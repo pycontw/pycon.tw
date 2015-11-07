@@ -1,0 +1,25 @@
+-r base.txt
+# Psycopg is the most popular PostgreSQL database adapter for the Python
+# programming language.
+# http://pythonhosted.org/psycopg2/
+psycopg2==2.6.1
+
+# Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
+# http://gunicorn.org/
+gunicorn==19.3.0
+
+# django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.
+# http://niwinz.github.io/django-redis/latest/
+django-redis==4.3.0
+
+# huey, a little task queue
+# http://huey.readthedocs.org/en/latest/index.html
+huey==0.4.9
+
+# Redis client for Python
+# https://redis-py.readthedocs.org/en/latest/
+redis==2.10.5
+
+# Sentry client for Python
+# https://raven.readthedocs.org/en/latest/
+raven==5.8.1

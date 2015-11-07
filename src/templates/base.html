@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% load compress static %}
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block head_tags%}
+    {% endblock %}
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
+    {% endcompress %}
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
+    {% block extra_css %}{% endblock %}
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    <title> | {% block title %} {% endblock %}</title>
+</head>
+<body class="{% block body-class %}{% endblock %}">
+
+    {% block body %}
+        <div class="container">It works!</div>
+    {% endblock %}
+
+    {% compress js %}
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/csrf_token.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        {% block scripts %}  {% endblock %}
+    {% endcompress %}
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

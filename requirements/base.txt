@@ -1,0 +1,37 @@
+# Django
+# https://www.djangoproject.com/
+Django==1.8.6
+
+# Django-environ allows you to utilize 12factor inspired environment variables
+# to configure your Django application.
+# http://django-environ.readthedocs.org
+django-environ==0.4.0
+
+# Reusable mixins for Django
+# http://django-braces.readthedocs.org/en/latest/index.html
+django-braces==1.8.1
+
+# Better python shell.
+# http://ipython.org/
+ipython==4.0.0
+
+# A collection of custom extensions for the Django Framework
+# http://django-extensions.readthedocs.org/en/latest/
+django-extensions==1.5.9
+
+# Compresses linked and inline JavaScript or CSS into a single cached file.
+# https://django-compressor.readthedocs.org/en/latest/
+django-compressor==1.5
+
+# A django-compressor filter to compile Sass files using libsass.
+# https://github.com/torchbox/django-libsass
+django-libsass
+
+# Faker is a Python package that generates fake data for you.
+# http://www.joke2k.net/faker/
+fake-factory==0.5.3
+
+# Fabric is a Python library and command-line tool for streamlining the use of
+# SSH for application deployment or systems administration tasks.
+# http://www.fabfile.org/
+Fabric==1.10.2
