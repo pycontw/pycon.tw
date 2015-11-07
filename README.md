@@ -33,11 +33,11 @@ Settings are stored in environment variables via [django-environ](http://django-
 
 Then edit the SECRET_KEY in local.env file, replace `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/), for example:
 
-    SECRET_KEY=q)uv=&tt2x3enyf7d9)x#!%g_5%p^ozws$k&o(a(u!@%&$t&8a
+    SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
 
 ### Run web server
 
-After that, just cd to **src** folder:
+After that, just cd to `src` folder:
 
     cd src
 
