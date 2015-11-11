@@ -1,1 +1,268 @@
+@import "bootstrap-variables";
 @import "vendors/bootstrap";
+
+$color-theme: #5194FB;
+$color-focus: #FFCC3E; // yellow
+
+$color-keynote-speaker__heading: $color-focus;
+
+@mixin roboto-medium() {
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
+@mixin roboto-light() {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+body {
+    @include roboto-light;
+}
+
+.header {
+    background-color: $color-theme;
+    color: white;
+    .logo {
+        margin-bottom: 2em;
+    }
+}
+.comming-soon {
+    font-size: 36px;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+// schedule
+
+.schedule-wrapper {
+    @include make-xs-column(10);
+    @include make-xs-column-offset(1);
+    @include make-sm-column(12);
+    @include make-sm-column-offset(0);
+    @include make-md-column(10);
+    @include make-md-column-offset(1);
+}
+.schedule {
+    background-color: #fff;
+    padding-top: 1em;
+    border-radius: 4px;
+}
+
+.schedule-block {
+    @include make-sm-column(4);
+    text-align: center;
+    color:#F18F56;
+    font-size:24px;
+}
+
+// visible in viewport > xs
+.schedule__title--lg {
+    @include make-sm-column(4);
+    @extend .hidden-xs;
+    text-align: center;
+    color: #ADCDFF;
+}
+
+// visible when viewport < xs
+.schedule__title {
+    @extend .visible-xs-block;
+    padding-top: .5em;
+}
+
+
+
+.quote {
+    margin-top: 1em;
+    padding-bottom: 2em;
+    font-size: 20px;
+    color: $color-focus;
+    text-align: center;
+}
+
+// intro
+
+%intro-block {
+    font-family: "Roboto";
+    margin-bottom: 4.2em;
+}
+
+.intro {
+    &__heading {
+        @include roboto-medium;
+        font-size: 36px;
+        padding-top: 1.2em;
+        padding-bottom: .8em;
+    }
+
+    &__body {
+        @include roboto-light;
+        font-size: 18px;
+    }
+}
+
+
+.intro__pycon {
+    @extend %intro-block;
+    color: #4668D9;
+}
+
+.intro__pycontw {
+    @extend %intro-block;
+    color: #F18F56;
+}
+
+.intro__volunteer {
+    @extend %intro-block;
+    border-radius:4px;
+    color: white;
+    background-color: #F08E57;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.35);
+    font-size: 18px;
+
+    .intro__heading {
+        font-size: 24px;
+        padding: 1em 1.2em .8em;
+        background-color: white;
+        color: #F08E57;
+    }
+
+    .intro__body {
+        padding: 2em 1.2em;
+        > p {
+            margin-bottom: 1.2em;
+        }
+    }
+}
+
+
+.community {
+    color: white;
+    background-color: $color-focus;
+}
+
+.community__list {
+    > li {
+        @include make-sm-column(6);
+        > a {
+            display: block;
+            padding-top: .5em;
+            padding-bottom: .5em;
+            color: white;
+        }
+    }
+
+    list-style: none;
+}
+
+.sponsorship {
+    background-color: $color-theme;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    a {
+        color: white;
+    }
+}
+
+.sponsorship__call {
+    @include make-xs-column-offset(0);
+    @include make-xs-column(12);
+    @include make-sm-column-offset(1);
+    @include make-sm-column(10);
+    @include make-md-column-offset(2);
+    @include make-md-column(8);
+    @include make-lg-column-offset(3);
+    @include make-lg-column(6);
+    border: 4px solid white;
+    padding: .3em 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    font-size: 36px;
+    color: white;
+}
+
+.section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    font-size: 18px;
+
+    &__heading {
+        @include roboto-medium();
+        margin-bottom: 1em;
+        color: $color-theme;
+        text-align: center;
+    }
+}
+
+.community {
+    border-radius: 5px;
+    padding: 1.2em 3.8em 2em;
+
+    .section__heading {
+        color: white;
+        text-align: left;
+        padding-bottom: 0;
+    }
+
+    &__list {
+        padding-left: 0;
+    }
+}
+
+$keynote-speaker-photo-size: 90px;
+// keynote-speaker
+.keynote-speaker {
+    @include make-xs-column(10);
+    @include make-xs-column-offset(1);
+    @include make-md-column(8);
+    @include make-md-column-offset(2);
+    margin-top: 80px;
+    padding-bottom: 5em;
+    border: 1px solid $color-theme;
+    border-radius: 5px;
+    text-align: center;
+
+    &__heading {
+        color: $color-keynote-speaker__heading;
+    }
+
+    &__body {
+        text-align: left;
+        padding: 4% 8%;
+        color:#686868;
+    }
+
+    &__name {
+        @include roboto-medium;
+        color: $color-theme;
+        font-size: 24px;
+    }
+
+    &__photo {
+        width: $keynote-speaker-photo-size;
+        height: $keynote-speaker-photo-size;
+        position: relative;
+        left: 50%;
+        margin-top: $keynote-speaker-photo-size / -2;
+        margin-left: $keynote-speaker-photo-size / -2;
+        margin-bottom: 4em;
+        border-radius: 50%;
+        border: 3px solid $color-theme;
+        background-color: white;
+    }
+
+    &__url {
+        font-size: 14px;
+        color: #82B3FF;
+        margin-bottom: 4em;
+        display: block;
+    }
+}
+
+.sponsors__logo {
+    > img {
+        margin: 2em auto 4em;
+        max-height: 60px;
+    }
+}

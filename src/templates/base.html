@@ -13,10 +13,11 @@
     {% block head_tags%}
     {% endblock %}
 
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
     {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
     {% endcompress %}
-    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,500' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
     {% block extra_css %}{% endblock %}
     <!--[if lt IE 9]>

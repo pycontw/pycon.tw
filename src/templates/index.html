@@ -1,1 +1,171 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="section header">
+    <nav class="container-fluid">
+        <div>pycontw 16</div>
+        <div class="social">
+            <div class="btn">fb</div>
+            <div class="btn">t</div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h1 class="logo text-center col-xs-8 col-xs-offset-2">
+                <img class="img-responsive" src="{% static 'images/logo.png' %}" alt="PYCON Taiwan 2016">
+            </h1>
+            <div class="comming-soon col-xs-12">
+                <p>Pythonistas, we are coming soon</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="schedule-wrapper">
+                <div class="row">
+                    <div class="h3 schedule__title--lg">Tutorials</div>
+                    <div class="h3 schedule__title--lg">Conference</div>
+                    <div class="h3 schedule__title--lg">Sprint</div>
+                </div>
+                <div class="row schedule">
+                    <div class="schedule-block">
+                        <h3 class="schedule__title">Tutorials</h3>
+                        <p>June 4-5, 2016</p>
+                    </div>
+                    <div class="schedule-block">
+                        <h3 class="schedule__title">Conference</h3>
+                        <p>June 17-18, 2016</p>
+                    </div>
+                    <div class="schedule-block">
+                        <h3 class="schedule__title">Sprint</h3>
+                        <p>June 18, 2016</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# end .schedule #}
+    </div>
+</div>
+<div class="section intro">
+    <div class="container">
+        <p class="quote">&quot;Simple is better than complex.    Complex is better than complicated.&quot;</p>
+        <div class="row">
+            <section class="intro__pycon col-md-8">
+                <h2 class="intro__heading">What is PyCon</h2>
+                <div class="intro__body">
+                PyCon is a conference by the Python community for the community. It is for Python enthusiasts of all experience levels, from new users to core developers. The original PyCon was formed in North America in 2003, but there are now a number of other conferences being run in the PyCon spirit around the world. -- PyCon: Community-Run Python Conference
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="intro__pycontw col-md-8 text-right col-md-push-4">
+                <h2 class="intro__heading">And what is PyCon Taiwan</h2>
+                <div class="intro__body">
+                PyCon APAC/TW 2015 is organized for pythonistas in Asia-Pacific and Taiwan. It will be hosted in Taipei, and we would like to invite you to join this big event, being a part of it by sponsoring, promoting your brand and product, and even making your company succeed through it. Three previous PyCon TW/APAC (2012, 2013 and 2014) was formed with support of the following, but not limited to, active user groups:
+                </div>
+            </section>
+            <section class="col-md-4 col-md-pull-8">
+                <div class="intro__volunteer">
+                    <h2 class="intro__heading h4">Call For Volunteer</h2>
+                    <div class="intro__body">
+                        <p>Help us organize and make the conference successful</p>
+                        <p>
+                            Contact: <br>
+                            organizers@pycon.tw
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{# end .intro #}
+
+{# begin .community #}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="community col-xs-12">
+                <h2 class="section__heading">Python Community in Taiwan</h2>
+                <ul class="community__list row">
+                    <li><a href="">Taipei.py - Taipei Python User Group</a></li>
+                    <li><a href="">PyHUG - Python Hsinchu User Group</a></li>
+                    <li><a href="">PyLadies Taiwan</a></li>
+                    <li><a href="">Tainan.py - Python Tainan User Group</a></li>
+                    <li><a href="">Kaohsiung.py - Kaohsiung Python User Group</a></li>
+                    <li><a href="">Taichung.py - Taichung Python User Group</a></li>
+                    <li><a href="">Django Girls Taipei</a></li>
+                    <li><a href="">Hualien.py - Hualien Python User Group</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{# end .community #}
+
+{# begin .sponsorship #}
+<div class="section sponsorship">
+    <div class="container">
+        <a class="sponsorship__call">Sponsorship 2016 available !</a>
+        <div class="col-xs-12">
+            <p>Prospectus in <a href="#">English</a>,
+                <a href="#">正體中文</a>,
+                <a href="#">簡體中文</a>,
+                <a href="#">日本語</a>
+            </p>
+            <p><a href="#">Application Form here</a></p>
+            <p><a href="#">See also Sponsorship 2015</a></p>
+        </div>
+    </div>
+</div>
+{# end .sponsorship #}
+
+{# begin .conf #}
+<div class="section conf">
+    <div class="block container">
+        <p class="quote">&quot;Beautiful is better than ugly.     Explicit is better than implicit. &quot;</p>
+
+        <div class="section keynote">
+            <h2 class="section__heading">Keynote Speaker</h2>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">Robert Bradshaw</div>
+                    <a class="keynote-speaker__url" href="https://andy.terrel.us">https://andy.terrel.us</a>
+                    <h3 class="keynote-speaker__heading h4">Bio</h3>
+                    <p class="keynote-speaker__body">Andy is a computational scientist with experience implementing distributed, large data applications. In his research, he is known for creating novel algorithms to speed implementations of mathematical models on the world's largest supercomputers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{# end .sec-conf #}
+
+{# begin .sponsors #}
+<div class="section sponsors">
+    <div class="container">
+        <div class="row">
+            <h2 class="section__heading">Sponsors</h2>
+            <div class="sponsors__logo col-sm-4">
+                <img class="img-responsive" src="{% static 'images/sponsors/python.png' %}" alt="python">
+            </div>
+            <div class="sponsors__logo col-sm-4">
+                <img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="gliacloud">
+
+            </div>
+            <div class="sponsors__logo col-sm-4">
+                <img class="img-responsive" src="{% static 'images/sponsors/django.png' %}" alt="django">
+            </div>
+        </div>
+        <p class="quote">Beautiful, Explicit, Simple</p>
+    </div>
+</div>
+{# end .sec-sponsors #}
+
+<footer>
+
+</footer>
+
+
+
+{% endblock body %}
