@@ -60,7 +60,7 @@ body {
 }
 .schedule {
     background-color: #fff;
-    padding-top: 1em;
+    padding-top: .6em;
     border-radius: 4px;
 }
 
@@ -155,8 +155,20 @@ body {
 
 
 .community {
+    border-radius: 5px;
+    padding: 1.2em 5% 2em;
     color: white;
     background-color: $color-focus;
+
+    .section__heading {
+        color: white;
+        text-align: left;
+        padding-bottom: 0;
+    }
+
+    &__list {
+        padding-left: 0;
+    }
 }
 
 .community__list {
@@ -227,20 +239,7 @@ body {
     }
 }
 
-.community {
-    border-radius: 5px;
-    padding: 1.2em 3.8em 2em;
 
-    .section__heading {
-        color: white;
-        text-align: left;
-        padding-bottom: 0;
-    }
-
-    &__list {
-        padding-left: 0;
-    }
-}
 
 .conf {
     background: url('/static/images/bg_section-conf.svg') no-repeat;
