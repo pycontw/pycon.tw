@@ -88,6 +88,9 @@ body {
 }
 
 .intro {
+    background: url('/static/images/bg_section-intro.svg') no-repeat;
+    background-size: 50% auto;
+    background-position: left 0 top -5vw;
     &__heading {
         @include roboto-medium;
         font-size: 36px;
@@ -210,6 +213,12 @@ body {
     }
 }
 
+.conf {
+    background: url('/static/images/bg_section-conf.svg') no-repeat;
+    background-size: 50% auto;
+    background-position: right 0 bottom 20vw;
+}
+
 $keynote-speaker-photo-size: 90px;
 // keynote-speaker
 .keynote-speaker {
@@ -220,6 +229,7 @@ $keynote-speaker-photo-size: 90px;
     margin-top: 80px;
     padding-bottom: 5em;
     border: 1px solid $color-theme;
+    background-color: #fff;
     border-radius: 5px;
     text-align: center;
 
