@@ -175,11 +175,24 @@ body {
 
 .sponsorship {
     background-color: $color-theme;
+    background-repeat: no-repeat;
+    background-image: url('/static/images/bg_section-sponsorship.svg');
+    background-size: contain;
+    background-position: center;
+    background-origin: content-box;
+    padding-left: 4em;
+    padding-right: 4em;
     text-align: center;
     color: white;
     font-size: 18px;
     a {
         color: white;
+    }
+}
+
+@media (max-width: $screen-md) {
+    .sponsorship {
+        background-image: none;
     }
 }
 
@@ -198,6 +211,7 @@ body {
     border-radius: 10px;
     font-size: 36px;
     color: white;
+    background-color: $color-theme;
 }
 
 .section {
