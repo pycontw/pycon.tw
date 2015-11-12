@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+<nav class="top-nav container-fluid clearfix">
+    <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo" alt="logo">
+    <div class="social pull-right">
+        <a href="#" class="social-btn">
+            <i class="fa fa-facebook fa-lg"></i>
+        </a>
+        <a href="#" class="social-btn">
+            <i class="fa fa-twitter fa-lg"></i>
+        </a>
+    </div>
+</nav>
 <div class="section header">
-    <nav class="container-fluid">
-        <div>pycontw 16</div>
-        <div class="social">
-            <div class="btn">fb</div>
-            <div class="btn">t</div>
-        </div>
-
-    </nav>
     <div class="container">
         <div class="row">
             <h1 class="logo text-center col-xs-8 col-xs-offset-2">
