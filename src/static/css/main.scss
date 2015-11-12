@@ -29,6 +29,10 @@ body {
     > .logo {
         @extend .hidden-xs;
     }
+
+    .social-btn {
+        color: #fff;
+    }
 }
 
 .header {
@@ -281,6 +285,13 @@ $keynote-speaker-photo-size: 90px;
     }
 }
 
+.footer {
+    color: $color-theme;
+    font-size: 16px;
+    padding: 1.8em 2em;
+    line-height: 40px;
+}
+
 .sponsors__logo {
     > img {
         margin: 2em auto 4em;
@@ -289,7 +300,7 @@ $keynote-speaker-photo-size: 90px;
 }
 
 .social-btn {
-    color: #fff;
+    color: $color-theme;
     display: inline-block;
     padding: .2em 1em;
 }
