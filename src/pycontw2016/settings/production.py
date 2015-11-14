@@ -7,7 +7,7 @@ import logging.config
 DEBUG = False
 
 # Must mention ALLOWED_HOSTS in production!
-# ALLOWED_HOSTS = ["pycontw2016.com"]
+ALLOWED_HOSTS = ["pycontw.krdai.info", ]
 
 # Cache the templates in memory for speed-up
 loaders = [
@@ -25,7 +25,7 @@ TEMPLATES[0]['OPTIONS'].update({"debug": False})
 TEMPLATES[0].update({"APP_DIRS": DEBUG})
 
 # Define STATIC_ROOT for the collectstatic command
-STATIC_ROOT = join(BASE_DIR, '..', 'site', 'static')
+STATIC_ROOT = join(BASE_DIR, 'assets')
 
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
@@ -66,20 +66,3 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
-
-HUEY = {
-    'backend': 'huey.backends.redis_backend',  # required.
-    'name': 'op',
-    'connection': {'host': "redis.gliacloud.com", 'port': "6379"},
-    'always_eager': False,
-    'consumer_options': {'workers': 4},
-}
-
-
-import huey
-from huey.backends.redis_backend import RedisQueue
-import huey.djhuey
-# switch to non blocking mode to avoid lost connection
-# the code cannot exists above the HEUY variable
-queue = RedisQueue(HUEY["name"], host=HUEY["connection"]["host"], port=HUEY["connection"]["port"])
-huey.djhuey.HUEY = huey.Huey(queue)
