@@ -73,7 +73,8 @@
                         <p>Help us organize and make the conference successful! Please fill out our volunteer form</p>
                         <p>
                             or contact: <br>
-                            organizers@pycon.tw
+
+                            <a href="mailto:organizers@pycon.tw">organizers@pycon.tw</a>
                         </p>
                     </div>
                 </div>
@@ -91,14 +92,14 @@
                 <div class="community">
                     <h2 class="section__heading">Python Community in Taiwan</h2>
                     <ul class="community__list row">
-                        <li><a href="">Taipei.py - Taipei Python User Group</a></li>
-                        <li><a href="">PyHUG - Python Hsinchu User Group</a></li>
-                        <li><a href="">PyLadies Taiwan</a></li>
-                        <li><a href="">Tainan.py - Python Tainan User Group</a></li>
-                        <li><a href="">Kaohsiung.py - Kaohsiung Python User Group</a></li>
-                        <li><a href="">Taichung.py - Taichung Python User Group</a></li>
-                        <li><a href="">Django Girls Taipei</a></li>
-                        <li><a href="">Hualien.py - Hualien Python User Group</a></li>
+                        <li><a href="http://www.meetup.com/Taipei-py/">Taipei.py - Taipei Python User Group</a></li>
+                        <li><a href="http://www.meetup.com/pythonhug/">PyHUG - Python Hsinchu User Group</a></li>
+                        <li><a href="http://www.meetup.com/PyLadiesTW/">PyLadies Taiwan</a></li>
+                        <li><a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/">Tainan.py - Python Tainan User Group</a></li>
+                        <li><a href="http://www.meetup.com/Kaohsiung-Python-Meetup">Kaohsiung.py - Kaohsiung Python User Group</a></li>
+                        <li><a href="http://www.meetup.com/Taichung-Python-Meetup/">Taichung.py - Taichung Python User Group</a></li>
+                        <li><a href="http://djangogirls.org/taipei">Django Girls Taipei</a></li>
+                        <li><a href="http://www.meetup.com/Hualien-Py/">Hualien.py - Hualien Python User Group</a></li>
                     </ul>
                 </div>
             </div>
@@ -110,16 +111,12 @@
 {# begin .sponsorship #}
 <div class="section sponsorship">
     <div class="container">
-        <a class="sponsorship__call">Call for Sponsors!</a>
+        <div class="sponsorship__call">Call for Sponsors!</div>
         <div class="col-xs-12">
             <p>
-            Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. We offer special benefits to encourage early contact. Contact us at sponsorship@pycon.tw for sponsorship details.
-            </p>
-            <p>
-            在 PyCon TW 2016 您能直接接觸台灣近 800 人的 Python 使用者與開發者。據2015年的經驗，近9成參加者為業界人士。這是尋找人才與推廣產品的絕佳場合！強烈建議您越早聯絡我們越好，預先聯繫與預先付款都將享有特殊福利。歡迎來信至 sponsorship@pycon.tw 瞭解更多贊助資訊！
+            Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. We offer special benefits to encourage early contact. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a> for sponsorship details.
             </p>
             <p>See also <a href="https://tw.pycon.org/2015apac/en/sponsors/"> Sponsors of PyCon APAC 2015</a></p>
-            <p>歡迎參考<a href="https://tw.pycon.org/2015apac/en/sponsors/">PyConAPAC 2015 贊助商名單</a></p>
         </div>
     </div>
 </div>
@@ -129,7 +126,7 @@
 <div class="section conf">
     <div class="block container">
         <p class="quote">&quot;Beautiful is better than ugly.     Explicit is better than implicit. &quot;</p>
-
+        {% comment %} 
         <div class="section keynote">
             <h2 class="section__heading">Keynote Speaker</h2>
             <div class="row">
@@ -163,6 +160,7 @@
                 </div>
             </div>
         </div>
+        {% endcomment %}
     </div>
 </div>
 {# end .sec-conf #}
@@ -173,13 +171,7 @@
         <div class="row">
             <h2 class="section__heading">Sponsors</h2>
             <div class="sponsors__logo col-sm-4">
-                <a href=""><img class="img-responsive" src="{% static 'images/sponsors/python.png' %}" alt="python"></a>
-            </div>
-            <div class="sponsors__logo col-sm-4">
                 <a href="http://www.gliacloud.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="gliacloud"></a>
-            </div>
-            <div class="sponsors__logo col-sm-4">
-                <a href=""><img class="img-responsive" src="{% static 'images/sponsors/django.png' %}" alt="django"></a>
             </div>
             <div class="sponsors__logo col-sm-4">
                 <a href="http://ocf.tw"><img class="img-responsive" src="{% static 'images/sponsors/openculture.png' %}" alt="openculture"></a>
