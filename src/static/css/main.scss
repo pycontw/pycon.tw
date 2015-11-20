@@ -147,6 +147,9 @@ body {
 
     .intro__body {
         padding: 2em 1.2em;
+        a{
+            color: #fff;
+        }
         > p {
             margin-bottom: 1.2em;
         }
@@ -199,6 +202,9 @@ body {
     font-size: 18px;
     a {
         color: white;
+    }
+    p {
+        padding: 0px 100px;
     }
 }
 
