@@ -30,8 +30,3 @@ django-libsass
 # Faker is a Python package that generates fake data for you.
 # http://www.joke2k.net/faker/
 fake-factory==0.5.3
-
-# Fabric is a Python library and command-line tool for streamlining the use of
-# SSH for application deployment or systems administration tasks.
-# http://www.fabfile.org/
-Fabric==1.10.2
