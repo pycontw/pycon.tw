@@ -132,24 +132,30 @@ body {
 }
 
 .intro__pycontw {
+    @include make-md-column(8);
+    text-align: right;
     color: #F18F56;
 }
 
 .intro__volunteer {
+    @include make-md-column(4);
+}
+
+.volunteer {
     border-radius:4px;
     color: white;
     background-color: #F08E57;
     box-shadow: 0 0 4px 0 rgba(0,0,0,0.35);
     font-size: 18px;
 
-    .intro__heading {
+    &__heading {
         font-size: 24px;
         padding: 1em 1.2em .8em;
         background-color: white;
         color: #F08E57;
     }
 
-    .intro__body {
+    &__body {
         padding: 2em 1.2em;
         a{
             color: #fff;
