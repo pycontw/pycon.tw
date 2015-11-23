@@ -94,7 +94,7 @@ body {
 
 
 .quote {
-    margin-top: 1em;
+    margin-top: 2em;
     padding-bottom: 2em;
     font-size: 20px;
     color: $color-focus;
@@ -141,6 +141,8 @@ body {
     @include make-md-column(4);
 }
 
+
+// volunteer block
 .volunteer {
     border-radius:4px;
     color: white;
@@ -197,6 +199,11 @@ body {
     }
     word-break: break-all;
     list-style: none;
+}
+
+.section.sponsorship {
+    margin-top: 6em;
+    margin-bottom: 2em;
 }
 
 .sponsorship {
