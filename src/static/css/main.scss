@@ -231,14 +231,6 @@ body {
 }
 
 .sponsorship__call {
-    // @include make-xs-column-offset(0);
-    // @include make-xs-column(12);
-    // @include make-sm-column-offset(1);
-    // @include make-sm-column(10);
-    // @include make-md-column-offset(2);
-    // @include make-md-column(8);
-    // @include make-lg-column-offset(3);
-    // @include make-lg-column(6);
     border: 4px solid white;
     padding: .3em 1em;
     margin-bottom: 1em;
@@ -246,6 +238,12 @@ body {
     font-size: 36px;
     color: white;
     background-color: $color-theme;
+}
+
+@media (max-width: $screen-xs) {
+    .sponsorship__call{
+        font-size: 28px;
+    }
 }
 
 .section {
