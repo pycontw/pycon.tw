@@ -7,7 +7,7 @@ import logging.config
 DEBUG = False
 
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ["pycontw.krdai.info", ]
+ALLOWED_HOSTS = ["pycontw.krdai.info", "tw.pycon.org", ]
 
 # Cache the templates in memory for speed-up
 loaders = [
