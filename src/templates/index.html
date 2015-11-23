@@ -110,12 +110,17 @@
 {# begin .sponsorship #}
 <div class="section sponsorship">
     <div class="container">
-        <div class="sponsorship__call">Call for Sponsors!</div>
-        <div class="col-xs-12">
-            <p>
-            Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. We offer special benefits to encourage early contact. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a> for sponsorship details.
-            </p>
-            <p>See also <a href="https://tw.pycon.org/2015apac/en/sponsors/" target="_blank"> Sponsors of PyCon APAC 2015</a></p>
+        <div class="row">
+            <div class="sponsorship__call col-sm-6 col-sm-offset-3">Call for Sponsors!</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. We offer special benefits to encourage early contact. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a> for sponsorship details.
+                </p>
+                <br>
+                <p>See also <a href="https://tw.pycon.org/2015apac/en/sponsors/" target="_blank"> Sponsors of PyCon APAC 2015</a></p>
+            </div>
         </div>
     </div>
 </div>
@@ -125,7 +130,7 @@
 <div class="section conf">
     <div class="block container">
         <p class="quote">&quot;Beautiful is better than ugly.     Explicit is better than implicit. &quot;</p>
-        {% comment %} 
+        {% comment %}
         <div class="section keynote">
             <h2 class="section__heading">Keynote Speaker</h2>
             <div class="row">
@@ -169,17 +174,21 @@
     <div class="container">
         <div class="row">
             <h2 class="section__heading">Sponsors</h2>
-            <div class="sponsors__logo col-sm-4">
-                <a href="http://www.gliacloud.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="gliacloud"></a>
+            <div class="row">
+                <div class="sponsors__logo col-sm-12">
+                    <a href="http://aktsk.com.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/akatsuki.png' %}" alt="akatsuki" style="max-height:100px;"></a>
+                </div>
             </div>
-            <div class="sponsors__logo col-sm-4">
-                <a href="http://ocf.tw" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/openculture.png' %}" alt="openculture"></a>
-            </div>
-            <div class="sponsors__logo col-sm-4">
-                <a href="http://www.wolftea.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/wolftea.png' %}" alt="wolftea"></a>
-            </div>
-            <div class="sponsors__logo col-sm-4">
-                <a href="http://aktsk.com.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/akatsuki.png' %}" alt="akatsuki"></a>
+            <div class="row">
+                <div class="sponsors__logo col-sm-4">
+                    <a href="http://ocf.tw" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/openculture.png' %}" alt="openculture" style="max-height:50px;"></a>
+                </div>
+                <div class="sponsors__logo col-sm-4">
+                    <a href="http://www.wolftea.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/wolftea.png' %}" alt="wolftea" style="max-height:100px; margin-top:10px;"></a>
+                </div>
+                <div class="sponsors__logo col-sm-4">
+                    <a href="http://www.gliacloud.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="gliacloud" style="max-height:50px;"></a>
+                </div>
             </div>
         </div>
         <p class="quote">Beautiful, Explicit, Simple</p>
