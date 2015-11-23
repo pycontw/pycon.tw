@@ -197,7 +197,6 @@ body {
             color: white;
         }
     }
-    word-break: break-all;
     list-style: none;
 }
 
@@ -243,6 +242,10 @@ body {
 @media (max-width: $screen-xs) {
     .sponsorship__call{
         font-size: 28px;
+    }
+    .sponsorship {
+        padding-left: 2em;
+        padding-right: 2em;
     }
 }
 
