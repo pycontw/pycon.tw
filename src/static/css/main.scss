@@ -1,7 +1,9 @@
 @import "bootstrap-variables";
 @import "vendors/bootstrap";
 
-$fa-font-path: "/static/fonts";
+$static_root: "./../../";
+
+$fa-font-path: $static_root + "/fonts";
 @import "vendors/font-awesome/font-awesome";
 
 $color-theme: #5194FB;
@@ -17,6 +19,10 @@ $color-keynote-speaker__heading: $color-focus;
 @mixin roboto-light() {
     font-family: "Roboto";
     font-weight: 300;
+}
+
+@mixin static($url) {
+    @return $static_root + url;
 }
 
 body {
@@ -103,7 +109,7 @@ body {
 }
 
 .intro {
-    background: url('/static/images/bg_section-intro.svg') no-repeat;
+    background: url(static('images/bg_section-intro.svg')) no-repeat;
     background-size: 50% auto;
     background-position: left 0 top -5vw;
     &__heading {
@@ -190,7 +196,7 @@ body {
 .sponsorship {
     background-color: $color-theme;
     background-repeat: no-repeat;
-    background-image: url('/static/images/bg_section-sponsorship.svg');
+    background-image: url(static('images/bg_section-sponsorship.svg'));
     background-size: contain;
     background-position: center;
     background-origin: content-box;
@@ -245,7 +251,7 @@ body {
 
 
 .conf {
-    background: url('/static/images/bg_section-conf.svg') no-repeat;
+    background: url(static('images/bg_section-conf.svg')) no-repeat;
     background-size: 50% auto;
     background-position: right 0 bottom 20vw;
 }
