@@ -133,12 +133,16 @@ body {
 
 .intro__pycontw {
     @include make-md-column(8);
+    @include make-md-column-push(4)
     text-align: right;
     color: #F18F56;
+    // margin-top: -3em;
+    // margin-bottom: 3em;
 }
 
 .intro__volunteer {
     @include make-md-column(4);
+    @include make-md-column-pull(8)
 }
 
 
@@ -246,6 +250,16 @@ body {
     .sponsorship {
         padding-left: 2em;
         padding-right: 2em;
+    }
+    .intro__pycontw {
+        margin-top: -4em;
+        margin-bottom: 4em;
+    }
+    .intro__volunteer{
+        margin-bottom: -4em;
+    }
+    .community{
+        margin-bottom: -4em;
     }
 }
 
