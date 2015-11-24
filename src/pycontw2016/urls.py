@@ -9,5 +9,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 ]
 
+if settings.URL_PREFIX:
+    urlpatterns = [
+        url(r'^{prefix}'.format(prefix=settings.URL_PREFIX), include(urlpatterns)),
+    ]
+
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

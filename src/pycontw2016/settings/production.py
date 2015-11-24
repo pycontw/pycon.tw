@@ -66,3 +66,6 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+URL_PREFIX = '2016/'
+STATIC_URL = '/2016/static/'
