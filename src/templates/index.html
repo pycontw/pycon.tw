@@ -2,7 +2,9 @@
 {% load static %}
 {% block body %}
 <nav class="top-nav container-fluid clearfix">
-    <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo" alt="logo">
+    <a href="{% url 'index' %}">
+        <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo" alt="logo">
+    </a>
     <div class="social pull-right">
         <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
             <i class="fa fa-facebook fa-lg"></i>
