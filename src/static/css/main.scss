@@ -224,6 +224,9 @@ body {
         color: white;
         text-decoration: underline;
     }
+    > .container {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: $screen-md) {
