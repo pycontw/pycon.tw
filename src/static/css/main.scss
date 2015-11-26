@@ -1,28 +1,12 @@
 @import "bootstrap-variables";
 @import "vendors/bootstrap";
 
-$static_root: "./../../";
+@import "base/variables";
 
-$fa-font-path: $static_root + "/fonts";
+// Mixins
+@import "mixins/font";
+@import "mixins/static";
 
-$color-theme: #5194FB;
-$color-focus: #FFCC3E; // yellow
-
-$color-keynote-speaker__heading: $color-focus;
-
-@mixin roboto-medium() {
-    font-family: "Roboto";
-    font-weight: 500;
-}
-
-@mixin roboto-light() {
-    font-family: "Roboto";
-    font-weight: 300;
-}
-
-@mixin static($url) {
-    @return $static_root + url;
-}
 
 body {
     @include roboto-light;
@@ -223,9 +207,6 @@ body {
     a {
         color: white;
         text-decoration: underline;
-    }
-    > .container {
-        max-width: 100%;
     }
 }
 
