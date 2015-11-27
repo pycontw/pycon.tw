@@ -31,7 +31,7 @@ body {
         margin-bottom: 2em;
     }
 }
-.comming-soon {
+.slogan {
     font-size: 36px;
     margin-bottom: 2em;
     text-align: center;
@@ -226,6 +226,15 @@ body {
     background-color: $color-theme;
 }
 
+@media (max-width: $screen-sm){
+    .schedule{
+        padding-top: 0;
+    }
+    .schedule__title{
+        padding-top: 0;
+    }
+}
+
 @media (max-width: $screen-xs) {
     .sponsorship__call{
         font-size: 28px;
@@ -243,6 +252,9 @@ body {
     }
     .community{
         margin-bottom: -4em;
+    }
+    .slogan {
+        font-size: 30px;
     }
 }
 

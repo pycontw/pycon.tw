@@ -3,7 +3,7 @@
 {% block body %}
 <nav class="top-nav container-fluid clearfix">
     <a href="{% url 'index' %}">
-        <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo" alt="logo">
+        <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo hidden-xs" alt="logo">
     </a>
     <div class="social pull-right">
         <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
@@ -17,10 +17,10 @@
 <div class="section header">
     <div class="container">
         <div class="row">
-            <h1 class="logo text-center col-xs-8 col-xs-offset-2">
+            <h1 class="logo text-center col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
                 <img class="img-responsive" src="{% static 'images/logo.png' %}" alt="PYCON Taiwan 2016">
             </h1>
-            <div class="comming-soon col-xs-12">
+            <div class="slogan col-xs-12">
                 <p>Implement the Future, Together !</p>
             </div>
         </div>
