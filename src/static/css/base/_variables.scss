@@ -1,6 +1,35 @@
 $static_root: "./../../";
 
-$color-theme: #5194FB;
-$color-focus: #FFCC3E; // yellow
+$theme-color: #3E6DF5; //blue
+$theme-focus: #FFC525; // yellow
 
-$color-keynote-speaker__heading: $color-focus;
+$color-keynote-speaker__heading: $theme-focus;
+
+$quote-color: $theme-focus;
+
+// section
+$section__heading-color: $theme-color;
+
+// schedule
+$schedule-color: #F58454;
+$schedule__title-color: #ADCDFF;
+
+// intro
+$intro__heading-color: $theme-color;
+$intro-color: #686868;
+
+// community
+$community-bg: $theme-focus;
+$community-color: #6B4C00;
+
+// footer
+$footer-bg: #F9FCFF;
+$footer-color: $theme-color;
+
+// keynote-speaker
+$keynote-speaker-color: #9F9F9F;
+$keynote-speaker__name-color: #3C3C3C;
+$keynote-speaker__url-color: #3C3C3C;
+$keynote-speaker-bg: #fff;
+
+$keynote-speaker-photo-size: 90px;

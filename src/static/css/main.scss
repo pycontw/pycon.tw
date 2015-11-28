@@ -13,7 +13,7 @@ body {
 }
 
 .top-nav {
-    background-color: $color-theme;
+    background-color: $theme-color;
     padding: 1.8em 2em;
     > .logo {
         @extend .hidden-xs;
@@ -25,7 +25,7 @@ body {
 }
 
 .header {
-    background-color: $color-theme;
+    background-color: $theme-color;
     color: white;
     .logo {
         margin-bottom: 2em;
@@ -56,7 +56,7 @@ body {
 .schedule-block {
     @include make-sm-column(4);
     text-align: center;
-    color:#F18F56;
+    color: $schedule-color;
     font-size:24px;
 }
 
@@ -65,7 +65,7 @@ body {
     @include make-sm-column(4);
     @extend .hidden-xs;
     text-align: center;
-    color: #ADCDFF;
+    color: $schedule__title-color;
 }
 
 // visible when viewport < xs
@@ -80,7 +80,7 @@ body {
     margin-top: 2em;
     padding-bottom: 2em;
     font-size: 20px;
-    color: $color-focus;
+    color: $quote-color;
     text-align: center;
 }
 
@@ -95,11 +95,13 @@ body {
     background: url(static('images/bg_section-intro.svg')) no-repeat;
     background-size: 50% auto;
     background-position: left 0 top -5vw;
+    color: $intro-color;
     &__heading {
         @include roboto-medium;
         font-size: 36px;
         padding-top: 1.2em;
         padding-bottom: .8em;
+        color: $intro__heading-color;
     }
 
     &__body {
@@ -111,16 +113,12 @@ body {
 
 .intro__pycon {
     @extend %intro-block;
-    color: #4668D9;
 }
 
 .intro__pycontw {
     @include make-md-column(8);
     @include make-md-column-push(4)
     text-align: right;
-    color: #F18F56;
-    // margin-top: -3em;
-    // margin-bottom: 3em;
 }
 
 .intro__volunteer {
@@ -160,31 +158,27 @@ body {
 .community {
     border-radius: 5px;
     padding: 1.2em 5% 2em;
-    color: white;
-    background-color: $color-focus;
+    color: $community-color;
+    background-color: $community-bg;
 
     .section__heading {
-        color: white;
         text-align: left;
         padding-bottom: 0;
-    }
-
-    &__list {
-        padding-left: 0;
+        color: $community-color;
     }
 }
 
-.community__list {
+.community-list {
+    padding-left: 0;
     > li {
         @include make-sm-column(6);
         > a {
             display: block;
             padding-top: .5em;
             padding-bottom: .5em;
-            color: white;
+            color: $community-color;
         }
     }
-    list-style: none;
 }
 
 .section.sponsorship {
@@ -193,7 +187,7 @@ body {
 }
 
 .sponsorship {
-    background-color: $color-theme;
+    background-color: $theme-color;
     background-repeat: no-repeat;
     background-image: url(static('images/bg_section-sponsorship.svg'));
     background-size: contain;
@@ -223,7 +217,7 @@ body {
     border-radius: 10px;
     font-size: 36px;
     color: white;
-    background-color: $color-theme;
+    background-color: $theme-color;
 }
 
 @media (max-width: $screen-sm){
@@ -266,8 +260,8 @@ body {
     &__heading {
         @include roboto-medium();
         margin-bottom: 1em;
-        color: $color-theme;
         text-align: center;
+        color: $section__heading-color;
     }
 }
 
@@ -279,7 +273,7 @@ body {
     background-position: right 0 bottom 20vw;
 }
 
-$keynote-speaker-photo-size: 90px;
+
 // keynote-speaker
 .keynote-speaker {
     @include make-xs-column(10);
@@ -288,10 +282,11 @@ $keynote-speaker-photo-size: 90px;
     @include make-md-column-offset(2);
     margin-top: 80px;
     padding-bottom: 5em;
-    border: 1px solid $color-theme;
-    background-color: #fff;
+    border: 1px solid $theme-color;
+    background-color: $keynote-speaker-bg;
     border-radius: 5px;
     text-align: center;
+    color: $keynote-speaker-color;
 
     &__heading {
         color: $color-keynote-speaker__heading;
@@ -300,12 +295,11 @@ $keynote-speaker-photo-size: 90px;
     &__body {
         text-align: left;
         padding: 4% 8%;
-        color:#686868;
     }
 
     &__name {
         @include roboto-medium;
-        color: $color-theme;
+        color: $keynote-speaker__name-color;
         font-size: 24px;
     }
 
@@ -318,20 +312,21 @@ $keynote-speaker-photo-size: 90px;
         margin-left: $keynote-speaker-photo-size / -2;
         margin-bottom: 4em;
         border-radius: 50%;
-        border: 3px solid $color-theme;
+        border: 3px solid $theme-color;
         background-color: white;
     }
 
     &__url {
         font-size: 14px;
-        color: #82B3FF;
+        color: $keynote-speaker__url-color;
         margin-bottom: 4em;
         display: block;
     }
 }
 
 .footer {
-    color: $color-theme;
+    background-color: $footer-bg;
+    color: $footer-color;
     font-size: 16px;
     padding: 1.8em 2em;
     line-height: 40px;
@@ -345,7 +340,7 @@ $keynote-speaker-photo-size: 90px;
 }
 
 .social-btn {
-    color: $color-theme;
+    color: $theme-color;
     display: inline-block;
     padding: .2em 1em;
 }
