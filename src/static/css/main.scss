@@ -168,6 +168,8 @@ body {
     }
 }
 
+
+// community-list
 .community-list {
     padding-left: 0;
     list-style: none;
@@ -192,7 +194,7 @@ body {
         }
     }
 
-    // full name
+    // show dash between name and full name
     .desc {
       &::before {
         content: " - ";
@@ -202,6 +204,8 @@ body {
 
 @media(max-width: $screen-xs-min)  {
     .community-list {
+
+        // hide dash between name and full name
         .desc {
             display: block;
             font-size: 14px;
@@ -211,6 +215,7 @@ body {
         }
     }
 }
+
 
 .section.sponsorship {
     margin-top: 6em;
@@ -242,13 +247,19 @@ body {
 }
 
 .sponsorship__call {
-    border: 4px solid white;
+    @include make-sm-column(10);
+    @include make-sm-column-offset(1);
+    @include make-md-column(8);
+    @include make-md-column-offset(2);
+    @include make-lg-column(6);
+    @include make-lg-column-offset(3);
     padding: .3em 1em;
-    margin-bottom: 1em;
-    border-radius: 10px;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    border-radius: 400px; // large number for capsule shape
     font-size: 36px;
-    color: white;
-    background-color: $theme-color;
+    color: $theme-color;
+    background-color: white;
 }
 
 @media (max-width: $screen-sm){
