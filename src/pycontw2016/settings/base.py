@@ -76,7 +76,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-
+    'users',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -147,5 +147,7 @@ STATICFILES_FINDERS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+AUTH_USER_MODEL = 'users.User'
 
 URL_PREFIX = None
