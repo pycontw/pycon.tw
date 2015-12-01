@@ -118,7 +118,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         swappable = 'AUTH_USER_MODEL'
 
     def __str__(self):
-        return self.speaker_name
+        return self.email
 
     def get_full_name(self):
         return self.speaker_name
