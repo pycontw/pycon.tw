@@ -46,6 +46,12 @@ And run migrate and http server:
     python manage.py migrate
     python manage.py runserver
 
+### Run tests
+
+Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run the tests:
+
+    py.test
+
 ## How to contribute
 
 Follow the [Github Flow](https://guides.github.com/introduction/flow/), please **DON'T push the commits into master directly**, always create branch by the feature you want to update.

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+
+{% block body %}
+<form id="user_profile_update_form" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">{% trans 'Save' %}</button>
+  <a href="{% url 'user_dashboard' %}">{% trans 'Cancel' %}</a>
+</form>
+{% endblock body %}

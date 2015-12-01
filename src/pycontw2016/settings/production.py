@@ -68,4 +68,5 @@ LOGGING = {
 logging.config.dictConfig(LOGGING)
 
 URL_PREFIX = '2016/'
+LOGIN_REDIRECT_URL = '/2016/dashboard/'
 STATIC_URL = '/2016/static/'

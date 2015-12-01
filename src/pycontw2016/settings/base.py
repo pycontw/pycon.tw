@@ -152,3 +152,5 @@ COMPRESS_PRECOMPILERS = (
 AUTH_USER_MODEL = 'users.User'
 
 URL_PREFIX = None
+
+LOGIN_REDIRECT_URL = '/dashboard/'

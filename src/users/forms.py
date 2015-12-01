@@ -106,3 +106,9 @@ class UserChangeForm(forms.ModelForm):
         :return str password:
         """
         return self.initial['password']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('speaker_name', 'bio', 'photo')

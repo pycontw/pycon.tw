@@ -126,6 +126,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.speaker_name
 
+    @property
+    def profile_filled(self):
+        return self.speaker_name and self.bio
+
+
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user.
         """

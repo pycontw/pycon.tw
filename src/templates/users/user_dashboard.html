@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+
+{% block body %}
+
+{% include '_includes/nav.html' %}
+
+<a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a>
+
+{% if user.profile_filled %}
+<p>TODO: Allow creation of proposals.</p>
+{% endif %}
+
+<p>TODO: List proposals.</p>
+
+{% endblock body %}
