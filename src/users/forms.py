@@ -6,6 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users.
+
     Includes all the required fields, plus a repeated password.
     """
     error_messages = {
@@ -28,6 +29,7 @@ class UserCreationForm(forms.ModelForm):
 
     def clean_email(self):
         """Clean form email.
+
         :return str email: cleaned email
         :raise forms.ValidationError: Email is duplicated
         """
@@ -45,6 +47,7 @@ class UserCreationForm(forms.ModelForm):
 
     def clean_password2(self):
         """Check that the two password entries match.
+
         :return str password2: cleaned password2
         :raise forms.ValidationError: password2 != password1
         """
@@ -59,10 +62,12 @@ class UserCreationForm(forms.ModelForm):
 
     def save(self, commit=True):
         """Save user.
+
         Save the provided password in hashed format.
+
         :return custom_user.models.EmailUser: user
         """
-        user = super(UserCreationForm, self).save(commit=False)
+        user = super().save(commit=False)
         user.set_password(self.cleaned_data["password1"])
         if commit:
             user.save()
@@ -71,6 +76,7 @@ class UserCreationForm(forms.ModelForm):
 
 class UserChangeForm(forms.ModelForm):
     """A form for updating users.
+
     Includes all the fields on the user, but replaces the password field
     with admin's password hash display field.
     """
@@ -85,16 +91,18 @@ class UserChangeForm(forms.ModelForm):
         exclude = ()
 
     def __init__(self, *args, **kwargs):
-        """Init the form."""
-        super(UserChangeForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         f = self.fields.get('user_permissions', None)
         if f is not None:
             f.queryset = f.queryset.select_related('content_type')
 
     def clean_password(self):
         """Clean password.
+
         Regardless of what the user provides, return the initial value.
         This is done here, rather than on the field, because the
         field does not have access to the initial value.
+
         :return str password:
         """
+        return self.initial['password']
