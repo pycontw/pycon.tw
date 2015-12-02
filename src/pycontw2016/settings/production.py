@@ -6,6 +6,8 @@ import logging.config
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False
 
+INSTALLED_APPS += ('postgres',)
+
 # Must mention ALLOWED_HOSTS in production!
 ALLOWED_HOSTS = ["pycontw.krdai.info", "tw.pycon.org", ]
 
