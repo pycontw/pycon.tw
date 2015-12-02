@@ -1,3 +1,47 @@
+import pytest
+
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
+
+
+def test_signup_login(bare_user_client):
+    """If the request is already authenticated, the signup view should
+    redirect it to the dashboard.
+    """
+    response = bare_user_client.get('/accounts/signup/', follow=True)
+    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+
+
+def test_signup_get(client):
+    response = client.get('/accounts/signup/')
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db
+def test_signup_post(client):
+    """If the signup is successful, the user should be created, with the
+    request logged-in and redirected to dashboard.
+    """
+    response = client.post('/accounts/signup/', {
+        'email': 'user@user.me',
+        'password1': '7K50M',
+        'password2': '7K50M',
+    }, follow=True)
+    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+    assert User.objects.filter(email='user@user.me').exists()
+
+
+def test_signup_duplicate(bare_user, client):
+    response = client.post('/accounts/signup/', {
+        'email': 'user@user.me',
+        'password1': '7K50M',
+        'password2': '7K50M',
+    })
+    assert response.status_code == 200
+
+
 def test_dashboard_nologin(client):
     response = client.get('/dashboard/', follow=True)
     assert response.redirect_chain == [

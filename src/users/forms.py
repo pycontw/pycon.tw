@@ -1,7 +1,10 @@
 from django import forms
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext_lazy as _
+
+
+User = get_user_model()
 
 
 class UserCreationForm(forms.ModelForm):
@@ -24,8 +27,12 @@ class UserCreationForm(forms.ModelForm):
     )
 
     class Meta:
-        model = get_user_model()
+        model = User
         fields = ('email',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._user = None
 
     def clean_email(self):
         """Clean form email.
@@ -60,7 +67,7 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True):
+    def save(self, commit=True, authenticated=False):
         """Save user.
 
         Save the provided password in hashed format.
@@ -68,13 +75,29 @@ class UserCreationForm(forms.ModelForm):
         :return custom_user.models.EmailUser: user
         """
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
+        password = self.cleaned_data.get('password1')
+        user.set_password(password)
         if commit:
             user.save()
+            if authenticated:
+                user = authenticate(email=user.email, password=password)
         return user
 
+    def get_user(self):
+        return self._user
 
-class UserChangeForm(forms.ModelForm):
+
+class UserProfileUpdateForm(forms.ModelForm):
+    """Form used to update user's profile.
+
+    This includes only fields containing basic user information.
+    """
+    class Meta:
+        model = User
+        fields = ('speaker_name', 'bio', 'photo')
+
+
+class AdminUserChangeForm(forms.ModelForm):
     """A form for updating users.
 
     Includes all the fields on the user, but replaces the password field
@@ -87,7 +110,7 @@ class UserChangeForm(forms.ModelForm):
     )
 
     class Meta:
-        model = get_user_model()
+        model = User
         exclude = ()
 
     def __init__(self, *args, **kwargs):
@@ -106,9 +129,3 @@ class UserChangeForm(forms.ModelForm):
         :return str password:
         """
         return self.initial['password']
-
-
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = get_user_model()
-        fields = ('speaker_name', 'bio', 'photo')
