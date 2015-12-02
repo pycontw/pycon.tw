@@ -147,8 +147,7 @@ class Proposal(models.Model):
     )
     recording_policy = models.BooleanField(
         verbose_name=_('recording policy'),
-        blank=False,
-        max_length=1,
+        default=True,
         choices=RECORDING_POLICY_CHOICES,
         help_text=_(
             "Description: If you agree to give permission to PyCon Taiwan to "
