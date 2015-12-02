@@ -166,9 +166,16 @@ class Proposal(models.Model):
         ),
     )
 
+    created_at = models.DateTimeField(
+        verbose_name=_('created at'),
+        auto_now_add=True,
+        db_index=True,
+    )
+
     class Meta:
         verbose_name = _('proposal')
         verbose_name_plural = _('proposals')
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.title
