@@ -1,6 +1,6 @@
 # Django
 # https://www.djangoproject.com/
-Django==1.8.7
+Django==1.9
 
 # Django-environ allows you to utilize 12factor inspired environment variables
 # to configure your Django application.
@@ -25,7 +25,7 @@ django-compressor==1.5
 
 # A django-compressor filter to compile Sass files using libsass.
 # https://github.com/torchbox/django-libsass
-django-libsass
+django-libsass==0.6
 
 # Faker is a Python package that generates fake data for you.
 # http://www.joke2k.net/faker/
