@@ -5,3 +5,4 @@ omit =
     pycontw2016/settings/*
     */tests.py
     */migrations/*
+show_missing = true
