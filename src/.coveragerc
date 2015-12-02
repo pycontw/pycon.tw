@@ -1,0 +1,7 @@
+[report]
+omit =
+    conftest.py
+    manage.py
+    pycontw2016/settings/*
+    */tests.py
+    */migrations/*

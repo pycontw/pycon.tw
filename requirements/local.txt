@@ -22,6 +22,15 @@ pytest==2.8.3
 # https://coverage.readthedocs.org/en/coverage-4.0.2/
 coverage==4.0.2
 
+# Pytest plugin for measuring coverage.
+# https://pypi.python.org/pypi/pytest-cov
+pytest-cov==2.2.0
+
+# The most feature-rich and easy-to-use library for processing XML and HTML in
+# the Python language.
+# http://lxml.de
 lxml==3.5.0
 
+# Parses CSS3 Selectors and translate them to XPath 1.0 expressions.
+# https://pythonhosted.org/cssselect/
 cssselect==0.9.1
