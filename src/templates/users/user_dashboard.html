@@ -7,12 +7,20 @@
 
 {% include '_includes/nav.html' %}
 
-<a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a>
+<div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
 
 {% if user.profile_filled %}
-<p>TODO: Allow creation of proposals.</p>
+<div><a href="{% url 'proposal_create' %}">{% trans 'Submit a Proposal' %}</a></div>
 {% endif %}
 
-<p>TODO: List proposals.</p>
+{% for proposal in user.proposal_set.all %}
+<div class="proposal">
+  <a href="{% url 'proposal_update' pk=proposal.pk %}">
+    {% blocktrans with proposal_title=proposal.title %}
+    Edit <strong>{{ proposal_title }}</strong>
+    {% endblocktrans %}
+  </a>
+</div>
+{% endfor %}
 
 {% endblock body %}

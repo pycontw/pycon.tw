@@ -1,9 +1,24 @@
 import pytest
 
+from lxml.etree import tostring
+
 from django.contrib.auth import get_user_model
+from django.test.html import parse_html
+
+from proposals.models import Proposal
 
 
 User = get_user_model()
+
+
+@pytest.fixture
+def proposals(user):
+    Proposal.objects.create(submitter=user, title='Fluidity Shoes')
+    Proposal.objects.create(submitter=user, title='Post-rifle cardboard')
+    Proposal.objects.create(submitter=user, title='Face forwards pen')
+
+    proposals = Proposal.objects.all()
+    return proposals
 
 
 def test_signup_login(bare_user_client):
@@ -55,8 +70,8 @@ def test_dashboard_bare(bare_user_client, parser):
     assert body.cssselect('a[href="/accounts/profile/"]'), (
         'should contain link to profile edit'
     )
-    assert not body.cssselect('a[href="/proposals/create/"]'), (
-        'should not be able to create a proposal (needs to fill profile first)'
+    assert not body.cssselect('a[href="/proposals/submit/"]'), (
+        'should not be able to submit a proposal (needs to fill profile first)'
     )
 
 
@@ -66,9 +81,35 @@ def test_dashboard(user_client, parser):
     assert body.cssselect('a[href="/accounts/profile/"]'), (
         'should contain link to profile edit'
     )
-    # assert body.cssselect('a[href="/proposals/create/"]'), (
-    #     'should be able to create a proposal'
-    # )
+    assert body.cssselect('a[href="/proposals/submit/"]'), (
+        'should be able to submit a proposal'
+    )
+
+
+def test_dashboard_proposal_list(user_client, proposals, parser):
+    response = user_client.get('/dashboard/')
+    body = parser.parse(response)
+    assert body.cssselect('a[href="/accounts/profile/"]'), (
+        'should contain link to profile edit'
+    )
+    assert body.cssselect('a[href="/proposals/submit/"]'), (
+        'should be able to submit a proposal'
+    )
+
+    elements = [
+        parse_html(tostring(e).decode('utf8'))
+        for e in body.cssselect('.proposal')
+    ]
+    assert len(elements) == 3
+
+    template = (
+        '<div class="proposal"><a href="/proposals/{pk}/edit/">'
+        'Edit <strong>{title}</strong></a></div>'
+    )
+    assert elements == [
+        parse_html(template.format(pk=proposal.pk, title=proposal.title))
+        for proposal in proposals
+    ]
 
 
 def test_profile_nologin(client):
