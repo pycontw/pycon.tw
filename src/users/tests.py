@@ -1,7 +1,5 @@
 import pytest
 
-from lxml.etree import tostring
-
 from django.contrib.auth import get_user_model
 from django.test.html import parse_html
 
@@ -64,7 +62,12 @@ def test_dashboard_nologin(client):
     ]
 
 
-def test_dashboard_bare(bare_user_client, parser):
+def test_dashboard_bare(bare_user_client):
+    response = bare_user_client.get('/dashboard/')
+    assert response.status_code == 200
+
+
+def test_dashboard_bare_ui(bare_user_client, parser):
     response = bare_user_client.get('/dashboard/')
     body = parser.parse(response)
     assert body.cssselect('a[href="/accounts/profile/"]'), (
@@ -75,7 +78,12 @@ def test_dashboard_bare(bare_user_client, parser):
     )
 
 
-def test_dashboard(user_client, parser):
+def test_dashboard(user_client):
+    response = user_client.get('/dashboard/')
+    assert response.status_code == 200
+
+
+def test_dashboard_ui(user_client, parser):
     response = user_client.get('/dashboard/')
     body = parser.parse(response)
     assert body.cssselect('a[href="/accounts/profile/"]'), (
@@ -96,8 +104,9 @@ def test_dashboard_proposal_list(user_client, proposals, parser):
         'should be able to submit a proposal'
     )
 
+    lxml_etree = pytest.importorskip('lxml.etree')
     elements = [
-        parse_html(tostring(e).decode('utf8'))
+        parse_html(lxml_etree.tostring(e).decode('utf8'))
         for e in body.cssselect('.proposal')
     ]
     assert len(elements) == 3
@@ -119,7 +128,12 @@ def test_profile_nologin(client):
     ]
 
 
-def test_profile_get(user_client, parser):
+def test_profile_get(user_client):
+    response = user_client.get('/accounts/profile/')
+    assert response.status_code == 200
+
+
+def test_profile_get_ui(user_client, parser):
     response = user_client.get('/accounts/profile/')
     body = parser.parse(response)
 

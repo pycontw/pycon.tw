@@ -10,8 +10,11 @@ class HTMLParser:
     def parse(self, response, status_code=200):
         if status_code is not None:
             assert response.status_code == status_code
-        from lxml.html import fragment_fromstring
-        fragment = fragment_fromstring(response.content, create_parent='body')
+        pytest.importorskip('cssselect')
+        lxml_html = pytest.importorskip('lxml.html')
+        fragment = lxml_html.fragment_fromstring(
+            response.content, create_parent='body',
+        )
         return fragment
 
 
