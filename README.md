@@ -48,9 +48,14 @@ And run migrate and http server:
 
 ### Run tests
 
-Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run the tests:
+Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run tests:
 
     py.test
+
+To run tests with coverage report:
+
+    py.test --cov=.
+
 
 ## How to contribute
 
