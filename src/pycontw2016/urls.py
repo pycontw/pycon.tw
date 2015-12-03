@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name="index.html"), name='index'),
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
+    url(r'^proposals/', include('proposals.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
