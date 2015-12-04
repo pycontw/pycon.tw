@@ -150,9 +150,8 @@ class Proposal(models.Model):
         default=True,
         choices=RECORDING_POLICY_CHOICES,
         help_text=_(
-            "Description: If you agree to give permission to PyCon Taiwan to "
-            "record, edit, and release audio and video of your presentation, "
-            "please check this box. See [Recoding Release] for details."
+            "Whether you agree to give permission to PyCon Taiwan to "
+            "record, edit, and release audio and video of your presentation."
         ),
     )
 
