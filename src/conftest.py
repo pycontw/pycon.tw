@@ -1,12 +1,14 @@
 import pytest
 
 from django.contrib.auth import get_user_model
+from django.test.html import parse_html
 
 
 User = get_user_model()
 
 
 class HTMLParser:
+
     def parse(self, response, status_code=200):
         if status_code is not None:
             assert response.status_code == status_code
@@ -16,6 +18,29 @@ class HTMLParser:
             response.content, create_parent='body',
         )
         return fragment
+
+    def arrange(self, element):
+        """Arrange an HTML node for comparison.
+
+        This method uses Django's ``parse_html`` testing utility to build
+        an HTML node for asserting purposes. Usage::
+
+            def test_div_foo(client, parser):
+                body = parser.parse(client.get('/foo/'))
+                expected = parser.arrange('<body><div>foo</div></body>')
+                assert parser.arrage(body) == expected
+
+        :param element: An HTML element. This can be either an lxml element,
+            or a string containing valid HTML. If an lxml element is passed
+            in, ``lxml.etree.tostring`` is used to convert the element to
+            string.
+        """
+        lxml_etree = pytest.importorskip('lxml.etree')
+        if isinstance(element, lxml_etree.ElementBase):
+            element = lxml_etree.tostring(element)
+        if not isinstance(element, str):
+            element = element.decode('utf-8')
+        return parse_html(element)
 
 
 @pytest.fixture

@@ -1,7 +1,6 @@
 import pytest
 
 from django.contrib.auth import get_user_model
-from django.test.html import parse_html
 
 from proposals.models import Proposal
 
@@ -104,11 +103,7 @@ def test_dashboard_proposal_list(user_client, proposals, parser):
         'should be able to submit a proposal'
     )
 
-    lxml_etree = pytest.importorskip('lxml.etree')
-    elements = [
-        parse_html(lxml_etree.tostring(e).decode('utf8'))
-        for e in body.cssselect('.proposal')
-    ]
+    elements = [parser.arrange(e) for e in body.cssselect('.proposal')]
     assert len(elements) == 3
 
     template = (
@@ -116,7 +111,7 @@ def test_dashboard_proposal_list(user_client, proposals, parser):
         'Edit <strong>{title}</strong></a></div>'
     )
     assert elements == [
-        parse_html(template.format(pk=proposal.pk, title=proposal.title))
+        parser.arrange(template.format(pk=proposal.pk, title=proposal.title))
         for proposal in proposals
     ]
 
