@@ -1,3 +1,5 @@
+import datetime
+
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin,
 )
@@ -56,6 +58,14 @@ class EmailUserManager(BaseUserManager):
         )
 
 
+def photo_upload_to(instance, filename):
+    return 'avatars/{pk}/{date}-{filename}'.format(
+        pk=instance.pk,
+        date=str(datetime.date.today()),
+        filename=filename,
+    )
+
+
 class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(
@@ -71,9 +81,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=140,
         help_text=_("About you. There will be no formatting."),
     )
-    photo = models.FileField(
+    photo = models.ImageField(
         verbose_name=_('photo'),
-        blank=True, default='', upload_to='documents/%Y/%m/%d',
+        blank=True, default='', upload_to=photo_upload_to,
     )
     facebook_id = models.CharField(
         verbose_name=_('facebook'),
