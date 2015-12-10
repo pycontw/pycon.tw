@@ -75,7 +75,9 @@ class Proposal(models.Model):
         max_length=400,
         help_text=_(
             "The overview of what the talk is about. If the talk assume some "
-            "domain knowledge please state it here."
+            "domain knowledge please state it here. If yout talk is accepted, "
+            "this will be displayed on both the website and the handbook. "
+            "Should be one paragraph."
         ),
     )
 
@@ -98,35 +100,27 @@ class Proposal(models.Model):
         ),
     )
 
-    objectives = models.TextField(
-        verbose_name=_('objectives'),
-        help_text=_(
-            "What will attendees get out of your talk? When they leave the "
-            "room, what will they know that they didn't know before?"
-        ),
-    )
-
     detailed_description = models.TextField(
         verbose_name=_('detailed description'),
         help_text=_(
-            "Try not be too lengthy which will scare away many reviewers. "
-            "A comfortable length is less than 1000 chars (about 650 Chinese "
-            "chars). Including related links to the talk topic will help "
-            "reviewers understand and more likely accept the proposal. Note "
-            "that most reviewers may not understand the topic as deep as you "
-            "do."
+            "Description of your talk. Will be made public if your "
+            "proposal is accepted. Edit using "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
         ),
     )
 
     outline = models.TextField(
         verbose_name=_('outline'),
-        blank=True,
-        default='',
         help_text=_(
-            "How the talk will be arranged. It is highly recommended to "
-            "attach the estimated time length for each sections in the talk. "
-            "Talks in favor of 45min should have a fallback plan about how to "
-            "shrink the content into a 25min one."
+            "Tell the reviewers about your talk. Try not be too lengthy, or "
+            "you could scare away many reviewers. A comfortable length is "
+            "less than 1000 characters (or about 650 Chinese characters). "
+            "Including related links will help reviewers understand and more "
+            "likely accept the proposal. Note that most reviewers may not "
+            "understand the topic as deeply as you do. Edit using "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
         ),
     )
 
@@ -136,8 +130,10 @@ class Proposal(models.Model):
         default='',
         help_text=_(
             "Anything else you'd like the program committee to know when "
-            "making their selection: your past speaking experience, open "
-            "source community experience, etc."
+            "making their selection: your past speaking experience, community "
+            "experience, etc. This is not made public. Edit using "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
         ),
     )
 

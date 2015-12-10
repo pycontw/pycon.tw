@@ -123,17 +123,18 @@ def test_proposal_edit_post(user_client, proposal):
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
             "it, you may be following “______ Style Guide”. But is it "
-            "enough?\n\n"
+            "enough?"
+        ),
+        'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "
             "than the style guides. In this share, I will introduce you the "
-            "keys of writing high maintainability code.\n\n"
+            "keys of writing high maintainability code."
         ),
-        'objectives': (
+        'outline': (
             "You will be able to write better code after this talk. Save both "
             "you and your co-workers’ time from hating each other, and build "
             "more exciting feature together. :)"
         ),
-        'detailed_description': 'Time is money. — Benjamin Franklin',
     }, follow=True)
 
     assert response.redirect_chain == [('http://testserver/dashboard/', 302)]

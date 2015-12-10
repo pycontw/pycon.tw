@@ -57,6 +57,6 @@ class ProposalUpdateForm(forms.ModelForm):
         model = Proposal
         fields = [
             'title', 'category', 'duration', 'language', 'target_audience',
-            'abstract', 'python_level', 'objectives', 'detailed_description',
-            'outline', 'supplementary', 'recording_policy', 'slide_link',
+            'abstract', 'python_level', 'detailed_description', 'outline',
+            'supplementary', 'recording_policy', 'slide_link',
         ]
