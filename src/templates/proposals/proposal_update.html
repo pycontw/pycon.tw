@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
 
-{% load i18n %}
+{% load i18n compress %}
+
+
+{% block extra_css %}
+{{ block.super }}
+{{ form.media.css }}
+{% endblock extra_css %}
 
 
 {% block body %}
 <form method="post">
   {% csrf_token %}
-  {{ form }}
+  {{ form.as_p }}
   <button type="submit">{% trans 'Save' %}</button>
 </form>
 {% endblock body %}
+
+
+{% block extra_js %}
+{{ block.super }}
+{% compress js %}
+{{ form.media.js }}
+<script>
+(function (SimpleMDE) {
+['detailed_description', 'outline', 'supplementary'].forEach(function (o) {
+  new SimpleMDE({
+    'element': document.getElementById('id_' + o),
+    'indentWithTabs': false,
+    'status': false
+  });
+});
+})(SimpleMDE);
+</script>
+{% endcompress %}
+{% endblock extra_js %}

@@ -60,3 +60,7 @@ class ProposalUpdateForm(forms.ModelForm):
             'abstract', 'python_level', 'detailed_description', 'outline',
             'supplementary', 'recording_policy', 'slide_link',
         ]
+
+    class Media:
+        css = {'all': ['css/vendors/simplemde.min.css']}
+        js = ['js/simplemde.js']
