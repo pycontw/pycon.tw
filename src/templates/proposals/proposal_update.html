@@ -20,18 +20,8 @@
 
 {% block extra_js %}
 {{ block.super }}
+
 {% compress js %}
 {{ form.media.js }}
-<script>
-(function (SimpleMDE) {
-['detailed_description', 'outline', 'supplementary'].forEach(function (o) {
-  new SimpleMDE({
-    'element': document.getElementById('id_' + o),
-    'indentWithTabs': false,
-    'status': false
-  });
-});
-})(SimpleMDE);
-</script>
 {% endcompress %}
 {% endblock extra_js %}
