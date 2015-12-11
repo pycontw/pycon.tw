@@ -7,7 +7,12 @@ from django.utils.html import format_html
 class SimpleMDEWidget(forms.Textarea):
 
     class Media:
-        css = {'all': ['css/vendors/simplemde.min.css']}
+        css = {
+            'all': [
+                'css/vendors/simplemde.min.css',
+                'css/simplemde-setup.css',
+            ],
+        }
         js = ['js/simplemde.js', 'js/simplemde-setup.js']
 
     def render(self, name, value, attrs=None):
