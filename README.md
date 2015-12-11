@@ -29,7 +29,7 @@ Install all dependencies:
 
 Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickiest way to start is to rename `local.sample.env` into `local.env`:
 
-    mv src/pycontw2016/settings/local.sample.env src/pycontw2016/settings/local.env
+    cp src/pycontw2016/settings/local.sample.env src/pycontw2016/settings/local.env
 
 Then edit the SECRET_KEY in local.env file, replace `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/), for example:
 
