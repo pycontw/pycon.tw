@@ -3,6 +3,9 @@
 {% load i18n compress %}
 
 
+{% block title %}{% blocktrans with proposal_title=form.instance.title %}Edit Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
+
+
 {% block extra_css %}
 {{ block.super }}
 {{ form.media.css }}

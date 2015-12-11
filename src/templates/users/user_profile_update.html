@@ -3,6 +3,9 @@
 {% load i18n %}
 
 
+{% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
+
+
 {% block body %}
 <form id="user_profile_update_form" method="post">
   {% csrf_token %}

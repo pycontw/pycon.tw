@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% block title %}{% trans 'Sign Up' %}{% endblock title %}
+
 {% block body %}
 <form method="post">
   {% csrf_token %}
