@@ -3,7 +3,8 @@
 {% block body %}
 <nav class="top-nav container-fluid clearfix">
     <a href="{% url 'index' %}">
-        <img src="{% static 'images/logo-tiny--reverse.png' %}" class="logo hidden-xs" alt="logo">
+        <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}" class="logo hidden-xs" alt="logo">
+        <img width="49" height="34" src="{% static 'images/LogoIcon_white@2x.png' %}" class="logo visible-xs-inline" alt="logo">
     </a>
     <div class="social pull-right">
         <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
@@ -70,7 +71,7 @@
             </section>
             <section class="intro__volunteer">
                 <div class="volunteer">
-                    <h2 class="volunteer__heading h4">Volunteers Needed!</h2>
+                    <h2 class="volunteer__heading h4">Volunteers Needed!<span><img width="25" height="22" src="{% static 'images/call_icon.png' %}" class="call__icon"></span></h2>
                     <div class="volunteer__body">
                         <p>Help us organize and make the conference successful!</p>
                         <p>
@@ -91,7 +92,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="community">
-                    <h2 class="section__heading">Python Community in Taiwan</h2>
+                    <h2 class="section__heading"><span><img width="36" height="36" src="{% static 'images/python_icon.png' %}" class="python__icon hidden-xs"></span>Python Community in Taiwan</h2>
                     <ul class="community-list list row">
                         <li class="list__item">
                             <a href="http://www.meetup.com/Taipei-py/" target="_blank">
@@ -233,7 +234,7 @@
     <div class="row clearfix">
         <div class="col-md-2">2016 PyCon Taiwan</div>
         <div class="col-md-8 hidden-xs hidden-sm">
-            <img src="{% static 'images/logo-tiny.png' %}" class="logo">
+            <img width="133" height="24" src="{% static 'images/Logo_pycontw16_blue_footer@2x.png' %}" class="logo">
         </div>
         <div class="social col-md-2 text-center">
             <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
