@@ -3,7 +3,7 @@ import pytest
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 
-from proposals.models import Proposal
+from proposals.models import TalkProposal
 
 
 User = get_user_model()
@@ -32,7 +32,7 @@ def another_user_client(another_user, client):
 
 @pytest.fixture
 def proposal(user):
-    proposal = Proposal.objects.create(
+    proposal = TalkProposal.objects.create(
         id=42,
         submitter=user,
         title='Beyond the Style Guides',
@@ -72,13 +72,16 @@ def test_proposal_create_post(user, user_client):
         'recording_policy': True,
     }, follow=True)
 
-    proposal = user.proposal_set.get(title='Beyond the Style Guides')
+    proposal = TalkProposal.objects.get(
+        submitter=user,
+        title='Beyond the Style Guides',
+    )
     assert response.redirect_chain == [
         ('http://testserver/proposals/{pk}/edit/'.format(pk=proposal.pk), 302),
     ]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Proposal created.')]
+    assert msgs == [(messages.SUCCESS, 'Talk proposal created.')]
 
 
 def test_proposal_edit_login(client):
@@ -140,4 +143,4 @@ def test_proposal_edit_post(user_client, proposal):
     assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Proposal updated.')]
+    assert msgs == [(messages.SUCCESS, 'Talk proposal updated.')]

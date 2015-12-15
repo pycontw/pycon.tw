@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-class Proposal(models.Model):
+class TalkProposal(models.Model):
     """Represent a submitted talk proposal.
     """
 
@@ -168,8 +168,8 @@ class Proposal(models.Model):
     )
 
     class Meta:
-        verbose_name = _('proposal')
-        verbose_name_plural = _('proposals')
+        verbose_name = _('talk proposal')
+        verbose_name_plural = _('talk proposals')
         ordering = ['-created_at']
 
     def __str__(self):

@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from proposals.models import Proposal
+from proposals.models import TalkProposal
 
 
-@admin.register(Proposal)
-class ProposalAdmin(admin.ModelAdmin):
+@admin.register(TalkProposal)
+class TalkProposalAdmin(admin.ModelAdmin):
 
     list_display = [
         'title', 'category', 'duration', 'language', 'target_audience',

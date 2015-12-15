@@ -2,7 +2,7 @@ import pytest
 
 from django.contrib.auth import get_user_model
 
-from proposals.models import Proposal
+from proposals.models import TalkProposal
 
 
 User = get_user_model()
@@ -10,11 +10,11 @@ User = get_user_model()
 
 @pytest.fixture
 def proposals(user):
-    Proposal.objects.create(submitter=user, title='Fluidity Shoes')
-    Proposal.objects.create(submitter=user, title='Post-rifle cardboard')
-    Proposal.objects.create(submitter=user, title='Face forwards pen')
+    TalkProposal.objects.create(submitter=user, title='Fluidity Shoes')
+    TalkProposal.objects.create(submitter=user, title='Post-rifle cardboard')
+    TalkProposal.objects.create(submitter=user, title='Face forwards pen')
 
-    proposals = Proposal.objects.all()
+    proposals = TalkProposal.objects.all()
     return proposals
 
 

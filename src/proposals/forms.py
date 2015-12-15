@@ -1,17 +1,17 @@
 from django import forms
 
 from core.widgets import SimpleMDEWidget
-from .models import Proposal
+from .models import TalkProposal
 
 
-class ProposalCreateForm(forms.ModelForm):
+class TalkProposalCreateForm(forms.ModelForm):
     """Form used to create a proposal.
 
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
     class Meta:
-        model = Proposal
+        model = TalkProposal
         fields = [
             'title', 'category', 'duration', 'language',
             'python_level', 'recording_policy',
@@ -28,7 +28,7 @@ class ProposalCreateForm(forms.ModelForm):
         """
         if self._request is None:
             raise forms.ValidationError(
-                'Proposal creation requires a request object.'
+                'Talk proposal creation requires a request object.'
             )
         user = self._request.user
         if user.is_anonymous() or not user.profile_filled:
@@ -48,14 +48,14 @@ class ProposalCreateForm(forms.ModelForm):
         return proposal
 
 
-class ProposalUpdateForm(forms.ModelForm):
+class TalkProposalUpdateForm(forms.ModelForm):
     """Form used to update a proposal.
 
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
     class Meta:
-        model = Proposal
+        model = TalkProposal
         fields = [
             'title', 'category', 'duration', 'language', 'target_audience',
             'abstract', 'python_level', 'detailed_description', 'outline',
