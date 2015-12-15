@@ -6,8 +6,8 @@ django-debug-toolbar==1.4
 
 # The Python WSGI Utility Library
 # http://werkzeug.pocoo.org/
-Werkzeug==0.10.4
+Werkzeug==0.11.2
 
 # Code coverage measurement for Python
 # https://coverage.readthedocs.org/en/coverage-4.0.2/
-coverage==4.0.2
+coverage==4.0.3
