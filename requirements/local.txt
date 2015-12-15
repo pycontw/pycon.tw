@@ -1,13 +1,27 @@
 -r base.txt
-# A configurable set of panels that display various debug information about the current
-# request/response.
+
+# A configurable set of panels that display various debug information about
+# the current request/response.
 # http://django-debug-toolbar.readthedocs.org/
 django-debug-toolbar==1.4
 
 # The Python WSGI Utility Library
 # http://werkzeug.pocoo.org/
-Werkzeug==0.11.2
+Werkzeug==0.10.4
+
+# A plugin for py.test that provides a set of useful tools for testing Django
+# applications and projects.
+# https://pytest-django.readthedocs.org/
+pytest-django==2.9.1
+
+# A mature full-featured Python testing tool
+# http://pytest.org/latest/
+pytest==2.8.3
 
 # Code coverage measurement for Python
 # https://coverage.readthedocs.org/en/coverage-4.0.2/
 coverage==4.0.3
+
+# Pytest plugin for measuring coverage.
+# https://pypi.python.org/pypi/pytest-cov
+pytest-cov==2.2.0
