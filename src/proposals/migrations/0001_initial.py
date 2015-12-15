@@ -9,7 +9,9 @@ from django.core.exceptions import ImproperlyConfigured
 def check_user_1(apps, schema_editor):
     Proposal = apps.get_model('proposals', 'Proposal')
     User = apps.get_model(*settings.AUTH_USER_MODEL.split('.'))
-    if Proposal.objects.exists() and not User.objects.filter(pk=1).exists():
+    db_alias = schema_editor.connection.alias
+    if (Proposal.objects.using(db_alias).exists()
+            and not User.objects.using(db_alias).filter(pk=1).exists()):
         raise ImproperlyConfigured(
             'Default user with pk=1 is needed for this migration.'
         )
