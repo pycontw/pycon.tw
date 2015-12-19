@@ -7,7 +7,7 @@ This repository serves the website of PyCon TW 2016. This project is open source
 ### Requirements
 
 - Git 1.8+
-- Python 2.7+
+- Python 3.4+
 
 ### Setting up virtualenv
 
@@ -45,6 +45,17 @@ And run migrate and http server:
 
     python manage.py migrate
     python manage.py runserver
+
+### Run tests
+
+Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run tests:
+
+    py.test
+
+To run tests with coverage report:
+
+    py.test --cov=.
+
 
 ## How to contribute
 
