@@ -138,6 +138,8 @@ MEDIA_URL = "/media/"
 
 ALLOWED_HOSTS = []
 
+LIBSASS_SOURCEMAPS = True
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
