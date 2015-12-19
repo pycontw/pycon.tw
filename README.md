@@ -7,7 +7,7 @@ This repository serves the website of PyCon TW 2016. This project is open source
 ### Requirements
 
 - Git 1.8+
-- Python 2.7+
+- Python 3.4+
 
 ### Setting up virtualenv
 
