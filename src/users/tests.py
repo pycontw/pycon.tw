@@ -23,7 +23,7 @@ def test_signup_login(bare_user_client):
     redirect it to the dashboard.
     """
     response = bare_user_client.get('/accounts/signup/', follow=True)
-    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)]
 
 
 def test_signup_get(client):
@@ -41,7 +41,7 @@ def test_signup_post(client):
         'password1': '7K50M',
         'password2': '7K50M',
     }, follow=True)
-    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)]
     assert User.objects.filter(email='user@user.me').exists()
 
 
@@ -57,7 +57,7 @@ def test_signup_duplicate(bare_user, client):
 def test_dashboard_nologin(client):
     response = client.get('/dashboard/', follow=True)
     assert response.redirect_chain == [
-        ('http://testserver/accounts/login/?next=/dashboard/', 302),
+        ('/accounts/login/?next=/dashboard/', 302),
     ]
 
 
@@ -119,7 +119,7 @@ def test_dashboard_proposal_list(user_client, proposals, parser):
 def test_profile_nologin(client):
     response = client.get('/accounts/profile/', follow=True)
     assert response.redirect_chain == [
-        ('http://testserver/accounts/login/?next=/accounts/profile/', 302),
+        ('/accounts/login/?next=/accounts/profile/', 302),
     ]
 
 
@@ -146,4 +146,4 @@ def test_profile_post(user_client):
         'speaker_name': 'User',
         'bio': 'Girl meta-dome kanji-space shoes Chiba rifle sub-orbital.',
     }, follow=True)
-    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)]

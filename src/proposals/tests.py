@@ -43,7 +43,7 @@ def proposal(user):
 def test_proposal_create_login(client):
     response = client.get('/proposals/submit/', follow=True)
     assert response.redirect_chain == [
-        ('http://testserver/accounts/login/?next=/proposals/submit/', 302),
+        ('/accounts/login/?next=/proposals/submit/', 302),
     ]
 
 
@@ -77,7 +77,7 @@ def test_proposal_create_post(user, user_client):
         title='Beyond the Style Guides',
     )
     assert response.redirect_chain == [
-        ('http://testserver/proposals/{pk}/edit/'.format(pk=proposal.pk), 302),
+        ('/proposals/{pk}/edit/'.format(pk=proposal.pk), 302),
     ]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
@@ -87,7 +87,7 @@ def test_proposal_create_post(user, user_client):
 def test_proposal_edit_login(client):
     response = client.get('/proposals/42/edit/', follow=True)
     assert response.redirect_chain == [
-        ('http://testserver/accounts/login/?next=/proposals/42/edit/', 302),
+        ('/accounts/login/?next=/proposals/42/edit/', 302),
     ]
 
 
@@ -140,7 +140,7 @@ def test_proposal_edit_post(user_client, proposal):
         ),
     }, follow=True)
 
-    assert response.redirect_chain == [('http://testserver/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, 'Talk proposal updated.')]
