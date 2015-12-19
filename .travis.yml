@@ -1,0 +1,16 @@
+language: python
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+python:
+  - "3.4"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python src/manage.py migrate --noinput
+  - py.test src
+
