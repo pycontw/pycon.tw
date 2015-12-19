@@ -17,7 +17,7 @@ class TalkProposalCreateForm(forms.ModelForm):
             'python_level', 'recording_policy',
         ]
 
-    def __init__(self, *args, request=None, **kwargs):
+    def __init__(self, request=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._request = request
 
