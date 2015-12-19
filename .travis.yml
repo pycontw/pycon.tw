@@ -7,7 +7,7 @@ cache:
   directories:
     - $HOME/.cache/pip
 
-python:
+  python:
   - "3.4"
 
 install:
@@ -15,7 +15,11 @@ install:
 
 script:
   - python src/manage.py migrate --noinput
-  - py.test src
+  - cd src; py.test --cov=.
 
 notifications:
   slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
+
+after_success:
+  - pip install codecov
+  - cd src; codecov
