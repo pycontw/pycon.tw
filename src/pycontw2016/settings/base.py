@@ -67,6 +67,7 @@ DJANGO_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 )
 
@@ -151,6 +152,8 @@ STATICFILES_FINDERS = (
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'users.User'
 

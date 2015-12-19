@@ -1,12 +1,23 @@
 import datetime
+import urllib.parse
 
+from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin,
 )
+from django.contrib.sites.models import Site
+from django.core import signing
 from django.core.mail import send_mail
+from django.core.urlresolvers import reverse
 from django.db import models
+from django.template.loader import render_to_string
 from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext, ugettext_lazy as _
+
+
+# TODO: Add these into settings?
+USER_SIGNUP_SALT = 'pycontw'    # Arbitrary.
+USER_SIGNUP_EXPIRE = 86400      # Allow one day of registration window.
 
 
 class EmailUserManager(BaseUserManager):
@@ -15,6 +26,7 @@ class EmailUserManager(BaseUserManager):
     def _create_user(
             self, email, password, is_staff, is_superuser, **extra_fields):
         """Create and save an EmailUser with the given email and password.
+
         :param str email: user email
         :param str password: user password
         :param bool is_staff: whether user staff or not
@@ -38,6 +50,7 @@ class EmailUserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
         """Create and save an EmailUser with the given email and password.
+
         :param str email: user email
         :param str password: user password
         :return custom_user.models.EmailUser user: regular user
@@ -49,6 +62,7 @@ class EmailUserManager(BaseUserManager):
 
     def create_superuser(self, email, password, **extra_fields):
         """Create and save an EmailUser with the given email and password.
+
         :param str email: user email
         :param str password: user password
         :return custom_user.models.EmailUser user: admin user
@@ -56,6 +70,19 @@ class EmailUserManager(BaseUserManager):
         return self._create_user(
             email, password, True, True, **extra_fields
         )
+
+    def from_activation_key(self, activation_key):
+        """Get a user from activation key.
+        """
+        try:
+            username = signing.loads(
+                activation_key,
+                salt=USER_SIGNUP_SALT,
+                max_age=USER_SIGNUP_EXPIRE,
+            )
+        except signing.BadSignature:
+            raise User.DoesNotExit
+        return self.get(**{self.model.USERNAME_FIELD: username})
 
 
 def photo_upload_to(instance, filename):
@@ -106,7 +133,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     is_active = models.BooleanField(
         verbose_name=_('active'),
-        default=True,
+        default=False,
         help_text=_(
             "Designates whether this user should be treated as "
             "active. Unselect this instead of deleting accounts."
@@ -138,9 +165,42 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def profile_filled(self):
-        return self.speaker_name and self.bio
+        return self.is_active and self.speaker_name and self.bio
 
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
+    def send_activation_email(self, request=None):
+        site = Site.objects.get_current(request=request)
+        activation_key = signing.dumps(
+            obj=getattr(self, self.USERNAME_FIELD),
+            salt=USER_SIGNUP_SALT,
+        )
+
+        activation_url = urllib.parse.urljoin(
+            base=('https://' + site.domain),
+            url=reverse('user_activate', kwargs={
+                'activation_key': activation_key,
+            }),
+        )
+
+        context = {
+            'user': self,
+            'site': site,
+            'activation_key': activation_key,
+            'activation_url': activation_url,
+        }
+        text_message = render_to_string(
+            'registration/activation_email.txt', context,
+        )
+        html_message = render_to_string(
+            'registration/activation_email.html', context,
+        )
+        self.email_user(
+            subject=ugettext('Complete your registration on tw.pycon.org'),
+            message=text_message,
+            html_message=html_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+        )

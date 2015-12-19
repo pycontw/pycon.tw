@@ -1,12 +1,18 @@
-from django.contrib.auth import login
+from django.contrib import messages
+from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
+from django.http import Http404
 from django.shortcuts import redirect, render
+from django.utils.translation import ugettext
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 
 from .decorators import login_forbidden
 from .forms import UserCreationForm, UserProfileUpdateForm
+
+
+User = get_user_model()
 
 
 @sensitive_post_parameters()
@@ -16,15 +22,36 @@ def user_signup(request):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
-            user = form.save(authenticated=True)
-            # TODO: Send an email to notify the email owner that the email is
-            # used for registration. Don't need to verify, but need to be
-            # notified (and let the owner do something if this is a mistake).
-            login(request, user)
-            return redirect('user_dashboard')
+            user = form.save()
+            user.send_activation_email()
+            messages.success(request, ugettext(
+                'An email has been sent to your email. Please follow '
+                'instructions in the email to complete your signup.'
+            ))
+            return redirect('login')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+def user_activate(request, activation_key):
+    try:
+        user = User.objects.from_activation_key(activation_key)
+    except User.DoesNotExist:
+        raise Http404
+    user.is_active = True
+    user.save()
+
+    # HACK: By default Django requires password to log the user in. We circle
+    # around it by marking it with the default backend, tricking Django into
+    # thinking it as actually authenticated.
+    user.backend = 'django.contrib.auth.backends.ModelBackend'
+    login(request, user)
+
+    messages.success(request, ugettext(
+        'Signup successful. You are now logged in.'
+    ))
+    return redirect('user_dashboard')
 
 
 @login_required

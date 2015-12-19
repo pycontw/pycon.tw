@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% trans 'Account Registration at tw.pycon.org' %}</title>
+</head>
+
+
+<body>
+
+<p>
+  {% blocktrans %}
+    Go here:
+    <a href="{{ activation_url }}", target="_blank">
+      {{ activation_url }}
+    </a>
+  {% endblocktrans %}
+</p>
+
+</body>
+
+</html>
