@@ -77,3 +77,4 @@ CACHE
 
 # coverage
 .coverage
+.cache
