@@ -1,8 +1,7 @@
 language: python
 
 env:
-  - DATABASE_URL=sqlite:///db.sqlite3
-  - SECRET_KEY=thisisasecret
+  - DATABASE_URL=sqlite:///db.sqlite3 SECRET_KEY=thisisasecret
   
 cache:
   directories:
