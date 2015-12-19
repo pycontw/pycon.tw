@@ -7,7 +7,7 @@ django-debug-toolbar==1.4
 
 # The Python WSGI Utility Library
 # http://werkzeug.pocoo.org/
-Werkzeug==0.10.4
+Werkzeug==0.11.2
 
 # A plugin for py.test that provides a set of useful tools for testing Django
 # applications and projects.
