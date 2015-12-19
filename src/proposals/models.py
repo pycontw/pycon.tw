@@ -3,9 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-class TalkProposal(models.Model):
-    """Represent a submitted talk proposal.
-    """
+class AbstractProposal(models.Model):
 
     submitter = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
@@ -38,17 +36,6 @@ class TalkProposal(models.Model):
         verbose_name=_('category'),
         max_length=5,
         choices=CATEGORY_CHOICES,
-    )
-
-    DURATION_CHOICES = (
-        ('NOPREF', _('No preference')),
-        ('PREF25', _('Prefer 25min')),
-        ('PREF45', _('Prefer 45min')),
-    )
-    duration = models.CharField(
-        verbose_name=_('duration'),
-        max_length=6,
-        choices=DURATION_CHOICES,
     )
 
     LANGUAGE_CHOICES = (
@@ -168,9 +155,32 @@ class TalkProposal(models.Model):
     )
 
     class Meta:
-        verbose_name = _('talk proposal')
-        verbose_name_plural = _('talk proposals')
+        abstract = True
         ordering = ['-created_at']
 
     def __str__(self):
         return self.title
+
+
+class TalkProposal(AbstractProposal):
+
+    DURATION_CHOICES = (
+        ('NOPREF', _('No preference')),
+        ('PREF25', _('Prefer 25min')),
+        ('PREF45', _('Prefer 45min')),
+    )
+    duration = models.CharField(
+        verbose_name=_('duration'),
+        max_length=6,
+        choices=DURATION_CHOICES,
+    )
+
+    class Meta(AbstractProposal.Meta):
+        verbose_name = _('talk proposal')
+        verbose_name_plural = _('talk proposals')
+
+
+class TutorialProposal(AbstractProposal):
+    class Meta(AbstractProposal.Meta):
+        verbose_name = _('tutorial proposal')
+        verbose_name_plural = _('tutorial proposals')
