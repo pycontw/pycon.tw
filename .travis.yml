@@ -2,7 +2,7 @@ language: python
 
 env:
   - DATABASE_URL=sqlite:///db.sqlite3 SECRET_KEY=thisisasecret
-  
+
 cache:
   directories:
     - $HOME/.cache/pip
@@ -17,3 +17,5 @@ script:
   - python src/manage.py migrate --noinput
   - py.test src
 
+notifications:
+  slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
