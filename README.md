@@ -15,11 +15,16 @@ At first, you should make sure you have [virtualenv](http://www.virtualenv.org/)
 
 then, create your virtualenv:
 
-    virtualenv venv
+    python3 -m venv venv
 
 Second, you need to enable the virtualenv by
 
     source venv/bin/activate
+
+If you are using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org), then you should assign your python path:
+
+    which python3 # Output: /usr/local/bin/python3
+    mkvirtualenv --python=/usr/local/bin/python3 pycontw2016
 
 Install all dependencies:
 
