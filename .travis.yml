@@ -10,13 +10,14 @@ cache:
   - '3.4'
 before_install:
 - openssl aes-256-cbc -K $encrypted_6c2822a03f14_key -iv $encrypted_6c2822a03f14_iv
-  -in deploy_key.enc -out ~/.ssh/id_rsa -d
-- openssl aes-256-cbc -K $encrypted_6c2822a03f14_key -iv $encrypted_6c2822a03f14_iv
-  -in deploy_staging.sh.enc -out ./deploy_staging.sh -d
+  -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
+- cp ./deploy_key ~/.ssh/id_rsa
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - chmod 755 ./deploy_staging.sh
+
 install:
 - pip install -r requirements.txt
 script:
