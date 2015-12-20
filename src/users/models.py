@@ -16,8 +16,7 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 class EmailUserManager(BaseUserManager):
     """Custom manager for EmailUser."""
 
-    def _create_user(
-            self, email, password, is_staff, is_superuser, **extra_fields):
+    def _create_user(self, email, password, **extra_fields):
         """Create and save an EmailUser with the given email and password.
 
         :param str email: user email
@@ -31,10 +30,10 @@ class EmailUserManager(BaseUserManager):
         if not email:
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
-        is_active = extra_fields.pop('is_active', False)
+        last_login = extra_fields.pop('last_login', now)
+        date_joined = extra_fields.pop('date_joined', now)
         user = self.model(
-            email=email, is_staff=is_staff, is_active=is_active,
-            is_superuser=is_superuser, last_login=now, date_joined=now,
+            email=email, last_login=last_login, date_joined=date_joined,
             **extra_fields
         )
         user.set_password(password)
@@ -48,10 +47,7 @@ class EmailUserManager(BaseUserManager):
         :param str password: user password
         :return custom_user.models.EmailUser user: regular user
         """
-        is_staff = extra_fields.pop("is_staff", False)
-        return self._create_user(
-            email, password, is_staff, False, **extra_fields
-        )
+        return self._create_user(email, password, **extra_fields)
 
     def create_superuser(self, email, password, **extra_fields):
         """Create and save an EmailUser with the given email and password.
@@ -61,7 +57,9 @@ class EmailUserManager(BaseUserManager):
         :return custom_user.models.EmailUser user: admin user
         """
         return self._create_user(
-            email, password, True, True, **extra_fields
+            email, password,
+            is_active=True, is_staff=True, is_superuser=True,
+            **extra_fields
         )
 
     def get_with_activation_key(self, activation_key):
