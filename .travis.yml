@@ -3,6 +3,7 @@ env:
   global:
   - DATABASE_URL=sqlite:///db.sqlite3
   - SECRET_KEY=thisisasecret
+  - secure: 1FJIVHw0VDZUjH077dopjAAEduZKsM7mwdJgf8CI7Kt1kdy78FculX48X023y5DSAdSIXYN34dZss4PkjKIkHUtrr+7kxgiGPIasuKZ/k875w5eql3rtSrqQ8UjCwuDaaXkJ6Hs1X4eHmp5QcgkrAUB+Td3lOfbOwlG3dT1njpxK9aONeWLV1XAZIwXQQ9fTBDQ/CHgAsPI2RDbl+fs//B6LtuvVkPBYE3XdS8MVpWof58KHqPL9FLLHIvfObRXFmGVU8v/PozunrwDYrUW5KDP8S+PtRDlZwSYRe+OKpEDkOYGWF8vPWMhRME2TVLeclUrDZBRLVQzGo2T+iM3yvbVE4iCmfrJvgR9KZjr9g/F07LNgKKq5eKdTa53zWZXnml5nCdt/FcjH+AVsPWew+d/5GFV/UBqWyKdtygqhPFJ1I/LcTZVPWRpOqycTWrpu6kYjRM3vn/G6cAVqhzqTkQpuDL5UUaShzylEXWS9weu9xwgFH43RywUVbX1Wvg3gIw5lBjYQkxAfZdX85zaH4yc8unqBkzx+UVWkDCiA4RpdeNjzfEPoxC9mDYZvhODP1FYrla9yE0GwT3s+O0/LOw9IIfuhvd+YwYLau4TsluShbnVKNrRlRwOnPArrRNwNeFeOtkm+lIKqjzXmPgtVT+awfDtvnKGSM7z8JwLMJc8=
 cache:
   directories:
   - $HOME/.cache/pip
@@ -17,7 +18,6 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - chmod 755 ./deploy_staging.sh
-
 install:
 - pip install -r requirements.txt
 script:
@@ -28,8 +28,9 @@ notifications:
 after_success:
 - pip install codecov
 - cd src; codecov
+- cd ..
 deploy:
   provider: script
-  script: ../deploy_staging.sh
+  script: fab deploy -H krdai.info -u deploy
   on:
     branch: feature/travis-ci
