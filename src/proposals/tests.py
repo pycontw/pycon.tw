@@ -10,27 +10,6 @@ User = get_user_model()
 
 
 @pytest.fixture
-def another_user(db):
-    try:
-        user = User.objects.get(email='another@ayatsuji.itou')
-    except User.DoesNotExist:
-        user = User.objects.create_user(
-            email='another@ayatsuji.itou',
-            password='7uk1T0n01sY',
-            speaker_name='Misaki Mei',
-            bio='Neon marketing office assault kanji into meta-face.',
-        )
-    assert user.profile_filled
-    return user
-
-
-@pytest.fixture
-def another_user_client(another_user, client):
-    client.login(email='another@ayatsuji.itou', password='7uk1T0n01sY')
-    return client
-
-
-@pytest.fixture
 def talk_proposal(user):
     proposal = TalkProposal.objects.create(
         id=42,

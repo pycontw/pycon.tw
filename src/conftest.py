@@ -90,3 +90,25 @@ def bare_user_client(bare_user, client):
 @pytest.fixture
 def user_client(user, bare_user_client):
     return bare_user_client
+
+
+@pytest.fixture
+def another_user(db):
+    try:
+        user = User.objects.get(email='another@ayatsuji.itou')
+    except User.DoesNotExist:
+        user = User.objects.create_user(
+            email='another@ayatsuji.itou',
+            password='7uk1T0n01sY',
+            speaker_name='Misaki Mei',
+            bio='Neon marketing office assault kanji into meta-face.',
+            is_active=True,
+        )
+    assert user.profile_filled
+    return user
+
+
+@pytest.fixture
+def another_user_client(another_user, client):
+    client.login(email='another@ayatsuji.itou', password='7uk1T0n01sY')
+    return client
