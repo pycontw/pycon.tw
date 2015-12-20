@@ -1,4 +1,6 @@
 language: python
+sudo: required
+
 python:
   - "3.4"
 
@@ -30,7 +32,7 @@ script:
 notifications:
   slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
 after_success:
-- pip install codecov fabric
+- sudo pip2 install codecov fabric
 - cd src; codecov
 - cd ..
 deploy:
