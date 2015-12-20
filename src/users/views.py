@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login
+from django.contrib.auth import get_user_model, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import Http404
@@ -23,20 +23,25 @@ def user_signup(request):
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
             user = form.save()
-            user.send_activation_email()
+            user.send_activation_email(request)
             messages.success(request, ugettext(
                 'An email has been sent to your email. Please follow '
                 'instructions in the email to complete your signup.'
             ))
-            return redirect('login')
+            return redirect('index')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
 
+@sensitive_post_parameters()
+@never_cache
 def user_activate(request, activation_key):
+    # Always log the request out so the rest makes sense.
+    if request.user.is_authenticated():
+        logout(request)
     try:
-        user = User.objects.from_activation_key(activation_key)
+        user = User.objects.get_with_activation_key(activation_key)
     except User.DoesNotExist:
         raise Http404
     user.is_active = True

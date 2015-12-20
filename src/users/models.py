@@ -1,11 +1,9 @@
 import datetime
-import urllib.parse
 
 from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin,
 )
-from django.contrib.sites.models import Site
 from django.core import signing
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
@@ -13,11 +11,6 @@ from django.db import models
 from django.template.loader import render_to_string
 from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
-
-
-# TODO: Add these into settings?
-USER_SIGNUP_SALT = 'pycontw'    # Arbitrary.
-USER_SIGNUP_EXPIRE = 86400      # Allow one day of registration window.
 
 
 class EmailUserManager(BaseUserManager):
@@ -38,7 +31,7 @@ class EmailUserManager(BaseUserManager):
         if not email:
             raise ValueError('The given email must be set')
         email = self.normalize_email(email)
-        is_active = extra_fields.pop("is_active", True)
+        is_active = extra_fields.pop('is_active', False)
         user = self.model(
             email=email, is_staff=is_staff, is_active=is_active,
             is_superuser=is_superuser, last_login=now, date_joined=now,
@@ -71,17 +64,17 @@ class EmailUserManager(BaseUserManager):
             email, password, True, True, **extra_fields
         )
 
-    def from_activation_key(self, activation_key):
+    def get_with_activation_key(self, activation_key):
         """Get a user from activation key.
         """
         try:
             username = signing.loads(
                 activation_key,
-                salt=USER_SIGNUP_SALT,
-                max_age=USER_SIGNUP_EXPIRE,
+                salt=settings.USER_ACTIVATION_KEY_SALT,
+                max_age=settings.USER_ACTIVATION_EXPIRE_SECONDS,
             )
         except signing.BadSignature:
-            raise User.DoesNotExit
+            raise self.model.DoesNotExist
         return self.get(**{self.model.USERNAME_FIELD: username})
 
 
@@ -167,28 +160,28 @@ class User(AbstractBaseUser, PermissionsMixin):
     def profile_filled(self):
         return self.is_active and self.speaker_name and self.bio
 
+    def get_activation_key(self):
+        key = signing.dumps(
+            obj=getattr(self, self.USERNAME_FIELD),
+            salt=settings.USER_ACTIVATION_KEY_SALT,
+        )
+        return key
+
     def email_user(self, subject, message, from_email=None, **kwargs):
         """Send an email to this user.
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
-    def send_activation_email(self, request=None):
-        site = Site.objects.get_current(request=request)
-        activation_key = signing.dumps(
-            obj=getattr(self, self.USERNAME_FIELD),
-            salt=USER_SIGNUP_SALT,
-        )
-
-        activation_url = urllib.parse.urljoin(
-            base=('https://' + site.domain),
-            url=reverse('user_activate', kwargs={
+    def send_activation_email(self, request):
+        activation_key = self.get_activation_key()
+        activation_url = request.build_absolute_uri(
+            reverse('user_activate', kwargs={
                 'activation_key': activation_key,
             }),
         )
 
         context = {
             'user': self,
-            'site': site,
             'activation_key': activation_key,
             'activation_url': activation_url,
         }
@@ -200,7 +193,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         )
         self.email_user(
             subject=ugettext('Complete your registration on tw.pycon.org'),
-            message=text_message,
-            html_message=html_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
+            message=text_message, html_message=html_message,
+            fail_silently=False,
         )

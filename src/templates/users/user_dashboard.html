@@ -13,17 +13,37 @@
 <div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
 
 {% if user.profile_filled %}
-<div><a href="{% url 'talk_proposal_create' %}">{% trans 'Submit a Proposal' %}</a></div>
+<div><a href="{% url 'proposal_create_choice' %}">{% trans 'Submit a Proposal' %}</a></div>
 {% endif %}
 
-{% for proposal in user.talkproposal_set.all %}
-<div class="proposal">
-  <a href="{% url 'talk_proposal_update' pk=proposal.pk %}">
-    {% blocktrans with proposal_title=proposal.title %}
-    Edit <strong>{{ proposal_title }}</strong>
-    {% endblocktrans %}
-  </a>
+{% if user.talkproposal_set.exists %}
+<div class="talk-proposals">
+  <h3>{% trans 'Talk Proposals' %}</h3>
+  {% for proposal in user.talkproposal_set.all %}
+  <div class="proposal">
+    <a href="{% url 'talk_proposal_update' pk=proposal.pk %}">
+      {% blocktrans with proposal_title=proposal.title %}
+      Edit <strong>{{ proposal_title }}</strong>
+      {% endblocktrans %}
+    </a>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+{% endif %}
+
+{% if user.tutorialproposal_set.exists %}
+<div class="tutorial-proposals">
+  <h3>{% trans 'Tutorial Proposals' %}</h3>
+  {% for proposal in user.tutorialproposal_set.all %}
+  <div class="proposal">
+    <a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}">
+      {% blocktrans with proposal_title=proposal.title %}
+      Edit <strong>{{ proposal_title }}</strong>
+      {% endblocktrans %}
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
 
 {% endblock body %}
