@@ -30,6 +30,6 @@ after_success:
 - cd src; codecov
 deploy:
   provider: script
-  script: ./deploy_staging.sh
+  script: ../deploy_staging.sh
   on:
     branch: feature/travis-ci
