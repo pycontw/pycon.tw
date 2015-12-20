@@ -24,6 +24,7 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - chmod 755 ./deploy_staging.sh
+
 install:
 - pip install -r requirements.txt
 script:
@@ -39,4 +40,5 @@ deploy:
   provider: script
   script: fab deploy -H krdai.info -u deploy
   on:
-    branch: feature/travis-ci
+    branch: master
+
