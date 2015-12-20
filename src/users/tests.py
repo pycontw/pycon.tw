@@ -127,11 +127,11 @@ def test_activate(inactive_user, client):
     link = '/accounts/activate/{key}/'.format(key=key)
 
     response = client.get(link, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    assert response.redirect_chain == [('/accounts/login/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
-        (messages.SUCCESS, 'Signup successful. You are now logged in.'),
+        (messages.SUCCESS, 'Signup successful. You can log in now.'),
     ]
 
 
@@ -145,16 +145,16 @@ def test_activate_logged_in(inactive_user, another_user, another_user_client):
     link = '/accounts/activate/{key}/'.format(key=key)
 
     response = another_user_client.get(link, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)]
-
-    # After the activation view, another_user should be logged out, and
-    # inactive_user (owner of the activation key) is logged in instead.
-    assert response.client.session['_auth_user_id'] == str(inactive_user.pk)
+    assert response.redirect_chain == [('/accounts/login/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
-        (messages.SUCCESS, 'Signup successful. You are now logged in.'),
+        (messages.SUCCESS, 'Signup successful. You can log in now.'),
     ]
+
+    # After the activation view, another_user should be logged out, and
+    # inactive_user (owner of the activation key) is logged in instead.
+    assert '_auth_user_id' not in response.client.session
 
 
 def test_activate_invalid(inactive_user, client):

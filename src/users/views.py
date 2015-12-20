@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login, logout
+from django.contrib.auth import get_user_model, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import Http404
@@ -47,16 +47,10 @@ def user_activate(request, activation_key):
     user.is_active = True
     user.save()
 
-    # HACK: By default Django requires password to log the user in. We circle
-    # around it by marking it with the default backend, tricking Django into
-    # thinking it as actually authenticated.
-    user.backend = 'django.contrib.auth.backends.ModelBackend'
-    login(request, user)
-
     messages.success(request, ugettext(
-        'Signup successful. You are now logged in.'
+        'Signup successful. You can log in now.'
     ))
-    return redirect('user_dashboard')
+    return redirect('login')
 
 
 @login_required
