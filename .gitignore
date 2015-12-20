@@ -78,3 +78,8 @@ CACHE
 # coverage
 .coverage
 .cache
+
+# deploy key for travis
+deploy_key
+deploy_key.pub
+
