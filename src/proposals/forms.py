@@ -69,8 +69,8 @@ class TalkProposalUpdateForm(forms.ModelForm):
         model = TalkProposal
         fields = [
             'title', 'category', 'duration', 'language', 'target_audience',
-            'abstract', 'python_level', 'detailed_description', 'outline',
-            'supplementary', 'recording_policy', 'slide_link',
+            'abstract', 'python_level', 'objective', 'detailed_description',
+            'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
         widgets = {
             'detailed_description': SimpleMDEWidget(),
@@ -89,8 +89,8 @@ class TutorialProposalUpdateForm(forms.ModelForm):
         model = TalkProposal
         fields = [
             'title', 'category', 'language', 'target_audience',
-            'abstract', 'python_level', 'detailed_description', 'outline',
-            'supplementary', 'recording_policy', 'slide_link',
+            'abstract', 'python_level', 'objective', 'detailed_description',
+            'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
         widgets = {
             'detailed_description': SimpleMDEWidget(),

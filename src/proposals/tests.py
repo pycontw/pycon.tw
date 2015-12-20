@@ -139,6 +139,9 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
             "it, you may be following “______ Style Guide”. But is it "
             "enough?"
         ),
+        'objective': (
+            "People can write more maintainable code and get happier."
+        ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "
             "than the style guides. In this share, I will introduce you the "
@@ -243,6 +246,9 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
             "computer’s time. Better maintainability saves more. To improve "
             "it, you may be following “______ Style Guide”. But is it "
             "enough?"
+        ),
+        'objective': (
+            "People can write more maintainable code and get happier."
         ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "

@@ -21,7 +21,7 @@ class AbstractProposal(models.Model):
         ('DB',    _('Databases')),
         ('DATA',  _('Data Analysis')),
         ('EDU',   _('Education')),
-        ('EMBED', _('Embedd Systems')),
+        ('EMBED', _('Embedded Systems')),
         ('GAME',  _('Gaming')),
         ('OTHER', _('Other')),
         ('CORE',  _('Python Core & Internals (language, stdlib, etc.)')),
@@ -59,10 +59,10 @@ class AbstractProposal(models.Model):
 
     abstract = models.TextField(
         verbose_name=_('abstract'),
-        max_length=400,
+        max_length=500,
         help_text=_(
             "The overview of what the talk is about. If the talk assume some "
-            "domain knowledge please state it here. If yout talk is accepted, "
+            "domain knowledge please state it here. If your talk is accepted, "
             "this will be displayed on both the website and the handbook. "
             "Should be one paragraph."
         ),
@@ -81,17 +81,30 @@ class AbstractProposal(models.Model):
             "The choice of talk level matters during the review process. "
             "More definition of talk level can be found at the Talk Level "
             "Definition in [How to Propose a talk] page. Note that a proposal "
-            "who't be more likely to accepted because of being \"Novice\" "
+            "won't be more likely to be accepted because of being \"Novice\" "
             "level. We may contact you to change the talk level when we find "
-            "the contend is too-hard or too-easy for the target audience."
+            "the content is too-hard or too-easy for the target audience."
+        ),
+    )
+
+    objective = models.TextField(
+        verbose_name=_('objective'),
+        max_length=500,
+        help_text=_(
+            "What will the attendees get out of your talk? When they leave the"
+            "room, what will they learn that they didn't know before?"
         ),
     )
 
     detailed_description = models.TextField(
         verbose_name=_('detailed description'),
+        blank=True,
         help_text=_(
-            "Description of your talk. Will be made public if your "
-            "proposal is accepted. Edit using "
+            "Try not be too lengthy to scare away reviewers or potential "
+            "audience. A comfortable length is less than 1000 chars (about 600 "
+            "Chinese characters). Since most reviewers may not understand "
+            "the topic as deep as you do, including related links to the talk "
+            "topic will help reviewers understand the proposal. Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
@@ -99,15 +112,12 @@ class AbstractProposal(models.Model):
 
     outline = models.TextField(
         verbose_name=_('outline'),
+        blank=True,
         help_text=_(
-            "Tell the reviewers about your talk. Try not be too lengthy, or "
-            "you could scare away many reviewers. A comfortable length is "
-            "less than 1000 characters (or about 650 Chinese characters). "
-            "Including related links will help reviewers understand and more "
-            "likely accept the proposal. Note that most reviewers may not "
-            "understand the topic as deeply as you do. Edit using "
-            "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
+            "How the talk will be arranged. It is highly recommended to attach "
+            "the estimated time length for each sections in the talk. Talks in "
+            "favor of 45min should have a fallback plan about how to shrink the"
+            "content into a 25min one."
         ),
     )
 
