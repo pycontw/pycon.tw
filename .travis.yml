@@ -41,4 +41,3 @@ deploy:
   script: fab deploy -H krdai.info -u deploy
   on:
     branch: master
-
