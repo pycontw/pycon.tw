@@ -1,0 +1,48 @@
+{% load i18n %}
+
+<table class="proposals-table table table-striped table-hover">
+  <thead>
+    <tr>
+        <th class="title-cell">{% trans 'Title' %}</th>
+        <th>{% trans 'Language' %}</th>
+        <th>{% trans 'Submitter' %}</th>
+        <th>{% trans 'Status' %}</th>
+        <th width="1%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% comment %}
+    TODO: This loop has a n+1 problem on "speaker_info.proposal".
+    We can't use selected_related here because it's generic, and
+    I don't have a good solution for this now...Maybe we need to
+    iterate on BOTH proposals and the speaker infos (with zip or
+    something) instead.
+    {% endcomment %}
+    {% for speaker_info in speaker_infos %}
+    <tr>
+      <td class="title-cell">{{ proposal.title }}</td>
+      <td>{{ speaker_info.proposal.get_language_display }}</td>
+      <td><a href="mailto: {{ speaker_info.proposal.submitter.email }}">{{ speaker_info.proposal.submitter.speaker_name }}</a></td>
+      <td>{{ speaker_info.get_status_display }}</td>
+      <td>
+        <form method="post"
+            action="{% url 'additional_speaker_set_status' pk=speaker_info.pk %}">
+          {% csrf_token %}
+          {% if speaker_info.status != 'accepted' %}
+          <button type="submit" name="status" value="accepted"
+              class="btn btn-sm btn-success">
+            {% trans 'Accept' %}
+          </button>
+          {% endif %}
+          {% if speaker_info.status != 'declined' %}
+          <button type="submit" name="status" value="declined"
+              class="btn btn-sm btn-danger">
+            {% trans 'Decline' %}
+          </button>
+          {% endif %}
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

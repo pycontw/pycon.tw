@@ -2,16 +2,19 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
+from django.http import Http404
 from django.utils.html import format_html
 from django.utils.translation import ugettext
 from django.views.generic import CreateView, UpdateView, TemplateView
 
 from .forms import (
+    AdditionalSpeakerCreateForm, AdditionalSpeakerCancelForm,
+    AdditionalSpeakerSetStatusForm,
     TalkProposalCreateForm, TalkProposalUpdateForm, TalkProposalCancelForm,
     TutorialProposalCreateForm, TutorialProposalUpdateForm,
     TutorialProposalCancelForm,
 )
-from .models import TalkProposal, TutorialProposal
+from .models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 
 class UserProfileRequiredMixin(UserPassesTestMixin):
@@ -52,22 +55,19 @@ class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         FormValidMessageMixin, CreateView):
 
-    success_url_name = None
-
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['request'] = self.request
         return kwargs
 
     def get_success_url(self):
-        return reverse(self.success_url_name, kwargs={'pk': self.object.pk})
+        return self.object.get_update_url()
 
 
 class TalkProposalCreateView(ProposalCreateView):
 
     form_class = TalkProposalCreateForm
     template_name = 'proposals/talk_proposal_create.html'
-    success_url_name = 'talk_proposal_update'
 
     def get_form_valid_message(self):
         msg = ugettext('Talk proposal <strong>{title}</strong> created.')
@@ -78,7 +78,6 @@ class TutorialProposalCreateView(ProposalCreateView):
 
     form_class = TutorialProposalCreateForm
     template_name = 'proposals/tutorial_proposal_create.html'
-    success_url_name = 'tutorial_proposal_update'
 
     def get_form_valid_message(self):
         msg = ugettext('Tutorial proposal <strong>{title}</strong> created.')
@@ -115,6 +114,81 @@ class TutorialProposalUpdateView(ProposalUpdateView):
     def get_form_valid_message(self):
         msg = ugettext('Tutorial proposal <strong>{title}</strong> updated.')
         return format_html(msg, title=self.object.title)
+
+
+class ProposalManageSpeakersView(
+        LoginRequiredMixin, UserProfileRequiredMixin,
+        FormValidMessageMixin, CreateView):
+
+    model = AdditionalSpeaker
+    form_class = AdditionalSpeakerCreateForm
+    template_name = 'proposals/manage_speakers.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            self.proposal = (
+                self.proposal_model.objects
+                .select_related('submitter').get(pk=kwargs['pk'])
+            )
+        except self.proposal_model.DoesNotExist:
+            raise Http404
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'request': self.request,
+            'proposal': self.proposal,
+        })
+        return kwargs
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['proposal'] = self.proposal
+        return data
+
+    def get_success_url(self):
+        return self.proposal.get_manage_speakers_url()
+
+
+class TalkProposalManageSpeakersView(ProposalManageSpeakersView):
+    proposal_model = TalkProposal
+
+
+class TutorialProposalManageSpeakersView(ProposalManageSpeakersView):
+    proposal_model = TutorialProposal
+
+
+class AdditionalSpeakerRemoveView(
+        LoginRequiredMixin, UserProfileRequiredMixin,
+        FormValidMessageMixin, UpdateView):
+
+    model = AdditionalSpeaker
+    form_class = AdditionalSpeakerCancelForm
+
+    def get_object(self):
+        instance = super().get_object()
+        if instance.proposal.submitter != self.request.user:
+            raise Http404
+        return instance
+
+    def get_success_url(self):
+        return self.object.proposal.get_manage_speakers_url()
+
+
+class AdditionalSpeakerSetStatusView(
+        LoginRequiredMixin, UserProfileRequiredMixin,
+        FormValidMessageMixin, UpdateView):
+
+    http_method_names = ['post', 'options']
+    model = AdditionalSpeaker
+    form_class = AdditionalSpeakerSetStatusForm
+
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
+
+    def get_success_url(self):
+        return reverse('user_dashboard')
 
 
 class ProposalCancelView(ProposalUpdateView):

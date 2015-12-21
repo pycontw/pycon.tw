@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin,
 )
+from django.contrib.contenttypes.models import ContentType
 from django.core import signing
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
@@ -12,10 +13,25 @@ from django.template.loader import render_to_string
 from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
 
+from proposals.models import TalkProposal, TutorialProposal
 
-class EmailUserManager(BaseUserManager):
-    """Custom manager for EmailUser."""
 
+class UserQueryset(models.QuerySet):
+    """Custom queryset for User.
+    """
+    def get_valid_speakers(self):
+        """Filter only valid speakers from the queryset.
+
+        :seealso: ``User.is_valid_speaker``
+        """
+        users = self.filter(verified=True, is_active=True)
+        users = users.exclude(speaker_name='').exclude(bio='')
+        return users
+
+
+class UserManager(BaseUserManager.from_queryset(UserQueryset)):
+    """Custom manager for User.
+    """
     def _create_user(self, email, password, **extra_fields):
         """Create and save an EmailUser with the given email and password.
 
@@ -141,7 +157,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=timezone.now,
     )
 
-    objects = EmailUserManager()
+    objects = UserManager()
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -161,10 +177,18 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.speaker_name
 
     def is_valid_speaker(self):
+        """Whether the user is a valid speaker.
+
+        :seealso: ``UserQuerySet.get_valid_speakers``
+        """
         return (
             self.verified and self.is_active
             and self.speaker_name and self.bio
         )
+
+    @property
+    def cospeaking_info_set(self):
+        return self.additionalspeaker_set.filter(cancelled=False)
 
     def get_verification_key(self):
         key = signing.dumps(
