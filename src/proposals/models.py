@@ -110,17 +110,6 @@ class AbstractProposal(models.Model):
         ),
     )
 
-    outline = models.TextField(
-        verbose_name=_('outline'),
-        blank=True,
-        help_text=_(
-            "How the talk will be arranged. It is highly recommended to attach "
-            "the estimated time length for each sections in the talk. Talks in "
-            "favor of 45min should have a fallback plan about how to shrink the"
-            "content into a 25min one."
-        ),
-    )
-
     supplementary = models.TextField(
         verbose_name=_('supplementary'),
         blank=True,
@@ -185,6 +174,17 @@ class TalkProposal(AbstractProposal):
         choices=DURATION_CHOICES,
     )
 
+    outline = models.TextField(
+        verbose_name=_('outline'),
+        blank=True,
+        help_text=_(
+            "How the talk will be arranged. It is highly recommended to attach "
+            "the estimated time length for each sections in the talk. Talks in "
+            "favor of 45min should have a fallback plan about how to shrink "
+            "the content into a 25min one."
+        ),
+    )
+
     class Meta(AbstractProposal.Meta):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
@@ -200,6 +200,16 @@ class TutorialProposal(AbstractProposal):
             verbose_name=_('duration'),
             max_length=7,
             choices=DURATION_CHOICES,
+    )
+
+    outline = models.TextField(
+        verbose_name=_('outline'),
+        blank=True,
+        help_text=_(
+            "How the tutorial will be arranged. You should enumerate over "
+            "each section in your talk and attach each section with the "
+            "estimated time length."
+        ),
     )
 
     class Meta(AbstractProposal.Meta):
