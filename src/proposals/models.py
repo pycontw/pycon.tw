@@ -191,6 +191,17 @@ class TalkProposal(AbstractProposal):
 
 
 class TutorialProposal(AbstractProposal):
+
+    DURATION_CHOICES = (
+        ('HALFDAY', _('Half day')),
+        ('FULLDAY', _('Full day')),
+    )
+    duration = models.CharField(
+            verbose_name=_('duration'),
+            max_length=7,
+            choices=DURATION_CHOICES,
+    )
+
     class Meta(AbstractProposal.Meta):
         verbose_name = _('tutorial proposal')
         verbose_name_plural = _('tutorial proposals')

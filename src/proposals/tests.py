@@ -186,6 +186,7 @@ def test_tutorial_proposal_create_post(user, user_client):
     response = user_client.post('/proposals/tutorial/submit/', {
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
+        'duration': 'FULLDAY',
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
@@ -235,6 +236,7 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
     response = user_client.post('/proposals/tutorial/42/edit/', {
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
+        'duration': 'FULLDAY',
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
