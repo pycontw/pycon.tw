@@ -25,7 +25,7 @@
     <script src="{% static 'js/html5shiv.min.js' %}"></script>
     <script src="{% static 'js/respond.min.js' %}"></script>
     <![endif]-->
-    <title>PyCon Taiwan 2016{% block title %}{% endblock %}</title>
+    {% block titletag %}<title>{% block title %}{% endblock %} | PyCon Taiwan 2016</title>{% endblock %}
 </head>
 <body class="{% block body-class %}{% endblock %}">
 

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Submit a New Talk Proposal' %}{% endblock title %}
+
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">{% trans 'Create Talk Proposal' %}</button>
+</form>
+{% endblock body %}
