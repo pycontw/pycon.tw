@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<div>
+  {% if user.is_authenticated %}
+  <a href="{% url 'user_dashboard' %}">{% trans 'Dashboard' %}</a>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
+    <button type="submit">{% trans 'Log Out' %}</button>
+  </form>
+  {% else %}
+  <a href="{% url 'logout' %}">{% trans 'Log In' %}</a>
+  {% endif %}
+</div>

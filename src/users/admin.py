@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from .forms import UserChangeForm, UserCreationForm
 from .models import User
+from .forms import AdminUserChangeForm, UserCreationForm
 
 
 @admin.register(User)
@@ -50,7 +50,7 @@ class UserAdmin(UserAdmin):
         ),
     )
 
-    form = UserChangeForm
+    form = AdminUserChangeForm
     add_form = UserCreationForm
 
     list_display = ('email', 'is_staff')
