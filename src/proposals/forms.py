@@ -86,9 +86,9 @@ class TutorialProposalUpdateForm(forms.ModelForm):
     user-editable fields.
     """
     class Meta:
-        model = TalkProposal
+        model = TutorialProposal
         fields = [
-            'title', 'category', 'language', 'target_audience',
+            'title', 'category', 'duration', 'language', 'target_audience',
             'abstract', 'python_level', 'objective', 'detailed_description',
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
