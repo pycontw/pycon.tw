@@ -94,8 +94,8 @@ class AbstractProposal(models.Model):
         verbose_name=_('objective'),
         max_length=500,
         help_text=_(
-            "What will the attendees get out of your talk? When they leave the"
-            "room, what will they learn that they didn't know before?"
+            "What will the attendees get out of your talk? When they leave "
+            "the room, what will they learn that they didn't know before?"
         ),
     )
 
@@ -104,10 +104,11 @@ class AbstractProposal(models.Model):
         blank=True,
         help_text=_(
             "Try not be too lengthy to scare away reviewers or potential "
-            "audience. A comfortable length is less than 1000 chars (about 600 "
-            "Chinese characters). Since most reviewers may not understand "
-            "the topic as deep as you do, including related links to the talk "
-            "topic will help reviewers understand the proposal. Edit using "
+            "audience. A comfortable length is less than 1000 characters "
+            "(or about 600 Chinese characters). Since most reviewers may not "
+            "understand the topic as deep as you do, including related links "
+            "to the talk topic will help reviewers understand the proposal. "
+            "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
@@ -181,10 +182,10 @@ class TalkProposal(AbstractProposal):
         verbose_name=_('outline'),
         blank=True,
         help_text=_(
-            "How the talk will be arranged. It is highly recommended to attach "
-            "the estimated time length for each sections in the talk. Talks in "
-            "favor of 45min should have a fallback plan about how to shrink "
-            "the content into a 25min one."
+            "How the talk will be arranged. It is highly recommended to "
+            "attach the estimated time length for each sections in the talk. "
+            "Talks in favor of 45min should have a fallback plan about how "
+            "to shrink the content into a 25min one."
         ),
     )
 
@@ -200,9 +201,9 @@ class TutorialProposal(AbstractProposal):
         ('FULLDAY', _('Full day')),
     )
     duration = models.CharField(
-            verbose_name=_('duration'),
-            max_length=7,
-            choices=DURATION_CHOICES,
+        verbose_name=_('duration'),
+        max_length=7,
+        choices=DURATION_CHOICES,
     )
 
     outline = models.TextField(
