@@ -9,21 +9,25 @@
 {% block body %}
 
 {% include '_includes/nav.html' %}
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
 
-<div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
+		{% if user.profile_filled %}
+		<div><a href="{% url 'talk_proposal_create' %}">{% trans 'Submit a Proposal' %}</a></div>
+		{% endif %}
 
-{% if user.profile_filled %}
-<div><a href="{% url 'talk_proposal_create' %}">{% trans 'Submit a Proposal' %}</a></div>
-{% endif %}
-
-{% for proposal in user.talkproposal_set.all %}
-<div class="proposal">
-  <a href="{% url 'talk_proposal_update' pk=proposal.pk %}">
-    {% blocktrans with proposal_title=proposal.title %}
-    Edit <strong>{{ proposal_title }}</strong>
-    {% endblocktrans %}
-  </a>
+		{% for proposal in user.talkproposal_set.all %}
+		<div class="proposal">
+		  <a href="{% url 'talk_proposal_update' pk=proposal.pk %}">
+		    {% blocktrans with proposal_title=proposal.title %}
+		    Edit <strong>{{ proposal_title }}</strong>
+		    {% endblocktrans %}
+		  </a>
+		</div>
+		{% endfor %}
+	</div>
 </div>
-{% endfor %}
-
 {% endblock body %}
+
+
