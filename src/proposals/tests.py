@@ -3,6 +3,10 @@ import pytest
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 
+from proposals.forms import (
+    TalkProposalCreateForm, TalkProposalUpdateForm,
+    TutorialProposalCreateForm, TutorialProposalUpdateForm,
+)
 from proposals.models import TalkProposal, TutorialProposal
 
 
@@ -27,6 +31,40 @@ def tutorial_proposal(user):
         title='Beyond the Style Guides',
     )
     return proposal
+
+
+def test_talk_proposal_create_form():
+    form = TalkProposalCreateForm()
+    assert list(form.fields) == [
+        'title', 'category', 'duration', 'language',
+        'python_level', 'recording_policy',
+    ]
+
+
+def test_tutorial_proposal_create_form():
+    form = TalkProposalCreateForm()
+    assert list(form.fields) == [
+        'title', 'category', 'duration', 'language',
+        'python_level', 'recording_policy',
+    ]
+
+
+def test_talk_proposal_update_form():
+    form = TalkProposalUpdateForm()
+    assert list(form.fields) == [
+        'title', 'category', 'duration', 'language', 'target_audience',
+        'abstract', 'python_level', 'objective', 'detailed_description',
+        'outline', 'supplementary', 'recording_policy', 'slide_link',
+    ]
+
+
+def test_tutorial_proposal_update_form():
+    form = TalkProposalUpdateForm()
+    assert list(form.fields) == [
+        'title', 'category', 'duration', 'language', 'target_audience',
+        'abstract', 'python_level', 'objective', 'detailed_description',
+        'outline', 'supplementary', 'recording_policy', 'slide_link',
+    ]
 
 
 def test_proposal_create_login(client):
@@ -89,7 +127,7 @@ def test_talk_proposal_create_post(user, user_client):
     )
     assert response.redirect_chain == [
         ('/proposals/talk/{pk}/edit/'.format(pk=proposal.pk), 302),
-    ]
+    ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, 'Talk proposal created.')]
@@ -139,6 +177,9 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
             "it, you may be following “______ Style Guide”. But is it "
             "enough?"
         ),
+        'objective': (
+            "People can write more maintainable code and get happier."
+        ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "
             "than the style guides. In this share, I will introduce you the "
@@ -151,7 +192,9 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
         ),
     }, follow=True)
 
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)], (
+        response.context['form'].errors
+    )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, 'Talk proposal updated.')]
@@ -183,6 +226,7 @@ def test_tutorial_proposal_create_post(user, user_client):
     response = user_client.post('/proposals/tutorial/submit/', {
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
+        'duration': 'FULLDAY',
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
@@ -194,7 +238,7 @@ def test_tutorial_proposal_create_post(user, user_client):
     )
     assert response.redirect_chain == [
         ('/proposals/tutorial/{pk}/edit/'.format(pk=proposal.pk), 302),
-    ]
+    ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, 'Tutorial proposal created.')]
@@ -232,6 +276,7 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
     response = user_client.post('/proposals/tutorial/42/edit/', {
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
+        'duration': 'FULLDAY',
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
@@ -243,6 +288,9 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
             "computer’s time. Better maintainability saves more. To improve "
             "it, you may be following “______ Style Guide”. But is it "
             "enough?"
+        ),
+        'objective': (
+            "People can write more maintainable code and get happier."
         ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "
@@ -256,7 +304,9 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
         ),
     }, follow=True)
 
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)], (
+        response.context['form'].errors
+    )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, 'Tutorial proposal updated.')]

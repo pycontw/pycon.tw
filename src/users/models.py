@@ -96,7 +96,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     bio = models.TextField(
         verbose_name=_('biography'),
-        max_length=140,
+        max_length=500,
         help_text=_("About you. There will be no formatting."),
     )
     photo = models.ImageField(
