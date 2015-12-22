@@ -72,6 +72,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'django_extensions',
+    'crispy_forms',
     'compressor',
 )
 
@@ -157,3 +158,5 @@ AUTH_USER_MODEL = 'users.User'
 URL_PREFIX = None
 
 LOGIN_REDIRECT_URL = '/dashboard/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
