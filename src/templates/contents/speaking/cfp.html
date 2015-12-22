@@ -1,11 +1,11 @@
-{% extends 'speaking/base.html' %}
+{% extends 'contents/speaking/_base.html' %}
 {% load i18n %}
 
 {% block title %}{% trans "Call for Proposals" %}{% endblock %}
 
 {% block content %}
-    {% url "speaking_recording" as speaking_recording_url %}
-    {% url "speaking_talk" as speaking_talk_url %}
+    {% url 'page' path='speaking/recording' as speaking_recording_url %}
+    {% url 'page' path='speaking/talk' as speaking_talk_url %}
     {% url "signup" as signup_url %}
     {% url "user_dashboard" as dashboard_url %}
     {% blocktrans %}

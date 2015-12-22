@@ -1,10 +1,10 @@
-{% extends 'speaking/base.html' %}
+{% extends 'contents/speaking/_base.html' %}
 {% load i18n %}
 
 {% block title %}{% trans "How to Propose a Talk" %}{% endblock %}
 
 {% block content %}
-    {% url 'speaking_cfp' as speaking_cfp_url %}
+    {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 
     <h1>{% trans "How to Propose a Talk?" %}</h1>
 
