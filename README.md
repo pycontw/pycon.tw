@@ -1,3 +1,6 @@
+[![codecov.io](https://codecov.io/github/pycontw/pycontw2016/coverage.svg?branch=master)](https://codecov.io/github/pycontw/pycontw2016?branch=master)
+![travis-ci status](https://api.travis-ci.org/pycontw/pycontw2016.svg)
+
 # PyCon TW 2016
 
 This repository serves the website of PyCon TW 2016. This project is open source and the license can be found in LICENSE.
