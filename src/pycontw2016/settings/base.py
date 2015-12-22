@@ -76,6 +76,8 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
+    'core',
+    'proposals',
     'users',
 )
 
@@ -153,3 +155,12 @@ COMPRESS_PRECOMPILERS = (
 AUTH_USER_MODEL = 'users.User'
 
 URL_PREFIX = None
+
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+
+# Settings used to control the accoutn activation process.
+
+USER_ACTIVATION_KEY_SALT = 'pycontw'    # Arbitraty.
+
+USER_ACTIVATION_EXPIRE_SECONDS = 86400  # Allow one day for activation.

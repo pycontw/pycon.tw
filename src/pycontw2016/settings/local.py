@@ -11,8 +11,11 @@ if "celery" in sys.argv[0]:
     DEBUG = False
 
 # Django Debug Toolbar
-INSTALLED_APPS += (
-    'debug_toolbar.apps.DebugToolbarConfig',)
+INSTALLED_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
+
+# Postgres-specifi migrations
+if 'postgres' in DATABASES['default']['ENGINE']:
+    INSTALLED_APPS += ('postgres',)
 
 # Show emails to console in DEBUG mode
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
