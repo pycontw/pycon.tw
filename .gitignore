@@ -84,3 +84,8 @@ CACHE
 deploy_key
 deploy_key.pub
 
+# generated on Travis
+/deploy_staging.sh
+/secrets.tar
+/src/coverage.xml
+
