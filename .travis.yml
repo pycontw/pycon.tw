@@ -34,7 +34,7 @@ install:
 - pip install -r requirements/travis.txt
 script:
 - python src/manage.py migrate --noinput
-- cd src; py.test --cov=.
+- cd src; py.test -n 2 --cov=.
 notifications:
   slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
 after_success:
