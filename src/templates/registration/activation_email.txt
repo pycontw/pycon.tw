@@ -1,0 +1,9 @@
+{% spaceless %}
+
+{% load i18n %}
+
+{% blocktrans %}
+Go here: {{ activation_url }}
+{% endblocktrans %}
+
+{% endspaceless %}

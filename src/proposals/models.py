@@ -3,9 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-class TalkProposal(models.Model):
-    """Represent a submitted talk proposal.
-    """
+class AbstractProposal(models.Model):
 
     submitter = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
@@ -23,10 +21,12 @@ class TalkProposal(models.Model):
         ('DB',    _('Databases')),
         ('DATA',  _('Data Analysis')),
         ('EDU',   _('Education')),
-        ('EMBED', _('Embedd Systems')),
+        ('EMBED', _('Embedded Systems')),
         ('GAME',  _('Gaming')),
+        ('GRAPH', _('Graphics')),
         ('OTHER', _('Other')),
-        ('CORE',  _('Python Core & Internals (language, stdlib, etc.)')),
+        ('CORE',  _('Python Core (language, stdlib, etc.)')),
+        ('INTNL', _('Python Internals')),
         ('LIBS',  _('Python Libraries')),
         ('SCI',   _('Science')),
         ('SEC',   _('Security')),
@@ -38,17 +38,6 @@ class TalkProposal(models.Model):
         verbose_name=_('category'),
         max_length=5,
         choices=CATEGORY_CHOICES,
-    )
-
-    DURATION_CHOICES = (
-        ('NOPREF', _('No preference')),
-        ('PREF25', _('Prefer 25min')),
-        ('PREF45', _('Prefer 45min')),
-    )
-    duration = models.CharField(
-        verbose_name=_('duration'),
-        max_length=6,
-        choices=DURATION_CHOICES,
     )
 
     LANGUAGE_CHOICES = (
@@ -72,10 +61,10 @@ class TalkProposal(models.Model):
 
     abstract = models.TextField(
         verbose_name=_('abstract'),
-        max_length=400,
+        max_length=500,
         help_text=_(
             "The overview of what the talk is about. If the talk assume some "
-            "domain knowledge please state it here. If yout talk is accepted, "
+            "domain knowledge please state it here. If your talk is accepted, "
             "this will be displayed on both the website and the handbook. "
             "Should be one paragraph."
         ),
@@ -92,33 +81,34 @@ class TalkProposal(models.Model):
         choices=PYTHON_LVL_CHOICES,
         help_text=_(
             "The choice of talk level matters during the review process. "
-            "More definition of talk level can be found at the Talk Level "
-            "Definition in [How to Propose a talk] page. Note that a proposal "
-            "who't be more likely to accepted because of being \"Novice\" "
-            "level. We may contact you to change the talk level when we find "
-            "the contend is too-hard or too-easy for the target audience."
+            "More definition of talk level can be found at the <a "
+            "href=\"/speaking/talk/\" target=\"_blank\">How to Propose a "
+            "talk</a> page. Note that a proposal won't be more likely to be "
+            "accepted because of being \"Novice\" level. We may contact you "
+            "to change the talk level when we find the content is too-hard "
+            "or too-easy for the target audience."
+        ),
+    )
+
+    objective = models.TextField(
+        verbose_name=_('objective'),
+        max_length=500,
+        help_text=_(
+            "What will the attendees get out of your talk? When they leave "
+            "the room, what will they learn that they didn't know before?"
         ),
     )
 
     detailed_description = models.TextField(
         verbose_name=_('detailed description'),
+        blank=True,
         help_text=_(
-            "Description of your talk. Will be made public if your "
-            "proposal is accepted. Edit using "
-            "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
-        ),
-    )
-
-    outline = models.TextField(
-        verbose_name=_('outline'),
-        help_text=_(
-            "Tell the reviewers about your talk. Try not be too lengthy, or "
-            "you could scare away many reviewers. A comfortable length is "
-            "less than 1000 characters (or about 650 Chinese characters). "
-            "Including related links will help reviewers understand and more "
-            "likely accept the proposal. Note that most reviewers may not "
-            "understand the topic as deeply as you do. Edit using "
+            "Try not be too lengthy to scare away reviewers or potential "
+            "audience. A comfortable length is less than 1000 characters "
+            "(or about 600 Chinese characters). Since most reviewers may not "
+            "understand the topic as deep as you do, including related links "
+            "to the talk topic will help reviewers understand the proposal. "
+            "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
@@ -168,9 +158,64 @@ class TalkProposal(models.Model):
     )
 
     class Meta:
-        verbose_name = _('talk proposal')
-        verbose_name_plural = _('talk proposals')
+        abstract = True
         ordering = ['-created_at']
 
     def __str__(self):
         return self.title
+
+
+class TalkProposal(AbstractProposal):
+
+    DURATION_CHOICES = (
+        ('NOPREF', _('No preference')),
+        ('PREF25', _('Prefer 25min')),
+        ('PREF45', _('Prefer 45min')),
+    )
+    duration = models.CharField(
+        verbose_name=_('duration'),
+        max_length=6,
+        choices=DURATION_CHOICES,
+    )
+
+    outline = models.TextField(
+        verbose_name=_('outline'),
+        blank=True,
+        help_text=_(
+            "How the talk will be arranged. It is highly recommended to "
+            "attach the estimated time length for each sections in the talk. "
+            "Talks in favor of 45min should have a fallback plan about how "
+            "to shrink the content into a 25min one."
+        ),
+    )
+
+    class Meta(AbstractProposal.Meta):
+        verbose_name = _('talk proposal')
+        verbose_name_plural = _('talk proposals')
+
+
+class TutorialProposal(AbstractProposal):
+
+    DURATION_CHOICES = (
+        ('HALFDAY', _('Half day')),
+        ('FULLDAY', _('Full day')),
+    )
+    duration = models.CharField(
+        verbose_name=_('duration'),
+        max_length=7,
+        choices=DURATION_CHOICES,
+    )
+
+    outline = models.TextField(
+        verbose_name=_('outline'),
+        blank=True,
+        help_text=_(
+            "How the tutorial will be arranged. You should enumerate over "
+            "each section in your talk and attach each section with the "
+            "estimated time length."
+        ),
+    )
+
+    class Meta(AbstractProposal.Meta):
+        verbose_name = _('tutorial proposal')
+        verbose_name_plural = _('tutorial proposals')

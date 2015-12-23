@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load i18n compress %}
+
+
+{% block title %}{% blocktrans with proposal_title=form.instance.title %}Edit Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
+
+
+{% block extra_css %}
+{{ block.super }}
+{{ form.media.css }}
+{% endblock extra_css %}
+
+
+{% block body %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">{% trans 'Save' %}</button>
+</form>
+{% endblock body %}
+
+
+{% block extra_js %}
+{{ block.super }}
+
+{% compress js %}
+{{ form.media.js }}
+{% endcompress %}
+{% endblock extra_js %}

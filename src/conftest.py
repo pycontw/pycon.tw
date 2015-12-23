@@ -9,14 +9,18 @@ User = get_user_model()
 
 class HTMLParser:
 
-    def parse(self, response, status_code=200):
-        if status_code is not None:
-            assert response.status_code == status_code
+    def parse(self, response=None, *, text=None, status_code=200):
+        if response is not None and text is not None:
+            raise ValueError(
+                'Provide exactly one of "response" and "text" to parse.',
+            )
+        if response is not None:
+            if status_code is not None:
+                assert response.status_code == status_code
+            text = response.content
         pytest.importorskip('cssselect')
         lxml_html = pytest.importorskip('lxml.html')
-        fragment = lxml_html.fragment_fromstring(
-            response.content, create_parent='body',
-        )
+        fragment = lxml_html.fragment_fromstring(text, create_parent=True)
         return fragment
 
     def arrange(self, element):
@@ -49,7 +53,7 @@ def parser():
 
 
 @pytest.fixture
-def bare_user(db):
+def inactive_user(db):
     try:
         user = User.objects.get(email='user@user.me')
     except User.DoesNotExist:
@@ -57,6 +61,14 @@ def bare_user(db):
             email='user@user.me',
             password='7K50<31',
         )
+    return user
+
+
+@pytest.fixture
+def bare_user(inactive_user):
+    user = User.objects.get(email='user@user.me')
+    user.is_active = True
+    user.save()
     return user
 
 
@@ -78,3 +90,25 @@ def bare_user_client(bare_user, client):
 @pytest.fixture
 def user_client(user, bare_user_client):
     return bare_user_client
+
+
+@pytest.fixture
+def another_user(db):
+    try:
+        user = User.objects.get(email='another@ayatsuji.itou')
+    except User.DoesNotExist:
+        user = User.objects.create_user(
+            email='another@ayatsuji.itou',
+            password='7uk1T0n01sY',
+            speaker_name='Misaki Mei',
+            bio='Neon marketing office assault kanji into meta-face.',
+            is_active=True,
+        )
+    assert user.profile_filled
+    return user
+
+
+@pytest.fixture
+def another_user_client(another_user, client):
+    client.login(email='another@ayatsuji.itou', password='7uk1T0n01sY')
+    return client

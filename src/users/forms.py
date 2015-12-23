@@ -30,10 +30,6 @@ class UserCreationForm(forms.ModelForm):
         model = User
         fields = ('email',)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._user = None
-
     def clean_email(self):
         """Clean form email.
 
@@ -44,8 +40,8 @@ class UserCreationForm(forms.ModelForm):
         # but it sets a nicer error message than the ORM. See #13147.
         email = self.cleaned_data["email"]
         try:
-            get_user_model()._default_manager.get(email=email)
-        except get_user_model().DoesNotExist:
+            User.objects.get(email=email)
+        except User.DoesNotExist:
             return email
         raise forms.ValidationError(
             self.error_messages['duplicate_email'],
@@ -67,24 +63,19 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True, authenticated=False):
+    def save(self, commit=True):
         """Save user.
 
         Save the provided password in hashed format.
 
-        :return custom_user.models.EmailUser: user
+        :return users.models.EmailUser: user
         """
         user = super().save(commit=False)
         password = self.cleaned_data.get('password1')
         user.set_password(password)
         if commit:
             user.save()
-            if authenticated:
-                user = authenticate(email=user.email, password=password)
         return user
-
-    def get_user(self):
-        return self._user
 
 
 class UserProfileUpdateForm(forms.ModelForm):
