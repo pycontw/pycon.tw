@@ -376,12 +376,12 @@ $font-family-sans-serif:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 // $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // // Navbar links
-// $navbar-default-link-color:                #777 !default;
-// $navbar-default-link-hover-color:          #333 !default;
+$navbar-default-link-color:                #fff !default;
+$navbar-default-link-hover-color:          #ccc !default;
 // $navbar-default-link-hover-bg:             transparent !default;
-// $navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-color:         #dedede !default;
 // $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
-// $navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-color:       #aaa !default;
 // $navbar-default-link-disabled-bg:          transparent !default;
 
 // // Navbar brand label
