@@ -44,6 +44,4 @@ deploy:
   provider: script
   script: fab deploy -H krdai.info -u deploy
   on:
-    branch:
-    - master
-    - travis-cache
+    branch: master
