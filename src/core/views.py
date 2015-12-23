@@ -1,9 +1,15 @@
 from django.http import Http404
-from django.template.loader import TemplateDoesNotExist, get_template
 from django.views.generic import TemplateView
+
+from .utils import (
+    TemplateExistanceStatusResponse,
+    collect_language_codes,
+)
 
 
 class FlatPageView(TemplateView):
+
+    response_class = TemplateExistanceStatusResponse
 
     def get(self, request, *args, **kwargs):
         self.path = kwargs['path']
@@ -13,11 +19,13 @@ class FlatPageView(TemplateView):
         """Look up template from path.
 
         Template name is built from the path, with leading and trailing
-        slashes stripped, "contents/" prepended, and ".html" appended.
+        slashes stripped, language code and "contents/" prepended,
+        and ".html" appended.
+
         Examples:
 
-        * "/speaking/cfp/"        -> "contents/speaking/cfp.html"
-        * "overview/pycontw2016/" -> "contents/overview/pycontw2016.html"
+        * "/speaking/cfp/"    -> "contents/<lang>/speaking/cfp.html"
+        * "overview/pycontw/" -> "contents/<lang>/overview/pycontw.html"
 
         If a matching template is not found, HTTP 404 will be raised.
 
@@ -30,14 +38,14 @@ class FlatPageView(TemplateView):
         here. This avoids the visitor seeing (accidentally) pages like
         "speaking/base.html".
         """
-        template_name = 'contents/' + self.path.strip('/') + '.html'
-        if any(c.startswith('_') for c in template_name.split('/')):
+        path = self.path.strip('/')
+        if any(c.startswith('_') for c in path.split('/')):
             raise Http404
-        try:
-            get_template(template_name, using=self.template_engine)
-        except TemplateDoesNotExist:
-            raise Http404
-        return [template_name]
+        template_names = [
+            '/'.join(['contents', code, path + '.html'])
+            for code in collect_language_codes(self.request.LANGUAGE_CODE)
+        ]
+        return template_names
 
 
 flat_page = FlatPageView.as_view()
