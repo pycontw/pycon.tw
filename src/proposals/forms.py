@@ -54,7 +54,7 @@ class TutorialProposalCreateForm(ProposalCreateForm):
     class Meta:
         model = TutorialProposal
         fields = [
-            'title', 'category', 'language',
+            'title', 'category', 'duration', 'language',
             'python_level', 'recording_policy',
         ]
 
