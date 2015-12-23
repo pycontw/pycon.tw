@@ -9,7 +9,7 @@ DEBUG = False
 INSTALLED_APPS += ('postgres',)
 
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ["pycontw.krdai.info", "tw.pycon.org", ]
+ALLOWED_HOSTS = ["pycontw.krdai.info", "tw.pycon.org"]
 
 # Cache the templates in memory for speed-up
 loaders = [
@@ -24,7 +24,7 @@ loaders = [
 
 TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0]['OPTIONS'].update({"debug": False})
-TEMPLATES[0].update({"APP_DIRS": DEBUG})
+del TEMPLATES[0]['APP_DIRS']
 
 # Define STATIC_ROOT for the collectstatic command
 STATIC_ROOT = join(BASE_DIR, 'assets')
