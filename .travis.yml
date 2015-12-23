@@ -1,5 +1,4 @@
 language: python
-sudo: required
 
 python:
   - "3.4"
@@ -38,11 +37,14 @@ script:
 notifications:
   slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
 after_success:
-- sudo pip2 install codecov fabric
+- pip wheel codecov fabric
+- pip install codecov fabric
 - cd src; codecov
 - cd ..
 deploy:
   provider: script
   script: fab deploy -H krdai.info -u deploy
   on:
-    branch: master
+    branch:
+    - master
+    - travis-cache
