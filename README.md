@@ -1,3 +1,6 @@
+[![codecov.io](https://codecov.io/github/pycontw/pycontw2016/coverage.svg?branch=master)](https://codecov.io/github/pycontw/pycontw2016?branch=master)
+![travis-ci status](https://api.travis-ci.org/pycontw/pycontw2016.svg)
+
 # PyCon TW 2016
 
 This repository serves the website of PyCon TW 2016. This project is open source and the license can be found in LICENSE.
@@ -15,11 +18,16 @@ At first, you should make sure you have [virtualenv](http://www.virtualenv.org/)
 
 then, create your virtualenv:
 
-    virtualenv venv
+    python3 -m venv venv
 
 Second, you need to enable the virtualenv by
 
     source venv/bin/activate
+
+If you are using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org), then you should assign your python path:
+
+    which python3 # Output: /usr/local/bin/python3
+    mkvirtualenv --python=/usr/local/bin/python3 pycontw2016
 
 Install all dependencies:
 
