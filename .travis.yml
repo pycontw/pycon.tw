@@ -26,7 +26,7 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - chmod 755 ./deploy_staging.sh
-- pop install -U pip
+- pip install -U pip
 - pip install wheel
 
 install:
