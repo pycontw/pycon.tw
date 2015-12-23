@@ -4,5 +4,6 @@ omit =
     manage.py
     pycontw2016/settings/*
     */tests.py
+    */tests/*
     */migrations/*
 show_missing = true
