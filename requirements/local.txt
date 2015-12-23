@@ -34,5 +34,3 @@ lxml==3.5.0
 # Parses CSS3 Selectors and translate them to XPath 1.0 expressions.
 # https://pythonhosted.org/cssselect/
 cssselect==0.9.1
-
-django-crispy-forms==1.5.2

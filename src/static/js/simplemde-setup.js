@@ -15,6 +15,7 @@ for (var i = 0; i < elementList.length; i++) {
   new SimpleMDE({
     'element': element,
     'indentWithTabs': false,
+    'spellChecker': false,
     'status': false
   });
 }

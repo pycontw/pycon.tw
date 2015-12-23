@@ -97,8 +97,17 @@ def test_signup_duplicate(bare_user, client, parser):
     assert response.status_code == 200
 
     body = parser.parse(response)
-    assert [tag.text for tag in body.cssselect('.errorlist > li')] == [
-        'A user with that email already exists.'
+    errored_blocks = body.cssselect('.has-error')
+    assert [e.get('id') for e in errored_blocks] == ['div_id_email']
+    assert [
+        parser.arrange(e)
+        for e in errored_blocks[0].cssselect('.help-block')
+    ] == [
+        parser.arrange(
+            '<span id="error_1_id_email" class="help-block">'
+            '<strong>A user with that email already exists.</strong>'
+            '</span>'
+        )
     ]
 
 

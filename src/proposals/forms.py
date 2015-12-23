@@ -21,7 +21,7 @@ class ProposalCreateForm(forms.ModelForm):
         """
         if self._request is None:
             raise forms.ValidationError(
-                'Talk proposal creation requires a request object.'
+                'Proposal creation requires a request object.'
             )
         user = self._request.user
         if user.is_anonymous() or not user.profile_filled:
