@@ -2,12 +2,13 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext, ugettext_lazy as _
 from django.views.generic import CreateView, UpdateView, TemplateView
 
 from .forms import (
-    TalkProposalCreateForm, TalkProposalUpdateForm,
+    TalkProposalCreateForm, TalkProposalUpdateForm, TalkProposalCancelForm,
     TutorialProposalCreateForm, TutorialProposalUpdateForm,
+    TutorialProposalCancelForm,
 )
 from .models import TalkProposal, TutorialProposal
 
@@ -27,10 +28,21 @@ class ProposalCreateChoiceView(
 
 class FormValidMessageMixin:
 
+    form_valid_message_level = messages.SUCCESS
     form_valid_message = None
 
+    def get_form_valid_message_level(self):
+        return self.form_valid_message_level
+
+    def get_form_valid_message(self):
+        return self.form_valid_message
+
     def form_valid(self, form):
-        messages.success(self.request, self.form_valid_message)
+        messages.add_message(
+            self.request,
+            self.get_form_valid_message_level(),
+            self.get_form_valid_message(),
+        )
         return super().form_valid(form)
 
 
@@ -85,3 +97,40 @@ class TutorialProposalUpdateView(ProposalUpdateView):
     form_class = TutorialProposalUpdateForm
     form_valid_message = _('Tutorial proposal updated.')
     template_name = 'proposals/tutorial_proposal_update.html'
+
+
+class ProposalCancelView(ProposalUpdateView):
+    http_method_names = ['post', 'options']
+    form_valid_message_level = messages.INFO
+
+
+class TalkProposalCancelView(ProposalCancelView):
+
+    model = TalkProposal
+    form_class = TalkProposalCancelForm
+
+    def get_form_valid_message_level(self):
+        if self.object.cancelled:
+            return messages.INFO
+        return messages.SUCCESS
+
+    def get_form_valid_message(self):
+        if self.object.cancelled:
+            return ugettext('Talk proposal cancelled.')
+        return ugettext('Talk proposal re-activated.')
+
+
+class TutorialProposalCancelView(ProposalCancelView):
+
+    model = TutorialProposal
+    form_class = TutorialProposalCancelForm
+
+    def get_form_valid_message_level(self):
+        if self.object.cancelled:
+            return messages.INFO
+        return messages.SUCCESS
+
+    def get_form_valid_message(self):
+        if self.object.cancelled:
+            return ugettext('Tutorial proposal cancelled.')
+        return ugettext('Tutorial proposal re-activated.')
