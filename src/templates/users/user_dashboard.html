@@ -32,6 +32,21 @@
 		  {% endfor %}
 		</div>
 		{% endif %}
+
+    {% if user.tutorialproposal_set.exists %}
+    <div class="tutorial-proposals">
+      <h3>{% trans 'Tutorial Proposals' %}</h3>
+      {% for proposal in user.tutorialproposal_set.all %}
+      <div class="proposal">
+        <a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}">
+          {% blocktrans with proposal_title=proposal.title %}
+          Edit <strong>{{ proposal_title }}</strong>
+          {% endblocktrans %}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
 	</div>
 </div>
 {% endblock body %}
