@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags static %}
+
 {% load i18n %}
 
 {% block title %}{% trans 'Sign Up' %}{% endblock title %}
 
 {% block body %}
-<form method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">{% trans 'Sign Up' %}</button>
-</form>
+<div class="row">
+    <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    	<h2 class="page-header">Sign Up</h2>
+        <form class="form-horizontal" action="." method="POST" autocomplete="false">
+  			{% csrf_token %}
+  			<div class="nesting-form-group">
+	  			<div class="col-md-offset-1 col-md-10">
+	  				{% crispy form %}
+		  			<button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Sign Up' %}</button>
+		  		</div>
+		  	</div>
+		</form>	
+	</div>
+</div>	    
 {% endblock body %}

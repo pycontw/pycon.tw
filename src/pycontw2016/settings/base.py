@@ -72,6 +72,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'django_extensions',
+    'crispy_forms',
     'compressor',
 )
 
@@ -158,6 +159,7 @@ URL_PREFIX = None
 
 LOGIN_REDIRECT_URL = '/dashboard/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Settings used to control the accoutn activation process.
 

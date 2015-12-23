@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 
-{% load i18n %}
+{% load crispy_forms_tags static %}
 
+{% load i18n %}
 
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
 
 {% block body %}
-<form id="user_profile_update_form" method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">{% trans 'Save' %}</button>
-  <a href="{% url 'user_dashboard' %}">{% trans 'Cancel' %}</a>
-</form>
+
+{% include '_includes/nav.html' %}
+
+<div class="row">
+    <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8">
+    	<h2 class="page-header">Update Profile</h2>
+		<form id="user_profile_update_form" method="post">
+  			{% csrf_token %}
+  			<div class="nesting-form-group">	  			
+		        {% crispy form %}
+		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>	
+		  		<a href="{% url 'user_dashboard' %}" class="btn btn-primary btn-md">{% trans 'Cancel' %}</a>	  	
+			</div>
+		</form>
+	</div>
+</div>
 {% endblock body %}
