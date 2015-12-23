@@ -39,7 +39,10 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': "[%(asctime)s] %(levelname)s [%(pathname)s:%(lineno)s] %(message)s",
+            'format': (
+                '[%(asctime)s] %(levelname)s '
+                '[%(pathname)s:%(lineno)s] %(message)s'
+            ),
             'datefmt': "%d/%b/%Y %H:%M:%S"
         },
         'simple': {
@@ -70,5 +73,11 @@ LOGGING = {
 logging.config.dictConfig(LOGGING)
 
 URL_PREFIX = '2016/'
+
+LOGIN_URL = '/2016/accounts/login/'
+
+LOGOUT_URL = '/2016/accounts/logout/'
+
 LOGIN_REDIRECT_URL = '/2016/dashboard/'
+
 STATIC_URL = '/2016/static/'
