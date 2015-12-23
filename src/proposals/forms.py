@@ -97,3 +97,24 @@ class TutorialProposalUpdateForm(forms.ModelForm):
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),
         }
+
+
+class ProposalCancelForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if not self.instance:
+            raise ValueError(
+                'Proposal cancel form must be initialized with an instance.'
+            )
+
+
+class TalkProposalCancelForm(ProposalCancelForm):
+    class Meta:
+        model = TalkProposal
+        fields = ['cancelled']
+
+
+class TutorialProposalCancelForm(ProposalCancelForm):
+    class Meta:
+        model = TutorialProposal
+        fields = ['cancelled']

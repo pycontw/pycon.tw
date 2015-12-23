@@ -157,6 +157,12 @@ class AbstractProposal(models.Model):
         db_index=True,
     )
 
+    cancelled = models.BooleanField(
+        verbose_name=_('cancelled'),
+        default=False,
+        db_index=True,
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
