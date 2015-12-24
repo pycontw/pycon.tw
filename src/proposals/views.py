@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 from django.utils.translation import ugettext
 from django.views.generic import CreateView, UpdateView, TemplateView
 
@@ -71,7 +71,7 @@ class TalkProposalCreateView(ProposalCreateView):
 
     def get_form_valid_message(self):
         msg = ugettext('Talk proposal <strong>{title}</strong> created.')
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
 
 
 class TutorialProposalCreateView(ProposalCreateView):
@@ -82,7 +82,7 @@ class TutorialProposalCreateView(ProposalCreateView):
 
     def get_form_valid_message(self):
         msg = ugettext('Tutorial proposal <strong>{title}</strong> created.')
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
 
 
 class ProposalUpdateView(
@@ -103,7 +103,7 @@ class TalkProposalUpdateView(ProposalUpdateView):
 
     def get_form_valid_message(self):
         msg = ugettext('Talk proposal <strong>{title}</strong> updated.')
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
 
 
 class TutorialProposalUpdateView(ProposalUpdateView):
@@ -114,7 +114,7 @@ class TutorialProposalUpdateView(ProposalUpdateView):
 
     def get_form_valid_message(self):
         msg = ugettext('Tutorial proposal <strong>{title}</strong> updated.')
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
 
 
 class ProposalCancelView(ProposalUpdateView):
@@ -141,7 +141,7 @@ class TalkProposalCancelView(ProposalCancelView):
             msg = ugettext(
                 'Talk proposal <strong>{title}</strong> reactivated.',
             )
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
 
 
 class TutorialProposalCancelView(ProposalCancelView):
@@ -163,4 +163,4 @@ class TutorialProposalCancelView(ProposalCancelView):
             msg = ugettext(
                 'Tutorial proposal <strong>{title}</strong> reactivated.',
             )
-        return mark_safe(msg.format(title=self.object.title))
+        return format_html(msg, title=self.object.title)
