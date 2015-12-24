@@ -8,6 +8,9 @@
 @import "mixins/static";
 @import "mixins/retina";
 
+// Themes
+@import "themes/proposals";
+
 
 body {
     @include roboto-light;
