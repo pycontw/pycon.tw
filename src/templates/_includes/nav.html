@@ -21,17 +21,15 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          {% if user.is_authenticated %}            
+          {% if user.is_authenticated %}
             <form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
-              <div class="form-group">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
-              </div>
-              <button type="submit" class="btn btn-default">{% trans 'Log Out' %}</button>
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
+              <button type="submit" class="btn btn-link">{% trans 'Log Out' %}</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
               <li>
-                  <a href="{% url 'user_dashboard' %}" style="color: #fff;">{% trans 'Dashboard' %}</a>
+                  <a href="{% url 'user_dashboard' %}">{% trans 'Dashboard' %}</a>
               </li>
             </ul>
           {% else %}
@@ -40,7 +38,7 @@
                   <a href="{% url 'logout' %}">{% trans 'Log In' %}</a>
               </li>
             </ul>
-          {% endif %} 
+          {% endif %}
 
       </div>
       <!-- /.navbar-collapse -->

@@ -177,20 +177,15 @@ class User(AbstractBaseUser, PermissionsMixin):
                 'activation_key': activation_key,
             }),
         )
-
         context = {
             'user': self,
             'activation_key': activation_key,
             'activation_url': activation_url,
         }
-        text_message = render_to_string(
+        message = render_to_string(
             'registration/activation_email.txt', context,
-        )
-        html_message = render_to_string(
-            'registration/activation_email.html', context,
         )
         self.email_user(
             subject=ugettext('Complete your registration on tw.pycon.org'),
-            message=text_message, html_message=html_message,
-            fail_silently=False,
+            message=message, fail_silently=False,
         )

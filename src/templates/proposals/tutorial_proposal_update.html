@@ -5,14 +5,13 @@
 {% load i18n compress %}
 
 
-{% block title %}{% blocktrans with proposal_title=form.instance.title %}Edit Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
+{% block title %}{% blocktrans with proposal_title=object.title %}Edit Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
 
 
 {% block extra_css %}
 {{ block.super }}
 {{ form.media.css }}
 {% endblock extra_css %}
-
 
 {% block body %}
 
@@ -21,15 +20,31 @@
 <div class="row" style="margin-bottom: 50px;">
     <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
     	<h2 class="page-header">{{ form.instance.title }}</h2>
-		<form method="post">
-  			{% csrf_token %}
-  			<div class="nesting-form-group">
-		        {% crispy form %}
-		  		<button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Save' %}</button>
-			</div>
-		</form>
+		  {% if not object.cancelled %}
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans 'Save' %}</button>
+      </form>
+      {% endif %}
+
+      <form method="post" action="{% url 'tutorial_proposal_cancel' pk=object.pk %}">
+        {% csrf_token %}
+        {% if object.cancelled %}
+        <button type="submit" name="cancelled" value=""
+            class="btn btn-success">
+          {% trans 'Reactivate' %}
+        </button>
+        {% else %}
+        <button type="submit" name="cancelled" value="true"
+            class="btn btn-danger">
+          {% trans 'Cancel' %}
+        </button>
+        {% endif %}
+      </form>
 	</div>
 </div>
+
 {% endblock body %}
 
 

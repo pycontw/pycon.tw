@@ -21,7 +21,7 @@ django-environ==0.4.0
 
 # A collection of custom extensions for the Django Framework
 # http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.5.9
+django-extensions==1.6.1
 
 # A django-compressor filter to compile Sass files using libsass.
 # https://github.com/torchbox/django-libsass

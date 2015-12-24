@@ -13,6 +13,10 @@ body {
     @include roboto-light;
 }
 
+.navbar {
+    border: none;
+}
+
 .top-nav {
     background-color: $theme-color;
     padding: 1.8em 2em;
@@ -22,6 +26,16 @@ body {
 
     .social-btn {
         color: #fff;
+    }
+
+    .navbar-right {
+        a, .btn-link {
+            font-weight: 300;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 

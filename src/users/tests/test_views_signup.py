@@ -67,25 +67,7 @@ def test_signup_post(client, parser):
         message_match.group('key'),
         salt='pycontw', max_age=86400,
     )
-
-    assert len(email.alternatives) == 1
-    assert len(email.alternatives[0]) == 2
-    assert email.alternatives[0][-1] == 'text/html'
-
-    body = parser.parse(text=email.alternatives[0][0])
-    link_tag = body.cssselect('#activation-link')[0]
-    assert link_tag.get('target') == '_blank'
-    assert link_tag.get('href') == link_tag.text.strip()
-
-    link_match = re.match(
-        r'^http://testserver/accounts/activate/(?P<key>[-:\w]+)/$',
-        link_tag.get('href'),
-    )
-    assert link_match, link_tag.get('href')
-    assert user.email == signing.loads(
-        link_match.group('key'),
-        salt='pycontw', max_age=86400,
-    )
+    assert not email.alternatives
 
 
 def test_signup_duplicate(bare_user, client, parser):

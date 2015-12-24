@@ -1,6 +1,7 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse_lazy
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import string_concat, ugettext_lazy as _
 
 
 class AbstractProposal(models.Model):
@@ -79,14 +80,15 @@ class AbstractProposal(models.Model):
         verbose_name=_('python level'),
         max_length=12,
         choices=PYTHON_LVL_CHOICES,
-        help_text=_(
-            "The choice of talk level matters during the review process. "
-            "More definition of talk level can be found at the <a "
-            "href=\"/speaking/talk/\" target=\"_blank\">How to Propose a "
-            "talk</a> page. Note that a proposal won't be more likely to be "
-            "accepted because of being \"Novice\" level. We may contact you "
-            "to change the talk level when we find the content is too-hard "
-            "or too-easy for the target audience."
+        help_text=string_concat(
+            _("The choice of talk level matters during the review process. "
+              "More definition of talk level can be found at the <a href=\""),
+            reverse_lazy('page', kwargs={'path': 'speaking/talk'}),
+            _("\" target=\"_blank\">How to Propose a "
+              "talk</a> page. Note that a proposal won't be more likely to be "
+              "accepted because of being \"Novice\" level. We may contact you "
+              "to change the talk level when we find the content is too-hard "
+              "or too-easy for the target audience."),
         ),
     )
 
@@ -154,6 +156,12 @@ class AbstractProposal(models.Model):
     created_at = models.DateTimeField(
         verbose_name=_('created at'),
         auto_now_add=True,
+        db_index=True,
+    )
+
+    cancelled = models.BooleanField(
+        verbose_name=_('cancelled'),
+        default=False,
         db_index=True,
     )
 
