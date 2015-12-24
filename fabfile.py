@@ -90,7 +90,12 @@ def push_transifex():
 
 @task
 def travis_push_transifex():
-    if os.getenv('TRAVIS_BRANCH') != 'transifex':
+    current_branch = os.getenv('TRAVIS_BRANCH')
+    target_branch = 'transifex'
+    if current_branch != target_branch:
+        print('{current} is not {target}. Transifex push skipped.'.format(
+            current=current_branch, target=target_branch,
+        ))
         return
     write_transifex_config()
     push_transifex()
