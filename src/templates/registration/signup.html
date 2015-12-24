@@ -12,13 +12,17 @@
     	<h2 class="page-header">Sign Up</h2>
         <form class="form-horizontal" action="." method="POST" autocomplete="false">
   			{% csrf_token %}
-  			<div class="nesting-form-group">
+  			<div class="nesting-form-group row">
 	  			<div class="col-md-offset-1 col-md-10">
 	  				{% crispy form %}
 		  			<button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Sign Up' %}</button>
 		  		</div>
 		  	</div>
-		</form>	
+		</form>
+        <br>
+        <div class="row text-center">
+            <div>Already have an account? <a href="{% url 'login' %}">Login.</a></div>
+        </div>
 	</div>
-</div>	    
+</div>
 {% endblock body %}
