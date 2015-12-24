@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-24 23:15+0800\n"
-"PO-Revision-Date: 2015-12-24 17:02+0000\n"
+"POT-Creation-Date: 2015-12-24 17:31+0000\n"
+"PO-Revision-Date: 2015-12-24 17:32+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh-hant\n"
+"Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: proposals/models.py:11
@@ -99,11 +99,11 @@ msgstr "網站框架"
 msgid "category"
 msgstr "分類"
 
-#: proposals/models.py:45 pycontw2016/settings/base.py:119
+#: proposals/models.py:45 pycontw2016/settings/base.py:120
 msgid "English"
 msgstr "英文"
 
-#: proposals/models.py:46 pycontw2016/settings/base.py:118
+#: proposals/models.py:46 pycontw2016/settings/base.py:119
 msgid "Chinese"
 msgstr "中文"
 
@@ -145,7 +145,7 @@ msgid "Experienced"
 msgstr ""
 
 #: proposals/models.py:80
-msgid "python level"
+msgid "Python level"
 msgstr ""
 
 #: proposals/models.py:84

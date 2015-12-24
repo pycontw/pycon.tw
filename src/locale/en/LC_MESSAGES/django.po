@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-24 23:15+0800\n"
+"POT-Creation-Date: 2015-12-24 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,11 +97,11 @@ msgstr ""
 msgid "category"
 msgstr ""
 
-#: proposals/models.py:45 pycontw2016/settings/base.py:119
+#: proposals/models.py:45 pycontw2016/settings/base.py:120
 msgid "English"
 msgstr ""
 
-#: proposals/models.py:46 pycontw2016/settings/base.py:118
+#: proposals/models.py:46 pycontw2016/settings/base.py:119
 msgid "Chinese"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgid "Experienced"
 msgstr ""
 
 #: proposals/models.py:80
-msgid "python level"
+msgid "Python level"
 msgstr ""
 
 #: proposals/models.py:84
