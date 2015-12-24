@@ -1,5 +1,5 @@
 [![codecov.io](https://codecov.io/github/pycontw/pycontw2016/coverage.svg?branch=master)](https://codecov.io/github/pycontw/pycontw2016?branch=master)
-![travis-ci status](https://api.travis-ci.org/pycontw/pycontw2016.svg)
+[![travis-ci status](https://api.travis-ci.org/pycontw/pycontw2016.svg)](https://travis-ci.org/pycontw/pycontw2016)
 
 # PyCon TW 2016
 
