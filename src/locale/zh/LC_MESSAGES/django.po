@@ -4,18 +4,19 @@
 # 
 # Translators:
 # Liang Bo Wang <ccwang002@gmail.com>, 2015
+# Tzu-ping Chung <uranusjr@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-24 23:15+0800\n"
-"PO-Revision-Date: 2015-12-24 16:23+0000\n"
+"PO-Revision-Date: 2015-12-24 17:02+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh-Hant\n"
+"Language: zh-hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: proposals/models.py:11
@@ -133,7 +134,7 @@ msgstr ""
 
 #: proposals/models.py:75
 msgid "Novice"
-msgstr ""
+msgstr "入門"
 
 #: proposals/models.py:76
 msgid "Intermediate"
@@ -201,11 +202,11 @@ msgstr ""
 
 #: proposals/models.py:133
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: proposals/models.py:134
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: proposals/models.py:137
 msgid "recording policy"
@@ -219,33 +220,33 @@ msgstr ""
 
 #: proposals/models.py:147
 msgid "slide link"
-msgstr ""
+msgstr "投影片連結"
 
 #: proposals/models.py:151
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
-msgstr ""
+msgstr "你可以在接近或大會之後補上投影片連結，不需要在審查階段時填入。"
 
 #: proposals/models.py:157
 msgid "created at"
-msgstr ""
+msgstr "建立時間"
 
 #: proposals/models.py:163
 msgid "cancelled"
-msgstr ""
+msgstr "撤回"
 
 #: proposals/models.py:179
 msgid "No preference"
-msgstr ""
+msgstr "無偏好"
 
 #: proposals/models.py:180
 msgid "Prefer 25min"
-msgstr ""
+msgstr "偏好 25 分鐘"
 
 #: proposals/models.py:181
 msgid "Prefer 45min"
-msgstr ""
+msgstr "偏好 45 分鐘"
 
 #: proposals/models.py:184 proposals/models.py:212
 msgid "duration"
@@ -265,19 +266,19 @@ msgstr ""
 
 #: proposals/models.py:201
 msgid "talk proposal"
-msgstr ""
+msgstr "演講提案"
 
 #: proposals/models.py:202
 msgid "talk proposals"
-msgstr ""
+msgstr "演講提案"
 
 #: proposals/models.py:208
 msgid "Half day"
-msgstr ""
+msgstr "半天"
 
 #: proposals/models.py:209
 msgid "Full day"
-msgstr ""
+msgstr "全天"
 
 #: proposals/models.py:221
 msgid ""
@@ -287,27 +288,27 @@ msgstr ""
 
 #: proposals/models.py:228
 msgid "tutorial proposal"
-msgstr ""
+msgstr "教學提案"
 
 #: proposals/models.py:229
 msgid "tutorial proposals"
-msgstr ""
+msgstr "教學提案"
 
 #: proposals/views.py:66
 msgid "Talk proposal created."
-msgstr ""
+msgstr "以建立演講提案。"
 
 #: proposals/views.py:73
 msgid "Tutorial proposal created."
-msgstr ""
+msgstr "已建立教學提案。"
 
 #: proposals/views.py:91
 msgid "Talk proposal updated."
-msgstr ""
+msgstr "已更新演講提案。"
 
 #: proposals/views.py:98
 msgid "Tutorial proposal updated."
-msgstr ""
+msgstr "已更新教學提案。"
 
 #: proposals/views.py:119
 msgid "Talk proposal cancelled."
@@ -440,23 +441,23 @@ msgstr ""
 
 #: users/forms.py:19
 msgid "A user with that email already exists."
-msgstr ""
+msgstr "一個有相同電子郵件信箱的使用者已存在。"
 
 #: users/forms.py:20
 msgid "The two password fields didn't match."
-msgstr ""
+msgstr "兩個密碼欄位並不一致。"
 
 #: users/forms.py:23 users/forms.py:100
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 #: users/forms.py:27
 msgid "Password confirmation"
-msgstr ""
+msgstr "密碼確認"
 
 #: users/forms.py:29
 msgid "Enter the same password as above, for verification."
-msgstr ""
+msgstr "請輸入與上方相同的密碼作為認証用。"
 
 #: users/forms.py:101
 msgid ""
@@ -471,7 +472,7 @@ msgstr "電子郵件信箱"
 
 #: users/models.py:94
 msgid "speaker name"
-msgstr ""
+msgstr "講者名稱"
 
 #: users/models.py:98
 msgid "biography"
@@ -479,27 +480,27 @@ msgstr "自我介紹"
 
 #: users/models.py:100
 msgid "About you. There will be no formatting."
-msgstr ""
+msgstr "介紹你自己。本欄位不帶有任何格式。"
 
 #: users/models.py:103
 msgid "photo"
-msgstr ""
+msgstr "個人照"
 
 #: users/models.py:107
 msgid "facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: users/models.py:111
 msgid "twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: users/models.py:115
 msgid "github"
-msgstr ""
+msgstr "GitHub"
 
 #: users/models.py:119
 msgid "staff status"
-msgstr ""
+msgstr "工人身份狀態"
 
 #: users/models.py:122
 msgid "Designates whether the user can log into this admin site."
@@ -521,22 +522,22 @@ msgstr ""
 
 #: users/models.py:144
 msgid "user"
-msgstr ""
+msgstr "使用者"
 
 #: users/models.py:145
 msgid "users"
-msgstr ""
+msgstr "使用者們"
 
 #: users/models.py:189
 msgid "Complete your registration on tw.pycon.org"
-msgstr ""
+msgstr "完成您在 tw.pycon.org 上的註冊"
 
 #: users/views.py:29
 msgid ""
 "An email has been sent to your email. Please follow instructions in the "
 "email to complete your signup."
-msgstr ""
+msgstr "一封電子郵件已經發送至您的信箱。請參照信中的指示完成註冊。"
 
 #: users/views.py:52
 msgid "Signup successful. You can log in now."
-msgstr ""
+msgstr "註冊成功。您現在即可登入。"
