@@ -74,7 +74,7 @@ def write_transifex_config():
         f.write((
             '[https://www.transifex.com]\n'
             'hostname = https://www.transifex.com\n'
-            'password = {password}'
+            'password = {password}\n'
             'token = \n'
             'username = pycontw\n'
         ).format(password=os.environ['TRANSIFEX_PASSWORD']))
