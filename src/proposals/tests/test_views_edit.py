@@ -1,3 +1,5 @@
+import pytest
+
 from django.contrib import messages
 
 
@@ -46,27 +48,31 @@ def test_tutorial_proposal_edit_not_owned(
     assert response.status_code == 404
 
 
-def test_talk_proposal_edit_get(user_client, talk_proposal, parser):
+def test_talk_proposal_edit_get(user_client, talk_proposal):
     response = user_client.get('/proposals/talk/42/edit/')
     assert response.status_code == 200
 
-    body = parser.parse(response)
+
+@pytest.mark.xfail
+def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
+    body = parser.parse(user_client.get('/proposals/talk/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
-    # assert len(submit_buttons) == 2
+    assert len(submit_buttons) == 2
 
-    # form_element = next(submit_buttons[0].iterancestors('form'))
-    # assert not form_element.get('action')   # Posts to the same view.
+    form_element = next(submit_buttons[0].iterancestors('form'))
+    assert not form_element.get('action')   # Posts to the same view.
 
-    # assert submit_buttons[1].get('name') == 'cancelled'
-    # assert submit_buttons[1].get('value')   # Should evaluate to True
+    assert submit_buttons[1].get('name') == 'cancelled'
+    assert submit_buttons[1].get('value')   # Should evaluate to True
 
-    # form_element = next(submit_buttons[1].iterancestors('form'))
-    # assert form_element.get('action') == '/proposals/talk/42/cancel/'
+    form_element = next(submit_buttons[1].iterancestors('form'))
+    assert form_element.get('action') == '/proposals/talk/42/cancel/'
 
 
-def test_talk_proposal_edit_get_cancelled(
+@pytest.mark.xfail
+def test_talk_proposal_edit_get_cancelled_ui(
         user_client, cancelled_talk_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
     re-activate it.
@@ -75,35 +81,39 @@ def test_talk_proposal_edit_get_cancelled(
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
-    # assert len(submit_buttons) == 1
+    assert len(submit_buttons) == 1
 
-    # assert submit_buttons[0].get('name') == 'cancelled'
-    # assert not submit_buttons[0].get('value')
+    assert submit_buttons[0].get('name') == 'cancelled'
+    assert not submit_buttons[0].get('value')
 
-    # form_element = next(submit_buttons[0].iterancestors('form'))
-    # assert form_element.get('action') == '/proposals/talk/42/cancel/'
+    form_element = next(submit_buttons[0].iterancestors('form'))
+    assert form_element.get('action') == '/proposals/talk/42/cancel/'
 
 
-def test_tutorial_proposal_edit_get(user_client, tutorial_proposal, parser):
+def test_tutorial_proposal_edit_get(user_client, tutorial_proposal):
     response = user_client.get('/proposals/tutorial/42/edit/')
     assert response.status_code == 200
 
-    body = parser.parse(response)
+
+@pytest.mark.xfail
+def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
+    body = parser.parse(user_client.get('/proposals/tutorial/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
-    # assert len(submit_buttons) == 2
+    assert len(submit_buttons) == 2
 
-    # form_element = next(submit_buttons[0].iterancestors('form'))
-    # assert not form_element.get('action')   # Posts to the same view.
+    form_element = next(submit_buttons[0].iterancestors('form'))
+    assert not form_element.get('action')   # Posts to the same view.
 
-    # assert submit_buttons[1].get('name') == 'cancelled'
-    # assert submit_buttons[1].get('value')   # Should evaluate to True
+    assert submit_buttons[1].get('name') == 'cancelled'
+    assert submit_buttons[1].get('value')   # Should evaluate to True
 
-    # form_element = next(submit_buttons[1].iterancestors('form'))
-    # assert form_element.get('action') == '/proposals/tutorial/42/cancel/'
+    form_element = next(submit_buttons[1].iterancestors('form'))
+    assert form_element.get('action') == '/proposals/tutorial/42/cancel/'
 
 
+@pytest.mark.xfail
 def test_tutorial_proposal_edit_get_cancelled(
         user_client, cancelled_tutorial_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
@@ -113,13 +123,13 @@ def test_tutorial_proposal_edit_get_cancelled(
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
-    # assert len(submit_buttons) == 1
+    assert len(submit_buttons) == 1
 
-    # assert submit_buttons[0].get('name') == 'cancelled'
-    # assert not submit_buttons[0].get('value')
+    assert submit_buttons[0].get('name') == 'cancelled'
+    assert not submit_buttons[0].get('value')
 
-    # form_element = next(submit_buttons[0].iterancestors('form'))
-    # assert form_element.get('action') == '/proposals/tutorial/42/cancel/'
+    form_element = next(submit_buttons[0].iterancestors('form'))
+    assert form_element.get('action') == '/proposals/tutorial/42/cancel/'
 
 
 def test_talk_proposal_edit_post(user_client, talk_proposal):
