@@ -92,3 +92,11 @@ LOGOUT_URL = '/2016/accounts/logout/'
 LOGIN_REDIRECT_URL = '/2016/dashboard/'
 
 STATIC_URL = '/2016/static/'
+
+EMAIL_BACKEND = env.email_url()['EMAIL_BACKEND']
+EMAIL_HOST = env.email_url()['EMAIL_HOST']
+EMAIL_HOST_PASSWORD = env.email_url()['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_USER = env.email_url()['EMAIL_HOST_USER']
+EMAIL_PORT = env.email_url()['EMAIL_PORT']
+EMAIL_USE_TLS = env.email_url()['EMAIL_USE_TLS']
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER
