@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 
 from fabric.api import cd, run, sudo, lcd, local
 from fabric.api import task
@@ -93,9 +94,12 @@ def travis_push_transifex():
     current_branch = os.getenv('TRAVIS_BRANCH')
     target_branch = 'master'
     if current_branch != target_branch:
-        print('{current} is not {target}. Transifex push skipped.'.format(
-            current=current_branch, target=target_branch,
-        ))
+        print(
+            'Branch {current} is not {target}. Transifex push skipped.'.format(
+                current=current_branch, target=target_branch,
+            ),
+            file=sys.stderr,
+        )
         return
     write_transifex_config()
     push_transifex()
