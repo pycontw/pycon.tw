@@ -97,6 +97,10 @@ def push_transifex():
 
 @task
 def travis_push_transifex():
+    if os.getenv('TRAVIS_PULL_REQUEST') != 'false':
+        print('Build triggered by a pull request. Transifex push skipped.',
+              file=sys.stderr)
+        return
     current_branch = os.getenv('TRAVIS_BRANCH')
     target_branch = 'master'
     if current_branch != target_branch:
