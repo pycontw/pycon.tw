@@ -100,3 +100,15 @@ EMAIL_HOST_USER = env.email_url()['EMAIL_HOST_USER']
 EMAIL_PORT = env.email_url()['EMAIL_PORT']
 EMAIL_USE_TLS = env.email_url()['EMAIL_USE_TLS']
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER
+
+# Setting for sentry
+
+INSTALLED_APPS += (
+    'raven.contrib.django.raven_compat',
+)
+
+import raven
+
+RAVEN_CONFIG = {
+    'dsn': env('DSN_URL'),
+}
