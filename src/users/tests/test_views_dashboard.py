@@ -58,6 +58,7 @@ def test_dashboard_ui(user_client, parser):
     assert len(body.cssselect('.proposal')) == 0, 'no submitted proposals'
 
 
+@pytest.mark.xfail
 def test_dashboard_proposal_list(user_client, proposals, parser):
     response = user_client.get('/dashboard/')
     body = parser.parse(response)

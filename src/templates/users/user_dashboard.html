@@ -21,30 +21,56 @@
 		{% if user.talkproposal_set.exists %}
 		<div class="talk-proposals">
 		  <h3>{% trans 'Talk Proposals' %}</h3>
-		  {% for proposal in user.talkproposal_set.all %}
-		  <div class="proposal">
-		    <a href="{% url 'talk_proposal_update' pk=proposal.pk %}">
-		      {% blocktrans with proposal_title=proposal.title %}
-		      Edit <strong>{{ proposal_title }}</strong>
-		      {% endblocktrans %}
-		    </a>
-		  </div>
-		  {% endfor %}
+        <table class="proposals-table table table-striped table-hover proposal">
+            <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Abstract</th>
+                  <th>Python level</th>
+                  <th>language</th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for proposal in user.talkproposal_set.all %}
+            <tr>
+              <td>{{ proposal.title }}</td>
+              <td>{{ proposal.abstract|truncatechars:30 }}</td>
+              <td>{{ proposal.python_level }}</td>
+              <td>{{ proposal.get_language_display }}</td>
+              <td><a href="{% url 'talk_proposal_update' pk=proposal.pk %}"><button type="button" class="btn btn-default btn-primary">Edit</button></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 		</div>
 		{% endif %}
 
     {% if user.tutorialproposal_set.exists %}
     <div class="tutorial-proposals">
       <h3>{% trans 'Tutorial Proposals' %}</h3>
-      {% for proposal in user.tutorialproposal_set.all %}
-      <div class="proposal">
-        <a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}">
-          {% blocktrans with proposal_title=proposal.title %}
-          Edit <strong>{{ proposal_title }}</strong>
-          {% endblocktrans %}
-        </a>
-      </div>
-      {% endfor %}
+      <table class="proposals-table table table-striped table-hover proposal">
+            <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Abstract</th>
+                  <th>Python level</th>
+                  <th>language</th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for proposal in user.tutorialproposal_set.all %}
+            <tr>
+              <td>{{ proposal.title }}</td>
+              <td>{{ proposal.abstract|truncatechars:30 }}</td>
+              <td>{{ proposal.python_level }}</td>
+              <td>{{ proposal.get_language_display }}</td>
+              <td><a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}"><button type="button" class="btn btn-default btn-primary">Edit</button></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
     {% endif %}
 	</div>

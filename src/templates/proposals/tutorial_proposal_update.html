@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags static %}
+
 {% load i18n compress %}
 
 
@@ -11,31 +13,40 @@
 {{ form.media.css }}
 {% endblock extra_css %}
 
-
 {% block body %}
 
-{% if not object.cancelled %}
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">{% trans 'Save' %}</button>
-</form>
-{% endif %}
+{% include '_includes/nav.html' %}
 
-<form method="post" action="{% url 'tutorial_proposal_cancel' pk=object.pk %}">
-  {% csrf_token %}
-  {% if object.cancelled %}
-  <button type="submit" name="cancelled" value=""
-      class="btn btn-success">
-    {% trans 'Reactivate' %}
-  </button>
-  {% else %}
-  <button type="submit" name="cancelled" value="true"
-      class="btn btn-danger">
-    {% trans 'Cancel' %}
-  </button>
-  {% endif %}
-</form>
+<div class="row" style="margin-bottom: 50px;">
+    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    	<h2 class="page-header">{{ form.instance.title }}</h2>
+		{% if not object.cancelled %}
+	    <form method="post">
+	     {% csrf_token %}
+        <div class="nesting-form-group">
+          {% crispy form %}
+          <button type="submit" class="btn btn-primary pull-right col-md-3 btn-lg">{% trans 'Save' %}</button>
+        </div>
+	    </form>
+	    {% endif %}
+      {% comment %}
+	    <form method="post" action="{% url 'tutorial_proposal_cancel' pk=object.pk %}">
+	        {% csrf_token %}
+	        {% if object.cancelled %}
+	        <button type="submit" name="cancelled" value=""
+	            class="btn btn-success">
+	          {% trans 'Reactivate' %}
+	        </button>
+	        {% else %}
+	        <button type="submit" name="cancelled" value="true"
+	            class="btn btn-danger btn-lg">
+	          {% trans 'Cancel' %}
+	        </button>
+	        {% endif %}
+	    </form>
+      {% endcomment %}
+	</div>
+</div>
 
 {% endblock body %}
 
