@@ -87,7 +87,10 @@ def test_talk_proposal_create_post(user, user_client):
     ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Talk proposal created.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Talk proposal <strong>Beyond the Style Guides</strong> created.'),
+    ]
 
 
 def test_tutorial_proposal_create_post(user, user_client):
@@ -109,4 +112,8 @@ def test_tutorial_proposal_create_post(user, user_client):
     ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Tutorial proposal created.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
+         'created.'),
+    ]

@@ -169,7 +169,10 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
     )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Talk proposal updated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Talk proposal <strong>Beyond the Style Guides</strong> updated.'),
+    ]
 
 
 def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
@@ -209,4 +212,8 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
     )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Tutorial proposal updated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
+         'updated.'),
+    ]

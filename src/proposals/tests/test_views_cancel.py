@@ -71,7 +71,10 @@ def test_talk_proposal_cancel(user_client, talk_proposal):
     assert TalkProposal.objects.get(pk=42).cancelled
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.INFO, 'Talk proposal cancelled.')]
+    assert msgs == [
+        (messages.INFO,
+         'Talk proposal <strong>Beyond the Style Guides</strong> withdrawn.'),
+    ]
 
 
 def test_talk_proposal_reactivate(user_client, cancelled_talk_proposal):
@@ -87,7 +90,11 @@ def test_talk_proposal_reactivate(user_client, cancelled_talk_proposal):
     assert not TalkProposal.objects.get(pk=42).cancelled
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Talk proposal re-activated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Talk proposal <strong>Beyond the Style Guides</strong> '
+         'reactivated.'),
+    ]
 
 
 def test_tutorial_proposal_cancel(user_client, tutorial_proposal):
@@ -103,7 +110,11 @@ def test_tutorial_proposal_cancel(user_client, tutorial_proposal):
     assert TutorialProposal.objects.get(pk=42).cancelled
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.INFO, 'Tutorial proposal cancelled.')]
+    assert msgs == [
+        (messages.INFO,
+         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
+         'withdrawn.'),
+    ]
 
 
 def test_tutorial_proposal_reactivate(
@@ -120,4 +131,8 @@ def test_tutorial_proposal_reactivate(
     assert not TutorialProposal.objects.get(pk=42).cancelled
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Tutorial proposal re-activated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
+         'reactivated.'),
+    ]
