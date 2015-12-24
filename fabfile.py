@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import os
+import pathlib
 
-from fabric.api import cd, run, sudo
+from fabric.api import cd, run, sudo, lcd, local
 from fabric.api import task
 from fabric.api import env
 
@@ -46,10 +47,51 @@ def collectstatic():
         run('source {0}/env.sh && ~/.virtualenvs/{1}/bin/python manage.py collectstatic --noinput -c'.format(PROJECT_DIR, VIRTUALENV_NAME))
 
 
+def compile_translations():
+    with cd(DJANGO_DIR):
+        run('~/.virtualenvs/{0}/bin/tx pull'.format(VIRTUALENV_NAME))
+        run('~/.virtualenvs/{0}/bin/python manage.py compilemessages'.format(
+            VIRTUALENV_NAME,
+        ))
+
+
 @task
 def deploy():
     pull_repo()
     install_requirements()
     collectstatic()
     migrate_db()
+    compile_translations()
     restart_services()
+
+
+def write_transifex_config():
+    """Used to setup Travis for Transifex push.
+    """
+    transifexrc_path = pathlib.Path.home().joinpath('.transifexrc')
+    if transifexrc_path.exists():
+        return
+    with transifexrc_path.open('w') as f:
+        f.write((
+            '[https://www.transifex.com]\n'
+            'hostname = https://www.transifex.com\n'
+            'password = {password}'
+            'token = \n'
+            'username = pycontw\n'
+        ).format(password=os.environ['TRANSIFEX_PASSWORD']))
+
+
+def push_transifex():
+    """Used on Travis to push translation on commit.
+    """
+    with lcd('src'):
+        local('python manage.py makemessages -a')
+        local('tx push -s -t')
+
+
+@task
+def travis_push_transifex():
+    if os.getenv('TRAVIS_BRANCH') != 'transifex':
+        return
+    write_transifex_config()
+    push_transifex()
