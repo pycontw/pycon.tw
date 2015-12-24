@@ -92,11 +92,12 @@ def push_transifex():
 @task
 def travis_push_transifex():
     current_branch = os.getenv('TRAVIS_BRANCH')
-    target_branch = 'master'
-    if current_branch != target_branch:
+    target_branches = ['master', 'transifex']
+    if current_branch not in target_branches:
         print(
-            'Branch {current} is not {target}. Transifex push skipped.'.format(
-                current=current_branch, target=target_branch,
+            'Branch {current} is not one of {targets}. '
+            'Transifex push skipped.'.format(
+                current=current_branch, targets=','.join(target_branches),
             ),
             file=sys.stderr,
         )
