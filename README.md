@@ -67,4 +67,8 @@ To run tests with coverage report:
 
 ## How to contribute
 
-Follow the [Github Flow](https://guides.github.com/introduction/flow/), please **DON'T push the commits into master directly**, always create branch by the feature you want to update.
+Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please **DO NOT push the commits into master directly**. Always create branch by the feature you want to update. You are encouraged to submit a pull request for reviewing before merging things into master.
+
+### Internationalisation
+
+Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw-2016/).
