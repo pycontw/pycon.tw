@@ -77,7 +77,7 @@ class AbstractProposal(models.Model):
         ('EXPERIENCED', _('Experienced')),
     )
     python_level = models.CharField(
-        verbose_name=_('python level'),
+        verbose_name=_('Python level'),
         max_length=12,
         choices=PYTHON_LVL_CHOICES,
         help_text=string_concat(
