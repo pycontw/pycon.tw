@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load i18n compress %}
+{% load i18n static compress crispy_forms_tags %}
 
 
 {% block title %}{% blocktrans with proposal_title=object.title %}Edit Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
@@ -8,34 +8,31 @@
 
 {% block extra_css %}
 {{ block.super }}
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'css/proposals/form.scss' %}">
 {{ form.media.css }}
+{% endcompress %}
 {% endblock extra_css %}
 
 
 {% block body %}
 
-{% if not object.cancelled %}
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">{% trans 'Save' %}</button>
-</form>
-{% endif %}
+{% include '_includes/nav.html' %}
 
-<form method="post" action="{% url 'tutorial_proposal_cancel' pk=object.pk %}">
-  {% csrf_token %}
-  {% if object.cancelled %}
-  <button type="submit" name="cancelled" value=""
-      class="btn btn-success">
-    {% trans 'Reactivate' %}
-  </button>
-  {% else %}
-  <button type="submit" name="cancelled" value="true"
-      class="btn btn-danger">
-    {% trans 'Cancel' %}
-  </button>
-  {% endif %}
-</form>
+<div class="row" style="margin-bottom: 50px;">
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8">
+    <h2 class="page-header">{{ form.instance.title }}</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="nesting-form-group">
+        {% crispy form %}
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          {% trans 'Save' %}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
 {% endblock body %}
 

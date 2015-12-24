@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags static %}
-
-{% load i18n compress %}
+{% load i18n static compress crispy_forms_tags %}
 
 
 {% block title %}{% blocktrans with proposal_title=form.instance.title %}Edit Talk Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
@@ -23,33 +21,15 @@
 
 <div class="row" style="margin-bottom: 50px;">
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8">
-    {% if not object.cancelled %}
     <h2 class="page-header">{{ form.instance.title }}</h2>
     <form method="post">
       {% csrf_token %}
       <div class="nesting-form-group">
         {% crispy form %}
-        <button type="submit" class="btn btn-primary pull-right col-md-3 btn-lg">
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
           {% trans 'Save' %}
         </button>
       </div>
-    </form>
-    {% endif %}
-
-    <form method="post" action="{% url 'talk_proposal_cancel' pk=object.pk %}"
-        class="cancel-form">
-      {% csrf_token %}
-      {% if object.cancelled %}
-      <button type="submit" name="cancelled" value=""
-          class="btn btn-success btn-lg">
-        {% trans 'Reactivate' %}
-      </button>
-      {% else %}
-      <button type="submit" name="cancelled" value="true"
-          class="btn btn-danger btn-lg">
-        {% trans 'Cancel' %}
-      </button>
-      {% endif %}
     </form>
   </div>
 </div>
