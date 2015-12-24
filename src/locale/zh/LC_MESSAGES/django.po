@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Liang Bo Wang <ccwang002@gmail.com>, 2015
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015
@@ -9,14 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-24 17:31+0000\n"
+"POT-Creation-Date: 2015-12-24 19:00+0000\n"
 "PO-Revision-Date: 2015-12-24 17:32+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
-"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
+"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
+"pycon-tw-2016/language/zh-Hant/)\n"
+"Language: zh-Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: proposals/models.py:11
@@ -168,8 +169,8 @@ msgstr ""
 
 #: proposals/models.py:99
 msgid ""
-"What will the attendees get out of your talk? When they leave the room, what"
-" will they learn that they didn't know before?"
+"What will the attendees get out of your talk? When they leave the room, what "
+"will they learn that they didn't know before?"
 msgstr ""
 
 #: proposals/models.py:105
@@ -182,9 +183,8 @@ msgid ""
 "comfortable length is less than 1000 characters (or about 600 Chinese "
 "characters). Since most reviewers may not understand the topic as deep as "
 "you do, including related links to the talk topic will help reviewers "
-"understand the proposal. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
+"understand the proposal. Edit using <a href='http://daringfireball.net/"
+"projects/markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
 
 #: proposals/models.py:120
@@ -194,10 +194,9 @@ msgstr ""
 #: proposals/models.py:124
 msgid ""
 "Anything else you'd like the program committee to know when making their "
-"selection: your past speaking experience, community experience, etc. This is"
-" not made public. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
+"selection: your past speaking experience, community experience, etc. This is "
+"not made public. Edit using <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
 
 #: proposals/models.py:133
@@ -259,9 +258,8 @@ msgstr ""
 #: proposals/models.py:193
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
-"estimated time length for each sections in the talk. Talks in favor of 45min"
-" should have a fallback plan about how to shrink the content into a 25min "
-"one."
+"estimated time length for each sections in the talk. Talks in favor of 45min "
+"should have a fallback plan about how to shrink the content into a 25min one."
 msgstr ""
 
 #: proposals/models.py:201
@@ -282,8 +280,8 @@ msgstr "全天"
 
 #: proposals/models.py:221
 msgid ""
-"How the tutorial will be arranged. You should enumerate over each section in"
-" your talk and attach each section with the estimated time length."
+"How the tutorial will be arranged. You should enumerate over each section in "
+"your talk and attach each section with the estimated time length."
 msgstr ""
 
 #: proposals/models.py:228

@@ -69,7 +69,6 @@ def write_transifex_config():
     """Used to setup Travis for Transifex push.
     """
     transifexrc_path = os.path.expanduser('~/.transifexrc')
-    print(transifexrc_path)
     if os.path.exists(transifexrc_path):
         return
     with open(transifexrc_path, 'w') as f:
