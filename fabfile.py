@@ -69,6 +69,7 @@ def write_transifex_config():
     """Used to setup Travis for Transifex push.
     """
     transifexrc_path = os.path.expanduser('~/.transifexrc')
+    print(transifexrc_path)
     if os.path.exists(transifexrc_path):
         return
     with open(transifexrc_path, 'w') as f:
@@ -92,15 +93,11 @@ def push_transifex():
 @task
 def travis_push_transifex():
     current_branch = os.getenv('TRAVIS_BRANCH')
-    target_branches = ['master', 'transifex']
-    if current_branch not in target_branches:
-        print(
-            'Branch {current} is not one of {targets}. '
-            'Transifex push skipped.'.format(
-                current=current_branch, targets=','.join(target_branches),
-            ),
-            file=sys.stderr,
-        )
+    target_branch = 'master'
+    if current_branch != target_branch:
+        print('Branch {cur} is not {target}. Transifex push skipped.'.format(
+            cur=current_branch, target=target_branch,
+        ), file=sys.stderr)
         return
     write_transifex_config()
     push_transifex()
