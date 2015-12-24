@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import pathlib
 
 from fabric.api import cd, run, sudo, lcd, local
 from fabric.api import task
@@ -68,10 +67,10 @@ def deploy():
 def write_transifex_config():
     """Used to setup Travis for Transifex push.
     """
-    transifexrc_path = pathlib.Path.home().joinpath('.transifexrc')
-    if transifexrc_path.exists():
+    transifexrc_path = os.path.expanduser('~/.transifexrc')
+    if os.path.exists(transifexrc_path):
         return
-    with transifexrc_path.open('w') as f:
+    with open(transifexrc_path, 'w') as f:
         f.write((
             '[https://www.transifex.com]\n'
             'hostname = https://www.transifex.com\n'
