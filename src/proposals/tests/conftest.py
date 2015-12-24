@@ -8,7 +8,7 @@ def talk_proposal(user):
     proposal = TalkProposal.objects.create(
         id=42,
         submitter=user,
-        title='Beyond the Style Guides',
+        title='Beyond the Style Guides<br>',
     )
     return proposal
 
@@ -25,7 +25,7 @@ def tutorial_proposal(user):
     proposal = TutorialProposal.objects.create(
         id=42,
         submitter=user,
-        title='Beyond the Style Guides',
+        title='Beyond the Style Guides<br>',
     )
     return proposal
 

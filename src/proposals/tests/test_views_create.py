@@ -70,7 +70,7 @@ def test_tutorial_proposal_create_get(user_client):
 
 def test_talk_proposal_create_post(user, user_client):
     response = user_client.post('/proposals/talk/submit/', {
-        'title': 'Beyond the Style Guides',
+        'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF45',
         'language': 'CHI',
@@ -80,7 +80,7 @@ def test_talk_proposal_create_post(user, user_client):
 
     proposal = TalkProposal.objects.get(
         submitter=user,
-        title='Beyond the Style Guides',
+        title='Beyond the Style Guides<br>',
     )
     assert response.redirect_chain == [
         ('/proposals/talk/{pk}/edit/'.format(pk=proposal.pk), 302),
@@ -89,13 +89,14 @@ def test_talk_proposal_create_post(user, user_client):
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.SUCCESS,
-         'Talk proposal <strong>Beyond the Style Guides</strong> created.'),
+         'Talk proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> created.'),
     ]
 
 
 def test_tutorial_proposal_create_post(user, user_client):
     response = user_client.post('/proposals/tutorial/submit/', {
-        'title': 'Beyond the Style Guides',
+        'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
         'language': 'CHI',
@@ -105,7 +106,7 @@ def test_tutorial_proposal_create_post(user, user_client):
 
     proposal = TutorialProposal.objects.get(
         submitter=user,
-        title='Beyond the Style Guides',
+        title='Beyond the Style Guides<br>',
     )
     assert response.redirect_chain == [
         ('/proposals/tutorial/{pk}/edit/'.format(pk=proposal.pk), 302),
@@ -114,6 +115,6 @@ def test_tutorial_proposal_create_post(user, user_client):
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.SUCCESS,
-         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
-         'created.'),
+         'Tutorial proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> created.'),
     ]

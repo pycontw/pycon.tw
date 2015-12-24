@@ -73,7 +73,8 @@ def test_talk_proposal_cancel(user_client, talk_proposal):
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.INFO,
-         'Talk proposal <strong>Beyond the Style Guides</strong> withdrawn.'),
+         'Talk proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> withdrawn.'),
     ]
 
 
@@ -92,8 +93,8 @@ def test_talk_proposal_reactivate(user_client, cancelled_talk_proposal):
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.SUCCESS,
-         'Talk proposal <strong>Beyond the Style Guides</strong> '
-         'reactivated.'),
+         'Talk proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> reactivated.'),
     ]
 
 
@@ -112,8 +113,8 @@ def test_tutorial_proposal_cancel(user_client, tutorial_proposal):
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.INFO,
-         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
-         'withdrawn.'),
+         'Tutorial proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> withdrawn.'),
     ]
 
 
@@ -133,6 +134,6 @@ def test_tutorial_proposal_reactivate(
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
         (messages.SUCCESS,
-         'Tutorial proposal <strong>Beyond the Style Guides</strong> '
-         'reactivated.'),
+         'Tutorial proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> reactivated.'),
     ]
