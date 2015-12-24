@@ -81,9 +81,15 @@ def write_transifex_config():
         ).format(password=os.environ['TRANSIFEX_PASSWORD']))
 
 
+@task
+def pull_transifex():
+    with lcd('src'):
+        local('tx pull')
+        local('python manage.py compilemessages')
+
+
+@task
 def push_transifex():
-    """Used on Travis to push translation on commit.
-    """
     with lcd('src'):
         local('python manage.py makemessages -a')
         local('tx push -s -t')
