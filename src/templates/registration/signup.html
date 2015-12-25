@@ -9,7 +9,7 @@
 {% block body %}
 <div class="row">
     <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
-    	<h2 class="page-header">Sign Up</h2>
+    	<h2 class="page-header">{% trans 'Sign Up' %}</h2>
         <form class="form-horizontal" action="." method="POST" autocomplete="false">
   			{% csrf_token %}
   			<div class="nesting-form-group row">
@@ -20,8 +20,11 @@
 		  	</div>
 		</form>
         <br>
-        <div class="row text-center">
-            <div>Already have an account? <a href="{% url 'login' %}">Login.</a></div>
+        <div class="text-center">
+            {% url 'login' as login_url %}
+            {% blocktrans %}
+            Already have an account? <a href="{{ login_url }}">Login.</a>
+            {% endblocktrans %}
         </div>
 	</div>
 </div>
