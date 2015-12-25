@@ -40,7 +40,7 @@ def test_signup_post(client, parser):
         'password1': '7K50M',
         'password2': '7K50M',
     }, follow=True)
-    assert response.redirect_chain == [('/', 302)]
+    assert response.redirect_chain == [('/accounts/login/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [(messages.SUCCESS, (
