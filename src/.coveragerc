@@ -3,6 +3,7 @@ omit =
     conftest.py
     manage.py
     pycontw2016/settings/*
+    pycontw2016/wsgi.py
     */tests.py
     */tests/*
     */migrations/*
