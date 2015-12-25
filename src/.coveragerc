@@ -4,6 +4,7 @@ omit =
     manage.py
     pycontw2016/settings/*
     pycontw2016/wsgi.py
+    pycontw2016/logger.py
     */tests.py
     */tests/*
     */migrations/*
