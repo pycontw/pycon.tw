@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-25 07:13+0000\n"
-"PO-Revision-Date: 2015-12-25 07:13+0000\n"
+"POT-Creation-Date: 2015-12-25 17:30+0800\n"
+"PO-Revision-Date: 2015-12-25 09:27+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
 "pycon-tw-2016/language/zh-Hant/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: proposals/models.py:13
 msgid "submitter"
-msgstr "提交者"
+msgstr "提交人"
 
 #: proposals/models.py:17
 msgid "title"
@@ -30,7 +30,7 @@ msgstr "題目"
 
 #: proposals/models.py:22
 msgid "Best Practices & Patterns"
-msgstr "最佳實踐和實務慣例"
+msgstr "最佳實踐與慣例"
 
 #: proposals/models.py:23
 msgid "Community"
@@ -273,9 +273,9 @@ msgid ""
 "estimated time length for each sections in the talk. Talks in favor of 45min "
 "should have a fallback plan about how to shrink the content into a 25min one."
 msgstr ""
-"本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。如"
-"果是偏好 45 min 應該要有 25min 講題安排備案，告訴我們將如何刪減講題以符合較短"
-"的時間限制。"
+"本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏"
+"好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合"
+"較短的時間限制。"
 
 #: proposals/models.py:205
 msgid "talk proposal"
@@ -368,7 +368,7 @@ msgstr "提交一個提案"
 
 #: templates/proposals/create_proposal_choice.html:12
 msgid "Choice a Proposal Type to Create"
-msgstr "選擇提案的類型："
+msgstr "選擇提案類型："
 
 #: templates/proposals/create_proposal_choice.html:14
 msgid "Talk"
@@ -379,6 +379,7 @@ msgid "Tutorial"
 msgstr "教學"
 
 #: templates/proposals/talk_proposal_create.html:7
+#: templates/proposals/talk_proposal_create.html:15
 msgid "Submit a New Talk Proposal"
 msgstr "提交一個新的演講提案"
 
@@ -398,6 +399,7 @@ msgid "Save"
 msgstr "儲存"
 
 #: templates/proposals/tutorial_proposal_create.html:7
+#: templates/proposals/tutorial_proposal_create.html:15
 msgid "Submit a New Tutorial Proposal"
 msgstr "提交一個新的教學提案"
 
@@ -427,11 +429,22 @@ msgid ""
 "      "
 msgstr ""
 "\n"
-"沒有帳號？<a href=\"%(signup_url)s\">立即註冊一個！</a>"
+"沒有帳號？<a href=\"%(signup_url)s\">馬上註冊一個！</a>"
 
-#: templates/registration/signup.html:7 templates/registration/signup.html:18
+#: templates/registration/signup.html:7 templates/registration/signup.html:12
+#: templates/registration/signup.html:18
 msgid "Sign Up"
 msgstr "註冊"
+
+#: templates/registration/signup.html:25
+#, python-format
+msgid ""
+"\n"
+"            Already have an account? <a href=\"%(login_url)s\">Login.</a>\n"
+"            "
+msgstr ""
+"\n"
+"已經有帳號了？直接<a href=\"%(login_url)s\">登入</a>。"
 
 #: templates/users/user_dashboard.html:15
 msgid "Edit speaker profile"
@@ -439,13 +452,39 @@ msgstr "修改講者資訊"
 
 #: templates/users/user_dashboard.html:23
 msgid "Talk Proposals"
-msgstr "演講提案們"
+msgstr "演講提案"
+
+#: templates/users/user_dashboard.html:27
+#: templates/users/user_dashboard.html:55
+msgid "Title"
+msgstr "題目"
+
+#: templates/users/user_dashboard.html:28
+#: templates/users/user_dashboard.html:56
+msgid "Abstract"
+msgstr "摘要"
+
+#: templates/users/user_dashboard.html:29
+#: templates/users/user_dashboard.html:57
+msgid "Python Level"
+msgstr "Python 難易度"
+
+#: templates/users/user_dashboard.html:30
+#: templates/users/user_dashboard.html:58
+msgid "Language"
+msgstr "語言"
+
+#: templates/users/user_dashboard.html:41
+#: templates/users/user_dashboard.html:70
+msgid "Edit"
+msgstr "編輯"
 
 #: templates/users/user_dashboard.html:51
 msgid "Tutorial Proposals"
-msgstr "教學提案們"
+msgstr "教學提案"
 
 #: templates/users/user_profile_update.html:7
+#: templates/users/user_profile_update.html:16
 msgid "Update Speaker Profile"
 msgstr "更新講者資訊"
 
@@ -463,15 +502,15 @@ msgstr "權限"
 
 #: users/admin.py:36
 msgid "Important dates"
-msgstr "重要期限"
+msgstr "重要日期"
 
 #: users/forms.py:19
 msgid "A user with that email already exists."
-msgstr "一個有相同電子郵件信箱的使用者已存在。"
+msgstr "此電子郵件信箱已被使用。"
 
 #: users/forms.py:20
 msgid "The two password fields didn't match."
-msgstr "兩個密碼欄位並不一致。"
+msgstr "密碼欄位內容不一致。"
 
 #: users/forms.py:23 users/forms.py:100
 msgid "Password"
@@ -483,7 +522,7 @@ msgstr "密碼確認"
 
 #: users/forms.py:29
 msgid "Enter the same password as above, for verification."
-msgstr "請輸入與上方相同的密碼作為認証用。"
+msgstr "請輸入與上方相同的密碼作為認證用。"
 
 #: users/forms.py:101
 msgid ""
@@ -491,7 +530,7 @@ msgid ""
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr ""
-"原始的密碼並沒有儲存在資料庫中，因為沒有任何方法能看到本使用者的密碼，但你可"
+"原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可"
 "以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/models.py:90
@@ -500,7 +539,7 @@ msgstr "電子郵件信箱"
 
 #: users/models.py:94
 msgid "speaker name"
-msgstr "講者名稱"
+msgstr "講者名"
 
 #: users/models.py:98
 msgid "biography"
@@ -515,15 +554,15 @@ msgid "photo"
 msgstr "個人照"
 
 #: users/models.py:107
-msgid "facebook"
+msgid "Facebook"
 msgstr "Facebook"
 
 #: users/models.py:111
-msgid "twitter"
+msgid "Twitter"
 msgstr "Twitter"
 
 #: users/models.py:115
-msgid "github"
+msgid "GitHub"
 msgstr "GitHub"
 
 #: users/models.py:119
@@ -554,7 +593,7 @@ msgstr "使用者"
 
 #: users/models.py:145
 msgid "users"
-msgstr "使用者們"
+msgstr "使用者"
 
 #: users/models.py:189
 msgid "Complete your registration on tw.pycon.org"

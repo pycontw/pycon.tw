@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-25 07:13+0000\n"
+"POT-Creation-Date: 2015-12-25 17:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -357,6 +357,7 @@ msgid "Tutorial"
 msgstr ""
 
 #: templates/proposals/talk_proposal_create.html:7
+#: templates/proposals/talk_proposal_create.html:15
 msgid "Submit a New Talk Proposal"
 msgstr ""
 
@@ -376,6 +377,7 @@ msgid "Save"
 msgstr ""
 
 #: templates/proposals/tutorial_proposal_create.html:7
+#: templates/proposals/tutorial_proposal_create.html:15
 msgid "Submit a New Tutorial Proposal"
 msgstr ""
 
@@ -403,8 +405,17 @@ msgid ""
 "      "
 msgstr ""
 
-#: templates/registration/signup.html:7 templates/registration/signup.html:18
+#: templates/registration/signup.html:7 templates/registration/signup.html:12
+#: templates/registration/signup.html:18
 msgid "Sign Up"
+msgstr ""
+
+#: templates/registration/signup.html:25
+#, python-format
+msgid ""
+"\n"
+"            Already have an account? <a href=\"%(login_url)s\">Login.</a>\n"
+"            "
 msgstr ""
 
 #: templates/users/user_dashboard.html:15
@@ -415,11 +426,37 @@ msgstr ""
 msgid "Talk Proposals"
 msgstr ""
 
+#: templates/users/user_dashboard.html:27
+#: templates/users/user_dashboard.html:55
+msgid "Title"
+msgstr ""
+
+#: templates/users/user_dashboard.html:28
+#: templates/users/user_dashboard.html:56
+msgid "Abstract"
+msgstr ""
+
+#: templates/users/user_dashboard.html:29
+#: templates/users/user_dashboard.html:57
+msgid "Python Level"
+msgstr ""
+
+#: templates/users/user_dashboard.html:30
+#: templates/users/user_dashboard.html:58
+msgid "Language"
+msgstr ""
+
+#: templates/users/user_dashboard.html:41
+#: templates/users/user_dashboard.html:70
+msgid "Edit"
+msgstr ""
+
 #: templates/users/user_dashboard.html:51
 msgid "Tutorial Proposals"
 msgstr ""
 
 #: templates/users/user_profile_update.html:7
+#: templates/users/user_profile_update.html:16
 msgid "Update Speaker Profile"
 msgstr ""
 
@@ -487,15 +524,15 @@ msgid "photo"
 msgstr ""
 
 #: users/models.py:107
-msgid "facebook"
+msgid "Facebook"
 msgstr ""
 
 #: users/models.py:111
-msgid "twitter"
+msgid "Twitter"
 msgstr ""
 
 #: users/models.py:115
-msgid "github"
+msgid "GitHub"
 msgstr ""
 
 #: users/models.py:119
