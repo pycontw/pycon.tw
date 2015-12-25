@@ -49,7 +49,7 @@ def collectstatic():
 
 def compile_translations():
     with cd(DJANGO_DIR):
-        run('~/.virtualenvs/{0}/bin/tx pull'.format(VIRTUALENV_NAME))
+        # run('~/.virtualenvs/{0}/bin/tx pull'.format(VIRTUALENV_NAME))
         run('~/.virtualenvs/{0}/bin/python manage.py compilemessages'.format(
             VIRTUALENV_NAME,
         ))
