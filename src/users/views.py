@@ -29,7 +29,7 @@ def user_signup(request):
                 'An email has been sent to your email. Please follow '
                 'instructions in the email to complete your signup.'
             ))
-            return redirect('index')
+            return redirect('login')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
