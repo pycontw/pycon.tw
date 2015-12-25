@@ -86,7 +86,7 @@ class AbstractProposal(models.Model):
             _("The choice of talk level matters during the review process. "
               "More definition of talk level can be found at the <a href=\""
               "{speaking_talk_url}\" target=\"_blank\">How to Propose a "
-              "talk</a> page. Note that a proposal won't be more likely to be "
+              "Talk</a> page. Note that a proposal won't be more likely to be "
               "accepted because of being \"Novice\" level. We may contact you "
               "to change the talk level when we find the content is too-hard "
               "or too-easy for the target audience."),
