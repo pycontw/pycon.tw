@@ -104,15 +104,15 @@ class User(AbstractBaseUser, PermissionsMixin):
         blank=True, default='', upload_to=photo_upload_to,
     )
     facebook_id = models.CharField(
-        verbose_name=_('facebook'),
+        verbose_name=_('Facebook'),
         blank=True, max_length=100,
     )
     twitter_id = models.CharField(
-        verbose_name=_('twitter'),
+        verbose_name=_('Twitter'),
         blank=True, max_length=100,
     )
     github_id = models.CharField(
-        verbose_name=_('github'),
+        verbose_name=_('GitHub'),
         blank=True, max_length=100,
     )
     is_staff = models.BooleanField(
