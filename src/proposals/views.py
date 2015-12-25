@@ -17,7 +17,7 @@ from .models import TalkProposal, TutorialProposal
 class UserProfileRequiredMixin(UserPassesTestMixin):
     def test_func(self):
         user = self.request.user
-        if user.is_anonymous() or not user.profile_filled:
+        if user.is_anonymous() or not user.verified:
             raise PermissionDenied
         return True
 

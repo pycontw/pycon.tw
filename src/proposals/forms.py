@@ -24,7 +24,7 @@ class ProposalCreateForm(forms.ModelForm):
                 'Proposal creation requires a request object.'
             )
         user = self._request.user
-        if user.is_anonymous() or not user.profile_filled:
+        if user.is_anonymous() or not user.is_valid_speaker():
             raise forms.ValidationError(
                 'Only authenticated user with complete speaker profile may '
                 'submit a proposal.'

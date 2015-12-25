@@ -5,6 +5,7 @@ import pytest
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core import mail, signing
+from django.core.urlresolvers import reverse
 from django.test import override_settings
 
 
@@ -26,46 +27,46 @@ def test_signup_get(client):
 
 @pytest.mark.django_db
 @override_settings(     # Make sure we don't really send an email.
+    SECRET_KEY='Footage order-flow long-chain hydrocarbons hacker',
     EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend',
     DEFAULT_FROM_EMAIL='dev@pycon.tw',
 )
 def test_signup_post(client, parser):
     """If the signup is successful, the user instance should be created,
-    and a confirmation email sent.
+    and a verificaion email sent.
 
-    The viewer should be redirected to the homepage.
+    The viewer should be logged in, and redirected to the dashboard.
     """
     response = client.post('/accounts/signup/', {
         'email': 'user@user.me',
         'password1': '7K50M',
         'password2': '7K50M',
     }, follow=True)
-    assert response.redirect_chain == [('/accounts/login/', 302)]
+    assert response.redirect_chain == [('/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, (
-        'An email has been sent to your email. Please follow instructions in '
-        'the email to complete your signup.'
-    ))]
+    assert msgs == [
+        (messages.SUCCESS, 'Sign up successful. You are now logged in.'),
+    ]
 
     user = User.objects.get(email='user@user.me')
-    assert not user.is_active
+    assert not user.verified
 
     assert len(mail.outbox) == 1
 
     email = mail.outbox[0]
     assert email.from_email == 'dev@pycon.tw'
     assert email.to == ['user@user.me']
-    assert email.subject == 'Complete your registration on tw.pycon.org'
+    assert email.subject == 'Verify your email address on tw.pycon.org'
 
     message_match = re.match(
-        r'^Go here: http://testserver/accounts/activate/(?P<key>[-:\w]+)/$',
+        r'^Go here: http://testserver/accounts/verify/(?P<key>[-:\w]+)/$',
         email.body.strip(),
     )
     assert message_match, email.body.strip()
     assert user.email == signing.loads(
         message_match.group('key'),
-        salt='pycontw', max_age=86400,
+        salt='Footage order-flow long-chain hydrocarbons hacker',
     )
     assert not email.alternatives
 
@@ -93,60 +94,27 @@ def test_signup_duplicate(bare_user, client, parser):
     ]
 
 
-def test_activate(inactive_user, client):
-    """A valid activation should result in the user logged-in, redirected to
-    dashboard, and getting a success message.
+def test_verify(bare_user, bare_user_client):
+    """A valid verification should result in the user getting a success
+    message, and redirected to dashboard.
     """
-    key = inactive_user.get_activation_key()
-    link = '/accounts/activate/{key}/'.format(key=key)
+    key = bare_user.get_verification_key()
+    link = '/accounts/verify/{key}/'.format(key=key)
 
-    response = client.get(link, follow=True)
-    assert response.redirect_chain == [('/accounts/login/', 302)]
+    response = bare_user_client.get(link, follow=True)
+    assert response.redirect_chain == [('/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
-        (messages.SUCCESS, 'Signup successful. You can log in now.'),
+        (messages.SUCCESS, 'Email verification successful.'),
     ]
 
 
-def test_activate_logged_in(inactive_user, another_user, another_user_client):
-    """User is logged-out when clicking an activation link.
+def test_verify_invalid(bare_user, client):
+    """Using an invalid verification code just results in 404.
     """
-    # Before the activation view, client belongs to another_user.
-    assert another_user_client.session['_auth_user_id'] == str(another_user.pk)
-
-    key = inactive_user.get_activation_key()
-    link = '/accounts/activate/{key}/'.format(key=key)
-
-    response = another_user_client.get(link, follow=True)
-    assert response.redirect_chain == [('/accounts/login/', 302)]
-
-    msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [
-        (messages.SUCCESS, 'Signup successful. You can log in now.'),
-    ]
-
-    # After the activation view, another_user should be logged out, and
-    # inactive_user (owner of the activation key) is logged in instead.
-    assert '_auth_user_id' not in response.client.session
-
-
-def test_activate_invalid(inactive_user, client):
-    """Using an invalid activation code just results in 404.
-    """
-    key = inactive_user.get_activation_key().swapcase()
-    link = '/accounts/activate/{key}/'.format(key=key)
-
-    response = client.get(link)
-    assert response.status_code == 404
-
-
-@override_settings(USER_ACTIVATION_EXPIRE_SECONDS=0)
-def test_activate_expired(inactive_user, client):
-    """Using an expired activation code just results in 404.
-    """
-    key = inactive_user.get_activation_key()
-    link = '/accounts/activate/{key}/'.format(key=key)
-
-    response = client.get(link)
+    # We use reverse to make sure we have the right link (but wrong key).
+    response = client.get(reverse('user_verify', kwargs={
+        'verification_key': bare_user.get_verification_key().swapcase(),
+    }))
     assert response.status_code == 404

@@ -1,7 +1,7 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, logout
+from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import login as base_login
+from django.contrib.auth.views import login as base_login_view
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
@@ -23,13 +23,14 @@ def user_signup(request):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
-            user = form.save()
-            user.send_activation_email(request)
+            user = form.save(auth=True)
+            user.send_verification_email(request)
+
+            login(request, user)
             messages.success(request, ugettext(
-                'An email has been sent to your email. Please follow '
-                'instructions in the email to complete your signup.'
+                'Sign up successful. You are now logged in.'
             ))
-            return redirect('login')
+            return redirect('user_dashboard')
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
@@ -37,21 +38,29 @@ def user_signup(request):
 
 @sensitive_post_parameters()
 @never_cache
-def user_activate(request, activation_key):
-    # Always log the request out so the rest makes sense.
-    if request.user.is_authenticated():
-        logout(request)
+def user_verify(request, verification_key):
     try:
-        user = User.objects.get_with_activation_key(activation_key)
+        user = User.objects.get_with_verification_key(verification_key)
     except User.DoesNotExist:
         raise Http404
-    user.is_active = True
+    user.verified = True
     user.save()
+    messages.success(request, ugettext('Email verification successful.'))
+    return redirect('user_dashboard')
 
+
+@sensitive_post_parameters()
+@never_cache
+@login_required
+def request_verification(request):
+    user = request.user
+    user.send_verification_email(request)
     messages.success(request, ugettext(
-        'Signup successful. You can log in now.'
-    ))
-    return redirect('login')
+        'A verification email has been sent to {email}').format(
+            email=user.email,
+        ),
+    )
+    return redirect('user_dashboard')
 
 
 @login_required
@@ -77,5 +86,5 @@ def user_profile_update(request):
     })
 
 
-def login(request):
-    return base_login(request, authentication_form=AuthenticationForm)
+def login_view(request):
+    return base_login_view(request, authentication_form=AuthenticationForm)

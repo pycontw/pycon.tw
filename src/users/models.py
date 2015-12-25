@@ -57,19 +57,18 @@ class EmailUserManager(BaseUserManager):
         :return custom_user.models.EmailUser user: admin user
         """
         return self._create_user(
-            email, password,
-            is_active=True, is_staff=True, is_superuser=True,
+            email, password, verified=True,
+            is_staff=True, is_superuser=True,
             **extra_fields
         )
 
-    def get_with_activation_key(self, activation_key):
-        """Get a user from activation key.
+    def get_with_verification_key(self, verification_key):
+        """Get a user from verification key.
         """
         try:
             username = signing.loads(
-                activation_key,
-                salt=settings.USER_ACTIVATION_KEY_SALT,
-                max_age=settings.USER_ACTIVATION_EXPIRE_SECONDS,
+                verification_key,
+                salt=settings.SECRET_KEY,
             )
         except signing.BadSignature:
             raise self.model.DoesNotExist
@@ -115,6 +114,13 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('GitHub'),
         blank=True, max_length=100,
     )
+    verified = models.BooleanField(
+        verbose_name=_('verified'),
+        default=False,
+        help_text=_(
+            "Designates whether the user has verified email ownership."
+        ),
+    )
     is_staff = models.BooleanField(
         verbose_name=_('staff status'),
         default=False,
@@ -124,7 +130,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     is_active = models.BooleanField(
         verbose_name=_('active'),
-        default=False,
+        default=True,
         help_text=_(
             "Designates whether this user should be treated as "
             "active. Unselect this instead of deleting accounts."
@@ -154,14 +160,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.speaker_name
 
-    @property
-    def profile_filled(self):
-        return self.is_active and self.speaker_name and self.bio
+    def is_valid_speaker(self):
+        return (
+            self.verified and self.is_active
+            and self.speaker_name and self.bio
+        )
 
-    def get_activation_key(self):
+    def get_verification_key(self):
         key = signing.dumps(
             obj=getattr(self, self.USERNAME_FIELD),
-            salt=settings.USER_ACTIVATION_KEY_SALT,
+            salt=settings.SECRET_KEY,
         )
         return key
 
@@ -170,22 +178,22 @@ class User(AbstractBaseUser, PermissionsMixin):
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
-    def send_activation_email(self, request):
-        activation_key = self.get_activation_key()
-        activation_url = request.build_absolute_uri(
-            reverse('user_activate', kwargs={
-                'activation_key': activation_key,
+    def send_verification_email(self, request):
+        verification_key = self.get_verification_key()
+        verification_url = request.build_absolute_uri(
+            reverse('user_verify', kwargs={
+                'verification_key': verification_key,
             }),
         )
         context = {
             'user': self,
-            'activation_key': activation_key,
-            'activation_url': activation_url,
+            'verification_key': verification_key,
+            'verification_url': verification_url,
         }
         message = render_to_string(
-            'registration/activation_email.txt', context,
+            'registration/verification_email.txt', context,
         )
         self.email_user(
-            subject=ugettext('Complete your registration on tw.pycon.org'),
+            subject=ugettext('Verify your email address on tw.pycon.org'),
             message=message, fail_silently=False,
         )
