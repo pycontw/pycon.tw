@@ -11,8 +11,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="{% static 'images/favicon_pyconTW_32x32.png' %}">
-    {% block head_tags%}
-    {% endblock %}
+    {% block head_tags%}{% endblock %}
 
     {% compress css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
@@ -30,7 +29,10 @@
 <body class="{% block body-class %}{% endblock %}">
 
     {% block body %}
-        <div class="container">It works!</div>
+        {% include '_includes/nav.html' %}
+        <div class="container">
+        {% block content %}It works!{% endblock %}
+        </div>
     {% endblock %}
 
     {% compress js %}

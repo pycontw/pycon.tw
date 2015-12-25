@@ -6,10 +6,7 @@
 {% block title %}{% trans 'Dashboard' %}{% endblock title %}
 
 
-{% block body %}
-
-{% include '_includes/nav.html' %}
-
+{% block content %}
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
 		<div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
@@ -75,6 +72,6 @@
     {% endif %}
 	</div>
 </div>
-{% endblock body %}
+{% endblock content %}
 
 

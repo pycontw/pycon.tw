@@ -13,12 +13,9 @@
 {{ form.media.css }}
 {% endblock extra_css %}
 
-{% block body %}
-
-{% include '_includes/nav.html' %}
-
+{% block content %}
 <div class="row" style="margin-bottom: 50px;">
-    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    <div class="col-md-offset-2 col-md-8">
     	<h2 class="page-header">{{ form.instance.title }}</h2>
 		{% if not object.cancelled %}
 	    <form method="post">
@@ -47,8 +44,7 @@
       {% endcomment %}
 	</div>
 </div>
-
-{% endblock body %}
+{% endblock content %}
 
 
 {% block extra_js %}
