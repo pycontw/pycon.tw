@@ -2,7 +2,8 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.html import format_html
+from django.utils.translation import ugettext
 from django.views.generic import CreateView, UpdateView, TemplateView
 
 from .forms import (
@@ -38,12 +39,13 @@ class FormValidMessageMixin:
         return self.form_valid_message
 
     def form_valid(self, form):
+        response = super().form_valid(form)
         messages.add_message(
             self.request,
             self.get_form_valid_message_level(),
             self.get_form_valid_message(),
         )
-        return super().form_valid(form)
+        return response
 
 
 class ProposalCreateView(
@@ -62,17 +64,25 @@ class ProposalCreateView(
 
 
 class TalkProposalCreateView(ProposalCreateView):
+
     form_class = TalkProposalCreateForm
-    form_valid_message = _('Talk proposal created.')
     template_name = 'proposals/talk_proposal_create.html'
     success_url_name = 'talk_proposal_update'
 
+    def get_form_valid_message(self):
+        msg = ugettext('Talk proposal <strong>{title}</strong> created.')
+        return format_html(msg, title=self.object.title)
+
 
 class TutorialProposalCreateView(ProposalCreateView):
+
     form_class = TutorialProposalCreateForm
-    form_valid_message = _('Tutorial proposal created.')
     template_name = 'proposals/tutorial_proposal_create.html'
     success_url_name = 'tutorial_proposal_update'
+
+    def get_form_valid_message(self):
+        msg = ugettext('Tutorial proposal <strong>{title}</strong> created.')
+        return format_html(msg, title=self.object.title)
 
 
 class ProposalUpdateView(
@@ -86,17 +96,25 @@ class ProposalUpdateView(
 
 
 class TalkProposalUpdateView(ProposalUpdateView):
+
     model = TalkProposal
     form_class = TalkProposalUpdateForm
-    form_valid_message = _('Talk proposal updated.')
     template_name = 'proposals/talk_proposal_update.html'
+
+    def get_form_valid_message(self):
+        msg = ugettext('Talk proposal <strong>{title}</strong> updated.')
+        return format_html(msg, title=self.object.title)
 
 
 class TutorialProposalUpdateView(ProposalUpdateView):
+
     model = TutorialProposal
     form_class = TutorialProposalUpdateForm
-    form_valid_message = _('Tutorial proposal updated.')
     template_name = 'proposals/tutorial_proposal_update.html'
+
+    def get_form_valid_message(self):
+        msg = ugettext('Tutorial proposal <strong>{title}</strong> updated.')
+        return format_html(msg, title=self.object.title)
 
 
 class ProposalCancelView(ProposalUpdateView):
@@ -116,8 +134,14 @@ class TalkProposalCancelView(ProposalCancelView):
 
     def get_form_valid_message(self):
         if self.object.cancelled:
-            return ugettext('Talk proposal cancelled.')
-        return ugettext('Talk proposal re-activated.')
+            msg = ugettext(
+                'Talk proposal <strong>{title}</strong> withdrawn.',
+            )
+        else:
+            msg = ugettext(
+                'Talk proposal <strong>{title}</strong> reactivated.',
+            )
+        return format_html(msg, title=self.object.title)
 
 
 class TutorialProposalCancelView(ProposalCancelView):
@@ -132,5 +156,11 @@ class TutorialProposalCancelView(ProposalCancelView):
 
     def get_form_valid_message(self):
         if self.object.cancelled:
-            return ugettext('Tutorial proposal cancelled.')
-        return ugettext('Tutorial proposal re-activated.')
+            msg = ugettext(
+                'Tutorial proposal <strong>{title}</strong> withdrawn.',
+            )
+        else:
+            msg = ugettext(
+                'Tutorial proposal <strong>{title}</strong> reactivated.',
+            )
+        return format_html(msg, title=self.object.title)

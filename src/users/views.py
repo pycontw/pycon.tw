@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import login as base_login
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
@@ -9,7 +10,7 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 
 from .decorators import login_forbidden
-from .forms import UserCreationForm, UserProfileUpdateForm
+from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm
 
 
 User = get_user_model()
@@ -74,3 +75,7 @@ def user_profile_update(request):
     return render(request, 'users/user_profile_update.html', {
         'form': form, 'logout_next': logout_next,
     })
+
+
+def login(request):
+    return base_login(request, authentication_form=AuthenticationForm)

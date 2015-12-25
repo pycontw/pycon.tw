@@ -134,7 +134,7 @@ def test_tutorial_proposal_edit_get_cancelled(
 
 def test_talk_proposal_edit_post(user_client, talk_proposal):
     response = user_client.post('/proposals/talk/42/edit/', {
-        'title': 'Beyond the Style Guides',
+        'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF45',
         'language': 'CHI',
@@ -169,12 +169,16 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
     )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Talk proposal updated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Talk proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> updated.'),
+    ]
 
 
 def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
     response = user_client.post('/proposals/tutorial/42/edit/', {
-        'title': 'Beyond the Style Guides',
+        'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
         'language': 'CHI',
@@ -209,4 +213,8 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
     )
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
-    assert msgs == [(messages.SUCCESS, 'Tutorial proposal updated.')]
+    assert msgs == [
+        (messages.SUCCESS,
+         'Tutorial proposal '
+         '<strong>Beyond the Style Guides&lt;br&gt;</strong> updated.'),
+    ]

@@ -25,7 +25,6 @@ build
 local.env
 
 # Django stuff:
-*.mo
 *.pot
 *.log
 venv/
