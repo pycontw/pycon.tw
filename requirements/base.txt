@@ -38,3 +38,7 @@ ipython==4.0.1
 # Python Imaging Library.
 # http://python-pillow.github.io
 Pillow==3.0.0
+
+# Transifex, an online translation collaboration platform
+# http://docs.transifex.com/client/
+transifex-client==0.11
