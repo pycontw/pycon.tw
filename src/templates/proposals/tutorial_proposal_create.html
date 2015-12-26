@@ -6,12 +6,9 @@
 
 {% block title %}{% trans 'Submit a New Tutorial Proposal' %}{% endblock title %}
 
-{% block body %}
-
-{% include '_includes/nav.html' %}
-
+{% block content %}
 <div class="row">
-    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+    <div class="col-md-offset-2 col-md-8">
     	<h2 class="page-header">{% trans 'Submit a New Tutorial Proposal' %}</h2>
 		<form method="post">
   			{% csrf_token %}
@@ -22,4 +19,4 @@
 		</form>
 	</div>
 </div>
-{% endblock body %}
+{% endblock content %}
