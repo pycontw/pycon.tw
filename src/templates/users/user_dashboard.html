@@ -2,16 +2,28 @@
 
 {% load i18n %}
 
-
 {% block title %}{% trans 'Dashboard' %}{% endblock title %}
 
-
 {% block content %}
+
+{% if not user.verified %}
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8 alert alert-warning clearfix" role="alert">
+    <p>{% trans 'You need to verify your email before being able to submit a proposal.' %}</p>
+    <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
+      {% csrf_token %}
+      <p>{% trans 'Did not get the verification email?' %}</p>
+      <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button>
+    </form>
+  </div>
+</div>
+{% endif %}
+
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
 		<div><a href="{% url 'user_profile_update' %}">{% trans 'Edit speaker profile' %}</a></div>
 
-		{% if user.profile_filled %}
+		{% if user.is_valid_speaker %}
 		<div><a href="{% url 'proposal_create_choice' %}">{% trans 'Submit a Proposal' %}</a></div>
 		{% endif %}
 

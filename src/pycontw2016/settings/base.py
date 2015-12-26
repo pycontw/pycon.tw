@@ -169,12 +169,6 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-# Settings used to control the accoutn activation process.
-
-USER_ACTIVATION_KEY_SALT = 'pycontw'    # Arbitraty.
-
-USER_ACTIVATION_EXPIRE_SECONDS = 86400  # Allow one day for activation.
-
 
 # Translation settings
 # Path to the local .po and .mo files
@@ -182,4 +176,3 @@ USER_ACTIVATION_EXPIRE_SECONDS = 86400  # Allow one day for activation.
 LOCALE_PATHS = (
     join(BASE_DIR, 'locale'),
 )
-

@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import (
     AuthenticationForm as BaseAuthenticationForm,
     ReadOnlyPasswordHashField,
@@ -21,12 +21,12 @@ class UserCreationForm(forms.ModelForm):
     }
     password1 = forms.CharField(
         label=_("Password"),
-        widget=forms.PasswordInput
+        widget=forms.PasswordInput,
     )
     password2 = forms.CharField(
-        label=_("Password confirmation"),
+        label=_('Password confirmation'),
         widget=forms.PasswordInput,
-        help_text=_("Enter the same password as above, for verification.")
+        help_text=_("Enter the same password as above, for verification."),
     )
 
     class Meta:
@@ -57,8 +57,8 @@ class UserCreationForm(forms.ModelForm):
         :return str password2: cleaned password2
         :raise forms.ValidationError: password2 != password1
         """
-        password1 = self.cleaned_data.get("password1")
-        password2 = self.cleaned_data.get("password2")
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError(
                 self.error_messages['password_mismatch'],
@@ -66,18 +66,29 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True):
+    def save(self, commit=True, auth=False):
         """Save user.
 
         Save the provided password in hashed format.
 
         :return users.models.EmailUser: user
         """
+        if auth and not commit:
+            raise ValueError(
+                'Can not authenticate user without committing first.'
+            )
         user = super().save(commit=False)
         password = self.cleaned_data.get('password1')
         user.set_password(password)
-        if commit:
-            user.save()
+        if not commit:
+            return user
+        user.save()
+        if not auth:
+            return user
+        user = authenticate(
+            email=self.cleaned_data['email'],
+            password=password,
+        )
         return user
 
 
