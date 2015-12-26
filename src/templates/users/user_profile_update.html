@@ -10,7 +10,7 @@
 {% block content %}
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
-    	<h2 class="page-header">Update Profile</h2>
+    	<h2 class="page-header">{% trans 'Update Speaker Profile' %}</h2>
 		<form id="user_profile_update_form" method="post">
   			{% csrf_token %}
   			<div class="nesting-form-group">

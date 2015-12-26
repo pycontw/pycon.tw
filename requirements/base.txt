@@ -8,7 +8,7 @@ django-braces==1.8.1
 
 # Compresses linked and inline JavaScript or CSS into a single cached file.
 # https://django-compressor.readthedocs.org/en/latest/
-django-compressor==1.5
+django-compressor==1.6
 
 # The best way to have DRY Django forms.
 # http://django-crispy-forms.readthedocs.org/en/latest/

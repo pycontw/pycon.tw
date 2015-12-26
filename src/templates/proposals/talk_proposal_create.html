@@ -9,7 +9,7 @@
 {% block content %}
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
-    	<h2 class="page-header">Submit a New Talk Proposal</h2>
+        <h2 class="page-header">{% trans 'Submit a New Talk Proposal' %}</h2>
 		<form method="post">
   			{% csrf_token %}
   			<div class="nesting-form-group">

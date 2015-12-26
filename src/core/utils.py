@@ -2,6 +2,11 @@ from django.conf import settings
 from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
 from django.template.response import TemplateResponse
+from django.utils.functional import lazy
+from django.utils.html import format_html
+
+
+format_html_lazy = lazy(format_html, str)
 
 
 class TemplateExistanceStatusResponse(TemplateResponse):

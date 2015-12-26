@@ -21,10 +21,10 @@
         <table class="proposals-table table table-striped table-hover proposal">
             <thead>
               <tr>
-                  <th>Title</th>
-                  <th>Abstract</th>
-                  <th>Python level</th>
-                  <th>language</th>
+                  <th>{% trans 'Title' %}</th>
+                  <th>{% trans 'Abstract' %}</th>
+                  <th>{% trans 'Python Level' %}</th>
+                  <th>{% trans 'Language' %}</th>
                   <th></th>
               </tr>
             </thead>
@@ -33,9 +33,9 @@
             <tr>
               <td>{{ proposal.title }}</td>
               <td>{{ proposal.abstract|truncatechars:30 }}</td>
-              <td>{{ proposal.python_level }}</td>
+              <td>{{ proposal.get_python_level_display }}</td>
               <td>{{ proposal.get_language_display }}</td>
-              <td><a href="{% url 'talk_proposal_update' pk=proposal.pk %}"><button type="button" class="btn btn-default btn-primary">Edit</button></a></td>
+              <td><a href="{% url 'talk_proposal_update' pk=proposal.pk %}"><button type="button" class="btn btn-default btn-primary">{% trans 'Edit' %}</button></a></td>
             </tr>
             {% endfor %}
             </tbody>
@@ -49,10 +49,10 @@
       <table class="proposals-table table table-striped table-hover proposal">
             <thead>
               <tr>
-                  <th>Title</th>
-                  <th>Abstract</th>
-                  <th>Python level</th>
-                  <th>language</th>
+                  <th>{% trans 'Title' %}</th>
+                  <th>{% trans 'Abstract' %}</th>
+                  <th>{% trans 'Python Level' %}</th>
+                  <th>{% trans 'Language' %}</th>
                   <th></th>
               </tr>
             </thead>
@@ -61,9 +61,11 @@
             <tr>
               <td>{{ proposal.title }}</td>
               <td>{{ proposal.abstract|truncatechars:30 }}</td>
-              <td>{{ proposal.python_level }}</td>
+              <td>{{ proposal.get_python_level_display }}</td>
               <td>{{ proposal.get_language_display }}</td>
-              <td><a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}"><button type="button" class="btn btn-default btn-primary">Edit</button></a></td>
+              <td><a href="{% url 'tutorial_proposal_update' pk=proposal.pk %}">
+                  <button type="button" class="btn btn-default btn-primary">{% trans 'Edit' %}</button>
+              </a></td>
             </tr>
             {% endfor %}
             </tbody>
