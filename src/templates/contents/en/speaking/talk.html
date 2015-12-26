@@ -252,8 +252,65 @@ Outline (optional):
 Supplementary (optional): None
 Recording Policy:         Yes
 Slide Link (optional):    None</pre>
-    {% comment %}
-    Intermediate
-    Build a automated pipeline for blog photo processing
-    {% endcomment %}
+
+    <h3>例：中階</h3>
+    <pre>
+Title:           自動處理部落格照片與加工
+Category:        圖像處理
+Duration:        25 min
+Language:        中文
+Python Level:    中階
+Target Audience: 需要批次處理照片並利用其 EXIF 做額外處理的人，
+                 並以 Pelican 此 blog 框架舉例。
+
+Abstract:
+
+    現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部
+    落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機型、鏡
+    頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自
+    動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印
+    的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成
+    自動處理所有放在文章的照片。
+
+Objectives:
+
+   寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解如
+   何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道如何使
+   用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。
+
+Detailed Description (optional):
+
+    ### 使用的第三方工具：
+
+    - [exiftool] 為分析照片 EXIF 的 Perl 工具
+    - [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)
+    - [Pelican] 為 Python 的 static site generator
+
+    [exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/
+    [Pillow]: http://python-pillow.github.io/
+    [Pelican]: http://blog.getpelican.com/
+
+Outline (optional):
+
+    1. 簡介 EXIF 與 exiftool [5min]
+    2. Pillow 使用及如何用它加上浮水印 [5min]
+        - 字型的選用
+        - 排版的一致性
+    3. 自動化 [5min]
+        - 使用 stdlib 架出一個 batch 處理流程
+        - 搭配 joblib 或 multiprocessing 達成平行化
+    4. 舉例（使用 Pelican）[5min]
+        - 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）
+        - 成果
+    5. Q&A [5min]
+
+Supplementary (optional):
+
+    Taipei.py 的講者，以前講過的主題有：
+
+        - [Pillow 影像處理簡介](/link/to/slides)
+        - [使用 Pelican 架設部落格](/link/to/slides)
+
+Recording Policy:      Yes
+Slide Link (optional): None</pre>
 {% endblock content %}
