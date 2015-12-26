@@ -8,6 +8,7 @@ from django.shortcuts import redirect, render
 from django.utils.translation import ugettext
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
+from django.views.decorators.http import require_POST
 
 from .decorators import login_forbidden
 from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm
@@ -52,6 +53,7 @@ def user_verify(request, verification_key):
 @sensitive_post_parameters()
 @never_cache
 @login_required
+@require_POST
 def request_verification(request):
     user = request.user
     user.send_verification_email(request)
