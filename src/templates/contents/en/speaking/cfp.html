@@ -1,10 +1,11 @@
-{% extends 'contents/en/speaking/_base.html' %}
+{% extends 'contents/_base.html' %}
 
 {% block title %}Call for Proposals{% endblock %}
 
 {% block content %}
     {% url 'page' path='speaking/recording' as speaking_recording_url %}
     {% url 'page' path='speaking/talk' as speaking_talk_url %}
+    {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
     {% url "signup" as signup_url %}
     {% url "user_dashboard" as dashboard_url %}
     <h1>Call for Proposals</h1>
@@ -40,6 +41,7 @@
         <a href="{{ dashboard_url }}">Dashboard</a>.
     </p>
     <p>We encourage you to submit the proposal as early as possible.</p>
+
     <h2>Guidelines for Proposal Submission</h2>
     <h3>Talks</h3>
     <p>
@@ -56,7 +58,7 @@
     <p>
         Most talks are 25 minutes long. However, we offer a limited number
         of 45-minute slots for important topics which we think audience can
-        benefit significantly more from an more extensive treatment. Note
+        benefit significantly more from a more extensive treatment. Note
         that the talk time length includes setup and Q&amp;A time.
     </p>
     <p>Talk can be given in either English or Chinese.</p>
@@ -66,5 +68,14 @@
         to Propose a Talk</a>.
     </p>
     <h3>Tutorials</h3>
-    <p>TBD</p>
+    <p>
+        Similar to talks, we don't pose limitations on tutorial topics. Tutorial
+        are half or full day long, equivalently to 3 or 6 hours of teaching. The
+        guideline for tutorial submission is based on the guideline for talks,
+        so make sure you have read <a href="{{ speaking_talk_url }}">How to
+        Propose a Talk</a>. On top of that, We have some special requirements
+        for tutorial submission, please refer to
+        <a href="{{ speaking_tutorial_url }}">How to Propose a Tutorial</a>
+        for more information.
+    </p>
 {% endblock content %}
