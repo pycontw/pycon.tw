@@ -2,16 +2,12 @@
 
 {% load i18n %}
 
-
 {% block title %}{% trans 'Dashboard' %}{% endblock title %}
 
-
-{% block body %}
-
-{% include '_includes/nav.html' %}
+{% block content %}
 
 {% if not user.verified %}
-<div class="container row">
+<div class="row">
   <div class="col-sm-offset-2 col-sm-8 alert alert-warning clearfix" role="alert">
     <p>{% trans 'You need to verify your email before being able to submit a proposal.' %}</p>
     <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
@@ -90,6 +86,6 @@
     {% endif %}
 	</div>
 </div>
-{% endblock body %}
+{% endblock content %}
 
 
