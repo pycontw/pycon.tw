@@ -50,7 +50,6 @@ def user_verify(request, verification_key):
     return redirect('user_dashboard')
 
 
-@sensitive_post_parameters()
 @never_cache
 @login_required
 @require_POST
