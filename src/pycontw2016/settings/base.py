@@ -86,6 +86,7 @@ LOCAL_APPS = (
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,7 +116,7 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
-    ('zh', _('Chinese')),
+    ('zh-hant', _('Chinese')),
     ('en', _('English')),
 ]
 
@@ -168,8 +169,10 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-# Settings used to control the accoutn activation process.
 
-USER_ACTIVATION_KEY_SALT = 'pycontw'    # Arbitraty.
+# Translation settings
+# Path to the local .po and .mo files
 
-USER_ACTIVATION_EXPIRE_SECONDS = 86400  # Allow one day for activation.
+LOCALE_PATHS = (
+    join(BASE_DIR, 'locale'),
+)

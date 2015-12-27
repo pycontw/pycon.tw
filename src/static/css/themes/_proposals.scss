@@ -1,0 +1,16 @@
+.cancel-form {
+    position: relative;
+}
+
+/* Must include .table to override Bootstrap styles. */
+.table.proposals-table {
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .title-cell {
+        text-align: left;
+        white-space: normal;
+    }
+}

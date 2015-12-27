@@ -14,6 +14,10 @@ urlpatterns = [
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^i18n/$',
+        TemplateView.as_view(template_name="change_lang.html"),
+        name='change_lang'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 if settings.URL_PREFIX:

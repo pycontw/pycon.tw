@@ -92,3 +92,33 @@ LOGOUT_URL = '/2016/accounts/logout/'
 LOGIN_REDIRECT_URL = '/2016/dashboard/'
 
 STATIC_URL = '/2016/static/'
+
+EMAIL_BACKEND = env.email_url()['EMAIL_BACKEND']
+EMAIL_HOST = env.email_url()['EMAIL_HOST']
+EMAIL_HOST_PASSWORD = env.email_url()['EMAIL_HOST_PASSWORD']
+EMAIL_HOST_USER = env.email_url()['EMAIL_HOST_USER']
+EMAIL_PORT = env.email_url()['EMAIL_PORT']
+EMAIL_USE_TLS = env.email_url()['EMAIL_USE_TLS']
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER
+
+# Securiy related settings
+SECURE_HSTS_SECONDS = 2592000
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+X_FRAME_OPTIONS = 'DENY'
+
+
+# Setting for sentry
+
+INSTALLED_APPS += (
+    'raven.contrib.django.raven_compat',
+)
+
+import raven
+
+RAVEN_CONFIG = {
+    'dsn': env('DSN_URL'),
+}

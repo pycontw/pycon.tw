@@ -7,21 +7,18 @@
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
 
-{% block body %}
-
-{% include '_includes/nav.html' %}
-
+{% block content %}
 <div class="row">
-    <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8">
-    	<h2 class="page-header">Update Profile</h2>
+    <div class="col-md-offset-2 col-md-8">
+    	<h2 class="page-header">{% trans 'Update Speaker Profile' %}</h2>
 		<form id="user_profile_update_form" method="post">
   			{% csrf_token %}
-  			<div class="nesting-form-group">	  			
+  			<div class="nesting-form-group">
 		        {% crispy form %}
-		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>	
-		  		<a href="{% url 'user_dashboard' %}" class="btn btn-primary btn-md">{% trans 'Cancel' %}</a>	  	
+		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>
+		  		<a href="{% url 'user_dashboard' %}" class="btn btn-md">{% trans 'Cancel' %}</a>
 			</div>
 		</form>
 	</div>
 </div>
-{% endblock body %}
+{% endblock content %}

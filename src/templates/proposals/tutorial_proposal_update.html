@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% load i18n static compress crispy_forms_tags %}
-
+{% load i18n static %}
+{% load compress crispy_forms_tags %}
 
 {% block title %}{% blocktrans with proposal_title=object.title %}Edit Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
 
@@ -15,26 +15,22 @@
 {% endblock extra_css %}
 
 
-{% block body %}
-
-{% include '_includes/nav.html' %}
-
+{% block content %}
 <div class="row" style="margin-bottom: 50px;">
-  <div class="col-xs-offset-2 col-xs-8 col-md-offset-2 col-md-8">
-    <h2 class="page-header">{{ form.instance.title }}</h2>
-    <form method="post">
-      {% csrf_token %}
-      <div class="nesting-form-group">
-        {% crispy form %}
-        <button type="submit" class="btn btn-primary btn-block btn-lg">
-          {% trans 'Save' %}
-        </button>
-      </div>
-    </form>
-  </div>
+    <div class="col-md-offset-2 col-md-8">
+    	<h2 class="page-header">{{ form.instance.title }}</h2>
+		{% if not object.cancelled %}
+	    <form method="post">
+	     {% csrf_token %}
+        <div class="nesting-form-group">
+          {% crispy form %}
+          <button type="submit" class="btn btn-primary pull-right col-md-3 btn-lg">{% trans 'Save' %}</button>
+        </div>
+	    </form>
+	    {% endif %}
+	</div>
 </div>
-
-{% endblock body %}
+{% endblock content %}
 
 
 {% block extra_js %}

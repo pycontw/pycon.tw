@@ -1,7 +1,9 @@
 from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
-from django.utils.translation import string_concat, ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
+
+from core.utils import format_html_lazy
 
 
 class AbstractProposal(models.Model):
@@ -77,18 +79,20 @@ class AbstractProposal(models.Model):
         ('EXPERIENCED', _('Experienced')),
     )
     python_level = models.CharField(
-        verbose_name=_('python level'),
+        verbose_name=_('Python level'),
         max_length=12,
         choices=PYTHON_LVL_CHOICES,
-        help_text=string_concat(
+        help_text=format_html_lazy(
             _("The choice of talk level matters during the review process. "
-              "More definition of talk level can be found at the <a href=\""),
-            reverse_lazy('page', kwargs={'path': 'speaking/talk'}),
-            _("\" target=\"_blank\">How to Propose a "
-              "talk</a> page. Note that a proposal won't be more likely to be "
+              "More definition of talk level can be found at the <a href=\""
+              "{speaking_talk_url}\" target=\"_blank\">How to Propose a "
+              "Talk</a> page. Note that a proposal won't be more likely to be "
               "accepted because of being \"Novice\" level. We may contact you "
               "to change the talk level when we find the content is too-hard "
               "or too-easy for the target audience."),
+            speaking_talk_url=reverse_lazy(
+                'page', kwargs={'path': 'speaking/talk'},
+            ),
         ),
     )
 

@@ -6,7 +6,7 @@ psycopg2==2.6.1
 
 # Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
 # http://gunicorn.org/
-gunicorn==19.3.0
+gunicorn==19.4.1
 
 # django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.
 # http://niwinz.github.io/django-redis/latest/
@@ -22,4 +22,4 @@ redis==2.10.5
 
 # Sentry client for Python
 # https://raven.readthedocs.org/en/latest/
-raven==5.8.1
+raven==5.9.2

@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% blocktrans %}
-Go here: {{ activation_url }}
+Go here: {{ verification_url }}
 {% endblocktrans %}
 
 {% endspaceless %}

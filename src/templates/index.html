@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+{% load i18n %}
 
 {% block titletag %}<title>PyCon Taiwan 2016</title>{% endblock titletag %}
 
@@ -34,21 +34,21 @@
         <div class="row">
             <div class="schedule-wrapper">
                 <div class="row">
-                    <div class="h3 schedule__title--lg">Tutorials</div>
-                    <div class="h3 schedule__title--lg">Conference</div>
-                    <div class="h3 schedule__title--lg">Sprint</div>
+                    <div class="h3 schedule__title--lg">{% trans 'Tutorials' %}</div>
+                    <div class="h3 schedule__title--lg">{% trans 'Conference' %}</div>
+                    <div class="h3 schedule__title--lg">{% trans 'Sprint' %}</div>
                 </div>
                 <div class="row schedule">
                     <div class="schedule-block">
-                        <h3 class="schedule__title">Tutorials</h3>
+                        <h3 class="schedule__title">{% trans 'Tutorials' %}<</h3>
                         <p>TBD</p>
                     </div>
                     <div class="schedule-block">
-                        <h3 class="schedule__title">Conference</h3>
+                        <h3 class="schedule__title">{% trans 'Conference' %}<</h3>
                         <p>June 3-5, 2016</p>
                     </div>
                     <div class="schedule-block">
-                        <h3 class="schedule__title">Sprint</h3>
+                        <h3 class="schedule__title">{% trans 'Sprint' %}<</h3>
                         <p>TBD</p>
                     </div>
                 </div>
@@ -59,32 +59,53 @@
 </div>
 <div class="section intro">
     <div class="container">
-        <p class="quote">&quot;Simple is better than complex.    Complex is better than complicated.&quot;</p>
+        <p class="quote">
+            &quot;Simple is better than complex. Complex is better than complicated.&quot;
+        </p>
         <div class="row">
             <section class="intro__pycon col-md-8">
+                {% blocktrans %}
                 <h2 class="intro__heading">What is PyCon</h2>
                 <div class="intro__body">
-                The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.
+                    The original PyCon was formed in North America in 2003, and
+                    now there are many other conferences being run in the PyCon
+                    spirit around the world.
                 </div>
+                {% endblocktrans %}
             </section>
         </div>
         <div class="row">
             <section class="intro__pycontw">
+                {% blocktrans %}
                 <h2 class="intro__heading">And what is PyCon Taiwan</h2>
                 <div class="intro__body">
-                PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.
+                    PyCon Taiwan is an annual convention in Taiwan for the
+                    discussion and promotion of the Python programming
+                    language. It is held by enthusiasts and focuses on Python
+                    technology and its versatile applications. We welcome
+                    people who are interested in Python to join PyCon Taiwan to
+                    share knowledge, exchange ideas, make connections and to
+                    help us grow our network.
                 </div>
+                {% endblocktrans %}
             </section>
             <section class="intro__volunteer">
                 <div class="volunteer">
-                    <h2 class="volunteer__heading h4">Volunteers Needed!<span><img width="25" height="22" src="{% static 'images/call_icon.png' %}" class="call__icon"></span></h2>
+                    {% static 'images/call_icon.png' as img_call_icon %}
+                    {% blocktrans %}
+                    <h4 class="volunteer__heading h4">
+                        Volunteers Needed!
+                        <img width="25" height="22" src="{{ img_call_icon }}" class="call__icon">
+                    </h4>
                     <div class="volunteer__body">
                         <p>Help us organize and make the conference successful!</p>
                         <p>
                             Please fill out<br>
-                            <a href="https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform" target="_blank">our volunteer form</a>
+                            <a href="https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform"
+                               target="_blank">our volunteer form</a>
                         </p>
                     </div>
+                    {% endblocktrans %}
                 </div>
             </section>
         </div>
@@ -98,11 +119,16 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="community">
-                    <h2 class="section__heading"><span><img width="36" height="36" src="{% static 'images/python_icon.png' %}" class="python__icon hidden-xs"></span>Python Community in Taiwan</h2>
+                    <h2 class="section__heading">
+                        <img width="36" height="36"
+                             src="{% static 'images/python_icon.png' %}"
+                             class="python__icon hidden-xs">
+                        {% trans 'Python Community in Taiwan' %}
+                    </h2>
                     <ul class="community-list list row">
                         <li class="list__item">
                             <a href="http://www.meetup.com/Taipei-py/" target="_blank">
-                            Taipei.py<span class="desc">Taipei Python User Group</span>
+                            Taipei.py <span class="desc">Taipei Python User Group</span>
                             </a>
                         </li>
                         <li class="list__item">
@@ -150,15 +176,28 @@
 <div class="section sponsorship">
     <div class="container">
         <div class="row">
-            <div class="sponsorship__call">Sponsorship 2016 available !</div>
+            <div class="sponsorship__call">
+                {% trans 'Sponsorship 2016 available!' %}
+            </div>
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                {% blocktrans %}
                 <p>
-                Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a> for sponsorship details.
+                    Sponsoring PyCon Taiwan 2016 will connect your brand with
+                    estimated total 800 Python enthusiastic users and
+                    developers in Taiwan, 9 out of 10 are professionals. It’s a
+                    great opportunity to find talents and promote your products
+                    here. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a>
+                    for sponsorship details.
                 </p>
                 <br>
-                <p>See also <a href="https://tw.pycon.org/2015apac/en/sponsors/" target="_blank"> Sponsors of PyCon APAC 2015</a></p>
+                <p>
+                    See also <a
+                        href="https://tw.pycon.org/2015apac/en/sponsors/"
+                        target="_blank">Sponsors of PyCon APAC 2015</a>
+                </p>
+                {% endblocktrans %}
             </div>
         </div>
     </div>
@@ -168,26 +207,18 @@
 {# begin .conf #}
 <div class="section conf">
     <div class="block container">
-        <p class="quote">&quot;Beautiful is better than ugly.     Explicit is better than implicit. &quot;</p>
+        <p class="quote">
+            &quot;Beautiful is better than ugly. Explicit is better than implicit. &quot;
+        </p>
         {% comment %}
         <div class="section keynote">
-            <h2 class="section__heading">Keynote Speaker</h2>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">Robert Bradshaw</div>
-                    <a class="keynote-speaker__url" href="https://andy.terrel.us" target="_blank">https://andy.terrel.us</a>
-                    <h3 class="keynote-speaker__heading h4">Bio</h3>
-                    <p class="keynote-speaker__body">Andy is a computational scientist with experience implementing distributed, large data applications. In his research, he is known for creating novel algorithms to speed implementations of mathematical models on the world's largest supercomputers.
-                    </p>
-                </div>
-            </div>
+            <h2 class="section__heading">Keynote Speakers</h2>
             <div class="row">
                 <div class="keynote-speaker">
                     <div class="keynote-speaker__photo"></div>
                     <div class="keynote-speaker__name">Jim Huang (jserv)</div>
                     <a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank">https://twitter.com/jserv</a>
-                    <h3 class="keynote-speaker__heading h4">Bio</h3>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
                     <p class="keynote-speaker__body">Jim Huang (黃敬群)，慣用網路暱稱為「jserv」，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰。
                     </p>
                 </div>
@@ -197,7 +228,7 @@
                     <div class="keynote-speaker__photo"></div>
                     <div class="keynote-speaker__name">Audrey Tang (au)</div>
                     <a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank">https://twitter.com/audreyt</a>
-                    <h3 class="keynote-speaker__heading h4">Bio</h3>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
                     <p class="keynote-speaker__body">
                     </p>
                 </div>
@@ -213,7 +244,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h2 class="section__heading">Sponsors</h2>
+                <h2 class="section__heading">{% trans 'Sponsors' %}</h2>
                 <div class="row">
                     <div class="sponsors__logo col-sm-12">
                         <a href="http://aktsk.com.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/akatsuki.png' %}" alt="akatsuki" style="max-height:100px;"></a>

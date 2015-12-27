@@ -53,7 +53,7 @@ def parser():
 
 
 @pytest.fixture
-def inactive_user(db):
+def bare_user(db):
     try:
         user = User.objects.get(email='user@user.me')
     except User.DoesNotExist:
@@ -65,16 +65,9 @@ def inactive_user(db):
 
 
 @pytest.fixture
-def bare_user(inactive_user):
-    user = User.objects.get(email='user@user.me')
-    user.is_active = True
-    user.save()
-    return user
-
-
-@pytest.fixture
 def user(bare_user):
     user = User.objects.get(email='user@user.me')
+    user.verified = True
     user.speaker_name = 'User'
     user.bio = 'Wonton soup semiotics warehouse neural urban physical-ware.'
     user.save()
@@ -99,9 +92,9 @@ def another_user(db):
         password='7uk1T0n01sY',
         speaker_name='Misaki Mei',
         bio='Neon marketing office assault kanji into meta-face.',
-        is_active=True,
+        verified=True,
     )
-    assert user.profile_filled
+    assert user.verified
     return user
 
 
