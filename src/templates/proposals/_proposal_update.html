@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load i18n static compress crispy_forms_tags %}
+
+
+{% block extra_css %}
+{{ block.super }}
+{% compress css %}
+{{ form.media.css }}
+{% endcompress %}
+{% endblock extra_css %}
+
+
+{% block content %}
+<div class="row" style="margin-bottom: 50px;">
+  <div class="col-md-offset-2 col-md-8">
+    {% if not object.cancelled %}
+    <h2 class="page-header">{{ object.title }}</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="nesting-form-group">
+        {% crispy form %}
+        <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Save' %}</button>
+      </div>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+
+{% compress js %}
+{{ form.media.js }}
+{% endcompress %}
+{% endblock extra_js %}
