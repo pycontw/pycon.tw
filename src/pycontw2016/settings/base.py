@@ -169,6 +169,8 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
+
 
 # Translation settings
 # Path to the local .po and .mo files
