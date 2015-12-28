@@ -22,7 +22,7 @@ body {
 
 .top-nav {
     background-color: $theme-color;
-    padding: 1.8em 2em;
+    padding: 24px 44px;
     > .logo {
         @extend .hidden-xs;
     }
@@ -31,13 +31,31 @@ body {
         color: #fff;
     }
 
+    .navbar-header{
+        margin-top: 3px;
+    }
+
     .navbar-right {
+        padding: 0;
+        margin: 0;
+
         a, .btn-link {
             font-weight: 300;
+            padding: 0;
 
             &:hover {
                 text-decoration: none;
             }
+        }
+
+        .logout-btn{
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height:19px;
+            background:#2350D2;
+            border-radius:4px;
+            width:88px;
+            height:32px;
         }
     }
 }

@@ -14,7 +14,7 @@
               <span class="icon-bar"></span>
           </button>
           <a href="{% url 'index' %}">
-              <img width="133" height="24" style="margin-top: 10px" src="{% static 'images/logo-tiny--reverse@2x.png' %}" class="logo hidden-xs" alt="logo">
+              <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}" class="logo hidden-xs" alt="logo">
               <img width="49" height="34" src="{% static 'images/LogoIcon_white@2x.png' %}" class="logo visible-xs-inline" alt="logo">
           </a>
       </div>
@@ -25,13 +25,8 @@
             <form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
               {% csrf_token %}
               <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
-              <button type="submit" class="btn btn-link">{% trans 'Log Out' %}</button>
+              <button type="submit" class="btn btn-link logout-btn">{% trans 'Log out' %}</button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                  <a href="{% url 'user_dashboard' %}">{% trans 'Dashboard' %}</a>
-              </li>
-            </ul>
           {% else %}
             <ul class="nav navbar-nav navbar-right">
               <li>
