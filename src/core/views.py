@@ -8,11 +8,6 @@ from .utils import (
 )
 
 
-class I18nRedirectView(RedirectView):
-    def get_redirect_url(self, path):
-        return reverse('page', kwargs={'path': path})
-
-
 class IndexView(TemplateView):
     template_name = 'index.html'
 
@@ -59,5 +54,4 @@ class FlatPageView(TemplateView):
 
 
 index = IndexView.as_view()
-i18n_redirect = I18nRedirectView.as_view()
 flat_page = FlatPageView.as_view()

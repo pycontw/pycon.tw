@@ -43,7 +43,6 @@
 
         <form class="navbar-form navbar-right" action="{% url 'set_language' %}" method="post">
           {% csrf_token %}
-          <input type="hidden" name="next" value="{% url 'i18n_redirect' path=i18n_path %}">
           <select id="language-select" name="language" class="form-control">
             {% get_language_info_list for LANGUAGES as languages %}
             {% get_current_language as LANGUAGE_CODE %}

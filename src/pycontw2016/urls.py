@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.i18n import set_language
 
-from core.views import flat_page, i18n_redirect, index
+from core.views import flat_page, index
 from users.views import user_dashboard
 
 
@@ -28,10 +28,6 @@ urlpatterns = i18n_patterns(
 ) + [
     url(r'^set-language/$', set_language, name='set_language'),
 ]
-
-
-# Redirect "/{whatever}" to "/{lang}/{whatever}".
-urlpatterns.append(url(NONASSETS_PATTERN, i18n_redirect, name='i18n_redirect'))
 
 
 # Prepend URL prefix if needed.
