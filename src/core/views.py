@@ -1,6 +1,5 @@
-from django.core.urlresolvers import reverse
 from django.http import Http404
-from django.views.generic import RedirectView, TemplateView
+from django.views.generic import TemplateView
 
 from .utils import (
     TemplateExistanceStatusResponse,
