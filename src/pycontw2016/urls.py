@@ -3,13 +3,14 @@ from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.views.i18n import set_language
 
 from core.views import flat_page, i18n_redirect, index
 from users.views import user_dashboard
 
 
 # Match everything except those starting with MEDIA_URL or STATIC_URL.
-NONASSETS_PATTERN = r'^(?!{media}|{static}/)(?P<path>.+)/$'.format(
+NONASSETS_PATTERN = r'^(?!{media}|{static}/)(?P<path>.*)/$'.format(
     media=settings.MEDIA_URL.strip('/'),
     static=settings.STATIC_URL.strip('/'),
 )
@@ -24,12 +25,13 @@ urlpatterns = i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),
 
     url(NONASSETS_PATTERN, flat_page, name='page'),
-)
+) + [
+    url(r'^set-language/$', set_language, name='set_language'),
+]
 
 
 # Redirect "/{whatever}" to "/{lang}/{whatever}".
-if settings.USE_I18N:
-    urlpatterns.append(url(NONASSETS_PATTERN, i18n_redirect)),
+urlpatterns.append(url(NONASSETS_PATTERN, i18n_redirect, name='i18n_redirect'))
 
 
 # Prepend URL prefix if needed.
