@@ -14,3 +14,80 @@
         white-space: normal;
     }
 }
+
+.profile_pic_panel {
+    margin: 20px 0 40px 0;
+    .pic {
+        width: 60px;
+        height: 60px;
+    } 
+    .upload-btn {
+        background: #F8F8F8;
+        border: 1px solid #EEEEEE;
+        border-radius: 3px;
+        width: 76px;
+        height: 32px;
+        position:relative;
+        display:inline-block;    
+
+        span {
+            font-size: 13px;
+            color: #3E6DF5;
+            line-height: 15px;
+        }
+
+        input {
+            -webkit-appearance: none; 
+            position: absolute;
+            top: 11px; 
+            left: 11px;
+            opacity: 0;
+        }   
+    }  
+}
+    
+
+.field {
+    margin: 20px 0 40px 0;
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    border-radius: 3px;
+}
+
+.field_title {
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 19px;
+}
+
+.name_field {
+    width: 308px;
+    height: 44px;    
+}
+
+.bio_field {
+    width: 600px;
+    height: 154px;
+}
+
+.save-btn {
+    background: #1542C4;
+    border: 1px solid #0E339F;
+    border-radius: 3px;
+    width: 68px;
+    height: 32px;
+    font-size: 13px;
+    color: #FFFFFF;
+    line-height: 15px;
+}
+
+.cancel-btn {
+    background: #D4D4D4;
+    border-radius: 3px;
+    width: 68px;
+    height: 32px;
+    font-size: 13px;
+    color: #FFFFFF;
+    line-height: 15px;
+    margin-left: 5px;
+}

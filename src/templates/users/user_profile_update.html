@@ -10,13 +10,38 @@
 {% block content %}
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
-    	<h2 class="page-header">{% trans 'Update Speaker Profile' %}</h2>
+    	<h2 class="page-header">{% trans 'Edit Profile' %}</h2>
 		<form id="user_profile_update_form" method="post">
   			{% csrf_token %}
   			<div class="nesting-form-group">
-		        {% crispy form %}
-		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>
-		  		<a href="{% url 'user_dashboard' %}" class="btn btn-md">{% trans 'Cancel' %}</a>
+  				{{ form.non_field_errors }}
+  				<div class="form-group">
+				    {{ form.photo.errors }}
+				    <label for="{{ form.photo.id_for_label }}" class="field_title">Profile picture</label>
+				    <div class="profile_pic_panel">
+				    	<div style="width:60px; margin-right:20px; display: inline-block;">
+				    		<img class="pic" src="{% static 'images/default_head.png' %}" class="img-circle">
+				    	</div>
+				    	<div class="btn upload-btn" style="display: inline-block;">
+				    		<span>{% trans 'Upload' %}</span>
+				    		<input id="id_photo" name="photo" type="file" />
+				    	</div>
+				    </div>
+				</div>
+				<div class="form-group">
+					{{ form.speaker_name.errors }}
+					<label for="{{ form.speaker_name.id_for_label }}" class="field_title">Your name</label>
+					<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" value="{{ form.speaker_name.value }}">
+				</div>
+				<div class="form-group">
+				    {{ form.bio.errors }}
+				    <label for="{{ form.bio.id_for_label }}" class="field_title">Self introduction</label>
+				    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
+				</div>
+				
+		        {# {% crispy form %} #}
+		  		<button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+		  		<a href="{% url 'user_dashboard' %}" class="btn cancel-btn" role="button">{% trans 'Cancel' %}</a>
 			</div>
 		</form>
 	</div>
