@@ -83,11 +83,8 @@ def test_talk_proposal_edit_get_cancelled_ui(
     )
     assert len(submit_buttons) == 1
 
-    assert submit_buttons[0].get('name') == 'cancelled'
-    assert not submit_buttons[0].get('value')
-
     form_element = next(submit_buttons[0].iterancestors('form'))
-    assert form_element.get('action') == '/proposals/talk/42/cancel/'
+    assert not form_element.get('action')   # Posts to the same view.
 
 
 def test_tutorial_proposal_edit_get(user_client, tutorial_proposal):
@@ -125,11 +122,8 @@ def test_tutorial_proposal_edit_get_cancelled(
     )
     assert len(submit_buttons) == 1
 
-    assert submit_buttons[0].get('name') == 'cancelled'
-    assert not submit_buttons[0].get('value')
-
     form_element = next(submit_buttons[0].iterancestors('form'))
-    assert form_element.get('action') == '/proposals/tutorial/42/cancel/'
+    assert not form_element.get('action')   # Posts to the same view.
 
 
 def test_talk_proposal_edit_post(user_client, talk_proposal):

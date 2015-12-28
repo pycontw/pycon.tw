@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -205,6 +205,12 @@ class TalkProposal(AbstractProposal):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
 
+    def get_update_url(self):
+        return reverse('talk_proposal_update', kwargs={'pk': self.pk})
+
+    def get_cancel_url(self):
+        return reverse('talk_proposal_cancel', kwargs={'pk': self.pk})
+
 
 class TutorialProposal(AbstractProposal):
 
@@ -231,3 +237,9 @@ class TutorialProposal(AbstractProposal):
     class Meta(AbstractProposal.Meta):
         verbose_name = _('tutorial proposal')
         verbose_name_plural = _('tutorial proposals')
+
+    def get_update_url(self):
+        return reverse('tutorial_proposal_update', kwargs={'pk': self.pk})
+
+    def get_cancel_url(self):
+        return reverse('tutorial_proposal_cancel', kwargs={'pk': self.pk})

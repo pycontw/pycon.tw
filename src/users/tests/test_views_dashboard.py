@@ -69,19 +69,23 @@ def test_dashboard_proposal_list(user_client, proposals, parser):
         'should be able to submit a proposal'
     )
 
-    elements = [parser.arrange(e) for e in body.cssselect('.proposal')]
+    elements = [parser.arrange(e) for e in body.cssselect('.proposal-title')]
     assert len(elements) == 6
 
     template = (
-        '<div class="proposal"><a href="/proposals/{type}/{pk}/edit/">'
-        'Edit <strong>{title}</strong></a></div>'
+        '<h4 class="proposal-title"><a href="/proposals/{type}/{pk}/edit/">'
+        '{title}</a></h4>'
     )
+
+    # The first three proposals are for talks.
     assert elements[:3] == [
         parser.arrange(template.format(
             pk=proposal.pk, type='talk', title=proposal.title,
         ))
         for proposal in proposals['talk']
     ]
+
+    # The latter three proposals are for tutorials.
     assert elements[-3:] == [
         parser.arrange(template.format(
             pk=proposal.pk, type='tutorial', title=proposal.title,
