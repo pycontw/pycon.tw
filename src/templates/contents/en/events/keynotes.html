@@ -1,0 +1,89 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+
+{% block title %}Keynotes{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
+{# begin .conf #}
+<div class="section conf">
+    <div class="block container">
+        <div class="section keynote">
+            <h2 class="section__heading">Keynote Speakers</h2>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">
+                        Amber Brown
+                    </div>
+                    <a class="keynote-speaker__url" href="#" target="_blank">
+                    </a>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
+                    <p class="keynote-speaker__body">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">
+                        Audrey Tang (au)
+                    </div>
+                    <a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank">
+                        https://twitter.com/audreyt
+                    </a>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
+                    <p class="keynote-speaker__body">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">
+                        Jim Huang (jserv)
+                    </div>
+                    <a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank">
+                        https://twitter.com/jserv
+                    </a>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
+                    <p class="keynote-speaker__body">
+                        Jim Huang (黃敬群)，慣用網路暱稱為「jserv」，熱血工讀生。 自 1999
+                        年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有
+                        GUTS、更有能力面對資訊科技產業的種種挑戰。
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">
+                        Paul Hildebrandt
+                    </div>
+                    <a class="keynote-speaker__url" href="#" target="_blank">
+                    </a>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
+                    <p class="keynote-speaker__body">
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="keynote-speaker">
+                    <div class="keynote-speaker__photo"></div>
+                    <div class="keynote-speaker__name">
+                        Steve Dower
+                    </div>
+                    <a class="keynote-speaker__url" href="#" target="_blank">
+                    </a>
+                    <h4 class="keynote-speaker__heading h4">Bio</h4>
+                    <p class="keynote-speaker__body">
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.sec.keynote -->
+    </div>
+</div>
+{# end .sec-conf #}
+{% endblock content %}
