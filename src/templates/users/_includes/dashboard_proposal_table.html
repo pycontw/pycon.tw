@@ -6,7 +6,7 @@
         <th class="title-cell" width="99%">{% trans 'Title' %}</th>
         <th>{% trans 'Python Level' %}</th>
         <th>{% trans 'Language' %}</th>
-        {% if user.is_valid_speaker %}<th></th>{% endif %}
+        <th></th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,6 @@
       <td class="title-cell">{{ proposal.title }}</td>
       <td>{{ proposal.get_python_level_display }}</td>
       <td>{{ proposal.get_language_display }}</td>
-      {% if user.is_valid_speaker %}
       <td>
         <form action="{{ proposal.get_cancel_url }}" method="post">
           {% csrf_token %}
@@ -27,7 +26,6 @@
           {% endif %}
         </form>
       </td>
-      {% endif %}
     </tr>
     {% endfor %}
   </tbody>
