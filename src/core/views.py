@@ -1,10 +1,20 @@
+from django.core.urlresolvers import reverse
 from django.http import Http404
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView, TemplateView
 
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
 )
+
+
+class I18nRedirectView(RedirectView):
+    def get_redirect_url(self, path):
+        return reverse('page', kwargs={'path': path})
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
 
 class FlatPageView(TemplateView):
@@ -48,4 +58,6 @@ class FlatPageView(TemplateView):
         return template_names
 
 
+index = IndexView.as_view()
+i18n_redirect = I18nRedirectView.as_view()
 flat_page = FlatPageView.as_view()
