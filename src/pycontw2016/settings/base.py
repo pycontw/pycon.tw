@@ -8,11 +8,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-from os.path import dirname, join, exists
+from os.path import abspath, dirname, join, exists
+from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
-BASE_DIR = dirname(dirname(dirname(__file__)))
+BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 
 # Use Django templates using the new Django 1.8 TEMPLATES settings
 TEMPLATES = [
@@ -60,6 +61,15 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = []
 
+# Database
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+DATABASES = {
+    # Raises ImproperlyConfigured exception if DATABASE_URL not in
+    # os.environ
+    'default': env.db(),
+}
+
 # Application definition
 
 DJANGO_APPS = (
@@ -85,6 +95,11 @@ LOCAL_APPS = (
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+# Enable Postgres-specific things if we are using it.
+if 'postgres' in DATABASES['default']['ENGINE']:
+    INSTALLED_APPS += ('postgres',)
+
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -101,17 +116,13 @@ ROOT_URLCONF = 'pycontw2016.urls'
 
 WSGI_APPLICATION = 'pycontw2016.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
-
-DATABASES = {
-    # Raises ImproperlyConfigured exception if DATABASE_URL not in
-    # os.environ
-    'default': env.db(),
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
+
+USE_I18N = True
+
+USE_L10N = True
 
 LANGUAGE_CODE = 'en-us'
 
@@ -120,13 +131,15 @@ LANGUAGES = [
     ('en', _('English')),
 ]
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
+# Path to the local .po and .mo files
+LOCALE_PATHS = (
+    join(BASE_DIR, 'locale'),
+)
 
 USE_TZ = True
+
+TIME_ZONE = 'UTC'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
@@ -137,17 +150,17 @@ STATIC_ROOT = join(BASE_DIR, 'assets')
 
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
 
+
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 
 MEDIA_ROOT = join(BASE_DIR, 'media')
 
-MEDIA_URL = "/media/"
-
-ALLOWED_HOSTS = []
+MEDIA_URL = '/media/'
 
 LIBSASS_SOURCEMAPS = True
+
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -157,24 +170,24 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+
+# URL settings.
+
+LOGIN_URL = reverse_lazy('login')
+
+LOGOUT_URL = reverse_lazy('logout')
+
+LOGIN_REDIRECT_URL = reverse_lazy('user_dashboard')
+
+
+# Third-party app and custom settings.
+
+AUTH_USER_MODEL = 'users.User'
+
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
 
-AUTH_USER_MODEL = 'users.User'
-
-URL_PREFIX = None
-
-LOGIN_REDIRECT_URL = '/dashboard/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
-
-
-# Translation settings
-# Path to the local .po and .mo files
-
-LOCALE_PATHS = (
-    join(BASE_DIR, 'locale'),
-)
