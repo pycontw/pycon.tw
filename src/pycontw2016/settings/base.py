@@ -103,6 +103,7 @@ if 'postgres' in DATABASES['default']['ENGINE']:
 MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'core.middlewares.LenientLocaleFallbackMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,6 +131,11 @@ LANGUAGES = [
     ('zh-hant', _('Traditional Chinese')),
     ('en-us',   _('English (United States)')),
 ]
+
+FALLBACK_LANGUAGES = {
+    'zh': 'zh-hant',
+    'en': 'en-us',
+}
 
 # Path to the local .po and .mo files
 LOCALE_PATHS = (
