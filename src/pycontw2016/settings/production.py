@@ -6,10 +6,13 @@ import logging.config
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False
 
-INSTALLED_APPS += ('postgres',)
-
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ["pycontw.krdai.info", "tw.pycon.org"]
+ALLOWED_HOSTS = ['pycontw.krdai.info', 'tw.pycon.org']
+
+# Override static and media URL for prefix in WSGI server.
+# https://code.djangoproject.com/ticket/25598
+STATIC_URL = '/2016/static/'
+MEDIA_URL = '/2016/media/'
 
 # Cache the templates in memory for speed-up
 loaders = [
@@ -25,9 +28,6 @@ loaders = [
 TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0]['OPTIONS'].update({"debug": False})
 del TEMPLATES[0]['APP_DIRS']
-
-# Define STATIC_ROOT for the collectstatic command
-STATIC_ROOT = join(BASE_DIR, 'assets')
 
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
@@ -83,16 +83,6 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
-URL_PREFIX = '2016/'
-
-LOGIN_URL = '/2016/accounts/login/'
-
-LOGOUT_URL = '/2016/accounts/logout/'
-
-LOGIN_REDIRECT_URL = '/2016/dashboard/'
-
-STATIC_URL = '/2016/static/'
-
 EMAIL_BACKEND = env.email_url()['EMAIL_BACKEND']
 EMAIL_HOST = env.email_url()['EMAIL_HOST']
 EMAIL_HOST_PASSWORD = env.email_url()['EMAIL_HOST_PASSWORD']
@@ -117,7 +107,7 @@ INSTALLED_APPS += (
     'raven.contrib.django.raven_compat',
 )
 
-import raven
+import raven    # NOQA
 
 RAVEN_CONFIG = {
     'dsn': env('DSN_URL'),
