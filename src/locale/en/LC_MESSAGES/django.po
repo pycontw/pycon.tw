@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 17:05+0000\n"
+"POT-Creation-Date: 2015-12-29 17:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,6 +118,8 @@ msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer)"
 msgstr ""
+"Who is the intended audience for your talk? (Be specific, “Python users” "
+"is not a good answer)"
 
 #: proposals/models.py:66
 msgid "abstract"
@@ -156,6 +158,12 @@ msgid ""
 "you to change the talk level when we find the content is too-hard or too-"
 "easy for the target audience."
 msgstr ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
+"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
+"more likely to be accepted because of being “Novice” level. We may contact "
+"you to change the talk level when we find the content is too-hard or too-"
+"easy for the target audience."
 
 #: proposals/models.py:100
 msgid "objective"
@@ -326,32 +334,24 @@ msgstr ""
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr ""
 
-#: pycontw2016/settings/base.py:131
-msgid "Traditional Chinese"
-msgstr ""
-
-#: pycontw2016/settings/base.py:132
-msgid "English (United States)"
-msgstr ""
-
-#: templates/_includes/nav.html:11
+#: templates/_includes/nav.html:10
 msgid "Toggle navigation"
 msgstr ""
 
-#: templates/_includes/nav.html:29
+#: templates/_includes/nav.html:28
 msgid "Log Out"
 msgstr ""
 
-#: templates/_includes/nav.html:33 templates/users/user_dashboard.html.py:5
+#: templates/_includes/nav.html:32 templates/users/user_dashboard.html.py:5
 msgid "Dashboard"
 msgstr ""
 
-#: templates/_includes/nav.html:39 templates/registration/login.html.py:7
+#: templates/_includes/nav.html:38 templates/registration/login.html.py:7
 #: templates/registration/login.html:12 templates/registration/login.html:18
 msgid "Log In"
 msgstr ""
 
-#: templates/_includes/nav.html:57
+#: templates/_includes/nav.html:56
 msgid "Change"
 msgstr ""
 

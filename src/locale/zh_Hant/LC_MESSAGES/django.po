@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 17:05+0000\n"
+"POT-Creation-Date: 2015-12-29 17:41+0000\n"
 "PO-Revision-Date: 2015-12-29 15:57+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -349,32 +349,24 @@ msgstr "《<strong>{title}</strong>》教學提案已撒回。"
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
 
-#: pycontw2016/settings/base.py:131
-msgid "Traditional Chinese"
-msgstr ""
-
-#: pycontw2016/settings/base.py:132
-msgid "English (United States)"
-msgstr ""
-
-#: templates/_includes/nav.html:11
+#: templates/_includes/nav.html:10
 msgid "Toggle navigation"
 msgstr ""
 
-#: templates/_includes/nav.html:29
+#: templates/_includes/nav.html:28
 msgid "Log Out"
 msgstr "登出"
 
-#: templates/_includes/nav.html:33 templates/users/user_dashboard.html.py:5
+#: templates/_includes/nav.html:32 templates/users/user_dashboard.html.py:5
 msgid "Dashboard"
 msgstr "控制面板"
 
-#: templates/_includes/nav.html:39 templates/registration/login.html.py:7
+#: templates/_includes/nav.html:38 templates/registration/login.html.py:7
 #: templates/registration/login.html:12 templates/registration/login.html:18
 msgid "Log In"
 msgstr "登入"
 
-#: templates/_includes/nav.html:57
+#: templates/_includes/nav.html:56
 msgid "Change"
 msgstr ""
 
