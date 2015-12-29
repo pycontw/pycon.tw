@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Dashboard' %}{% endblock title %}
+
+{% block body-class %}dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+  <p class="welcome">{% trans 'Welcome PyCon TW 2016' %}, {{ user.email }}</p>
+</div>
+
+{% if not user.verified %}
+<div class="row">
+  <div class="alert alert-warning clearfix" role="alert">
+    <p>{% trans 'You need to verify your email before being able to submit a proposal.' %}</p>
+    <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
+      {% csrf_token %}
+      <p>{% trans 'Did not get the verification email?' %}</p>
+      <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button>
+    </form>
+  </div>
+</div>
+{% elif not user.is_valid_speaker %}
+<div class="row">
+  <div class="alert alert-warning clearfix" role="alert">
+    <p>{% trans 'Please complete your speaker profile before submitting a proposal.' %}</p>
+  </div>
+</div>
+{% endif %}
+
+{% block panel-body %}{% endblock panel-body %}
+
+{% endblock content %}
