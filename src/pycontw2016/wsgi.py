@@ -14,7 +14,7 @@ application = get_wsgi_application()
 
 # Wrap werkzeug debugger if DEBUG is on
 from django.conf import settings
-if settings.DEBUG:
+if settings.DEBUG and settings.WERKZEUG_DEBUG:
     try:
         import django.views.debug
         import six

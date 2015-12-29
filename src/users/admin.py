@@ -27,7 +27,7 @@ class UserAdmin(UserAdmin):
             _('Permissions'),
             {
                 'fields': (
-                    'is_active', 'is_staff', 'is_superuser',
+                    'verified', 'is_active', 'is_staff', 'is_superuser',
                     'groups', 'user_permissions',
                 ),
             },
@@ -43,8 +43,7 @@ class UserAdmin(UserAdmin):
                 'classes': ('wide',),
                 'fields': (
                     'email', 'password1', 'password2',
-                    'speaker_name', 'bio', 'photo',
-                    'twitter_id', 'github_id', 'facebook_id',
+                    'speaker_name', 'bio', 'verified',
                 ),
             },
         ),
@@ -54,7 +53,10 @@ class UserAdmin(UserAdmin):
     add_form = UserCreationForm
 
     list_display = ('email', 'is_staff')
-    list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
+    list_filter = (
+        'verified', 'is_active', 'is_staff', 'is_superuser',
+        'groups',
+    )
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ('groups', 'user_permissions',)
