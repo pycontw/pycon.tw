@@ -20,20 +20,8 @@ urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
-if settings.URL_PREFIX:
-    urlpatterns = [
-        url(r'^{prefix}'.format(prefix=settings.URL_PREFIX),
-            include(urlpatterns)),
-    ]
-
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Catch-all URL pattern must be put last.
-if settings.URL_PREFIX:
-    urlpatterns += [
-        url(r'^{prefix}(?P<path>.+)/$'.format(prefix=settings.URL_PREFIX),
-            flat_page, name='page'),
-    ]
-else:
-    urlpatterns += [url(r'^(?P<path>.+)/$', flat_page, name='page')]
+urlpatterns += [url(r'^(?P<path>.+)/$', flat_page, name='page')]
