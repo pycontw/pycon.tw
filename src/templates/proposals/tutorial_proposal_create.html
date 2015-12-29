@@ -1,22 +1,7 @@
-{% extends 'base.html' %}
-
-{% load crispy_forms_tags static %}
+{% extends 'proposals/_proposal_create.html' %}
 
 {% load i18n %}
 
 {% block title %}{% trans 'Submit a New Tutorial Proposal' %}{% endblock title %}
 
-{% block content %}
-<div class="row">
-    <div class="col-md-offset-2 col-md-8">
-    	<h2 class="page-header">{% trans 'Submit a New Tutorial Proposal' %}</h2>
-		<form method="post">
-  			{% csrf_token %}
-  			<div class="nesting-form-group">
-		        {% crispy form %}
-		  		<button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Create Tutorial Proposal' %}</button>
-			</div>
-		</form>
-	</div>
-</div>
-{% endblock content %}
+{% block page_header %}{% trans 'Submit a New Tutorial Proposal' %}{% endblock page_header %}
