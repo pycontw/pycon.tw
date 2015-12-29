@@ -76,7 +76,7 @@ def user_dashboard(request):
 def user_profile_update(request):
     logout_next = reverse('index')
     if request.method == 'POST':
-        form = UserProfileUpdateForm(data=request.POST, instance=request.user)
+        form = UserProfileUpdateForm(data=request.POST, files=request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('user_dashboard')
