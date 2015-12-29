@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from os.path import abspath, dirname, join, exists
 from django.core.urlresolvers import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -125,16 +124,15 @@ USE_I18N = True
 
 USE_L10N = True
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('zh-hant', _('Traditional Chinese')),
-    ('en-us',   _('English (United States)')),
+    ('zh-hant', 'Traditional Chinese'),
+    ('en',      'English'),
 ]
 
-FALLBACK_LANGUAGES = {
+FALLBACK_LANGUAGE_PREFIXES = {
     'zh': 'zh-hant',
-    'en': 'en-us',
 }
 
 # Path to the local .po and .mo files

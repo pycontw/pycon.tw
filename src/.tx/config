@@ -1,6 +1,6 @@
 [main]
 host = https://www.transifex.com
-lang_map = zh-Hant:zh_Hant, en-US:en_US
+lang_map = zh-Hant:zh_Hant
 
 [pycon-tw-2016.djangopo]
 file_filter = locale/<lang>/LC_MESSAGES/django.po
