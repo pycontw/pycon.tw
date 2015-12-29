@@ -10,14 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-27 04:43+0000\n"
+"POT-Creation-Date: 2015-12-29 17:05+0000\n"
 "PO-Revision-Date: 2015-12-29 15:57+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
-"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
+"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
+"pycon-tw-2016/language/zh-Hant/)\n"
+"Language: zh-Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: proposals/models.py:13
@@ -100,11 +101,11 @@ msgstr "網站框架"
 msgid "category"
 msgstr "分類"
 
-#: proposals/models.py:47 pycontw2016/settings/base.py:120
+#: proposals/models.py:47
 msgid "English"
 msgstr "英文"
 
-#: proposals/models.py:48 pycontw2016/settings/base.py:119
+#: proposals/models.py:48
 msgid "Chinese"
 msgstr "中文"
 
@@ -131,7 +132,9 @@ msgid ""
 "The overview of what the talk is about. If the talk assume some domain "
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
-msgstr "介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若你的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
+msgstr ""
+"介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記"
+"在此。若你的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
 
 #: proposals/models.py:77
 msgid "Novice"
@@ -153,12 +156,16 @@ msgstr "Python 難易度"
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
-"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
-" be more likely to be accepted because of being \"Novice\" level. We may "
-"contact you to change the talk level when we find the content is too-hard or"
-" too-easy for the target audience."
-msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來說更簡單或困難時，可能會和你討論是否該修改。"
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
+"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
+"more likely to be accepted because of being \"Novice\" level. We may contact "
+"you to change the talk level when we find the content is too-hard or too-"
+"easy for the target audience."
+msgstr ""
+"講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的"
+"定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一"
+"文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來"
+"說更簡單或困難時，可能會和你討論是否該修改。"
 
 #: proposals/models.py:100
 msgid "objective"
@@ -166,9 +173,11 @@ msgstr "演講目標"
 
 #: proposals/models.py:103
 msgid ""
-"What will the attendees get out of your talk? When they leave the room, what"
-" will they learn that they didn't know before?"
-msgstr "會眾聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼在聽以前不知道的？"
+"What will the attendees get out of your talk? When they leave the room, what "
+"will they learn that they didn't know before?"
+msgstr ""
+"會眾聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼在聽以"
+"前不知道的？"
 
 #: proposals/models.py:109
 msgid "detailed description"
@@ -180,10 +189,13 @@ msgid ""
 "comfortable length is less than 1000 characters (or about 600 Chinese "
 "characters). Since most reviewers may not understand the topic as deep as "
 "you do, including related links to the talk topic will help reviewers "
-"understand the proposal. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
-msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1000 字元或 600 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+"understand the proposal. Edit using <a href='http://daringfireball.net/"
+"projects/markdown/basics' target='_blank'>Markdown</a>."
+msgstr ""
+"本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1000 "
+"字元或 600 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主"
+"題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:124
 msgid "supplementary"
@@ -192,11 +204,13 @@ msgstr "補充資訊"
 #: proposals/models.py:128
 msgid ""
 "Anything else you'd like the program committee to know when making their "
-"selection: your past speaking experience, community experience, etc. This is"
-" not made public. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
-msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+"selection: your past speaking experience, community experience, etc. This is "
+"not made public. Edit using <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a>."
+msgstr ""
+"任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社"
+"群經驗等。這欄位並不會公開。使用 <a href='http://daringfireball.net/projects/"
+"markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:137
 msgid "Yes"
@@ -246,21 +260,23 @@ msgstr "偏好 25 分鐘"
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
-#: proposals/models.py:188 proposals/models.py:216
+#: proposals/models.py:188 proposals/models.py:222
 msgid "duration"
 msgstr "時間長度"
 
-#: proposals/models.py:194 proposals/models.py:222
+#: proposals/models.py:194 proposals/models.py:228
 msgid "outline"
 msgstr "大綱"
 
 #: proposals/models.py:197
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
-"estimated time length for each sections in the talk. Talks in favor of 45min"
-" should have a fallback plan about how to shrink the content into a 25min "
-"one."
-msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。"
+"estimated time length for each sections in the talk. Talks in favor of 45min "
+"should have a fallback plan about how to shrink the content into a 25min one."
+msgstr ""
+"本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏"
+"好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合"
+"較短的時間限制。"
 
 #: proposals/models.py:205
 msgid "talk proposal"
@@ -270,25 +286,26 @@ msgstr "演講提案"
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:212
+#: proposals/models.py:218
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:213
+#: proposals/models.py:219
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:225
+#: proposals/models.py:231
 msgid ""
-"How the tutorial will be arranged. You should enumerate over each section in"
-" your talk and attach each section with the estimated time length."
-msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。"
+"How the tutorial will be arranged. You should enumerate over each section in "
+"your talk and attach each section with the estimated time length."
+msgstr ""
+"本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。"
 
-#: proposals/models.py:232
+#: proposals/models.py:238
 msgid "tutorial proposal"
 msgstr "教學提案"
 
-#: proposals/models.py:233
+#: proposals/models.py:239
 msgid "tutorial proposals"
 msgstr "教學提案"
 
@@ -332,18 +349,34 @@ msgstr "《<strong>{title}</strong>》教學提案已撒回。"
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
 
-#: templates/_includes/nav.html:28
+#: pycontw2016/settings/base.py:131
+msgid "Traditional Chinese"
+msgstr ""
+
+#: pycontw2016/settings/base.py:132
+msgid "English (United States)"
+msgstr ""
+
+#: templates/_includes/nav.html:11
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/_includes/nav.html:29
 msgid "Log Out"
 msgstr "登出"
 
-#: templates/_includes/nav.html:32 templates/users/user_dashboard.html.py:5
+#: templates/_includes/nav.html:33 templates/users/user_dashboard.html.py:5
 msgid "Dashboard"
 msgstr "控制面板"
 
-#: templates/_includes/nav.html:38 templates/registration/login.html.py:7
+#: templates/_includes/nav.html:39 templates/registration/login.html.py:7
 #: templates/registration/login.html:12 templates/registration/login.html:18
 msgid "Log In"
 msgstr "登入"
+
+#: templates/_includes/nav.html:57
+msgid "Change"
+msgstr ""
 
 #: templates/index.html:37 templates/index.html.py:43
 msgid "Tutorials"
@@ -362,12 +395,19 @@ msgid ""
 "\n"
 "                <h2 class=\"intro__heading\">What is PyCon</h2>\n"
 "                <div class=\"intro__body\">\n"
-"                    The original PyCon was formed in North America in 2003, and\n"
-"                    now there are many other conferences being run in the PyCon\n"
+"                    The original PyCon was formed in North America in 2003, "
+"and\n"
+"                    now there are many other conferences being run in the "
+"PyCon\n"
 "                    spirit around the world.\n"
 "                </div>\n"
 "                "
-msgstr "\n<h2 class=\"intro__heading\">何謂 PyCon</h2>\n<div class=\"intro__body\">\nPyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。\n</div>"
+msgstr ""
+"\n"
+"<h2 class=\"intro__heading\">何謂 PyCon</h2>\n"
+"<div class=\"intro__body\">\n"
+"PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。\n"
+"</div>"
 
 #: templates/index.html:79
 msgid ""
@@ -376,14 +416,24 @@ msgid ""
 "                <div class=\"intro__body\">\n"
 "                    PyCon Taiwan is an annual convention in Taiwan for the\n"
 "                    discussion and promotion of the Python programming\n"
-"                    language. It is held by enthusiasts and focuses on Python\n"
+"                    language. It is held by enthusiasts and focuses on "
+"Python\n"
 "                    technology and its versatile applications. We welcome\n"
-"                    people who are interested in Python to join PyCon Taiwan to\n"
-"                    share knowledge, exchange ideas, make connections and to\n"
+"                    people who are interested in Python to join PyCon Taiwan "
+"to\n"
+"                    share knowledge, exchange ideas, make connections and "
+"to\n"
 "                    help us grow our network.\n"
 "                </div>\n"
 "                "
-msgstr "\n<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2>\n<div class=\"intro__body\">\nPyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。\n</div>"
+msgstr ""
+"\n"
+"<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2>\n"
+"<div class=\"intro__body\">\n"
+"PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚"
+"焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友"
+"一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。\n"
+"</div>"
 
 #: templates/index.html:95
 #, python-format
@@ -391,18 +441,36 @@ msgid ""
 "\n"
 "                    <h4 class=\"volunteer__heading h4\">\n"
 "                        Volunteers Needed!\n"
-"                        <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\">\n"
+"                        <img width=\"25\" height=\"22\" src="
+"\"%(img_call_icon)s\" class=\"call__icon\">\n"
 "                    </h4>\n"
 "                    <div class=\"volunteer__body\">\n"
-"                        <p>Help us organize and make the conference successful!</p>\n"
+"                        <p>Help us organize and make the conference "
+"successful!</p>\n"
 "                        <p>\n"
 "                            Please fill out<br>\n"
-"                            <a href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n"
+"                            <a href=\"https://docs.google.com/forms/"
+"d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n"
 "                               target=\"_blank\">our volunteer form</a>\n"
 "                        </p>\n"
 "                    </div>\n"
 "                    "
-msgstr "\n<h4 class=\"volunteer__heading h4\">\n  志工招募中！\n  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\">\n</h4>\n<div class=\"volunteer__body\">\n  <p>與我們共同籌備並讓這個會議更成功！</p>\n  <p>\n    請填寫我們的<a \n      href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n       target=\"_blank\">志工參加表</a>\n  </p>\n</div>"
+msgstr ""
+"\n"
+"<h4 class=\"volunteer__heading h4\">\n"
+"  志工招募中！\n"
+"  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class="
+"\"call__icon\">\n"
+"</h4>\n"
+"<div class=\"volunteer__body\">\n"
+"  <p>與我們共同籌備並讓這個會議更成功！</p>\n"
+"  <p>\n"
+"    請填寫我們的<a \n"
+"      href=\"https://docs.google.com/forms/"
+"d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n"
+"       target=\"_blank\">志工參加表</a>\n"
+"  </p>\n"
+"</div>"
 
 #: templates/index.html:126
 msgid "Python Community in Taiwan"
@@ -416,11 +484,15 @@ msgstr "2016 年度贊助已經開始！ "
 msgid ""
 "\n"
 "                <p>\n"
-"                    Sponsoring PyCon Taiwan 2016 will connect your brand with\n"
+"                    Sponsoring PyCon Taiwan 2016 will connect your brand "
+"with\n"
 "                    estimated total 800 Python enthusiastic users and\n"
-"                    developers in Taiwan, 9 out of 10 are professionals. It’s a\n"
-"                    great opportunity to find talents and promote your products\n"
-"                    here. Contact us at <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a>\n"
+"                    developers in Taiwan, 9 out of 10 are professionals. "
+"It’s a\n"
+"                    great opportunity to find talents and promote your "
+"products\n"
+"                    here. Contact us at <a href=\"mailto:sponsorship@pycon.tw"
+"\">sponsorship@pycon.tw</a>\n"
 "                    for sponsorship details.\n"
 "                </p>\n"
 "                <br>\n"
@@ -430,14 +502,36 @@ msgid ""
 "                        target=\"_blank\">Sponsors of PyCon APAC 2015</a>\n"
 "                </p>\n"
 "                "
-msgstr "\n<p>\n    贊助 PyCon Taiwan 2016 能將貴品牌與約 800 名 Python 愛好者，其中九成為專業工程師。這也是個絕佳招聘機會並且能宣傳您的產品。請透過 <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 與我們聯絡得到更多贊助細節。\n</p>            \n<br>\n<p>\n    亦參考 <a\n        href=\"https://tw.pycon.org/2015apac/en/sponsors/\"\n        target=\"_blank\">PyCon APAC 2015 的贊助商</a>\n</p>"
+msgstr ""
+"\n"
+"<p>\n"
+"    贊助 PyCon Taiwan 2016 能將貴品牌與約 800 名 Python 愛好者，其中九成為專"
+"業工程師。這也是個絕佳招聘機會並且能宣傳您的產品。請透過 <a href=\"mailto:"
+"sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 與我們聯絡得到更多贊助細"
+"節。\n"
+"</p>            \n"
+"<br>\n"
+"<p>\n"
+"    亦參考 <a\n"
+"        href=\"https://tw.pycon.org/2015apac/en/sponsors/\"\n"
+"        target=\"_blank\">PyCon APAC 2015 的贊助商</a>\n"
+"</p>"
 
 #: templates/index.html:248
 msgid "Sponsors"
 msgstr "贊助者"
 
+#: templates/proposals/_proposal_create.html:14
+msgid "Create Tutorial Proposal"
+msgstr "創建教學提案"
+
+#: templates/proposals/_proposal_update.html:23
+#: templates/users/user_profile_update.html:18
+msgid "Save"
+msgstr "儲存"
+
 #: templates/proposals/create_proposal_choice.html:5
-#: templates/users/user_dashboard.html:27
+#: templates/users/user_dashboard.html:34
 msgid "Submit a Proposal"
 msgstr "提交一個提案"
 
@@ -453,36 +547,22 @@ msgstr "演講"
 msgid "Tutorial"
 msgstr "教學"
 
+#: templates/proposals/talk_proposal_create.html:5
 #: templates/proposals/talk_proposal_create.html:7
-#: templates/proposals/talk_proposal_create.html:12
 msgid "Submit a New Talk Proposal"
 msgstr "提交一個新的演講提案"
 
-#: templates/proposals/talk_proposal_create.html:17
-msgid "Create Talk Proposal"
-msgstr ""
-
-#: templates/proposals/talk_proposal_update.html:8
+#: templates/proposals/talk_proposal_update.html:5
 #, python-format
 msgid "Edit Talk Proposal %(proposal_title)s"
 msgstr "修改演講提案《%(proposal_title)s》"
 
-#: templates/proposals/talk_proposal_update.html:28
-#: templates/proposals/tutorial_proposal_update.html:25
-#: templates/users/user_profile_update.html:18
-msgid "Save"
-msgstr "儲存"
-
+#: templates/proposals/tutorial_proposal_create.html:5
 #: templates/proposals/tutorial_proposal_create.html:7
-#: templates/proposals/tutorial_proposal_create.html:12
 msgid "Submit a New Tutorial Proposal"
 msgstr "提交一個新的教學提案"
 
-#: templates/proposals/tutorial_proposal_create.html:17
-msgid "Create Tutorial Proposal"
-msgstr "創建教學提案"
-
-#: templates/proposals/tutorial_proposal_update.html:8
+#: templates/proposals/tutorial_proposal_update.html:5
 #, python-format
 msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr "修改教學提案《%(proposal_title)s》"
@@ -493,7 +573,9 @@ msgid ""
 "\n"
 "      Don't have an account? <a href=\"%(signup_url)s\">Sign up now!</a>\n"
 "      "
-msgstr "\n沒有帳號？<a href=\"%(signup_url)s\">馬上註冊一個！</a>"
+msgstr ""
+"\n"
+"沒有帳號？<a href=\"%(signup_url)s\">馬上註冊一個！</a>"
 
 #: templates/registration/signup.html:7 templates/registration/signup.html:12
 #: templates/registration/signup.html:18
@@ -506,14 +588,44 @@ msgid ""
 "\n"
 "            Already have an account? <a href=\"%(login_url)s\">Login.</a>\n"
 "            "
-msgstr "\n已經有帳號了？直接<a href=\"%(login_url)s\">登入</a>。"
+msgstr ""
+"\n"
+"已經有帳號了？直接<a href=\"%(login_url)s\">登入</a>。"
 
 #: templates/registration/verification_email.txt:5
 #, python-format
 msgid ""
 "\n"
 "Go here: %(verification_url)s\n"
-msgstr "\n前往：%(verification_url)s\n"
+msgstr ""
+"\n"
+"前往：%(verification_url)s\n"
+
+#: templates/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
+msgstr "題目"
+
+#: templates/users/_includes/dashboard_proposal_table.html:7
+msgid "Python Level"
+msgstr "Python 難易度"
+
+#: templates/users/_includes/dashboard_proposal_table.html:8
+msgid "Language"
+msgstr "語言"
+
+#: templates/users/_includes/dashboard_proposal_table.html:22
+#, fuzzy
+#| msgid "active"
+msgid "Reactivate"
+msgstr "已啟用"
+
+#: templates/users/_includes/dashboard_proposal_table.html:24
+msgid "Edit"
+msgstr "編輯"
+
+#: templates/users/_includes/dashboard_proposal_table.html:25
+msgid "Withdraw"
+msgstr ""
 
 #: templates/users/user_dashboard.html:12
 msgid "You need to verify your email before being able to submit a proposal."
@@ -527,42 +639,38 @@ msgstr "沒有收到認證用的 email 嗎？"
 msgid "Request a new one."
 msgstr "重新寄送一封。"
 
-#: templates/users/user_dashboard.html:24
+#: templates/users/user_dashboard.html:23
+#, fuzzy
+#| msgid ""
+#| "You need to verify your email before being able to submit a proposal."
+msgid "Please complete your speaker profile before submitting a proposal."
+msgstr "在投稿前，您必須先完成 email 的認證。"
+
+#: templates/users/user_dashboard.html:31
 msgid "Edit speaker profile"
 msgstr "修改講者資訊"
 
-#: templates/users/user_dashboard.html:32
+#: templates/users/user_dashboard.html:40
 msgid "Talk Proposals"
 msgstr "演講提案"
 
-#: templates/users/user_dashboard.html:36
-#: templates/users/user_dashboard.html:64
-msgid "Title"
-msgstr "題目"
-
-#: templates/users/user_dashboard.html:37
-#: templates/users/user_dashboard.html:65
-msgid "Abstract"
+#: templates/users/user_dashboard.html:44
+#, python-format
+msgid ""
+"You haven't submitted any talk proposals. Why not <a href="
+"\"%(talk_proposal_create_url)s\">submit one now</a>?"
 msgstr ""
 
-#: templates/users/user_dashboard.html:38
-#: templates/users/user_dashboard.html:66
-msgid "Python Level"
-msgstr "Python 難易度"
-
-#: templates/users/user_dashboard.html:39
-#: templates/users/user_dashboard.html:67
-msgid "Language"
-msgstr "語言"
-
-#: templates/users/user_dashboard.html:50
-#: templates/users/user_dashboard.html:79
-msgid "Edit"
-msgstr "編輯"
-
-#: templates/users/user_dashboard.html:60
+#: templates/users/user_dashboard.html:49
 msgid "Tutorial Proposals"
 msgstr "教學提案"
+
+#: templates/users/user_dashboard.html:53
+#, python-format
+msgid ""
+"You haven't submitted any tutorial proposals. Why not <a href="
+"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+msgstr ""
 
 #: templates/users/user_profile_update.html:7
 #: templates/users/user_profile_update.html:13
@@ -610,7 +718,9 @@ msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
-msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
+msgstr ""
+"原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可"
+"以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/models.py:89
 msgid "email address"

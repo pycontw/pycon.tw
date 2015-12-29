@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-27 04:43+0000\n"
+"POT-Creation-Date: 2015-12-29 17:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,11 +97,11 @@ msgstr ""
 msgid "category"
 msgstr ""
 
-#: proposals/models.py:47 pycontw2016/settings/base.py:120
+#: proposals/models.py:47
 msgid "English"
 msgstr ""
 
-#: proposals/models.py:48 pycontw2016/settings/base.py:119
+#: proposals/models.py:48
 msgid "Chinese"
 msgstr ""
 
@@ -241,11 +241,11 @@ msgstr ""
 msgid "Prefer 45min"
 msgstr ""
 
-#: proposals/models.py:188 proposals/models.py:216
+#: proposals/models.py:188 proposals/models.py:222
 msgid "duration"
 msgstr ""
 
-#: proposals/models.py:194 proposals/models.py:222
+#: proposals/models.py:194 proposals/models.py:228
 msgid "outline"
 msgstr ""
 
@@ -264,25 +264,25 @@ msgstr ""
 msgid "talk proposals"
 msgstr ""
 
-#: proposals/models.py:212
+#: proposals/models.py:218
 msgid "Half day"
 msgstr ""
 
-#: proposals/models.py:213
+#: proposals/models.py:219
 msgid "Full day"
 msgstr ""
 
-#: proposals/models.py:225
+#: proposals/models.py:231
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length."
 msgstr ""
 
-#: proposals/models.py:232
+#: proposals/models.py:238
 msgid "tutorial proposal"
 msgstr ""
 
-#: proposals/models.py:233
+#: proposals/models.py:239
 msgid "tutorial proposals"
 msgstr ""
 
@@ -326,17 +326,33 @@ msgstr ""
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr ""
 
-#: templates/_includes/nav.html:28
+#: pycontw2016/settings/base.py:131
+msgid "Traditional Chinese"
+msgstr ""
+
+#: pycontw2016/settings/base.py:132
+msgid "English (United States)"
+msgstr ""
+
+#: templates/_includes/nav.html:11
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/_includes/nav.html:29
 msgid "Log Out"
 msgstr ""
 
-#: templates/_includes/nav.html:32 templates/users/user_dashboard.html.py:5
+#: templates/_includes/nav.html:33 templates/users/user_dashboard.html.py:5
 msgid "Dashboard"
 msgstr ""
 
-#: templates/_includes/nav.html:38 templates/registration/login.html.py:7
+#: templates/_includes/nav.html:39 templates/registration/login.html.py:7
 #: templates/registration/login.html:12 templates/registration/login.html:18
 msgid "Log In"
+msgstr ""
+
+#: templates/_includes/nav.html:57
+msgid "Change"
 msgstr ""
 
 #: templates/index.html:37 templates/index.html.py:43
@@ -442,8 +458,17 @@ msgstr ""
 msgid "Sponsors"
 msgstr ""
 
+#: templates/proposals/_proposal_create.html:14
+msgid "Create Tutorial Proposal"
+msgstr ""
+
+#: templates/proposals/_proposal_update.html:23
+#: templates/users/user_profile_update.html:18
+msgid "Save"
+msgstr ""
+
 #: templates/proposals/create_proposal_choice.html:5
-#: templates/users/user_dashboard.html:27
+#: templates/users/user_dashboard.html:34
 msgid "Submit a Proposal"
 msgstr ""
 
@@ -459,36 +484,22 @@ msgstr ""
 msgid "Tutorial"
 msgstr ""
 
+#: templates/proposals/talk_proposal_create.html:5
 #: templates/proposals/talk_proposal_create.html:7
-#: templates/proposals/talk_proposal_create.html:12
 msgid "Submit a New Talk Proposal"
 msgstr ""
 
-#: templates/proposals/talk_proposal_create.html:17
-msgid "Create Talk Proposal"
-msgstr ""
-
-#: templates/proposals/talk_proposal_update.html:8
+#: templates/proposals/talk_proposal_update.html:5
 #, python-format
 msgid "Edit Talk Proposal %(proposal_title)s"
 msgstr ""
 
-#: templates/proposals/talk_proposal_update.html:28
-#: templates/proposals/tutorial_proposal_update.html:25
-#: templates/users/user_profile_update.html:18
-msgid "Save"
-msgstr ""
-
+#: templates/proposals/tutorial_proposal_create.html:5
 #: templates/proposals/tutorial_proposal_create.html:7
-#: templates/proposals/tutorial_proposal_create.html:12
 msgid "Submit a New Tutorial Proposal"
 msgstr ""
 
-#: templates/proposals/tutorial_proposal_create.html:17
-msgid "Create Tutorial Proposal"
-msgstr ""
-
-#: templates/proposals/tutorial_proposal_update.html:8
+#: templates/proposals/tutorial_proposal_update.html:5
 #, python-format
 msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr ""
@@ -521,6 +532,30 @@ msgid ""
 "Go here: %(verification_url)s\n"
 msgstr ""
 
+#: templates/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:7
+msgid "Python Level"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:8
+msgid "Language"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:22
+msgid "Reactivate"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:24
+msgid "Edit"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:25
+msgid "Withdraw"
+msgstr ""
+
 #: templates/users/user_dashboard.html:12
 msgid "You need to verify your email before being able to submit a proposal."
 msgstr ""
@@ -533,41 +568,34 @@ msgstr ""
 msgid "Request a new one."
 msgstr ""
 
-#: templates/users/user_dashboard.html:24
+#: templates/users/user_dashboard.html:23
+msgid "Please complete your speaker profile before submitting a proposal."
+msgstr ""
+
+#: templates/users/user_dashboard.html:31
 msgid "Edit speaker profile"
 msgstr ""
 
-#: templates/users/user_dashboard.html:32
+#: templates/users/user_dashboard.html:40
 msgid "Talk Proposals"
 msgstr ""
 
-#: templates/users/user_dashboard.html:36
-#: templates/users/user_dashboard.html:64
-msgid "Title"
+#: templates/users/user_dashboard.html:44
+#, python-format
+msgid ""
+"You haven't submitted any talk proposals. Why not <a href="
+"\"%(talk_proposal_create_url)s\">submit one now</a>?"
 msgstr ""
 
-#: templates/users/user_dashboard.html:37
-#: templates/users/user_dashboard.html:65
-msgid "Abstract"
-msgstr ""
-
-#: templates/users/user_dashboard.html:38
-#: templates/users/user_dashboard.html:66
-msgid "Python Level"
-msgstr ""
-
-#: templates/users/user_dashboard.html:39
-#: templates/users/user_dashboard.html:67
-msgid "Language"
-msgstr ""
-
-#: templates/users/user_dashboard.html:50
-#: templates/users/user_dashboard.html:79
-msgid "Edit"
-msgstr ""
-
-#: templates/users/user_dashboard.html:60
+#: templates/users/user_dashboard.html:49
 msgid "Tutorial Proposals"
+msgstr ""
+
+#: templates/users/user_dashboard.html:53
+#, python-format
+msgid ""
+"You haven't submitted any tutorial proposals. Why not <a href="
+"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
 msgstr ""
 
 #: templates/users/user_profile_update.html:7
