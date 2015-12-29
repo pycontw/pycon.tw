@@ -23,6 +23,7 @@ body {
 .top-nav {
     background-color: $theme-color;
     padding: 24px 44px;
+
     > .logo {
         @extend .hidden-xs;
     }
@@ -32,7 +33,7 @@ body {
     }
 
     .navbar-header{
-        margin-top: 3px;
+        margin: 3px 0 0;
     }
 
     .navbar-right {

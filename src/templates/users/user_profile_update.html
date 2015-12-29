@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
 {% load crispy_forms_tags static %}
 
@@ -7,7 +7,7 @@
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
 
-{% block content %}
+{% block main-content %}
 <div class="row">
     <div class="col-md-offset-2 col-md-8">
     	<h2 class="page-header">{% trans 'Edit Profile' %}</h2>
@@ -38,7 +38,7 @@
 				    <label for="{{ form.bio.id_for_label }}" class="field_title">Self introduction</label>
 				    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
 				</div>
-				
+
 		        {# {% crispy form %} #}
 		  		<button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
 		  		<a href="{% url 'user_dashboard' %}" class="btn cancel-btn" role="button">{% trans 'Cancel' %}</a>
@@ -46,4 +46,4 @@
 		</form>
 	</div>
 </div>
-{% endblock content %}
+{% endblock main-content %}

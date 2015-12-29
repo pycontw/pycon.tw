@@ -6,7 +6,7 @@ body.dashboard{
         font-size: 21px;
         color: #4A4A4A;
         line-height: 24px;
-        margin: 25px 0;
+        margin: 20px 0;
     }
 
     .alert-warning{
@@ -23,6 +23,12 @@ body.dashboard{
             padding: 0;
             color:#3E6DF5;
         }
+    }
+    .main-container{
+        background:#FFFFFF;
+        border: 1px solid #EEEEEE;
+        border-radius:4px;
+        padding: 20px;
     }
 }
 
