@@ -4,10 +4,10 @@ from core.utils import collect_language_codes
 
 
 def test_collect_language_codes():
-    assert collect_language_codes('zh-tw') == ['zh-tw', 'zh', 'en-us', 'en']
-    assert collect_language_codes('zh') == ['zh', 'en-us', 'en']
-    assert collect_language_codes('en-us') == ['en-us', 'en', 'en-us', 'en']
-    assert collect_language_codes('en') == ['en', 'en-us', 'en']
+    assert collect_language_codes('zh-tw') == ['zh-tw', 'zh', 'en']
+    assert collect_language_codes('zh') == ['zh', 'en']
+    assert collect_language_codes('en-uk') == ['en-uk', 'en', 'en']
+    assert collect_language_codes('en') == ['en', 'en']
 
 
 def test_index_page(client):
