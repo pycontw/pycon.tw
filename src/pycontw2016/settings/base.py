@@ -127,8 +127,8 @@ USE_L10N = True
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
-    ('zh-hant', _('Chinese')),
-    ('en', _('English')),
+    ('zh-hant', _('Traditional Chinese')),
+    ('en-us',   _('English (United States)')),
 ]
 
 # Path to the local .po and .mo files
