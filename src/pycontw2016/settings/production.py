@@ -107,7 +107,7 @@ INSTALLED_APPS += (
     'raven.contrib.django.raven_compat',
 )
 
-import raven    # NOQA
+import raven    # noqa
 
 RAVEN_CONFIG = {
     'dsn': env('DSN_URL'),

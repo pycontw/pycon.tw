@@ -7,6 +7,10 @@ from .utils import (
 )
 
 
+class IndexView(TemplateView):
+    template_name = 'index.html'
+
+
 class FlatPageView(TemplateView):
 
     response_class = TemplateExistanceStatusResponse
@@ -48,4 +52,5 @@ class FlatPageView(TemplateView):
         return template_names
 
 
+index = IndexView.as_view()
 flat_page = FlatPageView.as_view()

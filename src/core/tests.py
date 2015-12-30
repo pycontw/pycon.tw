@@ -1,8 +1,11 @@
 import pytest
 
+from django.test import override_settings
+
 from core.utils import collect_language_codes
 
 
+@override_settings(LANGUAGE_CODE='en-us')
 def test_collect_language_codes():
     assert collect_language_codes('zh-tw') == ['zh-tw', 'zh', 'en-us', 'en']
     assert collect_language_codes('zh') == ['zh', 'en-us', 'en']

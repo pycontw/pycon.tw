@@ -27,10 +27,10 @@ def collect_language_codes(user_code):
     a fallback. The site's default langauge (``settings.LANGUAGE_CODE``) and
     its base language (if applicable) are then appended as further fallbacks.
 
-    Examples (assuming site language is "en-us"):
+    Examples (assuming site language is "en"):
 
-    * "zh-tw" -> "zh-tw", "zh", "en-us", "en"
-    * "ja"    -> "ja", "en-us", "en"
+    * "zh-tw" -> "zh-tw", "zh", "en"
+    * "ja"    -> "ja", "en"
 
     :returns: An ordered iterable containing collected language codes.
     """

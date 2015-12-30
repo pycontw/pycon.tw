@@ -1,131 +1,129 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Translators:
-# flywindy <flywindy2002@gmail.com>, 2015
-# Liang Bo Wang <ccwang002@gmail.com>, 2015
-# Tzu-ping Chung <uranusjr@gmail.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PyCon TW 2016\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-27 04:43+0000\n"
-"PO-Revision-Date: 2015-12-27 04:40+0000\n"
-"Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
-"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
-"pycon-tw-2016/language/zh-Hant/)\n"
-"Language: zh-Hant\n"
+"POT-Creation-Date: 2015-12-30 04:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: proposals/models.py:13
 msgid "submitter"
-msgstr "提交人"
+msgstr ""
 
 #: proposals/models.py:17
 msgid "title"
-msgstr "題目"
+msgstr ""
 
 #: proposals/models.py:22
 msgid "Best Practices & Patterns"
-msgstr "最佳實踐與慣例"
+msgstr ""
 
 #: proposals/models.py:23
 msgid "Community"
-msgstr "社群"
+msgstr ""
 
 #: proposals/models.py:24
 msgid "Databases"
-msgstr "資料庫"
+msgstr ""
 
 #: proposals/models.py:25
 msgid "Data Analysis"
-msgstr "資料分析"
+msgstr ""
 
 #: proposals/models.py:26
 msgid "Education"
-msgstr "教育"
+msgstr ""
 
 #: proposals/models.py:27
 msgid "Embedded Systems"
-msgstr "嵌入式系統"
+msgstr ""
 
 #: proposals/models.py:28
 msgid "Gaming"
-msgstr "遊戲"
+msgstr ""
 
 #: proposals/models.py:29
 msgid "Graphics"
-msgstr "圖像處理"
+msgstr ""
 
 #: proposals/models.py:30
 msgid "Other"
-msgstr "其他"
+msgstr ""
 
 #: proposals/models.py:31
 msgid "Python Core (language, stdlib, etc.)"
-msgstr "Python Core（語言本身、標準函式庫…）"
+msgstr ""
 
 #: proposals/models.py:32
 msgid "Python Internals"
-msgstr "Python 實作"
+msgstr ""
 
 #: proposals/models.py:33
 msgid "Python Libraries"
-msgstr "Python 函式庫"
+msgstr ""
 
 #: proposals/models.py:34
 msgid "Science"
-msgstr "科學"
+msgstr ""
 
 #: proposals/models.py:35
 msgid "Security"
-msgstr "資訊安全"
+msgstr ""
 
 #: proposals/models.py:36
 msgid "Systems Administration"
-msgstr "系統管理"
+msgstr ""
 
 #: proposals/models.py:37
 msgid "Testing"
-msgstr "測試"
+msgstr ""
 
 #: proposals/models.py:38
 msgid "Web Frameworks"
-msgstr "網站框架"
+msgstr ""
 
 #: proposals/models.py:41
 msgid "category"
-msgstr "分類"
+msgstr ""
 
-#: proposals/models.py:47 pycontw2016/settings/base.py:120
+#: proposals/models.py:47
 msgid "English"
-msgstr "英文"
+msgstr ""
 
-#: proposals/models.py:48 pycontw2016/settings/base.py:119
+#: proposals/models.py:48
 msgid "Chinese"
-msgstr "中文"
+msgstr ""
 
 #: proposals/models.py:51
 msgid "language"
-msgstr "語言"
+msgstr ""
 
 #: proposals/models.py:57
 msgid "target audience"
-msgstr "目標聽眾"
+msgstr ""
 
 #: proposals/models.py:60
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer)"
-msgstr "演講的目標聽眾（請寫明確，「Python 使用者」不是個好答案）。"
+msgstr ""
+"Who is the intended audience for your talk? (Be specific, “Python users” is "
+"not a good answer)"
 
 #: proposals/models.py:66
 msgid "abstract"
-msgstr "摘要"
+msgstr ""
 
 #: proposals/models.py:69
 msgid ""
@@ -133,24 +131,22 @@ msgid ""
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
 msgstr ""
-"介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記"
-"在此。若你的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
 
 #: proposals/models.py:77
 msgid "Novice"
-msgstr "入門"
+msgstr ""
 
 #: proposals/models.py:78
 msgid "Intermediate"
-msgstr "中階"
+msgstr ""
 
 #: proposals/models.py:79
 msgid "Experienced"
-msgstr "進階"
+msgstr ""
 
 #: proposals/models.py:82
 msgid "Python level"
-msgstr "Python 難易度"
+msgstr ""
 
 #: proposals/models.py:86
 #, python-brace-format
@@ -162,26 +158,26 @@ msgid ""
 "you to change the talk level when we find the content is too-hard or too-"
 "easy for the target audience."
 msgstr ""
-"講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的"
-"定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一"
-"文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來"
-"說更簡單或困難時，可能會和你討論是否該修改。"
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
+"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
+"more likely to be accepted because of being “Novice” level. We may contact "
+"you to change the talk level when we find the content is too-hard or too-"
+"easy for the target audience."
 
 #: proposals/models.py:100
 msgid "objective"
-msgstr "演講目標"
+msgstr ""
 
 #: proposals/models.py:103
 msgid ""
 "What will the attendees get out of your talk? When they leave the room, what "
 "will they learn that they didn't know before?"
 msgstr ""
-"會眾聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼在聽以"
-"前不知道的？"
 
 #: proposals/models.py:109
 msgid "detailed description"
-msgstr "詳細講題說明"
+msgstr ""
 
 #: proposals/models.py:112
 msgid ""
@@ -192,14 +188,10 @@ msgid ""
 "understand the proposal. Edit using <a href='http://daringfireball.net/"
 "projects/markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
-"本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1000 "
-"字元或 600 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主"
-"題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/"
-"markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:124
 msgid "supplementary"
-msgstr "補充資訊"
+msgstr ""
 
 #: proposals/models.py:128
 msgid ""
@@ -208,65 +200,62 @@ msgid ""
 "not made public. Edit using <a href='http://daringfireball.net/projects/"
 "markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
-"任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社"
-"群經驗等。這欄位並不會公開。使用 <a href='http://daringfireball.net/projects/"
-"markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:137
 msgid "Yes"
-msgstr "是"
+msgstr ""
 
 #: proposals/models.py:138
 msgid "No"
-msgstr "否"
+msgstr ""
 
 #: proposals/models.py:141
 msgid "recording policy"
-msgstr "議程錄影"
+msgstr ""
 
 #: proposals/models.py:145
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation."
-msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。"
+msgstr ""
 
 #: proposals/models.py:151
 msgid "slide link"
-msgstr "投影片連結"
+msgstr ""
 
 #: proposals/models.py:155
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
-msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
+msgstr ""
 
 #: proposals/models.py:161
 msgid "created at"
-msgstr "建立時間"
+msgstr ""
 
 #: proposals/models.py:167
 msgid "cancelled"
-msgstr "撤回"
+msgstr ""
 
 #: proposals/models.py:183
 msgid "No preference"
-msgstr "無偏好"
+msgstr ""
 
 #: proposals/models.py:184
 msgid "Prefer 25min"
-msgstr "偏好 25 分鐘"
+msgstr ""
 
 #: proposals/models.py:185
 msgid "Prefer 45min"
-msgstr "偏好 45 分鐘"
+msgstr ""
 
-#: proposals/models.py:188 proposals/models.py:216
+#: proposals/models.py:188 proposals/models.py:222
 msgid "duration"
-msgstr "時間長度"
+msgstr ""
 
-#: proposals/models.py:194 proposals/models.py:222
+#: proposals/models.py:194 proposals/models.py:228
 msgid "outline"
-msgstr "大綱"
+msgstr ""
 
 #: proposals/models.py:197
 msgid ""
@@ -274,105 +263,109 @@ msgid ""
 "estimated time length for each sections in the talk. Talks in favor of 45min "
 "should have a fallback plan about how to shrink the content into a 25min one."
 msgstr ""
-"本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏"
-"好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合"
-"較短的時間限制。"
 
 #: proposals/models.py:205
 msgid "talk proposal"
-msgstr "演講提案"
+msgstr ""
 
 #: proposals/models.py:206
 msgid "talk proposals"
-msgstr "演講提案"
+msgstr ""
 
-#: proposals/models.py:212
+#: proposals/models.py:218
 msgid "Half day"
-msgstr "半天"
+msgstr ""
 
-#: proposals/models.py:213
+#: proposals/models.py:219
 msgid "Full day"
-msgstr "全天"
+msgstr ""
 
-#: proposals/models.py:225
+#: proposals/models.py:231
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length."
 msgstr ""
-"本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。"
 
-#: proposals/models.py:232
+#: proposals/models.py:238
 msgid "tutorial proposal"
-msgstr "教學提案"
+msgstr ""
 
-#: proposals/models.py:233
+#: proposals/models.py:239
 msgid "tutorial proposals"
-msgstr "教學提案"
+msgstr ""
 
 #: proposals/views.py:73
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
-msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
+msgstr ""
 
 #: proposals/views.py:84
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
-msgstr "已創建題目為《<strong>{title}</strong>》的教學提案。"
+msgstr ""
 
 #: proposals/views.py:105
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
-msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
+msgstr ""
 
 #: proposals/views.py:116
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
-msgstr "已完成更新《<strong>{title}</strong>》教學提案。"
+msgstr ""
 
 #: proposals/views.py:138
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
-msgstr "《<strong>{title}</strong>》演講提案已撒回。"
+msgstr ""
 
 #: proposals/views.py:142
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> reactivated."
-msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
+msgstr ""
 
 #: proposals/views.py:160
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
-msgstr "《<strong>{title}</strong>》教學提案已撒回。"
+msgstr ""
 
 #: proposals/views.py:164
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
-msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
+msgstr ""
+
+#: templates/_includes/nav.html:10
+msgid "Toggle navigation"
+msgstr ""
 
 #: templates/_includes/nav.html:28
 msgid "Log Out"
-msgstr "登出"
+msgstr ""
 
 #: templates/_includes/nav.html:32 templates/users/user_dashboard.html.py:5
 msgid "Dashboard"
-msgstr "控制面板"
+msgstr ""
 
 #: templates/_includes/nav.html:38 templates/registration/login.html.py:7
 #: templates/registration/login.html:12 templates/registration/login.html:18
 msgid "Log In"
-msgstr "登入"
+msgstr ""
+
+#: templates/_includes/nav.html:56
+msgid "Change"
+msgstr ""
 
 #: templates/index.html:37 templates/index.html.py:43
 msgid "Tutorials"
-msgstr "教學"
+msgstr ""
 
 #: templates/index.html:38 templates/index.html.py:47
 msgid "Conference"
-msgstr "會議"
+msgstr ""
 
 #: templates/index.html:39 templates/index.html.py:51
 msgid "Sprint"
-msgstr "Sprint"
+msgstr ""
 
 #: templates/index.html:67
 msgid ""
@@ -387,11 +380,6 @@ msgid ""
 "                </div>\n"
 "                "
 msgstr ""
-"\n"
-"<h2 class=\"intro__heading\">何謂 PyCon</h2>\n"
-"<div class=\"intro__body\">\n"
-"PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。\n"
-"</div>"
 
 #: templates/index.html:79
 msgid ""
@@ -411,13 +399,6 @@ msgid ""
 "                </div>\n"
 "                "
 msgstr ""
-"\n"
-"<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2>\n"
-"<div class=\"intro__body\">\n"
-"PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚"
-"焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友"
-"一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。\n"
-"</div>"
 
 #: templates/index.html:95
 #, python-format
@@ -440,29 +421,14 @@ msgid ""
 "                    </div>\n"
 "                    "
 msgstr ""
-"\n"
-"<h4 class=\"volunteer__heading h4\">\n"
-"  志工招募中！\n"
-"  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class="
-"\"call__icon\">\n"
-"</h4>\n"
-"<div class=\"volunteer__body\">\n"
-"  <p>與我們共同籌備並讓這個會議更成功！</p>\n"
-"  <p>\n"
-"    請填寫我們的<a \n"
-"      href=\"https://docs.google.com/forms/"
-"d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n"
-"       target=\"_blank\">志工參加表</a>\n"
-"  </p>\n"
-"</div>"
 
 #: templates/index.html:126
 msgid "Python Community in Taiwan"
-msgstr "臺灣的 Python 社群"
+msgstr ""
 
 #: templates/index.html:180
 msgid "Sponsorship 2016 available!"
-msgstr "2016 年度贊助已經開始！ "
+msgstr ""
 
 #: templates/index.html:185
 msgid ""
@@ -487,74 +453,56 @@ msgid ""
 "                </p>\n"
 "                "
 msgstr ""
-"\n"
-"<p>\n"
-"    贊助 PyCon Taiwan 2016 能將貴品牌與約 800 名 Python 愛好者，其中九成為專"
-"業工程師。這也是個絕佳招聘機會並且能宣傳您的產品。請透過 <a href=\"mailto:"
-"sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 與我們聯絡得到更多贊助細"
-"節。\n"
-"</p>            \n"
-"<br>\n"
-"<p>\n"
-"    亦參考 <a\n"
-"        href=\"https://tw.pycon.org/2015apac/en/sponsors/\"\n"
-"        target=\"_blank\">PyCon APAC 2015 的贊助商</a>\n"
-"</p>"
 
 #: templates/index.html:248
 msgid "Sponsors"
-msgstr "贊助者"
+msgstr ""
+
+#: templates/proposals/_proposal_create.html:14
+msgid "Create Tutorial Proposal"
+msgstr ""
+
+#: templates/proposals/_proposal_update.html:23
+#: templates/users/user_profile_update.html:18
+msgid "Save"
+msgstr ""
 
 #: templates/proposals/create_proposal_choice.html:5
-#: templates/users/user_dashboard.html:27
+#: templates/users/user_dashboard.html:34
 msgid "Submit a Proposal"
-msgstr "提交一個提案"
+msgstr ""
 
 #: templates/proposals/create_proposal_choice.html:10
 msgid "Choice a Proposal Type to Create"
-msgstr "選擇提案類型："
+msgstr ""
 
 #: templates/proposals/create_proposal_choice.html:12
 msgid "Talk"
-msgstr "演講"
+msgstr ""
 
 #: templates/proposals/create_proposal_choice.html:13
 msgid "Tutorial"
-msgstr "教學"
+msgstr ""
 
+#: templates/proposals/talk_proposal_create.html:5
 #: templates/proposals/talk_proposal_create.html:7
-#: templates/proposals/talk_proposal_create.html:12
 msgid "Submit a New Talk Proposal"
-msgstr "提交一個新的演講提案"
+msgstr ""
 
-#: templates/proposals/talk_proposal_create.html:17
-msgid "Create Talk Proposal"
-msgstr "創建演講提案"
-
-#: templates/proposals/talk_proposal_update.html:8
+#: templates/proposals/talk_proposal_update.html:5
 #, python-format
 msgid "Edit Talk Proposal %(proposal_title)s"
-msgstr "修改演講提案《%(proposal_title)s》"
+msgstr ""
 
-#: templates/proposals/talk_proposal_update.html:28
-#: templates/proposals/tutorial_proposal_update.html:25
-#: templates/users/user_profile_update.html:18
-msgid "Save"
-msgstr "儲存"
-
+#: templates/proposals/tutorial_proposal_create.html:5
 #: templates/proposals/tutorial_proposal_create.html:7
-#: templates/proposals/tutorial_proposal_create.html:12
 msgid "Submit a New Tutorial Proposal"
-msgstr "提交一個新的教學提案"
+msgstr ""
 
-#: templates/proposals/tutorial_proposal_create.html:17
-msgid "Create Tutorial Proposal"
-msgstr "創建教學提案"
-
-#: templates/proposals/tutorial_proposal_update.html:8
+#: templates/proposals/tutorial_proposal_update.html:5
 #, python-format
 msgid "Edit Tutorial Proposal %(proposal_title)s"
-msgstr "修改教學提案《%(proposal_title)s》"
+msgstr ""
 
 #: templates/registration/login.html:25
 #, python-format
@@ -563,13 +511,11 @@ msgid ""
 "      Don't have an account? <a href=\"%(signup_url)s\">Sign up now!</a>\n"
 "      "
 msgstr ""
-"\n"
-"沒有帳號？<a href=\"%(signup_url)s\">馬上註冊一個！</a>"
 
 #: templates/registration/signup.html:7 templates/registration/signup.html:12
 #: templates/registration/signup.html:18
 msgid "Sign Up"
-msgstr "註冊"
+msgstr ""
 
 #: templates/registration/signup.html:25
 #, python-format
@@ -578,8 +524,6 @@ msgid ""
 "            Already have an account? <a href=\"%(login_url)s\">Login.</a>\n"
 "            "
 msgstr ""
-"\n"
-"已經有帳號了？直接<a href=\"%(login_url)s\">登入</a>。"
 
 #: templates/registration/verification_email.txt:5
 #, python-format
@@ -587,98 +531,113 @@ msgid ""
 "\n"
 "Go here: %(verification_url)s\n"
 msgstr ""
-"\n"
-"前往：%(verification_url)s\n"
+
+#: templates/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:7
+msgid "Python Level"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:8
+msgid "Language"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:22
+msgid "Reactivate"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:24
+msgid "Edit"
+msgstr ""
+
+#: templates/users/_includes/dashboard_proposal_table.html:25
+msgid "Withdraw"
+msgstr ""
 
 #: templates/users/user_dashboard.html:12
 msgid "You need to verify your email before being able to submit a proposal."
-msgstr "在投稿前，您必須先完成 email 的認證。"
+msgstr ""
 
 #: templates/users/user_dashboard.html:15
 msgid "Did not get the verification email?"
-msgstr "沒有收到認證用的 email 嗎？"
+msgstr ""
 
 #: templates/users/user_dashboard.html:16
 msgid "Request a new one."
-msgstr "重新寄送一封。"
+msgstr ""
 
-#: templates/users/user_dashboard.html:24
+#: templates/users/user_dashboard.html:23
+msgid "Please complete your speaker profile before submitting a proposal."
+msgstr ""
+
+#: templates/users/user_dashboard.html:31
 msgid "Edit speaker profile"
-msgstr "修改講者資訊"
+msgstr ""
 
-#: templates/users/user_dashboard.html:32
+#: templates/users/user_dashboard.html:40
 msgid "Talk Proposals"
-msgstr "演講提案"
+msgstr ""
 
-#: templates/users/user_dashboard.html:36
-#: templates/users/user_dashboard.html:64
-msgid "Title"
-msgstr "題目"
+#: templates/users/user_dashboard.html:44
+#, python-format
+msgid ""
+"You haven't submitted any talk proposals. Why not <a href="
+"\"%(talk_proposal_create_url)s\">submit one now</a>?"
+msgstr ""
 
-#: templates/users/user_dashboard.html:37
-#: templates/users/user_dashboard.html:65
-msgid "Abstract"
-msgstr "摘要"
-
-#: templates/users/user_dashboard.html:38
-#: templates/users/user_dashboard.html:66
-msgid "Python Level"
-msgstr "Python 難易度"
-
-#: templates/users/user_dashboard.html:39
-#: templates/users/user_dashboard.html:67
-msgid "Language"
-msgstr "語言"
-
-#: templates/users/user_dashboard.html:50
-#: templates/users/user_dashboard.html:79
-msgid "Edit"
-msgstr "編輯"
-
-#: templates/users/user_dashboard.html:60
+#: templates/users/user_dashboard.html:49
 msgid "Tutorial Proposals"
-msgstr "教學提案"
+msgstr ""
+
+#: templates/users/user_dashboard.html:53
+#, python-format
+msgid ""
+"You haven't submitted any tutorial proposals. Why not <a href="
+"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+msgstr ""
 
 #: templates/users/user_profile_update.html:7
 #: templates/users/user_profile_update.html:13
 msgid "Update Speaker Profile"
-msgstr "更新講者資訊"
+msgstr ""
 
 #: templates/users/user_profile_update.html:19
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: users/admin.py:18
 msgid "Personal info"
-msgstr "個人介紹"
+msgstr ""
 
 #: users/admin.py:27
 msgid "Permissions"
-msgstr "權限"
+msgstr ""
 
 #: users/admin.py:36
 msgid "Important dates"
-msgstr "重要日期"
+msgstr ""
 
 #: users/forms.py:19
 msgid "A user with that email already exists."
-msgstr "此電子郵件信箱已被使用。"
+msgstr ""
 
 #: users/forms.py:20
 msgid "The two password fields didn't match."
-msgstr "密碼欄位內容不一致。"
+msgstr ""
 
 #: users/forms.py:23 users/forms.py:111
 msgid "Password"
-msgstr "密碼"
+msgstr ""
 
 #: users/forms.py:27
 msgid "Password confirmation"
-msgstr "密碼確認"
+msgstr ""
 
 #: users/forms.py:29
 msgid "Enter the same password as above, for verification."
-msgstr "請輸入與上方相同的密碼作為認證用。"
+msgstr ""
 
 #: users/forms.py:112
 msgid ""
@@ -686,92 +645,90 @@ msgid ""
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr ""
-"原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可"
-"以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/models.py:89
 msgid "email address"
-msgstr "電子郵件信箱"
+msgstr ""
 
 #: users/models.py:93
 msgid "speaker name"
-msgstr "講者名"
+msgstr ""
 
 #: users/models.py:97
 msgid "biography"
-msgstr "自我介紹"
+msgstr ""
 
 #: users/models.py:99
 msgid "About you. There will be no formatting."
-msgstr "介紹你自己。本欄位不帶有任何格式。"
+msgstr ""
 
 #: users/models.py:102
 msgid "photo"
-msgstr "個人照"
+msgstr ""
 
 #: users/models.py:106
 msgid "Facebook"
-msgstr "Facebook"
+msgstr ""
 
 #: users/models.py:110
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 #: users/models.py:114
 msgid "GitHub"
-msgstr "GitHub"
+msgstr ""
 
 #: users/models.py:118
 msgid "verified"
-msgstr "已認証"
+msgstr ""
 
 #: users/models.py:121
 msgid "Designates whether the user has verified email ownership."
-msgstr "指定本使用者是否已完成 email 認証。"
+msgstr ""
 
 #: users/models.py:125
 msgid "staff status"
-msgstr "管理員權限"
+msgstr ""
 
 #: users/models.py:128
 msgid "Designates whether the user can log into this admin site."
-msgstr "指定本使用者是否可以登入本管理站台。"
+msgstr ""
 
 #: users/models.py:132
 msgid "active"
-msgstr "已啟用"
+msgstr ""
 
 #: users/models.py:135
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
-msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
+msgstr ""
 
 #: users/models.py:140
 msgid "date joined"
-msgstr "註冊日期"
+msgstr ""
 
 #: users/models.py:150
 msgid "user"
-msgstr "使用者"
+msgstr ""
 
 #: users/models.py:151
 msgid "users"
-msgstr "使用者"
+msgstr ""
 
 #: users/models.py:197
 msgid "Verify your email address on tw.pycon.org"
-msgstr "請於 tw.pycon.org 網站上認證您的信箱地址"
+msgstr ""
 
 #: users/views.py:32
 msgid "Sign up successful. You are now logged in."
-msgstr "註冊成功。您現在可以登入。"
+msgstr ""
 
 #: users/views.py:49
 msgid "Email verification successful."
-msgstr "Email 認証成功。"
+msgstr ""
 
 #: users/views.py:60
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
-msgstr "一封認證用的 email 已經寄送至 {email}"
+msgstr ""
