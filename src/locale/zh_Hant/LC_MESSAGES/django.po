@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-29 17:41+0000\n"
-"PO-Revision-Date: 2015-12-29 15:57+0000\n"
+"POT-Creation-Date: 2015-12-30 04:52+0000\n"
+"PO-Revision-Date: 2015-12-30 04:47+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
 "pycon-tw-2016/language/zh-Hant/)\n"
@@ -606,10 +606,8 @@ msgid "Language"
 msgstr "語言"
 
 #: templates/users/_includes/dashboard_proposal_table.html:22
-#, fuzzy
-#| msgid "active"
 msgid "Reactivate"
-msgstr "已啟用"
+msgstr ""
 
 #: templates/users/_includes/dashboard_proposal_table.html:24
 msgid "Edit"
@@ -632,11 +630,8 @@ msgid "Request a new one."
 msgstr "重新寄送一封。"
 
 #: templates/users/user_dashboard.html:23
-#, fuzzy
-#| msgid ""
-#| "You need to verify your email before being able to submit a proposal."
 msgid "Please complete your speaker profile before submitting a proposal."
-msgstr "在投稿前，您必須先完成 email 的認證。"
+msgstr ""
 
 #: templates/users/user_dashboard.html:31
 msgid "Edit speaker profile"

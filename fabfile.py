@@ -86,7 +86,7 @@ def pull_transifex():
     with lcd('src'):
         local('python manage.py makemessages -a')
         local('tx pull')
-        local('python manage.py compilemessages')
+        local('python manage.py compilemessages -x _src')
 
 
 @task
