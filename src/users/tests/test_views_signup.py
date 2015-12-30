@@ -87,9 +87,9 @@ def test_signup_duplicate(bare_user, client, parser):
         for e in errored_blocks[0].cssselect('.help-block')
     ] == [
         parser.arrange(
-            '<span id="error_1_id_email" class="help-block">'
+            '<p id="error_1_id_email" class="help-block">'
             '<strong>A user with that email already exists.</strong>'
-            '</span>'
+            '</p>'
         )
     ]
 
