@@ -14,7 +14,7 @@
   {% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
 
 	<div class="talk-proposals">
-	  <h3>{% trans 'Talk Proposals' %}</h3>
+	  <h3 class="page-header">{% trans 'Talk Proposals' %}</h3>
     {% if user.talkproposal_set.exists %}
     {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.talkproposal_set.all %}
     {% else %}
@@ -23,7 +23,7 @@
 	</div>
 
   <div class="tutorial-proposals">
-    <h3>{% trans 'Tutorial Proposals' %}</h3>
+    <h3 class="page-header">{% trans 'Tutorial Proposals' %}</h3>
     {% if user.tutorialproposal_set.exists %}
     {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
     {% else %}

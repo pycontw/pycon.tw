@@ -18,12 +18,8 @@ body.dashboard{
                     font-size:16px;
                     color: #BBBBBB;
                     line-height:19px;
-                    border-left-style: solid;
-                    border-left-width: 4px;
-                    border-left-color: #FFFFFF;
-                    border-bottom-style: solid;
-                    border-bottom-width: 1px;
-                    border-bottom-color: #EEEEEE;
+                    border-left: 4px solid #FFFFFF;
+                    border-bottom: 1px solid #EEEEEE;
 
                     // &:hover{
                     //     color:#3E6DF5;
@@ -32,10 +28,7 @@ body.dashboard{
                 }
                 &.active a{
                     color:#3E6DF5;
-                    border-left-style: solid;
-                    border-left-width: 4px;
-                    border-left-color: #3E6DF5;
-
+                    border-left: 4px solid #3E6DF5;
                     // &:hover{
                     //     color:#BBBBBB;
                     //     background-color: transparent;
@@ -71,6 +64,16 @@ body.dashboard{
             border-left-width: 1px;
             border-left-color: #EEEEEE;
             padding: 0;
+
+            .page-header{
+                font-size: 21px;
+                padding: 23px 0 21px 33px;
+                margin: 0;
+            }
+
+            form{
+                padding:  33px;
+            }
         }
     }
 }
