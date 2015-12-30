@@ -6,29 +6,32 @@ from proposals.models import TalkProposal, TutorialProposal
 
 
 def test_talk_proposal_cancel_login(client):
-    response = client.get('/proposals/talk/42/cancel/', follow=True)
+    response = client.get('/en-us/proposals/talk/42/cancel/', follow=True)
     assert response.redirect_chain == [
-        ('/accounts/login/?next=/proposals/talk/42/cancel/', 302),
+        ('/en-us/accounts/login/?next=/en-us/proposals/talk/42/cancel/', 302),
     ]
 
 
 def test_tutorial_proposal_cancel_login(client):
-    response = client.get('/proposals/tutorial/42/cancel/', follow=True)
+    response = client.get('/en-us/proposals/tutorial/42/cancel/', follow=True)
     assert response.redirect_chain == [
-        ('/accounts/login/?next=/proposals/tutorial/42/cancel/', 302),
+        ('/en-us/accounts/login/?next=/en-us/proposals/tutorial/42/cancel/',
+         302),
     ]
 
 
 @pytest.mark.parametrize('method', ['get', 'post'])
 def test_talk_proposal_cancel_denied(bare_user_client, method):
-    response = getattr(bare_user_client, method)('/proposals/talk/42/cancel/')
+    response = getattr(bare_user_client, method)(
+        '/en-us/proposals/talk/42/cancel/',
+    )
     assert response.status_code == 403
 
 
 @pytest.mark.parametrize('method', ['get', 'post'])
 def test_tutorial_proposal_cancel_denied(bare_user_client, method):
     response = getattr(bare_user_client, method)(
-        '/proposals/tutorial/42/cancel/',
+        '/en-us/proposals/tutorial/42/cancel/',
     )
     assert response.status_code == 403
 
@@ -36,35 +39,35 @@ def test_tutorial_proposal_cancel_denied(bare_user_client, method):
 def test_talk_proposal_cancel_get(user_client, talk_proposal):
     """The cancel view should not allow GET, only POST.
     """
-    response = user_client.get('/proposals/talk/42/cancel/')
+    response = user_client.get('/en-us/proposals/talk/42/cancel/')
     assert response.status_code == 405
 
 
 def test_tutorial_proposal_cancel_get(user_client, tutorial_proposal):
     """The cancel view should not allow GET, only POST.
     """
-    response = user_client.get('/proposals/tutorial/42/cancel/')
+    response = user_client.get('/en-us/proposals/tutorial/42/cancel/')
     assert response.status_code == 405
 
 
 def test_talk_proposal_cancel_not_owned(another_user_client, talk_proposal):
-    response = another_user_client.post('/proposals/talk/42/cancel/')
+    response = another_user_client.post('/en-us/proposals/talk/42/cancel/')
     assert response.status_code == 404
 
 
 def test_tutorial_proposal_cancel_not_owned(
         another_user_client, tutorial_proposal):
-    response = another_user_client.post('/proposals/tutorial/42/cancel/')
+    response = another_user_client.post('/en-us/proposals/tutorial/42/cancel/')
     assert response.status_code == 404
 
 
 def test_talk_proposal_cancel(user_client, talk_proposal):
     assert not talk_proposal.cancelled
 
-    response = user_client.post('/proposals/talk/42/cancel/', {
+    response = user_client.post('/en-us/proposals/talk/42/cancel/', {
         'cancelled': True,
     }, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)], (
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)], (
         response.context['form'].errors
     )
 
@@ -81,10 +84,10 @@ def test_talk_proposal_cancel(user_client, talk_proposal):
 def test_talk_proposal_reactivate(user_client, cancelled_talk_proposal):
     assert cancelled_talk_proposal.cancelled
 
-    response = user_client.post('/proposals/talk/42/cancel/', {
+    response = user_client.post('/en-us/proposals/talk/42/cancel/', {
         'cancelled': '',
     }, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)], (
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)], (
         response.context['form'].errors
     )
 
@@ -101,10 +104,10 @@ def test_talk_proposal_reactivate(user_client, cancelled_talk_proposal):
 def test_tutorial_proposal_cancel(user_client, tutorial_proposal):
     assert not tutorial_proposal.cancelled
 
-    response = user_client.post('/proposals/tutorial/42/cancel/', {
+    response = user_client.post('/en-us/proposals/tutorial/42/cancel/', {
         'cancelled': True,
     }, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)], (
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)], (
         response.context['form'].errors
     )
 
@@ -122,10 +125,10 @@ def test_tutorial_proposal_reactivate(
         user_client, cancelled_tutorial_proposal):
     assert cancelled_tutorial_proposal.cancelled
 
-    response = user_client.post('/proposals/tutorial/42/cancel/', {
+    response = user_client.post('/en-us/proposals/tutorial/42/cancel/', {
         'cancelled': '',
     }, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)], (
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)], (
         response.context['form'].errors
     )
 

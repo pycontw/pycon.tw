@@ -12,13 +12,15 @@ FALLBACK_PREFIX_PATTERN = re.compile(
 )
 
 
-class LenientLocaleFallbackMiddleware:
+class LocaleFallbackMiddleware:
     """Redirect entries in ``settings.FALLBACK_LANGUAGE_PREFIXES`` to a
     valid language prefix.
     """
     response_redirect_class = HttpResponseRedirect
 
     def process_request(self, request):
+        if not settings.USE_I18N:
+            return
         match = FALLBACK_PREFIX_PATTERN.match(request.path_info)
         if not match:
             return

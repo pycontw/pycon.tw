@@ -16,18 +16,18 @@ urlpatterns = i18n_patterns(
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
-    url(r'^admin/', include(admin.site.urls)),
 
-    # Match everything except those starting with MEDIA_URL or STATIC_URL.
-    url(r'^(?!{media}|{static}/)(?P<path>.*)/$'.format(
+    # Match everything except admin, media, and static things.
+    url(r'^(?!admin|{media}|{static}/)(?P<path>.*)/$'.format(
         media=settings.MEDIA_URL.strip('/'),
         static=settings.STATIC_URL.strip('/')),
         flat_page, name='page'),
 )
 
-# set-langauge view should not be prefixed with language.
+# set-langauge and admin should not be prefixed with language.
 urlpatterns += [
     url(r'^set-language/$', set_language, name='set_language'),
+    url(r'^admin/', include(admin.site.urls)),
 ]
 
 # User-uploaded files like profile pics need to be served in development.
