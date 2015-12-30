@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from os.path import abspath, dirname, join, exists
 from django.core.urlresolvers import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -103,6 +102,7 @@ if 'postgres' in DATABASES['default']['ENGINE']:
 MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'core.middlewares.LocaleFallbackMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,12 +124,26 @@ USE_I18N = True
 
 USE_L10N = True
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('zh-hant', _('Chinese')),
-    ('en', _('English')),
+    ('zh-hant', 'Traditional Chinese'),
+    ('en-us',   'English (US)'),
 ]
+
+FALLBACK_LANGUAGE_PREFIXES = {
+    'zh': 'zh-hant',
+    'en': 'en-us',
+}
+
+from django.conf import locale
+if 'en-us' not in locale.LANG_INFO:
+    locale.LANG_INFO['en-us'] = {
+        'bidi': False,
+        'code': 'en-us',
+        'name': 'English (US)',
+        'name_local': 'English (US)',
+    }
 
 # Path to the local .po and .mo files
 LOCALE_PATHS = (

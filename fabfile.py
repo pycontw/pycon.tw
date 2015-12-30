@@ -82,15 +82,15 @@ def write_transifex_config():
 
 
 @task
-def pull_transifex():
+def pull_tx():
     with lcd('src'):
         local('python manage.py makemessages -a')
         local('tx pull')
-        local('python manage.py compilemessages')
+        local('python manage.py compilemessages -x _src')
 
 
 @task
-def push_transifex():
+def push_tx():
     with lcd('src'):
         local('python manage.py makemessages -a')
         local('tx push -s')
@@ -110,4 +110,4 @@ def travis_push_transifex():
         ), file=sys.stderr)
         return
     write_transifex_config()
-    push_transifex()
+    push_tx()

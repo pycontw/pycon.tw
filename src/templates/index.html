@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static %}
-{% load i18n %}
+{% load i18n static %}
 
 {% block titletag %}<title>PyCon Taiwan 2016</title>{% endblock titletag %}
 
@@ -40,16 +39,16 @@
                 </div>
                 <div class="row schedule">
                     <div class="schedule-block">
-                        <h3 class="schedule__title">{% trans 'Tutorials' %}<</h3>
-                        <p>TBD</p>
+                        <h3 class="schedule__title">{% trans 'Tutorials' %}</h3>
+                        <p>{% trans 'TBD' %}</p>
                     </div>
                     <div class="schedule-block">
-                        <h3 class="schedule__title">{% trans 'Conference' %}<</h3>
-                        <p>June 3-5, 2016</p>
+                        <h3 class="schedule__title">{% trans 'Conference' %}</h3>
+                        <p>{% trans 'June 3–5, 2016' %}</p>
                     </div>
                     <div class="schedule-block">
-                        <h3 class="schedule__title">{% trans 'Sprint' %}<</h3>
-                        <p>TBD</p>
+                        <h3 class="schedule__title">{% trans 'Sprint' %}</h3>
+                        <p>{% trans 'TBD' %}</p>
                     </div>
                 </div>
             </div>
@@ -60,10 +59,11 @@
 <div class="section intro">
     <div class="container">
         <p class="quote">
-            &quot;Simple is better than complex. Complex is better than complicated.&quot;
+            “Simple is better than complex. Complex is better than complicated.”
         </p>
         <div class="row">
             <section class="intro__pycon col-md-8">
+                {% spaceless %}
                 {% blocktrans %}
                 <h2 class="intro__heading">What is PyCon</h2>
                 <div class="intro__body">
@@ -72,10 +72,12 @@
                     spirit around the world.
                 </div>
                 {% endblocktrans %}
+                {% endspaceless %}
             </section>
         </div>
         <div class="row">
             <section class="intro__pycontw">
+                {% spaceless %}
                 {% blocktrans %}
                 <h2 class="intro__heading">And what is PyCon Taiwan</h2>
                 <div class="intro__body">
@@ -88,10 +90,12 @@
                     help us grow our network.
                 </div>
                 {% endblocktrans %}
+                {% endspaceless %}
             </section>
             <section class="intro__volunteer">
                 <div class="volunteer">
                     {% static 'images/call_icon.png' as img_call_icon %}
+                    {% spaceless %}
                     {% blocktrans %}
                     <h4 class="volunteer__heading h4">
                         Volunteers Needed!
@@ -106,6 +110,7 @@
                         </p>
                     </div>
                     {% endblocktrans %}
+                    {% endspaceless %}
                 </div>
             </section>
         </div>
@@ -182,6 +187,7 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                {% spaceless %}
                 {% blocktrans %}
                 <p>
                     Sponsoring PyCon Taiwan 2016 will connect your brand with
@@ -198,6 +204,7 @@
                         target="_blank">Sponsors of PyCon APAC 2015</a>
                 </p>
                 {% endblocktrans %}
+                {% endspaceless %}
             </div>
         </div>
     </div>

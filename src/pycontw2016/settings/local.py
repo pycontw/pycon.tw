@@ -20,7 +20,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
 
 # Reset logging
-# (see http://www.caktusgroup.com/blog/2015/01/27/Django-Logging-Configuration-logging_config-default-settings-logger/)
+# http://www.caktusgroup.com/blog/2015/01/27/
+# Django-Logging-Configuration-logging_config-default-settings-logger/
 
 LOGGING_CONFIG = None
 LOGGING = {
@@ -71,4 +72,3 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
-

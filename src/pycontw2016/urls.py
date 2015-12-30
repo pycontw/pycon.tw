@@ -1,27 +1,34 @@
 from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic import TemplateView
+from django.views.i18n import set_language
 
-from core.views import flat_page
+from core.views import flat_page, index
 from users.views import user_dashboard
 
 
-urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name="index.html"), name='index'),
+urlpatterns = i18n_patterns(
+
+    # Add top-level URL patterns here.
+    url(r'^$', index, name='index'),
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
+
+    # Match everything except admin, media, and static things.
+    url(r'^(?!admin|{media}|{static}/)(?P<path>.*)/$'.format(
+        media=settings.MEDIA_URL.strip('/'),
+        static=settings.STATIC_URL.strip('/')),
+        flat_page, name='page'),
+)
+
+# set-langauge and admin should not be prefixed with language.
+urlpatterns += [
+    url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^i18n/$',
-        TemplateView.as_view(template_name="change_lang.html"),
-        name='change_lang'),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
-# User-uploaded files like profile pics need to be served in development
+# User-uploaded files like profile pics need to be served in development.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# Catch-all URL pattern must be put last.
-urlpatterns += [url(r'^(?P<path>.+)/$', flat_page, name='page')]

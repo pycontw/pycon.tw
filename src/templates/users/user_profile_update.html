@@ -8,6 +8,7 @@
 
 {% block nav-profile %}active{% endblock %}
 
+<<<<<<< HEAD
 {% block main-content %}
 
 <h3 class="page-header">{% trans 'Edit Profile' %}</h3>
@@ -17,7 +18,7 @@
 		{{ form.non_field_errors }}
 		<div class="form-group">
 	    {{ form.photo.errors }}
-	    <label for="{{ form.photo.id_for_label }}" class="field_title">Profile picture</label>
+	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
 	    <div class="profile_pic_panel">
 	    	<div style="width:60px; margin-right:20px; display: inline-block;">
 	    		<img class="pic" src="{% static 'images/default_head.png' %}" class="img-circle">
@@ -30,12 +31,12 @@
 	</div>
 	<div class="form-group">
 		{{ form.speaker_name.errors }}
-		<label for="{{ form.speaker_name.id_for_label }}" class="field_title">Your name</label>
+		<label for="{{ form.speaker_name.id_for_label }}" class="field_title">{% trans 'Your Name' %}</label>
 		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" value="{{ form.speaker_name.value }}">
 	</div>
 	<div class="form-group">
 	    {{ form.bio.errors }}
-	    <label for="{{ form.bio.id_for_label }}" class="field_title">Self introduction</label>
+	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Self-Introduction' %}</label>
 	    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
 	</div>
 

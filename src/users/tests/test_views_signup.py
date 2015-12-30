@@ -16,12 +16,12 @@ def test_signup_login(bare_user_client):
     """If the request is already authenticated, the signup view should
     redirect it to the dashboard.
     """
-    response = bare_user_client.get('/accounts/signup/', follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    response = bare_user_client.get('/en-us/accounts/signup/', follow=True)
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
 
 
 def test_signup_get(client):
-    response = client.get('/accounts/signup/')
+    response = client.get('/en-us/accounts/signup/')
     assert response.status_code == 200
 
 
@@ -37,12 +37,12 @@ def test_signup_post(client, parser):
 
     The viewer should be logged in, and redirected to the dashboard.
     """
-    response = client.post('/accounts/signup/', {
+    response = client.post('/en-us/accounts/signup/', {
         'email': 'user@user.me',
         'password1': '7K50M',
         'password2': '7K50M',
     }, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
@@ -57,10 +57,11 @@ def test_signup_post(client, parser):
     email = mail.outbox[0]
     assert email.from_email == 'dev@pycon.tw'
     assert email.to == ['user@user.me']
-    assert email.subject == 'Verify your email address on tw.pycon.org'
+    assert email.subject == 'Verify your email address on testserver'
 
     message_match = re.match(
-        r'^Go here: http://testserver/accounts/verify/(?P<key>[-:\w]+)/$',
+        r'^Go here: '
+        r'http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
         email.body.strip(),
     )
     assert message_match, email.body.strip()
@@ -72,7 +73,7 @@ def test_signup_post(client, parser):
 
 
 def test_signup_duplicate(bare_user, client, parser):
-    response = client.post('/accounts/signup/', {
+    response = client.post('/en-us/accounts/signup/', {
         'email': 'user@user.me',
         'password1': '7K50M',
         'password2': '7K50M',
@@ -87,9 +88,9 @@ def test_signup_duplicate(bare_user, client, parser):
         for e in errored_blocks[0].cssselect('.help-block')
     ] == [
         parser.arrange(
-            '<span id="error_1_id_email" class="help-block">'
+            '<p id="error_1_id_email" class="help-block">'
             '<strong>A user with that email already exists.</strong>'
-            '</span>'
+            '</p>'
         )
     ]
 
@@ -99,10 +100,10 @@ def test_verify(bare_user, bare_user_client):
     message, and redirected to dashboard.
     """
     key = bare_user.get_verification_key()
-    link = '/accounts/verify/{key}/'.format(key=key)
+    link = '/en-us/accounts/verify/{key}/'.format(key=key)
 
     response = bare_user_client.get(link, follow=True)
-    assert response.redirect_chain == [('/dashboard/', 302)]
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [

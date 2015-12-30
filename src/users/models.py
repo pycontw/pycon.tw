@@ -194,6 +194,8 @@ class User(AbstractBaseUser, PermissionsMixin):
             'registration/verification_email.txt', context,
         )
         self.email_user(
-            subject=ugettext('Verify your email address on tw.pycon.org'),
+            subject=ugettext('Verify your email address on {host}').format(
+                host=request.get_host(),
+            ),
             message=message, fail_silently=False,
         )
