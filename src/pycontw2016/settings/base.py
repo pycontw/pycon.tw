@@ -128,12 +128,22 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ('zh-hant', 'Traditional Chinese'),
-    ('en',      'English'),
+    ('en-us',   'English (US)'),
 ]
 
 FALLBACK_LANGUAGE_PREFIXES = {
     'zh': 'zh-hant',
+    'en': 'en-us',
 }
+
+from django.conf import locale
+if 'en-us' not in locale.LANG_INFO:
+    locale.LANG_INFO['en-us'] = {
+        'bidi': False,
+        'code': 'en-us',
+        'name': 'English (US)',
+        'name_local': 'English (US)',
+    }
 
 # Path to the local .po and .mo files
 LOCALE_PATHS = (
