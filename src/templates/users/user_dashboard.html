@@ -4,10 +4,11 @@
 
 {% block title %}{% trans 'Dashboard' %}{% endblock title %}
 
+{% block nav-dashboard %}active{% endblock %}
+
 {% block main-content %}
 
 {% if user.is_valid_speaker %}
-	<div><a href="{% url 'proposal_create_choice' %}">{% trans 'Submit a Proposal' %}</a></div>
 
   {% url 'talk_proposal_create' as talk_proposal_create_url %}
   {% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
