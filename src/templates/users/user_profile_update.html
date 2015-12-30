@@ -14,7 +14,7 @@
 		<form id="user_profile_update_form" method="post" enctype="multipart/form-data">
   			{% csrf_token %}
   			<div class="nesting-form-group">
-		        {% crispy form %}
+		        {{ form|crispy }}
 		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>
 		  		<a href="{% url 'user_dashboard' %}" class="btn btn-md">{% trans 'Cancel' %}</a>
 			</div>
