@@ -8,7 +8,6 @@
 
 {% block nav-profile %}active{% endblock %}
 
-<<<<<<< HEAD
 {% block main-content %}
 
 <h3 class="page-header">{% trans 'Edit Profile' %}</h3>
@@ -21,7 +20,7 @@
 	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
 	    <div class="profile_pic_panel">
 	    	<div style="width:60px; margin-right:20px; display: inline-block;">
-	    		<img class="pic" src="{% static 'images/default_head.png' %}" class="img-circle">
+	    		<img class="img-circle pic" src="{{ form.instance.photo.url }}">
 	    	</div>
 	    	<div class="btn upload-btn" style="display: inline-block;">
 	    		<span>{% trans 'Upload' %}</span>
@@ -40,7 +39,7 @@
 	    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
 	</div>
 
-	<button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+	<button type="submit" class="btn btn-lg save-btn">{% trans 'Save' %}</button>
 	<a href="{% url 'user_dashboard' %}" class="btn cancel-btn" role="button">{% trans 'Cancel' %}</a>
 
 </form>
