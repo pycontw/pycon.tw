@@ -57,7 +57,7 @@ def test_signup_post(client, parser):
     email = mail.outbox[0]
     assert email.from_email == 'dev@pycon.tw'
     assert email.to == ['user@user.me']
-    assert email.subject == 'Verify your email address on tw.pycon.org'
+    assert email.subject == 'Verify your email address on testserver'
 
     message_match = re.match(
         r'^Go here: http://testserver/accounts/verify/(?P<key>[-:\w]+)/$',
