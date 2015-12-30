@@ -20,7 +20,7 @@
     {% endcomment %}
     {% for speaker_info in speaker_infos %}
     <tr>
-      <td class="title-cell">{{ proposal.title }}</td>
+      <td class="title-cell">{{ speaker_info.proposal.title }}</td>
       <td>{{ speaker_info.proposal.get_language_display }}</td>
       <td><a href="mailto: {{ speaker_info.proposal.submitter.email }}">{{ speaker_info.proposal.submitter.speaker_name }}</a></td>
       <td>{{ speaker_info.get_status_display }}</td>
