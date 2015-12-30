@@ -87,4 +87,4 @@ deploy_key.pub
 /deploy_staging.sh
 /secrets.tar
 /src/coverage.xml
-
+media/
