@@ -1,6 +1,7 @@
 import re
 
 from django.conf import settings
+from django.core.urlresolvers import get_script_prefix
 from django.http import HttpResponseRedirect
 
 
@@ -33,5 +34,8 @@ class LocaleFallbackMiddleware:
             return
         lang = match.group('lang')
         fallback = settings.FALLBACK_LANGUAGE_PREFIXES[lang]
-        path = request.get_full_path().replace(lang, fallback, 1)
+        script_prefix = get_script_prefix()
+        path = request.get_full_path().replace(
+            script_prefix + lang, script_prefix + fallback, 1,
+        )
         return self.response_redirect_class(path)
