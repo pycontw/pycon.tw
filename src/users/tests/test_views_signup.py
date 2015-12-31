@@ -71,7 +71,7 @@ def test_signup_post(client, parser):
     assert message_has_verification_link, email.body.strip()
     assert message_has_account_email, email.body.strip()
     assert user.email == signing.loads(
-        message_match.group('key'),
+        message_has_verification_link.group('key'),
         salt='Footage order-flow long-chain hydrocarbons hacker',
     )
     assert not email.alternatives
