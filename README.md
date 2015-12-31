@@ -12,49 +12,59 @@ This repository serves the website of PyCon TW 2016. This project is open source
 - Git 1.8+
 - Python 3.4+
 
-### Setting up virtualenv
+### Set up a Virtual Environment
 
-At first, you should make sure you have [virtualenv](http://www.virtualenv.org/) installed.
+#### Built-in `venv`
 
-then, create your virtualenv:
+Create your virtual environment:
 
     python3 -m venv venv
 
-Second, you need to enable the virtualenv by
+And enable it:
 
-    source venv/bin/activate
+    . venv/bin/activate
 
-If you are using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org), then you should assign your python path:
+#### [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
 
-    which python3 # Output: /usr/local/bin/python3
-    mkvirtualenv --python=/usr/local/bin/python3 pycontw2016
+You need to specify your python path when creating the virtual environment:
 
-Install all dependencies:
+    mkvirtualenv --python=$(which python3) pycontw2016
+
+### Install Dependencies
+
+Just use pip:
 
     pip install -r requirements.txt
 
-### Setting up local environment variables
+### Set up Local Environment Variables and Database
 
-Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickiest way to start is to rename `local.sample.env` into `local.env`:
+Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickiest way to start is to copy `local.sample.env` into `local.env`:
 
     cp src/pycontw2016/settings/local.sample.env src/pycontw2016/settings/local.env
 
-Then edit the SECRET_KEY in local.env file, replace `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/), for example:
+Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/) value. An example:
 
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
 
-### Run web server
+After that, just run the migration
 
-After that, just cd to `src` folder:
+### Get Ready for Development
+
+`cd` into the `src` directory:
 
     cd src
 
-And run migrate and http server:
+And migrate the database:
 
     python manage.py migrate
+
+Now you’re all set!
+
+## Run the Development Server
+
     python manage.py runserver
 
-### Run tests
+## Run Tests
 
 Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run tests:
 
@@ -65,10 +75,12 @@ To run tests with coverage report:
     py.test --cov=.
 
 
-## How to contribute
+## How to Contribute
 
 Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please **DO NOT push the commits into master directly**. Always create branch by the feature you want to update. You are encouraged to submit a pull request for reviewing before merging things into master.
 
-### Internationalisation
+We strongly recommend you configure your editor to match our conding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
+
+## Internationalisation
 
 Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw-2016/).
