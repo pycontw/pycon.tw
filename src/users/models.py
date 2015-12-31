@@ -187,6 +187,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         )
         context = {
             'user': self,
+            'host': request.get_host(),
             'verification_key': verification_key,
             'verification_url': verification_url,
         }
@@ -195,7 +196,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         )
         self.email_user(
             subject=ugettext('Verify your email address on {host}').format(
-                host=request.get_host(),
+                **context
             ),
             message=message, fail_silently=False,
         )

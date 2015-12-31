@@ -2,8 +2,14 @@
 
 {% load i18n %}
 
-{% blocktrans %}
-Go here: {{ verification_url }}
+{% blocktrans with user_email=user.email %}
+An account using this email address ({{ user_email }}) has been created on {{ host }}.
+
+To activate this account and confirm this email address, go to
+    {{ verification_url }}
+
+If you did not sign up for this site, you can ignore this message or report
+this incident to the organizers if you suspect your identity has been mistaken.
 {% endblocktrans %}
 
 {% endspaceless %}
