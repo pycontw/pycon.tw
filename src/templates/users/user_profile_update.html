@@ -20,7 +20,7 @@
 	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
 	    <div class="profile_pic_panel">
 	    	<div style="width:60px; margin-right:20px; display: inline-block;">
-	    		<img class="img-circle pic" src="{{ form.instance.photo.url }}">
+	    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
 	    	</div>
 	    	<div class="btn upload-btn" style="display: inline-block;">
 	    		<span>{% trans 'Upload' %}</span>
