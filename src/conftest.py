@@ -4,9 +4,6 @@ from django.contrib.auth import get_user_model
 from django.test.html import parse_html
 
 
-User = get_user_model()
-
-
 class HTMLParser:
 
     def parse(self, response=None, *, text=None, status_code=200):
@@ -54,6 +51,7 @@ def parser():
 
 @pytest.fixture
 def bare_user(db):
+    User = get_user_model()
     try:
         user = User.objects.get(email='user@user.me')
     except User.DoesNotExist:
@@ -66,6 +64,7 @@ def bare_user(db):
 
 @pytest.fixture
 def user(bare_user):
+    User = get_user_model()
     user = User.objects.get(email='user@user.me')
     user.verified = True
     user.speaker_name = 'User'
@@ -87,6 +86,7 @@ def user_client(user, bare_user_client):
 
 @pytest.fixture
 def another_user(db):
+    User = get_user_model()
     user = User.objects.create_user(
         email='another@ayatsuji.itou',
         password='7uk1T0n01sY',
@@ -106,6 +106,7 @@ def another_user_client(another_user, client):
 
 @pytest.fixture
 def admin_user(db):
+    User = get_user_model()
     user = User.objects.create_superuser(
         email='admin@adm.in', password='7K50<31',
     )
