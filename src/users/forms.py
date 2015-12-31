@@ -4,7 +4,8 @@ from django.contrib.auth.forms import (
     AuthenticationForm as BaseAuthenticationForm,
     ReadOnlyPasswordHashField,
 )
-from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext, ugettext_lazy as _
 
 
 User = get_user_model()
@@ -66,7 +67,7 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True, auth=False):
+    def save(self, commit=True, auth=True):
         """Save user.
 
         Save the provided password in hashed format.
@@ -137,4 +138,12 @@ class AdminUserChangeForm(forms.ModelForm):
 
 
 class AuthenticationForm(BaseAuthenticationForm):
+
     username = forms.EmailField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['password'].help_text = ugettext(
+            'You can <a href="{password_reset_url}">reset your password</a> '
+            'if you forgot it.'
+        ).format(password_reset_url=reverse('password_reset'))
