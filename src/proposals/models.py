@@ -251,7 +251,7 @@ class AbstractProposal(models.Model):
         db_index=True,
     )
 
-    additional_speaker_set = GenericRelation(
+    additionalspeaker_set = GenericRelation(
         to=AdditionalSpeaker,
         content_type_field='proposal_type',
         object_id_field='proposal_id',
@@ -267,7 +267,7 @@ class AbstractProposal(models.Model):
     @property
     def speakers(self):
         yield PrimarySpeaker(self)
-        additionals = self.additional_speaker_set.filter(cancelled=False)
+        additionals = self.additionalspeaker_set.filter(cancelled=False)
         for speaker in additionals.select_related('user'):
             yield speaker
 

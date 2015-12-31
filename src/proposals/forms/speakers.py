@@ -77,7 +77,7 @@ class AdditionalSpeakerCreateForm(
 
         # The user cannot already be one of the speakers.
         if (proposal.submitter == user
-                or proposal.additional_speaker_set.filter(
+                or proposal.additionalspeaker_set.filter(
                     cancelled=False, user=user).exists()):
             raise forms.ValidationError(
                 self.get_error_message('duplicate_speaker'),
@@ -101,7 +101,7 @@ class AdditionalSpeakerCreateForm(
 
     def save(self, commit=True):
         try:
-            speaker = self._proposal.additional_speaker_set.get(
+            speaker = self._proposal.additionalspeaker_set.get(
                 user=self._user, cancelled=True,
             )
         except self._meta.model.DoesNotExist:
