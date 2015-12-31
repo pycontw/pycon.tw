@@ -56,8 +56,9 @@ def user_verify(request, verification_key):
 def request_verification(request):
     user = request.user
     user.send_verification_email(request)
-    messages.success(request, ugettext(
-        'A verification email has been sent to {email}').format(
+    messages.success(
+        request,
+        ugettext('A verification email has been sent to {email}').format(
             email=user.email,
         ),
     )
@@ -76,7 +77,10 @@ def user_dashboard(request):
 def user_profile_update(request):
     logout_next = reverse('index')
     if request.method == 'POST':
-        form = UserProfileUpdateForm(data=request.POST, files=request.FILES, instance=request.user)
+        form = UserProfileUpdateForm(
+            data=request.POST, files=request.FILES,
+            instance=request.user,
+        )
         if form.is_valid():
             form.save()
             return redirect('user_dashboard')

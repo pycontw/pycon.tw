@@ -59,14 +59,19 @@ def test_signup_post(client, parser):
     assert email.to == ['user@user.me']
     assert email.subject == 'Verify your email address on testserver'
 
-    message_match = re.match(
-        r'^Go here: '
-        r'http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
+    # The message does contain the activation link
+    message_has_verification_link = re.search(
+        r'^\s+http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
         email.body.strip(),
+        re.MULTILINE
     )
-    assert message_match, email.body.strip()
+    # The message hints the email in use
+    message_has_account_email = user.email in email.body
+
+    assert message_has_verification_link, email.body.strip()
+    assert message_has_account_email, email.body.strip()
     assert user.email == signing.loads(
-        message_match.group('key'),
+        message_has_verification_link.group('key'),
         salt='Footage order-flow long-chain hydrocarbons hacker',
     )
     assert not email.alternatives
