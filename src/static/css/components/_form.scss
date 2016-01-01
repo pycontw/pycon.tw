@@ -1,0 +1,19 @@
+.form-control {
+    font-size: 16px;
+}
+
+// remove input outer grow of focus state
+.form-control,
+.form-control:focus,
+.has-error .form-control:focus {
+    box-shadow: none;
+}
+
+.has-error .help-block > strong {
+    font-weight: normal;
+}
+
+
+.form-tip {
+    vertical-align: middle;
+}

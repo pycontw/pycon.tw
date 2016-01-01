@@ -1,0 +1,26 @@
+body.registration {
+    background-color: $theme-color;
+}
+
+.registration-logo {
+    margin: 60px auto 50px;
+}
+
+
+.registration-panel {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    border-radius: 4px;
+
+
+    &__title {
+        color: $theme-color;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+}
+

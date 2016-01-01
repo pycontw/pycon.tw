@@ -6,6 +6,10 @@ from django.contrib.auth.forms import (
 )
 from django.utils.translation import ugettext_lazy as _
 
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Field, Fieldset, Layout, Submit
+from crispy_forms.bootstrap import FormActions
+
 
 User = get_user_model()
 
@@ -26,8 +30,24 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(
         label=_('Password confirmation'),
         widget=forms.PasswordInput,
-        help_text=_("Enter the same password as above, for verification."),
     )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.attrs = {'autocomplete': 'off'}
+        self.helper.label_class = 'sr-only'
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                Field('email', placeholder=self.fields['email'].label),
+                Field('password1', placeholder=self.fields['password1'].label),
+                Field('password2', placeholder=self.fields['password2'].label),
+            ),
+            FormActions(
+                Submit('save', _('Create Account'), css_class='btn-lg btn-block')
+            )
+        )
 
     class Meta:
         model = User
