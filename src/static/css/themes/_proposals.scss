@@ -81,7 +81,7 @@ body.dashboard{
                 }
             }
 
-            form{
+            > form{
                 padding:  33px;
             }
         }
@@ -94,14 +94,34 @@ body.dashboard{
 
 /* Must include .table to override Bootstrap styles. */
 .table.proposals-table {
-    th, td {
-        text-align: center;
-        vertical-align: middle;
-        white-space: nowrap;
+    thead{
+        background:#F8F8F8;
     }
-    .title-cell {
-        text-align: left;
-        white-space: normal;
+    th{
+        font-weight: 400;
+        font-size:13px;
+        color:#9B9B9B;
+        line-height:22px;
+        border-bottom: 1px solid #EEEEEE;
+        height: 40px;
+        padding-left: 34px;
+    }
+    td{
+
+        font-weight: 400;
+        font-size:13px;
+        color:#4A4A4A;
+        line-height: 25px;
+        padding: 32px 34px;
+
+        &.proposal-title{
+            font-size: 16px;
+        }
+
+        form{
+            padding: 0;
+            margin-top: -4px;
+        }
     }
 }
 
@@ -192,5 +212,25 @@ body.dashboard{
 
     &.yellow-btn{
         background:#FFC525;
+    }
+}
+
+.edit-btn{
+    background: #F8F8F8;
+    border: 1px solid #EEEEEE;
+    border-radius: 3px;
+    padding: 8px 16px 9px 18px;
+    font-weight: 400;
+    font-size:13px;
+    line-height:15px;
+
+    &.text-edit{
+        color:#3E6DF5;
+    }
+}
+
+.proposals{
+    p{
+        padding: 20px 33px;
     }
 }

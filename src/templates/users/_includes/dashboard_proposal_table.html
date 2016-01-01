@@ -1,28 +1,28 @@
 {% load i18n %}
 
-<table class="proposals-table table table-striped table-hover">
+<table class="proposals-table table table-responsive">
   <thead>
     <tr>
-        <th class="title-cell" width="99%">{% trans 'Title' %}</th>
-        <th>{% trans 'Python Level' %}</th>
-        <th>{% trans 'Language' %}</th>
+        <th>{% trans 'Title' %}</th>
+        <th class="hidden-xs">{% trans 'Python Level' %}</th>
+        <th class="hidden-xs">{% trans 'Language' %}</th>
         <th></th>
     </tr>
   </thead>
   <tbody>
     {% for proposal in proposals %}
     <tr>
-      <td class="title-cell">{{ proposal.title }}</td>
-      <td>{{ proposal.get_python_level_display }}</td>
-      <td>{{ proposal.get_language_display }}</td>
-      <td>
+      <td class="col-sm-4 col-sm-6 proposal-title">{{ proposal.title }}</td>
+      <td class="col-sm-2 hidden-xs">{{ proposal.get_python_level_display }}</td>
+      <td class="col-sm-1 hidden-xs">{{ proposal.get_language_display }}</td>
+      <td class="col-sm-5 col-sm-6">
         <form action="{{ proposal.get_cancel_url }}" method="post">
           {% csrf_token %}
           {% if proposal.cancelled %}
-          <button type="submit" name="cancelled" value="" class="btn btn-success">{% trans 'Reactivate' %}</button>
+          <button type="submit" name="cancelled" value="" class="btn edit-btn text-success">{% trans 'Reactivate' %}</button>
           {% else %}
-          <a href="{{ proposal.get_update_url }}" class="btn btn-default btn-primary">{% trans 'Edit' %}</a>
-          <button type="submit" name="cancelled" value="true" class="btn btn-danger">{% trans 'Withdraw' %}</button>
+          <a href="{{ proposal.get_update_url }}" class="btn btn-default edit-btn text-edit">{% trans 'Edit' %}</a>
+          <button type="submit" name="cancelled" value="true" class="btn edit-btn text-danger">{% trans 'Withdraw' %}</button>
           {% endif %}
         </form>
       </td>
