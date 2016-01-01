@@ -7,7 +7,7 @@ from django.contrib.auth.forms import (
 from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Field, Fieldset, Layout, Submit
+from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
 from crispy_forms.bootstrap import FormActions
 
 
@@ -158,3 +158,24 @@ class AdminUserChangeForm(forms.ModelForm):
 
 class AuthenticationForm(BaseAuthenticationForm):
     username = forms.EmailField()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.label_class = 'sr-only'
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                Field('username', placeholder=self.fields['username'].label),
+                Field('password', placeholder=self.fields['password'].label),
+            ),
+            FormActions(
+                Div(
+                    Div(HTML('''<a class="btn btn-link">{btn_text}</a>'''.format(
+                             btn_text=_('Forget Password?'))), css_class='col-xs-6 m-t-2'),
+                    Div(Submit('save', _('Log In'), css_class='btn-lg btn-block'),
+                        css_class='col-xs-6'),
+                    css_class='row'
+                    )
+            )
+        )

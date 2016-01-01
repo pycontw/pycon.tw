@@ -7,6 +7,7 @@
 .form-control:focus,
 .has-error .form-control:focus {
     box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .has-error .help-block > strong {
@@ -16,4 +17,9 @@
 
 .form-tip {
     vertical-align: middle;
+}
+
+
+input {
+    -webkit-appearance:none;  /* Remove default shadow */
 }
