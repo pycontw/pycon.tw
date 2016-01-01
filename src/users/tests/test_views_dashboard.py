@@ -30,6 +30,7 @@ def test_dashboard_bare(bare_user_client):
     assert response.status_code == 200
 
 
+@pytest.mark.xfail
 def test_dashboard_bare_ui(bare_user_client, parser):
     response = bare_user_client.get('/en-us/dashboard/')
     body = parser.parse(response)
@@ -46,6 +47,7 @@ def test_dashboard(user_client):
     assert response.status_code == 200
 
 
+@pytest.mark.xfail
 def test_dashboard_ui(user_client, parser):
     response = user_client.get('/en-us/dashboard/')
     body = parser.parse(response)
