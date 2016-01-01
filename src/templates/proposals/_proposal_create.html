@@ -1,19 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
 {% load i18n crispy_forms_tags %}
 
+{% block nav-dashboard %}active{% endblock %}
 
-{% block content %}
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <h2 class="page-header">{% block page_header %}{% endblock page_header %}</h2>
-    <form method="post">
-      {% csrf_token %}
-      <div class="nesting-form-group">
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Create Tutorial Proposal' %}</button>
-      </div>
-    </form>
-  </div>
+{% block main-content %}
+<div class="page-header">
+  <h3>{% block page_header %}{% endblock page_header %}</h3>
 </div>
-{% endblock content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="nesting-form-group">
+    {{ form|crispy }}
+    <button type="submit" class="btn save-btn">{% trans 'Create Tutorial Proposal' %}</button>
+  </div>
+</form>
+{% endblock main-content %}

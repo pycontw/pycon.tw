@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
 {% load i18n static compress crispy_forms_tags %}
 
@@ -10,23 +10,22 @@
 {% endcompress %}
 {% endblock extra_css %}
 
+{% block nav-dashboard %}active{% endblock %}
 
-{% block content %}
-<div class="row" style="margin-bottom: 50px;">
-  <div class="col-md-offset-2 col-md-8">
-    {% if not object.cancelled %}
-    <h2 class="page-header">{{ object.title }}</h2>
-    <form method="post">
-      {% csrf_token %}
-      <div class="nesting-form-group">
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans 'Save' %}</button>
-      </div>
-    </form>
-    {% endif %}
-  </div>
+{% block main-content %}
+{% if not object.cancelled %}
+<div class="page-header">
+  <h3>{{ object.title }}</h3>
 </div>
-{% endblock content %}
+<form method="post">
+  {% csrf_token %}
+  <div class="nesting-form-group">
+    {{ form|crispy }}
+    <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+  </div>
+</form>
+{% endif %}
+{% endblock main-content %}
 
 
 {% block extra_js %}
