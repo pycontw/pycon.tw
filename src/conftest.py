@@ -1,6 +1,7 @@
 import pytest
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
 
 
@@ -56,6 +57,13 @@ def parser():
 def bare_user(db):
     user = User.objects.create_user(email='user@user.me', password='7K50<31')
     return user
+
+
+@pytest.fixture(params=[AnonymousUser, 'bare_user'])
+def invalid_user(request, bare_user):
+    if callable(request.param):
+        return request.param()
+    return locals()[request.param]
 
 
 @pytest.fixture
