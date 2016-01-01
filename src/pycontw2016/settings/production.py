@@ -29,6 +29,9 @@ TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0]['OPTIONS'].update({"debug": False})
 del TEMPLATES[0]['APP_DIRS']
 
+# Explicitly tell Django where to find translations.
+LOCALE_PATHS = join(BASEDIR, 'locale')
+
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
 
