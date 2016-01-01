@@ -20,6 +20,12 @@
 }
 
 
+// Remove input shadow for iOS
 input {
-    -webkit-appearance:none;  /* Remove default shadow */
+    -webkit-appearance:none;
+}
+
+
+.btn-link {
+    color: $btn-link-color;
 }
