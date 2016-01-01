@@ -9,8 +9,10 @@
 {% block nav-profile %}active{% endblock %}
 
 {% block main-content %}
+<div class="page-header">
+	<h3>{% trans 'Edit Profile' %}</h3>
+</div>
 
-<h3 class="page-header">{% trans 'Edit Profile' %}</h3>
 <form id="user_profile_update_form" method="post" enctype="multipart/form-data">
 	{% csrf_token %}
 	<div class="nesting-form-group">

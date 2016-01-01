@@ -14,20 +14,27 @@
   {% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
 
 	<div class="talk-proposals">
-	  <h3 class="page-header">{% trans 'Talk Proposals' %}</h3>
+    <div class="page-header">
+        <h3>{% trans 'Talk Proposals' %} <a href="{% url 'talk_proposal_create' %}" class="btn new-btn" role="button"><i class="fa fa-plus"></i>&nbsp;
+{% trans 'New Talk Porposal' %}</a></h3>
+    </div>
+
     {% if user.talkproposal_set.exists %}
     {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.talkproposal_set.all %}
     {% else %}
-    <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ talk_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+    <p>{% blocktrans %}You haven't submitted any talk proposals.{% endblocktrans %}</p>
     {% endif %}
 	</div>
 
   <div class="tutorial-proposals">
-    <h3 class="page-header">{% trans 'Tutorial Proposals' %}</h3>
+    <div class="page-header">
+        <h3>{% trans 'Tutorial Proposals' %} <a href="{% url 'tutorial_proposal_create' %}" class="btn new-btn yellow-btn" role="button"><i class="fa fa-plus"></i>&nbsp;
+{% trans 'New Tutorial Porposal' %}</a></h3>
+    </div>
     {% if user.tutorialproposal_set.exists %}
     {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
     {% else %}
-    <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+    <p>{% blocktrans %}You haven't submitted any tutorial proposals.{% endblocktrans %}</p>
     {% endif %}
   </div>
 {% endif %}

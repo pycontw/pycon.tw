@@ -14,7 +14,8 @@ body.dashboard{
         .nav-sidebar{
             li{
                 a{
-                    padding: 24px 40px;
+                    padding: 24px 0 0 40px;
+                    height: 65px;
                     font-size:16px;
                     color: #BBBBBB;
                     line-height:19px;
@@ -66,9 +67,18 @@ body.dashboard{
             padding: 0;
 
             .page-header{
-                font-size: 21px;
-                padding: 23px 0 21px 33px;
+                padding: 20px 0 0 33px;
+                height: 65px;
                 margin: 0;
+
+                h3{
+                    font-weight: 500;
+                    font-size:21px;
+                    color:#4A4A4A;
+                    line-height:24px;
+                    margin: 0;
+                    padding: 0;
+                }
             }
 
             form{
@@ -168,4 +178,19 @@ body.dashboard{
     line-height: 15px;
     margin-left: 5px;
     padding: 8px 14px 9px 14px;
+}
+
+.new-btn {
+    background: #1542C4;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #FFFFFF;
+    line-height: 15px;
+    padding: 8px 12px 9px;
+    margin: -4px 0 0 24px;
+
+    &.yellow-btn{
+        background:#FFC525;
+    }
 }
