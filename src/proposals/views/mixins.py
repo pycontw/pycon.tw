@@ -16,11 +16,13 @@ class FormValidMessageMixin:
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        messages.add_message(
-            self.request,
-            self.get_form_valid_message_level(),
-            self.get_form_valid_message(),
-        )
+        form_valid_message = self.get_form_valid_message()
+        if form_valid_message:
+            messages.add_message(
+                self.request,
+                self.get_form_valid_message_level(),
+                form_valid_message,
+            )
         return response
 
 

@@ -16,19 +16,31 @@ class ProposalManageSpeakersView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         FormValidMessageMixin, CreateView):
 
+    http_method_names = ['get', 'post', 'options']
     model = AdditionalSpeaker
     form_class = AdditionalSpeakerCreateForm
     template_name = 'proposals/manage_speakers.html'
 
-    def dispatch(self, request, *args, **kwargs):
+    def get_proposal(self):
         try:
-            self.proposal = (
-                self.proposal_model.objects
-                .select_related('submitter').get(pk=kwargs['pk'])
+            proposal = (
+                self.proposal_model.objects.select_related('submitter').get(
+                    pk=self.kwargs['pk'],
+                    submitter=self.request.user,
+                    cancelled=False,
+                )
             )
         except self.proposal_model.DoesNotExist:
             raise Http404
-        return super().dispatch(request, *args, **kwargs)
+        return proposal
+
+    def get(self, request, *args, **kwargs):
+        self.proposal = self.get_proposal()
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        self.proposal = self.get_proposal()
+        return super().post(request, *args, **kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -59,6 +71,7 @@ class AdditionalSpeakerRemoveView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         FormValidMessageMixin, UpdateView):
 
+    http_method_names = ['post', 'options']
     model = AdditionalSpeaker
     form_class = AdditionalSpeakerCancelForm
 

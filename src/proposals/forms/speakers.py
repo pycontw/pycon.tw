@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
+from core.utils import form_has_instance
 from proposals.models import AdditionalSpeaker
 
 from .mixins import RequestUserSpeakerValidationMixin
@@ -46,7 +47,7 @@ class AdditionalSpeakerCreateForm(
 
     def __init__(self, proposal=None, request=None, *args, **kwargs):
         super().__init__(request=request, *args, **kwargs)
-        if self.instance.pk is not None:
+        if form_has_instance(self):
             raise ValueError(
                 'Additional speaker creation form cannot be used '
                 'with an instance.'
@@ -122,7 +123,7 @@ class AdditionalSpeakerCreateForm(
 class AdditionalSpeakerUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if not self.instance:
+        if not form_has_instance(self):
             raise ValueError(
                 'Additional speaker update form must be initialized '
                 'with an instance.'
@@ -130,12 +131,32 @@ class AdditionalSpeakerUpdateForm(forms.ModelForm):
 
 
 class AdditionalSpeakerCancelForm(AdditionalSpeakerUpdateForm):
+
     class Meta:
         model = AdditionalSpeaker
         fields = ['cancelled']
 
+    def clean_cancelled(self):
+        cancelled = self.cleaned_data['cancelled']
+        if not cancelled:
+            raise forms.ValidationError(
+                'Additional speaker cancel form can only be used to cancel '
+                'a speaker.'
+            )
+        return cancelled
+
 
 class AdditionalSpeakerSetStatusForm(AdditionalSpeakerUpdateForm):
+
     class Meta:
         model = AdditionalSpeaker
         fields = ['status']
+
+    def clean_status(self):
+        status = self.cleaned_data['status']
+        if status == AdditionalSpeaker.SPEAKING_STATUS_PENDING:
+            raise forms.ValidationError(
+                'Additional speaker status can not be changed to Pending '
+                'from another status.'
+            )
+        return status

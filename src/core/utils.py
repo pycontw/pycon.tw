@@ -41,3 +41,8 @@ def collect_language_codes(user_code):
     if '-' in settings.LANGUAGE_CODE:
         codes.append(settings.LANGUAGE_CODE.split('-')[0])
     return codes
+
+
+def form_has_instance(form):
+    instance = getattr(form, 'instance', None)
+    return instance and instance.pk is not None

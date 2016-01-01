@@ -1,9 +1,11 @@
 import pytest
 
 from proposals.forms import (
-    TalkProposalCreateForm, TalkProposalUpdateForm,
-    TutorialProposalCreateForm, TutorialProposalUpdateForm,
+    TalkProposalCancelForm, TutorialProposalCancelForm,
+    TalkProposalCreateForm, TutorialProposalCreateForm,
+    TalkProposalUpdateForm, TutorialProposalUpdateForm,
 )
+from proposals.models import TalkProposal, TutorialProposal
 
 
 @pytest.fixture
@@ -105,8 +107,11 @@ def test_tutorial_proposal_create_form_valid(
     assert form.is_valid()
 
 
-def test_talk_proposal_update_form():
-    form = TalkProposalUpdateForm()
+@pytest.mark.parametrize('form_class', [
+    TalkProposalUpdateForm, TutorialProposalUpdateForm,
+])
+def test_proposal_update_form(form_class):
+    form = form_class()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'target_audience',
         'abstract', 'python_level', 'objective', 'detailed_description',
@@ -114,10 +119,40 @@ def test_talk_proposal_update_form():
     ]
 
 
-def test_tutorial_proposal_update_form():
-    form = TutorialProposalUpdateForm()
-    assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'target_audience',
-        'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy', 'slide_link',
-    ]
+@pytest.mark.parametrize('form_class', [
+    TalkProposalCancelForm, TutorialProposalCancelForm,
+])
+def test_proposal_cancel_form_no_instance(form_class):
+    with pytest.raises(ValueError) as ctx:
+        form_class()
+    assert str(ctx.value) == (
+        'Proposal cancel form must be initialized with an instance.'
+    )
+
+
+def test_talk_proposal_cancel_form(talk_proposal):
+    form = TalkProposalCancelForm(instance=talk_proposal)
+    assert list(form.fields) == ['cancelled']
+
+
+def test_tutorial_proposal_cancel_form(tutorial_proposal):
+    form = TutorialProposalCancelForm(instance=tutorial_proposal)
+    assert list(form.fields) == ['cancelled']
+
+
+def test_talk_proposal_cancel_form_save(talk_proposal):
+    assert not talk_proposal.cancelled
+    form = TalkProposalCancelForm(
+        data={'cancelled': 'true'}, instance=talk_proposal,
+    )
+    form.save()
+    assert TalkProposal.objects.get(pk=talk_proposal.pk).cancelled
+
+
+def test_tutorial_proposal_cancel_form_save(tutorial_proposal):
+    assert not tutorial_proposal.cancelled
+    form = TutorialProposalCancelForm(
+        data={'cancelled': 'true'}, instance=tutorial_proposal,
+    )
+    form.save()
+    assert TutorialProposal.objects.get(pk=tutorial_proposal.pk).cancelled

@@ -23,6 +23,12 @@ class PrimarySpeaker:
     def __repr__(self):
         return '<PrimarySpeaker: {name}>'.format(name=self.user.speaker_name)
 
+    def __eq__(self, other):
+        return (
+            isinstance(other, PrimarySpeaker) and self.user == other.user
+            and self.proposal == other.proposal
+        )
+
     @property
     def user(self):
         return self._user

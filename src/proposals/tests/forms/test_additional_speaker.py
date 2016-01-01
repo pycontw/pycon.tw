@@ -1,20 +1,10 @@
 import pytest
 
-from proposals.forms import AdditionalSpeakerCreateForm
+from proposals.forms import (
+    AdditionalSpeakerCancelForm, AdditionalSpeakerCreateForm,
+    AdditionalSpeakerSetStatusForm,
+)
 from proposals.models import AdditionalSpeaker
-
-
-@pytest.fixture(params=['talk_proposal', 'tutorial_proposal'])
-def proposal(request, talk_proposal, tutorial_proposal):
-    return locals()[request.param]
-
-
-@pytest.fixture
-def additional_speaker(another_user, proposal):
-    speaker = AdditionalSpeaker.objects.create(
-        user=another_user, proposal=proposal,
-    )
-    return speaker
 
 
 @pytest.fixture
@@ -135,6 +125,12 @@ def test_additional_speaker_create_form_duplicate_user(
 
 def test_additional_speaker_create_form_cancelled_user(
         request, user, proposal, another_user, cancelled_additional_speaker):
+    """If a matching additional speaker already exists, the creation form
+    should reuse the same additional speaker instance instead of creating
+    a new one.
+
+    The "cancelled" flag of the existing epeaker should be set to False.
+    """
     request.user = user
     form = AdditionalSpeakerCreateForm(
         request=request, proposal=proposal,
@@ -143,5 +139,30 @@ def test_additional_speaker_create_form_cancelled_user(
     assert form.is_valid()
 
     after = form.save()
-    assert after == cancelled_additional_speaker
+    assert after.pk == cancelled_additional_speaker.pk
     assert not after.cancelled
+
+
+@pytest.mark.parametrize('form_class', [
+    AdditionalSpeakerCancelForm, AdditionalSpeakerSetStatusForm,
+])
+def test_additional_speaker_update_form_no_instance(form_class):
+    with pytest.raises(ValueError) as ctx:
+        form_class()
+    assert str(ctx.value) == (
+        'Additional speaker update form must be initialized with an instance.'
+    )
+
+
+def test_additional_speaker_cancel_form(additional_speaker):
+    form = AdditionalSpeakerCancelForm(instance=additional_speaker)
+    assert list(form.fields) == ['cancelled']
+
+
+def test_additional_speaker_cancel_form_save(additional_speaker):
+    assert not additional_speaker.cancelled
+    form = AdditionalSpeakerCancelForm(
+        data={'cancelled': 'true'}, instance=additional_speaker,
+    )
+    form.save()
+    assert AdditionalSpeaker.objects.get(pk=additional_speaker.pk).cancelled

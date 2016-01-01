@@ -1,5 +1,6 @@
 from django import forms
 
+from core.utils import form_has_instance
 from core.widgets import SimpleMDEWidget
 from proposals.models import TalkProposal, TutorialProposal
 
@@ -83,7 +84,7 @@ class TutorialProposalUpdateForm(forms.ModelForm):
 class ProposalCancelForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if not self.instance:
+        if not form_has_instance(self):
             raise ValueError(
                 'Proposal cancel form must be initialized with an instance.'
             )
