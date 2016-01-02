@@ -2,7 +2,11 @@
 
 {% load i18n %}
 
-{% block nav-dashboard %}active{% endblock %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
+
 
 {% block main-content %}
 
