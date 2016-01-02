@@ -8,26 +8,29 @@
 
 {% if user.is_valid_speaker %}
 
+	{% url 'talk_proposal_create' as talk_proposal_create_url %}
+	{% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
+
 	<div class="talk-proposals proposals">
     <div class="page-header">
-        <h3>{% trans 'Talk Proposals' %} <a href="{% url 'talk_proposal_create' %}" class="btn new-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Talk Porposal' %}</a><a href="{% url 'talk_proposal_create' %}" class="btn new-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>
+        <h3>{% trans 'Talk Proposals' %} <a href="{% url 'talk_proposal_create' %}" class="btn new-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Talk Porposal' %}</a><a href="{{ talk_proposal_create_url }}" class="btn new-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>
     </div>
 
     {% if user.talkproposal_set.exists %}
       {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.talkproposal_set.all %}
     {% else %}
-      <p>{% blocktrans %}You haven't submitted any talk proposals yet.{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ talk_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
     {% endif %}
 	</div>
 
   <div class="tutorial-proposals proposals">
     <div class="page-header">
-        <h3>{% trans 'Tutorial Proposals' %} <a href="{% url 'tutorial_proposal_create' %}" class="btn new-btn yellow-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Tutorial Porposal' %}</a><a href="{% url 'tutorial_proposal_create' %}" class="btn new-btn yellow-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>
+        <h3>{% trans 'Tutorial Proposals' %} <a href="{% url 'tutorial_proposal_create' %}" class="btn new-btn yellow-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Tutorial Porposal' %}</a><a href="{{ tutorial_proposal_create_url }}" class="btn new-btn yellow-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>
     </div>
     {% if user.tutorialproposal_set.exists %}
       {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
     {% else %}
-      <p>{% blocktrans %}You haven't submitted any tutorial proposals yet.{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
     {% endif %}
   </div>
 {% endif %}
