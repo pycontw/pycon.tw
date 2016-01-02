@@ -14,18 +14,18 @@
 {% if not user.verified %}
 <div class="row">
   <div class="alert alert-warning clearfix" role="alert">
-    <p>{% trans 'You need to verify your email before being able to submit a proposal.' %}</p>
+    <p>{% trans 'Please verify your account by clicking the link in the mail we sent to your email inbox.' %}</p>
     <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
       {% csrf_token %}
-      <p>{% trans 'Did not get the verification email?' %}</p>
-      <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button>
+      <p><span class="text-middle">{% trans 'Did not get the verification mail?' %}</span>
+      <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button></p>
     </form>
   </div>
 </div>
 {% elif not user.is_valid_speaker %}
 <div class="row">
   <div class="alert alert-warning clearfix" role="alert">
-    <p>{% trans 'Please complete your speaker profile before submitting a proposal.' %}</p>
+    <p>{% trans 'You need to complete your speaker profile first before submitting a proposal.' %}</p>
   </div>
 </div>
 {% endif %}
