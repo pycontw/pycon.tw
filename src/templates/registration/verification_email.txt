@@ -1,4 +1,5 @@
 {% spaceless %}
+{% autoescape off %}
 
 {% load i18n %}
 
@@ -11,4 +12,5 @@ To activate this account and confirm this email address, go to
 You can ignore this message if you did not sign up for this site.
 {% endblocktrans %}
 
+{% endautoescape %}
 {% endspaceless %}

@@ -1,7 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import login as base_login_view
+from django.contrib.auth.views import (
+    login as base_login, password_reset as base_password_reset,
+)
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
@@ -24,7 +26,7 @@ def user_signup(request):
     if request.method == 'POST':
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
-            user = form.save(auth=True)
+            user = form.save()
             user.send_verification_email(request)
 
             login(request, user)
@@ -92,4 +94,26 @@ def user_profile_update(request):
 
 
 def login_view(request):
-    return base_login_view(request, authentication_form=AuthenticationForm)
+    return base_login(request, authentication_form=AuthenticationForm)
+
+
+def password_reset(request):
+    return base_password_reset(
+        request, template_name='registration/password_reset.html',
+        email_template_name='registration/password_reset_email.txt',
+    )
+
+
+def password_reset_done(request):
+    messages.success(request, ugettext(
+        'An email is sent to your email account. Please check your inbox for '
+        'furthur instructions to reset your password.'
+    ))
+    return redirect('login')
+
+
+def password_reset_complete(request):
+    messages.success(request, ugettext(
+        'Password reset successful. You can now login.'
+    ))
+    return redirect('login')
