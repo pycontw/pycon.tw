@@ -67,6 +67,8 @@ def request_verification(request):
 
 @login_required
 def user_dashboard(request):
+    if not request.user.is_valid_speaker():
+        return redirect('user_profile_update')
     logout_next = reverse('index')
     return render(request, 'users/user_dashboard.html', {
         'logout_next': logout_next,
