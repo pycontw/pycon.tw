@@ -99,4 +99,4 @@ def password_change_done(request):
     messages.success(request, ugettext(
         'Your new password has been applied successfully.'
     ))
-    return redirect('password_change')
+    return redirect('user_dashboard')
