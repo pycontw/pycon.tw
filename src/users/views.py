@@ -56,8 +56,9 @@ def user_verify(request, verification_key):
 def request_verification(request):
     user = request.user
     user.send_verification_email(request)
-    messages.success(request, ugettext(
-        'A verification email has been sent to {email}').format(
+    messages.success(
+        request,
+        ugettext('A verification email has been sent to {email}').format(
             email=user.email,
         ),
     )

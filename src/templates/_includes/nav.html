@@ -1,5 +1,6 @@
 {% load i18n static %}
 {% load crispy_forms_tags %}
+{% load i18n_plus %}
 
 <div>
   <nav class="navbar navbar-default">
@@ -42,6 +43,7 @@
 
         <form class="navbar-form navbar-right" action="{% url 'set_language' %}" method="post">
           {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request|language_free_path }}">
           <select id="language-select" name="language" class="form-control">
             {% get_language_info_list for LANGUAGES as languages %}
             {% get_current_language as LANGUAGE_CODE %}
