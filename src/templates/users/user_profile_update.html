@@ -26,10 +26,8 @@
 	    		<span>{% trans 'Upload' %}</span>
 	    		<input id="id_photo" name="photo" type="file" />
 	    	</div>
-	    	<div>
-	    		<p>{% trans 'Suggested Dimensions: 800x800px or higher ' %}</p>
-	    	</div>
 	    </div>
+	    <p class="help-block">{% trans 'Suggested Dimensions: 800x800px or higher ' %}</p>
 	</div>
 	<div class="form-group">
 		{{ form.speaker_name.errors }}
@@ -40,6 +38,7 @@
 	    {{ form.bio.errors }}
 	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Self-Introduction' %}</label>
 	    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
+	    <p class="help-block">{% trans form.bio.help_text %}</p>
 	</div>
 
 	<button type="submit" class="btn btn-lg save-btn">{% trans 'Save' %}</button>
