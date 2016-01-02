@@ -16,14 +16,6 @@ cache:
   python:
   - '3.4'
 before_install:
-- openssl aes-256-cbc -K $encrypted_6c2822a03f14_key -iv $encrypted_6c2822a03f14_iv
-  -in secrets.tar.enc -out secrets.tar -d
-- tar xvf secrets.tar
-- cp ./deploy_key ~/.ssh/id_rsa
-- chmod 600 ~/.ssh/id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-- chmod 755 ./deploy_staging.sh
 - pip install -U pip
 - pip install wheel
 install:
@@ -40,6 +32,14 @@ after_success:
 - fab travis_push_transifex
 deploy:
   provider: script
-  script: fab deploy -H krdai.info -u deploy
+  script:
+  - openssl aes-256-cbc -K $encrypted_6c2822a03f14_key -iv $encrypted_6c2822a03f14_iv -in secrets.tar.enc -out secrets.tar -d
+  - tar xvf secrets.tar
+  - cp ./deploy_key ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  - chmod 755 ./deploy_staging.sh
+  - fab deploy -H krdai.info -u deploy
   on:
     branch: master
