@@ -156,7 +156,8 @@ $font-family-sans-serif:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // $btn-primary-color:              #fff !default;
 // $btn-primary-bg:                 $brand-primary !default;
-// $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+$btn-primary-bg:                    #1542c4;
+$btn-primary-border:                #1038ad;
 
 // $btn-success-color:              #fff !default;
 // $btn-success-bg:                 $brand-success !default;
@@ -195,11 +196,13 @@ $font-family-sans-serif:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 // $input-color:                    $gray !default;
 // //** `<input>` border color
 // $input-border:                   #ccc !default;
+$input-border:                  #d4d4d4;
 
 // // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 // //** Default `.form-control` border radius
 // // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 // $input-border-radius:            $border-radius-base !default;
+$input-border-radius:            3px;
 // //** Large `.form-control` border radius
 // $input-border-radius-large:      $border-radius-large !default;
 // //** Small `.form-control` border radius
@@ -207,12 +210,14 @@ $font-family-sans-serif:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // //** Border color for inputs on focus
 // $input-border-focus:             #66afe9 !default;
+$input-border-focus:                $theme-color;
 
 // //** Placeholder text color
 // $input-color-placeholder:        #999 !default;
 
 // //** Default `.form-control` height
 // $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-height-base:              44px;
 // //** Large `.form-control` height
 // $input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
 // //** Small `.form-control` height
@@ -220,6 +225,7 @@ $font-family-sans-serif:  Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // //** `.form-group` margin
 // $form-group-margin-bottom:       15px !default;
+$form-group-margin-bottom:          24px;
 
 // $legend-color:                   $gray-dark !default;
 // $legend-border-color:            #e5e5e5 !default;
@@ -516,6 +522,7 @@ $navbar-default-link-disabled-color:       #aaa !default;
 // $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
 // $state-danger-text:              #a94442 !default;
+$state-danger-text:                 #f15a39;
 // $state-danger-bg:                #f2dede !default;
 // $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
