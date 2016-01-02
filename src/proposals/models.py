@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
 from django.utils.translation import ugettext, ugettext_lazy as _
 
+from core.models import BigForeignKey
 from core.utils import format_html_lazy
 
 
@@ -47,7 +48,7 @@ class PrimarySpeaker:
 
 class AdditionalSpeaker(models.Model):
 
-    user = models.ForeignKey(
+    user = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('user'),
     )
@@ -96,7 +97,7 @@ class AdditionalSpeaker(models.Model):
 
 class AbstractProposal(models.Model):
 
-    submitter = models.ForeignKey(
+    submitter = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('submitter'),
     )
