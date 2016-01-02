@@ -13,15 +13,17 @@
     <div class="row">
         <div class="col-md-offset-2 col-md-8">
             {% include "registration/_registration_header.html" %}
-            <div class="registration-panel">
-                <h2 class="registration-panel__title">{% trans 'Sign Up' %}</h2>
-                {% crispy form %}
-                <p class="text-center">
-                    {% url 'login' as login_url %}
-                    {% blocktrans %}
-                    <span class="form-tip">Already have an account?</span><a href="{{ login_url }}" class="btn btn-link">Login.</a>
-                    {% endblocktrans %}
-                </p>
+            <div class="registration-panel-wrapper">
+                <div class="registration-panel">
+                    <h2 class="registration-panel__title">{% trans 'Sign Up' %}</h2>
+                    {% crispy form %}
+                    <p class="text-center">
+                        {% url 'login' as login_url %}
+                        {% blocktrans %}
+                        <span class="form-tip">Already have an account?</span><a href="{{ login_url }}" class="btn btn-link">Login.</a>
+                        {% endblocktrans %}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
