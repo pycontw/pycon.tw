@@ -2,9 +2,11 @@ language: python
 sudo: false
 python:
 - '3.4'
+services:
+- postgresql
 env:
   global:
-  - DATABASE_URL=sqlite:///db.sqlite3
+  - DATABASE_URL=postgres://127.0.0.1:5432/postgres
   - SECRET_KEY=thisisasecret
   - PIP_WHEEL_DIR=$HOME/.cache/pip/wheels
   - PIP_FIND_LINKS=file://$HOME/.cache/pip/wheels
