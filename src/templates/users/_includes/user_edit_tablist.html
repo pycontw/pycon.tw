@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<ul id="user-edit-tablist" class="nav nav-tabs" role="tablist">
+	<li role="presentation"
+			{% if active == 'profile' %}class="active"{% endif %}>
+		<a href="{% url 'user_profile_update' %}"
+				aria-controls="speaker-profile" role="tab">
+			{% trans 'Speaker Profile' %}
+		</a>
+	</li>
+	<li role="presentation"
+			{% if active == 'password' %}class="active"{% endif %}>
+		<a href="{% url 'password_change' %}"
+				aria-controls="change-password" role="tab">
+			{% trans 'Change Password' %}
+		</a>
+	</li>
+</ul>
