@@ -115,3 +115,5 @@ import raven    # noqa
 RAVEN_CONFIG = {
     'dsn': env('DSN_URL'),
 }
+
+GA_TRACK_ID = 'UA-71781656-2'

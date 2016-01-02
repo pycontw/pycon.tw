@@ -35,6 +35,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.request',
+                'core.context_processors.google_analytics',
             ],
             'debug': True,
         },
@@ -205,3 +206,5 @@ COMPRESS_PRECOMPILERS = (
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
+
+GA_TRACK_ID = None

@@ -40,7 +40,10 @@
         <script src="{% static 'js/csrf_token.js' %}"></script>
         <script src="{% static 'js/bootstrap.js' %}"></script>
         <script src="{% static 'js/base.js' %}"></script>
+        {% if GA_TRACK_ID %}
+        <script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
         <script src="{% static 'js/google_analytics.js' %}"></script>
+        {% endif %}
         {% block scripts %}  {% endblock %}
     {% endcompress %}
     {% block extra_js %}{% endblock %}
