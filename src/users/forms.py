@@ -35,6 +35,7 @@ class UserCreationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.error_text_inline = False
         self.helper.attrs = {'autocomplete': 'off'}
         self.helper.label_class = 'sr-only'
         self.helper.layout = Layout(
@@ -162,6 +163,7 @@ class AuthenticationForm(BaseAuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
+        self.helper.error_text_inline = False
         self.helper.label_class = 'sr-only'
         self.helper.layout = Layout(
             Fieldset(
