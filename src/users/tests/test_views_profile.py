@@ -21,9 +21,6 @@ def test_profile_get_ui(user_client, parser):
     body = parser.parse(response)
 
     form = body.get_element_by_id('user_profile_update_form')
-    assert form.cssselect('a[href="/en-us/dashboard/"]'), (
-        'should contain cancel link'
-    )
     assert form.cssselect('button[type="submit"]'), (
         'should contain submit button'
     )
