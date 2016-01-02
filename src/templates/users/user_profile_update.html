@@ -4,7 +4,9 @@
 
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
-{% block nav-profile %}active{% endblock %}
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='profile' %}
+{% endblock dashboard_tablist %}
 
 {% block main-content %}
 <div class="page-header">
