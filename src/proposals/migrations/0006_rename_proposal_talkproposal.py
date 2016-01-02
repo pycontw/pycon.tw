@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.apps import apps
 from django.db import migrations
 from django.conf import settings
 
@@ -12,7 +13,7 @@ class Migration(migrations.Migration):
         ('proposals', '0005_auto_20151210_1048'),
     ]
 
-    if 'postgres' in settings.INSTALLED_APPS:
+    if apps.is_installed('postgres'):
         dependencies.append(('postgres', '0001_proposal_generated_id'))
 
     operations = [

@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import core.models
+from django.apps import apps
 from django.conf import settings
 from django.db import migrations
 import django.db.models.deletion
@@ -13,6 +14,9 @@ class Migration(migrations.Migration):
     dependencies = [
         ('proposals', '0015_auto_20151229_0711'),
     ]
+
+    if apps.is_installed('postgres'):
+        dependencies.append(('postgres', '0004_user_generated_id'))
 
     operations = [
         migrations.AlterField(
