@@ -1,0 +1,39 @@
+body.registration {
+    background-color: $theme-color;
+}
+
+.registration-logo {
+    margin: 60px auto 50px;
+}
+
+
+.registration-panel-wrapper {
+    max-width: 460px;
+    margin: 0 auto;
+    &::after {
+        content: '';
+        display: block;
+        width:100%;
+        height: 100px;
+        padding: 20px;
+        background: url(static('images/bg_registration.png')) no-repeat 50% 50%;
+        background-size: content;
+        background-clip: content-box;
+    }
+}
+
+.registration-panel {
+    padding: 40px 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    border-radius: 4px;
+
+
+    &__title {
+        color: $theme-color;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+}
+
