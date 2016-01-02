@@ -19,12 +19,15 @@
 	    {{ form.photo.errors }}
 	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
 	    <div class="profile_pic_panel">
-	    	<div style="width:60px; margin-right:20px; display: inline-block;">
+	    	<div>
 	    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
 	    	</div>
-	    	<div class="btn upload-btn" style="display: inline-block;">
+	    	<div class="btn upload-btn">
 	    		<span>{% trans 'Upload' %}</span>
 	    		<input id="id_photo" name="photo" type="file" />
+	    	</div>
+	    	<div>
+	    		<p>{% trans 'Suggested Dimensions: 800x800px or higher ' %}</p>
 	    	</div>
 	    </div>
 	</div>

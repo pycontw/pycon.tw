@@ -8,9 +8,6 @@
 
 {% if user.is_valid_speaker %}
 
-  {% url 'talk_proposal_create' as talk_proposal_create_url %}
-  {% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
-
 	<div class="talk-proposals proposals">
     <div class="page-header">
         <h3>{% trans 'Talk Proposals' %} <a href="{% url 'talk_proposal_create' %}" class="btn new-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Talk Porposal' %}</a><a href="{% url 'talk_proposal_create' %}" class="btn new-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>

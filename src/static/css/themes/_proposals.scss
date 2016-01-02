@@ -127,6 +127,13 @@ body.dashboard{
 
 .profile_pic_panel {
     margin: 20px 0 40px 0;
+    > div{
+        display: inline-block;;
+        margin-right: 20px;
+        p{
+            font-size: 12px;
+        }
+    }
     .pic {
         width: 60px;
         height: 60px;
