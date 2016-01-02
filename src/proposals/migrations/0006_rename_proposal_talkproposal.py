@@ -12,6 +12,9 @@ class Migration(migrations.Migration):
         ('proposals', '0005_auto_20151210_1048'),
     ]
 
+    if 'postgres' in settings.INSTALLED_APPS:
+        dependencies.append(('postgres', '0001_proposal_generated_id'))
+
     operations = [
         migrations.RenameModel('Proposal', 'TalkProposal'),
         migrations.AlterModelOptions(

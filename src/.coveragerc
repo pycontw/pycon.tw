@@ -8,4 +8,12 @@ omit =
     */tests.py
     */tests/*
     */migrations/*
+
+exclude_lines =
+    def __repr__
+    def __str__
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+
 show_missing = true

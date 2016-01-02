@@ -1,6 +1,7 @@
 import pytest
 
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
 
 
@@ -51,15 +52,17 @@ def parser():
 
 @pytest.fixture
 def bare_user(db):
-    User = get_user_model()
-    try:
-        user = User.objects.get(email='user@user.me')
-    except User.DoesNotExist:
-        user = User.objects.create_user(
-            email='user@user.me',
-            password='7K50<31',
-        )
+    user = get_user_model().objects.create_user(
+        email='user@user.me', password='7K50<31',
+    )
     return user
+
+
+@pytest.fixture(params=[AnonymousUser, 'bare_user'])
+def invalid_user(request, bare_user):
+    if callable(request.param):
+        return request.param()
+    return locals()[request.param]
 
 
 @pytest.fixture
@@ -84,15 +87,21 @@ def user_client(user, bare_user_client):
 
 
 @pytest.fixture
-def another_user(db):
+def another_bare_user(db):
     user = get_user_model().objects.create_user(
         email='another@ayatsuji.itou',
         password='7uk1T0n01sY',
-        speaker_name='Misaki Mei',
-        bio='Neon marketing office assault kanji into meta-face.',
-        verified=True,
     )
-    assert user.verified
+    return user
+
+
+@pytest.fixture
+def another_user(another_bare_user):
+    user = get_user_model().objects.get(email='another@ayatsuji.itou')
+    user.speaker_name = 'Misaki Mei'
+    user.bio = 'Neon marketing office assault kanji into meta-face.'
+    user.verified = True
+    user.save()
     return user
 
 

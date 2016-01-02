@@ -53,6 +53,13 @@
         <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
         {% endif %}
       </div>
+
+      {% if user.cospeaking_info_set.exists %}
+      <div class="cospeaking-proposals">
+        <h3>{% trans 'Co-Speaking Proposals' %}</h3>
+        {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all %}
+      </div>
+      {% endif %}
     {% endif %}
 
 	</div>

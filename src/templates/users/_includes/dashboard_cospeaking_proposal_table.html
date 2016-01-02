@@ -1,0 +1,56 @@
+{% load i18n %}
+
+<table class="proposals-table table table-striped table-hover">
+  <thead>
+    <tr>
+        <th class="title-cell">{% trans 'Title' %}</th>
+        <th>{% trans 'Language' %}</th>
+        <th>{% trans 'Submitter' %}</th>
+        <th>{% trans 'Status' %}</th>
+        <th width="1%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% comment %}
+    FIXME: This loop has an n+1 problem on "speaker_info.proposal". We can't
+    do "selected_related" because it's generic, neither "prefetch_related"
+    because it is (likely) not homogenous.
+
+    This likely will not cause problems in practice, however. It's rare for
+    a user to become a co-speaker in two or more proposals, so n+1 is likely
+    around 3. Joining will likely require more queries.
+
+    We can always come back if this ever become a real problem.
+    {% endcomment %}
+    {% for speaker_info in speaker_infos %}
+    <tr>
+      <td class="title-cell">{{ speaker_info.proposal.title }}</td>
+      <td>{{ speaker_info.proposal.get_language_display }}</td>
+      <td>
+        <a href="mailto: {{ speaker_info.proposal.submitter.email }}">
+          {{ speaker_info.proposal.submitter.speaker_name }}
+        </a>
+      </td>
+      <td>{{ speaker_info.get_status_display }}</td>
+      <td>
+        <form method="post"
+            action="{% url 'additional_speaker_set_status' pk=speaker_info.pk %}">
+          {% csrf_token %}
+          {% if speaker_info.status != 'accepted' %}
+          <button type="submit" name="status" value="accepted"
+              class="btn btn-sm btn-success">
+            {% trans 'Accept' %}
+          </button>
+          {% endif %}
+          {% if speaker_info.status != 'declined' %}
+          <button type="submit" name="status" value="declined"
+              class="btn btn-sm btn-danger">
+            {% trans 'Decline' %}
+          </button>
+          {% endif %}
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
