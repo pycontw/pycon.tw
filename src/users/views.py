@@ -95,3 +95,10 @@ def user_profile_update(request):
 
 def login_view(request):
     return base_login_view(request, authentication_form=AuthenticationForm)
+
+
+def password_change_done(request):
+    messages.success(request, ugettext(
+        'Your new password has been applied successfully.'
+    ))
+    return redirect('user_dashboard')

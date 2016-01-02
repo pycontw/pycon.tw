@@ -31,15 +31,10 @@
 {% endif %}
 
 <div class="row main-container">
-  <div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-      {% if user.is_valid_speaker %}
-        <li class="{% block nav-dashboard %}{% endblock %}"><a href="{% url 'user_dashboard' %}">{% trans 'Proposal' %}</a></li>
-      {% endif %}
-        <li class="{% block nav-profile %}{% endblock %}"><a href="{% url 'user_profile_update' %}">{% trans 'Edit Profile' %}</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-9 col-md-10 main">
+	<div class="col-sm-3 col-md-2 sidebar">
+		{% block dashboard_tablist %}{% endblock dashboard_tablist %}
+	</div>
+	<div class="col-sm-9 col-md-10 main">
     {% block main-content %}{% endblock %}
   </div>
 </div>

@@ -1,4 +1,4 @@
-{% extends 'dashboard_base.html' %}
+{% extends 'proposals/_proposal_base.html' %}
 
 {% load i18n static compress crispy_forms_tags %}
 
@@ -10,7 +10,6 @@
 {% endcompress %}
 {% endblock extra_css %}
 
-{% block nav-dashboard %}active{% endblock %}
 
 {% block main-content %}
 {% if not object.cancelled %}
