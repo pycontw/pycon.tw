@@ -27,7 +27,7 @@
 	    		<input id="id_photo" name="photo" type="file" />
 	    	</div>
 	    </div>
-	    <p class="help-block">{% trans 'Suggested Dimensions: 800x800px or higher ' %}</p>
+	    <p class="help-block">{% trans 'At least 800&times;800 pixels for best results in our printed conference booklet.' %}</p>
 	</div>
 	<div class="form-group">
 		{{ form.speaker_name.errors }}
@@ -36,8 +36,8 @@
 	</div>
 	<div class="form-group">
 	    {{ form.bio.errors }}
-	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Self-Introduction' %}</label>
-	    <input id="id_bio" name="bio" type="text" class="form-control field bio_field" value="{{ form.bio.value }}">
+	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Biography' %}</label>
+	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
 	    <p class="help-block">{% trans form.bio.help_text %}</p>
 	</div>
 

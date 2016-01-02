@@ -183,8 +183,11 @@ body.dashboard{
 }
 
 .bio_field {
-    width: 600px;
-    height: 154px;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 154px;
+    max-height: 154px;
+    font-family: $font-family-monospace;
 }
 
 .save-btn {

@@ -46,7 +46,9 @@ class UserCreationForm(forms.ModelForm):
                 Field('password2', placeholder=self.fields['password2'].label),
             ),
             FormActions(
-                Submit('save', _('Create Account'), css_class='btn-lg btn-block')
+                Submit(
+                    'save', _('Create Account'), css_class='btn-lg btn-block',
+                )
             )
         )
 
@@ -171,13 +173,15 @@ class AuthenticationForm(BaseAuthenticationForm):
                 Field('username', placeholder=self.fields['username'].label),
                 Field('password', placeholder=self.fields['password'].label),
             ),
-            FormActions(
+            FormActions(Div(
                 Div(
-                    Div(HTML('''<a class="btn btn-link">{btn_text}</a>'''.format(
-                             btn_text=_('Forget Password?'))), css_class='col-xs-6 m-t-2'),
-                    Div(Submit('save', _('Log In'), css_class='btn-lg btn-block'),
-                        css_class='col-xs-6'),
-                    css_class='row'
-                    )
-            )
+                    HTML(_('<a class="btn btn-link">Forget Password?</a>')),
+                    css_class='col-xs-6 m-t-2',
+                ),
+                Div(
+                    Submit('save', _('Log In'), css_class='btn-lg btn-block'),
+                    css_class='col-xs-6',
+                ),
+                css_class='row',
+            ))
         )
