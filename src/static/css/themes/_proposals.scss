@@ -94,6 +94,7 @@ body.dashboard{
 
 /* Must include .table to override Bootstrap styles. */
 .table.proposals-table {
+
     thead{
         background:#F8F8F8;
     }
@@ -105,9 +106,12 @@ body.dashboard{
         border-bottom: 1px solid #EEEEEE;
         height: 40px;
         padding-left: 34px;
+
+        &.status-cell {
+            padding-left: 60px;
+        }
     }
     td{
-
         font-weight: 400;
         font-size:13px;
         color:#4A4A4A;
@@ -122,6 +126,9 @@ body.dashboard{
             padding: 0;
             margin-top: -4px;
         }
+    }
+    tbody > tr > td {
+        vertical-align: middle;
     }
 }
 
