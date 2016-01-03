@@ -1,6 +1,7 @@
 {% extends 'dashboard_base.html' %}
 
-{% load crispy_forms_tags static i18n %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
 
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
@@ -40,7 +41,10 @@
 	    {{ form.bio.errors }}
 	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Biography' %}</label>
 	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
-	    <p class="help-block">{% trans form.bio.help_text %}</p>
+	    <div class="help-block">
+	    	<p>{% trans form.bio.help_text %}</p>
+	    	<p class="character-counter">{% trans 'Current character count: ' %}<span data-source-id="id_bio" class="character-count-display" data-limit="500">{% trans '(Not available without JavaScript)' %}</span></p>
+	    </div>
 	</div>
 
 	<button type="submit" class="btn btn-lg save-btn">{% trans 'Save' %}</button>
@@ -48,3 +52,9 @@
 
 </form>
 {% endblock main-content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/character-counter.js' %}"></script>
+{% endblock extra_js %}
