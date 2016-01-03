@@ -109,7 +109,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     bio = models.TextField(
         verbose_name=_('biography'),
         max_length=500,
-        help_text=_("About you. There will be no formatting."),
+        help_text=_(
+            "Describe yourself with 500 characters or less. "
+            "There will be no formatting."
+        ),
     )
     photo = models.ImageField(
         verbose_name=_('photo'),

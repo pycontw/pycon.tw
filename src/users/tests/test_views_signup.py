@@ -17,7 +17,7 @@ def test_signup_login(bare_user_client):
     redirect it to the dashboard.
     """
     response = bare_user_client.get('/en-us/accounts/signup/', follow=True)
-    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
+    assert response.redirect_chain[0] == ('/en-us/dashboard/', 302)
 
 
 def test_signup_get(client):
@@ -42,7 +42,7 @@ def test_signup_post(client, parser):
         'password1': '7K50M',
         'password2': '7K50M',
     }, follow=True)
-    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
+    assert response.redirect_chain[0] == ('/en-us/dashboard/', 302)
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [
@@ -108,7 +108,7 @@ def test_verify(bare_user, bare_user_client):
     link = '/en-us/accounts/verify/{key}/'.format(key=key)
 
     response = bare_user_client.get(link, follow=True)
-    assert response.redirect_chain == [('/en-us/dashboard/', 302)]
+    assert response.redirect_chain[0] == ('/en-us/dashboard/', 302)
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
     assert msgs == [

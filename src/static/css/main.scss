@@ -1,15 +1,26 @@
+
+@import "base/variables";
+
 @import "bootstrap-variables";
 @import "vendors/bootstrap";
 
-@import "base/variables";
+
+@import "base/utilities";
 
 // Mixins
 @import "mixins/font";
 @import "mixins/static";
 @import "mixins/retina";
 
+// Components
+@import "components/form";
+
 // Themes
 @import "themes/proposals";
+
+
+// Pages
+@import "pages/registration";
 
 
 body {
@@ -20,9 +31,14 @@ body {
     border: none;
 }
 
+.text-middle {
+    vertical-align: middle;
+}
+
 .top-nav {
     background-color: $theme-color;
-    padding: 1.8em 2em;
+    padding: 24px 44px;
+
     > .logo {
         @extend .hidden-xs;
     }
@@ -31,13 +47,31 @@ body {
         color: #fff;
     }
 
+    .navbar-header{
+        margin: 3px 0 0;
+    }
+
     .navbar-right {
+        padding: 0;
+        margin: 0;
+
         a, .btn-link {
             font-weight: 300;
+            padding: 0;
 
             &:hover {
                 text-decoration: none;
             }
+        }
+
+        .logout-btn{
+            font-weight: 400;
+            color: #FFFFFF;
+            line-height:19px;
+            background:#2350D2;
+            border-radius:4px;
+            width:88px;
+            height:32px;
         }
     }
 }
@@ -415,13 +449,4 @@ body {
     color: $theme-color;
     display: inline-block;
     padding: .2em 1em;
-}
-
-.btn-primary {
-    background-color: #3e6df5;
-    border-color: #fff;
-    &:hover {
-        background-color: #2451d4;
-        border-color: #fff;
-    }
 }

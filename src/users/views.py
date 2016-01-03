@@ -69,6 +69,8 @@ def request_verification(request):
 
 @login_required
 def user_dashboard(request):
+    if not request.user.is_valid_speaker():
+        return redirect('user_profile_update')
     logout_next = reverse('index')
     return render(request, 'users/user_dashboard.html', {
         'logout_next': logout_next,
@@ -95,6 +97,13 @@ def user_profile_update(request):
 
 def login_view(request):
     return base_login(request, authentication_form=AuthenticationForm)
+
+
+def password_change_done(request):
+    messages.success(request, ugettext(
+        'Your new password has been applied successfully.'
+    ))
+    return redirect('user_dashboard')
 
 
 def password_reset(request):
