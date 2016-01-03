@@ -4,27 +4,67 @@
 	<thead>
 		<tr>
 			<th>{% trans 'Title' %}</th>
-			<th class="hidden-xs">{% trans 'Python Level' %}</th>
-			<th class="hidden-xs">{% trans 'Language' %}</th>
-			<th></th>
+			<th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
+			<th width="1%" class="hidden-xs">{% trans 'Language' %}</th>
+			<th width="1%"></th>
 		</tr>
 	</thead>
 	<tbody>
 		{% for proposal in proposals %}
 		<tr>
-			<td class="col-sm-4 col-sm-6 proposal-title">{{ proposal.title }}</td>
-			<td class="col-sm-2 hidden-xs">{{ proposal.get_python_level_display }}</td>
-			<td class="col-sm-1 hidden-xs">{{ proposal.get_language_display }}</td>
-			<td class="col-sm-5 col-sm-6">
-				<form action="{{ proposal.get_cancel_url }}" method="post">
+			<td class="proposal-title">{{ proposal.title }}</td>
+			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
+			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
+			<td>
+				<form class="dropdown" action="{{ proposal.get_cancel_url }}"
+						method="post">
 					{% csrf_token %}
-					{% if proposal.cancelled %}
-					<button type="submit" name="cancelled" value="" class="btn edit-btn text-success">{% trans 'Reactivate' %}</button>
-					{% else %}
-					<a href="{{ proposal.get_update_url }}" class="btn btn-default edit-btn text-edit">{% trans 'Edit' %}</a>
-					<a href="{{ proposal.get_manage_speakers_url }}" class="btn btn-default btn-default">{% trans 'Manage Speakers' %}</a>
-					<button type="submit" name="cancelled" value="true" class="btn edit-btn text-danger">{% trans 'Withdraw' %}</button>
-					{% endif %}
+					<button type="button" data-toggle="dropdown"
+							id="proposal-edit-dropdown-{{ proposal.pk }}"
+							class="btn edit-btn dropdown-toggle script-only"
+							aria-haspopup="true" aria-expanded="true">
+						{% trans 'Edit' %}
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="proposal-edit-dropdown-{{ proposal.pk }}">
+						{% if proposal.cancelled %}
+						<li><button type="submit" name="cancelled" value="">{% trans 'Reactivate' %}</button></li>
+						{% else %}
+						<li>
+							<a href="{{ proposal.get_update_url }}"
+									class="btn btn-block edit-btn text-edit">
+								{% trans 'Edit Proposal' %}
+							</a>
+						</li>
+						<li>
+							<a href="{{ proposal.get_manage_speakers_url }}"
+									class="btn btn-block edit-btn text-edit">
+								{% trans 'Manage Speakers' %}
+							</a>
+						</li>
+						<li>
+							<button type="submit" name="cancelled" value="true"
+									class="btn btn-block edit-btn text-danger">
+								{% trans 'Withdraw' %}
+							</button>
+						</li>
+						{% endif %}
+					</ul>
+					<noscript>
+						<a href="{{ proposal.get_update_url }}"
+								class="btn btn-block edit-btn text-edit">
+							{% trans 'Edit Proposal' %}
+						</a>
+						<a href="{{ proposal.get_manage_speakers_url }}"
+								class="btn btn-block edit-btn text-edit">
+							{% trans 'Manage Speakers' %}
+						</a>
+						<button type="submit" name="cancelled" value="true"
+								class="btn btn-block edit-btn text-danger">
+							{% trans 'Withdraw' %}
+						</button>
+					</noscript>
 				</form>
 			</td>
 		</tr>

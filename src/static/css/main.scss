@@ -35,6 +35,10 @@ body {
     vertical-align: middle;
 }
 
+.script-only {
+    display: none;
+}
+
 .top-nav {
     background-color: $theme-color;
     padding: 24px 44px;

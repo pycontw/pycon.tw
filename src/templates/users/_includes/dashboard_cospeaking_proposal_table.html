@@ -1,13 +1,12 @@
 {% load i18n %}
 
-<table class="proposals-table table table-striped table-hover">
+<table class="proposals-table table table-responsive">
   <thead>
     <tr>
-        <th class="title-cell">{% trans 'Title' %}</th>
-        <th>{% trans 'Language' %}</th>
-        <th>{% trans 'Submitter' %}</th>
-        <th>{% trans 'Status' %}</th>
-        <th width="1%"></th>
+        <th>{% trans 'Title' %}</th>
+        <th width="1%" class="hidden-xs">{% trans 'Language' %}</th>
+        <th width="1%" class="hidden-xs">{% trans 'Submitter' %}</th>
+        <th width="1%" class="status-cell">{% trans 'Status' %}</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +15,7 @@
     do "selected_related" because it's generic, neither "prefetch_related"
     because it is (likely) not homogenous.
 
-    This likely will not cause problems in practice, however. It's rare for
+    This will be unlikely cause problems in practice, however. It's rare for
     a user to become a co-speaker in two or more proposals, so n+1 is likely
     around 3. Joining will likely require more queries.
 
@@ -24,30 +23,58 @@
     {% endcomment %}
     {% for speaker_info in speaker_infos %}
     <tr>
-      <td class="title-cell">{{ speaker_info.proposal.title }}</td>
-      <td>{{ speaker_info.proposal.get_language_display }}</td>
-      <td>
+      <td class="proposal-title">{{ speaker_info.proposal.title }}</td>
+      <td class="hidden-xs">{{ speaker_info.proposal.get_language_display }}</td>
+      <td class="hidden-xs">
         <a href="mailto: {{ speaker_info.proposal.submitter.email }}">
           {{ speaker_info.proposal.submitter.speaker_name }}
         </a>
       </td>
-      <td>{{ speaker_info.get_status_display }}</td>
       <td>
-        <form method="post"
+        <form method="post" class="dropdown"
             action="{% url 'additional_speaker_set_status' pk=speaker_info.pk %}">
           {% csrf_token %}
-          {% if speaker_info.status != 'accepted' %}
-          <button type="submit" name="status" value="accepted"
-              class="btn btn-sm btn-success">
-            {% trans 'Accept' %}
-          </button>
-          {% endif %}
-          {% if speaker_info.status != 'declined' %}
-          <button type="submit" name="status" value="declined"
-              class="btn btn-sm btn-danger">
-            {% trans 'Decline' %}
-          </button>
-          {% endif %}
+          <button type="button" data-toggle="dropdown"
+          		id="status-edit-dropdown-{{ speaker_info.pk }}"
+							class="btn edit-btn dropdown-toggle script-only"
+							aria-haspopup="true" aria-expanded="true">
+						{{ speaker_info.get_status_display }}
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right"
+							aria-labelledby="status-edit-dropdown-{{ speaker_info.pk }}">
+	          {% if speaker_info.status != 'accepted' %}
+	          <li>
+	          	<button type="submit" name="status" value="accepted"
+	            	  class="btn edit-btn btn-block text-primary">
+	            	{% trans 'Accept' %}
+	          	</button>
+	          </li>
+	          {% endif %}
+	          {% if speaker_info.status != 'declined' %}
+	          <li>
+		          <button type="submit" name="status" value="declined"
+		              class="btn edit-btn btn-block text-danger">
+		            {% trans 'Decline' %}
+		          </button>
+	          </li>
+	          {% endif %}
+          </ul>
+          <noscript>
+          	<p class="text-center">{{ speaker_info.get_status_display }}</p>
+	          {% if speaker_info.status != 'accepted' %}
+          	<button type="submit" name="status" value="accepted"
+            	  class="btn edit-btn btn-block text-primary">
+            	{% trans 'Accept' %}
+          	</button>
+	          {% endif %}
+	          {% if speaker_info.status != 'declined' %}
+	          <button type="submit" name="status" value="declined"
+	              class="btn edit-btn btn-block text-danger">
+	            {% trans 'Decline' %}
+	          </button>
+	          {% endif %}
+          </noscript>
         </form>
       </td>
     </tr>
