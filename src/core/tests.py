@@ -5,28 +5,17 @@ from django.test import override_settings
 from core.utils import collect_language_codes
 
 
-@override_settings(
-    LANGAUGES=[('en-us', 'English')],
-    FALLBACK_LANGUAGE_PREFIXES={'en': 'en-us'},
-)
 def test_locale_fallback_middleware(client, settings):
     response = client.get('/en/', follow=True)
-    assert response.redirect_chain == [
-        ('/en-us/', 302),
-    ]
+    assert response.redirect_chain == [('/en-us/', 302)]
 
 
-@override_settings(
-    USE_I18N=False,
-    LANGAUGES=[('en-us', 'English')],
-    FALLBACK_LANGUAGE_PREFIXES={'en': 'en-us'},
-)
+@override_settings(USE_I18N=False)
 def test_locale_fallback_middleware_no_i18n(client, settings):
     response = client.get('/en/')
     assert response.status_code == 404
 
 
-@override_settings(LANGUAGE_CODE='en-us')
 def test_collect_language_codes():
     assert collect_language_codes('zh-tw') == ['zh-tw', 'zh', 'en-us', 'en']
     assert collect_language_codes('zh') == ['zh', 'en-us', 'en']
