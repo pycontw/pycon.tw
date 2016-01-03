@@ -1,0 +1,7 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}

@@ -1,3 +1,5 @@
+import pytest
+
 from django.contrib.auth import get_user_model
 
 
@@ -16,6 +18,7 @@ def test_profile_get(user_client):
     assert response.status_code == 200
 
 
+@pytest.mark.xfail
 def test_profile_get_ui(user_client, parser):
     response = user_client.get('/en-us/accounts/profile/')
     body = parser.parse(response)

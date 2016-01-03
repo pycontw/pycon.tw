@@ -25,11 +25,33 @@ def test_dashboard_nologin(client):
     ]
 
 
-def test_dashboard_bare(bare_user_client):
-    response = bare_user_client.get('/en-us/dashboard/')
-    assert response.status_code == 200
+def test_dashboard_bare_unverified(bare_user_client):
+    """Bare user should be redirected to profile update page.
+    """
+    response = bare_user_client.get('/en-us/dashboard/', follow=True)
+    assert response.redirect_chain == [('/en-us/accounts/profile/', 302)]
 
 
+def test_dashboard_bare_verified(bare_user, bare_user_client):
+    """User without a valid profile should be redirected to profile page.
+    """
+    bare_user.verified = True
+    bare_user.save()
+    response = bare_user_client.get('/en-us/dashboard/', follow=True)
+    assert response.redirect_chain == [('/en-us/accounts/profile/', 302)]
+
+
+def test_dashboard_bare(bare_user, bare_user_client):
+    """Unverified user should be redirected to profile page.
+    """
+    bare_user.speaker_name = 'Bare User'
+    bare_user.bio = 'Wristwatch camera market vinyl rain shrine.'
+    bare_user.save()
+    response = bare_user_client.get('/en-us/dashboard/', follow=True)
+    assert response.redirect_chain == [('/en-us/accounts/profile/', 302)]
+
+
+@pytest.mark.xfail
 def test_dashboard_bare_ui(bare_user_client, parser):
     response = bare_user_client.get('/en-us/dashboard/')
     body = parser.parse(response)
@@ -46,6 +68,7 @@ def test_dashboard(user_client):
     assert response.status_code == 200
 
 
+@pytest.mark.xfail
 def test_dashboard_ui(user_client, parser):
     response = user_client.get('/en-us/dashboard/')
     body = parser.parse(response)

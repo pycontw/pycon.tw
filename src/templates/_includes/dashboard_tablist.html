@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<ul class="nav nav-sidebar">
+  {% if user.is_valid_speaker %}
+    <li class="{% if active == 'dashboard' %}active{% endif %}"><a href="{% url 'user_dashboard' %}">{% trans 'Proposals' %}</a></li>
+  {% endif %}
+    <li class="{% if active == 'profile' %}active{% endif %}"><a href="{% url 'user_profile_update' %}">{% trans 'Edit Profile' %}</a></li>
+    <li class="{% if active == 'password' %}active{% endif %}"><a href="{% url 'password_change' %}">{% trans 'Change Password' %}</a></li>
+</ul>

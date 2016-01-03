@@ -4,8 +4,11 @@ from django.contrib.auth.forms import (
     AuthenticationForm as BaseAuthenticationForm,
     ReadOnlyPasswordHashField,
 )
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
+from crispy_forms.bootstrap import FormActions
 
 
 User = get_user_model()
@@ -27,8 +30,27 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(
         label=_('Password confirmation'),
         widget=forms.PasswordInput,
-        help_text=_("Enter the same password as above, for verification."),
     )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.error_text_inline = False
+        self.helper.attrs = {'autocomplete': 'off'}
+        self.helper.label_class = 'sr-only'
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                Field('email', placeholder=self.fields['email'].label),
+                Field('password1', placeholder=self.fields['password1'].label),
+                Field('password2', placeholder=self.fields['password2'].label),
+            ),
+            FormActions(
+                Submit(
+                    'save', _('Create Account'), css_class='btn-lg btn-block',
+                )
+            )
+        )
 
     class Meta:
         model = User
@@ -143,7 +165,28 @@ class AuthenticationForm(BaseAuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['password'].help_text = ugettext(
-            'You can <a href="{password_reset_url}">reset your password</a> '
-            'if you forgot it.'
-        ).format(password_reset_url=reverse('password_reset'))
+        self.helper = FormHelper()
+        self.helper.error_text_inline = False
+        self.helper.label_class = 'sr-only'
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                Field(
+                    'username', placeholder=self.fields['username'].label,
+                    autocomplete='off', autocorrect='off',
+                    autocapitalize='off', spellcheck='false',
+                ),
+                Field('password', placeholder=self.fields['password'].label),
+            ),
+            FormActions(Div(
+                Div(
+                    HTML(_('<a class="btn btn-link">Forget Password?</a>')),
+                    css_class='col-xs-6 m-t-2',
+                ),
+                Div(
+                    Submit('save', _('Log In'), css_class='btn-lg btn-block'),
+                    css_class='col-xs-6',
+                ),
+                css_class='row',
+            ))
+        )

@@ -1,0 +1,31 @@
+.form-control {
+    font-size: 16px;
+}
+
+// remove input outer grow of focus state
+.form-control,
+.form-control:focus,
+.has-error .form-control:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.has-error .help-block > strong {
+    font-weight: normal;
+}
+
+
+.form-tip {
+    vertical-align: middle;
+}
+
+
+// Remove input shadow for iOS
+input {
+    -webkit-appearance:none;
+}
+
+
+.btn-link {
+    color: $btn-link-color;
+}

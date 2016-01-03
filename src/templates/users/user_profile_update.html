@@ -1,24 +1,50 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
-{% load crispy_forms_tags static %}
-
-{% load i18n %}
+{% load crispy_forms_tags static i18n %}
 
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='profile' %}
+{% endblock dashboard_tablist %}
 
-{% block content %}
-<div class="row">
-    <div class="col-md-offset-2 col-md-8">
-    	<h2 class="page-header">{% trans 'Update Speaker Profile' %}</h2>
-		<form id="user_profile_update_form" method="post" enctype="multipart/form-data">
-  			{% csrf_token %}
-  			<div class="nesting-form-group">
-		        {{ form|crispy }}
-		  		<button type="submit" class="btn btn-primary btn-md">{% trans 'Save' %}</button>
-		  		<a href="{% url 'user_dashboard' %}" class="btn btn-md">{% trans 'Cancel' %}</a>
-			</div>
-		</form>
-	</div>
+{% block main-content %}
+<div class="page-header">
+	<h3>{% trans 'Edit Profile' %}</h3>
 </div>
-{% endblock content %}
+
+<form id="user_profile_update_form" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="nesting-form-group">
+		{{ form.non_field_errors }}
+		<div class="form-group">
+	    {{ form.photo.errors }}
+	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
+	    <div class="profile_pic_panel">
+	    	<div>
+	    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
+	    	</div>
+	    	<div class="btn upload-btn">
+	    		<span>{% trans 'Upload' %}</span>
+	    		<input id="id_photo" name="photo" type="file" />
+	    	</div>
+	    </div>
+	    <p class="help-block">{% trans 'At least 800&times;800 pixels for best results in our printed conference booklet.' %}</p>
+	</div>
+	<div class="form-group">
+		{{ form.speaker_name.errors }}
+		<label for="{{ form.speaker_name.id_for_label }}" class="field_title">{% trans 'Your Name' %}</label>
+		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.speaker_name.value }}">
+	</div>
+	<div class="form-group">
+	    {{ form.bio.errors }}
+	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Biography' %}</label>
+	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
+	    <p class="help-block">{% trans form.bio.help_text %}</p>
+	</div>
+
+	<button type="submit" class="btn btn-lg save-btn">{% trans 'Save' %}</button>
+	<a href="{% url 'user_dashboard' %}" class="btn cancel-btn" role="button">{% trans 'Cancel' %}</a>
+
+</form>
+{% endblock main-content %}
