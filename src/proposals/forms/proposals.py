@@ -1,36 +1,18 @@
 from django import forms
 
+from core.utils import form_has_instance
 from core.widgets import SimpleMDEWidget
-from .models import TalkProposal, TutorialProposal
+from proposals.models import TalkProposal, TutorialProposal
+
+from .mixins import RequestUserSpeakerValidationMixin
 
 
-class ProposalCreateForm(forms.ModelForm):
+class ProposalCreateForm(RequestUserSpeakerValidationMixin, forms.ModelForm):
     """Form used to create a proposal.
 
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
-    def __init__(self, request=None, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self._request = request
-
-    def clean(self):
-        """Validate user for saving later.
-
-        Only a valid user with filled profile may create a proposal.
-        """
-        if self._request is None:
-            raise forms.ValidationError(
-                'Proposal creation requires a request object.'
-            )
-        user = self._request.user
-        if user.is_anonymous() or not user.is_valid_speaker():
-            raise forms.ValidationError(
-                'Only authenticated user with complete speaker profile may '
-                'submit a proposal.'
-            )
-        return self.cleaned_data
-
     def save(self, commit=True):
         """Fill user field on save.
         """
@@ -102,7 +84,7 @@ class TutorialProposalUpdateForm(forms.ModelForm):
 class ProposalCancelForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if not self.instance:
+        if not form_has_instance(self):
             raise ValueError(
                 'Proposal cancel form must be initialized with an instance.'
             )

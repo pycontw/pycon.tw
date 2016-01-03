@@ -1,14 +1,103 @@
 from django.conf import settings
+from django.contrib.contenttypes.fields import (
+    GenericForeignKey, GenericRelation,
+)
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext, ugettext_lazy as _
 
+from core.models import BigForeignKey
 from core.utils import format_html_lazy
+
+
+class PrimarySpeaker:
+    """A wapper representing the submitter of the proposal as a speaker.
+
+    This class is meant to be compatible with ``AdditionalSpeaker``, and used
+    along side with instances of that class.
+    """
+    def __init__(self, proposal):
+        super().__init__()
+        self._proposal = proposal
+        self._user = proposal.submitter
+
+    def __repr__(self):
+        return '<PrimarySpeaker: {name}>'.format(name=self.user.speaker_name)
+
+    def __eq__(self, other):
+        return (
+            isinstance(other, PrimarySpeaker) and self.user == other.user
+            and self.proposal == other.proposal
+        )
+
+    @property
+    def user(self):
+        return self._user
+
+    @property
+    def proposal(self):
+        return self._proposal
+
+    @property
+    def cancelled(self):
+        return False
+
+    def get_status_display(self):
+        return ugettext('Proposal author')
+
+
+class AdditionalSpeaker(models.Model):
+
+    user = BigForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+    )
+
+    proposal_type = models.ForeignKey(
+        to='contenttypes.ContentType',
+        verbose_name=_('proposal model type'),
+    )
+    proposal_id = models.BigIntegerField(
+        verbose_name=_('proposal ID'),
+    )
+    proposal = GenericForeignKey('proposal_type', 'proposal_id')
+
+    SPEAKING_STATUS_PENDING = 'pending'
+    SPEAKING_STATUS_ACCEPTED = 'accepted'
+    SPEAKING_STATUS_DECLINED = 'declined'
+    SPEAKING_STATUS = (
+        (SPEAKING_STATUS_PENDING,  _('Pending')),
+        (SPEAKING_STATUS_ACCEPTED, _('Accepted')),
+        (SPEAKING_STATUS_DECLINED, _('Declined')),
+    )
+    status = models.CharField(
+        max_length=8,
+        choices=SPEAKING_STATUS,
+        default=SPEAKING_STATUS_PENDING,
+    )
+
+    cancelled = models.BooleanField(
+        verbose_name=_('cancelled'),
+        default=False,
+        db_index=True,
+    )
+
+    class Meta:
+        unique_together = ['user', 'proposal_type', 'proposal_id']
+        ordering = ['proposal_type', 'proposal_id', 'user__speaker_name']
+        verbose_name = _('additional speaker')
+        verbose_name_plural = _('additional speakers')
+
+    def __str__(self):
+        return '{name} ({status})'.format(
+            name=self.user.speaker_name,
+            status=self.get_status_display(),
+        )
 
 
 class AbstractProposal(models.Model):
 
-    submitter = models.ForeignKey(
+    submitter = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('submitter'),
     )
@@ -169,12 +258,25 @@ class AbstractProposal(models.Model):
         db_index=True,
     )
 
+    additionalspeaker_set = GenericRelation(
+        to=AdditionalSpeaker,
+        content_type_field='proposal_type',
+        object_id_field='proposal_id',
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
 
     def __str__(self):
         return self.title
+
+    @property
+    def speakers(self):
+        yield PrimarySpeaker(self)
+        additionals = self.additionalspeaker_set.filter(cancelled=False)
+        for speaker in additionals.select_related('user'):
+            yield speaker
 
 
 class TalkProposal(AbstractProposal):
@@ -211,6 +313,14 @@ class TalkProposal(AbstractProposal):
     def get_cancel_url(self):
         return reverse('talk_proposal_cancel', kwargs={'pk': self.pk})
 
+    def get_manage_speakers_url(self):
+        return reverse('talk_proposal_manage_speakers', kwargs={'pk': self.pk})
+
+    def get_remove_speaker_url(self, speaker):
+        return reverse('talk_proposal_remove_speaker', kwargs={
+            'pk': self.pk, 'email': speaker.user.email,
+        })
+
 
 class TutorialProposal(AbstractProposal):
 
@@ -243,3 +353,13 @@ class TutorialProposal(AbstractProposal):
 
     def get_cancel_url(self):
         return reverse('tutorial_proposal_cancel', kwargs={'pk': self.pk})
+
+    def get_manage_speakers_url(self):
+        return reverse('tutorial_proposal_manage_speakers', kwargs={
+            'pk': self.pk,
+        })
+
+    def get_remove_speaker_url(self, speaker):
+        return reverse('tutorial_proposal_remove_speaker', kwargs={
+            'pk': self.pk, 'email': speaker.user.email,
+        })

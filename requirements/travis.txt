@@ -1,3 +1,4 @@
 -r local.txt
 codecov
 fabric3
+psycopg2

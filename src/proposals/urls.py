@@ -18,6 +18,9 @@ urlpatterns = [
     url(r'^talk/(?P<pk>\d+)/cancel/$',
         views.TalkProposalCancelView.as_view(),
         name='talk_proposal_cancel'),
+    url(r'^talk/(?P<pk>\d+)/manage-speakers/$',
+        views.TalkProposalManageSpeakersView.as_view(),
+        name='talk_proposal_manage_speakers'),
 
     url(r'^tutorial/submit/$',
         views.TutorialProposalCreateView.as_view(),
@@ -28,4 +31,14 @@ urlpatterns = [
     url(r'^tutorial/(?P<pk>\d+)/cancel/$',
         views.TutorialProposalCancelView.as_view(),
         name='tutorial_proposal_cancel'),
+    url(r'^tutorial/(?P<pk>\d+)/manage-speakers/$',
+        views.TutorialProposalManageSpeakersView.as_view(),
+        name='tutorial_proposal_manage_speakers'),
+
+    url(r'^remove-speaker/(?P<pk>\d+)/$',
+        views.AdditionalSpeakerRemoveView.as_view(),
+        name='additional_speaker_remove'),
+    url(r'^set-speaker-status/(?P<pk>\d+)/$',
+        views.AdditionalSpeakerSetStatusView.as_view(),
+        name='additional_speaker_set_status'),
 ]

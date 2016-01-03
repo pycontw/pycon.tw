@@ -2,9 +2,11 @@ language: python
 sudo: false
 python:
 - '3.4'
+services:
+- postgresql
 env:
   global:
-  - DATABASE_URL=sqlite:///db.sqlite3
+  - DATABASE_URL=postgres://127.0.0.1:5432/postgres
   - SECRET_KEY=thisisasecret
   - PIP_WHEEL_DIR=$HOME/.cache/pip/wheels
   - PIP_FIND_LINKS=file://$HOME/.cache/pip/wheels
@@ -16,17 +18,10 @@ cache:
   python:
   - '3.4'
 before_install:
-- openssl aes-256-cbc -K $encrypted_6c2822a03f14_key -iv $encrypted_6c2822a03f14_iv
-  -in secrets.tar.enc -out secrets.tar -d
-- tar xvf secrets.tar
-- cp ./deploy_key ~/.ssh/id_rsa
-- chmod 600 ~/.ssh/id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-- chmod 755 ./deploy_staging.sh
+- source secret_sauce.bash
+install:
 - pip install -U pip
 - pip install wheel
-install:
 - pip wheel -q -r requirements/travis.txt
 - pip install -r requirements/travis.txt
 script:

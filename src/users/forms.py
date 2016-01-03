@@ -89,7 +89,7 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True, auth=False):
+    def save(self, commit=True, auth=True):
         """Save user.
 
         Save the provided password in hashed format.
@@ -160,6 +160,7 @@ class AdminUserChangeForm(forms.ModelForm):
 
 
 class AuthenticationForm(BaseAuthenticationForm):
+
     username = forms.EmailField()
 
     def __init__(self, *args, **kwargs):
@@ -170,7 +171,11 @@ class AuthenticationForm(BaseAuthenticationForm):
         self.helper.layout = Layout(
             Fieldset(
                 '',
-                Field('username', placeholder=self.fields['username'].label),
+                Field(
+                    'username', placeholder=self.fields['username'].label,
+                    autocomplete='off', autocorrect='off',
+                    autocapitalize='off', spellcheck='false',
+                ),
                 Field('password', placeholder=self.fields['password'].label),
             ),
             FormActions(Div(

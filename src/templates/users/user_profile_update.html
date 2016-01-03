@@ -34,7 +34,7 @@
 	<div class="form-group">
 		{{ form.speaker_name.errors }}
 		<label for="{{ form.speaker_name.id_for_label }}" class="field_title">{% trans 'Your Name' %}</label>
-		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" value="{{ form.speaker_name.value }}">
+		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.speaker_name.value }}">
 	</div>
 	<div class="form-group">
 	    {{ form.bio.errors }}
