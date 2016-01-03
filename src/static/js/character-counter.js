@@ -12,8 +12,8 @@ $('.character-counter .character-count-display').each(function () {
 	var $counter = $(this);
 	$source = $('textarea#' + $counter.data('source-id'));
 	$source.on('input propertychange', function () {
-			showCharacterCount($counter, $(this));
-		});
+		showCharacterCount($counter, $(this));
+	});
 	showCharacterCount($counter, $source);
 });
 
