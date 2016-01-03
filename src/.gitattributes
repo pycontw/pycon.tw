@@ -1,0 +1,4 @@
+src/static/js/bootstrap.js  linguist-vendored
+src/static/js/jquery.js     linguist-vendored
+
+src/static/css/vendors/*    linguist-vendored
