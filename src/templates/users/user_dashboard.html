@@ -32,7 +32,7 @@
         <h3>{% trans 'Tutorial Proposals' %} <a href="{% url 'tutorial_proposal_create' %}" class="btn new-btn yellow-btn hidden-xs" role="button"><i class="fa fa-plus"></i>&nbsp;{% trans 'New Tutorial Porposal' %}</a><a href="{{ tutorial_proposal_create_url }}" class="btn new-btn yellow-btn visible-xs-inline" role="button"><i class="fa fa-plus"></i></a></h3>
     </div>
     {% if user.tutorialproposal_set.exists %}
-      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
+      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all %}
     {% else %}
       <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
     {% endif %}
@@ -41,7 +41,8 @@
   {% if user.cospeaking_info_set.exists %}
   <div class="cospeaking-proposals">
     <div class="page-header"><h3>{% trans 'Co-Speaking Proposals' %}</h3></div>
-    {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all only %}
+    {# include with ... only will block csrf_token #}
+    {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all %}
   </div>
   {% endif %}
 
