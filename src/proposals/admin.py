@@ -17,7 +17,7 @@ class ProposalAdmin(admin.ModelAdmin):
 
     fields = [
         'submitter', 'title', 'category', 'duration', 'language',
-        'target_audience', 'abstract', 'python_level', 'objective',
+        'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled',
     ]
@@ -33,19 +33,19 @@ class ProposalAdmin(admin.ModelAdmin):
 @admin.register(TalkProposal)
 class TalkProposalAdmin(ProposalAdmin):
     list_display = [
-        'title', 'category', 'duration', 'language', 'target_audience',
+        'title', 'category', 'duration', 'language',
         'python_level',
     ]
     list_filter = [
-        'category', 'duration', 'language', 'target_audience', 'python_level',
+        'category', 'duration', 'language', 'python_level',
     ]
 
 
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
     list_display = [
-        'title', 'category', 'language', 'target_audience', 'python_level',
+        'title', 'category', 'language', 'python_level',
     ]
     list_filter = [
-        'category', 'language', 'target_audience', 'python_level',
+        'category', 'language', 'python_level',
     ]

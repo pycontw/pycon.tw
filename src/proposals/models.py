@@ -142,15 +142,6 @@ class AbstractProposal(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
-    target_audience = models.CharField(
-        verbose_name=_('target audience'),
-        max_length=140,
-        help_text=_(
-            "Who is the intended audience for your talk? (Be specific, "
-            "\"Python users\" is not a good answer)"
-        ),
-    )
-
     abstract = models.TextField(
         verbose_name=_('abstract'),
         max_length=500,
@@ -189,8 +180,11 @@ class AbstractProposal(models.Model):
         verbose_name=_('objective'),
         max_length=500,
         help_text=_(
-            "What will the attendees get out of your talk? When they leave "
-            "the room, what will they learn that they didn't know before?"
+            "Who is the intended audience for your talk? (Be specific, "
+            "\"Python users\" is not a good answer). "
+            "And what will the attendees get out of your talk? When they "
+            "leave the room, what will they learn that they didn't know "
+            "before?"
         ),
     )
 
