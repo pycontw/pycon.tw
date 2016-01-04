@@ -50,7 +50,7 @@ class TalkProposalUpdateForm(forms.ModelForm):
     class Meta:
         model = TalkProposal
         fields = [
-            'title', 'category', 'duration', 'language', 'target_audience',
+            'title', 'category', 'duration', 'language',
             'abstract', 'python_level', 'objective', 'detailed_description',
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
@@ -70,7 +70,7 @@ class TutorialProposalUpdateForm(forms.ModelForm):
     class Meta:
         model = TutorialProposal
         fields = [
-            'title', 'category', 'duration', 'language', 'target_audience',
+            'title', 'category', 'duration', 'language',
             'abstract', 'python_level', 'objective', 'detailed_description',
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
