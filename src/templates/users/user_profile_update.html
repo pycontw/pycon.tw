@@ -43,7 +43,7 @@
 	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
 	    <div class="help-block">
 	    	<p>{% trans form.bio.help_text %}</p>
-	    	<p class="character-counter">{% trans 'Current character count: ' %}<span data-source-id="id_bio" class="character-count-display" data-limit="500">{% trans '(Not available without JavaScript)' %}</span></p>
+	    	<p class="character-counter">{% trans 'Current character count: ' %}<span data-source-id="id_bio" class="character-count-display" data-limit-max="500" data-limit-min="1">{% trans '(Not available without JavaScript)' %}</span></p>
 	    </div>
 	</div>
 
