@@ -34,7 +34,7 @@
     {% if user.tutorialproposal_set.exists %}
       {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
     {% else %}
-      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
     {% endif %}
   </div>
 
