@@ -97,9 +97,16 @@ body.dashboard{
     thead{
         background:#F8F8F8;
     }
-    th{
+    th, td {
         font-weight: 400;
-        font-size:13px;
+        font-size: 13px;
+        white-space: nowrap;
+
+        &.proposal-title {
+            white-space: normal;
+        }
+    }
+    th{
         color:#9B9B9B;
         line-height:22px;
         border-bottom: 1px solid #EEEEEE;
@@ -107,9 +114,6 @@ body.dashboard{
         padding-left: 34px;
     }
     td{
-
-        font-weight: 400;
-        font-size:13px;
         color:#4A4A4A;
         line-height: 25px;
         padding: 32px 34px;
