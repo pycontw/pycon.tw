@@ -36,7 +36,10 @@ class UserCreationForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.error_text_inline = False
-        self.helper.attrs = {'autocomplete': 'off'}
+        self.helper.attrs = {
+            'autocomplete': 'off', 'autocorrect': 'off',
+            'autocapitalize': 'off', 'spellcheck': 'false',
+        }
         self.helper.label_class = 'sr-only'
         self.helper.layout = Layout(
             Fieldset(
@@ -168,14 +171,14 @@ class AuthenticationForm(BaseAuthenticationForm):
         self.helper = FormHelper()
         self.helper.error_text_inline = False
         self.helper.label_class = 'sr-only'
+        self.helper.attrs = {
+            'autocomplete': 'off', 'autocorrect': 'off',
+            'autocapitalize': 'off', 'spellcheck': 'false',
+        }
         self.helper.layout = Layout(
             Fieldset(
                 '',
-                Field(
-                    'username', placeholder=self.fields['username'].label,
-                    autocomplete='off', autocorrect='off',
-                    autocapitalize='off', spellcheck='false',
-                ),
+                Field('username', placeholder=self.fields['username'].label),
                 Field('password', placeholder=self.fields['password'].label),
             ),
             FormActions(Div(

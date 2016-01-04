@@ -1,11 +1,23 @@
 (function ($) {
 
-var showCharacterCount = function ($counter, $source) {
+var toInt = function (value, defaultValue) {
+	var parsed = parseFloat(value);
+	return isNaN(parsed) ? defaultValue : parsed;
+};
+
+var showCharacterCount = function ($counter, $source, initial) {
 	var text = $source.val();
 	var length = text ? text.length : 0;
+	var error =
+		length > toInt($counter.data('max-limit'), Infinity) ||
+		length < toInt($counter.data('min-limit'), -Infinity)
+	;
 	$counter.text(length);
-	$counter.closest('.form-group').toggleClass(
-		'has-error', length > parseInt($counter.data('limit')));
+	var $fg = $counter.closest('.form-group').toggleClass('has-error', error);
+	if (!initial) {
+		$fg.closest('form').find('input[type="submit"]')
+			.prop('disabled', error);
+	}
 };
 
 $('.character-counter .character-count-display').each(function () {
