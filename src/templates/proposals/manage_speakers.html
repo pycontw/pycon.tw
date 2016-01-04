@@ -29,7 +29,7 @@
             {% if speaker.user != proposal.submitter %}
             <form action="{% url 'additional_speaker_remove' pk=speaker.pk %}" method="post">
               {% csrf_token %}
-              <button type-"submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
+              <button type="submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
             </form>
             {% endif %}
           </td>
