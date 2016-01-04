@@ -1,10 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
 
 {% block title %}{% blocktrans with proposal_title=proposal.title %}Manage Speakers for {{ proposal_title }}{% endblocktrans %}{% endblock title %}
 
-{% block content %}
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
 <div class="row">
   <div class="col-md-offset-2 col-md-8">
 
@@ -48,4 +53,4 @@
 
   </div>
 </div>
-{% endblock content %}
+{% endblock main-content %}
