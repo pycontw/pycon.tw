@@ -184,7 +184,7 @@ class AbstractProposal(models.Model):
             "\"Python users\" is not a good answer). "
             "And what will the attendees get out of your talk? When they "
             "leave the room, what will they learn that they didn't know "
-            "before?"
+            "before? This is NOT made public and for REVIEW ONLY."
         ),
     )
 
@@ -210,7 +210,8 @@ class AbstractProposal(models.Model):
         help_text=_(
             "Anything else you'd like the program committee to know when "
             "making their selection: your past speaking experience, community "
-            "experience, etc. This is not made public. Edit using "
+            "experience, etc. This is NOT made public and for REVIEW ONLY. "
+            "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
@@ -293,7 +294,8 @@ class TalkProposal(AbstractProposal):
             "How the talk will be arranged. It is highly recommended to "
             "attach the estimated time length for each sections in the talk. "
             "Talks in favor of 45min should have a fallback plan about how "
-            "to shrink the content into a 25min one."
+            "to shrink the content into a 25min one. "
+            "This is NOT made public and for REVIEW ONLY."
         ),
     )
 
@@ -334,7 +336,8 @@ class TutorialProposal(AbstractProposal):
         help_text=_(
             "How the tutorial will be arranged. You should enumerate over "
             "each section in your talk and attach each section with the "
-            "estimated time length."
+            "estimated time length. "
+            "This is NOT made public and for REVIEW ONLY."
         ),
     )
 
