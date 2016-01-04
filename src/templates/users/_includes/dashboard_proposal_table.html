@@ -12,10 +12,10 @@
 	<tbody>
 		{% for proposal in proposals %}
 		<tr>
-			<td class="col-sm-4 col-sm-6 proposal-title">{{ proposal.title }}</td>
-			<td class="col-sm-2 hidden-xs">{{ proposal.get_python_level_display }}</td>
-			<td class="col-sm-1 hidden-xs">{{ proposal.get_language_display }}</td>
-			<td class="col-sm-5 col-sm-6">
+			<td class="proposal-title">{{ proposal.title }}</td>
+			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
+			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
+			<td>
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
 					{% if proposal.cancelled %}

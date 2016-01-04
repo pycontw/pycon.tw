@@ -3,10 +3,10 @@
 <table class="proposals-table table table-striped table-hover">
   <thead>
     <tr>
-        <th class="title-cell">{% trans 'Title' %}</th>
-        <th>{% trans 'Language' %}</th>
-        <th>{% trans 'Submitter' %}</th>
-        <th>{% trans 'Status' %}</th>
+        <th class="proposal-title">{% trans 'Title' %}</th>
+        <th width="1%">{% trans 'Language' %}</th>
+        <th width="1%">{% trans 'Submitter' %}</th>
+        <th width="1%">{% trans 'Status' %}</th>
         <th width="1%"></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
     {% endcomment %}
     {% for speaker_info in speaker_infos %}
     <tr>
-      <td class="title-cell">{{ speaker_info.proposal.title }}</td>
+      <td class="proposal-title">{{ speaker_info.proposal.title }}</td>
       <td>{{ speaker_info.proposal.get_language_display }}</td>
       <td>
         <a href="mailto: {{ speaker_info.proposal.submitter.email }}">
