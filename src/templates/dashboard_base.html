@@ -28,7 +28,7 @@
 {% endif %}
 
 {% for message in messages %}
-<div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert">{{ message }}</div>
+<div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert"><p>{{ message }}</p></div>
 {% endfor %}
 
 <div class="row main-container">
