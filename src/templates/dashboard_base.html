@@ -30,6 +30,14 @@
 </div>
 {% endif %}
 
+{% if messages %}
+<div class="row">
+  {% for message in messages %}
+  <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} clearfix" role="alert">{{ message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+
 <div class="row main-container">
 	<div class="col-sm-3 col-md-2 sidebar">
 		{% block dashboard_tablist %}{% endblock dashboard_tablist %}
