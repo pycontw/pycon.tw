@@ -14,40 +14,37 @@
   <h3>{% blocktrans with title=proposal.title %}Manage Speakers for <em>{{ title }}</em>{% endblocktrans %}</h3>
 </div>
 <div class="table-panel">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>{% trans 'Speaker' %}</th>
-          <th>{% trans 'Status' %}</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for speaker in proposal.speakers %}
-        <tr>
-          <td class="title-cell">{{ speaker.user.speaker_name|default:speaker.user.email }}</td>
-          <td>{{ speaker.get_status_display }}</td>
-          <td>
-            {% if speaker.user != proposal.submitter %}
-            <form action="{% url 'additional_speaker_remove' pk=speaker.pk %}" method="post">
-              {% csrf_token %}
-              <button type="submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
-            </form>
-            {% endif %}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{% trans 'Speaker' %}</th>
+        <th>{% trans 'Status' %}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for speaker in proposal.speakers %}
+      <tr>
+        <td class="title-cell">{{ speaker.user.speaker_name|default:speaker.user.email }}</td>
+        <td>{{ speaker.get_status_display }}</td>
+        <td>
+          {% if speaker.user != proposal.submitter %}
+          <form action="{% url 'additional_speaker_remove' pk=speaker.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-    <form class="form" method="post">
-      {% csrf_token %}
-      <div class="nesting-form-group">
-        {% crispy form %}
-        <button type="submit" class="btn btn-primary btn-lg">{% trans 'Add Speaker' %}</button>
-      </div>
-    </form>
-
+<form class="form" method="post">
+  {% csrf_token %}
+  <div class="nesting-form-group">
+    {% crispy form %}
+    <button type="submit" class="btn btn-primary btn-lg">{% trans 'Add Speaker' %}</button>
   </div>
-</div>
+</form>
 {% endblock main-content %}
