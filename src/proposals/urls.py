@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^tutorial/submit/$',
         views.TutorialProposalCreateView.as_view(),
         name='tutorial_proposal_create'),
-    url(r'^talk/(?P<pk>\d+)/peek/$',
+    url(r'^tutorial/(?P<pk>\d+)/peek/$',
         views.ReadonlyTutorialProposalUpdateView.as_view(),
         name='tutorial_proposal_peek'),
     url(r'^tutorial/(?P<pk>\d+)/edit/$',
