@@ -16,3 +16,8 @@ def character_counter(source_id, min=None, max=None, extra_classes=None):
         'attrs': flatatt(attrs),
         'class': ' '.join(['character-counter'] + (extra_classes or [])),
     }
+
+
+@register.filter
+def message_bootstrap_class_str(message):
+    return ' '.join('alert-' + tag for tag in message.tags.split(' '))
