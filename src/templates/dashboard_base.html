@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load i18n %}
+{% load pycontw_tools %}
 
 {% block title %}{% trans 'Dashboard' %}{% endblock title %}
 
@@ -12,31 +13,23 @@
 </div>
 
 {% if not user.verified %}
-<div class="row">
-  <div class="alert alert-warning clearfix" role="alert">
-    <p>{% trans 'Please verify your account by clicking the link in the mail we sent to your email inbox.' %}</p>
-    <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
-      {% csrf_token %}
-      <p><span class="text-middle">{% trans 'Did not get the verification mail?' %}</span>
-      <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button></p>
-    </form>
-  </div>
+<div class="alert alert-warning clearfix" role="alert">
+  <p>{% trans 'Please verify your account by clicking the link in the mail we sent to your email inbox.' %}</p>
+  <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
+    {% csrf_token %}
+    <p><span class="text-middle">{% trans 'Did not get the verification mail?' %}</span>
+    <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button></p>
+  </form>
 </div>
 {% elif not user.is_valid_speaker %}
-<div class="row">
-  <div class="alert alert-warning clearfix" role="alert">
-    <p>{% trans 'You need to complete your speaker profile first before submitting a proposal.' %}</p>
-  </div>
+<div class="alert alert-warning clearfix" role="alert">
+  <p>{% trans 'You need to complete your speaker profile first before submitting a proposal.' %}</p>
 </div>
 {% endif %}
 
-{% if messages %}
-<div class="row">
-  {% for message in messages %}
-  <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} clearfix" role="alert">{{ message }}</div>
-  {% endfor %}
-</div>
-{% endif %}
+{% for message in messages %}
+<div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert">{{ message }}</div>
+{% endfor %}
 
 <div class="row main-container">
 	<div class="col-sm-3 col-md-2 sidebar">
