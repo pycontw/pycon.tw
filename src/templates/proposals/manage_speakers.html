@@ -10,13 +10,10 @@
 {% endblock dashboard_tablist %}
 
 {% block main-content %}
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-
-    <h2 class="page-header">
-      {% blocktrans with title=proposal.title %}Manage Speakers for <em>{{ title }}</em>{% endblocktrans %}
-    </h2>
-
+<div class="page-header">
+  <h3>{% blocktrans with title=proposal.title %}Manage Speakers for <em>{{ title }}</em>{% endblocktrans %}</h3>
+</div>
+<div class="table-panel">
     <table class="table">
       <thead>
         <tr>
@@ -42,7 +39,7 @@
         {% endfor %}
       </tbody>
     </table>
-
+</div>
     <form class="form" method="post">
       {% csrf_token %}
       <div class="nesting-form-group">
