@@ -26,6 +26,45 @@
 {% endif %}
 {% endblock main-content %}
 
+{% block scripts %}
+    {% trans "Character count: " as char_count %}
+    <script>
+        (function ($) {
+            // Copy from static/js/character-counter.js
+            var updateCharCount = function($counter, $source, initial){
+                var text = $source.val();
+                var length = text ? text.length : 0;
+                $counter.text(length);
+                var error = length >= parseFloat($source.attr("maxlength"));
+                // Only the first time updateCharCount being called has initial=true.
+                // If the limit is reached on load, don't trigger warning.
+                if (!initial) {
+                    // Make the field error
+                    $counter.closest('.form-group').toggleClass('has-warning', error);
+                    // Disable form submit button
+                    //$counter.closest('form').find('[type="submit"]')
+                    //        .prop('disabled', error);
+                }
+            };
+            // Inject counter to all textareas that have max char limit.
+            $('form textarea.textarea[maxlength]').each(function(){
+                var $source = $(this);
+                var $counterDisplay = $(
+                    "<p>{{ char_count }}"
+                    + "<span class=\"counter\"></span> / "
+                    + $(this).attr("maxlength")
+                    + "</span>"
+                ).addClass('help-block char-counter-display');
+                var $counter = $counterDisplay.find('span.counter');
+                $source.after($counterDisplay);
+                $source.on('input change', function () {
+                    updateCharCount($counter, $source, false);
+                });
+                updateCharCount($counter, $source, true);
+            });
+        })(jQuery);
+    </script>
+{% endblock %}
 
 {% block extra_js %}
 {{ block.super }}
