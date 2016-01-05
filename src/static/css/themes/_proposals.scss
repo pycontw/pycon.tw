@@ -194,6 +194,13 @@ textarea.form-control {
     font-family: $font-family-monospace;
 }
 
+.proposal-form {
+    textarea.form-control {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
 .save-btn {
     background: #1542C4;
     border: 1px solid #0E339F;

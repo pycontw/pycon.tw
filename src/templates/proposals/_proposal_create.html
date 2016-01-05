@@ -6,7 +6,7 @@
 <div class="page-header">
   <h3>{% block page_header %}{% endblock page_header %}</h3>
 </div>
-<form method="post">
+<form method="post" class="proposal-form">
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}

@@ -19,7 +19,7 @@
   <h3>{{ object.title }}</h3>
 </div>
 
-<form{% if not readonly %} method="post"{% endif %}>
+<form method="post" class="proposal-form">
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}
