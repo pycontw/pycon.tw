@@ -183,8 +183,8 @@ class AuthenticationForm(BaseAuthenticationForm):
             ),
             FormActions(Div(
                 Div(
-                    HTML("""<a class="btn btn-link" href="{% url 'password_reset' %}">
-                        Forget Password?</a>"""),
+                    HTML(_("""<a class="btn btn-link" href="{% url 'password_reset' %}">
+                        Forgot Password?</a>""")),
                     css_class='col-xs-6 m-t-2',
                 ),
                 Div(
