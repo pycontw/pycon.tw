@@ -1,11 +1,5 @@
 (function (SimpleMDE) {
 
-if (!Element.prototype.hasAttribute) {
-  Element.prototype.hasAttribute = function (name) {
-    return this.getAttribute(name) !== null;
-  };
-}
-
 var elementList = document.getElementsByTagName('textarea');
 for (var i = 0; i < elementList.length; i++) {
   var element = elementList[i];
@@ -16,8 +10,25 @@ for (var i = 0; i < elementList.length; i++) {
     'element': element,
     'indentWithTabs': false,
     'spellChecker': false,
-    'status': false
+    'status': false,
+    'tabSize': 4
   });
+}
+
+})(SimpleMDE);
+
+
+(function (SimpleMDE) {
+
+if (!document.querySelectorAll)
+       return;
+
+var elementList = document.querySelectorAll(
+       '.editor-readonly > .editor-preview');
+for (var i = 0; i < elementList.length; i++) {
+       var element = elementList[i];
+       element.innerHTML = SimpleMDE.prototype.markdown(
+               element.textContent || element.innerText);
 }
 
 })(SimpleMDE);
