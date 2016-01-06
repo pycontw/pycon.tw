@@ -22,7 +22,8 @@ var showCharacterCount = function ($counter, $source) {
 		.prop('disabled', error);
 };
 
-$('textarea.character-counted').each(function () {
+$('textarea.character-counted').not('.character-counter-enabled')
+		.each(function () {
 	var $source = $(this);
 	var $counter = $('#character-counter-template')
 		.clone().removeClass('hide').removeAttr('id').insertAfter($source)
@@ -32,6 +33,7 @@ $('textarea.character-counted').each(function () {
 		showCharacterCount($counter, $(this));
 	});
 	showCharacterCount($counter, $source);
+	$source.addClass('character-counter-enabled');
 });
 
 })(jQuery);
