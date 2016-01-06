@@ -198,6 +198,7 @@ class AuthenticationForm(BaseAuthenticationForm):
 
 
 class PasswordResetForm(BasePasswordResetForm):
+    email = forms.EmailField(label=_("Email Address"), max_length=254)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -215,7 +216,8 @@ class PasswordResetForm(BasePasswordResetForm):
             ),
             FormActions(Div(
                 Div(
-                    Submit('submit', _('Request Password Reset'), css_class='btn btn-primary btn-block btn-lg'),
+                    Submit('submit', _('Request Password Reset'),
+                        css_class='btn btn-primary btn-block btn-lg'),
                     css_class='col-md-offset-1 col-md-10',
                 ),
                 css_class='nesting-form-group row'
