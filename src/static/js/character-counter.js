@@ -17,7 +17,9 @@ var showCharacterCount = function ($counter, $source) {
 	var error = length > max || length < min;
 
 	$fg.toggleClass('has-error', error)
-		.closest('form').find('input[type="submit"]').prop('disabled', error);
+		.closest('form')
+		.find('input[type="submit"],button[type="submit"]')
+		.prop('disabled', error);
 };
 
 $('textarea.character-counted').each(function () {
