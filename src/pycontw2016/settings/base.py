@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from os.path import abspath, dirname, join, exists
+
+from django.contrib.messages import constants as messages
 from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
@@ -154,6 +156,14 @@ LOCALE_PATHS = (
 USE_TZ = True
 
 TIME_ZONE = 'UTC'
+
+
+# Message tag setup.
+# https://docs.djangoproject.com/es/1.9/ref/contrib/messages/#message-tags
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
 
 
 # Static files (CSS, JavaScript, Images)

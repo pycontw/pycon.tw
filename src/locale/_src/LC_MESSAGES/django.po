@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 06:45+0000\n"
+"POT-Creation-Date: 2016-01-04 16:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Declined"
 msgstr ""
 
-#: proposals/models.py:80 proposals/models.py:256
+#: proposals/models.py:80 proposals/models.py:251
 msgid "cancelled"
 msgstr ""
 
@@ -195,43 +195,33 @@ msgid "language"
 msgstr ""
 
 #: proposals/models.py:146
-msgid "target audience"
-msgstr ""
-
-#: proposals/models.py:149
-msgid ""
-"Who is the intended audience for your talk? (Be specific, \"Python users\" "
-"is not a good answer)"
-msgstr ""
-
-#: proposals/models.py:155
 msgid "abstract"
 msgstr ""
 
-#: proposals/models.py:158
+#: proposals/models.py:149
 msgid ""
 "The overview of what the talk is about. If the talk assume some domain "
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
 msgstr ""
 
-#: proposals/models.py:166
+#: proposals/models.py:157
 msgid "Novice"
 msgstr ""
 
-#: proposals/models.py:167
+#: proposals/models.py:158
 msgid "Intermediate"
 msgstr ""
 
-#: proposals/models.py:168
+#: proposals/models.py:159
 msgid "Experienced"
 msgstr ""
 
-#: proposals/models.py:171
+#: proposals/models.py:162
 msgid "Python level"
 msgstr ""
 
-#: proposals/models.py:175
+#: proposals/models.py:166
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -242,21 +232,23 @@ msgid ""
 "easy for the target audience."
 msgstr ""
 
-#: proposals/models.py:189
+#: proposals/models.py:180
 msgid "objective"
 msgstr ""
 
-#: proposals/models.py:192
+#: proposals/models.py:183
 msgid ""
-"What will the attendees get out of your talk? When they leave the room, what "
-"will they learn that they didn't know before?"
+"Who is the intended audience for your talk? (Be specific, \"Python users\" "
+"is not a good answer). And what will the attendees get out of your talk? "
+"When they leave the room, what will they learn that they didn't know before? "
+"This is NOT made public and for REVIEW ONLY."
 msgstr ""
 
-#: proposals/models.py:198
+#: proposals/models.py:192
 msgid "detailed description"
 msgstr ""
 
-#: proposals/models.py:201
+#: proposals/models.py:195
 msgid ""
 "Try not be too lengthy to scare away reviewers or potential audience. A "
 "comfortable length is less than 1000 characters (or about 600 Chinese "
@@ -266,104 +258,106 @@ msgid ""
 "projects/markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
 
-#: proposals/models.py:213
+#: proposals/models.py:207
 msgid "supplementary"
 msgstr ""
 
-#: proposals/models.py:217
+#: proposals/models.py:211
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
-"not made public. Edit using <a href='http://daringfireball.net/projects/"
-"markdown/basics' target='_blank'>Markdown</a>."
+"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
+"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
 msgstr ""
 
-#: proposals/models.py:226
+#: proposals/models.py:221
 msgid "Yes"
 msgstr ""
 
-#: proposals/models.py:227
+#: proposals/models.py:222
 msgid "No"
 msgstr ""
 
-#: proposals/models.py:230
+#: proposals/models.py:225
 msgid "recording policy"
 msgstr ""
 
-#: proposals/models.py:234
+#: proposals/models.py:229
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation."
 msgstr ""
 
-#: proposals/models.py:240
+#: proposals/models.py:235
 msgid "slide link"
 msgstr ""
 
-#: proposals/models.py:244
+#: proposals/models.py:239
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr ""
 
-#: proposals/models.py:250
+#: proposals/models.py:245
 msgid "created at"
 msgstr ""
 
-#: proposals/models.py:285
+#: proposals/models.py:280
 msgid "No preference"
 msgstr ""
 
-#: proposals/models.py:286
+#: proposals/models.py:281
 msgid "Prefer 25min"
 msgstr ""
 
-#: proposals/models.py:287
+#: proposals/models.py:282
 msgid "Prefer 45min"
 msgstr ""
 
-#: proposals/models.py:290 proposals/models.py:332
+#: proposals/models.py:285 proposals/models.py:328
 msgid "duration"
 msgstr ""
 
-#: proposals/models.py:296 proposals/models.py:338
+#: proposals/models.py:291 proposals/models.py:334
 msgid "outline"
 msgstr ""
 
-#: proposals/models.py:299
+#: proposals/models.py:294
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
 "estimated time length for each sections in the talk. Talks in favor of 45min "
-"should have a fallback plan about how to shrink the content into a 25min one."
+"should have a fallback plan about how to shrink the content into a 25min "
+"one. This is NOT made public and for REVIEW ONLY."
 msgstr ""
 
-#: proposals/models.py:307
+#: proposals/models.py:303
 msgid "talk proposal"
 msgstr ""
 
-#: proposals/models.py:308
+#: proposals/models.py:304
 msgid "talk proposals"
 msgstr ""
 
-#: proposals/models.py:328
+#: proposals/models.py:324
 msgid "Half day"
 msgstr ""
 
-#: proposals/models.py:329
+#: proposals/models.py:325
 msgid "Full day"
 msgstr ""
 
-#: proposals/models.py:341
+#: proposals/models.py:337
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
-"your talk and attach each section with the estimated time length."
+"your talk and attach each section with the estimated time length. This is "
+"NOT made public and for REVIEW ONLY."
 msgstr ""
 
-#: proposals/models.py:348
+#: proposals/models.py:345
 msgid "tutorial proposal"
 msgstr ""
 
-#: proposals/models.py:349
+#: proposals/models.py:346
 msgid "tutorial proposals"
 msgstr ""
 
@@ -407,12 +401,20 @@ msgstr ""
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr ""
 
+#: templates/_includes/character_counter.html:3
+msgid "Current character count: "
+msgstr ""
+
+#: templates/_includes/character_counter.html:3
+msgid "(Not available without JavaScript)"
+msgstr ""
+
 #: templates/_includes/dashboard_tablist.html:5
 msgid "Proposals"
 msgstr ""
 
 #: templates/_includes/dashboard_tablist.html:7
-#: templates/users/user_profile_update.html:14
+#: templates/users/user_profile_update.html:15
 msgid "Edit Profile"
 msgstr ""
 
@@ -576,11 +578,11 @@ msgid "Sponsors"
 msgstr ""
 
 #: templates/proposals/_proposal_create.html:13
-msgid "Create Tutorial Proposal"
+msgid "Create Proposal"
 msgstr ""
 
 #: templates/proposals/_proposal_update.html:23
-#: templates/users/user_profile_update.html:50
+#: templates/users/user_profile_update.html:51
 msgid "Save"
 msgstr ""
 
@@ -812,38 +814,30 @@ msgstr ""
 msgid "Co-Speaking Proposals"
 msgstr ""
 
-#: templates/users/user_profile_update.html:6
+#: templates/users/user_profile_update.html:7
 msgid "Update Speaker Profile"
 msgstr ""
 
-#: templates/users/user_profile_update.html:23
+#: templates/users/user_profile_update.html:24
 msgid "Profile Picture"
 msgstr ""
 
-#: templates/users/user_profile_update.html:29
+#: templates/users/user_profile_update.html:30
 msgid "Upload"
 msgstr ""
 
-#: templates/users/user_profile_update.html:33
+#: templates/users/user_profile_update.html:34
 msgid ""
 "At least 800&times;800 pixels for best results in our printed conference "
 "booklet."
 msgstr ""
 
-#: templates/users/user_profile_update.html:37
+#: templates/users/user_profile_update.html:38
 msgid "Your Name"
 msgstr ""
 
-#: templates/users/user_profile_update.html:42
+#: templates/users/user_profile_update.html:43
 msgid "Biography"
-msgstr ""
-
-#: templates/users/user_profile_update.html:46
-msgid "Current character count: "
-msgstr ""
-
-#: templates/users/user_profile_update.html:46
-msgid "(Not available without JavaScript)"
 msgstr ""
 
 #: users/admin.py:18

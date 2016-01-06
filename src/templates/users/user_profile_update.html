@@ -2,6 +2,7 @@
 
 {% load static i18n %}
 {% load crispy_forms_tags %}
+{% load pycontw_tools %}
 
 {% block title %}{% trans 'Update Speaker Profile' %}{% endblock title %}
 
@@ -43,7 +44,7 @@
 	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
 	    <div class="help-block">
 	    	<p>{% trans form.bio.help_text %}</p>
-	    	<p class="character-counter">{% trans 'Current character count: ' %}<span data-source-id="id_bio" class="character-count-display" data-limit="500">{% trans '(Not available without JavaScript)' %}</span></p>
+	    	{% character_counter 'id_bio' min=1 max=500 %}
 	    </div>
 	</div>
 

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-04 08:01+0000\n"
-"PO-Revision-Date: 2016-01-04 09:36+0000\n"
+"POT-Creation-Date: 2016-01-04 16:30+0000\n"
+"PO-Revision-Date: 2016-01-04 16:35+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -91,7 +91,7 @@ msgstr "已接受"
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:80 proposals/models.py:250
+#: proposals/models.py:80 proposals/models.py:251
 msgid "cancelled"
 msgstr "取消"
 
@@ -241,7 +241,8 @@ msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
 "When they leave the room, what will they learn that they didn't know before?"
-msgstr "目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？"
+" This is NOT made public and for REVIEW ONLY."
+msgstr "目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:192
 msgid "detailed description"
@@ -266,98 +267,99 @@ msgstr "補充資訊"
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is"
-" not made public. Edit using <a "
+" NOT made public and for REVIEW ONLY. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
-#: proposals/models.py:220
+#: proposals/models.py:221
 msgid "Yes"
 msgstr "是"
 
-#: proposals/models.py:221
+#: proposals/models.py:222
 msgid "No"
 msgstr "否"
 
-#: proposals/models.py:224
+#: proposals/models.py:225
 msgid "recording policy"
 msgstr "議程錄影"
 
-#: proposals/models.py:228
+#: proposals/models.py:229
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation."
 msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。"
 
-#: proposals/models.py:234
+#: proposals/models.py:235
 msgid "slide link"
 msgstr "投影片連結"
 
-#: proposals/models.py:238
+#: proposals/models.py:239
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
-#: proposals/models.py:244
+#: proposals/models.py:245
 msgid "created at"
 msgstr "建立時間"
 
-#: proposals/models.py:279
+#: proposals/models.py:280
 msgid "No preference"
 msgstr "無偏好"
 
-#: proposals/models.py:280
+#: proposals/models.py:281
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
 
-#: proposals/models.py:281
+#: proposals/models.py:282
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
-#: proposals/models.py:284 proposals/models.py:326
+#: proposals/models.py:285 proposals/models.py:328
 msgid "duration"
 msgstr "時間長度"
 
-#: proposals/models.py:290 proposals/models.py:332
+#: proposals/models.py:291 proposals/models.py:334
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:293
+#: proposals/models.py:294
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
 "estimated time length for each sections in the talk. Talks in favor of 45min"
 " should have a fallback plan about how to shrink the content into a 25min "
-"one."
-msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。"
+"one. This is NOT made public and for REVIEW ONLY."
+msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:301
+#: proposals/models.py:303
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:302
+#: proposals/models.py:304
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:322
+#: proposals/models.py:324
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:323
+#: proposals/models.py:325
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:335
+#: proposals/models.py:337
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
-" your talk and attach each section with the estimated time length."
-msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。"
+" your talk and attach each section with the estimated time length. This is "
+"NOT made public and for REVIEW ONLY."
+msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:342
+#: proposals/models.py:345
 msgid "tutorial proposal"
 msgstr "教學提案"
 
-#: proposals/models.py:343
+#: proposals/models.py:346
 msgid "tutorial proposals"
 msgstr "教學提案"
 
@@ -393,12 +395,20 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》教學提案。"
 
+#: templates/_includes/character_counter.html:3
+msgid "Current character count: "
+msgstr "現在字元總數："
+
+#: templates/_includes/character_counter.html:3
+msgid "(Not available without JavaScript)"
+msgstr "（無 JavaScript 時無法使用）"
+
 #: templates/_includes/dashboard_tablist.html:5
 msgid "Proposals"
 msgstr "提案"
 
 #: templates/_includes/dashboard_tablist.html:7
-#: templates/users/user_profile_update.html:14
+#: templates/users/user_profile_update.html:15
 msgid "Edit Profile"
 msgstr "修改講者資訊"
 
@@ -555,7 +565,7 @@ msgid "Create Proposal"
 msgstr "建立提案"
 
 #: templates/proposals/_proposal_update.html:23
-#: templates/users/user_profile_update.html:50
+#: templates/users/user_profile_update.html:51
 msgid "Save"
 msgstr "儲存"
 
@@ -780,39 +790,31 @@ msgstr "您尚未投稿教學，何不馬上<a href=\"%(tutorial_proposal_create
 msgid "Co-Speaking Proposals"
 msgstr " 共同演講的提案"
 
-#: templates/users/user_profile_update.html:6
+#: templates/users/user_profile_update.html:7
 msgid "Update Speaker Profile"
 msgstr "更新講者資訊"
 
-#: templates/users/user_profile_update.html:23
+#: templates/users/user_profile_update.html:24
 msgid "Profile Picture"
 msgstr "頭像"
 
-#: templates/users/user_profile_update.html:29
+#: templates/users/user_profile_update.html:30
 msgid "Upload"
 msgstr "上傳"
 
-#: templates/users/user_profile_update.html:33
+#: templates/users/user_profile_update.html:34
 msgid ""
 "At least 800&times;800 pixels for best results in our printed conference "
 "booklet."
 msgstr "為於會議印刷品中取得最佳效果，請提供至少 800&times;800 像素。"
 
-#: templates/users/user_profile_update.html:37
+#: templates/users/user_profile_update.html:38
 msgid "Your Name"
 msgstr "您的大名"
 
-#: templates/users/user_profile_update.html:42
+#: templates/users/user_profile_update.html:43
 msgid "Biography"
 msgstr "自我介紹"
-
-#: templates/users/user_profile_update.html:46
-msgid "Current character count: "
-msgstr "現在字元總數："
-
-#: templates/users/user_profile_update.html:46
-msgid "(Not available without JavaScript)"
-msgstr "（無 JavaScript 時無法使用）"
 
 #: users/admin.py:18
 msgid "Personal info"

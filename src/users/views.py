@@ -91,6 +91,9 @@ def user_profile_update(request):
         )
         if form.is_valid():
             form.save()
+            messages.success(request, ugettext(
+                'Your profile has been updated successfully.',
+            ))
             return redirect('user_dashboard')
     else:
         form = UserProfileUpdateForm(instance=request.user)

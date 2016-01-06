@@ -199,6 +199,7 @@ class AuthenticationForm(BaseAuthenticationForm):
 
 
 class PasswordResetForm(BasePasswordResetForm):
+    email = forms.EmailField(label=_("Email Address"), max_length=254)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -9,8 +9,8 @@ var showCharacterCount = function ($counter, $source, initial) {
 	var text = $source.val();
 	var length = text ? text.length : 0;
 	var error =
-		length > toInt($counter.data('max-limit'), Infinity) ||
-		length < toInt($counter.data('min-limit'), -Infinity)
+		length > toInt($counter.data('limit-max'), Infinity) ||
+		length < toInt($counter.data('limit-min'), -Infinity)
 	;
 	$counter.text(length);
 	var $fg = $counter.closest('.form-group').toggleClass('has-error', error);
