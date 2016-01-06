@@ -20,7 +20,7 @@ var showCharacterCount = function ($counter, $source) {
 		.closest('form').find('input[type="submit"]').prop('disabled', error);
 };
 
-$('textarea.charactercountedtextarea').each(function () {
+$('textarea.character-counted').each(function () {
 	var $source = $(this);
 	var $counter = $('#character-counter-template')
 		.clone().removeClass('hide').removeAttr('id')
