@@ -4,6 +4,7 @@ from django.contrib.contenttypes.fields import (
 )
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from core.models import BigForeignKey
@@ -92,6 +93,14 @@ class AdditionalSpeaker(models.Model):
         return '{name} ({status})'.format(
             name=self.user.speaker_name,
             status=self.get_status_display(),
+        )
+
+
+class ProposalQuerySet(models.QuerySet):
+    def filter_viewable(self, user):
+        return self.filter(
+            Q(submitter=user)
+            | Q(additionalspeaker_set__in=user.additionalspeaker_set.all())
         )
 
 
@@ -259,6 +268,8 @@ class AbstractProposal(models.Model):
         object_id_field='proposal_id',
     )
 
+    objects = ProposalQuerySet.as_manager()
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
@@ -303,6 +314,9 @@ class TalkProposal(AbstractProposal):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
 
+    def get_peek_url(self):
+        return reverse('talk_proposal_peek', kwargs={'pk': self.pk})
+
     def get_update_url(self):
         return reverse('talk_proposal_update', kwargs={'pk': self.pk})
 
@@ -344,6 +358,9 @@ class TutorialProposal(AbstractProposal):
     class Meta(AbstractProposal.Meta):
         verbose_name = _('tutorial proposal')
         verbose_name_plural = _('tutorial proposals')
+
+    def get_peek_url(self):
+        return reverse('tutorial_proposal_peek', kwargs={'pk': self.pk})
 
     def get_update_url(self):
         return reverse('tutorial_proposal_update', kwargs={'pk': self.pk})

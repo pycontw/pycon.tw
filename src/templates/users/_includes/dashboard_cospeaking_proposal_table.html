@@ -25,6 +25,7 @@
     {% for speaker_info in speaker_infos %}
     <tr>
       <td class="proposal-title">{{ speaker_info.proposal.title }}</td>
+      <td class="title-cell"><a href="{{ speaker_info.proposal.get_peek_url }}">{{ speaker_info.proposal.title }}</a></td>
       <td>{{ speaker_info.proposal.get_language_display }}</td>
       <td>
         <a href="mailto: {{ speaker_info.proposal.submitter.email }}">

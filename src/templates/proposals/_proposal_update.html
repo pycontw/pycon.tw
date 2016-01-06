@@ -12,18 +12,25 @@
 
 
 {% block main-content %}
+
 {% if not object.cancelled %}
+
 <div class="page-header">
   <h3>{{ object.title }}</h3>
 </div>
+
 <form method="post" class="proposal-form">
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}
+    {% if not readonly %}
     <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+    {% endif %}
   </div>
 </form>
+
 {% endif %}
+
 {% endblock main-content %}
 
 
