@@ -22,7 +22,8 @@ var showCharacterCount = function ($counter, $source) {
 		.prop('disabled', error);
 };
 
-$('textarea.character-counted').not('.character-counter-enabled')
+$('textarea.character-counted')
+		.not('*[disabled]').not('.character-counter-enabled')
 		.each(function () {
 	var $source = $(this);
 	var $counter = $('#character-counter-template')
