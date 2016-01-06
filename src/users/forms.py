@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import (
     AuthenticationForm as BaseAuthenticationForm,
+    PasswordResetForm as BasePasswordResetForm,
     ReadOnlyPasswordHashField,
 )
 from django.utils.translation import ugettext_lazy as _
@@ -183,7 +184,8 @@ class AuthenticationForm(BaseAuthenticationForm):
             ),
             FormActions(Div(
                 Div(
-                    HTML(_('<a class="btn btn-link">Forget Password?</a>')),
+                    HTML(_("""<a class="btn btn-link" href="{% url 'password_reset' %}">
+                        Forgot Password?</a>""")),
                     css_class='col-xs-6 m-t-2',
                 ),
                 Div(
@@ -191,5 +193,33 @@ class AuthenticationForm(BaseAuthenticationForm):
                     css_class='col-xs-6',
                 ),
                 css_class='row',
+            ))
+        )
+
+
+class PasswordResetForm(BasePasswordResetForm):
+    email = forms.EmailField(label=_("Email Address"), max_length=254)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.error_text_inline = False
+        self.helper.label_class = 'sr-only'
+        self.helper.attrs = {
+            'autocomplete': 'off', 'autocorrect': 'off',
+            'autocapitalize': 'off', 'spellcheck': 'false',
+        }
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                Field('email', placeholder=self.fields['email'].label),
+            ),
+            FormActions(Div(
+                Div(
+                    Submit('submit', _('Request Password Reset'),
+                        css_class='btn btn-primary btn-block btn-lg'),
+                    css_class='col-md-offset-1 col-md-10',
+                ),
+                css_class='nesting-form-group row'
             ))
         )

@@ -13,7 +13,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
 
 from .decorators import login_forbidden
-from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm
+from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm, PasswordResetForm
 
 
 User = get_user_model()
@@ -111,7 +111,8 @@ def password_change_done(request):
 
 def password_reset(request):
     return base_password_reset(
-        request, template_name='registration/password_reset.html',
+        request, password_reset_form=PasswordResetForm,
+        template_name='registration/password_reset.html',
         email_template_name='registration/password_reset_email.txt',
     )
 
