@@ -1,7 +1,7 @@
 (function ($) {
 
 var toInt = function (value, defaultValue) {
-	var parsed = parseFloat(value);
+	var parsed = parseInt(value);
 	return isNaN(parsed) ? defaultValue : parsed;
 };
 
