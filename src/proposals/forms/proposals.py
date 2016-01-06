@@ -1,7 +1,7 @@
 from django import forms
 
 from core.utils import form_has_instance
-from core.widgets import SimpleMDEWidget
+from core.widgets import CharacterCountedTextarea, SimpleMDEWidget
 from proposals.models import TalkProposal, TutorialProposal
 
 from .mixins import RequestUserSpeakerValidationMixin
@@ -55,6 +55,8 @@ class TalkProposalUpdateForm(forms.ModelForm):
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
         widgets = {
+            'abstract': CharacterCountedTextarea(),
+            'objective': CharacterCountedTextarea(),
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),

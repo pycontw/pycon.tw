@@ -1,13 +1,11 @@
 {% extends 'proposals/_proposal_base.html' %}
 
-{% load i18n static compress crispy_forms_tags %}
+{% load i18n static crispy_forms_tags %}
 
 
 {% block extra_css %}
 {{ block.super }}
-{% compress css %}
 {{ form.media.css }}
-{% endcompress %}
 {% endblock extra_css %}
 
 
@@ -31,13 +29,12 @@
 
 {% endif %}
 
+{% include '_includes/character_counter_template.html' %}
 {% endblock main-content %}
 
 
 {% block extra_js %}
 {{ block.super }}
-
-{% compress js %}
 {{ form.media.js }}
-{% endcompress %}
+<script src="{% static 'js/character-counter.js' %}"></script>
 {% endblock extra_js %}
