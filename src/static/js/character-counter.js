@@ -23,10 +23,8 @@ var showCharacterCount = function ($counter, $source) {
 $('textarea.character-counted').each(function () {
 	var $source = $(this);
 	var $counter = $('#character-counter-template')
-		.clone().removeClass('hide').removeAttr('id')
-		.insertBefore($source.siblings('.help-block'))
-		.find('.character-counter')
-		.data('maxlength', $source.attr('maxlength'));
+		.clone().removeClass('hide').removeAttr('id').insertAfter($source)
+		.find('.character-counter').data('maxlength', $source.attr('maxlength'));
 
 	$source.removeAttr('maxlength').on('input change', function () {
 		showCharacterCount($counter, $(this));
