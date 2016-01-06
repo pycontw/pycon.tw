@@ -8,7 +8,8 @@ var toInt = function (value, defaultValue) {
 var showCharacterCount = function ($counter, $source) {
 	var $fg = $source.closest('.form-group');
 	var text = $source.val();
-	var length = text ? text.length : 0;
+	var length =
+		text ? text.replace(/^\s+|\s+$/g, '').replace(/\r?\n/g, '\r\n').length : 0;
 
 	var max = toInt($counter.data('maxlength'), Infinity);
 	$counter.text(isFinite(max) ? length + ' / ' + max : length);
