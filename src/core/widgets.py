@@ -8,6 +8,10 @@ from .utils import split_css_class
 
 
 class CharacterCountedTextarea(forms.Textarea):
+
+    class Media:
+        js = ['js/character-counter.js']
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         css_classes = split_css_class(self.attrs.get('class', ''))

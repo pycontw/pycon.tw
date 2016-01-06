@@ -1,4 +1,7 @@
 from django import forms
+from django.utils.functional import cached_property
+
+from crispy_forms.helper import FormHelper
 
 from core.utils import form_has_instance
 from core.widgets import CharacterCountedTextarea, SimpleMDEWidget
@@ -41,7 +44,16 @@ class TutorialProposalCreateForm(ProposalCreateForm):
         ]
 
 
-class TalkProposalUpdateForm(forms.ModelForm):
+class ProposalUpdateForm(forms.ModelForm):
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.form_tag = False
+        helper.include_media = False
+        return helper
+
+
+class TalkProposalUpdateForm(ProposalUpdateForm):
     """Form used to update a talk proposal.
 
     This is the complete editing form for proposal. It should contain all
@@ -63,7 +75,7 @@ class TalkProposalUpdateForm(forms.ModelForm):
         }
 
 
-class TutorialProposalUpdateForm(forms.ModelForm):
+class TutorialProposalUpdateForm(ProposalUpdateForm):
     """Form used to update a tutorial proposal.
 
     This is the complete editing form for proposal. It should contain all
@@ -77,6 +89,8 @@ class TutorialProposalUpdateForm(forms.ModelForm):
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
         widgets = {
+            'abstract': CharacterCountedTextarea(),
+            'objective': CharacterCountedTextarea(),
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),

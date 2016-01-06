@@ -18,9 +18,8 @@
 </div>
 
 <form method="post" class="proposal-form">
-  {% csrf_token %}
   <div class="nesting-form-group">
-    {{ form|crispy }}
+    {% crispy form %}
     {% if not readonly %}
     <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
     {% endif %}
@@ -36,5 +35,4 @@
 {% block extra_js %}
 {{ block.super }}
 {{ form.media.js }}
-<script src="{% static 'js/character-counter.js' %}"></script>
 {% endblock extra_js %}
