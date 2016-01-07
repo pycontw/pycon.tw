@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import (
     login as base_login, password_reset as base_password_reset,
+    password_reset_confirm as base_password_reset_confirm,
 )
 from django.core.urlresolvers import reverse
 from django.http import Http404
@@ -13,7 +14,10 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
 
 from .decorators import login_forbidden
-from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm, PasswordResetForm
+from .forms import (
+    AuthenticationForm, UserCreationForm, UserProfileUpdateForm,
+    PasswordResetForm, SetPasswordForm,
+)
 
 
 User = get_user_model()
@@ -130,3 +134,10 @@ def password_reset_complete(request):
         'Password reset successful. You can now login.'
     ))
     return redirect('login')
+
+
+def password_reset_confirm(request, uidb64, token):
+    return base_password_reset_confirm(
+        request, uidb64=uidb64, token=token,
+        set_password_form=SetPasswordForm
+    )
