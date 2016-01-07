@@ -19,29 +19,36 @@
 	{% csrf_token %}
 	<div class="nesting-form-group">
 		{{ form.non_field_errors }}
-		<div class="form-group">
-	    {{ form.photo.errors }}
-	    <label for="{{ form.photo.id_for_label }}" class="field_title">{% trans 'Profile Picture' %}</label>
-	    <div class="profile_pic_panel">
-	    	<div>
-	    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
-	    	</div>
-	    	<div class="btn upload-btn">
-	    		<span>{% trans 'Upload' %}</span>
-	    		<input id="id_photo" name="photo" type="file" />
-	    	</div>
+		<div class="form-group {% if form.photo.errors %}has-error{% endif %}">
+		    <label for="{{ form.photo.id_for_label }}" class="control-label field_title">{% trans 'Profile Picture' %}</label>
+		    <div class="profile_pic_panel">
+		    	<div>
+		    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
+		    	</div>
+		    	<div class="btn upload-btn">
+		    		<span>{% trans 'Upload' %}</span>
+		    		<input id="id_photo" name="photo" type="file" />
+		    		{% if form.photo.errors %}
+		    			<p class="help-block">{% for error in form.photo.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		    		{% endif %}
+		    	</div>
+		    </div>
+		    <p class="help-block">{% trans 'At least 800&times;800 pixels for best results in our printed conference booklet.' %}</p>
 	    </div>
-	    <p class="help-block">{% trans 'At least 800&times;800 pixels for best results in our printed conference booklet.' %}</p>
 	</div>
-	<div class="form-group">
-		{{ form.speaker_name.errors }}
-		<label for="{{ form.speaker_name.id_for_label }}" class="field_title">{% trans 'Your Name' %}</label>
+	<div class="form-group {% if form.speaker_name.errors %}has-error{% endif %}">
+		<label for="{{ form.speaker_name.id_for_label }}" class="control-label field_title requiredField">{% trans 'Your Name' %}<span class="asteriskField">*</span></label>
 		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.speaker_name.value }}">
+		{% if form.speaker_name.errors %}
+			<p class="help-block">{% for error in form.speaker_name.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{% endif %}
 	</div>
-	<div class="form-group">
-	    {{ form.bio.errors }}
-	    <label for="{{ form.bio.id_for_label }}" class="field_title">{% trans 'Biography' %}</label>
+	<div class="form-group {% if form.bio.errors %}has-error{% endif %}">
+	    <label for="{{ form.bio.id_for_label }}" class="control-label field_title requiredField">{% trans 'Biography' %}<span class="asteriskField">*</span></label>
 	    <textarea id="id_bio" name="bio" class="form-control field bio_field">{{ form.bio.value }}</textarea>
+	    {% if form.bio.errors %}
+			<p class="help-block">{% for error in form.bio.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{% endif %}
 	    <div class="help-block">
 	    	<p>{% trans form.bio.help_text %}</p>
 	    	{% character_counter 'id_bio' min=1 max=500 %}
