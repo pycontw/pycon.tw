@@ -1,0 +1,20 @@
+{% comment %}
+Taken from master to fix form asset loading.
+
+This is needed to fix the "include_media" context used to NOT load assets
+with our forms; we want to include them manually at the bottom of the body.
+
+TODO: Remove this file when upgrading django-crispy-forms to 1.5.3 or later.
+{% endcomment %}
+
+{% load crispy_forms_utils %}
+
+{% specialspaceless %}
+    {% if include_media %}{{ form.media }}{% endif %}
+    {% if form_show_errors %}
+        {% include "bootstrap3/errors.html" %}
+    {% endif %}
+    {% for field in form %}
+        {% include "bootstrap3/field.html" %}
+    {% endfor %}
+{% endspecialspaceless %}
