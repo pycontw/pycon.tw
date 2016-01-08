@@ -254,10 +254,13 @@ $form-group-margin-bottom:          24px;
 
 // //** Dropdown link text color.
 // $dropdown-link-color:            $gray-dark !default;
+$dropdown-link-color:            $theme-color;
 // //** Hover color for dropdown links.
 // $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+$dropdown-link-hover-color:      $theme-color;
 // //** Hover background for dropdown links.
 // $dropdown-link-hover-bg:         #f5f5f5 !default;
+$dropdown-link-hover-bg:         #f3f3f3;
 
 // //** Active dropdown menu item text color.
 // $dropdown-link-active-color:     $component-active-color !default;
@@ -379,6 +382,7 @@ $navbar-margin-bottom:             0 !default;
 
 // $navbar-default-color:             #777 !default;
 // $navbar-default-bg:                #f8f8f8 !default;
+$navbar-default-bg:                   $theme-color;
 // $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // // Navbar links
@@ -387,6 +391,7 @@ $navbar-default-link-hover-color:          #ccc !default;
 // $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #dedede !default;
 // $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-active-bg:            transparent;
 $navbar-default-link-disabled-color:       #aaa !default;
 // $navbar-default-link-disabled-bg:          transparent !default;
 
