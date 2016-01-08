@@ -1,7 +1,3 @@
-.btn {
-    font-size: 13px;
-}
-
 .btn-focus {
   @include button-variant($btn-focus-color, $btn-focus-bg, $btn-focus-border);
 }
