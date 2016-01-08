@@ -1,12 +1,11 @@
 {% extends 'contents/_base.html' %}
 
 {% block title %}如何投稿演講{% endblock %}
+{% block page_title %}<h1>如何投稿演講（Talk）？</h1>{% endblock page_title %}
 
 {% block content %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url "user_dashboard" as dashboard_url %}
-
-<h1>如何投稿演講（Talk）？</h1>
 
 <p>
 	有關投稿的整體流程說明，請參考<a
