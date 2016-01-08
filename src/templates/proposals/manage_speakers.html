@@ -1,17 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'dashboard_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load static i18n crispy_forms_tags %}
 
 {% block title %}{% blocktrans with proposal_title=proposal.title %}Manage Speakers for {{ proposal_title }}{% endblocktrans %}{% endblock title %}
 
-{% block content %}
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
 
-    <h2 class="page-header">
-      {% blocktrans with title=proposal.title %}Manage Speakers for <em>{{ title }}</em>{% endblocktrans %}
-    </h2>
-
+{% block main-content %}
+<div class="page-header">
+  <h3>{% blocktrans with title=proposal.title %}Manage Speakers for <em>{{ title }}</em>{% endblocktrans %}</h3>
+</div>
+<div class="table-panel">
     <table class="table">
       <thead>
         <tr>
@@ -29,7 +30,7 @@
             {% if speaker.user != proposal.submitter %}
             <form action="{% url 'additional_speaker_remove' pk=speaker.pk %}" method="post">
               {% csrf_token %}
-              <button type-"submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
+              <button type="submit" name="cancelled" value="true" class="btn btn-danger btn-sm">{% trans 'Remove' %}</button>
             </form>
             {% endif %}
           </td>
@@ -37,15 +38,15 @@
         {% endfor %}
       </tbody>
     </table>
-
+</div>
     <form class="form" method="post">
       {% csrf_token %}
       <div class="nesting-form-group">
         {% crispy form %}
-        <button type="submit" class="btn btn-primary btn-lg">{% trans 'Add Speaker' %}</button>
+        <button type="submit" class="btn save-btn">{% trans 'Add Speaker' %}</button>
       </div>
     </form>
 
   </div>
 </div>
-{% endblock content %}
+{% endblock main-content %}

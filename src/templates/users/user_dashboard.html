@@ -44,16 +44,17 @@
         </a>
     </h3>
     {% if user.tutorialproposal_set.exists %}
-      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all only %}
+      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all %}
     {% else %}
-      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
     {% endif %}
   </div>
 
   {% if user.cospeaking_info_set.exists %}
   <div class="cospeaking-proposals">
-    <h3 class="page-header"><span class="header-title">{% trans 'Co-Speaking Proposals' %}</span></h3>
-    {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all only %}
+    <h3 class="dashboard-header"><span class="header-title">{% trans 'Co-Speaking Proposals' %}</span></h3>
+    {# include with ... only will block csrf_token #}
+    {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all %}
   </div>
   {% endif %}
 

@@ -1,36 +1,37 @@
 {% extends 'proposals/_proposal_base.html' %}
 
-{% load i18n static compress crispy_forms_tags %}
+{% load i18n static crispy_forms_tags %}
 
 
 {% block extra_css %}
 {{ block.super }}
-{% compress css %}
 {{ form.media.css }}
-{% endcompress %}
 {% endblock extra_css %}
 
 
 {% block main-content %}
+
 {% if not object.cancelled %}
 <h3 class="dashboard-header">
   <span class="header-title">{{ object.title }}</span>
 </h3>
-<form method="post">
-  {% csrf_token %}
+
+<form method="post" class="proposal-form">
   <div class="nesting-form-group">
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+    {% crispy form %}
+    {% if not readonly %}
+    <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+    {% endif %}
   </div>
 </form>
+
 {% endif %}
+
+{% include '_includes/character_counter_template.html' %}
 {% endblock main-content %}
 
 
 {% block extra_js %}
 {{ block.super }}
-
-{% compress js %}
 {{ form.media.js }}
-{% endcompress %}
 {% endblock extra_js %}

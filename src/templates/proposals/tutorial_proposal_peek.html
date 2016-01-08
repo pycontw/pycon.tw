@@ -1,0 +1,5 @@
+{% extends 'proposals/_proposal_update.html' %}
+
+{% load i18n %}
+
+{% block title %}{% blocktrans with proposal_title=object.title %}Tutorial Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}

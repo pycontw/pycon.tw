@@ -4,6 +4,7 @@ from django.contrib.contenttypes.fields import (
 )
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from core.models import BigForeignKey
@@ -95,6 +96,14 @@ class AdditionalSpeaker(models.Model):
         )
 
 
+class ProposalQuerySet(models.QuerySet):
+    def filter_viewable(self, user):
+        return self.filter(
+            Q(submitter=user)
+            | Q(additionalspeaker_set__in=user.additionalspeaker_set.all())
+        )
+
+
 class AbstractProposal(models.Model):
 
     submitter = BigForeignKey(
@@ -142,15 +151,6 @@ class AbstractProposal(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
-    target_audience = models.CharField(
-        verbose_name=_('target audience'),
-        max_length=140,
-        help_text=_(
-            "Who is the intended audience for your talk? (Be specific, "
-            "\"Python users\" is not a good answer)"
-        ),
-    )
-
     abstract = models.TextField(
         verbose_name=_('abstract'),
         max_length=500,
@@ -189,8 +189,11 @@ class AbstractProposal(models.Model):
         verbose_name=_('objective'),
         max_length=500,
         help_text=_(
-            "What will the attendees get out of your talk? When they leave "
-            "the room, what will they learn that they didn't know before?"
+            "Who is the intended audience for your talk? (Be specific, "
+            "\"Python users\" is not a good answer). "
+            "And what will the attendees get out of your talk? When they "
+            "leave the room, what will they learn that they didn't know "
+            "before? This is NOT made public and for REVIEW ONLY."
         ),
     )
 
@@ -216,7 +219,8 @@ class AbstractProposal(models.Model):
         help_text=_(
             "Anything else you'd like the program committee to know when "
             "making their selection: your past speaking experience, community "
-            "experience, etc. This is not made public. Edit using "
+            "experience, etc. This is NOT made public and for REVIEW ONLY. "
+            "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
         ),
@@ -264,6 +268,8 @@ class AbstractProposal(models.Model):
         object_id_field='proposal_id',
     )
 
+    objects = ProposalQuerySet.as_manager()
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
@@ -299,13 +305,19 @@ class TalkProposal(AbstractProposal):
             "How the talk will be arranged. It is highly recommended to "
             "attach the estimated time length for each sections in the talk. "
             "Talks in favor of 45min should have a fallback plan about how "
-            "to shrink the content into a 25min one."
+            "to shrink the content into a 25min one. Edit using "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
+            "This is NOT made public and for REVIEW ONLY."
         ),
     )
 
     class Meta(AbstractProposal.Meta):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
+
+    def get_peek_url(self):
+        return reverse('talk_proposal_peek', kwargs={'pk': self.pk})
 
     def get_update_url(self):
         return reverse('talk_proposal_update', kwargs={'pk': self.pk})
@@ -340,13 +352,19 @@ class TutorialProposal(AbstractProposal):
         help_text=_(
             "How the tutorial will be arranged. You should enumerate over "
             "each section in your talk and attach each section with the "
-            "estimated time length."
+            "estimated time length. Edit using "
+            "<a href='http://daringfireball.net/projects/markdown/basics' "
+            "target='_blank'>Markdown</a>."
+            "This is NOT made public and for REVIEW ONLY."
         ),
     )
 
     class Meta(AbstractProposal.Meta):
         verbose_name = _('tutorial proposal')
         verbose_name_plural = _('tutorial proposals')
+
+    def get_peek_url(self):
+        return reverse('tutorial_proposal_peek', kwargs={'pk': self.pk})
 
     def get_update_url(self):
         return reverse('tutorial_proposal_update', kwargs={'pk': self.pk})

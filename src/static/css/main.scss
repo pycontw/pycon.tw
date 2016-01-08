@@ -55,7 +55,11 @@ body {
 
     .navbar-right {
         padding: 0;
-        margin: 0;
+        margin: 0 0 0 6px;
+
+        .form-control {
+            font-size: 14px;
+        }
 
         a, .btn-link {
             font-weight: 300;
@@ -66,14 +70,13 @@ body {
             }
         }
 
-        .logout-btn{
+        .btn {
+            padding: 5px 19px;
+            line-height: 19px;
             font-weight: 400;
             color: #FFFFFF;
-            line-height:19px;
-            background:#2350D2;
-            border-radius:4px;
-            width:88px;
-            height:32px;
+            background: #2350D2;
+            border-radius: 4px;
         }
     }
 }
@@ -141,7 +144,7 @@ body {
 // intro
 
 %intro-block {
-    font-family: "Roboto";
+    font-family: $font-family-sans-serif;
     margin-bottom: 4.2em;
 }
 

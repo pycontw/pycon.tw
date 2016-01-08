@@ -113,7 +113,7 @@ def test_tutorial_proposal_create_form_valid(
 def test_proposal_update_form(form_class):
     form = form_class()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'target_audience',
+        'title', 'category', 'duration', 'language',
         'abstract', 'python_level', 'objective', 'detailed_description',
         'outline', 'supplementary', 'recording_policy', 'slide_link',
     ]

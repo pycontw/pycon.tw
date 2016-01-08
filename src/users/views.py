@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import (
     login as base_login, password_reset as base_password_reset,
+    password_reset_confirm as base_password_reset_confirm,
 )
 from django.core.urlresolvers import reverse
 from django.http import Http404
@@ -13,7 +14,10 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
 
 from .decorators import login_forbidden
-from .forms import AuthenticationForm, UserCreationForm, UserProfileUpdateForm
+from .forms import (
+    AuthenticationForm, UserCreationForm, UserProfileUpdateForm,
+    PasswordResetForm, SetPasswordForm,
+)
 
 
 User = get_user_model()
@@ -87,6 +91,9 @@ def user_profile_update(request):
         )
         if form.is_valid():
             form.save()
+            messages.success(request, ugettext(
+                'Your profile has been updated successfully.',
+            ))
             return redirect('user_dashboard')
     else:
         form = UserProfileUpdateForm(instance=request.user)
@@ -108,7 +115,8 @@ def password_change_done(request):
 
 def password_reset(request):
     return base_password_reset(
-        request, template_name='registration/password_reset.html',
+        request, password_reset_form=PasswordResetForm,
+        template_name='registration/password_reset.html',
         email_template_name='registration/password_reset_email.txt',
     )
 
@@ -126,3 +134,10 @@ def password_reset_complete(request):
         'Password reset successful. You can now login.'
     ))
     return redirect('login')
+
+
+def password_reset_confirm(request, uidb64, token):
+    return base_password_reset_confirm(
+        request, uidb64=uidb64, token=token,
+        set_password_form=SetPasswordForm
+    )

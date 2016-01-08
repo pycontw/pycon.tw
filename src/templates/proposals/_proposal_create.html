@@ -6,11 +6,11 @@
 <h3 class="dashboard-header">
   <span class="header-title">{% block page_header %}{% endblock page_header %}</span>
 </h3>
-<form method="post">
+<form method="post" class="proposal-form">
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">{% trans 'Create Tutorial Proposal' %}</button>
+    <button type="submit" class="btn save-btn">{% trans 'Create Proposal' %}</button>
   </div>
 </form>
 {% endblock main-content %}

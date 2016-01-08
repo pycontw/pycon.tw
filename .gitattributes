@@ -1,0 +1,6 @@
+src/static/js/bootstrap.js  linguist-vendored
+src/static/js/jquery.js     linguist-vendored
+src/static/js/simplemde.js  linguist-vendored
+src/static/js/google_analytics.js  linguist-vendored
+
+src/static/css/vendors/*    linguist-vendored

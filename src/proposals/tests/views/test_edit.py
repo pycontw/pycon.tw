@@ -135,9 +135,6 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
-        'target_audience': (
-            'Who can program, but wants to write more beautiful code.'
-        ),
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
@@ -145,7 +142,8 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
             "enough?"
         ),
         'objective': (
-            "People can write more maintainable code and get happier."
+            "Aim for those who can code, but wants to write more beautiful "
+            "code. People can write more maintainable code and get happier."
         ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "
@@ -179,9 +177,6 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
         'language': 'CHI',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
-        'target_audience': (
-            'Who can program, but wants to write more beautiful code.'
-        ),
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
@@ -189,7 +184,8 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
             "enough?"
         ),
         'objective': (
-            "People can write more maintainable code and get happier."
+            "Aim for those who can code, but wants to write more beautiful "
+            "code. People can write more maintainable code and get happier."
         ),
         'detailed_description': (
             "The answer is “No”. To write maintainable code, you need more "

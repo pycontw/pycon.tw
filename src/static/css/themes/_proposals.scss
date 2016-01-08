@@ -67,6 +67,10 @@ body.dashboard{
             padding: 0;
 
 
+            .table-panel {
+                padding: 33px 33px 0px 33px;
+            }
+
             > form{
                 padding:  33px;
             }
@@ -83,9 +87,16 @@ body.dashboard{
     thead{
         background:#F8F8F8;
     }
-    th{
+    th, td {
         font-weight: 400;
-        font-size:13px;
+        font-size: 13px;
+        white-space: nowrap;
+
+        &.proposal-title {
+            white-space: normal;
+        }
+    }
+    th{
         color:#9B9B9B;
         line-height:22px;
         border-bottom: 1px solid #EEEEEE;
@@ -93,9 +104,6 @@ body.dashboard{
         padding-left: 34px;
     }
     td{
-
-        font-weight: 400;
-        font-size:13px;
         color:#4A4A4A;
         line-height: 25px;
         padding: 32px 34px;
@@ -165,36 +173,22 @@ body.dashboard{
     height: 44px;
 }
 
-.bio_field {
-    min-width: 600px;
-    max-width: 600px;
-    min-height: 154px;
-    max-height: 154px;
+textarea.form-control {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
     font-family: $font-family-monospace;
 }
 
-.cancel-btn {
-    background: #D4D4D4;
-    border-radius: 3px;
-    font-size: 13px;
-    color: #FFFFFF;
-    line-height: 15px;
-    margin-left: 5px;
-    padding: 8px 14px 9px 14px;
-}
-
-
-.edit-btn{
-    background: #F8F8F8;
-    border: 1px solid #EEEEEE;
-    border-radius: 3px;
-    padding: 8px 16px 9px 18px;
-    font-weight: 400;
-    font-size:13px;
-    line-height:15px;
-
-    &.text-edit{
-        color:#3E6DF5;
+#user_profile_update_form {
+    textarea.form-control {
+        width: 100%;
+        @media screen and (min-width: $screen-md-min) {
+            max-width: 75%;
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            max-width: 600px;
+        }
     }
 }
 

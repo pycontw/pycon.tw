@@ -1,3 +1,7 @@
+.btn {
+    font-size: 13px;
+}
+
 .btn-focus {
   @include button-variant($btn-focus-color, $btn-focus-bg, $btn-focus-border);
 }
@@ -30,13 +34,24 @@
   }
 }
 
-.btn-withdraw {
-    color: #f58694;
+.btn-natural.btn-withdraw {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        color: #f58694;
+    }
 }
 
-.btn-reactivate {
-    color: #69a820;
+.btn-natural.btn-reactivate {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+        color: #69a820;
+    }
 }
-
-
-
