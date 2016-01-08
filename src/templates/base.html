@@ -31,8 +31,8 @@
 <body class="{% block body-class %}{% endblock %}">
 
   {% block body %}
-  {% include '_includes/nav.html' %}
-  <div class="container">{% block content %}It works!{% endblock %}</div>
+    {% block nav %}{% include '_includes/nav/front_nav.html' %}{% endblock %}
+    <div class="container">{% block content %}It works!{% endblock %}</div>
   {% endblock %}
 
   {% compress js %}

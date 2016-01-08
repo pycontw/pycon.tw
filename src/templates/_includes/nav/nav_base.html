@@ -1,0 +1,47 @@
+{% load i18n static crispy_forms_tags %}
+{% load i18n_plus %}
+
+<nav class="navbar navbar-default">
+  <div class="top-nav clearfix container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="{% url 'index' %}">
+            <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}" class="logo hidden-xs" alt="logo">
+            <img width="49" height="34" src="{% static 'images/LogoIcon_white@2x.png' %}" class="logo visible-xs-inline" alt="logo">
+        </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar">
+
+      {% block nav-content %}{% endblock nav-content %}
+
+      <form class="navbar-form navbar-right"
+      	action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request|language_free_path }}">
+      <select id="language-select" name="language" class="form-control input-sm">
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% for language in languages %}
+          <option value="{{ language.code }}"
+              {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+            {{ language.name_local }}
+          </option>
+        {% endfor %}
+      </select>
+      <noscript>
+      <button type="submit" class="btn">{% trans 'Change' %}</button>
+      </noscript>
+      </form>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

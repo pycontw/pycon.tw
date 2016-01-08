@@ -6,20 +6,9 @@
 
 
 {% block body %}
-<nav class="top-nav container-fluid clearfix">
-    <a href="{% url 'index' %}">
-        <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}" class="logo hidden-xs" alt="logo">
-        <img width="49" height="34" src="{% static 'images/LogoIcon_white@2x.png' %}" class="logo visible-xs-inline" alt="logo">
-    </a>
-    <div class="social pull-right">
-        <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
-            <i class="fa fa-facebook fa-lg"></i>
-        </a>
-        <a href="https://twitter.com/pycontw" class="social-btn" target="_blank">
-            <i class="fa fa-twitter fa-lg"></i>
-        </a>
-    </div>
-</nav>
+
+{% include '_includes/nav/front_nav.html' %}
+
 <div class="section header">
     <div class="container">
         <div class="row">
