@@ -1,5 +1,19 @@
+
 .navbar-site {
+
+    .navbar-brand {
+        padding: 20px 40px;
+        height: auto;
+    }
+
+    .navbar-form {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+
     .navbar-nav {
+        margin-top: 10px;
         font-size: 16px;
         font-weight: 500;
         > li > a {
@@ -7,14 +21,96 @@
             padding-right: 20px;
         }
 
+        @media (max-width: $grid-float-breakpoint-max) {
+            .open .dropdown-menu {
+                > li > a {
+                    color: $dropdown-link-color;
+                    &:hover,
+                    &:focus {
+                        color: $dropdown-link-hover-color;
+                        background-color: $dropdown-link-hover-bg;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-nav .dropdown-menu {
+        margin-left: 20px;
     }
 
     .navbar-nav > li > .dropdown-menu {
         background:#FFFFFF;
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
         border-radius: 2px;
-        width:136px;
+        min-width:136px;
+        max-width:180px;
+        padding: 8px 0;
     }
+
+    .navbar-collapse.in {
+        @media (max-width: $grid-float-breakpoint-max) {
+            .navbar-lang {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 72px;
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    .navbar-nav > li > .btn {
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: $theme-color;
+        padding: 6px 20px;
+        margin-top: 5px;
+        .caret {
+            margin-left: 10px;
+        }
+    }
+
+    .navbar-lang {
+
+        .dropdown-menu {
+            margin-left: 0;
+        }
+
+        @media (max-width: $grid-float-breakpoint-max) {
+            padding: 20px 0;
+            margin: 0;
+
+            .dropdon-menu {
+                margin-left: 0;
+            }
+        }
+
+
+         .dropdown,
+         .dropdown.open {
+            > .btn {
+                width: 100px;
+                color: $dropdown-link-color;
+                &,
+                &:hover,
+                &:active {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .navbar-lang > li > .dropdown-menu {
+        margin-top: 4px;
+        min-width: initial;
+        width: 100%;
+        font-size: 13px;
+        > li > a {
+            padding: 5px 10px;
+        }
+    }
+
 }
 
 
