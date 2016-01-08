@@ -3,14 +3,14 @@
 {% load i18n crispy_forms_tags %}
 
 {% block main-content %}
-<div class="page-header">
-  <h3>{% block page_header %}{% endblock page_header %}</h3>
-</div>
+<h3 class="dashboard-header">
+  <span class="header-title">{% block page_header %}{% endblock page_header %}</span>
+</h3>
 <form method="post">
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}
-    <button type="submit" class="btn save-btn">{% trans 'Create Tutorial Proposal' %}</button>
+    <button type="submit" class="btn btn-primary">{% trans 'Create Tutorial Proposal' %}</button>
   </div>
 </form>
 {% endblock main-content %}

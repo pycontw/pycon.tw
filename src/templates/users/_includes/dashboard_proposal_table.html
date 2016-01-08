@@ -22,7 +22,6 @@
 					<button type="submit" name="cancelled" value="" class="btn edit-btn text-success">{% trans 'Reactivate' %}</button>
 					{% else %}
 					<a href="{{ proposal.get_update_url }}" class="btn btn-default edit-btn text-edit">{% trans 'Edit' %}</a>
-					<a href="{{ proposal.get_manage_speakers_url }}" class="btn btn-default btn-default">{% trans 'Manage Speakers' %}</a>
 					<button type="submit" name="cancelled" value="true" class="btn edit-btn text-danger">{% trans 'Withdraw' %}</button>
 					{% endif %}
 				</form>

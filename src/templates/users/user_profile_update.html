@@ -24,7 +24,7 @@
 	    	<div>
 	    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
 	    	</div>
-	    	<div class="btn upload-btn">
+	    	<div class="btn btn-natural upload-btn">
 	    		<span>{% trans 'Upload' %}</span>
 	    		<input id="id_photo" name="photo" type="file" />
 	    	</div>
@@ -43,7 +43,7 @@
 	    <p class="help-block">{% trans form.bio.help_text %}</p>
 	</div>
 
-	<button type="submit" class="btn btn-lg save-btn">{% trans 'Save' %}</button>
+	<button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
 	<a href="{% url 'user_dashboard' %}" class="btn cancel-btn" role="button">{% trans 'Cancel' %}</a>
 
 </form>

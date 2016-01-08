@@ -2,19 +2,40 @@
   @include button-variant($btn-focus-color, $btn-focus-bg, $btn-focus-border);
 }
 
+.btn-negative {
+  @include button-variant($btn-negative-color, $btn-negative-bg, $btn-negative-border);
+}
+
+.btn-natural {
+  @include button-variant($btn-natural-color, $btn-natural-bg, $btn-natural-border);
+}
+
 .btn-primary {
-  &:focus,
-  &.focus {
-    background-color: $btn-primary-focus-bg;
+  &:hover {
+    background-color: $btn-primary-hover-bg;
+    color: #fff;
   }
 }
 
 .btn-focus {
-  &:focus,
-  &.focus {
-    background-color: $btn-focus-focus-bg;
+  &:hover {
+    background-color: $btn-focus-hover-bg;
     border-color: $btn-focus-border;
   }
+}
+
+.btn-natural {
+  &:hover {
+    background-color: $btn-natural-hover-bg;
+  }
+}
+
+.btn-withdraw {
+    color: #f58694;
+}
+
+.btn-reactivate {
+    color: #69a820;
 }
 
 

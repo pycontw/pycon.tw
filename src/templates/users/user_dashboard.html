@@ -52,7 +52,7 @@
 
   {% if user.cospeaking_info_set.exists %}
   <div class="cospeaking-proposals">
-    <div class="page-header"><h3>{% trans 'Co-Speaking Proposals' %}</h3></div>
+    <h3 class="page-header"><span class="header-title">{% trans 'Co-Speaking Proposals' %}</span></h3>
     {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all only %}
   </div>
   {% endif %}
