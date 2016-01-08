@@ -6,47 +6,47 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="{% static 'images/favicon_pyconTW_32x32.png' %}">
-    {% block head_tags%}{% endblock %}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="{% static 'images/favicon_pyconTW_32x32.png' %}">
+  {% block head_tags %}{% endblock %}
 
-    {% compress css %}
-        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
-    {% endcompress %}
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    {% block extra_css %}{% endblock %}
-    <!--[if lt IE 9]>
-    <script src="{% static 'js/html5shiv.min.js' %}"></script>
-    <script src="{% static 'js/respond.min.js' %}"></script>
-    <![endif]-->
-    {% block titletag %}<title>{% block title %}{% endblock %} | PyCon Taiwan 2016</title>{% endblock %}
+  {% compress css %}
+  <link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
+  {% endcompress %}
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  {% block extra_css %}{% endblock %}
+  <!--[if lt IE 9]>
+  <script src="{% static 'js/html5shiv.min.js' %}"></script>
+  <script src="{% static 'js/respond.min.js' %}"></script>
+  <![endif]-->
+  {% block titletag %}<title>{% block title %}{% endblock %} | PyCon Taiwan 2016</title>{% endblock %}
 </head>
+
+
 <body class="{% block body-class %}{% endblock %}">
 
-    {% block body %}
-        {% include '_includes/nav.html' %}
-        <div class="container">
-        {% block content %}It works!{% endblock %}
-        </div>
-    {% endblock %}
+  {% block body %}
+  {% include '_includes/nav.html' %}
+  <div class="container">{% block content %}It works!{% endblock %}</div>
+  {% endblock %}
 
-    {% compress js %}
-        <script src="{% static 'js/jquery.js' %}"></script>
-        <script src="{% static 'js/csrf_token.js' %}"></script>
-        <script src="{% static 'js/bootstrap.js' %}"></script>
-        <script src="{% static 'js/base.js' %}"></script>
-        {% if GA_TRACK_ID %}
-        <script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
-        <script src="{% static 'js/google_analytics.js' %}"></script>
-        {% endif %}
-        {% block scripts %}{% endblock %}
-    {% endcompress %}
-    {% block extra_js %}{% endblock %}
+  {% compress js %}
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/csrf_token.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'js/base.js' %}"></script>
+  {% if GA_TRACK_ID %}
+  <script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
+  <script src="{% static 'js/google_analytics.js' %}"></script>
+  {% endif %}
+  {% block scripts %}{% endblock %}
+  {% endcompress %}
+  {% block extra_js %}{% endblock %}
 
 </body>
 </html>
