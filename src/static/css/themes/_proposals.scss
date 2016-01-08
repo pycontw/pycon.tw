@@ -14,7 +14,7 @@ body.dashboard{
         .nav-sidebar{
             li{
                 a{
-                    padding: 24px 0 0 40px;
+                    padding: 24px 0 0 28px;
                     height: 65px;
                     font-size:16px;
                     color: #BBBBBB;
@@ -22,10 +22,11 @@ body.dashboard{
                     border-left: 4px solid #FFFFFF;
                     border-bottom: 1px solid #EEEEEE;
 
-                    // &:hover{
-                    //     color:#3E6DF5;
-                    //     background-color: transparent;
-                    // }
+                    &:hover{
+                        color:#BBBBBB;
+                        background-color: #F8F8F8;
+                        border-left: 4px solid #F8F8F8;
+                    }
                 }
                 &.active a{
                     color:#3E6DF5;
