@@ -11,6 +11,14 @@
         padding-bottom: 20px;
     }
 
+    .navbar-toggle {
+        border: none;
+        margin-top: 20px;
+
+        .icon-bar {
+            background-color: #fff;
+        }
+    }
 
     .navbar-nav {
         margin-top: 10px;
@@ -31,21 +39,27 @@
                         background-color: $dropdown-link-hover-bg;
                     }
                 }
+                > .active > a {
+                    &,
+                    &:hover,
+                    &:focus{
+                        color: $dropdown-link-active-color;
+                        background-color: $dropdown-link-active-bg;
+                    }
+                }
             }
         }
     }
 
     .navbar-nav .dropdown-menu {
         margin-left: 20px;
-    }
-
-    .navbar-nav > li > .dropdown-menu {
         background:#FFFFFF;
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
         border-radius: 2px;
         min-width:136px;
         max-width:180px;
         padding: 8px 0;
+        border: #fff;
     }
 
     .navbar-collapse.in {
@@ -72,7 +86,6 @@
     }
 
     .navbar-lang {
-
         .dropdown-menu {
             margin-left: 0;
         }
@@ -87,11 +100,12 @@
         }
 
 
-         .dropdown,
-         .dropdown.open {
+        .dropdown,
+        .dropdown.open {
             > .btn {
-                width: 100px;
+                width: 140px;
                 color: $dropdown-link-color;
+                border-radius: 3px;
                 &,
                 &:hover,
                 &:active {
@@ -99,6 +113,13 @@
                 }
             }
         }
+    }
+
+    .navbar-lang__close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
     }
 
     .navbar-lang > li > .dropdown-menu {
@@ -113,6 +134,29 @@
 
 }
 
+
+.navbar-site {
+    .social {
+        margin-left: 30px;
+        @media (max-width: $grid-float-breakpoint-max) {
+            margin-top: -60px;
+        }
+    }
+    .social-btn {
+        color: #fff;
+        margin-top: 20px;
+    }
+}
+
+
+// .em
+.navbar-site .nav .em {
+    background-color: #1542c4;
+    color: #fff;
+    border-radius: 40px;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
 
 .top-nav {
     background-color: $theme-color;
@@ -153,7 +197,7 @@
             font-weight: 400;
             color: #FFFFFF;
             background: #2350D2;
-            border-radius: 4px;
+            border-radius: 3px;
         }
     }
 }

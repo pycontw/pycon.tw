@@ -25,25 +25,29 @@
 
       {% block nav-content %}{% endblock nav-content %}
 
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_language_info for LANGUAGE_CODE as current_language %}
+
         <ul class="nav navbar-nav navbar-lang navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button"
-               aria-haspopup="true" aria-expanded="false">
-               {% trans 'ABOUT' %} <span class="caret"></span>
+               aria-haspopup="true" aria-expanded="false"> {{ current_language.name_local }}
+               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              {% get_language_info_list for LANGUAGES as languages %}
-              {% get_current_language as LANGUAGE_CODE %}
               {% for language in languages %}
-              <li>
-                <a href="#" data-lang="{{ language.code}}"
-                   {% if language.code == LANGUAGE_CODE %}class="active"{% endif %}>
+              <li {% if language.code == LANGUAGE_CODE %}class="active"{% endif %}>
+                <a href="#" data-lang="{{ language.code}}">
                   {{ language.name_local }}
                 </a>
               </li>
               {% endfor %}
             </ul>
-       </ul>
+          </li>
+          <a class="navbar-lang__close visible-xs" href="#"
+             data-toggle="collapse" data-target="#navbar"><i class="fa fa-times fa-2x"></i></a>
+        </ul>
 
       </div>
 

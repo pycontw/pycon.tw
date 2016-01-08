@@ -263,9 +263,10 @@ $dropdown-link-hover-color:      $theme-color;
 $dropdown-link-hover-bg:         #f3f3f3;
 
 // //** Active dropdown menu item text color.
-// $dropdown-link-active-color:     $component-active-color !default;
+$dropdown-link-active-color:     $theme-color;
 // //** Active dropdown menu item background color.
 // $dropdown-link-active-bg:        $component-active-bg !default;
+$dropdown-link-active-bg:        #e3e3e3;
 
 // //** Disabled dropdown menu item background color.
 // $dropdown-link-disabled-color:   $gray-light !default;
@@ -403,8 +404,11 @@ $navbar-default-link-disabled-color:       #aaa !default;
 
 // // Navbar toggle
 // $navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-hover-bg:              transparent;
 // $navbar-default-toggle-icon-bar-bg:        #888 !default;
+$navbar-default-toggle-icon-bar-bg:        #fff;
 // $navbar-default-toggle-border-color:       #ddd !default;
+$navbar-default-toggle-border-color:       transparent;
 
 
 // //=== Inverted navbar
