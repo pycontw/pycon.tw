@@ -371,7 +371,7 @@ $form-group-margin-bottom:          24px;
 
 // // Basics of a navbar
 // $navbar-height:                    50px !default;
-// $navbar-margin-bottom:             $line-height-computed !default;
+$navbar-margin-bottom:             0 !default;
 // $navbar-border-radius:             $border-radius-base !default;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
