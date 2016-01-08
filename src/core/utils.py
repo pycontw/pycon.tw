@@ -46,3 +46,9 @@ def collect_language_codes(user_code):
 def form_has_instance(form):
     instance = getattr(form, 'instance', None)
     return instance and instance.pk is not None
+
+
+def split_css_class(class_str):
+    if not class_str:
+        return set()
+    return set(s.strip() for s in class_str.split())

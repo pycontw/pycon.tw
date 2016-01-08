@@ -4,6 +4,20 @@ from django.utils.encoding import force_text
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 
+from .utils import split_css_class
+
+
+class CharacterCountedTextarea(forms.Textarea):
+
+    class Media:
+        js = ['js/character-counter.js']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        css_classes = split_css_class(self.attrs.get('class', ''))
+        css_classes.add('character-counted')
+        self.attrs['class'] = ' '.join(css_classes)
+
 
 class SimpleMDEWidget(forms.Textarea):
 

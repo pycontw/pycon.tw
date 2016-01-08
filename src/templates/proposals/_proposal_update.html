@@ -1,13 +1,11 @@
 {% extends 'proposals/_proposal_base.html' %}
 
-{% load i18n static compress crispy_forms_tags %}
+{% load i18n static crispy_forms_tags %}
 
 
 {% block extra_css %}
 {{ block.super }}
-{% compress css %}
 {{ form.media.css }}
-{% endcompress %}
 {% endblock extra_css %}
 
 
@@ -20,9 +18,8 @@
 </div>
 
 <form method="post" class="proposal-form">
-  {% csrf_token %}
   <div class="nesting-form-group">
-    {{ form|crispy }}
+    {% crispy form %}
     {% if not readonly %}
     <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
     {% endif %}
@@ -31,13 +28,11 @@
 
 {% endif %}
 
+{% include '_includes/character_counter_template.html' %}
 {% endblock main-content %}
 
 
 {% block extra_js %}
 {{ block.super }}
-
-{% compress js %}
 {{ form.media.js }}
-{% endcompress %}
 {% endblock extra_js %}
