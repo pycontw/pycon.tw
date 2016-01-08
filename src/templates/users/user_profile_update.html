@@ -9,9 +9,9 @@
 {% endblock dashboard_tablist %}
 
 {% block main-content %}
-<div class="page-header">
-	<h3>{% trans 'Edit Profile' %}</h3>
-</div>
+<h3 class="dashboard-header">
+	<span class="header-title">{% trans 'Edit Profile' %}</span>
+</h3>
 
 <form id="user_profile_update_form" method="post" enctype="multipart/form-data">
 	{% csrf_token %}

@@ -1,0 +1,21 @@
+.btn-focus {
+  @include button-variant($btn-focus-color, $btn-focus-bg, $btn-focus-border);
+}
+
+.btn-primary {
+  &:focus,
+  &.focus {
+    background-color: $btn-primary-focus-bg;
+  }
+}
+
+.btn-focus {
+  &:focus,
+  &.focus {
+    background-color: $btn-focus-focus-bg;
+    border-color: $btn-focus-border;
+  }
+}
+
+
+
