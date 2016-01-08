@@ -27,7 +27,7 @@
           		action="{% url 'logout' %}" method="post">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
-            <button type="submit" class="btn">{% trans 'Log out' %}</button>
+            <button type="submit" class="btn">{% trans 'Log Out' %}</button>
           </form>
           {% else %}
           <ul class="nav navbar-nav navbar-right">

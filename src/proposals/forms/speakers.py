@@ -18,8 +18,8 @@ class AdditionalSpeakerCreateForm(
     email = forms.EmailField(
         label=_('speaker email'),
         help_text=_(
-            'The speaker should have a registered account to tw.pycon.org, '
-            'and have completed both email validation and the speaker profile.'
+            'The speaker should have a registered account, and have '
+            'completed both email validation and the speaker profile.'
         ),
     )
 
