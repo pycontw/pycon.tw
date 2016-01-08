@@ -10,7 +10,7 @@
   {% csrf_token %}
   <div class="nesting-form-group">
     {{ form|crispy }}
-    <button type="submit" class="btn save-btn">{% trans 'Create Proposal' %}</button>
+    <button type="submit" class="btn btn-primary">{% trans 'Create Proposal' %}</button>
   </div>
 </form>
 {% endblock main-content %}
