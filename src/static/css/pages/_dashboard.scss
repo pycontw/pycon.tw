@@ -1,0 +1,27 @@
+.dashboard .main {
+    .btn {
+        font-size: 13px;
+    }
+}
+
+
+.dashboard-header {
+    padding: 20px 0 0 33px;
+    height: 65px;
+    margin: 0;
+    border-bottom: 1px solid #f8f8f8;
+    font-size:21px;
+    font-weight: 500;
+    color:#4A4A4A;
+    line-height:24px;
+
+    > .header__title {
+        margin-right: 24px;
+    }
+
+    .btn {
+        font-size: 13px;
+        margin-top: -3px;
+        padding: 8px 12px 6px;
+    }
+}
