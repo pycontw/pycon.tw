@@ -12,7 +12,7 @@
         padding-top: 52px;
         height: 111px;
         font-family: $font-family-sans-serif;
-        font-weight: 100;
+        font-weight: 400;
         font-size: 40px;
     }
 }
@@ -20,7 +20,8 @@
 .content-page-content {
 
     max-width: 944px;
-
+    min-height: 600px;
+    margin-bottom: 50px;
     color: #9197A3;
 
     font-family: $font-family-sans-serif;
