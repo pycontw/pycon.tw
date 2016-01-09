@@ -3,6 +3,10 @@
 {% load i18n %}
 
 {% block nav-content %}
+<ul class="nav navbar-nav">
+    <li><a href="{% url 'user_dashboard' %}" target="_blank"><span class="em">{% trans 'DASHBOARD' %}</span></a></li>
+  </li>
+</ul>
 
 {% if user.is_authenticated %}
     <form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
