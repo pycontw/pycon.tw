@@ -6,6 +6,7 @@ from django.contrib.auth.forms import (
     SetPasswordForm as BaseSetPasswordForm,
     ReadOnlyPasswordHashField,
 )
+from django.core.files.images import get_image_dimensions
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
@@ -130,6 +131,18 @@ class UserProfileUpdateForm(forms.ModelForm):
         model = User
         fields = ('speaker_name', 'bio', 'photo')
 
+    def clean_photo(self):
+        photo = self.cleaned_data.get('photo')
+        if not photo:
+            return photo
+
+        width, height = get_image_dimensions(photo)
+        if width < 800 or height < 800:
+            raise forms.ValidationError(_(
+                'Your image is too small ({width}\u00d7{height} pixels).'
+            ).format(width=width, height=height))
+        return photo
+
 
 class AdminUserChangeForm(forms.ModelForm):
     """A form for updating users.
@@ -202,6 +215,7 @@ class AuthenticationForm(BaseAuthenticationForm):
 
 
 class PasswordResetForm(BasePasswordResetForm):
+
     email = forms.EmailField(label=_("Email Address"), max_length=254)
 
     def __init__(self, *args, **kwargs):
