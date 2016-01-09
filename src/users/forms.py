@@ -6,6 +6,7 @@ from django.contrib.auth.forms import (
     SetPasswordForm as BaseSetPasswordForm,
     ReadOnlyPasswordHashField,
 )
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
@@ -185,8 +186,10 @@ class AuthenticationForm(BaseAuthenticationForm):
             ),
             FormActions(Div(
                 Div(
-                    HTML(_("""<a class="btn btn-link" href="{% url 'password_reset' %}">
-                        Forgot Password?</a>""")),
+                    HTML(_(
+                        '<a class="btn btn-link" href="{password_reset_url}">'
+                        'Forgot Password?</a>'
+                    ).format(password_reset_url=reverse('password_reset'))),
                     css_class='col-xs-6 m-t-2',
                 ),
                 Div(
@@ -242,8 +245,14 @@ class SetPasswordForm(BaseSetPasswordForm):
         self.helper.layout = Layout(
             Fieldset(
                 '',
-                Field('new_password1', placeholder=self.fields['new_password1'].label),
-                Field('new_password2', placeholder=self.fields['new_password2'].label),
+                Field(
+                    'new_password1',
+                    placeholder=self.fields['new_password1'].label,
+                ),
+                Field(
+                    'new_password2',
+                    placeholder=self.fields['new_password2'].label,
+                ),
             ),
             FormActions(Div(
                 Div(
