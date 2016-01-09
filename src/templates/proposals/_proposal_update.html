@@ -12,16 +12,15 @@
 {% block main-content %}
 
 {% if not object.cancelled %}
-
-<div class="page-header">
-  <h3>{{ object.title }}</h3>
-</div>
+<h3 class="dashboard-header">
+  <span class="header-title">{{ object.title }}</span>
+</h3>
 
 <form method="post" class="proposal-form">
   <div class="nesting-form-group">
     {% crispy form %}
     {% if not readonly %}
-    <button type="submit" class="btn save-btn">{% trans 'Save' %}</button>
+    <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
     {% endif %}
   </div>
 </form>

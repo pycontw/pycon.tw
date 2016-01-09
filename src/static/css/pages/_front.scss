@@ -1,0 +1,96 @@
+.content-container {
+    max-width: 944px;
+}
+.content-page-title {
+
+    margin-top: -20px;
+    margin-bottom: 38px;
+    background-color: $theme-color;
+    color: white;
+
+    h1 {
+        padding-top: 52px;
+        height: 111px;
+        font-family: $font-family-sans-serif;
+        font-weight: 100;
+        font-size: 40px;
+    }
+}
+
+.content-page-content {
+
+    max-width: 944px;
+
+    color: #9197A3;
+
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+
+    line-height: 24px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+        font-family: $font-family-sans-serif;
+        font-weight: 300;
+        margin: 20px 0 12px 0;
+    }
+
+    h2 {
+        margin-top: 53px;
+        color: $theme-color;
+        font-weight: 400;
+    }
+
+    p {
+        margin: 0 0 12px;
+    }
+
+    > ul {
+        margin: 0 0 20px;
+        padding-left: 5px;
+        list-style: none;
+
+        > li::before {
+            content: "・";
+            padding-right: 15px;
+        }
+
+        > li > p {
+
+            display: inline-block;
+            margin-left: 34px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.content-page-footer {
+
+    display: table;
+    height: 116px;
+    width: 100%;
+    margin-top: 74px;
+
+    background-color: #F9FCFF;
+    background-image: url(static('images/Logo_pycontw16_blue_footer.png'));
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .content-page-footer-content {
+
+        display: table-cell;
+        vertical-align: middle;
+
+        .copyright {
+            margin-left: 67px;
+            font-size: 16px;
+            color: $theme-color;
+        }
+        .social {
+            margin-right: 67px;
+        }
+    }
+}

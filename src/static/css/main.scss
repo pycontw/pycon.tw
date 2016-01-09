@@ -15,13 +15,15 @@
 
 // Components
 @import "components/form";
+@import "components/buttons";
 
 // Themes
 @import "themes/proposals";
 
-
 // Pages
+@import "pages/front";
 @import "pages/registration";
+@import "pages/dashboard";
 
 
 body {
@@ -215,6 +217,11 @@ body {
             left: 20px;
             top: 10px;
         }
+    }
+
+    &::before {
+        content: "";
+        margin-right: 0;
     }
 
     // show dash between name and full name
