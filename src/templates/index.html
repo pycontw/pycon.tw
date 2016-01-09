@@ -2,6 +2,12 @@
 
 {% load i18n static %}
 
+{% block meta_og %}
+  <meta property="og:title" content="PyCon Taiwan 2016" />
+  <meta property="og:description" content="PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network." />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}" />
+{% endblock %}
+
 {% block titletag %}<title>PyCon Taiwan 2016</title>{% endblock titletag %}
 
 
