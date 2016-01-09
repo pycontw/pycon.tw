@@ -94,7 +94,14 @@
         }
     }
 
+    ul.navbar-lang {
+        // By default the js powered language selector is hidden
+        // This selector is enabled in js/base.js
+        display: none;
+    }
+
     .navbar-lang {
+
         .dropdown-menu {
             margin-left: 0;
         }
