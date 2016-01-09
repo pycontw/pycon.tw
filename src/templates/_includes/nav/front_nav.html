@@ -1,0 +1,42 @@
+{% extends '_includes/nav/nav_base.html' %}
+
+{% load i18n %}
+
+{% block nav-content %}
+
+{% url 'page' path='about/pycontw' as about_pycontw_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+
+<ul class="nav navbar-nav">
+  <li class="dropdown">
+    <a href="#" class="{% if active == 'about' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'ABOUT' %} </a>
+    <ul class="dropdown-menu">
+      <li><a href="{{ about_pycontw_url }}">{% trans 'PyCon TW 2016' %}</a></li>
+      <li><a href="{{ about_coc_url }}">{% trans 'Code of Conduct' %}</a></li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="{% if active == 'speaking' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'SPEAKING' %} </a>
+    <ul class="dropdown-menu">
+      <li><a href="{{ speaking_cfp_url }}">{% trans 'Call for Proposal' %}</a></li>
+      <li><a href="{{ speaking_talk_url }}">{% trans 'Proposing a Talk' %}</a></li>
+      <li><a href="{{ speaking_tutorial_url }}">{% trans 'Proposing a Tutorial' %}</a></li>
+    </ul>
+    <li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'BLOG' %}</a></li>
+    <li><a href="{% url 'user_dashboard' %}" target="_blank"><span class="em">{% trans 'DASHBOARD' %}</span></a></li>
+  </li>
+</ul>
+
+<div class="social pull-right">
+  <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
+    <i class="fa fa-facebook fa-lg"></i>
+  </a>
+  <a href="https://twitter.com/pycontw" class="social-btn" target="_blank">
+    <i class="fa fa-twitter fa-lg"></i>
+  </a>
+</div>
+
+{% endblock nav-content %}

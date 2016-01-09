@@ -1,0 +1,80 @@
+{% load i18n static crispy_forms_tags %}
+{% load i18n_plus %}
+
+<nav class="navbar navbar-default navbar-fe navbar-site">
+  <div class="clearfix container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}"
+                 class="logo hidden-xs" alt="logo">
+            <img width="42" height="30" src="{% static 'images/LogoIcon_white@2x.png' %}"
+                class="logo visible-xs-inline" alt="logo">
+        </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar">
+
+      {% block nav-content %}{% endblock nav-content %}
+
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_language_info for LANGUAGE_CODE as current_language %}
+
+        <ul class="nav navbar-nav navbar-lang navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false"> {{ current_language.name_local }}
+               <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              {% for language in languages %}
+              <li {% if language.code == LANGUAGE_CODE %}class="active"{% endif %}>
+                <a href="#" data-lang="{{ language.code}}">
+                  {{ language.name_local }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% comment %}
+          <a class="navbar-lang__close visible-xs" href="#"
+             data-toggle="collapse" data-target="#navbar"><i class="fa fa-times fa-2x"></i></a>
+          {% endcomment %}
+        </ul>
+
+        <!-- Fallback version of form selection -->
+        <form class="navbar-form navbar-right navbar-lang"
+              action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request|language_free_path }}">
+            <select id="language-select" name="language" class="form-control input-sm">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"
+                            {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ language.name_local }}
+                    </option>
+                {% endfor %}
+            </select>
+            <noscript>
+                <button type="submit" class="btn">{% trans 'Change' %}</button>
+            </noscript>
+        </form>
+      </div>
+
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

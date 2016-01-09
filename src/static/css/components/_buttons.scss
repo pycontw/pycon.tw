@@ -10,6 +10,12 @@
   @include button-variant($btn-natural-color, $btn-natural-bg, $btn-natural-border);
 }
 
+.btn-logout {
+  font-size: 16px;
+  font-weight: 400;
+  @include button-variant($btn-logout-color, $btn-logout-bg, $btn-logout-border);
+}
+
 .btn-primary {
   &:hover {
     background-color: $btn-primary-hover-bg;

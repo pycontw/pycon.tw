@@ -1,9 +1,11 @@
-.dashboard .main {
-    .btn {
+.dashboard{
+    .main .btn {
         font-size: 13px;
     }
+    .navbar-site .navbar-brand{
+        padding-right: 5px;
+    }
 }
-
 
 .dashboard-header {
     padding: 20px 0 0 33px;

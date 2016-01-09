@@ -7,6 +7,8 @@
 
 {% block body-class %}dashboard{% endblock %}
 
+{% block nav %}{% include '_includes/nav/dashboard_nav.html' %}{% endblock %}
+
 {% block content %}
 <div class="row">
   <p class="welcome">{% trans 'Welcome PyCon TW 2016' %}, {{ user.email }}</p>

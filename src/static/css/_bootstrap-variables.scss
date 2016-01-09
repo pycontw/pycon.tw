@@ -255,15 +255,19 @@ $form-group-margin-bottom:          24px;
 
 // //** Dropdown link text color.
 // $dropdown-link-color:            $gray-dark !default;
+$dropdown-link-color:            $theme-color;
 // //** Hover color for dropdown links.
 // $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+$dropdown-link-hover-color:      $theme-color;
 // //** Hover background for dropdown links.
 // $dropdown-link-hover-bg:         #f5f5f5 !default;
+$dropdown-link-hover-bg:         #f3f3f3;
 
 // //** Active dropdown menu item text color.
-// $dropdown-link-active-color:     $component-active-color !default;
+$dropdown-link-active-color:     $theme-color;
 // //** Active dropdown menu item background color.
 // $dropdown-link-active-bg:        $component-active-bg !default;
+$dropdown-link-active-bg:        #e3e3e3;
 
 // //** Disabled dropdown menu item background color.
 // $dropdown-link-disabled-color:   $gray-light !default;
@@ -372,14 +376,16 @@ $form-group-margin-bottom:          24px;
 
 // // Basics of a navbar
 // $navbar-height:                    50px !default;
-// $navbar-margin-bottom:             $line-height-computed !default;
+$navbar-margin-bottom:             0 !default;
 // $navbar-border-radius:             $border-radius-base !default;
+$navbar-border-radius:             0;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 // $navbar-collapse-max-height:       340px !default;
 
 // $navbar-default-color:             #777 !default;
 // $navbar-default-bg:                #f8f8f8 !default;
+$navbar-default-bg:                   $theme-color;
 // $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // // Navbar links
@@ -388,6 +394,7 @@ $navbar-default-link-hover-color:          #ccc !default;
 // $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #dedede !default;
 // $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-active-bg:            transparent;
 $navbar-default-link-disabled-color:       #aaa !default;
 // $navbar-default-link-disabled-bg:          transparent !default;
 
@@ -398,8 +405,11 @@ $navbar-default-link-disabled-color:       #aaa !default;
 
 // // Navbar toggle
 // $navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-hover-bg:              transparent;
 // $navbar-default-toggle-icon-bar-bg:        #888 !default;
+$navbar-default-toggle-icon-bar-bg:        #fff;
 // $navbar-default-toggle-border-color:       #ddd !default;
+$navbar-default-toggle-border-color:       transparent;
 
 
 // //=== Inverted navbar

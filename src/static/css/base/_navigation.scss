@@ -1,0 +1,218 @@
+
+.navbar-site {
+    padding: 12px 0;
+
+    .navbar-brand {
+        padding: 23px 40px;
+        height: auto;
+    }
+
+    .navbar-form {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+    .navbar-toggle {
+        border: none;
+        margin-top: 20px;
+
+        .icon-bar {
+            background-color: #fff;
+        }
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        > li > a {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &.active{
+                padding-bottom: 6px;
+                border-bottom: 3px solid #FFFFFF;
+            }
+        }
+
+        @media (max-width: $grid-float-breakpoint-max) {
+            .open .dropdown-menu {
+                > li > a {
+                    color: $dropdown-link-color;
+                    &:hover,
+                    &:focus {
+                        color: $dropdown-link-hover-color;
+                        background-color: $dropdown-link-hover-bg;
+                    }
+                }
+                > .active > a {
+                    &,
+                    &:hover,
+                    &:focus{
+                        color: $dropdown-link-active-color;
+                        background-color: $dropdown-link-active-bg;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-nav .dropdown-menu {
+        margin-left: 20px;
+        background:#FFFFFF;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
+        border-radius: 2px;
+        min-width:136px;
+        max-width:180px;
+        padding: 8px 0;
+        border: #fff;
+    }
+
+    .navbar-collapse.in {
+        @media (max-width: $grid-float-breakpoint-max) {
+            .navbar-lang {
+                position: absolute;
+                top: 5px;
+                width: 60%;
+                height: 72px;
+                background-color: $theme-color;
+            }
+            .navbar-nav > li > a.active{
+                border-bottom: 1px solid #FFFFFF;
+            }
+        }
+    }
+
+    .navbar-nav > li > .btn {
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: $theme-color;
+        padding: 6px 10px;
+        margin-top: 5px;
+        .caret {
+            margin-left: 10px;
+        }
+    }
+
+    ul.navbar-lang {
+        // By default the js powered language selector is hidden
+        // This selector is enabled in js/base.js
+        display: none;
+    }
+
+    .navbar-lang {
+
+        .dropdown-menu {
+            margin-left: 0;
+        }
+
+        @media (max-width: $grid-float-breakpoint-max) {
+            padding: 20px 0;
+            margin: 0;
+
+            .dropdon-menu {
+                margin-left: 0;
+            }
+        }
+
+
+        .dropdown,
+        .dropdown.open {
+            > .btn {
+                color: $dropdown-link-color;
+                border-radius: 3px;
+                &,
+                &:hover,
+                &:active {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .navbar-lang__close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+    }
+
+    .navbar-lang > li > .dropdown-menu {
+        margin-top: 4px;
+        min-width: initial;
+        width: 100%;
+        font-size: 13px;
+        > li > a {
+            padding: 5px 10px;
+        }
+    }
+
+}
+
+
+.navbar-site {
+    .social {
+        margin-left: 30px;
+        @media (max-width: $grid-float-breakpoint-max) {
+            margin-top: -60px;
+        }
+    }
+    .social-btn {
+        color: #fff;
+        margin-top: 20px;
+    }
+}
+
+
+// .em
+.navbar-site .nav .em {
+    background-color: #1542c4;
+    color: #fff;
+    border-radius: 40px;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.top-nav {
+    background-color: $theme-color;
+    padding: 24px 44px;
+
+    > .logo {
+        @extend .hidden-xs;
+    }
+
+    .social-btn {
+        color: #fff;
+    }
+
+    .navbar-header{
+        margin: 3px 0 0;
+    }
+
+    .navbar-right {
+        padding: 0;
+        margin: 0 0 0 6px;
+
+        .form-control {
+            font-size: 14px;
+        }
+
+        a, .btn-link {
+            font-weight: 300;
+            padding: 0;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .btn {
+            padding: 5px 19px;
+            line-height: 19px;
+            font-weight: 400;
+            color: #FFFFFF;
+            background: #2350D2;
+            border-radius: 3px;
+        }
+    }
+}
