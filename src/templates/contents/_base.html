@@ -2,7 +2,9 @@
 
 {% block body %}
 
-{% include '_includes/nav/front_nav.html' %}
+{% block nav %}
+    {% include '_includes/nav/front_nav.html' %}
+{% endblock nav %}
 
 <div class="content-page-title">
 	<div class="content-container container">

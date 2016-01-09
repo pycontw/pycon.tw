@@ -28,6 +28,11 @@
         > li > a {
             padding-left: 20px;
             padding-right: 20px;
+
+            &.active{
+                padding-bottom: 6px;
+                border-bottom: 3px solid #FFFFFF;
+            }
         }
 
         @media (max-width: $grid-float-breakpoint-max) {
