@@ -1,5 +1,6 @@
 
 .navbar-site {
+    padding: 12px 0;
 
     .navbar-brand {
         padding: 20px 40px;
@@ -23,7 +24,7 @@
     .navbar-nav {
         margin-top: 10px;
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 400;
         > li > a {
             padding-left: 20px;
             padding-right: 20px;
@@ -78,7 +79,7 @@
         background-color: #fff;
         border: 1px solid #fff;
         color: $theme-color;
-        padding: 6px 20px;
+        padding: 6px 10px;
         margin-top: 5px;
         .caret {
             margin-left: 10px;
@@ -103,7 +104,6 @@
         .dropdown,
         .dropdown.open {
             > .btn {
-                width: 140px;
                 color: $dropdown-link-color;
                 border-radius: 3px;
                 &,
