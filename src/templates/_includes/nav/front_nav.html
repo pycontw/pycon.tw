@@ -14,7 +14,9 @@
   <li class="dropdown">
     <a href="#" class="{% if active == 'about' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'ABOUT' %} </a>
     <ul class="dropdown-menu">
+      {% comment %}
       <li><a href="{{ about_pycontw_url }}">{% trans 'PyCon TW 2016' %}</a></li>
+      {% endcomment %}
       <li><a href="{{ about_coc_url }}">{% trans 'Code of Conduct' %}</a></li>
     </ul>
   </li>
