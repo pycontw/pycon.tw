@@ -17,10 +17,8 @@
 @import "components/form";
 @import "components/buttons";
 
-// Themes
-@import "themes/proposals";
-
 // Pages
+@import "pages/proposals";
 @import "pages/front";
 @import "pages/registration";
 @import "pages/dashboard";
