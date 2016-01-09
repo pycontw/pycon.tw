@@ -51,28 +51,27 @@
           {% endcomment %}
         </ul>
 
+        <!-- Fallback version of form selection -->
+        <form class="navbar-form navbar-right navbar-lang"
+              action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request|language_free_path }}">
+            <select id="language-select" name="language" class="form-control input-sm">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"
+                            {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ language.name_local }}
+                    </option>
+                {% endfor %}
+            </select>
+            <noscript>
+                <button type="submit" class="btn">{% trans 'Change' %}</button>
+            </noscript>
+        </form>
       </div>
 
-      {% comment %}
-        <form class="navbar-form navbar-right navbar-lang"
-          action="{% url 'set_language' %}" method="post">
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ request|language_free_path }}">
-        <select id="language-select" name="language" class="form-control input-sm">
-          {% get_language_info_list for LANGUAGES as languages %}
-          {% get_current_language as LANGUAGE_CODE %}
-          {% for language in languages %}
-            <option value="{{ language.code }}"
-                {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
-              {{ language.name_local }}
-            </option>
-          {% endfor %}
-        </select>
-        <noscript>
-        <button type="submit" class="btn">{% trans 'Change' %}</button>
-        </noscript>
-        </form>
-      {% endcomment %}
 
     </div>
     <!-- /.navbar-collapse -->
