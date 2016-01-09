@@ -133,12 +133,12 @@ body.dashboard{
     .upload-btn {
         position: relative;
         display: inline-block;
-        padding: 8px 16px 9px 18px;
 
         span {
             font-size: 13px;
             color: #3E6DF5;
             line-height: 15px;
+            cursor: pointer;
         }
 
         input {
