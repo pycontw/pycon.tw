@@ -1,1 +1,32 @@
 {% extends 'base.html' %}
+
+{% block body %}
+
+{% include '_includes/nav.html' %}
+
+<div class="content-page-title">
+	<div class="content-container container">
+		{% block page_title %}{% endblock page_title %}
+	</div>
+</div>
+
+<div class="content-container container content-page-content">
+	{% block content %}{% endblock content %}
+</div>
+
+<div class="content-page-footer">
+	<div class="content-page-footer-content">
+		<div class="copyright pull-left">2016 PyCon Taiwan</div>
+		<div class="social pull-right">
+			<a href="https://www.facebook.com/pycontw"
+					class="social-btn" target="_blank">
+        <i class="fa fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://twitter.com/pycontw" class="social-btn" target="_blank">
+        <i class="fa fa-twitter fa-lg"></i>
+      </a>
+		</div>
+	</div>
+</div>
+
+{% endblock body %}

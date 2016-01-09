@@ -19,8 +19,8 @@
 // Themes
 @import "themes/proposals";
 
-
 // Pages
+@import "pages/front";
 @import "pages/registration";
 @import "pages/dashboard";
 
@@ -258,6 +258,11 @@ body {
             left: 20px;
             top: 10px;
         }
+    }
+
+    &::before {
+        content: "";
+        margin-right: 0;
     }
 
     // show dash between name and full name

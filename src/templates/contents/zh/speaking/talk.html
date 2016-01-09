@@ -1,12 +1,11 @@
 {% extends 'contents/_base.html' %}
 
 {% block title %}如何投稿演講{% endblock %}
+{% block page_title %}<h1>如何投稿演講（Talk）？</h1>{% endblock page_title %}
 
 {% block content %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url "user_dashboard" as dashboard_url %}
-
-<h1>如何投稿演講（Talk）？</h1>
 
 <p>
 	有關投稿的整體流程說明，請參考<a
@@ -106,11 +105,11 @@
 <h3>投稿不推薦的主意</h3>
 <ul>
 	<li>
-		避免資訊型廣告（infomercials）。<br>
-		意即，只在議程中宣傳您的產品或介紹怎麼使用您的產品。然而，我們非常歡迎您來分享貴公司如果解決遇到的問題，以及貴公司維護、可以幫助多數會眾的開源專案。
+		<p>避免資訊型廣告（infomercials）。</p>
+		<p>意即，只在議程中宣傳您的產品或介紹怎麼使用您的產品。然而，我們非常歡迎您來分享貴公司如果解決遇到的問題，以及貴公司維護、可以幫助多數會眾的開源專案。</p>
 	</li>
 	<li>
-		不應該假設審稿的人認識您。應該讓投稿本身包含足夠的資訊。
+		<p>不應該假設審稿的人認識您。應該讓投稿本身包含足夠的資訊。</p>
 	</li>
 </ul>
 

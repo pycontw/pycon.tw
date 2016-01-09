@@ -1,6 +1,7 @@
 {% extends 'contents/_base.html' %}
 
 {% block title %}投稿募集{% endblock %}
+{% block page_title %}<h1>投稿募集（Call for Proposals）</h1>{% endblock %}
 
 {% block content %}
     {% url 'page' path='speaking/recording' as speaking_recording_url %}
@@ -8,7 +9,7 @@
     {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
     {% url "signup" as signup_url %}
     {% url "user_dashboard" as dashboard_url %}
-    <h1>投稿募集（Call for Proposals）</h1>
+
     <p>
         即日起，PyCon 2016 Taiwan 開始接受演講（Talk）與教學（Tutorial）的投稿！
     </p>
