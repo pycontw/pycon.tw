@@ -72,10 +72,13 @@
         @media (max-width: $grid-float-breakpoint-max) {
             .navbar-lang {
                 position: absolute;
-                top: 0;
-                width: 100%;
+                top: 5px;
+                width: 60%;
                 height: 72px;
                 background-color: $theme-color;
+            }
+            .navbar-nav > li > a.active{
+                border-bottom: 1px solid #FFFFFF;
             }
         }
     }

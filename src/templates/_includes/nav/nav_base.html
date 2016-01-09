@@ -14,7 +14,7 @@
         <a class="navbar-brand" href="{% url 'index' %}">
             <img width="133" height="24" src="{% static 'images/logo-tiny--reverse@2x.png' %}"
                  class="logo hidden-xs" alt="logo">
-            <img width="49" height="34" src="{% static 'images/LogoIcon_white@2x.png' %}"
+            <img width="42" height="30" src="{% static 'images/LogoIcon_white@2x.png' %}"
                 class="logo visible-xs-inline" alt="logo">
         </a>
     </div>
@@ -45,8 +45,10 @@
               {% endfor %}
             </ul>
           </li>
+          {% comment %}
           <a class="navbar-lang__close visible-xs" href="#"
              data-toggle="collapse" data-target="#navbar"><i class="fa fa-times fa-2x"></i></a>
+          {% endcomment %}
         </ul>
 
       </div>
