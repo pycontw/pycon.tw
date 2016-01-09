@@ -120,4 +120,4 @@ RAVEN_CONFIG = {
     'dsn': env('DSN_URL'),
 }
 
-GA_TRACK_ID = 'UA-71781656-2'
+GA_TRACK_ID = 'UA-28961467-1'
