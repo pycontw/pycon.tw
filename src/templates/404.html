@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+
+{% block titletag %}<title>PyCon Taiwan 2016</title>{% endblock titletag %}
+
+
+{% block body %}
+
+{% include '_includes/nav/front_nav.html' %}
+
+<div class="content-page-title">
+    <div class="content-container container">
+        <h1>Page not found</h1>
+    </div>
+</div>
+
+<div class="content-container container content-page-content">
+    {% block content %}{% endblock content %}
+    <p>We're sorry but that page could not be found.</p>
+</div>
+
+{% include '_includes/footer.html' %}
+
+{% endblock body %}
