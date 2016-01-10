@@ -127,6 +127,13 @@ class UserProfileUpdateForm(forms.ModelForm):
 
     This includes only fields containing basic user information.
     """
+    error_messages = {
+        'photo_too_small': _(
+            'Your image is too small ({width}\u00d7{height} pixels).'
+        ),
+        'photo_bad_dimension': _('The image you provided is not quadrate.'),
+    }
+
     class Meta:
         model = User
         fields = ('speaker_name', 'bio', 'photo')
@@ -138,10 +145,23 @@ class UserProfileUpdateForm(forms.ModelForm):
 
         width, height = get_image_dimensions(photo)
         if width < 800 or height < 800:
-            raise forms.ValidationError(_(
-                'Your image is too small ({width}\u00d7{height} pixels).'
-            ).format(width=width, height=height))
+            raise forms.ValidationError(self.get_error_message(
+                'photo_too_small', width=width, height=height,
+            ))
+
+        ratio = width / height
+        if ratio < 0.9 or ratio > 1.1:
+            raise forms.ValidationError(self.get_error_message(
+                'photo_bad_dimension', width=width, height=height,
+            ))
+
         return photo
+
+    def get_error_message(self, *args, **kwargs):
+        msg = self.error_messages[args.pop(0)]
+        if args or kwargs:
+            msg = msg.format(*args, **kwargs)
+        return msg
 
 
 class AdminUserChangeForm(forms.ModelForm):

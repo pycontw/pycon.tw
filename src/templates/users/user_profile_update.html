@@ -32,7 +32,7 @@
 		    {% if form.photo.errors %}
 		    <p class="help-block">{% for error in form.photo.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
 		    {% endif %}
-		    <p class="help-block">{% trans 'At least 800&times;800 pixels for best results in our printed conference booklet.' %}</p>
+		    <p class="help-block">{% trans 'Provide a square photo at least 800&times;800 pixels in size for best results in our printed conference booklet.' %}</p>
 	    </div>
 	</div>
 	<div class="form-group {% if form.speaker_name.errors %}has-error{% endif %}">
