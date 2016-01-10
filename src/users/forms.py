@@ -158,7 +158,8 @@ class UserProfileUpdateForm(forms.ModelForm):
         return photo
 
     def get_error_message(self, *args, **kwargs):
-        msg = self.error_messages[args.pop(0)]
+        key, *args = args
+        msg = self.error_messages[key]
         if args or kwargs:
             msg = msg.format(*args, **kwargs)
         return msg
