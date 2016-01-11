@@ -81,6 +81,20 @@ Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please *
 
 We strongly recommend you configure your editor to match our conding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
 
+
 ## Internationalisation
 
-Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw-2016/).
+Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw-2016/). When new commits are added into master branch, Travis CI will automatically push new translation strings to Transifex, so simply fix or edit the translation online.
+
+### Update translation
+
+Translation updates into code base are done *manually* at `src/`. You need to [configure the Transifex client](http://docs.transifex.com/client/config/) first by adding `~/.transifexrc`.
+
+Old translation files will prevent `tx pull` updating if they have later modified time, which generally are if they are pulled from the remote repo. They should be removed first:
+
+    rm locale/zh_Hant/LC_MESSAGES/django.*
+
+Run `tx pull` to get newer translation and recompile the PO files:
+
+    tx pull -l zh-Hant
+    python manage.py compilemessages -l zh_Hant
