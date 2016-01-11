@@ -6,6 +6,8 @@ from django.contrib.auth.forms import (
     SetPasswordForm as BaseSetPasswordForm,
     ReadOnlyPasswordHashField,
 )
+from django.core.files.images import get_image_dimensions
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
@@ -125,9 +127,42 @@ class UserProfileUpdateForm(forms.ModelForm):
 
     This includes only fields containing basic user information.
     """
+    error_messages = {
+        'photo_too_small': _(
+            'Your image is too small ({width}\u00d7{height} pixels).'
+        ),
+        'photo_bad_dimension': _('The image you provided is not quadrate.'),
+    }
+
     class Meta:
         model = User
         fields = ('speaker_name', 'bio', 'photo')
+
+    def clean_photo(self):
+        photo = self.cleaned_data.get('photo')
+        if not photo:
+            return photo
+
+        width, height = get_image_dimensions(photo)
+        if width < 800 or height < 800:
+            raise forms.ValidationError(self.get_error_message(
+                'photo_too_small', width=width, height=height,
+            ))
+
+        ratio = width / height
+        if ratio < 0.9 or ratio > 1.1:
+            raise forms.ValidationError(self.get_error_message(
+                'photo_bad_dimension', width=width, height=height,
+            ))
+
+        return photo
+
+    def get_error_message(self, *args, **kwargs):
+        key, *args = args
+        msg = self.error_messages[key]
+        if args or kwargs:
+            msg = msg.format(*args, **kwargs)
+        return msg
 
 
 class AdminUserChangeForm(forms.ModelForm):
@@ -185,8 +220,10 @@ class AuthenticationForm(BaseAuthenticationForm):
             ),
             FormActions(Div(
                 Div(
-                    HTML(_("""<a class="btn btn-link" href="{% url 'password_reset' %}">
-                        Forgot Password?</a>""")),
+                    HTML(_(
+                        '<a class="btn btn-link" href="{password_reset_url}">'
+                        'Forgot Password?</a>'
+                    ).format(password_reset_url=reverse('password_reset'))),
                     css_class='col-xs-6 m-t-2',
                 ),
                 Div(
@@ -199,6 +236,7 @@ class AuthenticationForm(BaseAuthenticationForm):
 
 
 class PasswordResetForm(BasePasswordResetForm):
+
     email = forms.EmailField(label=_("Email Address"), max_length=254)
 
     def __init__(self, *args, **kwargs):
@@ -242,8 +280,14 @@ class SetPasswordForm(BaseSetPasswordForm):
         self.helper.layout = Layout(
             Fieldset(
                 '',
-                Field('new_password1', placeholder=self.fields['new_password1'].label),
-                Field('new_password2', placeholder=self.fields['new_password2'].label),
+                Field(
+                    'new_password1',
+                    placeholder=self.fields['new_password1'].label,
+                ),
+                Field(
+                    'new_password2',
+                    placeholder=self.fields['new_password2'].label,
+                ),
             ),
             FormActions(Div(
                 Div(
