@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-09 14:29+0000\n"
-"PO-Revision-Date: 2016-01-09 15:08+0000\n"
+"POT-Creation-Date: 2016-01-11 09:30+0000\n"
+"PO-Revision-Date: 2016-01-11 04:17+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -491,27 +491,36 @@ msgid ""
 "proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
 
-#: templates/index.html:25 templates/index.html.py:31
+#: templates/index.html:8
+msgid ""
+"PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge,"
+" exchange ideas, make connections and to help us grow our network."
+msgstr "PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。"
+
+#: templates/index.html:32 templates/index.html.py:38
 msgid "Tutorials"
 msgstr "教學"
 
-#: templates/index.html:26 templates/index.html.py:35
+#: templates/index.html:33 templates/index.html.py:42
 msgid "Conference"
 msgstr "會議"
 
-#: templates/index.html:27 templates/index.html.py:39
+#: templates/index.html:34 templates/index.html.py:46
 msgid "Sprint"
 msgstr "Sprint"
 
-#: templates/index.html:32 templates/index.html.py:40
+#: templates/index.html:39 templates/index.html.py:47
 msgid "TBD"
 msgstr "待定"
 
-#: templates/index.html:36
+#: templates/index.html:43
 msgid "June 3–5, 2016"
 msgstr "2016 年 6 月 3–5 日"
 
-#: templates/index.html:56
+#: templates/index.html:63
 msgid ""
 "\n"
 "                <h2 class=\"intro__heading\">What is PyCon</h2>\n"
@@ -523,7 +532,7 @@ msgid ""
 "                "
 msgstr "\n<h2 class=\"intro__heading\">何謂 PyCon</h2>\n<div class=\"intro__body\">\nPyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。\n</div>"
 
-#: templates/index.html:70
+#: templates/index.html:77
 msgid ""
 "\n"
 "                <h2 class=\"intro__heading\">And what is PyCon Taiwan</h2>\n"
@@ -539,7 +548,7 @@ msgid ""
 "                "
 msgstr "\n<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2>\n<div class=\"intro__body\">\nPyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。\n</div>"
 
-#: templates/index.html:88
+#: templates/index.html:95
 #, python-format
 msgid ""
 "\n"
@@ -558,15 +567,15 @@ msgid ""
 "                    "
 msgstr "\n<h4 class=\"volunteer__heading h4\">\n  志工招募中！\n  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\">\n</h4>\n<div class=\"volunteer__body\">\n  <p>與我們共同籌備並讓這個會議更成功！</p>\n  <p>\n    請填寫我們的<a \n      href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\"\n       target=\"_blank\">志工參加表</a>\n  </p>\n</div>"
 
-#: templates/index.html:120
+#: templates/index.html:127
 msgid "Python Community in Taiwan"
 msgstr "臺灣的 Python 社群"
 
-#: templates/index.html:174
+#: templates/index.html:181
 msgid "Sponsorship 2016 available!"
 msgstr "2016 年度贊助已經開始！ "
 
-#: templates/index.html:180
+#: templates/index.html:187
 msgid ""
 "\n"
 "                <p>\n"
@@ -586,7 +595,7 @@ msgid ""
 "                "
 msgstr "\n<p>\n    贊助 PyCon Taiwan 2016 能將貴品牌與約 800 名 Python 愛好者，其中九成為專業工程師。這也是個絕佳招聘機會並且能宣傳您的產品。請透過 <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 與我們聯絡得到更多贊助細節。\n</p>            \n<br>\n<p>\n    亦參考 <a\n        href=\"https://tw.pycon.org/2015apac/en/sponsors/\"\n        target=\"_blank\">PyCon APAC 2015 的贊助商</a>\n</p>"
 
-#: templates/index.html:244
+#: templates/index.html:251
 msgid "Sponsors"
 msgstr "贊助者"
 
@@ -595,7 +604,7 @@ msgid "Create Proposal"
 msgstr "建立提案"
 
 #: templates/proposals/_proposal_update.html:23
-#: templates/users/user_profile_update.html:61
+#: templates/users/user_profile_update.html:62
 msgid "Save"
 msgstr "儲存"
 
@@ -673,7 +682,7 @@ msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr "修改教學提案《%(proposal_title)s》"
 
 #: templates/registration/login.html:7 templates/registration/login.html:18
-#: users/forms.py:193
+#: users/forms.py:230
 msgid "Log In"
 msgstr "登入"
 
@@ -840,17 +849,17 @@ msgstr "頭像"
 msgid "Upload"
 msgstr "上傳"
 
-#: templates/users/user_profile_update.html:35
+#: templates/users/user_profile_update.html:36
 msgid ""
-"At least 800&times;800 pixels for best results in our printed conference "
-"booklet."
-msgstr "為於會議印刷品中取得最佳效果，請提供至少 800&times;800 像素。"
+"Provide a square photo at least 800&times;800 pixels in size for best "
+"results in our printed conference booklet."
+msgstr "請提供至少 800&times;800 像素之方型照片，以於會議印刷品中取得最佳效果。"
 
-#: templates/users/user_profile_update.html:40
+#: templates/users/user_profile_update.html:41
 msgid "Your Name"
 msgstr "您的大名"
 
-#: templates/users/user_profile_update.html:50
+#: templates/users/user_profile_update.html:51
 msgid "Biography"
 msgstr "自我介紹"
 
@@ -866,48 +875,54 @@ msgstr "權限"
 msgid "Important dates"
 msgstr "重要日期"
 
-#: users/forms.py:25
+#: users/forms.py:27
 msgid "A user with that email already exists."
 msgstr "此電子郵件信箱已被使用。"
 
-#: users/forms.py:26
+#: users/forms.py:28
 msgid "The two password fields didn't match."
 msgstr "密碼欄位內容不一致。"
 
-#: users/forms.py:29 users/forms.py:139
+#: users/forms.py:31 users/forms.py:174
 msgid "Password"
 msgstr "密碼"
 
-#: users/forms.py:33
+#: users/forms.py:35
 msgid "Password confirmation"
 msgstr "密碼確認"
 
-#: users/forms.py:55
+#: users/forms.py:57
 msgid "Create Account"
 msgstr "新建帳號"
 
-#: users/forms.py:140
+#: users/forms.py:132
+msgid "Your image is too small ({width}\\u00d7{height} pixels)."
+msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
+
+#: users/forms.py:134
+msgid "The image you provided is not quadrate."
+msgstr "提供的圖片並非方型。"
+
+#: users/forms.py:175
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
 
-#: users/forms.py:188
-msgid ""
-"<a class=\"btn btn-link\" href=\"{% url 'password_reset' %}\">\n"
-"                        Forgot Password?</a>"
-msgstr "<a class=\"btn btn-link\" href=\"{% url 'password_reset' %}\">忘記密碼？</a>"
+#: users/forms.py:224
+msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
+msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼？</a>"
 
-#: users/forms.py:202
+#: users/forms.py:240
 msgid "Email Address"
 msgstr "電子郵件信箱"
 
-#: users/forms.py:221
+#: users/forms.py:259
 msgid "Request Password Reset"
 msgstr "申請密碼重設"
 
-#: users/forms.py:251
+#: users/forms.py:295
 msgid "Set Password"
 msgstr "設定密碼"
 
