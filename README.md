@@ -88,9 +88,9 @@ Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/py
 
 ### Update translation
 
-Translation updates into code base are done *manually* at `src/`. You need to [configure the Transifex client](http://docs.transifex.com/client/config/) first by adding `~/.transifexrc`.
+Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](http://docs.transifex.com/client/config/) first by adding the file `~/.transifexrc`.
 
-Old translation files will prevent `tx pull` updating if they have later modified time, which generally are if they are pulled from the remote repo. They should be removed first:
+Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
 
     rm locale/zh_Hant/LC_MESSAGES/django.*
 
