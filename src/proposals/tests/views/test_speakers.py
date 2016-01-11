@@ -152,3 +152,29 @@ def test_remove_speaker_post(user_client, proposal_type, additional_speaker):
     assert response.redirect_chain == [
         ('/en-us/proposals/{}/42/manage-speakers/'.format(proposal_type), 302),
     ]
+
+
+def test_set_speaker_status_get_not_allowed(
+        another_user_client, additional_speaker):
+    response = another_user_client.get(
+        '/en-us/proposals/set-speaker-status/81/',
+    )
+    assert response.status_code == 405
+
+
+def test_set_speaker_status_post_not_owned(user_client, additional_speaker):
+    response = user_client.post(
+        '/en-us/proposals/set-speaker-status/81/',
+        {'status': 'declined'},
+    )
+    assert response.status_code == 404
+
+
+def test_set_speaker_status_post(
+        another_user_client, additional_speaker):
+    response = another_user_client.post(
+        '/en-us/proposals/set-speaker-status/81/',
+        {'status': 'declined'},
+        follow=True,
+    )
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)]

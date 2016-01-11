@@ -92,6 +92,7 @@ class AdditionalSpeakerSetStatusView(
     http_method_names = ['post', 'options']
     model = AdditionalSpeaker
     form_class = AdditionalSpeakerSetStatusForm
+    template_name = None
 
     def get_queryset(self):
         return super().get_queryset().filter(user=self.request.user)
