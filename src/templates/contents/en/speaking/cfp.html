@@ -1,7 +1,15 @@
 {% extends 'contents/_base/speaking.html' %}
 
+{% load i18n static %}
+
 {% block title %}Call for Proposals{% endblock %}
 {% block page_title %}<h1>Call for Proposals</h1>{% endblock %}
+
+{% block meta_og %}
+  <meta property="og:title" content="Call for Proposals | PyCon Taiwan 2016" />
+  <meta property="og:description" content="The Call for Proposals (CfP) is now open. PyCon Taiwan 2016 is accepting talks and tutorial!" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}" />
+{% endblock %}
 
 {% block content %}
     {% url 'page' path='speaking/recording' as speaking_recording_url %}
@@ -10,7 +18,7 @@
     {% url "signup" as signup_url %}
     {% url "user_dashboard" as dashboard_url %}
 
-    <p>The Call for Proposals (CfP) is now open. PyCon 2016 Taiwan is
+    <p>The Call for Proposals (CfP) is now open. PyCon Taiwan 2016 is
         accepting talks and tutorial!</p>
     <h2>Important Dates</h2>
     <ul>

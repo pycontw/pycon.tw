@@ -10,7 +10,7 @@ from .utils import split_css_class
 class CharacterCountedTextarea(forms.Textarea):
 
     class Media:
-        js = ['js/character-counter.js']
+        js = ['js/tools/character-counter.js']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -28,7 +28,7 @@ class SimpleMDEWidget(forms.Textarea):
                 'css/simplemde-setup.css',
             ],
         }
-        js = ['js/simplemde.js', 'js/simplemde-setup.js']
+        js = ['js/vendors/simplemde.js', 'js/tools/simplemde-setup.js']
 
     def render(self, name, value, attrs=None):
         attrs = self.build_attrs(attrs, name=name)

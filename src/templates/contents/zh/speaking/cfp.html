@@ -1,7 +1,15 @@
 {% extends 'contents/_base/speaking.html' %}
 
+{% load i18n static %}
+
 {% block title %}投稿募集{% endblock %}
 {% block page_title %}<h1>投稿募集（Call for Proposals）</h1>{% endblock %}
+
+{% block meta_og %}
+  <meta property="og:title" content="投稿募集（Call for Proposals）| PyCon Taiwan 2016" />
+  <meta property="og:description" content="即日起，PyCon Taiwan 2016 開始接受演講（Talk）與教學（Tutorial）的投稿！" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}" />
+{% endblock %}
 
 {% block content %}
     {% url 'page' path='speaking/recording' as speaking_recording_url %}
@@ -11,7 +19,7 @@
     {% url "user_dashboard" as dashboard_url %}
 
     <p>
-        即日起，PyCon 2016 Taiwan 開始接受演講（Talk）與教學（Tutorial）的投稿！
+        即日起，PyCon Taiwan 2016 開始接受演講（Talk）與教學（Tutorial）的投稿！
     </p>
 
     <h2>重要日期</h2>

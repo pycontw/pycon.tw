@@ -134,24 +134,27 @@ body.dashboard{
         position: relative;
         display: inline-block;
 
-        span {
+        > span {
             font-size: 13px;
             color: #3E6DF5;
             line-height: 15px;
             cursor: pointer;
+            display: hidden;
         }
 
-        input {
+        > .upload-btn-shadowed {
             -webkit-appearance: none;
             position: absolute;
-            top: 11px;
-            left: 11px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
         }
     }
 }
 
-.form-group{
+.form-group {
     margin-bottom: 40px;
 }
 
