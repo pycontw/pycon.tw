@@ -44,6 +44,7 @@ def test_speaking_pages(client, path, expected):
 
 def content_page_path_gen():
     from django.conf import settings
+    checked = set()
     for template_setting in settings.TEMPLATES:
         for template_dir in template_setting['DIRS']:
             for lang in ['en', 'zh']:
@@ -59,7 +60,11 @@ def content_page_path_gen():
                         if ext != '.html':
                             continue
                         comps = [c for c in dirpath.split(os.sep) if c != '.']
-                        yield '/'.join([''] + comps + [root, ''])
+                        path = '/'.join([''] + comps + [root, ''])
+                        if path in checked:
+                            continue
+                        yield path
+                        checked.add(path)
 
 
 @pytest.fixture(params=content_page_path_gen())
