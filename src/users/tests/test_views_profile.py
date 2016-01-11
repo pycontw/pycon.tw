@@ -1,5 +1,6 @@
 import pytest
 
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 
 
@@ -38,3 +39,17 @@ def test_profile_post(user_client):
         'bio': 'Girl meta-dome kanji-space shoes Chiba rifle sub-orbital.',
     }, follow=True)
     assert response.redirect_chain == [('/en-us/dashboard/', 302)]
+
+
+def test_password_change_done(user_client):
+    response = user_client.get(
+        '/en-us/accounts/password-reset/done/', follow=True,
+    )
+    assert response.redirect_chain == [('/en-us/accounts/login/', 302)]
+
+    msgs = [(m.level, m.message) for m in response.context['messages']]
+    assert msgs == [
+        (messages.SUCCESS,
+         'An email is sent to your email account. Please check your inbox '
+         'for furthur instructions to reset your password.'),
+    ]

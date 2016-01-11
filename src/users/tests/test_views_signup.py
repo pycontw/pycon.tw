@@ -124,3 +124,24 @@ def test_verify_invalid(bare_user, client):
         'verification_key': bare_user.get_verification_key().swapcase(),
     }))
     assert response.status_code == 404
+
+
+def test_verification_login(client):
+    response = client.get('/en-us/accounts/verification-request/', follow=True)
+    assert response.redirect_chain == [
+        ('/en-us/accounts/login/?next=/en-us/accounts/verification-request/',
+         302),
+    ]
+
+
+def test_verification_get(bare_user_client):
+    response = bare_user_client.get('/en-us/accounts/verification-request/')
+    assert response.status_code == 405
+
+
+def test_verification_post(user_client):
+    response = user_client.post(
+        '/en-us/accounts/verification-request/',
+        follow=True,
+    )
+    assert response.redirect_chain == [('/en-us/dashboard/', 302)]

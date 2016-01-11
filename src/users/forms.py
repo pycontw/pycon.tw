@@ -8,6 +8,7 @@ from django.contrib.auth.forms import (
 )
 from django.core.files.images import get_image_dimensions
 from django.core.urlresolvers import reverse
+from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
@@ -36,16 +37,20 @@ class UserCreationForm(forms.ModelForm):
         widget=forms.PasswordInput,
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.error_text_inline = False
-        self.helper.attrs = {
+    class Meta:
+        model = User
+        fields = ('email',)
+
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.error_text_inline = False
+        helper.attrs = {
             'autocomplete': 'off', 'autocorrect': 'off',
             'autocapitalize': 'off', 'spellcheck': 'false',
         }
-        self.helper.label_class = 'sr-only'
-        self.helper.layout = Layout(
+        helper.label_class = 'sr-only'
+        helper.layout = Layout(
             Fieldset(
                 '',
                 Field('email', placeholder=self.fields['email'].label),
@@ -58,10 +63,7 @@ class UserCreationForm(forms.ModelForm):
                 )
             )
         )
-
-    class Meta:
-        model = User
-        fields = ('email',)
+        return helper
 
     def clean_email(self):
         """Clean form email.
@@ -203,16 +205,16 @@ class AuthenticationForm(BaseAuthenticationForm):
 
     username = forms.EmailField()
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.error_text_inline = False
-        self.helper.label_class = 'sr-only'
-        self.helper.attrs = {
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.error_text_inline = False
+        helper.label_class = 'sr-only'
+        helper.attrs = {
             'autocomplete': 'off', 'autocorrect': 'off',
             'autocapitalize': 'off', 'spellcheck': 'false',
         }
-        self.helper.layout = Layout(
+        helper.layout = Layout(
             Fieldset(
                 '',
                 Field('username', placeholder=self.fields['username'].label),
@@ -233,22 +235,23 @@ class AuthenticationForm(BaseAuthenticationForm):
                 css_class='row',
             ))
         )
+        return helper
 
 
 class PasswordResetForm(BasePasswordResetForm):
 
     email = forms.EmailField(label=_("Email Address"), max_length=254)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.error_text_inline = False
-        self.helper.label_class = 'sr-only'
-        self.helper.attrs = {
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.error_text_inline = False
+        helper.label_class = 'sr-only'
+        helper.attrs = {
             'autocomplete': 'off', 'autocorrect': 'off',
             'autocapitalize': 'off', 'spellcheck': 'false',
         }
-        self.helper.layout = Layout(
+        helper.layout = Layout(
             Fieldset(
                 '',
                 Field('email', placeholder=self.fields['email'].label),
@@ -264,20 +267,20 @@ class PasswordResetForm(BasePasswordResetForm):
                 css_class='nesting-form-group row'
             ))
         )
+        return helper
 
 
 class SetPasswordForm(BaseSetPasswordForm):
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.error_text_inline = False
-        self.helper.label_class = 'sr-only'
-        self.helper.attrs = {
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.error_text_inline = False
+        helper.label_class = 'sr-only'
+        helper.attrs = {
             'autocomplete': 'off', 'autocorrect': 'off',
             'autocapitalize': 'off', 'spellcheck': 'false',
         }
-        self.helper.layout = Layout(
+        helper.layout = Layout(
             Fieldset(
                 '',
                 Field(
@@ -300,3 +303,4 @@ class SetPasswordForm(BaseSetPasswordForm):
                 css_class='nesting-form-group row'
             ))
         )
+        return helper
