@@ -1,6 +1,9 @@
+import os
+
 import pytest
 
 from django.test import override_settings
+from django.utils.translation import activate
 
 from core.utils import collect_language_codes
 
@@ -37,3 +40,46 @@ def test_index_page(client):
 ])
 def test_speaking_pages(client, path, expected):
     assert client.get(path).status_code == expected
+
+
+def content_page_path_gen():
+    from django.conf import settings
+    for template_setting in settings.TEMPLATES:
+        for template_dir in template_setting['DIRS']:
+            for lang in ['en', 'zh']:
+                contents_path = os.path.join(template_dir, 'contents', lang)
+                os.chdir(contents_path)
+                for dirpath, _, filenames in os.walk('.'):
+                    if os.path.basename(dirpath).startswith('_'):
+                        continue
+                    for filename in filenames:
+                        if filename.startswith('_'):
+                            continue
+                        root, ext = os.path.splitext(filename)
+                        if ext != '.html':
+                            continue
+                        comps = [c for c in dirpath.split(os.sep) if c != '.']
+                        yield '/'.join([''] + comps + [root, ''])
+
+
+@pytest.fixture(params=content_page_path_gen())
+def content_page_path(request):
+    return request.param
+
+
+def language_gen():
+    from django.conf import settings
+    for lang_code, _ in settings.LANGUAGES:
+        yield lang_code
+
+
+@pytest.fixture(params=language_gen())
+def language(request):
+    return request.param
+
+
+def test_content_pages(client, language, content_page_path):
+    activate(language)
+    path = '/' + language + '/' + content_page_path
+    response = client.get(path)
+    assert response.status_code == 200, path
