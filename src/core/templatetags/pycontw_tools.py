@@ -1,4 +1,3 @@
-from django.forms.widgets import flatatt
 from django.template import Library
 
 
