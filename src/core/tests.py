@@ -5,7 +5,7 @@ import pytest
 from django.test import override_settings
 from django.utils.translation import activate
 
-from core.utils import collect_language_codes
+from core.utils import collect_language_codes, split_css_class
 
 
 def test_locale_fallback_middleware(client, settings):
@@ -24,6 +24,11 @@ def test_collect_language_codes():
     assert collect_language_codes('zh') == ['zh', 'en-us', 'en']
     assert collect_language_codes('en-us') == ['en-us', 'en', 'en-us', 'en']
     assert collect_language_codes('en') == ['en', 'en-us', 'en']
+
+
+def test_split_css_class():
+    class_str = ' foo bar baz spam-egg foo '
+    assert split_css_class(class_str) == {'foo', 'bar', 'baz', 'spam-egg'}
 
 
 def test_index_page(client):
