@@ -151,6 +151,9 @@
 
 
 .navbar-site {
+    .navbar-nav > li > a {
+        @extend .text-uppercase;
+    }
     .social {
         margin-left: 30px;
         @media (max-width: $grid-float-breakpoint-max) {

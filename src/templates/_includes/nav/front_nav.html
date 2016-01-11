@@ -12,7 +12,7 @@
 
 <ul class="nav navbar-nav">
   <li class="dropdown">
-    <a href="#" class="{% if active == 'about' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'ABOUT' %} </a>
+    <a href="#" class="{% if active == 'about' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'About' %}</a>
     <ul class="dropdown-menu">
       {% comment %}
       <li><a href="{{ about_pycontw_url }}">{% trans 'PyCon TW 2016' %}</a></li>
@@ -21,14 +21,14 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a href="#" class="{% if active == 'speaking' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'SPEAKING' %} </a>
+    <a href="#" class="{% if active == 'speaking' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Speaking' %}</a>
     <ul class="dropdown-menu">
       <li><a href="{{ speaking_cfp_url }}">{% trans 'Call for Proposal' %}</a></li>
       <li><a href="{{ speaking_talk_url }}">{% trans 'Proposing a Talk' %}</a></li>
       <li><a href="{{ speaking_tutorial_url }}">{% trans 'Proposing a Tutorial' %}</a></li>
     </ul>
-    <li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'BLOG' %}</a></li>
-    <li><a href="{% url 'user_dashboard' %}" target="_blank"><span class="em">{% trans 'DASHBOARD' %}</span></a></li>
+    <li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'Blog' %}</a></li>
+    <li><a href="{% url 'user_dashboard' %}" target="_blank"><span class="em">{% trans 'Dashboard' %}</span></a></li>
   </li>
 </ul>
 

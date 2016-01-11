@@ -4,16 +4,15 @@
 
 {% block nav-content %}
 <ul class="nav navbar-nav">
-    <li><a href="{% url 'user_dashboard' %}"><span class="em">{% trans 'DASHBOARD' %}</span></a></li>
-  </li>
+  <li><a href="{% url 'user_dashboard' %}"><span class="em">{% trans 'Dashboard' %}</span></a></li>
 </ul>
 
 {% if user.is_authenticated %}
-    <form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-        <input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
-        <button type="submit" class="btn btn-logout">{% trans 'Log out' %}</button>
-    </form>
+<form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
+<button type="submit" class="btn btn-logout">{% trans 'Log out' %}</button>
+</form>
 {% endif %}
 
 {% endblock nav-content %}
