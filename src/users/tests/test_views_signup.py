@@ -61,7 +61,7 @@ def test_signup_post(client, parser):
 
     # The message does contain the activation link
     message_has_verification_link = re.search(
-        r'^\s+http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
+        r'^\s*http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
         email.body.strip(),
         re.MULTILINE
     )
