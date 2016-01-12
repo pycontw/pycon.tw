@@ -26,6 +26,8 @@
 
 body {
     @include roboto-light;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 .navbar {
