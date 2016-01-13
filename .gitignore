@@ -75,9 +75,10 @@ Desktop.ini
 # Cache
 CACHE
 
-# coverage
+# Testing
 .coverage
 .cache
+.tox
 
 # deploy key for travis
 deploy_key

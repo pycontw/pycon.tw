@@ -84,12 +84,18 @@ def language_gen():
 
 
 @pytest.fixture(params=language_gen())
-def language(request):
-    return request.param
+def language(request, settings):
+    lang = request.param
+
+    def activate_default_language():
+        activate(settings.LANGUAGE_CODE)
+
+    request.addfinalizer(activate_default_language)
+    activate(lang)
+    return lang
 
 
 def test_content_pages(client, language, content_page_path):
-    activate(language)
     path = '/' + language + '/' + content_page_path
     response = client.get(path)
     assert response.status_code == 200, path

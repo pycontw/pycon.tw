@@ -66,13 +66,25 @@ Now you’re all set!
 
 ## Run Tests
 
-Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). To run tests:
+Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). You have two options to run tests, either with the local environment, or in an isolated one via [Tox](http://tox.readthedocs.org/en/latest/).
+
+
+### Testing in the Local Environment
+
+Run the following command inside `src`:
 
     py.test
 
 To run tests with coverage report:
 
     py.test --cov=.
+
+
+### Testing with Tox
+
+Run the following inside the top-level directory (the one with `tox.ini`):
+
+    tox
 
 
 ## How to Contribute

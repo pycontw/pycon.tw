@@ -1,4 +1,4 @@
--r local.txt
+-r dev.txt
 codecov
 fabric3
 psycopg2
