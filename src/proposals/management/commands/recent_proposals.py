@@ -1,12 +1,16 @@
 import logging
 from datetime import timedelta
+
+from tabulate import tabulate
+
 from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Q
 from django.utils.timezone import now
-from tabulate import tabulate
+
 from proposals.models import TalkProposal, TutorialProposal
 
 logger = logging.getLogger(__file__)
+
 
 def str_stripper(s, max_len=32):
     if len(s) > max_len:
@@ -61,7 +65,8 @@ class Command(BaseCommand):
 
     def cry(self):
         self.stderr.write(self.style.NOTICE(
-            'No proposals are recently submitted. How come ...'
+            'No proposals are recently submitted '
+            '◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣'
         ))
 
     def proposal_summary(self, queryset):
@@ -77,4 +82,3 @@ class Command(BaseCommand):
             ['Category', 'Python Level', 'Title'],
             tablefmt='simple'
         ))
-
