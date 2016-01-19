@@ -111,6 +111,7 @@ def test_recent_tutorial_proposals_only(
     make_proposal_created_earlier(tutorial_proposal)
     call_command('recent_proposals', hour=today_valid_hour)
     out, err = capsys.readouterr()
+    print(out)
 
     assert 'Talks:\n' not in out
     assert 'Tutorials:\n' in out
@@ -132,13 +133,13 @@ def test_no_recent_proposal(today_valid_hour, capsys):
     call_command('recent_proposals', hour=today_valid_hour)
     out, err = capsys.readouterr()
     print(err)
-    assert re.search('^No proposals are recently submitted', err, re.MULTILINE)
+    assert re.search('^No proposals are recently submitted', out, re.MULTILINE)
 
 
 def test_justly_created_proposal(talk_proposal, today_valid_hour, capsys):
     call_command('recent_proposals', hour=today_valid_hour)
     out, err = capsys.readouterr()
-    assert re.search('^No proposals are recently submitted', err, re.MULTILINE)
+    assert re.search('^No proposals are recently submitted', out, re.MULTILINE)
 
 
 @pytest.mark.parametrize('hour', [-1, 25])

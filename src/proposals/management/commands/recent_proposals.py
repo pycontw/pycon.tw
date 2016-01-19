@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime, timedelta
+from io import StringIO
 
 from tabulate import tabulate
 import pytz
@@ -37,6 +38,10 @@ def proposal_summary(queryset):
 class Command(BaseCommand):
     help = "Summarize the recent proposal submits."
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.msg = StringIO()
+
     def add_arguments(self, parser):
         parser.add_argument(
             '--days',
@@ -56,27 +61,42 @@ class Command(BaseCommand):
             21:00. An error will be raised if the given hour time has not come.
             """
         )
+        parser.add_argument(
+            '--mailto',
+            metavar='ADDR',
+            type=str,
+            default=None,
+            help="""If set, mail the stdout to the given address."""
+        )
 
     def handle(self, *args, **options):
         recent_lookup = self.create_datetime_range_lookup(*args, **options)
         recent_talks = TalkProposal.objects.filter(recent_lookup)
         recent_tutorials = TutorialProposal.objects.filter(recent_lookup)
-        if not recent_talks.exists() and not recent_tutorials.exists():
-            self.cry()
-            return
-
-        self.stdout.write(
-            'Got total {:d} new proposals'.format(
+        self.msg.write(
+            'Got total {:d} new proposals\n'.format(
                 recent_talks.count() + recent_tutorials.count()
             ))
+        if not recent_talks.exists() and not recent_tutorials.exists():
+            self.cry()
+        else:
+            self.summary(recent_talks, recent_tutorials)
+        self.report(options['mailto'])
 
+    def summary(self, recent_talks, recent_tutorials):
         if recent_talks:
-            self.stdout.write('\n\nTalks:')
-            self.stdout.write(proposal_summary(recent_talks))
+            self.msg.write('\n\nTalks:\n')
+            self.msg.write(proposal_summary(recent_talks))
 
         if recent_tutorials:
-            self.stdout.write('\n\nTutorials:')
-            self.stdout.write(proposal_summary(recent_tutorials))
+            self.msg.write('\n\nTutorials:\n')
+            self.msg.write(proposal_summary(recent_tutorials))
+
+    def report(self, mailto=None):
+        if mailto:
+            pass
+        else:
+            self.stdout.write(self.msg.getvalue())
 
     def create_datetime_range_lookup(self, *args, **options):
         """Create valid recent datetime range and return a lookup Q object"""
@@ -106,9 +126,9 @@ class Command(BaseCommand):
                 .format(today_dt, taiwan_tz)
             )
         earliest_dt = today_dt - timedelta(days=recent_days)
-        self.stderr.write(
-            'Collecting recent {:d} days proposals '
-            'from {:%Y-%m-%d %H:%M} to {:%Y-%m-%d %H:%M} (timezone: {!s})'
+        self.msg.write(
+            'Recent {:d} days proposals \n'
+            'From {:%Y-%m-%d %H:%M} to {:%Y-%m-%d %H:%M} (timezone: {!s})\n'
             .format(recent_days, earliest_dt, today_dt, taiwan_tz)
         )
         recent_lookup = Q(
@@ -119,9 +139,9 @@ class Command(BaseCommand):
         return recent_lookup
 
     def cry(self):
-        self.stderr.write(self.style.NOTICE(
-            'No proposals are recently submitted '
-            '◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣'
-        ))
+        self.msg.write(
+            'No proposals are recently submitted\n'
+            '◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣\n'
+        )
 
 
