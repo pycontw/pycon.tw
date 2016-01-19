@@ -381,10 +381,10 @@ body {
     &__photo {
         width: $keynote-speaker-photo-size;
         height: $keynote-speaker-photo-size;
-        position: relative;
-        left: 50%;
+        //position: relative;
+        //left: 50%;
         margin-top: $keynote-speaker-photo-size / -2;
-        margin-left: $keynote-speaker-photo-size / -2;
+        //margin-left: $keynote-speaker-photo-size / -2;
         margin-bottom: 4em;
         border-radius: 50%;
         border: 3px solid $theme-color;
@@ -396,6 +396,10 @@ body {
         color: $keynote-speaker__url-color;
         margin-bottom: 4em;
         display: block;
+    }
+
+    a {
+        color: $keynote-speaker__url-color;
     }
 }
 
