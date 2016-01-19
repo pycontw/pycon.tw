@@ -85,6 +85,7 @@ class Command(BaseCommand):
                 recent_talks.count() + recent_tutorials.count()
             ))
         self.report(start_dt, end_dt, options['mailto'])
+        self.msg.close()  # close the StringIO
 
     def summary(self, recent_talks, recent_tutorials):
         """Print out the proposal summary table"""
@@ -112,7 +113,6 @@ class Command(BaseCommand):
                 fail_silently=False,
             )
         self.stdout.write(self.msg.getvalue())
-        self.msg.close()
 
     def create_datetime_range_lookup(self, recent_days, day_shift_hour):
         """Create valid recent datetime range and return a lookup Q object"""
