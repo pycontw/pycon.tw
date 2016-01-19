@@ -9,81 +9,193 @@
 {# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
 {# begin .conf #}
 <div class="section conf">
-    <div class="block container">
-        <div class="section keynote">
-            <h2 class="section__heading">Keynote Speakers</h2>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">
-                        Amber Brown
-                    </div>
-                    <a class="keynote-speaker__url" href="#" target="_blank">
-                    </a>
-                    <h4 class="keynote-speaker__heading h4">Bio</h4>
-                    <p class="keynote-speaker__body">
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">
-                        Audrey Tang (au)
-                    </div>
-                    <a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank">
-                        https://twitter.com/audreyt
-                    </a>
-                    <h4 class="keynote-speaker__heading h4">Bio</h4>
-                    <p class="keynote-speaker__body">
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">
-                        Jim Huang (jserv)
-                    </div>
-                    <a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank">
-                        https://twitter.com/jserv
-                    </a>
-                    <h4 class="keynote-speaker__heading h4">Bio</h4>
-                    <p class="keynote-speaker__body">
-                        Jim Huang (黃敬群)，慣用網路暱稱為「jserv」，熱血工讀生。 自 1999
-                        年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有
-                        GUTS、更有能力面對資訊科技產業的種種挑戰。
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">
-                        Paul Hildebrandt
-                    </div>
-                    <a class="keynote-speaker__url" href="#" target="_blank">
-                    </a>
-                    <h4 class="keynote-speaker__heading h4">Bio</h4>
-                    <p class="keynote-speaker__body">
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="keynote-speaker">
-                    <div class="keynote-speaker__photo"></div>
-                    <div class="keynote-speaker__name">
-                        Steve Dower
-                    </div>
-                    <a class="keynote-speaker__url" href="#" target="_blank">
-                    </a>
-                    <h4 class="keynote-speaker__heading h4">Bio</h4>
-                    <p class="keynote-speaker__body">
-                    </p>
-                </div>
-            </div>
-        </div><!-- /.sec.keynote -->
-    </div>
+	<div class="block">
+		<div class="section keynote">
+			<h2 class="section__heading">Keynote Speakers</h2>
+			<div class="row">
+				<div class="keynote-speaker">
+					<img class="keynote-speaker__photo"
+						src="{% static "images/LogoIcon_white@2x.png" %}"
+						alt="Keynote Headpic">
+					<div class="keynote-speaker__name">
+						Amber Brown (HawkOwl)
+					</div>
+					<div class="keynote-speaker__url">
+						<a href="https://twitter.com/hawkieowl" target="_blank">@hawkieowl</a><br>
+						<a href="http://atleastfornow.net/" target="_blank">http://atleastfornow.net/</a>
+					</div>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<p class="keynote-speaker__body">
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="keynote-speaker">
+					<img class="keynote-speaker__photo"
+						src="{% static "images/LogoIcon_white@2x.png" %}"
+						alt="Keynote Headpic">
+					<div class="keynote-speaker__name">
+						Audrey Tang (au)
+					</div>
+					<a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank">
+						@audreyt
+					</a>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<div class="keynote-speaker__body">
+						<p>
+							Audrey showed an early interest in computers, beginning to learn
+							Perl programming at age 12. Two years later, she dropped out of
+							high school, unable to adapt to student life. By the year 2000,
+							at the age of 19, Audrey  had already held positions in software
+							companies, and worked in California's Silicon Valley as an
+							entrepreneur.
+						</p><p>
+							Audrey is best known for initiating and leading the Pugs project,
+							a joint effort from the Haskell and Perl communities to implement
+							the Perl 6 language; she has also made contributions to
+							internationalization and localization efforts for several Free
+							Software programs, including SVK, Request Tracker (for which she
+							also wrote a large portion of the code) and Slash, as well as
+							heading Traditional Chinese translation efforts for various open
+							source-related books.
+						</p>
+						<p>
+							On CPAN, Audrey initiated over 100 Perl projects between June
+							2001 and July 2006, including the popular Perl Archive Toolkit
+							(PAR), a cross-platform packaging and deployment tool for Perl 5.
+							She is also responsible for setting up smoke test and digital
+							signature systems for CPAN. In October 2005, she was a speaker at
+							O'Reilly Media's European Open Source Convention in Amsterdam.
+						</p>
+						<p>
+							Now she has retired and continuously engaged in developing a
+							variety of tools and platforms to participate open government g0v
+							events.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="keynote-speaker">
+					<img class="keynote-speaker__photo"
+						src="{% static "images/LogoIcon_white@2x.png" %}"
+						alt="Keynote Headpic">
+					<div class="keynote-speaker__name">
+						Jim Huang (jserv)
+					</div>
+					<a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank">
+						@jserv
+					</a>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<div class="keynote-speaker__body">
+						<p>
+							Jim Huang, the nickname is “jserv” on the website. As a little
+							child, he had connected computer systems and a variety of
+							programming languages. In 1997, he tried to develop the operating
+							system, and hence touched Linux.  After that, he has acted on
+							Open Source. In 1999, he cooperated in web company; as the end of
+							it, he decided that dropped out of university and go to service
+							in the army.
+						</p>
+						<p>
+							When the time in the army, he continues enriched himself. Until
+							he was working, he was still research and implement. Especially,
+							he has enforced in integrating software and hardware. Besides, to
+							assist Taiwan’s enterprises in connection with Open Systems and
+							dynamic Groups.
+						</p>
+						<p>
+							In 2009, jserv built in 0xLab with friends from Groups; 0xLAb was
+							applied project of software and hardware integration. In 2014,
+							jserv built SSX with friends and be Chief Technology Officer; SSX
+							is a venture capital company and concern in intelligent hardware,
+							health, healthcare, IOT, etc. And SSX has still helped lots of
+							star-up company in Southern Taiwan.
+						</p>
+						<p>
+							In addition, jserve is Consultant of MediaTek, ICL of ITRI,
+							DELTA. Moreover, from 2012, jserv was invited by NCKU to be a
+							lecturer.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="keynote-speaker">
+					<img
+						class="keynote-speaker__photo"
+						src="{% static "images/keynotes/paul_hildebrandt.jpg" %}"
+						alt="Keynote Headpic">
+					<div class="keynote-speaker__name">
+						Paul Hildebrandt
+					</div>
+					<a class="keynote-speaker__url" href="#" target="_blank">
+					</a>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<div class="keynote-speaker__body">
+						<p>
+							Paul Hildebrandt has been a Senior Engineer with Walt Disney
+							Animation Studios (WDAS) since 1996, and has worked in both
+							Systems and Software engineering. His current title is Senior
+							Software Engineer and Product Owner for the Playback tools among
+							his primary duties is spending time working with the artists,
+							understanding their needs, and designing tools to assist them. If
+							he is lucky, he gets to write code.
+						</p>
+						<p>
+							Hildebrandt leads a team that is responsible for developing the
+							digital asset manager, media player, dailies review system with a
+							mobile interface, and other related tools. These tools are
+							available on a variety of platforms including Linux, Mac, iOS,
+							and Android. Among the Disney animated films that he has
+							contributed are Zootopia, the Oscar® winning hits "Big Hero 6",
+							"Frozen" and Oscar®-nominated box office hits, "Wreck-It Ralph,"
+							"Tangled," "Bolt," "Treasure Planet," and "Dinosaur." He is WDAS'
+							evangelist for PyCon and other Python sponsorships.
+						</p>
+						<p>
+							Prior to joining Disney, Hildebrandt spent eight years with
+							Hughes Aircraft as a Senior Engineer working on commercial
+							in-flight entertainment for airlines and the Stealth Bomber
+							trainers. He also served as the electrical lead for a team that
+							raced a solar car across Australia in the 1990 World Solar
+							Challenge. The team finished in the top third.
+						</p>
+						<p>
+							Hildebrandt was born and raised in Anaheim, California. He
+							received his BSEE with a focus on Computing from California
+							Polytechnic University Pomona. He resides outside of Los Angeles
+							with his wife and three boys.
+						</p>
+			</div> </div> </div>
+			<div class="row">
+				<div class="keynote-speaker">
+					<img class="keynote-speaker__photo"
+						src="{% static "images/keynotes/steve_dower.jpg" %}"
+						alt="Keynote Headpic">
+					<div class="keynote-speaker__name">
+						Steve Dower
+					</div>
+					<div class="keynote-speaker__url">
+						<a href="https://twitter.com/zooba" target="_blank">@zooba</a><br>
+						<a href="http://stevedower.id.au/" target="_blank">http://stevedower.id.au/</a>
+					</div>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<div class="keynote-speaker__body">
+						<p>
+							Steve is an engineer who tells people about Python and then gives them excuses
+							to use it and great tools to use it with. He works on Python Tools for Visual
+							Studio, contributes to many of Microsoft’s Python libraries, and is a core
+							contributor and Windows expert for CPython.
+						</p>
+						<p>
+							He now works as a software engineer at Microsoft.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.sec.keynote -->
+	</div>
 </div>
 {# end .sec-conf #}
 {% endblock content %}
