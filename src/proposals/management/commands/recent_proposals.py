@@ -1,16 +1,16 @@
-import logging
 from datetime import datetime, timedelta
 from io import StringIO
 
 from tabulate import tabulate
 import pytz
-
+from django.core.mail import send_mail
 from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Q
 
 from proposals.models import TalkProposal, TutorialProposal
 
-logger = logging.getLogger(__file__)
+utc_tz = pytz.UTC
+taiwan_tz = pytz.timezone('Asia/Taipei')
 
 
 def str_stripper(s, max_len=32, ellipsis='...'):
@@ -66,49 +66,61 @@ class Command(BaseCommand):
             metavar='ADDR',
             type=str,
             default=None,
-            help="""If set, mail the stdout to the given address."""
+            help="""If set, mail the summary to the given address."""
         )
 
     def handle(self, *args, **options):
-        recent_lookup = self.create_datetime_range_lookup(*args, **options)
+        """The command working logic"""
+        recent_lookup, start_dt, end_dt = self.create_datetime_range_lookup(
+            recent_days=options['days'], day_shift_hour=options['hour']
+        )
         recent_talks = TalkProposal.objects.filter(recent_lookup)
         recent_tutorials = TutorialProposal.objects.filter(recent_lookup)
-        self.msg.write(
-            'Got total {:d} new proposals\n'.format(
-                recent_talks.count() + recent_tutorials.count()
-            ))
         if not recent_talks.exists() and not recent_tutorials.exists():
             self.cry()
         else:
             self.summary(recent_talks, recent_tutorials)
-        self.report(options['mailto'])
+        self.msg.write(
+            '\n\nGot total {:d} new proposals\n'.format(
+                recent_talks.count() + recent_tutorials.count()
+            ))
+        self.report(start_dt, end_dt, options['mailto'])
 
     def summary(self, recent_talks, recent_tutorials):
+        """Print out the proposal summary table"""
         if recent_talks:
-            self.msg.write('\n\nTalks:\n')
-            self.msg.write(proposal_summary(recent_talks))
+            self.msg.write('\nTalks:\n\n')
+            print(proposal_summary(recent_talks), file=self.msg)
 
         if recent_tutorials:
-            self.msg.write('\n\nTutorials:\n')
-            self.msg.write(proposal_summary(recent_tutorials))
+            self.msg.write('\nTutorials:\n\n')
+            print(proposal_summary(recent_tutorials), file=self.msg)
 
-    def report(self, mailto=None):
+    def report(self, start_dt, end_dt, mailto=None):
+        """Report to either the stdout or mailing to some address"""
         if mailto:
-            pass
-        else:
-            self.stdout.write(self.msg.getvalue())
+            subject = (
+                '[PyConTW2016][Program] Proposal submission summary '
+                'from {:%m/%d} to {:%m/%d}'
+                .format(start_dt, end_dt)
+            )
+            send_mail(
+                subject=subject,
+                message=self.msg.getvalue(),
+                from_email=None,
+                recipient_list=[mailto],
+                fail_silently=False,
+            )
+        self.stdout.write(self.msg.getvalue())
+        self.msg.close()
 
-    def create_datetime_range_lookup(self, *args, **options):
+    def create_datetime_range_lookup(self, recent_days, day_shift_hour):
         """Create valid recent datetime range and return a lookup Q object"""
-        utc_tz = pytz.UTC
-        taiwan_tz = pytz.timezone('Asia/Taipei')
-        recent_days = options['days']
         if recent_days <= 0:
             raise CommandError(
                 'Given number of days %d is not a positive number'
                 % recent_days
             )
-        day_shift_hour = options['hour']
         today_utc_dt = utc_tz.fromutc(datetime.utcnow())
         # To find the datetime range in Taiwan timezone
         #   today-N H:00 to today H:00
@@ -127,8 +139,9 @@ class Command(BaseCommand):
             )
         earliest_dt = today_dt - timedelta(days=recent_days)
         self.msg.write(
-            'Recent {:d} days proposals \n'
-            'From {:%Y-%m-%d %H:%M} to {:%Y-%m-%d %H:%M} (timezone: {!s})\n'
+            'Proposals submitted during the recent {:d} days\n'
+            'From {:%Y-%m-%d %H:%M} to {:%Y-%m-%d %H:%M}\n'
+            '(Timezone: {!s})\n\n'
             .format(recent_days, earliest_dt, today_dt, taiwan_tz)
         )
         recent_lookup = Q(
@@ -136,7 +149,7 @@ class Command(BaseCommand):
             created_at__lt=today_dt,
             cancelled=False,
         )
-        return recent_lookup
+        return recent_lookup, earliest_dt, today_dt
 
     def cry(self):
         self.msg.write(

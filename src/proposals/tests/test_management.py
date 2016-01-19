@@ -4,8 +4,10 @@ import re
 import pytest
 import pytz
 from django.utils.timezone import now
+from django.core import mail
 from django.core.management import call_command
 from django.core.management.base import CommandError
+from django.test import override_settings
 
 from proposals.models import TalkProposal
 
@@ -116,6 +118,28 @@ def test_recent_tutorial_proposals_only(
     assert 'Talks:\n' not in out
     assert 'Tutorials:\n' in out
     assert re.search(r"^Got total 1 new proposals", out, re.MULTILINE)
+
+
+# Testing mailing ability
+
+@override_settings(     # Make sure we don't really send an email.
+    EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend',
+    DEFAULT_FROM_EMAIL='dev@pycon.tw',
+)
+def test_command_send_mail(dayago_talk_proposal, today_valid_hour):
+    call_command(
+        'recent_proposals',
+        hour=today_valid_hour,
+        mailto='receiver@pycon.tw',
+    )
+    assert len(mail.outbox) == 1
+
+    email = mail.outbox[0]
+    assert email.from_email == 'dev@pycon.tw'
+    assert email.to == ['receiver@pycon.tw']
+    assert email.subject.startswith(
+        '[PyConTW2016][Program] Proposal submission summary'
+    )
 
 
 # Testing edge cases
