@@ -172,6 +172,15 @@ def test_invalid_hour(hour):
         call_command('recent_proposals', hour=hour)
     assert 'Given hour %d is invalid' % hour in str(e.value)
 
+@pytest.mark.django_db
+def test_default_hour_option(capsys):
+    now_dt = taiwan_tz.normalize(now())
+    call_command('recent_proposals')
+    out, err = capsys.readouterr()
+    assert re.search(
+        r'to {:%Y-%m-%d %H}:00$'.format(now_dt),
+        out, re.MULTILINE
+    )
 
 def test_yet_present_hour():
     now_dt = taiwan_tz.normalize(now())
