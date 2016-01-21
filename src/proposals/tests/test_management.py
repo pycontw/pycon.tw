@@ -175,7 +175,7 @@ def test_invalid_hour(hour):
 
 def test_yet_present_hour():
     now_dt = taiwan_tz.normalize(now())
-    if now_dt == 23:
+    if now_dt.hour == 23:
         # FIXME: cannot test this between 23:00 - 23:59
         return
     with pytest.raises(CommandError) as e:

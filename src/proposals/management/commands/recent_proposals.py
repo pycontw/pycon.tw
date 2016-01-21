@@ -54,11 +54,12 @@ class Command(BaseCommand):
             '--hour',
             metavar='H',
             type=int,
-            default=21,
+            default=None,
             help="""
             Set the hour to cut the day shift. For example, if 21 O\'clock in
             is set, it finds proposals submitted between today-N 21:00 to today
             21:00. An error will be raised if the given hour time has not come.
+            By default, it uses the nearest valid local (Asia/Taipei) hour.
             """
         )
         parser.add_argument(
@@ -122,6 +123,8 @@ class Command(BaseCommand):
                 % recent_days
             )
         today_utc_dt = utc_tz.fromutc(datetime.utcnow())
+        if day_shift_hour is None:
+            day_shift_hour = taiwan_tz.normalize(today_utc_dt).hour
         # To find the datetime range in Taiwan timezone
         #   today-N H:00 to today H:00
         try:
