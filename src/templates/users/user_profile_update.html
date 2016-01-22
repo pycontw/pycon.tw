@@ -19,22 +19,22 @@
 	<div class="nesting-form-group">
 		{{ form.non_field_errors }}
 		<div class="form-group {% if form.photo.errors %}has-error{% endif %}">
-		    <label for="{{ form.photo.id_for_label }}" class="control-label field_title">{% trans 'Profile Picture' %}</label>
-		    <div class="profile_pic_panel">
-		    	<div>
-		    		<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
-		    	</div>
-		    	<div class="btn upload-btn btn-natural">
-		    		<span class="btn-natural hide">{% trans 'Upload' %}</span>
-		    		<input id="id_photo" name="photo" type="file" data-value-display="id_photo_value" />
-		    	</div>
-		    	<div id="id_photo_value" class="text-muted"></div>
-		    </div>
-		    {% if form.photo.errors %}
-		    <p class="help-block">{% for error in form.photo.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
-		    {% endif %}
-		    <p class="help-block">{% trans 'Provide a square photo at least 800&times;800 pixels in size for best results in our printed conference booklet.' %}</p>
-	    </div>
+			<label for="{{ form.photo.id_for_label }}" class="control-label field_title">{% trans 'Profile Picture' %}</label>
+			<div class="profile_pic_panel">
+				<div>
+					<img class="img-circle pic" src="{% if form.photo.value %}{{ form.instance.photo.url }}{% else %}{% static 'images/default_head.png' %}{% endif %}">
+				</div>
+				<div class="btn upload-btn btn-natural">
+					<span class="btn-natural hide">{% trans 'Upload' %}</span>
+					<input id="id_photo" name="photo" type="file" data-value-display="id_photo_value" />
+				</div>
+				<div id="id_photo_value" class="text-muted"></div>
+			</div>
+			{% if form.photo.errors %}
+			<p class="help-block">{% for error in form.photo.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+			{% endif %}
+			<p class="help-block">{% trans 'Provide a square photo at least 800&times;800 pixels in size for best results in our printed conference booklet.' %}</p>
+		</div>
 	</div>
 	<div class="form-group {% if form.speaker_name.errors %}has-error{% endif %}">
 		<label for="{{ form.speaker_name.id_for_label }}" class="control-label field_title requiredField">
@@ -42,21 +42,57 @@
 		</label>
 		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.speaker_name.value }}">
 		{% if form.speaker_name.errors %}
-			<p class="help-block">{% for error in form.speaker_name.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		<p class="help-block">{% for error in form.speaker_name.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
 		{% endif %}
 	</div>
 	<div class="form-group {% if form.bio.errors %}has-error{% endif %}">
-	    {{ form.bio.errors }}
-	    <label for="{{ form.bio.id_for_label }}" class="control-label field_title requiredField">
-	    	{% trans 'Biography' %}<span class="asteriskField">*</span>
-	    </label>
-	    <textarea id="id_bio" name="bio" maxlength="{{ form.bio.field.widget.attrs.maxlength }}" class="form-control field character-counted bio_field">{{ form.bio.value }}</textarea>
-	    {% if form.bio.errors %}
-			<p class="help-block">{% for error in form.bio.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{{ form.bio.errors }}
+		<label for="{{ form.bio.id_for_label }}" class="control-label field_title requiredField">
+			{% trans 'Biography' %}<span class="asteriskField">*</span>
+		</label>
+		<textarea id="id_bio" name="bio" maxlength="{{ form.bio.field.widget.attrs.maxlength }}" class="form-control field character-counted bio_field">{{ form.bio.value }}</textarea>
+		{% if form.bio.errors %}
+		<p class="help-block">{% for error in form.bio.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
 		{% endif %}
-	    <div class="help-block">
-	    	<p>{% trans form.bio.help_text %}</p>
-	    </div>
+		<div class="help-block">
+			<p>{% trans form.bio.help_text %}</p>
+		</div>
+	</div>
+	<div class="form-group{% if form.facebook_profile_url.errors %} has-error{% endif %}">
+		<label for="{{ form.facebook_profile_url.id_for_label }}" class="control-label field_title">
+			{% trans 'Facebook Profile Page' %}
+		</label>
+		<input id="id_facebook_profile_url" name="facebook_profile_url" type="url" class="form-control field facebook_profile_url_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.facebook_profile_url.value }}">
+		{% if form.facebook_profile_url.errors %}
+		<p class="help-block">{% for error in form.facebook_profile_url.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{% endif %}
+		<p class="help-block">{{ form.facebook_profile_url.help_text }}</p>
+	</div>
+	<div class="form-group{% if form.twitter_id.errors %} has-error{% endif %}">
+		<label for="{{ form.twitter_id.id_for_label }}" class="control-label field_title">
+			{% trans 'Twitter Handle' %}
+		</label>
+		<div class="input-group">
+			<span class="input-group-addon">@</span>
+			<input id="id_twitter_id" name="twitter_id" type="url" class="form-control field twitter_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.twitter_id.value }}">
+		</div>
+		{% if form.twitter_id.errors %}
+		<p class="help-block">{% for error in form.twitter_id.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{% endif %}
+		<p class="help-block">{{ form.twitter_id.help_text }}</p>
+	</div>
+	<div class="form-group{% if form.github_id.errors %} has-error{% endif %}">
+		<label for="{{ form.github_id.id_for_label }}" class="control-label field_title">
+			{% trans 'GitHub Username' %}
+		</label>
+		<div class="input-group">
+			<span class="input-group-addon">@</span>
+			<input id="id_github_id" name="github_id" type="url" class="form-control field github_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.github_id.value }}">
+		</div>
+		{% if form.github_id.errors %}
+		<p class="help-block">{% for error in form.github_id.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
+		{% endif %}
+		<p class="help-block">{{ form.github_id.help_text }}</p>
 	</div>
 
 	<button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>

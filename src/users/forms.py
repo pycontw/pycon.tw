@@ -138,14 +138,20 @@ class UserProfileUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('speaker_name', 'bio', 'photo')
+        fields = (
+            'speaker_name', 'bio', 'photo',
+            'facebook_profile_url', 'twitter_id', 'github_id',
+        )
 
     def clean_photo(self):
         photo = self.cleaned_data.get('photo')
         if not photo:
             return photo
 
-        width, height = get_image_dimensions(photo)
+        try:
+            width, height = get_image_dimensions(photo)
+        except FileNotFoundError:
+            width = height = 0
         if width < 800 or height < 800:
             raise forms.ValidationError(self.get_error_message(
                 'photo_too_small', width=width, height=height,
