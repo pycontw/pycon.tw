@@ -213,6 +213,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def cospeaking_info_set(self):
         return self.additionalspeaker_set.filter(cancelled=False)
 
+    @property
+    def twitter_profile_url(self):
+        return 'https://twitter.com/{}'.format(self.twitter_id)
+
+    @property
+    def github_profile_url(self):
+        return 'https://github.com/{}'.format(self.github_id)
+
     def get_verification_key(self):
         key = signing.dumps(
             obj=getattr(self, self.USERNAME_FIELD),
