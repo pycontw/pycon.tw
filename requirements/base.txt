@@ -39,6 +39,14 @@ ipython==4.0.1
 # http://python-pillow.github.io
 Pillow==3.1.0
 
+# World Timezone Definitions for Python.
+# http://pythonhosted.org/pytz/
+pytz==2015.7
+
 # Transifex, an online translation collaboration platform
 # http://docs.transifex.com/client/
 transifex-client==0.11
+
+# Tabulate, an utility for pretty-print tabular data
+# https://bitbucket.org/astanin/python-tabulate
+tabulate==0.7.5
