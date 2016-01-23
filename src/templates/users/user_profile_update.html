@@ -40,7 +40,7 @@
 		<label for="{{ form.speaker_name.id_for_label }}" class="control-label field_title requiredField">
 			{% trans 'Your Name' %}<span class="asteriskField">*</span>
 		</label>
-		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.speaker_name.value }}">
+		<input id="id_speaker_name" name="speaker_name" type="text" class="form-control field name_field" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" value="{{ form.speaker_name.value }}">
 		{% if form.speaker_name.errors %}
 		<p class="help-block">{% for error in form.speaker_name.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
 		{% endif %}
@@ -62,7 +62,7 @@
 		<label for="{{ form.facebook_profile_url.id_for_label }}" class="control-label field_title">
 			{% trans 'Facebook Profile Page' %}
 		</label>
-		<input id="id_facebook_profile_url" name="facebook_profile_url" type="url" class="form-control field facebook_profile_url_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.facebook_profile_url.value }}">
+		<input id="id_facebook_profile_url" name="facebook_profile_url" type="url" class="form-control field facebook_profile_url_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" value="{{ form.facebook_profile_url.value }}">
 		{% if form.facebook_profile_url.errors %}
 		<p class="help-block">{% for error in form.facebook_profile_url.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
 		{% endif %}
@@ -74,7 +74,7 @@
 		</label>
 		<div class="input-group">
 			<span class="input-group-addon">@</span>
-			<input id="id_twitter_id" name="twitter_id" type="url" class="form-control field twitter_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.twitter_id.value }}">
+			<input id="id_twitter_id" name="twitter_id" type="text" class="form-control field twitter_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" value="{{ form.twitter_id.value }}">
 		</div>
 		{% if form.twitter_id.errors %}
 		<p class="help-block">{% for error in form.twitter_id.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
@@ -87,7 +87,7 @@
 		</label>
 		<div class="input-group">
 			<span class="input-group-addon">@</span>
-			<input id="id_github_id" name="github_id" type="url" class="form-control field github_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="{{ form.github_id.value }}">
+			<input id="id_github_id" name="github_id" type="text" class="form-control field github_id_field sms_identity_field" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" value="{{ form.github_id.value }}">
 		</div>
 		{% if form.github_id.errors %}
 		<p class="help-block">{% for error in form.github_id.errors %}<strong>{{ error }}</strong>{% endfor %}</p>
