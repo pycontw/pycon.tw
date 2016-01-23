@@ -7,10 +7,13 @@ from django.contrib.auth.models import (
 from django.core import signing
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
+from django.core.validators import RegexValidator
 from django.db import models
 from django.template.loader import render_to_string
 from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
+
+from core.utils import format_html_lazy
 
 
 class UserQueryset(models.QuerySet):
@@ -118,17 +121,37 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('photo'),
         blank=True, default='', upload_to=photo_upload_to,
     )
-    facebook_id = models.CharField(
+    facebook_profile_url = models.URLField(
         verbose_name=_('Facebook'),
-        blank=True, max_length=100,
+        blank=True,
+        help_text=format_html_lazy(_(
+            "Link to your Facebook profile page. This will be shown when "
+            "we display your public information. If you do not know what your "
+            "profile page link is, click on "
+            "<a href='https://www.facebook.com/me' target='_blank'>"
+            "this link</a>, and copy-paste the URL of the page opened. "
+            "Remember to log in to Facebook first!"
+        )),
     )
     twitter_id = models.CharField(
         verbose_name=_('Twitter'),
-        blank=True, max_length=100,
+        blank=True, max_length=100, validators=[
+            RegexValidator(r'^[0-9a-zA-Z]*$', 'Not a valid Twitter handle'),
+        ],
+        help_text=_(
+            "Your Twitter handle, without the \"@\" sign. This will be "
+            "shown when we display your public information."
+        ),
     )
     github_id = models.CharField(
         verbose_name=_('GitHub'),
-        blank=True, max_length=100,
+        blank=True, max_length=100, validators=[
+            RegexValidator(r'^[0-9a-zA-Z]*$', 'Not a valid GitHub account'),
+        ],
+        help_text=_(
+            "Your GitHub account, without the \"@\" sign. This will be "
+            "shown when we display your public information."
+        ),
     )
     verified = models.BooleanField(
         verbose_name=_('verified'),
@@ -189,6 +212,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def cospeaking_info_set(self):
         return self.additionalspeaker_set.filter(cancelled=False)
+
+    @property
+    def twitter_profile_url(self):
+        return 'https://twitter.com/{}'.format(self.twitter_id)
+
+    @property
+    def github_profile_url(self):
+        return 'https://github.com/{}'.format(self.github_id)
 
     def get_verification_key(self):
         key = signing.dumps(
