@@ -5,8 +5,23 @@
     font-weight: 500;
 }
 
-
 @mixin roboto-light() {
     font-family: $font-family-sans-serif;
     font-weight: 300;
+}
+
+@mixin roboto-normal() {
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+
+    // Retina screens.
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+        font-weight: 300;
+    }
 }
