@@ -41,6 +41,8 @@ DROP_ID_FIELD_BIGINT_DEFAULT = """
         SET DEFAULT nextval('users_user_id_seq');
     ALTER TABLE "users_user" ALTER COLUMN "id"
         SET DATA TYPE integer USING "id" % (1 << 23);
+    ALTER TABLE "django_admin_log" ALTER COLUMN "user_id"
+        SET DATA TYPE integer USING "user_id" % (1 << 23);
 """
 
 
