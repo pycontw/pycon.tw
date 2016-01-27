@@ -3,14 +3,60 @@ teams:
   members:
   - title: Chairperson
     name: Tsung-Wei Hu
+  - title: Vice Chairperson
+    name: Wen-Chang Hsu
 
 - key: Program
   members:
   - name: Liang Bo Wang
     tags: lead
-
+  - name: Summit Suen
+  - name: Ming-Yi Huang
+  - name: Victor
+  - name: Tim Hsu
+  - name: Yung-Yu Chen
+  - name: tjw
 - key: Web
   members:
   - name: Michelle Leu
     tags: lead
   - name: Andy Dai
+- key: Public Relation
+  members:
+  - name: Chun-Yu Tseng
+    lead: true
+  - name: Chun-Chia Chen
+  - name: 謝宗翰
+  - name: 詹智翔
+  - name: Ming
+  - name: Dainese
+  - name: 劉慈恩
+  - name: 蕭鈞文
+  - name: 王曉文
+  - name: Yahsin Huang
+- key: Venue
+  members:
+  - name: Catcatcatcat Arissa
+    lead: true
+  - name: Rock Hung
+- key: Registration
+  members:
+  - name: Sosorry
+    lead: true
+- key: Sponsorship
+  members:
+  - name: Ning Chen
+    lead: true
+  - name: Jenny Liang
+  - name: Stanley Huang
+  - name: Chih Cheng Liang
+  - name: Ed Hsu
+  - name: Joannie Huang
+  - name: Bruce Huang
+  - name: Yao-Po Wang
+  - name: Chih-Jen Wu
+  - name: Yahsin Huang
+- key: Finance
+  members:
+  - name: Lloyd
+  - name: TimChen
