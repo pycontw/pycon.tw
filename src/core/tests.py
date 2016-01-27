@@ -25,7 +25,7 @@ def test_collect_language_codes():
     ]
     assert collect_language_codes('zh') == ['zh', 'en-us', 'en', '_default']
     assert collect_language_codes('en-us') == [
-        'en-us', 'en', 'en-us', 'en' '_default',
+        'en-us', 'en', 'en-us', 'en', '_default',
     ]
     assert collect_language_codes('en') == ['en', 'en-us', 'en', '_default']
 
