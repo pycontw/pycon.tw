@@ -99,7 +99,9 @@ def test_cancelled_proposal_not_shown_in_recent_proposals(
 
     # Test only one talk proposal is retrieved
     assert re.search(r"^Got total 1 new proposals", out, re.MULTILINE)
-    assert re.search(another_user_dayago_talk_proposal.title, out, re.MULTILINE)
+    assert re.search(
+        another_user_dayago_talk_proposal.title, out, re.MULTILINE,
+    )
     for proposal in [cancelled_talk_proposal, weekago_talk_proposal]:
         assert not re.search(
             proposal.title, out, re.MULTILINE
@@ -172,6 +174,7 @@ def test_invalid_hour(hour):
         call_command('recent_proposals', hour=hour)
     assert 'Given hour %d is invalid' % hour in str(e.value)
 
+
 @pytest.mark.django_db
 def test_default_hour_option(capsys):
     now_dt = taiwan_tz.normalize(now())
@@ -181,6 +184,7 @@ def test_default_hour_option(capsys):
         r'to {:%Y-%m-%d %H}:00$'.format(now_dt),
         out, re.MULTILINE
     )
+
 
 def test_yet_present_hour():
     now_dt = taiwan_tz.normalize(now())

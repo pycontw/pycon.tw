@@ -1,4 +1,3 @@
-from django.contrib.staticfiles import finders
 from django.http import Http404
 from django.views.generic import TemplateView
 
