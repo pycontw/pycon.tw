@@ -15,9 +15,7 @@
 {% for person in team.members %}
 <li>
 	<span class="staff-person" data-tags="{{ person.tags }}"
-			{% if person.title %}data-title="{{ person.title }}"{% endif %}>
-		{{ person.name }}
-	</span>
+			{% if person.title %}data-title="{{ person.title }}"{% endif %}>{{ person.name }}</span>
 </li>
 {% endfor %}
 </ul>

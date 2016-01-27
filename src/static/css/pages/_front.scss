@@ -68,13 +68,13 @@
     .staff-person {
 
         &[data-title]::before {
-            content: attr(data-title) ":";
+            content: attr(data-title) ": ";
             font-weight: 300;
         }
 
         &::after {
             content: attr(data-tags);
-            margin-left: 0.5ex;
+            margin-left: 1ex;
             font-size: 90%;
             font-style: italic;
             font-weight: 300;
