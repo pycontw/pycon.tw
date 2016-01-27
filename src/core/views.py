@@ -1,9 +1,8 @@
-import yaml
-
 from django.contrib.staticfiles import finders
 from django.http import Http404
 from django.views.generic import TemplateView
 
+from .data import EXTRA_DATA
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
@@ -18,29 +17,16 @@ class FlatPageView(TemplateView):
 
     response_class = TemplateExistanceStatusResponse
 
-    def get_path_components(self, path):
-        components = path.strip('/').split('/')
-        if not components or any(c.startswith('_') for c in components):
-            raise Http404
-        return components
-
-    def load_extra_data(self):
-        *components, basename = self.path_components
-        path = finders.find(
-            '/'.join(['data', 'contents'] + components + [basename + '.yml']),
-        )
-        if path is None:
-            return {}
-        with open(path) as f:
-            return yaml.load(f)
-
     def get(self, request, *args, **kwargs):
-        self.path_components = self.get_path_components(kwargs['path'])
+        path = self.kwargs['path'].strip('/')
+        if not path or any(c.startswith('_') for c in path.split('/')):
+            raise Http404
+        self.path = path
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data.update(self.load_extra_data())
+        data.update(EXTRA_DATA.get(self.path, {}))
         return data
 
     def get_template_names(self):
@@ -66,9 +52,8 @@ class FlatPageView(TemplateView):
         here. This avoids the visitor seeing (accidentally) pages like
         "speaking/base.html".
         """
-        *components, basename = self.path_components
         template_names = [
-            '/'.join(['contents', code] + components + [basename + '.html'])
+            '/'.join(['contents', code, self.path + '.html'])
             for code in collect_language_codes(self.request.LANGUAGE_CODE)
         ]
         return template_names
