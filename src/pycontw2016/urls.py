@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.i18n import set_language
 
-from core.views import flat_page, index
+from core.views import flat_page, index, staff
 from users.views import user_dashboard
 
 
@@ -16,6 +16,8 @@ urlpatterns = i18n_patterns(
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
+
+    url(r'^about/staff/$', staff),
 
     # Match everything except admin, media, and static things.
     url(r'^(?!admin|{media}|{static}/)(?P<path>.*)/$'.format(

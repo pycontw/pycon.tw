@@ -1,3 +1,6 @@
+import yaml
+
+from django.contrib.staticfiles import finders
 from django.http import Http404
 from django.views.generic import TemplateView
 
@@ -52,5 +55,22 @@ class FlatPageView(TemplateView):
         return template_names
 
 
+class StaffPageView(TemplateView):
+
+    template_name = 'contents/_base/staff.html'
+
+    def get_staff_data(self):
+        path = finders.find('data/staff.yml')
+        with open(path) as f:
+            info = yaml.load(f)
+        return info
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data.update(self.get_staff_data())
+        return data
+
+
 index = IndexView.as_view()
 flat_page = FlatPageView.as_view()
+staff = StaffPageView.as_view()

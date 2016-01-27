@@ -61,6 +61,22 @@
     }
 }
 
+.staff-list {
+
+    font-weight: 400;
+
+    .staff-title {
+        font-weight: 300;
+    }
+    .team-lead::after {
+        content: "lead";
+        margin-left: 1ex;
+        font-size: 90%;
+        font-style: italic;
+        font-weight: 300;
+    }
+}
+
 .content-page-footer {
 
     display: table;
