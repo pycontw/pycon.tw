@@ -65,15 +65,20 @@
 
     font-weight: 400;
 
-    .staff-title {
-        font-weight: 300;
-    }
-    .team-lead::after {
-        content: "lead";
-        margin-left: 1ex;
-        font-size: 90%;
-        font-style: italic;
-        font-weight: 300;
+    .staff-person {
+
+        &[data-title]::before {
+            content: attr(data-title) ":";
+            font-weight: 300;
+        }
+
+        &::after {
+            content: attr(data-tags);
+            margin-left: 0.5ex;
+            font-size: 90%;
+            font-style: italic;
+            font-weight: 300;
+        }
     }
 }
 

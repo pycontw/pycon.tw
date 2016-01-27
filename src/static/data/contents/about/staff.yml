@@ -1,14 +1,16 @@
-coordinators:
-- title: Chairperson
-  name: Tsung-Wei Hu
-
 teams:
+- key: Coordinators
+  members:
+  - title: Chairperson
+    name: Tsung-Wei Hu
+
 - key: Program
   members:
   - name: Liang Bo Wang
-    lead: true
+    tags: lead
+
 - key: Web
   members:
   - name: Michelle Leu
-    lead: true
+    tags: lead
   - name: Andy Dai
