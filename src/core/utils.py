@@ -40,6 +40,7 @@ def collect_language_codes(user_code):
     codes.append(settings.LANGUAGE_CODE)
     if '-' in settings.LANGUAGE_CODE:
         codes.append(settings.LANGUAGE_CODE.split('-')[0])
+    codes.append('_default')
     return codes
 
 
