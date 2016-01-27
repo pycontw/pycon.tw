@@ -24,13 +24,14 @@ def collect_language_codes(user_code):
 
     The language code requested is the first choice. If the code indicates a
     sublanguage (e.g. ``zh-hant``), the base language (``zh``) is collected as
-    a fallback. The site's default langauge (``settings.LANGUAGE_CODE``) and
-    its base language (if applicable) are then appended as further fallbacks.
+    a fallback. The site's default langauge (``settings.LANGUAGE_CODE``),
+    its base language (if applicable), and a default directory "_default" are
+    then appended as further fallbacks.
 
     Examples (assuming site language is "en"):
 
-    * "zh-tw" -> "zh-tw", "zh", "en"
-    * "ja"    -> "ja", "en"
+    * "zh-tw" -> "zh-tw", "zh", "en", "_default"
+    * "ja"    -> "ja", "en", "_default"
 
     :returns: An ordered iterable containing collected language codes.
     """
