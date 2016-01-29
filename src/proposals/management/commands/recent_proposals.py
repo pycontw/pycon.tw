@@ -68,7 +68,10 @@ class Command(BaseCommand):
             type=str,
             action="append",
             default=None,
-            help="""If set, mail the summary to the given address."""
+            help="""
+            If set, mail the summary to the given address.
+            Use --mailto multiple times to have more than one email receivers.
+            """
         )
 
     def handle(self, *args, **options):
