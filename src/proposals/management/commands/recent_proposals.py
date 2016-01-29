@@ -3,11 +3,14 @@ from io import StringIO
 
 from tabulate import tabulate
 import pytz
+from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 from django.core.management.base import BaseCommand, CommandError
+from django.conf import settings
 from django.db.models import Q
 
 from proposals.models import TalkProposal, TutorialProposal
+from .slack import Slack
 
 utc_tz = pytz.UTC
 taiwan_tz = pytz.timezone('Asia/Taipei')
@@ -73,6 +76,15 @@ class Command(BaseCommand):
             Use --mailto multiple times to have more than one email receivers.
             """
         )
+        parser.add_argument(
+            '--slack',
+            action='store_true',
+            help="""
+            Send the proposal to PyConTW Slack channel #program.
+            If the settings `SLACK_WEBHOOK_URL` is not properly set, it will
+            raise with an ImproperlyConfigured exception.
+            """
+        )
 
     def handle(self, *args, **options):
         """The command working logic"""
@@ -89,7 +101,7 @@ class Command(BaseCommand):
             '\n\nGot total {:d} new proposals\n'.format(
                 recent_talks.count() + recent_tutorials.count()
             ))
-        self.report(start_dt, end_dt, options['mailto'])
+        self.report(start_dt, end_dt, options['mailto'], options['slack'])
         self.msg.close()  # close the StringIO
 
     def summary(self, recent_talks, recent_tutorials):
@@ -102,14 +114,15 @@ class Command(BaseCommand):
             self.msg.write('\nTutorials:\n\n')
             print(proposal_summary(recent_tutorials), file=self.msg)
 
-    def report(self, start_dt, end_dt, mailto=None):
+    def report(self, start_dt, end_dt, mailto=None, slack=False):
         """Report to either the stdout or mailing to some address"""
+        self.stdout.write(self.msg.getvalue())
+        title = (
+            'Proposal submission summary from {:%m/%d} to {:%m/%d}'
+            .format(start_dt, end_dt)
+        )
         if mailto:
-            subject = (
-                '[PyConTW2016][Program] Proposal submission summary '
-                'from {:%m/%d} to {:%m/%d}'
-                .format(start_dt, end_dt)
-            )
+            subject = '[PyConTW2016][Program] %s' % title
             send_mail(
                 subject=subject,
                 message=self.msg.getvalue(),
@@ -117,7 +130,20 @@ class Command(BaseCommand):
                 recipient_list=mailto,
                 fail_silently=False,
             )
-        self.stdout.write(self.msg.getvalue())
+        if slack:
+            # Check if the slack integration is properly set
+            if settings.SLACK_WEBHOOK_URL is None:
+                raise ImproperlyConfigured("SLACK_WEBHOOK_URL is not set.")
+            # Create the Slack client and send message
+            slack = Slack(url=settings.SLACK_WEBHOOK_URL)
+            status, msg = slack.notify(
+                text='*%s*\n```\n%s\n```' % (title, self.msg.getvalue())
+            )
+            if status != 200:
+                self.stderr.write(self.style.ERROR(
+                    'Slack communication failed with status code %d (msg: %s)'
+                    % (status, msg)
+                ))
 
     def create_datetime_range_lookup(self, recent_days, day_shift_hour):
         """Create valid recent datetime range and return a lookup Q object"""
