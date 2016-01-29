@@ -122,24 +122,34 @@ def test_recent_tutorial_proposals_only(
 
 # Testing mailing ability
 
+@pytest.mark.parametrize('receivers', [
+    ['receiver@pycon.tw'],
+    ['receiver@pycon.tw', 'another.receiver@pycon.tw']
+])
 @override_settings(     # Make sure we don't really send an email.
     EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend',
     DEFAULT_FROM_EMAIL='dev@pycon.tw',
 )
-def test_command_send_mail(dayago_talk_proposal, today_valid_hour):
+def test_command_send_mail(
+    dayago_talk_proposal,
+    today_valid_hour,
+    receivers,
+):
     call_command(
         'recent_proposals',
         hour=today_valid_hour,
-        mailto='receiver@pycon.tw',
+        mailto=receivers,
     )
     assert len(mail.outbox) == 1
 
     email = mail.outbox[0]
     assert email.from_email == 'dev@pycon.tw'
-    assert email.to == ['receiver@pycon.tw']
+    assert email.to == receivers
     assert email.subject.startswith(
         '[PyConTW2016][Program] Proposal submission summary'
     )
+
+
 
 
 # Testing edge cases

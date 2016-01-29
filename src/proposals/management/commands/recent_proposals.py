@@ -66,6 +66,7 @@ class Command(BaseCommand):
             '--mailto',
             metavar='ADDR',
             type=str,
+            action="append",
             default=None,
             help="""If set, mail the summary to the given address."""
         )
@@ -110,7 +111,7 @@ class Command(BaseCommand):
                 subject=subject,
                 message=self.msg.getvalue(),
                 from_email=None,
-                recipient_list=[mailto],
+                recipient_list=mailto,
                 fail_silently=False,
             )
         self.stdout.write(self.msg.getvalue())
