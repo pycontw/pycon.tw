@@ -12,7 +12,7 @@
 	</div>
 </div>
 
-<div class="content-container container content-page-content">
+<div class="content-container container {% block content_page_class %}content-page-content{% endblock content_page_class %}">
 	{% block content %}{% endblock content %}
 </div>
 
