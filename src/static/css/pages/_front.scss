@@ -61,6 +61,27 @@
     }
 }
 
+.staff-list {
+
+    font-weight: 400;
+
+    .staff-person {
+
+        &[data-title]::before {
+            content: attr(data-title) ": ";
+            font-weight: 300;
+        }
+
+        &::after {
+            content: attr(data-tags);
+            margin-left: 1ex;
+            font-size: 90%;
+            font-style: italic;
+            font-weight: 300;
+        }
+    }
+}
+
 .content-page-footer {
 
     display: table;

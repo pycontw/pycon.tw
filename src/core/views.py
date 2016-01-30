@@ -1,6 +1,7 @@
 from django.http import Http404
 from django.views.generic import TemplateView
 
+from .data import EXTRA_DATA
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
@@ -16,8 +17,16 @@ class FlatPageView(TemplateView):
     response_class = TemplateExistanceStatusResponse
 
     def get(self, request, *args, **kwargs):
-        self.path = kwargs['path']
+        path = self.kwargs['path'].strip('/')
+        if not path or any(c.startswith('_') for c in path.split('/')):
+            raise Http404
+        self.path = path
         return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data.update(EXTRA_DATA.get(self.path, {}))
+        return data
 
     def get_template_names(self):
         """Look up template from path.
@@ -42,11 +51,8 @@ class FlatPageView(TemplateView):
         here. This avoids the visitor seeing (accidentally) pages like
         "speaking/base.html".
         """
-        path = self.path.strip('/')
-        if any(c.startswith('_') for c in path.split('/')):
-            raise Http404
         template_names = [
-            '/'.join(['contents', code, path + '.html'])
+            '/'.join(['contents', code, self.path + '.html'])
             for code in collect_language_codes(self.request.LANGUAGE_CODE)
         ]
         return template_names

@@ -1,0 +1,24 @@
+{% extends 'contents/_base/about.html' %}
+
+{% load i18n %}
+
+
+{% block title %}{% trans 'Staff' %}{% endblock title %}
+{% block page_title %}<h1>{% trans 'Staff' %}</h1>{% endblock %}
+
+
+{% block content %}
+
+{% for team in teams %}
+<h2>{{ team.key }}</h2>
+<ul class="{{ team.key|lower }}-member-list staff-list">
+{% for person in team.members %}
+<li>
+	<span class="staff-person" data-tags="{{ person.tags }}"
+			{% if person.title %}data-title="{{ person.title }}"{% endif %}>{{ person.name }}</span>
+</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock content %}

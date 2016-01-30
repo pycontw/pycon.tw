@@ -163,5 +163,3 @@ class Command(BaseCommand):
             'No proposals are recently submitted\n'
             '◢▆▅▄▃ 崩╰(〒皿〒)╯潰 ▃▄▅▆◣\n'
         )
-
-
