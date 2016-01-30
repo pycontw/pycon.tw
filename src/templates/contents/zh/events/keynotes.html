@@ -1,164 +1,161 @@
-{% extends 'contents/_base.html' %}
+{% extends 'contents/_base/keynotes.html' %}
 
 {% load static %}
 
-{% block title %}Keynotes{% endblock %}
+{% block title %}主題演講{% endblock %}
+{% block page_title %}<h1>主題演講講者 (Keynote Speakers)</h1>{% endblock %}
 
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
 {# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
-{# begin .conf #}
-<div class="section conf">
-	<div class="block">
-		<div class="section keynote">
-			<h2 class="section__heading">主題講者</h2>
-			<div class="row">
-				<div class="keynote-speaker">
-					<img class="keynote-speaker__photo"
-						src="{% static "images/LogoIcon_white@2x.png" %}"
-						alt="Keynote Headpic">
-					<div class="keynote-speaker__name">
-						Amber Brown (HawkOwl)
-					</div>
-					<div class="keynote-speaker__url">
-						<a href="https://twitter.com/hawkieowl" target="_blank">@hawkieowl</a><br>
-						<a href="http://atleastfornow.net/" target="_blank">http://atleastfornow.net/</a>
-					</div>
-					<h4 class="keynote-speaker__heading h4">Bio</h4>
-					<p class="keynote-speaker__body">
-					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="keynote-speaker">
-					<img class="keynote-speaker__photo"
-						src="{% static "images/LogoIcon_white@2x.png" %}"
-						alt="Keynote Headpic">
-					<div class="keynote-speaker__name">
-						唐鳳 (Audrey Tang)
-					</div>
-					<a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank">
-						@audreyt
-					</a>
-					<h4 class="keynote-speaker__heading h4">Bio</h4>
-					<div class="keynote-speaker__body">
-						<p>
-							唐鳳 (Audrey Tang)，1981 年出生，台灣知名自由軟體開發者。小學時曾留學德國，後來又回臺灣繼續就讀，國小五年級曾自己發明壓縮演算法，次年以一支人工智慧的程式拿下全國比賽冠軍，最高學歷為國中畢業，十六歲時就開了搜尋引擎的小公司，她也提倡自主學習 是「臺灣十大電腦高手」。
-						</p>
-						<p>
-							唐鳳是 Pugs 專案的發起人，為 Haskell 語言與 Perl 6 語言的核心貢獻者之一，也是 Haskell 和 Perl 社群的領導者之一。在 CPAN 上，唐鳳負責維護 100 餘項的 Perl 相關專案，包括 Perl Archive Toolkit (PAR) 這項跨平台封裝及建置工具，以及 CPAN 的自動測試及數位簽章系統等。
-						</p>
-						<p>
-							現在她已然退休，仍致力於自由軟體的國際化工作，包括設計 Kwiki、RT 及 Slash 等系統的國際化架構，並發起多項開放原始碼書籍的翻譯計劃，以及參與 g0v 社群的發起。
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="keynote-speaker">
-					<img class="keynote-speaker__photo"
-						src="{% static "images/LogoIcon_white@2x.png" %}"
-						alt="Keynote Headpic">
-					<div class="keynote-speaker__name">
-						黃敬群 (Jim Huang )
-					</div>
-					<a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank">
-						@jserv
-					</a>
-					<h4 class="keynote-speaker__heading h4">Bio</h4>
-					<div class="keynote-speaker__body">
-						<p>
-黃敬群 (Jim Huang, jserv)，1981 年出生，網路暱稱為 jserv，台灣知名開放原碼社群參與者。因為父親的關係，所以 jserv 從小便閱讀電腦主機與各式程式設計等書籍自學軟體開發。1997 年，高中生的他嘗試開發作業系統而接觸 Linux，便在開源軟體界活躍。1999 年，大學生的他與人合作網路事業，然而公司最後慘淡收場，使 jserv 決定先休學當兵。
-						</p>
-						<p>
-當兵期間，jserv 不斷充實自己。開始工作後，仍不斷的研究和實作，並致力於軟硬體系統整合，也協助台灣的科技產業得以銜接開放系統的豐富資源和活躍的社群。
-						</p>
-						<p>
-							2009 年，jserv 協同開源社群的朋友創辦 0xLab，成為軟硬體整合方案提供者。2014 年與朋友建立南星創速器（SSX）並擔任技術長，關注智能硬體、醫療健康和互聯網應用等三大主軸的新興創業團隊，給予各方面輔導和協助。2012 年，在業界力薦和學界邀請，jserv 於成功大學資訊工程系擔任兼任教師至今。並在聯發科技、工研院資通所，台達電子等單位擔任技術顧問。
-						</p>
-						<p>
-							如今，jserv 仍自詡為熱血工讀生，並騎著心愛的腳踏車繼續在南台灣為世界發光……
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="keynote-speaker">
-					<img
-						class="keynote-speaker__photo"
-						src="{% static "images/keynotes/paul_hildebrandt.jpg" %}"
-						alt="Keynote Headpic">
-					<div class="keynote-speaker__name">
-						Paul Hildebrandt
-					</div>
-					<a class="keynote-speaker__url" href="#" target="_blank">
-					</a>
-					<h4 class="keynote-speaker__heading h4">Bio</h4>
-					<div class="keynote-speaker__body">
-						<p>
-							Paul Hildebrandt has been a Senior Engineer with Walt Disney
-							Animation Studios (WDAS) since 1996, and has worked in both
-							Systems and Software engineering. His current title is Senior
-							Software Engineer and Product Owner for the Playback tools among
-							his primary duties is spending time working with the artists,
-							understanding their needs, and designing tools to assist them. If
-							he is lucky, he gets to write code.
-						</p>
-						<p>
-							Hildebrandt leads a team that is responsible for developing the
-							digital asset manager, media player, dailies review system with a
-							mobile interface, and other related tools. These tools are
-							available on a variety of platforms including Linux, Mac, iOS,
-							and Android. Among the Disney animated films that he has
-							contributed are Zootopia, the Oscar® winning hits "Big Hero 6",
-							"Frozen" and Oscar®-nominated box office hits, "Wreck-It Ralph,"
-							"Tangled," "Bolt," "Treasure Planet," and "Dinosaur." He is WDAS'
-							evangelist for PyCon and other Python sponsorships.
-						</p>
-						<p>
-							Prior to joining Disney, Hildebrandt spent eight years with
-							Hughes Aircraft as a Senior Engineer working on commercial
-							in-flight entertainment for airlines and the Stealth Bomber
-							trainers. He also served as the electrical lead for a team that
-							raced a solar car across Australia in the 1990 World Solar
-							Challenge. The team finished in the top third.
-						</p>
-						<p>
-							Hildebrandt was born and raised in Anaheim, California. He
-							received his BSEE with a focus on Computing from California
-							Polytechnic University Pomona. He resides outside of Los Angeles
-							with his wife and three boys.
-						</p>
-			</div> </div> </div>
-			<div class="row">
-				<div class="keynote-speaker">
-					<img class="keynote-speaker__photo"
-						src="{% static "images/keynotes/steve_dower.jpg" %}"
-						alt="Keynote Headpic">
-					<div class="keynote-speaker__name">
-						Steve Dower
-					</div>
-					<div class="keynote-speaker__url">
-						<a href="https://twitter.com/zooba" target="_blank">@zooba</a><br>
-						<a href="http://stevedower.id.au/" target="_blank">http://stevedower.id.au/</a>
-					</div>
-					<h4 class="keynote-speaker__heading h4">Bio</h4>
-					<div class="keynote-speaker__body">
-						<p>
-							Steve is an engineer who tells people about Python and then gives them excuses
-							to use it and great tools to use it with. He works on Python Tools for Visual
-							Studio, contributes to many of Microsoft’s Python libraries, and is a core
-							contributor and Windows expert for CPython.
-						</p>
-						<p>
-							He now works as a software engineer at Microsoft.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.sec.keynote -->
-	</div>
-</div>
-{# end .sec-conf #}
+
+{# Amber #}
+<div class="keynote-speaker">
+    <div class="keynote-speaker__profile">
+        <!--<img class="keynote-speaker__photo"
+            src=""
+            alt="Keynote profile photo">-->
+        <h2 class="keynote-speaker__name">Amber Brown (HawkOwl)</h2>
+        <div class="keynote-speaker__url">
+            <a href="https://twitter.com/hawkieowl" target="_blank">@hawkieowl</a><br>
+            <a href="http://atleastfornow.net/" target="_blank">http://atleastfornow.net/</a>
+        </div>
+    </div><!-- /.keynote-speaker__profile -->
+    <div class="keynote-speaker__bio">
+        <h4 class="keynote-speaker__bio__header">簡歷</h4>
+        <p></p>
+    </div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# au #}
+<div class="keynote-speaker">
+    <div class="keynote-speaker__profile">
+        <!--<img class="keynote-speaker__photo"
+            src=""
+            alt="Keynote profile photo">-->
+        <h2 class="keynote-speaker__name">唐鳳<br>(Audrey Tang)</h2>
+        <div class="keynote-speaker__url">
+            <a href="https://twitter.com/audreyt" target="_blank">
+                @audreyt
+            </a>
+        </div>
+    </div><!-- /.keynote-speaker__profile -->
+    <div class="keynote-speaker__bio">
+        <h4 class="keynote-speaker__bio__header">簡歷</h4>
+        <p>
+            唐鳳 (Audrey Tang)，1981 年出生，台灣知名自由軟體開發者。小學時曾留學德國，後來又回臺灣繼續就讀，國小五年級曾自己發明壓縮演算法，次年以一支人工智慧的程式拿下全國比賽冠軍，最高學歷為國中畢業，十六歲時就開了搜尋引擎的小公司，她也提倡自主學習 是「臺灣十大電腦高手」。
+        </p>
+        <p>
+            唐鳳是 Pugs 專案的發起人，為 Haskell 語言與 Perl 6 語言的核心貢獻者之一，也是 Haskell 和 Perl 社群的領導者之一。在 CPAN 上，唐鳳負責維護 100 餘項的 Perl 相關專案，包括 Perl Archive Toolkit (PAR) 這項跨平台封裝及建置工具，以及 CPAN 的自動測試及數位簽章系統等。
+        </p>
+        <p>
+            現在她已然退休，仍致力於自由軟體的國際化工作，包括設計 Kwiki、RT 及 Slash 等系統的國際化架構，並發起多項開放原始碼書籍的翻譯計劃，以及參與 g0v 社群的發起。
+        </p>
+    </div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# jserv #}
+<div class="keynote-speaker">
+    <div class="keynote-speaker__profile">
+        <!--<img class="keynote-speaker__photo"
+            src=""
+            alt="Keynote profile photo">-->
+        <h2 class="keynote-speaker__name">黃敬群<br>(Jim Huang)</h2>
+        <div class="keynote-speaker__url">
+            <a href="https://twitter.com/jserv" target="_blank">@jserv</a>
+        </div>
+    </div><!-- /.keynote-speaker__profile -->
+    <div class="keynote-speaker__bio">
+        <h4 class="keynote-speaker__bio__header">簡歷</h4>
+        <p>
+            黃敬群 (Jim Huang, jserv)，1981 年出生，網路暱稱為 jserv，台灣知名開放原碼社群參與者。因為父親的關係，所以 jserv 從小便閱讀電腦主機與各式程式設計等書籍自學軟體開發。1997 年，高中生的他嘗試開發作業系統而接觸 Linux，便在開源軟體界活躍。1999 年，大學生的他與人合作網路事業，然而公司最後慘淡收場，使 jserv 決定先休學當兵。
+        </p>
+        <p>
+            當兵期間，jserv 不斷充實自己。開始工作後，仍不斷的研究和實作，並致力於軟硬體系統整合，也協助台灣的科技產業得以銜接開放系統的豐富資源和活躍的社群。
+        </p>
+        <p>
+            2009 年，jserv 協同開源社群的朋友創辦 0xLab，成為軟硬體整合方案提供者。2014 年與朋友建立南星創速器（SSX）並擔任技術長，關注智能硬體、醫療健康和互聯網應用等三大主軸的新興創業團隊，給予各方面輔導和協助。2012 年，在業界力薦和學界邀請，jserv 於成功大學資訊工程系擔任兼任教師至今。並在聯發科技、工研院資通所，台達電子等單位擔任技術顧問。
+        </p>
+        <p>
+            如今，jserv 仍自詡為熱血工讀生，並騎著心愛的腳踏車繼續在南台灣為世界發光……
+        </p>
+    </div>
+</div><!-- /.keynote-speaker -->
+
+{# Paul #}
+<div class="keynote-speaker">
+    <div class="keynote-speaker__profile">
+        <img class="keynote-speaker__photo"
+             src="{% static "images/keynotes/paul_hildebrandt.jpg" %}"
+             alt="Keynote profile photo">
+        <h2 class="keynote-speaker__name">Paul Hildebrandt</h2>
+        <div class="keynote-speaker__url">
+        </div>
+    </div><!-- /.keynote-speaker__profile -->
+    <div class="keynote-speaker__bio">
+        <h4 class="keynote-speaker__bio__header">簡歷</h4>
+        <p>
+            Paul Hildebrandt has been a Senior Engineer with Walt Disney
+            Animation Studios (WDAS) since 1996, and has worked in both Systems
+            and Software engineering. His current title is Senior Software
+            Engineer and Product Owner for the Playback tools among his primary
+            duties is spending time working with the artists, understanding
+            their needs, and designing tools to assist them. If he is lucky, he
+            gets to write code.
+        </p>
+        <p>
+            Hildebrandt leads a team that is responsible for developing the
+            digital asset manager, media player, dailies review system with a
+            mobile interface, and other related tools. These tools are available
+            on a variety of platforms including Linux, Mac, iOS, and Android.
+            Among the Disney animated films that he has contributed are
+            Zootopia, the Oscar® winning hits "Big Hero 6", "Frozen" and
+            Oscar®-nominated box office hits, "Wreck-It Ralph," "Tangled,"
+            "Bolt," "Treasure Planet," and "Dinosaur." He is WDAS' evangelist
+            for PyCon and other Python sponsorships.
+        </p>
+        <p>
+            Prior to joining Disney, Hildebrandt spent eight years with Hughes
+            Aircraft as a Senior Engineer working on commercial in-flight
+            entertainment for airlines and the Stealth Bomber trainers. He also
+            served as the electrical lead for a team that raced a solar car
+            across Australia in the 1990 World Solar Challenge. The team
+            finished in the top third.
+        </p>
+        <p>
+            Hildebrandt was born and raised in Anaheim, California. He received
+            his BSEE with a focus on Computing from California Polytechnic
+            University Pomona. He resides outside of Los Angeles with his wife
+            and three boys.
+        </p>
+    </div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Steve #}
+<div class="keynote-speaker">
+    <div class="keynote-speaker__profile">
+        <img class="keynote-speaker__photo"
+             src="{% static "images/keynotes/steve_dower.jpg" %}"
+             alt="Keynote profile photo">
+        <h2 class="keynote-speaker__name">Steve Dower</h2>
+        <div class="keynote-speaker__url">
+            <a href="https://twitter.com/zooba" target="_blank">@zooba</a><br>
+            <a href="http://stevedower.id.au/" target="_blank">http://stevedower.id.au/</a>
+        </div>
+    </div><!-- /.keynote-speaker__profile -->
+    <div class="keynote-speaker__bio">
+        <h4 class="keynote-speaker__bio__header">簡歷</h4>
+        <p>
+            Steve is an engineer who tells people about Python and then gives
+            them excuses to use it and great tools to use it with. He works on
+            Python Tools for Visual Studio, contributes to many of Microsoft’s
+            Python libraries, and is a core contributor and Windows expert for
+            CPython.
+        </p>
+        <p>
+            He now works as a software engineer at Microsoft.
+        </p>
+    </div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
 {% endblock content %}
 
