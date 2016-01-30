@@ -11,15 +11,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-13 06:39+0000\n"
-"PO-Revision-Date: 2016-01-20 07:45+0000\n"
-"Last-Translator: flywindy <flywindy2002@gmail.com>\n"
+"POT-Creation-Date: 2016-01-30 11:45+0000\n"
+"PO-Revision-Date: 2016-01-30 16:03+0000\n"
+"Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: core/data.py:8
+msgid "Coordinators"
+msgstr "整體會議"
+
+#: core/data.py:11
+msgid "Chairperson"
+msgstr "主席"
+
+#: core/data.py:15
+msgid "Vice Chairperson"
+msgstr "副主席"
+
+#: core/data.py:21
+msgid "Program"
+msgstr "議程組"
+
+#: core/data.py:23 core/data.py:35 core/data.py:42 core/data.py:55
+#: core/data.py:62 core/data.py:68
+msgid "lead"
+msgstr "組長"
+
+#: core/data.py:33
+msgid "Web"
+msgstr "網站組"
+
+#: core/data.py:40
+msgid "Public Relation"
+msgstr "公關組"
+
+#: core/data.py:53
+msgid "Venue"
+msgstr "場務組"
+
+#: core/data.py:60
+msgid "Registration"
+msgstr "註冊組"
+
+#: core/data.py:66
+msgid "Sponsorship"
+msgstr "贊助組"
+
+#: core/data.py:79
+msgid "Finance"
+msgstr "財務會計組"
 
 #: proposals/forms/mixins.py:10
 msgid "{model_name_cap} creation requires a request object."
@@ -67,7 +112,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:54 users/models.py:166
+#: proposals/models.py:54 users/models.py:189
 msgid "user"
 msgstr "使用者"
 
@@ -419,7 +464,7 @@ msgid "Change Password"
 msgstr "更改密碼"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:32 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:41 templates/dashboard_base.html:6
 msgid "Dashboard"
 msgstr "控制面板"
 
@@ -427,31 +472,45 @@ msgstr "控制面板"
 msgid "Log out"
 msgstr "登出"
 
-#: templates/_includes/nav/front_nav.html:15
+#: templates/_includes/nav/front_nav.html:17
 msgid "About"
 msgstr "關於"
 
-#: templates/_includes/nav/front_nav.html:21
+#: templates/_includes/nav/front_nav.html:23
 msgid "Code of Conduct"
 msgstr "行為準則"
 
-#: templates/_includes/nav/front_nav.html:25
+#: templates/_includes/nav/front_nav.html:24
+#: templates/contents/_default/about/staff.html:6
+#: templates/contents/_default/about/staff.html:7
+msgid "Staff"
+msgstr "工作人員"
+
+#: templates/_includes/nav/front_nav.html:28
+msgid "Events"
+msgstr "活動"
+
+#: templates/_includes/nav/front_nav.html:30
+msgid "Keynotes"
+msgstr "主題講演"
+
+#: templates/_includes/nav/front_nav.html:34
 msgid "Speaking"
 msgstr "投稿"
 
-#: templates/_includes/nav/front_nav.html:27
+#: templates/_includes/nav/front_nav.html:36
 msgid "Call for Proposal"
 msgstr "稿件募集說明"
 
-#: templates/_includes/nav/front_nav.html:28
+#: templates/_includes/nav/front_nav.html:37
 msgid "Proposing a Talk"
 msgstr "投稿演講"
 
-#: templates/_includes/nav/front_nav.html:29
+#: templates/_includes/nav/front_nav.html:38
 msgid "Proposing a Tutorial"
 msgstr "投稿教學"
 
-#: templates/_includes/nav/front_nav.html:31
+#: templates/_includes/nav/front_nav.html:40
 msgid "Blog"
 msgstr "部落格"
 
@@ -575,7 +634,7 @@ msgid "Create Proposal"
 msgstr "建立提案"
 
 #: templates/proposals/_proposal_update.html:23
-#: templates/users/user_profile_update.html:62
+#: templates/users/user_profile_update.html:98
 msgid "Save"
 msgstr "儲存"
 
@@ -653,7 +712,7 @@ msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr "修改教學提案《%(proposal_title)s》"
 
 #: templates/registration/login.html:7 templates/registration/login.html:18
-#: users/forms.py:232
+#: users/forms.py:238
 msgid "Log In"
 msgstr "登入"
 
@@ -820,6 +879,18 @@ msgstr "您的大名"
 msgid "Biography"
 msgstr "自我介紹"
 
+#: templates/users/user_profile_update.html:63
+msgid "Facebook Profile Page"
+msgstr "Facebook 個人頁"
+
+#: templates/users/user_profile_update.html:73
+msgid "Twitter Handle"
+msgstr "Twitter 帳號"
+
+#: templates/users/user_profile_update.html:86
+msgid "GitHub Username"
+msgstr "GitHub 帳號"
+
 #: users/admin.py:18
 msgid "Personal info"
 msgstr "個人介紹"
@@ -840,7 +911,7 @@ msgstr "此電子郵件信箱已被使用。"
 msgid "The two password fields didn't match."
 msgstr "密碼欄位內容不一致。"
 
-#: users/forms.py:32 users/forms.py:176
+#: users/forms.py:32 users/forms.py:182
 msgid "Password"
 msgstr "密碼"
 
@@ -860,97 +931,118 @@ msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
 msgid "The image you provided is not quadrate."
 msgstr "提供的圖片並非方型。"
 
-#: users/forms.py:177
+#: users/forms.py:183
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
 
-#: users/forms.py:226
+#: users/forms.py:232
 msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼？</a>"
 
-#: users/forms.py:243
+#: users/forms.py:249
 msgid "Email Address"
 msgstr "電子郵件信箱"
 
-#: users/forms.py:262
+#: users/forms.py:268
 msgid "Request Password Reset"
 msgstr "申請密碼重設"
 
-#: users/forms.py:298
+#: users/forms.py:304
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: users/models.py:102
+#: users/models.py:105
 msgid "email address"
 msgstr "電子郵件信箱"
 
-#: users/models.py:106
+#: users/models.py:109
 msgid "speaker name"
 msgstr "講者名"
 
-#: users/models.py:110
+#: users/models.py:113
 msgid "biography"
 msgstr "自我介紹"
 
-#: users/models.py:113
+#: users/models.py:116
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
 
-#: users/models.py:118
+#: users/models.py:121
 msgid "photo"
 msgstr "個人照"
 
-#: users/models.py:122
+#: users/models.py:125
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:126
+#: users/models.py:128
+msgid ""
+"Link to your Facebook profile page. This will be shown when we display your "
+"public information. If you do not know what your profile page link is, click"
+" on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and"
+" copy-paste the URL of the page opened. Remember to log in to Facebook "
+"first!"
+msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
+
+#: users/models.py:137
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:130
+#: users/models.py:142
+msgid ""
+"Your Twitter handle, without the \"@\" sign. This will be shown when we "
+"display your public information."
+msgstr "您的 Twitter 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
+
+#: users/models.py:147
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:134
+#: users/models.py:152
+msgid ""
+"Your GitHub account, without the \"@\" sign. This will be shown when we "
+"display your public information."
+msgstr "您的 GitHub 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
+
+#: users/models.py:157
 msgid "verified"
 msgstr "已認證"
 
-#: users/models.py:137
+#: users/models.py:160
 msgid "Designates whether the user has verified email ownership."
 msgstr "指定本使用者是否已完成 email 認證。"
 
-#: users/models.py:141
+#: users/models.py:164
 msgid "staff status"
 msgstr "管理員權限"
 
-#: users/models.py:144
+#: users/models.py:167
 msgid "Designates whether the user can log into this admin site."
 msgstr "指定本使用者是否可以登入本管理站台。"
 
-#: users/models.py:148
+#: users/models.py:171
 msgid "active"
 msgstr "已啟用"
 
-#: users/models.py:151
+#: users/models.py:174
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
 
-#: users/models.py:156
+#: users/models.py:179
 msgid "date joined"
 msgstr "註冊日期"
 
-#: users/models.py:167
+#: users/models.py:190
 msgid "users"
 msgstr "使用者"
 
-#: users/models.py:222
+#: users/models.py:253
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
 
