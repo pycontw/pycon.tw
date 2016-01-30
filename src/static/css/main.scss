@@ -22,6 +22,7 @@
 @import "pages/front";
 @import "pages/registration";
 @import "pages/dashboard";
+@import "pages/keynotes";
 
 
 body {
@@ -349,59 +350,6 @@ body {
 }
 
 
-// keynote-speaker
-.keynote-speaker {
-    @include make-xs-column(10);
-    @include make-xs-column-offset(1);
-    @include make-md-column(8);
-    @include make-md-column-offset(2);
-    margin-top: 80px;
-    padding-bottom: 5em;
-    border: 1px solid $theme-color;
-    background-color: $keynote-speaker-bg;
-    border-radius: 5px;
-    text-align: center;
-    color: $keynote-speaker-color;
-
-    &__heading {
-        color: $color-keynote-speaker__heading;
-    }
-
-    &__body {
-        text-align: left;
-        padding: 4% 8%;
-    }
-
-    &__name {
-        @include roboto-medium;
-        color: $keynote-speaker__name-color;
-        font-size: 24px;
-    }
-
-    &__photo {
-        width: $keynote-speaker-photo-size;
-        height: $keynote-speaker-photo-size;
-        //position: relative;
-        //left: 50%;
-        margin-top: $keynote-speaker-photo-size / -2;
-        //margin-left: $keynote-speaker-photo-size / -2;
-        margin-bottom: 4em;
-        border-radius: 50%;
-        border: 3px solid $theme-color;
-        background-color: white;
-    }
-
-    &__url {
-        font-size: 14px;
-        color: $keynote-speaker__url-color;
-        margin-bottom: 4em;
-        display: block;
-    }
-
-    a {
-        color: $keynote-speaker__url-color;
-    }
-}
 
 .footer {
     background-color: $footer-bg;
