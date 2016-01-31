@@ -136,7 +136,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     twitter_id = models.CharField(
         verbose_name=_('Twitter'),
         blank=True, max_length=100, validators=[
-            RegexValidator(r'^[0-9a-zA-Z]*$', 'Not a valid Twitter handle'),
+            RegexValidator(r'^[0-9a-zA-Z_]*$', 'Not a valid Twitter handle'),
         ],
         help_text=_(
             "Your Twitter handle, without the \"@\" sign. This will be "
@@ -146,7 +146,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     github_id = models.CharField(
         verbose_name=_('GitHub'),
         blank=True, max_length=100, validators=[
-            RegexValidator(r'^[0-9a-zA-Z]*$', 'Not a valid GitHub account'),
+            RegexValidator(r'^[0-9a-zA-Z_-]*$', 'Not a valid GitHub account'),
         ],
         help_text=_(
             "Your GitHub account, without the \"@\" sign. This will be "
