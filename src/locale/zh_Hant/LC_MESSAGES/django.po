@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-30 11:45+0000\n"
-"PO-Revision-Date: 2016-01-30 16:03+0000\n"
+"POT-Creation-Date: 2016-02-01 06:45+0000\n"
+"PO-Revision-Date: 2016-02-01 06:48+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -442,6 +442,30 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》教學提案。"
 
+#: templates/404.html:8
+msgid "Page Not Found"
+msgstr "頁面不存在"
+
+#: templates/404.html:65
+msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
+msgstr "糟惹！這是個 <span class=\"error-code\">404</span> 錯誤。"
+
+#: templates/404.html:66
+msgid "We cannot find what you’re looking for."
+msgstr "我們找不到你想找的東西。"
+
+#: templates/500.html:8
+msgid "Server Error"
+msgstr "伺服器錯誤"
+
+#: templates/500.html:66
+msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
+msgstr "糟惹！這是個 <span class=\"error-code\">500</span> 錯誤。"
+
+#: templates/500.html:67
+msgid "We screwed up. It’s not your fault."
+msgstr "我們搞砸了，這不是你的問題。"
+
 #: templates/_includes/character_counter_template.html:4
 msgid "Character count: "
 msgstr "字元數："
@@ -464,7 +488,7 @@ msgid "Change Password"
 msgstr "更改密碼"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:41 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:49 templates/dashboard_base.html:6
 msgid "Dashboard"
 msgstr "控制面板"
 
@@ -472,45 +496,54 @@ msgstr "控制面板"
 msgid "Log out"
 msgstr "登出"
 
-#: templates/_includes/nav/front_nav.html:17
+#: templates/_includes/nav/front_nav.html:18
 msgid "About"
 msgstr "關於"
 
-#: templates/_includes/nav/front_nav.html:23
+#: templates/_includes/nav/front_nav.html:24
 msgid "Code of Conduct"
 msgstr "行為準則"
 
-#: templates/_includes/nav/front_nav.html:24
+#: templates/_includes/nav/front_nav.html:25
 #: templates/contents/_default/about/staff.html:6
 #: templates/contents/_default/about/staff.html:7
 msgid "Staff"
 msgstr "工作人員"
 
-#: templates/_includes/nav/front_nav.html:28
+#: templates/_includes/nav/front_nav.html:29
 msgid "Events"
 msgstr "活動"
 
-#: templates/_includes/nav/front_nav.html:30
+#: templates/_includes/nav/front_nav.html:31
 msgid "Keynotes"
-msgstr "主題講演"
+msgstr "主題演講"
 
-#: templates/_includes/nav/front_nav.html:34
+#: templates/_includes/nav/front_nav.html:35
 msgid "Speaking"
 msgstr "投稿"
 
-#: templates/_includes/nav/front_nav.html:36
+#: templates/_includes/nav/front_nav.html:37
 msgid "Call for Proposal"
 msgstr "稿件募集說明"
 
-#: templates/_includes/nav/front_nav.html:37
+#: templates/_includes/nav/front_nav.html:38
 msgid "Proposing a Talk"
 msgstr "投稿演講"
 
-#: templates/_includes/nav/front_nav.html:38
+#: templates/_includes/nav/front_nav.html:39
 msgid "Proposing a Tutorial"
 msgstr "投稿教學"
 
-#: templates/_includes/nav/front_nav.html:40
+#: templates/_includes/nav/front_nav.html:43
+msgctxt "navbar"
+msgid "Registration"
+msgstr "註冊"
+
+#: templates/_includes/nav/front_nav.html:45
+msgid "Financial Aid"
+msgstr "財務補助"
+
+#: templates/_includes/nav/front_nav.html:48
 msgid "Blog"
 msgstr "部落格"
 
