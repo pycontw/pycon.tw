@@ -25,3 +25,8 @@
         font-weight: 300;
     }
 }
+
+@mixin roboto-regular() {
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+}

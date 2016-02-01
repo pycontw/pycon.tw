@@ -3,8 +3,6 @@ $static_root: "./../../";
 $theme-color: #3E6DF5; //blue
 $theme-focus: #FFC525; // yellow
 
-$color-keynote-speaker__heading: $theme-focus;
-
 $quote-color: $theme-focus;
 
 // section
@@ -26,15 +24,11 @@ $community-color: #6B4C00;
 $footer-bg: #F9FCFF;
 $footer-color: $theme-color;
 
-// keynote-speaker
-$keynote-speaker-color: #9F9F9F;
-$keynote-speaker__name-color: #3C3C3C;
-$keynote-speaker__url-color: #3C3C3C;
+// keynotes
+$keynotes-bg: $theme-color;
 $keynote-speaker-bg: #fff;
-
-$keynote-speaker-photo-size: 90px;
-
-
+$keynote-speaker__url-color: #3C3C3C;
+$keynote-speaker__bio-color: #4A4A4A;
 
 // Buttons
 
