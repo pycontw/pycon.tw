@@ -5,10 +5,11 @@
 
 <head>
 
-<title>{% trans 'Page Not Found' %} | PyCon TW 2016</title>
+<title>{% trans 'Server Error' %} | PyCon TW 2016</title>
 
 <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,800' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
+
 
 <style type="text/css">
 html, body {
@@ -62,8 +63,8 @@ p {
 
 <div>
 	<div class="error-description">
-		<h1>{% blocktrans %}Ooops! It’s a <span class="error-code">404</span> problem.{% endblocktrans %}</h1>
-		<p>{% trans 'We cannot find what you’re looking for.' %}</p>
+		<h1>{% blocktrans %}Ooops! It’s a <span class="error-code">500</span> problem.{% endblocktrans %}</h1>
+		<p>{% trans 'We screwed up. It’s not your fault.' %}</p>
 	</div>
 	<a href="{% url 'index' %}" class="link-to-index"></a>
 </div>

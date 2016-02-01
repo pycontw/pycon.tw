@@ -1,4 +1,7 @@
+import functools
+
 from django.http import Http404
+from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
 
 from .data import EXTRA_DATA
@@ -60,3 +63,16 @@ class FlatPageView(TemplateView):
 
 index = IndexView.as_view()
 flat_page = FlatPageView.as_view()
+
+
+def error_page(request, code):
+    """A proxy view displaying error pages.
+    """
+    try:
+        view_func = {
+            '404': functools.partial(page_not_found, exception=Http404()),
+            '500': server_error,
+        }[code]
+    except KeyError:
+        raise Http404
+    return view_func(request)
