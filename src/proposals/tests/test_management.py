@@ -1,10 +1,15 @@
+from collections import namedtuple
 from datetime import timedelta
+import json
 import re
+from unittest import mock
 
 import pytest
 import pytz
 from django.utils.timezone import now
+from django.conf import settings
 from django.core import mail
+from django.core.exceptions import ImproperlyConfigured
 from django.core.management import call_command
 from django.core.management.base import CommandError
 from django.test import override_settings
@@ -12,7 +17,7 @@ from django.test import override_settings
 from proposals.models import TalkProposal
 
 taiwan_tz = pytz.timezone('Asia/Taipei')
-
+FakeHTTPResponse = namedtuple('FakeHTTPResponse', ['status', 'data'])
 
 # Define fixtures
 
@@ -152,6 +157,53 @@ def test_command_send_mail(
     )
 
 
+# Testing Slack
+
+@override_settings(     # Make sure we don't really talk to Slack.
+    SLACK_WEBHOOK_URL="https://fake.slack.hook/services/myuniquesignal"
+    )
+def test_slack_connect():
+    from proposals.management.commands.slack import Slack
+    webhook_url = settings.SLACK_WEBHOOK_URL
+    slack = Slack(url=webhook_url)
+    slack.pool.urlopen = mock.MagicMock(
+        return_value=FakeHTTPResponse(200, b'ok')
+    )
+    slack.notify(text='Test')
+    slack.pool.urlopen.assert_called_once_with(
+        "POST",
+        webhook_url,
+        headers={'Content-Type': "application/json"},
+        body=json.dumps({"text": "Test"})
+    )
+
+
+@pytest.mark.django_db
+@override_settings(
+    SLACK_WEBHOOK_URL=None
+)
+def test_command_improper_slack_url():
+    with pytest.raises(ImproperlyConfigured):
+        call_command(
+            'recent_proposals',
+            slack=True,
+        )
+
+
+@pytest.mark.django_db
+@override_settings(     # Make sure we don't really talk to Slack.
+    SLACK_WEBHOOK_URL="https://fake.slack.hook/services/myuniquesignal"
+)
+def test_command_with_slack():
+    from proposals.management.commands.slack import Slack
+    Slack.notify = mock.MagicMock(
+        return_value=(200, b'ok')
+    )
+    call_command(
+        'recent_proposals',
+        slack=True,
+    )
+    assert Slack.notify.call_count == 1
 
 
 # Testing edge cases
