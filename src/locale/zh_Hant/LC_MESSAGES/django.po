@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-01 06:45+0000\n"
-"PO-Revision-Date: 2016-02-01 06:48+0000\n"
+"POT-Creation-Date: 2016-02-01 06:52+0000\n"
+"PO-Revision-Date: 2016-02-01 06:55+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -452,7 +452,7 @@ msgstr "糟惹！這是個 <span class=\"error-code\">404</span> 錯誤。"
 
 #: templates/404.html:66
 msgid "We cannot find what you’re looking for."
-msgstr "我們找不到你想找的東西。"
+msgstr "我們找不到你想去的頁面。"
 
 #: templates/500.html:8
 msgid "Server Error"
