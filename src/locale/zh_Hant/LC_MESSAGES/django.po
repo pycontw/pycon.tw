@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-01 06:52+0000\n"
-"PO-Revision-Date: 2016-02-01 06:55+0000\n"
+"POT-Creation-Date: 2016-02-02 10:50+0000\n"
+"PO-Revision-Date: 2016-02-02 11:28+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -136,7 +136,7 @@ msgstr "已接受"
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:81 proposals/models.py:260
+#: proposals/models.py:81 proposals/models.py:266
 msgid "cancelled"
 msgstr "已取消"
 
@@ -332,44 +332,46 @@ msgstr "議程錄影"
 #: proposals/models.py:238
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
-"release audio and video of your presentation."
-msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。"
+"release audio and video of your presentation. More information can be found "
+"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
+"page."
+msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
 
-#: proposals/models.py:244
+#: proposals/models.py:250
 msgid "slide link"
 msgstr "投影片連結"
 
-#: proposals/models.py:248
+#: proposals/models.py:254
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
-#: proposals/models.py:254
+#: proposals/models.py:260
 msgid "created at"
 msgstr "建立時間"
 
-#: proposals/models.py:291
+#: proposals/models.py:297
 msgid "No preference"
 msgstr "無偏好"
 
-#: proposals/models.py:292
+#: proposals/models.py:298
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
 
-#: proposals/models.py:293
+#: proposals/models.py:299
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
-#: proposals/models.py:296 proposals/models.py:344
+#: proposals/models.py:302 proposals/models.py:350
 msgid "duration"
 msgstr "時間長度"
 
-#: proposals/models.py:302 proposals/models.py:350
+#: proposals/models.py:308 proposals/models.py:356
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:305
+#: proposals/models.py:311
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
 "estimated time length for each sections in the talk. Talks in favor of 45min"
@@ -378,23 +380,23 @@ msgid ""
 " target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:316
+#: proposals/models.py:322
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:317
+#: proposals/models.py:323
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:340
+#: proposals/models.py:346
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:341
+#: proposals/models.py:347
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:353
+#: proposals/models.py:359
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
 " your talk and attach each section with the estimated time length. Edit "
@@ -402,11 +404,11 @@ msgid ""
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:363
+#: proposals/models.py:369
 msgid "tutorial proposal"
 msgstr "教學提案"
 
-#: proposals/models.py:364
+#: proposals/models.py:370
 msgid "tutorial proposals"
 msgstr "教學提案"
 
