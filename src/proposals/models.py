@@ -100,7 +100,7 @@ class ProposalQuerySet(models.QuerySet):
     def filter_viewable(self, user):
         return self.filter(
             Q(submitter=user)
-            | Q(additionalspeaker_set__in=user.additionalspeaker_set.all())
+            | Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
         )
 
 
