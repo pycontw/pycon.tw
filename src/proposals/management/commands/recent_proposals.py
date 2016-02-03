@@ -98,9 +98,16 @@ class Command(BaseCommand):
         else:
             self.summary(recent_talks, recent_tutorials)
         self.msg.write(
-            '\n\nGot total {:d} new proposals\n'.format(
+            '\n\nGot total {:d} new proposals.\n'.format(
                 recent_talks.count() + recent_tutorials.count()
             ))
+        self.msg.write(
+            'So far {:d} talk and {:d} tutorial proposals have been submitted.'
+            .format(
+                TalkProposal.objects.filter(cancelled=False).count(),
+                TutorialProposal.objects.filter(cancelled=False).count()
+            )
+        )
         self.report(start_dt, end_dt, options['mailto'], options['slack'])
         self.msg.close()  # close the StringIO
 

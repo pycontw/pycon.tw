@@ -56,9 +56,15 @@ def compile_translations():
             VIRTUALENV_NAME,
         ))
 
+def clean_local_untracked_translation():
+    # Fix local git changes when only .po files are committed
+    # but .mo files are not.
+    with cd(PROJECT_DIR):
+        run('git checkout -- src/locale/')
 
 @task
 def deploy():
+    clean_local_untracked_translation()
     pull_repo()
     install_requirements()
     collectstatic()

@@ -234,9 +234,15 @@ class AbstractProposal(models.Model):
         verbose_name=_('recording policy'),
         default=True,
         choices=RECORDING_POLICY_CHOICES,
-        help_text=_(
-            "Whether you agree to give permission to PyCon Taiwan to "
-            "record, edit, and release audio and video of your presentation."
+        help_text=format_html_lazy(
+            _("Whether you agree to give permission to PyCon Taiwan to "
+              "record, edit, and release audio and video of your "
+              "presentation. More information can be found at "
+              "<a href='{recording_policy_url}' target='_blank'>"
+              "Recording Release</a> page."),
+            recording_policy_url=reverse_lazy(
+                'page', kwargs={'path': 'speaking/recording'},
+            )
         ),
     )
 
