@@ -84,7 +84,11 @@ def test_recent_proposal_default_command(
     print(out)
 
     # Test only two talk proposals are retrieved
-    assert re.search(r"Got total 2 new proposals", out, re.MULTILINE)
+    assert re.search(r"^Got total 2 new proposals", out, re.MULTILINE)
+    # Test total there are three proposals submitted
+    assert re.search(
+        r"^So far 3 talk and 0 tutorial proposals", out, re.MULTILINE
+    )
     # Test the title of these two proposals are in the output
     for proposal in [dayago_talk_proposal, another_user_dayago_talk_proposal]:
         assert re.search(proposal.title, out, re.MULTILINE)
@@ -111,6 +115,10 @@ def test_cancelled_proposal_not_shown_in_recent_proposals(
         assert not re.search(
             proposal.title, out, re.MULTILINE
         )
+    # Make sure total proposal number does not count the cancelled talks in
+    assert re.search(
+        r"^So far 2 talk and 0 tutorial proposals", out, re.MULTILINE
+    )
 
 
 def test_recent_tutorial_proposals_only(
