@@ -12,6 +12,11 @@ html[lang^="zh-"] {
         }
     }
 
+    em {
+        font-style: normal;
+        font-weight: 500;
+    }
+
     .staff-list .staff-person::after {
         font-style: normal;
     }
