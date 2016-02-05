@@ -1,0 +1,14 @@
+html[lang^="zh-"] {
+
+    cite {
+
+        font-style: normal;
+
+        &::before {
+            content: "《";
+        }
+        &::after {
+            content: "》";
+        }
+    }
+}
