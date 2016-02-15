@@ -224,6 +224,7 @@ body {
     &::before {
         content: "";
         margin-right: 0;
+        padding-right: 0;
     }
 
     // show dash between name and full name
