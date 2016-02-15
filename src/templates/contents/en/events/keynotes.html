@@ -6,6 +6,12 @@
 {% block page_title %}<h1>Keynote Speakers</h1>{% endblock %}
 
 
+{% block meta_og %}
+  <meta property="og:title" content="Keynote Speakers | PyCon Taiwan 2016" />
+  <meta property="og:description" content="Enjoy keynote speeches from Amber Brown, Andrey Tang, Jim Huang, Paul Hildebrandt and Steve Dower." />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
 {# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}

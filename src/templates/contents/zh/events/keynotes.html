@@ -5,6 +5,14 @@
 {% block title %}主題演講{% endblock %}
 {% block page_title %}<h1>主題演講講者 (Keynote Speakers)</h1>{% endblock %}
 
+
+{% block meta_og %}
+  <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2016" />
+  <meta property="og:description" content="享受由 Amber Brown、唐鳳、黃敬群、Paul Hildebrandt 與 Steve Dower 帶來的主題演講。
+" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
 {# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
