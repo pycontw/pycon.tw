@@ -34,6 +34,11 @@ EXTRA_DATA['about/staff'] = {
             'members': [
                 {'name': 'Michelle Leu', 'tags': _('lead')},
                 {'name': 'Andy Dai'},
+                {'name': 'Tzu-ping Chung'},
+                {'name': 'Liang Bo Wang'},
+                {'name': 'Willy Liu'},
+                {'name': 'Lei-Yao Hung'},
+                {'name': 'Hsuan-Wen Liu'},
             ],
         },
         {
