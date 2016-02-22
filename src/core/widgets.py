@@ -10,7 +10,7 @@ from .utils import split_css_class
 class CharacterCountedTextarea(forms.Textarea):
 
     class Media:
-        js = ['js/tools/character-counter.js']
+        js = ['js/vendors/eastasianwidth.js', 'js/tools/character-counter.js']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

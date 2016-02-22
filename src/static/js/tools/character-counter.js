@@ -8,8 +8,8 @@ var toInt = function (value, defaultValue) {
 var showCharacterCount = function ($counter, $source) {
 	var $fg = $source.closest('.form-group');
 	var text = $source.val();
-	var length =
-		text ? text.replace(/^\s+|\s+$/g, '').replace(/\r?\n/g, '\r\n').length : 0;
+	var length = text ? eastasianwidth.length(
+		text.replace(/^\s+|\s+$/g, '').replace(/\r?\n/g, '\r\n')) : 0;
 
 	var max = toInt($counter.data('maxlength'), Infinity);
 	$counter.text(isFinite(max) ? length + ' / ' + max : length);
@@ -30,6 +30,7 @@ $('textarea.character-counted')
 	var $counter = $('#character-counter-template')
 		.clone().removeClass('hide').removeAttr('id').insertAfter($source)
 		.find('.character-counter').data('maxlength', $source.attr('maxlength'));
+	$counter.next('.character-counter-tooltip').tooltip();
 
 	$source.removeAttr('maxlength').on('input change', function () {
 		showCharacterCount($counter, $(this));
