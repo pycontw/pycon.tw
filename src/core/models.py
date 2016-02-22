@@ -1,6 +1,8 @@
 from django.apps import apps
 from django.db import models
 
+from .validators import EAWMaxLengthValidator
+
 
 class BigForeignKey(models.ForeignKey):
     def db_type(self, connection):
@@ -17,3 +19,15 @@ class BigForeignKey(models.ForeignKey):
         if apps.is_installed('postgres') and presumed_type == 'integer':
             return 'bigint'
         return presumed_type
+
+
+class EAWTextField(models.TextField):
+    """Derived TextField that checks for its content's EAW lengh.
+
+    This adds an extra validator that counts EAW wide characters as two
+    instead of one.
+    """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.max_length is not None:
+            self.validators.append(EAWMaxLengthValidator(self.max_length))

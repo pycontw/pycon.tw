@@ -7,7 +7,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from core.models import BigForeignKey
+from core.models import BigForeignKey, EAWTextField
 from core.utils import format_html_lazy
 
 
@@ -151,7 +151,7 @@ class AbstractProposal(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
-    abstract = models.TextField(
+    abstract = EAWTextField(
         verbose_name=_('abstract'),
         max_length=500,
         help_text=_(
@@ -185,7 +185,7 @@ class AbstractProposal(models.Model):
         ),
     )
 
-    objective = models.TextField(
+    objective = EAWTextField(
         verbose_name=_('objective'),
         max_length=500,
         help_text=_(
