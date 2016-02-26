@@ -19,7 +19,7 @@ class UserAdmin(UserAdmin):
             {
                 'fields': (
                     'speaker_name', 'bio', 'photo',
-                    'twitter_id', 'github_id', 'facebook_id',
+                    'twitter_id', 'github_id', 'facebook_profile_url',
                 ),
             },
         ),

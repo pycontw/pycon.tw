@@ -86,6 +86,7 @@ deploy_key.pub
 
 # generated on Travis
 /deploy_staging.sh
+/deploy_master.sh
 /secrets.tar
 /src/coverage.xml
 media/
