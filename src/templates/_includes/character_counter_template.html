@@ -1,5 +1,6 @@
 {% load i18n %}
 
 <div id="character-counter-template" class="help-block hide">
-{% trans 'Character count: ' %}<span class="character-counter">{% trans '(Not available without JavaScript)' %}</span>
+{% trans 'Text unit count: ' %}<span class="character-counter">{% trans '(Not available without JavaScript)' %}</span>
+<span class="character-counter-tooltip fa fa-question-circle" data-toggle="tooltip" data-placement="top" title="{% trans 'This value is used to estimate the size of text in our materials. It counts East Asian wide characters (e.g. Chinese) as two units because they take more space.' %}"></span>
 </div>

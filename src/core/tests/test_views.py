@@ -2,37 +2,7 @@ import os
 
 import pytest
 
-from django.test import override_settings
 from django.utils.translation import activate
-
-from core.utils import collect_language_codes, split_css_class
-
-
-def test_locale_fallback_middleware(client, settings):
-    response = client.get('/en/', follow=True)
-    assert response.redirect_chain == [('/en-us/', 302)]
-
-
-@override_settings(USE_I18N=False)
-def test_locale_fallback_middleware_no_i18n(client, settings):
-    response = client.get('/en/')
-    assert response.status_code == 404
-
-
-def test_collect_language_codes():
-    assert collect_language_codes('zh-tw') == [
-        'zh-tw', 'zh', 'en-us', 'en', '_default',
-    ]
-    assert collect_language_codes('zh') == ['zh', 'en-us', 'en', '_default']
-    assert collect_language_codes('en-us') == [
-        'en-us', 'en', 'en-us', 'en', '_default',
-    ]
-    assert collect_language_codes('en') == ['en', 'en-us', 'en', '_default']
-
-
-def test_split_css_class():
-    class_str = ' foo bar baz spam-egg foo '
-    assert split_css_class(class_str) == {'foo', 'bar', 'baz', 'spam-egg'}
 
 
 def test_index_page(client):
