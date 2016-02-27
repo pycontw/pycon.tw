@@ -14,6 +14,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from core.utils import format_html_lazy
+from core.models import EAWTextField
 
 
 class UserQueryset(models.QuerySet):
@@ -109,9 +110,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('speaker name'),
         max_length=100,
     )
-    bio = models.TextField(
+    bio = EAWTextField(
         verbose_name=_('biography'),
-        max_length=500,
+        max_length=1000,
         help_text=_(
             "Describe yourself with 500 characters or less. "
             "There will be no formatting."
