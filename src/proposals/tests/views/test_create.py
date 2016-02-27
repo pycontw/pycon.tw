@@ -73,7 +73,7 @@ def test_talk_proposal_create_post(user, user_client):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF45',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
     }, follow=True)
@@ -99,7 +99,7 @@ def test_tutorial_proposal_create_post(user, user_client):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
     }, follow=True)
