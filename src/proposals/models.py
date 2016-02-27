@@ -153,7 +153,7 @@ class AbstractProposal(models.Model):
 
     abstract = EAWTextField(
         verbose_name=_('abstract'),
-        max_length=500,
+        max_length=1000,
         help_text=_(
             "The overview of what the talk is about. If the talk assume some "
             "domain knowledge please state it here. If your talk is accepted, "
@@ -187,7 +187,7 @@ class AbstractProposal(models.Model):
 
     objective = EAWTextField(
         verbose_name=_('objective'),
-        max_length=500,
+        max_length=1000,
         help_text=_(
             "Who is the intended audience for your talk? (Be specific, "
             "\"Python users\" is not a good answer). "
@@ -202,8 +202,8 @@ class AbstractProposal(models.Model):
         blank=True,
         help_text=_(
             "Try not be too lengthy to scare away reviewers or potential "
-            "audience. A comfortable length is less than 1000 characters "
-            "(or about 600 Chinese characters). Since most reviewers may not "
+            "audience. A comfortable length is less than 2000 characters "
+            "(or about 1200 Chinese characters). Since most reviewers may not "
             "understand the topic as deep as you do, including related links "
             "to the talk topic will help reviewers understand the proposal. "
             "Edit using "

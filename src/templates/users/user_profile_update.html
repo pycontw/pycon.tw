@@ -105,6 +105,7 @@
 {{ block.super }}
 {% include '_includes/character_counter_template.html' %}
 {% compress js %}
+<script src="{% static 'js/vendors/eastasianwidth.js' %}"></script>
 <script src="{% static 'js/tools/character-counter.js' %}"></script>
 <script src="{% static 'js/users/user_profile_update.js' %}"></script>
 {% endcompress %}
