@@ -20,13 +20,16 @@ EXTRA_DATA['about/staff'] = {
         {
             'key': _('Program'),
             'members': [
-                {'name': 'Liang Bo Wang', 'tags': _('lead')},
-                {'name': 'Summit Suen'},
+                {'name': 'Liang-Bo Wang', 'tags': _('lead')},
+
                 {'name': 'Ming-Yi Huang'},
-                {'name': 'Victor'},
+                {'name': 'Victor Gau'},
                 {'name': 'Tim Hsu'},
                 {'name': 'Yung-Yu Chen'},
-                {'name': 'tjw'},
+                {'name': 'Tzer-jen Wei'},
+                {'name': 'Summit Suen'},
+                {'name': 'Yi Hsiao'},
+                {'name': 'Jason'},
             ],
         },
         {
