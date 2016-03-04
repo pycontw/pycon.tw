@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('users', '0001_initial'),
-        ('postgres', '0004_user_generated_id'),
+        ('postgres', '0005_fix_user_id_in_adminlog'),
     ]
 
     operations = [
