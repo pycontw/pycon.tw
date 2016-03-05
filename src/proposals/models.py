@@ -142,12 +142,13 @@ class AbstractProposal(models.Model):
     )
 
     LANGUAGE_CHOICES = (
-        ('ENG', _('English')),
-        ('CHI', _('Chinese')),
+        ('ENEN', _('English talk')),
+        ('ZHEN', _('Chinese talk w. English slides')),
+        ('ZHZH', _('Chinese talk w. Chinese slides'))
     )
     language = models.CharField(
         verbose_name=_('language'),
-        max_length=3,
+        max_length=4,
         choices=LANGUAGE_CHOICES,
     )
 
