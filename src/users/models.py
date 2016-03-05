@@ -210,6 +210,9 @@ class User(AbstractBaseUser, PermissionsMixin):
             and self.speaker_name and self.bio
         )
 
+    def is_reviewer(self):
+        return self.has_perm('reviews.add_review')
+
     @property
     def cospeaking_info_set(self):
         return self.additionalspeaker_set.filter(cancelled=False)

@@ -18,5 +18,4 @@ class TalkProposalListView(PermissionRequiredMixin, LoginRequiredMixin, ListView
 class TalkProposalDetailView(PermissionRequiredMixin, LoginRequiredMixin, DetailView):
     model = TalkProposal
     permission_required = 'reviews.add_review'
-
-
+    template_name = 'reviews/talkproposal_detail.html'
