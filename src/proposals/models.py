@@ -27,8 +27,9 @@ class PrimarySpeaker:
 
     def __eq__(self, other):
         return (
-            isinstance(other, PrimarySpeaker) and self.user == other.user
-            and self.proposal == other.proposal
+            isinstance(other, PrimarySpeaker) and
+            self.user == other.user and
+            self.proposal == other.proposal
         )
 
     @property
@@ -99,8 +100,8 @@ class AdditionalSpeaker(models.Model):
 class ProposalQuerySet(models.QuerySet):
     def filter_viewable(self, user):
         return self.filter(
-            Q(submitter=user)
-            | Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
+            Q(submitter=user) |
+            Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
         )
 
 
@@ -273,6 +274,22 @@ class AbstractProposal(models.Model):
         content_type_field='proposal_type',
         object_id_field='proposal_id',
     )
+
+    class RESULT(object):
+        Undecided = 0
+        Accepted = 1
+        Rejected = 2
+
+    RESULT_CHOICES = (
+        (RESULT.Undecided, 'Undecided'),
+        (RESULT.Accepted, 'Accepted'),
+        (RESULT.Rejected, 'Rejected'),
+    )
+
+    result = models.IntegerField(verbose_name=_('review result'),
+                                 default=0,
+                                 choices=RESULT_CHOICES,
+                                 db_index=True)
 
     objects = ProposalQuerySet.as_manager()
 

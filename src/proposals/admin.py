@@ -20,6 +20,7 @@ class ProposalAdmin(admin.ModelAdmin):
         'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled',
+        'result',
     ]
     readonly_fields = ['submitter']
     search_fields = ['title', 'abstract']
