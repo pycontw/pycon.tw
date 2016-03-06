@@ -63,10 +63,9 @@
         {% endif %}
     </div>
     <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
-    <form action="." method="POST">
+    <form action="{{ request.get_full_path }}" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-        <input type="hidden" name="proposal" value="{{ proposal.pk }}">
     <input class="btn" type="submit" value="Submit">
     </form>
 {% endblock %}
