@@ -176,6 +176,20 @@
     margin-top: 10px;
 }
 
+@media (min-width: $grid-float-breakpoint) {
+    .navbar-nav.navbar-nav-hover {
+        .dropdown-menu {
+            @include transition (all 0.3s);
+            display: block;
+            opacity: 0;
+        }
+
+        .dropdown:hover > .dropdown-menu {
+            opacity: 1;
+        }
+    }
+}
+
 .top-nav {
     background-color: $theme-color;
     padding: 24px 44px;
