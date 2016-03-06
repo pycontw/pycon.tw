@@ -5,3 +5,12 @@
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='review' %}
 {% endblock dashboard_tablist %}
+
+{% block main-content %}
+<ul>
+{% for object in object_list %}
+    <li>{{ object.title }} <a href="{% url 'review_proposal_detail' object.pk %}">Review</a></li>
+{% endfor %}
+</ul>
+
+{% endblock main-content %}
