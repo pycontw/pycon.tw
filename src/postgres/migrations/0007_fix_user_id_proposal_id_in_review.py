@@ -14,6 +14,7 @@ ALTER_REVIEW_REVIEWER_ID = """
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('reviews', '0001_initial'),
         ('postgres', '0006_fix_user_id_in_permission'),
     ]
 
