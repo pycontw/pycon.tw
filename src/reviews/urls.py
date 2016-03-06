@@ -1,11 +1,11 @@
 from django.conf.urls import url
 
-from .views import TalkProposalDetailView, TalkProposalListView
-from .views import ReviewUpdateView
+from .views import TalkProposalListView
+from .views import ReviewUpdateView, ReviewCreateView
 
 
 urlpatterns = [
     url(r'^$', TalkProposalListView.as_view(), name='review_proposal_list', ),
-    url(r'^proposal/(?P<pk>(\d+))/$', TalkProposalDetailView.as_view(), name='review_proposal_detail', ),
+    url(r'^create/$', ReviewCreateView.as_view(), name='review_create', ),
     url(r'^update/(?P<pk>(\d+))/$', ReviewUpdateView.as_view(), name='review_update', ),
 ]
