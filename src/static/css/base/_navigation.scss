@@ -179,13 +179,16 @@
 @media (min-width: $grid-float-breakpoint) {
     .navbar-nav.navbar-nav-hover {
         .dropdown-menu {
-            @include transition (all 0.3s);
+            @include transition (all 0.8s);
             display: block;
             opacity: 0;
+            max-height: 0;
+            overflow: hidden;
         }
 
         .dropdown:hover > .dropdown-menu {
             opacity: 1;
+            max-height: 300px;
         }
     }
 }
