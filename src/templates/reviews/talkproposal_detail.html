@@ -5,3 +5,55 @@
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='review' %}
 {% endblock dashboard_tablist %}
+
+{% block main-content %}
+    <h3 class="dashboard-header"><span class="header-title">Title</span></h3>
+    <p>
+        {{ object.title }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Category</span></h3>
+    <p>
+        {{ object.get_category_display }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Duration</span></h3>
+    <p>
+        {{ object.get_duration_display }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Language</span></h3>
+    <p>
+        {{ object.get_language_display }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Abstract</span></h3>
+    <p>
+        {{ object.abstract }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Python Level</span></h3>
+    <p>
+        {{ object.get_python_level_display }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Objective</span></h3>
+    <p>
+        {{ object.objective }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Detailed description</span></h3>
+    <p>
+        {{ object.detailed_description }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Outline</span></h3>
+    <p>
+        {{ object.outline }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Supplementary</span></h3>
+    <p>
+        {{ object.supplementary }}
+    </p>
+    <h3 class="dashboard-header"><span class="header-title">Slide Link</span></h3>
+    <p>
+        {{ object.slide_link }}
+    </p>
+    <form action="{% url 'review_update' review.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input class="btn" type="submit" value="送出">
+    </form>
+{% endblock %}
