@@ -82,6 +82,14 @@ body.dashboard{
                 > h4:first-child {
                     margin-top: 0;
                 }
+                > .markdown-field {
+                    background-color: transparent;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    position: relative;
+                    padding: 1em;
+                    height: auto;
+                }
             }
         }
     }

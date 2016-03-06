@@ -1,10 +1,18 @@
 {% extends 'dashboard_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load i18n staticfiles %}
+{% load compress crispy_forms_tags %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/vendors/simplemde.min.css' %}">
+{% endblock extra_css %}
+
 
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='review' %}
 {% endblock dashboard_tablist %}
+
 
 {% block main-content %}
 
@@ -25,15 +33,15 @@
 	<div>{{ proposal.objective|linebreaks }}</div>
 	{% if proposal.detailed_description %}
 	<h4>{% trans 'Detailed description' %}</h4>
-	<div>{{ proposal.detailed_description|linebreaks }}</div>
+	<div class="markdown-field">{{ proposal.detailed_description }}</div>
 	{% endif %}
 	{% if proposal.outline %}
 	<h4>{% trans 'Outline' %}</h4>
-	<div>{{ proposal.outline|linebreaks }}</div>
+	<div class="markdown-field">{{ proposal.outline }}</div>
 	{% endif %}
 	{% if proposal.supplementary %}
 	<h4>{% trans 'Supplementary' %}</h4>
-	<div>{{ proposal.supplementary|linebreaks }}</div>
+	<div class="markdown-field">{{ proposal.supplementary }}</div>
 	{% endif %}
 </div>
 
@@ -46,3 +54,12 @@
 </form>
 
 {% endblock main-content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+{% compress js %}
+<script src="{% static 'js/vendors/simplemde.js' %}"></script>
+<script src="{% static 'js/reviews/review_form.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
