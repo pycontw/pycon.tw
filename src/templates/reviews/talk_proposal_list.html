@@ -1,0 +1,23 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='review' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
+
+<div class="talk-proposals proposals">
+<h3 class="dashboard-header">
+    <span class="header__title">{% trans 'Unreviewed Talk Proposals' %}</span>
+</h3>
+
+{% if object_list.exists %}
+  {% include 'reviews/_includes/proposal_table.html' with user=user proposals=object_list %}
+{% else %}
+  <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
+{% endif %}
+</div>
+
+{% endblock main-content %}

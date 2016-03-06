@@ -12,14 +12,14 @@ from .forms import ReviewForm
 class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = 'reviews.add_review'
-    template_name = 'reviews/talkproposal_list.html'
+    template_name = 'reviews/talk_proposal_list.html'
 
     def get_queryset(self):
         return TalkProposal.objects.exclude(
             review__reviewer=self.request.user,
         ).exclude(
             submitter=self.request.user
-        )
+        ).order_by('?')
 
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):

@@ -1,0 +1,24 @@
+{% load i18n %}
+
+<table class="proposals-table table table-responsive">
+    <thead>
+        <tr>
+            <th class="proposal-title">{% trans 'Title' %}</th>
+            <th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
+            <th width="1%" class="hidden-xs">{% trans 'Language' %}</th>
+            <th width="1%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proposal in proposals %}
+        <tr>
+            <td class="proposal-title">{{ proposal.title }}</td>
+            <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
+            <td class="hidden-xs">{{ proposal.get_language_display }}</td>
+            <td>
+                <a href="{% url 'review_create' %}?proposal_id={{ proposal.pk }}" class="btn btn-natural">{% trans 'Review' %}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
