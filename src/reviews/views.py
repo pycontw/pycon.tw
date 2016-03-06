@@ -40,17 +40,13 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
         if context['proposal'].submitter == self.request.user:
             raise PermissionDenied
 
-        context['form'] = ReviewForm(
-            initial={
-                'proposal': context['proposal'],
-            }
-        )
-
         return context
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.reviewer = self.request.user
+        proposal_id = self.request.GET.get('proposal_id')
+        self.object.proposal = TalkProposal.objects.get(pk=proposal_id)
         return super(ReviewCreateView, self).form_valid(form)
 
     def get_success_url(self):
