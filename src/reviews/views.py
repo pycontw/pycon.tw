@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse
+from django.db.models import Count
 from django.http import Http404
 from django.views.generic import CreateView, ListView, UpdateView
 
@@ -12,13 +13,19 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = 'reviews.add_review'
     template_name = 'reviews/talk_proposal_list.html'
+    order_keys = {
+        'title': 'title',
+        'reviews': 'review_count',
+    }
 
     def get_queryset(self):
+        order_key = self.order_keys.get(self.request.GET.get('order'), '?')
         user = self.request.user
         unreviewed = self.model.objects.filter_reviewable(user).exclude(
             review__reviewer=user,
         )
-        return unreviewed.order_by('?')
+        unreviewed = unreviewed.annotate(review_count=Count('review'))
+        return unreviewed.order_by(order_key)
 
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
