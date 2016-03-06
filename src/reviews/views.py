@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic.edit import UpdateView, CreateView
 from django.core.urlresolvers import reverse
 from django.http import Http404
+from django.core.exceptions import PermissionDenied
 
 from .models import TalkProposal
 from .models import Review
@@ -35,6 +36,10 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
             context['proposal'] = TalkProposal.objects.get(pk=proposal_id)
         except TalkProposal.DoesNotExist:
             raise Http404('Proposal not found!')
+
+        if context['proposal'].submitter == self.request.user:
+            raise PermissionDenied
+
         context['form'] = ReviewForm(
             initial={
                 'proposal': context['proposal'],
