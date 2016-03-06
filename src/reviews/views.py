@@ -1,29 +1,28 @@
-from django.views.generic.list import ListView
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.views.generic.edit import UpdateView, CreateView
+from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse
 from django.http import Http404
-from django.core.exceptions import PermissionDenied
+from django.views.generic import CreateView, ListView, UpdateView
 
-from .models import TalkProposal
-from .models import Review
-from .forms import ReviewForm
+from .models import Review, TalkProposal
 
 
 class TalkProposalListView(PermissionRequiredMixin, ListView):
+
     model = TalkProposal
     permission_required = 'reviews.add_review'
     template_name = 'reviews/talk_proposal_list.html'
 
     def get_queryset(self):
-        return TalkProposal.objects.exclude(
-            review__reviewer=self.request.user,
-        ).exclude(
-            submitter=self.request.user
-        ).order_by('?')
+        user = self.request.user
+        unreviewed = self.model.objects.filter_reviewable(user).exclude(
+            review__reviewer=user,
+        )
+        return unreviewed.order_by('?')
 
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
+
     model = Review
     permission_required = 'reviews.add_review'
     template_name = 'reviews/review_form.html'
@@ -54,6 +53,7 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
 
 
 class ReviewUpdateView(PermissionRequiredMixin, UpdateView):
+
     model = Review
     permission_required = 'reviews.add_review'
     fields = ('score', 'comment', 'note', )

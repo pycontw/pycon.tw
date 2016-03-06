@@ -98,8 +98,15 @@ class AdditionalSpeaker(models.Model):
 
 
 class ProposalQuerySet(models.QuerySet):
+
     def filter_viewable(self, user):
         return self.filter(
+            Q(submitter=user) |
+            Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
+        )
+
+    def filter_reviewable(self, user):
+        return self.exclude(
             Q(submitter=user) |
             Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
         )
