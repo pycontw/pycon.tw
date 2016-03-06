@@ -19,13 +19,19 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     }
 
     def get_queryset(self):
-        order_key = self.order_keys.get(self.request.GET.get('order'), '?')
         user = self.request.user
-        unreviewed = self.model.objects.filter_reviewable(user).exclude(
-            review__reviewer=user,
+        proposals = (
+            self.model.objects
+            .filter_reviewable(user)
+            .exclude(review__reviewer=user)
+            .annotate(review_count=Count('review'))
         )
-        unreviewed = unreviewed.annotate(review_count=Count('review'))
-        return unreviewed.order_by(order_key)
+        category = self.request.GET.get('category')
+        if category:
+            proposals = proposals.filter(category=category.upper())
+
+        order_key = self.order_keys.get(self.request.GET.get('order'), '?')
+        return proposals.order_by(order_key)
 
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
