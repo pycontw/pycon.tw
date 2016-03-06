@@ -67,13 +67,21 @@ body.dashboard{
             border-left-color: #EEEEEE;
             padding: 0;
 
-
             .table-panel {
                 padding: 33px 33px 0px 33px;
             }
 
             > form, .dashboard-body{
-                padding:  33px;
+                padding: 33px;
+            }
+
+            > .reviewed-proposal-view {
+                > h4 {
+                    margin-top: 2em;
+                }
+                > h4:first-child {
+                    margin-top: 0;
+                }
             }
         }
     }
