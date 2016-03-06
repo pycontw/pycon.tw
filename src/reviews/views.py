@@ -27,7 +27,7 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
     model = Review
     permission_required = 'reviews.add_review'
     template_name = 'reviews/review_form.html'
-    form_class = ReviewForm
+    fields = ('score', 'comment', 'note', )
 
     def get_context_data(self, **kwargs):
         context = super(ReviewCreateView, self).get_context_data(**kwargs)
