@@ -21,6 +21,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             submitter=self.request.user
         )
 
+
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
     model = Review
     permission_required = 'reviews.add_review'
@@ -52,6 +53,9 @@ class ReviewUpdateView(PermissionRequiredMixin, UpdateView):
     permission_required = 'reviews.add_review'
     fields = ('score', 'comment', 'note', )
     template_name = 'reviews/review_form.html'
+
+    def get_queryset(self):
+        return Review.objects.filter(reviewer=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super(ReviewUpdateView, self).get_context_data(**kwargs)
