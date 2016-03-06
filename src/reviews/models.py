@@ -12,9 +12,9 @@ class Review(models.Model):
         verbose_name_plural = "Reviews"
         ordering = ['-updated']
 
-    def __unicode__(self):
+    def __str__(self):
         return u'{0} Review {1}. Score {2}'.format(
-            self.user, self.proposal, self.get_score_display()
+            self.reviewer, self.proposal, self.get_score_display()
         )
 
     REVIEW_CHOICES = (

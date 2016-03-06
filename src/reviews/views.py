@@ -37,12 +37,16 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
             raise Http404('Proposal not found!')
         context['form'] = ReviewForm(
             initial={
-                'reviewer': self.request.user,
                 'proposal': context['proposal'],
             }
         )
 
         return context
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.reviewer = self.request.user
+        return super(ReviewCreateView, self).form_valid(form)
 
     def get_success_url(self):
         return reverse('review_proposal_list')
