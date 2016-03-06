@@ -7,50 +7,62 @@
 {% endblock dashboard_tablist %}
 
 {% block main-content %}
-    <h3 class="dashboard-header"><span class="header-title">Title</span></h3>
-    <p>
-        {{ proposal.title }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Category</span></h3>
-    <p>
-        {{ proposal.get_category_display }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Duration</span></h3>
-    <p>
-        {{ proposal.get_duration_display }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Language</span></h3>
-    <p>
-        {{ proposal.get_language_display }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Abstract</span></h3>
-    <p>
-        {{ proposal.abstract }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Python Level</span></h3>
-    <p>
-        {{ proposal.get_python_level_display }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Objective</span></h3>
-    <p>
-        {{ proposal.objective }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Detailed description</span></h3>
-    <p>
-        {{ proposal.detailed_description }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Outline</span></h3>
-    <p>
-        {{ proposal.outline }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Supplementary</span></h3>
-    <p>
-        {{ proposal.supplementary }}
-    </p>
-    <h3 class="dashboard-header"><span class="header-title">Slide Link</span></h3>
-    <p>
-        {{ proposal.slide_link }}
-    </p>
+    <h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
+    <div class="dashboard-body">
+        <h4>Category</h4>
+        <p>
+            {{ proposal.get_category_display }}
+        </p>
+        <br>
+        <h4>Duration</h4>
+        <p>
+            {{ proposal.get_duration_display }}
+        </p>
+        <br>
+        <h4>Language</h4>
+        <p>
+            {{ proposal.get_language_display }}
+        </p>
+        <br>
+        <h4>Abstract</h4>
+        <p>
+            {{ proposal.abstract }}
+        </p>
+        <br>
+        <h4>Python level</h4>
+        <p>
+            {{ proposal.get_python_level_display }}
+        </p>
+        {% if proposal.objective %}
+            <br>
+            <h4>Objective</h4>
+            <p>
+                {{ proposal.objective }}
+            </p>
+        {% endif %}
+        {% if proposal.detailed_description %}
+            <br>
+            <h4>Detailed description</h4>
+            <p>
+                {{ proposal.detailed_description }}
+            </p>
+        {% endif %}
+        {% if proposal.outline %}
+            <br>
+            <h4>Outline</h4>
+            <p>
+                {{ proposal.outline }}
+            </p>
+        {% endif %}
+        {% if proposal.supplementary %}
+            <br>
+            <h4>Supplementary</h4>
+            <p>
+                {{ proposal.supplementary }}
+            </p>
+        {% endif %}
+    </div>
+    <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
     <form action="{{ request.get_full_path }}" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
