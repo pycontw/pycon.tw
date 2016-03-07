@@ -70,7 +70,11 @@ class Review(models.Model):
         ),
     )
 
-    updated = models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(
+        auto_now=True,
+        verbose_name=_('updated'),
+        db_index=True,
+    )
 
     class Meta:
         verbose_name = _('review')
