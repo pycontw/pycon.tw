@@ -39,10 +39,12 @@
 	<h4>{% trans 'Outline' %}</h4>
 	<div class="markdown-field">{{ proposal.outline }}</div>
 	{% endif %}
+    {% comment %}
 	{% if proposal.supplementary %}
 	<h4>{% trans 'Supplementary' %}</h4>
 	<div class="markdown-field">{{ proposal.supplementary }}</div>
 	{% endif %}
+    {% endcomment %}
 </div>
 
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
