@@ -61,6 +61,7 @@ class Review(models.Model):
     )
     discloses_comment = models.BooleanField(
         default=True,
+        choices=DISCLOSE_CHOICES,
         verbose_name=_('discloses comment to proposal submitter'),
         help_text=_(
             "Whether the proposal submitter can read you comments. We will "
