@@ -21,7 +21,7 @@ class ReviewForm(RequestUserValidationMixin, forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ['score', 'comment', 'note']
+        fields = ['score', 'comment', 'discloses_comment', 'note']
 
     def __init__(self, proposal, *args, **kwargs):
         super().__init__(*args, **kwargs)
