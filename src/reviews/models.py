@@ -47,6 +47,20 @@ class Review(models.Model):
         ),
     )
 
+    DISCLOSE_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No')),
+    )
+    discloses_comment = models.BooleanField(
+        default=True,
+        verbose_name=_('discloses comment to proposal submitter'),
+        help_text=_(
+            "Whether the proposal submitter can read you comments. We will "
+            "include your comments in the proposal acceptance/rejection "
+            "notice sent to the submitter if you allow us to."
+        )
+    )
+
     note = models.TextField(
         blank=True,
         verbose_name=_('note'),
