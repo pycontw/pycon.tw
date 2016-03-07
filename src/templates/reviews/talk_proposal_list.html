@@ -24,8 +24,8 @@
 <h3 class="dashboard-header">
     <span class="header__title">{% trans 'Reviewed Talk Proposals' %}</span>
 </h3>
-{% if user.review_set.all.exists %}
-  {% include 'reviews/_includes/review_table.html' with user=user reviews=user.review_set.all %}
+{% if reviews.exists %}
+  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
 {% else %}
   <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
 {% endif %}

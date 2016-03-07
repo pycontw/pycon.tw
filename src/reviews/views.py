@@ -5,6 +5,7 @@ from django.db.models import Count
 from django.http import Http404
 from django.views.generic import CreateView, ListView, UpdateView
 
+from .apps import ReviewsConfig
 from .models import Review, TalkProposal
 
 
@@ -19,19 +20,31 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     }
 
     def get_queryset(self):
+        params = self.request.GET
         user = self.request.user
         proposals = (
             self.model.objects
             .filter_reviewable(user)
-            .exclude(review__reviewer=user)
+            .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
             .annotate(review_count=Count('review'))
         )
-        category = self.request.GET.get('category')
+        category = params.get('category').upper()
         if category:
-            proposals = proposals.filter(category=category.upper())
+            proposals = proposals.filter(category=category)
+        order_key = self.order_keys.get(params.get('order').lower())
+        return proposals.order_by(order_key or '?')
 
-        order_key = self.order_keys.get(self.request.GET.get('order'), '?')
-        return proposals.order_by(order_key)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['reviews'] = self.get_reviews()
+        return context
+
+    def get_reviews(self):
+        reviews = (
+            self.request.user.review_set
+            .filter(stage=ReviewsConfig.stage)
+        )
+        return reviews
 
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
