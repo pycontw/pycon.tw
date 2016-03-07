@@ -25,16 +25,22 @@ class Review(models.Model):
     )
 
     SCORE_CHOICES = (
-        (2,  '+1'),
-        (1,  '+0'),
-        (0,  '----------'),
-        (-1, '-0'),
-        (-2, '-1'),
+        (2, _('+1 (strong accept)')),
+        (1, _('+0 (weakly accept)')),
+        (0, '----------'),
+        (-1, _('-0 (weakly reject)')),
+        (-2, _('-1 (strong reject)')),
     )
     score = models.SmallIntegerField(
         default=0,
         choices=SCORE_CHOICES,
         verbose_name=_('score'),
+        help_text=_(
+            "Your score to accept or reject this talk. "
+            "More information about the scoring and acceptance criteria "
+            "can be found at the google doc "
+            "<a href=\"https://goo.gl/EPlUZx\">Review Guideline</a>."
+        ),
     )
 
     comment = models.TextField(
