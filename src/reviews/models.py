@@ -8,6 +8,9 @@ from proposals.models import TalkProposal
 from .apps import ReviewsConfig
 
 
+REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
+
+
 class Review(models.Model):
 
     reviewer = BigForeignKey(
