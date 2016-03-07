@@ -88,6 +88,7 @@ class Review(models.Model):
     class Meta:
         verbose_name = _('review')
         verbose_name_plural = _('reviews')
+        unique_together = ['reviewer', 'stage', 'proposal']
         ordering = ['-updated']
 
     def __str__(self):

@@ -16,7 +16,7 @@
             <td class="proposal-title">{{ review.proposal.title }}</td>
             <td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
             <td>
-                <a href="{% url 'review_update' review.pk %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>
+                <a href="{% url 'review_edit' proposal_pk=review.proposal.pk %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>
             </td>
         </tr>
         {% endfor %}

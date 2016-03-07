@@ -2,12 +2,12 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.http import Http404
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import ListView, UpdateView
 
 from proposals.models import TalkProposal
 
 from .apps import ReviewsConfig
-from .forms import ReviewCreateForm
+from .forms import ReviewForm
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 
@@ -49,9 +49,9 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return reviews
 
 
-class ReviewCreateView(PermissionRequiredMixin, CreateView):
+class ReviewEditView(PermissionRequiredMixin, UpdateView):
 
-    form_class = ReviewCreateForm
+    form_class = ReviewForm
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/review_form.html'
     proposal_model = TalkProposal
@@ -75,6 +75,17 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
         self.proposal = self.get_proposal()
         return super().post(request, *args, **kwargs)
 
+    def get_object(self):
+        try:
+            review = Review.objects.get(
+                proposal=self.proposal,
+                reviewer=self.request.user,
+                stage=ReviewsConfig.stage,
+            )
+        except Review.DoesNotExist:
+            review = None
+        return review
+
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
@@ -86,25 +97,6 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data()
         data['proposal'] = self.proposal
-        return data
-
-    def get_success_url(self):
-        return reverse('review_proposal_list')
-
-
-class ReviewUpdateView(PermissionRequiredMixin, UpdateView):
-
-    model = Review
-    fields = ['score', 'comment', 'note']
-    permission_required = REVIEW_REQUIRED_PERMISSIONS
-    template_name = 'reviews/review_form.html'
-
-    def get_queryset(self):
-        return super().get_queryset().filter(reviewer=self.request.user)
-
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data()
-        data['proposal'] = self.object.proposal
         return data
 
     def get_success_url(self):

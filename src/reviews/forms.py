@@ -6,7 +6,7 @@ from core.forms import RequestUserValidationMixin
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 
-class ReviewCreateForm(RequestUserValidationMixin, forms.ModelForm):
+class ReviewForm(RequestUserValidationMixin, forms.ModelForm):
 
     error_messages = RequestUserValidationMixin.error_messages.copy()
     error_messages.update({
