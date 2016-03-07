@@ -28,10 +28,10 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
             .annotate(review_count=Count('review'))
         )
-        category = params.get('category').upper()
+        category = params.get('category', '').upper()
         if category:
             proposals = proposals.filter(category=category)
-        order_key = self.order_keys.get(params.get('order').lower())
+        order_key = self.order_keys.get(params.get('order', '').lower())
         return proposals.order_by(order_key or '?')
 
     def get_context_data(self, **kwargs):
