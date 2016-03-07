@@ -16,7 +16,6 @@ class Review(models.Model):
     )
 
     stage = models.IntegerField(
-        default=1,
         verbose_name=_('stage'),
     )
 
