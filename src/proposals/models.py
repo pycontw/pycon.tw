@@ -282,22 +282,6 @@ class AbstractProposal(models.Model):
         object_id_field='proposal_id',
     )
 
-    class RESULT(object):
-        Undecided = 0
-        Accepted = 1
-        Rejected = 2
-
-    RESULT_CHOICES = (
-        (RESULT.Undecided, 'Undecided'),
-        (RESULT.Accepted, 'Accepted'),
-        (RESULT.Rejected, 'Rejected'),
-    )
-
-    result = models.IntegerField(verbose_name=_('review result'),
-                                 default=0,
-                                 choices=RESULT_CHOICES,
-                                 db_index=True)
-
     objects = ProposalQuerySet.as_manager()
 
     class Meta:
@@ -340,6 +324,18 @@ class TalkProposal(AbstractProposal):
             "target='_blank'>Markdown</a>."
             "This is NOT made public and for REVIEW ONLY."
         ),
+    )
+
+    ACCEPTED_CHOICES = (
+        (None,  '----------'),
+        (True,  _('Accepted')),
+        (False, _('Rejected')),
+    )
+    accepted = models.NullBooleanField(
+        verbose_name=_('accepted'),
+        default=None,
+        choices=ACCEPTED_CHOICES,
+        db_index=True,
     )
 
     class Meta(AbstractProposal.Meta):
