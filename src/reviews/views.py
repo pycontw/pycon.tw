@@ -1,18 +1,20 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.core.exceptions import PermissionDenied
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.http import Http404
 from django.views.generic import CreateView, ListView, UpdateView
 
+from proposals.models import TalkProposal
+
 from .apps import ReviewsConfig
-from .models import Review, TalkProposal
+from .forms import ReviewCreateForm
+from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 
 class TalkProposalListView(PermissionRequiredMixin, ListView):
 
     model = TalkProposal
-    permission_required = 'reviews.add_review'
+    permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
     order_keys = {
         'title': 'title',
@@ -49,30 +51,42 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
 
 class ReviewCreateView(PermissionRequiredMixin, CreateView):
 
-    model = Review
-    permission_required = 'reviews.add_review'
+    form_class = ReviewCreateForm
+    permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/review_form.html'
-    fields = ('score', 'comment', 'note', )
+    proposal_model = TalkProposal
+
+    def get_proposal(self):
+        try:
+            proposal = (
+                self.proposal_model.objects
+                .filter_reviewable(self.request.user)
+                .get(pk=self.kwargs['proposal_pk'])
+            )
+        except self.proposal_model.DoesNotExist:
+            raise Http404
+        return proposal
+
+    def get(self, request, *args, **kwargs):
+        self.proposal = self.get_proposal()
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        self.proposal = self.get_proposal()
+        return super().post(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({
+            'request': self.request,
+            'proposal': self.proposal,
+        })
+        return kwargs
 
     def get_context_data(self, **kwargs):
-        context = super(ReviewCreateView, self).get_context_data(**kwargs)
-        proposal_id = self.request.GET.get('proposal_id')
-        try:
-            context['proposal'] = TalkProposal.objects.get(pk=proposal_id)
-        except TalkProposal.DoesNotExist:
-            raise Http404('Proposal not found!')
-
-        if context['proposal'].submitter == self.request.user:
-            raise PermissionDenied
-
-        return context
-
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.reviewer = self.request.user
-        proposal_id = self.request.GET.get('proposal_id')
-        self.object.proposal = TalkProposal.objects.get(pk=proposal_id)
-        return super(ReviewCreateView, self).form_valid(form)
+        data = super().get_context_data()
+        data['proposal'] = self.proposal
+        return data
 
     def get_success_url(self):
         return reverse('review_proposal_list')
@@ -81,17 +95,17 @@ class ReviewCreateView(PermissionRequiredMixin, CreateView):
 class ReviewUpdateView(PermissionRequiredMixin, UpdateView):
 
     model = Review
-    permission_required = 'reviews.add_review'
-    fields = ('score', 'comment', 'note', )
+    fields = ['score', 'comment', 'note']
+    permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/review_form.html'
 
     def get_queryset(self):
-        return Review.objects.filter(reviewer=self.request.user)
+        return super().get_queryset().filter(reviewer=self.request.user)
 
     def get_context_data(self, **kwargs):
-        context = super(ReviewUpdateView, self).get_context_data(**kwargs)
-        context['proposal'] = self.object.proposal
-        return context
+        data = super().get_context_data()
+        data['proposal'] = self.object.proposal
+        return data
 
     def get_success_url(self):
         return reverse('review_proposal_list')

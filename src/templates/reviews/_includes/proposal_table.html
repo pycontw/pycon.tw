@@ -16,7 +16,7 @@
             <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
             <td class="hidden-xs">{{ proposal.get_category_display }}</td>
             <td>
-                <a href="{% url 'review_create' %}?proposal_id={{ proposal.pk }}" class="btn btn-natural">{% trans 'Review' %}</a>
+                <a href="{% url 'review_create' proposal_pk=proposal.pk %}" class="btn btn-natural">{% trans 'Review' %}</a>
             </td>
         </tr>
         {% endfor %}
