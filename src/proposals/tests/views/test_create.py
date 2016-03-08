@@ -1,5 +1,11 @@
+import pytest
+
 from django.contrib import messages
+
 from proposals.models import TalkProposal, TutorialProposal
+
+
+pytestmark = pytest.mark.skipif(True, reason='call for proposals ends')
 
 
 def test_proposal_create_login(client):
