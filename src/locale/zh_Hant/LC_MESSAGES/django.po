@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-02 10:50+0000\n"
-"PO-Revision-Date: 2016-02-02 11:28+0000\n"
+"POT-Creation-Date: 2016-03-09 07:58+0000\n"
+"PO-Revision-Date: 2016-03-09 08:07+0000\n"
 "Last-Translator: Liang Bo Wang <ccwang002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -37,32 +37,32 @@ msgstr "副主席"
 msgid "Program"
 msgstr "議程組"
 
-#: core/data.py:23 core/data.py:35 core/data.py:42 core/data.py:55
-#: core/data.py:62 core/data.py:68
+#: core/data.py:23 core/data.py:38 core/data.py:50 core/data.py:63
+#: core/data.py:70 core/data.py:76
 msgid "lead"
 msgstr "組長"
 
-#: core/data.py:33
+#: core/data.py:36
 msgid "Web"
 msgstr "網站組"
 
-#: core/data.py:40
+#: core/data.py:48
 msgid "Public Relation"
 msgstr "公關組"
 
-#: core/data.py:53
+#: core/data.py:61
 msgid "Venue"
 msgstr "場務組"
 
-#: core/data.py:60
+#: core/data.py:68
 msgid "Registration"
 msgstr "註冊組"
 
-#: core/data.py:66
+#: core/data.py:74
 msgid "Sponsorship"
 msgstr "贊助組"
 
-#: core/data.py:79
+#: core/data.py:87
 msgid "Finance"
 msgstr "財務會計組"
 
@@ -112,7 +112,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:54 users/models.py:189
+#: proposals/models.py:54 users/models.py:190
 msgid "user"
 msgstr "使用者"
 
@@ -296,13 +296,13 @@ msgstr "詳細說明"
 #: proposals/models.py:204
 msgid ""
 "Try not be too lengthy to scare away reviewers or potential audience. A "
-"comfortable length is less than 1000 characters (or about 600 Chinese "
+"comfortable length is less than 2000 characters (or about 1200 Chinese "
 "characters). Since most reviewers may not understand the topic as deep as "
 "you do, including related links to the talk topic will help reviewers "
 "understand the proposal. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1000 字元或 600 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:216
 msgid "supplementary"
@@ -469,12 +469,19 @@ msgid "We screwed up. It’s not your fault."
 msgstr "我們搞砸了，這不是你的問題。"
 
 #: templates/_includes/character_counter_template.html:4
-msgid "Character count: "
-msgstr "字元數："
+msgid "Text unit count: "
+msgstr "字單位計數："
 
 #: templates/_includes/character_counter_template.html:4
 msgid "(Not available without JavaScript)"
 msgstr "（無 JavaScript 時無法使用）"
+
+#: templates/_includes/character_counter_template.html:5
+msgid ""
+"This value is used to estimate the size of text in our materials. It counts "
+"East Asian wide characters (e.g. Chinese) as two units because they take "
+"more space."
+msgstr "本數值用來估計文本的長度。東亞寬字元（如：中文）占兩單位，因為他們占用較大的空間。"
 
 #: templates/_includes/dashboard_tablist.html:5
 msgid "Proposals"
@@ -490,7 +497,7 @@ msgid "Change Password"
 msgstr "更改密碼"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:49 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:46 templates/dashboard_base.html:6
 msgid "Dashboard"
 msgstr "控制面板"
 
@@ -502,50 +509,50 @@ msgstr "登出"
 msgid "About"
 msgstr "關於"
 
-#: templates/_includes/nav/front_nav.html:24
+#: templates/_includes/nav/front_nav.html:21
 msgid "Code of Conduct"
 msgstr "行為準則"
 
-#: templates/_includes/nav/front_nav.html:25
+#: templates/_includes/nav/front_nav.html:22
 #: templates/contents/_default/about/staff.html:6
 #: templates/contents/_default/about/staff.html:7
 msgid "Staff"
 msgstr "工作人員"
 
-#: templates/_includes/nav/front_nav.html:29
+#: templates/_includes/nav/front_nav.html:26
 msgid "Events"
 msgstr "活動"
 
-#: templates/_includes/nav/front_nav.html:31
+#: templates/_includes/nav/front_nav.html:28
 msgid "Keynotes"
 msgstr "主題演講"
 
-#: templates/_includes/nav/front_nav.html:35
+#: templates/_includes/nav/front_nav.html:32
 msgid "Speaking"
 msgstr "投稿"
 
-#: templates/_includes/nav/front_nav.html:37
+#: templates/_includes/nav/front_nav.html:34
 msgid "Call for Proposal"
 msgstr "稿件募集說明"
 
-#: templates/_includes/nav/front_nav.html:38
+#: templates/_includes/nav/front_nav.html:35
 msgid "Proposing a Talk"
 msgstr "投稿演講"
 
-#: templates/_includes/nav/front_nav.html:39
+#: templates/_includes/nav/front_nav.html:36
 msgid "Proposing a Tutorial"
 msgstr "投稿教學"
 
-#: templates/_includes/nav/front_nav.html:43
+#: templates/_includes/nav/front_nav.html:40
 msgctxt "navbar"
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/_includes/nav/front_nav.html:45
+#: templates/_includes/nav/front_nav.html:42
 msgid "Financial Aid"
 msgstr "財務補助"
 
-#: templates/_includes/nav/front_nav.html:48
+#: templates/_includes/nav/front_nav.html:45
 msgid "Blog"
 msgstr "部落格"
 
@@ -854,37 +861,23 @@ msgstr "編輯"
 msgid "Withdraw"
 msgstr "撤回"
 
-#: templates/users/user_dashboard.html:20
+#: templates/users/user_dashboard.html:23
 msgid "Talk Proposals"
 msgstr "演講提案"
 
-#: templates/users/user_dashboard.html:22
-msgid "New Talk Porposal"
-msgstr "投稿新演講"
+#: templates/users/user_dashboard.html:40
+msgid "You haven't submitted any talk proposals."
+msgstr "您尚未有任何演講投稿。"
 
-#: templates/users/user_dashboard.html:30
-#, python-format
-msgid ""
-"You haven't submitted any talk proposals. Why not <a "
-"href=\"%(talk_proposal_create_url)s\">submit one now</a>?"
-msgstr "您尚未投稿演講，何不馬上<a href=\"%(talk_proposal_create_url)s\">創建一個</a>？"
-
-#: templates/users/user_dashboard.html:36
+#: templates/users/user_dashboard.html:46
 msgid "Tutorial Proposals"
 msgstr "教學提案"
 
-#: templates/users/user_dashboard.html:39
-msgid "New Tutorial Porposal"
-msgstr "投稿新教學"
+#: templates/users/user_dashboard.html:66
+msgid "You haven't submitted any tutorial proposals."
+msgstr "您尚未有任何教學投稿。"
 
-#: templates/users/user_dashboard.html:49
-#, python-format
-msgid ""
-"You haven't submitted any tutorial proposals. Why not <a "
-"href=\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
-msgstr "您尚未投稿教學，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">創建一個</a>？"
-
-#: templates/users/user_dashboard.html:55
+#: templates/users/user_dashboard.html:72
 msgid "Co-Speaking Proposals"
 msgstr " 共同演講的提案"
 
@@ -989,32 +982,32 @@ msgstr "申請密碼重設"
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: users/models.py:105
+#: users/models.py:106
 msgid "email address"
 msgstr "電子郵件信箱"
 
-#: users/models.py:109
+#: users/models.py:110
 msgid "speaker name"
 msgstr "講者名"
 
-#: users/models.py:113
+#: users/models.py:114
 msgid "biography"
 msgstr "自我介紹"
 
-#: users/models.py:116
+#: users/models.py:117
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
 
-#: users/models.py:121
+#: users/models.py:122
 msgid "photo"
 msgstr "個人照"
 
-#: users/models.py:125
+#: users/models.py:126
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:128
+#: users/models.py:129
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -1023,61 +1016,61 @@ msgid ""
 "first!"
 msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
 
-#: users/models.py:137
+#: users/models.py:138
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:142
+#: users/models.py:143
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 Twitter 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:147
+#: users/models.py:148
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:152
+#: users/models.py:153
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 GitHub 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:157
+#: users/models.py:158
 msgid "verified"
 msgstr "已認證"
 
-#: users/models.py:160
+#: users/models.py:161
 msgid "Designates whether the user has verified email ownership."
 msgstr "指定本使用者是否已完成 email 認證。"
 
-#: users/models.py:164
+#: users/models.py:165
 msgid "staff status"
 msgstr "管理員權限"
 
-#: users/models.py:167
+#: users/models.py:168
 msgid "Designates whether the user can log into this admin site."
 msgstr "指定本使用者是否可以登入本管理站台。"
 
-#: users/models.py:171
+#: users/models.py:172
 msgid "active"
 msgstr "已啟用"
 
-#: users/models.py:174
+#: users/models.py:175
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
 
-#: users/models.py:179
+#: users/models.py:180
 msgid "date joined"
 msgstr "註冊日期"
 
-#: users/models.py:190
+#: users/models.py:191
 msgid "users"
 msgstr "使用者"
 
-#: users/models.py:253
+#: users/models.py:254
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
 
