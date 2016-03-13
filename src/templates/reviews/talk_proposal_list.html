@@ -23,27 +23,32 @@
 {% endblocktrans %}</p>
 </div>
 
-<div class="talk-proposals proposals">
-<h3 class="dashboard-header">
-    <span class="header__title">{% trans 'Unreviewed Talk Proposals' %}</span>
-</h3>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %}</a></li>
+    <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %}</a></li>
+</ul>
 
-{% if object_list.exists %}
-  {% include 'reviews/_includes/proposal_table.html' with user=user proposals=object_list %}
-{% else %}
-  <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
-{% endif %}
-</div>
-
-<div class="talk-proposals proposals">
-<h3 class="dashboard-header">
-    <span class="header__title">{% trans 'Reviewed Talk Proposals' %}</span>
-</h3>
-{% if reviews.exists %}
-  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
-{% else %}
-  <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
-{% endif %}
+<!-- Tab panes -->
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="unreviewed">
+        <div class="talk-proposals proposals">
+        {% if object_list.exists %}
+          {% include 'reviews/_includes/proposal_table.html' with user=user proposals=object_list %}
+        {% else %}
+          <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
+        {% endif %}
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="reviewed">
+        <div class="talk-proposals proposals">
+        {% if reviews.exists %}
+          {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
+        {% else %}
+          <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
+        {% endif %}
+        </div>
+    </div>
 </div>
 
 {% endblock main-content %}
