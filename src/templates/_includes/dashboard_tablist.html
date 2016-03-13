@@ -6,4 +6,8 @@
   {% endif %}
     <li class="{% if active == 'profile' %}active{% endif %}"><a href="{% url 'user_profile_update' %}">{% trans 'Edit Profile' %}</a></li>
     <li class="{% if active == 'password' %}active{% endif %}"><a href="{% url 'password_change' %}">{% trans 'Change Password' %}</a></li>
+
+  {% if user.is_reviewer %}
+    <li class="{% if active == 'review' %}active{% endif %}"><a href="{% url 'review_proposal_list' %}">{% trans 'Reviews' %}</a></li>
+  {% endif %}
 </ul>

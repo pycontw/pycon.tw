@@ -32,6 +32,7 @@ class ProposalAdmin(admin.ModelAdmin):
 
 @admin.register(TalkProposal)
 class TalkProposalAdmin(ProposalAdmin):
+    fields = ProposalAdmin.fields + ['accepted']
     list_display = [
         'title', 'category', 'duration', 'language',
         'python_level',

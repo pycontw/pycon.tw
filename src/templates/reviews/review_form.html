@@ -1,0 +1,61 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n staticfiles %}
+{% load compress crispy_forms_tags %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/vendors/simplemde.min.css' %}">
+{% endblock extra_css %}
+
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='review' %}
+{% endblock dashboard_tablist %}
+
+
+{% block main-content %}
+
+<h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
+
+<div class="dashboard-body reviewed-proposal-view">
+	<h4>{% trans 'Category' %}</h4>
+	<div>{{ proposal.get_category_display }}</div>
+	<h4>{% trans 'Duration' %}</h4>
+	<div>{{ proposal.get_duration_display }}</div>
+	<h4>{% trans 'Language' %}</h4>
+	<div>{{ proposal.get_language_display }}</div>
+	<h4>{% trans 'Abstract' %}</h4>
+	<div>{{ proposal.abstract }}</div>
+	<h4>{% trans 'Python level' %}</h4>
+	<div>{{ proposal.get_python_level_display }}</div>
+	<h4>{% trans 'Objective' %}</h4>
+	<div>{{ proposal.objective|linebreaks }}</div>
+	{% if proposal.detailed_description %}
+	<h4>{% trans 'Detailed description' %}</h4>
+	<div class="markdown-field">{{ proposal.detailed_description }}</div>
+	{% endif %}
+	{% if proposal.outline %}
+	<h4>{% trans 'Outline' %}</h4>
+	<div class="markdown-field">{{ proposal.outline }}</div>
+	{% endif %}
+</div>
+
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
+
+<form action="{{ request.get_full_path }}" method="POST">
+{% csrf_token %}
+{{ form|crispy }}
+<input class="btn btn-primary btn-lg" type="submit" value="Submit">
+</form>
+
+{% endblock main-content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+{% compress js %}
+<script src="{% static 'js/vendors/simplemde.js' %}"></script>
+<script src="{% static 'js/reviews/review_form.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}

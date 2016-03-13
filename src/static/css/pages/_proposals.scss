@@ -67,13 +67,29 @@ body.dashboard{
             border-left-color: #EEEEEE;
             padding: 0;
 
-
             .table-panel {
                 padding: 33px 33px 0px 33px;
             }
 
-            > form{
-                padding:  33px;
+            > form, .dashboard-body{
+                padding: 33px;
+            }
+
+            > .reviewed-proposal-view {
+                > h4 {
+                    margin-top: 2em;
+                }
+                > h4:first-child {
+                    margin-top: 0;
+                }
+                > .markdown-field {
+                    background-color: transparent;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    position: relative;
+                    padding: 1em;
+                    height: auto;
+                }
             }
         }
     }
@@ -203,6 +219,13 @@ textarea.form-control {
 .proposals{
     p{
         padding: 20px 33px;
+    }
+}
+
+.review-stage.proposals {
+    p {
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 

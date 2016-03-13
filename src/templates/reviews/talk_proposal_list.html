@@ -1,0 +1,49 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='review' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
+
+<div class="review-stage proposals">
+<h3 class="dashboard-header">
+	<span class="header__title">
+		{% blocktrans %}Current Review Stage: {{ review_stage }}{% endblocktrans %}
+	</span>
+</h3>
+{% include review_stage_desc_tpl %}
+<p>{% blocktrans %}
+	Note that at anytime, the identity of the reviewer, e.g. you, is hidden to
+	other reviewers and speakers.  For more information about the whole review
+	process, please refer to the google doc
+	<a href="https://goo.gl/EPlUZx">Review Guideline</a>.
+{% endblocktrans %}</p>
+</div>
+
+<div class="talk-proposals proposals">
+<h3 class="dashboard-header">
+    <span class="header__title">{% trans 'Unreviewed Talk Proposals' %}</span>
+</h3>
+
+{% if object_list.exists %}
+  {% include 'reviews/_includes/proposal_table.html' with user=user proposals=object_list %}
+{% else %}
+  <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
+{% endif %}
+</div>
+
+<div class="talk-proposals proposals">
+<h3 class="dashboard-header">
+    <span class="header__title">{% trans 'Reviewed Talk Proposals' %}</span>
+</h3>
+{% if reviews.exists %}
+  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
+{% else %}
+  <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
+{% endif %}
+</div>
+
+{% endblock main-content %}

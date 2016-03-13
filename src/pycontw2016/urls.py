@@ -16,6 +16,7 @@ urlpatterns = i18n_patterns(
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
+    url(r'^reviews/', include('reviews.urls')),
 
     # Match everything except admin, media, static, and error pages.
     url(r'^(?!admin|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
