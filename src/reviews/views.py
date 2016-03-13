@@ -39,6 +39,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['reviews'] = self.get_reviews()
+        review_stage = ReviewsConfig.stage
+        context['review_stage'] = review_stage
+        context['review_stage_desc_tpl'] = (
+            'reviews/_includes/review_stage_%s_desc.html'
+            % review_stage
+        )
         return context
 
     def get_reviews(self):
