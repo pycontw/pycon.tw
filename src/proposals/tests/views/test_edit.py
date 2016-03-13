@@ -1,6 +1,13 @@
 import pytest
 
+from django.conf import settings
 from django.contrib import messages
+
+
+pytestmark = pytest.mark.skipif(
+    not settings.PROPOSALS_EDITABLE,
+    reason='call for proposals ends',
+)
 
 
 def test_talk_proposal_edit_login(client):

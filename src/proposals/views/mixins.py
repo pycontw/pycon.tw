@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
+from django.http import Http404
 
 
 class FormValidMessageMixin:
@@ -32,3 +34,10 @@ class UserProfileRequiredMixin(UserPassesTestMixin):
         if user.is_anonymous() or not user.verified:
             raise PermissionDenied
         return True
+
+
+class ProposalEditMixin:
+    def dispatch(self, request, *args, **kwargs):
+        if not settings.PROPOSALS_EDITABLE:
+            raise Http404
+        return super().dispatch(request, *args, **kwargs)

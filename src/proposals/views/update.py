@@ -7,7 +7,9 @@ from django.views.generic import UpdateView
 from proposals.forms import TalkProposalUpdateForm, TutorialProposalUpdateForm
 from proposals.models import TalkProposal, TutorialProposal
 
-from .mixins import FormValidMessageMixin, UserProfileRequiredMixin
+from .mixins import (
+    FormValidMessageMixin, ProposalEditMixin, UserProfileRequiredMixin,
+)
 
 
 class TalkProposalMixin:
@@ -22,7 +24,7 @@ class TutorialProposalMixin:
 
 class ProposalUpdateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, UpdateView):
+        ProposalEditMixin, FormValidMessageMixin, UpdateView):
 
     success_url = reverse_lazy('user_dashboard')
 

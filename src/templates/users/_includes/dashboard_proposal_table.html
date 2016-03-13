@@ -6,7 +6,9 @@
 			<th class="proposal-title">{% trans 'Title' %}</th>
 			<th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
 			<th width="1%" class="hidden-xs">{% trans 'Language' %}</th>
+			{% if proposals_editable %}
 			<th width="1%"></th>
+			{% endif %}
 		</tr>
 	</thead>
 	<tbody>
@@ -15,6 +17,7 @@
 			<td class="proposal-title">{{ proposal.title }}</td>
 			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
 			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
+			{% if proposals_editable %}
 			<td>
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
@@ -29,6 +32,7 @@
 					{% endif %}
 				</form>
 			</td>
+			{% endif %}
 		</tr>
 		{% endfor %}
 	</tbody>

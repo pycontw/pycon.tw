@@ -38,6 +38,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.request',
                 'core.context_processors.google_analytics',
+                'core.context_processors.proposals_states',
             ],
             'debug': True,
         },
@@ -220,3 +221,10 @@ WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 GA_TRACK_ID = None
 
 SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
+
+
+# Project settings.
+
+PROPOSALS_CREATABLE = False
+
+PROPOSALS_EDITABLE = False
