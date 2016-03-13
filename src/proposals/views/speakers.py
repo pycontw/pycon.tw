@@ -9,12 +9,14 @@ from proposals.forms import (
 )
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
-from .mixins import FormValidMessageMixin, UserProfileRequiredMixin
+from .mixins import (
+    FormValidMessageMixin, ProposalEditMixin, UserProfileRequiredMixin,
+)
 
 
 class ProposalManageSpeakersView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, CreateView):
+        ProposalEditMixin, FormValidMessageMixin, CreateView):
 
     http_method_names = ['get', 'post', 'options']
     model = AdditionalSpeaker
@@ -69,7 +71,7 @@ class TutorialProposalManageSpeakersView(ProposalManageSpeakersView):
 
 class AdditionalSpeakerRemoveView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, UpdateView):
+        ProposalEditMixin, FormValidMessageMixin, UpdateView):
 
     http_method_names = ['post', 'options']
     model = AdditionalSpeaker
@@ -87,7 +89,7 @@ class AdditionalSpeakerRemoveView(
 
 class AdditionalSpeakerSetStatusView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, UpdateView):
+        ProposalEditMixin, FormValidMessageMixin, UpdateView):
 
     http_method_names = ['post', 'options']
     model = AdditionalSpeaker
