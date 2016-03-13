@@ -3,6 +3,7 @@
 <table class="proposals-table table table-responsive">
     <thead>
         <tr>
+            <th width="1%">{% trans 'Reviewed Count' %}</th>
             <th class="proposal-title">{% trans 'Title' %}</th>
             <th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
             <th width="1%" class="hidden-xs">{% trans 'Category' %}</th>
@@ -12,6 +13,7 @@
     <tbody>
         {% for proposal in proposals %}
         <tr>
+            <td>{{ proposal.review_count }}</td>
             <td class="proposal-title">{{ proposal.title }}</td>
             <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
             <td class="hidden-xs">{{ proposal.get_category_display }}</td>
