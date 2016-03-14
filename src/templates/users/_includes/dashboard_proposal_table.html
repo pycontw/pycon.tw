@@ -16,6 +16,7 @@
 			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
 			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
 			<td>
+				{% if proposals_editable %}
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
 					{% if proposal.cancelled %}
@@ -28,6 +29,9 @@
 					<button type="submit" name="cancelled" value="true" class="btn btn-natural btn-withdraw">{% trans 'Withdraw' %}</button>
 					{% endif %}
 				</form>
+				{% else %}
+				<a href="{{ proposal.get_peek_url }}" class="btn btn-natural">{% trans 'View' %}</a>
+				{% endif %}
 			</td>
 		</tr>
 		{% endfor %}

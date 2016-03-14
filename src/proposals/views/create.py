@@ -1,4 +1,6 @@
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import Http404
 from django.utils.html import format_html
 from django.utils.translation import ugettext
 from django.views.generic import CreateView
@@ -11,6 +13,11 @@ from .mixins import FormValidMessageMixin, UserProfileRequiredMixin
 class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         FormValidMessageMixin, CreateView):
+
+    def dispatch(self, request, *args, **kwargs):
+        if not settings.PROPOSALS_CREATABLE:
+            raise Http404
+        return super().dispatch(request, *args, **kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
