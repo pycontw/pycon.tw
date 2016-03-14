@@ -9,24 +9,24 @@
 {% block main-content %}
 
 <div class="review-stage proposals">
-<h3 class="dashboard-header">
-	<span class="header__title">
-		{% blocktrans %}Current Review Stage: {{ review_stage }}{% endblocktrans %}
-	</span>
-</h3>
-{% include review_stage_desc_tpl %}
-<p>{% blocktrans %}
-	Note that at anytime, the identity of the reviewer, e.g. you, is hidden to
-	other reviewers and speakers.  For more information about the whole review
-	process, please refer to the google doc
-	<a href="https://goo.gl/EPlUZx">Review Guideline</a>.
-{% endblocktrans %}</p>
+    <h3 class="dashboard-header">
+    	<span class="header__title">
+    		{% blocktrans %}Current Review Stage: {{ review_stage }}{% endblocktrans %}
+    	</span>
+    </h3>
+    {% include review_stage_desc_tpl %}
+    <p>{% blocktrans %}
+    	Note that at anytime, the identity of the reviewer, e.g. you, is hidden to
+    	other reviewers and speakers.  For more information about the whole review
+    	process, please refer to the google doc
+    	<a href="https://goo.gl/EPlUZx">Review Guideline</a>.
+    {% endblocktrans %}</p>
 </div>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %}</a></li>
-    <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %}</a></li>
+    <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
+    <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
 </ul>
 
 <!-- Tab panes -->
