@@ -5,14 +5,10 @@ from . import views
 
 urlpatterns = [
 
-    url(r'^submit/$',
-        views.ProposalCreateChoiceView.as_view(),
-        name='proposal_create_choice'),
-
     url(r'^talk/submit/$',
         views.TalkProposalCreateView.as_view(),
         name='talk_proposal_create'),
-    url(r'^talk/(?P<pk>\d+)/peek/$',
+    url(r'^talk/(?P<pk>\d+)/view/$',
         views.ReadonlyTalkProposalUpdateView.as_view(),
         name='talk_proposal_peek'),
     url(r'^talk/(?P<pk>\d+)/edit/$',
@@ -28,7 +24,7 @@ urlpatterns = [
     url(r'^tutorial/submit/$',
         views.TutorialProposalCreateView.as_view(),
         name='tutorial_proposal_create'),
-    url(r'^tutorial/(?P<pk>\d+)/peek/$',
+    url(r'^tutorial/(?P<pk>\d+)/view/$',
         views.ReadonlyTutorialProposalUpdateView.as_view(),
         name='tutorial_proposal_peek'),
     url(r'^tutorial/(?P<pk>\d+)/edit/$',

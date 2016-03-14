@@ -28,7 +28,7 @@
 
 body {
     @include roboto-light;
-    text-rendering: optimizeLegibility !important;
+    // text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
 }
 

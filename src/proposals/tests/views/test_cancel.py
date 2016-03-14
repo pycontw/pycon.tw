@@ -1,8 +1,15 @@
 import pytest
 
+from django.conf import settings
 from django.contrib import messages
 
 from proposals.models import TalkProposal, TutorialProposal
+
+
+pytestmark = pytest.mark.skipif(
+    not settings.PROPOSALS_EDITABLE,
+    reason='call for proposals ends',
+)
 
 
 def test_talk_proposal_cancel_login(client):
