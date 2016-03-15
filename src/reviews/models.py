@@ -42,7 +42,8 @@ class Review(models.Model):
             "Your score to accept or reject this talk. "
             "More information about the scoring and acceptance criteria "
             "can be found at the google doc "
-            "<a href=\"https://goo.gl/EPlUZx\">Review Guideline</a>."
+            "<a href=\"https://goo.gl/EPlUZx\" "
+            "target=\"_blank\">Review Guideline</a>."
         ),
     )
 
