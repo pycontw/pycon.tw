@@ -1,0 +1,34 @@
+.review-stage{
+    .stage-desc{
+        padding: 20px 33px;
+    }
+}
+
+.review-statistics{
+    padding: 10px 23px;
+
+    .panel-box{
+        padding: 0 10px;
+
+        .panel-body{
+            font-size: 30px;
+        }
+    }
+}
+
+ul.nav-tabs.reviews-tabs{
+    padding: 0 33px;
+
+    li{
+        padding-top: 20px;
+        &.active a{
+            color: #3e6df5;
+        }
+        a{
+            font-size: 16px;
+            font-weight: 400;
+            color: #4A4A4A;
+            padding: 15px;
+        }
+    }
+}
