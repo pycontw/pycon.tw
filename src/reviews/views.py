@@ -45,6 +45,14 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             'reviews/_includes/review_stage_%s_desc.html'
             % review_stage
         )
+
+        context['score'] = {
+            'strong_accept': self.get_reviews().filter(score=2).count(),
+            'weakly_accept': self.get_reviews().filter(score=1).count(),
+            'weakly_reject': self.get_reviews().filter(score=-1).count(),
+            'strong_reject': self.get_reviews().filter(score=-2).count(),
+        }
+
         return context
 
     def get_reviews(self):
