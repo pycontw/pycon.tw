@@ -5,7 +5,6 @@
         <tr>
             <th width="1%">{% trans 'Reviewed Count' %}</th>
             <th class="proposal-title">{% trans 'Title' %}</th>
-            <th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
             <th width="1%" class="hidden-xs">{% trans 'Category' %}</th>
             <th width="1%"></th>
         </tr>
@@ -15,7 +14,6 @@
         <tr>
             <td>{{ proposal.review_count }}</td>
             <td class="proposal-title">{{ proposal.title }}</td>
-            <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
             <td class="hidden-xs">{{ proposal.get_category_display }}</td>
             <td>
                 <a href="{% url 'review_edit' proposal_pk=proposal.pk %}" class="btn btn-natural">{% trans 'Review' %}</a>
