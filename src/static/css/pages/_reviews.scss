@@ -5,7 +5,8 @@
 }
 
 .review-statistics{
-    padding: 10px 23px;
+    padding: 0 23px;
+    margin: 10px 0 25px;
 
     .panel-box{
         padding: 0 10px;
@@ -18,17 +19,33 @@
 
 ul.nav-tabs.reviews-tabs{
     padding: 0 33px;
+    border-top: 1px solid #ddd;
 
     li{
-        padding-top: 20px;
+        padding-right: 30px;
+        padding-top: 8px;
         &.active a{
             color: #3e6df5;
+            border-bottom: 4px solid #3e6df5;
+
+            &:hover, &:link, &:visited, &:active{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                color: #3e6df5;
+            }
         }
         a{
             font-size: 16px;
             font-weight: 400;
-            color: #4A4A4A;
-            padding: 15px;
+            color: #9b9b9b;
+            padding: 15px 1px;
+            border: none;
+            outline: 0;
+            &:hover{
+                background-color: transparent;
+                color: #4A4A4A;
+            }
         }
     }
 }
