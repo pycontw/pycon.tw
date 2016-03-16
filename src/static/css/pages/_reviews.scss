@@ -32,3 +32,30 @@ ul.nav-tabs.reviews-tabs{
         }
     }
 }
+
+.tab-content .proposals-table{
+    a{
+        color: #9b9b9b;
+
+        i{
+            margin-left: 10px;
+
+            &.fa-sort-asc{
+                display: none;
+            }
+        }
+
+
+        &.active{
+            color: #4a4a4a;
+            text-decoration: none;
+
+            i.fa-sort-asc{
+                display: inline;
+            }
+            i.fa-sort{
+                display: none;
+            }
+        }
+    }
+}
