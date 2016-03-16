@@ -19,8 +19,11 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     ordering = '?'
     order_keys = {
         'title': 'title',
-        'reviews': 'review_count',
-        'category': 'category'
+        'review_count': 'review_count',
+        'category': 'category',
+        '-title': '-title',
+        '-review_count': '-review_count',
+        '-category': '-category',
     }
 
     def get_ordering(self):

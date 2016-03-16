@@ -3,9 +3,27 @@
 <table class="proposals-table table table-responsive">
     <thead>
         <tr>
-            <th width="1%"><a href="?order=reviews" {% if ordering == 'review_count' %}class="active"{% endif %}>{% trans 'Reviewed Count' %}<i class="fa fa-sort fa-lg"></i><i class="fa fa-sort-asc fa-lg"></i></a></th>
-            <th class="proposal-title"><a href="?order=title" {% if ordering == 'title' %}class="active"{% endif %}>{% trans 'Title' %}<i class="fa fa-sort fa-lg"></i><i class="fa fa-sort-asc fa-lg"></i></a></th>
-            <th width="1%" class="hidden-xs"><a href="?order=category" {% if ordering == 'category' %}class="active"{% endif %}>{% trans 'Category' %}<i class="fa fa-sort fa-lg"></i><i class="fa fa-sort-asc fa-lg"></i></a></th>
+            <th width="1%">
+                <a {% if ordering == 'review_count' %}class="active asc" href="?order=-review_count" {% elif ordering == '-review_count' %}class="active desc" href="?order=review_count"{% else %}href="?order=review_count"{% endif %}>{% trans 'Reviewed Count' %}
+                    <i class="fa fa-sort fa-lg"></i>
+                    <i class="fa fa-sort-asc fa-lg"></i>
+                    <i class="fa fa-sort-desc fa-lg"></i>
+                </a>
+            </th>
+            <th class="proposal-title">
+                <a {% if ordering == 'title' %}class="active asc" href="?order=-title" {% elif ordering == '-title' %}class="active desc" href="?order=title"{% else %}href="?order=title"{% endif %}>{% trans 'Title' %}
+                    <i class="fa fa-sort fa-lg"></i>
+                    <i class="fa fa-sort-asc fa-lg"></i>
+                    <i class="fa fa-sort-desc fa-lg"></i>
+                </a>
+            </th>
+            <th width="1%" class="hidden-xs">
+                <a {% if ordering == 'category' %}class="active asc" href="?order=-category" {% elif ordering == '-category' %}class="active desc" href="?order=category"{% else %}href="?order=category"{% endif %}>{% trans 'Category' %}
+                    <i class="fa fa-sort fa-lg"></i>
+                    <i class="fa fa-sort-asc fa-lg"></i>
+                    <i class="fa fa-sort-desc fa-lg"></i>
+                </a>
+            </th>
             <th width="1%"></th>
         </tr>
     </thead>

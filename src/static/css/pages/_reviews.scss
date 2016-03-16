@@ -40,21 +40,26 @@ ul.nav-tabs.reviews-tabs{
         i{
             margin-left: 10px;
 
-            &.fa-sort-asc{
+            &.fa-sort-asc, &.fa-sort-desc{
                 display: none;
             }
         }
 
-
         &.active{
             color: #4a4a4a;
             text-decoration: none;
-
+            i{
+                display: none;
+            }
+        }
+        &.asc{
             i.fa-sort-asc{
                 display: inline;
             }
-            i.fa-sort{
-                display: none;
+        }
+        &.desc{
+            i.fa-sort-desc{
+                display: inline;
             }
         }
     }
