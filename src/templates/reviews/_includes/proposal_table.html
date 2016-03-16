@@ -19,7 +19,7 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
-            <th width="1%" class="hidden-xs">
+            <th width="1%" class="hidden-xs hidden-sm">
                 <a {% if ordering == 'category' %}class="active asc" href="?order=-category" {% elif ordering == '-category' %}class="active desc" href="?order=category"{% else %}href="?order=category"{% endif %}>
                     {% trans 'Category' %}
                     <i class="fa fa-sort fa-lg"></i>
@@ -27,7 +27,7 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
-            <th width="1%" class="hidden-xs">
+            <th width="1%" class="hidden-md hidden-sm hidden-xs">
                 <a {% if ordering == 'python_level' %}class="active asc" href="?order=-level" {% elif ordering == '-python_level' %}class="active desc" href="?order=level"{% else %}href="?order=level"{% endif %}>
                     {% trans 'Level' %}
                     <i class="fa fa-sort fa-lg"></i>
@@ -35,7 +35,7 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
-            <th width="1%" class="hidden-xs">
+            <th width="1%" class="hidden-md hidden-sm hidden-xs">
                 <a {% if ordering == 'language' %}class="active asc" href="?order=-lang" {% elif ordering == '-language' %}class="active desc" href="?order=lang"{% else %}href="?order=lang"{% endif %}>
                     {% trans 'Lang' %}
                     <i class="fa fa-sort fa-lg"></i>
@@ -51,9 +51,9 @@
         <tr>
             <td>{{ proposal.review_count }}</td>
             <td class="proposal-title">{{ proposal.title }}</td>
-            <td class="hidden-xs">{{ proposal.get_category_display|truncatechars:16 }}</td>
-            <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
-            <td class="hidden-xs">{{ proposal.get_language_display }}</td>
+            <td class="hidden-xs hidden-sm">{{ proposal.get_category_display|truncatechars:16 }}</td>
+            <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_python_level_display }}</td>
+            <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
             <td>
                 <a href="{% url 'review_edit' proposal_pk=proposal.pk %}" class="btn btn-natural">{% trans 'Review' %}</a>
             </td>
