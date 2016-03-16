@@ -4,8 +4,8 @@
     <thead>
         <tr>
             <th width="1%">
-                <a {% if ordering == 'review_count' %}class="active asc" href="?order=-review_count" {% elif ordering == '-review_count' %}class="active desc" href="?order=review_count"{% else %}href="?order=review_count"{% endif %}>
-                    {% trans 'Votes' %}
+                <a {% if ordering == 'review_count' %}class="active asc" href="?order=-count" {% elif ordering == '-review_count' %}class="active desc" href="?order=count"{% else %}href="?order=count"{% endif %}>
+                    {% trans 'Reviewed' %}
                     <i class="fa fa-sort fa-lg"></i>
                     <i class="fa fa-sort-asc fa-lg"></i>
                     <i class="fa fa-sort-desc fa-lg"></i>
@@ -27,8 +27,22 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
-            <th width="1%" class="hidden-xs">{% trans 'Level' %}</th>
-            <th width="1%" class="hidden-xs">{% trans 'Lang' %}</th>
+            <th width="1%" class="hidden-xs">
+                <a {% if ordering == 'python_level' %}class="active asc" href="?order=-level" {% elif ordering == '-python_level' %}class="active desc" href="?order=level"{% else %}href="?order=level"{% endif %}>
+                    {% trans 'Level' %}
+                    <i class="fa fa-sort fa-lg"></i>
+                    <i class="fa fa-sort-asc fa-lg"></i>
+                    <i class="fa fa-sort-desc fa-lg"></i>
+                </a>
+            </th>
+            <th width="1%" class="hidden-xs">
+                <a {% if ordering == 'language' %}class="active asc" href="?order=-lang" {% elif ordering == '-language' %}class="active desc" href="?order=lang"{% else %}href="?order=lang"{% endif %}>
+                    {% trans 'Lang' %}
+                    <i class="fa fa-sort fa-lg"></i>
+                    <i class="fa fa-sort-asc fa-lg"></i>
+                    <i class="fa fa-sort-desc fa-lg"></i>
+                </a>
+            </th>
             <th width="1%"></th>
         </tr>
     </thead>
