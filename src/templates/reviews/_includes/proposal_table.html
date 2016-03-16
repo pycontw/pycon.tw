@@ -5,7 +5,7 @@
         <tr>
             <th width="1%">
                 <a {% if ordering == 'review_count' %}class="active asc" href="?order=-review_count" {% elif ordering == '-review_count' %}class="active desc" href="?order=review_count"{% else %}href="?order=review_count"{% endif %}>
-                    {% trans 'Reviewed Count' %}
+                    {% trans 'Votes' %}
                     <i class="fa fa-sort fa-lg"></i>
                     <i class="fa fa-sort-asc fa-lg"></i>
                     <i class="fa fa-sort-desc fa-lg"></i>
@@ -27,6 +27,8 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
+            <th width="1%" class="hidden-xs">{% trans 'Level' %}</th>
+            <th width="1%" class="hidden-xs">{% trans 'Lang' %}</th>
             <th width="1%"></th>
         </tr>
     </thead>
@@ -35,7 +37,9 @@
         <tr>
             <td>{{ proposal.review_count }}</td>
             <td class="proposal-title">{{ proposal.title }}</td>
-            <td class="hidden-xs">{{ proposal.get_category_display }}</td>
+            <td class="hidden-xs">{{ proposal.get_category_display|truncatechars:16 }}</td>
+            <td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
+            <td class="hidden-xs">{{ proposal.get_language_display }}</td>
             <td>
                 <a href="{% url 'review_edit' proposal_pk=proposal.pk %}" class="btn btn-natural">{% trans 'Review' %}</a>
             </td>
