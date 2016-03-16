@@ -1,12 +1,16 @@
 .review-stage{
     .stage-desc{
-        padding: 20px 33px;
+        padding: 20px 33px 10px;
     }
 }
 
 .review-statistics{
     padding: 0 23px;
-    margin: 10px 0 25px;
+    margin: 0 0 30px;
+
+    h4{
+        padding: 20px 10px;
+    }
 
     .panel-box{
         padding: 0 10px;
