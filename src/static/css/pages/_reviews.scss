@@ -1,0 +1,87 @@
+.review-stage{
+    .stage-desc{
+        padding: 20px 33px 10px;
+    }
+}
+
+.review-statistics{
+    padding: 0 23px;
+    margin: 0 0 30px;
+
+    h4{
+        padding: 20px 10px;
+    }
+
+    .panel-box{
+        padding: 0 10px;
+
+        .panel-body{
+            font-size: 30px;
+        }
+    }
+}
+
+ul.nav-tabs.reviews-tabs{
+    padding: 0 33px;
+    border-top: 1px solid #ddd;
+
+    li{
+        padding-right: 30px;
+        padding-top: 8px;
+        &.active a{
+            color: #3e6df5;
+            border-bottom: 4px solid #3e6df5;
+
+            &:hover, &:link, &:visited, &:active{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                color: #3e6df5;
+            }
+        }
+        a{
+            font-size: 16px;
+            font-weight: 400;
+            color: #9b9b9b;
+            padding: 15px 1px;
+            border: none;
+            outline: 0;
+            &:hover{
+                background-color: transparent;
+                color: #4A4A4A;
+            }
+        }
+    }
+}
+
+.tab-content .proposals-table{
+    th a{
+        color: #9b9b9b;
+
+        i{
+            margin-left: 10px;
+
+            &.fa-sort-asc, &.fa-sort-desc{
+                display: none;
+            }
+        }
+
+        &.active{
+            color: #4a4a4a;
+            text-decoration: none;
+            i{
+                display: none;
+            }
+        }
+        &.asc{
+            i.fa-sort-asc{
+                display: inline;
+            }
+        }
+        &.desc{
+            i.fa-sort-desc{
+                display: inline;
+            }
+        }
+    }
+}

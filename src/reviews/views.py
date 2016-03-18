@@ -16,13 +16,28 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
+    ordering = '?'
     order_keys = {
         'title': 'title',
-        'reviews': 'review_count',
+        'count': 'review_count',
+        'category': 'category',
+        'level': 'python_level',
+        'lang': 'language',
+        '-title': '-title',
+        '-count': '-review_count',
+        '-category': '-category',
+        '-level': '-python_level',
+        '-lang': '-language',
     }
 
-    def get_queryset(self):
+    def get_ordering(self):
         params = self.request.GET
+        order_key = self.order_keys.get(params.get('order', '').lower())
+        if order_key:
+            self.ordering = order_key
+        return self.ordering
+
+    def get_queryset(self):
         user = self.request.user
         proposals = (
             self.model.objects
@@ -30,11 +45,11 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
             .annotate(review_count=Count('review'))
         )
-        category = params.get('category', '').upper()
-        if category:
-            proposals = proposals.filter(category=category)
-        order_key = self.order_keys.get(params.get('order', '').lower())
-        return proposals.order_by(order_key or '?')
+        # params = self.request.GET
+        # category = params.get('category', '').upper()
+        # if category:
+        #     proposals = proposals.filter(category=category)
+        return proposals.order_by(self.get_ordering())
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -45,6 +60,15 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             'reviews/_includes/review_stage_%s_desc.html'
             % review_stage
         )
+
+        context['score'] = {
+            'strong_accept': self.get_reviews().filter(score=2).count(),
+            'weakly_accept': self.get_reviews().filter(score=1).count(),
+            'weakly_reject': self.get_reviews().filter(score=-1).count(),
+            'strong_reject': self.get_reviews().filter(score=-2).count(),
+        }
+
+        context['ordering'] = self.ordering
         return context
 
     def get_reviews(self):
