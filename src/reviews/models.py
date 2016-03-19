@@ -30,8 +30,8 @@ class Review(models.Model):
     class Vote(object):
         PLUS_ONE = "+1"
         PLUS_ZERO = "+0"
-        MINUS_ZERO = "−0"
-        MINUS_ONE = "−1"
+        MINUS_ZERO = "-0"
+        MINUS_ONE = "-1"
 
     VOTE_CHOICES = (
         (Vote.PLUS_ONE, _('+1 (strong accept)')),
@@ -101,10 +101,10 @@ class Review(models.Model):
         ordering = ['-updated']
 
     def __str__(self):
-        return _('Review {proposal} by {reviewer}: {score}').format(
+        return _('Review {proposal} by {reviewer}: {vote}').format(
             reviewer=self.reviewer,
             proposal=self.proposal,
-            score=self.get_score_display(),
+            vote=self.get_vote_display(),
         )
 
     def save(self, *args, **kwargs):
