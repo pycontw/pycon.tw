@@ -47,6 +47,33 @@ class Review(models.Model):
         ),
     )
 
+    class Votes(object):
+        PLUS_ONE = "+1"
+        PLUS_ZERO = "+0"
+        MINUS_ZERO = "−0"
+        MINUS_ONE = "−1"
+
+    VOTE_CHOICES = (
+        (Votes.PLUS_ONE, _('+1 (strong accept)')),
+        (Votes.PLUS_ZERO, _('+0 (weakly accept)')),
+        (Votes.MINUS_ZERO, _('-0 (weakly reject)')),
+        (Votes.MINUS_ONE, _('-1 (strong reject)')),
+    )
+
+    vote = models.CharField(
+        max_length=2,
+        blank=True,
+        choices=VOTE_CHOICES,
+        verbose_name=_("vote"),
+        help_text=_(
+            "Your vote to accept or reject this talk. "
+            "More information about the scoring and acceptance criteria "
+            "can be found at the google doc "
+            "<a href=\"https://goo.gl/EPlUZx\" "
+            "target=\"_blank\">Review Guideline</a>."
+        ),
+    )
+
     comment = models.TextField(
         verbose_name=_('comment'),
         help_text=_(
