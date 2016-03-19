@@ -3,7 +3,7 @@
 <table class="proposals-table table table-responsive">
     <thead>
         <tr>
-            <th width="1%">{% trans 'Score' %}</th>
+            <th width="1%">{% trans 'Vote' %}</th>
             <th class="proposal-title">{% trans 'Title' %}</th>
             <th width="1%" class="hidden-xs">{% trans 'Comment' %}</th>
             <th width="1%"></th>
@@ -12,7 +12,7 @@
     <tbody>
         {% for review in reviews %}
         <tr>
-            <td>{{ review.get_score_display }}</td>
+            <td>{{ review.get_vote_display }}</td>
             <td class="proposal-title">{{ review.proposal.title }}</td>
             <td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
             <td>

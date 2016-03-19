@@ -27,19 +27,26 @@ class Review(models.Model):
         verbose_name=_('proposal'),
     )
 
-    SCORE_CHOICES = (
-        (2, _('+1 (strong accept)')),
-        (1, _('+0 (weakly accept)')),
-        (0, '----------'),
-        (-1, _('-0 (weakly reject)')),
-        (-2, _('-1 (strong reject)')),
+    class Vote(object):
+        PLUS_ONE = "+1"
+        PLUS_ZERO = "+0"
+        MINUS_ZERO = "−0"
+        MINUS_ONE = "−1"
+
+    VOTE_CHOICES = (
+        (Vote.PLUS_ONE, _('+1 (strong accept)')),
+        (Vote.PLUS_ZERO, _('+0 (weakly accept)')),
+        (Vote.MINUS_ZERO, _('-0 (weakly reject)')),
+        (Vote.MINUS_ONE, _('-1 (strong reject)')),
     )
-    score = models.SmallIntegerField(
-        default=0,
-        choices=SCORE_CHOICES,
-        verbose_name=_('score'),
+
+    vote = models.CharField(
+        max_length=2,
+        blank=True,
+        choices=VOTE_CHOICES,
+        verbose_name=_("vote"),
         help_text=_(
-            "Your score to accept or reject this talk. "
+            "Your vote to accept or reject this talk. "
             "More information about the scoring and acceptance criteria "
             "can be found at the google doc "
             "<a href=\"https://goo.gl/EPlUZx\" "
