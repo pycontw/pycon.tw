@@ -2,7 +2,6 @@ from django import forms
 from django.forms.utils import flatatt
 from django.utils.encoding import force_text
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
 
 from .utils import split_css_class
 
@@ -37,7 +36,7 @@ class SimpleMDEWidget(forms.Textarea):
                 '<div class="editor-readonly">'
                 '<div class="editor-preview editor-preview-active">'
                 '{content}</div></div>',
-                content=mark_safe(value),
+                content=value,
             )
         else:
             attrs['data-simplemde'] = True
