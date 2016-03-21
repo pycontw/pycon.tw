@@ -1,3 +1,4 @@
+import collections
 import itertools
 import random
 
@@ -20,6 +21,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
+    vote_keys = {
+        Review.Vote.PLUS_ONE: 'strong_accept',
+        Review.Vote.PLUS_ZERO: 'weak_accept',
+        Review.Vote.MINUS_ZERO: 'weak_reject',
+        Review.Vote.MINUS_ONE: 'strong_reject',
+    }
     order_keys = {
         'title': 'title',
         'count': 'review_count',
@@ -85,16 +92,17 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             % review_stage
         )
 
-        context['vote'] = {
-            'strong_accept': context['reviews'].filter(
-                vote=Review.Vote.PLUS_ONE).count(),
-            'weak_accept': context['reviews'].filter(
-                vote=Review.Vote.PLUS_ZERO).count(),
-            'weak_reject': context['reviews'].filter(
-                vote=Review.Vote.MINUS_ZERO).count(),
-            'strong_reject': context['reviews'].filter(
-                vote=Review.Vote.MINUS_ONE).count(),
-        }
+        vote_count_pairs = (
+            self.get_reviews()
+            .values_list('vote')
+            .annotate(count=Count('vote'))
+        )
+        context['vote'] = collections.defaultdict(
+            (lambda: 0),
+            ((self.vote_keys[k], v)
+             for k, v in vote_count_pairs
+             if k in self.vote_keys),
+        )
         context['ordering'] = self.ordering
         context['query_string'] = self.request.GET.urlencode()
         return context
