@@ -1,3 +1,5 @@
+import collections
+
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
@@ -16,6 +18,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
+    vote_keys = {
+        Review.Vote.PLUS_ONE:   'strong_accept',
+        Review.Vote.PLUS_ZERO:  'weakly_accept',
+        Review.Vote.MINUS_ZERO: 'weakly_reject',
+        Review.Vote.MINUS_ONE:  'strong_reject',
+    }
     ordering = '?'
     order_keys = {
         'title': 'title',
@@ -62,16 +70,17 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             'reviews/_includes/review_stage_%s_desc.html'
             % review_stage
         )
-        context['vote'] = {
-            'strong_accept': self.get_reviews().filter(
-                vote=Review.Vote.PLUS_ONE).count(),
-            'weakly_accept': self.get_reviews().filter(
-                vote=Review.Vote.PLUS_ZERO).count(),
-            'weakly_reject': self.get_reviews().filter(
-                vote=Review.Vote.MINUS_ZERO).count(),
-            'strong_reject': self.get_reviews().filter(
-                vote=Review.Vote.MINUS_ONE).count(),
-        }
+        vote_count_pairs = (
+            self.get_reviews()
+            .values_list('vote')
+            .annotate(count=Count('vote'))
+        )
+        context['vote'] = collections.defaultdict(
+            (lambda: 0),
+            ((self.vote_keys[k], v)
+             for k, v in vote_count_pairs
+             if k in self.vote_keys),
+        )
         context['ordering'] = self.ordering
         return context
 
