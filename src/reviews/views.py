@@ -29,6 +29,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         '-level': '-python_level',
         '-lang': '-language',
     }
+    paginate_by = 100
 
     def get_ordering(self):
         params = self.request.GET
