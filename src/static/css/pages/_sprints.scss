@@ -1,0 +1,99 @@
+// Page style for events/sprints
+
+// ks stands for sprint-event
+$sp-padding-vertical: 50px;
+$sp-padding-horizontal: 28px;
+$sp-profile-line-height: 24px;
+$sp-photo-size: 124px;
+$sp-photo-border: 5px;
+$sp-group-margin: 32px;  // margin between information group
+$sp-margin: 47px; // margin between sprint events
+
+.sprints {
+    background-color: $sprints-bg;
+
+    .content-container {
+        max-width: none;
+    }
+}
+
+.sprint-event {
+    @include make-md-column(12);
+    background-color: $sprint-event-bg;
+    border-radius: 3px;
+    padding-top: $sp-padding-vertical;
+    padding-bottom: $sp-padding-vertical;
+    margin-bottom: $sp-margin;
+
+    &:last-of-type {
+        margin-bottom: ($sp-margin * 4);
+    }
+
+    &__profile {
+        @include make-md-column(3);
+        text-align: center;
+    }
+
+    &__photo {
+        border: $sp-photo-border solid $theme-color;
+        border-radius: 100%;
+        width: $sp-photo-size;
+        margin-bottom: ($sp-group-margin - $sp-photo-border);
+    }
+
+    &__name {
+        @include roboto-medium;
+        color: $theme-color;
+        font-size: $sp-profile-line-height;
+        margin-top: 0px;
+        margin-bottom: $sp-group-margin;
+    }
+
+    &__url {
+        @include roboto-regular;
+        display: block;
+        font-size: 14px;
+        line-height: $sp-profile-line-height;
+        color: $sprint-event__url-color;
+
+        a {
+            color: $sprint-event__url-color;
+        }
+    }
+
+    &__info {
+        @include make-md-column(9);
+        padding-right: 40px;
+
+        &__header {
+            font-size: 20px;
+            line-height: $sp-profile-line-height;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            @include roboto-light;
+            font-size: 16px;
+            line-height: $sp-profile-line-height;
+            color: $sprint-event__info-color;
+        }
+    }
+}
+
+// When sprint events collapsed to one-column,
+// adjust the margins of main blocks.
+@media screen and (max-width: $screen-sm-max) {
+    .sprint-event {
+        &__profile,
+        &__info {
+            padding-left: $sp-padding-horizontal;
+            padding-right: $sp-padding-horizontal;
+
+            &__header {
+                margin-top: $sp-group-margin;
+            }
+        }
+    }
+}
+

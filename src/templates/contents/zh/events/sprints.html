@@ -1,0 +1,64 @@
+{% extends 'contents/_base/events.html' %}
+{% block body-class %}sprints{% endblock %}
+{% block content_page_class %}{% endblock %}
+
+{% load static %}
+
+{% block title %}Sprints{% endblock %}
+{% block page_title %}<h1>Sprints</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="Sprints | PyCon Taiwan 2016" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_sprint.png' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="sprint-event">
+	<div class="sprint-event__info">
+    <h2>活動簡介</h2>
+    <p>
+    PyCon Taiwan 的 Sprint Day 活動，邀請大家帶著手上的專案一起來動手，
+    利用難得見面的契機，與大家分享專案的進展，同時也是號召同好的好機會。
+    </p>
+    <h2>
+      2016-04-16 (六): Python Workshop: Tutorials and Projects On PyCon Taiwan
+      by PyLadies Taiwan * Taipei.py
+    </h2>
+    <p>
+    由 PyLadies Taiwan 與 Taipei.py 協辦的 Python Workshop: Tutorials and
+    Projects On PyCon Taiwan 2016，是個結合 Sprints 與 Tutorials 的活動。
+    </p>
+    <h3>
+      詳細活動內容請見報名網頁
+    </h3>
+    <ul>
+      <li><strong>Projects On (Sprint)</strong>:
+        http://www.meetup.com/Taipei-py/events/228997805/
+      </li>
+      <li>
+        <strong>Tutorials</strong>:
+        <ul>
+          <li> PyLadies (限 PyLadies)
+            http://www.meetup.com/PyLadiesTW/events/229629711/
+          </li>
+          <li>
+            Taipei.py http://www.meetup.com/Taipei-py/events/229608148/
+          </li>
+        </ul>
+      </li>
+    </ul> 
+    <h2>2016-06-11 (六): PyCon Taiwan Sprint Day</h2>
+    <p>
+    大會後的正式 Sprint 活動，報名預計在大會報名結束後開放。
+    屆時會在 Python Taiwan 郵件列表、Twitter，以及 Facebook 上發佈活動訊息。
+    </p>
+
+    <h2>場地</h2>
+		</p>
+      兩場都在 CLBC（捷運大安）4 樓，歡迎帶你的專案一起來玩。
+		</p>
+	</div>
+</div>
+{% endblock content %}

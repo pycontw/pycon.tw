@@ -1,0 +1,22 @@
+{% extends 'contents/_base/events.html' %}
+{% block body-class %}sprints{% endblock %}
+{% block content_page_class %}{% endblock %}
+
+{% load static %}
+
+{% block title %}Sprints{% endblock %}
+{% block page_title %}<h1>Sprints</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="Sprints | PyCon Taiwan 2016" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_sprint.png' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="sprint-event">
+	<div class="sprint-event__info">
+	</div>
+</div>
+{% endblock content %}
