@@ -35,8 +35,8 @@ class Review(models.Model):
 
     VOTE_CHOICES = (
         (Vote.PLUS_ONE, _('+1 (strong accept)')),
-        (Vote.PLUS_ZERO, _('+0 (weakly accept)')),
-        (Vote.MINUS_ZERO, _('-0 (weakly reject)')),
+        (Vote.PLUS_ZERO, _('+0 (weak accept)')),
+        (Vote.MINUS_ZERO, _('-0 (weak reject)')),
         (Vote.MINUS_ONE, _('-1 (strong reject)')),
     )
 
