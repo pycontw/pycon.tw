@@ -107,6 +107,7 @@ class ProposalQuerySet(models.QuerySet):
 
     def filter_reviewable(self, user):
         return self.exclude(
+            Q(cancelled=True) |
             Q(submitter=user) |
             Q(additionalspeaker_set__in=user.cospeaking_info_set.all())
         )

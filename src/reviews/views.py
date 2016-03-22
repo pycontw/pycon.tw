@@ -42,7 +42,6 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         user = self.request.user
         proposals = (
             self.model.objects
-            .filter(cancelled=False)
             .filter_reviewable(user)
             .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
             .annotate(review_count=Count('review'))
@@ -103,7 +102,6 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         try:
             proposal = (
                 self.proposal_model.objects
-                .filter(cancelled=False)
                 .filter_reviewable(self.request.user)
                 .get(pk=self.kwargs['proposal_pk'])
             )
