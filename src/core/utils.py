@@ -67,11 +67,20 @@ class SequenceQuerySet:
     def __repr__(self):
         return '<SequenceQuerySet: {seq!r}>'.format(seq=self._seq)
 
-    def __getitem__(self, i):
-        return type(self)(self._seq[i])
+    def __len__(self):
+        return len(self._seq)
 
     def __iter__(self):
         return iter(self._seq)
+
+    def __bool__(self):
+        return bool(self._seq)
+
+    def __getitem__(self, i):
+        return type(self)(self._seq[i])
+
+    def all(self):
+        return self
 
     def count(self):
         return len(self._seq)
