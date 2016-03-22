@@ -54,3 +54,27 @@ def split_css_class(class_str):
     if not class_str:
         return set()
     return set(s.strip() for s in class_str.split())
+
+
+class SequenceQuerySet:
+    """Wrap a sequence to use the same API as Django's QuerySet.
+    """
+    __slots__ = ('_seq')
+
+    def __init__(self, seq):
+        self._seq = seq
+
+    def __repr__(self):
+        return '<SequenceQuerySet: {seq!r}>'.format(seq=self._seq)
+
+    def __getitem__(self, i):
+        return type(self)(self._seq[i])
+
+    def __iter__(self):
+        return iter(self._seq)
+
+    def count(self):
+        return len(self._seq)
+
+    def exists(self):
+        return bool(self._seq)

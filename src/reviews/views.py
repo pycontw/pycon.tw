@@ -1,9 +1,12 @@
+import random
+
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.http import Http404
 from django.views.generic import ListView, UpdateView
 
+from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
 
 from .apps import ReviewsConfig
@@ -16,7 +19,6 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
-    ordering = '?'
     order_keys = {
         'title': 'title',
         'count': 'review_count',
@@ -34,9 +36,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     def get_ordering(self):
         params = self.request.GET
         order_key = self.order_keys.get(params.get('order', '').lower())
-        if order_key:
-            self.ordering = order_key
-        return self.ordering
+        return order_key
 
     def get_queryset(self):
         user = self.request.user
@@ -51,7 +51,16 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         # category = params.get('category', '').upper()
         # if category:
         #     proposals = proposals.filter(category=category)
-        return proposals.order_by(self.get_ordering())
+        ordering = self.get_ordering()
+        if ordering:
+            proposals = proposals.order_by(ordering)
+            self.ordering = ordering
+        else:
+            proposal_list = list(proposals)
+            random.shuffle(proposal_list)
+            proposals = SequenceQuerySet(proposal_list)
+            self.ordering = '?'
+        return proposals
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
