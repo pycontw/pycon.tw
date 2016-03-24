@@ -54,7 +54,7 @@
 </div>
 <!-- Nav tabs -->
 <ul class="nav nav-tabs reviews-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list.count }})</a></li>
+    <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
     <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
 </ul>
 <!-- Tab panes -->
