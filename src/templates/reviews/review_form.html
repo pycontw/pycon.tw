@@ -26,7 +26,7 @@
 	<h4>{% trans 'Language' %}</h4>
 	<div>{{ proposal.get_language_display }}</div>
 	<h4>{% trans 'Abstract' %}</h4>
-	<div>{{ proposal.abstract }}</div>
+	<div>{{ proposal.abstract|linebreaks }}</div>
 	<h4>{% trans 'Python level' %}</h4>
 	<div>{{ proposal.get_python_level_display }}</div>
 	<h4>{% trans 'Objective' %}</h4>
