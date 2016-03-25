@@ -82,6 +82,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
                 vote=Review.Vote.MINUS_ONE).count(),
         }
         context['ordering'] = self.ordering
+        context['query_string'] = self.request.GET.urlencode()
         return context
 
     def get_reviews(self):
@@ -144,4 +145,8 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         return data
 
     def get_success_url(self):
-        return reverse('review_proposal_list')
+        query_string = self.request.GET.urlencode()
+        url = reverse('review_proposal_list')
+        if query_string:
+            return url + '?' + query_string
+        return url
