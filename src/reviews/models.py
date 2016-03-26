@@ -42,7 +42,7 @@ class Review(models.Model):
 
     vote = models.CharField(
         max_length=2,
-        blank=True,
+        blank=False,
         choices=VOTE_CHOICES,
         verbose_name=_("vote"),
         help_text=_(
