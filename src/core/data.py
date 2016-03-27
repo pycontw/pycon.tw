@@ -90,5 +90,20 @@ EXTRA_DATA['about/staff'] = {
                 {'name': 'TimChen'},
             ],
         },
+        {
+            'key': _('Photography'),
+            'members': [
+                {'name': 'Daniel', 'tags': _('lead')},
+                {'name': 'Andrew'},
+                {'name': '三子'},
+                {'name': 'Vivian'},
+                {'name': 'Vagabond'},
+                {'name': '啓豪'},
+                {'name': '百香'},
+                {'name': 'Deimos'},
+                {'name': 'Heidern'},
+                {'name': '何彥蓁'},
+            ]
+        },
     ],
 }
