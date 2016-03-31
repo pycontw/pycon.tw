@@ -73,6 +73,7 @@
 </div>
 {% endif %}
 
+{% if proposal.accepted == None %}
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
 
 <form action="{{ request.get_full_path }}" method="POST">
@@ -80,6 +81,7 @@
 {{ form|crispy }}
 <input class="btn btn-primary btn-lg" type="submit" value="Submit">
 </form>
+{% endif %}
 
 {% endblock main-content %}
 

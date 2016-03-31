@@ -54,7 +54,11 @@
             <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_python_level_display }}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
             <td>
-                <a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Review' %}</a>
+              {% if proposal.accepted == None %}
+              <a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Review' %}</a>
+              {% else %}
+              <a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}">{{ proposal.get_accepted_display }}</a>
+              {% endif %}
             </td>
         </tr>
         {% endfor %}

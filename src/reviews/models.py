@@ -24,7 +24,6 @@ class ReviewQuerySet(models.QuerySet):
         cospeaking = user.cospeaking_info_set.all()
         qs = self.exclude(
             Q(proposal__cancelled=True) |
-            Q(proposal__accepted__isnull=False) |
             Q(proposal__submitter=user) |
             Q(proposal__additionalspeaker_set__in=cospeaking)
         )

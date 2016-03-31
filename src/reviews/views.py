@@ -43,6 +43,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         proposals = (
             self.model.objects
             .filter_reviewable(user)
+            .exclude(accepted__isnull=False)
             .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
             .annotate(review_count=Count('review'))
         )
@@ -64,6 +65,18 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['reviews'] = self.get_reviews()
+
+        verdicted_proposals = (
+            TalkProposal.objects
+            .filter_reviewable(self.request.user)
+            .filter(accepted__isnull=False)
+            .annotate(review_count=Count('review'))
+        )
+        context.update({
+            'proposals_with_verdict': verdicted_proposals,
+            'proposals_with_verdict_exists': verdicted_proposals.exists(),
+        })
+
         review_stage = ReviewsConfig.stage
         context['review_stage'] = review_stage
         context['review_stage_desc_tpl'] = (
@@ -119,6 +132,8 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
 
     def post(self, request, *args, **kwargs):
         self.proposal = self.get_proposal()
+        if self.proposal.accepted is not None:
+            return self.http_method_not_allowed(request, *args, **kwargs)
         return super().post(request, *args, **kwargs)
 
     def get_object(self):
