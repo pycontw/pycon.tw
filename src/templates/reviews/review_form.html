@@ -19,6 +19,10 @@
 <h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
 
 <div class="dashboard-body reviewed-proposal-view">
+	{% if review_stage > 1 %}
+	<h4>{% trans 'Submitter' %}</h4>
+	<div>{{ proposal.submitter.speaker_name }}</div>
+	{% endif %}
 	<h4>{% trans 'Category' %}</h4>
 	<div>{{ proposal.get_category_display }}</div>
 	<h4>{% trans 'Duration' %}</h4>
@@ -38,6 +42,10 @@
 	{% if proposal.outline %}
 	<h4>{% trans 'Outline' %}</h4>
 	<div class="markdown-field">{{ proposal.outline }}</div>
+	{% endif %}
+	{% if review_stage > 1 and proposal.supplementary %}
+	<h4>{% trans 'Submitter' %}</h4>
+	<div>{{ proposal.supplementary }}</div>
 	{% endif %}
 </div>
 

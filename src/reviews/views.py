@@ -137,6 +137,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         kwargs.update({
             'request': self.request,
             'proposal': self.proposal,
+            'review_stage': ReviewsConfig.stage,
         })
         return kwargs
 
