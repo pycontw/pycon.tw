@@ -70,14 +70,16 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             'reviews/_includes/review_stage_%s_desc.html'
             % review_stage
         )
+
+        current_stage_reviews = self.get_reviews().filter(stage=review_stage)
         context['vote'] = {
-            'strong_accept': self.get_reviews().filter(
+            'strong_accept': current_stage_reviews.filter(
                 vote=Review.Vote.PLUS_ONE).count(),
-            'weak_accept': self.get_reviews().filter(
+            'weak_accept': current_stage_reviews.filter(
                 vote=Review.Vote.PLUS_ZERO).count(),
-            'weak_reject': self.get_reviews().filter(
+            'weak_reject': current_stage_reviews.filter(
                 vote=Review.Vote.MINUS_ZERO).count(),
-            'strong_reject': self.get_reviews().filter(
+            'strong_reject': current_stage_reviews.filter(
                 vote=Review.Vote.MINUS_ONE).count(),
         }
         context['ordering'] = self.ordering
@@ -86,8 +88,9 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
 
     def get_reviews(self):
         reviews = (
-            self.request.user.review_set
-            .filter(stage=ReviewsConfig.stage)
+            Review.objects
+            .filter_reviewable(self.request.user)
+            .order_by('-stage', 'pk')
         )
         return reviews
 
