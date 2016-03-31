@@ -137,7 +137,6 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         kwargs.update({
             'request': self.request,
             'proposal': self.proposal,
-            'review_stage': ReviewsConfig.stage,
         })
         return kwargs
 
@@ -151,6 +150,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
             )
             .order_by('stage', '?')
         )
+        data['review_stage'] = ReviewsConfig.stage
         return data
 
     def get_success_url(self):
