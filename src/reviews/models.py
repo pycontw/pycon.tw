@@ -11,6 +11,14 @@ from .apps import ReviewsConfig
 REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
 
 
+class ReviewQuerySet(models.QuerySet):
+    def filter_current_reviews(self, proposal, user=None):
+        qs = self.filter(proposal=proposal, stage__lte=ReviewsConfig.stage)
+        if user:
+            qs = qs.exclude(reviewer=user)
+        return qs
+
+
 class Review(models.Model):
 
     reviewer = BigForeignKey(
@@ -26,6 +34,8 @@ class Review(models.Model):
         to=TalkProposal,
         verbose_name=_('proposal'),
     )
+
+    objects = ReviewQuerySet.as_manager()
 
     class Vote(object):
         PLUS_ONE = "+1"

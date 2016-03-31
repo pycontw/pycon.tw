@@ -41,6 +41,30 @@
 	{% endif %}
 </div>
 
+{% if reviews.exists %}
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Previous Reviews' %}</span></h3>
+<div class="dashboard-body">
+	<table class="table existing-review-table">
+		<thead>
+			<tr>
+				<th>{% trans 'Stage' %}</th>
+				<th>{% trans 'Vote' %}</th>
+				<th class="comment-display">{% trans 'Comments' %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for review in reviews %}
+			<tr>
+				<td width="1">{{ review.stage }}</td>
+				<td width="1" class="vote-display">{{ review.get_vote_display }}</td>
+				<td class="comment-display">{{ review.comment|linebreaks }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
 
 <form action="{{ request.get_full_path }}" method="POST">

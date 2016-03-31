@@ -140,6 +140,13 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data()
         data['proposal'] = self.proposal
+        data['reviews'] = (
+            Review.objects
+            .filter_current_reviews(
+                proposal=self.proposal, user=self.request.user,
+            )
+            .order_by('stage', '?')
+        )
         return data
 
     def get_success_url(self):

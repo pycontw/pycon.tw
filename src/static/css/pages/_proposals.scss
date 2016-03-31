@@ -91,6 +91,19 @@ body.dashboard{
                     height: auto;
                 }
             }
+
+            .existing-review-table {
+
+                th, td {
+                    text-align: center;
+                }
+                .vote-display {
+                    white-space: nowrap;
+                }
+                .comment-display {
+                    text-align: left;
+                }
+            }
         }
     }
 }
