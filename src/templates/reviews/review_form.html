@@ -4,6 +4,10 @@
 {% load compress crispy_forms_tags %}
 
 
+{% block title %}{% blocktrans with proposal_title=proposal.title %}Review {{ proposal_title }}{% endblocktrans %}
+{% endblock title %}
+
+
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/vendors/simplemde.min.css' %}">
 {% endblock extra_css %}
