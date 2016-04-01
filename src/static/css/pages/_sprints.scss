@@ -1,0 +1,61 @@
+// Page style for events/sprints
+
+// ks stands for sprint-event
+$sp-padding-vertical: 50px;
+$sp-padding-horizontal: 28px;
+$sp-group-margin: 32px;  // margin between information group
+$sp-margin: 47px; // margin between sprint events
+
+.sprints {
+    background-color: $sprints-bg;
+
+    .content-container {
+        max-width: none;
+    }
+}
+
+.sprint-event {
+    @include make-md-column(12);
+    background-color: $sprint-event-bg;
+    border-radius: 3px;
+    padding-top: $sp-padding-vertical;
+    padding-bottom: $sp-padding-vertical;
+    margin-bottom: $sp-margin;
+
+    &:last-of-type {
+        margin-bottom: ($sp-margin * 4);
+    }
+
+    &__info {
+        @include make-md-column(9);
+        padding-right: 40px;
+
+        &__header {
+            font-size: 20px;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            @include roboto-light;
+            font-size: 16px;
+            color: $sprint-event__info-color;
+        }
+    }
+}
+
+// When sprint events collapsed to one-column,
+// adjust the margins of main blocks.
+@media screen and (max-width: $screen-sm-max) {
+    .sprint-event {
+        &__info {
+            padding-left: $sp-padding-horizontal;
+            padding-right: $sp-padding-horizontal;
+
+            &__header {
+                margin-top: $sp-group-margin;
+            }
+        }
+    }
+}
+

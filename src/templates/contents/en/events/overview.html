@@ -1,0 +1,69 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}Events Overview{% endblock %}
+{% block page_title %}<h1>Events Overview</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+<p>
+    Events of PyCon Taiwan 2016 can be divided into two parts: during the conference dates (6/3-5) and out of the conference dates (Tutorial, Sprint).
+</p>
+
+<h2>Out of the conference</h2>
+<h3>Tutorial</h3>
+<p>
+    Tutorial is a paid event that will be held 1 to 3 weeks before the PyCon TW. A tutorial can be either full-day (6 hours) or half-day (3 hours) and its content is selected by public proposal calling.
+</p>
+<p>
+    Every tutorial has its sepicific target audience, ranging from Python newbies who never try Python before, people interested in controlling Raspberry Pi, to people doing data analysis. Tutorials aim to build backgroud knowlege to better understand conference talks, or to get hands on more Python applications. The ticket for tutorial is saled separately from that for conference, so make sure you register both events respectively.
+</p>
+
+<h3>Sprint</h3>
+<p>
+    Two sprints will be held out of the conference dates. During the sprint, open source project managers will bring their projects and explain their issues or any unresolved problem. After the introduction of all projects, people find their projects of interest and get involved. By this interaction possibility, one can dig deep into projects or fields they care.
+</p>
+<p>
+    It is highly welcomed to bring one’s own project and find enthusiasts of same interest. For people with sufficient Python background who wants to join open source projects but having no clue or too shy to shout out on the mail list and public channels, sprints serve as a great chance to get involved.
+</p>
+<p>
+    Running alongside there is a separate schedule of workshops in April for attendees who want to learn more about knowledge for specific topics.
+</p>
+<p>
+	More information about the sprint can be found on the
+	<a href="{{ events_sprint_url }}">Sprint</a> page.
+</p>
+
+<h2>Between the conference (Jun 3~5)</h2>
+<h3>Keynote</h3>
+<p>
+    During the three days conference, PyCon TW will invite 5 speakers to give keynote talks, which all will be live broadcast. Keynote speaker is considered one of the toppest person in their domain area globally. Being either a enginner or a manager, they will share their professional experience and the image of their domain’s future.
+</p>
+<p>
+	More information about the keynote can be found on the
+	<a href="{{ events_keynote_url }}">Keynote</a> page.
+</p>
+
+<h3>Talk</h3>
+<p>
+    These 3 days are packed with scheduled talks about Python and the found by speaker from Taiwan and the global. Talk difference between 25 min and 45 min, Everyday is synchronized with 3 talks base on different type and degree of difficulty, choose their own topics of interest to listen. Many people will notes the program schedule before the meeting, it will not run the wrong place.
+</p>
+<p>
+    Announcement of the program schedule will be in the middle of April
+</p>
+
+<h3>Lightning Talk</h3>
+<p>
+    Lighting talk is the very stimulation activities. Speaker only has 5 min to presentation include to set up the powerpoint, and will cut-off signal on time. It seems cruel, but every year to play countless tricks of activity. Lightning talk welcome every topic like live demo, the little story of the project etc. On-site registration will be open this year, let’s together to be creative it!
+</p>
+
+<h3>Job Fair</h3>
+<p>
+    This is the job fair only for Python’s engineer. Although there will not be any open program schedule but let vendor to introduce themselves on stage, you can communication with the vendor and throw(submit) your resume, vendor will also take the time to promote their intrinsic needs. We encourage more exchanges with each other vendor in this period, perhaps a better chance this occurred.
+</p>
+
+{# <h3>BoF (Birds of a Feather)</h3> #}
+
+{% endblock content %}

@@ -73,9 +73,9 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         context['vote'] = {
             'strong_accept': self.get_reviews().filter(
                 vote=Review.Vote.PLUS_ONE).count(),
-            'weakly_accept': self.get_reviews().filter(
+            'weak_accept': self.get_reviews().filter(
                 vote=Review.Vote.PLUS_ZERO).count(),
-            'weakly_reject': self.get_reviews().filter(
+            'weak_reject': self.get_reviews().filter(
                 vote=Review.Vote.MINUS_ZERO).count(),
             'strong_reject': self.get_reviews().filter(
                 vote=Review.Vote.MINUS_ONE).count(),

@@ -7,8 +7,10 @@
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
 {% url 'page' path='about/staff' as about_staff_url %}
+{% url 'page' path='events/overview' as events_overview_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/overview' as events_overview_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
@@ -26,8 +28,10 @@
   <li class="dropdown">
     <a href="#" class="{% if active == 'events' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Events' %}</a>
     <ul class="dropdown-menu">
+      <li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
       <li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
       <li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
+      <li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
     </ul>
   </li>
   <li class="dropdown">
