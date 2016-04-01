@@ -6,8 +6,9 @@
 {% block page_title %}<h1>Events Overview</h1>{% endblock %}
 
 {% block content %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
 <p>
     Events of PyCon Taiwan 2016 can be divided into two parts: during the conference dates (6/3-5) and out of the conference dates (Tutorial, Sprint).
 </p>
@@ -23,7 +24,7 @@
 
 <h3>Sprint</h3>
 <p>
-    Two sprints will be held out of the conference dates. During the sprint, open source project managers will bring their projects and explain their issues or any unresolved problem. After the introduction of all projects, people find their projects of interest and get involved. By this interaction possibility, one can dig deep into projects or fields they care.
+    Two sprints will be held out of the conference dates. During the sprint, open source project managers will bring their projects and explain their issues or any unresolved problem. After the introduction of all projects, people find their projects of interest and get involved. By this interaction possibility, one can dig deep into projects or fields they care. 
 </p>
 <p>
     It is highly welcomed to bring one’s own project and find enthusiasts of same interest. For people with sufficient Python background who wants to join open source projects but having no clue or too shy to shout out on the mail list and public channels, sprints serve as a great chance to get involved.
@@ -31,10 +32,11 @@
 <p>
     Running alongside there is a separate schedule of workshops in April for attendees who want to learn more about knowledge for specific topics.
 </p>
-<p>
-	More information about the sprint can be found on the
-	<a href="{{ events_sprint_url }}">Sprint</a> page.
-</p>
+<<<<<<< HEAD
+    More information about the sprint can be found on the <a
+        href="{{ events_sprint_url }}">Sprint </a>page.</p>
+=======
+>>>>>>> parent of 47ae3e3... Add sprint page link in events/overview
 
 <h2>Between the conference (Jun 3~5)</h2>
 <h3>Keynote</h3>
@@ -42,9 +44,8 @@
     During the three days conference, PyCon TW will invite 5 speakers to give keynote talks, which all will be live broadcast. Keynote speaker is considered one of the toppest person in their domain area globally. Being either a enginner or a manager, they will share their professional experience and the image of their domain’s future.
 </p>
 <p>
-	More information about the keynote can be found on the
-	<a href="{{ events_keynote_url }}">Keynote</a> page.
-</p>
+    More about the Keynote information please reference <a
+        href="{{ events_keynote_url }}">Keynote </a>page.</p>
 
 <h3>Talk</h3>
 <p>
@@ -64,6 +65,15 @@
     This is the job fair only for Python’s engineer. Although there will not be any open program schedule but let vendor to introduce themselves on stage, you can communication with the vendor and throw(submit) your resume, vendor will also take the time to promote their intrinsic needs. We encourage more exchanges with each other vendor in this period, perhaps a better chance this occurred.
 </p>
 
-{# <h3>BoF (Birds of a Feather)</h3> #}
+<h3>BoF (Birds of a Feather)</h3>
+<p>
+    BoF (Birds of a Feather), take the name of the proverb, 「Birds of a feather flock together」 means of mutually attracting enthusiasts from Italy, is very casual, so there is a common interest of the congregation exchange activities. Just sitting in the audience listening to the agenda not enjoyable, think of a topic more brainstorming, wanted to show there is a shining achievement, want their friends together to discuss it? So do not miss the opportunity to stall BoF! Welcome to create a topic of interest to invite the congregation together to discuss, together with us to create their PyCon TW bustling night market!
+</p>
+<p>
+    Binding characteristics of Taiwan night market culture, which is the most popular annual PyCon TW night. Not only in the field with a delicious buffet a real treat for you, there are many eye-opening performances took turns on stage (performers also register themselves Oh!).
+</p>
+<p>
+    More information about the sprint can be found on the <a
+        href="{{ events_bof_url }}">BOF </a>page.</p>
 
 {% endblock content %}
