@@ -6,8 +6,9 @@
 {% block page_title %}<h1>活動概覽 (Events Overview)</h1>{% endblock %}
 
 {% block content %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
 <p>
     PyCon Taiwan 2016 活動分為會議期間外（Tutorial, Sprint）與會議期間（6/3-5）。
 </p>
@@ -23,14 +24,18 @@
 <p>
     兩場 Sprint 活動安排在會議三天以外的時間。當天的 Sprint 將有開源專案的負責人，帶著他們專案待解決的問題、issue 來現場與大家分享與解說，參加的人可以就自己感興趣的專案一同加入。透過這個互動機會將能更了解自己關注的相關專案領域。歡迎帶自己的開源專案來找同好。對已經有一定 Python 基礎的人，想參加開源專案開放但不知如何加入，或者害羞怕自己不了解該專案環境的人，參加 Sprint 是個大展身手的好機會！對於沒有把握自己是否能加入開發的朋友，四月的活動也會有 workshop 形式的工作坊，歡迎一起來玩！
 </p>
-<p>更多關於 Sprint 內容請參考 <a href="{{ events_sprint_url }}">Sprint</a> 頁面。</p>
+<p>
+    更多關於今年 Sprint 訊息請參考<a
+        href="{{ events_sprint_url }}"> Sprint </a>頁面。</p>
 
 <h2>會議期間（2016 年 6 月 3–5 日）</h2>
 <h3>Keynote</h3>
 <p>
     為期三天的議程中，邀請五位講者分別在不同場次進行主題演講 (Keynote)，所有議場將會同步轉播。Keynote 講者都是在全球而言各領域非常頂尖的人士，不論是工程師或管理者，他們將帶來對自己的領域、專案的經驗分享，或者對於未來數年發展的方向與想像。
 </p>
-<p>更多關於 Keynote 內容請參考<a href="{{ events_keynote_url }}">主題演講</a>頁面。</p>
+<p>
+    更多關於今年 Keynote 內容請參考<a
+        href="{{ events_keynote_url }}">主題演講</a>頁面。</p>
 
 <h3>Talk</h3>
 <p>
@@ -51,5 +56,8 @@
 <p>
     BoF (Birds of a Feather)，名字取諺語「Birds of a feather flock together」指同好互相吸引之意而來，是個很隨性、讓有共同興趣的會眾交流的活動。只坐在台下聽議程不過癮，想對某個主題有更多的腦力激盪，有很炫的成果想展示，想呼朋引伴一起來討論嗎？那麼千萬別錯過 BoF 擺攤的機會！歡迎您發起一個主題，邀請感興趣的會眾一起來討論，一起與我們打造屬於 PyCon TW 熱鬧的夜市！結合台灣特色夜市文化，這是每年 PyCon TW 最熱鬧一晚。在現場不僅備有美味的自助餐供你大飽口福，還有許多令人大開眼界的表演輪番登台（表演也是自行報名的喔！）。
 </p>
+<p>
+    更多關於今年 BoF 訊息請參考<a
+        href="{{ events_bof_url }}"> BoF </a>頁面。</p>
 
 {% endblock content %}
