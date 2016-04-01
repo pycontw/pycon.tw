@@ -1,12 +1,9 @@
 {% extends 'contents/_base/events.html' %}
-{% block body-class %}sprints{% endblock %}
-{% block content_page_class %}{% endblock %}
 
 {% load static %}
 
 {% block title %}Sprints{% endblock %}
 {% block page_title %}<h1>Sprints</h1>{% endblock %}
-
 
 {% block meta_og %}
   <meta property="og:title" content="Sprints | PyCon Taiwan 2016" />
@@ -15,8 +12,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="sprint-event">
-	<div class="sprint-event__info">
     <h2>活動簡介</h2>
     <p>
       兩場 Sprint 活動安排在會議三天以外的時間。當天的 Sprint 將有開源專案的
@@ -59,7 +54,7 @@
           </li>
         </ul>
       </li>
-    </ul> 
+    </ul>
 
     <h2>2016-06-11 (六): PyCon Taiwan Sprint Day</h2>
     <p>
@@ -79,6 +74,4 @@
       入口在巷子裡，肉羹與牛肉麵店中間的公寓門，門鈴貼有「CLBC」的標籤
       （<a href="https://goo.gl/maps/eXHudbMx57u">街景</a>）
 		</p>
-	</div>
-</div>
 {% endblock content %}
