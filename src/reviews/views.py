@@ -44,7 +44,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             self.model.objects
             .filter_reviewable(user)
             .exclude(accepted__isnull=False)
-            .exclude(review__stage=ReviewsConfig.stage, review__reviewer=user)
+            .exclude(review__reviewer=user)
             .annotate(review_count=Count('review'))
         )
         # params = self.request.GET
@@ -68,11 +68,6 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
 
         context['reviews'] = self.get_reviews()
 
-        if review_stage == 2:
-            context['reviews'] = self.get_reviews().filter(
-                proposal__accepted__isnull=True,
-            )
-
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
@@ -89,15 +84,14 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             % review_stage
         )
 
-        current_stage_reviews = self.get_reviews().filter(stage=review_stage)
         context['vote'] = {
-            'strong_accept': current_stage_reviews.filter(
+            'strong_accept': context['reviews'].filter(
                 vote=Review.Vote.PLUS_ONE).count(),
-            'weak_accept': current_stage_reviews.filter(
+            'weak_accept': context['reviews'].filter(
                 vote=Review.Vote.PLUS_ZERO).count(),
-            'weak_reject': current_stage_reviews.filter(
+            'weak_reject': context['reviews'].filter(
                 vote=Review.Vote.MINUS_ZERO).count(),
-            'strong_reject': current_stage_reviews.filter(
+            'strong_reject': context['reviews'].filter(
                 vote=Review.Vote.MINUS_ONE).count(),
         }
         context['ordering'] = self.ordering
@@ -105,11 +99,27 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return context
 
     def get_reviews(self):
-        reviews = (
-            Review.objects
-            .filter_reviewable(self.request.user)
-            .order_by('-stage', 'pk')
-        )
+        review_stage = ReviewsConfig.stage
+        if review_stage == 1:
+            reviews = (
+                Review.objects
+                .filter_reviewable(self.request.user)
+                .exclude(stage=2)
+            )
+        elif review_stage == 2:
+            proposals = TalkProposal.objects.filter(
+                    review__stage=1,
+                    review__reviewer=self.request.user
+                ) & TalkProposal.objects.filter(
+                    review__stage=2,
+                    review__reviewer=self.request.user
+                )
+            reviews = (
+                Review.objects
+                .filter_reviewable(self.request.user)
+                .filter(proposal__accepted__isnull=True)
+                .exclude(proposal__in=proposals, stage=1)
+            )
         return reviews
 
 

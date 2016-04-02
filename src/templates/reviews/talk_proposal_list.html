@@ -64,7 +64,7 @@
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="unreviewed">
         <div class="talk-proposals proposals">
-        {% if object_list.exists %}
+        {% if object_list %}
           {% include 'reviews/_includes/proposal_table.html' with proposals=object_list %}
         {% else %}
           <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
@@ -73,7 +73,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="reviewed">
         <div class="talk-proposals proposals">
-        {% if reviews.exists %}
+        {% if reviews %}
           {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
         {% else %}
           <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
@@ -83,7 +83,7 @@
     {% if review_stage == 2 and proposals_with_verdict %}
     <div role="tabpanel" class="tab-pane" id="verdicted">
 	    <div class="talk-proposals proposals">
-	      {% include 'reviews/_includes/proposal_table.html' with proposals=proposals_with_verdict %}
+	      {% include 'reviews/_includes/proposal_table.html' with proposals=proposals_with_verdict verdict=True %}
 	    </div>
     </div>
     {% endif %}

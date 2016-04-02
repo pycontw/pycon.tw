@@ -12,17 +12,15 @@
 	</thead>
 	<tbody>
 		{% for review in reviews %}
-		<tr>
-			<td>{{ review.stage }}</td>
-			<td>{{ review.get_vote_display }}</td>
-			<td class="proposal-title">{{ review.proposal.title }}</td>
-			<td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
-			<td>
-				{% if review.stage == review_stage %}
-				<a href="{% url 'review_edit' proposal_pk=review.proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>
-				{% endif %}
-			</td>
-		</tr>
+			<tr>
+				<td>{{ review.stage }}</td>
+				<td>{{ review.get_vote_display }}</td>
+				<td class="proposal-title">{{ review.proposal.title }}</td>
+				<td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
+				<td>
+					<a href="{% url 'review_edit' proposal_pk=review.proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>
+				</td>
+			</tr>
 		{% endfor %}
 	</tbody>
 </table>
