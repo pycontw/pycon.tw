@@ -2,6 +2,7 @@
 <table class="proposals-table table table-responsive">
     <thead>
         <tr>
+            {% if not verdict %}
             <th width="1%">
                 <a {% if ordering == 'review_count' %}class="active asc" href="?order=-count" {% elif ordering == '-review_count' %}class="active desc" href="?order=count"{% else %}href="?order=count"{% endif %}>
                     {% trans 'Reviewed' %}
@@ -10,6 +11,7 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
+            {% endif %}
             <th class="proposal-title">
                 <a {% if ordering == 'title' %}class="active asc" href="?order=-title" {% elif ordering == '-title' %}class="active desc" href="?order=title"{% else %}href="?order=title"{% endif %}>
                     {% trans 'Title' %}
@@ -42,19 +44,31 @@
                     <i class="fa fa-sort-desc fa-lg"></i>
                 </a>
             </th>
+            {% if verdict %}
+                <th width="1%">{% trans 'Decision' %}</th>
+            {% endif %}
             <th width="1%"></th>
         </tr>
     </thead>
     <tbody>
         {% for proposal in proposals %}
         <tr>
-            <td>{{ proposal.review_count }}</td>
+            {% if proposal.accepted == None %}
+                <td>{{ proposal.review_count }}</td>
+            {% endif %}
             <td class="proposal-title">{{ proposal.title }}</td>
             <td class="hidden-xs hidden-sm">{{ proposal.get_category_display|truncatechars:16 }}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_python_level_display }}</td>
             <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
+            {% if proposal.accepted != None %}
+                <td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_accepted_display }}</td>
+            {% endif %}
             <td>
+              {% if proposal.accepted == None %}
                 <a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Review' %}</a>
+              {% else %}
+                <a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Read' %}</a>
+              {% endif %}
             </td>
         </tr>
         {% endfor %}

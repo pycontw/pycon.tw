@@ -23,6 +23,10 @@
 <h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
 
 <div class="dashboard-body reviewed-proposal-view">
+	{% if review_stage == 2 %}
+		<h4>{% trans 'Submitter' %}</h4>
+		<div>{{ proposal.submitter.speaker_name }}</div>
+	{% endif %}
 	<h4>{% trans 'Category' %}</h4>
 	<div>{{ proposal.get_category_display }}</div>
 	<h4>{% trans 'Duration' %}</h4>
@@ -43,15 +47,35 @@
 	<h4>{% trans 'Outline' %}</h4>
 	<div class="markdown-field">{{ proposal.outline }}</div>
 	{% endif %}
+	{% if review_stage == 2 and proposal.supplementary %}
+		<h4>{% trans 'Supplementary' %}</h4>
+		<div class="markdown-field">{{ proposal.supplementary }}</div>
+	{% endif %}
 </div>
 
-<h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
+{% if review_stage == 2 and other_reviews %}
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Previous Reviews by Other Reviewers' %}</span></h3>
+<div class="dashboard-body">
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=other_reviews %}
+</div>
+{% endif %}
 
-<form action="{{ request.get_full_path }}" method="POST">
+{% if review_stage == 2 and my_reviews %}
+<h3 class="dashboard-header"><span class="header-title">{% trans 'My Previous Reviews' %}</span></h3>
+<div class="dashboard-body">
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=my_reviews %}
+</div>
+{% endif %}
+
+{% if proposal.accepted == None %}
+
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
+<form method="POST">
 {% csrf_token %}
 {{ form|crispy }}
 <input class="btn btn-primary btn-lg" type="submit" value="Submit">
 </form>
+{% endif %}
 
 {% endblock main-content %}
 

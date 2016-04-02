@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
 from core.models import BigForeignKey
@@ -9,6 +10,28 @@ from .apps import ReviewsConfig
 
 
 REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
+
+
+class ReviewQuerySet(models.QuerySet):
+
+    def filter_current_reviews(
+            self, proposal, exclude_user=None, filter_user=None):
+        qs = self.filter(proposal=proposal, stage__lte=ReviewsConfig.stage)
+        if exclude_user:
+            qs = qs.exclude(reviewer=exclude_user)
+        if filter_user:
+            qs = qs.filter(reviewer=filter_user)
+        return qs
+
+    def filter_reviewable(self, user):
+        cospeaking = user.cospeaking_info_set.all()
+        qs = self.exclude(
+            Q(proposal__cancelled=True) |
+            Q(proposal__submitter=user) |
+            Q(proposal__additionalspeaker_set__in=cospeaking)
+        )
+        qs = qs.filter(reviewer=user)
+        return qs
 
 
 class Review(models.Model):
@@ -26,6 +49,8 @@ class Review(models.Model):
         to=TalkProposal,
         verbose_name=_('proposal'),
     )
+
+    objects = ReviewQuerySet.as_manager()
 
     class Vote(object):
         PLUS_ONE = "+1"
