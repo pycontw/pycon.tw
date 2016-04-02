@@ -70,7 +70,7 @@
 {% if proposal.accepted == None %}
 
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
-<form method="POST">
+<form action="{{ request.get_full_path }}" method="POST">
 {% csrf_token %}
 {{ form|crispy }}
 <input class="btn btn-primary btn-lg" type="submit" value="Submit">
