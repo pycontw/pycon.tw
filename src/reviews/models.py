@@ -14,10 +14,13 @@ REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
 
 class ReviewQuerySet(models.QuerySet):
 
-    def filter_current_reviews(self, proposal, user=None):
+    def filter_current_reviews(
+            self, proposal, exclude_user=None, filter_user=None):
         qs = self.filter(proposal=proposal, stage__lte=ReviewsConfig.stage)
-        if user:
-            qs = qs.exclude(reviewer=user)
+        if exclude_user:
+            qs = qs.exclude(reviewer=exclude_user)
+        if filter_user:
+            qs = qs.filter(reviewer=filter_user)
         return qs
 
     def filter_reviewable(self, user):

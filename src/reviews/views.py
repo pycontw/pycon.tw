@@ -156,17 +156,36 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        data = super().get_context_data()
-        data['proposal'] = self.proposal
-        data['reviews'] = (
+        review_stage = ReviewsConfig.stage
+        other_reviews = (
             Review.objects
             .filter_current_reviews(
-                proposal=self.proposal, user=self.request.user,
+                proposal=self.proposal,
+                exclude_user=self.request.user,
             )
             .order_by('stage', '?')
         )
-        data['review_stage'] = ReviewsConfig.stage
-        return data
+        my_reviews = (
+            Review.objects
+            .filter_current_reviews(
+                proposal=self.proposal,
+                filter_user=self.request.user,
+            )
+            .order_by('stage')
+        )
+        if self.proposal.accepted is not None and self.object:
+            # If this proposal does not have verdict, this page will have a
+            # review form. Exclude the current user's current review so that
+            # it does not show up twice (once in the table, once in form).
+            my_reviews = my_reviews.exclude(pk=self.object.pk)
+
+        kwargs.update({
+            'proposal': self.proposal,
+            'other_reviews': other_reviews,
+            'my_reviews': my_reviews,
+            'review_stage': review_stage,
+        })
+        return super().get_context_data(**kwargs)
 
     def get_success_url(self):
         query_string = self.request.GET.urlencode()

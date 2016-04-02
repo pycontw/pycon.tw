@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<table class="table existing-review-table">
+	<thead>
+		<tr>
+			<th>{% trans 'Stage' %}</th>
+			<th>{% trans 'Vote' %}</th>
+			<th class="comment-display">{% trans 'Comments' %}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for review in reviews %}
+		<tr>
+			<td width="1">{{ review.stage }}</td>
+			<td width="1" class="vote-display">{{ review.get_vote_display }}</td>
+			<td class="comment-display">{{ review.comment|linebreaks }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
