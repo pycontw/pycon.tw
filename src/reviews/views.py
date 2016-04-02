@@ -175,7 +175,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
             )
             .order_by('stage')
         )
-        if self.proposal.accepted is not None and self.object:
+        if self.proposal.accepted is None and self.object:
             # If this proposal does not have verdict, this page will have a
             # review form. Exclude the current user's current review so that
             # it does not show up twice (once in the table, once in form).
