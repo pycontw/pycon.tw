@@ -56,8 +56,8 @@
 <ul class="nav nav-tabs reviews-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
     <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
-    {% if proposals_with_verdict_exists %}
-    <li role="presentation"><a href="#verdicted" aria-controls="verdicted" role="tab" data-toggle="tab">{% trans 'Talk Proposals With Decision' %} ({{ proposals_with_verdict|length }})</a></li>
+    {% if review_stage == 2 and proposals_with_verdict %}
+        <li role="presentation"><a href="#verdicted" aria-controls="verdicted" role="tab" data-toggle="tab">{% trans 'Talk Proposals With Decision' %} ({{ proposals_with_verdict|length }})</a></li>
     {% endif %}
 </ul>
 <!-- Tab panes -->
@@ -80,7 +80,7 @@
         {% endif %}
         </div>
     </div>
-    {% if proposals_with_verdict_exists %}
+    {% if review_stage == 2 and proposals_with_verdict %}
     <div role="tabpanel" class="tab-pane" id="verdicted">
 	    <div class="talk-proposals proposals">
 	      {% include 'reviews/_includes/proposal_table.html' with proposals=proposals_with_verdict %}

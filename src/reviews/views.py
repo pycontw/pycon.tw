@@ -64,9 +64,14 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['reviews'] = self.get_reviews().filter(
-            proposal__accepted__isnull=True,
-        )
+        review_stage = ReviewsConfig.stage
+
+        context['reviews'] = self.get_reviews()
+
+        if review_stage == 2:
+            context['reviews'] = self.get_reviews().filter(
+                proposal__accepted__isnull=True,
+            )
 
         verdicted_proposals = (
             TalkProposal.objects
@@ -76,10 +81,8 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         )
         context.update({
             'proposals_with_verdict': verdicted_proposals,
-            'proposals_with_verdict_exists': verdicted_proposals.exists(),
         })
 
-        review_stage = ReviewsConfig.stage
         context['review_stage'] = review_stage
         context['review_stage_desc_tpl'] = (
             'reviews/_includes/review_stage_%s_desc.html'
