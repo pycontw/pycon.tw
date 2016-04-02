@@ -6,8 +6,10 @@
 {% block page_title %}<h1>Events Overview</h1>{% endblock %}
 
 {% block content %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
 <p>
     Events of PyCon Taiwan 2016 can be divided into two parts: during the conference dates (6/3-5) and out of the conference dates (Tutorial, Sprint).
 </p>
@@ -34,6 +36,15 @@
 <p>
 	More information about the sprint can be found on the
 	<a href="{{ events_sprint_url }}">Sprint</a> page.
+</p>
+
+<h3>PyDay</h3>
+<p>
+    PyDay is a newbie activities held by the PyCon TW and the  top univerisities in Taiwan. All the PyDay’s speakers are mostly from the PyCon keynote speakers and would share their experience throuhout sessions. After PyCon if want to more interact with keynote speaker welcome book PyDay ticket.
+</p>
+<p>
+    More information about the pyday can be found on the
+    <a href="{{ events_pyday_url }}">PyDay</a> page.
 </p>
 
 <h2>Between the conference (Jun 3~5)</h2>
@@ -64,6 +75,16 @@
     This is the job fair only for Python’s engineer. Although there will not be any open program schedule but let vendor to introduce themselves on stage, you can communication with the vendor and throw(submit) your resume, vendor will also take the time to promote their intrinsic needs. We encourage more exchanges with each other vendor in this period, perhaps a better chance this occurred.
 </p>
 
-{# <h3>BoF (Birds of a Feather)</h3> #}
+<h3>BoF (Birds of a Feather)</h3>
+<p>
+    BoF (Birds of a Feather), take the name of the proverb, 「Birds of a feather flock together」 means of mutually attracting enthusiasts from Italy, is very casual, so there is a common interest of the congregation exchange activities. Just sitting in the audience listening to the agenda not enjoyable, think of a topic more brainstorming, wanted to show there is a shining achievement, want their friends together to discuss it? So do not miss the opportunity to stall BoF! Welcome to create a topic of interest to invite the congregation together to discuss, together with us to create their PyCon TW bustling night market!
+</p>
+<p>
+    Binding characteristics of Taiwan night market culture, which is the most popular annual PyCon TW night. Not only in the field with a delicious buffet a real treat for you, there are many eye-opening performances took turns on stage (performers also register themselves Oh!).
+</p>
+<p>
+    More information about the BoF can be found on the
+    <a href="{{ events_bof_url }}"> BoF</a> page.
+</p>
 
 {% endblock content %}

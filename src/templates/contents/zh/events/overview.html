@@ -6,8 +6,10 @@
 {% block page_title %}<h1>活動概覽 (Events Overview)</h1>{% endblock %}
 
 {% block content %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
 <p>
     PyCon Taiwan 2016 活動分為會議期間外（Tutorial, Sprint）與會議期間（6/3-5）。
 </p>
@@ -24,6 +26,13 @@
     兩場 Sprint 活動安排在會議三天以外的時間。當天的 Sprint 將有開源專案的負責人，帶著他們專案待解決的問題、issue 來現場與大家分享與解說，參加的人可以就自己感興趣的專案一同加入。透過這個互動機會將能更了解自己關注的相關專案領域。歡迎帶自己的開源專案來找同好。對已經有一定 Python 基礎的人，想參加開源專案開放但不知如何加入，或者害羞怕自己不了解該專案環境的人，參加 Sprint 是個大展身手的好機會！對於沒有把握自己是否能加入開發的朋友，四月的活動也會有 workshop 形式的工作坊，歡迎一起來玩！
 </p>
 <p>更多關於 Sprint 內容請參考 <a href="{{ events_sprint_url }}">Sprint</a> 頁面。</p>
+
+<h3>PyDay</h3>
+<p>
+    PyDay 在台灣，是由 PyCon TW 和頂尖大學一起舉辦的新手村活動。由 PyCon 所邀請的主題講者，在 PyCon 主議程之後特別加碼，來帶領大家進行全天候的 Python 盛宴。參加過 PyCon 議程後還想與講者做更多互動歡迎購票參加 PyDay 喔。
+</p>
+<p>更多關於 PyDay 內容請參考 <a href="{{ events_pyday_url }}">PyDay</a> 頁面。</p>
+
 
 <h2>會議期間（2016 年 6 月 3–5 日）</h2>
 <h3>Keynote</h3>
@@ -51,5 +60,6 @@
 <p>
     BoF (Birds of a Feather)，名字取諺語「Birds of a feather flock together」指同好互相吸引之意而來，是個很隨性、讓有共同興趣的會眾交流的活動。只坐在台下聽議程不過癮，想對某個主題有更多的腦力激盪，有很炫的成果想展示，想呼朋引伴一起來討論嗎？那麼千萬別錯過 BoF 擺攤的機會！歡迎您發起一個主題，邀請感興趣的會眾一起來討論，一起與我們打造屬於 PyCon TW 熱鬧的夜市！結合台灣特色夜市文化，這是每年 PyCon TW 最熱鬧一晚。在現場不僅備有美味的自助餐供你大飽口福，還有許多令人大開眼界的表演輪番登台（表演也是自行報名的喔！）。
 </p>
+<p>更多關於 BoF 內容請參考<a href="{{ events_bof_url }}"> BoF </a>頁面。</p>
 
 {% endblock content %}
