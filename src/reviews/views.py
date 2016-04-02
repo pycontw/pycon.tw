@@ -1,3 +1,4 @@
+import itertools
 import random
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
@@ -172,13 +173,25 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         review_stage = ReviewsConfig.stage
-        other_reviews = (
+        # Query all reviews made by others, including all stages
+        full_other_reviews = (
             Review.objects
             .filter_current_reviews(
                 proposal=self.proposal,
                 exclude_user=self.request.user,
             )
-            .order_by('stage', '?')
+            .order_by('reviewer', '-stage')
+        )
+        # Select only the latest stage review for each reviewer
+        # by first grouping reviews based on reviewer.
+        # Note that this requires the QuerySet already sorted by reviewer
+        grouped_reviews_per_reviewers = itertools.groupby(
+            full_other_reviews, key=lambda r: r.reviewer
+        )
+        other_reviews = (
+            # we sorted the reviews by descending stage
+            next(reviews_by_same_reviewer)
+            for _, reviews_by_same_reviewer in grouped_reviews_per_reviewers
         )
         my_reviews = (
             Review.objects
