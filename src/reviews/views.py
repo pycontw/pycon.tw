@@ -180,7 +180,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
                 proposal=self.proposal,
                 exclude_user=self.request.user,
             )
-            .order_by('reviewer', '-stage')
+            .order_by('vote', '-stage')
         )
         # Select only the latest stage review for each reviewer
         # by first grouping reviews based on reviewer.
