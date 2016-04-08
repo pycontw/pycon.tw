@@ -83,7 +83,7 @@ class TalkQuerySet(models.QuerySet):
         expression. Fortunately we only have two kinds of talk durations, and
         a simple OR solves the problem. :p
 
-        See also: `core.utils.TimeRange.overlaps`.
+        See also: `EventQuerySet.filter_overlapping`.
         """
         start_25 = time_add(
             day, timerange.start, datetime.timedelta(minutes=-25),
@@ -145,9 +145,20 @@ class Talk(ConferenceEvent):
 
 class EventQuerySet(models.QuerySet):
     def filter_overlapping(self, day, location, timerange, exclude):
-        """Filter events that overlaps the given time range.
+        """Filter events that overlaps the given time range `[start, end)`.
 
-        This uses the same logic as `core.utils.TimeRange.overlaps`.
+        If time ranges A and B do not overlap, either B ends before A starts,
+        or B starts after A ends, i.e.::
+
+            A.start >= B.end or B.start >= A.end
+
+        Note that we use >= here since we define a time range to be open at
+        the end. This method should return the inverse of the above result,
+        and according to De Morgan's laws, we have::
+
+               not (A.start >= B.end or B.start >= A.end)
+            => not (A.start >= B.end) and not (B.start >= A.end)
+            => A.start < B.end and A.end > B.start
         """
         qs = self.filter(
             day=day,

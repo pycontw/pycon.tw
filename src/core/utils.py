@@ -1,3 +1,4 @@
+import collections
 import datetime
 
 from django.conf import settings
@@ -91,34 +92,9 @@ class SequenceQuerySet:
         return bool(self._seq)
 
 
-class TimeRange:
-    """Represents a range between datetime instances `[start, end)`.
-    """
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
-
-    @classmethod
-    def from_duration(cls, start, delta):
-        return cls(start, start + delta)
-
-    def overlaps(self, other):
-        """Check whether given time range overlaps this one.
-
-        If time ranges A and B do not overlap, either B.start is after than
-        A.end, or B.end happens before A.start, i.e.::
-
-            B.start >= A.end or A.start >= B.end
-
-        Note that we use >= here since TimeRange instances are open at the end.
-        This method should return the inverse of the above result, and
-        according to De Morgan's laws, we have::
-
-               not (B.start >= A.end or A.start >= B.end)
-            => not (B.start >= A.end) and not (A.start >= B.end)
-            => B.start < A.end and A.start < B.end
-        """
-        return self.start < other.end and self.end > other.start
+TimeRange = collections.namedtuple('TimeRange', 'start end')
+"""Represents a range between `datetime.time` instances `[start, end)`.
+"""
 
 
 def time_add(date, time, delta):
