@@ -94,7 +94,8 @@ LOCAL_APPS = (
     'core',
     'proposals',
     'users',
-    'reviews'
+    'reviews',
+    'schedule',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -157,7 +158,7 @@ LOCALE_PATHS = (
 
 USE_TZ = True
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 
 
 # Message tag setup.
