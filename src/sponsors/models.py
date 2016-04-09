@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import override
 
 
 def logo_upload_to(instance, filename):
@@ -41,6 +42,11 @@ class Sponsor(models.Model):
         (Level.BRONZE, _('bronze')),
         (Level.SPECIAL, _('special')),
     )
+
+    @property
+    def level_en_name(self):
+        with override('en-us'):
+            return self.LEVEL_CHOICES[self.level][1]
 
     level = models.PositiveSmallIntegerField(
         verbose_name=_('level'),
