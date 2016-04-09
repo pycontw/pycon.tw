@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 def logo_upload_to(instance, filename):
-    return 'avatars/{pk}/{filename}'.format(
+    return 'sponsors/{pk}/{filename}'.format(
         pk=instance.pk,
         filename=filename,
     )
@@ -35,11 +35,11 @@ class Sponsor(models.Model):
         SPECIAL = 4
 
     LEVEL_CHOICES = (
-        (Level.PLATINUM, _('platinum sponsor')),
-        (Level.GOLD, _('gold sponsor')),
-        (Level.SILVER, _('silver sponsor')),
-        (Level.BRONZE, _('bronze sponsor')),
-        (Level.SPECIAL, _('special sponsor')),
+        (Level.PLATINUM, _('platinum')),
+        (Level.GOLD, _('gold')),
+        (Level.SILVER, _('silver')),
+        (Level.BRONZE, _('bronze')),
+        (Level.SPECIAL, _('special')),
     )
 
     level = models.PositiveSmallIntegerField(
@@ -50,6 +50,7 @@ class Sponsor(models.Model):
     class Meta:
         verbose_name = _('sponsor')
         verbose_name_plural = _('sponsors')
+        ordering = ('name',)
 
     def __str__(self):
         return self.name

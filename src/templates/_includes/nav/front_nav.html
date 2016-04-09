@@ -15,8 +15,6 @@
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
-{% url 'page' path='sponsor/our_sponsors' as sponsor_ours_urls %}
-{% url 'page' path='sponsor/partner_sponsors' as sponsor_partner_url %}
 {% url 'sponsor_list' as sponsor_url %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
 
@@ -50,8 +48,6 @@
   <li class="dropdown">
     <a href="#" class="{% if active == 'sponsor' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Sponsor' %}</a>
     <ul class="dropdown-menu">
-      <li><a href="{{ sponsor_ours_urls }}">{% trans 'Page Our Sponsors' %}</a></li>
-      <li><a href="{{ sponsor_partner_url }}">{% trans 'Page Partner Sponsors' %}</a></li>
       <li><a href="{{ sponsor_url }}">{% trans 'Our Sponsors' %}</a></li>
     </ul>
   </li>
