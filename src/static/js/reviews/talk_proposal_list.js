@@ -1,20 +1,25 @@
 (function ($) {
-	$(function() {
-		var $hashTab = $('.js-hash-tabs');
-		if ($hashTab.length === 0) { return }
 
-		if(location.hash) {
-			$hashTab.find('a[href=' + location.hash + ']').tab('show');
-		}
+var $hashTab = $('.js-hash-tabs');
+if (!window.localStorage || $hashTab.length === 0) {
+	return;
+}
 
-		$($hashTab).on("shown.bs.tab", function(e) {
-			location.hash = e.target.getAttribute("href");
-		});
+var getTab = function () {
+	return localStorage.getItem('review_proposal_tab');
+};
 
-		$(window).on('popstate', function() {
-			var anchor = location.hash || $hashTab.find("a[data-toggle=tab]").first().attr("href");
-			$hashTab.find('a[href=' + anchor + ']').tab('show');
-		});
+$hashTab.on('shown.bs.tab', function(e) {
+	localStorage.setItem('review_proposal_tab', e.target.getAttribute('href'));
+});
 
-	});
+var tab = getTab();
+if (tab) {
+	$hashTab.find('a[href=' + tab + ']').tab('show');
+}
+$(window).on('popstate', function() {
+	var tab = getTab() || $hashTab.find("a[data-toggle=tab]").attr('href');
+	$hashTab.find('a[href=' + tab + ']').tab('show');
+});
+
 })(jQuery);
