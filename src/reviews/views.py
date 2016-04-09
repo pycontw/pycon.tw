@@ -193,6 +193,13 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
             next(reviews_by_same_reviewer)
             for _, reviews_by_same_reviewer in grouped_reviews_per_reviewers
         )
+        # Sort other_reviews by vote
+        VOTE_ORDER = {'+1': 3, '+0': 2, '-0': 1, '-1': 0}
+        other_reviews = sorted(
+            other_reviews,
+            key=lambda r: VOTE_ORDER[r.vote],
+            reverse=True,
+        )
         my_reviews = (
             Review.objects
             .filter_current_reviews(
