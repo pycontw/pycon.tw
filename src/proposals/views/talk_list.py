@@ -8,4 +8,5 @@ class TalkProposalListView(ListView):
     queryset = (
         TalkProposal.objects
         .filter(accepted=True).select_related('submitter')
+        .order_by('title')
     )
