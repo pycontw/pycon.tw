@@ -7,6 +7,7 @@ from django.views.i18n import set_language
 
 from core.views import error_page, flat_page, index
 from users.views import user_dashboard
+from proposals.views.talk_list import TalkProposalListView
 
 
 urlpatterns = i18n_patterns(
@@ -17,6 +18,7 @@ urlpatterns = i18n_patterns(
     url(r'^accounts/', include('users.urls')),
     url(r'^proposals/', include('proposals.urls')),
     url(r'^reviews/', include('reviews.urls')),
+    url(r'^events/talks/$', TalkProposalListView.as_view(), name='events_talks'),
 
     # Match everything except admin, media, static, and error pages.
     url(r'^(?!admin|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
