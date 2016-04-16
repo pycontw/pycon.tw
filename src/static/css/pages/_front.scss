@@ -109,3 +109,12 @@
         }
     }
 }
+
+.talk-detail-content {
+    .proposal-content {
+        margin-bottom: 5em;
+    }
+    .speaker-content {
+        border-top: 1px solid $gray-lighterish;
+    }
+}
