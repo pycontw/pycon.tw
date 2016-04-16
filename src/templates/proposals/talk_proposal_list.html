@@ -1,0 +1,12 @@
+{% extends 'contents/_base/events.html' %}
+
+{% block title %}Talks{% endblock %}
+
+{% block content %}
+	<h2>Talks</h2>
+	<ul>
+		{% for proposal in object_list %}
+			<li><strong>{{ proposal.title }}</strong>, {{ proposal.submitter.speaker_name }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
