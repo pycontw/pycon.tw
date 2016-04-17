@@ -16,6 +16,7 @@
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
+{% url 'page' path='registration/ticket-info' as reg_ticket_info_url%}
 
 <ul class="nav navbar-nav navbar-nav-hover">
   <li class="dropdown">
@@ -49,6 +50,7 @@
 		<a href="#" class="{% if active == 'registration' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Registration' context 'navbar' %}</a>
 		<ul class="dropdown-menu">
 			<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
+            <li><a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a></li>
 		</ul>
 	</li><!-- /.dropdown -->
 	<li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'Blog' %}</a></li>
