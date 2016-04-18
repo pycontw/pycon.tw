@@ -41,9 +41,9 @@
     </ul>
   </li>
   <li class="dropdown">
-      <a href="#" class="{% if active == 'venue' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Venue' %}</a>
+      <a href="#" class="{% if active == 'venue' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Venue' context 'conf location' %}</a>
       <ul class="dropdown-menu">
-          <li><a href="{{ venue_url }}">{% trans 'Venue' %}</a></li>
+          <li><a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a></li>
           <li><a href="{{ venue_accommodation_url }}">{% trans 'Accommodation' %}</a></li>
       </ul>
   </li><!-- /.dropdown -->
