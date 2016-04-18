@@ -1,6 +1,7 @@
 {% extends 'dashboard_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load i18n staticfiles %}
+{% load compress crispy_forms_tags %}
 
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='review' %}
@@ -53,7 +54,7 @@
     </div>
 </div>
 <!-- Nav tabs -->
-<ul class="nav nav-tabs reviews-tabs" role="tablist">
+<ul class="nav nav-tabs reviews-tabs js-hash-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
     <li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
     {% if review_stage == 2 and proposals_with_verdict %}
@@ -90,3 +91,9 @@
 </div>
 
 {% endblock main-content %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/reviews/talk_proposal_list.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
