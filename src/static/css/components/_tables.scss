@@ -14,13 +14,13 @@
     }
 
     th{
-        @include table_text_style()
+        @include table_text_style();
         font-size:16px;
         color:#ffffff;
     }
 
     td{
-        @include table_text_style()
+        @include table_text_style();
         font-size: 14px;
     }
 
