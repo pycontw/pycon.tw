@@ -7,29 +7,27 @@
 {% block content %}
 
     {% url 'page' path='events/pyday' as events_pyday_url %}
+    {% url 'page' path='events/sprints' as events_sprints_url %}
     {% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
 
     <div class="pycon-list">
         <div class="pycon-list-item text-theme-highlight">
-            開始售票：
             <span class="text-emphasize ">
             2016 年 4 月 18 日 18：03
             </span>
-            開始售票
+            開始售票；各票種早鳥優惠為期兩週。
         </div>
             <div class="pycon-list-item text-theme-highlight">
-            早鳥票
             <span class="text-emphasize text-theme-highlight">
                2016 年 5 月 1 日 18：04
             </span>
-            截止售票
+            早鳥票截止，各票種恢復原價販售，預計為期兩週。
         </div>
             <div class="pycon-list-item text-theme-highlight">
-            原票價為
             <span class="text-emphasize text-theme-highlight">
-                2016 年 5 月 13 日 18：05
+               2016 年 5 月 13 日 18：05
             </span>
-            截止售票
+            預計截止售票。
         </div>
     </div>
 
@@ -37,7 +35,8 @@
         票種說明
     </h2>
     <p>
-        請詳閱下列票種說明
+        下列票種用於報名六月3日至5日的議程活動；
+        Tutorials 及 Sprints 的報名方式，請另見相關網頁說明。
     </p>
 
     <div class="table-responsive">
@@ -48,17 +47,35 @@
             <tr>
                 <th> </th>
                 <th>
-                    早鳥票票價
+                    早鳥票價
                 </th>
                 <th>
                     原票價
                 </th>
                 <th>
-                    購票
+                    購票網址
                 </th>
                 <th>
                     說明
                 </th>
+            </tr>
+
+            <tr>
+                <td class="text-emphasize">
+                    一般票
+                </td>
+                <td class="text-theme-highlight text-emphasize">4,490</td>
+                <td>4,990</td>
+                <td>
+                    <a class="btn btn-action" href="http://pycontw.kktix.cc/events/pycontw2016-regular" target="_blank">
+                        按此購票
+                    </a>
+                </td>
+                <td class="table-pycon__description">
+                    有統編需求，請填寫公司抬頭與統一編號。
+                    無統編需求，請於抬頭與統編填寫 N/A。
+                    電子發票於報到櫃台交付。
+                </td>
             </tr>
 
             <tr>
@@ -77,7 +94,7 @@
                     </a>
                 </td>
                 <td class="table-pycon__description">
-                    此票種將發票全數捐贈給
+                    發票將捐贈給
                     <a href="http://ocf.tw/">
                         開放文化基金會
                     </a>
@@ -97,12 +114,12 @@
                     </a>
                 </td>
                 <td class="table-pycon__description">
-                    此票種將發票全數捐贈給
+                    發票將捐贈給
                     <a href="http://ocf.tw/">
                         開放文化基金會
                     </a>
                     ，對此大會予以票價優惠。<br/>
-                    限在學學生，報到需出示學生證
+                    報到需出示學生證，無法出示證明者，大會有權保留進場資格。
                 </td>
             </tr>
 
@@ -120,25 +137,7 @@
 
                 </td>
                 <td class="table-pycon__description">
-                    講者專用，報名時請輸入邀請碼
-                </td>
-            </tr>
-
-            <tr>
-
-                <td class="text-emphasize">
-                    一般票
-                </td>
-                <td class="text-theme-highlight text-emphasize">4,490</td>
-                <td>4,990</td>
-                <td>
-                    <a class="btn btn-action" href="http://pycontw.kktix.cc/events/pycontw2016-regular" target="_blank">
-                        按此購票
-                    </a>
-                </td>
-                <td class="table-pycon__description">
-                    有統編需求，請填寫公司抬頭與統一編號。<br/>
-                    無統編需求，請於抬頭與統編填寫 N/A。
+                    講者專用，報名時請輸入邀請碼。
                 </td>
             </tr>
             </tbody>
@@ -149,9 +148,10 @@
 
 
     <ul>
-        <li>若無特別標註，皆以台幣計價; NTD 32.41 = USD 1.00 (2016.04.14)
-        <li>今年為電子發票，報帳與留存僅於發票上有有無統編的差別。
-        <li>如需英文收據，請來信 registration[at]pycon.tw
+        <li><a href="http://itn.tw/knowledgebase.php?action=displayarticle&id=68">電子發票標示買方統編</a>，可用於公司報帳；個人留存之用的電子發票，只會顯示賣方統編。</li>
+        <li>各級學校就讀的學生，包括研究所、大專院校、中小學生等，可購買學生票。</li>
+        <li>若無特別標註，皆以台幣計價；請參考 2016.04.14 匯率 USD 1.00 = NTD 32.41。</li>
+        <li>如需開立英文收據，或票務相關問題，請來信 registration[at]pycon.tw 洽詢。</li>
     </ul>
 
     <h2>注意事項</h2>
@@ -213,7 +213,7 @@
         </tr>
         <tr>
             <td class='text-emphasize' colspan="1" rowspan="1">
-               胸寬
+               胸寬 (cm)
             </td>
             <td colspan="1" rowspan="1">
                44.5
@@ -239,7 +239,7 @@
         </tr>
         <tr>
             <td class='text-emphasize' colspan="1" rowspan="1">
-               衣長
+               衣長 (cm)
             </td>
             <td colspan="1" rowspan="1">
                62
@@ -269,7 +269,7 @@
 
     <h4>2. Everybody Pays</h4>
     <p>
-        PyCon APAC 2016 為使用者需付費之議程，所有工作人員和講者均自行付費參加。見
+        PyCon Taiwan 2016 是需付費的活動，所有籌備人員和講者均自行付費參加。見
         (<a href="https://tw.pycon.org/2013/zh/blog/2013/03/05/everybody-pays-zh/">
             公平付費
         </a>）
@@ -306,14 +306,14 @@
 
 
     <h4>8. 票務諮詢管道</h4>
-    <p>如有任何問題，請寄信至 registration[at]pycon.tw ，票務將盡快給予回應。</p>
+    <p>如有任何問題，請寄信至 registration[at]pycon.tw 洽詢，我們將盡快給予回應。</p>
 
     <h4>9. 關於PyCon 課程 (Tutorial)、PyDay</h4>
 
-    <p>您可以透過本頁面查詢 PyCon 課程以及 <a href="{{ events_pyday_url }}">PyDay</a>
+    <p>您可以透過本頁面最上方 [活動] 下拉選單，查詢 PyCon 課程 (待公告)、<a href="{{ events_sprints_url }}">Sprints</a> 以及 <a href="{{ events_pyday_url }}">PyDay</a>
        相關內容。</p>
 
-    <p>期待各地熱愛 Python 的每個人都能參加 PyCon Taiwan 2016 的活動 :)</p>
+    <p>歡迎所有 Python 愛好者的參加與宣傳，期待在 PyCon Taiwan 2016 會場與您相見 :)</p>
 
 
 {% endblock %}
