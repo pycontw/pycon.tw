@@ -115,8 +115,8 @@
     var iconMain = mapMarkerLayer(
 				'main',
 				"{% static 'images/logo_blue_huge.png' %}",
-				[121.6113, 25.0410],
-				0.25
+				[121.6113, 25.0405],
+				0.15
 		);
     var map = new ol.Map({
 		target: 'map',
@@ -130,7 +130,7 @@
 		],
 		view: new ol.View({
 			center: ol.proj.fromLonLat([121.6129333, 25.041291]),
-			zoom: 16
+			zoom: 15.8
 		}),
 		interactions: ol.interaction.defaults({mouseWheelZoom:false})
 	});
