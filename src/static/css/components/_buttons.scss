@@ -10,6 +10,10 @@
   @include button-variant($btn-natural-color, $btn-natural-bg, $btn-natural-border);
 }
 
+.btn-action{
+    @include button-variant($btn-action-color, $btn-action-bg, $btn-action-border);
+}
+
 .btn-logout {
   font-size: 16px;
   font-weight: 400;
@@ -56,4 +60,11 @@
     &.active {
         color: #69a820;
     }
+}
+
+.btn-action{
+    width: 156px;
+    line-height: 42px;
+    font-size:16px;
+    font-weight: 700;
 }
