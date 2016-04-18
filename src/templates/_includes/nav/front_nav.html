@@ -16,6 +16,7 @@
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
+{% url 'page' path='registration/ticket-info' as reg_ticket_info_url%}
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
@@ -33,6 +34,7 @@
     <ul class="dropdown-menu">
       <li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
       <li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
+			<li><a href="{% url 'events_talks' %}">{% trans 'Talks' %}</a></li>
       <li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
       <li><a href="{{ events_bof_url }}">{% trans 'BoF' %}</a></li>
       <li><a href="{{ events_pyday_url }}">{% trans 'PyDay' %}</a></li>
@@ -57,6 +59,7 @@
 		<a href="#" class="{% if active == 'registration' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Registration' context 'navbar' %}</a>
 		<ul class="dropdown-menu">
 			<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
+            <li><a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a></li>
 		</ul>
 	</li><!-- /.dropdown -->
 	<li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'Blog' %}</a></li>
