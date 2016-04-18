@@ -5,12 +5,12 @@
 {% block title %}Venue{% endblock title %}
 
 {% block extra_css %}
-	<link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
 	<style>
 	#map {
 		height: 400px;
 	}
 	</style>
+	<link rel="stylesheet" href="{% static 'css/vendors/openlayers.css' %}" type="text/css">
 {% endblock %}
 
 {% block content %}
@@ -110,11 +110,11 @@
 {% endblock content %}
 
 {% block scripts %}
-<script src="{% static 'js/venue/icon_layer.js' %}"></script>
+	<script src="{% static 'js/vendors/openlayers.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/venue/icon_layer.js' %}"></script>
 {% endblock %}
 
 {% block extra_js %}
-<script src="http://openlayers.org/en/v3.15.1/build/ol.js" type="text/javascript"></script>
 <script>
     var iconMain = mapMarkerLayer('main', "{% static 'images/favicon_pyconTW_32x32.png' %}", [121.6116, 25.0410]);
     var map = new ol.Map({
