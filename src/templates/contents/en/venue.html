@@ -1,10 +1,22 @@
-{% extends 'contents/_base.html' %}
+{% extends 'contents/_base/venue.html' %}
+
+{% load static %}
 
 {% block title %}Venue{% endblock title %}
 
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'css/vendors/openlayers.css' %}" type="text/css">
+{% endblock %}
+
 {% block content %}
 <h2>Venue Location</h2>
-<p>Academia Sinica, Nangang, Taipei City</p>
+<div class="map-container">
+	<div id="map" class="map"></div>
+	<div class="map-address">
+		Humanities and Social Science Building<br>
+		Academia Sinica
+	</div>
+</div>
 <ul>
     <li>
         PyCon TW 2016 venue is at Humanities and Social Science Building (HSSB), Academia Sinica.
@@ -92,3 +104,35 @@
     EasyCard or cash.
 </p>
 {% endblock content %}
+
+{% block scripts %}
+	<script src="{% static 'js/vendors/openlayers.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/venue/icon_layer.js' %}"></script>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    var iconMain = mapMarkerLayer(
+				'main',
+				"{% static 'images/logo_blue_huge.png' %}",
+				[121.6113, 25.0405],
+				0.15
+		);
+    var map = new ol.Map({
+		target: 'map',
+		layers: [
+			new ol.layer.Tile({
+				   source: new ol.source.OSM({
+				   url: "http://a.tile2.opencyclemap.org/transport/{z}/{x}/{y}.png"
+				})
+			}),
+            iconMain
+		],
+		view: new ol.View({
+			center: ol.proj.fromLonLat([121.6129333, 25.041291]),
+			zoom: 15.8
+		}),
+		interactions: ol.interaction.defaults({mouseWheelZoom:false})
+	});
+</script>
+{% endblock %}
