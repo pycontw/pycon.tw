@@ -140,7 +140,7 @@ body {
 
 .intro__pycontw {
     @include make-md-column(8);
-    @include make-md-column-push(4)
+    @include make-md-column-push(4);
     text-align: right;
 }
 
