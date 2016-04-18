@@ -21,15 +21,16 @@ EXTRA_DATA['about/staff'] = {
             'key': _('Program'),
             'members': [
                 {'name': 'Liang-Bo Wang', 'tags': _('lead')},
-
                 {'name': 'Ming-Yi Huang'},
                 {'name': 'Victor Gau'},
-                {'name': 'Tim Hsu'},
+                {'name': 'Wen-Chang Hsu'},
                 {'name': 'Yung-Yu Chen'},
                 {'name': 'Tzer-jen Wei'},
                 {'name': 'Summit Suen'},
                 {'name': 'Yi Hsiao'},
                 {'name': 'Jason'},
+                {'name': 'Keith Yang'},
+                {'name': '賴昱廷'},
             ],
         },
         {
@@ -38,7 +39,7 @@ EXTRA_DATA['about/staff'] = {
                 {'name': 'Michelle Leu', 'tags': _('lead')},
                 {'name': 'Andy Dai'},
                 {'name': 'Tzu-ping Chung'},
-                {'name': 'Liang Bo Wang'},
+                {'name': 'Liang-Bo Wang'},
                 {'name': 'Willy Liu'},
                 {'name': 'Lei-Yao Hung'},
                 {'name': 'Hsuan-Wen Liu'},
@@ -60,8 +61,7 @@ EXTRA_DATA['about/staff'] = {
         {
             'key': _('Venue'),
             'members': [
-                {'name': 'Catcatcatcat Arissa', 'tags': _('lead')},
-                {'name': 'Rock Hung'},
+                {'name': 'Rock Hung', 'tags': _('lead')},
             ],
         },
         {
