@@ -1,0 +1,9 @@
+.text-theme-highlight {
+    color: $theme-color;
+}
+
+.text-emphasize {
+    @include roboto-medium();
+}
+
+

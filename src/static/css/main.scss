@@ -17,6 +17,9 @@
 // Components
 @import "components/form";
 @import "components/buttons";
+@import "components/tables";
+@import "components/texts";
+@import "components/lists";
 
 // Pages
 @import "pages/proposals";
@@ -138,7 +141,7 @@ body {
 
 .intro__pycontw {
     @include make-md-column(8);
-    @include make-md-column-push(4)
+    @include make-md-column-push(4);
     text-align: right;
 }
 
