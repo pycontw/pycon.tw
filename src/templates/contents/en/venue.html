@@ -5,22 +5,18 @@
 {% block title %}Venue{% endblock title %}
 
 {% block extra_css %}
-	<style>
-	#map {
-		height: 400px;
-	}
-	</style>
 	<link rel="stylesheet" href="{% static 'css/vendors/openlayers.css' %}" type="text/css">
 {% endblock %}
 
 {% block content %}
 <h2>Venue Location</h2>
+<div class="map-container">
 	<div id="map" class="map"></div>
-	<div class="map-address" style="opacity: 1;">
+	<div class="map-address">
 		Humanities and Social Science Building<br>
-		Academia Sinica.
+		Academia Sinica
 	</div>
-<p>Academia Sinica, Nangang, Taipei City</p>
+</div>
 <ul>
     <li>
         PyCon TW 2016 venue is at Humanities and Social Science Building (HSSB), Academia Sinica.
