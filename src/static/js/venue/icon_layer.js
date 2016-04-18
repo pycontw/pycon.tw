@@ -1,4 +1,4 @@
-function mapMarkerLayer(name, imgSrc, pos) {
+function mapMarkerLayer(name, imgSrc, pos, scale) {
     var icon = new ol.Feature({
         geometry: new ol.geom.Point(
             ol.proj.fromLonLat(pos)
@@ -7,7 +7,7 @@ function mapMarkerLayer(name, imgSrc, pos) {
     });
     var iconStyle = new ol.style.Style({
         image: new ol.style.Icon({
-            scale: .5,
+            scale: scale,
             anchor: [0.5, 1],
             anchorXUnits: 'fraction',
             anchorYUnits: 'fraction',

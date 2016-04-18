@@ -112,7 +112,12 @@
 
 {% block extra_js %}
 <script>
-    var iconMain = mapMarkerLayer('main', "{% static 'images/favicon_pyconTW_32x32.png' %}", [121.6116, 25.0410]);
+    var iconMain = mapMarkerLayer(
+				'main',
+				"{% static 'images/logo_blue_huge.png' %}",
+				[121.6113, 25.0410],
+				0.25
+		);
     var map = new ol.Map({
 		target: 'map',
 		layers: [
