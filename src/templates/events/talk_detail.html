@@ -14,16 +14,28 @@
 {% block content %}
 
 <div class="proposal-content">
+	<h3>{% trans 'Language' %}</h3>
+	<div>{{ object.get_language_display }}</div>
+
+	<h3>{% trans 'Category' %}</h3>
+	<div>{{ object.get_category_display }}</div>
+
+	<h3>{% trans 'Python Level' %}</h3>
+	<div>{{ object.get_python_level_display }}</div>
+
+	{% if object.slide_link %}
+	<h3>{% trans 'Slides Link' %}</h3>
+	<div><a href="{{ object.slide_link }}">{{ object.slide_link }}</a></div>
+	{% endif %}
+
 	<h2>{% trans 'Abstract' %}</h2>
 	<div>{{ object.abstract }}</div>
-
-	<h2>{% trans 'Python Level' %}</h2>
-	<div>{{ object.get_python_level_display }}</div>
 
 	<h2>{% trans 'Description' %}</h2>
 	<div class="editor-readonly">
 		<div class="editor-preview">{{ object.detailed_description }}</div>
 	</div>
+
 </div>
 
 <div class="speaker-content">
