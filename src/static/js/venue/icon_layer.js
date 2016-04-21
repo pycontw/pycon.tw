@@ -8,7 +8,7 @@ function mapMarkerLayer(name, imgSrc, pos, scale) {
     var iconStyle = new ol.style.Style({
         image: new ol.style.Icon({
             scale: scale,
-            anchor: [0.5, 1],
+            anchor: [0.5, 0.5],
             anchorXUnits: 'fraction',
             anchorYUnits: 'fraction',
             src: imgSrc
