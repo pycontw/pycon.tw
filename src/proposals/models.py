@@ -299,6 +299,10 @@ class AbstractProposal(models.Model):
         for speaker in additionals.select_related('user'):
             yield speaker
 
+    @property
+    def speaker_count(self):
+        return self.additionalspeaker_set.filter(cancelled=False).count() + 1
+
 
 class TalkProposal(AbstractProposal):
 

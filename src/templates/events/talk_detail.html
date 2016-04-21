@@ -1,0 +1,55 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n staticfiles %}
+
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block page_title %}<h1>{{ object.title }}</h1>{% endblock page_title %}
+
+
+{% block content_page_class %}{{ block.super }} talk-detail-content{% endblock content_page_class %}
+
+
+{% block content %}
+
+<div class="proposal-content">
+	<h3>{% trans 'Language' %}</h3>
+	<div>{{ object.get_language_display }}</div>
+
+	<h3>{% trans 'Category' %}</h3>
+	<div>{{ object.get_category_display }}</div>
+
+	<h3>{% trans 'Python Level' %}</h3>
+	<div>{{ object.get_python_level_display }}</div>
+
+	{% if object.slide_link %}
+	<h3>{% trans 'Slides Link' %}</h3>
+	<div><a href="{{ object.slide_link }}">{{ object.slide_link }}</a></div>
+	{% endif %}
+
+	<h2>{% trans 'Abstract' %}</h2>
+	<div>{{ object.abstract }}</div>
+
+	<h2>{% trans 'Description' %}</h2>
+	<div class="editor-readonly">
+		<div class="editor-preview">{{ object.detailed_description }}</div>
+	</div>
+
+</div>
+
+<div class="speaker-content">
+	{% for info in object.speakers %}
+	<h3>{{ info.user.speaker_name }}</h3>
+	<div>{{ info.user.bio }}</div>
+	{% endfor %}
+</div>
+
+{% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/vendors/simplemde.js' %}"></script>
+<script src="{% static 'js/tools/simplemde-setup.js' %}"></script>
+{% endblock extra_js %}
