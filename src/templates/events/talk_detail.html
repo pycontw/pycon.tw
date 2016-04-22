@@ -40,8 +40,38 @@
 
 <div class="speaker-content">
 	{% for info in object.speakers %}
-	<h3>{{ info.user.speaker_name }}</h3>
-	<div>{{ info.user.bio }}</div>
+	{% with user=info.user %}
+	<h3>
+		{{ user.speaker_name }}
+		<span class="speaker-social">
+			{% if user.github_id %}
+			<a href="mailto:{{ user.github_profile_url }}" target="_blank">
+				<span class="fa fa-github" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+			{% if user.twitter_id %}
+			<a href="mailto:{{ user.twitter_profile_url }}" target="_blank">
+				<span class="fa fa-twitter" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+			{% if user.facebook_profile_url %}
+			<a href="{{ user.facebook_profile_url }}" target="_blank">
+				<span class="fa fa-facebook" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+		</span>
+	</h3>
+	<div class="row">
+		{% if user.photo %}
+		<div class="col-sm-4 col-sm-push-8 speaker-photo-contain">
+			<img class="speaker-photo" src="{{ user.photo.url }}">
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">{{ user.bio|linebreaks }}</div>
+		{% else %}
+		<div class="col-xs-12">{{ user.bio|linebreaks }}</div>
+		{% endif %}
+	</div>
+	{% endwith %}
 	{% endfor %}
 </div>
 
