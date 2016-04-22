@@ -45,12 +45,12 @@
 		{{ user.speaker_name }}
 		<span class="speaker-social">
 			{% if user.github_id %}
-			<a href="mailto:{{ user.github_profile_url }}" target="_blank">
+			<a href="{{ user.github_profile_url }}" target="_blank">
 				<span class="fa fa-github" aria-hidden="true"></span>
 			</a>
 			{% endif %}
 			{% if user.twitter_id %}
-			<a href="mailto:{{ user.twitter_profile_url }}" target="_blank">
+			<a href="{{ user.twitter_profile_url }}" target="_blank">
 				<span class="fa fa-twitter" aria-hidden="true"></span>
 			</a>
 			{% endif %}
