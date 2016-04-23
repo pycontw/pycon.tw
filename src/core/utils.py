@@ -1,3 +1,6 @@
+import collections
+import datetime
+
 from django.conf import settings
 from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
@@ -87,3 +90,17 @@ class SequenceQuerySet:
 
     def exists(self):
         return bool(self._seq)
+
+
+TimeRange = collections.namedtuple('TimeRange', 'start end')
+"""Represents a range between `datetime.time` instances `[start, end)`.
+"""
+
+
+def time_add(date, time, delta):
+    """Apply `datetime.timedelta` to a `datetime.time` instance on a given
+    `datetime.date`.
+    """
+    dt = datetime.datetime.combine(date, time)
+    dt = dt + delta
+    return dt.time()
