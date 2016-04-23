@@ -6,7 +6,7 @@ from django.contrib import messages
 
 pytestmark = pytest.mark.skipif(
     not settings.PROPOSALS_EDITABLE,
-    reason='call for proposals ends',
+    reason='proposal edit disabled',
 )
 
 
