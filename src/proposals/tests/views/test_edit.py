@@ -139,7 +139,7 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF45',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'abstract': (
@@ -181,7 +181,7 @@ def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'abstract': (
