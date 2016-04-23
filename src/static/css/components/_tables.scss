@@ -7,31 +7,25 @@
 .table-pycon {
     @include roboto-light;
 
-    tr:first-child{
+    > thead > tr {
         background: $theme-color;
         border-radius:3px 3px 0 0;
         height:60px;
     }
-
-    th{
+    th, td {
         @include table_text_style();
+    }
+    th {
         font-size:16px;
         color:#ffffff;
     }
-
-    td{
-        @include table_text_style();
+    td {
         font-size: 14px;
     }
-
     .table-pycon__description {
         @include roboto-light;
         font-weight: 300;
         width: 250px;
         text-align: left;
     }
-
 }
-
-
-
