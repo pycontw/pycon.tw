@@ -29,7 +29,7 @@
 	{% endif %}
 
 	<h2>{% trans 'Abstract' %}</h2>
-	<div>{{ object.abstract }}</div>
+	<div>{{ object.abstract|linebreaks }}</div>
 
 	<h2>{% trans 'Description' %}</h2>
 	<div class="editor-readonly">
