@@ -16,16 +16,20 @@
 			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
 			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
 			<td>
-				{% if proposals_editable %}
+				{% if proposals_editable or proposals_withdrawable %}
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
+					{% if proposals_editable %}
 					{% if proposal.cancelled %}
 					<button type="submit" name="cancelled" value="" class="btn btn-natural btn-reactivate">{% trans 'Reactivate' %}</button>
 					{% else %}
 					<a href="{{ proposal.get_update_url }}" class="btn btn-natural">{% trans 'Edit' %}</a>
+					{% endif %}
+					{% endif %}
 					{% comment %}
 					<a href="{{ proposal.get_manage_speakers_url }}" class="btn btn-default btn-default">{% trans 'Manage Speakers' %}</a>
 					{% endcomment %}
+					{% if proposals_withdrawable %}
 					<button type="submit" name="cancelled" value="true" class="btn btn-natural btn-withdraw">{% trans 'Withdraw' %}</button>
 					{% endif %}
 				</form>

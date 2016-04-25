@@ -7,8 +7,8 @@ from proposals.models import TalkProposal, TutorialProposal
 
 
 pytestmark = pytest.mark.skipif(
-    not settings.PROPOSALS_EDITABLE,
-    reason='call for proposals ends',
+    not settings.PROPOSALS_WITHDRAWABLE,
+    reason='proposal withdrawal disabled',
 )
 
 

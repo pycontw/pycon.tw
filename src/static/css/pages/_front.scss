@@ -111,10 +111,38 @@
 }
 
 .talk-detail-content {
+
     .proposal-content {
         margin-bottom: 5em;
     }
+
     .speaker-content {
+
         border-top: 1px solid $gray-lighterish;
+
+        .speaker-social {
+
+            margin-left: 1em;
+            font-size: 80%;
+
+            > a {
+                margin-left: 5px;
+                color: $gray;
+
+                &:hover, &:focus {
+                    color: $gray-light;
+                }
+            }
+        }
+
+        .speaker-photo-contain {
+
+            text-align: center;
+
+            .speaker-photo {
+                width: 100%;
+                max-width: 260px;
+            }
+        }
     }
 }
