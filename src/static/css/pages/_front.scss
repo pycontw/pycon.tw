@@ -44,18 +44,24 @@
         padding-left: 5px;
         list-style: none;
 
-        > li::before {
-            content: "・";
-            padding-right: 15px;
-        }
+        > li {
 
-        > li > p {
+            display: table-row;
 
-            display: inline-block;
-            margin-left: 34px;
+            &::before {
+                content: "・";
+                display: table-cell;
+                padding-right: 15px;
+            }
 
-            &:first-child {
-                margin-left: 0;
+            > p {
+
+                display: inline-block;
+                margin-left: 34px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
             }
         }
     }
