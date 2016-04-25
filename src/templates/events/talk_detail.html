@@ -33,7 +33,9 @@
 
     {% if object.detailed_description %}
 	    <h2>{% trans 'Description' %}</h2>
-	    <div>{{ object.detailed_description }}</div>
+	    <div class="editor-readonly">
+	    	<div class="editor-preview">{{ object.detailed_description }}</div>
+	    </div>
     {% endif %}
 
 </div>
