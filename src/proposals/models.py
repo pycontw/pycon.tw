@@ -86,7 +86,7 @@ class AdditionalSpeaker(models.Model):
 
     class Meta:
         unique_together = ['user', 'proposal_type', 'proposal_id']
-        ordering = ['proposal_type', 'proposal_id', 'user__speaker_name']
+        ordering = ['proposal_type', 'proposal_id', 'pk']
         verbose_name = _('additional speaker')
         verbose_name_plural = _('additional speakers')
 
