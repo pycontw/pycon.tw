@@ -31,10 +31,10 @@
 	<h2>{% trans 'Abstract' %}</h2>
 	<div>{{ object.abstract|linebreaks }}</div>
 
-	<h2>{% trans 'Description' %}</h2>
-	<div class="editor-readonly">
-		<div class="editor-preview">{{ object.detailed_description }}</div>
-	</div>
+    {% if object.detailed_description %}
+	    <h2>{% trans 'Description' %}</h2>
+	    <div>{{ object.detailed_description }}</div>
+    {% endif %}
 
 </div>
 
