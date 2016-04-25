@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import messages
 from django.utils.html import format_html
 from django.utils.translation import ugettext
@@ -9,8 +10,12 @@ from .update import ProposalUpdateView
 
 
 class ProposalCancelView(ProposalUpdateView):
+
     http_method_names = ['post', 'options']
     form_valid_message_level = messages.INFO
+
+    def can_edit(self):
+        return settings.PROPOSALS_WITHDRAWABLE
 
 
 class TalkProposalCancelView(ProposalCancelView):
