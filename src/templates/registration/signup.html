@@ -2,7 +2,7 @@
 
 {% load crispy_forms_tags static %}
 
-{% load i18n %}
+{% load i18n pycontw_tools %}
 
 {% block title %}{% trans 'Sign Up' %}{% endblock title %}
 
@@ -14,6 +14,9 @@
 		<div class="col-md-offset-2 col-md-8">
 			{% include "registration/_registration_header.html" %}
 			<div class="registration-panel-wrapper">
+				{% for message in messages %}
+				    <div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert"><p>{{ message }}</p></div>
+				{% endfor %}
 				<div class="registration-panel">
 					<h2 class="registration-panel__title">{% trans 'Sign Up' %}</h2>
 					{% crispy form %}
