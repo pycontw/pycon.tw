@@ -1,3 +1,5 @@
+$sponsor-img-height: 75px;
+
 @mixin sponsor-decoration($color) {
     border:5px solid $color;
     &:before {
@@ -47,9 +49,16 @@
     border-radius: 3px;
     position: relative;
 
+    &__logo-wrapper {
+        height: $sponsor-img-height;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
     &__logo {
-        max-height: 75px;
-        margin: 0 auto 40px;
+        max-height: $sponsor-img-height;
+        margin: 0 auto;
     }
 
     &__title {
@@ -78,7 +87,7 @@
     }
 
     &.sponsor--special &__intro {
-        height: 150px;
+        height: 235px;
     }
 }
 
