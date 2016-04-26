@@ -1,10 +1,15 @@
 .talk-list > li {
+
     font-size: 90%;
-    margin-top: 10px;
-}
-.talk-list > li > .proposal-title {
-    font-size: 115%;
-    font-weight: strong;
-    margin-right: 0.5ex;
-    color: #000;
+
+    > p {
+        padding-top: 10px;
+    }
+
+    .proposal-title {
+        font-size: 115%;
+        font-weight: strong;
+        margin-right: 0.5ex;
+        color: #000;
+    }
 }

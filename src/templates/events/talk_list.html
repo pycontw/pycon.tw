@@ -10,7 +10,7 @@
 <ul class="talk-list">
 	{% for proposal in object_list %}
 	{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
-	<li>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</li>
+	<li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
 	{% endfor %}
 </ul>
 {% endblock content %}
