@@ -1,9 +1,10 @@
 .text-theme-highlight {
     color: $theme-color;
 }
+.text-reverse-highlight {
+    color: #F08E57;
+}
 
 .text-emphasize {
     @include roboto-medium();
 }
-
-
