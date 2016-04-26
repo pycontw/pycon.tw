@@ -50,6 +50,7 @@ $sponsor-img-height: 75px;
     position: relative;
 
     &__logo-wrapper {
+        @include make-xs-column(12);
         height: $sponsor-img-height;
         display: flex;
         align-items: center;
