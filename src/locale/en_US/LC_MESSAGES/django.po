@@ -1,801 +1,887 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
+# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-17 16:54+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2016-04-27 16:52+0000\n"
+"PO-Revision-Date: 2016-04-27 18:09+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/data.py:8
 msgid "Coordinators"
-msgstr ""
+msgstr "Coordinators"
 
 #: core/data.py:11
 msgid "Chairperson"
-msgstr ""
+msgstr "Chairperson"
 
 #: core/data.py:15
 msgid "Vice Chairperson"
-msgstr ""
+msgstr "Vice Chairperson"
 
 #: core/data.py:21
 msgid "Program"
-msgstr ""
+msgstr "Program"
 
-#: core/data.py:23 core/data.py:38 core/data.py:50 core/data.py:63
+#: core/data.py:23 core/data.py:39 core/data.py:51 core/data.py:64
 #: core/data.py:70 core/data.py:76 core/data.py:96
 msgid "lead"
-msgstr ""
+msgstr "lead"
 
-#: core/data.py:36
+#: core/data.py:37
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
-#: core/data.py:48
+#: core/data.py:49
 msgid "Public Relation"
-msgstr ""
+msgstr "Public Relation"
 
-#: core/data.py:61
+#: core/data.py:62
 msgid "Venue"
-msgstr ""
+msgstr "Venue"
 
 #: core/data.py:68
 msgid "Registration"
-msgstr ""
+msgstr "Registration"
 
 #: core/data.py:74
 msgid "Sponsorship"
-msgstr ""
+msgstr "Sponsorship"
 
 #: core/data.py:87
 msgid "Finance"
-msgstr ""
+msgstr "Finance"
 
 #: core/data.py:94
 msgid "Photography"
-msgstr ""
+msgstr "Photography"
 
 #: core/forms.py:10
-#, python-brace-format
 msgid "{model_name_cap} creation requires a request object."
-msgstr ""
+msgstr "{model_name_cap} creation requires a request object."
 
 #: proposals/forms/mixins.py:12
-#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
-msgstr ""
+msgstr "Only authenticated user with complete speaker profile may create a {model_name}."
 
 #: proposals/forms/speakers.py:19
 msgid "speaker email"
-msgstr ""
+msgstr "speaker email"
 
 #: proposals/forms/speakers.py:21
 msgid ""
 "The speaker should have a registered account, and have completed both email "
 "validation and the speaker profile."
-msgstr ""
+msgstr "The speaker should have a registered account, and have completed both email validation and the speaker profile."
 
 #: proposals/forms/speakers.py:29
-#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create an "
 "{model_name}."
-msgstr ""
+msgstr "Only authenticated user with complete speaker profile may create an {model_name}."
 
 #: proposals/forms/speakers.py:33
 msgid "Additional speaker creation requires a proposal instance."
-msgstr ""
+msgstr "Additional speaker creation requires a proposal instance."
 
 #: proposals/forms/speakers.py:36
 msgid "User can only add additional speakers to owned proposals."
-msgstr ""
+msgstr "User can only add additional speakers to owned proposals."
 
 #: proposals/forms/speakers.py:39
 msgid "This user is already a speaker for the proposal."
-msgstr ""
+msgstr "This user is already a speaker for the proposal."
 
 #: proposals/forms/speakers.py:41
 msgid "No valid speaker found with your selection."
-msgstr ""
+msgstr "No valid speaker found with your selection."
 
 #: proposals/models.py:48
 msgid "Proposal author"
-msgstr ""
+msgstr "Proposal author"
 
 #: proposals/models.py:55 users/models.py:190
 msgid "user"
-msgstr ""
+msgstr "user"
 
 #: proposals/models.py:60
 msgid "proposal model type"
-msgstr ""
+msgstr "proposal model type"
 
 #: proposals/models.py:63
 msgid "proposal ID"
-msgstr ""
+msgstr "proposal ID"
 
 #: proposals/models.py:71
 msgid "Pending"
-msgstr ""
+msgstr "Pending"
 
-#: proposals/models.py:72 proposals/models.py:332
+#: proposals/models.py:72 proposals/models.py:338
 msgid "Accepted"
-msgstr ""
+msgstr "Accepted"
 
 #: proposals/models.py:73
 msgid "Declined"
-msgstr ""
+msgstr "Declined"
 
-#: proposals/models.py:82 proposals/models.py:275
+#: proposals/models.py:82 proposals/models.py:277
 msgid "cancelled"
-msgstr ""
+msgstr "cancelled"
 
 #: proposals/models.py:90
 msgid "additional speaker"
-msgstr ""
+msgstr "additional speaker"
 
 #: proposals/models.py:91
 msgid "additional speakers"
-msgstr ""
+msgstr "additional speakers"
 
 #: proposals/models.py:120
 msgid "submitter"
-msgstr ""
+msgstr "submitter"
 
 #: proposals/models.py:124
 msgid "title"
-msgstr ""
+msgstr "title"
 
 #: proposals/models.py:129
 msgid "Best Practices & Patterns"
-msgstr ""
+msgstr "Best Practices & Patterns"
 
 #: proposals/models.py:130
 msgid "Community"
-msgstr ""
+msgstr "Community"
 
 #: proposals/models.py:131
 msgid "Databases"
-msgstr ""
+msgstr "Databases"
 
 #: proposals/models.py:132
 msgid "Data Analysis"
-msgstr ""
+msgstr "Data Analysis"
 
 #: proposals/models.py:133
 msgid "Education"
-msgstr ""
+msgstr "Education"
 
 #: proposals/models.py:134
 msgid "Embedded Systems"
-msgstr ""
+msgstr "Embedded Systems"
 
 #: proposals/models.py:135
 msgid "Gaming"
-msgstr ""
+msgstr "Gaming"
 
 #: proposals/models.py:136
 msgid "Graphics"
-msgstr ""
+msgstr "Graphics"
 
 #: proposals/models.py:137
 msgid "Other"
-msgstr ""
+msgstr "Other"
 
 #: proposals/models.py:138
 msgid "Python Core (language, stdlib, etc.)"
-msgstr ""
+msgstr "Python Core (language, stdlib, etc.)"
 
 #: proposals/models.py:139
 msgid "Python Internals"
-msgstr ""
+msgstr "Python Internals"
 
 #: proposals/models.py:140
 msgid "Python Libraries"
-msgstr ""
+msgstr "Python Libraries"
 
 #: proposals/models.py:141
 msgid "Science"
-msgstr ""
+msgstr "Science"
 
 #: proposals/models.py:142
 msgid "Security"
-msgstr ""
+msgstr "Security"
 
 #: proposals/models.py:143
 msgid "Systems Administration"
-msgstr ""
+msgstr "Systems Administration"
 
 #: proposals/models.py:144
 msgid "Testing"
-msgstr ""
+msgstr "Testing"
 
 #: proposals/models.py:145
 msgid "Web Frameworks"
-msgstr ""
+msgstr "Web Frameworks"
 
 #: proposals/models.py:148
 msgid "category"
-msgstr ""
+msgstr "category"
 
 #: proposals/models.py:154
-msgid "English"
-msgstr ""
+msgid "English talk"
+msgstr "English talk"
 
 #: proposals/models.py:155
-msgid "Chinese"
-msgstr ""
+msgid "Chinese talk w. English slides"
+msgstr "Chinese talk w. English slides"
 
-#: proposals/models.py:158
+#: proposals/models.py:156
+msgid "Chinese talk w. Chinese slides"
+msgstr "Chinese talk w. Chinese slides"
+
+#: proposals/models.py:157
+msgid "Taiwanese Hokkien"
+msgstr "Taiwanese Hokkien"
+
+#: proposals/models.py:160
 msgid "language"
-msgstr ""
+msgstr "language"
 
-#: proposals/models.py:164
+#: proposals/models.py:166
 msgid "abstract"
-msgstr ""
+msgstr "abstract"
 
-#: proposals/models.py:167
+#: proposals/models.py:169
 msgid ""
 "The overview of what the talk is about. If the talk assume some domain "
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
-msgstr ""
-
-#: proposals/models.py:175
-msgid "Novice"
-msgstr ""
-
-#: proposals/models.py:176
-msgid "Intermediate"
-msgstr ""
+msgstr "The overview of what the talk is about. If the talk assume some domain knowledge please state it here. If your talk is accepted, this will be displayed on both the website and the handbook. Should be one paragraph."
 
 #: proposals/models.py:177
+msgid "Novice"
+msgstr "Novice"
+
+#: proposals/models.py:178
+msgid "Intermediate"
+msgstr "Intermediate"
+
+#: proposals/models.py:179
 msgid "Experienced"
-msgstr ""
+msgstr "Experienced"
 
-#: proposals/models.py:180 templates/reviews/review_form.html.py:38
+#: proposals/models.py:182 templates/reviews/review_form.html.py:38
 msgid "Python level"
-msgstr ""
+msgstr "Python level"
 
-#: proposals/models.py:184
-#, python-brace-format
+#: proposals/models.py:186
 msgid ""
 "The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
-"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
-"more likely to be accepted because of being \"Novice\" level. We may contact "
-"you to change the talk level when we find the content is too-hard or too-"
-"easy for the target audience."
-msgstr ""
-"The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
-"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
-"more likely to be accepted because of being “Novice” level. We may contact "
-"you to change the talk level when we find the content is too-hard or too-"
-"easy for the target audience."
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
+"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
+" be more likely to be accepted because of being \"Novice\" level. We may "
+"contact you to change the talk level when we find the content is too-hard or"
+" too-easy for the target audience."
+msgstr "The choice of talk level matters during the review process. More definition of talk level can be found at the <a href=\"{speaking_talk_url}\" target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be more likely to be accepted because of being “Novice” level. We may contact you to change the talk level when we find the content is too-hard or too-easy for the target audience."
 
-#: proposals/models.py:198
+#: proposals/models.py:200
 msgid "objective"
-msgstr ""
+msgstr "objective"
 
-#: proposals/models.py:201
+#: proposals/models.py:203
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
-"When they leave the room, what will they learn that they didn't know before? "
-"This is NOT made public and for REVIEW ONLY."
-msgstr ""
+"When they leave the room, what will they learn that they didn't know before?"
+" This is NOT made public and for REVIEW ONLY."
+msgstr "Who is the intended audience for your talk? (Be specific, “Python users” is not a good answer). And what will the attendees get out of your talk? When they leave the room, what will they learn that they didn't know before? This is NOT made public and for REVIEW ONLY."
 
-#: proposals/models.py:210
+#: proposals/models.py:212
 msgid "detailed description"
-msgstr ""
+msgstr "detailed description"
 
-#: proposals/models.py:213
+#: proposals/models.py:215
 msgid ""
 "Try not be too lengthy to scare away reviewers or potential audience. A "
 "comfortable length is less than 2000 characters (or about 1200 Chinese "
 "characters). Since most reviewers may not understand the topic as deep as "
 "you do, including related links to the talk topic will help reviewers "
-"understand the proposal. Edit using <a href='http://daringfireball.net/"
-"projects/markdown/basics' target='_blank'>Markdown</a>."
-msgstr ""
+"understand the proposal. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr "Try not be too lengthy to scare away reviewers or potential audience. A comfortable length is less than 2000 characters (or about 1200 Chinese characters). Since most reviewers may not understand the topic as deep as you do, including related links to the talk topic will help reviewers understand the proposal. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
 
-#: proposals/models.py:225
+#: proposals/models.py:227
 msgid "supplementary"
-msgstr ""
+msgstr "supplementary"
 
-#: proposals/models.py:229
+#: proposals/models.py:231
 msgid ""
 "Anything else you'd like the program committee to know when making their "
-"selection: your past speaking experience, community experience, etc. This is "
-"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
-"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
-msgstr ""
+"selection: your past speaking experience, community experience, etc. This is"
+" NOT made public and for REVIEW ONLY. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr "Anything else you'd like the program committee to know when making their selection: your past speaking experience, community experience, etc. This is NOT made public and for REVIEW ONLY. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
 
-#: proposals/models.py:239 reviews/models.py:92
+#: proposals/models.py:241 reviews/models.py:92
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
-#: proposals/models.py:240 reviews/models.py:93
+#: proposals/models.py:242 reviews/models.py:93
 msgid "No"
-msgstr ""
+msgstr "No"
 
-#: proposals/models.py:243
+#: proposals/models.py:245
 msgid "recording policy"
-msgstr ""
+msgstr "recording policy"
 
-#: proposals/models.py:247
-#, python-brace-format
+#: proposals/models.py:249
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation. More information can be found "
 "at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
 "page."
-msgstr ""
+msgstr "Whether you agree to give permission to PyCon Taiwan to record, edit, and release audio and video of your presentation. More information can be found at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> page."
 
-#: proposals/models.py:259
+#: proposals/models.py:261
 msgid "slide link"
-msgstr ""
+msgstr "slide link"
 
-#: proposals/models.py:263
+#: proposals/models.py:265
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
-msgstr ""
+msgstr "You can add your slide link near or after the conference day. Not required for review."
 
-#: proposals/models.py:269
+#: proposals/models.py:271
 msgid "created at"
-msgstr ""
+msgstr "created at"
 
-#: proposals/models.py:306
+#: proposals/models.py:312
 msgid "No preference"
-msgstr ""
+msgstr "No preference"
 
-#: proposals/models.py:307
+#: proposals/models.py:313
 msgid "Prefer 25min"
-msgstr ""
+msgstr "Prefer 25min"
 
-#: proposals/models.py:308
+#: proposals/models.py:314
 msgid "Prefer 45min"
-msgstr ""
-
-#: proposals/models.py:311 proposals/models.py:371
-msgid "duration"
-msgstr ""
+msgstr "Prefer 45min"
 
 #: proposals/models.py:317 proposals/models.py:377
-msgid "outline"
-msgstr ""
+msgid "duration"
+msgstr "duration"
 
-#: proposals/models.py:320
+#: proposals/models.py:323 proposals/models.py:383
+msgid "outline"
+msgstr "outline"
+
+#: proposals/models.py:326
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
-"estimated time length for each sections in the talk. Talks in favor of 45min "
-"should have a fallback plan about how to shrink the content into a 25min "
-"one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
+"estimated time length for each sections in the talk. Talks in favor of 45min"
+" should have a fallback plan about how to shrink the content into a 25min "
+"one. Edit using <a href='http://daringfireball.net/projects/markdown/basics'"
+" target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
+msgstr "How the talk will be arranged. It is highly recommended to attach the estimated time length for each sections in the talk. Talks in favor of 45min should have a fallback plan about how to shrink the content into a 25min one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 
-#: proposals/models.py:333
+#: proposals/models.py:339
 msgid "Rejected"
-msgstr ""
+msgstr "Rejected"
 
-#: proposals/models.py:336
+#: proposals/models.py:342
 msgid "accepted"
-msgstr ""
+msgstr "accepted"
 
-#: proposals/models.py:343
+#: proposals/models.py:349
 msgid "talk proposal"
-msgstr ""
+msgstr "talk proposal"
 
-#: proposals/models.py:344
+#: proposals/models.py:350
 msgid "talk proposals"
-msgstr ""
+msgstr "talk proposals"
 
-#: proposals/models.py:367
+#: proposals/models.py:373
 msgid "Half day"
-msgstr ""
+msgstr "Half day"
 
-#: proposals/models.py:368
+#: proposals/models.py:374
 msgid "Full day"
-msgstr ""
+msgstr "Full day"
 
-#: proposals/models.py:380
+#: proposals/models.py:386
 msgid ""
-"How the tutorial will be arranged. You should enumerate over each section in "
-"your talk and attach each section with the estimated time length. Edit using "
-"<a href='http://daringfireball.net/projects/markdown/basics' "
+"How the tutorial will be arranged. You should enumerate over each section in"
+" your talk and attach each section with the estimated time length. Edit "
+"using <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
+msgstr "How the tutorial will be arranged. You should enumerate over each section in your talk and attach each section with the estimated time length. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 
-#: proposals/models.py:390
+#: proposals/models.py:396
 msgid "tutorial proposal"
-msgstr ""
+msgstr "tutorial proposal"
 
-#: proposals/models.py:391
+#: proposals/models.py:397
 msgid "tutorial proposals"
-msgstr ""
+msgstr "tutorial proposals"
 
-#: proposals/views/cancel.py:29
-#, python-brace-format
+#: proposals/templatetags/proposals.py:11
+msgctxt "speaker name default separator"
+msgid ", "
+msgstr ", "
+
+#: proposals/templatetags/proposals.py:12
+msgctxt "speaker name last separator"
+msgid " and "
+msgstr " and "
+
+#: proposals/views/cancel.py:34
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
-msgstr ""
+msgstr "Talk proposal <strong>{title}</strong> withdrawn."
 
-#: proposals/views/cancel.py:33
-#, python-brace-format
+#: proposals/views/cancel.py:38
 msgid "Talk proposal <strong>{title}</strong> reactivated."
-msgstr ""
+msgstr "Talk proposal <strong>{title}</strong> reactivated."
 
-#: proposals/views/cancel.py:51
-#, python-brace-format
+#: proposals/views/cancel.py:56
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
-msgstr ""
+msgstr "Tutorial proposal <strong>{title}</strong> withdrawn."
 
-#: proposals/views/cancel.py:55
-#, python-brace-format
+#: proposals/views/cancel.py:60
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
-msgstr ""
+msgstr "Tutorial proposal <strong>{title}</strong> reactivated."
 
 #: proposals/views/create.py:37
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
-msgstr ""
+msgstr "Talk proposal <strong>{title}</strong> created."
 
 #: proposals/views/create.py:47
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
-msgstr ""
+msgstr "Tutorial proposal <strong>{title}</strong> created."
 
 #: proposals/views/update.py:40
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
-msgstr ""
+msgstr "Talk proposal <strong>{title}</strong> updated."
 
 #: proposals/views/update.py:49
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
-msgstr ""
+msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
 #: reviews/forms.py:14
-#, python-brace-format
 msgid "The current user is invalid to create a {model_name}."
-msgstr ""
+msgstr "The current user is invalid to create a {model_name}."
 
 #: reviews/forms.py:17
-#, python-brace-format
 msgid "{model_name_cap} creation requires a proposal object."
-msgstr ""
+msgstr "{model_name_cap} creation requires a proposal object."
 
 #: reviews/forms.py:49
-#, python-brace-format
 msgid "Could not review proposal {proposal}."
-msgstr ""
+msgstr "Could not review proposal {proposal}."
 
 #: reviews/models.py:41
 msgid "reviewer"
-msgstr ""
+msgstr "reviewer"
 
 #: reviews/models.py:45
 msgid "stage"
-msgstr ""
+msgstr "stage"
 
 #: reviews/models.py:50
 msgid "proposal"
-msgstr ""
+msgstr "proposal"
 
 #: reviews/models.py:62
 msgid "+1 (strong accept)"
-msgstr ""
+msgstr "+1 (strong accept)"
 
 #: reviews/models.py:63
 msgid "+0 (weak accept)"
-msgstr ""
+msgstr "+0 (weak accept)"
 
 #: reviews/models.py:64
 msgid "-0 (weak reject)"
-msgstr ""
+msgstr "–0 (weak reject)"
 
 #: reviews/models.py:65
 msgid "-1 (strong reject)"
-msgstr ""
+msgstr "–1 (strong reject)"
 
 #: reviews/models.py:72
 msgid "vote"
-msgstr ""
+msgstr "vote"
 
 #: reviews/models.py:74
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
-"and acceptance criteria can be found at the google doc <a href=\"https://goo."
-"gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
-msgstr ""
+"and acceptance criteria can be found at the google doc <a "
+"href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
+msgstr "Your vote to accept or reject this talk. More information about the scoring and acceptance criteria can be found at the google doc <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 
 #: reviews/models.py:83
 msgid "comment"
-msgstr ""
+msgstr "comment"
 
 #: reviews/models.py:85
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
-"later review stages, and you can choose whether or not to disclose it to the "
-"proposal's submitter."
-msgstr ""
+"later review stages, and you can choose whether or not to disclose it to the"
+" proposal's submitter."
+msgstr "Comments to this proposal. This may be available for other reviewers in later review stages, and you can choose whether or not to disclose it to the proposal's submitter."
 
 #: reviews/models.py:98
 msgid "discloses comment to proposal submitter"
-msgstr ""
+msgstr "discloses comment to proposal submitter"
 
 #: reviews/models.py:100
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
-msgstr ""
+msgstr "Whether the proposal submitter can read you comments. We will include your comments in the proposal acceptance/rejection notice sent to the submitter if you allow us to."
 
 #: reviews/models.py:108
 msgid "note"
-msgstr ""
+msgstr "note"
 
 #: reviews/models.py:110
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
-msgstr ""
+msgstr "Personal notes about this proposal. You can use this field to record anything you like during the review process. We promise to never disclose them to anyone."
 
 #: reviews/models.py:118
 msgid "updated"
-msgstr ""
+msgstr "updated"
 
 #: reviews/models.py:123
 msgid "review"
-msgstr ""
+msgstr "review"
 
 #: reviews/models.py:124
 msgid "reviews"
-msgstr ""
+msgstr "reviews"
 
 #: reviews/models.py:129
-#, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
-msgstr ""
+msgstr "Review {proposal} by {reviewer}: {vote}"
+
+#: sponsors/models.py:16
+msgid "name"
+msgstr "name"
+
+#: sponsors/models.py:20
+msgid "website URL"
+msgstr "website URL"
+
+#: sponsors/models.py:25
+msgid "Introduction"
+msgstr "Introduction"
+
+#: sponsors/models.py:28
+msgid "logo"
+msgstr "logo"
+
+#: sponsors/models.py:40
+msgid "platinum"
+msgstr "platinum"
+
+#: sponsors/models.py:41
+msgid "gold"
+msgstr "gold"
+
+#: sponsors/models.py:42
+msgid "silver"
+msgstr "silver"
+
+#: sponsors/models.py:43
+msgid "bronze"
+msgstr "bronze"
+
+#: sponsors/models.py:44
+msgid "special"
+msgstr "special"
+
+#: sponsors/models.py:53
+msgid "level"
+msgstr "level"
+
+#: sponsors/models.py:58
+msgid "sponsor"
+msgstr "sponsor"
+
+#: sponsors/models.py:59
+msgid "sponsors"
+msgstr "sponsors"
 
 #: templates/404.html:8
 msgid "Page Not Found"
-msgstr ""
+msgstr "Page Not Found"
 
 #: templates/404.html:65
 msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
-msgstr ""
+msgstr "Ooops! It’s a <span class=\"error-code\">404</span> problem."
 
 #: templates/404.html:66
 msgid "We cannot find what you’re looking for."
-msgstr ""
+msgstr "We cannot find what you’re looking for."
 
 #: templates/500.html:8
 msgid "Server Error"
-msgstr ""
+msgstr "Server Error"
 
 #: templates/500.html:66
 msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
-msgstr ""
+msgstr "Ooops! It’s a <span class=\"error-code\">500</span> problem."
 
 #: templates/500.html:67
 msgid "We screwed up. It’s not your fault."
-msgstr ""
+msgstr "We screwed up. It’s not your fault."
 
 #: templates/_includes/character_counter_template.html:4
 msgid "Text unit count: "
-msgstr ""
+msgstr "Text unit count: "
 
 #: templates/_includes/character_counter_template.html:4
 msgid "(Not available without JavaScript)"
-msgstr ""
+msgstr "(Not available without JavaScript)"
 
 #: templates/_includes/character_counter_template.html:5
 msgid ""
 "This value is used to estimate the size of text in our materials. It counts "
 "East Asian wide characters (e.g. Chinese) as two units because they take "
 "more space."
-msgstr ""
+msgstr "This value is used to estimate the size of text in our materials. It counts East Asian wide characters (e.g. Chinese) as two units because they take more space."
 
 #: templates/_includes/dashboard_tablist.html:5
 msgid "Proposals"
-msgstr ""
+msgstr "Proposals"
 
 #: templates/_includes/dashboard_tablist.html:7
 #: templates/users/user_profile_update.html:14
 msgid "Edit Profile"
-msgstr ""
+msgstr "Edit Profile"
 
 #: templates/_includes/dashboard_tablist.html:8
 msgid "Change Password"
-msgstr ""
+msgstr "Change Password"
 
 #: templates/_includes/dashboard_tablist.html:11
 msgid "Reviews"
-msgstr ""
+msgstr "Reviews"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:57 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:76 templates/dashboard_base.html:6
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: templates/_includes/nav/dashboard_nav.html:14
 msgid "Log out"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:23
-msgid "About"
-msgstr ""
+msgstr "Log out"
 
 #: templates/_includes/nav/front_nav.html:26
-msgid "Code of Conduct"
-msgstr ""
+msgid "About"
+msgstr "About"
 
-#: templates/_includes/nav/front_nav.html:27
+#: templates/_includes/nav/front_nav.html:29
+msgid "Code of Conduct"
+msgstr "Code of Conduct"
+
+#: templates/_includes/nav/front_nav.html:30
 #: templates/contents/_default/about/staff.html:6
 #: templates/contents/_default/about/staff.html:7
 msgid "Staff"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:31
-msgid "Events"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:33
-msgid "Overview"
-msgstr ""
+msgstr "Staff"
 
 #: templates/_includes/nav/front_nav.html:34
-msgid "Keynotes"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:35
-#: templates/proposals/talk_proposal_list.html:5
-#: templates/proposals/talk_proposal_list.html:8
-msgid "Talks"
-msgstr ""
+msgid "Events"
+msgstr "Events"
 
 #: templates/_includes/nav/front_nav.html:36
-msgid "Sprints"
-msgstr ""
+msgid "Overview"
+msgstr "Overview"
 
 #: templates/_includes/nav/front_nav.html:37
+msgid "Keynotes"
+msgstr "Keynotes"
+
+#: templates/_includes/nav/front_nav.html:38 templates/events/talk_list.html:5
+#: templates/events/talk_list.html.py:7
+msgid "Talks"
+msgstr "Talks"
+
+#: templates/_includes/nav/front_nav.html:39
+msgid "Sprints"
+msgstr "Sprints"
+
+#: templates/_includes/nav/front_nav.html:40
 msgid "BoF"
-msgstr ""
+msgstr "BoF"
 
-#: templates/_includes/nav/front_nav.html:38
+#: templates/_includes/nav/front_nav.html:41
 msgid "PyDay"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:42
-msgid "Speaking"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:44
-msgid "Call for Proposal"
-msgstr ""
+msgstr "PyDay"
 
 #: templates/_includes/nav/front_nav.html:45
-msgid "Proposing a Talk"
-msgstr ""
+#: templates/_includes/nav/front_nav.html:47
+msgctxt "conf location"
+msgid "Venue"
+msgstr "Venue"
 
-#: templates/_includes/nav/front_nav.html:46
-msgid "Proposing a Tutorial"
-msgstr ""
+#: templates/_includes/nav/front_nav.html:48
+msgid "Accommodation"
+msgstr "Accommodation"
 
-#: templates/_includes/nav/front_nav.html:50
+#: templates/_includes/nav/front_nav.html:63
+msgid "Sponsor"
+msgstr "Sponsor"
+
+#: templates/_includes/nav/front_nav.html:65
+msgid "Our Sponsors"
+msgstr "Our Sponsors"
+
+#: templates/_includes/nav/front_nav.html:69
 msgctxt "navbar"
 msgid "Registration"
-msgstr ""
+msgstr "Registration"
 
-#: templates/_includes/nav/front_nav.html:52
-msgid "Financial Aid"
-msgstr ""
-
-#: templates/_includes/nav/front_nav.html:53
+#: templates/_includes/nav/front_nav.html:71
 msgid "Ticket Info"
-msgstr ""
+msgstr "Ticket Info"
 
-#: templates/_includes/nav/front_nav.html:56
+#: templates/_includes/nav/front_nav.html:72
+msgid "Financial Aid"
+msgstr "Financial Aid"
+
+#: templates/_includes/nav/front_nav.html:75
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: templates/_includes/nav/nav_base.html:8
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Toggle navigation"
 
 #: templates/_includes/nav/nav_base.html:71
 msgid "Change"
-msgstr ""
+msgstr "Change"
 
 #: templates/dashboard_base.html:14
 msgid "Welcome PyCon TW 2016"
-msgstr ""
+msgstr "Welcome PyCon TW 2016"
 
 #: templates/dashboard_base.html:21
 msgid ""
 "Please verify your account by clicking the link in the mail we sent to your "
 "email inbox."
-msgstr ""
+msgstr "Please verify your account by clicking the link in the mail we sent to your email inbox."
 
 #: templates/dashboard_base.html:24
 msgid "Did not get the verification mail?"
-msgstr ""
+msgstr "Did not get the verification mail?"
 
 #: templates/dashboard_base.html:25
 msgid "Request a new one."
-msgstr ""
+msgstr "Request a new one."
 
 #: templates/dashboard_base.html:30
 msgid ""
-"You need to complete your speaker profile first before submitting a proposal."
-msgstr ""
+"You need to complete your speaker profile first before submitting a "
+"proposal."
+msgstr "You need to complete your speaker profile first before submitting a proposal."
+
+#: templates/events/talk_detail.html:17 templates/reviews/review_form.html:34
+#: templates/users/_includes/dashboard_cospeaking_proposal_table.html:7
+#: templates/users/_includes/dashboard_proposal_table.html:8
+msgid "Language"
+msgstr "Language"
+
+#: templates/events/talk_detail.html:20
+#: templates/reviews/_includes/proposal_table.html:25
+#: templates/reviews/review_form.html:30
+msgid "Category"
+msgstr "Category"
+
+#: templates/events/talk_detail.html:23
+#: templates/users/_includes/dashboard_proposal_table.html:7
+msgid "Python Level"
+msgstr "Python Level"
+
+#: templates/events/talk_detail.html:27
+msgid "Slides Link"
+msgstr "Slides Link"
+
+#: templates/events/talk_detail.html:31 templates/reviews/review_form.html:36
+msgid "Abstract"
+msgstr "Abstract"
+
+#: templates/events/talk_detail.html:35
+msgid "Description"
+msgstr "Description"
+
+#: templates/events/talk_list.html:13
+#, python-format
+msgid ""
+"<a class=\"proposal-title\" "
+"href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by "
+"%(speaker_names)s"
+msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by %(speaker_names)s"
 
 #: templates/index.html:7
 msgid ""
 "PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
 "focuses on Python technology and its versatile applications. We welcome "
-"people who are interested in Python to join PyCon Taiwan to share knowledge, "
-"exchange ideas, make connections and to help us grow our network."
-msgstr ""
+"people who are interested in Python to join PyCon Taiwan to share knowledge,"
+" exchange ideas, make connections and to help us grow our network."
+msgstr "PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network."
 
 #: templates/index.html:31 templates/index.html.py:37
 msgid "Tutorials"
-msgstr ""
+msgstr "Tutorials"
 
 #: templates/index.html:32 templates/index.html.py:41
 msgid "Conference"
-msgstr ""
+msgstr "Conference"
 
 #: templates/index.html:33 templates/index.html.py:45
 msgid "Sprint"
-msgstr ""
+msgstr "Sprint"
 
 #: templates/index.html:38
 msgid "TBD"
-msgstr ""
+msgstr "TBD"
 
 #: templates/index.html:42
 msgid "June 3–5, 2016"
-msgstr ""
+msgstr "June 3–5, 2016"
 
 #: templates/index.html:46
 msgid "Apr 16 &amp; Jun 11, 2016"
-msgstr ""
+msgstr "Apr 16 &amp; Jun 11, 2016"
 
 #: templates/index.html:61
 msgid ""
 "<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
 "The original PyCon was formed in North America in 2003, and now there are "
-"many other conferences being run in the PyCon spirit around the world. </div>"
-msgstr ""
+"many other conferences being run in the PyCon spirit around the world. "
+"</div>"
+msgstr "<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world. </div>"
 
 #: templates/index.html:73
 msgid ""
-"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div class="
-"\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for the "
-"discussion and promotion of the Python programming language. It is held by "
-"enthusiasts and focuses on Python technology and its versatile applications. "
-"We welcome people who are interested in Python to join PyCon Taiwan to share "
-"knowledge, exchange ideas, make connections and to help us grow our network. "
-"</div>"
-msgstr ""
+"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div "
+"class=\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for "
+"the discussion and promotion of the Python programming language. It is held "
+"by enthusiasts and focuses on Python technology and its versatile "
+"applications. We welcome people who are interested in Python to join PyCon "
+"Taiwan to share knowledge, exchange ideas, make connections and to help us "
+"grow our network. </div>"
+msgstr "<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div class=\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network. </div>"
 
 #: templates/index.html:89
 #, python-format
@@ -803,675 +889,631 @@ msgid ""
 "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
 "height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div "
 "class=\"volunteer__body\"> <p>Help us organize and make the conference "
-"successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
-"forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target="
-"\"_blank\">our volunteer form</a> </p> </div>"
-msgstr ""
+"successful!</p> <p> Please fill out<br> <a "
+"href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\""
+" target=\"_blank\">our volunteer form</a> </p> </div>"
+msgstr "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div class=\"volunteer__body\"> <p>Help us organize and make the conference successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target=\"_blank\">our volunteer form</a> </p> </div>"
 
 #: templates/index.html:119
 msgid "Python Community in Taiwan"
-msgstr ""
+msgstr "Python Community in Taiwan"
 
 #: templates/index.html:173
 msgid "Sponsorship 2016 available!"
-msgstr ""
+msgstr "Sponsorship 2016 available!"
 
 #: templates/index.html:178
 msgid ""
 "<p> Sponsoring PyCon Taiwan 2016 will connect your brand with estimated "
 "total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 "
-"are professionals. It’s a great opportunity to find talents and promote your "
-"products here. Contact us at <a href=\"mailto:sponsorship@pycon.tw"
-"\">sponsorship@pycon.tw</a> for sponsorship details. </p> <br> <p> See also "
-"<a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target=\"_blank\"> "
+"are professionals. It’s a great opportunity to find talents and promote your"
+" products here. Contact us at <a "
+"href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> for "
+"sponsorship details. </p> <br> <p> See also <a "
+"href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target=\"_blank\"> "
 "Sponsors of PyCon APAC 2015 </a> </p>"
-msgstr ""
+msgstr "<p> Sponsoring PyCon Taiwan 2016 will connect your brand with estimated total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 are professionals. It’s a great opportunity to find talents and promote your products here. Contact us at <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> for sponsorship details. </p> <br> <p> See also <a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target=\"_blank\"> Sponsors of PyCon APAC 2015 </a> </p>"
 
 #: templates/index.html:240
 msgid "Sponsors"
-msgstr ""
+msgstr "Sponsors"
 
 #: templates/proposals/_proposal_create.html:13
 msgid "Create Proposal"
-msgstr ""
+msgstr "Create Proposal"
 
 #: templates/proposals/_proposal_update.html:23
 #: templates/users/user_profile_update.html:98
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 #: templates/proposals/create_proposal_choice.html:5
 msgid "Submit a Proposal"
-msgstr ""
+msgstr "Submit a Proposal"
 
 #: templates/proposals/create_proposal_choice.html:10
 msgid "Choice a Proposal Type to Create"
-msgstr ""
+msgstr "Choice a Proposal Type to Create"
 
 #: templates/proposals/create_proposal_choice.html:12
 msgid "Talk"
-msgstr ""
+msgstr "Talk"
 
 #: templates/proposals/create_proposal_choice.html:13
 msgid "Tutorial"
-msgstr ""
+msgstr "Tutorial"
 
 #: templates/proposals/manage_speakers.html:5
 #, python-format
 msgid "Manage Speakers for %(proposal_title)s"
-msgstr ""
+msgstr "Manage Speakers for %(proposal_title)s"
 
 #: templates/proposals/manage_speakers.html:13
 #, python-format
 msgid "Manage Speakers for <em>%(title)s</em>"
-msgstr ""
+msgstr "Manage Speakers for <em>%(title)s</em>"
 
 #: templates/proposals/manage_speakers.html:19
 msgid "Speaker"
-msgstr ""
+msgstr "Speaker"
 
 #: templates/proposals/manage_speakers.html:20
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:9
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: templates/proposals/manage_speakers.html:33
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 #: templates/proposals/manage_speakers.html:46
 msgid "Add Speaker"
-msgstr ""
+msgstr "Add Speaker"
 
 #: templates/proposals/talk_proposal_create.html:5
 #: templates/proposals/talk_proposal_create.html:7
 msgid "Submit a New Talk Proposal"
-msgstr ""
-
-#: templates/proposals/talk_proposal_list.html:11
-#, python-format
-msgid "<span class=\"proposal-title\">%(proposal_title)s</span> by %(speaker)s"
-msgstr ""
+msgstr "Submit a New Talk Proposal"
 
 #: templates/proposals/talk_proposal_peek.html:5
 #, python-format
 msgid "Talk Proposal %(proposal_title)s"
-msgstr ""
+msgstr "Talk Proposal %(proposal_title)s"
 
 #: templates/proposals/talk_proposal_update.html:5
 #, python-format
 msgid "Edit Talk Proposal %(proposal_title)s"
-msgstr ""
+msgstr "Edit Talk Proposal %(proposal_title)s"
 
 #: templates/proposals/tutorial_proposal_create.html:5
 #: templates/proposals/tutorial_proposal_create.html:7
 msgid "Submit a New Tutorial Proposal"
-msgstr ""
+msgstr "Submit a New Tutorial Proposal"
 
 #: templates/proposals/tutorial_proposal_peek.html:5
 #, python-format
 msgid "Tutorial Proposal %(proposal_title)s"
-msgstr ""
+msgstr "Tutorial Proposal %(proposal_title)s"
 
 #: templates/proposals/tutorial_proposal_update.html:5
 #, python-format
 msgid "Edit Tutorial Proposal %(proposal_title)s"
-msgstr ""
+msgstr "Edit Tutorial Proposal %(proposal_title)s"
 
-#: templates/registration/login.html:7 templates/registration/login.html:18
+#: templates/registration/login.html:7 templates/registration/login.html:21
 #: users/forms.py:238
 msgid "Log In"
-msgstr ""
+msgstr "Log In"
 
-#: templates/registration/login.html:22
+#: templates/registration/login.html:25
 #: templates/registration/password_reset.html:22
 #, python-format
 msgid ""
 "<span class=\"form-tip\">Don't have an account?</span> <a class=\"btn btn-"
 "link\" href=\"%(signup_url)s\">Sign up now!</a>"
-msgstr ""
+msgstr "<span class=\"form-tip\">Don’t have an account?</span> <a class=\"btn btn-link\" href=\"%(signup_url)s\">Sign up now!</a>"
 
 #: templates/registration/password_change_form.html:14
 msgid "Change Log In Password"
-msgstr ""
+msgstr "Change Log In Password"
 
 #: templates/registration/password_change_form.html:22
 msgid "Submit"
-msgstr ""
+msgstr "Submit"
 
 #: templates/registration/password_reset.html:7
 #: templates/registration/password_reset.html:18
 msgid "Reset Your Password"
-msgstr ""
+msgstr "Reset Your Password"
 
 #: templates/registration/password_reset_confirm.html:25
 #, python-format
 msgid ""
-"<p>The password reset link was invalid, possibly because it has already been "
-"used. You can either</p> <ul> <li><a href=\"%(password_reset_url)s\">Request "
-"a new password reset</a>, or</li> <li><a href=\"%(index_url)s\">Return to "
-"homepage.</a></li> </ul>"
-msgstr ""
+"<p>The password reset link was invalid, possibly because it has already been"
+" used. You can either</p> <ul> <li><a "
+"href=\"%(password_reset_url)s\">Request a new password reset</a>, or</li> "
+"<li><a href=\"%(index_url)s\">Return to homepage.</a></li> </ul>"
+msgstr "<p>The password reset link was invalid, possibly because it has already been used. You can either</p> <ul> <li><a href=\"%(password_reset_url)s\">Request a new password reset</a>, or</li> <li><a href=\"%(index_url)s\">Return to homepage.</a></li> </ul>"
 
 #: templates/registration/password_reset_email.txt:7
 #, python-format
 msgid ""
 "\n"
-"You receive this email because someone has requested to reset the password "
-"for your user account %(user_email)s at %(site_name)s.\n"
+"You receive this email because someone has requested to reset the password for your user account %(user_email)s at %(site_name)s.\n"
 "\n"
 "To reset your password, go to\n"
 "    %(protocol)s://%(domain)s%(password_reset_confirm_url)s\n"
 "\n"
 "You can ignore this message if you did not request a password reset.\n"
-msgstr ""
+msgstr "\nYou receive this email because someone has requested to reset the password for your user account %(user_email)s at %(site_name)s.\n\nTo reset your password, go to\n    %(protocol)s://%(domain)s%(password_reset_confirm_url)s\n\nYou can ignore this message if you did not request a password reset.\n"
 
-#: templates/registration/signup.html:7 templates/registration/signup.html:18
+#: templates/registration/signup.html:7 templates/registration/signup.html:21
 msgid "Sign Up"
-msgstr ""
+msgstr "Sign Up"
 
-#: templates/registration/signup.html:22
+#: templates/registration/signup.html:25
 #, python-format
 msgid ""
-"<span class=\"form-tip\">Already have an account?</span><a href="
-"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
-msgstr ""
+"<span class=\"form-tip\">Already have an account?</span><a "
+"href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+msgstr "<span class=\"form-tip\">Already have an account?</span><a href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 
 #: templates/registration/verification_email.txt:6
 #, python-format
 msgid ""
 "\n"
-"An account has been created on %(host)s with this email address "
-"(%(user_email)s).\n"
+"An account has been created on %(host)s with this email address (%(user_email)s).\n"
 "\n"
 "To activate this account and confirm this email address, go to\n"
 "%(verification_url)s\n"
 "\n"
 "You can ignore this message if you did not sign up for this site.\n"
-msgstr ""
+msgstr "\nAn account has been created on %(host)s with this email address (%(user_email)s).\n\nTo activate this account and confirm this email address, go to\n%(verification_url)s\n\nYou can ignore this message if you did not sign up for this site.\n"
 
 #: templates/reviews/_includes/previous_review_table.html:6
 #: templates/reviews/_includes/review_table.html:6
 msgid "Stage"
-msgstr ""
+msgstr "Stage"
 
 #: templates/reviews/_includes/previous_review_table.html:7
 #: templates/reviews/_includes/review_table.html:7
 msgid "Vote"
-msgstr ""
+msgstr "Vote"
 
 #: templates/reviews/_includes/previous_review_table.html:8
 msgid "Comments"
-msgstr ""
+msgstr "Comments"
 
 #: templates/reviews/_includes/proposal_table.html:8
 msgid "Reviewed"
-msgstr ""
+msgstr "Reviewed"
 
 #: templates/reviews/_includes/proposal_table.html:17
 #: templates/reviews/_includes/review_table.html:8
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
-msgstr ""
-
-#: templates/reviews/_includes/proposal_table.html:25
-#: templates/reviews/review_form.html:30
-msgid "Category"
-msgstr ""
+msgstr "Title"
 
 #: templates/reviews/_includes/proposal_table.html:33
 msgid "Level"
-msgstr ""
+msgstr "Level"
 
 #: templates/reviews/_includes/proposal_table.html:41
 msgid "Lang"
-msgstr ""
+msgstr "Lang"
 
 #: templates/reviews/_includes/proposal_table.html:48
 msgid "Decision"
-msgstr ""
+msgstr "Decision"
 
 #: templates/reviews/_includes/proposal_table.html:68
 msgid "Review"
-msgstr ""
+msgstr "Review"
 
 #: templates/reviews/_includes/proposal_table.html:70
 msgid "Read"
-msgstr ""
+msgstr "Read"
 
 #: templates/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
 "\n"
-"\tIn review stage 1, you <strong>will not</strong> see score and comment "
-"made\n"
+"\tIn review stage 1, you <strong>will not</strong> see score and comment made\n"
 "\tby other reviewers, nor the name and background of the speaker. In short,\n"
 "\tyou review based on the talk content itself.\n"
-msgstr ""
+msgstr "\n\tIn review stage 1, you <strong>will not</strong> see score and comment made\n\tby other reviewers, nor the name and background of the speaker. In short,\n\tyou review based on the talk content itself.\n"
 
 #: templates/reviews/_includes/review_stage_2_desc.html:3
 msgid ""
 "\n"
-"\tAfter review stage 1, some of the proposals have been accepted or "
-"rejected.\n"
-"\tThese proposals and their reviews (read-only) are shown in the separate "
-"tab.\n"
-msgstr ""
+"\tAfter review stage 1, some of the proposals have been accepted or rejected.\n"
+"\tThese proposals and their reviews (read-only) are shown in the separate tab.\n"
+msgstr "\n\tAfter review stage 1, some of the proposals have been accepted or rejected.\n\tThese proposals and their reviews (read-only) are shown in the separate tab.\n"
 
 #: templates/reviews/_includes/review_stage_2_desc.html:8
 msgid ""
 "\n"
 "\tIn review stage 2, you will see score and comment made by other reviewers\n"
 "\tanonymously, including the name and background of the speaker. With more\n"
-"\tinformation provided, you may want to update your review. Updating or "
-"adding\n"
-"\treview in stage 2 follows the same way as stage 1. Only the last review "
-"you\n"
+"\tinformation provided, you may want to update your review. Updating or adding\n"
+"\treview in stage 2 follows the same way as stage 1. Only the last review you\n"
 "\tmade will be disclosed to the speaker (if you choose to).\n"
-msgstr ""
+msgstr "\n\tIn review stage 2, you will see score and comment made by other reviewers\n\tanonymously, including the name and background of the speaker. With more\n\tinformation provided, you may want to update your review. Updating or adding\n\treview in stage 2 follows the same way as stage 1. Only the last review you\n\tmade will be disclosed to the speaker (if you choose to).\n"
 
 #: templates/reviews/_includes/review_table.html:9
 msgid "Comment"
-msgstr ""
+msgstr "Comment"
 
 #: templates/reviews/_includes/review_table.html:21
 msgid "Update"
-msgstr ""
+msgstr "Update"
 
 #: templates/reviews/review_form.html:7
 #, python-format
 msgid "%(proposal_title)s | Reviews"
-msgstr ""
+msgstr "%(proposal_title)s | Reviews"
 
 #: templates/reviews/review_form.html:27
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:8
 msgid "Submitter"
-msgstr ""
+msgstr "Submitter"
 
 #: templates/reviews/review_form.html:32
 msgid "Duration"
-msgstr ""
-
-#: templates/reviews/review_form.html:34
-#: templates/users/_includes/dashboard_cospeaking_proposal_table.html:7
-#: templates/users/_includes/dashboard_proposal_table.html:8
-msgid "Language"
-msgstr ""
-
-#: templates/reviews/review_form.html:36
-msgid "Abstract"
-msgstr ""
+msgstr "Duration"
 
 #: templates/reviews/review_form.html:40
 msgid "Objective"
-msgstr ""
+msgstr "Objective"
 
 #: templates/reviews/review_form.html:43
 msgid "Detailed description"
-msgstr ""
+msgstr "Detailed description"
 
 #: templates/reviews/review_form.html:47
 msgid "Outline"
-msgstr ""
+msgstr "Outline"
 
 #: templates/reviews/review_form.html:51
 msgid "Supplementary"
-msgstr ""
+msgstr "Supplementary"
 
 #: templates/reviews/review_form.html:57
 msgid "Previous Reviews by Other Reviewers"
-msgstr ""
+msgstr "Previous Reviews by Other Reviewers"
 
 #: templates/reviews/review_form.html:64
 msgid "My Previous Reviews"
-msgstr ""
+msgstr "My Previous Reviews"
 
 #: templates/reviews/review_form.html:72
 msgid "Review Proposal"
-msgstr ""
+msgstr "Review Proposal"
 
-#: templates/reviews/talk_proposal_list.html:14
+#: templates/reviews/talk_proposal_list.html:15
 #, python-format
 msgid "Current Review Stage: %(review_stage)s"
-msgstr ""
+msgstr "Current Review Stage: %(review_stage)s"
 
-#: templates/reviews/talk_proposal_list.html:19
+#: templates/reviews/talk_proposal_list.html:20
 msgid ""
 "\n"
-"        Note that at anytime, the identity of the reviewer, e.g. you, is "
-"hidden to\n"
-"        other reviewers and speakers.  For more information about the whole "
-"review\n"
+"        Note that at anytime, the identity of the reviewer, e.g. you, is hidden to\n"
+"        other reviewers and speakers.  For more information about the whole review\n"
 "        process, please refer to the google doc\n"
-"        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review "
-"Guideline</a>.\n"
+"        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>.\n"
 "        "
-msgstr ""
+msgstr "\n        Note that at anytime, the identity of the reviewer, e.g. you, is hidden to\n        other reviewers and speakers.  For more information about the whole review\n        process, please refer to the google doc\n        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>.\n        "
 
-#: templates/reviews/talk_proposal_list.html:29
+#: templates/reviews/talk_proposal_list.html:30
 msgid "Personal Review Stats"
-msgstr ""
-
-#: templates/reviews/talk_proposal_list.html:57
-msgid "Unreviewed Talk Proposals"
-msgstr ""
+msgstr "Personal Review Stats"
 
 #: templates/reviews/talk_proposal_list.html:58
+msgid "Unreviewed Talk Proposals"
+msgstr "Unreviewed Talk Proposals"
+
+#: templates/reviews/talk_proposal_list.html:59
 msgid "Reviewed Talk Proposals"
-msgstr ""
+msgstr "Reviewed Talk Proposals"
 
-#: templates/reviews/talk_proposal_list.html:60
+#: templates/reviews/talk_proposal_list.html:61
 msgid "Talk Proposals With Decision"
-msgstr ""
+msgstr "Talk Proposals With Decision"
 
-#: templates/reviews/talk_proposal_list.html:70
+#: templates/reviews/talk_proposal_list.html:71
 msgid "You have reviewed all talk proposals."
-msgstr ""
+msgstr "You have reviewed all talk proposals."
 
-#: templates/reviews/talk_proposal_list.html:79
+#: templates/reviews/talk_proposal_list.html:80
 msgid "You haven't reviewed any talk proposals."
-msgstr ""
+msgstr "You haven’t reviewed any talk proposals."
 
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:43
 msgid "Accept"
-msgstr ""
+msgstr "Accept"
 
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:49
 msgid "Decline"
-msgstr ""
+msgstr "Decline"
 
-#: templates/users/_includes/dashboard_proposal_table.html:7
-msgid "Python Level"
-msgstr ""
-
-#: templates/users/_includes/dashboard_proposal_table.html:23
+#: templates/users/_includes/dashboard_proposal_table.html:24
 msgid "Reactivate"
-msgstr ""
+msgstr "Reactivate"
 
-#: templates/users/_includes/dashboard_proposal_table.html:25
+#: templates/users/_includes/dashboard_proposal_table.html:26
 msgid "Edit"
-msgstr ""
-
-#: templates/users/_includes/dashboard_proposal_table.html:30
-msgid "Withdraw"
-msgstr ""
+msgstr "Edit"
 
 #: templates/users/_includes/dashboard_proposal_table.html:34
+msgid "Withdraw"
+msgstr "Withdraw"
+
+#: templates/users/_includes/dashboard_proposal_table.html:38
 msgid "View"
-msgstr ""
+msgstr "View"
 
 #: templates/users/user_dashboard.html:20
 msgid "Talk Proposals"
-msgstr ""
+msgstr "Talk Proposals"
 
 #: templates/users/user_dashboard.html:23
 msgid "New Talk Porposal"
-msgstr ""
+msgstr "New Talk Porposal"
 
 #: templates/users/user_dashboard.html:33
 #, python-format
 msgid ""
-"You haven't submitted any talk proposals. Why not <a href="
-"\"%(talk_proposal_create_url)s\">submit one now</a>?"
-msgstr ""
+"You haven't submitted any talk proposals. Why not <a "
+"href=\"%(talk_proposal_create_url)s\">submit one now</a>?"
+msgstr "You haven‘t submitted any talk proposals. Why not <a href=\"%(talk_proposal_create_url)s\">submit one now</a>?"
 
 #: templates/users/user_dashboard.html:35
 msgid "You haven't submitted any talk proposals."
-msgstr ""
+msgstr "You haven’t submitted any talk proposals."
 
 #: templates/users/user_dashboard.html:42
 msgid "Tutorial Proposals"
-msgstr ""
+msgstr "Tutorial Proposals"
 
 #: templates/users/user_dashboard.html:46
 msgid "New Tutorial Porposal"
-msgstr ""
+msgstr "New Tutorial Porposal"
 
 #: templates/users/user_dashboard.html:58
 #, python-format
 msgid ""
-"You haven't submitted any tutorial proposals. Why not <a href="
-"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
-msgstr ""
+"You haven't submitted any tutorial proposals. Why not <a "
+"href=\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+msgstr "You haven’t submitted any tutorial proposals. Why not <a href=\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
 
 #: templates/users/user_dashboard.html:60
 msgid "You haven't submitted any tutorial proposals."
-msgstr ""
+msgstr "You haven’t submitted any tutorial proposals."
 
 #: templates/users/user_dashboard.html:67
 msgid "Co-Speaking Proposals"
-msgstr ""
+msgstr "Co-Speaking Proposals"
 
 #: templates/users/user_profile_update.html:6
 msgid "Update Speaker Profile"
-msgstr ""
+msgstr "Update Speaker Profile"
 
 #: templates/users/user_profile_update.html:22
 msgid "Profile Picture"
-msgstr ""
+msgstr "Profile Picture"
 
 #: templates/users/user_profile_update.html:28
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
 
 #: templates/users/user_profile_update.html:36
 msgid ""
 "Provide a square photo at least 800&times;800 pixels in size for best "
 "results in our printed conference booklet."
-msgstr ""
+msgstr "Provide a square photo at least 800&times;800 pixels in size for best results in our printed conference booklet."
 
 #: templates/users/user_profile_update.html:41
 msgid "Your Name"
-msgstr ""
+msgstr "Your Name"
 
 #: templates/users/user_profile_update.html:51
 msgid "Biography"
-msgstr ""
+msgstr "Biography"
 
 #: templates/users/user_profile_update.html:63
 msgid "Facebook Profile Page"
-msgstr ""
+msgstr "Facebook Profile Page"
 
 #: templates/users/user_profile_update.html:73
 msgid "Twitter Handle"
-msgstr ""
+msgstr "Twitter Handle"
 
 #: templates/users/user_profile_update.html:86
 msgid "GitHub Username"
-msgstr ""
+msgstr "GitHub Username"
 
 #: users/admin.py:18
 msgid "Personal info"
-msgstr ""
+msgstr "Personal info"
 
 #: users/admin.py:27
 msgid "Permissions"
-msgstr ""
+msgstr "Permissions"
 
 #: users/admin.py:36
 msgid "Important dates"
-msgstr ""
+msgstr "Important dates"
 
 #: users/forms.py:28
 msgid "A user with that email already exists."
-msgstr ""
+msgstr "A user with that email already exists."
 
 #: users/forms.py:29
 msgid "The two password fields didn't match."
-msgstr ""
+msgstr "The two password fields didn’t match."
 
 #: users/forms.py:32 users/forms.py:182
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: users/forms.py:36
 msgid "Password confirmation"
-msgstr ""
+msgstr "Password confirmation"
 
 #: users/forms.py:62
 msgid "Create Account"
-msgstr ""
+msgstr "Create Account"
 
 #: users/forms.py:134
-#, python-brace-format
 msgid "Your image is too small ({width}\\u00d7{height} pixels)."
-msgstr ""
+msgstr "Your image is too small ({width}\\u00d7{height} pixels)."
 
 #: users/forms.py:136
 msgid "The image you provided is not quadrate."
-msgstr ""
+msgstr "The image you provided is not quadrate."
 
 #: users/forms.py:183
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
-msgstr ""
+msgstr "Raw passwords are not stored, so there is no way to see this user's password, but you can change the password using <a href=\"password/\">this form</a>."
 
 #: users/forms.py:232
-#, python-brace-format
-msgid ""
-"<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
-msgstr ""
+msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
+msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 
 #: users/forms.py:249
 msgid "Email Address"
-msgstr ""
+msgstr "Email Address"
 
 #: users/forms.py:268
 msgid "Request Password Reset"
-msgstr ""
+msgstr "Request Password Reset"
 
 #: users/forms.py:304
 msgid "Set Password"
-msgstr ""
+msgstr "Set Password"
 
 #: users/models.py:106
 msgid "email address"
-msgstr ""
+msgstr "email address"
 
 #: users/models.py:110
 msgid "speaker name"
-msgstr ""
+msgstr "speaker name"
 
 #: users/models.py:114
 msgid "biography"
-msgstr ""
+msgstr "biography"
 
 #: users/models.py:117
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
-msgstr ""
+msgstr "Describe yourself with 500 characters or less. There will be no formatting."
 
 #: users/models.py:122
 msgid "photo"
-msgstr ""
+msgstr "photo"
 
 #: users/models.py:126
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: users/models.py:129
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
-"public information. If you do not know what your profile page link is, click "
-"on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and "
-"copy-paste the URL of the page opened. Remember to log in to Facebook first!"
-msgstr ""
+"public information. If you do not know what your profile page link is, click"
+" on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and"
+" copy-paste the URL of the page opened. Remember to log in to Facebook "
+"first!"
+msgstr "Link to your Facebook profile page. This will be shown when we display your public information. If you do not know what your profile page link is, click on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and copy-paste the URL of the page opened. Remember to log in to Facebook first!"
 
 #: users/models.py:138
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: users/models.py:143
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
-msgstr ""
+msgstr "Your Twitter handle, without the “@” sign. This will be shown when we display your public information."
 
 #: users/models.py:148
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: users/models.py:153
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
-msgstr ""
+msgstr "Your GitHub account, without the “@” sign. This will be shown when we display your public information."
 
 #: users/models.py:158
 msgid "verified"
-msgstr ""
+msgstr "verified"
 
 #: users/models.py:161
 msgid "Designates whether the user has verified email ownership."
-msgstr ""
+msgstr "Designates whether the user has verified email ownership."
 
 #: users/models.py:165
 msgid "staff status"
-msgstr ""
+msgstr "staff status"
 
 #: users/models.py:168
 msgid "Designates whether the user can log into this admin site."
-msgstr ""
+msgstr "Designates whether the user can log into this admin site."
 
 #: users/models.py:172
 msgid "active"
-msgstr ""
+msgstr "active"
 
 #: users/models.py:175
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
-msgstr ""
+msgstr "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
 
 #: users/models.py:180
 msgid "date joined"
-msgstr ""
+msgstr "date joined"
 
 #: users/models.py:191
 msgid "users"
-msgstr ""
+msgstr "users"
 
 #: users/models.py:257
-#, python-brace-format
 msgid "Verify your email address on {host}"
-msgstr ""
+msgstr "Verify your email address on {host}"
 
 #: users/views.py:38
 msgid "Sign up successful. You are now logged in."
-msgstr ""
+msgstr "Sign up successful. You are now logged in."
 
 #: users/views.py:55
 msgid "Email verification successful."
-msgstr ""
+msgstr "Email verification successful."
 
 #: users/views.py:67
-#, python-brace-format
 msgid "A verification email has been sent to {email}"
-msgstr ""
+msgstr "A verification email has been sent to {email}"
 
 #: users/views.py:95
 msgid "Your profile has been updated successfully."
-msgstr ""
+msgstr "Your profile has been updated successfully."
 
 #: users/views.py:111
 msgid "Your new password has been applied successfully."
-msgstr ""
+msgstr "Your new password has been applied successfully."
 
 #: users/views.py:126
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
-msgstr ""
+msgstr "An email is sent to your email account. Please check your inbox for furthur instructions to reset your password."
 
 #: users/views.py:134
 msgid "Password reset successful. You can now login."
-msgstr ""
-
-#~ msgid ""
-#~ "Who is the intended audience for your talk? (Be specific, \"Python users"
-#~ "\" is not a good answer)"
-#~ msgstr ""
-#~ "Who is the intended audience for your talk? (Be specific, “Python users” "
-#~ "is not a good answer)"
+msgstr "Password reset successful. You can now login."
