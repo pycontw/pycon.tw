@@ -1,11 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import override
+from django.utils.text import slugify
 
 
 def logo_upload_to(instance, filename):
-    return 'sponsors/{pk}/{filename}'.format(
-        pk=instance.pk,
+    return 'sponsors/{name}/{filename}'.format(
+        name=slugify(instance.name, allow_unicode=True),
         filename=filename,
     )
 
