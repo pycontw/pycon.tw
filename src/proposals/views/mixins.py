@@ -37,7 +37,11 @@ class UserProfileRequiredMixin(UserPassesTestMixin):
 
 
 class ProposalEditMixin:
+
+    def can_edit(self):
+        return settings.PROPOSALS_EDITABLE
+
     def dispatch(self, request, *args, **kwargs):
-        if not settings.PROPOSALS_EDITABLE:
+        if not self.can_edit():
             raise Http404
         return super().dispatch(request, *args, **kwargs)

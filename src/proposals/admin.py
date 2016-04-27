@@ -7,7 +7,6 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 class AdditionalSpeakerInline(GenericTabularInline):
     model = AdditionalSpeaker
     fields = ['user', 'status', 'cancelled']
-    readonly_fields = ['user']
     ct_field = 'proposal_type'
     ct_fk_field = 'proposal_id'
     extra = 0

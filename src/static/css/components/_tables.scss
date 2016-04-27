@@ -1,0 +1,31 @@
+@mixin table_text_style(){
+    text-align: center;
+    vertical-align: middle !important;
+    padding:20px !important;
+}
+
+.table-pycon {
+    @include roboto-light;
+
+    > thead > tr {
+        background: $theme-color;
+        border-radius:3px 3px 0 0;
+        height:60px;
+    }
+    th, td {
+        @include table_text_style();
+    }
+    th {
+        font-size:16px;
+        color:#ffffff;
+    }
+    td {
+        font-size: 14px;
+    }
+    .table-pycon__description {
+        @include roboto-light;
+        font-weight: 300;
+        width: 250px;
+        text-align: left;
+    }
+}

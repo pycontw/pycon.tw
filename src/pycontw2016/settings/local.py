@@ -13,6 +13,9 @@ if 'celery' in sys.argv[0]:
 # Django Debug Toolbar
 INSTALLED_APPS += ('debug_toolbar.apps.DebugToolbarConfig',)
 
+# Install local, development apps.
+INSTALLED_APPS += env.tuple('LOCAL_APPS', default=())
+
 # Show emails to console in DEBUG mode
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

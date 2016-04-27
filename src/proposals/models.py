@@ -86,7 +86,7 @@ class AdditionalSpeaker(models.Model):
 
     class Meta:
         unique_together = ['user', 'proposal_type', 'proposal_id']
-        ordering = ['proposal_type', 'proposal_id', 'user__speaker_name']
+        ordering = ['proposal_type', 'proposal_id', 'pk']
         verbose_name = _('additional speaker')
         verbose_name_plural = _('additional speakers')
 
@@ -151,12 +151,14 @@ class AbstractProposal(models.Model):
     )
 
     LANGUAGE_CHOICES = (
-        ('ENG', _('English')),
-        ('CHI', _('Chinese')),
+        ('ENEN', _('English talk')),
+        ('ZHEN', _('Chinese talk w. English slides')),
+        ('ZHZH', _('Chinese talk w. Chinese slides')),
+        ('TAI',  _('Taiwanese Hokkien')),
     )
     language = models.CharField(
         verbose_name=_('language'),
-        max_length=3,
+        max_length=4,
         choices=LANGUAGE_CHOICES,
     )
 
@@ -298,6 +300,10 @@ class AbstractProposal(models.Model):
         additionals = self.additionalspeaker_set.filter(cancelled=False)
         for speaker in additionals.select_related('user'):
             yield speaker
+
+    @property
+    def speaker_count(self):
+        return self.additionalspeaker_set.filter(cancelled=False).count() + 1
 
 
 class TalkProposal(AbstractProposal):

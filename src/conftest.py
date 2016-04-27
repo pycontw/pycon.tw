@@ -7,7 +7,9 @@ from django.test.html import parse_html
 
 class HTMLParser:
 
-    def parse(self, response=None, *, text=None, status_code=200):
+    def parse(
+            self, response=None, *,
+            text=None, status_code=200, create_parent=True):
         if response is not None and text is not None:
             raise ValueError(
                 'Provide exactly one of "response" and "text" to parse.',
@@ -18,7 +20,9 @@ class HTMLParser:
             text = response.content
         pytest.importorskip('cssselect')
         lxml_html = pytest.importorskip('lxml.html')
-        fragment = lxml_html.fragment_fromstring(text, create_parent=True)
+        fragment = lxml_html.fragment_fromstring(
+            text, create_parent=create_parent,
+        )
         return fragment
 
     def arrange(self, element):

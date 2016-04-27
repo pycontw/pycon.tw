@@ -206,8 +206,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         :seealso: ``UserQuerySet.get_valid_speakers``
         """
         return (
-            self.verified and self.is_active
-            and self.speaker_name and self.bio
+            self.verified and self.is_active and
+            self.speaker_name and self.bio
         )
 
     def is_reviewer(self):

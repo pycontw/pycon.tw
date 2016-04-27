@@ -9,4 +9,5 @@ def proposals_states(requests):
     return {
         'proposals_creatable': settings.PROPOSALS_CREATABLE,
         'proposals_editable': settings.PROPOSALS_EDITABLE,
+        'proposals_withdrawable': settings.PROPOSALS_WITHDRAWABLE,
     }

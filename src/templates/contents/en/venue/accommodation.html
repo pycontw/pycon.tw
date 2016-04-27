@@ -1,32 +1,154 @@
-{% extends 'contents/_base.html' %}
+{% extends 'contents/_base/venue.html' %}
 
 {% block title %}Accommodation{% endblock title %}
 
 {% block content %}
-    <h2>Accommodation</h2>
-    <p>PyCon TW has on-site lodging at Academia Sinica Activities Center,
-        3-minute walk next to the venue. It comes with the following
-        options:</p>
-    <ul>
-        <li>superior single room: NT$1,650 /day</li>
-        <li>
-            superior double room: NT$1,750 (for one person) and NT$1,900 (for
-            two people) /day
-        </li>
-    </ul>
-    <p>
-        <em><sup>*</sup>Extra person for NT$300 and extra bed for NT$450
-            respectively.</em><br>
-        <em><sup>**</sup>Room facilities include TV, wireless &amp; wired
-            network, thermos, hair dryer, and personal hygiene products.
-            Breakfast and gym are also provided.</em>
-    </p>
-    <p>
-        More information on
-        <a href="http://gao.sinica.edu.tw/huo-dong/room.php" target="_blank">the original site</a>.
-    </p>
 
-    <h3>Application Procedure</h3>
-    <p>TBD</p>
+<h2>On-site Accommodation</h2>
+<p>PyCon TW has on-site lodging at Academia Sinica Activities Center,
+	3-minute walk next to the venue. It comes with the following
+	options:</p>
+<ul>
+	<li>superior single room: NT$1,650 /day</li>
+	<li>
+		superior double room: NT$1,750 (for one person) and NT$1,900 (for
+		two people) /day
+	</li>
+</ul>
+<p>
+	<em><sup>*</sup>Extra person for NT$300 and extra bed for NT$450
+		respectively.</em><br>
+	<em><sup>**</sup>Room facilities include TV, wireless &amp; wired
+		network, thermos, hair dryer, and personal hygiene products.
+		Breakfast and gym are also provided.</em>
+</p>
+<p>
+	More information on
+	<a href="http://gao.sinica.edu.tw/huo-dong/room.php" target="_blank">the original site</a>.
+</p>
+
+<h3>Application Procedure</h3>
+<p>
+	To apply for the on-site lodging, send email to
+	<a href="mailto:organizers@pycon.tw?subject=Accommodation%20Reservation%20in%20Academia%20Sinica">organizers@pycon.tw</a>
+	(Rock Hung) with the following information:
+</p>
+<ul>
+	<li>Check-in and check-out date</li>
+	<li>Number of people</li>
+	<li>Room type and number of rooms</li>
+	<li>Representative's name</li>
+</ul>
+<p>
+	<strong>Note</strong>:
+	All date / time is represented in UTC+08 timezone.
+	Early check-in and later check-out should be noticed in advance.
+</p>
+
+<h2>Outside the Venue</h2>
+<p>
+	For accommodation outside the venue, please book the hotels youself.
+	You might find the following list helpful.
+</p>
+
+<table class="accomodation-table table table-responsive">
+	<thead>
+		<tr>
+			<th>Price Level</th>
+			<th>Hotel in Taipei</th>
+			<th>MRT Station Nearby</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">$$$</td>
+			<td>
+				<a href="http://www.grandvictoria.com.tw/en/rooms.php" target="_blank">
+					Grand Victoria Hotel
+				</a>
+			</td>
+			<td>Jiannan Rd. (Miramar) in 400m</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="http://www.taipei.grand.hyatt.com/en/hotel/home.html" target="_blank">
+					Grand Hyatt
+				</a>
+			</td>
+			<td>Taipei City Hall in 800m</td>    </tr>
+			<tr>
+				<td rowspan="4">$$</td>
+				<td>
+					<a href="http://www.tango-hotels.com/" target="_blank">
+						Tango Hotel Taipei XinYi
+					</a>
+				</td>
+				<td>Yongchun in 350m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://www.taipeifullerton.com.tw/html/eng_south/about_us.htm" target="_blank">
+						Taipei Fullerton, City Lake
+					</a>
+				</td>
+				<td>Daan in 250m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://www.justsleep.com.tw/NTU/en" target="_blank">
+						National Taiwan University
+					</a>
+				</td>
+				<td>Gongguan (NTU) in 200m</td>    </tr>
+			<tr>
+				<td>
+					<a href="http://www.dandyhotel.com.tw/EN/DandyD/index.aspx?lan=en-US" target="_blank">
+						Dandy Hotel Daan Park Branch
+					</a>
+				</td>
+				<td>Daan in 100m</td>
+			</tr>
+			<tr>
+				<td rowspan="5">$</td>
+				<td>
+					<a href="http://fw.tfhg.com.tw/about_en.php" target="_blank">
+						Forward Hotel Nangang
+					</a>
+				</td>
+				<td>Nangang Software Park in 350m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://www.cityinn.com.tw/EN/Cityinn1/index.aspx?lan=en-us" target="_blank">
+						CityInn Hotel Taipei Main Station I
+					</a>
+				</td>
+				<td>Taipei Main Station in 400m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://vintagetravelhostel.blogspot.tw/" target="_blank">
+						Vintage Travel &amp; Hostel
+					</a>
+				</td>
+				<td>Daqiaotou in 800m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://www.eehostel.com/index.html" target="_blank">
+						Eight Elephants Hostel
+					</a>
+				</td>
+				<td>Guting in 400m</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="http://www.lofthostel.com.tw/en-us/" target="_blank">
+						The Loft Hostel
+					</a>
+				</td>
+				<td>Zhongxiao Dunhua in 300m</td>
+			</tr>  </tbody></table>
+
 {% endblock content %}
 

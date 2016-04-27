@@ -14,7 +14,7 @@ def talk_proposal_data():
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
         'duration': 'PREF45',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
     }
@@ -61,7 +61,7 @@ def tutorial_proposal_data():
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
         'duration': 'HALFDAY',
-        'language': 'CHI',
+        'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
     }
