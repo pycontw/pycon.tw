@@ -148,6 +148,10 @@
             .speaker-photo {
                 width: 100%;
                 max-width: 260px;
+
+                @media (max-width: $screen-xs-max) {
+                    margin-bottom: 2em;
+                }
             }
         }
     }
