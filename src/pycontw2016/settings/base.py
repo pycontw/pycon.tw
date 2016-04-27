@@ -76,6 +76,7 @@ DATABASES = {
 # Application definition
 
 DJANGO_APPS = (
+    'modeltranslation',
     'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.contenttypes',
@@ -94,7 +95,8 @@ LOCAL_APPS = (
     'core',
     'proposals',
     'users',
-    'reviews'
+    'reviews',
+    'sponsors',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

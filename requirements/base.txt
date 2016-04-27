@@ -53,3 +53,7 @@ tabulate==0.7.5
 
 # Certifi, a carefully curated collection of Root Certificates for SSL
 certifi>=2015.11.20
+
+# Translates Django models using a registration approach.
+# https://github.com/deschler/django-modeltranslation
+django-modeltranslation==0.11
