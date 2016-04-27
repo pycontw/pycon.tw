@@ -7,7 +7,17 @@
     margin-bottom: 20px;
 
     .map {
+
         height: 400px;
+
+        .ol-attribution {
+
+            padding-top: 0;
+
+            > ul {
+                font-size: 70%;
+            }
+        }
     }
 
     .map-address {
