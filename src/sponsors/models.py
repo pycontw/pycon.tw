@@ -57,7 +57,7 @@ class Sponsor(models.Model):
     class Meta:
         verbose_name = _('sponsor')
         verbose_name_plural = _('sponsors')
-        ordering = ('name',)
+        ordering = ('level', 'name',)
 
     def __str__(self):
         return self.name
