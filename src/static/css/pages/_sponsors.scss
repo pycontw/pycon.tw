@@ -17,6 +17,10 @@ $sponsor-img-height: 75px;
 
 .sponsor-page {
     background-color: $sponsor-bg;
+
+    .content-container {
+        max-width: none;
+    }
 }
 
 .sponsor-section {
