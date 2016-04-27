@@ -17,6 +17,10 @@ $sponsor-img-height: 75px;
 
 .sponsor-page {
     background-color: $sponsor-bg;
+
+    .content-container {
+        max-width: none;
+    }
 }
 
 .sponsor-section {
@@ -55,11 +59,16 @@ $sponsor-img-height: 75px;
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+
+        a{
+            margin: 0 auto;
+            max-width: 100%;
+        }
     }
 
     &__logo {
         max-height: $sponsor-img-height;
-        margin: 0 auto;
+
     }
 
     &__title {
