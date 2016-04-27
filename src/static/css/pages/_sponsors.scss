@@ -59,11 +59,16 @@ $sponsor-img-height: 75px;
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+
+        a{
+            margin: 0 auto;
+            max-width: 100%;
+        }
     }
 
     &__logo {
         max-height: $sponsor-img-height;
-        margin: 0 auto;
+
     }
 
     &__title {
