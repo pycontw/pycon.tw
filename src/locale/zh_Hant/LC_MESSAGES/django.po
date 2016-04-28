@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 11:18+0000\n"
-"PO-Revision-Date: 2016-04-18 11:22+0000\n"
-"Last-Translator: Liang Bo Wang <me@liang2.tw>\n"
+"POT-Creation-Date: 2016-04-28 03:18+0000\n"
+"PO-Revision-Date: 2016-04-28 03:21+0000\n"
+"Last-Translator: Michelle <flywindy2002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,20 +39,20 @@ msgstr "副主席"
 msgid "Program"
 msgstr "議程組"
 
-#: core/data.py:23 core/data.py:38 core/data.py:50 core/data.py:63
+#: core/data.py:23 core/data.py:39 core/data.py:51 core/data.py:64
 #: core/data.py:70 core/data.py:76 core/data.py:96
 msgid "lead"
 msgstr "組長"
 
-#: core/data.py:36
+#: core/data.py:37
 msgid "Web"
 msgstr "網站組"
 
-#: core/data.py:48
+#: core/data.py:49
 msgid "Public Relation"
 msgstr "公關組"
 
-#: core/data.py:61
+#: core/data.py:62
 msgid "Venue"
 msgstr "場務組"
 
@@ -134,7 +134,7 @@ msgstr "提案 ID"
 msgid "Pending"
 msgstr "待回覆"
 
-#: proposals/models.py:72 proposals/models.py:332
+#: proposals/models.py:72 proposals/models.py:338
 msgid "Accepted"
 msgstr "已接受"
 
@@ -142,7 +142,7 @@ msgstr "已接受"
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:82 proposals/models.py:275
+#: proposals/models.py:82 proposals/models.py:277
 msgid "cancelled"
 msgstr "已取消"
 
@@ -235,45 +235,53 @@ msgid "category"
 msgstr "分類"
 
 #: proposals/models.py:154
-msgid "English"
-msgstr "英文"
+msgid "English talk"
+msgstr "英文演講"
 
 #: proposals/models.py:155
-msgid "Chinese"
-msgstr "中文"
+msgid "Chinese talk w. English slides"
+msgstr "中文演講/英文投影片"
 
-#: proposals/models.py:158
+#: proposals/models.py:156
+msgid "Chinese talk w. Chinese slides"
+msgstr "中文演講/中文投影片"
+
+#: proposals/models.py:157
+msgid "Taiwanese Hokkien"
+msgstr "臺灣閩南語"
+
+#: proposals/models.py:160
 msgid "language"
 msgstr "語言"
 
-#: proposals/models.py:164
+#: proposals/models.py:166
 msgid "abstract"
 msgstr "摘要"
 
-#: proposals/models.py:167
+#: proposals/models.py:169
 msgid ""
 "The overview of what the talk is about. If the talk assume some domain "
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
 msgstr "介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
 
-#: proposals/models.py:175
+#: proposals/models.py:177
 msgid "Novice"
 msgstr "入門"
 
-#: proposals/models.py:176
+#: proposals/models.py:178
 msgid "Intermediate"
 msgstr "中階"
 
-#: proposals/models.py:177
+#: proposals/models.py:179
 msgid "Experienced"
 msgstr "進階"
 
-#: proposals/models.py:180 templates/reviews/review_form.html.py:38
+#: proposals/models.py:182 templates/reviews/review_form.html.py:38
 msgid "Python level"
 msgstr "Python 難易度"
 
-#: proposals/models.py:184
+#: proposals/models.py:186
 msgid ""
 "The choice of talk level matters during the review process. More definition "
 "of talk level can be found at the <a href=\"{speaking_talk_url}\" "
@@ -283,11 +291,11 @@ msgid ""
 " too-easy for the target audience."
 msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來說更簡單或困難時，可能會和你討論是否該修改。"
 
-#: proposals/models.py:198
+#: proposals/models.py:200
 msgid "objective"
 msgstr "演講目標"
 
-#: proposals/models.py:201
+#: proposals/models.py:203
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -295,11 +303,11 @@ msgid ""
 " This is NOT made public and for REVIEW ONLY."
 msgstr "目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:210
+#: proposals/models.py:212
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: proposals/models.py:213
+#: proposals/models.py:215
 msgid ""
 "Try not be too lengthy to scare away reviewers or potential audience. A "
 "comfortable length is less than 2000 characters (or about 1200 Chinese "
@@ -310,11 +318,11 @@ msgid ""
 "target='_blank'>Markdown</a>."
 msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
-#: proposals/models.py:225
+#: proposals/models.py:227
 msgid "supplementary"
 msgstr "補充資訊"
 
-#: proposals/models.py:229
+#: proposals/models.py:231
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is"
@@ -323,19 +331,19 @@ msgid ""
 "target='_blank'>Markdown</a>."
 msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
-#: proposals/models.py:239 reviews/models.py:92
+#: proposals/models.py:241 reviews/models.py:92
 msgid "Yes"
 msgstr "是"
 
-#: proposals/models.py:240 reviews/models.py:93
+#: proposals/models.py:242 reviews/models.py:93
 msgid "No"
 msgstr "否"
 
-#: proposals/models.py:243
+#: proposals/models.py:245
 msgid "recording policy"
 msgstr "議程錄影"
 
-#: proposals/models.py:247
+#: proposals/models.py:249
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation. More information can be found "
@@ -343,41 +351,41 @@ msgid ""
 "page."
 msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
 
-#: proposals/models.py:259
+#: proposals/models.py:261
 msgid "slide link"
 msgstr "投影片連結"
 
-#: proposals/models.py:263
+#: proposals/models.py:265
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
-#: proposals/models.py:269
+#: proposals/models.py:271
 msgid "created at"
 msgstr "建立時間"
 
-#: proposals/models.py:306
+#: proposals/models.py:312
 msgid "No preference"
 msgstr "無偏好"
 
-#: proposals/models.py:307
+#: proposals/models.py:313
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
 
-#: proposals/models.py:308
+#: proposals/models.py:314
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
-#: proposals/models.py:311 proposals/models.py:371
+#: proposals/models.py:317 proposals/models.py:377
 msgid "duration"
 msgstr "時間長度"
 
-#: proposals/models.py:317 proposals/models.py:377
+#: proposals/models.py:323 proposals/models.py:383
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:320
+#: proposals/models.py:326
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
 "estimated time length for each sections in the talk. Talks in favor of 45min"
@@ -386,31 +394,31 @@ msgid ""
 " target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:333
+#: proposals/models.py:339
 msgid "Rejected"
 msgstr "已拒絕"
 
-#: proposals/models.py:336
+#: proposals/models.py:342
 msgid "accepted"
 msgstr "已接受"
 
-#: proposals/models.py:343
+#: proposals/models.py:349
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:344
+#: proposals/models.py:350
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:367
+#: proposals/models.py:373
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:368
+#: proposals/models.py:374
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:380
+#: proposals/models.py:386
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
 " your talk and attach each section with the estimated time length. Edit "
@@ -418,27 +426,37 @@ msgid ""
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:390
+#: proposals/models.py:396
 msgid "tutorial proposal"
 msgstr "教學提案"
 
-#: proposals/models.py:391
+#: proposals/models.py:397
 msgid "tutorial proposals"
 msgstr "教學提案"
 
-#: proposals/views/cancel.py:29
+#: proposals/templatetags/proposals.py:11
+msgctxt "speaker name default separator"
+msgid ", "
+msgstr "、"
+
+#: proposals/templatetags/proposals.py:12
+msgctxt "speaker name last separator"
+msgid " and "
+msgstr "、"
+
+#: proposals/views/cancel.py:34
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》演講提案已撤回。"
 
-#: proposals/views/cancel.py:33
+#: proposals/views/cancel.py:38
 msgid "Talk proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
 
-#: proposals/views/cancel.py:51
+#: proposals/views/cancel.py:56
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》教學提案已撤回。"
 
-#: proposals/views/cancel.py:55
+#: proposals/views/cancel.py:60
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
 
@@ -544,19 +562,67 @@ msgstr "個人對本投稿的附註。您可以使用這個欄位記錄有關審
 
 #: reviews/models.py:118
 msgid "updated"
-msgstr ""
+msgstr "更新時間"
 
 #: reviews/models.py:123
 msgid "review"
-msgstr ""
+msgstr "審查"
 
 #: reviews/models.py:124
 msgid "reviews"
-msgstr ""
+msgstr "審查"
 
 #: reviews/models.py:129
 msgid "Review {proposal} by {reviewer}: {vote}"
-msgstr ""
+msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
+
+#: sponsors/models.py:16
+msgid "name"
+msgstr "名稱"
+
+#: sponsors/models.py:20
+msgid "website URL"
+msgstr "網站 URL"
+
+#: sponsors/models.py:25
+msgid "Introduction"
+msgstr "簡介"
+
+#: sponsors/models.py:28
+msgid "logo"
+msgstr "標誌"
+
+#: sponsors/models.py:40
+msgid "platinum"
+msgstr "白金級"
+
+#: sponsors/models.py:41
+msgid "gold"
+msgstr "金級"
+
+#: sponsors/models.py:42
+msgid "silver"
+msgstr "銀級"
+
+#: sponsors/models.py:43
+msgid "bronze"
+msgstr "銅級"
+
+#: sponsors/models.py:44
+msgid "special"
+msgstr "特別贊助"
+
+#: sponsors/models.py:53
+msgid "level"
+msgstr "等級"
+
+#: sponsors/models.py:58
+msgid "sponsor"
+msgstr "贊助"
+
+#: sponsors/models.py:59
+msgid "sponsors"
+msgstr "贊助"
 
 #: templates/404.html:8
 msgid "Page Not Found"
@@ -612,10 +678,10 @@ msgstr "更改密碼"
 
 #: templates/_includes/dashboard_tablist.html:11
 msgid "Reviews"
-msgstr ""
+msgstr "審查"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:69 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:76 templates/dashboard_base.html:6
 msgid "Dashboard"
 msgstr "控制面板"
 
@@ -623,74 +689,81 @@ msgstr "控制面板"
 msgid "Log out"
 msgstr "登出"
 
-#: templates/_includes/nav/front_nav.html:25
+#: templates/_includes/nav/front_nav.html:26
 msgid "About"
 msgstr "關於"
 
-#: templates/_includes/nav/front_nav.html:28
+#: templates/_includes/nav/front_nav.html:29
 msgid "Code of Conduct"
 msgstr "行為準則"
 
-#: templates/_includes/nav/front_nav.html:29
+#: templates/_includes/nav/front_nav.html:30
 #: templates/contents/_default/about/staff.html:6
 #: templates/contents/_default/about/staff.html:7
 msgid "Staff"
 msgstr "工作人員"
 
-#: templates/_includes/nav/front_nav.html:33
+#: templates/_includes/nav/front_nav.html:34
 msgid "Events"
 msgstr "活動"
 
-#: templates/_includes/nav/front_nav.html:35
+#: templates/_includes/nav/front_nav.html:36
 msgid "Overview"
 msgstr "總覽"
 
-#: templates/_includes/nav/front_nav.html:36
+#: templates/_includes/nav/front_nav.html:37
 msgid "Keynotes"
 msgstr "主題演講"
 
-#: templates/_includes/nav/front_nav.html:37
-#: templates/proposals/talk_proposal_list.html:5
-#: templates/proposals/talk_proposal_list.html:8
+#: templates/_includes/nav/front_nav.html:38 templates/events/talk_list.html:5
+#: templates/events/talk_list.html.py:7
 msgid "Talks"
 msgstr "演講"
 
-#: templates/_includes/nav/front_nav.html:38
+#: templates/_includes/nav/front_nav.html:39
 msgid "Sprints"
 msgstr "Sprints"
 
-#: templates/_includes/nav/front_nav.html:39
+#: templates/_includes/nav/front_nav.html:40
 msgid "BoF"
 msgstr "BoF"
 
-#: templates/_includes/nav/front_nav.html:40
+#: templates/_includes/nav/front_nav.html:41
 msgid "PyDay"
 msgstr "PyDay"
 
-#: templates/_includes/nav/front_nav.html:44
-#: templates/_includes/nav/front_nav.html:46
+#: templates/_includes/nav/front_nav.html:45
+#: templates/_includes/nav/front_nav.html:47
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
 
-#: templates/_includes/nav/front_nav.html:47
+#: templates/_includes/nav/front_nav.html:48
 msgid "Accommodation"
 msgstr "住宿"
 
-#: templates/_includes/nav/front_nav.html:62
+#: templates/_includes/nav/front_nav.html:63
+msgid "Sponsor"
+msgstr "贊助"
+
+#: templates/_includes/nav/front_nav.html:65
+msgid "Our Sponsors"
+msgstr "贊助夥伴"
+
+#: templates/_includes/nav/front_nav.html:69
 msgctxt "navbar"
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/_includes/nav/front_nav.html:64
+#: templates/_includes/nav/front_nav.html:71
 msgid "Ticket Info"
 msgstr "售票資訊"
 
-#: templates/_includes/nav/front_nav.html:65
+#: templates/_includes/nav/front_nav.html:72
 msgid "Financial Aid"
 msgstr "財務補助"
 
-#: templates/_includes/nav/front_nav.html:68
+#: templates/_includes/nav/front_nav.html:75
 msgid "Blog"
 msgstr "部落格"
 
@@ -725,6 +798,43 @@ msgid ""
 "You need to complete your speaker profile first before submitting a "
 "proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
+
+#: templates/events/talk_detail.html:17 templates/reviews/review_form.html:34
+#: templates/users/_includes/dashboard_cospeaking_proposal_table.html:7
+#: templates/users/_includes/dashboard_proposal_table.html:8
+msgid "Language"
+msgstr "語言"
+
+#: templates/events/talk_detail.html:20
+#: templates/reviews/_includes/proposal_table.html:25
+#: templates/reviews/review_form.html:30
+msgid "Category"
+msgstr "分類"
+
+#: templates/events/talk_detail.html:23
+#: templates/users/_includes/dashboard_proposal_table.html:7
+msgid "Python Level"
+msgstr "Python 難易度"
+
+#: templates/events/talk_detail.html:27
+msgid "Slides Link"
+msgstr "投影片連結"
+
+#: templates/events/talk_detail.html:31 templates/reviews/review_form.html:36
+msgid "Abstract"
+msgstr "摘要"
+
+#: templates/events/talk_detail.html:35
+msgid "Description"
+msgstr "說明"
+
+#: templates/events/talk_list.html:13
+#, python-format
+msgid ""
+"<a class=\"proposal-title\" "
+"href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by "
+"%(speaker_names)s"
+msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\"><cite>%(proposal_title)s</cite></a> %(speaker_names)s"
 
 #: templates/index.html:7
 msgid ""
@@ -870,11 +980,6 @@ msgstr "新增講者"
 msgid "Submit a New Talk Proposal"
 msgstr "提交一個新的演講提案"
 
-#: templates/proposals/talk_proposal_list.html:11
-#, python-format
-msgid "<span class=\"proposal-title\">%(proposal_title)s</span> by %(speaker)s"
-msgstr "<span class=\"proposal-title\">%(proposal_title)s</span>講者：%(speaker)s"
-
 #: templates/proposals/talk_proposal_peek.html:5
 #, python-format
 msgid "Talk Proposal %(proposal_title)s"
@@ -900,12 +1005,12 @@ msgstr "教學投稿《%(proposal_title)s》"
 msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr "修改教學提案《%(proposal_title)s》"
 
-#: templates/registration/login.html:7 templates/registration/login.html:18
+#: templates/registration/login.html:7 templates/registration/login.html:21
 #: users/forms.py:238
 msgid "Log In"
 msgstr "登入"
 
-#: templates/registration/login.html:22
+#: templates/registration/login.html:25
 #: templates/registration/password_reset.html:22
 #, python-format
 msgid ""
@@ -947,11 +1052,11 @@ msgid ""
 "You can ignore this message if you did not request a password reset.\n"
 msgstr "\n你收到此信的原因為某人申請重設了你在 %(site_name)s 上的使用者帳號 %(user_email)s。\n\n如果要重設密碼，請至\n%(protocol)s://%(domain)s%(password_reset_confirm_url)s\n\n如果您沒有申請重設密碼，可以忽略本信。\n"
 
-#: templates/registration/signup.html:7 templates/registration/signup.html:18
+#: templates/registration/signup.html:7 templates/registration/signup.html:21
 msgid "Sign Up"
 msgstr "註冊"
 
-#: templates/registration/signup.html:22
+#: templates/registration/signup.html:25
 #, python-format
 msgid ""
 "<span class=\"form-tip\">Already have an account?</span><a "
@@ -973,20 +1078,20 @@ msgstr "\n一個使用本信箱（%(user_email)s）的使用者帳號已於 %(ho
 #: templates/reviews/_includes/previous_review_table.html:6
 #: templates/reviews/_includes/review_table.html:6
 msgid "Stage"
-msgstr ""
+msgstr "階段"
 
 #: templates/reviews/_includes/previous_review_table.html:7
 #: templates/reviews/_includes/review_table.html:7
 msgid "Vote"
-msgstr ""
+msgstr "投票"
 
 #: templates/reviews/_includes/previous_review_table.html:8
 msgid "Comments"
-msgstr ""
+msgstr "評論"
 
 #: templates/reviews/_includes/proposal_table.html:8
 msgid "Reviewed"
-msgstr ""
+msgstr "已審查"
 
 #: templates/reviews/_includes/proposal_table.html:17
 #: templates/reviews/_includes/review_table.html:8
@@ -995,30 +1100,25 @@ msgstr ""
 msgid "Title"
 msgstr "題目"
 
-#: templates/reviews/_includes/proposal_table.html:25
-#: templates/reviews/review_form.html:30
-msgid "Category"
-msgstr ""
-
 #: templates/reviews/_includes/proposal_table.html:33
 msgid "Level"
-msgstr ""
+msgstr "等級"
 
 #: templates/reviews/_includes/proposal_table.html:41
 msgid "Lang"
-msgstr ""
+msgstr "語言"
 
 #: templates/reviews/_includes/proposal_table.html:48
 msgid "Decision"
-msgstr ""
+msgstr "結果"
 
 #: templates/reviews/_includes/proposal_table.html:68
 msgid "Review"
-msgstr ""
+msgstr "審查"
 
 #: templates/reviews/_includes/proposal_table.html:70
 msgid "Read"
-msgstr ""
+msgstr "閱讀"
 
 #: templates/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
@@ -1047,16 +1147,16 @@ msgstr ""
 
 #: templates/reviews/_includes/review_table.html:9
 msgid "Comment"
-msgstr ""
+msgstr "評論"
 
 #: templates/reviews/_includes/review_table.html:21
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: templates/reviews/review_form.html:7
 #, python-format
 msgid "%(proposal_title)s | Reviews"
-msgstr ""
+msgstr "%(proposal_title)s | 審查"
 
 #: templates/reviews/review_form.html:27
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:8
@@ -1065,50 +1165,40 @@ msgstr "提案人"
 
 #: templates/reviews/review_form.html:32
 msgid "Duration"
-msgstr ""
-
-#: templates/reviews/review_form.html:34
-#: templates/users/_includes/dashboard_cospeaking_proposal_table.html:7
-#: templates/users/_includes/dashboard_proposal_table.html:8
-msgid "Language"
-msgstr "語言"
-
-#: templates/reviews/review_form.html:36
-msgid "Abstract"
-msgstr ""
+msgstr "時間長度"
 
 #: templates/reviews/review_form.html:40
 msgid "Objective"
-msgstr ""
+msgstr "演講目標"
 
 #: templates/reviews/review_form.html:43
 msgid "Detailed description"
-msgstr ""
+msgstr "詳細說明"
 
 #: templates/reviews/review_form.html:47
 msgid "Outline"
-msgstr ""
+msgstr "大綱"
 
 #: templates/reviews/review_form.html:51
 msgid "Supplementary"
-msgstr ""
+msgstr "補充資訊"
 
 #: templates/reviews/review_form.html:57
 msgid "Previous Reviews by Other Reviewers"
-msgstr ""
+msgstr "其他審查員意見"
 
 #: templates/reviews/review_form.html:64
 msgid "My Previous Reviews"
-msgstr ""
+msgstr "我之前的審查意見"
 
 #: templates/reviews/review_form.html:72
 msgid "Review Proposal"
-msgstr ""
+msgstr "審查提案"
 
 #: templates/reviews/talk_proposal_list.html:15
 #, python-format
 msgid "Current Review Stage: %(review_stage)s"
-msgstr ""
+msgstr "目前審查階段：%(review_stage)s"
 
 #: templates/reviews/talk_proposal_list.html:20
 msgid ""
@@ -1122,7 +1212,7 @@ msgstr ""
 
 #: templates/reviews/talk_proposal_list.html:30
 msgid "Personal Review Stats"
-msgstr ""
+msgstr "個人審查數據"
 
 #: templates/reviews/talk_proposal_list.html:58
 msgid "Unreviewed Talk Proposals"
@@ -1152,23 +1242,19 @@ msgstr "接受"
 msgid "Decline"
 msgstr "拒絕"
 
-#: templates/users/_includes/dashboard_proposal_table.html:7
-msgid "Python Level"
-msgstr "Python 難易度"
-
-#: templates/users/_includes/dashboard_proposal_table.html:23
+#: templates/users/_includes/dashboard_proposal_table.html:24
 msgid "Reactivate"
 msgstr "恢復"
 
-#: templates/users/_includes/dashboard_proposal_table.html:25
+#: templates/users/_includes/dashboard_proposal_table.html:26
 msgid "Edit"
 msgstr "編輯"
 
-#: templates/users/_includes/dashboard_proposal_table.html:30
+#: templates/users/_includes/dashboard_proposal_table.html:34
 msgid "Withdraw"
 msgstr "撤回"
 
-#: templates/users/_includes/dashboard_proposal_table.html:34
+#: templates/users/_includes/dashboard_proposal_table.html:38
 msgid "View"
 msgstr ""
 
