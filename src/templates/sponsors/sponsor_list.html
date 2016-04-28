@@ -1,8 +1,8 @@
 {% extends 'contents/_base/sponsor.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}Our Sponsors{% endblock title %}
-{% block page_title %}<h1>Our Sponsors</h1>{% endblock page_title %}
+{% block page_title %}<h1>{% trans 'Our Sponsors' %}</h1>{% endblock page_title %}
 
 {% block content %}
     {% regroup object_list by get_level_display as sponsor_level_list %}
