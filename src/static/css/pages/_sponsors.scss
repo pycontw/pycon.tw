@@ -1,6 +1,6 @@
 $sponsor-img-height: 75px;
 
-@mixin sponsor-decoration($color) {
+@mixin sponsor-decoration($color, $size: 20px) {
     border:5px solid $color;
     &:before {
         display: block;
@@ -8,8 +8,8 @@ $sponsor-img-height: 75px;
         top: 20px;
         left: 20px;
         content: "";
-        width: 20px;
-        height: 20px;
+        width: $size;
+        height: $size;
         background-color: $color;
         border-radius: 100%;
     }
@@ -34,7 +34,7 @@ $sponsor-img-height: 75px;
 
 
 .sponsor-wrapper {
-    &--gold {
+    &--platinum, &--gold {
         @include make-xs-column(12);
     }
     &--silver {
@@ -60,7 +60,7 @@ $sponsor-img-height: 75px;
         align-items: center;
         margin-bottom: 30px;
 
-        a{
+        a {
             margin: 0 auto;
             max-width: 100%;
         }
@@ -80,7 +80,19 @@ $sponsor-img-height: 75px;
 
     &__intro {
         line-height: 22px;
-        overflow: scroll;
+        overflow: auto;
+    }
+
+    &.sponsor--platinum {
+        @include sponsor-decoration($sponsor-platinum-color, 30px);
+        background: white;
+        background:
+            linear-gradient(135deg, $sponsor-platinum-color 0px, white 0) top left,
+            linear-gradient(225deg, $sponsor-platinum-color 30px, white 0) top right,
+            linear-gradient(-45deg, $sponsor-platinum-color 30px, white 0) bottom right,
+            linear-gradient(45deg, $sponsor-platinum-color 30px, white 0) bottom left;
+        background-size: 51% 51%;
+        background-repeat: no-repeat;
     }
 
     &.sponsor--gold {
@@ -93,6 +105,10 @@ $sponsor-img-height: 75px;
     }
 
     // intro height
+    &.sponsor--platinum &__intro {
+        height: 200px;
+    }
+
     &.sponsor--silver &__intro {
         height: 200px;
     }
@@ -102,10 +118,11 @@ $sponsor-img-height: 75px;
     }
 }
 
-.sponsor.sponsor--gold {
+.sponsor.sponsor--gold,
+.sponsor.sponsor--platinum {
     @include clearfix();
     .sponsor {
-        &__logo {
+        &__logo-wrapper {
             @include make-md-column(4);
         }
 
