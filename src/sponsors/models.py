@@ -47,7 +47,7 @@ class Sponsor(models.Model):
     @property
     def level_en_name(self):
         with override('en-us'):
-            return self.LEVEL_CHOICES[self.level][1]
+            return self.get_level_display()
 
     level = models.PositiveSmallIntegerField(
         verbose_name=_('level'),
