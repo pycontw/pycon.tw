@@ -41,30 +41,6 @@ class UserCreationForm(forms.ModelForm):
         model = User
         fields = ('email',)
 
-    @cached_property
-    def helper(self):
-        helper = FormHelper()
-        helper.error_text_inline = False
-        helper.attrs = {
-            'autocomplete': 'off', 'autocorrect': 'off',
-            'autocapitalize': 'off', 'spellcheck': 'false',
-        }
-        helper.label_class = 'sr-only'
-        helper.layout = Layout(
-            Fieldset(
-                '',
-                Field('email', placeholder=self.fields['email'].label),
-                Field('password1', placeholder=self.fields['password1'].label),
-                Field('password2', placeholder=self.fields['password2'].label),
-            ),
-            FormActions(
-                Submit(
-                    'save', _('Create Account'), css_class='btn-lg btn-block',
-                )
-            )
-        )
-        return helper
-
     def clean_email(self):
         """Clean form email.
 
@@ -98,29 +74,67 @@ class UserCreationForm(forms.ModelForm):
             )
         return password2
 
-    def save(self, commit=True, auth=True):
+    def save(self, commit=True):
         """Save user.
 
         Save the provided password in hashed format.
 
         :return users.models.EmailUser: user
         """
+        user = super().save(commit=False)
+        password = self.cleaned_data.get('password1')
+        user.set_password(password)
+        if commit:
+            user.save()
+        return user
+
+
+class PublicUserCreationForm(UserCreationForm):
+    """Form used to create new user through public interface.
+
+    This inherits the basic user-creation form, but adds a form helper for
+    layout, and provides option to log the user in automatically when calling
+    ``save()``.
+    """
+    @cached_property
+    def helper(self):
+        helper = FormHelper()
+        helper.error_text_inline = False
+        helper.attrs = {
+            'autocomplete': 'off', 'autocorrect': 'off',
+            'autocapitalize': 'off', 'spellcheck': 'false',
+        }
+        helper.label_class = 'sr-only'
+        helper.layout = Layout(
+            Fieldset(
+                '',
+                Field('email', placeholder=self.fields['email'].label),
+                Field('password1', placeholder=self.fields['password1'].label),
+                Field('password2', placeholder=self.fields['password2'].label),
+            ),
+            FormActions(
+                Submit(
+                    'save', _('Create Account'), css_class='btn-lg btn-block',
+                )
+            )
+        )
+        return helper
+
+    def save(self, commit=True, auth=True):
+        """Save user.
+
+        If `auth` is True, the user is automatically logged-in after saving.
+        """
         if auth and not commit:
             raise ValueError(
                 'Can not authenticate user without committing first.'
             )
-        user = super().save(commit=False)
-        password = self.cleaned_data.get('password1')
-        user.set_password(password)
-        if not commit:
-            return user
-        user.save()
-        if not auth:
-            return user
-        user = authenticate(
-            email=self.cleaned_data['email'],
-            password=password,
-        )
+        user = super().save(commit=commit)
+        if auth:
+            user = authenticate(
+                email=self.cleaned_data['email'],
+                password=self.cleaned_data.get('password1'),
+            )
         return user
 
 
