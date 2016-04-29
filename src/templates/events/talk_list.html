@@ -8,7 +8,7 @@
 
 {% block content %}
 
-{% if object_list.exists %}
+{% if object_list %}
 <h2>{% trans 'Proposed Talks' %}</h2>
 <ul class="talk-list">
 	{% for proposal in object_list %}
@@ -18,7 +18,7 @@
 </ul>
 {% endif %}
 
-{% if sponsored_events.exists %}
+{% if sponsored_events %}
 <h2>{% trans 'Sponsored Events' %}</h2>
 <ul class="talk-list">
 	{% for event in sponsored_events %}

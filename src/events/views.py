@@ -8,7 +8,8 @@ from .models import SponsoredEvent
 class AcceptedTalkMixin:
     queryset = (
         TalkProposal.objects
-        .filter(accepted=True).select_related('submitter')
+        .filter(accepted=True)
+        .select_related('submitter')
         .order_by('title')
     )
 
@@ -34,5 +35,11 @@ class TalkDetailView(AcceptedTalkMixin, DetailView):
 
 
 class SponsoredEventDetailView(DetailView):
+
     model = SponsoredEvent
     template_name = 'events/sponsored_event_detail.html'
+
+    def get_queryset(self):
+        """Fetch user relation before-hand because we'll need it.
+        """
+        return super().get_queryset().select_related('host')
