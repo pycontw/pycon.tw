@@ -1,4 +1,5 @@
 -r dev.txt
+pycrypto
 codecov
 fabric3
 psycopg2
