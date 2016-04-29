@@ -1,4 +1,5 @@
 import functools
+from datetime import datetime
 
 from django.http import Http404
 from django.views.defaults import page_not_found, server_error
@@ -13,6 +14,12 @@ from .utils import (
 
 class IndexView(TemplateView):
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        countdown = datetime(2016, 5, 1, 18, 5) - datetime.now()
+        context['countdown'] = countdown.days
+        return context
 
 
 class FlatPageView(TemplateView):

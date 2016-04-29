@@ -100,6 +100,40 @@ body {
     padding-top: .5em;
 }
 
+// latest-news
+
+.latest-news{
+    background:#f6f6f6;
+    border:1px solid #e7e7e7;
+    text-align: center;
+
+    &__content{
+        font-size:24px;
+        color:#555555;
+        line-height: 28px;
+        padding: 23px 0;
+    }
+
+    &__title{
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    &__text{
+        font-weight: 300;
+        margin-right: 20px;
+        span{
+            color: #f58454;
+        }
+    }
+    &__link a{
+        font-weight: 500;
+        color:#4163f5;
+        text-decoration:none;
+        i{
+            margin: 0 5px;
+        }
+    }
+}
 
 
 .quote {
