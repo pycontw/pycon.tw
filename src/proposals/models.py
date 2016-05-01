@@ -16,10 +16,12 @@ class PrimarySpeaker:
     This class is meant to be compatible with ``AdditionalSpeaker``, and used
     along side with instances of that class.
     """
-    def __init__(self, proposal):
+    def __init__(self, *, proposal=None, user=None):
+        if proposal is None and user is None:
+            raise ValueError('must specify either proposal or user')
         super().__init__()
         self._proposal = proposal
-        self._user = proposal.submitter
+        self._user = user or proposal.submitter
 
     def __repr__(self):
         return '<PrimarySpeaker: {name}>'.format(name=self.user.speaker_name)
@@ -164,7 +166,7 @@ class AbstractProposal(EventInfo):
 
     @property
     def speakers(self):
-        yield PrimarySpeaker(self)
+        yield PrimarySpeaker(proposal=self)
         additionals = self.additionalspeaker_set.filter(cancelled=False)
         for speaker in additionals.select_related('user'):
             yield speaker

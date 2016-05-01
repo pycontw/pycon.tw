@@ -2,7 +2,7 @@ from proposals.models import PrimarySpeaker
 
 
 def test_speaker_compatibility(user, proposal, additional_speaker):
-    speaker = PrimarySpeaker(proposal)
+    speaker = PrimarySpeaker(proposal=proposal)
     assert speaker.user == user
 
     assert speaker.proposal == proposal
@@ -17,5 +17,5 @@ def test_speaker_compatibility(user, proposal, additional_speaker):
 
 def test_proposal_speakers(user, proposal, additional_speaker):
     assert list(proposal.speakers) == [
-        PrimarySpeaker(proposal), additional_speaker,
+        PrimarySpeaker(proposal=proposal), additional_speaker,
     ]
