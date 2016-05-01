@@ -60,6 +60,11 @@
 				<span class="fa fa-facebook" aria-hidden="true"></span>
 			</a>
 			{% endif %}
+			{% if user == request.user %}
+			<a href="{% url 'user_profile_update' %}" target="_blank">
+				<span class="fa fa-edit" aria-hidden="true"></span>
+			</a>
+			{% endif %}
 		</span>
 	</h3>
 	<div class="row">
