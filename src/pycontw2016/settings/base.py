@@ -160,7 +160,7 @@ LOCALE_PATHS = (
 
 USE_TZ = True
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 
 
 # Message tag setup.
