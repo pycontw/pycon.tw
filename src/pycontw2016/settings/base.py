@@ -96,6 +96,7 @@ LOCAL_APPS = (
     'proposals',
     'users',
     'reviews',
+    'events',
     'sponsors',
 )
 

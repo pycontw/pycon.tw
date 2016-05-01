@@ -7,10 +7,32 @@
 {% block page_title %}<h1>{% trans 'Talks' %}</h1>{% endblock page_title %}
 
 {% block content %}
+
+{% if object_list %}
+<h2>{% trans 'Proposed Talks' %}</h2>
 <ul class="talk-list">
 	{% for proposal in object_list %}
 	{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
 	<li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
 	{% endfor %}
 </ul>
+{% endif %}
+
+{% if sponsored_events %}
+<h2>{% trans 'Sponsored Events' %}</h2>
+<ul class="talk-list">
+	{% for event in sponsored_events %}
+	<li>
+		{% url 'events_sponsored_event_detail' pk=event.pk as sponsored_event_url %}
+		{% blocktrans with event_title=event.title host_name=event.host.speaker_name %}
+		<a class="proposal-title" href="{{ sponsored_event_url }}">
+			{{ event_title }}
+		</a>
+		by {{ host_name }}
+		{% endblocktrans %}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
 {% endblock content %}
