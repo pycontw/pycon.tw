@@ -15,7 +15,7 @@ from django.views.decorators.http import require_POST
 
 from .decorators import login_forbidden
 from .forms import (
-    AuthenticationForm, UserCreationForm, UserProfileUpdateForm,
+    AuthenticationForm, PublicUserCreationForm, UserProfileUpdateForm,
     PasswordResetForm, SetPasswordForm,
 )
 
@@ -28,7 +28,7 @@ User = get_user_model()
 @login_forbidden
 def user_signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(data=request.POST)
+        form = PublicUserCreationForm(data=request.POST)
         if form.is_valid():
             user = form.save()
             user.send_verification_email(request)
@@ -39,7 +39,7 @@ def user_signup(request):
             ))
             return redirect('user_dashboard')
     else:
-        form = UserCreationForm()
+        form = PublicUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
 
 
