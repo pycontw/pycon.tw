@@ -9,6 +9,22 @@
 {% block content %}
 
 {% if object_list %}
+
+<div class="pycon-list">
+	<div class="pycon-list-item text-theme-highlight">
+		{% blocktrans trimmed with gdoc_url="https://docs.google.com/spreadsheets/d/17-8E1OhfgiG4pIOIrp3OpNY4OaK1QxUn4TJK9oVmRSw/htmlview" %}
+		You can peek the program schedule on
+		<a class="text-emphasize" href="{{ gdoc_url }}" target="_blank">this Google document</a>.
+		{% endblocktrans %}
+	</div>
+	<div class="pycon-list-item text-theme-highlight">
+		{% blocktrans trimmed %}
+		Program schedule <span class="text-emphasize">may be subject to change</span>.
+		Please check this page frequently to get the latest version.
+		{% endblocktrans %}
+	</div>
+</div>
+
 <h2>{% trans 'Proposed Talks' %}</h2>
 <ul class="talk-list">
 	{% for proposal in object_list %}
