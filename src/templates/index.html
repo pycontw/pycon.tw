@@ -54,16 +54,14 @@
 	</div>
 </div>
 <div class="latest-news">
-	{% blocktrans trimmed %}
 	<div class="latest-news__content">
-		<span class="latest-news__title">Tickets On Sale!</span>
-		<span class="latest-news__text"><span>{{ countdown }} days</span> before the early bird ends.</span>
+		<span class="latest-news__title">{% blocktrans %}Tickets On Sale!{% endblocktrans %}</span>
+		<span class="latest-news__text"><span>{{ countdown.value }} {{ countdown.type }}</span> before the end of sale.</span>
 		<span class="latest-news__link">
-			<a href="{{ reg_ticket_info_url }}">Go <i class="fa fa-caret-right fa-2" aria-hidden="true"></i>
+			<a href="{{ reg_ticket_info_url }}">{% blocktrans %}Go{% endblocktrans %} <i class="fa fa-caret-right fa-2" aria-hidden="true"></i>
 			</a>
 		</span>
 	</div>
-	{% endblocktrans %}
 </div>
 <div class="section intro">
 	<div class="container">

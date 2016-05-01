@@ -2,6 +2,7 @@ import functools
 from datetime import datetime
 
 from django.http import Http404
+from django.utils import timezone
 from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
 
@@ -17,8 +18,14 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        countdown = datetime(2016, 5, 1, 18, 5) - datetime.now()
-        context['countdown'] = countdown.days
+        countdown = datetime(2016, 5, 13, 18, 5) - datetime.now()
+        context['countdown'] = {
+            'type': 'days',
+            'value': countdown.days
+        }
+        if countdown.days == 0:
+            context['countdown']['type'] = 'hours'
+            context['countdown']['value'] = countdown.seconds // 3600
         return context
 
 
