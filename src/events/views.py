@@ -9,7 +9,7 @@ from .models import SponsoredEvent
 class AcceptedTalkMixin:
     queryset = (
         TalkProposal.objects
-        .filter(accepted=True)
+        .filter_accepted()
         .select_related('submitter')
         .order_by('title')
     )

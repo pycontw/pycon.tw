@@ -100,6 +100,9 @@ class AdditionalSpeaker(models.Model):
 
 class ProposalQuerySet(models.QuerySet):
 
+    def filter_accepted(self):
+        return self.filter(accepted=True)
+
     def filter_viewable(self, user):
         return self.filter(
             Q(submitter=user) |
