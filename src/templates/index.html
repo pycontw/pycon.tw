@@ -2,8 +2,6 @@
 
 {% load i18n static %}
 
-{% url 'page' path='registration/ticket-info' as reg_ticket_info_url%}
-
 {% block meta_og %}
 	<meta property="og:title" content="PyCon Taiwan 2016" />
 	<meta property="og:description" content="{% trans 'PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.' %}" />
@@ -53,16 +51,18 @@
 		{# end .schedule #}
 	</div>
 </div>
+{% if countdown.value > 0 %}
 <div class="latest-news">
 	<div class="latest-news__content">
 		<span class="latest-news__title">{% trans 'Tickets On Sale!' %}</span>
 		<span class="latest-news__text">{% blocktrans trimmed with countdown.value as value and countdown.type as type %}<span> {{ value }} {{ type }}</span> before the end of sale.{% endblocktrans %}</span>
 		<span class="latest-news__link">
-			<a href="{{ reg_ticket_info_url }}">Go <i class="fa fa-caret-right fa-2" aria-hidden="true"></i>
+			<a href="registration/ticket-info">Go <i class="fa fa-caret-right fa-2" aria-hidden="true"></i>
 			</a>
 		</span>
 	</div>
 </div>
+{% endif %}
 <div class="section intro">
 	<div class="container">
 		<p class="quote">
