@@ -1,6 +1,9 @@
 import functools
+import pytz
+
 from datetime import datetime
 
+from django.utils.translation import ugettext_lazy as _
 from django.http import Http404
 from django.utils import timezone
 from django.views.defaults import page_not_found, server_error
@@ -18,13 +21,13 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        countdown = datetime(2016, 5, 13, 18, 5) - datetime.now()
+        countdown = pytz.timezone('Asia/Taipei').localize(datetime(2016, 5, 13, 18, 5)) - timezone.now()
         context['countdown'] = {
-            'type': 'days',
+            'type': _('days'),
             'value': countdown.days
         }
         if countdown.days == 0:
-            context['countdown']['type'] = 'hours'
+            context['countdown']['type'] = _('hours')
             context['countdown']['value'] = countdown.seconds // 3600
         return context
 
