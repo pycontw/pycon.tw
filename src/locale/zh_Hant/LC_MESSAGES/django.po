@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-28 03:18+0000\n"
-"PO-Revision-Date: 2016-04-28 03:21+0000\n"
-"Last-Translator: Michelle <flywindy2002@gmail.com>\n"
+"POT-Creation-Date: 2016-05-02 06:48+0000\n"
+"PO-Revision-Date: 2016-05-02 07:17+0000\n"
+"Last-Translator: Liang Bo Wang <me@liang2.tw>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,6 +76,208 @@ msgstr "記錄組"
 msgid "{model_name_cap} creation requires a request object."
 msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 
+#: core/models.py:42
+msgid "title"
+msgstr "題目"
+
+#: core/models.py:47
+msgid "Best Practices & Patterns"
+msgstr "最佳實踐與慣例"
+
+#: core/models.py:48
+msgid "Community"
+msgstr "社群"
+
+#: core/models.py:49
+msgid "Databases"
+msgstr "資料庫"
+
+#: core/models.py:50
+msgid "Data Analysis"
+msgstr "資料分析"
+
+#: core/models.py:51
+msgid "Education"
+msgstr "教育"
+
+#: core/models.py:52
+msgid "Embedded Systems"
+msgstr "嵌入式系統"
+
+#: core/models.py:53
+msgid "Gaming"
+msgstr "遊戲"
+
+#: core/models.py:54
+msgid "Graphics"
+msgstr "圖像處理"
+
+#: core/models.py:55
+msgid "Other"
+msgstr "其他"
+
+#: core/models.py:56
+msgid "Python Core (language, stdlib, etc.)"
+msgstr "Python Core（語言本身、標準函式庫…）"
+
+#: core/models.py:57
+msgid "Python Internals"
+msgstr "Python 實作"
+
+#: core/models.py:58
+msgid "Python Libraries"
+msgstr "Python 函式庫"
+
+#: core/models.py:59
+msgid "Science"
+msgstr "科學"
+
+#: core/models.py:60
+msgid "Security"
+msgstr "資訊安全"
+
+#: core/models.py:61
+msgid "Systems Administration"
+msgstr "系統管理"
+
+#: core/models.py:62
+msgid "Testing"
+msgstr "測試"
+
+#: core/models.py:63
+msgid "Web Frameworks"
+msgstr "網站框架"
+
+#: core/models.py:66
+msgid "category"
+msgstr "分類"
+
+#: core/models.py:72
+msgid "English talk"
+msgstr "英文演講"
+
+#: core/models.py:73
+msgid "Chinese talk w. English slides"
+msgstr "中文演講/英文投影片"
+
+#: core/models.py:74
+msgid "Chinese talk w. Chinese slides"
+msgstr "中文演講/中文投影片"
+
+#: core/models.py:75
+msgid "Taiwanese Hokkien"
+msgstr "臺灣閩南語"
+
+#: core/models.py:78
+msgid "language"
+msgstr "語言"
+
+#: core/models.py:84
+msgid "abstract"
+msgstr "摘要"
+
+#: core/models.py:87
+msgid ""
+"The overview of what the talk is about. If the talk assume some domain "
+"knowledge please state it here. If your talk is accepted, this will be "
+"displayed on both the website and the handbook. Should be one paragraph."
+msgstr "介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
+
+#: core/models.py:95
+msgid "Novice"
+msgstr "入門"
+
+#: core/models.py:96
+msgid "Intermediate"
+msgstr "中階"
+
+#: core/models.py:97
+msgid "Experienced"
+msgstr "進階"
+
+#: core/models.py:100 templates/reviews/review_form.html.py:38
+msgid "Python level"
+msgstr "Python 難易度"
+
+#: core/models.py:104
+msgid ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
+"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
+" be more likely to be accepted because of being \"Novice\" level. We may "
+"contact you to change the talk level when we find the content is too-hard or"
+" too-easy for the target audience."
+msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來說更簡單或困難時，可能會和你討論是否該修改。"
+
+#: core/models.py:118
+msgid "detailed description"
+msgstr "詳細說明"
+
+#: core/models.py:121
+msgid ""
+"Try not be too lengthy to scare away reviewers or potential audience. A "
+"comfortable length is less than 2000 characters (or about 1200 Chinese "
+"characters). Since most reviewers may not understand the topic as deep as "
+"you do, including related links to the talk topic will help reviewers "
+"understand the proposal. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+
+#: core/models.py:133 reviews/models.py:92
+msgid "Yes"
+msgstr "是"
+
+#: core/models.py:134 reviews/models.py:93
+msgid "No"
+msgstr "否"
+
+#: core/models.py:137
+msgid "recording policy"
+msgstr "議程錄影"
+
+#: core/models.py:141
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
+"release audio and video of your presentation. More information can be found "
+"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
+"page."
+msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
+
+#: core/models.py:153
+msgid "slide link"
+msgstr "投影片連結"
+
+#: core/models.py:157
+msgid ""
+"You can add your slide link near or after the conference day. Not required "
+"for review."
+msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
+
+#: core/models.py:163
+msgid "created at"
+msgstr "建立時間"
+
+#: core/views.py:28
+msgid "days"
+msgstr "天"
+
+#: core/views.py:32
+msgid "hours"
+msgstr "小時"
+
+#: events/models.py:11
+msgid "host"
+msgstr "主持人"
+
+#: events/models.py:15
+msgid "sponsored event"
+msgstr "贊助演講"
+
+#: events/models.py:16
+msgid "sponsored events"
+msgstr "贊助演講"
+
 #: proposals/forms/mixins.py:12
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
@@ -114,188 +316,55 @@ msgstr "本使用者已經是此提案的講者。"
 msgid "No valid speaker found with your selection."
 msgstr "您的選擇找不到對應講者。"
 
-#: proposals/models.py:48
+#: proposals/models.py:47
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:55 users/models.py:190
+#: proposals/models.py:54 users/models.py:190
 msgid "user"
 msgstr "使用者"
 
-#: proposals/models.py:60
+#: proposals/models.py:59
 msgid "proposal model type"
 msgstr "提案 model 類型"
 
-#: proposals/models.py:63
+#: proposals/models.py:62
 msgid "proposal ID"
 msgstr "提案 ID"
 
-#: proposals/models.py:71
+#: proposals/models.py:70
 msgid "Pending"
 msgstr "待回覆"
 
-#: proposals/models.py:72 proposals/models.py:338
+#: proposals/models.py:71 proposals/models.py:206
 msgid "Accepted"
 msgstr "已接受"
 
-#: proposals/models.py:73
+#: proposals/models.py:72
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:82 proposals/models.py:277
+#: proposals/models.py:81 proposals/models.py:149
 msgid "cancelled"
 msgstr "已取消"
 
-#: proposals/models.py:90
+#: proposals/models.py:89
 msgid "additional speaker"
 msgstr "額外講者"
 
-#: proposals/models.py:91
+#: proposals/models.py:90
 msgid "additional speakers"
 msgstr "額外講者"
 
-#: proposals/models.py:120
+#: proposals/models.py:119
 msgid "submitter"
 msgstr "提案人"
 
-#: proposals/models.py:124
-msgid "title"
-msgstr "題目"
-
-#: proposals/models.py:129
-msgid "Best Practices & Patterns"
-msgstr "最佳實踐與慣例"
-
-#: proposals/models.py:130
-msgid "Community"
-msgstr "社群"
-
-#: proposals/models.py:131
-msgid "Databases"
-msgstr "資料庫"
-
-#: proposals/models.py:132
-msgid "Data Analysis"
-msgstr "資料分析"
-
-#: proposals/models.py:133
-msgid "Education"
-msgstr "教育"
-
-#: proposals/models.py:134
-msgid "Embedded Systems"
-msgstr "嵌入式系統"
-
-#: proposals/models.py:135
-msgid "Gaming"
-msgstr "遊戲"
-
-#: proposals/models.py:136
-msgid "Graphics"
-msgstr "圖像處理"
-
-#: proposals/models.py:137
-msgid "Other"
-msgstr "其他"
-
-#: proposals/models.py:138
-msgid "Python Core (language, stdlib, etc.)"
-msgstr "Python Core（語言本身、標準函式庫…）"
-
-#: proposals/models.py:139
-msgid "Python Internals"
-msgstr "Python 實作"
-
-#: proposals/models.py:140
-msgid "Python Libraries"
-msgstr "Python 函式庫"
-
-#: proposals/models.py:141
-msgid "Science"
-msgstr "科學"
-
-#: proposals/models.py:142
-msgid "Security"
-msgstr "資訊安全"
-
-#: proposals/models.py:143
-msgid "Systems Administration"
-msgstr "系統管理"
-
-#: proposals/models.py:144
-msgid "Testing"
-msgstr "測試"
-
-#: proposals/models.py:145
-msgid "Web Frameworks"
-msgstr "網站框架"
-
-#: proposals/models.py:148
-msgid "category"
-msgstr "分類"
-
-#: proposals/models.py:154
-msgid "English talk"
-msgstr "英文演講"
-
-#: proposals/models.py:155
-msgid "Chinese talk w. English slides"
-msgstr "中文演講/英文投影片"
-
-#: proposals/models.py:156
-msgid "Chinese talk w. Chinese slides"
-msgstr "中文演講/中文投影片"
-
-#: proposals/models.py:157
-msgid "Taiwanese Hokkien"
-msgstr "臺灣閩南語"
-
-#: proposals/models.py:160
-msgid "language"
-msgstr "語言"
-
-#: proposals/models.py:166
-msgid "abstract"
-msgstr "摘要"
-
-#: proposals/models.py:169
-msgid ""
-"The overview of what the talk is about. If the talk assume some domain "
-"knowledge please state it here. If your talk is accepted, this will be "
-"displayed on both the website and the handbook. Should be one paragraph."
-msgstr "介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
-
-#: proposals/models.py:177
-msgid "Novice"
-msgstr "入門"
-
-#: proposals/models.py:178
-msgid "Intermediate"
-msgstr "中階"
-
-#: proposals/models.py:179
-msgid "Experienced"
-msgstr "進階"
-
-#: proposals/models.py:182 templates/reviews/review_form.html.py:38
-msgid "Python level"
-msgstr "Python 難易度"
-
-#: proposals/models.py:186
-msgid ""
-"The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
-"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
-" be more likely to be accepted because of being \"Novice\" level. We may "
-"contact you to change the talk level when we find the content is too-hard or"
-" too-easy for the target audience."
-msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來說更簡單或困難時，可能會和你討論是否該修改。"
-
-#: proposals/models.py:200
+#: proposals/models.py:123
 msgid "objective"
 msgstr "演講目標"
 
-#: proposals/models.py:203
+#: proposals/models.py:126
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -303,26 +372,11 @@ msgid ""
 " This is NOT made public and for REVIEW ONLY."
 msgstr "目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:212
-msgid "detailed description"
-msgstr "詳細說明"
-
-#: proposals/models.py:215
-msgid ""
-"Try not be too lengthy to scare away reviewers or potential audience. A "
-"comfortable length is less than 2000 characters (or about 1200 Chinese "
-"characters). Since most reviewers may not understand the topic as deep as "
-"you do, including related links to the talk topic will help reviewers "
-"understand the proposal. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
-msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
-
-#: proposals/models.py:227
+#: proposals/models.py:135
 msgid "supplementary"
 msgstr "補充資訊"
 
-#: proposals/models.py:231
+#: proposals/models.py:139
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is"
@@ -331,61 +385,27 @@ msgid ""
 "target='_blank'>Markdown</a>."
 msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
-#: proposals/models.py:241 reviews/models.py:92
-msgid "Yes"
-msgstr "是"
-
-#: proposals/models.py:242 reviews/models.py:93
-msgid "No"
-msgstr "否"
-
-#: proposals/models.py:245
-msgid "recording policy"
-msgstr "議程錄影"
-
-#: proposals/models.py:249
-msgid ""
-"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
-"release audio and video of your presentation. More information can be found "
-"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
-"page."
-msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
-
-#: proposals/models.py:261
-msgid "slide link"
-msgstr "投影片連結"
-
-#: proposals/models.py:265
-msgid ""
-"You can add your slide link near or after the conference day. Not required "
-"for review."
-msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
-
-#: proposals/models.py:271
-msgid "created at"
-msgstr "建立時間"
-
-#: proposals/models.py:312
+#: proposals/models.py:180
 msgid "No preference"
 msgstr "無偏好"
 
-#: proposals/models.py:313
+#: proposals/models.py:181
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
 
-#: proposals/models.py:314
+#: proposals/models.py:182
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
-#: proposals/models.py:317 proposals/models.py:377
+#: proposals/models.py:185 proposals/models.py:245
 msgid "duration"
 msgstr "時間長度"
 
-#: proposals/models.py:323 proposals/models.py:383
+#: proposals/models.py:191 proposals/models.py:251
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:326
+#: proposals/models.py:194
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
 "estimated time length for each sections in the talk. Talks in favor of 45min"
@@ -394,31 +414,31 @@ msgid ""
 " target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:339
+#: proposals/models.py:207
 msgid "Rejected"
 msgstr "已拒絕"
 
-#: proposals/models.py:342
+#: proposals/models.py:210
 msgid "accepted"
 msgstr "已接受"
 
-#: proposals/models.py:349
+#: proposals/models.py:217
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:350
+#: proposals/models.py:218
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:373
+#: proposals/models.py:241
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:374
+#: proposals/models.py:242
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:386
+#: proposals/models.py:254
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
 " your talk and attach each section with the estimated time length. Edit "
@@ -426,11 +446,11 @@ msgid ""
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/models.py:396
+#: proposals/models.py:264
 msgid "tutorial proposal"
 msgstr "教學提案"
 
-#: proposals/models.py:397
+#: proposals/models.py:265
 msgid "tutorial proposals"
 msgstr "教學提案"
 
@@ -747,6 +767,7 @@ msgid "Sponsor"
 msgstr "贊助"
 
 #: templates/_includes/nav/front_nav.html:65
+#: templates/sponsors/sponsor_list.html:5
 msgid "Our Sponsors"
 msgstr "贊助夥伴"
 
@@ -799,42 +820,80 @@ msgid ""
 "proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
 
+#: templates/events/sponsored_event_detail.html:17
 #: templates/events/talk_detail.html:17 templates/reviews/review_form.html:34
 #: templates/users/_includes/dashboard_cospeaking_proposal_table.html:7
 #: templates/users/_includes/dashboard_proposal_table.html:8
 msgid "Language"
 msgstr "語言"
 
+#: templates/events/sponsored_event_detail.html:20
 #: templates/events/talk_detail.html:20
 #: templates/reviews/_includes/proposal_table.html:25
 #: templates/reviews/review_form.html:30
 msgid "Category"
 msgstr "分類"
 
+#: templates/events/sponsored_event_detail.html:23
 #: templates/events/talk_detail.html:23
 #: templates/users/_includes/dashboard_proposal_table.html:7
 msgid "Python Level"
 msgstr "Python 難易度"
 
+#: templates/events/sponsored_event_detail.html:27
 #: templates/events/talk_detail.html:27
 msgid "Slides Link"
 msgstr "投影片連結"
 
+#: templates/events/sponsored_event_detail.html:31
 #: templates/events/talk_detail.html:31 templates/reviews/review_form.html:36
 msgid "Abstract"
 msgstr "摘要"
 
+#: templates/events/sponsored_event_detail.html:35
 #: templates/events/talk_detail.html:35
 msgid "Description"
 msgstr "說明"
 
-#: templates/events/talk_list.html:13
+#: templates/events/talk_list.html:15
+#, python-format
+msgid ""
+"You can peek at the program schedule on <a class=\"text-emphasize\" "
+"href=\"%(gdoc_url)s\" target=\"_blank\">this Google document</a>."
+msgstr "您可以先於<a class=\"text-emphasize\" href=\"%(gdoc_url)s\" target=\"_blank\">此 Google 文件</a>預覽議程時間表。"
+
+#: templates/events/talk_list.html:21
+msgid ""
+"Program schedule are <span class=\"text-emphasize\">subject to "
+"change</span>. Please check this page frequently to get the latest version."
+msgstr "議程時間表會<span class=\"text-emphasize\">隨狀況更新</span>。請經常查看本頁以取得最新的版本。"
+
+#: templates/events/talk_list.html:28
+msgid "Proposed Talks"
+msgstr "一般演講"
+
+#: templates/events/talk_list.html:32
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
 "href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by "
 "%(speaker_names)s"
 msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\"><cite>%(proposal_title)s</cite></a> %(speaker_names)s"
+
+#: templates/events/talk_list.html:38
+msgid "Sponsored Events"
+msgstr "贊助演講"
+
+#: templates/events/talk_list.html:43
+#, python-format
+msgid ""
+"\n"
+"\t\t<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">\n"
+"\t\t\t%(event_title)s\n"
+"\t\t</a>\n"
+"\t\tby %(host_name)s\n"
+"\t\t"
+msgstr "\n<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">《%(event_title)s》</a>%(host_name)s"
 
 #: templates/index.html:7
 msgid ""
@@ -869,7 +928,16 @@ msgstr "2016 年 6 月 3–5 日"
 msgid "Apr 16 &amp; Jun 11, 2016"
 msgstr "4 月 16 日、6 月 11 日"
 
-#: templates/index.html:61
+#: templates/index.html:57
+msgid "Tickets On Sale!"
+msgstr "熱烈售票中！"
+
+#: templates/index.html:58
+#, python-format
+msgid "<span> %(value)s %(type)s</span> before the end of sale."
+msgstr "距離賣票截止尚有 <span>%(value)s %(type)s</span>。"
+
+#: templates/index.html:73
 msgid ""
 "<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
 "The original PyCon was formed in North America in 2003, and now there are "
@@ -877,7 +945,7 @@ msgid ""
 "</div>"
 msgstr "<h2 class=\"intro__heading\">何謂 PyCon</h2>\n<div class=\"intro__body\">PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</div>"
 
-#: templates/index.html:73
+#: templates/index.html:85
 msgid ""
 "<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div "
 "class=\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for "
@@ -888,7 +956,7 @@ msgid ""
 "grow our network. </div>"
 msgstr "<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2> <div class=\"intro__body\">\nPyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</div>"
 
-#: templates/index.html:89
+#: templates/index.html:101
 #, python-format
 msgid ""
 "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
@@ -899,15 +967,15 @@ msgid ""
 " target=\"_blank\">our volunteer form</a> </p> </div>"
 msgstr "<h4 class=\"volunteer__heading h4\">\n  志工招募中！\n  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\">\n</h4>\n<div class=\"volunteer__body\">\n  <p>與我們共同籌備並讓這個會議更成功！</p>\n  <p>請填寫我們的<a href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target=\"_blank\">志工參加表</a></p>\n</div>"
 
-#: templates/index.html:119
+#: templates/index.html:131
 msgid "Python Community in Taiwan"
 msgstr "臺灣的 Python 社群"
 
-#: templates/index.html:173
+#: templates/index.html:185
 msgid "Sponsorship 2016 available!"
 msgstr "2016 年度贊助已經開始！ "
 
-#: templates/index.html:178
+#: templates/index.html:190
 msgid ""
 "<p> Sponsoring PyCon Taiwan 2016 will connect your brand with estimated "
 "total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 "
@@ -919,7 +987,7 @@ msgid ""
 "Sponsors of PyCon APAC 2015 </a> </p>"
 msgstr "<p>在 PyCon Taiwan 2016 您能直接面對近 800 位 Python 使用者與開發者。據 2015 年的經驗，近 9 成參加者為業界人士。這是尋找人才與推廣產品的絕佳場合！\n歡迎來信至 <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 瞭解更多贊助資訊！</p>\n<br>\n<p>或參考 <a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target=\"_blank\">PyCon APAC 2015 的贊助商</a></p>"
 
-#: templates/index.html:240
+#: templates/index.html:252
 msgid "Sponsors"
 msgstr "贊助夥伴"
 
@@ -1006,7 +1074,7 @@ msgid "Edit Tutorial Proposal %(proposal_title)s"
 msgstr "修改教學提案《%(proposal_title)s》"
 
 #: templates/registration/login.html:7 templates/registration/login.html:21
-#: users/forms.py:238
+#: users/forms.py:252
 msgid "Log In"
 msgstr "登入"
 
@@ -1358,7 +1426,7 @@ msgstr "此電子郵件信箱已被使用。"
 msgid "The two password fields didn't match."
 msgstr "密碼欄位內容不一致。"
 
-#: users/forms.py:32 users/forms.py:182
+#: users/forms.py:32 users/forms.py:196
 msgid "Password"
 msgstr "密碼"
 
@@ -1366,38 +1434,38 @@ msgstr "密碼"
 msgid "Password confirmation"
 msgstr "密碼確認"
 
-#: users/forms.py:62
+#: users/forms.py:117
 msgid "Create Account"
 msgstr "新建帳號"
 
-#: users/forms.py:134
+#: users/forms.py:148
 msgid "Your image is too small ({width}\\u00d7{height} pixels)."
 msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
 
-#: users/forms.py:136
+#: users/forms.py:150
 msgid "The image you provided is not quadrate."
 msgstr "提供的圖片並非方型。"
 
-#: users/forms.py:183
+#: users/forms.py:197
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
 msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
 
-#: users/forms.py:232
+#: users/forms.py:246
 msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼？</a>"
 
-#: users/forms.py:249
+#: users/forms.py:263
 msgid "Email Address"
 msgstr "電子郵件信箱"
 
-#: users/forms.py:268
+#: users/forms.py:282
 msgid "Request Password Reset"
 msgstr "申請密碼重設"
 
-#: users/forms.py:304
+#: users/forms.py:318
 msgid "Set Password"
 msgstr "設定密碼"
 
