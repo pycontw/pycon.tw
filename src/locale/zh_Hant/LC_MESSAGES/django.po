@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-02 06:48+0000\n"
-"PO-Revision-Date: 2016-05-02 07:17+0000\n"
-"Last-Translator: Liang Bo Wang <me@liang2.tw>\n"
+"POT-Creation-Date: 2016-05-03 08:46+0000\n"
+"PO-Revision-Date: 2016-05-03 08:53+0000\n"
+"Last-Translator: Michelle <flywindy2002@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -701,7 +701,7 @@ msgid "Reviews"
 msgstr "審查"
 
 #: templates/_includes/nav/dashboard_nav.html:7
-#: templates/_includes/nav/front_nav.html:76 templates/dashboard_base.html:6
+#: templates/_includes/nav/front_nav.html:77 templates/dashboard_base.html:6
 msgid "Dashboard"
 msgstr "控制面板"
 
@@ -771,20 +771,24 @@ msgstr "贊助"
 msgid "Our Sponsors"
 msgstr "贊助夥伴"
 
-#: templates/_includes/nav/front_nav.html:69
+#: templates/_includes/nav/front_nav.html:66
+msgid "Patrons"
+msgstr "個人贊助"
+
+#: templates/_includes/nav/front_nav.html:70
 msgctxt "navbar"
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/_includes/nav/front_nav.html:71
+#: templates/_includes/nav/front_nav.html:72
 msgid "Ticket Info"
 msgstr "售票資訊"
 
-#: templates/_includes/nav/front_nav.html:72
+#: templates/_includes/nav/front_nav.html:73
 msgid "Financial Aid"
 msgstr "財務補助"
 
-#: templates/_includes/nav/front_nav.html:75
+#: templates/_includes/nav/front_nav.html:76
 msgid "Blog"
 msgstr "部落格"
 
@@ -928,16 +932,20 @@ msgstr "2016 年 6 月 3–5 日"
 msgid "Apr 16 &amp; Jun 11, 2016"
 msgstr "4 月 16 日、6 月 11 日"
 
-#: templates/index.html:57
-msgid "Tickets On Sale!"
-msgstr "熱烈售票中！"
-
 #: templates/index.html:58
-#, python-format
-msgid "<span> %(value)s %(type)s</span> before the end of sale."
-msgstr "距離賣票截止尚有 <span>%(value)s %(type)s</span>。"
+msgid "Tickets Sold Out!"
+msgstr "票已完售！"
 
-#: templates/index.html:73
+#: templates/index.html:59
+#, python-format
+msgid "See you in<span> %(value)s %(type)s</span> at PyConTW."
+msgstr "<span> %(value)s %(type)s</span> 後 PyConTW 會場見."
+
+#: templates/index.html:62
+msgid "Check the schedule"
+msgstr "看議程"
+
+#: templates/index.html:74
 msgid ""
 "<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
 "The original PyCon was formed in North America in 2003, and now there are "
@@ -945,7 +953,7 @@ msgid ""
 "</div>"
 msgstr "<h2 class=\"intro__heading\">何謂 PyCon</h2>\n<div class=\"intro__body\">PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</div>"
 
-#: templates/index.html:85
+#: templates/index.html:86
 msgid ""
 "<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div "
 "class=\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for "
@@ -956,7 +964,7 @@ msgid ""
 "grow our network. </div>"
 msgstr "<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2> <div class=\"intro__body\">\nPyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</div>"
 
-#: templates/index.html:101
+#: templates/index.html:102
 #, python-format
 msgid ""
 "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
@@ -967,15 +975,15 @@ msgid ""
 " target=\"_blank\">our volunteer form</a> </p> </div>"
 msgstr "<h4 class=\"volunteer__heading h4\">\n  志工招募中！\n  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\">\n</h4>\n<div class=\"volunteer__body\">\n  <p>與我們共同籌備並讓這個會議更成功！</p>\n  <p>請填寫我們的<a href=\"https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target=\"_blank\">志工參加表</a></p>\n</div>"
 
-#: templates/index.html:131
+#: templates/index.html:132
 msgid "Python Community in Taiwan"
 msgstr "臺灣的 Python 社群"
 
-#: templates/index.html:185
+#: templates/index.html:186
 msgid "Sponsorship 2016 available!"
 msgstr "2016 年度贊助已經開始！ "
 
-#: templates/index.html:190
+#: templates/index.html:191
 msgid ""
 "<p> Sponsoring PyCon Taiwan 2016 will connect your brand with estimated "
 "total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 "
@@ -987,7 +995,7 @@ msgid ""
 "Sponsors of PyCon APAC 2015 </a> </p>"
 msgstr "<p>在 PyCon Taiwan 2016 您能直接面對近 800 位 Python 使用者與開發者。據 2015 年的經驗，近 9 成參加者為業界人士。這是尋找人才與推廣產品的絕佳場合！\n歡迎來信至 <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</a> 瞭解更多贊助資訊！</p>\n<br>\n<p>或參考 <a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target=\"_blank\">PyCon APAC 2015 的贊助商</a></p>"
 
-#: templates/index.html:252
+#: templates/index.html:253
 msgid "Sponsors"
 msgstr "贊助夥伴"
 
