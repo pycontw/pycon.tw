@@ -95,7 +95,7 @@ EMAIL_USE_TLS = env.email_url()['EMAIL_USE_TLS']
 
 DEFAULT_FROM_EMAIL = SERVER_EMAIL = '{name} <{addr}>'.format(
     name='PyCon Taiwan',
-    addr=EMAIL_HOST_USER,
+    addr='web@pycon.tw',
 )
 
 # Securiy related settings
