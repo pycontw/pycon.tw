@@ -38,15 +38,8 @@
 <h2>{% trans 'Sponsored Events' %}</h2>
 <ul class="talk-list">
 	{% for event in sponsored_events %}
-	<li>
-		{% url 'events_sponsored_event_detail' pk=event.pk as sponsored_event_url %}
-		{% blocktrans with event_title=event.title host_name=event.host.speaker_name %}
-		<a class="proposal-title" href="{{ sponsored_event_url }}">
-			{{ event_title }}
-		</a>
-		by {{ host_name }}
-		{% endblocktrans %}
-	</li>
+	{% url 'events_sponsored_event_detail' pk=event.pk as sponsored_event_url %}
+	<li><p>{% blocktrans with event_title=event.title host_name=event.host.speaker_name %}<a class="proposal-title" href="{{ sponsored_event_url }}">{{ event_title }}</a> by {{ host_name }}{% endblocktrans %}</p></li>
 	{% endfor %}
 </ul>
 {% endif %}
