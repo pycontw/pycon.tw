@@ -1,4 +1,6 @@
-from django.views.generic import DetailView, ListView
+from django.core.urlresolvers import reverse
+from django.http import Http404
+from django.views.generic import DetailView, ListView, RedirectView
 
 from proposals.models import TalkProposal
 
@@ -32,6 +34,17 @@ class TalkListView(AcceptedTalkMixin, ListView):
 
 class TalkDetailView(AcceptedTalkMixin, DetailView):
     template_name = 'events/talk_detail.html'
+
+
+class SponsoredEventRedirectView(RedirectView):
+    def get_redirect_url(self, pk):
+        try:
+            event = SponsoredEvent.objects.get(pk=pk)
+        except SponsoredEvent.DoesNotExist:
+            raise Http404
+        return reverse('events_sponsored_event_detail', kwargs={
+            'slug': event.slug,
+        })
 
 
 class SponsoredEventDetailView(DetailView):

@@ -13,3 +13,4 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     search_fields = ['title', 'abstract']
     list_display = ['title', 'category', 'language', 'python_level']
     list_filter = ['category', 'language', 'python_level']
+    prepopulated_fields = {'slug': ['title']}
