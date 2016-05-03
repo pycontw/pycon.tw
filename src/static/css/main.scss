@@ -103,7 +103,7 @@ body {
 // latest-news
 
 .latest-news{
-    background:#f6f6f6;
+    background: #f9f9f9;
     border:1px solid #e7e7e7;
     text-align: center;
 
@@ -114,9 +114,16 @@ body {
         padding: 23px 0;
     }
 
+    &__icon{
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
     &__title{
         font-weight: 500;
-        margin-right: 10px;
+        margin: 0 10px;
     }
     &__text{
         font-weight: 300;

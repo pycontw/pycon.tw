@@ -54,11 +54,12 @@
 {% if countdown.value > 0 %}
 <div class="latest-news">
 	<div class="latest-news__content">
-		<span class="latest-news__title">{% trans 'Tickets On Sale!' %}</span>
-		<span class="latest-news__text">{% blocktrans trimmed with countdown.value as value and countdown.type as type %}<span> {{ value }} {{ type }}</span> before the end of sale.{% endblocktrans %}</span>
+		<span class="latest-news__icon"><img src="{% static 'images/icon_ticket@3x.png' %}"></span>
+		<span class="latest-news__title">{% trans 'Tickets Sold Out!' %}</span>
+		<span class="latest-news__text">{% blocktrans trimmed with countdown.value as value and countdown.type as type %}See you in<span> {{ value }} {{ type }}</span> at PyConTW.{% endblocktrans %}</span>
 		<span class="latest-news__link">
-			<a href="registration/ticket-info">Go <i class="fa fa-caret-right fa-2" aria-hidden="true"></i>
-			</a>
+			<a href="https://docs.google.com/spreadsheets/d/17-8E1OhfgiG4pIOIrp3OpNY4OaK1QxUn4TJK9oVmRSw/htmlview" target="_blank">
+			Check the schedule <i class="fa fa-caret-right fa-2" aria-hidden="true"></i></a>
 		</span>
 	</div>
 </div>
