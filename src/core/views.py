@@ -21,7 +21,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        deadline = datetime(2016, 5, 13, 18, 5)
+        deadline = datetime(2016, 6, 3, 8, 20)
         now = timezone.now()
         countdown = pytz.timezone('Asia/Taipei').localize(deadline) - now
         context['countdown'] = {
