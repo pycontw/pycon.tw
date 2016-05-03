@@ -6,7 +6,7 @@ from .models import SponsoredEvent
 @admin.register(SponsoredEvent)
 class SponsoredEventAdmin(admin.ModelAdmin):
     fields = [
-        'host', 'title', 'category', 'language',
+        'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
         'recording_policy', 'slide_link',
     ]
