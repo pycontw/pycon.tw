@@ -42,9 +42,7 @@ class SponsoredEventRedirectView(RedirectView):
             event = SponsoredEvent.objects.get(pk=pk)
         except SponsoredEvent.DoesNotExist:
             raise Http404
-        return reverse('events_sponsored_event_detail', kwargs={
-            'slug': event.slug,
-        })
+        return event.get_absolute_url()
 
 
 class SponsoredEventDetailView(DetailView):
