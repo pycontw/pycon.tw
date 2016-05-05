@@ -170,9 +170,13 @@ class AbstractProposal(EventInfo):
     @property
     def speakers(self):
         yield PrimarySpeaker(proposal=self)
-        additionals = self.additionalspeaker_set.filter(cancelled=False)
-        for speaker in additionals.select_related('user'):
-            yield speaker
+        # We filter cancelled speakers in Python instead of ORM to make sure
+        # the additionalspeaker_set query can be prefetched. This is the
+        # right trade-off because it's unlikely there are a lot of cancelled
+        # additional speakers, so this overhead is very small.
+        for speaker in self.additionalspeaker_set.all():
+            if not speaker.cancelled:
+                yield speaker
 
     @property
     def speaker_count(self):
