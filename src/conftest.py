@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
 
+from proposals.models import TalkProposal
+
 
 class HTMLParser:
 
@@ -128,3 +130,21 @@ def admin_user(db):
 def admin_client(admin_user, client):
     client.login(email='admin@adm.in', password='7K50<31')
     return client
+
+
+@pytest.fixture
+def talk_proposal(user):
+    proposal = TalkProposal.objects.create(
+        id=42,
+        submitter=user,
+        title='Beyond the Style Guides<br>',
+        language='ZHEN',
+    )
+    return proposal
+
+
+@pytest.fixture
+def accepted_talk_proposal(talk_proposal):
+    talk_proposal.accepted = True
+    talk_proposal.save()
+    return talk_proposal
