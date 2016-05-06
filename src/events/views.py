@@ -36,6 +36,9 @@ class TalkDetailView(AcceptedTalkMixin, DetailView):
 
 
 class SponsoredEventRedirectView(RedirectView):
+
+    permanent = True
+
     def get_redirect_url(self, pk):
         try:
             event = SponsoredEvent.objects.get(pk=pk)
