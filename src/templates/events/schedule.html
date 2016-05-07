@@ -1,0 +1,38 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+{% block page_title %}<h1>{% trans 'Schedule' %}</h1>{% endblock page_title %}
+
+
+{% block content %}
+
+<div class="pycon-list">
+	<div class="pycon-list-item text-theme-highlight">
+		{% url 'page' path='events/overview' as overview_url %}
+		{% url 'page' path='events/keynote' as keynote_url %}
+		{% url 'events_talk_list' as talk_list_url %}
+		{% blocktrans trimmed %}
+		This is the full schedule of talks for PyCon Taiwan 2016. See also:
+		<ul>
+			<li><a href="{{ overview_url }}">Overview of conference schedule</a></li>
+			<li><a href="{{ keynote_url }}">Our keynote speeches</a></li>
+			<li><a href="{{ talk_list_url }}">An alphabetically-sorted list of all talks</a></li>
+		</ul>
+		{% endblocktrans %}
+	</div>
+	<div class="pycon-list-item text-theme-highlight">
+		{% blocktrans trimmed %}
+		Program schedule are <span class="text-emphasize">subject to change</span>.
+		Please check this page frequently to get the latest version.
+		{% endblocktrans %}
+	</div>
+</div>
+
+{% block schedule %}
+{{ schedule_html|safe }}
+{% endblock schedule %}
+
+{% endblock content %}

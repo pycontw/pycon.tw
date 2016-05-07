@@ -3,15 +3,14 @@ from django.core.urlresolvers import reverse
 from django.http import Http404
 from django.views.generic import CreateView, UpdateView
 
+from core.mixins import FormValidMessageMixin
 from proposals.forms import (
     AdditionalSpeakerCancelForm, AdditionalSpeakerCreateForm,
     AdditionalSpeakerSetStatusForm,
 )
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
-from .mixins import (
-    FormValidMessageMixin, ProposalEditMixin, UserProfileRequiredMixin,
-)
+from .mixins import ProposalEditMixin, UserProfileRequiredMixin
 
 
 class ProposalManageSpeakersView(

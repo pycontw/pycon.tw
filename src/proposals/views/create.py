@@ -5,9 +5,10 @@ from django.utils.html import format_html
 from django.utils.translation import ugettext
 from django.views.generic import CreateView
 
+from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
 
-from .mixins import FormValidMessageMixin, UserProfileRequiredMixin
+from .mixins import UserProfileRequiredMixin
 
 
 class ProposalCreateView(

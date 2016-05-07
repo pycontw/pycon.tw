@@ -4,12 +4,11 @@ from django.utils.html import format_html
 from django.utils.translation import ugettext
 from django.views.generic import UpdateView
 
+from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalUpdateForm, TutorialProposalUpdateForm
 from proposals.models import TalkProposal, TutorialProposal
 
-from .mixins import (
-    FormValidMessageMixin, ProposalEditMixin, UserProfileRequiredMixin,
-)
+from .mixins import ProposalEditMixin, UserProfileRequiredMixin
 
 
 class TalkProposalMixin:

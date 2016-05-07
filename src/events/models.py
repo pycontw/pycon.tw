@@ -1,10 +1,12 @@
 import collections
 import datetime
+import functools
 import urllib.parse
 
 from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
+from django.utils.timezone import make_naive
 from django.utils.translation import ugettext, ugettext_lazy as _
 
 from core.models import BigForeignKey, EventInfo
@@ -29,6 +31,7 @@ class TimeManager(models.Manager):
         return super().get(value=value)
 
 
+@functools.total_ordering
 class Time(models.Model):
 
     value = models.DateTimeField(
@@ -44,7 +47,15 @@ class Time(models.Model):
         ordering = ['value']
 
     def __str__(self):
-        return str(self.value)
+        return str(make_naive(self.value))
+
+    def __lt__(self, other):
+        if not isinstance(other, Time):
+            return NotImplemented
+        if (not isinstance(self.value, datetime.datetime) or
+                not isinstance(other.value, datetime.datetime)):
+            return NotImplemented
+        return self.value < other.value
 
 
 class Location:
@@ -212,3 +223,23 @@ class ProposedTalkEvent(BaseEvent):
 
     def get_absolute_url(self):
         return reverse('events_talk_detail', kwargs={'pk': self.proposal.pk})
+
+
+class Schedule(models.Model):
+
+    html = models.TextField(
+        verbose_name=_('HTML'),
+    )
+    created_at = models.DateTimeField(
+        verbose_name=_('created at'),
+        auto_now_add=True,
+    )
+
+    class Meta:
+        verbose_name = _('Schedule')
+        verbose_name_plural = _('Schedules')
+        ordering = ['-created_at']
+        get_latest_by = 'created_at'
+
+    def __str__(self):
+        return ugettext('Schedule created at {}').format(self.created_at)

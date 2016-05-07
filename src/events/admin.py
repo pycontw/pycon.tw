@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .models import (
     CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
-    Time, DAY_1, DAY_2, DAY_3,
+    Time, Schedule, DAY_1, DAY_2, DAY_3,
 )
 
 
@@ -132,3 +132,10 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     search_fields = ['title', 'abstract']
     prepopulated_fields = {'slug': ['title']}
     raw_id_fields = ['host']
+
+
+@admin.register(Schedule)
+class ScheduleAdmin(admin.ModelAdmin):
+    fields = ['html', 'created_at']
+    readonly_fields = ['created_at']
+    list_display = ['created_at']

@@ -3,7 +3,9 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import django.db.models.deletion
+from django.db.models.deletion import CASCADE
+
+from events.models import Location
 
 
 KEYNOTE_EVENT_KWARGS = [
@@ -19,7 +21,8 @@ def add_keynote_events(apps, schema_editor):
     KeynoteEvent = apps.get_model('events', 'KeynoteEvent')
     db_alias = schema_editor.connection.alias
     KeynoteEvent.objects.using(db_alias).bulk_create([
-        KeynoteEvent(**kwargs) for kwargs in KEYNOTE_EVENT_KWARGS
+        KeynoteEvent(location=Location.ALL, **kwargs)
+        for kwargs in KEYNOTE_EVENT_KWARGS
     ])
 
 
@@ -33,10 +36,32 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='KeynoteEvent',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('location', models.CharField(blank=True, choices=[('2-all', 'All rooms'), ('3-r012', 'R0, R1, R2'), ('4-r0', 'R0'), ('5-r1', 'R1'), ('6-r2', 'R2'), ('1-r3', 'R3')], db_index=True, max_length=6, null=True, verbose_name='location')),
-                ('speaker_name', models.CharField(max_length=100, verbose_name='speaker name')),
-                ('slug', models.SlugField(help_text="This is used to link to the speaker's introduction on the Keynote page, e.g. 'liang2' will link to '/None/events/keynotes/#keynote-speaker-liang2'.", verbose_name='slug')),
+                ('id', models.AutoField(
+                    auto_created=True, primary_key=True, serialize=False,
+                    verbose_name='ID',
+                )),
+                ('location', models.CharField(
+                    blank=True, db_index=True, max_length=6, null=True,
+                    verbose_name='location', choices=[
+                        ('2-all', 'All rooms'),
+                        ('3-r012', 'R0, R1, R2'),
+                        ('4-r0', 'R0'),
+                        ('5-r1', 'R1'),
+                        ('6-r2', 'R2'),
+                        ('1-r3', 'R3'),
+                    ],
+                )),
+                ('speaker_name', models.CharField(
+                    max_length=100, verbose_name='speaker name',
+                )),
+                ('slug', models.SlugField(
+                    help_text=(
+                        "This is used to link to the speaker's introduction "
+                        "on the Keynote page, e.g. 'liang2' will link to "
+                        "'/None/events/keynotes/#keynote-speaker-liang2'."
+                    ),
+                    verbose_name='slug',
+                )),
             ],
             options={
                 'verbose_name_plural': 'keynote events',
@@ -46,12 +71,20 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='keynoteevent',
             name='begin_time',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='begined_keynoteevent_set', to='events.Time', verbose_name='begin time'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=CASCADE,
+                related_name='begined_keynoteevent_set',
+                to='events.Time', verbose_name='begin time',
+            ),
         ),
         migrations.AddField(
             model_name='keynoteevent',
             name='end_time',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ended_keynoteevent_set', to='events.Time', verbose_name='end time'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=CASCADE,
+                related_name='ended_keynoteevent_set',
+                to='events.Time', verbose_name='end time',
+            ),
         ),
 
         migrations.RunPython(
