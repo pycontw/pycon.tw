@@ -9,8 +9,9 @@ from django.utils.text import slugify
 def generate_slugs(apps, schema_editor):
     SponsoredEvent = apps.get_model('events', 'SponsoredEvent')
     db_alias = schema_editor.connection.alias
+    slug_len = SponsoredEvent._meta.get_field('slug').max_length
     for e in SponsoredEvent.objects.using(db_alias).filter(slug=''):
-        e.slug = slugify(e.title, allow_unicode=True)
+        e.slug = slugify(e.title, allow_unicode=True)[:slug_len]
         e.save()
 
 
