@@ -108,7 +108,7 @@
 						<p>Help us organize and make the conference successful!</p>
 						<p>
 							Please fill out<br>
-							<a href="https://docs.google.com/forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform"
+							<a href="https://docs.google.com/forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform"
 								 target="_blank">our volunteer form</a>
 						</p>
 					</div>
@@ -183,25 +183,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="sponsorship__call">
-				{% trans 'Sponsorship 2016 available!' %}
+				{% trans 'Patronage 2016 available!' %}
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 				{% blocktrans trimmed %}
 				<p>
-					Sponsoring PyCon Taiwan 2016 will connect your brand with
-					estimated total 800 Python enthusiastic users and
-					developers in Taiwan, 9 out of 10 are professionals. It’s a
-					great opportunity to find talents and promote your products
-					here. Contact us at <a href="mailto:sponsorship@pycon.tw">sponsorship@pycon.tw</a>
-					for sponsorship details.
+					If you wish to support PyCon Taiwan 2016 on your own, [welcome to be a patron](link to kktix)! There will be a page for the list of all patrons (e.g. links to profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 website.
 				</p>
 				<br>
 				<p>
-					See also
-					<a href="https://tw.pycon.org/2015apac/en/sponsors/" target="_blank">
-						Sponsors of PyCon APAC 2015
+					Go to join
+					<a href="http://pycontw.kktix.cc/events/pycontw2016patron" target="_blank">
+						Patron of PyCon Taiwan 2016
 					</a>
 				</p>
 				{% endblocktrans %}
@@ -250,12 +245,22 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<h2 class="section__heading">{% trans 'Sponsors' %}</h2>
+				<!-- 白金級 -->
                 <div class="row">
 					<div class="sponsors__logo">
 						<a href="http://www.ibm.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/ibmpos_blurgb.jpg' %}" alt="IBM" style="max-height: 100px;"></a>
 					</div>
 				</div>
-				<br>
+				<!-- 金級 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-6">
+						<a href="https://www.kkbox.com/play/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/KKBOX_logo_20130820@h300px.png' %}" alt="KKBOX" style="max-height: 120px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-6">
+						<a href="http://www.trendmicro.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/TM_logo.png' %}" alt="TrendMicro 趨勢科技" style="max-height: 120px;"></a>
+					</div>
+				</div>
+				<!-- 銀級 -->
 				<div class="row">
 					<div class="sponsors__logo col-sm-4">
 						<a href="http://aktsk.com.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/akatsuki.png' %}" alt="Akatsuki 曉數碼" style="max-height: 100px;"></a>
@@ -272,7 +277,7 @@
 						<a href="https://www.gandi.net" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/gandi.png' %}" alt="Gandi"></a>
 					</div>
 					<div class="sponsors__logo col-sm-4">
-						<a href="https://www.kkbox.com/play/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/KKBOX_logo_20130820@h300px.png' %}" alt="KKBOX" style="max-height: 100px;"></a>
+						<a href="http://www.mysql.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/mysql_logo.png' %}" alt="MYSQL"></a>
 					</div>
 					<div class="sponsors__logo col-sm-4">
 						<a href="http://www.ruckuswireless.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/Ruckus_Hrzntl_SBW.png' %}" alt="Ruckus Wireless"></a>
@@ -287,7 +292,16 @@
 					<div class="sponsors__logo col-sm-4">
 					</div>
 				</div>
-				<br>
+				<!-- 銅級 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-6">
+						<a href="http://lileesystems.com/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/Lilee-ColorLogo-v1.png' %}" alt="Lilee System 理立系統" style="max-height: 100px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-6">
+						<a href="http://www.transtep.com/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/transtep_logo.png' %}" alt="Transtep Technology Inc."></a>
+					</div>
+				</div>
+				<!-- 特殊贊助 -->
 				<div class="row">
 					<div class="sponsors__logo col-sm-4">
 						<a href="http://ocf.tw" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/openculture.png' %}" alt="開放文化基金會" style="max-height: 60px; margin-top: 50px;"></a>
@@ -297,6 +311,11 @@
 					</div>
 					<div class="sponsors__logo col-sm-4">
 						<a href="http://www.gliacloud.com" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="GliaCloud" style="max-height: 60px; margin-top: 50px;"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sponsors__logo">
+						<a href="http://www.iis.sinica.edu.tw/" target="_blank"><img class="img-responsive" src="{% static 'images/sponsors/IIS_logo.png' %}" alt="中央研究院資訊科學研究所" style="max-height: 100px;"></a>
 					</div>
 				</div>
 			</div>
