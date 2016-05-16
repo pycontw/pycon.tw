@@ -42,7 +42,7 @@ $sponsor-img-height: 75px;
         @include make-md-column(6);
     }
 
-    &--special {
+    &--special, &--bronze {
         @include make-md-column(4);
     }
 }
@@ -105,6 +105,10 @@ $sponsor-img-height: 75px;
         max-height: 500px;
     }
 
+    &.sponsor--bronze {
+        @include sponsor-decoration($sponsor-bronze-color);
+    }
+
     // intro height
     &.sponsor--platinum &__intro {
         height: 200px;
@@ -112,6 +116,10 @@ $sponsor-img-height: 75px;
 
     &.sponsor--silver &__intro {
         height: 200px;
+    }
+
+    &.sponsor--bronze &__intro {
+        height: 250px;
     }
 
     &.sponsor--special &__intro {
