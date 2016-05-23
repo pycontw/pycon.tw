@@ -72,6 +72,11 @@ $ks-margin: 47px; // margin between keynote speakers
             margin-bottom: 15px;
         }
 
+        &__header:not(:first-of-type) {
+            // extra top margin for second and later sections
+            margin-top: 40px;
+        }
+
         p {
             @include roboto-light;
             font-size: 16px;
