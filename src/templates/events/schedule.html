@@ -6,7 +6,6 @@
 
 {% block page_title %}<h1>{% trans 'Schedule' %}</h1>{% endblock page_title %}
 
-
 {% block content %}
 
 <div class="pycon-list">
@@ -33,6 +32,99 @@
 
 {% block schedule %}
 {{ schedule_html|safe }}
+    <h2>DAY 1</h2>
+    <div class="time-table">
+        <div class="time-table__header">
+            <div class="time-table__time"></div>
+            <div class="time-table__slot">
+                <div class="slot-item header-cell header-cell--r0">R0</div>
+                <div class="slot-item header-cell header-cell--r1">R1</div>
+                <div class="slot-item header-cell header-cell--r2">R2</div>
+            </div>
+        </div>
+
+        <div class="time-table__row">
+            <div class="time-table__time">08:00</div>
+            <div class="time-table__slot">
+                <div class="slot-item talk">
+                    <div class="slot-item__label talk__location bg-Rall"></div>
+                    <div class="slot-item__content">
+                        <div class="slot-item__title">
+                            Registration
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-table__row">
+            <div class="time-table__time">10:00</div>
+            <div class="time-table__slot">
+                <div class="slot-item talk talk--keynote">
+                    <div class="slot-item__label talk__location bg-Rall"></div>
+                    <div class="slot-item__content">
+                        <div class="slot-item__title">Keynote</div>
+                        <div class="talk__speaker">Paul Hildebrandt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-table__row">
+            <div class="time-table__time">11:00</div>
+            <div class="time-table__slot">
+                <div class="slot-item talk">
+                    <div class="slot-item__label slot-item__label--r0">R0</div>
+                    <div class="slot-item__content">
+                        <div class="talk__title">Openstack Swift Benchmark with Ansible</div>
+                        <div class="talk__speaker">Charles Hsu</div>
+                        <div class="talk__lang">ZH</div>
+                    </div>
+                </div>
+                <div class="slot-item talk">
+                    <div class="slot-item__label slot-item__label--r1">R1</div>
+                    <div class="slot-item__content">
+                        <div class="talk__title">....when thinking functionally with Python</div>
+                        <div class="talk__speaker">Apua Juan</div>
+                        <div class="talk__lang">ZH</div>
+                    </div>
+                </div>
+                <div class="slot-item talk">
+                    <div class="slot-item__label slot-item__label--r2">R2</div>
+                    <div class="slot-item__content">
+                        <div class="talk__title">Easy Map Applications Using Python</div>
+                        <div class="talk__speaker">Victor Gau</div>
+                        <div class="talk__lang">EN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="time-table__row">
+            <div class="time-table__time">11:00</div>
+            <div class="time-table__slot">
+                <div class="slot-item talk">
+                    <div class="slot-item__label slot-item__label--r0">R0</div>
+                    <div class="slot-item__content">
+                        hi
+                    </div>
+                </div>
+                <div class="slot-item talk">
+                    <div class="slot-item__label  slot-item__label--r1">R1</div>
+                    <div class="slot-item__content">
+                        hi
+                    </div>
+                </div>
+                <div class="slot-item talk">
+                    <div class="slot-item__label slot-item__label--r2">R2</div>
+                    <div class="slot-item__content">
+                        hi
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 {% endblock schedule %}
 
 {% endblock content %}

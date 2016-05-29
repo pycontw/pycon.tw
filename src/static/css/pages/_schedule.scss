@@ -1,0 +1,149 @@
+$time-table-border-color: #e4ebff;
+$location-color-map: (
+  'r0': #1542c4,
+  'r1': #0b38ba,
+  'r2': #072c98
+);
+
+.time-table-date {
+    font-size:30px;
+    color: #4163f5;
+}
+
+.time-table {
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid $time-table-border-color;
+    overflow: hidden;
+}
+
+.time-table__row {
+    display: flex;
+}
+
+.time-table__time {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $time-table-border-color;
+}
+
+.time-table__slot {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 10;
+}
+
+.time-table__header {
+    display: none;
+    height: 60px;
+    background: #3e6df5;
+    color: white;
+
+    // disable border for header
+    .time-table__time {
+        border: none;
+    }
+
+    .header-cell {
+        display: flex;
+        align-items: center;
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+
+.time-table__slot .slot-item
+{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.slot-item {
+    &__title {
+        @include roboto-medium;
+    }
+
+    &__label {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        background-color:  #3e6df5;
+        border-width: 1px 0 1px 0;
+        border-color: rgba(255, 255, 255, .1);
+        border-style: solid;
+        padding: 5px;
+        color: white;
+
+        // .slot-item__label-r0, .slot-item__label-r1, ...
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex: 10;
+        flex-flow: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px 10px;
+        border: 1px solid $time-table-border-color;
+    }
+
+}
+
+
+@media (min-width: $screen-md-min) {
+    .time-table__header {
+        display: flex;
+        flex: 1
+    }
+
+    .time-table__slot{
+        flex-direction: row;
+        flex: 15;
+    }
+
+    // only show in mobile version
+    .time-table__slot .slot-item__label {
+        display: none;
+    }
+}
+
+
+// Talk related style
+.time-table .talk {
+    .talk__title {
+        @include roboto-medium();
+        font-size:16px;
+        color: #f08e57;
+        margin-bottom: 8px;
+    }
+
+    .talk__speaker {
+        color:#3e6df5;
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }
+
+    .talk__lang {
+        @include roboto-medium;
+        border:1px solid #555555;
+        line-height: 1.6;
+        border-radius:2px;
+        font-size: 12px;
+        display: inline-block;
+        padding: 0 8px;
+    }
+}
