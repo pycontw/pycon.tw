@@ -68,6 +68,9 @@ EXTRA_DATA['about/staff'] = {
             'key': _('Registration'),
             'members': [
                 {'name': 'Sosorry', 'tags': _('lead')},
+                {'name': '阿碰'},
+                {'name': 'Bruce'},
+                {'name': '文祥'},
             ],
         },
         {
