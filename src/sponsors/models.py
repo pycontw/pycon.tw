@@ -30,13 +30,15 @@ class Sponsor(models.Model):
     )
 
     class Level:
-        PLATINUM = 0
-        GOLD = 1
-        SILVER = 2
-        BRONZE = 3
-        SPECIAL = 4
+        PARTNER = 0
+        PLATINUM = 1
+        GOLD = 2
+        SILVER = 3
+        BRONZE = 4
+        SPECIAL = 5
 
     LEVEL_CHOICES = (
+        (Level.PARTNER, _('partner')),
         (Level.PLATINUM, _('platinum')),
         (Level.GOLD, _('gold')),
         (Level.SILVER, _('silver')),
