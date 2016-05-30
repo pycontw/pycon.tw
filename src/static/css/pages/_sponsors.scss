@@ -84,7 +84,7 @@ $sponsor-img-height: 75px;
         overflow: auto;
     }
 
-    &.sponsor--platinum {
+    &.sponsor--platinum, &.sponsor--partner{
         @include sponsor-decoration($sponsor-platinum-color, 30px);
         background: white;
         background:
