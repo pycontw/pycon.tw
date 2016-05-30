@@ -34,7 +34,7 @@ $sponsor-img-height: 75px;
 
 
 .sponsor-wrapper {
-    &--platinum, &--gold {
+    &--partner, &--platinum, &--gold {
         @include make-xs-column(12);
     }
     &--silver {
@@ -110,6 +110,10 @@ $sponsor-img-height: 75px;
     }
 
     // intro height
+    &.sponsor--partner &__intro {
+        height: 150px;
+    }
+
     &.sponsor--platinum &__intro {
         height: 200px;
     }
@@ -128,7 +132,8 @@ $sponsor-img-height: 75px;
 }
 
 .sponsor.sponsor--gold,
-.sponsor.sponsor--platinum {
+.sponsor.sponsor--platinum,
+.sponsor.sponsor--partner{
     @include clearfix();
     .sponsor {
         &__logo-wrapper {
@@ -144,7 +149,8 @@ $sponsor-img-height: 75px;
 
 @media (min-width: $screen-md-min) {
     .sponsor.sponsor--gold,
-    .sponsor.sponsor--platinum {
+    .sponsor.sponsor--platinum,
+    .sponsor.sponsor--partner{
         .sponsor__logo-wrapper {
             height: 200px;
         }
