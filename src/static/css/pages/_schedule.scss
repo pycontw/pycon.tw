@@ -2,127 +2,170 @@ $time-table-border-color: #e4ebff;
 $location-color-map: (
   'r0': #1542c4,
   'r1': #0b38ba,
-  'r2': #072c98
+  'r2': #072c98,
+  'r3': #021C6A
 );
-
-.time-table-date {
-    font-size:30px;
-    color: #4163f5;
-}
-
-.time-table {
-    text-align: center;
-    border-radius: 3px;
-    border: 1px solid $time-table-border-color;
-    overflow: hidden;
-}
-
-.time-table__row {
-    display: flex;
-}
-
-.time-table__time {
-    display: flex;
-    flex: 2;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $time-table-border-color;
-}
-
-.time-table__slot {
-    display: flex;
-    flex-flow: column wrap;
-    flex: 10;
-}
-
-.time-table__header {
-    display: none;
-    height: 60px;
-    background: #3e6df5;
-    color: white;
-
-    // disable border for header
-    .time-table__time {
-        border: none;
-    }
-
-    .header-cell {
-        display: flex;
-        align-items: center;
-        @each $location, $color in $location-color-map {
-            &--#{$location} {
-                background-color: $color;
-            }
-        }
-    }
-}
-
-
-.time-table__slot .slot-item
-{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-}
-
-.slot-item {
-    &__title {
-        @include roboto-medium;
-    }
-
-    &__label {
-        display: flex;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        min-width: 30px;
-        background-color:  #3e6df5;
-        border-width: 1px 0 1px 0;
-        border-color: rgba(255, 255, 255, .1);
-        border-style: solid;
-        padding: 5px;
-        color: white;
-
-        // .slot-item__label-r0, .slot-item__label-r1, ...
-        @each $location, $color in $location-color-map {
-            &--#{$location} {
-                background-color: $color;
-            }
-        }
-    }
-
-    &__content {
-        display: flex;
-        flex: 10;
-        flex-flow: column;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 20px 10px;
-        border: 1px solid $time-table-border-color;
-    }
-
-}
-
-
-@media (min-width: $screen-md-min) {
-    .time-table__header {
-        display: flex;
-        flex: 1
-    }
-
-    .time-table__slot{
-        flex-direction: row;
-        flex: 15;
-    }
-
-    // only show in mobile version
-    .time-table__slot .slot-item__label {
+//
+//.time-table-date {
+//    font-size:30px;
+//    color: #4163f5;
+//}
+//
+//.time-table {
+//    text-align: center;
+//    border-radius: 3px;
+//    border: 1px solid $time-table-border-color;
+//    overflow: hidden;
+//}
+//
+//.time-table__row {
+//    display: flex;
+//    flex-flow: row wrap;
+//}
+//
+//.time-table__time {
+//    display: flex;
+//    width: 100%;
+//    padding-left: 10%;
+//    justify-content: center;
+//    align-items: center;
+//    border: 1px solid $time-table-border-color;
+//}
+//
+//.time-table__time {
+//    &--row {
+//        flex-direction: column;
+//        align-items: stretch;
+//    }
+//
+//    .time__cell {
+//        border: 1px solid $time-table-border-color;
+//        border-width: 1px 0 1px 0;
+//        flex-flow: row;
+//        flex: 1;
+//
+//        &:first-child {
+//            border-top: none;
+//        }
+//
+//        &:last-child {
+//            border-bottom: none;
+//        }
+//    }
+//}
+//
+//
+//.time-table__slot {
+//    display: flex;
+//    flex-flow: column wrap;
+//    width: 100%;
+//}
+//
+//.time-table__header {
+//    display: none;
+//    height: 60px;
+//    background: #3e6df5;
+//    color: white;
+//
+//    // disable border for header
+//    .time-table__time {
+//        border: none;
+//    }
+//
+//    .header-cell {
+//        display: flex;
+//        align-items: center;
+//        @each $location, $color in $location-color-map {
+//            &--#{$location} {
+//                background-color: $color;
+//            }
+//        }
+//    }
+//}
+//
+//
+//.time-table__slot {
+//    .slot-item {
+//        display: flex;
+//        flex: 1;
+//        justify-content: center;
+//        min-height: 64px;
+//    }
+//}
+//
+//.slot-item {
+//    &__title {
+//        @include roboto-medium;
+//    }
+//
+//    &__label {
+//        display: flex;
+//        //flex: 1;
+//        width: 10%;
+//        align-items: center;
+//        justify-content: center;
+//        min-width: 30px;
+//        background-color:  #3e6df5;
+//        border-width: 1px 0 1px 0;
+//        border-color: rgba(255, 255, 255, .1);
+//        border-style: solid;
+//        padding: 5px;
+//        color: white;
+//
+//        // .slot-item__label-r0, .slot-item__label-r1, ...
+//        @each $location, $color in $location-color-map {
+//            &--#{$location} {
+//                background-color: $color;
+//            }
+//        }
+//    }
+//
+//    &__content {
+//        display: flex;
+//        flex: 10;
+//        flex-flow: column;
+//        align-items: center;
+//        justify-content: flex-end;
+//        padding: 20px 10px;
+//        border: 1px solid $time-table-border-color;
+//    }
+//
+//}
+//
+//@media (min-width: $screen-md-min) {
+//    .time-table__header {
+//        display: flex;
+//        flex: 1;
+//        .time-table__slot {
+//            align-items: stretch;
+//            .slot-item {
+//                min-height: 0;
+//            }
+//        }
+//    }
+//
+//    .time-table__time {
+//        flex: 2;
+//        padding-left: 0;
+//    }
+//
+//    .time-table__slot{
+//        flex-direction: row;
+//        align-items: flex-start;
+//        flex: 15;
+//        .slot-item--h2 {
+//            min-height: 128px;
+//        }
+//    }
+//
+//    // only show in mobile version
+    .slot-item__label {
         display: none;
     }
-}
-
-
-// Talk related style
+//}
+//
+//
+//// Talk related style
 .time-table .talk {
     .talk__title {
         @include roboto-medium();
@@ -147,3 +190,183 @@ $location-color-map: (
         padding: 0 8px;
     }
 }
+
+$cell-height: 180px;
+
+.time-table {
+    border: 1px solid $time-table-border-color;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.time-table__time {
+    @include make-md-column(1);
+    border: 1px solid $time-table-border-color;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--row-span {
+        height: auto;
+    }
+}
+
+.time-table__header {
+    display: none;
+    .slot-item,
+    .time-table__time {
+        height: 40px;
+    }
+    .header-cell {
+        color: white;
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+.time-table__slot {
+    @include make-md-column(11);
+}
+
+
+.slot-item {
+    @include make-xs-column(12);
+    @include make-md-column(3);
+    //height: $cell-height;
+    border: 1px solid $time-table-border-color;
+    display: flex;
+    flex-flow: row;
+    //align-items: flex-start;
+    //justify-content: space-between;
+    text-align: center;
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        background-color:  #3e6df5;
+        border-width: 1px 0 1px 0;
+        border-color: rgba(255, 255, 255, .1);
+        border-style: solid;
+        padding: 5px;
+        color: white;
+        margin-left: -15px;
+
+        // .slot-item__label-r0, .slot-item__label-r1, ...
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        padding: 15px 5px;
+    }
+
+    .talk__title {
+        flex: 4;
+    }
+    .talk__speaker {
+        flex: 1;
+    }
+
+    &--w3 {
+        @include make-md-column(9);
+    }
+
+    &--w4 {
+        @include make-md-column(12);
+    }
+
+    &--offset-1 {
+        @include make-md-column-offset(4);
+    }
+
+    &--blank {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: $screen-md-min) {
+
+    .time-table__time {
+        border: 1px solid $time-table-border-color;
+        height: $cell-height;
+        &--row-span {
+            flex-flow: column;
+        }
+        .time__cell {
+            height: $cell-height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .row {
+        //.slot-item:first-child
+        .slot-item {
+            border-left-style: dashed;
+            border-right-style: dashed;
+            //border-width: 1px 0 1px 0 ;
+            //border-style: dashed;
+
+        }
+        //.slot-item:first-child {
+        //    border-left-width: 1px;
+        //}
+        //.slot-item:last-child {
+        //    border-right-width: 1px;
+        //}
+    }
+
+    .time-table__header {
+        display: block;
+        .time-table__time {
+            background:#3e6df5;
+            border: none;
+        }
+        .slot-item {
+            border: none;
+        }
+    }
+
+    .slot-item--blank {
+        display: block;
+        background-color: #f5f5f5;
+    }
+
+
+    .slot-item .slot-item__label {
+        display: none;
+    }
+
+    .slot-item {
+        height: $cell-height;
+        padding: 0;
+        &__content {
+            flex-direction: column;
+        }
+    }
+
+    .slot-item, .time-table__time {
+        &--hsmall { height: $cell-height * 0.5; }
+        &--h2 { height: $cell-height * 2; }
+        &--h3 { height: $cell-height * 3; }
+    }
+}
+
