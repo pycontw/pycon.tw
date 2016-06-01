@@ -10,9 +10,9 @@
 
 <div class="pycon-list">
 	<div class="pycon-list-item text-theme-highlight">
-		{% blocktrans trimmed with gdoc_url="https://docs.google.com/spreadsheets/d/17-8E1OhfgiG4pIOIrp3OpNY4OaK1QxUn4TJK9oVmRSw/htmlview" %}
-		You can peek at the program schedule on
-		<a class="text-emphasize" href="{{ gdoc_url }}" target="_blank">this Google document</a>.
+		{% blocktrans trimmed %}
+		You can check out the program schedule
+		<a class="text-emphasize" href="{% url 'events_schedule' %}">here</a>.
 		{% endblocktrans %}
 	</div>
 	<div class="pycon-list-item text-theme-highlight">
