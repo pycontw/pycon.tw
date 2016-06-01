@@ -3,7 +3,11 @@ import datetime
 import pytest
 import pytz
 
-from events.models import Location, Time, CustomEvent, KeynoteEvent
+from events.models import (
+    Location, Time,
+    CustomEvent, KeynoteEvent, ProposedTalkEvent,
+)
+from proposals.models import AdditionalSpeaker
 
 
 cst = pytz.timezone('Asia/Taipei')
@@ -32,6 +36,43 @@ def keynote_belt_event(db):
     e.location = Location.ALL
     e.save()
     return e
+
+
+@pytest.fixture
+def custom_partial_belt_event(db):
+    e = CustomEvent.objects.create(
+        title='Job Fair',
+        begin_time=Time.objects.get('2016-06-04 14:45'),
+        end_time=Time.objects.get('2016-06-04 15:15'),
+        location=Location.R012,
+    )
+    return e
+
+
+@pytest.fixture
+def proposed_talk_block_event(accepted_talk_proposal, another_user):
+    e = ProposedTalkEvent.objects.create(
+        proposal=accepted_talk_proposal,
+        begin_time=Time.objects.get('2016-06-03 16:00'),
+        end_time=Time.objects.get('2016-06-03 16:45'),
+        location=Location.R0,
+    )
+    AdditionalSpeaker.objects.create(
+        user=another_user, proposal=accepted_talk_proposal,
+    )
+    return e
+
+
+@pytest.fixture
+def events(
+        custom_partial_belt_event, keynote_belt_event,
+        proposed_talk_block_event, sponsored_block_event):
+    return {
+        'custom_event': custom_partial_belt_event,
+        'keynote_event': keynote_belt_event,
+        'proposed_talk_event': proposed_talk_block_event,
+        'sponsored_event': sponsored_block_event,
+    }
 
 
 @pytest.fixture
