@@ -364,7 +364,8 @@ def render_day(day, display):
     if not events:
         return ''
     return format_html(
-        '<h2 class="time-table-header">{display}</h2>{table}',
+        '<h2 id="{slug}" class="time-table-header">{display}</h2>{table}',
+        slug=day.strftime(r'%Y-%m-%d'),
         display=display, table=render_table(day),
     )
 

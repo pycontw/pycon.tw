@@ -1,6 +1,6 @@
 {% extends 'contents/_base/events.html' %}
 
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block title %}{% trans 'Schedule' %}{% endblock title %}
 
@@ -30,8 +30,27 @@
 	</div>
 </div>
 
+<h2>{% trans 'Quick Jump' %}</h2>
+<p>
+	<a href="#2016-06-03" class="btn btn-primary smooth-scroll">
+		{% trans 'Day 1' %}
+	</a>
+	<a href="#2016-06-04" class="btn btn-primary smooth-scroll">
+		{% trans 'Day 2' %}
+	</a>
+	<a href="#2016-06-05" class="btn btn-primary smooth-scroll">
+		{% trans 'Day 3' %}
+	</a>
+</p>
+
 {% block schedule %}
 {{ schedule_html|safe }}
 {% endblock schedule %}
 
 {% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/tools/smooth-scroll.js' %}"></script>
+{% endblock extra_js %}
