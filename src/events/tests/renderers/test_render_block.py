@@ -73,7 +73,7 @@ def test_render_block(parser, utils, time_map, events, event_key):
 
     expected = {
         'custom_event': """
-            <div class="slot-item slot-item--w3 slot-item--h1">
+            <div class="slot-item slot-item--w3 slot-item--hsmall">
               3-r012 Job Fair
             </div>""",
         'keynote_event': """
@@ -85,7 +85,7 @@ def test_render_block(parser, utils, time_map, events, event_key):
               4-r0 Beyond the Style Guides&lt;br&gt;
             </div>""",
         'sponsored_event': """
-            <div class="slot-item slot-item--w1 slot-item--hsmall">
+            <div class="slot-item slot-item--w1 slot-item--h1">
               6-r2 Camera engine office woman lights
             </div>""",
     }[event_key]
@@ -103,7 +103,9 @@ def test_render_attached_period(utils, events, event_key, begin, end):
     rendered = renderers.render_attached_period(e.begin_time, e.end_time)
     assert utils.is_safe(rendered)
     assert rendered == (
-        '<div class="time-table__time">{} &ndash; {}</div>'.format(begin, end)
+        '<div class="attached time-table__time">{} &ndash; {}</div>'.format(
+            begin, end,
+        )
     )
 
 
@@ -115,20 +117,20 @@ def test_render_columned_period(parser, utils, make_time, time_count):
 
     expected = {
         2: (
-            '<div class="time-table__time time-table__time--row-span '
+            '<div class="columned time-table__time time-table__time--row-span '
             'time-table__time--hsmall">'
             '  <div class="time__cell">0:00<br>|<br>1:00</div>'
             '</div>'
         ),
         3: (
-            '<div class="time-table__time time-table__time--row-span '
+            '<div class="columned time-table__time time-table__time--row-span '
             'time-table__time--h2">'
             '  <div class="time__cell">0:00<br>|<br>1:00</div>'
             '  <div class="time__cell">1:00<br>|<br>2:00</div>'
             '</div>'
         ),
         4: (
-            '<div class="time-table__time time-table__time--row-span '
+            '<div class="columned time-table__time time-table__time--row-span '
             'time-table__time--h3">'
             '  <div class="time__cell">0:00<br>|<br>1:00</div>'
             '  <div class="time__cell">1:00<br>|<br>2:00</div>'

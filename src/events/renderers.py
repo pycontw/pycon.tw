@@ -104,7 +104,7 @@ def render_block_location(location):
 
 def _has_tall_event(events):
     return any(
-        isinstance(e, ProposedTalkEvent) or isinstance(e, CustomEvent)
+        isinstance(e, ProposedTalkEvent) or isinstance(e, SponsoredEvent)
         for e in events
     )
 
@@ -129,7 +129,7 @@ def render_attached_period(begin, end):
     begin = make_naive(begin.value)
     end = make_naive(end.value)
     return format_html(
-        '<div class="time-table__time">'
+        '<div class="attached time-table__time">'
         '{begin_h}:{begin_m} &ndash; {end_h}:{end_m}</div>',
         begin_h=begin.hour, begin_m=begin.strftime(r'%M'),
         end_h=end.hour, end_m=end.strftime(r'%M'),
@@ -173,12 +173,12 @@ def _render_blocks(events, time_map):
     )
 
 
-def _render_multirow_subrow(event_iter, time_map):
+def _render_multirow_subrow(event_iter, time_map, events):
     # Render period block for this row, and the first event.
     e0 = next(event_iter)
     cells = [
         render_attached_period(e0.begin_time, e0.end_time),
-        render_block(e0, time_map, [])
+        render_block(e0, time_map, events)
     ]
     cols = Location.get_md_width(e0.location)
 
@@ -188,7 +188,7 @@ def _render_multirow_subrow(event_iter, time_map):
             e = next(event_iter)
         except StopIteration:
             break
-        cells.append(render_block(e, time_map, []))
+        cells.append(render_block(e, time_map, events))
         cols += Location.get_md_width(e.location)
     return cells
 
@@ -203,18 +203,18 @@ def _render_multirow(events, time_map):
     event_iter = iter(events)
 
     # Render R0-R2 events in the first time period.
-    cells = _render_multirow_subrow(event_iter, time_map)
+    cells = _render_multirow_subrow(event_iter, time_map, events)
 
     # Render the multi-row R3 event.
     cells.extend([
         render_attached_period(sp_event.begin_time, sp_event.end_time),
-        render_block(sp_event, time_map, [], 'pull-right'),
+        render_block(sp_event, time_map, events, 'pull-right'),
     ])
 
     # Render the rest of the events.
     try:
         while True:
-            cells += _render_multirow_subrow(event_iter, time_map)
+            cells += _render_multirow_subrow(event_iter, time_map, events)
     except StopIteration:
         pass
 
@@ -243,7 +243,7 @@ def render_columned_period(times, events):
     if height == 1 and not _has_tall_event(events):
         height = 'small'
     return format_html(
-        '<div class="time-table__time time-table__time--row-span '
+        '<div class="columned time-table__time time-table__time--row-span '
         'time-table__time--h{height}">{cells}</div>',
         height=height,
         cells=cells,
