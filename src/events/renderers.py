@@ -109,9 +109,11 @@ def _has_tall_event(events):
     )
 
 
-def render_block(event, time_map, events, *extra_classes):
+def render_block(event, time_map, events, extra_classes=None, max_height=None):
     location = event.location
     height = time_map[event.end_time] - time_map[event.begin_time]
+    if max_height is not None:
+        height = min(height, max_height)
     if height == 1 and not _has_tall_event(events):
         height = 'small'
     return format_html(
@@ -193,7 +195,7 @@ def _render_multirow_subrow(event_iter, time_map, events):
     return cells
 
 
-def _render_multirow(events, time_map):
+def _render_multirow(events, time_map, max_height):
     """Render a complex format that contains a multi-row R3 event.
     """
     sp_event, *events = events
@@ -208,7 +210,7 @@ def _render_multirow(events, time_map):
     # Render the multi-row R3 event.
     cells.extend([
         render_attached_period(sp_event.begin_time, sp_event.end_time),
-        render_block(sp_event, time_map, events, 'pull-right'),
+        render_block(sp_event, time_map, events, ['pull-right'], max_height),
     ])
 
     # Render the rest of the events.
@@ -223,30 +225,36 @@ def _render_multirow(events, time_map):
 
 
 def render_columned_period(times, events):
-
-    def _get_args(begin_time, end_time):
-        begin_naive = make_naive(begin_time.value)
-        end_naive = make_naive(end_time.value)
-        return (
-            begin_naive.hour,
-            begin_naive.strftime('%M'),
-            end_naive.hour,
-            end_naive.strftime('%M'),
-        )
-
+    cell_args = [
+        _get_column_period_args(begin, end)
+        for begin, end in zip(times[:-1], times[1:])
+        if any(e.end_time == end for e in events)
+    ]
     cells = format_html_join(
         '',
         '<div class="time__cell">{}:{}<br>|<br>{}:{}</div>',
-        (_get_args(begin, end) for begin, end in zip(times[:-1], times[1:])),
+        iter(cell_args),
     )
-    height = len(times) - 1
+    height = len(cell_args)
     if height == 1 and not _has_tall_event(events):
         height = 'small'
-    return format_html(
+    html = format_html(
         '<div class="columned time-table__time time-table__time--row-span '
         'time-table__time--h{height}">{cells}</div>',
         height=height,
         cells=cells,
+    )
+    return html, height
+
+
+def _get_column_period_args(begin_time, end_time):
+    begin_naive = make_naive(begin_time.value)
+    end_naive = make_naive(end_time.value)
+    return (
+        begin_naive.hour,
+        begin_naive.strftime('%M'),
+        end_naive.hour,
+        end_naive.strftime('%M'),
     )
 
 
@@ -254,6 +262,8 @@ def render_row(times, events):
     events = sorted(events, key=lambda e: e.location)
     times = sorted(times)
     time_map = {t: i for i, t in enumerate(times)}
+
+    period_block, max_height = render_columned_period(times, events)
     try:
         sp_event = events[0]
     except IndexError:  # No events in this time period.
@@ -264,11 +274,11 @@ def render_row(times, events):
             content = _render_blocks(events, time_map)
         else:
             # If there is a multi-row R3 event.
-            content = _render_multirow(events, time_map)
+            content = _render_multirow(events, time_map, max_height)
     return format_html(
         '{period}'
         '<div class="time-table__slot"><div class="row">{content}</div></div>',
-        period=render_columned_period(times, events),
+        period=period_block,
         content=content,
     )
 

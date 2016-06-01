@@ -8,12 +8,13 @@ from events import renderers
 @pytest.fixture
 def simple_renderer(mocker):
 
-    def _simple_block_renderer(event, time_map, events, *extra_classes):
+    def _simple_block_renderer(
+            event, time_map, events, extra_classes=None, max_height=None):
         if extra_classes:
             fmt = '|{event} ({classes})| '
         else:
             fmt = '|{event}| '
-        return fmt.format(classes=' '.join(extra_classes), event=event)
+        return fmt.format(classes=' '.join(extra_classes or []), event=event)
 
     def _simple_attached_period_renderer(begin, end):
         return '|{0.hour}:{0:%M} {1.hour}:{1:%M}| '.format(
@@ -21,12 +22,13 @@ def simple_renderer(mocker):
         )
 
     def _simple_columned_period_renderer(times, events):
-        return '|{}| '.format(
+        html = '|{}| '.format(
             ' '.join(
                 '{0.hour}:{0:%M}'.format(make_naive(time.value))
                 for time in times
             )
         )
+        return html, len(events)
 
     mocker.patch.multiple(
         'events.renderers',

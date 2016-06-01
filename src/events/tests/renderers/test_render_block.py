@@ -1,7 +1,7 @@
 import pytest
 
 from events import renderers
-from events.models import Location
+from events.models import Location, CustomEvent, Time
 
 
 @pytest.fixture
@@ -112,7 +112,13 @@ def test_render_attached_period(utils, events, event_key, begin, end):
 @pytest.mark.parametrize('time_count', [2, 3, 4])
 def test_render_columned_period(parser, utils, make_time, time_count):
     times = [make_time(h) for h in range(time_count)]
-    rendered = renderers.render_columned_period(times, [])
+    rendered, _ = renderers.render_columned_period(times, [
+        CustomEvent(
+            title='M<3', location=Location.ALL,
+            begin_time=begin_time, end_time=end_time,
+        )
+        for begin_time, end_time in zip(times[:-1], times[1:])
+    ])
     assert utils.is_safe(rendered)
 
     expected = {
