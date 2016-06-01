@@ -51,7 +51,7 @@ def render_proposedtalkevent(e):
     return format_html(
         '<div class="slot-item__content talk">'
         '<a href="{link}" class="talk__title">{title}</a>'
-        '<a href="{link}" class="talk__speaker">{speakers}</a>'
+        '<a href="{link}#speaker-content" class="talk__speaker">{speakers}</a>'
         '<div class="talk__lang">{lang}</div>'
         '</div>',
         link=e.get_absolute_url(),
@@ -65,7 +65,7 @@ def render_sponsoredevent(e):
     return format_html(
         '<div class="slot-item__content sponsored talk">'
         '<a href="{link}" class="talk__title">{title}</a>'
-        '<a href="{link}" class="talk__speaker">{speaker}</a>'
+        '<a href="{link}#speaker-content" class="talk__speaker">{speaker}</a>'
         '<div class="talk__lang">{lang}</div>'
         '</div>',
         link=e.get_absolute_url(),

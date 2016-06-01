@@ -35,7 +35,8 @@ def test_render_proposedtalkevent(parser, utils, proposed_talk_block_event):
           <a href="/en-us/events/talk/42/" class="talk__title">
             Beyond the Style Guides&lt;br&gt;
           </a>
-          <a href="/en-us/events/talk/42/" class="talk__speaker">
+          <a href="/en-us/events/talk/42/#speaker-content"
+              class="talk__speaker">
             User and Misaki Mei
           </a>
           <div class="talk__lang">EN Slides</div>
@@ -52,7 +53,7 @@ def test_render_sponsoredevent(parser, utils, sponsored_block_event):
               class="talk__title">
             Camera engine office woman lights
           </a>
-          <a href="/en-us/events/talk/sponsored/camera-engine/"
+          <a href="/en-us/events/talk/sponsored/camera-engine/#speaker-content"
               class="talk__speaker">
             User
           </a>
@@ -87,23 +88,24 @@ def test_render_event(parser, utils, events, event_key):
               <a href="/en-us/events/talk/42/" class="talk__title">
                 Beyond the Style Guides&lt;br&gt;
               </a>
-              <a href="/en-us/events/talk/42/" class="talk__speaker">
+              <a href="/en-us/events/talk/42/#speaker-content"
+                  class="talk__speaker">
                 User and Misaki Mei
               </a>
               <div class="talk__lang">EN Slides</div>
             </div>""",
-        'sponsored_event': """
-            <div class="slot-item__content sponsored talk">
-              <a href="/en-us/events/talk/sponsored/camera-engine/"
-                  class="talk__title">
-                Camera engine office woman lights
-              </a>
-              <a href="/en-us/events/talk/sponsored/camera-engine/"
-                  class="talk__speaker">
-                User
-              </a>
-              <div class="talk__lang">ZH</div>
-            </div>""",
+        'sponsored_event': (
+            '<div class="slot-item__content sponsored talk">'
+            '  <a href="/en-us/events/talk/sponsored/camera-engine/"'
+            '      class="talk__title">'
+            '    Camera engine office woman lights'
+            '  </a>'
+            '  <a href="/en-us/events/talk/sponsored/camera-engine/'
+            '#speaker-content" class="talk__speaker">'
+            '    User'
+            '  </a>'
+            '  <div class="talk__lang">ZH</div>'
+            '</div>'),
     }[event_key]
     assert parser.arrange(rendered) == parser.arrange(expected)
 
