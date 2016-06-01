@@ -23,10 +23,10 @@ def time_map(events):
 
 
 # Hack to get all possible location values by introspection.
-POSSIBLE_LOCATIONS = [
+POSSIBLE_LOCATIONS = sorted(
     getattr(Location, k)
     for k in Location.__dict__ if k.isupper()
-]
+)
 
 
 @pytest.mark.parametrize('location', POSSIBLE_LOCATIONS)
