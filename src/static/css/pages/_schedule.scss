@@ -5,182 +5,26 @@ $location-color-map: (
   'r2': #072c98,
   'r3': #021C6A
 );
-//
-//.time-table-date {
-//    font-size:30px;
-//    color: #4163f5;
-//}
-//
-//.time-table {
-//    text-align: center;
-//    border-radius: 3px;
-//    border: 1px solid $time-table-border-color;
-//    overflow: hidden;
-//}
-//
-//.time-table__row {
-//    display: flex;
-//    flex-flow: row wrap;
-//}
-//
-//.time-table__time {
-//    display: flex;
-//    width: 100%;
-//    padding-left: 10%;
-//    justify-content: center;
-//    align-items: center;
-//    border: 1px solid $time-table-border-color;
-//}
-//
-//.time-table__time {
-//    &--row {
-//        flex-direction: column;
-//        align-items: stretch;
-//    }
-//
-//    .time__cell {
-//        border: 1px solid $time-table-border-color;
-//        border-width: 1px 0 1px 0;
-//        flex-flow: row;
-//        flex: 1;
-//
-//        &:first-child {
-//            border-top: none;
-//        }
-//
-//        &:last-child {
-//            border-bottom: none;
-//        }
-//    }
-//}
-//
-//
-//.time-table__slot {
-//    display: flex;
-//    flex-flow: column wrap;
-//    width: 100%;
-//}
-//
-//.time-table__header {
-//    display: none;
-//    height: 60px;
-//    background: #3e6df5;
-//    color: white;
-//
-//    // disable border for header
-//    .time-table__time {
-//        border: none;
-//    }
-//
-//    .header-cell {
-//        display: flex;
-//        align-items: center;
-//        @each $location, $color in $location-color-map {
-//            &--#{$location} {
-//                background-color: $color;
-//            }
-//        }
-//    }
-//}
-//
-//
-//.time-table__slot {
-//    .slot-item {
-//        display: flex;
-//        flex: 1;
-//        justify-content: center;
-//        min-height: 64px;
-//    }
-//}
-//
-//.slot-item {
-//    &__title {
-//        @include roboto-medium;
-//    }
-//
-//    &__label {
-//        display: flex;
-//        //flex: 1;
-//        width: 10%;
-//        align-items: center;
-//        justify-content: center;
-//        min-width: 30px;
-//        background-color:  #3e6df5;
-//        border-width: 1px 0 1px 0;
-//        border-color: rgba(255, 255, 255, .1);
-//        border-style: solid;
-//        padding: 5px;
-//        color: white;
-//
-//        // .slot-item__label-r0, .slot-item__label-r1, ...
-//        @each $location, $color in $location-color-map {
-//            &--#{$location} {
-//                background-color: $color;
-//            }
-//        }
-//    }
-//
-//    &__content {
-//        display: flex;
-//        flex: 10;
-//        flex-flow: column;
-//        align-items: center;
-//        justify-content: flex-end;
-//        padding: 20px 10px;
-//        border: 1px solid $time-table-border-color;
-//    }
-//
-//}
-//
-//@media (min-width: $screen-md-min) {
-//    .time-table__header {
-//        display: flex;
-//        flex: 1;
-//        .time-table__slot {
-//            align-items: stretch;
-//            .slot-item {
-//                min-height: 0;
-//            }
-//        }
-//    }
-//
-//    .time-table__time {
-//        flex: 2;
-//        padding-left: 0;
-//    }
-//
-//    .time-table__slot{
-//        flex-direction: row;
-//        align-items: flex-start;
-//        flex: 15;
-//        .slot-item--h2 {
-//            min-height: 128px;
-//        }
-//    }
-//
-//    // only show in mobile version
-    .slot-item__label {
-        display: none;
-    }
-//}
-//
-//
+
+$cell-height: 180px;
+
+
 //// Talk related style
 .time-table .talk {
-    .talk__title {
+    &__title {
         @include roboto-medium();
         font-size:16px;
         color: #f08e57;
         margin-bottom: 8px;
     }
 
-    .talk__speaker {
+    &__speaker {
         color:#3e6df5;
         margin-top: 8px;
         margin-bottom: 5px;
     }
 
-    .talk__lang {
+    &__lang {
         @include roboto-medium;
         border:1px solid #555555;
         line-height: 1.6;
@@ -191,12 +35,16 @@ $location-color-map: (
     }
 }
 
-$cell-height: 180px;
 
+// Time table
 .time-table {
     border: 1px solid $time-table-border-color;
     border-radius: 3px;
     overflow: hidden;
+}
+
+.time-table-header {
+    text-transform: uppercase;
 }
 
 .time-table__time {
@@ -206,6 +54,7 @@ $cell-height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(228, 235, 255, 0.28);
 
     &--row-span {
         height: auto;
@@ -219,6 +68,9 @@ $cell-height: 180px;
         height: 40px;
     }
     .header-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: white;
         @each $location, $color in $location-color-map {
             &--#{$location} {
@@ -236,12 +88,9 @@ $cell-height: 180px;
 .slot-item {
     @include make-xs-column(12);
     @include make-md-column(3);
-    //height: $cell-height;
     border: 1px solid $time-table-border-color;
     display: flex;
     flex-flow: row;
-    //align-items: flex-start;
-    //justify-content: space-between;
     text-align: center;
 
     &__label {
@@ -275,6 +124,12 @@ $cell-height: 180px;
         padding: 15px 5px;
     }
 
+    &--w3 { @include make-md-column(9); }
+
+    &--w4 { @include make-md-column(12); }
+
+    &--blank { display: none; }
+
     .talk__title {
         flex: 4;
     }
@@ -282,30 +137,16 @@ $cell-height: 180px;
         flex: 1;
     }
 
-    &--w3 {
-        @include make-md-column(9);
-    }
-
-    &--w4 {
-        @include make-md-column(12);
-    }
-
-    &--offset-1 {
-        @include make-md-column-offset(4);
-    }
-
-    &--blank {
-        display: none;
-    }
-
 }
 
 
+// For desktop
 @media (min-width: $screen-md-min) {
 
     .time-table__time {
         border: 1px solid $time-table-border-color;
         height: $cell-height;
+        background-color: #fff;
         &--row-span {
             flex-flow: column;
         }
@@ -318,20 +159,10 @@ $cell-height: 180px;
     }
 
     .row {
-        //.slot-item:first-child
         .slot-item {
             border-left-style: dashed;
             border-right-style: dashed;
-            //border-width: 1px 0 1px 0 ;
-            //border-style: dashed;
-
         }
-        //.slot-item:first-child {
-        //    border-left-width: 1px;
-        //}
-        //.slot-item:last-child {
-        //    border-right-width: 1px;
-        //}
     }
 
     .time-table__header {
@@ -345,26 +176,22 @@ $cell-height: 180px;
         }
     }
 
-    .slot-item--blank {
-        display: block;
-        background-color: #f5f5f5;
-    }
-
-
-    .slot-item .slot-item__label {
-        display: none;
-    }
-
     .slot-item {
         height: $cell-height;
         padding: 0;
         &__content {
             flex-direction: column;
         }
+        &__label { display: none; }
+
+        &--blank {
+            display: block;
+            background-color: #f5f5f5;
+        }
     }
 
     .slot-item, .time-table__time {
-        &--hsmall { height: $cell-height * 0.5; }
+        &--h1 { height: $cell-height * 0.5; }
         &--h2 { height: $cell-height * 2; }
         &--h3 { height: $cell-height * 3; }
     }
