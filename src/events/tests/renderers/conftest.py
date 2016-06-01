@@ -30,23 +30,23 @@ def utils():
 
 @pytest.fixture
 def keynote_belt_event(db):
-    e = KeynoteEvent.objects.get(speaker_name='Amber Brown')
-    e.begin_time = Time.objects.get('2016-06-05 9:00')
-    e.end_time = Time.objects.get('2016-06-05 10:00')
-    e.location = Location.ALL
-    e.save()
-    return e
+    return KeynoteEvent.objects.create(
+        speaker_name='Amber Brown',
+        slug='amber-brown',
+        begin_time=Time.objects.get('2016-06-05 9:00'),
+        end_time=Time.objects.get('2016-06-05 10:00'),
+        location=Location.ALL,
+    )
 
 
 @pytest.fixture
 def custom_partial_belt_event(db):
-    e = CustomEvent.objects.create(
+    return CustomEvent.objects.create(
         title='Job Fair',
         begin_time=Time.objects.get('2016-06-04 14:45'),
         end_time=Time.objects.get('2016-06-04 15:15'),
         location=Location.R012,
     )
-    return e
 
 
 @pytest.fixture
