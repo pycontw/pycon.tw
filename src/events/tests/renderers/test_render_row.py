@@ -9,7 +9,8 @@ from events import renderers
 def simple_renderer(mocker):
 
     def _simple_block_renderer(
-            event, time_map, events, extra_classes=None, max_height=None):
+            event, time_map, events, extra_classes=None, *,
+            min_height=0, max_height=None):
         if extra_classes:
             fmt = '|{event} ({classes})| '
         else:

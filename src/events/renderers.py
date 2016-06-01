@@ -109,12 +109,14 @@ def _has_tall_event(events):
     )
 
 
-def render_block(event, time_map, events, extra_classes=None, max_height=None):
+def render_block(
+        event, time_map, events, extra_classes=None, *,
+        min_height=0, max_height=None):
     location = event.location
     height = time_map[event.end_time] - time_map[event.begin_time]
     if max_height is not None:
         height = min(height, max_height)
-    if height == 1 and not _has_tall_event(events):
+    if height == 1 and min_height < 1 and not _has_tall_event(events):
         height = 'small'
     return format_html(
         '<div class="slot-item slot-item--w{w} slot-item--h{h}{classes}">'
@@ -145,7 +147,16 @@ def _render_blocks(events, time_map):
     if events[0].location == Location.R3:
         # If this contains R3, shuffle it to the back.
         r3_event, *events = events
-        r3_block = render_block(r3_event, time_map, events)
+
+        # If this is not a smooth row, we need to prevent any block from
+        # being rendered as short because we can't handle it with multi-height.
+        if any(r3_event.end_time != e.end_time for e in events):
+            min_height = 1
+        else:
+            min_height = 0
+        r3_block = render_block(
+            r3_event, time_map, events, min_height=min_height,
+        )
     else:
         r3_event = None
         r3_block = ''
@@ -210,7 +221,10 @@ def _render_multirow(events, time_map, max_height):
     # Render the multi-row R3 event.
     cells.extend([
         render_attached_period(sp_event.begin_time, sp_event.end_time),
-        render_block(sp_event, time_map, events, ['pull-right'], max_height),
+        render_block(
+            sp_event, time_map, events, ['pull-right'],
+            max_height=max_height,
+        ),
     ])
 
     # Render the rest of the events.
