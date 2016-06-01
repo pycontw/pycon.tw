@@ -3,6 +3,7 @@ import itertools
 import sortedcontainers
 
 from django.utils.html import format_html, format_html_join
+from django.utils.safestring import mark_safe
 from django.utils.timezone import make_naive
 from django.utils.translation import ugettext, ugettext_lazy as _
 
@@ -40,6 +41,7 @@ LANG_DISPLAY_MAP = {
     'ENEN': 'EN',
     'ZHZH': 'ZH',
     'ZHEN': _('EN Slides'),
+    'TAI':  'TAI',
 }
 
 
@@ -100,13 +102,16 @@ def render_block_location(location):
     )
 
 
-def render_block(event, time_map, *extra_classes):
+def render_block(event, time_map, events, *extra_classes):
     location = event.location
+    height = time_map[event.end_time] - time_map[event.begin_time]
+    if not any(isinstance(e, ProposedTalkEvent) for e in events):
+        height = 'small'
     return format_html(
         '<div class="slot-item slot-item--w{w} slot-item--h{h}{classes}">'
         '{location}{event}</div>',
         w=Location.get_md_width(location),
-        h=time_map[event.end_time] - time_map[event.begin_time],
+        h=height,
         location=render_block_location(location),
         event=render_event(event),
         classes=(' ' + ' '.join(extra_classes) if extra_classes else ''),
@@ -114,6 +119,7 @@ def render_block(event, time_map, *extra_classes):
 
 
 def render_attached_period(begin, end):
+    return ''
     begin = make_naive(begin.value)
     end = make_naive(end.value)
     return format_html(
@@ -131,7 +137,7 @@ def _render_blocks(events, time_map):
     if events[0].location == Location.R3:
         # If this contains R3, shuffle it to the back.
         r3_event, *events = events
-        r3_block = render_block(r3_event, time_map)
+        r3_block = render_block(r3_event, time_map, events)
     else:
         r3_event = None
         r3_block = ''
@@ -154,7 +160,7 @@ def _render_blocks(events, time_map):
         r012_period=render_attached_period(rx_begin, rx_end),
         r012_blocks=html_join(
             '',
-            (render_block(e, time_map) for e in events),
+            (render_block(e, time_map, events) for e in events),
         ),
         r3_period=r3_period,
         r3_block=r3_block,
@@ -166,7 +172,7 @@ def _render_multirow_subrow(event_iter, time_map):
     e0 = next(event_iter)
     cells = [
         render_attached_period(e0.begin_time, e0.end_time),
-        render_block(e0, time_map)
+        render_block(e0, time_map, [])
     ]
     cols = Location.get_md_width(e0.location)
 
@@ -176,7 +182,7 @@ def _render_multirow_subrow(event_iter, time_map):
             e = next(event_iter)
         except StopIteration:
             break
-        cells.append(render_block(e, time_map))
+        cells.append(render_block(e, time_map, []))
         cols += Location.get_md_width(e.location)
     return cells
 
@@ -196,7 +202,7 @@ def _render_multirow(events, time_map):
     # Render the multi-row R3 event.
     cells.extend([
         render_attached_period(sp_event.begin_time, sp_event.end_time),
-        render_block(sp_event, time_map, 'pull-right'),
+        render_block(sp_event, time_map, [], 'pull-right'),
     ])
 
     # Render the rest of the events.
@@ -210,7 +216,7 @@ def _render_multirow(events, time_map):
     return html_join('', cells)
 
 
-def render_columned_period(times):
+def render_columned_period(times, events):
 
     def _get_args(begin_time, end_time):
         begin_naive = make_naive(begin_time.value)
@@ -227,10 +233,13 @@ def render_columned_period(times):
         '<div class="time__cell">{}:{}<br>|<br>{}:{}</div>',
         (_get_args(begin, end) for begin, end in zip(times[:-1], times[1:])),
     )
+    height = len(times) - 1
+    if not any(isinstance(e, ProposedTalkEvent) for e in events):
+        height = 'small'
     return format_html(
         '<div class="time-table__time time-table__time--row-span '
         'time-table__time--h{height}">{cells}</div>',
-        height=len(times) - 1,
+        height=height,
         cells=cells,
     )
 
@@ -253,7 +262,7 @@ def render_row(times, events):
     return format_html(
         '{period}'
         '<div class="time-table__slot"><div class="row">{content}</div></div>',
-        period=render_columned_period(times),
+        period=render_columned_period(times, events),
         content=content,
     )
 
@@ -319,7 +328,7 @@ def render_table(day):
     )
     groups = collect_event_groups(events)
 
-    head = """
+    head = mark_safe("""
         <div class="time-table__header">
           <div class="time-table__time"></div>
           <div class="time-table__slot">
@@ -331,7 +340,7 @@ def render_table(day):
             </div>
           </div>
         </div>
-    """
+    """)
     body = html_join('', (
         render_row(times, group) for times, group in groups.items()
     ))
@@ -341,9 +350,21 @@ def render_table(day):
     )
 
 
-def render_all():
-    return format_html_join(
-        '', '<h2 class="time-table-header">{}</h2>{}',
-        ((display, render_table(day))
-         for day, display in DAY_NAMES.items())
+def render_day(day, display):
+    events = list(itertools.chain.from_iterable(
+        _filter_events(Cls, day)
+        for Cls in EVENT_CLASSES
+    ))
+    if not events:
+        return ''
+    return format_html(
+        '<h2 class="time-table-header">{display}</h2>{table}',
+        display=display, table=render_table(day),
     )
+
+
+def render_all():
+    return html_join('', (
+        render_day(day, display)
+        for day, display in DAY_NAMES.items()
+    ))

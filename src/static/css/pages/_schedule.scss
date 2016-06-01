@@ -155,6 +155,7 @@ $cell-height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
     }
 
@@ -191,7 +192,8 @@ $cell-height: 180px;
     }
 
     .slot-item, .time-table__time {
-        &--h1 { height: $cell-height * 0.5; }
+        text-align: center;
+        &--hsmall { height: $cell-height * 0.5; }
         &--h2 { height: $cell-height * 2; }
         &--h3 { height: $cell-height * 3; }
     }
