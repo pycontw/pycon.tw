@@ -8,7 +8,7 @@ from events import renderers
 @pytest.fixture
 def simple_renderer(mocker):
 
-    def _simple_block_renderer(event, time_map, *extra_classes):
+    def _simple_block_renderer(event, time_map, events, *extra_classes):
         if extra_classes:
             fmt = '|{event} ({classes})| '
         else:
@@ -20,7 +20,7 @@ def simple_renderer(mocker):
             make_naive(begin.value), make_naive(end.value),
         )
 
-    def _simple_columned_period_renderer(times):
+    def _simple_columned_period_renderer(times, events):
         return '|{}| '.format(
             ' '.join(
                 '{0.hour}:{0:%M}'.format(make_naive(time.value))

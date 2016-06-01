@@ -68,7 +68,7 @@ def test_render_block_location(parser, utils, location):
 @pytest.mark.usefixtures('simple_component_renderer')
 def test_render_block(parser, utils, time_map, events, event_key):
     e = events[event_key]
-    rendered = renderers.render_block(e, time_map)
+    rendered = renderers.render_block(e, time_map, [e])
     assert utils.is_safe(rendered)
 
     expected = {
@@ -77,7 +77,7 @@ def test_render_block(parser, utils, time_map, events, event_key):
               3-r012 Job Fair
             </div>""",
         'keynote_event': """
-            <div class="slot-item slot-item--w4 slot-item--h1">
+            <div class="slot-item slot-item--w4 slot-item--hsmall">
               2-all Keynote: Amber Brown
             </div>""",
         'proposed_talk_event': """
@@ -85,7 +85,7 @@ def test_render_block(parser, utils, time_map, events, event_key):
               4-r0 Beyond the Style Guides&lt;br&gt;
             </div>""",
         'sponsored_event': """
-            <div class="slot-item slot-item--w1 slot-item--h1">
+            <div class="slot-item slot-item--w1 slot-item--hsmall">
               6-r2 Camera engine office woman lights
             </div>""",
     }[event_key]
@@ -110,13 +110,13 @@ def test_render_attached_period(utils, events, event_key, begin, end):
 @pytest.mark.parametrize('time_count', [2, 3, 4])
 def test_render_columned_period(parser, utils, make_time, time_count):
     times = [make_time(h) for h in range(time_count)]
-    rendered = renderers.render_columned_period(times)
+    rendered = renderers.render_columned_period(times, [])
     assert utils.is_safe(rendered)
 
     expected = {
         2: (
             '<div class="time-table__time time-table__time--row-span '
-            'time-table__time--h1">'
+            'time-table__time--hsmall">'
             '  <div class="time__cell">0:00<br>|<br>1:00</div>'
             '</div>'
         ),

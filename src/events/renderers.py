@@ -102,10 +102,17 @@ def render_block_location(location):
     )
 
 
+def _has_tall_event(events):
+    return any(
+        isinstance(e, ProposedTalkEvent) or isinstance(e, CustomEvent)
+        for e in events
+    )
+
+
 def render_block(event, time_map, events, *extra_classes):
     location = event.location
     height = time_map[event.end_time] - time_map[event.begin_time]
-    if not any(isinstance(e, ProposedTalkEvent) for e in events):
+    if height == 1 and not _has_tall_event(events):
         height = 'small'
     return format_html(
         '<div class="slot-item slot-item--w{w} slot-item--h{h}{classes}">'
@@ -119,7 +126,6 @@ def render_block(event, time_map, events, *extra_classes):
 
 
 def render_attached_period(begin, end):
-    return ''
     begin = make_naive(begin.value)
     end = make_naive(end.value)
     return format_html(
@@ -234,7 +240,7 @@ def render_columned_period(times, events):
         (_get_args(begin, end) for begin, end in zip(times[:-1], times[1:])),
     )
     height = len(times) - 1
-    if not any(isinstance(e, ProposedTalkEvent) for e in events):
+    if height == 1 and not _has_tall_event(events):
         height = 'small'
     return format_html(
         '<div class="time-table__time time-table__time--row-span '

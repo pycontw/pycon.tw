@@ -20,7 +20,7 @@ class RendererTestUtils:
 
         This is Django's internal API, but we exploit it for easy testing.
         """
-        return hasattr(s, '__html__')
+        return not s or hasattr(s, '__html__')
 
 
 @pytest.fixture
