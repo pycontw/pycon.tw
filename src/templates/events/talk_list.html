@@ -10,9 +10,10 @@
 
 <div class="pycon-list">
 	<div class="pycon-list-item text-theme-highlight">
+		{% url 'events_schedule' as schedule_url %}
 		{% blocktrans trimmed %}
 		You can check out the program schedule
-		<a class="text-emphasize" href="{% url 'events_schedule' %}">here</a>.
+		<a class="text-emphasize" href="{{ schedule_url }}">here</a>.
 		{% endblocktrans %}
 	</div>
 	<div class="pycon-list-item text-theme-highlight">
