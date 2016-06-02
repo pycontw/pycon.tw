@@ -6,6 +6,7 @@
 {% block page_title %}<h1>活動概覽 (Events Overview)</h1>{% endblock %}
 
 {% block content %}
+{% url 'page' path='events/tutorials' as events_tutorials_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
@@ -21,6 +22,7 @@
     專業課程 (Tutorial) 是 PyCon TW 2016 的一部份，採付費方式。舉辦時間會在研討會前一至三週，提供全天（6 小時）或是半天（3 小時）的課程。課程內容採取公開遴選方式徵求提案。</p>
 <p>
     Tutorial 可能有針對完全沒學過 Python 的初學者的新手教學，亦有針對特定主題如 Raspberry Pi、資料分析等課程。目前讓會眾在參與研討會時更容易上手，對 Python 駕輕就熟的使用者能瞭解更多應用。Tutorial 與研討會的票是分開銷售，因此如果您參與了 tutorial 還想加入 PyCon TW 2016 研討會，請不要忘記購票。</p>
+<p>更多關於 Tutorial 內容請參考 <a href="{{ events_tutorials_url }}">Tutorial</a> 頁面。</p>
 
 <h3>Sprint</h3>
 <p>

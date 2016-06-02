@@ -6,6 +6,7 @@
 {% block page_title %}<h1>Events Overview</h1>{% endblock %}
 
 {% block content %}
+{% url 'page' path='events/tutorials' as events_tutorials_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
@@ -30,6 +31,10 @@
 	before, and also for specific topics such as controlling Raspberry Pi, data
 	analysis, etc. Tickets for tutorials are sold separately from the conference.
 	Make sure you complete registration for both events.
+</p>
+<p>
+	More information about tutorials can be found on the
+	<a href="{{ events_tutorials_url }}">Tutorial</a> page.
 </p>
 
 <h3>Sprints</h3>

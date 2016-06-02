@@ -14,6 +14,7 @@
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/tutorials' as events_tutorial_url %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
@@ -42,6 +43,7 @@
       <li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
       <li><a href="{{ events_bof_url }}">{% trans 'BoF' %}</a></li>
       <li><a href="{{ events_pyday_url }}">{% trans 'PyDay' %}</a></li>
+      <li><a href="{{ events_tutorial_url }}">{% trans 'Tutorial' %}</a></li>
     </ul>
   </li>
   <li class="dropdown">
