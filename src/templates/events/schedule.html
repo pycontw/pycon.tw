@@ -1,12 +1,18 @@
 {% extends 'contents/_base/events.html' %}
 
 {% load i18n staticfiles %}
+{% load pycontw_tools %}
 
 {% block title %}{% trans 'Schedule' %}{% endblock title %}
 
 {% block page_title %}<h1>{% trans 'Schedule' %}</h1>{% endblock page_title %}
 
 {% block content %}
+
+{% for message in messages %}
+<div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert">{{ message }}</div>
+{% endfor %}
+
 
 <div class="pycon-list">
 	<div class="pycon-list-item text-theme-highlight">
@@ -50,7 +56,10 @@
 {% endblock content %}
 
 
-{% block extra_js %}
+{% block scripts %}
 {{ block.super }}
+<script src="{% static 'js/vendors/Hyphenator.js' %}"></script>
+<script src="{% static 'js/vendors/jquery.dotdotdot.min.js' %}"></script>
 <script src="{% static 'js/tools/smooth-scroll.js' %}"></script>
-{% endblock extra_js %}
+<script src="{% static 'js/events/schedule.js' %}"></script>
+{% endblock scripts %}

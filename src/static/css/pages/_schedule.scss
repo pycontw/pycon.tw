@@ -131,10 +131,14 @@ $cell-height: 180px;
     &--blank { display: none; }
 
     .talk__title {
+        display: flex;
         flex: 4;
+        align-items: center;
     }
     .talk__speaker {
+        display: flex;
         flex: 1;
+        align-items: center;
     }
 
 }
@@ -191,6 +195,13 @@ $cell-height: 180px;
         &--blank {
             display: block;
             background-color: #f5f5f5;
+        }
+
+        .talk__title {
+            // Margianlly less than 4 * line-height.
+            // This is set here to make jquery-dotdotdot only work on desktop,
+            // not mobile.
+            max-height: 71px;
         }
     }
 
