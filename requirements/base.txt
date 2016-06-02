@@ -27,6 +27,13 @@ django-extensions==1.6.1
 # https://github.com/torchbox/django-libsass
 django-libsass==0.6
 
+# Translates Django models using a registration approach.
+# https://github.com/deschler/django-modeltranslation
+django-modeltranslation==0.11
+
+# Certifi, a carefully curated collection of Root Certificates for SSL
+certifi>=2015.11.20
+
 # Faker is a Python package that generates fake data for you.
 # http://www.joke2k.net/faker/
 fake-factory==0.5.3
@@ -43,17 +50,14 @@ Pillow==3.1.0
 # http://pythonhosted.org/pytz/
 pytz==2015.7
 
-# Transifex, an online translation collaboration platform
-# http://docs.transifex.com/client/
-transifex-client==0.11
+# Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
+# http://www.grantjenks.com/docs/sortedcontainers/
+sortedcontainers==1.4.4
 
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.7.5
 
-# Certifi, a carefully curated collection of Root Certificates for SSL
-certifi>=2015.11.20
-
-# Translates Django models using a registration approach.
-# https://github.com/deschler/django-modeltranslation
-django-modeltranslation==0.11
+# Transifex, an online translation collaboration platform
+# http://docs.transifex.com/client/
+transifex-client==0.11

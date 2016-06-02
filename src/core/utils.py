@@ -3,10 +3,20 @@ from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
 from django.template.response import TemplateResponse
 from django.utils.functional import lazy
-from django.utils.html import format_html
+from django.utils.html import conditional_escape, format_html, mark_safe
 
 
 format_html_lazy = lazy(format_html, str)
+
+
+def html_join(sep, sequence):
+    """Similar to str.join, but passes the separator and all elements in the
+    sequence through conditional_escape, and calls 'mark_safe' on the result.
+    This function should be used instead of str.join to build up small HTML
+    fragments.
+    """
+    sep_safe = conditional_escape(sep)
+    return mark_safe(sep_safe.join(conditional_escape(e) for e in sequence))
 
 
 class TemplateExistanceStatusResponse(TemplateResponse):

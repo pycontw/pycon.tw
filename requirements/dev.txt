@@ -26,6 +26,10 @@ coverage==4.0.3
 # https://pypi.python.org/pypi/pytest-cov
 pytest-cov==2.2.0
 
+# Thin-wrapper around the mock package for easier use with py.test
+# https://github.com/pytest-dev/pytest-mock/
+pytest-mock==0.11.0
+
 # xdist: pytest distributed testing plugin
 # Use this plugin to speed up the test speed
 # http://pytest.org/latest/xdist.html

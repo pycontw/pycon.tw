@@ -1,0 +1,220 @@
+$time-table-border-color: #e4ebff;
+$location-color-map: (
+  'r0': #1542c4,
+  'r1': #0b38ba,
+  'r2': #072c98,
+  'r3': #021C6A
+);
+
+$cell-height: 180px;
+
+
+//// Talk related style
+.time-table .talk {
+    &__title {
+        @include roboto-medium();
+        font-size:16px;
+        color: #f08e57;
+        margin-bottom: 8px;
+    }
+
+    &__speaker {
+        color:#3e6df5;
+        margin-top: 8px;
+        margin-bottom: 5px;
+    }
+
+    &__lang {
+        @include roboto-medium;
+        border:1px solid #555555;
+        line-height: 1.6;
+        border-radius:2px;
+        font-size: 12px;
+        display: inline-block;
+        padding: 0 8px;
+    }
+}
+
+
+// Time table
+.time-table {
+    border: 1px solid $time-table-border-color;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.time-table-header {
+    text-transform: uppercase;
+}
+
+.time-table__time {
+    @include make-md-column(1);
+    border: 1px solid $time-table-border-color;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 235, 255, 0.28);
+
+    &--row-span {
+        height: auto;
+    }
+}
+
+.time-table__header {
+    display: none;
+    .slot-item,
+    .time-table__time {
+        height: 40px;
+    }
+    .header-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+.time-table__slot {
+    @include make-md-column(11);
+}
+
+
+.slot-item {
+    @include make-xs-column(12);
+    @include make-md-column(3);
+    border: 1px solid $time-table-border-color;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 30px;
+        background-color:  #3e6df5;
+        border-width: 1px 0 1px 0;
+        border-color: rgba(255, 255, 255, .1);
+        border-style: solid;
+        padding: 5px;
+        color: white;
+        margin-left: -15px;
+
+        // .slot-item__label-r0, .slot-item__label-r1, ...
+        @each $location, $color in $location-color-map {
+            &--#{$location} {
+                background-color: $color;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        padding: 15px 5px;
+    }
+
+    &--w3 { @include make-md-column(9); }
+
+    &--w4 { @include make-md-column(12); }
+
+    &--blank { display: none; }
+
+    .talk__title {
+        flex: 4;
+    }
+    .talk__speaker {
+        flex: 1;
+    }
+
+}
+
+
+// For desktop
+@media (min-width: $screen-md-min) {
+
+    .time-table__time {
+        border: 1px solid $time-table-border-color;
+        height: $cell-height;
+        background-color: #fff;
+        &--row-span {
+            flex-flow: column;
+        }
+        .time__cell {
+            height: $cell-height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    .attached.time-table__time {
+        display: none;
+    }
+
+    .row {
+        .slot-item {
+            border-left-style: dashed;
+            border-right-style: dashed;
+        }
+    }
+
+    .time-table__header {
+        display: block;
+        .time-table__time {
+            background:#3e6df5;
+            border: none;
+        }
+        .slot-item {
+            border: none;
+        }
+    }
+
+    .slot-item {
+        height: $cell-height;
+        padding: 0;
+        &__content {
+            flex-direction: column;
+        }
+        &__label { display: none; }
+
+        &--blank {
+            display: block;
+            background-color: #f5f5f5;
+        }
+    }
+
+    .slot-item, .time-table__time {
+        text-align: center;
+        &--hsmall { height: $cell-height * 0.5; }
+        &--h2 { height: $cell-height * 2; }
+        &--h3 { height: $cell-height * 3; }
+        &--h4 { height: $cell-height * 4; }
+        &--h5 { height: $cell-height * 5; }
+    }
+}
+
+
+// For mobile.
+@media (max-width: $screen-sm-max) {
+    .columned.time-table__time {
+        display: none;
+    }
+}
+
+
+// Generation form.
+
+.generation-form {
+    margin-top: 3em;
+}

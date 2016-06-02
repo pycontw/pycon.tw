@@ -1,16 +1,6 @@
 import pytest
 
-from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
-
-
-@pytest.fixture
-def talk_proposal(user):
-    proposal = TalkProposal.objects.create(
-        id=42,
-        submitter=user,
-        title='Beyond the Style Guides<br>',
-    )
-    return proposal
+from proposals.models import AdditionalSpeaker, TutorialProposal
 
 
 @pytest.fixture
@@ -26,6 +16,7 @@ def tutorial_proposal(user):
         id=42,
         submitter=user,
         title='Beyond the Style Guides<br>',
+        language='ZHEN',
     )
     return proposal
 
