@@ -1,8 +1,11 @@
+import collections
+
 import pytest
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
+from django.utils import six
 
 from proposals.models import TalkProposal
 
@@ -54,6 +57,33 @@ class HTMLParser:
 @pytest.fixture
 def parser():
     return HTMLParser()
+
+
+class DjangoUtils:
+    """Test utilities for testing Django things.
+    """
+    def to_list(self, qs, transform=repr):
+        """Convert a queryset to list.
+
+        This uses a similar algorithm to Django's `assertQuerySetEqual` to
+        convert the queryset, but leave the asserting part to pytest.
+        """
+        items = six.moves.map(transform, qs)
+        return list(items)
+
+    def to_counter(self, qs, transform=repr):
+        """Convert a queryset to a `collections.Counter`.
+
+        This uses a similar algorithm to Django's `assertQuerySetEqual` to
+        convert the queryset, but leave the asserting part to pytest.
+        """
+        items = six.moves.map(transform, qs)
+        return collections.Counter(items)
+
+
+@pytest.fixture
+def djutils():
+    return DjangoUtils()
 
 
 @pytest.fixture
