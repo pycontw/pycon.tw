@@ -71,19 +71,19 @@ class EventTimeRangeFilter(admin.SimpleListFilter):
     def queryset(self, request, queryset):
         try:
             filter_kwargs = {
-                'day1': {self.field_name + 'value__date': DAY_1},
-                'day2': {self.field_name + 'value__date': DAY_2},
-                'day3': {self.field_name + 'value__date': DAY_3},
+                'day1': {self.field_name + '__value__date': DAY_1},
+                'day2': {self.field_name + '__value__date': DAY_2},
+                'day3': {self.field_name + '__value__date': DAY_3},
             }[self.value()]
         except KeyError:
             return queryset
         return queryset.filter(**filter_kwargs)
 
 
-class StartTimeRangeFilter(EventTimeRangeFilter):
-    title = _('start time')
-    parameter_name = 'start-time'
-    field_name = 'start_time'
+class BeginTimeRangeFilter(EventTimeRangeFilter):
+    title = _('begin time')
+    parameter_name = 'begin-time'
+    field_name = 'begin_time'
 
 
 class EndTimeRangeFilter(EventTimeRangeFilter):
@@ -97,7 +97,7 @@ class CustomEventAdmin(admin.ModelAdmin):
     fields = ['title', 'begin_time', 'end_time', 'location']
     search_fields = ['title']
     list_display = ['title', 'begin_time', 'end_time', 'location']
-    list_filter = [StartTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
 
 
 @admin.register(KeynoteEvent)
@@ -105,14 +105,14 @@ class KeynoteEventAdmin(admin.ModelAdmin):
     fields = ['speaker_name', 'slug', 'begin_time', 'end_time', 'location']
     search_fields = ['speaker_name']
     list_display = ['speaker_name', 'begin_time', 'end_time', 'location']
-    list_filter = [StartTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
 
 
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
     fields = ['proposal', 'begin_time', 'end_time', 'location']
     list_display = ['proposal', 'begin_time', 'end_time', 'location']
-    list_filter = [StartTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
     raw_id_fields = ['proposal']
 
 
@@ -126,8 +126,8 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     ]
     list_display = ['title', 'begin_time', 'end_time', 'location']
     list_filter = [
+        BeginTimeRangeFilter, EndTimeRangeFilter, 'location',
         'category', 'language', 'python_level',
-        StartTimeRangeFilter, EndTimeRangeFilter, 'location',
     ]
     search_fields = ['title', 'abstract']
     prepopulated_fields = {'slug': ['title']}
