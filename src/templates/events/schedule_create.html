@@ -32,6 +32,7 @@
 
 
 {% block scripts %}
-{{ block.super }}
+{# This needs to happen before the DOM is modified. #}
 <script src="{% static 'js/events/schedule_gen.js' %}"></script>
-{% endblock %}
+{{ block.super }}
+{% endblock scripts %}
