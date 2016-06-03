@@ -213,6 +213,21 @@ $cell-height: 180px;
         &--h4 { height: $cell-height * 4; }
         &--h5 { height: $cell-height * 5; }
     }
+
+    .slot-item.slot-item--h2 {
+        .talk__title {
+          max-height: 142px;
+        }
+
+        .slot-item__content {
+          justify-content: center;
+        }
+
+        .talk__speaker {
+            flex: 0;
+            margin-bottom: 10px;
+        }
+    }
 }
 
 
