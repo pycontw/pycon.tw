@@ -5,7 +5,18 @@
 
 {% block title %}{{ object.title }}{% endblock title %}
 
-{% block page_title %}<h1>{{ object.title }}</h1>{% endblock page_title %}
+{% block page_title %}
+<h1>
+	{{ object.title }}
+	{% if object.submitter == user %}
+	<span class="accessory">
+		<a href="{% url 'talk_proposal_update' pk=object.pk %}" target="_blank">
+			<span class="fa fa-edit" aria-hidden="true"></span>
+		</a>
+	</span>
+	{% endif %}
+</h1>
+{% endblock page_title %}
 
 
 {% block content_page_class %}{{ block.super }} talk-detail-content{% endblock content_page_class %}
@@ -59,6 +70,11 @@
 			{% if user.facebook_profile_url %}
 			<a href="{{ user.facebook_profile_url }}" target="_blank">
 				<span class="fa fa-facebook" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+			{% if user == request.user %}
+			<a href="{% url 'user_profile_update' %}" target="_blank">
+				<span class="fa fa-edit" aria-hidden="true"></span>
 			</a>
 			{% endif %}
 		</span>

@@ -10,8 +10,24 @@
     color: white;
 
     h1 {
+
         padding: 52px 0 22px;
         font-size: 40px;
+
+        .accessory {
+
+            margin-left: 0.5em;
+            font-size: 60%;
+
+            > a {
+                margin-left: 5px;
+                color: $gray-lighterish;
+
+                &:hover, &:focus {
+                    color: $gray-lighter;
+                }
+            }
+        }
     }
 }
 
