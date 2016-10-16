@@ -33,8 +33,3 @@ after_success:
 - cd src; codecov
 - cd ..
 - fab travis_push_transifex
-deploy:
-  provider: script
-  script: fab deploy -H krdai.info -u deploy
-  on:
-    branch: master
