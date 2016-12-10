@@ -1,4 +1,5 @@
 from django.apps import apps
+from django.conf import settings
 from django.core.urlresolvers import reverse_lazy
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -34,6 +35,28 @@ class EAWTextField(models.TextField):
         super().__init__(*args, **kwargs)
         if self.max_length is not None:
             self.validators.append(EAWMaxLengthValidator(self.max_length))
+
+
+class DefaultConferenceManagerMixin:
+    """Mixin for querysets that provides conference filtering by default.
+    """
+    conference_attr = 'conference'
+
+    def get_queryset(self):
+        """Filter to include only instances for the current conference.
+
+        Note that we use the slug setting directly to minimize SQL overhead.
+        """
+        qs = super().get_queryset()
+        qs = qs.filter(**{
+            self.conference_attr: settings.CONFERENCE_DEFAULT_SLUG,
+        })
+        return qs
+
+
+class DefaultConferenceManager(DefaultConferenceManagerMixin, models.Manager):
+    """A concrete manager using ``DefaultConferenceManagerMixin``.
+    """
 
 
 class EventInfo(models.Model):

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 import os
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE',
-    'pycontw2016.settings.production',
+    'pycontw2016.settings.production.pycontw2016',
 )
 
 from django.core.wsgi import get_wsgi_application

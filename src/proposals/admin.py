@@ -15,8 +15,8 @@ class AdditionalSpeakerInline(GenericTabularInline):
 class ProposalAdmin(admin.ModelAdmin):
 
     fields = [
-        'submitter', 'title', 'category', 'duration', 'language',
-        'abstract', 'python_level', 'objective',
+        'conference', 'submitter', 'title', 'category', 'duration',
+        'language', 'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled',
     ]

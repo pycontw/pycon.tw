@@ -7,7 +7,9 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from core.models import BigForeignKey, EAWTextField, EventInfo
+from core.models import (
+    BigForeignKey, DefaultConferenceManager, EAWTextField, EventInfo,
+)
 
 
 class PrimarySpeaker:
@@ -119,6 +121,12 @@ class ProposalQuerySet(models.QuerySet):
 
 class AbstractProposal(EventInfo):
 
+    conference = models.SlugField(
+        default=settings.CONFERENCE_DEFAULT_SLUG,
+        choices=settings.CONFERENCE_CHOICES,
+        verbose_name=_('conference'),
+    )
+
     submitter = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('submitter'),
@@ -162,7 +170,8 @@ class AbstractProposal(EventInfo):
         object_id_field='proposal_id',
     )
 
-    objects = ProposalQuerySet.as_manager()
+    objects = DefaultConferenceManager.from_queryset(ProposalQuerySet)()
+    all_objects = models.Manager.from_queryset(ProposalQuerySet)()
 
     class Meta:
         abstract = True

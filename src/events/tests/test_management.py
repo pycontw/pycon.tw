@@ -57,9 +57,9 @@ def test_import_keynote_event(djutils, mock_open, keynote_event_json):
     call_command('import_events', 'yks.om')
 
     mock_open.assert_called_once_with('yks.om')
-    assert djutils.to_list(KeynoteEvent.objects.all()) == [
+    assert djutils.to_list(KeynoteEvent.objects.order_by('pk')) == [
         '<KeynoteEvent: Keynote: Amber Brown>',
-        '<KeynoteEvent: Keynote: Audrey Tang>'
+        '<KeynoteEvent: Keynote: Audrey Tang>',
     ]
 
 

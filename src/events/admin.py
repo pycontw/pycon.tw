@@ -94,7 +94,7 @@ class EndTimeRangeFilter(EventTimeRangeFilter):
 
 @admin.register(CustomEvent)
 class CustomEventAdmin(admin.ModelAdmin):
-    fields = ['title', 'begin_time', 'end_time', 'location']
+    fields = ['conference', 'title', 'begin_time', 'end_time', 'location']
     search_fields = ['title']
     list_display = ['title', 'begin_time', 'end_time', 'location']
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
@@ -102,7 +102,10 @@ class CustomEventAdmin(admin.ModelAdmin):
 
 @admin.register(KeynoteEvent)
 class KeynoteEventAdmin(admin.ModelAdmin):
-    fields = ['speaker_name', 'slug', 'begin_time', 'end_time', 'location']
+    fields = [
+        'conference', 'speaker_name', 'slug',
+        'begin_time', 'end_time', 'location',
+    ]
     search_fields = ['speaker_name']
     list_display = ['speaker_name', 'begin_time', 'end_time', 'location']
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
@@ -110,7 +113,7 @@ class KeynoteEventAdmin(admin.ModelAdmin):
 
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
-    fields = ['proposal', 'begin_time', 'end_time', 'location']
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
     list_display = ['proposal', 'begin_time', 'end_time', 'location']
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
     raw_id_fields = ['proposal']
@@ -119,7 +122,7 @@ class ProposedTalkEventAdmin(admin.ModelAdmin):
 @admin.register(SponsoredEvent)
 class SponsoredEventAdmin(admin.ModelAdmin):
     fields = [
-        'host', 'title', 'slug', 'category', 'language',
+        'conference', 'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
         'recording_policy', 'slide_link',
         'begin_time', 'end_time', 'location',

@@ -1,7 +1,7 @@
 import pytest
 
 from events import renderers
-from events.models import Location, CustomEvent, Time
+from events.models import Location, CustomEvent
 
 
 @pytest.fixture

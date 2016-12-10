@@ -12,6 +12,7 @@ from os.path import abspath, dirname, join, exists
 
 from django.contrib.messages import constants as messages
 from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -229,6 +230,12 @@ SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
 
 
 # Project settings.
+
+CONFERENCE_CHOICES = [
+    ('pycontw-2016', _('PyCon Taiwan 2016')),
+]
+
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2016'
 
 PROPOSALS_CREATABLE = False
 
