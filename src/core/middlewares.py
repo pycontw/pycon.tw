@@ -3,6 +3,8 @@ import re
 from django.conf import settings
 from django.core.urlresolvers import get_script_prefix
 from django.http import HttpResponseRedirect
+from django.utils.deprecation import MiddlewareMixin
+
 
 
 # Matches things like
@@ -20,11 +22,17 @@ FALLBACK_PREFIX_PATTERN = re.compile(
 )
 
 
-class LocaleFallbackMiddleware:
+class LocaleFallbackMiddleware(object):
     """Redirect entries in ``settings.FALLBACK_LANGUAGE_PREFIXES`` to a
     valid language prefix.
     """
     response_redirect_class = HttpResponseRedirect
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        return self.process_request(request) or self.get_response(request)
 
     def process_request(self, request):
         if not settings.USE_I18N:
