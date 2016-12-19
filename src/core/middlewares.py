@@ -3,8 +3,6 @@ import re
 from django.conf import settings
 from django.core.urlresolvers import get_script_prefix
 from django.http import HttpResponseRedirect
-from django.utils.deprecation import MiddlewareMixin
-
 
 
 # Matches things like
@@ -32,18 +30,18 @@ class LocaleFallbackMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        return self.process_request(request) or self.get_response(request)
-
-    def process_request(self, request):
+        # Return default response if USE_I18N is not enabled or if
+        # FALLBACK_PREFIX_PATTERN does not match.
         if not settings.USE_I18N:
-            return
+            return self.get_response(request)
         match = FALLBACK_PREFIX_PATTERN.match(request.path_info)
         if not match:
-            return
+            return self.get_response(request)
+
         lang = match.group('lang')
         fallback = settings.FALLBACK_LANGUAGE_PREFIXES[lang]
         script_prefix = get_script_prefix()
         path = request.get_full_path().replace(
             script_prefix + lang, script_prefix + fallback, 1,
-        )
+            )
         return self.response_redirect_class(path)
