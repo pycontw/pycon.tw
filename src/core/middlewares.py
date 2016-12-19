@@ -26,12 +26,18 @@ class LocaleFallbackMiddleware:
     """
     response_redirect_class = HttpResponseRedirect
 
-    def process_request(self, request):
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        # Return default response if USE_I18N is not enabled or if
+        # FALLBACK_PREFIX_PATTERN does not match.
         if not settings.USE_I18N:
-            return
+            return self.get_response(request)
         match = FALLBACK_PREFIX_PATTERN.match(request.path_info)
         if not match:
-            return
+            return self.get_response(request)
+
         lang = match.group('lang')
         fallback = settings.FALLBACK_LANGUAGE_PREFIXES[lang]
         script_prefix = get_script_prefix()
