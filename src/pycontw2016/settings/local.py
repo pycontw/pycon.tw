@@ -5,6 +5,8 @@ import logging.config
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+INTERNAL_IPS = ['127.0.0.1']
+
 # Turn off debug while imported by Celery with a workaround
 # See http://stackoverflow.com/a/4806384
 if 'celery' in sys.argv[0]:
