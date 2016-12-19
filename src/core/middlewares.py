@@ -20,7 +20,7 @@ FALLBACK_PREFIX_PATTERN = re.compile(
 )
 
 
-class LocaleFallbackMiddleware(object):
+class LocaleFallbackMiddleware:
     """Redirect entries in ``settings.FALLBACK_LANGUAGE_PREFIXES`` to a
     valid language prefix.
     """
@@ -43,5 +43,5 @@ class LocaleFallbackMiddleware(object):
         script_prefix = get_script_prefix()
         path = request.get_full_path().replace(
             script_prefix + lang, script_prefix + fallback, 1,
-            )
+        )
         return self.response_redirect_class(path)
