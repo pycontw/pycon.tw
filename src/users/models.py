@@ -215,7 +215,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def cospeaking_info_set(self):
-        return self.additionalspeaker_set.filter(cancelled=False)
+        return self.additionalspeaker_set.filter(
+            cancelled=False,
+            conference=settings.CONFERENCE_DEFAULT_SLUG,
+        )
 
     @property
     def twitter_profile_url(self):

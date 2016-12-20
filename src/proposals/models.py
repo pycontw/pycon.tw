@@ -52,7 +52,7 @@ class PrimarySpeaker:
         return ugettext('Proposal author')
 
 
-class AdditionalSpeaker(models.Model):
+class AdditionalSpeaker(ConferenceRelated):
 
     user = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
