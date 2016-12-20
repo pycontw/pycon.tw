@@ -59,6 +59,22 @@ class DefaultConferenceManager(DefaultConferenceManagerMixin, models.Manager):
     """
 
 
+class ConferenceRelated(models.Model):
+    """Mixin providing conference field.
+    """
+    conference = models.SlugField(
+        default=settings.CONFERENCE_DEFAULT_SLUG,
+        choices=settings.CONFERENCE_CHOICES,
+        verbose_name=_('conference'),
+    )
+
+    objects = DefaultConferenceManager()
+    all_objects = models.Manager()
+
+    class Meta:
+        abstract = True
+
+
 class EventInfo(models.Model):
 
     title = models.CharField(

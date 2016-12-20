@@ -9,7 +9,7 @@ from django.db import models
 from django.utils.timezone import make_naive
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from core.models import BigForeignKey, DefaultConferenceManager, EventInfo
+from core.models import BigForeignKey, ConferenceRelated, EventInfo
 from core.utils import format_html_lazy
 from proposals.models import TalkProposal
 
@@ -89,15 +89,9 @@ class Location:
         }[value]
 
 
-class BaseEvent(models.Model):
+class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
-    conference = models.SlugField(
-        default=settings.CONFERENCE_DEFAULT_SLUG,
-        choices=settings.CONFERENCE_CHOICES,
-        verbose_name=_('conference'),
-    )
-
     LOCATION_CHOICES = [
         (Location.ALL,  _('All rooms')),
         (Location.R012, _('R0, R1, R2')),
@@ -130,9 +124,6 @@ class BaseEvent(models.Model):
         related_name='ended_%(class)s_set',
         verbose_name=_('end time'),
     )
-
-    objects = DefaultConferenceManager()
-    all_objects = models.Manager()
 
     class Meta:
         abstract = True
