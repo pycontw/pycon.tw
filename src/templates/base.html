@@ -35,7 +35,7 @@
 <body class="{% block body-class %}{% endblock %}">
 
   {% block body %}
-    {% block nav %}{% include '_includes/nav/front_nav.html' %}{% endblock %}
+    {% block nav %}{% include '_includes/nav/front_nav.html' with active=None %}{% endblock %}
     <div class="container">{% block content %}It works!{% endblock %}</div>
   {% endblock %}
 
