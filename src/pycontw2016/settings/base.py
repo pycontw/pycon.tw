@@ -21,7 +21,10 @@ BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            join(BASE_DIR, 'templates', 'default'),
+            join(BASE_DIR, 'templates', 'default'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -233,14 +236,10 @@ CONFERENCE_CHOICES = [
 ]
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2016'
+TEMPLATES[0]['DIRS'][1] = join(BASE_DIR, 'templates', 'pycontw-2016')
 
 PROPOSALS_CREATABLE = False
 
 PROPOSALS_EDITABLE = True
 
 PROPOSALS_WITHDRAWABLE = False
-
-
-# Override with project settings.
-
-TEMPLATES[0]['DIRS'] = [join(BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG)]

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'boilerplate.html' %}
 
 {% load i18n %}
 {% load pycontw_tools %}
@@ -10,8 +10,9 @@
 {% block nav %}{% include '_includes/nav/dashboard_nav.html' %}{% endblock %}
 
 {% block content %}
+
 <div class="row">
-  <p class="welcome">{% trans 'Welcome PyCon TW 2016' %}, {{ user.email }}</p>
+  <p class="welcome">{% blocktrans %}Hi {{ user.email }}, welcome!{% endblocktrans %}</p>
 </div>
 
 <div class="row alert-container">

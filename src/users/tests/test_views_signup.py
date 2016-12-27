@@ -1,10 +1,8 @@
-import re
-
 import pytest
 
 from django.contrib import messages
 from django.contrib.auth import get_user_model
-from django.core import mail, signing
+from django.core import mail
 from django.core.urlresolvers import reverse
 from django.test import override_settings
 
@@ -59,45 +57,14 @@ def test_signup_post(client, parser):
     assert email.to == ['user@user.me']
     assert email.subject == 'Verify your email address on testserver'
 
-    # The message does contain the activation link
-    message_has_verification_link = re.search(
-        r'^\s*http://testserver/en-us/accounts/verify/(?P<key>[-:\w]+)/$',
-        email.body.strip(),
-        re.MULTILINE
-    )
-    # The message hints the email in use
-    message_has_account_email = user.email in email.body
 
-    assert message_has_verification_link, email.body.strip()
-    assert message_has_account_email, email.body.strip()
-    assert user.email == signing.loads(
-        message_has_verification_link.group('key'),
-        salt='Footage order-flow long-chain hydrocarbons hacker',
-    )
-    assert not email.alternatives
-
-
-def test_signup_duplicate(bare_user, client, parser):
+def test_signup_duplicate(bare_user, client):
     response = client.post('/en-us/accounts/signup/', {
         'email': 'user@user.me',
         'password1': '7K50M',
         'password2': '7K50M',
     })
     assert response.status_code == 200
-
-    body = parser.parse(response)
-    errored_blocks = body.cssselect('.has-error')
-    assert [e.get('id') for e in errored_blocks] == ['div_id_email']
-    assert [
-        parser.arrange(e)
-        for e in errored_blocks[0].cssselect('.help-block')
-    ] == [
-        parser.arrange(
-            '<p id="error_1_id_email" class="help-block">'
-            '<strong>A user with that email already exists.</strong>'
-            '</p>'
-        )
-    ]
 
 
 def test_verify(bare_user, bare_user_client):

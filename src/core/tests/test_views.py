@@ -28,6 +28,8 @@ def content_page_path_gen():
         for template_dir in template_setting['DIRS']:
             for lang in ['en', 'zh']:
                 contents_path = os.path.join(template_dir, 'contents', lang)
+                if not os.path.exists(contents_path):
+                    continue
                 os.chdir(contents_path)
                 for dirpath, _, filenames in os.walk('.'):
                     if os.path.basename(dirpath).startswith('_'):

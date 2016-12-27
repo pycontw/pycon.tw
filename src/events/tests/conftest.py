@@ -1,6 +1,6 @@
 import pytest
 
-from events.models import Location, SponsoredEvent, Schedule, Time
+from events.models import Location, SponsoredEvent, Time
 
 
 @pytest.fixture
@@ -16,8 +16,3 @@ def sponsored_block_event(user):
         location=Location.R2,
     )
     return e
-
-
-@pytest.fixture
-def schedule(db):
-    return Schedule.objects.create(html='mmm')

@@ -25,14 +25,3 @@ def test_sponsored_event_redirect(client, sponsored_block_event, pk, status):
 def test_sponsored_event_detail(client, sponsored_block_event, slug, status):
     r = client.get('/en-us/events/talk/sponsored/{slug}/'.format(slug=slug))
     assert r.status_code == status
-
-
-def test_schedule(client, parser, schedule):
-    r = client.get('/en-us/events/schedule/')
-    body = parser.parse(r)
-
-    # Make sure every cross-page intra-site link is good.
-    link_tags = body.cssselect('a[href^="/"]')
-    assert len(link_tags) != 0
-    for tag in link_tags:
-        assert client.get(tag.get('href'), follow=True).status_code == 200
