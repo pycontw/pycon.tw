@@ -21,10 +21,7 @@ BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            join(BASE_DIR, 'templates'),
-            # insert more TEMPLATE_DIRS here
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -242,3 +239,8 @@ PROPOSALS_CREATABLE = False
 PROPOSALS_EDITABLE = True
 
 PROPOSALS_WITHDRAWABLE = False
+
+
+# Override with project settings.
+
+TEMPLATES[0]['DIRS'] = [join(BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG)]
