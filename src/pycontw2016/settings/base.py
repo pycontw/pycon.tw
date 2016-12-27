@@ -233,10 +233,11 @@ SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
 
 CONFERENCE_CHOICES = [
     ('pycontw-2016', _('PyCon Taiwan 2016')),
+    ('pycontw-2017', _('PyCon Taiwan 2017')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2016'
-TEMPLATES[0]['DIRS'][1] = join(BASE_DIR, 'templates', 'pycontw-2016')
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
+TEMPLATES[0]['DIRS'][1] = join(BASE_DIR, 'templates', 'pycontw-2017')
 
 PROPOSALS_CREATABLE = False
 
