@@ -1,11 +1,12 @@
-from collections import namedtuple
-from datetime import timedelta
+import collections
+import datetime
 import json
 import re
-from unittest import mock
+import unittest.mock
 
 import pytest
 import pytz
+
 from django.utils.timezone import now
 from django.conf import settings
 from django.core import mail
@@ -16,8 +17,10 @@ from django.test import override_settings
 
 from proposals.models import TalkProposal
 
+
 taiwan_tz = pytz.timezone('Asia/Taipei')
-FakeHTTPResponse = namedtuple('FakeHTTPResponse', ['status', 'data'])
+FakeHTTPResponse = collections.namedtuple('FakeHTTPResponse', 'status data')
+
 
 # Define fixtures
 
@@ -28,7 +31,7 @@ def today_valid_hour():
 
 
 def make_proposal_created_earlier(proposal, days=1):
-    dt_dayago = now() - timedelta(days=days)
+    dt_dayago = now() - datetime.timedelta(days=days)
     proposal.created_at = dt_dayago
     proposal.save()
 
@@ -71,7 +74,7 @@ def weekago_talk_proposal(user):
 def test_weekago_talk_created_datetime(weekago_talk_proposal):
     proposal_lifetime = now() - weekago_talk_proposal.created_at
     print('The proposal has been created for %d days' % proposal_lifetime.days)
-    assert proposal_lifetime >= timedelta(weeks=1)
+    assert proposal_lifetime >= datetime.timedelta(weeks=1)
 
 
 def test_recent_proposal_default_command(
@@ -168,13 +171,13 @@ def test_command_send_mail(
 # Testing Slack
 
 @override_settings(     # Make sure we don't really talk to Slack.
-    SLACK_WEBHOOK_URL="https://fake.slack.hook/services/myuniquesignal"
-    )
+    SLACK_WEBHOOK_URL="https://fake.slack.hook/services/myuniquesignal",
+)
 def test_slack_connect():
     from proposals.management.commands.slack import Slack
     webhook_url = settings.SLACK_WEBHOOK_URL
     slack = Slack(url=webhook_url)
-    slack.pool.urlopen = mock.MagicMock(
+    slack.pool.urlopen = unittest.mock.MagicMock(
         return_value=FakeHTTPResponse(200, b'ok')
     )
     slack.notify(text='Test')
@@ -204,7 +207,7 @@ def test_command_improper_slack_url():
 )
 def test_command_with_slack():
     from proposals.management.commands.slack import Slack
-    Slack.notify = mock.MagicMock(
+    Slack.notify = unittest.mock.MagicMock(
         return_value=(200, b'ok')
     )
     call_command(

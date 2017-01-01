@@ -26,12 +26,14 @@ def upgrade_system():
 
 def install_requirements():
     with cd(PROJECT_DIR):
-        run('~/.virtualenvs/{0}/bin/pip install -r requirements/production.txt'.format(VIRTUALENV_NAME))
+        run('~/.virtualenvs/{0}/bin/pip install -r '
+            'requirements/production.txt'.format(VIRTUALENV_NAME))
 
 
 def migrate_db():
     with cd(DJANGO_DIR):
-        run('source {0}/env.sh && ~/.virtualenvs/{1}/bin/python manage.py migrate'.format(PROJECT_DIR, VIRTUALENV_NAME))
+        run('source {0}/env.sh && ~/.virtualenvs/{1}/bin/python '
+            'manage.py migrate'.format(PROJECT_DIR, VIRTUALENV_NAME))
 
 
 def pull_repo():
@@ -46,7 +48,10 @@ def restart_services():
 
 def collectstatic():
     with cd(DJANGO_DIR):
-        run('source {0}/env.sh && ~/.virtualenvs/{1}/bin/python manage.py collectstatic --noinput -c'.format(PROJECT_DIR, VIRTUALENV_NAME))
+        run('source {0}/env.sh && ~/.virtualenvs/{1}/bin/python '
+            'manage.py collectstatic --noinput -c'.format(
+                PROJECT_DIR, VIRTUALENV_NAME,
+            ))
 
 
 def compile_translations():
@@ -56,11 +61,13 @@ def compile_translations():
             VIRTUALENV_NAME,
         ))
 
+
 def clean_local_untracked_translation():
     # Fix local git changes when only .po files are committed
     # but .mo files are not.
     with cd(PROJECT_DIR):
         run('git checkout -- src/locale/')
+
 
 @task
 def deploy():

@@ -9,7 +9,11 @@ django-debug-toolbar==1.6
 # http://werkzeug.pocoo.org/
 Werkzeug==0.11.11
 
-# A mature full-featured Python testing tool
+# Your Tool For Style Guide Enforcement.
+# http://flake8.readthedocs.io/en/latest/
+flake8==2.5.1
+
+# A mature full-featured Python testing tool.
 # http://pytest.org/latest/
 pytest==2.8.5
 

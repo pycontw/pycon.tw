@@ -77,8 +77,8 @@ class AdditionalSpeakerCreateForm(
         # on valid data.
 
         # The user cannot already be one of the speakers.
-        if (proposal.submitter == user
-                or proposal.additionalspeaker_set.filter(
+        if (proposal.submitter == user or
+                proposal.additionalspeaker_set.filter(
                     cancelled=False, user=user).exists()):
             raise forms.ValidationError(
                 self.get_error_message('duplicate_speaker'),

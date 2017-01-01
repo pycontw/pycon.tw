@@ -8,22 +8,25 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-from os.path import abspath, dirname, join, exists
+import os
 
+import environ
+
+from django.conf import locale
 from django.contrib.messages import constants as messages
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
-# Build paths inside the project like this: join(BASE_DIR, "directory")
-BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
+# Build paths inside the project like this: os.path.join(BASE_DIR, "directory")
+BASE_DIR = os.path.abspath(os.path.join(__file__, '..', '..', '..'))
 
 # Use Django templates using the new Django 1.8 TEMPLATES settings
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            join(BASE_DIR, 'templates', 'default'),
-            join(BASE_DIR, 'templates', 'default'),
+            os.path.join(BASE_DIR, 'templates', 'default'),
+            os.path.join(BASE_DIR, 'templates', 'default'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -47,13 +50,12 @@ TEMPLATES = [
 ]
 
 # Use 12factor inspired environment variables or from a file
-import environ
 env = environ.Env()
 
 # Ideally move env file should be outside the git repo
 # i.e. BASE_DIR.parent.parent
-env_file = join(dirname(__file__), 'local.env')
-if exists(env_file):
+env_file = os.path.join(os.path.dirname(__file__), 'local.env')
+if os.path.exists(env_file):
     environ.Env.read_env(str(env_file))
 
 # Quick-start development settings - unsuitable for production
@@ -146,7 +148,6 @@ FALLBACK_LANGUAGE_PREFIXES = {
     'en': 'en-us',
 }
 
-from django.conf import locale
 if 'en-us' not in locale.LANG_INFO:
     locale.LANG_INFO['en-us'] = {
         'bidi': False,
@@ -157,7 +158,7 @@ if 'en-us' not in locale.LANG_INFO:
 
 # Path to the local .po and .mo files
 LOCALE_PATHS = (
-    join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 USE_TZ = True
@@ -178,16 +179,16 @@ MESSAGE_TAGS = {
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-STATICFILES_DIRS = [join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 
-MEDIA_ROOT = join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
@@ -237,7 +238,7 @@ CONFERENCE_CHOICES = [
 ]
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
-TEMPLATES[0]['DIRS'][1] = join(BASE_DIR, 'templates', 'pycontw-2017')
+TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'pycontw-2017')
 
 PROPOSALS_CREATABLE = False
 

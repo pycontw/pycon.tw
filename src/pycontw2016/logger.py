@@ -30,6 +30,7 @@ class NewStyleLogMessage(object):
 
         return self.message.format(*args, **kwargs)
 
+
 N = NewStyleLogMessage
 
 

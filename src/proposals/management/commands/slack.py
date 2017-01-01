@@ -38,4 +38,3 @@ class Slack:
             body=json.dumps(payload)
         )
         return response.status, response.data.decode('utf8')
-

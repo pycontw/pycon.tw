@@ -108,13 +108,15 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
                 .exclude(stage=2)
             )
         elif review_stage == 2:
-            proposals = TalkProposal.objects.filter(
+            proposals = (
+                TalkProposal.objects.filter(
                     review__stage=1,
                     review__reviewer=self.request.user
                 ) & TalkProposal.objects.filter(
                     review__stage=2,
                     review__reviewer=self.request.user
                 )
+            )
             reviews = (
                 Review.objects
                 .filter_reviewable(self.request.user)

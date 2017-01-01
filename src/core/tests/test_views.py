@@ -1,3 +1,4 @@
+import itertools
 import os
 
 import pytest
@@ -22,30 +23,35 @@ def test_speaking_pages(client, path, expected):
 
 
 def content_page_path_gen():
+    # Caon't do module-level import because settings are not configured when
+    # the module is imported, only when the code runs.
     from django.conf import settings
+
     checked = set()
-    for template_setting in settings.TEMPLATES:
-        for template_dir in template_setting['DIRS']:
-            for lang in ['en', 'zh']:
-                contents_path = os.path.join(template_dir, 'contents', lang)
-                if not os.path.exists(contents_path):
+    template_dirs = itertools.chain.from_iterable(
+        template_setting['DIRS'] for template_setting in settings.TEMPLATES
+    )
+    for template_dir in template_dirs:
+        for lang in ['en', 'zh']:
+            contents_path = os.path.join(template_dir, 'contents', lang)
+            if not os.path.exists(contents_path):
+                continue
+            os.chdir(contents_path)
+            for dirpath, _, filenames in os.walk('.'):
+                if os.path.basename(dirpath).startswith('_'):
                     continue
-                os.chdir(contents_path)
-                for dirpath, _, filenames in os.walk('.'):
-                    if os.path.basename(dirpath).startswith('_'):
+                for filename in filenames:
+                    if filename.startswith('_'):
                         continue
-                    for filename in filenames:
-                        if filename.startswith('_'):
-                            continue
-                        root, ext = os.path.splitext(filename)
-                        if ext != '.html':
-                            continue
-                        comps = [c for c in dirpath.split(os.sep) if c != '.']
-                        path = '/'.join([''] + comps + [root, ''])
-                        if path in checked:
-                            continue
-                        yield path
-                        checked.add(path)
+                    root, ext = os.path.splitext(filename)
+                    if ext != '.html':
+                        continue
+                    comps = [c for c in dirpath.split(os.sep) if c != '.']
+                    path = '/'.join([''] + comps + [root, ''])
+                    if path in checked:
+                        continue
+                    yield path
+                    checked.add(path)
 
 
 @pytest.fixture(params=content_page_path_gen())

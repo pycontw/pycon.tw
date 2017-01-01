@@ -1,7 +1,13 @@
-# In production set the environment variable like this:
-#    DJANGO_SETTINGS_MODULE=my_proj.settings.production
-from ..base import *            # NOQA
+"""In production set the environment variable like this::
+
+    DJANGO_SETTINGS_MODULE=my_proj.settings.production
+"""
+
+from ..base import BASE_DIR, INSTALLED_APPS, TEMPLATES, env
+from ..base import *            # noqa
+
 import logging.config
+import os
 
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False
@@ -30,10 +36,10 @@ TEMPLATES[0]['OPTIONS'].update({"debug": False})
 del TEMPLATES[0]['APP_DIRS']
 
 # Explicitly tell Django where to find translations.
-LOCALE_PATHS = [join(BASE_DIR, 'locale')]
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 # Log everything to the logs directory at the top
-LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
+LOGFILE_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'logs')
 
 # Reset logging
 LOGGING_CONFIG = None
@@ -56,13 +62,13 @@ LOGGING = {
         'proj_log_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': join(LOGFILE_ROOT, 'project.log'),
+            'filename': os.path.join(LOGFILE_ROOT, 'project.log'),
             'formatter': 'verbose'
         },
         'django_log_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': join(LOGFILE_ROOT, 'django.log'),
+            'filename': os.path.join(LOGFILE_ROOT, 'django.log'),
             'formatter': 'verbose'
         },
         'console': {

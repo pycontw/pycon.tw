@@ -38,9 +38,6 @@ urlpatterns += [
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Debug Toolbar's URL.
-# See http://django-debug-toolbar.readthedocs.io/en/stable/installation.html#urlconf
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
+    urlpatterns += [url(r'^__debug__/', include(debug_toolbar.urls))]

@@ -1,6 +1,9 @@
+from .base import BASE_DIR, INSTALLED_APPS, env
 from .base import *             # NOQA
-import sys
+
 import logging.config
+import os
+import sys
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -22,7 +25,7 @@ INSTALLED_APPS += env.tuple('LOCAL_APPS', default=())
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Log everything to the logs directory at the top
-LOGFILE_ROOT = join(dirname(BASE_DIR), 'logs')
+LOGFILE_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'logs')
 
 # Reset logging
 # http://www.caktusgroup.com/blog/2015/01/27/
@@ -48,13 +51,13 @@ LOGGING = {
         'django_log_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': join(LOGFILE_ROOT, 'django.log'),
+            'filename': os.path.join(LOGFILE_ROOT, 'django.log'),
             'formatter': 'verbose'
         },
         'proj_log_file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': join(LOGFILE_ROOT, 'project.log'),
+            'filename': os.path.join(LOGFILE_ROOT, 'project.log'),
             'formatter': 'verbose'
         },
         'console': {

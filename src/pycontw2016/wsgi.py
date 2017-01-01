@@ -7,16 +7,18 @@ For more information on this file, see
 https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
 """
 import os
+
+from django.conf import settings
+from django.core.wsgi import get_wsgi_application
+
+
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE',
     'pycontw2016.settings.production.pycontw2016',
 )
-
-from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 
 # Wrap werkzeug debugger if DEBUG is on
-from django.conf import settings
 if settings.DEBUG and settings.WERKZEUG_DEBUG:
     try:
         import django.views.debug

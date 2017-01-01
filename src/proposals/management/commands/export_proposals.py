@@ -1,11 +1,14 @@
 import json
-from django.core.management.base import BaseCommand, CommandError
+
+from django.core.management.base import BaseCommand
 from django.core.serializers.json import DjangoJSONEncoder
 from proposals.models import TalkProposal, TutorialProposal
+
 
 PROPOSAL_TYPE_MAPPING = {
     'talk': TalkProposal, 'tutorial': TutorialProposal
 }
+
 
 class Command(BaseCommand):
     help = "Export both talk and tutorial proposal info as JSON"
