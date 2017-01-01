@@ -1,4 +1,4 @@
 {% extends 'boilerplate.html' %}
 
 {% block titletag %}<title>{% block title %}{% endblock %} | PyCon Taiwan 2016</title>{% endblock %}
-{% block nav %}{% include '_includes/nav/front_nav.html' %}{% endblock %}
+{% block nav %}{% include '_includes/nav/front_nav.html' with active=None %}{% endblock %}
