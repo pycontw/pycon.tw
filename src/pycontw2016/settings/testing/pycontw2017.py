@@ -6,3 +6,5 @@ from .base import *     # noqa
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
 TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'pycontw-2017')
+
+EVENTS_PUBLISHED = False

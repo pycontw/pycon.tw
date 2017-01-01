@@ -9,3 +9,5 @@ LANGUAGE_CODE = 'en-us'
 
 CONFERENCE_DEFAULT_SLUG = 'testing'
 TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'testing')
+
+EVENTS_PUBLISHED = True
