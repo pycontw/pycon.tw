@@ -1,0 +1,68 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}主題演講{% endblock %}
+{% block page_title %}<h1>主題演講講者 (Keynote Speakers)</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2017" />
+  <meta property="og:description" content="享受由 Carol Willing、Russell Keith-Magee 帶來的主題演講。
+" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Carol Willing', 'Russell Keith-Magee' #}
+
+{# Carol-Willing #}
+<div id="keynote-speaker-carol-willing" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/2017/carol_willing.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/willingcarol" target="_blank">@WillingCarol</a><br>
+			<a href="https://willingconsulting.com/" target="_blank">https://willingconsulting.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Carol Willing 是 PSF 基金會理事之一，長期為 OpenHatch，Systers，PyLadies 聖地亞哥，聖地亞哥 Python 社區和 Jupyter 研發工程師做出貢獻。她對學習和分享充滿熱情。最近的演講包括 PyCon US 2016，PyData Carolinas 2016，PyCon Philippines 2016
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Russell-Keith-Magee #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/2017/russell_keith_magee.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/freakboy3742" target="_blank">@freakboy3742</a>
+			<a href="http://cecinestpasun.com/" target="_blank">http://cecinestpasun.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Russell Keith-Magee 博士是 Django Evolution 的共同創始人之一，同時也是 Django 用戶和 Django 開發者與積極參與者 與 Google Summer of Code 2008 的指導者。在過去的開發中 Russell Keith-Magee 博士創建 Python native 套件 “BeeWare”，讓 Python 語言的重要性更為提升。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			（演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}
+

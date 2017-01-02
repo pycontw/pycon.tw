@@ -1,0 +1,66 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}Keynotes{% endblock %}
+{% block page_title %}<h1>Keynote Speakers</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="Keynote Speakers | PyCon Taiwan 2017" />
+  <meta property="og:description" content="Enjoy keynote speeches from Carol Willing、Russell Keith-Magee." />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Carol Willing', 'Russell Keith-Magee' #}
+
+{# Carol-Willing #}
+<div id="keynote-speaker-carol-willing" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/2017/carol_willing.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/willingcarol" target="_blank">@WillingCarol</a><br>
+			<a href="https://willingconsulting.com/" target="_blank">https://willingconsulting.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Carol Willing is a member of the PSF Foundation and contributes regularly to OpenHatch, Systers, PyLadies San Diego, the San Diego Python community, and Jupyter R&D engineers. She has a passion for learning and sharing. Recent lectures include PyCon US 2016, PyData Carolinas 2016, PyCon Philippines 2016.
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Russell-Keith-Magee #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/2017/russell_keith_magee.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/freakboy3742" target="_blank">@freakboy3742</a>
+			<a href="http://cecinestpasun.com/" target="_blank">http://cecinestpasun.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Dr. Russell Keith-Magee is a co-founder of Django Evolution, a schema evolution framework for Django, an active participant on the Django Users and Django Developers and was a mentor in the Google Summer of Code 2008. In past years of development, Dr. Russell Keith-Magee contribute regularly to create Python native tools “BeeWare” to let the python language more enhance the importance.
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			（TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}
