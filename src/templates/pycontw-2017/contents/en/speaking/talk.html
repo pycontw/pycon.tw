@@ -1,0 +1,303 @@
+{% extends 'contents/_base/speaking.html' %}
+
+{% block title %}How to Propose a Talk{% endblock %}
+{% block page_title %}<h1>How to Propose a Talk?</h1>{% endblock page_title %}
+
+{% block content %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+
+<p>
+	For general proposal calling information, see
+	<a href="{{ speaking_cfp_url }}">Call for Proposals</a>.
+</p>
+
+<p>
+	First of all, thank you considering giving a talk in PyCon Taiwan 2017.
+  The following will help you submit an successful proposal. In the following,
+   we are going to provide you the tips to make your proposal strong and
+   informative and get the best chance of acceptance.
+</p>
+
+<p>
+	Generally, you will have the following aspects to think through before your proposal:
+</p>
+
+<ul>
+	<li>What’s your topic?</li>
+	<li>Who is your target audience?</li>
+	<li>What will the audience gain after your talk?</li>
+	<li>How you organize your talk time?</li>
+</ul>
+
+<p>
+	You will ask to fill up the following fields for your proposal:
+</p>
+
+<ul>
+	<li>Title</li>
+  <li>Type</li>
+  <li>Category</li>
+	<li>Duration</li>
+	<li>Language</li>
+  <li>Review Comment Language</li>
+	<li>Abstract</li>
+	<li>Python Level</li>
+	<li>Objectives</li>
+	<li>Detailed Description (optional)</li>
+	<li>Outline (optional)</li>
+	<li>Supplementary (optional)</li>
+	<li>Recording Policy</li>
+	<li>Slide Link (optional)</li>
+</ul>
+
+<p>
+	Looks like quite a lot of fields to fill in. Well, you can skip those optional
+  fields and the rest of the form will only take you about 500 chars to type.
+  But we encourage you to fill most of the fields to help reviewer understand your proposal.
+</p>
+
+<p>
+	Some of the fields are for reviewers only so no need to worry about spoilers:
+</p>
+
+<ul>
+	<li>Objectives</li>
+	<li>Outline</li>
+	<li>Supplementary</li>
+</ul>
+
+<p>Next we will give more detailed advice on each aspects.</p>
+
+<h2>Topics and General Advice</h2>
+
+<p>
+	You can find what accepted talks are about from the previous PyCons:
+</p>
+
+<ul>
+	<li><a href="//tw.pycon.org/2015apac/en/schedule/" target="_blank">PyCon
+			APAC 2015</a></li>
+	<li><a href="//tw.pycon.org/2014apac/en/program/" target="_blank">PyCon
+			APAC 2014</a></li>
+	<li><a href="//tw.pycon.org/2013/en/program/" target="_blank">PyCon
+			TW 2013</a></li>
+</ul>
+<p>
+	There are some proposal examples for different Python levels at the end of this page.
+</p>
+
+<h3>Good Ideas</h3>
+<ul>
+	<li>The abstract or detail description should contain:</li>
+	<ul>
+		<li>
+			Who is the intended audience? What should they know before the talk?
+      Is there any special domain knowledge required?
+		</li>
+		<li>
+			What will they get after my talk?
+		</li>
+	</ul>
+	<li>
+		Enumerate each of your talk section in outline with estimated time length.
+	</li>
+	<li>
+		If your topic is not that familiar to normal Pythonistas, make sure you
+    provide sufficient information through links of blog posts, wiki, source codes,
+     or materials that help the understanding of your content.
+	</li>
+</ul>
+
+<h3>Bad Ideas</h3>
+<ul>
+	<li>
+		<p>Avoid infomercials.</p>
+		<p>
+      That is, try not to merely sell your products or how to use them in your talk.
+      However, we do welcome talks about how your company solve the problem or your
+      open source project that can benefit the general attendees.
+    </p>
+	</li>
+	<li>
+		<p>Don’t assume everyone in the review committee knows you.
+       Please always submit a full proposal.</p>
+	</li>
+</ul>
+
+<h2>How to Choose the Python Level?</h2>
+
+<p>Choosing the Python level <strong>is</strong> important.</p>
+
+<p>
+	Your talk won’t be simply accepted because it is either super hard or deadly simple.
+  The acceptance correlates with the specified Python level and your targeted audience.
+</p>
+
+<p>
+	If your talk is for Python first-timers and it is about your Python learning experience
+  and how you solve some tricky issues you face. This is a proper proposal. If your talk
+   is about inspecting the Python memory usage and coordinating two GC systems together
+   with reusing pointers, and you specify your talk as being novice or intermediate,
+   it is not a good idea.
+</p>
+
+<p>
+	For the extreme conditions (like topics above), it will be easy to decide. But topics
+  lie somewhere in between are not. Therefore, we give more description below to help
+  you find the proper level.
+</p>
+
+<h4>Novice</h4>
+<p>
+	People who have little to none Python knowledge. One can expect them to have basic
+  knowledge about Python syntax and control flow (e.g. if-else, for loops; functions),
+  but the audience does not understand every modules in stdlib, nor the concepts of
+  tricky variables visible scope and OOP (and MRO inheritance).
+</p>
+
+<p>
+	Sharing your experience learning Python, leading a community perfectly fits in this
+  level. Generally a talk about non-builtin Python packages, say pandas and Django,
+  is not a novice talk. Unless people can actually learn all the content you give
+  right after your talk.
+</p>
+
+<h4>Intermediate</h4>
+<p>
+	The possible applications are more diverse than novice talks. Intermediate
+  talks are for those who just learned how Python works and wish to know
+  more how it can be used in different tasks. The talk topic can be about
+  setting up web frameworks, talking to databases, monitoring the web traffic,
+  auto trading in the stock market and so on.
+</p>
+
+<p>
+	From previous submissions over the past few years, around a half of the talks
+  should fall into this category. Note that we may contact you to adjust your
+  talk to be novice or experienced based on your proposal.
+</p>
+
+
+<h4>Experienced</h4>
+<p>
+    People coming to experienced talks should have good proficiency of audience’s
+    Python (or programming) skill.
+</p>
+
+<p>
+	The main difference between intermediate and experienced talks is that experienced
+  talks assume more domain knowledge about the talk topic. For example, talks about
+  optimization and tool’s internals should be at this level.
+</p>
+
+<h2>Proposal Examples</h2>
+<h3>Novice</h3>
+<pre>
+Title:           使用 Python 讓管理電腦資料更容易
+Category:        Python Core
+Duration:        25 min
+Language:        中文
+Python Level:    Novice
+
+Abstract:
+
+	對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音
+	樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月下來，
+	電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一
+	個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的
+	pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合
+	Python 迴圈與排序技巧完成複雜的檔案重新歸類。
+
+Objectives:
+
+	針對初學 Python 、想試著用程式解決生活問題的人。
+	我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始
+	自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。
+
+	但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看出效
+	果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學
+	程式的人有幫助。
+
+Detailed Description (optional):
+
+	最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的
+	「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。
+
+Outline (optional):
+
+	1. 資料整理的常見狀況 [5 min]
+	2. pathlib 模組設計介紹 [10 min]
+		- 運用 Path 物件
+		- 目錄結構探索 Path.iterdir(), .glob()
+		- 使用 Path 更動路徑
+	3. 結合 for 迴圈與排序 [5 min]
+		- sorted(key=<lambda fun>) 用法
+		- 整合 enumerated, zip 同時處理多個關連檔案
+	4. 案例分享  [5 min]
+
+Supplementary (optional): None
+Recording Policy:         Yes
+Slide Link (optional):    None</pre>
+
+<h3>Intermediate</h3>
+<pre>
+Title:           自動處理部落格照片與加工
+Category:        圖像處理
+Duration:        25 min
+Language:        中文
+Python Level:    中階
+
+Abstract:
+
+	現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部
+	落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機型、鏡
+	頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自
+	動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印
+	的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成
+	自動處理所有放在文章的照片。
+
+Objectives:
+
+	針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 blog 框架
+	示範實際整合的情況。
+
+	寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解
+	如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道
+	如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。
+
+Detailed Description (optional):
+
+	### 使用的第三方工具：
+
+	- [exiftool] 為分析照片 EXIF 的 Perl 工具
+	- [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)
+	- [Pelican] 為 Python 的 static site generator
+
+	[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/
+	[Pillow]: http://python-pillow.github.io/
+	[Pelican]: http://blog.getpelican.com/
+
+Outline (optional):
+
+	1. 簡介 EXIF 與 exiftool [5min]
+	2. Pillow 使用及如何用它加上浮水印 [5min]
+		- 字型的選用
+		- 排版的一致性
+	3. 自動化 [5min]
+		- 使用 stdlib 架出一個 batch 處理流程
+		- 搭配 joblib 或 multiprocessing 達成平行化
+	4. 舉例（使用 Pelican）[5min]
+		- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）
+		- 成果
+	5. Q&A [5min]
+
+Supplementary (optional):
+
+	Taipei.py 的講者，以前講過的主題有：
+
+		- [Pillow 影像處理簡介](/link/to/slides)
+		- [使用 Pelican 架設部落格](/link/to/slides)
+
+Recording Policy:      Yes
+Slide Link (optional): None</pre>
+{% endblock content %}
