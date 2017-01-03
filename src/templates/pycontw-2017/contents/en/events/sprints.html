@@ -1,0 +1,35 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}Sprints{% endblock %}
+{% block page_title %}<h1>Sprints</h1>{% endblock %}
+
+{% block meta_og %}
+  <meta property="og:title" content="Sprints | PyCon Taiwan 2017" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_sprint.png' %}" />
+{% endblock %}
+
+{% block content %}
+<h2>Introduction</h2>
+<p>
+	Sprints will be held out of the conference dates. During the sprint,
+	open source project managers will bring their projects and explain their
+	issues or any unresolved problem. After the introduction of all projects,
+	people find their projects of interest and get involved. By this
+	interaction possibility, one can dig deep into projects or fields they
+	care.
+</p>
+<p>
+	It is highly welcomed to bring one’s own project and find enthusiasts of
+	same interest. For people with sufficient Python background who wants to
+	join open source projects but having no clue or too shy to shout out
+	on the mail list and public channels, sprints serve as a great chance to
+	get involved.
+</p>
+<p>
+	Running alongside there is a separate schedule of workshops in April for
+	attendees who want to learn more about knowledge for specific topics.
+</p>
+{% endblock content %}
