@@ -1,0 +1,216 @@
+{% extends 'contents/_base/registration.html' %}
+
+{% block title %}售票資訊{% endblock title %}
+{% block page_title %}<h1>售票資訊 (Conference Tickets)</h1>{% endblock page_title %}
+
+
+{% block content %}
+
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/sprints' as events_sprints_url %}
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
+
+<div class="pycon-list">
+	<div class="pycon-list-item text-theme-highlight">
+		<span class="text-emphasize">
+		2017 年 月 日 (TBD)
+		</span>
+		開始售票；各票種早鳥優惠為期兩週。
+	</div>
+		<div class="pycon-list-item text-theme-highlight">
+		<span class="text-emphasize text-theme-highlight">
+		   2017 年 月 日 (TBD)
+		</span>
+        (TBD) 早鳥票截止，各票種恢復原價販售，預計為期兩週。<span class="text-reverse-highlight">註：學生早鳥票已全數售罄，為因應學生踴躍購票，於 5 月 1 日同時間開始販售額外 50 張學生原價票。</span>
+	</div>
+		<div class="pycon-list-item text-theme-highlight">
+		<span class="text-emphasize text-theme-highlight">
+		   2017 年 月 日 (TBD)
+		</span>
+		預計截止售票。
+	</div>
+</div>
+
+<h2>
+	票種說明
+</h2>
+<p>
+	下列票種用於報名 月 日至 日 (TBD) 的議程活動；tutorials 及 sprints 的報名方式，請另見相關網頁說明。
+</p>
+
+<div class="table-responsive">
+	<table class="table table-pycon">
+	<thead>
+		<tr>
+			<th></th>
+			<th>早鳥票價</th>
+			<th>原票價</th>
+			<th>購票網址</th>
+			<th>說明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="text-emphasize">一般票</td>
+			<td class="text-theme-highlight text-emphasize">4,490</td>
+			<td>4,990</td>
+			<td>
+				<a class="btn btn-action" href="(TBD)" target="_blank">
+					按此購票
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 <em>N/A</em>。電子發票於報到櫃台交付。
+			</td>
+		</tr>
+		<tr>
+			<td class="text-emphasize">優惠票</td>
+			<td class="text-theme-highlight text-emphasize">2,190</td>
+			<td>2,690</td>
+			<td>
+				<a class="btn btn-action" href="(TBD)" target="_blank">
+					按此購票
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				發票將捐贈給<a href="http://ocf.tw/">開放文化基金會</a>，對此大會予以票價優惠。
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text-emphasize">學生票</td>
+			<td class="text-theme-highlight text-emphasize">1,390</td>
+			<td>1,790</td>
+			<td>
+				<a class="btn btn-action" href="(TBD)" target="_blank">
+					按此購票
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				<p>發票將捐贈給<a href="http://ocf.tw/">開放文化基金會</a>，對此大會予以票價優惠。</p>
+				<p>報到需出示學生證，無法出示證明者，大會有權保留進場資格。</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text-emphasize">講者票</td>
+			<td class="text-emphasize text-theme-highlight" colspan="2">2,190</td>
+			<td>
+				<a class="btn btn-action" href="(TBD)" target="_blank">
+					按此購票
+				</a>
+
+			</td>
+			<td class="table-pycon__description">
+				講者專用，報名時請輸入邀請碼。
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>
+
+
+
+<ul>
+	<li>若無特別標註，皆以台幣計價；請參考 (TBD) 匯率 USD 1.00 = NTD 32.41。</li>
+	<li><a href="http://itn.tw/knowledgebase.php?action=displayarticle&id=68">電子發票標示買方統編</a>，可用於公司報帳；個人留存之用的電子發票，只會顯示賣方統編。</li>
+	<li>各級學校就讀的學生，包括研究所、大專院校、中小學生等，可購買學生票。</li>
+	<li>如需開立英文收據，或票務相關問題，請來信 organizers[at]pycon.tw 洽詢。</li>
+</ul>
+
+<h2>注意事項</h2>
+<h4> 1. T 裇尺寸 </h4>
+
+<p>
+	每一位報名參加者皆能獲得紀念 T 裇一件，請在報名時填寫您的尺寸。尺寸請參考下表：
+</p>
+
+<div class="table-responsive">
+	<table class="table table-pycon">
+		<thead>
+			<tr>
+				<th class="text-emphasize">尺寸</th>
+				<th>XS</th>
+				<th>S</th>
+				<th>M</th>
+				<th>L</th>
+				<th>XL</th>
+				<th>2XL</th>
+				<th>3XL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-emphasize">身高（cm）</td>
+				<td>150 以下</td>
+				<td>150–160</td>
+				<td>160–170</td>
+				<td>170–180</td>
+				<td colspan="3">180 以上</td>
+			</tr>
+			<tr>
+				<td class="text-emphasize">胸寬（cm）</td>
+				<td>44.5</td>
+				<td>47</td>
+				<td>49.5</td>
+				<td>52</td>
+				<td>54.5</td>
+				<td>57</td>
+				<td>59.5</td>
+			</tr>
+			<tr>
+				<td class="text-emphasize">衣長（cm）</td>
+				<td>62</td>
+				<td>63.5</td>
+				<td>66</td>
+				<td>68.5</td>
+				<td>71</td>
+				<td>73.5</td>
+				<td>73.5</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>2. Everybody Pays</h4>
+<p>
+	PyCon Taiwan 2017 是需付費的活動，所有籌備人員和講者均自行付費參加。見<a href="https://tw.pycon.org/2013/zh/blog/2013/03/05/everybody-pays-zh/">公平付費</a>。
+</p>
+
+
+<h4>3. 付款方式</h4>
+<p>我們提供三種付款方式：信用卡、PayPal、ATM 轉帳。</p>
+
+
+<h4>4. 不接受退票</h4>
+<p>本次活動恕不受理退票。僅受理補差額更改優惠票成一般票，須於售票截止前 (2017 年 5 月 13 日) 寄信至 organizers[at]pycon.tw 告知，活動方將於更改完成後，寄信通知買方。</p>
+
+
+<h4>5. 財務補助計畫（Financial Aid Plan）</h4>
+<p>若您資金上有困難，歡迎申請大會 Financial Aid 計劃，但必須先購票才能申請！ 更多的申請說明請至該<a href="{{ reg_financial_aid_url }}">專頁</a>。
+</p>
+
+
+<h4>6. 飲食需求</h4>
+<p>會議當天提供午餐。請務必註明您的飲食需求。</p>
+
+
+<h4>7. 正確的聯絡資訊</h4>
+<p>報名時請留下正確的聯絡方式（手機號碼與 email），以便大會通知。</p>
+
+
+<h4>8. 票務諮詢管道</h4>
+<p>如有任何問題，請寄信至 organizers[at]pycon.tw 洽詢，我們將盡快給予回應。</p>
+
+<h4>9. 關於 PyCon 課程 (Tutorial)、PyDay</h4>
+
+<p>您可以透過本頁面最上方「活動」下拉選單，查詢 PyCon 課程 (待公告)、<a href="{{ events_sprints_url }}">Sprints</a> 以及 <a href="{{ events_pyday_url }}">PyDay</a>
+   相關內容。</p>
+
+<hr>
+
+<p>歡迎所有 Python 愛好者的參加與宣傳，期待在 PyCon Taiwan 2017 會場與您相見 :)</p>
+
+
+{% endblock %}
