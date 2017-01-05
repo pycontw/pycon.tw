@@ -13,25 +13,18 @@ import os
 DEBUG = False
 
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ['pycontw.krdai.info', 'tw.pycon.org']
-
-# Override static and media URL for prefix in WSGI server.
-# https://code.djangoproject.com/ticket/25598
-STATIC_URL = '/2016/static/'
-MEDIA_URL = '/2016/media/'
+ALLOWED_HOSTS = ['tw.pycon.org']
 
 # Cache the templates in memory for speed-up
-loaders = [
+TEMPLATES[0]['OPTIONS'].update({"loaders": [
     (
         'django.template.loaders.cached.Loader',
         [
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
-        ]
+        ],
     ),
-]
-
-TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
+]})
 TEMPLATES[0]['OPTIONS'].update({"debug": False})
 del TEMPLATES[0]['APP_DIRS']
 
