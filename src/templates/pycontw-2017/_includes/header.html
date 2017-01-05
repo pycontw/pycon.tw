@@ -2,6 +2,25 @@
 {% load i18n_plus %}
 
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
+
+{% url 'page' path='events/overview' as events_overview_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
+{% url 'page' path='events/tutorials' as events_tutorial_url %}
+
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+
+
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
+{% url 'page' path='registration/ticket-info' as reg_ticket_info_url%}
+
+{% url 'page' path='venue' as venue_url %}
+{% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
 <header>
 	<nav class="wrapper header-nav">
@@ -16,9 +35,9 @@
 				{% trans 'events' %}
 			</a>
 			<nav class="sub">
-				<a href="#">{% trans 'overview' %}</a>
+				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
 				<a href="#">{% trans 'schedule' %}</a>
-				<a href="#">{% trans 'keynote' %}</a>
+				<a href="{{ events_keynote_url }}">{% trans 'keynote' %}</a>
 				<a href="#">{% trans 'talk' %}</a>
 			</nav>
 		</div>
