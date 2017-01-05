@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load i18n_plus %}
 
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 
@@ -47,16 +48,29 @@
 			{% trans 'dashboard' %}
 		</a>
 		<div class="parent lang">
-			<a href="#">english</a>
+			{% get_language_info_list for LANGUAGES as languages %}
+			{% get_current_language as LANGUAGE_CODE %}
+			{% get_language_info for LANGUAGE_CODE as current_language %}
+			<a href="#">{{ current_language.name_translated }}</a>
 			<nav class="sub">
-				<a href="#">繁體中文</a>
-				<a href="#">English (US)</a>
+				{% for language in languages %}
+				<a href="{{ request|path_for_language:language.code }}"
+						data-lang="{{ language.code }}">
+					{{ language.name_local }}
+				</a>
+				{% endfor %}
 			</nav>
 		</div>
 		<nav class="social">
-			<a href="#" class="fa fa-facebook"></a>
-			<a href="#" class="fa fa-twitter"></a>
-			<a href="#" class="fa fa-envelope-o"></a>
+			<a href="https://www.facebook.com/pycontw" target="_blank" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/pycontw" target="_blank" class="fa fa-twitter"></a>
+			<a href="mailto:organizers@pycon.tw" target="_blank" class="fa fa-envelope-o"></a>
 		</nav>
 	</nav>
 </header>
+
+<form id="nav-lang-form" action="{% url 'set_language' %}" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="next">
+	<input type="hidden" name="language">
+</form>

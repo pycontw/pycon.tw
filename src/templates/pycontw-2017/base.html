@@ -15,6 +15,7 @@
 
 {% compress css %}
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/main.css' %}">
+<link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
 {% endcompress %}
 
 </head>
@@ -25,7 +26,7 @@
 <div class="mother-wrapper">
 
 {% block nav %}
-{% include '_includes/header.html' %}
+{% include '_includes/header.html' with active=None %}
 {% endblock nav %}
 
 {% block content_full %}
@@ -50,6 +51,7 @@
 {% endif %}
 
 {% compress js %}
+<script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
 {% endcompress %}
 
 </body>
