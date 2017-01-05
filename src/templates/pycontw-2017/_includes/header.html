@@ -1,22 +1,51 @@
+{% load i18n %}
+
+{% url 'page' path='about/pycontw' as about_pycontw_url %}
+
 <header>
 	<nav class="wrapper header-nav">
-		<a href="#">about</a>
 		<div class="parent">
-			<a href="#">events</a>
+			<a href="{{ about_pycontw_url }}"
+					class="{% if active == 'about' %}active{% endif %}">
+				{% trans 'about' %}
+			</a>
+		</div>
+		<div class="parent">
+			<a href="#">
+				{% trans 'events' %}
+			</a>
 			<nav class="sub">
-				<a href="#">overview</a>
-				<a href="#">schedule</a>
-				<a href="#">keynote</a>
-				<a href="#">talk</a>
+				<a href="#">{% trans 'overview' %}</a>
+				<a href="#">{% trans 'schedule' %}</a>
+				<a href="#">{% trans 'keynote' %}</a>
+				<a href="#">{% trans 'talk' %}</a>
 			</nav>
 		</div>
-		<a href="#">venue</a>
-		<a href="#" class="active">sponsor</a>
-		<a href="#">registration</a>
-		<a href="#">blog</a>
+		<div class="parent">
+			<a href="#" class="{% if active == 'venue' %}active{% endif %}">
+				{% trans 'venue' %}
+			</a>
+		</div>
+		<div class="parent">
+			<a href="#" class="{% if active == 'sponsor' %}active{% endif %}">
+				{% trans 'sponsor' %}
+			</a>
+		</div>
+		<div class="parent">
+			<a href="#" class="{% if active == 'registration' %}active{% endif %}">
+				{% trans 'registration' %}
+			</a>
+		</div>
+		<div class="parent">
+			<a href="http://pycontw.blogspot.tw/" target="_blank">
+				{% trans 'blog' %}
+			</a>
+		</div>
 	</nav>
 	<nav class="control-nav">
-		<a href="#" class="dashboard">dashboard</a>
+		<a href="{% url 'user_dashboard' %}" class="dashboard">
+			{% trans 'dashboard' %}
+		</a>
 		<div class="parent lang">
 			<a href="#">english</a>
 			<nav class="sub">
