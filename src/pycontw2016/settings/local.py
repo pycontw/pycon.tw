@@ -41,10 +41,11 @@ LOGGING = {
                 '[%(asctime)s] %(levelname)s '
                 '[%(pathname)s:%(lineno)s] %(message)s'
             ),
-            'datefmt': "%d/%b/%Y %H:%M:%S"
+            'datefmt': '%d/%b/%Y %H:%M:%S',
         },
         'simple': {
-            'format': '%(levelname)s %(message)s'
+            'format': '[%(asctime)s] %(levelname).1s %(message)s',
+            'datefmt': '%d/%b/%Y %H:%M:%S',
         },
     },
     'handlers': {
@@ -61,14 +62,14 @@ LOGGING = {
             'formatter': 'verbose'
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['django_log_file', ],
+            'handlers': ['django_log_file', 'console', ],
             'propagate': True,
             'level': 'DEBUG',
         },
