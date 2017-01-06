@@ -78,6 +78,6 @@ def language(request, settings):
 
 
 def test_content_pages(client, language, content_page_path):
-    path = '/' + language + '/' + content_page_path
+    path = '/{}{}'.format(language, content_page_path)
     response = client.get(path)
     assert response.status_code == 200, path
