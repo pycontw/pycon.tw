@@ -8,19 +8,43 @@
 
 {% block meta_og %}
   <meta property="og:title" content="Keynote Speakers | PyCon Taiwan 2017" />
-  <meta property="og:description" content="Enjoy keynote speeches from Carol Willing、Russell Keith-Magee." />
+  <meta property="og:description" content="Enjoy keynote speeches from Andrew Godwin、Carol Willing、Russell Keith-Magee." />
   <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
 {% endblock %}
 
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
-{# 'Carol Willing', 'Russell Keith-Magee' #}
+{# 'Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+
+{# Andrew-Godwin #}
+<div id="keynote-speaker-andrew-godwin" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/andrew_godwin.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Andrew-Godwin (andrewgodwin)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/andrewgodwin" target="_blank">@andrewgodwin</a><br>
+			<a href="http://www.aeracode.org/" target="_blank">http://www.aeracode.org/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			(TBD)
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
 
 {# Carol-Willing #}
 <div id="keynote-speaker-carol-willing" class="keynote-speaker">
 	<div class="keynote-speaker__profile">
 		<img class="keynote-speaker__photo"
-		src="{% static 'images/keynotes/2017/carol_willing.png' %}"
+		src="{% static 'pycontw-2017/images/keynotes/carol_willing.png' %}"
 		alt="Keynote profile photo">
 		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
 		<div class="keynote-speaker__url">
@@ -31,7 +55,10 @@
 	<div class="keynote-speaker__bio">
 		<h4 class="keynote-speaker__bio__header">Bio</h4>
 		<p>
-			Carol Willing is a one of the Foundation member in Python Software Foundation, a core developer for Project Jupyter, and a Research Software Engineer at Cal Poly San Luis Obispo. She's co-organizes PyLadies San Diego and San Diego Python. an active contributor to open source projects, a maintainer for OpenHatch and the Anita Borg Institute’s open source projects. Combining a love of nature, the arts, and math with a BSE in Electrical Engineering from Duke and an MS in Management from MIT, She enjoys creating and teaching in this field for more than 20 years. Carol Willing has a passion for learning and sharing. Recent lectures include PyCon US 2016, PyData Carolinas 2016, PyCon Philippines 2016.
+			Carol Willing is a one of the Foundation member in Python Software Foundation, a core developer for Project Jupyter, and a Research Software Engineer at Cal Poly San Luis Obispo. She's co-organizes PyLadies San Diego and San Diego Python. an active contributor to open source projects, a maintainer for OpenHatch and the Anita Borg Institute’s open source projects. Carol Willing has a passion for learning and sharing.
+		</p>
+		<p>
+			Recent lectures include PyCon US 2016, PyData Carolinas 2016, PyCon Philippines 2016.
 		</p>
 		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
 		<p>
@@ -44,7 +71,7 @@
 <div id="keynote-speaker-audrey-tang" class="keynote-speaker">
 	<div class="keynote-speaker__profile">
 		<img class="keynote-speaker__photo"
-		src="{% static 'images/keynotes/2017/russell_keith_magee.png' %}"
+		src="{% static 'pycontw-2017/images/keynotes/russell_keith_magee.png' %}"
 		alt="Keynote profile photo">
 		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
 		<div class="keynote-speaker__url">
@@ -55,7 +82,7 @@
 	<div class="keynote-speaker__bio">
 		<h4 class="keynote-speaker__bio__header">簡歷</h4>
 		<p>
-			Dr. Russell Keith-Magee is a co-founder of Django Evolution, a schema evolution framework for Django, an active participant on the Django Users and Django Developers and was a mentor in the Google Summer of Code 2008. In past years of development, Dr. Russell Keith-Magee contribute regularly to create Python native tools “BeeWare” to let the python language more enhance the importance.
+			Dr. Russell Keith-Magee is a 10 years Django core team veteran, and for 5 years, was President of the Django Software Foundation. He's also the founder of the BeeWare project, developing GUI tools to support the development of Python software and was a mentor in the Google Summer of Code 2008. In years of development, Dr. Russell Keith-Magee contributes regularly to create Python native tools “BeeWare” to let the python language more enhance the importance.
 		</p>
 		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
 		<p>

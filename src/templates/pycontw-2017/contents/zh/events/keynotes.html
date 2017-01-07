@@ -8,20 +8,44 @@
 
 {% block meta_og %}
   <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2017" />
-  <meta property="og:description" content="享受由 Carol Willing、Russell Keith-Magee 帶來的主題演講。
+  <meta property="og:description" content="享受由 Andrew Godwin、Carol Willing、Russell Keith-Magee 帶來的主題演講。
 " />
   <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
 {% endblock %}
 
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
-{# 'Carol Willing', 'Russell Keith-Magee' #}
+{# 'Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+
+{# Andrew-Godwin #}
+<div id="keynote-speaker-andrew-godwin" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/andrew_godwin.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Andrew-Godwin (andrewgodwin)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/andrewgodwin" target="_blank">@andrewgodwin</a><br>
+			<a href="http://www.aeracode.org/" target="_blank">http://www.aeracode.org/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			(TBD)
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
 
 {# Carol-Willing #}
 <div id="keynote-speaker-carol-willing" class="keynote-speaker">
 	<div class="keynote-speaker__profile">
 		<img class="keynote-speaker__photo"
-		src="{% static 'images/keynotes/2017/carol_willing.png' %}"
+		src="{% static 'pycontw-2017/images/keynotes/carol_willing.png' %}"
 		alt="Keynote profile photo">
 		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
 		<div class="keynote-speaker__url">
@@ -32,10 +56,10 @@
 	<div class="keynote-speaker__bio">
 		<h4 class="keynote-speaker__bio__header">簡歷</h4>
 		<p>
-			Carol Willing 是Python 軟體基金會理事之一，Project Jupyter 的核心開發人員和 Cal Poly San Luis Obispo 的的研究軟體工程師。 她共同組織了 PyLadies 聖地亞哥和聖地亞哥 Python。積極德貢獻於開源項目、OpenHatch 的維護和 Anita Borg 學院的開源。Carol Wiiling 熱愛自然、藝術和數學。畢業自 Duke BSE in Electrical Engineering 與麻省理工學院的管理碩士，她喜歡創作和指導他人，已經在這個領域擁有超過 20 年經驗。
+			Carol Willing 是 Python 軟體基金會理事之一也是Project Jupyter 的核心開發人員和 Cal Poly San Luis Obispo 的研究軟體工程師。她共同組織了 PyLadies 聖地亞哥和聖地亞哥 Python。她是積極的開源專案貢獻者，維護 OpenHatch 和 Anita Borg 學院的開源項目專案。Carol Willing 對學習和分享充滿熱情。最近的演講包括 PyCon US 2016，PyData Carolinas 2016，PyCon Philippines 2016。
 		<p>
 		<p>
-			Carol Willing對學習和分享充滿熱情。 最近的演講包括 PyCon US 2016，PyData Carolinas 2016，PyCon Philippines 2016。
+			Carol Willing對學習和分享充滿熱情。最近的演講包括 PyCon US 2016，PyData Carolinas 2016，PyCon Philippines 2016。
 		</p>
 		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
 		<p>
@@ -48,7 +72,7 @@
 <div id="keynote-speaker-audrey-tang" class="keynote-speaker">
 	<div class="keynote-speaker__profile">
 		<img class="keynote-speaker__photo"
-		src="{% static 'images/keynotes/2017/russell_keith_magee.png' %}"
+		src="{% static 'pycontw-2017/images/keynotes/russell_keith_magee.png' %}"
 		alt="Keynote profile photo">
 		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
 		<div class="keynote-speaker__url">
@@ -59,7 +83,7 @@
 	<div class="keynote-speaker__bio">
 		<h4 class="keynote-speaker__bio__header">簡歷</h4>
 		<p>
-			Russell Keith-Magee 博士是 Django Evolution 的共同創始人之一，同時也是 Django 用戶和 Django 開發者與參與者。 參與 Google Summer of Code 2008 的指導。在過去的開發中 Russell Keith-Magee 博士創建 Python native 套件 “BeeWare”，讓 Python 語言的重要性更為提升。
+			Russell Keith-Magee 博士是位擁有 10 年 Django 核心團隊老將，5 年來一直是 Django 軟體基金會的主席。他也是 BeeWare 項目的創始人，開發 GUI 工具以支援 Python 軟體的開發，並且是 Google Summer of Code 2008 的 Mentor。在多年的發展中，Russell Keith-Magee 博士致力於創建 Python native 工具 “BeeWare“ 提升 Python 語言重要性。
 		</p>
 		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
 		<p>
