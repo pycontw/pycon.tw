@@ -1,6 +1,6 @@
 $static_root: "./../../";
 
-$theme-color: #223d53; 
+$theme-color: #223d53;
 $theme-focus: #FFC525; // yellow
 
 $quote-color: $theme-focus;
@@ -45,6 +45,7 @@ $sponsor-platinum-color: #eddcad;
 
 // Buttons
 
+$btn-primary-bg: #367ABD;
 $btn-primary-hover-bg: #0b38ba;
 
 $btn-focus-color: #fff;
@@ -81,5 +82,4 @@ $reddish-orange: #f75b1c;
 
 $proposals-alert-warning-bg: $sand-yellow;
 
-$navbar-em-bg: #367ABD; //$btn-primary-bg;
-
+$navbar-em-bg: $btn-primary-bg;
