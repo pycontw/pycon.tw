@@ -10,6 +10,7 @@
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'page' path='events/talks' as events_talk_url %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 <p>
 	Events at PyCon Taiwan 2017 can be divided into two: Those during the
@@ -91,7 +92,7 @@
 </p>
 <p>
 	The plan is to open unconference proposal submission 10 days before the conference starts. More information about the Unconference talk can be found on the
-	<a href="#">Unconference</a> page.
+	<a href="{{ speaking_unconference_url  }}">Unconference</a> page.
 </p>
 
 <h3>Lightning Talks</h3>
