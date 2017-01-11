@@ -181,7 +181,10 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static', 'default', 'styles'),
+]
 
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -238,7 +241,12 @@ CONFERENCE_CHOICES = [
 ]
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
-TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'pycontw-2017')
+TEMPLATES[0]['DIRS'][1] = os.path.join(
+    BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
+)
+STATICFILES_DIRS[1] = os.path.join(
+    BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
+)
 
 PROPOSALS_CREATABLE = False
 
