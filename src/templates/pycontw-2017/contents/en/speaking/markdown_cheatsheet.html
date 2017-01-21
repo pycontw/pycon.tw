@@ -1,0 +1,107 @@
+{% extends 'contents/_base/speaking.html' %}
+
+{% block title %}Markdown Cheatsheet{% endblock title %}
+
+{% block content %}
+
+<h2><span>Markdown Cheatsheet</span></h2>
+<article>
+    <table class="accomodation-table table table-responsive">
+        <thead>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <th>Use</th>
+                <th>Or</th>
+                <th>...Get</th>
+            </tr>
+        </thead>
+        </tr>
+        <tbody>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>*Italic*</td>
+                <td>_Italic_</td>
+                <td><i>Italic</i></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>**Bold**</td>
+                <td>__Bold__</td>
+                <td><b>Bold</b></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td># Heading 1</td>
+                <td>Heading 1<br>=========</td>
+                <td>Heading 1</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td># Heading 2</td>
+                <td>Heading 2<br>=========</td>
+                <td>Heading 2</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>[Link](https://tw.pycon.org/)</td>
+                <td>[Link][1]<br>⋮<br>[1]: https://tw.pycon.org/</td>
+                <td><a href="https://tw.pycon.org/">Link</a></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>![Image](https://www.python.org/static/img/python-logo.png)</td>
+                <td>![Image][1]<br>⋮<br>[1]: https://www.python.org/static/img/python-logo.png</td>
+                <td><img src="https://www.python.org/static/img/python-logo.png" alt="py-logo" /></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>&gt; Blockquote</td>
+                <td></td>
+                <td>Blockquote</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>A paragraph.<br><br>A paragraph after 1 blank line.</td>
+                <td></td>
+                <td>A paragraph.<br><br>A paragraph after 1 blank line.</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>* List<br>* List<br>* List</td>
+                <td>- List<br>- List<br>- List</td>
+                <td><ul><li>List</li><li>List</li><li>List</li></ul</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>1. One<br>2. Two<br>3. Three</td>
+                <td>1) One<br>2) Two<br>3) Three</td>
+                <td><ol><li>One</li><li>Two</li><li>Three</li></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>Horizontal Rule<br><br>---</td>
+                <td>Horizontal Rule<br><br>***</td>
+                <td>Horizontal Rule<a></a></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>`Inline code` with backticks</td>
+                <td></td>
+                <td><a>Inline code</a> with backticks</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>```<br># code block<br>print '3 backticks or'<br>print 'indent 4 spaces'<br>```</td>
+                <td></td>
+                <td>```<br># code block<br>print '3 backticks or'<br>print 'indent 4 spaces'<br>```</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+
+<blockquote>
+    引用自：<a href="http://commonmark.org/help/"
+        target="_blank">http://commonmark.org/</a>
+</blockquote>
+
+{% endblock content %}
