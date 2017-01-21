@@ -1,27 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
 # Liang Bo Wang <me@liang2.tw>, 2015-2016
 # Liang Bo Wang <me@liang2.tw>, 2016
 # Michelle <flywindy2002@gmail.com>, 2016
-# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2016
+# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW 2016\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-21 21:14+0800\n"
-"PO-Revision-Date: 2016-05-03 08:53+0000\n"
-"Last-Translator: Michelle <flywindy2002@gmail.com>\n"
-"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
-"pycon-tw-2016/language/zh-Hant/)\n"
-"Language: zh-Hant\n"
+"POT-Creation-Date: 2017-01-22 00:22+0800\n"
+"PO-Revision-Date: 2017-01-21 16:24+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw-2016/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/data.py:8
@@ -74,13 +73,10 @@ msgid "Photography"
 msgstr "記錄組"
 
 #: core/forms.py:10
-#, python-brace-format
 msgid "{model_name_cap} creation requires a request object."
 msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 
 #: core/models.py:68
-#, fuzzy
-#| msgid "Conference"
 msgid "conference"
 msgstr "會議"
 
@@ -189,9 +185,7 @@ msgid ""
 "The overview of what the talk is about. If the talk assume some domain "
 "knowledge please state it here. If your talk is accepted, this will be "
 "displayed on both the website and the handbook. Should be one paragraph."
-msgstr ""
-"介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記"
-"在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
+msgstr "介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
 
 #: core/models.py:134
 msgid "Novice"
@@ -210,19 +204,14 @@ msgid "Python level"
 msgstr "Python 難易度"
 
 #: core/models.py:143
-#, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
-"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
-"more likely to be accepted because of being \"Novice\" level. We may contact "
-"you to change the talk level when we find the content is too-hard or too-"
-"easy for the target audience."
-msgstr ""
-"講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的"
-"定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一"
-"文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來"
-"說更簡單或困難時，可能會和你討論是否該修改。"
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
+"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
+" be more likely to be accepted because of being \"Novice\" level. We may "
+"contact you to change the talk level when we find the content is too-hard or"
+" too-easy for the target audience."
+msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href=\"{speaking_talk_url}\" target=\"_blank\">如何投稿</a>一文。注意：投稿不會因為投得級別是「入門」就比較容易上。我們發現這講題對聽眾來說更簡單或困難時，可能會和你討論是否該修改。"
 
 #: core/models.py:157
 msgid "detailed description"
@@ -234,13 +223,10 @@ msgid ""
 "comfortable length is less than 2000 characters (or about 1200 Chinese "
 "characters). Since most reviewers may not understand the topic as deep as "
 "you do, including related links to the talk topic will help reviewers "
-"understand the proposal. Edit using <a href='http://daringfireball.net/"
-"projects/markdown/basics' target='_blank'>Markdown</a>."
-msgstr ""
-"本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 "
-"字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與"
-"主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/"
-"projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+"understand the proposal. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr "本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元或 1200 個中文字。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: core/models.py:172 reviews/models.py:92
 msgid "Yes"
@@ -255,15 +241,12 @@ msgid "recording policy"
 msgstr "議程錄影"
 
 #: core/models.py:180
-#, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation. More information can be found "
 "at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
 "page."
-msgstr ""
-"是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a "
-"href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
+msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
 
 #: core/models.py:192
 msgid "slide link"
@@ -289,102 +272,78 @@ msgstr "小時"
 
 #: events/admin.py:14
 msgid "time value"
-msgstr ""
+msgstr "時間值"
 
 #: events/admin.py:19 events/admin.py:66 events/models.py:21
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
-msgstr ""
+msgstr "第 1 天"
 
 #: events/admin.py:20 events/admin.py:67 events/models.py:22
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
-msgstr ""
+msgstr "第 2 天"
 
 #: events/admin.py:21 events/admin.py:68 events/models.py:23
 #: templates/pycontw-2016/events/schedule.html:48
 msgid "Day 3"
-msgstr ""
-
-#: events/admin.py:56
-msgid "month"
-msgstr ""
-
-#: events/admin.py:57
-#, fuzzy
-#| msgid "days"
-msgid "day"
-msgstr "天"
-
-#: events/admin.py:58
-#, fuzzy
-#| msgid "hours"
-msgid "hour"
-msgstr "小時"
-
-#: events/admin.py:59
-msgid "minute"
-msgstr ""
+msgstr "第 3 天"
 
 #: events/admin.py:84 events/models.py:117
 msgid "begin time"
-msgstr ""
+msgstr "開始時間"
 
 #: events/admin.py:90 events/models.py:125
 msgid "end time"
-msgstr ""
+msgstr "結束時間"
 
 #: events/models.py:39
 msgid "value"
-msgstr ""
+msgstr "值"
 
 #: events/models.py:45
 msgid "time"
-msgstr ""
+msgstr "時間"
 
 #: events/models.py:46
 msgid "times"
-msgstr ""
+msgstr "時間"
 
 #: events/models.py:96
 msgid "All rooms"
-msgstr ""
+msgstr "全體會議"
 
 #: events/models.py:97
 msgid "R0, R1, R2"
-msgstr ""
+msgstr "R0、R1、R2"
 
 #: events/models.py:98
 msgid "R0"
-msgstr ""
+msgstr "R0"
 
 #: events/models.py:99
 msgid "R1"
-msgstr ""
+msgstr "R1"
 
 #: events/models.py:100
 msgid "R2"
-msgstr ""
+msgstr "R2"
 
 #: events/models.py:101
 msgid "R3"
-msgstr ""
+msgstr "R3"
 
 #: events/models.py:109
-#, fuzzy
-#| msgid "Education"
 msgid "location"
-msgstr "教育"
+msgstr "地點"
 
 #: events/models.py:140
 msgid "custom event"
 msgstr ""
 
 #: events/models.py:141
-#, fuzzy
-#| msgid "sponsored events"
 msgid "custom events"
-msgstr "贊助演講"
+msgstr ""
 
 #: events/models.py:150 users/models.py:110
 msgid "speaker name"
@@ -392,32 +351,25 @@ msgstr "講者名"
 
 #: events/models.py:154 events/models.py:187
 msgid "slug"
-msgstr ""
+msgstr "網址文字"
 
 #: events/models.py:156
-#, python-brace-format
 msgid ""
-"This is used to link to the speaker's introduction on the Keynote page, e.g. "
-"'liang2' will link to '{link}#keynote-speaker-liang2'."
+"This is used to link to the speaker's introduction on the Keynote page, e.g."
+" 'liang2' will link to '{link}#keynote-speaker-liang2'."
 msgstr ""
 
 #: events/models.py:164
-#, fuzzy
-#| msgid "sponsored event"
 msgid "keynote event"
-msgstr "贊助演講"
+msgstr "主題演講"
 
 #: events/models.py:165
-#, fuzzy
-#| msgid "sponsored events"
 msgid "keynote events"
-msgstr "贊助演講"
+msgstr "主題演講"
 
 #: events/models.py:168
-#, fuzzy, python-brace-format
-#| msgid "Keynotes"
 msgid "Keynote: {speaker}"
-msgstr "主題演講"
+msgstr "主題演講：{speaker}"
 
 #: events/models.py:183
 msgid "host"
@@ -437,73 +389,53 @@ msgstr "提案"
 
 #: events/models.py:218
 msgid "talk event"
-msgstr ""
+msgstr "演講"
 
 #: events/models.py:219
 msgid "talk events"
-msgstr ""
+msgstr "演講"
 
 #: events/models.py:231
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: events/models.py:239 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/_includes/header.html:37
 msgid "Schedule"
-msgstr ""
+msgstr "時間表"
 
 #: events/models.py:240
 msgid "Schedules"
-msgstr ""
+msgstr "時間表"
 
 #: events/models.py:245
-#, fuzzy
-#| msgid "created at"
 msgid "Schedule created at {}"
-msgstr "建立時間"
+msgstr "時間表建立於 {}"
 
 #: events/renderers.py:34 templates/pycontw-2017/_includes/header.html:39
-#, fuzzy
-#| msgid "Keynotes"
 msgid "Keynote"
 msgstr "主題演講"
 
 #: events/renderers.py:43
-#, fuzzy
-#| msgid "Slides Link"
 msgid "EN Slides"
-msgstr "投影片連結"
+msgstr "英文投影片"
 
 #: events/views.py:67
 msgid "New talk schedule generated successfully."
-msgstr ""
+msgstr "演講時間表產生成功。"
 
 #: proposals/forms/mixins.py:12
-#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/proposals.py:33 proposals/forms/proposals.py:74
+#: proposals/forms/proposals.py:34 proposals/forms/proposals.py:71
 #: proposals/models.py:189 proposals/models.py:248
 msgid "duration"
 msgstr "時間長度"
-
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
-#: pycontw2016/settings/base.py:258
-msgid "No preference"
-msgstr "無偏好"
-
-#: proposals/forms/proposals.py:36 proposals/forms/proposals.py:77
-msgid "Prefer 30min"
-msgstr "偏好 30 分鐘"
-
-#: proposals/forms/proposals.py:37 proposals/forms/proposals.py:78
-msgid "Prefer 45min"
-msgstr "偏好 45 分鐘"
 
 #: proposals/forms/speakers.py:19
 msgid "speaker email"
@@ -516,7 +448,6 @@ msgid ""
 msgstr "講者應該已於 tw.pycon.org 註冊帳號，並且完成 email 認證與講者資訊。"
 
 #: proposals/forms/speakers.py:29
-#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create an "
 "{model_name}."
@@ -590,12 +521,9 @@ msgstr "演講目標"
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
-"When they leave the room, what will they learn that they didn't know before? "
-"This is NOT made public and for REVIEW ONLY."
-msgstr ""
-"目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講"
-"中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅"
-"供審查使用。"
+"When they leave the room, what will they learn that they didn't know before?"
+" This is NOT made public and for REVIEW ONLY."
+msgstr "目標聽眾是誰？（請寫明確，「Python 使用者」不是個好答案）；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:143
 msgid "supplementary"
@@ -604,14 +532,11 @@ msgstr "補充資訊"
 #: proposals/models.py:147
 msgid ""
 "Anything else you'd like the program committee to know when making their "
-"selection: your past speaking experience, community experience, etc. This is "
-"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
-"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
-msgstr ""
-"任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社"
-"群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://"
-"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格"
-"式編輯。"
+"selection: your past speaking experience, community experience, etc. This is"
+" NOT made public and for REVIEW ONLY. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: proposals/models.py:194 proposals/models.py:254
 msgid "outline"
@@ -620,15 +545,11 @@ msgstr "大綱"
 #: proposals/models.py:197
 msgid ""
 "How the talk will be arranged. It is highly recommended to attach the "
-"estimated time length for each sections in the talk. Talks in favor of 45min "
-"should have a fallback plan about how to shrink the content into a 25min "
-"one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
-"本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏"
-"好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合"
-"較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/"
-"basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
+"estimated time length for each sections in the talk. Talks in favor of 45min"
+" should have a fallback plan about how to shrink the content into a 25min "
+"one. Edit using <a href='http://daringfireball.net/projects/markdown/basics'"
+" target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
+msgstr "本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 25 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:210
 msgid "Rejected"
@@ -656,14 +577,11 @@ msgstr "全天"
 
 #: proposals/models.py:257
 msgid ""
-"How the tutorial will be arranged. You should enumerate over each section in "
-"your talk and attach each section with the estimated time length. Edit using "
-"<a href='http://daringfireball.net/projects/markdown/basics' "
+"How the tutorial will be arranged. You should enumerate over each section in"
+" your talk and attach each section with the estimated time length. Edit "
+"using <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
-"本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。使用 "
-"<a href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
+msgstr "本教學的進行將會如何安排。應該要列舉教學的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:267
 msgid "tutorial proposal"
@@ -684,85 +602,72 @@ msgid " and "
 msgstr "、"
 
 #: proposals/views/cancel.py:34
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》演講提案已撤回。"
 
 #: proposals/views/cancel.py:38
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
 
 #: proposals/views/cancel.py:56
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》教學提案已撤回。"
 
 #: proposals/views/cancel.py:60
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
 
 #: proposals/views/create.py:38
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
 
 #: proposals/views/create.py:48
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的教學提案。"
 
 #: proposals/views/update.py:39
-#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 
 #: proposals/views/update.py:48
-#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》教學提案。"
 
 #: pycontw2016/settings/base.py:239
-#, fuzzy
-#| msgid "Welcome PyCon TW 2016"
 msgid "PyCon Taiwan 2016"
-msgstr "歡迎來到 PyCon TW 2016"
+msgstr "PyCon Taiwan 2016"
 
 #: pycontw2016/settings/base.py:240
 msgid "PyCon Taiwan 2017"
-msgstr ""
+msgstr "PyCon Taiwan 2017"
+
+#: pycontw2016/settings/base.py:258
+#: pycontw2016/settings/production/pycontw2016.py:13
+msgid "No preference"
+msgstr "無偏好"
 
 #: pycontw2016/settings/base.py:259
-#, fuzzy
-#| msgid "Prefer 25min"
-msgid "Prefer 25 min"
-msgstr "偏好 25 分鐘"
+msgid "Prefer 30min"
+msgstr "偏好 30 分鐘"
 
 #: pycontw2016/settings/base.py:260
-#, fuzzy
-#| msgid "Prefer 25min"
-msgid "Prefer 30 min"
-msgstr "偏好 25 分鐘"
-
-#: pycontw2016/settings/base.py:261
-#, fuzzy
-#| msgid "Prefer 45min"
-msgid "Prefer 45 min"
+#: pycontw2016/settings/production/pycontw2016.py:15
+msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
+#: pycontw2016/settings/production/pycontw2016.py:14
+msgid "Prefer 25min"
+msgstr "偏好 25 分鐘"
+
 #: reviews/forms.py:14
-#, python-brace-format
 msgid "The current user is invalid to create a {model_name}."
 msgstr "現在的使用者無法建立 {model_name}。"
 
 #: reviews/forms.py:17
-#, python-brace-format
 msgid "{model_name_cap} creation requires a proposal object."
 msgstr "{model_name_cap} 的建立需要一個 proposal 物件。"
 
 #: reviews/forms.py:49
-#, python-brace-format
 msgid "Could not review proposal {proposal}."
 msgstr "無法審查提案 {proposal}。"
 
@@ -797,11 +702,9 @@ msgstr "投票"
 #: reviews/models.py:74
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
-"and acceptance criteria can be found at the google doc <a href=\"https://goo."
-"gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
-msgstr ""
-"投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照 Google 文件上的<a "
-"href=\"https://goo.gl/EPlUZx\" target=\"_blank\">審稿指南</a>。"
+"and acceptance criteria can be found at the google doc <a "
+"href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
+msgstr "投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照 Google 文件上的<a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">審稿指南</a>。"
 
 #: reviews/models.py:83
 msgid "comment"
@@ -810,11 +713,9 @@ msgstr "評論"
 #: reviews/models.py:85
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
-"later review stages, and you can choose whether or not to disclose it to the "
-"proposal's submitter."
-msgstr ""
-"對於本提案的評論。本欄位內容將在之後的審查階段讓其他審查者看見，您可以選擇要"
-"或不要讓本提案的投稿者知道您的評論。 "
+"later review stages, and you can choose whether or not to disclose it to the"
+" proposal's submitter."
+msgstr "對於本提案的評論。本欄位內容將在之後的審查階段讓其他審查者看見，您可以選擇要或不要讓本提案的投稿者知道您的評論。 "
 
 #: reviews/models.py:98
 msgid "discloses comment to proposal submitter"
@@ -825,9 +726,7 @@ msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
-msgstr ""
-"本提案的投稿者是否能知道您的評論。我們會在通知提案接受或拒絕結果時，如果您同"
-"意讓投稿者知道，將這些評論加在通知結果中。"
+msgstr "本提案的投稿者是否能知道您的評論。我們會在通知提案接受或拒絕結果時，如果您同意讓投稿者知道，將這些評論加在通知結果中。"
 
 #: reviews/models.py:108
 msgid "note"
@@ -838,9 +737,7 @@ msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
-msgstr ""
-"個人對本投稿的附註。您可以使用這個欄位記錄有關審查的任何資訊。我們不會把這欄"
-"位的資訊公布給任何人，只有您知道。"
+msgstr "個人對本投稿的附註。您可以使用這個欄位記錄有關審查的任何資訊。我們不會把這欄位的資訊公布給任何人，只有您知道。"
 
 #: reviews/models.py:118
 msgid "updated"
@@ -855,7 +752,6 @@ msgid "reviews"
 msgstr "審查"
 
 #: reviews/models.py:129
-#, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
 
@@ -877,7 +773,7 @@ msgstr "標誌"
 
 #: sponsors/models.py:41
 msgid "partner"
-msgstr ""
+msgstr "夥伴"
 
 #: sponsors/models.py:42
 msgid "platinum"
@@ -924,9 +820,7 @@ msgid ""
 "This value is used to estimate the size of text in our materials. It counts "
 "East Asian wide characters (e.g. Chinese) as two units because they take "
 "more space."
-msgstr ""
-"本數值用來估計文本的長度。東亞寬字元（如：中文）占兩單位，因為他們占用較大的"
-"空間。"
+msgstr "本數值用來估計文本的長度。東亞寬字元（如：中文）占兩單位，因為他們占用較大的空間。"
 
 #: templates/default/_includes/dashboard_tablist.html:5
 msgid "Proposals"
@@ -966,7 +860,7 @@ msgstr "修改"
 #: templates/default/dashboard_base.html:15
 #, python-format
 msgid "Hi %(user.email)s, welcome!"
-msgstr ""
+msgstr "嗨 %(user.email)s，歡迎！"
 
 #: templates/default/dashboard_base.html:22
 msgid ""
@@ -984,7 +878,8 @@ msgstr "重新寄送一封。"
 
 #: templates/default/dashboard_base.html:31
 msgid ""
-"You need to complete your speaker profile first before submitting a proposal."
+"You need to complete your speaker profile first before submitting a "
+"proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
 
 #: templates/default/proposals/_proposal_create.html:13
@@ -1068,9 +963,7 @@ msgstr "登入"
 msgid ""
 "<span class=\"form-tip\">Don't have an account?</span> <a class=\"btn btn-"
 "link\" href=\"%(signup_url)s\">Sign up now!</a>"
-msgstr ""
-"<span class=\"form-tip\">沒有帳號？</span><a class=\"btn btn-link\" href="
-"\"%(signup_url)s\">馬上註冊一個！</a>"
+msgstr "<span class=\"form-tip\">沒有帳號？</span><a class=\"btn btn-link\" href=\"%(signup_url)s\">馬上註冊一個！</a>"
 
 #: templates/default/registration/password_change_form.html:14
 msgid "Change Log In Password"
@@ -1097,22 +990,13 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"You receive this email because someone has requested to reset the password "
-"for your user account %(user_email)s at %(site_name)s.\n"
+"You receive this email because someone has requested to reset the password for your user account %(user_email)s at %(site_name)s.\n"
 "\n"
 "To reset your password, go to\n"
 "    %(protocol)s://%(domain)s%(password_reset_confirm_url)s\n"
 "\n"
 "You can ignore this message if you did not request a password reset.\n"
-msgstr ""
-"\n"
-"你收到此信的原因為某人申請重設了你在 %(site_name)s 上的使用者帳號 "
-"%(user_email)s。\n"
-"\n"
-"如果要重設密碼，請至\n"
-"%(protocol)s://%(domain)s%(password_reset_confirm_url)s\n"
-"\n"
-"如果您沒有申請重設密碼，可以忽略本信。\n"
+msgstr "\n你收到此信的原因為某人申請重設了你在 %(site_name)s 上的使用者帳號 %(user_email)s。\n\n如果要重設密碼，請至\n%(protocol)s://%(domain)s%(password_reset_confirm_url)s\n\n如果您沒有申請重設密碼，可以忽略本信。\n"
 
 #: templates/default/registration/signup.html:5
 #: templates/default/registration/signup.html:7
@@ -1122,36 +1006,23 @@ msgid "Sign Up"
 msgstr "註冊"
 
 #: templates/default/registration/signup.html:13
-#, fuzzy, python-format
-#| msgid ""
-#| "<span class=\"form-tip\">Already have an account?</span><a href="
-#| "\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+#, python-format
 msgid ""
-"<span class=\"form-tip\">Already have an account?</span> <a href="
-"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+"<span class=\"form-tip\">Already have an account?</span> <a "
+"href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 msgstr ""
-"<span class=\"form-tip\">已經有帳號了？</span><a href=\"%(login_url)s\" "
-"class=\"btn btn-link\">請登入。</a>"
 
 #: templates/default/registration/verification_email.txt:6
 #, python-format
 msgid ""
 "\n"
-"An account has been created on %(host)s with this email address "
-"(%(user_email)s).\n"
+"An account has been created on %(host)s with this email address (%(user_email)s).\n"
 "\n"
 "To activate this account and confirm this email address, go to\n"
 "%(verification_url)s\n"
 "\n"
 "You can ignore this message if you did not sign up for this site.\n"
-msgstr ""
-"\n"
-"一個使用本信箱（%(user_email)s）的使用者帳號已於 %(host)s 創立。\n"
-"\n"
-"欲啟用本帳號並確認使用本信箱地址，請至\n"
-"%(verification_url)s\n"
-"\n"
-"若您沒有在本站註冊過，則可以忽略本訊息。\n"
+msgstr "\n一個使用本信箱（%(user_email)s）的使用者帳號已於 %(host)s 創立。\n\n欲啟用本帳號並確認使用本信箱地址，請至\n%(verification_url)s\n\n若您沒有在本站註冊過，則可以忽略本訊息。\n"
 
 #: templates/default/reviews/_includes/previous_review_table.html:6
 #: templates/default/reviews/_includes/review_table.html:6
@@ -1208,8 +1079,7 @@ msgstr "閱讀"
 #: templates/default/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
 "\n"
-"\tIn review stage 1, you <strong>will not</strong> see score and comment "
-"made\n"
+"\tIn review stage 1, you <strong>will not</strong> see score and comment made\n"
 "\tby other reviewers, nor the name and background of the speaker. In short,\n"
 "\tyou review based on the talk content itself.\n"
 msgstr ""
@@ -1217,10 +1087,8 @@ msgstr ""
 #: templates/default/reviews/_includes/review_stage_2_desc.html:3
 msgid ""
 "\n"
-"\tAfter review stage 1, some of the proposals have been accepted or "
-"rejected.\n"
-"\tThese proposals and their reviews (read-only) are shown in the separate "
-"tab.\n"
+"\tAfter review stage 1, some of the proposals have been accepted or rejected.\n"
+"\tThese proposals and their reviews (read-only) are shown in the separate tab.\n"
 msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_2_desc.html:8
@@ -1228,10 +1096,8 @@ msgid ""
 "\n"
 "\tIn review stage 2, you will see score and comment made by other reviewers\n"
 "\tanonymously, including the name and background of the speaker. With more\n"
-"\tinformation provided, you may want to update your review. Updating or "
-"adding\n"
-"\treview in stage 2 follows the same way as stage 1. Only the last review "
-"you\n"
+"\tinformation provided, you may want to update your review. Updating or adding\n"
+"\treview in stage 2 follows the same way as stage 1. Only the last review you\n"
 "\tmade will be disclosed to the speaker (if you choose to).\n"
 msgstr ""
 
@@ -1307,13 +1173,10 @@ msgstr "目前審查階段：%(review_stage)s"
 #: templates/default/reviews/talk_proposal_list.html:20
 msgid ""
 "\n"
-"        Note that at anytime, the identity of the reviewer, e.g. you, is "
-"hidden to\n"
-"        other reviewers and speakers.  For more information about the whole "
-"review\n"
+"        Note that at anytime, the identity of the reviewer, e.g. you, is hidden to\n"
+"        other reviewers and speakers.  For more information about the whole review\n"
 "        process, please refer to the google doc\n"
-"        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review "
-"Guideline</a>.\n"
+"        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>.\n"
 "        "
 msgstr ""
 
@@ -1331,7 +1194,7 @@ msgstr "已審查的演講提案"
 
 #: templates/default/reviews/talk_proposal_list.html:61
 msgid "Talk Proposals With Decision"
-msgstr ""
+msgstr "已決策之演講提案"
 
 #: templates/default/reviews/talk_proposal_list.html:71
 msgid "You have reviewed all talk proposals."
@@ -1369,7 +1232,7 @@ msgstr "撤回"
 
 #: templates/default/users/_includes/dashboard_proposal_table.html:38
 msgid "View"
-msgstr ""
+msgstr "瀏覽"
 
 #: templates/default/users/user_dashboard.html:20
 msgid "Talk Proposals"
@@ -1377,14 +1240,14 @@ msgstr "演講提案"
 
 #: templates/default/users/user_dashboard.html:23
 msgid "New Talk Porposal"
-msgstr ""
+msgstr "投稿新演講"
 
 #: templates/default/users/user_dashboard.html:33
 #, python-format
 msgid ""
-"You haven't submitted any talk proposals. Why not <a href="
-"\"%(talk_proposal_create_url)s\">submit one now</a>?"
-msgstr ""
+"You haven't submitted any talk proposals. Why not <a "
+"href=\"%(talk_proposal_create_url)s\">submit one now</a>?"
+msgstr "您尚未投稿演講，何不馬上<a href=\"%(talk_proposal_create_url)s\">創建一個</a>？"
 
 #: templates/default/users/user_dashboard.html:35
 msgid "You haven't submitted any talk proposals."
@@ -1396,14 +1259,14 @@ msgstr "教學提案"
 
 #: templates/default/users/user_dashboard.html:46
 msgid "New Tutorial Porposal"
-msgstr ""
+msgstr "投稿新教學"
 
 #: templates/default/users/user_dashboard.html:58
 #, python-format
 msgid ""
-"You haven't submitted any tutorial proposals. Why not <a href="
-"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
-msgstr ""
+"You haven't submitted any tutorial proposals. Why not <a "
+"href=\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+msgstr "您尚未投稿教學，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">創建一個</a>？"
 
 #: templates/default/users/user_dashboard.html:60
 msgid "You haven't submitted any tutorial proposals."
@@ -1429,8 +1292,7 @@ msgstr "上傳"
 msgid ""
 "Provide a square photo at least 800&times;800 pixels in size for best "
 "results in our printed conference booklet."
-msgstr ""
-"請提供至少 800&times;800 像素之方型照片，以於會議印刷品中取得最佳效果。"
+msgstr "請提供至少 800&times;800 像素之方型照片，以於會議印刷品中取得最佳效果。"
 
 #: templates/default/users/user_profile_update.html:41
 msgid "Your Name"
@@ -1514,6 +1376,7 @@ msgid "Sprints"
 msgstr "Sprints"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:44
+#: templates/pycontw-2017/_includes/header.html:43
 msgid "BoF"
 msgstr "BoF"
 
@@ -1561,6 +1424,7 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
+#: templates/pycontw-2017/_includes/header.html:66
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -1573,31 +1437,29 @@ msgstr "部落格"
 msgid ""
 "This is the full schedule of talks for PyCon Taiwan 2016. See also: <ul> "
 "<li><a href=\"%(overview_url)s\">Overview of conference schedule</a></li> "
-"<li><a href=\"%(keynote_url)s\">Our keynote speeches</a></li> <li><a href="
-"\"%(talk_list_url)s\">An alphabetically-sorted list of all talks</a></li> </"
-"ul>"
+"<li><a href=\"%(keynote_url)s\">Our keynote speeches</a></li> <li><a "
+"href=\"%(talk_list_url)s\">An alphabetically-sorted list of all "
+"talks</a></li> </ul>"
 msgstr ""
 
 #: templates/pycontw-2016/events/schedule.html:32
 #: templates/pycontw-2016/events/talk_list.html:20
 msgid ""
-"Program schedule are <span class=\"text-emphasize\">subject to change</"
-"span>. Please check this page frequently to get the latest version."
-msgstr ""
-"議程時間表會<span class=\"text-emphasize\">隨狀況更新</span>。請經常查看本頁"
-"以取得最新的版本。"
+"Program schedule are <span class=\"text-emphasize\">subject to "
+"change</span>. Please check this page frequently to get the latest version."
+msgstr "議程時間表會<span class=\"text-emphasize\">隨狀況更新</span>。請經常查看本頁以取得最新的版本。"
 
 #: templates/pycontw-2016/events/schedule.html:39
 msgid "Quick Jump"
-msgstr ""
+msgstr "跳至"
 
 #: templates/pycontw-2016/events/schedule_create.html:15
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
-msgstr ""
+msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 
 #: templates/pycontw-2016/events/schedule_create.html:26
 msgid "Generate"
-msgstr ""
+msgstr "產生"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:27
 #: templates/pycontw-2016/events/talk_detail.html:27
@@ -1610,16 +1472,11 @@ msgid "Description"
 msgstr "說明"
 
 #: templates/pycontw-2016/events/talk_list.html:14
-#, fuzzy, python-format
-#| msgid ""
-#| "You can peek at the program schedule on <a class=\"text-emphasize\" href="
-#| "\"%(gdoc_url)s\" target=\"_blank\">this Google document</a>."
+#, python-format
 msgid ""
-"You can check out the program schedule <a class=\"text-emphasize\" href="
-"\"%(schedule_url)s\">here</a>."
+"You can check out the program schedule <a class=\"text-emphasize\" "
+"href=\"%(schedule_url)s\">here</a>."
 msgstr ""
-"您可以先於<a class=\"text-emphasize\" href=\"%(gdoc_url)s\" target=\"_blank"
-"\">此 Google 文件</a>預覽議程時間表。"
 
 #: templates/pycontw-2016/events/talk_list.html:28
 msgid "Proposed Talks"
@@ -1628,44 +1485,30 @@ msgstr "一般演講"
 #: templates/pycontw-2016/events/talk_list.html:32
 #, python-format
 msgid ""
-"<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\">"
-"%(proposal_title)s</a> by %(speaker_names)s"
-msgstr ""
-"<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\"><cite>"
-"%(proposal_title)s</cite></a> %(speaker_names)s"
+"<a class=\"proposal-title\" "
+"href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by "
+"%(speaker_names)s"
+msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\"><cite>%(proposal_title)s</cite></a> %(speaker_names)s"
 
 #: templates/pycontw-2016/events/talk_list.html:38
 msgid "Sponsored Events"
 msgstr "贊助演講"
 
 #: templates/pycontw-2016/events/talk_list.html:41
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "\t\t<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">\n"
-#| "\t\t\t%(event_title)s\n"
-#| "\t\t</a>\n"
-#| "\t\tby %(host_name)s\n"
-#| "\t\t"
+#, python-format
 msgid ""
-"<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">"
-"%(event_title)s</a> by %(host_name)s"
-msgstr ""
-"\n"
-"<a class=\"proposal-title\" href=\"%(sponsored_event_url)s"
-"\">《%(event_title)s》</a>%(host_name)s"
+"<a class=\"proposal-title\" "
+"href=\"%(sponsored_event_url)s\">%(event_title)s</a> by %(host_name)s"
+msgstr "<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\"><cite>%(event_title)s</cite></a> %(host_name)s"
 
 #: templates/pycontw-2016/index.html:7
 msgid ""
 "PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
 "focuses on Python technology and its versatile applications. We welcome "
-"people who are interested in Python to join PyCon Taiwan to share knowledge, "
-"exchange ideas, make connections and to help us grow our network."
-msgstr ""
-"PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚"
-"焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友"
-"一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。"
+"people who are interested in Python to join PyCon Taiwan to share knowledge,"
+" exchange ideas, make connections and to help us grow our network."
+msgstr "PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。"
 
 #: templates/pycontw-2016/index.html:31 templates/pycontw-2016/index.html:37
 msgid "Tutorials"
@@ -1681,10 +1524,8 @@ msgid "Sprint"
 msgstr "Sprint"
 
 #: templates/pycontw-2016/index.html:38
-#, fuzzy
-#| msgid "June 3–5, 2016"
 msgid "June 3, 2016"
-msgstr "2016 年 6 月 3–5 日"
+msgstr "2016 年 6 月 3 日"
 
 #: templates/pycontw-2016/index.html:42
 msgid "June 3–5, 2016"
@@ -1701,7 +1542,7 @@ msgstr "票已完售！"
 #: templates/pycontw-2016/index.html:59
 #, python-format
 msgid "See you in<span> %(value)s %(type)s</span> at PyConTW."
-msgstr "<span> %(value)s %(type)s</span> 後 PyConTW 會場見."
+msgstr "<span> %(value)s %(type)s</span>後 PyConTW 會場見～"
 
 #: templates/pycontw-2016/index.html:62
 msgid "Check the schedule"
@@ -1711,76 +1552,49 @@ msgstr "看議程"
 msgid ""
 "<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
 "The original PyCon was formed in North America in 2003, and now there are "
-"many other conferences being run in the PyCon spirit around the world. </div>"
-msgstr ""
-"<h2 class=\"intro__heading\">何謂 PyCon</h2>\n"
-"<div class=\"intro__body\">PyCon 最初於 2003 成立於北美，現在世界各地皆有以 "
-"PyCon 精神而成立的會議。</div>"
+"many other conferences being run in the PyCon spirit around the world. "
+"</div>"
+msgstr "<h2 class=\"intro__heading\">何謂 PyCon</h2>\n<div class=\"intro__body\">PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</div>"
 
 #: templates/pycontw-2016/index.html:86
 msgid ""
-"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div class="
-"\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for the "
-"discussion and promotion of the Python programming language. It is held by "
-"enthusiasts and focuses on Python technology and its versatile applications. "
-"We welcome people who are interested in Python to join PyCon Taiwan to share "
-"knowledge, exchange ideas, make connections and to help us grow our network. "
-"</div>"
-msgstr ""
-"<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2> <div class=\"intro__body"
-"\">\n"
-"PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚"
-"焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友"
-"一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</div>"
+"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div "
+"class=\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for "
+"the discussion and promotion of the Python programming language. It is held "
+"by enthusiasts and focuses on Python technology and its versatile "
+"applications. We welcome people who are interested in Python to join PyCon "
+"Taiwan to share knowledge, exchange ideas, make connections and to help us "
+"grow our network. </div>"
+msgstr "<h2 class=\"intro__heading\">何謂 PyCon Taiwan</h2> <div class=\"intro__body\">\nPyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</div>"
 
 #: templates/pycontw-2016/index.html:102
-#, fuzzy, python-format
-#| msgid ""
-#| "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
-#| "height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div "
-#| "class=\"volunteer__body\"> <p>Help us organize and make the conference "
-#| "successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
-#| "forms/d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target="
-#| "\"_blank\">our volunteer form</a> </p> </div>"
+#, python-format
 msgid ""
 "<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
 "height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div "
 "class=\"volunteer__body\"> <p>Help us organize and make the conference "
-"successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
-"forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\" target="
-"\"_blank\">our volunteer form</a> </p> </div>"
-msgstr ""
-"<h4 class=\"volunteer__heading h4\">\n"
-"  志工招募中！\n"
-"  <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class="
-"\"call__icon\">\n"
-"</h4>\n"
-"<div class=\"volunteer__body\">\n"
-"  <p>與我們共同籌備並讓這個會議更成功！</p>\n"
-"  <p>請填寫我們的<a href=\"https://docs.google.com/forms/"
-"d/1JoHhAj6NeXg98OFAAvAHQ6Dcrh9Dxp2PttHKwxNbiFs/viewform\" target=\"_blank\">"
-"志工參加表</a></p>\n"
-"</div>"
+"successful!</p> <p> Please fill out<br> <a "
+"href=\"https://docs.google.com/forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\""
+" target=\"_blank\">our volunteer form</a> </p> </div>"
+msgstr "<h4 class=\"volunteer__heading h4\"> 志工招募中！ <img width=\"25\" height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div class=\"volunteer__body\"> <p>與我們共同籌備並讓這個會議更成功！</p> <p> 請填寫我們的<a href=\"https://docs.google.com/forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\" target=\"_blank\">志工參加表</a> </p> </div>"
 
 #: templates/pycontw-2016/index.html:132
 msgid "Python Community in Taiwan"
 msgstr "臺灣的 Python 社群"
 
 #: templates/pycontw-2016/index.html:186
-#, fuzzy
-#| msgid "Sponsorship 2016 available!"
 msgid "Patronage 2016 available!"
-msgstr "2016 年度贊助已經開始！ "
+msgstr "2016 個人贊助已經開始！ "
 
 #: templates/pycontw-2016/index.html:191
 msgid ""
 "<p> If you wish to support PyCon Taiwan 2016 on your own, welcome to be a "
 "patron! There will be a page for the list of all patrons (e.g. links to "
 "profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 "
-"website. </p> <br> <p> Go to be <a href=\"http://pycontw.kktix.cc/events/"
-"pycontw2016patron\" target=\"_blank\"> a patron of PyCon Taiwan 2016 </a> </"
-"p>"
-msgstr ""
+"website. </p> <br> <p> Go to be <a "
+"href=\"http://pycontw.kktix.cc/events/pycontw2016patron\" target=\"_blank\">"
+" a patron of PyCon Taiwan 2016 </a> </p>"
+msgstr "<p>若您希望以個人身份支持 PyCon Taiwan 2016，歡迎加入我們的個人贊助行列！我們會在 PyCon Taiwan 2016 網站上列出所有個人贊助者（列出您的 Facebook、GitHub、Twitter 帳號連結等等）。</p> <br> <p>馬上 <a href=\"http://pycontw.kktix.cc/events/pycontw2016patron\" target=\"_blank\">贊助 PyCon Taiwan 2016。</a> </p>"
 
 #: templates/pycontw-2016/index.html:248
 msgid "Sponsors"
@@ -1789,35 +1603,24 @@ msgstr "贊助夥伴"
 #: templates/pycontw-2016/registration/password_reset_confirm.html:25
 #, python-format
 msgid ""
-"<p>The password reset link was invalid, possibly because it has already been "
-"used. You can either</p> <ul> <li><a href=\"%(password_reset_url)s\">Request "
-"a new password reset</a>, or</li> <li><a href=\"%(index_url)s\">Return to "
-"homepage.</a></li> </ul>"
-msgstr ""
-"<p>密碼重設連結已失效，它可能已經被使用。您可以嘗試</p>\n"
-"<ul>\n"
-"<li><a href=\"%(password_reset_url)s\">重新申請密碼重設</a>，或者</li>\n"
-"<li><a href=\"%(index_url)s\">回到首頁</a>。</li>\n"
-"</ul>"
+"<p>The password reset link was invalid, possibly because it has already been"
+" used. You can either</p> <ul> <li><a "
+"href=\"%(password_reset_url)s\">Request a new password reset</a>, or</li> "
+"<li><a href=\"%(index_url)s\">Return to homepage.</a></li> </ul>"
+msgstr "<p>密碼重設連結已失效，它可能已經被使用。您可以嘗試</p>\n<ul>\n<li><a href=\"%(password_reset_url)s\">重新申請密碼重設</a>，或者</li>\n<li><a href=\"%(index_url)s\">回到首頁</a>。</li>\n</ul>"
 
 #: templates/pycontw-2016/registration/signup.html:25
 #, python-format
 msgid ""
-"<span class=\"form-tip\">Already have an account?</span><a href="
-"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
-msgstr ""
-"<span class=\"form-tip\">已經有帳號了？</span><a href=\"%(login_url)s\" "
-"class=\"btn btn-link\">請登入。</a>"
+"<span class=\"form-tip\">Already have an account?</span><a "
+"href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+msgstr "<span class=\"form-tip\">已經有帳號了？</span><a href=\"%(login_url)s\" class=\"btn btn-link\">請登入。</a>"
 
 #: templates/pycontw-2017/_includes/header.html:29
-#, fuzzy
-#| msgid "About"
 msgid "about"
 msgstr "關於"
 
 #: templates/pycontw-2017/_includes/header.html:34
-#, fuzzy
-#| msgid "Events"
 msgid "events"
 msgstr "活動"
 
@@ -1825,37 +1628,19 @@ msgstr "活動"
 msgid "Talk"
 msgstr "演講"
 
-#: templates/pycontw-2017/_includes/header.html:43
-#, fuzzy
-#| msgid "BoF"
-msgid "Bof"
-msgstr "BoF"
-
 #: templates/pycontw-2017/_includes/header.html:48
-#, fuzzy
-#| msgid "Venue"
 msgid "venue"
-msgstr "場務組"
+msgstr "會場"
 
 #: templates/pycontw-2017/_includes/header.html:62
-#, fuzzy
-#| msgid "Registration"
 msgid "registration"
-msgstr "註冊組"
-
-#: templates/pycontw-2017/_includes/header.html:66
-#, fuzzy
-#| msgid "Financial Aid"
-msgid "Finacial Aid"
-msgstr "財務補助"
+msgstr "註冊"
 
 #: templates/pycontw-2017/_includes/header.html:71
 msgid "blog"
-msgstr ""
+msgstr "部落格"
 
 #: templates/pycontw-2017/_includes/header.html:77
-#, fuzzy
-#| msgid "Dashboard"
 msgid "dashboard"
 msgstr "控制面板"
 
@@ -1892,7 +1677,6 @@ msgid "Create Account"
 msgstr "新建帳號"
 
 #: users/forms.py:148
-#, python-brace-format
 msgid "Your image is too small ({width}\\u00d7{height} pixels)."
 msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
 
@@ -1905,14 +1689,10 @@ msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"password/\">this "
 "form</a>."
-msgstr ""
-"原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可"
-"以透過<a href=\"password/\">本表單</a>更改密碼。"
+msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/forms.py:246
-#, python-brace-format
-msgid ""
-"<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
+msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼？</a>"
 
 #: users/forms.py:263
@@ -1951,13 +1731,11 @@ msgstr "Facebook"
 #: users/models.py:129
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
-"public information. If you do not know what your profile page link is, click "
-"on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and "
-"copy-paste the URL of the page opened. Remember to log in to Facebook first!"
-msgstr ""
-"您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個"
-"人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>"
-"這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
+"public information. If you do not know what your profile page link is, click"
+" on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and"
+" copy-paste the URL of the page opened. Remember to log in to Facebook "
+"first!"
+msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
 
 #: users/models.py:138
 msgid "Twitter"
@@ -2014,7 +1792,6 @@ msgid "users"
 msgstr "使用者"
 
 #: users/models.py:260
-#, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
 
@@ -2027,7 +1804,6 @@ msgid "Email verification successful."
 msgstr "Email 認證成功。"
 
 #: users/views.py:67
-#, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "一封認證用的 email 已經寄送至 {email}"
 
@@ -2043,36 +1819,8 @@ msgstr "已成功地使用您的新密碼。"
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
-msgstr ""
-"一封電子郵件已經發送至您的信箱。請檢查您的收件匣並參照信中指示重設密碼。"
+msgstr "一封電子郵件已經發送至您的信箱。請檢查您的收件匣並參照信中指示重設密碼。"
 
 #: users/views.py:134
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "TBD"
-#~ msgstr "待定"
-
-#~ msgid ""
-#~ "<p> Sponsoring PyCon Taiwan 2016 will connect your brand with estimated "
-#~ "total 800 Python enthusiastic users and developers in Taiwan, 9 out of 10 "
-#~ "are professionals. It’s a great opportunity to find talents and promote "
-#~ "your products here. Contact us at <a href=\"mailto:sponsorship@pycon.tw"
-#~ "\">sponsorship@pycon.tw</a> for sponsorship details. </p> <br> <p> See "
-#~ "also <a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target="
-#~ "\"_blank\"> Sponsors of PyCon APAC 2015 </a> </p>"
-#~ msgstr ""
-#~ "<p>在 PyCon Taiwan 2016 您能直接面對近 800 位 Python 使用者與開發者。據 "
-#~ "2015 年的經驗，近 9 成參加者為業界人士。這是尋找人才與推廣產品的絕佳場"
-#~ "合！\n"
-#~ "歡迎來信至 <a href=\"mailto:sponsorship@pycon.tw\">sponsorship@pycon.tw</"
-#~ "a> 瞭解更多贊助資訊！</p>\n"
-#~ "<br>\n"
-#~ "<p>或參考 <a href=\"https://tw.pycon.org/2015apac/en/sponsors/\" target="
-#~ "\"_blank\">PyCon APAC 2015 的贊助商</a></p>"
-
-#~ msgid "Submit a Proposal"
-#~ msgstr "提交一個提案"
-
-#~ msgid "Choice a Proposal Type to Create"
-#~ msgstr "選擇提案類型："
