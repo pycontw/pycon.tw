@@ -1,5 +1,7 @@
 from django import forms
+from django.conf import settings
 from django.utils.functional import cached_property
+from django.utils.translation import ugettext_lazy as _
 
 from crispy_forms.helper import FormHelper
 
@@ -27,6 +29,12 @@ class ProposalCreateForm(RequestUserSpeakerValidationMixin, forms.ModelForm):
 
 
 class TalkProposalCreateForm(ProposalCreateForm):
+
+    duration = forms.ChoiceField(
+        label=_('duration'),
+        choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
+    )
+
     class Meta:
         model = TalkProposal
         fields = [
@@ -59,6 +67,11 @@ class TalkProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
+    duration = forms.ChoiceField(
+        label=_('duration'),
+        choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
+    )
+
     class Meta:
         model = TalkProposal
         fields = [

@@ -71,25 +71,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return proposals
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
         review_stage = ReviewsConfig.stage
-
-        context['reviews'] = self.get_reviews()
-
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
             .filter(accepted__isnull=False)
             .annotate(review_count=Count('review'))
-        )
-        context.update({
-            'proposals_with_verdict': verdicted_proposals,
-        })
-
-        context['review_stage'] = review_stage
-        context['review_stage_desc_tpl'] = (
-            'reviews/_includes/review_stage_%s_desc.html'
-            % review_stage
         )
 
         vote_count_pairs = (
@@ -97,14 +84,26 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
             .values_list('vote')
             .annotate(count=Count('vote'))
         )
-        context['vote'] = collections.defaultdict(
+        vote_mapping = collections.defaultdict(
             (lambda: 0),
             ((self.vote_keys[k], v)
              for k, v in vote_count_pairs
              if k in self.vote_keys),
         )
-        context['ordering'] = self.ordering
-        context['query_string'] = self.request.GET.urlencode()
+
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'proposals_with_verdict': verdicted_proposals,
+            'reviews': self.get_reviews(),
+            'review_stage': review_stage,
+            'review_stage_desc_tpl': (
+                'reviews/_includes/review_stage_%s_desc.html'
+                % review_stage
+            ),
+            'vote': vote_mapping,
+            'ordering': self.ordering,
+            'query_string': self.request.GET.urlencode(),
+        })
         return context
 
     def get_reviews(self):

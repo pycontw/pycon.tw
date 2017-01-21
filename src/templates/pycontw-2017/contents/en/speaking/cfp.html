@@ -1,0 +1,127 @@
+{% extends 'contents/_base/speaking.html' %}
+
+{% load i18n static %}
+
+{% block title %}Call for Proposals{% endblock %}
+{% block page_title %}<h1>Call for Proposals</h1>{% endblock %}
+
+{% block meta_og %}
+  <meta property="og:title" content="Call for Proposals | PyCon Taiwan 2017" />
+  <meta property="og:description" content="The Call for Proposals (CfP) is now open. PyCon 2017 Taiwan is accepting talks and tutorials!" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2017_facebook_shareImage.png' %}" />
+{% endblock %}
+
+{% block content %}
+    {% url 'page' path='speaking/recording' as speaking_recording_url %}
+    {% url 'page' path='speaking/talk' as speaking_talk_url %}
+    {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+    {% url "signup" as signup_url %}
+    {% url "user_dashboard" as dashboard_url %}
+
+    <p>The Call for Proposals (CfP) is now open. PyCon 2017 Taiwan is accepting talks and tutorials!</p>
+    <h2><span>Important Dates</span></h2>
+    <article>
+      <ul>
+          <li>Talks &amp; Tutorial CfP begins: Feb 02</li>
+  				<li>Tutorial CfP ends: Mar 01</li>
+  				<li>Talks CfP ends: Mar 01</li>
+          <li>Announcement of acceptance: Apr 30</li>
+      </ul>
+      <br />
+      <p>
+          Since one of the PyCon motivation is to help Python eduation and its advocation,
+          by default your talks wil be recorded, edited and uploaded to
+              <a href="http://pyvideo.org" target="_blank">pyvideo.org</a>
+          by the PyCon Taiwan committe.
+          If you don’t want your talk being recorded, make sure you toggle the recording
+          option off during the proposal submission. See more info about the
+              <a href="{{ speaking_recording_url }}"
+                target="_blank">recording release</a>.
+      </p>
+      <p>
+        Note that speakers are required to buy the conference ticket as well.
+        (see  <a href="http://jessenoller.com/2011/05/25/pycon-everybody-pays/" target="_blank">Everyone Pays Policy</a>).
+      </p>
+    </article>
+
+    <h2><span>How to Submit Your Proposal</span></h2>
+    <article>
+      <p>
+          You need to <a href="{{ signup_url }}">sign up</a> a new account on
+          tw.pycon.org. With an activated account, you can fill up the speaker
+          profile and create new proposals through your
+          <a href="{{ dashboard_url }}">Dashboard</a>.
+      </p>
+      <p>We encourage you to submit the proposal as early as possible.</p>
+    </article>
+
+    <h2><span>Guidelines for Proposal Submission</span></h2>
+    <h3>Talks</h3>
+    	<article>
+	      <p>
+	          We accept a broad range of Python related proposals, from reports on
+	          academic to commercial projects and case studies. Basically, if you
+	          are reading these words, you should go submit your proposal!
+	      </p>
+	      <p>
+	          The theme of PyCon TW 2017 is <strong>"Define The Future"</strong>.
+	          Therefore, we encourage speakers to talk about your own Python
+	          application or your experience of using Python or hosting a Python
+	          community. Talks on advanced topics are highly welcomed as well.
+	      </p>
+	      <p>
+	          Most talks are <strong>30 minutes</strong> long. However, we offer a limited number
+	          of 45-minute slots for important topics which we think audience can
+	          benefit significantly more from a more extensive treatment. Note
+	          that the talk time length <strong>includes setup and Q&amp;A time</strong>.
+	      </p>
+	      <p>Talk can be given in either <strong>English, Chinese or Taiwanese.</strong></p>
+	      <p>
+	          We have redesigned the proposal form to make it better help speakers to
+	          organize their idea. Find more at <a href="{{ speaking_talk_url }}">How
+	          to Propose a Talk</a>.
+	      </p>
+	    </article>
+    <h3>Unconference</h3>
+    	<article>
+	      <p>
+	        We’re going to open a new <strong>“Unconference”</strong> track (on the last day), our
+	        purpose is to provide different interaction between speakers and audiences.
+	        For unconference talks, not only Python-related proposals are accepted, any
+	        indirectly related topics are also welcomed. Unconference talks are voted
+	        and thus decided by conference attendees. (The current plan is to open for
+	        unconference proposal submission 10 days before the conference starts)
+	      </p>
+	      <p>
+	        An unconference talk <strong>lasts 20 minutes</strong>, note that <strong>the Q&amp;A session is
+	        included</strong> in the 20 minutes.
+	      </p>
+	      <p>
+	        An unconference talk can be run in any form, the speaker / host can decide
+	        the way he / she uses that space and time. Furthermore, unconference talks
+	        are not officially recorded in any ways, thus any topics that are more critical
+	        compared to the regular conference talks are welcomed.
+	      </p>
+	      <p>
+	        Unconferences can be spoken in <strong>Chinese, English or Taiwanese</strong>.
+	      </p>
+	      <p>
+	        Please refer to <a
+	            href="{{ speaking_unconference_url }}">Unconference Proposal</a>
+	             for the unconference proposal format.
+	      </p>
+	    </article>
+    <h3>Tutorials</h3>
+      <article>
+	      <p>
+	        Similar to talks, we don't pose limitations on tutorial topics. Tutorial
+	        are half or full day long, equivalently to 3 or 6 hours of teaching. The
+	        guideline for tutorial submission is based on the guideline for talks,
+	        so make sure you have read <a href="{{ speaking_talk_url }}">How to
+	        Propose a Talk</a>. On top of that, We have some special requirements
+	        for tutorial submission, please refer to
+	        <a href="{{ speaking_tutorial_url }}">How to Propose a Tutorial</a>
+	        for more information.
+	      </p>
+	    </article>
+{% endblock content %}

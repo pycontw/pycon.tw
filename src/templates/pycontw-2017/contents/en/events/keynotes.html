@@ -1,0 +1,108 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}Keynotes{% endblock %}
+{% block page_title %}<h1>Keynote Speakers</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="Keynote Speakers | PyCon Taiwan 2017" />
+  <meta property="og:description" content="Enjoy keynote speeches from Andrew Godwin、Carol Willing、Russell Keith-Magee." />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+
+{# Andrew-Godwin #}
+<div id="keynote-speaker-andrew-godwin" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/andrew_godwin.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Andrew-Godwin (andrewgodwin)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/andrewgodwin" target="_blank">@andrewgodwin</a><br>
+			<a href="http://www.aeracode.org/" target="_blank">http://www.aeracode.org/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Andrew is a Python programmer, Django core developer and the author of South, the Django migrations framework, and has been programming, maintaining and herding machines for over a decade.
+		</p>
+		<p>
+			He is an alumnus of Magdalen College, Oxford. Now lives in mostly-sunny San Francisco. Now working in the Eventbrite.
+		</p>
+		<p>
+			Andrew is a reasonably well-travelled technical public speaker he enjoy the occasional bit of cycling, plenty of archery, flying small planes, mountains and overzealous consumption of cheese.
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Carol-Willing #}
+<div id="keynote-speaker-carol-willing" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/carol_willing.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/willingcarol" target="_blank">@WillingCarol</a><br>
+			<a href="https://willingconsulting.com/" target="_blank">https://willingconsulting.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Carol Naslund Willing can frequently be heard saying “That’s so cool. How does it work? I would love to learn more about it.” She has enjoyed developing software and a is a Director of the Python Software Foundation, a core developer for Project Jupyter, and a Research Software Engineer at Cal Poly San Luis Obispo. She’s an active contributor to open source projects, a maintainer for OpenHatch and the Anita Borg Institute’s open source projects.
+		</p>
+		<p>
+			My experiences with people have taught me to “use what you have learned to make something better and share with others”.
+		</p>
+		<p>
+			Recent lectures include PyCon US 2016, PyData Carolinas 2016, PyCon Philippines 2016.
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Russell-Keith-Magee #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/russell_keith_magee.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/freakboy3742" target="_blank">@freakboy3742</a>
+			<a href="http://cecinestpasun.com/" target="_blank">http://cecinestpasun.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Dr Russell Keith-Magee is a 10 year veteran of the Django core team, and for 5 years, was President of the Django Software Foundation. He's also the founder of the BeeWare project, developing GUI tools to support the development of Python software and the co-founder of Django Evolution.
+		</p>
+		<p>
+			He completed his tertiary education at the Curtin University of Technology, from which he hold a Bachelor’s degree in Physics, and a First Class Honours in Computer Science, After studying Physics and Computer Science as an undergraduate, Russell completed a doctoral dissertation investigating models of learning and development in neural networks now is a Doctor of Philosophy.
+		</p>
+		<p>
+			I'm a geek. I like new ideas and pushing the envelope of the possible using technology. However, technology isn't just about building a nifty new widget. Technology needs to complement reality - physically, conceptually, and financially.
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			（TBD)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}

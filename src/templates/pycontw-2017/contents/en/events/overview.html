@@ -1,0 +1,140 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}Events Overview{% endblock %}
+{% block page_title %}<h1>Events Overview</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='events/tutorials' as events_tutorials_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/talks' as events_talk_url %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
+<article>
+	<p>
+		Events at PyCon Taiwan 2017 can be divided into two: Those during the
+		conference (June 9–11), and those out of it (tutorials and sprints).
+	</p>
+</article>
+
+<h2><span>Out of the Conference</span></h2>
+	<article>
+		<h3>Tutorials</h3>
+		<p>
+			Tutorial is a paid event that will be held 1 to 3 weeks before the PyCon TW.
+			A tutorial can be either full-day (6 hours) or half-day (3 hours) and its content
+			is selected by public proposal calling.
+		</p>
+		<p>
+			We offer both tutorials for Python newcomers who have never tried Python
+			before, and also for specific topics such as controlling Raspberry Pi, data
+			analysis, etc. Tickets for tutorials are sold separately from the conference.
+			Make sure you complete registration for both events.
+		</p>
+		<p>
+			More information about tutorials can be found on the
+			<a href="{{ events_tutorials_url }}">Tutorial</a> page.
+		</p>
+
+		<h3>Sprints</h3>
+		<p>
+			Sprints will be held out of the conference dates. During the sprint, open source
+			project managers will bring their projects and explain their issues or any unresolved
+			problem. After the introduction of all projects, people find their projects of interest and get involved. By this interaction possibility, one can dig deep into projects or fields they care.
+		</p>
+		<p>
+			It is highly welcomed to bring one’s own project and find enthusiasts of same interest.
+			For people with sufficient Python background who wants to join open source projects but
+			having no clue or too shy to shout out on the mail list and public channels, sprints
+			serve as a great chance to get involved.
+		</p>
+		<p>
+			Running alongside there is a separate schedule of workshops in April for attendees
+			who want to learn more about knowledge for specific topics.
+		</p>
+		<p>
+			More information about sprints can be found on the
+			<a href="{{ events_sprint_url }}">Sprint</a> page.
+		</p>
+	</article>
+
+
+<h2><span>During the Conference (June 9–11)</span></h2>
+	<article>
+		<h3>Keynotes</h3>
+		<p>
+			During the three days conference, PyCon TW will invite 4~5 speakers to give keynote talks,
+			which all will be live broadcast. Keynote speaker is considered one of the toppest person
+			in their domain area globally. Being either a engineer or a manager, they will share their professional experience and the image of their domain’s future.
+		</p>
+		<p>
+			More information about keynotes can be found on the
+			<a href="{{ events_keynote_url }}">Keynote</a> page.
+		</p>
+
+		<h3>Talks</h3>
+		<p>
+			The three conference days are packed with talks about Python by speakers
+			from Taiwan and around the world. The talks will be either 30- or 45-minute
+			long. Three tracks of talks will be delivered simultaneously, all with
+			different topics and difficulties. We suggest you to make a schedule
+			beforehand, and choose what you want ot listen based on your interests. Many
+			people take notes on the program schedule before the meeting so they don’t
+			run to wrong places.
+		</p>
+		<p>
+			The program schedule will be announced by the end of April. List of accepted
+			talks can be found on the <a href="{{ events_talk_url }}">Talks</a> page.
+		</p>
+
+		<h3>Unconference</h3>
+		<p>
+			We’re going to open a new “unconference” track on the last day. Our purpose is to provide
+			different interaction between speakers and audiences. For unconference talks, not only
+			Python-related proposals are accepted, but any indirectly related topics are welcomed.
+			Unconference talks are voted and thus decided by conference attendees.
+		</p>
+		<p>
+			The plan is to open unconference proposal submission 10 days before the conference starts. More information about the Unconference talk can be found on the
+			<a href="{{ speaking_unconference_url  }}">Unconference</a> page.
+		</p>
+
+		<h3>Lightning Talks</h3>
+		<p>
+			Lighting talk is the very stimulation activities. Speaker only has 5 min to presentation
+			include to set up the powerpoint, and will cut-off signal on time. It seems cruel,
+			but every year to play countless tricks of activity. Lightning talk welcome every
+			topic like live demo, the little story of the project etc.
+		</p>
+		<p>On-site registration will be open this year, let’s together to be creative it!</p>
+
+		<h3>Job Fair</h3>
+		<p>
+			This is the job fair only for Python’s engineer. Although there will not be any open program schedule but let vendor to introduce themselves on stage, you can communication with the vendor and throw(submit) your resume, vendor will also take the time to promote their intrinsic needs.</p>
+		<p>
+			We encourage more exchanges with each other vendor in this period, perhaps a better chance this occurred.
+		</p>
+
+		<h3>BoF (Birds of a Feather)</h3>
+		<p>
+			BoF (Birds of a Feather), take the name of the proverb, 「Birds of a feather flock together」
+			means of mutually attracting enthusiasts from Italy, is very casual, so there is a common
+			interest of the congregation exchange activities. Just sitting in the audience listening
+			to the agenda not enjoyable, think of a topic more brainstorming, wanted to show there is a
+			shining achievement, want their friends together to discuss it? So do not miss the opportunity
+			to stall BoF! Welcome to create a topic of interest to invite the congregation together to
+			discuss, together with us to create their PyCon TW bustling night market!
+		</p>
+		<p>
+			Binding characteristics of Taiwan night market culture, which is the most popular annual
+			PyCon TW night. Not only in the field with a delicious buffet a real treat for you, there
+			are many eye-opening performances took turns on stage (performers also register themselves Oh!).
+		<p>
+		<p>
+			More information about the BoF can be found on the
+			<a href="{{ events_bof_url }}">BoF</a> page.
+		</p>
+	<article>
+{% endblock content %}

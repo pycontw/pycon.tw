@@ -1,0 +1,110 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}基調演講{% endblock %}
+{% block page_title %}<h1>基調演講講者 (Keynote Speakers)</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2017" />
+  <meta property="og:description" content="享受由 Andrew Godwin、Carol Willing、Russell Keith-Magee 帶來的主題演講。
+" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+
+{# Andrew-Godwin #}
+<div id="keynote-speaker-andrew-godwin" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/andrew_godwin.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Andrew-Godwin (andrewgodwin)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/andrewgodwin" target="_blank">@andrewgodwin</a><br>
+			<a href="http://www.aeracode.org/" target="_blank">http://www.aeracode.org/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Andrew 是一位 Python 程式設計師、Django 核心開發人員、同時亦是 South 與 Django migrations 框架作者。在程式設計、維護與機器集中管理擁有十多年經驗。
+		</p>
+		<p>
+			他是牛津大學莫德林學院 (Magdalen College, Oxford) 的出色校友，現居風景怡人的舊金山。目前則任職於 Eventbrite。
+		</p>
+		<p>
+			Andrew 是一位相當喜愛旅遊的演講者，興趣是偶爾騎騎單車、射箭、飛行小型飛機、爬山和奶酪。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Carol-Willing #}
+<div id="keynote-speaker-carol-willing" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/carol_willing.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Carol Willing (willingc)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/willingcarol" target="_blank">@WillingCarol</a><br>
+			<a href="https://willingconsulting.com/" target="_blank">https://willingconsulting.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			經常總會聽到 Carol Naslund Willing 說：“這真是太酷了。 它是如何運作的？好希望學習到更多有關的事物”。她熱愛開發軟體，目前為 PSF (Python Software Foundation) 基金會理事之一 、 Project Jupyter 的核心開發人員與加州理工大學聖路易斯奧比斯 ( Cal Poly San Luis Obispo) 的軟體研究工程師。她活躍於開源專案的共同開發，並且維護像是 OpenHatch 與 Anita Brog Institute 的開源專案。
+		<p>
+		<p>
+			與人之間的經驗使我有了這樣感觸：“用你所學，使事情更好，並且與人分享”。Caril Wiilling 這樣說的。
+		</p>
+		<p>
+			Carol Willing 對學習和分享充滿熱情。最近的演講包括 PyCon US 2016，PyData Carolinas 2016，PyCon Philippines 2016。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Russell-Keith-Magee #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/russell_keith_magee.png' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Russell Keith-Magee</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/freakboy3742" target="_blank">@freakboy3742</a>
+			<a href="http://cecinestpasun.com/" target="_blank">http://cecinestpasun.com/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Russel Keith-Magee 博士是擁有 10 年經驗的 Django 核心團隊老手，且有五年時間一直擔任 Django 軟體基金會 (Django Software Fundation) 的主席，他是 BeeWare 專案的發起人，透過這個專案 GUI 工具用來支援 Python 軟體開發。同時也是 Django Evolution 的共同發起人。
+		</p>
+		<p>
+			他畢業於澳洲科廷科技大學 (Curtin University of Technology)，取得物理學士學位且獲得計算機科學的一級獎章 (First Class Honours)。之後 Russell 完成了關於學習模型調查與類神經網路的博士論文研究並且取得哲學博士學位。
+		</p>
+		<p>
+			自稱為 geek，喜歡新得想法和推廣可能使用的技術與科技，因此他認為資訊科技是充實現實與物理、概念和金融，而他也熱衷在建構這方面技術。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			（演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}
+

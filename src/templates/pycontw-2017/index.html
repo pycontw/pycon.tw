@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block titletag %}
+<title>PyCon Taiwan 2017</title>
+{% endblock titletag %}
+
+
+{% block content_full %}
+<div class="wrapper">
+	<main>
+		<h1 class="logo"></h1>
+		<div class="date-panel">
+			<time>9–11 June</time>
+			<code class="def-future">def future():</code>
+		</div>
+		<nav class="index-session-links">
+			<a href="#">tutorial: 1 June</a>
+			<a href="#">sprint: 5 June</a>
+		</nav>
+		<section class="index-intro">
+			<article class="what-is-pycon">
+				<h2>what is pycon</h2>
+				<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
+			</article>
+			<article class="what-is-pycon-taiwan align-right">
+				<h2>what is pycon taiwan</h2>
+				<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
+			</article>
+		</section>
+	</main>
+</div>
+
+<section class="communities">
+	<h2>Python Communities in Taiwan</h2>
+	<nav class="community-refs">
+		<a href="#">PyLadies Taiwan</a>
+		<a href="#">Django Girls Taipei</a>
+		<a href="#">Taipei.py <span class="desc">Taipei Python User Group</span></a>
+		<a href="#">Tainan.py <span class="desc">Tainan Python User Group</span></a>
+		<a href="#">PyHUG <span class="desc">Python Hsinchu User Group</span></a>
+		<a href="#">Taichung.py <span class="desc">Taichung Python User Group</span></a>
+		<a href="#">Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span></a>
+		<a href="#">Hualien.py <span class="desc">Hualien Python User Group</span></a>
+	</nav>
+</section>
+{% endblock content_full %}
+
+{% block extrabody %}
+<i class="deco polygons"></i>
+<i class="deco taiwan"></i>
+<i class="deco circle left"></i>
+<i class="deco circle right"></i>
+<i class="deco meteor top"></i>
+<i class="deco meteor left"></i>
+<i class="deco meteor right"></i>
+{% endblock extrabody %}

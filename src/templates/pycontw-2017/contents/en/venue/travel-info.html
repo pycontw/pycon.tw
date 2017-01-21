@@ -1,0 +1,132 @@
+{% extends 'contents/_base/venue.html' %}
+
+{% block title %}Travel Info{% endblock title %}
+
+{% block content %}
+<h1><span>class TaipeiTrip(Tech, Nature, Design, Tradition):</span></h1>
+<article>
+    <p><em>'''Base class to travel in Taipei.'''</em></p>
+</article>
+
+<h2><span>def __init__(self):</span></h2>
+<article>
+    <p>
+        <strong>Taipei City</strong>, a long developed metropolis surrounded by
+        mountains with great forest diversity, generates mixture of lifestyles
+        ranging from fast-pace technology persuasion to deep immersion in nature and
+        history. One can always find their own way travelling around from their
+        point of view.
+    </p>
+    <p>
+        Based on surveys made by renowned bloggers and travelling sites, we
+        recommend the following search keywords:
+    </p>
+    <ul>
+        <li>Museum</li>
+        <li>Buddhist temple</li>
+        <li>Food, fruits, night market, Taiwanese snacks</li>
+        <li>Electronics (3C) market</li>
+        <li>Biking, riverside bikeways</li>
+        <li>Bookstore 24hr</li>
+        <li>Indie music</li>
+        <li>Mountain trails, hot spring, natural scenery</li>
+        <li>Towns near Taipei, Jiufen, Tamsui, Keelung</li>
+    </ul>
+</article>
+
+<h2><span>def first_access(self):</span></h2>
+<article>
+    <p>
+        If you have never heard of Taipei or Taiwan before, you may want to start
+        from the introduction videos below.
+    </p>
+    <p>
+        <a href="http://youtu.be/dZ5-RcVIizU" target="_blank">
+            <img src="//img.youtube.com/vi/dZ5-RcVIizU/0.jpg" alt="">
+        </a>
+        <a href="http://youtu.be/cXijExpxJi4" target="_blank">
+            <img src="//img.youtube.com/vi/cXijExpxJi4/0.jpg" alt="">
+        </a>
+        <a href="https://youtu.be/1U8fQBIITfU" target="_blank">
+            <img src="//img.youtube.com/vi/1U8fQBIITfU/0.jpg" alt="">
+        </a>
+    </p>
+</article>
+
+<h2><span>def weather(self):</span></h2>
+<article>
+    <p>
+        Taipei in May is warm and humid with frequent afternoon thunderstorms. An
+        umbrella should always be with you. Temperature ranges from 21°C (70°F) to
+        28 (82°F) but it would be cooler in mountains, around 15°C (60°F) depends on
+        the height.
+    </p>
+</span>
+</article>
+
+<h2><span>def smartcard_payment(self):</span></h2>
+<article>
+    <p>
+        <em>'''Known as EasyCard, the eletric money system in Taipei.'''</em>
+    </p>
+    <p>
+        <strong>EasyCard</strong>, the contactless smartcard payment system, is very
+        much like the JR East Suica card or the Octopus card. You could not only use
+        EasyCard to pay most transportation fee (e.g., MRT, bus, youbike and train),
+        but also in most convenient stores and supermarkets. EasyCard saves a lot of
+        time finding changes from your pockets.
+    </p>
+    <p>
+        An EasyCard can be bought and recharged at every MRT station. It can also be
+        recharged at most convenient stores.
+    </p>
+</article>
+
+<h2><span>def transportation(self, location):</span></h2>
+
+<h3>MRT</h3>
+<article>
+    <p>
+        MRT, the best way to travel around Taipei by, is also known as Taipei Metro,
+        which is both cheap and easy to use. Most tourist attractions are reachable
+        by MRT.
+    </p>
+    <p>
+        MRT is more English-friendly than other public transportations. However MRT
+        is not a 24-hour service. <em>No MRT in midnight.</em>
+    </p>
+</article>
+
+<h3>Youbike(Ubike)</h3>
+<article>
+    <p>
+        <em>To become a member of Youbike, Taiwan cell phone number is required.
+            Otherwise you will need an IC credit card for single ride payment.</em>
+    </p>
+
+    <p>
+        Youbike is a public bicycle sharing service, which let members to rent a
+        bike at one place and return at another. Their rental sites are well spread
+        in Taipei, but before your ride, you might need to check their locations and
+        operating status online to see if there are any bike left. Youbike charges
+        by NT$10 per 30 minutes in the first 3 hours, with first half hour free.
+    </p>
+
+    <p>
+        Find more on their <a href="http://www.youbike.com.tw/home.php?eng=1"
+                              target="_blank">official site</a>. Also the locations
+        of rental sites can be found on <a
+            href="http://www.openstreetmap.org/#map=15/25.0255/121.5488&layers=C"
+            target="_blank">OpenStreetMap</a>, shown as yellow dots.
+    </p>
+</article>
+
+<h1><span>if __name__ == "__main__":</span></h1>
+<h3>your_visit = TaipeiTrip()</h3>
+<article>
+    <p>
+        <strong>Join PyCon Taiwan 2017</strong> and initiate your first trip to
+        Taipei!
+    </p>
+</article>
+{% endblock content %}

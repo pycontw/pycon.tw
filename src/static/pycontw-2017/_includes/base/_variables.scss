@@ -1,6 +1,6 @@
 $static_root: "./../../";
 
-$theme-color: #3E6DF5; //blue
+$theme-color: #223d53;
 $theme-focus: #FFC525; // yellow
 
 $quote-color: $theme-focus;
@@ -45,6 +45,7 @@ $sponsor-platinum-color: #eddcad;
 
 // Buttons
 
+$btn-primary-bg: #367ABD;
 $btn-primary-hover-bg: #0b38ba;
 
 $btn-focus-color: #fff;
@@ -72,3 +73,13 @@ $btn-action-bg:#f08e57;
 $btn-action-border: transparent;
 
 $btn-link-color: $theme-color;
+
+// pycon2017 color
+$bright-sea-green: #00ff96;
+$water-blue: #1697e5;
+$sand-yellow: #fbda61;
+$reddish-orange: #f75b1c;
+
+$proposals-alert-warning-bg: $sand-yellow;
+
+$navbar-em-bg: $btn-primary-bg;

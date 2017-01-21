@@ -185,15 +185,9 @@ class AbstractProposal(ConferenceRelated, EventInfo):
 
 class TalkProposal(AbstractProposal):
 
-    DURATION_CHOICES = (
-        ('NOPREF', _('No preference')),
-        ('PREF25', _('Prefer 25min')),
-        ('PREF45', _('Prefer 45min')),
-    )
     duration = models.CharField(
         verbose_name=_('duration'),
         max_length=6,
-        choices=DURATION_CHOICES,
     )
 
     outline = models.TextField(

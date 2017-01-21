@@ -1,0 +1,60 @@
+{% load compress static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+{% block titletag %}
+<title>{% block title %}{% endblock %} | PyCon Taiwan 2017</title>
+{% endblock titletag %}
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu+Mono:400i" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
+<link rel="stylesheet" href="{% static 'pycontw-2017/styles/main.css' %}">
+<link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
+{% endcompress %}
+
+</head>
+
+
+<body>
+
+<div class="mother-wrapper">
+
+{% block nav %}
+{% include '_includes/header.html' with active=None %}
+{% endblock nav %}
+
+{% block content_full %}
+<div class="wrapper">
+	<main class="inner-wrapper">
+		{% block content %}{% endblock content %}
+	</main>
+</div>
+{% endblock content_full %}
+
+<div class="push"></div>
+
+</div>
+
+{% include '_includes/footer.html' %}
+
+{% block extrabody %}{% endblock extrabody %}
+
+{% if GA_TRACK_ID %}
+<script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
+<script src="{% static 'js/vendors/google_analytics.js' %}"></script>
+{% endif %}
+
+{% compress js %}
+<script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
+{% endcompress %}
+
+</body>
+
+</html>
