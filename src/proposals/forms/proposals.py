@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
@@ -31,11 +32,7 @@ class TalkProposalCreateForm(ProposalCreateForm):
 
     duration = forms.ChoiceField(
         label=_('duration'),
-        choices=(
-            ('NOPREF', _('No preference')),
-            ('PREF30', _('Prefer 30min')),
-            ('PREF45', _('Prefer 45min')),
-        ),
+        choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
 
     class Meta:
@@ -72,11 +69,7 @@ class TalkProposalUpdateForm(ProposalUpdateForm):
     """
     duration = forms.ChoiceField(
         label=_('duration'),
-        choices=(
-            ('NOPREF', _('No preference')),
-            ('PREF30', _('Prefer 30min')),
-            ('PREF45', _('Prefer 45min')),
-        ),
+        choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
 
     class Meta:

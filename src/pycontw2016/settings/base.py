@@ -248,8 +248,14 @@ STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
 
-PROPOSALS_CREATABLE = False
+PROPOSALS_CREATABLE = True
 
 PROPOSALS_EDITABLE = True
 
 PROPOSALS_WITHDRAWABLE = False
+
+TALK_PROPOSAL_DURATION_CHOICES = (
+    ('NOPREF', _('No preference')),
+    ('PREF30', _('Prefer 30min')),
+    ('PREF45', _('Prefer 45min')),
+)

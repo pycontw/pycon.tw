@@ -1,39 +1,22 @@
-import pytest
-
-from django.conf import settings
 from django.contrib import messages
+from django.test import override_settings
 
 from proposals.models import TalkProposal, TutorialProposal
 
 
-pytestmark = pytest.mark.skipif(
-    not settings.PROPOSALS_CREATABLE,
-    reason='call for proposals ends',
-)
+@override_settings(PROPOSALS_CREATABLE=False)
+def test_talk_proposal_create_unavailable(user_client):
+    response = user_client.get('/en-us/proposals/talk/submit/')
+    assert response.status_code == 404
 
 
-def test_proposal_create_login(client):
-    response = client.get('/en-us/proposals/submit/', follow=True)
-    assert response.redirect_chain == [
-        ('/en-us/accounts/login/?next=/en-us/proposals/submit/', 302),
-    ]
+@override_settings(PROPOSALS_CREATABLE=False)
+def test_tutorial_proposal_create_unavailable(user_client):
+    response = user_client.get('/en-us/proposals/tutorial/submit/')
+    assert response.status_code == 404
 
 
-def test_proposal_create_denied_get(bare_user_client):
-    response = bare_user_client.get('/en-us/proposals/submit/')
-    assert response.status_code == 403
-
-
-def test_proposal_create_denied_post(bare_user_client):
-    response = bare_user_client.post('/en-us/proposals/submit/')
-    assert response.status_code == 403
-
-
-def test_proposal_create_get(user_client):
-    response = user_client.get('/en-us/proposals/submit/')
-    assert response.status_code == 200
-
-
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_talk_proposal_create_login(client):
     response = client.get('/en-us/proposals/talk/submit/', follow=True)
     assert response.redirect_chain == [
@@ -41,6 +24,7 @@ def test_talk_proposal_create_login(client):
     ]
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_tutorial_proposal_create_login(client):
     response = client.get('/en-us/proposals/tutorial/submit/', follow=True)
     assert response.redirect_chain == [
@@ -48,36 +32,43 @@ def test_tutorial_proposal_create_login(client):
     ]
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_talk_proposal_create_denied_get(bare_user_client):
     response = bare_user_client.get('/en-us/proposals/talk/submit/')
     assert response.status_code == 403
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_tutorial_proposal_create_denied_get(bare_user_client):
     response = bare_user_client.get('/en-us/proposals/tutorial/submit/')
     assert response.status_code == 403
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_talk_proposal_create_denied_post(bare_user_client):
     response = bare_user_client.post('/en-us/proposals/talk/submit/')
     assert response.status_code == 403
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_tutorial_proposal_create_denied_post(bare_user_client):
     response = bare_user_client.post('/en-us/proposals/tutorial/submit/')
     assert response.status_code == 403
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_talk_proposal_create_get(user_client):
     response = user_client.get('/en-us/proposals/talk/submit/')
     assert response.status_code == 200
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_tutorial_proposal_create_get(user_client):
     response = user_client.get('/en-us/proposals/tutorial/submit/')
     assert response.status_code == 200
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_talk_proposal_create_post(user, user_client):
     response = user_client.post('/en-us/proposals/talk/submit/', {
         'title': 'Beyond the Style Guides<br>',
@@ -104,6 +95,7 @@ def test_talk_proposal_create_post(user, user_client):
     ]
 
 
+@override_settings(PROPOSALS_CREATABLE=True)
 def test_tutorial_proposal_create_post(user, user_client):
     response = user_client.post('/en-us/proposals/tutorial/submit/', {
         'title': 'Beyond the Style Guides<br>',
