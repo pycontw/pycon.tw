@@ -20,18 +20,14 @@ for (var i = 0; i < elementList.length; i++) {
 
 (function (SimpleMDE) {
 
-if (!document.querySelectorAll || !window.DOMParser)
+if (!document.querySelectorAll)
 	return;
-
-var parser = new DOMParser();
 
 var elementList = document.querySelectorAll(
 	'.editor-readonly > .editor-preview');
-for (var i = 0; i < elementList.length; i++) {
-	var element = elementList[i];
-	var source = element.textContent || element.innerText;
-	element.innerHTML = SimpleMDE.prototype.markdown(
-		parser.parseFromString(source, 'text/html').documentElement.textContent);
-}
+Array.prototype.forEach.call(elementList, function (e) {
+	var source = e.textContent || e.innerText;
+	e.innerHTML = SimpleMDE.prototype.markdown(source);
+});
 
 })(SimpleMDE);

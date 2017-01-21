@@ -1,3 +1,4 @@
+import collections
 import itertools
 import random
 
@@ -20,6 +21,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
+    vote_keys = {
+        Review.Vote.PLUS_ONE: 'strong_accept',
+        Review.Vote.PLUS_ZERO: 'weak_accept',
+        Review.Vote.MINUS_ZERO: 'weak_reject',
+        Review.Vote.MINUS_ONE: 'strong_reject',
+    }
     order_keys = {
         'title': 'title',
         'count': 'review_count',
@@ -64,39 +71,39 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return proposals
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
         review_stage = ReviewsConfig.stage
-
-        context['reviews'] = self.get_reviews()
-
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
             .filter(accepted__isnull=False)
             .annotate(review_count=Count('review'))
         )
-        context.update({
-            'proposals_with_verdict': verdicted_proposals,
-        })
 
-        context['review_stage'] = review_stage
-        context['review_stage_desc_tpl'] = (
-            'reviews/_includes/review_stage_%s_desc.html'
-            % review_stage
+        vote_count_pairs = (
+            self.get_reviews()
+            .values_list('vote')
+            .annotate(count=Count('vote'))
+        )
+        vote_mapping = collections.defaultdict(
+            (lambda: 0),
+            ((self.vote_keys[k], v)
+             for k, v in vote_count_pairs
+             if k in self.vote_keys),
         )
 
-        context['vote'] = {
-            'strong_accept': context['reviews'].filter(
-                vote=Review.Vote.PLUS_ONE).count(),
-            'weak_accept': context['reviews'].filter(
-                vote=Review.Vote.PLUS_ZERO).count(),
-            'weak_reject': context['reviews'].filter(
-                vote=Review.Vote.MINUS_ZERO).count(),
-            'strong_reject': context['reviews'].filter(
-                vote=Review.Vote.MINUS_ONE).count(),
-        }
-        context['ordering'] = self.ordering
-        context['query_string'] = self.request.GET.urlencode()
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'proposals_with_verdict': verdicted_proposals,
+            'reviews': self.get_reviews(),
+            'review_stage': review_stage,
+            'review_stage_desc_tpl': (
+                'reviews/_includes/review_stage_%s_desc.html'
+                % review_stage
+            ),
+            'vote': vote_mapping,
+            'ordering': self.ordering,
+            'query_string': self.request.GET.urlencode(),
+        })
         return context
 
     def get_reviews(self):
