@@ -311,7 +311,7 @@ msgid ""
 "understand the proposal. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr "Try not be too lengthy to scare away reviewers or potential audience. A comfortable length is less than 2000 characters (or about 1200 Chinese characters). Since most reviewers may not understand the topic as deep as you do, including related links to the talk topic will help reviewers understand the proposal. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
+msgstr "Try not be too lengthy to scare away reviewers or potential audience. A comfortable length is less than 2000 characters (or about 1200 Chinese characters). Since most reviewers may not understand the topic as deep as you do, including related links to the talk topic will help reviewers understand the proposal. Edit using <a href='/speaking/markdown_cheatsheet' target='_blank'>Markdown</a>."
 
 #: proposals/models.py:227
 msgid "supplementary"
@@ -324,7 +324,7 @@ msgid ""
 " NOT made public and for REVIEW ONLY. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr "Anything else you'd like the program committee to know when making their selection: your past speaking experience, community experience, etc. This is NOT made public and for REVIEW ONLY. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
+msgstr "Anything else you'd like the program committee to know when making their selection: your past speaking experience, community experience, etc. This is NOT made public and for REVIEW ONLY. Edit using <a href='/speaking/markdown_cheatsheet' target='_blank'>Markdown</a>."
 
 #: proposals/models.py:241 reviews/models.py:92
 msgid "Yes"
@@ -387,7 +387,7 @@ msgid ""
 " should have a fallback plan about how to shrink the content into a 25min "
 "one. Edit using <a href='http://daringfireball.net/projects/markdown/basics'"
 " target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr "How the talk will be arranged. It is highly recommended to attach the estimated time length for each sections in the talk. Talks in favor of 45min should have a fallback plan about how to shrink the content into a 25min one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
+msgstr "How the talk will be arranged. It is highly recommended to attach the estimated time length for each sections in the talk. Talks in favor of 45min should have a fallback plan about how to shrink the content into a 25min one. Edit using <a href='/speaking/markdown_cheatsheet' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 
 #: proposals/models.py:339
 msgid "Rejected"
@@ -419,7 +419,7 @@ msgid ""
 " your talk and attach each section with the estimated time length. Edit "
 "using <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr "How the tutorial will be arranged. You should enumerate over each section in your talk and attach each section with the estimated time length. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
+msgstr "How the tutorial will be arranged. You should enumerate over each section in your talk and attach each section with the estimated time length. Edit using <a href='/speaking/markdown_cheatsheet' target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 
 #: proposals/models.py:396
 msgid "tutorial proposal"
