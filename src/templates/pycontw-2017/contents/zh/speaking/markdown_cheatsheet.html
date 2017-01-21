@@ -1,0 +1,107 @@
+{% extends 'contents/_base/speaking.html' %}
+
+{% block title %}Markdown Cheatsheet{% endblock title %}
+
+{% block content %}
+
+<h2><span>如何使用 Markdown 語法</span></h2>
+<article>
+    <table class="accomodation-table table table-responsive">
+        <thead>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <th>使用</th>
+                <th>或用</th>
+                <th>...得到</th>
+            </tr>
+        </thead>
+        </tr>
+        <tbody>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>*斜體*</td>
+                <td>_斜體_</td>
+                <td><i>斜體</i></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>**粗體**</td>
+                <td>__粗體__</td>
+                <td><b>粗體</b></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td># 標題一</td>
+                <td>標題一<br>=========</td>
+                <td>標題一</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td># 標題二</td>
+                <td>標題二<br>=========</td>
+                <td>標題二</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>[連結](https://tw.pycon.org/)</td>
+                <td>[連結][1]<br>⋮<br>[1]: https://tw.pycon.org/</td>
+                <td><a href="https://tw.pycon.org/">連結</a></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>![圖片](https://www.python.org/static/img/python-logo.png)</td>
+                <td>![圖片][1]<br>⋮<br>[1]: https://www.python.org/static/img/python-logo.png</td>
+                <td><img src="https://www.python.org/static/img/python-logo.png" alt="圖片" /></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>&gt; 引用</td>
+                <td></td>
+                <td>引用</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>這是一個章節。<br><br>隔著一行，這是另一個章節。</td>
+                <td></td>
+                <td>這是一個章節。<br><br>隔著一行，這是另一個章節。</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>* 清單項目<br>* 清單項目<br>* 清單項目</td>
+                <td>- 清單項目<br>- 清單項目<br>- 清單項目</td>
+                <td><ul><li>清單項目</li><li>清單項目</li><li>清單項目</li></ul</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>1. 清單項目一<br>2. 清單項目二<br>3. 清單項目三</td>
+                <td>1) 清單項目一<br>2) 清單項目二<br>3) 清單項目三</td>
+                <td><ol><li>清單項目一</li><li>清單項目二</li><li>清單項目三</li></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>水平線<br><br>---</td>
+                <td>水平線<br><br>***</td>
+                <td>水平線</td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>使用反引號`內嵌代碼`</td>
+                <td></td>
+                <td>使用反引號<a>內嵌代碼</a></td>
+            </tr>
+            <tr>
+                <th style="display:none;" aria-label="hidden"></th>
+                <td>```<br># 程式碼區塊<br>印出'三個反引號'，或者'<br>印出'四個縮進的空白'<br>```</td>
+                <td></td>
+                <td>```<br># 程式碼區塊<br>印出'三個反引號'，或者'<br>印出'四個縮進的空白'<br>```</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+
+<blockquote>
+    引用自：<a href="http://commonmark.org/help/"
+        target="_blank">http://commonmark.org/</a>
+</blockquote>
+
+{% endblock content %}
