@@ -976,9 +976,9 @@ msgid "Submit a New Talk Proposal"
 msgstr "Submit a New Talk Proposal"
 
 #: templates/default/proposals/talk_proposal_create.html:10
-msgid "Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
+msgid "Please review the <a href=\"/speaking/talk/\" target=\"_blank\">How to Propose a Talk</a>"
 msgstr ""
-"Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
+"Please review the <a href=\"/speaking/talk/\" target=\"_blank\">How to Propose a Talk</a>"
 
 #: templates/proposals/talk_proposal_peek.html:5
 #, python-format
