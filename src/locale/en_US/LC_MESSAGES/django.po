@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2016
 msgid ""
@@ -279,12 +279,24 @@ msgstr "Python level"
 #: proposals/models.py:186
 msgid ""
 "The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" "
-"target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't"
-" be more likely to be accepted because of being \"Novice\" level. We may "
-"contact you to change the talk level when we find the content is too-hard or"
-" too-easy for the target audience."
-msgstr "The choice of talk level matters during the review process. More definition of talk level can be found at the <a href=\"{speaking_talk_url}\" target=\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be more likely to be accepted because of being “Novice” level. We may contact you to change the talk level when we find the content is too-hard or too-easy for the target audience."
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
+"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
+"more likely to be accepted because of being \"Novice\" level. We may contact "
+"you to change the talk level when we find the content is too-hard or too-"
+"easy for the target audience.&nbsp;<button type='button' class='btn btn-"
+"warning btn-xs'data-toggle='modal' data-"
+"target='#proposalFieldExampleModal'data-content='<h5>Good Example</h5>Good "
+"example.'>Open Example</button>"
+msgstr ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
+"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
+"more likely to be accepted because of being \"Novice\" level. We may contact "
+"you to change the talk level when we find the content is too-hard or too-"
+"easy for the target audience.&nbsp;<button type='button' class='btn btn-"
+"warning btn-xs'data-toggle='modal' data-"
+"target='#proposalFieldExampleModal'data-content='<h5>Good Example</h5>Good "
+"example.'>Open Example</button>"
 
 #: proposals/models.py:200
 msgid "objective"
@@ -974,6 +986,11 @@ msgstr "Add Speaker"
 #: templates/proposals/talk_proposal_create.html:7
 msgid "Submit a New Talk Proposal"
 msgstr "Submit a New Talk Proposal"
+
+#: templates/default/proposals/talk_proposal_create.html:10
+msgid "Please review the <a href=\"/speaking/talk/\" target=\"_blank\">How to Propose a Talk</a>"
+msgstr ""
+"Please review the <a href=\"/speaking/talk/\" target=\"_blank\">How to Propose a Talk</a>"
 
 #: templates/proposals/talk_proposal_peek.html:5
 #, python-format
