@@ -8,12 +8,12 @@ from django.views.generic import CreateView
 from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
 
-from .mixins import UserProfileRequiredMixin
+from .mixins import ProposalLastUpdatedTimestampMixin, UserProfileRequiredMixin
 
 
 class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, CreateView):
+        ProposalLastUpdatedTimestampMixin, FormValidMessageMixin, CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if not settings.PROPOSALS_CREATABLE:

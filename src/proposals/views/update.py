@@ -8,7 +8,10 @@ from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalUpdateForm, TutorialProposalUpdateForm
 from proposals.models import TalkProposal, TutorialProposal
 
-from .mixins import ProposalEditMixin, UserProfileRequiredMixin
+from .mixins import (
+    ProposalLastUpdatedTimestampMixin, ProposalEditMixin,
+    UserProfileRequiredMixin,
+)
 
 
 class TalkProposalMixin:
@@ -23,7 +26,8 @@ class TutorialProposalMixin:
 
 class ProposalUpdateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        ProposalEditMixin, FormValidMessageMixin, UpdateView):
+        ProposalEditMixin, ProposalLastUpdatedTimestampMixin,
+        FormValidMessageMixin, UpdateView):
 
     success_url = reverse_lazy('user_dashboard')
 
