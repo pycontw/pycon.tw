@@ -924,8 +924,8 @@ msgid "Submit a New Talk Proposal"
 msgstr "提交一個新的演講提案"
 
 #: templates/default/proposals/talk_proposal_create.html:10
-msgid "Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
-msgstr "請參考<a href=\"/speaking/talk/\">議程投稿教學</a>"
+msgid "Please review the <a href=\"/speaking/talk/\" target=\"_blank\">How to Propose a Talk</a>"
+msgstr "請參考<a href=\"/speaking/talk/\" target=\"_blank\">議程投稿教學</a>"
 
 #: templates/default/proposals/talk_proposal_peek.html:5
 #, python-format
