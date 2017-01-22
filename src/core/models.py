@@ -146,7 +146,10 @@ class EventInfo(models.Model):
               "Talk</a> page. Note that a proposal won't be more likely to be "
               "accepted because of being \"Novice\" level. We may contact you "
               "to change the talk level when we find the content is too-hard "
-              "or too-easy for the target audience."),
+              "or too-easy for the target audience."
+              "&nbsp;<button type='button' class='btn btn-warning btn-xs'"
+              "data-toggle='modal' data-target='#proposalFieldExampleModal'"
+              "data-content='<h5>Good Example</h5>Good example.'>Open Example</button>"),
             speaking_talk_url=reverse_lazy(
                 'page', kwargs={'path': 'speaking/talk'},
             ),
