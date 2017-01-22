@@ -26,6 +26,9 @@ class ProposalEditMixin:
 class ProposalLastUpdatedTimestampMixin:
     def get_context_data(self, **kwargs):
         if 'last_updated_timestamp' not in kwargs:
-            last_updated_at = self.object.last_updated_at
-            kwargs['last_updated_timestamp'] = last_updated_at.timestamp()
+            if self.object:
+                timestamp = self.object.last_updated_at.timestamp()
+            else:
+                timestamp = None
+            kwargs['last_updated_timestamp'] = timestamp
         return super().get_context_data(**kwargs)
