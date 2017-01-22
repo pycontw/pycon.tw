@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
@@ -922,6 +922,10 @@ msgstr "新增講者"
 #: templates/default/proposals/talk_proposal_create.html:7
 msgid "Submit a New Talk Proposal"
 msgstr "提交一個新的演講提案"
+
+#: templates/default/proposals/talk_proposal_create.html:10
+msgid "Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
+msgstr "請參考<a href=\"/speaking/talk/\">議程投稿教學</a>"
 
 #: templates/default/proposals/talk_proposal_peek.html:5
 #, python-format

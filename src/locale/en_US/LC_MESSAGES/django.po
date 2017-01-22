@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2016
 msgid ""
@@ -974,6 +974,11 @@ msgstr "Add Speaker"
 #: templates/proposals/talk_proposal_create.html:7
 msgid "Submit a New Talk Proposal"
 msgstr "Submit a New Talk Proposal"
+
+#: templates/default/proposals/talk_proposal_create.html:10
+msgid "Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
+msgstr ""
+"Please review the <a href=\"/speaking/talk/\">How to Propose a Talk</a>"
 
 #: templates/proposals/talk_proposal_peek.html:5
 #, python-format
