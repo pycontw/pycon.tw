@@ -123,6 +123,8 @@ class EventInfo(models.Model):
         verbose_name=_('abstract'),
         max_length=1000,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "data-content='abstract'>Proposal Examples</a></p>"
             "The overview of what the talk is about. If the talk assume some "
             "domain knowledge please state it here. If your talk is accepted, "
             "this will be displayed on both the website and the handbook. "
@@ -146,10 +148,7 @@ class EventInfo(models.Model):
               "Talk</a> page. Note that a proposal won't be more likely to be "
               "accepted because of being \"Novice\" level. We may contact you "
               "to change the talk level when we find the content is too-hard "
-              "or too-easy for the target audience."
-              "&nbsp;<button type='button' class='btn btn-warning btn-xs'"
-              "data-toggle='modal' data-target='#proposalFieldExampleModal'"
-              "data-content='<h5>Good Example</h5>Good example.'>Open Example</button>"),
+              "or too-easy for the target audience."),
             speaking_talk_url=reverse_lazy(
                 'page', kwargs={'path': 'speaking/talk'},
             ),
@@ -160,6 +159,8 @@ class EventInfo(models.Model):
         verbose_name=_('detailed description'),
         blank=True,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "data-content='detailed description'>Proposal Examples</a></p>"
             "Try not be too lengthy to scare away reviewers or potential "
             "audience. A comfortable length is less than 2000 characters "
             "(or about 1200 Chinese characters). Since most reviewers may not "

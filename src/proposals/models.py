@@ -131,6 +131,8 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         verbose_name=_('objective'),
         max_length=1000,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "data-content='objective'>Proposal Examples</a></p>"
             "Who is the intended audience for your talk? (Be specific, "
             "\"Python users\" is not a good answer). "
             "And what will the attendees get out of your talk? When they "
@@ -194,6 +196,8 @@ class TalkProposal(AbstractProposal):
         verbose_name=_('outline'),
         blank=True,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "data-content='outline'>Proposal Examples</a></p>"
             "How the talk will be arranged. It is highly recommended to "
             "attach the estimated time length for each sections in the talk. "
             "Talks in favor of 45min should have a fallback plan about how "
