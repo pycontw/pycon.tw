@@ -6,6 +6,7 @@
 <h3 class="dashboard-header">
   <span class="header-title">{% block page_header %}{% endblock page_header %}</span>
 </h3>
+{% block alert_content %}{% endblock alert_content %}
 <form method="post" class="proposal-form">
   {% csrf_token %}
   <div class="nesting-form-group">
