@@ -34,10 +34,10 @@
 {% block scripts %}
 {{ block.super }}
 <script src="{% static 'js/vendors/jquery.are-you-sure.js' %}"></script>
-<script src="{% static 'js/proposals/proposal_update.js' %}"></script>
 {% endblock scripts %}
 
 {% block extra_js %}
 {{ block.super }}
 {{ form.media.js }}
+<script src="{% static 'js/proposals/proposal_update.js' %}"></script>
 {% endblock extra_js %}
