@@ -11,8 +11,11 @@
 	</thead>
 	<tbody>
 		{% for proposal in proposals %}
-		<tr>
-			<td class="proposal-title"  style="padding-bottom: 0px;">{{ proposal.title }}</td>
+		<tr class="proposal-info-row">
+			<td class="proposal-title">
+				{{ proposal.title }}
+				<br>
+			</td>
 			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_python_level_display }}</td>
 			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_language_display }}</td>
 			<td  style="padding-bottom: 0px;">
@@ -38,20 +41,22 @@
 				{% endif %}
 			</td>
 		</tr>
-		<tr>
-			<td colspan="3" style="border: 0; padding: 10px 34px 10px 34px">
-			填寫進度({{ proposal.finish_column_count.num}} / 6)：
-				<div class="progress" style="height: 15px">
-				{% if proposal.finish_column_count.num <= 3 %}
-					<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
+		<tr class="progress-row">
+			<td colspan="3">
+				<div class="progress proposal-progress">
+					<div class="progress-bar progress-bar-{% if proposal.finish_percentage <= 50 %}danger{% elif proposal.finish_percentage < 100 %}warning{% else %}success{% endif %}"
+							role="progressbar"
+							aria-valuenow="{{ proposal.finish_percentage }}"
+							aria-valuemin="0" aria-valuemax="100"
+							style="width: {{ proposal.finish_percentage }}%;">
+						{% if proposal.unfinished_fields_count == 0 %}
+						{% trans 'Proposal finished! \0/' %}
+						{% else %}
+						{% blocktrans with count=proposal.unfinished_fields_count trimmed %}
+						{{ count }} fields to go!
+						{% endblocktrans %}
+						{% endif %}
 					</div>
-				{% elif proposal.finish_column_count.num <= 5 %}
-					<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
-					</div>
-				{% else %}
-					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
-					</div>
-				{% endif %}
 				</div>
 			</td>
 		</tr>

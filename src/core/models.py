@@ -123,7 +123,8 @@ class EventInfo(models.Model):
         verbose_name=_('abstract'),
         max_length=1000,
         help_text=_(
-            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "<p><a href='#' data-toggle='modal' "
+            "data-target='#proposalFieldExampleModal' "
             "data-content='abstract'>Proposal Examples</a></p>"
             "The overview of what the talk is about. If the talk assume some "
             "domain knowledge please state it here. If your talk is accepted, "

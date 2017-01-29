@@ -131,7 +131,8 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         verbose_name=_('objective'),
         max_length=1000,
         help_text=_(
-            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "<p><a href='#' data-toggle='modal' "
+            "data-target='#proposalFieldExampleModal' "
             "data-content='objective'>Proposal Examples</a></p>"
             "Who is the intended audience for your talk? (Be specific, "
             "\"Python users\" is not a good answer). "
@@ -170,6 +171,11 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     objects = DefaultConferenceManager.from_queryset(ProposalQuerySet)()
     all_objects = models.Manager.from_queryset(ProposalQuerySet)()
 
+    _must_fill_fields = [
+        'abstract', 'objective', 'supplementary',
+        'detailed_description', 'outline', 'slide_link',
+    ]
+
     class Meta:
         abstract = True
 
@@ -184,6 +190,23 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     def speaker_count(self):
         return self.additionalspeaker_set.filter(cancelled=False).count() + 1
 
+    @property
+    def must_fill_fields_count(self):
+        return len(self._must_fill_fields)
+
+    @property
+    def finished_fields_count(self):
+        count = sum(1 for f in self._must_fill_fields if getattr(self, f))
+        return count
+
+    @property
+    def finish_percentage(self):
+        return 100 * self.finished_fields_count // self.must_fill_fields_count
+
+    @property
+    def unfinished_fields_count(self):
+        return self.must_fill_fields_count - self.finished_fields_count
+
 
 class TalkProposal(AbstractProposal):
 
@@ -196,7 +219,8 @@ class TalkProposal(AbstractProposal):
         verbose_name=_('outline'),
         blank=True,
         help_text=_(
-            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "<p><a href='#' data-toggle='modal' "
+            "data-target='#proposalFieldExampleModal' "
             "data-content='outline'>Proposal Examples</a></p>"
             "How the talk will be arranged. It is highly recommended to "
             "attach the estimated time length for each sections in the talk. "
@@ -240,22 +264,6 @@ class TalkProposal(AbstractProposal):
         return reverse('talk_proposal_remove_speaker', kwargs={
             'pk': self.pk, 'email': speaker.user.email,
         })
-
-    def finish_column_count(self):
-        counter = 0;
-        if self.abstract != "":
-            counter += 1
-        if self.detailed_description != "":
-            counter += 1
-        if self.outline != "":
-            counter += 1
-        if self.supplementary != "":
-            counter += 1
-        if self.slide_link != "":
-            counter += 1
-        if self.objective != "":
-            counter += 1
-        return {'precent': counter / 6 * 100, 'num': counter}
 
 
 class TutorialProposal(AbstractProposal):
@@ -305,19 +313,3 @@ class TutorialProposal(AbstractProposal):
         return reverse('tutorial_proposal_remove_speaker', kwargs={
             'pk': self.pk, 'email': speaker.user.email,
         })
-
-    def finish_column_count(self):
-        counter = 0;
-        if self.abstract != "":
-            counter += 1
-        if self.detailed_description != "":
-            counter += 1
-        if self.outline != "":
-            counter += 1
-        if self.supplementary != "":
-            counter += 1
-        if self.slide_link != "":
-            counter += 1
-        if self.objective != "":
-            counter += 1
-        return {'precent': counter / 6 * 100, 'num': counter}
