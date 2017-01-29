@@ -1,11 +1,13 @@
 {% extends 'contents/_base/speaking.html' %}
 
 {% block title %}非正式會議投稿{% endblock title %}
-{% block page_title %}<h1>非正式會議投稿（Unconference Proposal）</h1>{% endblock page_title %}
+{% block page_title %}<h1>如何投稿非正式會議（Unconference Talk）？</h1>{% endblock page_title %}
 
 {% block content %}
     {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
     {% url 'page' path='speaking/talk' as speaking_talk_url %}
+
+    <h1><span>如何投稿非正式會議（Unconference Talk）？</span></h1>
     <article>
       <p>
           和一般議程比起來，非正式會議較不拘束，歡迎各種議題和各種形式的演講、討論、意見交流等，

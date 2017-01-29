@@ -11,11 +11,14 @@
 	</thead>
 	<tbody>
 		{% for proposal in proposals %}
-		<tr>
-			<td class="proposal-title">{{ proposal.title }}</td>
-			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
-			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
-			<td>
+		<tr class="proposal-info-row">
+			<td class="proposal-title">
+				{{ proposal.title }}
+				<br>
+			</td>
+			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_python_level_display }}</td>
+			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_language_display }}</td>
+			<td  style="padding-bottom: 0px;">
 				{% if proposals_editable or proposals_withdrawable %}
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
@@ -36,6 +39,25 @@
 				{% else %}
 				<a href="{{ proposal.get_peek_url }}" class="btn btn-natural">{% trans 'View' %}</a>
 				{% endif %}
+			</td>
+		</tr>
+		<tr class="progress-row">
+			<td colspan="3">
+				<div class="progress proposal-progress">
+					<div class="progress-bar progress-bar-{% if proposal.finish_percentage <= 50 %}danger{% elif proposal.finish_percentage < 100 %}warning{% else %}success{% endif %}"
+							role="progressbar"
+							aria-valuenow="{{ proposal.finish_percentage }}"
+							aria-valuemin="0" aria-valuemax="100"
+							style="width: {{ proposal.finish_percentage }}%;">
+						{% if proposal.unfinished_fields_count == 0 %}
+						{% trans 'Proposal finished! \0/' %}
+						{% else %}
+						{% blocktrans with count=proposal.unfinished_fields_count trimmed %}
+						{{ count }} fields to go!
+						{% endblocktrans %}
+						{% endif %}
+					</div>
+				</div>
 			</td>
 		</tr>
 		{% endfor %}

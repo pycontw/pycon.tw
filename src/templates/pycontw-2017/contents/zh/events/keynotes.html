@@ -8,14 +8,45 @@
 
 {% block meta_og %}
   <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2017" />
-  <meta property="og:description" content="享受由 Andrew Godwin、Carol Willing、Russell Keith-Magee 帶來的主題演講。
-" />
+  <meta property="og:description" content="享受由 Andrew Godwin、Carol Willing、Russell Keith-Magee 帶來的主題演講。" />
   <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
 {% endblock %}
 
 {% block content %}
 {# Kyenote speakers ordered by their first name #}
-{# 'Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+{# 'HT-Lin', Andrew Godwin', Carol Willing', 'Russell Keith-Magee' #}
+
+{# 林軒田 #}
+<div id="keynote-speaker-ht-lin" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'pycontw-2017/images/keynotes/ht_lin.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">林軒田(HT Lin)</h2>
+		<div class="keynote-speaker__url">
+			<a href="http://www.csie.ntu.edu.tw/~htlin/" target="_blank">http://www.csie.ntu.edu.tw/~htlin/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			林軒田專精「機器學習」與「資料探勘」，在加入Appier之前,原任臺灣大學資訊工程學系副 教授,並曾擔任臺灣人工智慧學會秘書長，投入「機器學習的理論基礎與演算法設計」之研究。
+		</p>
+		<p>
+			林軒田曾在全球開放式課程平台 Coursera 開設免費機器學習課程，向全球推廣人工智慧， 「機器學習基石」與「機器學習技法」兩門課程在全球已累積數百萬點閱人氣。由林軒田等人 合著出版的《Learning From Data》一書至今仍盤踞亞馬遜線上書店暢銷排行榜，被奉為機器 學習入門教科書。林軒田自 2014 年起開始擔任 Appier 顧問,定期與 Appier AI 團隊交流; 2016 年 2 月，林軒田正式加入 Appier，擔任首席資料科學家。
+		</p>
+		<p>
+			林軒田曾獲得2013年國科會「吳大猷先生紀念獎」、2013 年臺灣大學「優良導師獎」、2012 年 ACM Taipei Chapter「李國鼎青年研究獎」與 2011 年臺灣大學「教學傑出教師獎」，並曾 連續四年 (2010-2013) 共同帶領臺灣大學團隊獲得六座 KDDCup 世界冠軍。
+		</p>
+		<p>
+			林軒田畢業於國立臺灣大學資訊工程學系，並於美國加州理工學院取得資訊工程碩士與博士學位。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《TBD》</h4>
+		<p>
+			(演講題目待訂，敬請期待。)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
 
 {# Andrew-Godwin #}
 <div id="keynote-speaker-andrew-godwin" class="keynote-speaker">

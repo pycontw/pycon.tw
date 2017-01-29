@@ -3,3 +3,11 @@
 {% load i18n %}
 
 {% block title %}{% blocktrans with proposal_title=object.title %}Edit Talk Proposal {{ proposal_title }}{% endblocktrans %}{% endblock title %}
+
+{% block alert_content %}
+<div class="dashboard-alert">
+  <div class="alert alert-warning" role="alert">
+    {% blocktrans %}Please review the <a href="/speaking/talk/" target="_blank">How to Propose a Talk</a>{% endblocktrans %}
+  </div>
+</div>
+{% endblock alert_content %}

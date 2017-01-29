@@ -15,7 +15,7 @@
 <h3 class="dashboard-header">
   <span class="header-title">{{ object.title }}</span>
 </h3>
-
+{% block alert_content %}{% endblock alert_content %}
 <form method="post" class="proposal-form">
   <div class="nesting-form-group">
     {% crispy form %}
