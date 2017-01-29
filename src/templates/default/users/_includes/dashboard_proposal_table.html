@@ -12,10 +12,10 @@
 	<tbody>
 		{% for proposal in proposals %}
 		<tr>
-			<td class="proposal-title">{{ proposal.title }}</td>
-			<td class="hidden-xs">{{ proposal.get_python_level_display }}</td>
-			<td class="hidden-xs">{{ proposal.get_language_display }}</td>
-			<td>
+			<td class="proposal-title"  style="padding-bottom: 0px;">{{ proposal.title }}</td>
+			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_python_level_display }}</td>
+			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_language_display }}</td>
+			<td  style="padding-bottom: 0px;">
 				{% if proposals_editable or proposals_withdrawable %}
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
@@ -36,6 +36,23 @@
 				{% else %}
 				<a href="{{ proposal.get_peek_url }}" class="btn btn-natural">{% trans 'View' %}</a>
 				{% endif %}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="border: 0; padding: 10px 34px 10px 34px">
+			填寫進度({{ proposal.finish_column_count.num}} / 6)：
+				<div class="progress" style="height: 15px">
+				{% if proposal.finish_column_count.num <= 3 %}
+					<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
+					</div>
+				{% elif proposal.finish_column_count.num <= 5 %}
+					<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
+					</div>
+				{% else %}
+					<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{proposal.finish_column_count.precent}}%;">
+					</div>
+				{% endif %}
+				</div>
 			</td>
 		</tr>
 		{% endfor %}
