@@ -237,6 +237,22 @@ class TalkProposal(AbstractProposal):
             'pk': self.pk, 'email': speaker.user.email,
         })
 
+    def finish_column_count(self):
+        counter = 0;
+        if self.abstract != "":
+            counter += 1
+        if self.detailed_description != "":
+            counter += 1
+        if self.outline != "":
+            counter += 1
+        if self.supplementary != "":
+            counter += 1
+        if self.slide_link != "":
+            counter += 1
+        if self.objective != "":
+            counter += 1
+        return {'precent': counter / 6 * 100, 'num': counter}
+
 
 class TutorialProposal(AbstractProposal):
 
@@ -285,3 +301,19 @@ class TutorialProposal(AbstractProposal):
         return reverse('tutorial_proposal_remove_speaker', kwargs={
             'pk': self.pk, 'email': speaker.user.email,
         })
+
+    def finish_column_count(self):
+        counter = 0;
+        if self.abstract != "":
+            counter += 1
+        if self.detailed_description != "":
+            counter += 1
+        if self.outline != "":
+            counter += 1
+        if self.supplementary != "":
+            counter += 1
+        if self.slide_link != "":
+            counter += 1
+        if self.objective != "":
+            counter += 1
+        return {'precent': counter / 6 * 100, 'num': counter}
