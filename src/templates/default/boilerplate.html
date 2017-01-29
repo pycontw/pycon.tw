@@ -37,6 +37,7 @@
 	{% block body %}
 		{% block nav %}{% include '_includes/nav/front_nav.html' %}{% endblock %}
 		<div class="container">{% block content %}It works!{% endblock %}</div>
+		{% block extra_body %}{% endblock extra_body %}
 	{% endblock %}
 
 	{% compress js %}

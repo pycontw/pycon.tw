@@ -242,3 +242,45 @@ textarea.form-control {
         padding: 20px 33px;
     }
 }
+
+#proposal-scroll-progress-widget {
+    $box-size: 56px;
+
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 9999;
+
+    width: $box-size;
+    height: $box-size;
+    border-radius: $box-size / 2;
+
+    background-color: $gray;
+    color: $gray-lighter;
+    overflow: hidden;
+
+    letter-spacing: -2px;
+    line-height: $box-size;
+    text-align: center;
+    vertical-align: middle;
+
+    .top {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-light;
+    }
+
+    .text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .current {
+            font-weight: bold;
+            font-size: 150%;
+            letter-spacing: 0;
+        }
+    }
+}
