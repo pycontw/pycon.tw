@@ -17,6 +17,9 @@ if 'celery' in sys.argv[0]:
 
 # Django Debug Toolbar
 INSTALLED_APPS += ('debug_toolbar',)
+MIDDLEWARE += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
 
 # Install local, development apps.
 INSTALLED_APPS += env.tuple('LOCAL_APPS', default=())
