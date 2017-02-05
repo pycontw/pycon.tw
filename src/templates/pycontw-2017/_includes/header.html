@@ -23,6 +23,7 @@
 
 <header>
 	<nav class="wrapper header-nav">
+    <a href="/" class="header-logo"></a>
 		<div class="parent">
 			<a href="{{ about_pycontw_url }}"
 					class="{% if active == 'about' %}active{% endif %}">
@@ -30,13 +31,13 @@
 			</a>
 		</div>
 		<div class="parent">
-			<a href="#">
+			<a href="{{ events_overview_url }}">
 				{% trans 'events' %}
 			</a>
 			<nav class="sub">
-				<a href="#">{% trans 'Schedule' %}</a>
+				{# <a href="#">{% trans 'Schedule' %}</a> #}
 				<a href="{{ events_overview_url }}">{% trans 'Overview' %}</a>
-				<a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a>
+				{# <a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a> #}
 				<a href="{{ speaking_talk_url }}">{% trans 'Talk' %}</a>
 				<a href="{{ events_tutorial_url }}">{% trans 'Tutorial' %}</a>
 				<a href="{{ events_sprint_url }}">{% trans 'Sprint' %}</a>
@@ -44,30 +45,30 @@
 			</nav>
 		</div>
 		<div class="parent">
-			<a href="#" class="{% if active == 'venue' %}active{% endif %}">
-				{% trans 'venue' %}
+			<a href="{{ venue_url }}" class="{% if active == 'venue' %}active{% endif %}">
+				{% trans 'venue' context 'conference location' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ venue_url }}">{% trans 'Venue' %}</a>
+				<a href="{{ venue_url }}">{% trans 'Venue' context 'conference location' %}</a>
 				<a href="{{ venue_accommodation_url }}">{% trans 'Accommodation' %}</a>
 			</nav>
 		</div>
-		<div class="parent">
+		{% comment %}<div class="parent">
 			<a href="#" class="{% if active == 'sponsor' %}active{% endif %}">
-				{% trans 'sponsor' %}
+				{% trans 'sponsors' %}
 			</a>
-		</div>
+		</div> {% endcomment %}
 		<div class="parent">
-			<a href="#" class="{% if active == 'registration' %}active{% endif %}">
+			<a href="{{ reg_financial_aid_url }}" class="{% if active == 'registration' %}active{% endif %}">
 				{% trans 'registration' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a>
+				{# <a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a> #}
 				<a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a>
 			</nav>
 		</div>
 		<div class="parent">
-			<a href="http://pycontw.blogspot.tw/" target="_blank">
+			<a href="https://pycontw.blogspot.tw/" target="_blank">
 				{% trans 'blog' %}
 			</a>
 		</div>

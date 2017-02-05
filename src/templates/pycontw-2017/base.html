@@ -6,15 +6,25 @@
 <head>
 
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{% block description %}{% endblock description %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 {% block titletag %}
 <title>{% block title %}{% endblock %} | PyCon Taiwan 2017</title>
 {% endblock titletag %}
 
-<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu+Mono:400i" rel="stylesheet">
+<link rel="icon" type="image/png" href="{% static 'images/favicon_pyconTW_32x32.png' %}">
+
+{% block meta_og %}
+<meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
+{# <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}"> #}
+{% endblock %}
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu+Mono:400,400i" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 {% compress css %}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/main.css' %}">
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
 {% endcompress %}
