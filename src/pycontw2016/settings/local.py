@@ -1,4 +1,4 @@
-from .base import BASE_DIR, INSTALLED_APPS, env
+from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, env
 from .base import *             # NOQA
 
 import logging.config
