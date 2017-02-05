@@ -18,77 +18,88 @@
     {% url "signup" as signup_url %}
     {% url "user_dashboard" as dashboard_url %}
 
+    <h1><span>投稿募集（Call for Proposals）</span></h1>
     <p>
         台灣 PyCon 2017 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！
     </p>
 
-    <h2>重要日期</h2>
-    <ul>
-        <li>議程 ＆ 課程 開放徵稿：12月25日</li>
-				<li>課程投稿截止：02月15日</li>
-				<li>議程投稿截止：02月15日</li>
-        <li>公告完整議程：04月03日（待決定）</li>
-    </ul>
-    <p>
-        因為 PyCon 的目的之一在於推廣 Python 程式語言與其在教育上的影響力，您的議程（talk）預設將會被錄影、編輯並且上傳至 PyCon 台灣社群經營之網站
-        <a href="http://pyvideo.org" target="_blank">pyvideo.org</a> 。如果不希望您的議程被記錄，請確定在送出投稿主題前，確認在「記錄選項（recording option）」中選擇正確的選項。更多資訊請參考<a
-            href="{{ speaking_recording_url }}"
-            target="_blank">錄影釋出</a>。
-    </p>
-    <p>
-        特別要注意的事，每一位講者也需要購買會議的門票。（更多資訊請參考［Everyone Pays Policy］）
-    </p>
+    <h2><span>重要日期</span></h2>
+    <article>
+      <ul>
+          <li>議程 ＆ 課程 開放徵稿：02月01日</li>
+  				<li>課程投稿截止：03月01日</li>
+  				<li>議程投稿截止：03月01日</li>
+          <li>公告完整議程：04月30日</li>
+      </ul>
+      <br />
+      <p>
+          因為 PyCon 的目的之一在於推廣 Python 程式語言與其在教育上的影響力，您的議程（talk）預設將會被錄影、編輯並且上傳至 PyCon 台灣社群經營之網站
+          <a href="http://pyvideo.org" target="_blank">pyvideo.org</a> 。如果不希望您的議程被記錄，請確定在送出投稿主題前，確認在「記錄選項（recording option）」中選擇正確的選項。更多資訊請參考<a
+              href="{{ speaking_recording_url }}"
+              target="_blank">錄影釋出</a>。
+      </p>
+      <p>
+          特別要注意的事，每一位講者也需要購買會議的門票。（更多資訊請參考 <a href="http://jessenoller.com/2011/05/25/pycon-everybody-pays/" target="_blank">Everyone Pays Policy</a>）
+      </p>
+    </article>
 
-    <h2>如何提交您的稿件</h2>
-    <p>
-        您需要先在 tw.pycon.org <a
-            href="{{ signup_url }}">註冊</a>一個新的帳號。在啟用您的帳號之後，就可以填寫講者資訊並且從您的<a
-            href="{{ dashboard_url }}">儀表板</a>中創建新的投搞。
-    </p>
-    <p>我們強烈建議您儘早送出您的投稿。</p>
+    <h2><span>如何提交您的稿件</span></h2>
+    <article>
+      <p>
+          您需要先在 tw.pycon.org <a
+              href="{{ signup_url }}">註冊</a>一個新的帳號。在啟用您的帳號之後，就可以填寫講者資訊並且從您的<a
+              href="{{ dashboard_url }}">儀表板</a>中創建新的投搞。
+      </p>
+      <p>我們強烈建議您儘早送出您的投稿。</p>
+    </article>
 
-    <h2>稿件提交指南</h2>
+    <h2><span>稿件提交指南</span></h2>
     <h3>議程（Talk）</h3>
-    <p>
-        我們接受泛 Python 相關的各類投稿，包括學術報告、商用專案或者案例研究等。正在閱讀本文件的您，想必也應該是要來投稿的！
-    </p>
-    <p>
-        今年 PyCon 台灣 2017 的主題為「定義未來」，因此我們鼓勵講師給予您的 Python 應用、使用 Python 解決問題的的經驗，
-        或如何主持您的社群圈。我們也非常歡迎適合進階者內容的投稿。
-    </p>
-    <p>
-        絕大部分的議程時間長度為三十分鐘。此外我們也安排了時間長度為四十五分鐘的議程，
-        此類的議程將會是我們認為比較重要並且能夠極大化影響族群並給予顯著幫助的主題。需要注意的是，
-        議程的時間長度將會包含開場與Q&amp;A的時間。
-    </p>
-    <p>議程可以使用的語言為：英文、中文、台語。</p>
-    <p>
-        為了幫助講者組織他們的想法，我們重新設計了投稿表單。更多請至<a
-            href="{{ speaking_talk_url }}">議程投稿教學</a>。
-    </p>
+      <article>
+	      <p>
+	          我們接受泛 Python 相關的各類投稿，包括學術報告、商用專案或者案例研究等。正在閱讀本文件的您，想必也應該是要來投稿的！
+	      </p>
+	      <p>
+	          今年 PyCon 台灣 2017 的主題為「定義未來」，因此我們鼓勵講師給予您的 Python 應用、使用 Python 解決問題的的經驗，
+	          或如何主持您的社群圈。我們也非常歡迎適合進階者內容的投稿。
+	      </p>
+	      <p>
+	          絕大部分的議程時間<strong>長度為三十分鐘</strong>。此外我們也安排了時間長度為四十五分鐘的議程，
+	          此類的議程將會是我們認為比較重要並且能夠極大化影響族群並給予顯著幫助的主題。需要注意的是，
+	          議程的時間長度將會包含開場與Q&amp;A的時間。
+	      </p>
+	      <p>議程可以使用的語言為：<strong>英文、中文、台語。</strong></p>
+	      <p>
+	          為了幫助講者組織他們的想法，我們重新設計了投稿表單。更多請至<a href="{{ speaking_talk_url }}">議程投稿教學</a>。
+	      </p>
+      </article>
     <h3>非正式會議（Unconference）</h3>
-    <p>
-      本次我們將在會議的最後一天開一軌 Talks 作為 Unconference talk，目的是希望讓講者與會眾能有不一樣的互動。
-      Unconference talk 不僅僅歡迎 Python 相關的 proposal，我們也歡迎與 Python 非相關的題目。
-      （目前開會討論後會在會議前 10 天開放報名）Unconference 的議程由會眾投票決定。
-    </p>
-    <p>
-      Unconference talk 長度為 20 minutes. 因此我們希望 Unconference talk 內容儘量是一個心得、經驗的分享，
-      也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。
-    </p>
-    <p>
-      一個 Unconference talk 可以以任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於 Unconference
-      不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
-    </p>
-    <p>
-      Unconference talk 可以使用中文、英文或是台語。
-    </p>
-    <p>
-      Unconferece talk 的投稿格式請參見<a
-          href="{{ speaking_unconference_url }}">Unconference Proposal</a>。
-    </p>
-    <h3>課程（Tutorial）</h3>
-    <p>
-        TBD
-    </p>
+      <article>
+	      <p>
+	        本次我們將在會議的最後一天開一軌 Talks 作為 Unconference talk，目的是希望讓講者與會眾能有不一樣的互動。
+	        Unconference talk 不僅僅歡迎 Python 相關的 proposal，我們也歡迎與 Python 非相關的題目。
+	        （目前開會討論後會在會議前 10 天開放報名）Unconference 的議程由會眾投票決定。
+	      </p>
+	      <p>
+	        Unconference talk 長度為 20 minutes. 因此我們希望 Unconference talk 內容儘量是一個心得、經驗的分享，
+	        也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。
+	      </p>
+	      <p>
+	        一個 Unconference talk 可以以任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於 Unconference
+	        不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
+	      </p>
+	      <p>
+	        Unconference talk 可以使用中文、英文或是台語。
+	      </p>
+	      <p>
+	        Unconferece talk 的投稿格式請參見<a href="{{ speaking_unconference_url }}">Unconference Proposal</a>。
+	      </p>
+	    </article>
+    <h3>教學（Tutorial）</h3>
+      <article>
+	      <p>
+	          同演講，我們對教學的主題並不做任何限制。教學為半天或一整天的活動，相當於
+	          3 或 6 小時的教學。投稿教學的方針基於演講，所以請先閱讀<a href="{{ speaking_talk_url }}">如何投稿演講？</a>。除了該文中的事項外，我們對教學投稿本身有額外的規範，請參見<a href="{{ speaking_tutorial_url }}">如何投稿教學？</a>一文。
+	      </p>
+    	</article>
 {% endblock content %}

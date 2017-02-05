@@ -123,6 +123,9 @@ class EventInfo(models.Model):
         verbose_name=_('abstract'),
         max_length=1000,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' "
+            "data-target='#proposalFieldExampleModal' "
+            "data-content='abstract'>Proposal Examples</a></p>"
             "The overview of what the talk is about. If the talk assume some "
             "domain knowledge please state it here. If your talk is accepted, "
             "this will be displayed on both the website and the handbook. "
@@ -157,6 +160,8 @@ class EventInfo(models.Model):
         verbose_name=_('detailed description'),
         blank=True,
         help_text=_(
+            "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'"
+            "data-content='detailed description'>Proposal Examples</a></p>"
             "Try not be too lengthy to scare away reviewers or potential "
             "audience. A comfortable length is less than 2000 characters "
             "(or about 1200 Chinese characters). Since most reviewers may not "

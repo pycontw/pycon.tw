@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy as p
 
 
 EXTRA_DATA = {}
@@ -59,7 +59,7 @@ EXTRA_DATA['about/staff'] = {
                 {'name': '王曉文'},
                 {'name': 'Yahsin Huang'}]},
         {
-            'key': _('Venue'),
+            'key': p('organizer team name', 'Venue'),
             'members': [
                 {'name': 'Rock Hung', 'tags': _('lead')},
             ],
