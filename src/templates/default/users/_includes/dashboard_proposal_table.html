@@ -52,8 +52,10 @@
 						{% if proposal.unfinished_fields_count == 0 %}
 						{% trans 'Proposal finished! \0/' %}
 						{% else %}
-						{% blocktrans with count=proposal.unfinished_fields_count trimmed %}
-						{{ count }} fields to go!
+						{% blocktrans count counter=proposal.unfinished_fields_count trimmed %}
+						Last field to go!
+						{% plural %}
+						{{ counter }} fields to go!
 						{% endblocktrans %}
 						{% endif %}
 					</div>
