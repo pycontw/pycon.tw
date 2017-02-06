@@ -173,7 +173,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
 
     _must_fill_fields = [
         'abstract', 'objective', 'supplementary',
-        'detailed_description', 'outline', 'slide_link',
+        'detailed_description', 'outline',
     ]
 
     class Meta:
