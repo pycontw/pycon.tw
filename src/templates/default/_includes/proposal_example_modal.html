@@ -17,6 +17,71 @@
 
 <script>
 (function() {
+  var abstract_novice_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Abstract Example' %}</dt> \
+      <pre><dd>對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音樂、影片，或者辦公、就學、研究產生的資料，通通都放在電腦裡。經年累月下來，電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 Python 迴圈與排序技巧完成複雜的檔案重新歸類。</dd></pre> \
+      </div> \
+      </dl><br />";
+  var abstract_media_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Abstract Example' %}</dt> \
+      <pre><dd>現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成自動處理所有放在文章的照片。</dd></pre> \
+      </div> \
+      </dl>";
+  var objective_novice_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Objective Example' %}</dt> \
+      <pre><dd>針對初學 Python 、想試著用程式解決生活問題的人。我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。</dd> \
+      <dd>但我發現整理電腦裡面的的資料，是個很實用的切入點，一開始能很簡單就看出效果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學程式的人有幫助。</dd></pre> \
+      </div> \
+      <dl><br />";
+  var objective_media_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Objective Example' %}</dt> \
+      <pre><dd>針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 blog 框架 示範實際整合的情況。</dd> \
+      <dd>寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。</dd></pre> \
+      </div> \
+      <dl>";
+  var description_novice_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Description Example' %}</dt> \
+      <pre><dd>最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。</dd></pre> \
+      </div> \
+      </dl><br />";
+  var description_media_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Description Example' %}</dt> \
+      <pre><dd>### 使用的第三方工具：<br />&nbsp;&nbsp;- [exiftool] 為分析照片 EXIF 的 Perl 工具<br />&nbsp;&nbsp;- [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)<br />&nbsp;&nbsp;- [Pelican] 為 Python 的 static site generator<br /><br />[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/<br />[Pillow]: http://python-pillow.github.io/<br />[Pelican]: http://blog.getpelican.com/<br /></dd></pre></div> \
+      </dl>";
+  var outline_novice_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Outline Example' %}</dt> \
+      <pre><dd>1. 資料整理的常見狀況 [5 min]<br />2. pathlib 模組設計介紹 [10 min]<br />&nbsp;&nbsp;- 運用 Path 物件<br />&nbsp;&nbsp;- 目錄結構探索 Path.iterdir(), .glob()<br />&nbsp;&nbsp;- 使用 Path 更動路徑<br />3. 結合 for 迴圈與排序 [5 min]<br />&nbsp;&nbsp;- sorted(key=) 用法<br />&nbsp;&nbsp;- 整合 enumerated, zip 同時處理多個關連檔案<br />4. 案例分享  [5 min]<br /></dd></pre> \
+      </div> \
+      </dl><br />";
+  var outline_media_example = "<dl> \
+      <div> \
+      <dt>{% trans 'Outline Example' %}</dt> \
+      <pre><dd>1. 簡介 EXIF 與 exiftool [5min]<br />2. Pillow 使用及如何用它加上浮水印 [5min]<br />&nbsp;&nbsp;- 字型的選用<br />&nbsp;&nbsp;- 排版的一致性<br />3. 自動化 [5min]<br />&nbsp;&nbsp;- 使用 stdlib 架出一個 batch 處理流程<br />&nbsp;&nbsp;- 搭配 joblib 或 multiprocessing 達成平行化<br />4. 舉例（使用 Pelican）[5min]<br />&nbsp;&nbsp;- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）<br />&nbsp;&nbsp;- 成果<br />5. Q&A [5min]<br /></dd></pre> \
+      </div> \
+      </dl>";
+  var novice = "<h4>{% trans 'Novice' %}</h4> \
+      <p>{% blocktrans %}If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference.{% endblocktrans %}</p> \
+      <dl> \
+      <dt>{% trans 'Title' %}</dt> <dd>使用 Python 讓管理電腦資料更容易</dd> \
+      <dt>{% trans 'Category' %}</dt> <dd>Python Core</dd> \
+      <dt>{% trans 'Duration' %}</dt> <dd>25min</dd> \
+      <dt>{% trans 'Language' %}</dt> <dd>中文</dd> \
+      </dl>";
+  var intermediate = "<h4>{% trans 'Intermediate' %}</h4> \
+      <p>{% blocktrans %}If your proposed target is intermediate topic, the following is an example of an interimediate proposal that you can use for your reference.{% endblocktrans %}</p> \
+      <dl> \
+      <dt>{% trans 'Title' %}</dt> <dd>自動處理部落格照片與加工</dd> \
+      <dt>{% trans 'Category' %}</dt> <dd>圖像處理</dd> \
+      <dt>{% trans 'Duration' %}</dt> <dd>25min</dd> \
+      <dt>{% trans 'Language' %}</dt> <dd>中文</dd> \
+      </dl>";
   var example_title = {
     'abstract': "{% trans 'Abstract' %}",
     'objective': "{% trans 'Objective' %}",
@@ -24,97 +89,29 @@
     'outline': "{% trans 'Outline' %}",
   };
   var example_content = {
-    'abstract': {% blocktrans %}
-      "<h4>初階</h4> \
-      <div> \
-        對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音 \
-      	樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月下來， \
-      	電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一 \
-      	個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的 \
-      	pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 \
-      	Python 迴圈與排序技巧完成複雜的檔案重新歸類。 \
-      </div> \
-      <h4>中階</h4> \
-      <div> \
-        現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部 \
-        落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機型、鏡 \
-        頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自 \
-        動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印 \
-        的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成 \
-        自動處理所有放在文章的照片。 \
-      </div>"
-      {% endblocktrans %},
+    'abstract':
+      novice+
+      abstract_novice_example+
+      intermediate+
+      abstract_media_example,
 
-    'objective': {% blocktrans %}
-      "<h4>初階</h4> \
-      <div> \
-        針對初學 Python 、想試著用程式解決生活問題的人。 \
-        我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始 \
-        自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。 \
-        <br /> \
-        但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看出效 \
-      	果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學 \
-      	程式的人有幫助。 \
-      </div> \
-      <h4>中階</h4> \
-      <div> \
-        針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 blog 框架 \
-        示範實際整合的情況。 \
-        <br /> \
-        寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解 \
-        如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道 \
-        如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。 \
-      </div>"
-      {% endblocktrans %},
+    'objective':
+      novice+
+      objective_novice_example+
+      intermediate+
+      objective_media_example,
 
-    'detailed description': {% blocktrans %}
-      "<h4>初階</h4> \
-      <div> \
-       最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的 \
-      「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。 \
-      </div> \
-      <h4>中階</h4> \
-      <div> \
-        ### 使用的第三方工具：<br /> \
-        <br /> \
-        - [exiftool] 為分析照片 EXIF 的 Perl 工具<br /> \
-        - [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)<br /> \
-        - [Pelican] 為 Python 的 static site generator<br /> \
-        <br /> \
-        [exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/<br /> \
-        [Pillow]: http://python-pillow.github.io/<br /> \
-        [Pelican]: http://blog.getpelican.com/<br /> \
-      </div>"
-      {% endblocktrans %},
+    'detailed description':
+      novice+
+      description_novice_example+
+      intermediate+
+      description_media_example,
 
-    'outline': {% blocktrans %}
-      "<h4>初階</h4> \
-      <div> \
-        1. 資料整理的常見狀況 [5 min]<br /> \
-        2. pathlib 模組設計介紹 [10 min]<br /> \
-        &nbsp;&nbsp;- 運用 Path 物件<br /> \
-        &nbsp;&nbsp;- 目錄結構探索 Path.iterdir(), .glob()<br /> \
-        &nbsp;&nbsp;- 使用 Path 更動路徑<br /> \
-        3. 結合 for 迴圈與排序 [5 min]<br /> \
-        &nbsp;&nbsp;- sorted(key=) 用法<br /> \
-        &nbsp;&nbsp;- 整合 enumerated, zip 同時處理多個關連檔案<br /> \
-        4. 案例分享  [5 min]<br /> \
-      </div> \
-      <h4>中階</h4> \
-      <div> \
-        1. 簡介 EXIF 與 exiftool [5min]<br /> \
-        2. Pillow 使用及如何用它加上浮水印 [5min]<br /> \
-        &nbsp;&nbsp;- 字型的選用<br /> \
-        &nbsp;&nbsp;- 排版的一致性<br /> \
-        3. 自動化 [5min]<br /> \
-        &nbsp;&nbsp;- 使用 stdlib 架出一個 batch 處理流程<br /> \
-        &nbsp;&nbsp;- 搭配 joblib 或 multiprocessing 達成平行化<br /> \
-        4. 舉例（使用 Pelican）[5min]<br /> \
-        &nbsp;&nbsp;- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）<br /> \
-        &nbsp;&nbsp;- 成果<br /> \
-        5. Q&A [5min]<br /> \
-      </div>"
-      {% endblocktrans %},
+    'outline':
+      novice+
+      outline_novice_example+
+      intermediate+
+      outline_media_example,
   };
 
 
