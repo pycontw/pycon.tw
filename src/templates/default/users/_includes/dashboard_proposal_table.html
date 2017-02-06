@@ -41,6 +41,7 @@
 				{% endif %}
 			</td>
 		</tr>
+		{% if proposal.unfinished_fields_count %}
 		<tr class="progress-row">
 			<td colspan="3">
 				<div class="progress proposal-progress">
@@ -49,19 +50,16 @@
 							aria-valuenow="{{ proposal.finish_percentage }}"
 							aria-valuemin="0" aria-valuemax="100"
 							style="width: {{ proposal.finish_percentage }}%;">
-						{% if proposal.unfinished_fields_count == 0 %}
-						{% trans 'Proposal finished! \0/' %}
-						{% else %}
 						{% blocktrans count counter=proposal.unfinished_fields_count trimmed %}
 						Last field to go!
 						{% plural %}
 						{{ counter }} fields to go!
 						{% endblocktrans %}
-						{% endif %}
 					</div>
 				</div>
 			</td>
 		</tr>
+		{% endif %}
 		{% endfor %}
 	</tbody>
 </table>
