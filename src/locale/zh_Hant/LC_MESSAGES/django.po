@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-06 15:11+0800\n"
-"PO-Revision-Date: 2017-02-06 07:14+0000\n"
+"PO-Revision-Date: 2017-02-06 07:29+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -344,11 +344,11 @@ msgstr "地點"
 
 #: events/models.py:140
 msgid "custom event"
-msgstr ""
+msgstr "自訂活動"
 
 #: events/models.py:141
 msgid "custom events"
-msgstr ""
+msgstr "自訂活動"
 
 #: events/models.py:150 users/models.py:110
 msgid "speaker name"
@@ -1155,7 +1155,7 @@ msgstr "註冊"
 msgid ""
 "<span class=\"form-tip\">Already have an account?</span> <a "
 "href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
-msgstr ""
+msgstr "<span class=\"form-tip\">已有帳號？</span> <a href=\"%(login_url)s\" class=\"btn btn-link\">按此登入。</a>"
 
 #: templates/default/registration/verification_email.txt:6
 #, python-format
@@ -1365,7 +1365,7 @@ msgstr "瀏覽"
 #, python-format
 msgid "Last field to go!"
 msgid_plural "%(counter)s fields to go!"
-msgstr[0] ""
+msgstr[0] "還差 %(counter)s 欄！"
 
 #: templates/default/users/user_dashboard.html:20
 msgid "Talk Proposals"
