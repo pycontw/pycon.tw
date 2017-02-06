@@ -29,6 +29,10 @@
 					class="{% if active == 'about' %}active{% endif %}">
 				{% trans 'about' %}
 			</a>
+			<nav class="sub">
+				<a href="{{ about_coc_url }}">{% trans 'about' %}</a>
+				<a href="{{ about_coc_url }}">{% trans 'code of conduct' %}</a>
+			</nav>
 		</div>
 		<div class="parent">
 			<a href="{{ events_overview_url }}">
@@ -36,12 +40,12 @@
 			</a>
 			<nav class="sub">
 				{# <a href="#">{% trans 'Schedule' %}</a> #}
-				<a href="{{ events_overview_url }}">{% trans 'Overview' %}</a>
+				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
 				{# <a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a> #}
-				<a href="{{ speaking_talk_url }}">{% trans 'Talk' %}</a>
-				<a href="{{ events_tutorial_url }}">{% trans 'Tutorial' %}</a>
-				<a href="{{ events_sprint_url }}">{% trans 'Sprint' %}</a>
-				<a href="{{ events_bof_url }}">{% trans 'BoF' %}</a>
+				<a href="{{ speaking_talk_url }}">{% trans 'talk' %}</a>
+				<a href="{{ events_tutorial_url }}">{% trans 'tutorial' %}</a>
+				<a href="{{ events_sprint_url }}">{% trans 'sprint' %}</a>
+				<a href="{{ events_bof_url }}">{% trans 'bof' %}</a>
 			</nav>
 		</div>
 		<div class="parent">
@@ -49,8 +53,8 @@
 				{% trans 'venue' context 'conference location' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ venue_url }}">{% trans 'Venue' context 'conference location' %}</a>
-				<a href="{{ venue_accommodation_url }}">{% trans 'Accommodation' %}</a>
+				<a href="{{ venue_url }}">{% trans 'venue' context 'conference location' %}</a>
+				<a href="{{ venue_accommodation_url }}">{% trans 'accommodation' %}</a>
 			</nav>
 		</div>
 		{% comment %}<div class="parent">
@@ -64,7 +68,7 @@
 			</a>
 			<nav class="sub">
 				{# <a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a> #}
-				<a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a>
+				<a href="{{ reg_financial_aid_url }}">{% trans 'financial aid' %}</a>
 			</nav>
 		</div>
 		<div class="parent">
