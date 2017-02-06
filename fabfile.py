@@ -100,7 +100,7 @@ def write_transifex_config():
 def pull_tx():
     with lcd('src'):
         local('python manage.py makemessages -a')
-        local('tx pull')
+        local('tx pull -a -s')
         local('python manage.py compilemessages -x _src')
 
 
