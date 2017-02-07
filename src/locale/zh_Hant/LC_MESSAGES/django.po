@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
@@ -961,6 +961,14 @@ msgid ""
 "        [Pelican]: http://blog.getpelican.com/<br /> \\\n"
 "      </div>\"\n"
 "      "
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:70
+msgid "If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference."
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:78
+msgid "If your proposed target is intermediate topic, the following is an example of an interimediate proposal that you can use for your reference."
 msgstr ""
 
 #: templates/default/_includes/proposal_example_modal.html:90
