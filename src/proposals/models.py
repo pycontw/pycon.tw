@@ -225,7 +225,7 @@ class TalkProposal(AbstractProposal):
             "How the talk will be arranged. It is highly recommended to "
             "attach the estimated time length for each sections in the talk. "
             "Talks in favor of 45min should have a fallback plan about how "
-            "to shrink the content into a 25min one. Edit using "
+            "to shrink the content into a 30min one. Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
             "target='_blank'>Markdown</a>."
             "This is NOT made public and for REVIEW ONLY."
