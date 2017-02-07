@@ -1086,6 +1086,14 @@ msgid ""
 "      "
 msgstr ""
 
+#: templates/default/_includes/proposal_example_modal.html:70
+msgid "If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference."
+msgstr "If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference."
+
+#: templates/default/_includes/proposal_example_modal.html:78
+msgid "If your proposed target is intermediate topic, the following is an example of an interimediate proposal that you can use for your reference."
+msgstr "If your proposed target is intermediate topic, the following is an example of an interimediate proposal that you can use for your reference."
+
 #: templates/default/_includes/proposal_example_modal.html:90
 msgid ""
 "\n"
