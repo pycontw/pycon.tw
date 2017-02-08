@@ -169,7 +169,7 @@ class EventInfo(models.Model):
             "to the talk topic will help reviewers understand the proposal. "
             "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
+            "target='_blank' rel='noopener'>Markdown</a>."
         ),
     )
 
@@ -185,8 +185,8 @@ class EventInfo(models.Model):
             _("Whether you agree to give permission to PyCon Taiwan to "
               "record, edit, and release audio and video of your "
               "presentation. More information can be found at "
-              "<a href='{recording_policy_url}' target='_blank'>"
-              "Recording Release</a> page."),
+              "<a href='{recording_policy_url}' "
+              "target='_blank' rel='noopener'>Recording Release</a> page."),
             recording_policy_url=reverse_lazy(
                 'page', kwargs={'path': 'speaking/recording'},
             )
