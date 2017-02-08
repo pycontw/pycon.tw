@@ -1,32 +1,32 @@
 {% extends 'contents/_base/speaking.html' %}
-
 {% block title %}Unconference Proposal{% endblock title %}
 {% block page_title %}<h1>How to Propose a Unconference Talk?</h1>{% endblock page_title %}
 
 {% block content %}
-    {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
-    {% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
 
-    <h1><span>How to Propose a Unconference Talk?</span></h1>
-    <article>
-      <p>
-          Compared to the regular conference talks, unconference are relatively unrestricted,
-          any topics and any types of speeches, discussions, interactions are welcomed, and
-          the acceptance of the proposals are voted and decided by conference attendees.
-          Thus an unconference proposal is relatively much simpler.
-      </p>
-      <p>
-          Note: “Any” topics or “any” types of content are based on the inviolability of
-          PyCon Taiwan’s Code of Conduct. (are regulated by the CoC of PyCon Taiwan)
-      </p>
-    </article>
+<h1><span>How to Propose a Unconference Talk?</span></h1>
+<article>
+  <p>
+    Compared to the regular conference talks, unconference are relatively unrestricted, any topics and any types of speeches, discussions, interactions are welcomed, and the acceptance of the proposals are voted and decided by conference attendees. Thus an unconference proposal is relatively much simpler.
+  </p>
+  <p>
+    An unconference talk <strong>lasts 20 minutes</strong>, note that <strong>the Q&amp;A session is included</strong> in the 20 minutes.
+ 	</p>
+  <p>
+    An unconference talk can be run in any form, the speaker / host can decide the way he / she uses that space and time. Furthermore, unconference talks are not officially recorded in any ways, thus any topics that are more critical compared to the regular conference talks are welcomed. Unconferences can be spoken in <strong>Chinese, English or Taiwanese</strong>.
+  </p>
+  <p>
+    Note: “Any” topics or “any” types of content are based on the inviolability of PyCon Taiwan’s Code of Conduct. (are regulated by the CoC of PyCon Taiwan)
+  </p>
+</article>
 
-    <h2><span>Proposal Format</span></h2>
-    <article>
-      <ul>
-      	<li>Title</li>
-      	<li>Abstract</li>
-      </ul>
-    </article>
-
+<h2><span>Proposal Format</span></h2>
+<article>
+  <ul>
+  	<li>Title</li>
+  	<li>Abstract</li>
+  </ul>
+</article>
 {% endblock content %}
