@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load i18n_plus %}
 
+{% url 'index' as home_url %}
+
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
 
@@ -23,7 +25,7 @@
 
 <header>
 	<nav class="wrapper header-nav">
-    <a href="/" class="header-logo"></a>
+    <a href="{{ home_url }}" class="header-logo"></a>
 		<div class="parent">
 			<a href="{{ about_pycontw_url }}"
 					class="{% if active == 'about' %}active{% endif %}">
