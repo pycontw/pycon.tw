@@ -129,9 +129,9 @@ class User(AbstractBaseUser, PermissionsMixin):
             "Link to your Facebook profile page. This will be shown when "
             "we display your public information. If you do not know what your "
             "profile page link is, click on "
-            "<a href='https://www.facebook.com/me' target='_blank'>"
-            "this link</a>, and copy-paste the URL of the page opened. "
-            "Remember to log in to Facebook first!"
+            "<a href='https://www.facebook.com/me' "
+            "target='_blank' rel='noopener'>this link</a>, and copy-paste the "
+            "URL of the page opened. Remember to log in to Facebook first!"
         )),
     )
     twitter_id = models.CharField(

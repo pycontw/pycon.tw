@@ -67,7 +67,7 @@
     <a href="#" class="{% if active == 'sponsor' %}active{% endif %} dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans 'Sponsor' %}</a>
     <ul class="dropdown-menu">
       <li><a href="{{ sponsor_url }}">{% trans 'Our Sponsors' %}</a></li>
-      <li><a href="http://pycontw.kktix.cc/events/pycontw2016patron" target="_blank">{% trans 'Patrons' %}</a></li>
+      <li><a href="http://pycontw.kktix.cc/events/pycontw2016patron" target="_blank" rel="noopener">{% trans 'Patrons' %}</a></li>
     </ul>
   </li>
   <li class="dropdown">
@@ -77,18 +77,18 @@
           <li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
       </ul>
   </li><!-- /.dropdown -->
-  <li><a href="http://pycontw.blogspot.tw/" target="_blank">{% trans 'Blog' %}</a></li>
-  <li><a href="{% url 'user_dashboard' %}" target="_blank"><span class="em">{% trans 'Dashboard' %}</span></a></li>
+  <li><a href="http://pycontw.blogspot.tw/" target="_blank" rel="noopener">{% trans 'Blog' %}</a></li>
+  <li><a href="{% url 'user_dashboard' %}" target="_blank" rel="noopener"><span class="em">{% trans 'Dashboard' %}</span></a></li>
 </ul>
 
 <div class="social pull-right">
-  <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank">
+  <a href="https://www.facebook.com/pycontw" class="social-btn" target="_blank" rel="noopener">
     <i class="fa fa-facebook fa-lg"></i>
   </a>
-  <a href="https://twitter.com/pycontw" class="social-btn" target="_blank">
+  <a href="https://twitter.com/pycontw" class="social-btn" target="_blank" rel="noopener">
     <i class="fa fa-twitter fa-lg"></i>
   </a>
-    <a href="mailto:organizers@pycon.tw" class="social-btn" target="_blank">
+    <a href="mailto:organizers@pycon.tw" class="social-btn" target="_blank" rel="noopener">
         <i class="fa fa-envelope"></i>
     </a>
 </div>

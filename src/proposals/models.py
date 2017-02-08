@@ -152,7 +152,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
             "experience, etc. This is NOT made public and for REVIEW ONLY. "
             "Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
+            "target='_blank' rel='noopener'>Markdown</a>."
         ),
     )
 
@@ -227,7 +227,7 @@ class TalkProposal(AbstractProposal):
             "Talks in favor of 45min should have a fallback plan about how "
             "to shrink the content into a 30min one. Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
+            "target='_blank' rel='noopener'>Markdown</a>."
             "This is NOT made public and for REVIEW ONLY."
         ),
     )
@@ -286,7 +286,7 @@ class TutorialProposal(AbstractProposal):
             "each section in your talk and attach each section with the "
             "estimated time length. Edit using "
             "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
+            "target='_blank' rel='noopener'>Markdown</a>."
             "This is NOT made public and for REVIEW ONLY."
         ),
     )

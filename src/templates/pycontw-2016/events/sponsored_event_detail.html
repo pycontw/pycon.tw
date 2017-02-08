@@ -46,17 +46,17 @@
 		{{ user.speaker_name }}
 		<span class="speaker-social">
 			{% if user.github_id %}
-			<a href="{{ user.github_profile_url }}" target="_blank">
+			<a href="{{ user.github_profile_url }}" target="_blank" rel="noopener">
 				<span class="fa fa-github" aria-hidden="true"></span>
 			</a>
 			{% endif %}
 			{% if user.twitter_id %}
-			<a href="{{ user.twitter_profile_url }}" target="_blank">
+			<a href="{{ user.twitter_profile_url }}" target="_blank" rel="noopener">
 				<span class="fa fa-twitter" aria-hidden="true"></span>
 			</a>
 			{% endif %}
 			{% if user.facebook_profile_url %}
-			<a href="{{ user.facebook_profile_url }}" target="_blank">
+			<a href="{{ user.facebook_profile_url }}" target="_blank" rel="noopener">
 				<span class="fa fa-facebook" aria-hidden="true"></span>
 			</a>
 			{% endif %}
