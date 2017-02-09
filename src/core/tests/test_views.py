@@ -77,7 +77,36 @@ def language(request, settings):
     return lang
 
 
-def test_content_pages(client, language, content_page_path):
+def test_content_pages(client, parser, language, content_page_path):
     path = '/{}{}'.format(language, content_page_path)
     response = client.get(path)
     assert response.status_code == 200, path
+
+    body = parser.parse(response)
+    link_tags = body.cssselect('a[href^="/"]:not(a[href^="//"])')
+
+    def get_link_status_pair(tag):
+        link = tag.get('href')
+        try:
+            status = client.get(tag.get('href'), follow=True).status_code
+        except:     # Catch internal server error for better reporting.
+            status = 500
+        return (link, status)
+
+    link_status_codes = [
+        get_link_status_pair(tag)
+        for tag in link_tags
+    ]
+    assert link_status_codes, 'isolated page: no links found'
+
+    def get_error_message():
+        errors = [
+            '    {1} {0!r}'.format(*p)
+            for p in link_status_codes
+            if p[1] != 200
+        ]
+        if len(errors) == 1:
+            return errors[0].lstrip()
+        return 'Links do not return 200 status code\n' + '\n'.join(errors)
+
+    assert all(p[1] == 200 for p in link_status_codes), get_error_message()
