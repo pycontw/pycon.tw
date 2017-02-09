@@ -104,9 +104,11 @@ Translation updates into code base are done **manually** under `src/`. You need 
 
 Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
 
+    rm locale/en_US/LC_MESSAGES/django.*
     rm locale/zh_Hant/LC_MESSAGES/django.*
+    # ... more languages
 
 Run `tx pull` to get newer translation and recompile the PO files:
 
-    tx pull -l zh-Hant
-    python manage.py compilemessages -l zh_Hant
+    tx pull -a
+    python manage.py compilemessages -x _src
