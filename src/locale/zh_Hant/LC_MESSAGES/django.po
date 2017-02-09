@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 18:10+0800\n"
-"PO-Revision-Date: 2017-02-08 13:33+0000\n"
+"POT-Creation-Date: 2017-02-09 14:50+0800\n"
+"PO-Revision-Date: 2017-02-09 07:14+0000\n"
 "Last-Translator: Jason <chairco@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -564,7 +564,7 @@ msgid ""
 "plan about how to shrink the content into a 30min one. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
+msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>觀看範例</a>。</p>本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 30 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:238
 msgid "Rejected"
@@ -1718,7 +1718,7 @@ msgstr "sprint"
 
 #: templates/pycontw-2017/_includes/header.html:50
 msgid "bof"
-msgstr "bof"
+msgstr "夜市（BoF）"
 
 #: templates/pycontw-2017/_includes/header.html:55
 #: templates/pycontw-2017/_includes/header.html:58
