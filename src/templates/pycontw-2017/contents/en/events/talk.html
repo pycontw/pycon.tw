@@ -1,0 +1,26 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}Talk{% endblock %}
+{% block page_title %}<h1>Talk</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+<h1><span>Talk</span></h1>
+<article>
+	<p>
+		If you are interesting in propose talk, see <a href="{{ speaking_talk_url }}">How to Propose a Talk？</a>一頁。
+	</p>
+	<p>
+		The three conference days are packed with talks about Python by speakers from Taiwan and around the world. The talks will be either 30- or 45-minute long. Three tracks of talks will be delivered simultaneously, all with different topics and difficulties. We suggest you to make a schedule beforehand, and choose what you want ot listen based on your interests. Many people take notes on the program schedule before the meeting so they don’t run to wrong places.
+	</p>
+</article>
+
+<h2><span>Proposed Talks List</span></h2>
+<article>
+	<p>
+		The current schedule for the <em>Call for Proposals</em>, stay tuned!
+	</p>
+</article>
+{% endblock content %}

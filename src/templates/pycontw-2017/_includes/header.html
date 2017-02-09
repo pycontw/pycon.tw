@@ -6,9 +6,12 @@
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
 
+{% url 'page' path='events/schedules' as events_schedule_url %}
 {% url 'page' path='events/overview' as events_overview_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/talk' as events_talk_url %}
 {% url 'page' path='events/tutorials' as events_tutorial_url %}
+{% url 'page' path='events/unconferences' as events_unconference_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 
@@ -41,11 +44,13 @@
 				{% trans 'events' %}
 			</a>
 			<nav class="sub">
-				{# <a href="#">{% trans 'Schedule' %}</a> #}
+				<a href="{{ speaking_cfp_url }}">{% trans 'cfp' %}</a>
+				{# <a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a> #}
 				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
 				{# <a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a> #}
-				<a href="{{ speaking_talk_url }}">{% trans 'talk' %}</a>
+				<a href="{{ events_talk_url }}">{% trans 'talk' %}</a>
 				<a href="{{ events_tutorial_url }}">{% trans 'tutorial' %}</a>
+				<a href="{{ events_unconference_url }}">{% trans 'unconference' %}</a>
 				<a href="{{ events_sprint_url }}">{% trans 'sprint' %}</a>
 				<a href="{{ events_bof_url }}">{% trans 'bof' %}</a>
 			</nav>

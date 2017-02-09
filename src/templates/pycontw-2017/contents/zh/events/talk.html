@@ -1,0 +1,26 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}演講{% endblock %}
+{% block page_title %}<h1>演講（Talk）</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+<h1><span>演講（Talk)</span></h1>
+<article>
+	<p>
+		假如您想參與今年的演講投稿，請參考<a href="{{ speaking_talk_url }}">如何投稿？</a>一頁。
+	</p>
+	<p>
+		演講 (Talk) 為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。
+	</p>
+</article>
+
+<h2><span>演講錄取列表</span></h2>
+<article>
+	<p>
+		目前為時程為<em>投稿募集</em>中，敬請期待！
+	</p>
+</article>
+{% endblock content %}
