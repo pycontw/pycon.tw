@@ -9,8 +9,8 @@
 {% url 'page' path='events/tutorials' as events_tutorials_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
-{% url 'page' path='events/talks' as events_talk_url %}
-{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+{% url 'page' path='events/talk' as events_talk_url %}
+{% url 'page' path='events/unconferences' as events_unconference_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 
 <h1><span>活動簡介</span></h1>
@@ -21,65 +21,60 @@
 </article>
 
 <h2><span>會議期間外</span></h2>
-	<article>
-		<h3>Tutorial</h3>
-		<p>
-			專業課程 (Tutorial) 是 PyCon TW 2017 的一部份，採付費方式。舉辦時間會在研討會前一至三週，提供全天（6 小時）或是半天（3 小時）的課程。課程內容採取公開遴選方式徵求提案。</p>
-		<p>
-			Tutorial 可能有針對完全沒學過 Python 的初學者的新手教學，亦有針對特定主題如 Raspberry Pi、資料分析等課程。目前讓會眾在參與研討會時更容易上手，對 Python 駕輕就熟的使用者能瞭解更多應用。Tutorial 與研討會的票是分開銷售，因此如果您參與了 tutorial 還想加入 PyCon TW 2017 研討會，請不要忘記購票。</p>
-		<p>更多關於 Tutorial 內容請參考 <a href="{{ events_tutorials_url }}">Tutorial</a> 頁面。</p>
+<article>
+	<h3>Tutorial</h3>
+	<p>
+		專業課程 (Tutorial) 是 PyCon TW 2017 的一部份，採付費方式。舉辦時間會在研討會前一至三週，提供全天（6 小時）或是半天（3 小時）的課程。課程內容採取公開遴選方式徵求提案。</p>
+	<p>
+		Tutorial 可能有針對完全沒學過 Python 的初學者的新手教學，亦有針對特定主題如 Raspberry Pi、資料分析等課程。目前讓會眾在參與研討會時更容易上手，對 Python 駕輕就熟的使用者能瞭解更多應用。Tutorial 與研討會的票是分開銷售，因此如果您參與了 tutorial 還想加入 PyCon TW 2017 研討會，請不要忘記購票。</p>
+	<p>更多關於<em>教學</em>內容請參考 <a href="{{ events_tutorials_url }}">Tutorial</a> 頁面。</p>
 
-		<h3>Sprint</h3>
-		<p>
-			兩場 Sprint 活動安排在會議三天以外的時間。當天的 Sprint 將有開源專案的負責人，帶著他們專案待解決的問題、issue 來現場與大家分享與解說，參加的人可以就自己感興趣的專案一同加入。透過這個互動機會將能更了解自己關注的相關專案領域。歡迎帶自己的開源專案來找同好。對已經有一定 Python 基礎的人，想參加開源專案開放但不知如何加入，或者害羞怕自己不了解該專案環境的人，參加 Sprint 是個大展身手的好機會！對於沒有把握自己是否能加入開發的朋友，活動也會有 workshop 形式的工作坊，歡迎一起來玩！
-		</p>
-		<p>更多關於 Sprint 內容請參考 <a href="{{ events_sprint_url }}">Sprint</a> 頁面。</p>
-	</article>
+	<h3>Sprint</h3>
+	<p>
+		兩場 Sprint 活動安排在會議三天以外的時間。當天的 Sprint 將有開源專案的負責人，帶著他們專案待解決的問題、issue 來現場與大家分享與解說，參加的人可以就自己感興趣的專案一同加入。透過這個互動機會將能更了解自己關注的相關專案領域。歡迎帶自己的開源專案來找同好。對已經有一定 Python 基礎的人，想參加開源專案開放但不知如何加入，或者害羞怕自己不了解該專案環境的人，參加 Sprint 是個大展身手的好機會！對於沒有把握自己是否能加入開發的朋友，活動也會有 workshop 形式的工作坊，歡迎一起來玩！
+	</p>
+	<p>更多關於<em> Sprint </em>內容請參考 <a href="{{ events_sprint_url }}">Sprint</a> 頁面。</p>
+</article>
 
 
 <h2><span>會議期間（2017 年 6 月 9–11 日)</span></h2>
-	<article>
-		<h3>Keynote</h3>
-		<p>
-			為期三天的議程中，邀請四五位講者分別在不同場次進行主題演講 (Keynote)，所有議場將會同步轉播。Keynote 講者都是在全球而言各領域非常頂尖的人士，不論是工程師或管理者，他們將帶來對自己的領域、專案的經驗分享，或者對於未來數年發展的方向與想像。
-		</p>
-		<p>
-			更多關於 Keynote 內容請參考<a href="{{ events_keynote_url }}">主題演講</a>頁面。
-		</p>
+<article>
+	<h3>基調演講（Keynote）</h3>
+	<p>
+		為期三天的議程中，邀請四位講者分別在不同場次進行基調演講 (Keynote)，所有議場將會同步轉播。基調演講 講者都是在全球而言各領域非常頂尖的人士，不論是工程師或管理者，他們將帶來對自己的領域、專案的經驗分享，或者對於未來數年發展的方向與想像。
+	</p>
+	<p>
+		更多關於<em>基調演講</em>內容請參考<a href="{{ events_keynote_url }}">基調演講</a>頁面。
+	</p>
 
-		<h3>Talk</h3>
-		<p>
-			演講 (Talk) 為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。
-		</p>
-		<p>議程時間表將於四月底時公布，今年已接受的演講列表可參考<a href="{{ events_talk_url }}">演講</a>頁面。</p>
+	<h3>演講（Talk）</h3>
+	<p>
+		演講 (Talk) 為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。
+	</p>
+	<p>議程時間表將預計於四月底時公布，更多關於<em>演講</em>內容請參考<a href="{{ events_talk_url }}">演講</a>頁面。</p>
 
-		<h3>Unconference</h3>
-		<p>
-			2017 年我們將在會議的最後一天開一個演講軌作為 unconference，目的是希望讓講者與會眾能有不一樣的互動。 Unconference 不僅僅歡迎 Python 相關的 proposal，我們也歡迎與 Python 非相關的題目。</p>
-		<p>
-			一個 unconference talk 長度為 20 minutes. 因此我們希望 unconference talk 內容儘量是一個心得、經驗的分享，也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。</p>
-		<p>
-			一個 Unconference talk 可以以任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於 Unconference 不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
-		</p>
-		<p>
-			（目前開會討論後會在會議前 10 天開放報名）Unconference 的議程由會眾投票決定。<a href="{{ speaking_unconference_url }}">Unconference</a> 頁面。
-		</p>
+	<h3>非正式會議（Unconference）</h3>
+	<p>
+		2017 年我們將在會議的最後一天開一個演講軌作為非正式會議(Unconference)，目的是希望讓講者與會眾能有不一樣的互動。 非正式會議議程不僅僅歡迎 Python 相關的 proposal，我們也歡迎與<em> Python 非相關的題目</em>。
+	</p>
+	<p>
+		更多關於非正式會議內容請參考<a href="{{ events_unconference_url }}">非正式會議</a>頁面。
+	</p>
 
-		<h3>Lightning Talk</h3>
-		<p>
-			閃電秀 (Lightning talk) 是議程中非常刺激的活動。每個人包含設置投影片只有五分鐘，時間一到就直接切訊號，是個看似殘酷，但每年都能玩出無數花樣的極限活動。閃電秀的內容五花八門，live demo、專案開發的小故事等等都歡迎。今年將於現場開放報名，大家一起來發揮創意吧！
-		</p>
+	<h3>閃電秀（Lightning Talk）</h3>
+	<p>
+		閃電秀 (Lightning talk) 是議程中非常刺激的活動。每個人包含設置投影片只有五分鐘，時間一到就直接切訊號，是個看似殘酷，但每年都能玩出無數花樣的極限活動。閃電秀的內容五花八門，live demo、專案開發的小故事等等都歡迎。今年將於現場開放報名，大家一起來發揮創意吧！
+	</p>
 
-		<h3>Job Fair</h3>
-		<p>
-			這是一個專門為 Python 工程師而設的就業博覽會。Job Fair 雖不會安排任何議程但開放廠商在台上自我介紹，會眾可以趁此時與現場的廠商交流、投屨歷，廠商也會藉此時宣傳自己徵才的需求。對於想找工作的會眾，我們鼓勵在這時段多與廠商互相交流，也許美好的機會就此出現。
-		</p>
+	<h3>Job Fair</h3>
+	<p>
+		這是一個專門為 Python 工程師而設的就業博覽會。Job Fair 雖不會安排任何議程但開放廠商在台上自我介紹，會眾可以趁此時與現場的廠商交流、投屨歷，廠商也會藉此時宣傳自己徵才的需求。對於想找工作的會眾，我們鼓勵在這時段多與廠商互相交流，也許美好的機會就此出現。
+	</p>
 
-		<h3>BoF (Birds of a Feather)</h3>
-		<p>
-			BoF (Birds of a Feather)，名字取諺語「Birds of a feather flock together」指同好互相吸引之意而來，是個很隨性、讓有共同興趣的會眾交流的活動。只坐在台下聽議程不過癮，想對某個主題有更多的腦力激盪，有很炫的成果想展示，想呼朋引伴一起來討論嗎？那麼千萬別錯過 BoF 擺攤的機會！歡迎您發起一個主題，邀請感興趣的會眾一起來討論，一起與我們打造屬於 PyCon TW 熱鬧的夜市！結合台灣特色夜市文化，這是每年 PyCon TW 最熱鬧一晚。在現場不僅備有美味的自助餐供你大飽口福，還有許多令人大開眼界的表演輪番登台（表演也是自行報名的喔！）。
-		</p>
-		<p>更多關於 BoF 內容請參考 <a href="{{ events_bof_url }}">BoF</a> 頁面。</p>
-	</article>
-
+	<h3>夜市 (Birds of a Feather)</h3>
+	<p>
+		BoF (Birds of a Feather)，名字取諺語「Birds of a feather flock together」指同好互相吸引之意而來，是個很隨性、讓有共同興趣的會眾交流的活動。只坐在台下聽議程不過癮，想對某個主題有更多的腦力激盪，有很炫的成果想展示，想呼朋引伴一起來討論嗎？那麼千萬別錯過 BoF 擺攤的機會！歡迎您發起一個主題，邀請感興趣的會眾一起來討論，一起與我們打造屬於 PyCon TW 熱鬧的夜市！結合台灣特色夜市文化，這是每年 PyCon TW 最熱鬧一晚。在現場不僅備有美味的自助餐供你大飽口福，還有許多令人大開眼界的表演輪番登台（表演也是自行報名的喔！）。
+	</p>
+	<p>更多關於<em>夜市（BoF）</em>內容請參考 <a href="{{ events_bof_url }}">夜市（BoF）</a>頁面。</p>
+</article>
 {% endblock content %}
