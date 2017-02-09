@@ -5,6 +5,7 @@
 # Translators:
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
+# Jason <chairco@gmail.com>, 2017
 # Liang Bo Wang <me@liang2.tw>, 2015-2016
 # Liang Bo Wang <me@liang2.tw>, 2016
 # Michelle <flywindy2002@gmail.com>, 2016
@@ -13,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-06 15:11+0800\n"
-"PO-Revision-Date: 2017-02-06 07:29+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2017-02-08 18:10+0800\n"
+"PO-Revision-Date: 2017-02-08 13:33+0000\n"
+"Last-Translator: Jason <chairco@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -183,13 +184,15 @@ msgid ""
 "talk is about. If the talk assume some domain knowledge please state it "
 "here. If your talk is accepted, this will be displayed on both the website "
 "and the handbook. Should be one paragraph."
-msgstr ""
+msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='abstract'>觀看範例</a>。</p>介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。"
 
 #: core/models.py:137
+#: templates/default/_includes/proposal_example_modal.html:69
 msgid "Novice"
 msgstr "入門"
 
 #: core/models.py:138
+#: templates/default/_includes/proposal_example_modal.html:77
 msgid "Intermediate"
 msgstr "中階"
 
@@ -225,7 +228,7 @@ msgid ""
 " links to the talk topic will help reviewers understand the proposal. Edit "
 "using <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr ""
+msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='detailed description'>觀看範例</a>。</p>本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 2000 字元 (或 1200 個中文字)。因為多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
 
 #: core/models.py:177 reviews/models.py:92
 msgid "Yes"
@@ -366,15 +369,15 @@ msgstr "用來連結至基調演講頁面上的講者簡介，如「liang2」可
 
 #: events/models.py:164
 msgid "keynote event"
-msgstr "主題演講"
+msgstr "基調演講"
 
 #: events/models.py:165
 msgid "keynote events"
-msgstr "主題演講"
+msgstr "基調演講"
 
 #: events/models.py:168
 msgid "Keynote: {speaker}"
-msgstr "主題演講：{speaker}"
+msgstr "基調演講：{speaker}"
 
 #: events/models.py:183
 msgid "host"
@@ -424,7 +427,7 @@ msgstr "時間表建立於 {}"
 
 #: events/renderers.py:34
 msgid "Keynote"
-msgstr "主題演講"
+msgstr "基調演講"
 
 #: events/renderers.py:43
 msgid "EN Slides"
@@ -533,7 +536,7 @@ msgid ""
 "answer). And what will the attendees get out of your talk? When they leave "
 "the room, what will they learn that they didn't know before? This is NOT "
 "made public and for REVIEW ONLY."
-msgstr ""
+msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'data-content='objective'>觀看範例</a>。</p>目標聽眾是誰？(請寫明確，「Python 使用者」不是個好答案)；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:146
 msgid "supplementary"
@@ -546,7 +549,7 @@ msgid ""
 " NOT made public and for REVIEW ONLY. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>."
-msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。這欄位並不會公開。本欄位不公開僅供審查使用。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。"
+msgstr "任何其餘你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/models.py:219 proposals/models.py:282
 msgid "outline"
@@ -558,7 +561,7 @@ msgid ""
 "data-content='outline'>Proposal Examples</a></p>How the talk will be "
 "arranged. It is highly recommended to attach the estimated time length for "
 "each sections in the talk. Talks in favor of 45min should have a fallback "
-"plan about how to shrink the content into a 25min one. Edit using <a "
+"plan about how to shrink the content into a 30min one. Edit using <a "
 "href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
 msgstr ""
@@ -869,131 +872,93 @@ msgstr "展開導覽列"
 msgid "Change"
 msgstr "修改"
 
-#: templates/default/_includes/proposal_example_modal.html:21
+#: templates/default/_includes/proposal_example_modal.html:22
+#: templates/default/_includes/proposal_example_modal.html:28
+msgid "Abstract Example"
+msgstr "摘要範例"
+
+#: templates/default/_includes/proposal_example_modal.html:34
+#: templates/default/_includes/proposal_example_modal.html:41
+msgid "Objective Example"
+msgstr "演講目標範例"
+
+#: templates/default/_includes/proposal_example_modal.html:48
+#: templates/default/_includes/proposal_example_modal.html:54
+msgid "Description Example"
+msgstr "詳細說明範例"
+
+#: templates/default/_includes/proposal_example_modal.html:59
+#: templates/default/_includes/proposal_example_modal.html:65
+msgid "Outline Example"
+msgstr "大綱範例"
+
+#: templates/default/_includes/proposal_example_modal.html:70
+msgid ""
+"If your proposed target is novice topic, the following is an example of an "
+"novice proposal that you can use for your reference."
+msgstr "如果您的投稿目標為入門題目，以下為一篇入門投稿範例，提供給您在撰寫時做參考。"
+
+#: templates/default/_includes/proposal_example_modal.html:72
+#: templates/default/_includes/proposal_example_modal.html:80
+#: templates/default/reviews/_includes/proposal_table.html:17
+#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
+#: templates/default/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
+msgstr "題目"
+
+#: templates/default/_includes/proposal_example_modal.html:73
+#: templates/default/_includes/proposal_example_modal.html:81
+#: templates/default/reviews/_includes/proposal_table.html:25
+#: templates/default/reviews/review_form.html:30
+#: templates/pycontw-2016/events/sponsored_event_detail.html:20
+#: templates/pycontw-2016/events/talk_detail.html:20
+msgid "Category"
+msgstr "分類"
+
+#: templates/default/_includes/proposal_example_modal.html:74
+#: templates/default/_includes/proposal_example_modal.html:82
+#: templates/default/reviews/review_form.html:32
+msgid "Duration"
+msgstr "時間長度"
+
+#: templates/default/_includes/proposal_example_modal.html:75
+#: templates/default/_includes/proposal_example_modal.html:83
+#: templates/default/reviews/review_form.html:34
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
+#: templates/default/users/_includes/dashboard_proposal_table.html:8
+#: templates/pycontw-2016/events/sponsored_event_detail.html:17
+#: templates/pycontw-2016/events/talk_detail.html:17
+msgid "Language"
+msgstr "語言"
+
+#: templates/default/_includes/proposal_example_modal.html:78
+msgid ""
+"If your proposed target is intermediate topic, the following is an example "
+"of an interimediate proposal that you can use for your reference."
+msgstr "如果您的投稿目標為中階題目，以下為一篇中階投稿範例，提供給您在撰寫時做參考。"
+
+#: templates/default/_includes/proposal_example_modal.html:86
 #: templates/default/reviews/review_form.html:36
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
 msgid "Abstract"
 msgstr "摘要"
 
-#: templates/default/_includes/proposal_example_modal.html:22
+#: templates/default/_includes/proposal_example_modal.html:87
 #: templates/default/reviews/review_form.html:40
 msgid "Objective"
 msgstr "演講目標"
 
-#: templates/default/_includes/proposal_example_modal.html:23
+#: templates/default/_includes/proposal_example_modal.html:88
 #: templates/default/reviews/review_form.html:43
 msgid "Detailed description"
 msgstr "詳細說明"
 
-#: templates/default/_includes/proposal_example_modal.html:24
+#: templates/default/_includes/proposal_example_modal.html:89
 #: templates/default/reviews/review_form.html:47
 msgid "Outline"
 msgstr "大綱"
-
-#: templates/default/_includes/proposal_example_modal.html:27
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音 \\\n"
-"      \t樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月下來， \\\n"
-"      \t電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一 \\\n"
-"      \t個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的 \\\n"
-"      \tpathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 \\\n"
-"      \tPython 迴圈與排序技巧完成複雜的檔案重新歸類。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部 \\\n"
-"        落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機型、鏡 \\\n"
-"        頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自 \\\n"
-"        動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印 \\\n"
-"        的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成 \\\n"
-"        自動處理所有放在文章的照片。 \\\n"
-"      </div>\"\n"
-"      "
-msgstr ""
-
-#: templates/default/_includes/proposal_example_modal.html:48
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        針對初學 Python 、想試著用程式解決生活問題的人。 \\\n"
-"        我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始 \\\n"
-"        自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。 \\\n"
-"        <br /> \\\n"
-"        但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看出效 \\\n"
-"      \t果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學 \\\n"
-"      \t程式的人有幫助。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 blog 框架 \\\n"
-"        示範實際整合的情況。 \\\n"
-"        <br /> \\\n"
-"        寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解 \\\n"
-"        如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道 \\\n"
-"        如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。 \\\n"
-"      </div>\"\n"
-"      "
-msgstr ""
-
-#: templates/default/_includes/proposal_example_modal.html:70
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"       最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的 \\\n"
-"      「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        ### 使用的第三方工具：<br /> \\\n"
-"        <br /> \\\n"
-"        - [exiftool] 為分析照片 EXIF 的 Perl 工具<br /> \\\n"
-"        - [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)<br /> \\\n"
-"        - [Pelican] 為 Python 的 static site generator<br /> \\\n"
-"        <br /> \\\n"
-"        [exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/<br /> \\\n"
-"        [Pillow]: http://python-pillow.github.io/<br /> \\\n"
-"        [Pelican]: http://blog.getpelican.com/<br /> \\\n"
-"      </div>\"\n"
-"      "
-msgstr ""
-
-#: templates/default/_includes/proposal_example_modal.html:90
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        1. 資料整理的常見狀況 [5 min]<br /> \\\n"
-"        2. pathlib 模組設計介紹 [10 min]<br /> \\\n"
-"        &nbsp;&nbsp;- 運用 Path 物件<br /> \\\n"
-"        &nbsp;&nbsp;- 目錄結構探索 Path.iterdir(), .glob()<br /> \\\n"
-"        &nbsp;&nbsp;- 使用 Path 更動路徑<br /> \\\n"
-"        3. 結合 for 迴圈與排序 [5 min]<br /> \\\n"
-"        &nbsp;&nbsp;- sorted(key=) 用法<br /> \\\n"
-"        &nbsp;&nbsp;- 整合 enumerated, zip 同時處理多個關連檔案<br /> \\\n"
-"        4. 案例分享  [5 min]<br /> \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        1. 簡介 EXIF 與 exiftool [5min]<br /> \\\n"
-"        2. Pillow 使用及如何用它加上浮水印 [5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 字型的選用<br /> \\\n"
-"        &nbsp;&nbsp;- 排版的一致性<br /> \\\n"
-"        3. 自動化 [5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 使用 stdlib 架出一個 batch 處理流程<br /> \\\n"
-"        &nbsp;&nbsp;- 搭配 joblib 或 multiprocessing 達成平行化<br /> \\\n"
-"        4. 舉例（使用 Pelican）[5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）<br /> \\\n"
-"        &nbsp;&nbsp;- 成果<br /> \\\n"
-"        5. Q&A [5min]<br /> \\\n"
-"      </div>\"\n"
-"      "
-msgstr ""
 
 #: templates/default/_includes/talk_proposal_alert.html:6
 #, python-format
@@ -1004,8 +969,8 @@ msgstr "請參見<a href=\"%(howto_link)s\" target=\"_blank\">如何投稿演講
 
 #: templates/default/dashboard_base.html:15
 #, python-format
-msgid "Hi %(user.email)s, welcome!"
-msgstr "嗨 %(user.email)s，歡迎！"
+msgid "Hi %(name)s, welcome!"
+msgstr ""
 
 #: templates/default/dashboard_base.html:22
 msgid ""
@@ -1187,20 +1152,6 @@ msgstr "評論"
 msgid "Reviewed"
 msgstr "已審查"
 
-#: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:8
-#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
-#: templates/default/users/_includes/dashboard_proposal_table.html:6
-msgid "Title"
-msgstr "題目"
-
-#: templates/default/reviews/_includes/proposal_table.html:25
-#: templates/default/reviews/review_form.html:30
-#: templates/pycontw-2016/events/sponsored_event_detail.html:20
-#: templates/pycontw-2016/events/talk_detail.html:20
-msgid "Category"
-msgstr "分類"
-
 #: templates/default/reviews/_includes/proposal_table.html:33
 msgid "Level"
 msgstr "等級"
@@ -1263,18 +1214,6 @@ msgstr "%(proposal_title)s | 審查"
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:8
 msgid "Submitter"
 msgstr "提案人"
-
-#: templates/default/reviews/review_form.html:32
-msgid "Duration"
-msgstr "時間長度"
-
-#: templates/default/reviews/review_form.html:34
-#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
-#: templates/default/users/_includes/dashboard_proposal_table.html:8
-#: templates/pycontw-2016/events/sponsored_event_detail.html:17
-#: templates/pycontw-2016/events/talk_detail.html:17
-msgid "Language"
-msgstr "語言"
 
 #: templates/default/reviews/review_form.html:51
 msgid "Supplementary"
@@ -1490,13 +1429,12 @@ msgid "Events"
 msgstr "活動"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:39
-#: templates/pycontw-2017/_includes/header.html:39
 msgid "Overview"
 msgstr "總覽"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:41
 msgid "Keynotes"
-msgstr "主題演講"
+msgstr "基調演講"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:42
 #: templates/pycontw-2016/events/talk_list.html:5
@@ -1509,16 +1447,14 @@ msgid "Sprints"
 msgstr "Sprints"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:44
-#: templates/pycontw-2017/_includes/header.html:44
 msgid "BoF"
-msgstr "BoF"
+msgstr "夜市（BoF）"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:45
 msgid "PyDay"
 msgstr "PyDay"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:46
-#: templates/pycontw-2017/_includes/header.html:42
 msgid "Tutorial"
 msgstr "教學"
 
@@ -1529,7 +1465,6 @@ msgid "Venue"
 msgstr "會場"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:53
-#: templates/pycontw-2017/_includes/header.html:53
 msgid "Accommodation"
 msgstr "住宿"
 
@@ -1556,7 +1491,6 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2017/_includes/header.html:68
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -1657,7 +1591,6 @@ msgid "Conference"
 msgstr "會議"
 
 #: templates/pycontw-2016/index.html:33 templates/pycontw-2016/index.html:45
-#: templates/pycontw-2017/_includes/header.html:43
 msgid "Sprint"
 msgstr "Sprint"
 
@@ -1754,37 +1687,62 @@ msgid ""
 "href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 msgstr "<span class=\"form-tip\">已經有帳號了？</span><a href=\"%(login_url)s\" class=\"btn btn-link\">請登入。</a>"
 
-#: templates/pycontw-2017/_includes/header.html:30
+#: templates/pycontw-2017/_includes/header.html:32
+#: templates/pycontw-2017/_includes/header.html:35
 msgid "about"
 msgstr "關於"
 
-#: templates/pycontw-2017/_includes/header.html:35
+#: templates/pycontw-2017/_includes/header.html:36
+msgid "code of conduct"
+msgstr "行為準則"
+
+#: templates/pycontw-2017/_includes/header.html:41
 msgid "events"
 msgstr "活動"
 
-#: templates/pycontw-2017/_includes/header.html:41
-msgid "Talk"
+#: templates/pycontw-2017/_includes/header.html:45
+msgid "overview"
+msgstr "活動總覽"
+
+#: templates/pycontw-2017/_includes/header.html:47
+msgid "talk"
 msgstr "演講"
 
+#: templates/pycontw-2017/_includes/header.html:48
+msgid "tutorial"
+msgstr "教學"
+
 #: templates/pycontw-2017/_includes/header.html:49
+msgid "sprint"
+msgstr "sprint"
+
+#: templates/pycontw-2017/_includes/header.html:50
+msgid "bof"
+msgstr "bof"
+
+#: templates/pycontw-2017/_includes/header.html:55
+#: templates/pycontw-2017/_includes/header.html:58
 msgctxt "conference location"
 msgid "venue"
 msgstr "會場"
 
-#: templates/pycontw-2017/_includes/header.html:52
-msgctxt "conference location"
-msgid "Venue"
-msgstr "會場"
+#: templates/pycontw-2017/_includes/header.html:59
+msgid "accommodation"
+msgstr "住宿"
 
-#: templates/pycontw-2017/_includes/header.html:64
+#: templates/pycontw-2017/_includes/header.html:70
 msgid "registration"
 msgstr "註冊"
 
-#: templates/pycontw-2017/_includes/header.html:73
+#: templates/pycontw-2017/_includes/header.html:74
+msgid "financial aid"
+msgstr "財務補助"
+
+#: templates/pycontw-2017/_includes/header.html:79
 msgid "blog"
 msgstr "部落格"
 
-#: templates/pycontw-2017/_includes/header.html:79
+#: templates/pycontw-2017/_includes/header.html:85
 msgid "dashboard"
 msgstr "控制面板"
 
