@@ -6,18 +6,15 @@ from django.utils.translation import ugettext_lazy as _
 from crispy_forms.helper import FormHelper
 
 from core.utils import form_has_instance
-from core.widgets import CharacterCountedTextarea, SimpleMDEWidget
 from proposals.models import TalkProposal, TutorialProposal
 
-from .mixins import RequestUserSpeakerValidationMixin
+from .mixins import (
+    RequestUserSpeakerValidationMixin,
+    TalkProposalMixin, TutorialProposalMixin,
+)
 
 
 class ProposalCreateForm(RequestUserSpeakerValidationMixin, forms.ModelForm):
-    """Form used to create a proposal.
-
-    Fields in this form is intentionally reduced to allow people to submit
-    a proposal very quickly, and fill in the details later.
-    """
     def save(self, commit=True):
         """Fill user field on save.
         """
@@ -28,24 +25,31 @@ class ProposalCreateForm(RequestUserSpeakerValidationMixin, forms.ModelForm):
         return proposal
 
 
-class TalkProposalCreateForm(ProposalCreateForm):
+class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
+    """Form used to create a talk proposal.
 
+    Fields in this form is intentionally reduced to allow people to submit
+    a proposal very quickly, and fill in the details later.
+    """
     duration = forms.ChoiceField(
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
 
-    class Meta:
-        model = TalkProposal
+    class Meta(TalkProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
             'python_level', 'recording_policy',
         ]
 
 
-class TutorialProposalCreateForm(ProposalCreateForm):
-    class Meta:
-        model = TutorialProposal
+class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
+    """Form used to create a tutorial proposal.
+
+    Fields in this form is intentionally reduced to allow people to submit
+    a proposal very quickly, and fill in the details later.
+    """
+    class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
             'python_level', 'recording_policy',
@@ -61,7 +65,7 @@ class ProposalUpdateForm(forms.ModelForm):
         return helper
 
 
-class TalkProposalUpdateForm(ProposalUpdateForm):
+class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
     """Form used to update a talk proposal.
 
     This is the complete editing form for proposal. It should contain all
@@ -72,20 +76,12 @@ class TalkProposalUpdateForm(ProposalUpdateForm):
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
 
-    class Meta:
-        model = TalkProposal
+    class Meta(TalkProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
             'abstract', 'python_level', 'objective', 'detailed_description',
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
-        widgets = {
-            'abstract': CharacterCountedTextarea(),
-            'objective': CharacterCountedTextarea(),
-            'detailed_description': SimpleMDEWidget(),
-            'outline': SimpleMDEWidget(),
-            'supplementary': SimpleMDEWidget(),
-        }
 
 
 class TutorialProposalUpdateForm(ProposalUpdateForm):
@@ -94,20 +90,12 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
-    class Meta:
-        model = TutorialProposal
+    class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
             'abstract', 'python_level', 'objective', 'detailed_description',
             'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
-        widgets = {
-            'abstract': CharacterCountedTextarea(),
-            'objective': CharacterCountedTextarea(),
-            'detailed_description': SimpleMDEWidget(),
-            'outline': SimpleMDEWidget(),
-            'supplementary': SimpleMDEWidget(),
-        }
 
 
 class ProposalCancelForm(forms.ModelForm):
