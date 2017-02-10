@@ -43,7 +43,7 @@ class TalkProposalMixin:
             'abstract': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
-                "data-content='abstract'>Proposal Examples</a></p>"
+                "data-content='abstract'>Proposal Examples</a>.</p>"
                 "<p>The overview of what the talk is about. If the talk "
                 "assume some domain knowledge please state it here. If your "
                 "talk is accepted, this will be displayed on both the website "
@@ -65,7 +65,8 @@ class TalkProposalMixin:
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
-                "data-content='detailed description'>Proposal Examples</a></p>"
+                "data-content='detailed description'>"
+                "Proposal Examples</a>.</p>"
                 "<p>Try not be too lengthy to scare away reviewers or "
                 "potential audience. A comfortable length is less than 2000 "
                 "characters (or about 1200 Chinese characters). Since most "
@@ -138,7 +139,7 @@ class TutorialProposalMixin:
             'abstract': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
-                "data-content='abstract'>Proposal Examples</a></p>"
+                "data-content='abstract'>Proposal Examples</a>.</p>"
                 "<p>The overview of what the talk is about. If the talk "
                 "assume some domain knowledge please state it here. If your "
                 "talk is accepted, this will be displayed on both the website "
@@ -160,7 +161,8 @@ class TutorialProposalMixin:
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
-                "data-content='detailed description'>Proposal Examples</a></p>"
+                "data-content='detailed description'>"
+                "Proposal Examples</a>.</p>"
                 "<p>Try not be too lengthy to scare away reviewers or "
                 "potential audience. A comfortable length is less than 2000 "
                 "characters (or about 1200 Chinese characters). Since most "
