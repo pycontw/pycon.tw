@@ -19,7 +19,9 @@
   <dl>
     <div>
       <dt>{% trans 'Abstract Example' %}</dt>
-      <pre><dd>{% blocktrans %}For modern human beings, the data in computers are essentially an external place for storing our memories. No matter they're photographs of your daily life, music, videos, or even some data produced for work, school, research, they're all being stored in computers. As the time goes by, the folders in computers fall into a state of chaos. Or in another scenario, you're managed to manipulate a series of files, but ended up with changing them one by one using File Explorer. Well, is there any better methodology? This talk is going to introduce how you can "programmatically" manipulate directories and files, using Python and it's built-in module, pathlib. We'll look at examples from simple ones to complicated ones, and eventually combine looping and sorting techniques in Python, to conquer a complicated file re-categorize problem.{% endblocktrans %}</dd></pre>
+      <dd>
+        <pre>{% blocktrans %}For modern human beings, the data in computers are essentially an external place for storing our memories. No matter they're photographs of your daily life, music, videos, or even some data produced for work, school, research, they're all being stored in computers. As the time goes by, the folders in computers fall into a state of chaos. Or in another scenario, you're managed to manipulate a series of files, but ended up with changing them one by one using File Explorer. Well, is there any better methodology? This talk is going to introduce how you can "programmatically" manipulate directories and files, using Python and it's built-in module, pathlib. We'll look at examples from simple ones to complicated ones, and eventually combine looping and sorting techniques in Python, to conquer a complicated file re-categorize problem.{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
   <br />
@@ -28,8 +30,10 @@
 <script id="abstract-intermediate-example" type="text/html">
   <dl>
     <div>
-    <dt>{% trans 'Abstract Example' %}</dt>
-    <pre><dd>{% blocktrans %}Nowadays, photographs always contain the information about the state where the photo was taken, they're called EXIF. Sometimes when building a blog about travel notes or nature photography, you'll have to put information of some EXIF fields under the pictures of the article, such as camera model, focal, aperture, shutter, GPS, etc. Sometimes even show information as a watermark on the image. In this talk, we're going to build a workflow on automated EXIF processing. First introduce the usage of exiftool, and integrate Pillow to reach the effect of watermark. Finally, we'll take a blog framework, Pelican as an example, to build a Pelican plugin that automatically processes all the photographs in the article.{% endblocktrans %}</dd></pre>
+      <dt>{% trans 'Abstract Example' %}</dt>
+      <dd>
+        <pre>{% blocktrans %}Nowadays, photographs always contain the information about the state where the photo was taken, they're called EXIF. Sometimes when building a blog about travel notes or nature photography, you'll have to put information of some EXIF fields under the pictures of the article, such as camera model, focal, aperture, shutter, GPS, etc. Sometimes even show information as a watermark on the image. In this talk, we're going to build a workflow on automated EXIF processing. First introduce the usage of exiftool, and integrate Pillow to reach the effect of watermark. Finally, we'll take a blog framework, Pelican as an example, to build a Pelican plugin that automatically processes all the photographs in the article.{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
 </script>
@@ -38,8 +42,11 @@
   <dl>
     <div>
       <dt>{% trans 'Objective Example' %}</dt>
-      <pre>{% blocktrans %}<dd>Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.</dd>
-        <dd>But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners.</dd>{% endblocktrans %}</pre>
+      <dd>
+        <pre>{% blocktrans %}Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.
+
+But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners.{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
   <br />
@@ -49,8 +56,11 @@
   <dl>
     <div>
       <dt>{% trans 'Objective Example' %}</dt>
-      <pre>{% blocktrans %}<dd>Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.</dd>
-      <dd>While I was writing blog posts, I found out that the manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins.</dd>{% endblocktrans %}</pre>
+      <dd>
+        <pre>{% blocktrans %}Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.
+
+While I was writing blog posts, I found out that the manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins.{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
   <br />
@@ -60,7 +70,9 @@
   <dl>
     <div>
       <dt>{% trans 'Description Example' %}</dt>
-      <pre><dd>{% blocktrans %}In the final example sharing, we'll try to move a series of images marked with date and file name, into "YEAR/MONTH" patterned directories that already have data in it, and also rename each image according to the chronological order.{% endblocktrans %}</dd></pre>
+      <dd>
+        <pre>{% blocktrans %}In the final example sharing, we'll try to move a series of images marked with date and file name, into "YEAR/MONTH" patterned directories that already have data in it, and also rename each image according to the chronological order.{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
   <br />
@@ -70,7 +82,8 @@
   <dl>
     <div>
       <dt>{% trans 'Description Example' %}</dt>
-      <pre><dd>{% blocktrans %}### Third-party libraries used:
+      <dd>
+        <pre>{% blocktrans %}### Third-party libraries used:
   - [exiftool] A Perl tool for analyzing EXIF of images
   - [Pillow] A Python tool for image processing, formerly known as PIL (Python Image Library)
   - [Pelican] A static site generator in Python
@@ -78,7 +91,8 @@
 [exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/
 [Pillow]: http://python-pillow.github.io/
 [Pelican]: http://blog.getpelican.com/
-{% endblocktrans %}</dd></pre>
+{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl>
   <br />
@@ -88,7 +102,18 @@
   <dl>
     <div>
       <dt>{% trans 'Outline Example' %}</dt>
-      <pre><dd>1. 資料整理的常見狀況 [5 min]<br />2. pathlib 模組設計介紹 [10 min]<br />&nbsp;&nbsp;- 運用 Path 物件<br />&nbsp;&nbsp;- 目錄結構探索 Path.iterdir(), .glob()<br />&nbsp;&nbsp;- 使用 Path 更動路徑<br />3. 結合 for 迴圈與排序 [5 min]<br />&nbsp;&nbsp;- sorted(key=) 用法<br />&nbsp;&nbsp;- 整合 enumerated, zip 同時處理多個關連檔案<br />4. 案例分享  [5 min]<br /></dd></pre>
+      <dd>
+        <pre>{% blocktrans %}1. 資料整理的常見狀況 [5 min]
+2. pathlib 模組設計介紹 [10 min]
+  - 運用 Path 物件
+  - 目錄結構探索 Path.iterdir(), .glob()
+  - 使用 Path 更動路徑
+3. 結合 for 迴圈與排序 [5 min]
+  - sorted(key=) 用法
+  - 整合 enumerated, zip 同時處理多個關連檔案
+4. 案例分享  [5 min]
+{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl><br />
 </script>
@@ -97,7 +122,20 @@
   <dl>
     <div>
       <dt>{% trans 'Outline Example' %}</dt>
-      <pre><dd>1. 簡介 EXIF 與 exiftool [5min]<br />2. Pillow 使用及如何用它加上浮水印 [5min]<br />&nbsp;&nbsp;- 字型的選用<br />&nbsp;&nbsp;- 排版的一致性<br />3. 自動化 [5min]<br />&nbsp;&nbsp;- 使用 stdlib 架出一個 batch 處理流程<br />&nbsp;&nbsp;- 搭配 joblib 或 multiprocessing 達成平行化<br />4. 舉例（使用 Pelican）[5min]<br />&nbsp;&nbsp;- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）<br />&nbsp;&nbsp;- 成果<br />5. Q&A [5min]<br /></dd></pre>
+      <dd>
+        <pre>{% blocktrans %}1. 簡介 EXIF 與 exiftool [5min]
+2. Pillow 使用及如何用它加上浮水印 [5min]
+  - 字型的選用
+  - 排版的一致性
+3. 自動化 [5min]
+  - 使用 stdlib 架出一個 batch 處理流程
+  - 搭配 joblib 或 multiprocessing 達成平行化
+4. 舉例（使用 Pelican）[5min]
+  - 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）
+  - 成果
+5. Q&A [5min]
+{% endblocktrans %}</pre>
+      </dd>
     </div>
   </dl><br />
 </script>
