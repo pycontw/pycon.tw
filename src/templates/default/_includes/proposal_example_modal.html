@@ -60,7 +60,7 @@
   <dl>
     <div>
       <dt>{% trans 'Description Example' %}</dt>
-      <pre><dd>最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。</dd></pre>
+      <pre><dd>{% blocktrans %}In the final example sharing, we'll try to move a series of images marked with date and file name, into "YEAR/MONTH" patterned directories that already have data in it, and also rename each image according to the chronological order.{% endblocktrans %}</dd></pre>
     </div>
   </dl>
   <br />
@@ -70,7 +70,15 @@
   <dl>
     <div>
       <dt>{% trans 'Description Example' %}</dt>
-      <pre><dd>### 使用的第三方工具：<br />&nbsp;&nbsp;- [exiftool] 為分析照片 EXIF 的 Perl 工具<br />&nbsp;&nbsp;- [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)<br />&nbsp;&nbsp;- [Pelican] 為 Python 的 static site generator<br /><br />[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/<br />[Pillow]: http://python-pillow.github.io/<br />[Pelican]: http://blog.getpelican.com/<br /></dd></pre>
+      <pre><dd>{% blocktrans %}### Third-party libraries used:
+  - [exiftool] A Perl tool for analyzing EXIF of images
+  - [Pillow] A Python tool for image processing, formerly known as PIL (Python Image Library)
+  - [Pelican] A static site generator in Python
+
+[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/
+[Pillow]: http://python-pillow.github.io/
+[Pelican]: http://blog.getpelican.com/
+{% endblocktrans %}</dd></pre>
     </div>
   </dl>
   <br />
