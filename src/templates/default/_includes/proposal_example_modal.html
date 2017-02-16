@@ -15,6 +15,19 @@
   </div>
 </div>
 
+{% for level, parts in examples.items %}
+{% for part, content in parts.items %}
+<script id="{{ level }}-{{ part }}-example" type="text/html">
+  <dl>
+    <div>
+      <dt>{{ content.0 }}</dt>
+      <dd><pre>{{ content.1 }}</pre></dd>
+    </div>
+  </dl>
+</script>
+{% endfor %}
+{% endfor %}
+
 {% get_current_language as LANGUAGE_CODE %}
 
 <script id="novice-examples-header" type="text/html">
@@ -51,67 +64,6 @@
 
 <script>
 (function() {
-  var examples = {
-    novice: {
-      abstract: `{% blocktrans %}For modern human beings, the data in computers are essentially an external place for storing our memories. No matter they're photographs of your daily life, music, videos, or even some data produced for work, school, research, they're all being stored in computers. As the time goes by, the folders in computers fall into a state of chaos. Or in another scenario, you're managed to manipulate a series of files, but ended up with changing them one by one using File Explorer. Well, is there any better methodology? This talk is going to introduce how you can "programmatically" manipulate directories and files, using Python and it's built-in module, pathlib. We'll look at examples from simple ones to complicated ones, and eventually combine looping and sorting techniques in Python, to conquer a complicated file re-categorize problem.{% endblocktrans %}`,
-      objective: `{% blocktrans %}Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.
-
-But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners.{% endblocktrans %}`,
-      description: `{% blocktrans %}In the final example sharing, we'll try to move a series of images marked with date and file name, into "YEAR/MONTH" patterned directories that already have data in it, and also rename each image according to the chronological order.{% endblocktrans %}`,
-      outline: `{% blocktrans %}1. Common situations in data clean-up  [5 min]
-2. Introduction to pathlib module's design  [10 min]
-  - Using Path object
-  - Exploring directory structure: Path.iterdir(), .glob()
-  - Using Path for changing paths
-3. Integrate for-loop and sorting  [5 min]
-  - sorted(key=) usage
-  - Integrate enumerated, zip to simultaneously process multiple related files
-4. Example sharing  [5 min]
-{% endblocktrans %}`
-    },
-    intermediate: {
-      abstract: `{% blocktrans %}Nowadays, photographs always contain the information about the state where the photo was taken, they're called EXIF. Sometimes when building a blog about travel notes or nature photography, you'll have to put information of some EXIF fields under the pictures of the article, such as camera model, focal, aperture, shutter, GPS, etc. Sometimes even show information as a watermark on the image. In this talk, we're going to build a workflow on automated EXIF processing. First introduce the usage of exiftool, and integrate Pillow to reach the effect of watermark. Finally, we'll take a blog framework, Pelican as an example, to build a Pelican plugin that automatically processes all the photographs in the article.{% endblocktrans %}`,
-      objective: `{% blocktrans %}Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.
-
-While I was writing blog posts, I found out that the manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins.{% endblocktrans %}`,
-      description: `{% blocktrans %}### Third-party libraries used:
-  - [exiftool] A Perl tool for analyzing EXIF of images
-  - [Pillow] A Python tool for image processing, formerly known as PIL (Python Image Library)
-  - [Pelican] A static site generator in Python
-
-[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/
-[Pillow]: http://python-pillow.github.io/
-[Pelican]: http://blog.getpelican.com/
-{% endblocktrans %}`,
-      outline: `{% blocktrans %}1. Intro to EXIF and exiftool [5min]
-2. Usage of Pillow, use it to add watermark [5min]
-  - Selection of fonts
-  - Consistency of layout
-3. Automation [5min]
-  - Using stdlib to make a batch processing workflow
-  - Integrating joblib or multiprocessing to parallelize
-4. Example (using Pelican) [5min]
-  - Intro to Pelican's plugin system (integration between template tags and signals)
-  - Final resulting work
-5. Q&A [5min]
-{% endblocktrans %}`
-    },
-    blockTitle: {
-      abstract: "{% trans 'Abstract Example' %}",
-      objective: "{% trans 'Objective Example' %}",
-      description: "{% trans 'Description Example' %}",
-      outline: "{% trans 'Outline Example' %}"
-    }
-  };
-
-  for (var level in examples) {
-    if (level === "blockTitle") continue;
-    for (var part in examples[level]) {
-        examples[level][part] = `<dl><div><dt>${examples.blockTitle[part]}</dt>
-                                 <dd><pre>${examples[level][part]}</pre></dd>
-                                 </div></dl><br />`;
-    }
-  }
 
   var novice = $("#novice-examples-header").html();
   var intermediate = $("#intermediate-examples-header").html();
@@ -123,32 +75,17 @@ While I was writing blog posts, I found out that the manipulations involving pro
     'outline': "{% trans 'Outline' %}",
   };
 
-  var example_content = {
-    'abstract':
-      novice+
-      examples.novice.abstract+
-      intermediate+
-      examples.intermediate.abstract,
-
-    'objective':
-      novice+
-      examples.novice.objective+
-      intermediate+
-      examples.intermediate.objective,
-
-    'detailed description':
-      novice+
-      examples.novice.description+
-      intermediate+
-      examples.intermediate.description,
-
-    'outline':
-      novice+
-      examples.novice.outline+
-      intermediate+
-      examples.intermediate.outline,
+  var getContent = function(part) {
+      return novice + $("#novice-" + part + "-example").html() +
+             intermediate + $("#intermediate-" + part + "-example").html();
   };
 
+  var example_content = {
+    "abstract": getContent("abstract"),
+    "objective": getContent("objective"),
+    "detailed description": getContent("description"),
+    "outline": getContent("outline")
+  };
 
   $('#proposalFieldExampleModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
