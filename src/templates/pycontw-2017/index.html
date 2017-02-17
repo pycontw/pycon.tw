@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load i18n static %}
 
 {% block titletag %}
-<title>PyCon Taiwan 2017</title>
+<title>{% trans 'PyCon Taiwan 2017' %}</title>
 {% endblock titletag %}
 
 
@@ -14,28 +14,32 @@
       <img src="{% static 'pycontw-2017/images/icon-logo.svg' %}">
     </h1>
 		<div class="date-panel">
-			<time>9–11 June</time>
+			<time>{% trans '9–11 June' %}</time>
 			<code class="def-future">def future():</code>
 		</div>
 		<nav class="index-session-links">
-			<a href="#">tutorial: 1 June</a>
-			<a href="#">sprint: 5 June</a>
+			<a href="#">{% trans 'tutorial: '%}{% trans '1 June' %}</a>
+			<a href="#">{% trans 'sprint: '%}{% trans 'TBA' %}</a>
 		</nav>
 		<section class="index-intro">
 			<article class="what-is-pycon">
+				{% blocktrans trimmed %}
 				<h2>what is pycon</h2>
 				<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
+				{% endblocktrans %}
 			</article>
 			<article class="what-is-pycon-taiwan align-right">
+				{% blocktrans trimmed %}
 				<h2>what is pycon taiwan</h2>
 				<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
+				{% endblocktrans %}
 			</article>
 		</section>
 	</main>
 </div>
 
 <section class="communities">
-	<h2>Python Communities in Taiwan</h2>
+	<h2>{% trans 'Python Communities in Taiwan' %}</h2>
 	<nav class="community-refs">
 		<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
 			PyLadies Taiwan
