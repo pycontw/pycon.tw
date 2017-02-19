@@ -30,6 +30,15 @@
 
 {% get_current_language as LANGUAGE_CODE %}
 
+<script>
+var example_title = {
+	'abstract': "{% trans 'Abstract' %}",
+	'objective': "{% trans 'Objective' %}",
+	'detailed description': "{% trans 'Detailed description' %}",
+	'outline': "{% trans 'Outline' %}",
+};
+</script>
+
 <script id="novice-examples-header" type="text/html">
   <h4>{% trans 'Novice' %}</h4>
   <p>{% blocktrans %}If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference.{% endblocktrans %}</p>
@@ -60,41 +69,4 @@
     <dt>{% trans 'Language' %}</dt>
     <dd>{% if LANGUAGE_CODE == "zh-hant" %}中文{% else %}English{% endif %}</dd>
   </dl>
-</script>
-
-<script>
-(function() {
-
-  var novice = $("#novice-examples-header").html();
-  var intermediate = $("#intermediate-examples-header").html();
-
-  var example_title = {
-    'abstract': "{% trans 'Abstract' %}",
-    'objective': "{% trans 'Objective' %}",
-    'detailed description': "{% trans 'Detailed description' %}",
-    'outline': "{% trans 'Outline' %}",
-  };
-
-  var getContent = function(part) {
-      return novice + $("#novice-" + part + "-example").html() +
-             intermediate + $("#intermediate-" + part + "-example").html();
-  };
-
-  var example_content = {
-    "abstract": getContent("abstract"),
-    "objective": getContent("objective"),
-    "detailed description": getContent("description"),
-    "outline": getContent("outline")
-  };
-
-  $('#proposalFieldExampleModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var content = button.data('content') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('.modal-title').html(example_title[content])
-    modal.find('.modal-body div').html(example_content[content])
-  })
-})();
 </script>

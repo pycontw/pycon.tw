@@ -6,6 +6,7 @@ $('.proposal-form').areYouSure({
 
 })(jQuery);
 
+
 // Scroll progress.
 (function ($) {
 
@@ -36,5 +37,40 @@ function updateScrollProgress() {
 
 $(window).scroll(updateScrollProgress);
 updateScrollProgress();
+
+})(jQuery);
+
+
+// Example modal.
+(function ($) {
+
+var novice = $("#novice-examples-header").html();
+var intermediate = $("#intermediate-examples-header").html();
+
+var getContent = function(part) {
+		return novice + $("#novice-" + part + "-example").html() +
+					 intermediate + $("#intermediate-" + part + "-example").html();
+};
+
+var example_content = {
+	"abstract": getContent("abstract"),
+	"objective": getContent("objective"),
+	"detailed description": getContent("description"),
+	"outline": getContent("outline")
+};
+
+$('#proposalFieldExampleModal').on('show.bs.modal', function (event) {
+	// Button that triggered the modal.
+	var button = $(event.relatedTarget);
+	// Extract info from data-* attributes.
+	var content = button.data('content');
+	// If necessary, you could initiate an AJAX request here (and then
+	// do the updating in a callback). Update the modal's content. We'll
+	// use jQuery here, but you could use a data binding library or other
+	// methods instead.
+	var modal = $(this)
+	modal.find('.modal-title').html(example_title[content])
+	modal.find('.modal-body div').html(example_content[content])
+});
 
 })(jQuery);
