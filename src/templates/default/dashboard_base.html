@@ -12,7 +12,7 @@
 {% block content %}
 
 <div class="row">
-  <p class="welcome">{% blocktrans %}Hi {{ user.email }}, welcome!{% endblocktrans %}</p>
+  <p class="welcome">{% blocktrans with name=user.get_short_name|default:user.get_username %}Hi {{ name }}, welcome!{% endblocktrans %}</p>
 </div>
 
 <div class="row alert-container">

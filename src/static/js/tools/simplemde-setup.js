@@ -8,6 +8,7 @@ for (var i = 0; i < elementList.length; i++) {
 	}
 	new SimpleMDE({
 		'element': element,
+		'forceSync': true,
 		'indentWithTabs': false,
 		'spellChecker': false,
 		'status': false,

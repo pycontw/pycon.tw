@@ -27,7 +27,7 @@ class SimpleMDEWidget(forms.Textarea):
                 'css/simplemde-setup.css',
             ],
         }
-        js = ['js/vendors/simplemde.js', 'js/tools/simplemde-setup.js']
+        js = ['js/vendors/simplemde.min.js', 'js/tools/simplemde-setup.js']
 
     def render(self, name, value, attrs=None):
         attrs = self.build_attrs(attrs, name=name)

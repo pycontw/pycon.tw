@@ -63,7 +63,9 @@
 
 {% compress js %}
 <script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
+{% block scripts %}{% endblock %}
 {% endcompress %}
+{% block extra_js %}{% endblock %}
 
 </body>
 

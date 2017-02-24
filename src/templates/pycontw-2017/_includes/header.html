@@ -1,12 +1,17 @@
 {% load i18n %}
 {% load i18n_plus %}
 
+{% url 'index' as home_url %}
+
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
 
+{% url 'page' path='events/schedules' as events_schedule_url %}
 {% url 'page' path='events/overview' as events_overview_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
-{% url 'page' path='events/tutorials' as events_tutorial_url %}
+{% url 'page' path='events/talk' as events_talk_url %}
+{% url 'page' path='events/tutorial' as events_tutorial_url %}
+{% url 'page' path='events/unconference' as events_unconference_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 
@@ -23,25 +28,31 @@
 
 <header>
 	<nav class="wrapper header-nav">
-    <a href="/" class="header-logo"></a>
+    <a href="{{ home_url }}" class="header-logo"></a>
 		<div class="parent">
 			<a href="{{ about_pycontw_url }}"
 					class="{% if active == 'about' %}active{% endif %}">
 				{% trans 'about' %}
 			</a>
+			<nav class="sub">
+				<a href="{{ about_pycontw_url }}">{% trans 'about' %}</a>
+				<a href="{{ about_coc_url }}">{% trans 'code of conduct' %}</a>
+			</nav>
 		</div>
 		<div class="parent">
 			<a href="{{ events_overview_url }}">
 				{% trans 'events' %}
 			</a>
 			<nav class="sub">
-				{# <a href="#">{% trans 'Schedule' %}</a> #}
-				<a href="{{ events_overview_url }}">{% trans 'Overview' %}</a>
+				<a href="{{ speaking_cfp_url }}">{% trans 'cfp' %}</a>
+				{# <a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a> #}
+				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
 				{# <a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a> #}
-				<a href="{{ speaking_talk_url }}">{% trans 'Talk' %}</a>
-				<a href="{{ events_tutorial_url }}">{% trans 'Tutorial' %}</a>
-				<a href="{{ events_sprint_url }}">{% trans 'Sprint' %}</a>
-				<a href="{{ events_bof_url }}">{% trans 'BoF' %}</a>
+				<a href="{{ events_talk_url }}">{% trans 'talk' %}</a>
+				<a href="{{ events_tutorial_url }}">{% trans 'tutorial' %}</a>
+				<a href="{{ events_unconference_url }}">{% trans 'unconference' %}</a>
+				<a href="{{ events_sprint_url }}">{% trans 'sprint' %}</a>
+				<a href="{{ events_bof_url }}">{% trans 'bof' %}</a>
 			</nav>
 		</div>
 		<div class="parent">
@@ -49,8 +60,8 @@
 				{% trans 'venue' context 'conference location' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ venue_url }}">{% trans 'Venue' context 'conference location' %}</a>
-				<a href="{{ venue_accommodation_url }}">{% trans 'Accommodation' %}</a>
+				<a href="{{ venue_url }}">{% trans 'venue' context 'conference location' %}</a>
+				<a href="{{ venue_accommodation_url }}">{% trans 'accommodation' %}</a>
 			</nav>
 		</div>
 		{% comment %}<div class="parent">
@@ -64,11 +75,11 @@
 			</a>
 			<nav class="sub">
 				{# <a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a> #}
-				<a href="{{ reg_financial_aid_url }}">{% trans 'Finacial Aid' %}</a>
+				<a href="{{ reg_financial_aid_url }}">{% trans 'financial aid' %}</a>
 			</nav>
 		</div>
 		<div class="parent">
-			<a href="https://pycontw.blogspot.tw/" target="_blank">
+			<a href="https://pycontw.blogspot.tw/" target="_blank" rel="noopener">
 				{% trans 'blog' %}
 			</a>
 		</div>
@@ -92,9 +103,9 @@
 			</nav>
 		</div>
 		<nav class="social">
-			<a href="https://www.facebook.com/pycontw" target="_blank" class="fa fa-facebook"></a>
-			<a href="https://twitter.com/pycontw" target="_blank" class="fa fa-twitter"></a>
-			<a href="mailto:organizers@pycon.tw" target="_blank" class="fa fa-envelope-o"></a>
+			<a href="https://www.facebook.com/pycontw" target="_blank" rel="noopener" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/pycontw" target="_blank" rel="noopener" class="fa fa-twitter"></a>
+			<a href="mailto:organizers@pycon.tw" target="_blank" rel="noopener" class="fa fa-envelope-o"></a>
 		</nav>
 	</nav>
 </header>

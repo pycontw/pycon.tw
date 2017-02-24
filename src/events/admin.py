@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models import Q
 from django.utils.timezone import make_naive
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, pgettext_lazy as p
 
 from .models import (
     CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
@@ -53,10 +53,10 @@ class TimeAdmin(admin.ModelAdmin):
     def get_minute(self, instance):
         return make_naive(instance.value).strftime(r'%M')
 
-    get_month.short_description = _('month')
-    get_day.short_description = _('day')
-    get_hour.short_description = _('hour')
-    get_minute.short_description = _('minute')
+    get_month.short_description = p('datetime component', 'month')
+    get_day.short_description = p('datetime component', 'day')
+    get_hour.short_description = p('datetime component', 'hour')
+    get_minute.short_description = p('datetime component', 'minute')
 
 
 class EventTimeRangeFilter(admin.SimpleListFilter):

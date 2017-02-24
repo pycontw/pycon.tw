@@ -31,7 +31,22 @@
 {% endblock main-content %}
 
 
+{% block extra_body %}
+{{ block.super }}
+<div id="proposal-scroll-progress-widget">
+	<div class="top"></div>
+	<div class="text"></div>
+</div>
+{% endblock extra_body %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/vendors/jquery.are-you-sure.js' %}"></script>
+{% endblock scripts %}
+
 {% block extra_js %}
 {{ block.super }}
 {{ form.media.js }}
+<script src="{% static 'js/proposals/proposal_update.js' %}"></script>
 {% endblock extra_js %}

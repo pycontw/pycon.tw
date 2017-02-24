@@ -77,7 +77,71 @@ def language(request, settings):
     return lang
 
 
-def test_content_pages(client, language, content_page_path):
-    path = '/{}{}'.format(language, content_page_path)
-    response = client.get(path)
-    assert response.status_code == 200, path
+@pytest.fixture
+def content_page_full_path(language, content_page_path):
+    return '/{}{}'.format(language, content_page_path)
+
+
+def test_content_pages(client, parser, content_page_full_path):
+    response = client.get(content_page_full_path)
+    assert response.status_code == 200, content_page_full_path
+
+
+def test_content_pages_links(client, parser, content_page_full_path):
+    body = parser.parse(client.get(content_page_full_path))
+    link_tags = body.cssselect('a[href^="/"]:not(a[href^="//"])')
+
+    def get_link_status_pair(tag):
+        link = tag.get('href')
+        try:
+            status = client.get(tag.get('href'), follow=True).status_code
+        except:     # Catch internal server error for better reporting.
+            status = 500
+        return (link, status)
+
+    link_status_codes = [
+        get_link_status_pair(tag)
+        for tag in link_tags
+    ]
+    assert link_status_codes, 'isolated page: no links found'
+
+    def get_error_message():
+        errors = [
+            '    {1} {0!r}'.format(*p)
+            for p in link_status_codes
+            if p[1] != 200
+        ]
+        if len(errors) == 1:
+            return errors[0].lstrip()
+        return 'Links do not return 200 status code\n' + '\n'.join(errors)
+
+    assert all(p[1] == 200 for p in link_status_codes), get_error_message()
+
+
+def test_content_pages_noopener(client, parser, content_page_full_path):
+    body = parser.parse(client.get(content_page_full_path))
+    external_link_tags = body.cssselect(
+        'a[href^="//"], a[href^="http://"], a[href^="https://"]',
+    )
+
+    def get_link_safty_pair(tag):
+        link = tag.get('href')
+        safe = not tag.get('target') or tag.get('rel') == 'noopener'
+        return (link, safe)
+
+    link_noopener_pairs = [
+        get_link_safty_pair(tag)
+        for tag in external_link_tags
+    ]
+
+    def get_error_message():
+        errors = [
+            '    {0!r}'.format(*p)
+            for p in link_noopener_pairs
+            if p[1] is not True
+        ]
+        if len(errors) == 1:
+            return errors[0].lstrip()
+        return 'External links do not set rel="noopener"\n' + '\n'.join(errors)
+
+    assert all(p[1] is True for p in link_noopener_pairs), get_error_message()

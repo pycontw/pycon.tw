@@ -99,8 +99,10 @@ def write_transifex_config():
 @task
 def pull_tx():
     with lcd('src'):
-        local('python manage.py makemessages -a')
-        local('tx pull')
+        local("ls locale/*/LC_MESSAGES/django.* | "
+              "grep '^locale/[^_]' | "
+              "xargs rm")
+        local('tx pull -a')
         local('python manage.py compilemessages -x _src')
 
 

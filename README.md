@@ -38,7 +38,7 @@ Just use pip:
 
 ### Set up Local Environment Variables and Database
 
-Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickiest way to start is to copy `local.sample.env` into `local.env`:
+Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickest way to start is to copy `local.sample.env` into `local.env`:
 
     cp src/pycontw2016/settings/local.sample.env src/pycontw2016/settings/local.env
 
@@ -91,7 +91,7 @@ Run the following inside the top-level directory (the one with `tox.ini`):
 
 Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please **DO NOT push the commits into master directly**. Always create branch by the feature you want to update. You are encouraged to submit a pull request for reviewing before merging things into master.
 
-We strongly recommend you configure your editor to match our conding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
+We strongly recommend you configure your editor to match our coding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
 
 
 ## Internationalisation
@@ -104,9 +104,11 @@ Translation updates into code base are done **manually** under `src/`. You need 
 
 Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
 
+    rm locale/en_US/LC_MESSAGES/django.*
     rm locale/zh_Hant/LC_MESSAGES/django.*
+    # ... more languages
 
 Run `tx pull` to get newer translation and recompile the PO files:
 
-    tx pull -l zh-Hant
-    python manage.py compilemessages -l zh_Hant
+    tx pull -a
+    python manage.py compilemessages -x _src

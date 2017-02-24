@@ -127,33 +127,20 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         verbose_name=_('submitter'),
     )
 
+    outline = models.TextField(
+        verbose_name=_('outline'),
+        blank=True,
+    )
+
     objective = EAWTextField(
         verbose_name=_('objective'),
         max_length=1000,
-        help_text=_(
-            "<p><a href='#' data-toggle='modal' "
-            "data-target='#proposalFieldExampleModal' "
-            "data-content='objective'>Proposal Examples</a></p>"
-            "Who is the intended audience for your talk? (Be specific, "
-            "\"Python users\" is not a good answer). "
-            "And what will the attendees get out of your talk? When they "
-            "leave the room, what will they learn that they didn't know "
-            "before? This is NOT made public and for REVIEW ONLY."
-        ),
     )
 
     supplementary = models.TextField(
         verbose_name=_('supplementary'),
         blank=True,
         default='',
-        help_text=_(
-            "Anything else you'd like the program committee to know when "
-            "making their selection: your past speaking experience, community "
-            "experience, etc. This is NOT made public and for REVIEW ONLY. "
-            "Edit using "
-            "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
-        ),
     )
 
     cancelled = models.BooleanField(
@@ -173,7 +160,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
 
     _must_fill_fields = [
         'abstract', 'objective', 'supplementary',
-        'detailed_description', 'outline', 'slide_link',
+        'detailed_description', 'outline',
     ]
 
     class Meta:
@@ -213,23 +200,6 @@ class TalkProposal(AbstractProposal):
     duration = models.CharField(
         verbose_name=_('duration'),
         max_length=6,
-    )
-
-    outline = models.TextField(
-        verbose_name=_('outline'),
-        blank=True,
-        help_text=_(
-            "<p><a href='#' data-toggle='modal' "
-            "data-target='#proposalFieldExampleModal' "
-            "data-content='outline'>Proposal Examples</a></p>"
-            "How the talk will be arranged. It is highly recommended to "
-            "attach the estimated time length for each sections in the talk. "
-            "Talks in favor of 45min should have a fallback plan about how "
-            "to shrink the content into a 25min one. Edit using "
-            "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
-            "This is NOT made public and for REVIEW ONLY."
-        ),
     )
 
     ACCEPTED_CHOICES = (
@@ -276,19 +246,6 @@ class TutorialProposal(AbstractProposal):
         verbose_name=_('duration'),
         max_length=7,
         choices=DURATION_CHOICES,
-    )
-
-    outline = models.TextField(
-        verbose_name=_('outline'),
-        blank=True,
-        help_text=_(
-            "How the tutorial will be arranged. You should enumerate over "
-            "each section in your talk and attach each section with the "
-            "estimated time length. Edit using "
-            "<a href='http://daringfireball.net/projects/markdown/basics' "
-            "target='_blank'>Markdown</a>."
-            "This is NOT made public and for REVIEW ONLY."
-        ),
     )
 
     class Meta(AbstractProposal.Meta):
