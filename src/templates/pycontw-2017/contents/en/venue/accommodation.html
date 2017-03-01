@@ -3,6 +3,22 @@
 {% block title %}Accommodation{% endblock title %}
 
 {% block content %}
+
+<style>
+.accomodation-table {
+    border: 1.5px solid white;
+}
+.accomodation-table > thead {
+    border: 1.5px solid white;
+}
+.accomodation-table .money-range {
+    border: 1.5px solid white;
+}
+.accomodation-table .above-money-range {
+    border-bottom: 1.5px solid white;
+}
+</style>
+
 <h1><span>Accommodation</span></h1>
 
 <h2><span>Academia Sinica Activities Center</span></h2>
@@ -48,8 +64,8 @@
     For accommodation outside the venue, please book the hotels youself. You might find the following list helpful.
   </p>
 
-  <table style="border: 1.5px solid white;" class="accomodation-table table table-responsive">
-    <thead style="border: 1.5px solid white;">
+  <table class="accomodation-table table table-responsive">
+    <thead>
       <tr>
         <th>Price Level</th>
         <th>Hotel in Taipei</th>
@@ -58,17 +74,17 @@
     </thead>
     <tbody>
       <tr>
-        <td style="border: 1.5px solid white;" rowspan="2">$$$</td>
+        <td class="money-range" rowspan="2">$$$</td>
         <td><a href="http://www.grandvictoria.com.tw/en/rooms.php" target="_blank" rel="noopener">Grand Victoria Hotel
         </a></td>
         <td>Jiannan Rd. (Miramar) in 400m</td>
       </tr>
-      <tr style="border-bottom: 1.5px solid white;">
+      <tr class="above-money-range">
         <td><a href="http://www.taipei.grand.hyatt.com/en/hotel/home.html" target="_blank" rel="noopener">Grand Hyatt</a></td>
         <td>Taipei City Hall in 800m</td>
       </tr>
       <tr>
-        <td style="border: 1.5px solid white;" rowspan="4">$$</td>
+        <td class="money-range" rowspan="4">$$</td>
         <td><a href="http://www.tango-hotels.com/" target="_blank" rel="noopener">Tango Hotel Taipei XinYi</a></td>
         <td>Yongchun in 350m</td>
       </tr>
@@ -83,12 +99,12 @@
         </td>
         <td>Gongguan (NTU) in 200m</td>
       </tr>
-      <tr style="border-bottom: 1.5px solid white;">
+      <tr class="above-money-range">
         <td><a href="http://www.dandyhotel.com.tw/EN/DandyD/index.aspx?lan=en-US" target="_blank" rel="noopener">Dandy Hotel Daan Park Branch</a></td>
         <td>Daan in 100m</td>
       </tr>
       <tr>
-        <td style="border: 1.5px solid white;" rowspan="5">$</td>
+        <td class="money-range" rowspan="5">$</td>
         <td><a href="http://fw.tfhg.com.tw/about_en.php" target="_blank" rel="noopener">Forward Hotel Nangang</a></td>
         <td>Nangang Software Park in 350m</td>
       </tr>

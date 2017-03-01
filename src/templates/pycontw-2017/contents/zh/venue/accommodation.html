@@ -3,6 +3,22 @@
 {% block title %}住宿{% endblock %}
 
 {% block content %}
+
+<style>
+.accomodation-table {
+    border: 1.5px solid white;
+}
+.accomodation-table > thead {
+    border: 1.5px solid white;
+}
+.accomodation-table .money-range {
+    border: 1.5px solid white;
+}
+.accomodation-table .above-money-range {
+    border-bottom: 1.5px solid white;
+}
+</style>
+
 <h1><span>住宿</span></h1>
 
 <h2><span>中研院活動中心</span></h2>
@@ -44,8 +60,8 @@
 <article>
     <p>其他的住宿替代方案列於此供參考，您需要自行訂房，並自行前往會場。</p>
 
-    <table style="border: 1.5px solid white;" class="accomodation-table table table-responsive">
-        <thead style="border: 1.5px solid white;">
+    <table class="accomodation-table table table-responsive">
+        <thead>
             <tr>
                 <th>價格區間</th>
                 <th>台北的飯店</th>
@@ -54,20 +70,20 @@
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1.5px solid white;" rowspan="2">$$$</td>
+                <td class="money-range" rowspan="2">$$$</td>
                 <td><a href="http://www.grandvictoria.com.tw/main.php" target="_blank" rel="noopener">
                         維多麗亞酒店
                 </a></td>
                 <td>距劍南路站 400m 步行約 5 分</td>
             </tr>
-            <tr style="border-bottom: 1.5px solid white;">
+            <tr class="above-money-range">
                 <td><a href="http://www.taipei.grand.hyatt.com/zh-Hant/hotel/home.html" target="_blank" rel="noopener">
                         台北君悅酒店
                 </a></td>
                 <td>距市政府站 800m 步行約 10 分</td>
             </tr>
             <tr>
-                <td style="border: 1.5px solid white;" rowspan="4">$$</td>
+                <td class="money-range" rowspan="4">$$</td>
                 <td><a href="http://www.tango-hotels.com/" target="_blank" rel="noopener">
                         天閣飯店臺北信義
                 </a></td>
@@ -85,14 +101,14 @@
                 </a></td>
                 <td>距公館站 200m 步行約 3 分</td>
             </tr>
-            <tr style="border-bottom: 1.5px solid white;">
+            <tr class="above-money-range">
                 <td><a href="http://www.dandyhotel.com.tw/DandyD/index.aspx?lan=zh-TW">
                         丹迪旅店 大安森林公園店
                 </a></td>
                 <td>距大安站 100m 步行約 1 分</td>
             </tr>
             <tr>
-                <td style="border: 1.5px solid white;" rowspan="5">$</td>
+                <td class="money-range" rowspan="5">$</td>
                 <td><a href="http://fw.tfhg.com.tw/about_ch.php" target="_blank" rel="noopener">
                         台北馥華商旅
                 </a></td>
