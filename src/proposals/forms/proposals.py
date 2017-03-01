@@ -60,6 +60,7 @@ class ProposalUpdateForm(forms.ModelForm):
     @cached_property
     def helper(self):
         helper = FormHelper()
+        helper.template = '_includes/proposal_update_form.html'
         helper.form_tag = False
         helper.include_media = False
         return helper

@@ -15,10 +15,11 @@
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 
-{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
-{% url 'page' path='speaking/talk' as speaking_talk_url %}
-{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+{% url 'page' path='speaking/recording' as speaking_recording_url %}
 
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 {% url 'page' path='registration/ticket-info' as reg_ticket_info_url %}
@@ -29,22 +30,20 @@
 <header>
 	<nav class="wrapper header-nav">
     <a href="{{ home_url }}" class="header-logo"></a>
-		<div class="parent">
-			<a href="{{ about_pycontw_url }}"
-					class="{% if active == 'about' %}active{% endif %}">
+		<div class="parent {% if active == 'about' %}active{% endif %}">
+			<a href="{{ about_pycontw_url }}">
 				{% trans 'about' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ about_pycontw_url }}">{% trans 'about' %}</a>
+				<a href="{{ about_pycontw_url }}">{% trans 'pycon taiwan' %}</a>
 				<a href="{{ about_coc_url }}">{% trans 'code of conduct' %}</a>
 			</nav>
 		</div>
-		<div class="parent">
+		<div class="parent {% if active == 'events' %}active{% endif %}">
 			<a href="{{ events_overview_url }}">
 				{% trans 'events' %}
 			</a>
 			<nav class="sub">
-				<a href="{{ speaking_cfp_url }}">{% trans 'cfp' %}</a>
 				{# <a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a> #}
 				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
 				{# <a href="{{ events_keynote_url }}">{% trans 'Keynote' %}</a> #}
@@ -55,8 +54,20 @@
 				<a href="{{ events_bof_url }}">{% trans 'bof' %}</a>
 			</nav>
 		</div>
-		<div class="parent">
-			<a href="{{ venue_url }}" class="{% if active == 'venue' %}active{% endif %}">
+		<div class="parent {% if active == 'speaking' %}active{% endif %}">
+			<a href="{{ speaking_cfp_url }}">
+				{% trans 'speaking' %}
+			</a>
+			<nav class="sub">
+				<a href="{{ speaking_cfp_url }}">{% trans 'overview' %}</a>
+				<a href="{{ speaking_talk_url }}">{% trans 'talks' %}</a>
+				<a href="{{ speaking_tutorial_url }}">{% trans 'tutorials' %}</a>
+				<a href="{{ speaking_unconference_url }}">{% trans 'unconference' %}</a>
+				<a href="{{ speaking_recording_url }}">{% trans 'recording policy' %}</a>
+			</nav>
+		</div>
+		<div class="parent {% if active == 'venue' %}active{% endif %}">
+			<a href="{{ venue_url }}">
 				{% trans 'venue' context 'conference location' %}
 			</a>
 			<nav class="sub">
@@ -64,13 +75,15 @@
 				<a href="{{ venue_accommodation_url }}">{% trans 'accommodation' %}</a>
 			</nav>
 		</div>
-		{% comment %}<div class="parent">
-			<a href="#" class="{% if active == 'sponsor' %}active{% endif %}">
+		{% comment %}
+		<div class="parent {% if active == 'sponsor' %}active{% endif %}">
+			<a href="#"">
 				{% trans 'sponsors' %}
 			</a>
-		</div> {% endcomment %}
-		<div class="parent">
-			<a href="{{ reg_financial_aid_url }}" class="{% if active == 'registration' %}active{% endif %}">
+		</div>
+		{% endcomment %}
+		<div class="parent {% if active == 'registration' %}active{% endif %}">
+			<a href="{{ reg_financial_aid_url }}">
 				{% trans 'registration' %}
 			</a>
 			<nav class="sub">

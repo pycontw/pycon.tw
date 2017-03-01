@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-10 18:48+0800\n"
-"PO-Revision-Date: 2017-02-10 10:52+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2017-02-12 10:54+0800\n"
+"PO-Revision-Date: 2017-02-13 06:11+0000\n"
+"Last-Translator: Jason <chairco@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -484,7 +484,7 @@ msgid ""
 "using <a href='http://daringfireball.net/projects/markdown/basics' "
 "target='_blank' rel='noopener'>Markdown</a>. This is NOT made public and for"
 " REVIEW ONLY."
-msgstr "本教學的安排規劃。應該要列舉教學的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
+msgstr "本教學的安排規劃。應該要列舉課程的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:75
 #: proposals/models.py:201 proposals/models.py:246
@@ -605,11 +605,11 @@ msgstr "全天"
 
 #: proposals/models.py:252
 msgid "tutorial proposal"
-msgstr "教學提案"
+msgstr "專業課程提案"
 
 #: proposals/models.py:253
 msgid "tutorial proposals"
-msgstr "教學提案"
+msgstr "專業課程提案"
 
 #: proposals/utils.py:4
 msgctxt "speaker name default separator"
@@ -631,11 +631,11 @@ msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
 
 #: proposals/views/cancel.py:56
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
-msgstr "《<strong>{title}</strong>》教學提案已撤回。"
+msgstr "《<strong>{title}</strong>》專業課程提案已撤回。"
 
 #: proposals/views/cancel.py:60
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
-msgstr "《<strong>{title}</strong>》教學提案已重新提交。"
+msgstr "《<strong>{title}</strong>》專業課程提案已重新提交。"
 
 #: proposals/views/create.py:38
 msgid "Talk proposal <strong>{title}</strong> created."
@@ -643,7 +643,7 @@ msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
 
 #: proposals/views/create.py:48
 msgid "Tutorial proposal <strong>{title}</strong> created."
-msgstr "已創建題目為《<strong>{title}</strong>》的教學提案。"
+msgstr "已創建題目為《<strong>{title}</strong>》的專業課程提案。"
 
 #: proposals/views/update.py:39
 msgid "Talk proposal <strong>{title}</strong> updated."
@@ -651,7 +651,7 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 
 #: proposals/views/update.py:48
 msgid "Tutorial proposal <strong>{title}</strong> updated."
-msgstr "已完成更新《<strong>{title}</strong>》教學提案。"
+msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
 #: pycontw2016/settings/base.py:238
 msgid "PyCon Taiwan 2016"
@@ -1051,17 +1051,17 @@ msgstr "修改演講提案《%(proposal_title)s》"
 #: templates/default/proposals/tutorial_proposal_create.html:5
 #: templates/default/proposals/tutorial_proposal_create.html:7
 msgid "Submit a New Tutorial Proposal"
-msgstr "提交一個新的教學提案"
+msgstr "提交一個新的專業課程提案"
 
 #: templates/default/proposals/tutorial_proposal_peek.html:5
 #, python-format
 msgid "Tutorial Proposal %(proposal_title)s"
-msgstr "教學投稿《%(proposal_title)s》"
+msgstr "專業課程投稿《%(proposal_title)s》"
 
 #: templates/default/proposals/tutorial_proposal_update.html:5
 #, python-format
 msgid "Edit Tutorial Proposal %(proposal_title)s"
-msgstr "修改教學提案《%(proposal_title)s》"
+msgstr "修改專業課程提案《%(proposal_title)s》"
 
 #: templates/default/registration/login.html:5
 #: templates/default/registration/login.html:7
@@ -1327,22 +1327,22 @@ msgstr "您尚未有任何演講投稿。"
 
 #: templates/default/users/user_dashboard.html:42
 msgid "Tutorial Proposals"
-msgstr "教學提案"
+msgstr "專業課程提案"
 
 #: templates/default/users/user_dashboard.html:46
 msgid "New Tutorial Porposal"
-msgstr "投稿新教學"
+msgstr "投稿新專業課程"
 
 #: templates/default/users/user_dashboard.html:58
 #, python-format
 msgid ""
 "You haven't submitted any tutorial proposals. Why not <a "
 "href=\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
-msgstr "您尚未投稿教學，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">創建一個</a>？"
+msgstr "您尚未投稿專業課程，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">創建一個</a>？"
 
 #: templates/default/users/user_dashboard.html:60
 msgid "You haven't submitted any tutorial proposals."
-msgstr "您尚未有任何教學投稿。"
+msgstr "您尚未有任何專業課程投稿。"
 
 #: templates/default/users/user_dashboard.html:67
 msgid "Co-Speaking Proposals"
@@ -1456,7 +1456,7 @@ msgstr "PyDay"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:46
 msgid "Tutorial"
-msgstr "教學"
+msgstr "專業課程"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
@@ -1578,7 +1578,7 @@ msgstr "PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 P
 
 #: templates/pycontw-2016/index.html:31 templates/pycontw-2016/index.html:37
 msgid "Tutorials"
-msgstr "教學"
+msgstr "專業課程"
 
 #: templates/pycontw-2016/index.html:32 templates/pycontw-2016/index.html:41
 msgid "Conference"
@@ -1708,7 +1708,7 @@ msgstr "演講"
 
 #: templates/pycontw-2017/_includes/header.html:52
 msgid "tutorial"
-msgstr "教學"
+msgstr "專業課程"
 
 #: templates/pycontw-2017/_includes/header.html:53
 msgid "unconference"
