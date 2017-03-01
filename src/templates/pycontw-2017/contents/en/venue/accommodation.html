@@ -4,16 +4,31 @@
 
 {% block content %}
 
-<h2><span>On-site Accommodation</span></h2>
+<style>
+.accomodation-table {
+    border: 1.5px solid white;
+}
+.accomodation-table > thead {
+    border: 1.5px solid white;
+}
+.accomodation-table .money-range {
+    border: 1.5px solid white;
+}
+.accomodation-table .above-money-range {
+    border-bottom: 1.5px solid white;
+}
+</style>
+
+<h1><span>Accommodation</span></h1>
+
+<h2><span>Academia Sinica Activities Center</span></h2>
 <article>
-  <p>PyCon TW has on-site lodging at Academia Sinica Activities Center,
-      3-minute walk next to the venue. It comes with the following
-      options:</p>
+  <p>PyCon TW has on-site lodging at Academia Sinica Activities Center, 3-minute walk next to the venue.</p>
+
+  <h3><span>Room Details</span></h3>
   <ul>
       <li>superior single room: NT$1,650 /day</li>
-      <li>
-        superior double room: NT$1,750 (for one person) and NT$1,900 (for two people) /day
-      </li>
+      <li>superior double room: NT$1,750 (for one person) and NT$1,900 (for two people) /day</li>
   </ul>
 
   <p>
@@ -24,10 +39,8 @@
   <p>
   	More information on <a href="http://gao.sinica.edu.tw/huo-dong/room.php" target="_blank" rel="noopener">the original site</a>.
   </p>
-</article>
 
-<h3>Application Procedure</h3>
-<article>
+  <h3>Application Procedure</h3>
   <p>
       To apply for the on-site lodging, send email to <a href="mailto:organizers@pycon.tw?subject=Accommodation%20Reservation%20in%20Academia%20Sinica">organizers@pycon.tw</a> (Rock Hung) with the following information:
   </p>
@@ -61,16 +74,17 @@
     </thead>
     <tbody>
       <tr>
-        <td rowspan="2">$$$</td>
+        <td class="money-range" rowspan="2">$$$</td>
         <td><a href="http://www.grandvictoria.com.tw/en/rooms.php" target="_blank" rel="noopener">Grand Victoria Hotel
         </a></td>
         <td>Jiannan Rd. (Miramar) in 400m</td>
       </tr>
-      <tr>
+      <tr class="above-money-range">
         <td><a href="http://www.taipei.grand.hyatt.com/en/hotel/home.html" target="_blank" rel="noopener">Grand Hyatt</a></td>
-        <td>Taipei City Hall in 800m</td>    </tr>
+        <td>Taipei City Hall in 800m</td>
+      </tr>
       <tr>
-        <td rowspan="4">$$</td>
+        <td class="money-range" rowspan="4">$$</td>
         <td><a href="http://www.tango-hotels.com/" target="_blank" rel="noopener">Tango Hotel Taipei XinYi</a></td>
         <td>Yongchun in 350m</td>
       </tr>
@@ -85,12 +99,12 @@
         </td>
         <td>Gongguan (NTU) in 200m</td>
       </tr>
-      <tr>
+      <tr class="above-money-range">
         <td><a href="http://www.dandyhotel.com.tw/EN/DandyD/index.aspx?lan=en-US" target="_blank" rel="noopener">Dandy Hotel Daan Park Branch</a></td>
         <td>Daan in 100m</td>
       </tr>
       <tr>
-        <td rowspan="5">$</td>
+        <td class="money-range" rowspan="5">$</td>
         <td><a href="http://fw.tfhg.com.tw/about_en.php" target="_blank" rel="noopener">Forward Hotel Nangang</a></td>
         <td>Nangang Software Park in 350m</td>
       </tr>
