@@ -25,7 +25,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 {% compress css %}
-<link rel="stylesheet" href="{% static 'pycontw-2017/styles/main.css' %}">
+<link rel="stylesheet" href="{% static 'pycontw-2017/styles/main-dev.css' %}">
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
 {% endcompress %}
 
@@ -61,6 +61,7 @@
 <script src="{% static 'js/vendors/google_analytics.js' %}"></script>
 {% endif %}
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 {% compress js %}
 <script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
 {% block scripts %}{% endblock %}
