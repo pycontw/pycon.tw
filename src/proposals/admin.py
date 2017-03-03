@@ -20,7 +20,7 @@ class ProposalAdmin(admin.ModelAdmin):
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled',
     ]
-    readonly_fields = ['submitter']
+    readonly_fields = ['conference', 'submitter']
     search_fields = ['title', 'abstract']
     inlines = [AdditionalSpeakerInline]
 
@@ -37,7 +37,7 @@ class TalkProposalAdmin(ProposalAdmin):
         'python_level',
     ]
     list_filter = [
-        'category', 'duration', 'language', 'python_level',
+        'conference', 'category', 'duration', 'language', 'python_level',
     ]
 
 
@@ -47,5 +47,5 @@ class TutorialProposalAdmin(ProposalAdmin):
         'title', 'category', 'language', 'python_level',
     ]
     list_filter = [
-        'category', 'language', 'python_level',
+        'conference', 'category', 'language', 'python_level',
     ]
