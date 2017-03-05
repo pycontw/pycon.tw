@@ -87,6 +87,7 @@ class EventInfo(models.Model):
         ('DATA',  _('Data Analysis')),
         ('EDU',   _('Education')),
         ('EMBED', _('Embedded Systems')),
+        ('FIN',   _('FinTech')),
         ('GAME',  _('Gaming')),
         ('GRAPH', _('Graphics')),
         ('OTHER', _('Other')),

@@ -28,9 +28,14 @@
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
 <header>
+  <a href="#" class="btn-menu"></a>
 	<nav class="wrapper header-nav">
+    <div class="parent lang">
+      <a href="#" class="btn-show-lang-menu">ENGLISH</a>
+      <button class="btn-close"></button>
+    </div>
     <a href="{{ home_url }}" class="header-logo"></a>
-		<div class="parent {% if active == 'about' %}active{% endif %}">
+		<div class="parent to-expand {% if active == 'about' %}active{% endif %}">
 			<a href="{{ about_pycontw_url }}">
 				{% trans 'about' %}
 			</a>
@@ -39,7 +44,7 @@
 				<a href="{{ about_coc_url }}">{% trans 'code of conduct' %}</a>
 			</nav>
 		</div>
-		<div class="parent {% if active == 'events' %}active{% endif %}">
+		<div class="parent to-expand {% if active == 'events' %}active{% endif %}">
 			<a href="{{ events_overview_url }}">
 				{% trans 'events' %}
 			</a>
@@ -54,7 +59,7 @@
 				<a href="{{ events_bof_url }}">{% trans 'bof' %}</a>
 			</nav>
 		</div>
-		<div class="parent {% if active == 'speaking' %}active{% endif %}">
+		<div class="parent to-expand {% if active == 'speaking' %}active{% endif %}">
 			<a href="{{ speaking_cfp_url }}">
 				{% trans 'speaking' %}
 			</a>
@@ -66,7 +71,7 @@
 				<a href="{{ speaking_recording_url }}">{% trans 'recording policy' %}</a>
 			</nav>
 		</div>
-		<div class="parent {% if active == 'venue' %}active{% endif %}">
+		<div class="parent to-expand {% if active == 'venue' %}active{% endif %}">
 			<a href="{{ venue_url }}">
 				{% trans 'venue' context 'conference location' %}
 			</a>
@@ -82,7 +87,7 @@
 			</a>
 		</div>
 		{% endcomment %}
-		<div class="parent {% if active == 'registration' %}active{% endif %}">
+		<div class="parent to-expand {% if active == 'registration' %}active{% endif %}">
 			<a href="{{ reg_financial_aid_url }}">
 				{% trans 'registration' %}
 			</a>
@@ -96,7 +101,15 @@
 				{% trans 'blog' %}
 			</a>
 		</div>
-	</nav>
+  </nav>
+  <nav class="wrapper header-menu-nav">
+    <div class="parent lang">
+      <a href="#" class="btn-back-to-menu">Back to Menu</a>
+      <button class="btn-close"></button>
+    </div>
+    <a href="#" class="active">English</a>
+    <a href="#">繁體中文</a>
+  </nav>
 	<nav class="control-nav">
 		<a href="{% url 'user_dashboard' %}" class="dashboard">
 			{% trans 'dashboard' %}
