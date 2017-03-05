@@ -27,11 +27,17 @@
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
+{% get_language_info_list for LANGUAGES as languages %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as current_language %}
+
 <header>
   <a href="#" class="btn-menu"></a>
 	<nav class="wrapper header-nav">
     <div class="parent lang">
-      <a href="#" class="btn-show-lang-menu">ENGLISH</a>
+      <a href="#" class="btn-show-lang-menu">
+      	{{ current_language.name_translated }}
+      </a>
       <button class="btn-close"></button>
     </div>
     <a href="{{ home_url }}" class="header-logo"></a>
@@ -102,13 +108,19 @@
 			</a>
 		</div>
   </nav>
+
   <nav class="wrapper header-menu-nav">
     <div class="parent lang">
-      <a href="#" class="btn-back-to-menu">Back to Menu</a>
+      <a href="#" class="btn-back-to-menu">{% trans 'Back to Menu' %}</a>
       <button class="btn-close"></button>
     </div>
-    <a href="#" class="active">English</a>
-    <a href="#">繁體中文</a>
+    {% for language in languages %}
+    <a href="{{ request|path_for_language:language.code }}"
+    		{% if language == current_language %}class="active"{% endif %}
+    		data-lang="{{ language.code }}">
+    	{{ language.name_local }}
+    </a>
+    {% endfor %}
   </nav>
 	<nav class="control-nav">
 		<a href="{% url 'user_dashboard' %}" class="dashboard">

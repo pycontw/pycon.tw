@@ -1,4 +1,5 @@
-document.querySelectorAll('.control-nav > .lang > nav > a').forEach(function (el) {
+document.querySelectorAll(
+		'.control-nav > .lang > nav > a, .header-menu-nav > a').forEach((el) => {
 	el.addEventListener('click', function (e) {
 		e.preventDefault();
 		var form = document.getElementById('nav-lang-form');
