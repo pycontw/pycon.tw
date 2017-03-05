@@ -39,15 +39,24 @@ document.querySelectorAll('.control-nav > .lang > nav > a').forEach(function (el
   $('.btn-show-lang-menu').on('click', (e) => {
     $('.header-nav').hide();
     $('.header-menu-nav').show();
-  })
+  });
 
   $('.btn-back-to-menu').on('click', (e) => {
     $('.header-nav').show();
     $('.header-menu-nav').hide();
-  })
+  });
 
   $('.btn-close').on('click', (e) => {
     $('body').removeClass('show-menu');
     controlRootEl();
-  })
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 599) {
+      $('.header-nav').show();
+      $('.header-menu-nav').hide();
+    } else {
+      $('body').removeClass('show-menu');
+    }
+  });
 })();
