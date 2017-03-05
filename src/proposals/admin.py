@@ -36,16 +36,10 @@ class TalkProposalAdmin(ProposalAdmin):
         'title', 'category', 'duration', 'language',
         'python_level',
     ]
-    list_filter = [
-        'conference', 'category', 'duration', 'language', 'python_level',
-    ]
+    list_filter = ['category', 'duration', 'language', 'python_level']
 
 
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
-    list_display = [
-        'title', 'category', 'language', 'python_level',
-    ]
-    list_filter = [
-        'conference', 'category', 'language', 'python_level',
-    ]
+    list_display = ['title', 'category', 'language', 'python_level']
+    list_filter = ['category', 'language', 'python_level']
