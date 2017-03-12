@@ -7,7 +7,7 @@ from .models import Review
 class ReviewAdmin(admin.ModelAdmin):
     fields = [
         'reviewer', 'stage', 'proposal', 'vote', 'comment',
-        'note',
+        'note','is_draft'
         # 'updated',
     ]
     list_display = [
