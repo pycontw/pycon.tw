@@ -18,7 +18,7 @@ from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 class ReviewableMixin:
     def dispatch(self, request, *args, **kwargs):
-        if not settings.REVIEWS_STAGE < 1:
+        if settings.REVIEWS_STAGE < 1:
             raise Http404
         return super().dispatch(request, *args, **kwargs)
 
