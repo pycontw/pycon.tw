@@ -77,6 +77,12 @@
 				<a href="{{ speaking_recording_url }}">{% trans 'recording policy' %}</a>
 			</nav>
 		</div>
+
+		{# TODO: Replace the following with dropdown when accomodation info is done. #}
+		<a href="{{ venue_url }}" class="{% if active == 'venue' %}active{% endif %}">
+			{% trans 'venue' context 'conference location' %}
+		</a>
+		{% comment %}
 		<div class="parent to-expand {% if active == 'venue' %}active{% endif %}">
 			<a href="{{ venue_url }}">
 				{% trans 'venue' context 'conference location' %}
@@ -86,6 +92,8 @@
 				<a href="{{ venue_accommodation_url }}">{% trans 'accommodation' %}</a>
 			</nav>
 		</div>
+		{% endcomment %}
+
 		{% comment %}
 		<div class="parent {% if active == 'sponsor' %}active{% endif %}">
 			<a href="#"">

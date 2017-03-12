@@ -2,6 +2,7 @@ import collections
 import itertools
 import random
 
+from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
@@ -11,12 +12,18 @@ from django.views.generic import ListView, UpdateView
 from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
 
-from .apps import ReviewsConfig
 from .forms import ReviewForm
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 
-class TalkProposalListView(PermissionRequiredMixin, ListView):
+class ReviewableMixin:
+    def dispatch(self, request, *args, **kwargs):
+        if settings.REVIEWS_STAGE < 1:
+            raise Http404
+        return super().dispatch(request, *args, **kwargs)
+
+
+class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
 
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
@@ -44,12 +51,12 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
     def get_ordering(self):
         params = self.request.GET
         order_key = self.order_keys.get(params.get('order', '').lower())
-        return order_key
+        return order_key or '?'
 
     def get_queryset(self):
         user = self.request.user
-        proposals = (
-            self.model.objects
+        qs = (
+            super().get_queryset()
             .filter_reviewable(user)
             .exclude(accepted__isnull=False)
             .exclude(review__reviewer=user)
@@ -60,18 +67,21 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         # if category:
         #     proposals = proposals.filter(category=category)
         ordering = self.get_ordering()
-        if ordering:
-            proposals = proposals.order_by(ordering)
-            self.ordering = ordering
-        else:
-            proposal_list = list(proposals)
+        if ordering == '?':
+            # We don't use order_by('?') because it is crazy slow, and instead
+            # resolve the queryset to a list, and shuffle it normally. This is
+            # OK since we will iterate through it in the template anyway.
+            proposal_list = list(qs)
             random.shuffle(proposal_list)
-            proposals = SequenceQuerySet(proposal_list)
-            self.ordering = '?'
-        return proposals
+            qs = SequenceQuerySet(proposal_list)
+            ordering = '?'
+        else:
+            qs = qs.order_by(ordering)
+        self.ordering = ordering
+        return qs
 
     def get_context_data(self, **kwargs):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
@@ -108,7 +118,8 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return context
 
     def _get_reviews(self):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
+
         if review_stage == 1:
             reviews = (
                 Review.objects
@@ -140,7 +151,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return self._get_reviews().filter(draft=True)
 
 
-class ReviewEditView(PermissionRequiredMixin, UpdateView):
+class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
 
     form_class = ReviewForm
     permission_required = REVIEW_REQUIRED_PERMISSIONS
@@ -173,7 +184,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
             review = Review.objects.get(
                 proposal=self.proposal,
                 reviewer=self.request.user,
-                stage=ReviewsConfig.stage,
+                stage=settings.REVIEWS_STAGE,
             )
         except Review.DoesNotExist:
             review = None
@@ -188,7 +199,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
         # Query all reviews made by others, including all stages
         full_other_reviews = (
             Review.objects

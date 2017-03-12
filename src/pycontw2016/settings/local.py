@@ -1,4 +1,4 @@
-from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, env
+from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, REVIEWS_STAGE, env
 from .base import *             # NOQA
 
 import logging.config
@@ -84,3 +84,6 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+
+REVIEWS_STAGE = env.int('REVIEWS_STAGE', default=REVIEWS_STAGE)
