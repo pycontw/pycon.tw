@@ -3,10 +3,8 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from core.models import BigForeignKey
+from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
-
-from .apps import ReviewsConfig
 
 
 REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
@@ -16,7 +14,7 @@ class ReviewQuerySet(models.QuerySet):
 
     def filter_current_reviews(
             self, proposal, exclude_user=None, filter_user=None):
-        qs = self.filter(proposal=proposal, stage__lte=ReviewsConfig.stage)
+        qs = self.filter(proposal=proposal, stage__lte=settings.REVIEWS_STAGE)
         if exclude_user:
             qs = qs.exclude(reviewer=exclude_user)
         if filter_user:
@@ -32,6 +30,10 @@ class ReviewQuerySet(models.QuerySet):
         )
         qs = qs.filter(reviewer=user)
         return qs
+
+
+class ReviewManager(DefaultConferenceManager.from_queryset(ReviewQuerySet)):
+    conference_attr = 'proposal__conference'
 
 
 class Review(models.Model):
@@ -50,7 +52,8 @@ class Review(models.Model):
         verbose_name=_('proposal'),
     )
 
-    objects = ReviewQuerySet.as_manager()
+    objects = ReviewManager()
+    all_objects = ReviewQuerySet.as_manager()
 
     class Vote(object):
         PLUS_ONE = "+1"
@@ -136,5 +139,5 @@ class Review(models.Model):
 
     def save(self, *args, **kwargs):
         if self.stage is None:
-            self.stage = ReviewsConfig.stage
+            self.stage = settings.REVIEWS_STAGE
         return super().save(*args, **kwargs)

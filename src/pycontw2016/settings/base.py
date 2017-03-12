@@ -43,6 +43,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'core.context_processors.google_analytics',
                 'core.context_processors.proposals_states',
+                'core.context_processors.reviews_states',
             ],
             'debug': True,
         },
@@ -252,6 +253,8 @@ PROPOSALS_CREATABLE = True
 PROPOSALS_EDITABLE = True
 
 PROPOSALS_WITHDRAWABLE = False
+
+REVIEWS_STAGE = 0
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),

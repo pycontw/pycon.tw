@@ -156,7 +156,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     )
 
     objects = DefaultConferenceManager.from_queryset(ProposalQuerySet)()
-    all_objects = models.Manager.from_queryset(ProposalQuerySet)()
+    all_objects = ProposalQuerySet.as_manager()
 
     _must_fill_fields = [
         'abstract', 'objective', 'supplementary',
