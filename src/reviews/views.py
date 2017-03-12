@@ -51,12 +51,12 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
     def get_ordering(self):
         params = self.request.GET
         order_key = self.order_keys.get(params.get('order', '').lower())
-        return order_key
+        return order_key or '?'
 
     def get_queryset(self):
         user = self.request.user
-        proposals = (
-            self.model.objects
+        qs = (
+            super().get_queryset()
             .filter_reviewable(user)
             .exclude(accepted__isnull=False)
             .exclude(review__reviewer=user)
@@ -67,15 +67,18 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         # if category:
         #     proposals = proposals.filter(category=category)
         ordering = self.get_ordering()
-        if ordering:
-            proposals = proposals.order_by(ordering)
-            self.ordering = ordering
-        else:
-            proposal_list = list(proposals)
+        if ordering == '?':
+            # We don't use order_by('?') because it is crazy slow, and instead
+            # resolve the queryset to a list, and shuffle it normally. This is
+            # OK since we will iterate through it in the template anyway.
+            proposal_list = list(qs)
             random.shuffle(proposal_list)
-            proposals = SequenceQuerySet(proposal_list)
-            self.ordering = '?'
-        return proposals
+            qs = SequenceQuerySet(proposal_list)
+            ordering = '?'
+        else:
+            qs = qs.order_by(ordering)
+        self.ordering = ordering
+        return qs
 
     def get_context_data(self, **kwargs):
         review_stage = settings.REVIEWS_STAGE
