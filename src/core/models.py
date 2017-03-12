@@ -161,6 +161,11 @@ class EventInfo(models.Model):
         db_index=True,
     )
 
+    last_updated_at = models.DateTimeField(
+        verbose_name=_('last updated at'),
+        auto_now=True,
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
