@@ -58,9 +58,9 @@ class ReviewForm(RequestUserValidationMixin, forms.ModelForm):
         review.proposal = self._proposal
 
         if self._request.POST.get("draft"):
-            review.is_draft = True
+            review.draft = True
         else:
-            review.is_draft = False
+            review.draft = False
 
         if commit:
             review.save()

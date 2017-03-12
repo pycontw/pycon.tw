@@ -134,10 +134,10 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return reviews
 
     def get_reviews(self):
-        return self._get_reviews().filter(is_draft=False)
+        return self._get_reviews().filter(draft=False)
 
     def get_draft_reviews(self):
-        return self._get_reviews().filter(is_draft=True)
+        return self._get_reviews().filter(draft=True)
 
 
 class ReviewEditView(PermissionRequiredMixin, UpdateView):

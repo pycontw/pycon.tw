@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='review',
-            name='is_draft',
+            name='draft',
             field=models.BooleanField(default=False),
         ),
     ]
