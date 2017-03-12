@@ -11,3 +11,9 @@ def proposals_states(requests):
         'proposals_editable': settings.PROPOSALS_EDITABLE,
         'proposals_withdrawable': settings.PROPOSALS_WITHDRAWABLE,
     }
+
+
+def reviews_states(request):
+    return {
+        'reviews_stage': settings.REVIEWS_STAGE,
+    }

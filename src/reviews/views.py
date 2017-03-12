@@ -2,6 +2,7 @@ import collections
 import itertools
 import random
 
+from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
@@ -11,12 +12,18 @@ from django.views.generic import ListView, UpdateView
 from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
 
-from .apps import ReviewsConfig
 from .forms import ReviewForm
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review
 
 
-class TalkProposalListView(PermissionRequiredMixin, ListView):
+class ReviewableMixin:
+    def dispatch(self, request, *args, **kwargs):
+        if not settings.REVIEWS_STAGE < 1:
+            raise Http404
+        return super().dispatch(request, *args, **kwargs)
+
+
+class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
 
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
@@ -71,7 +78,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return proposals
 
     def get_context_data(self, **kwargs):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
@@ -107,7 +114,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return context
 
     def get_reviews(self):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
         if review_stage == 1:
             reviews = (
                 Review.objects
@@ -133,7 +140,7 @@ class TalkProposalListView(PermissionRequiredMixin, ListView):
         return reviews
 
 
-class ReviewEditView(PermissionRequiredMixin, UpdateView):
+class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
 
     form_class = ReviewForm
     permission_required = REVIEW_REQUIRED_PERMISSIONS
@@ -166,7 +173,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
             review = Review.objects.get(
                 proposal=self.proposal,
                 reviewer=self.request.user,
-                stage=ReviewsConfig.stage,
+                stage=settings.REVIEWS_STAGE,
             )
         except Review.DoesNotExist:
             review = None
@@ -181,7 +188,7 @@ class ReviewEditView(PermissionRequiredMixin, UpdateView):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        review_stage = ReviewsConfig.stage
+        review_stage = settings.REVIEWS_STAGE
         # Query all reviews made by others, including all stages
         full_other_reviews = (
             Review.objects

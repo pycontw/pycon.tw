@@ -6,8 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 from core.models import BigForeignKey
 from proposals.models import TalkProposal
 
-from .apps import ReviewsConfig
-
 
 REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
 
@@ -16,7 +14,7 @@ class ReviewQuerySet(models.QuerySet):
 
     def filter_current_reviews(
             self, proposal, exclude_user=None, filter_user=None):
-        qs = self.filter(proposal=proposal, stage__lte=ReviewsConfig.stage)
+        qs = self.filter(proposal=proposal, stage__lte=settings.REVIEWS_STAGE)
         if exclude_user:
             qs = qs.exclude(reviewer=exclude_user)
         if filter_user:
@@ -134,5 +132,5 @@ class Review(models.Model):
 
     def save(self, *args, **kwargs):
         if self.stage is None:
-            self.stage = ReviewsConfig.stage
+            self.stage = settings.REVIEWS_STAGE
         return super().save(*args, **kwargs)
