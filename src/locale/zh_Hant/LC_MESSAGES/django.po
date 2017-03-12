@@ -763,6 +763,9 @@ msgstr "個人對本投稿的附註。您可以使用這個欄位記錄有關審
 msgid "updated"
 msgstr "更新時間"
 
+msgid "draft"
+msgstr "草稿"
+
 #: reviews/models.py:123
 msgid "review"
 msgstr "審查"
@@ -1257,6 +1260,9 @@ msgstr "未審查的演講提案"
 #: templates/default/reviews/talk_proposal_list.html:54
 msgid "Reviewed Talk Proposals"
 msgstr "已審查的演講提案"
+
+msgid "Draft"
+msgstr "草稿"
 
 #: templates/default/reviews/talk_proposal_list.html:56
 msgid "Talk Proposals With Decision"
