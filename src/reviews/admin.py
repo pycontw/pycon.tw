@@ -6,13 +6,13 @@ from .models import Review
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     fields = [
-        'reviewer', 'stage', 'proposal', 'vote', 'comment',
-        'note','draft'
+        'reviewer', 'stage', 'draft', 'proposal', 'vote', 'comment',
+        'note',
         # 'updated',
     ]
     list_display = [
         'proposal', 'vote', 'reviewer', 'stage',
     ]
     list_filter = [
-        'vote', 'stage',
+        'vote', 'stage', 'draft',
     ]
