@@ -3,7 +3,7 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
 
-from core.models import BigForeignKey
+from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
 
 
@@ -32,6 +32,10 @@ class ReviewQuerySet(models.QuerySet):
         return qs
 
 
+class ReviewManager(DefaultConferenceManager.from_queryset(ReviewQuerySet)):
+    conference_attr = 'proposal__conference'
+
+
 class Review(models.Model):
 
     reviewer = BigForeignKey(
@@ -48,7 +52,8 @@ class Review(models.Model):
         verbose_name=_('proposal'),
     )
 
-    objects = ReviewQuerySet.as_manager()
+    objects = ReviewManager()
+    all_objects = ReviewQuerySet.as_manager()
 
     class Vote(object):
         PLUS_ONE = "+1"
