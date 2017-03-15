@@ -8,6 +8,10 @@
 
 
 {% block content_full %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/tutorial' as events_tutorial_url %}
+
 <div class="wrapper">
 	<main>
     <h1 class="logo">
@@ -18,8 +22,9 @@
 			<code class="def-future">def future():</code>
 		</div>
 		<nav class="index-session-links">
-			<a href="#">{% trans 'tutorial: '%}{% trans '1 June' %}</a>
-			<a href="#">{% trans 'sprint: '%}{% trans 'TBA' %}</a>
+			<a href="{{ events_tutorial_url }}">{% trans 'tutorial: '%}{% trans '1 June' %}</a>
+			<a href="{{ speaking_cfp_url }}">{% trans 'cfp: '%}{% trans '27 Mar' %}</a>
+			<a href="{{ events_sprint_url}}">{% trans 'sprint: '%}{% trans '12 Mar' %}</a>
 		</nav>
 		<section class="index-intro">
 			<article class="what-is-pycon">
