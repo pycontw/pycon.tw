@@ -122,6 +122,8 @@ class Review(models.Model):
         db_index=True,
     )
 
+    draft = models.BooleanField(default=False)
+
     class Meta:
         verbose_name = _('review')
         verbose_name_plural = _('reviews')

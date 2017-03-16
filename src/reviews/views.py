@@ -105,6 +105,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         context.update({
             'proposals_with_verdict': verdicted_proposals,
             'reviews': self.get_reviews(),
+            'draft_reviews': self.get_draft_reviews(),
             'review_stage': review_stage,
             'review_stage_desc_tpl': (
                 'reviews/_includes/review_stage_%s_desc.html'
@@ -116,7 +117,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         })
         return context
 
-    def get_reviews(self):
+    def _get_reviews(self):
         review_stage = settings.REVIEWS_STAGE
         if review_stage == 1:
             reviews = (
@@ -141,6 +142,12 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
                 .exclude(proposal__in=proposals, stage=1)
             )
         return reviews
+
+    def get_reviews(self):
+        return self._get_reviews().filter(draft=False)
+
+    def get_draft_reviews(self):
+        return self._get_reviews().filter(draft=True)
 
 
 class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
@@ -232,7 +239,6 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             # review form. Exclude the current user's current review so that
             # it does not show up twice (once in the table, once in form).
             my_reviews = my_reviews.exclude(pk=self.object.pk)
-
         kwargs.update({
             'proposal': self.proposal,
             'other_reviews': other_reviews,
