@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-06 15:13+0800\n"
+"POT-Creation-Date: 2017-03-19 15:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,196 +67,158 @@ msgstr ""
 msgid "{model_name_cap} creation requires a request object."
 msgstr ""
 
-#: core/models.py:68
+#: core/models.py:66
 msgid "conference"
 msgstr ""
 
-#: core/models.py:81 events/models.py:136
+#: core/models.py:79 events/models.py:136
 msgid "title"
 msgstr ""
 
-#: core/models.py:86
+#: core/models.py:84
 msgid "Best Practices & Patterns"
 msgstr ""
 
-#: core/models.py:87
+#: core/models.py:85
 msgid "Community"
 msgstr ""
 
-#: core/models.py:88
+#: core/models.py:86
 msgid "Databases"
 msgstr ""
 
-#: core/models.py:89
+#: core/models.py:87
 msgid "Data Analysis"
 msgstr ""
 
-#: core/models.py:90
+#: core/models.py:88
 msgid "Education"
 msgstr ""
 
-#: core/models.py:91
+#: core/models.py:89
 msgid "Embedded Systems"
 msgstr ""
 
-#: core/models.py:92
+#: core/models.py:90
+msgid "FinTech"
+msgstr ""
+
+#: core/models.py:91
 msgid "Gaming"
 msgstr ""
 
-#: core/models.py:93
+#: core/models.py:92 templates/default/_includes/proposal_example_modal.html:65
 msgid "Graphics"
 msgstr ""
 
-#: core/models.py:94
+#: core/models.py:93
 msgid "Other"
 msgstr ""
 
-#: core/models.py:95
+#: core/models.py:94
 msgid "Python Core (language, stdlib, etc.)"
 msgstr ""
 
-#: core/models.py:96
+#: core/models.py:95
 msgid "Python Internals"
 msgstr ""
 
-#: core/models.py:97
+#: core/models.py:96
 msgid "Python Libraries"
 msgstr ""
 
-#: core/models.py:98
+#: core/models.py:97
 msgid "Science"
 msgstr ""
 
-#: core/models.py:99
+#: core/models.py:98
 msgid "Security"
 msgstr ""
 
-#: core/models.py:100
+#: core/models.py:99
 msgid "Systems Administration"
 msgstr ""
 
-#: core/models.py:101
+#: core/models.py:100
 msgid "Testing"
 msgstr ""
 
-#: core/models.py:102
+#: core/models.py:101
 msgid "Web Frameworks"
 msgstr ""
 
-#: core/models.py:105
+#: core/models.py:104
 msgid "category"
 msgstr ""
 
-#: core/models.py:111
+#: core/models.py:110
 msgid "English talk"
 msgstr ""
 
-#: core/models.py:112
+#: core/models.py:111
 msgid "Chinese talk w. English slides"
 msgstr ""
 
-#: core/models.py:113
+#: core/models.py:112
 msgid "Chinese talk w. Chinese slides"
 msgstr ""
 
-#: core/models.py:114
+#: core/models.py:113
 msgid "Taiwanese Hokkien"
 msgstr ""
 
-#: core/models.py:117
+#: core/models.py:116
 msgid "language"
 msgstr ""
 
-#: core/models.py:123
+#: core/models.py:122
 msgid "abstract"
 msgstr ""
 
-#: core/models.py:126
-msgid ""
-"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
-"data-content='abstract'>Proposal Examples</a></p>The overview of what the "
-"talk is about. If the talk assume some domain knowledge please state it "
-"here. If your talk is accepted, this will be displayed on both the website "
-"and the handbook. Should be one paragraph."
-msgstr ""
-
-#: core/models.py:137
+#: core/models.py:127
+#: templates/default/_includes/proposal_example_modal.html:43
 msgid "Novice"
 msgstr ""
 
-#: core/models.py:138
+#: core/models.py:128
+#: templates/default/_includes/proposal_example_modal.html:58
 msgid "Intermediate"
 msgstr ""
 
-#: core/models.py:139
+#: core/models.py:129
 msgid "Experienced"
 msgstr ""
 
-#: core/models.py:142 templates/default/reviews/review_form.html:38
+#: core/models.py:132 templates/default/reviews/review_form.html:38
 msgid "Python level"
 msgstr ""
 
-#: core/models.py:146
-#, python-brace-format
-msgid ""
-"The choice of talk level matters during the review process. More definition "
-"of talk level can be found at the <a href=\"{speaking_talk_url}\" target="
-"\"_blank\">How to Propose a Talk</a> page. Note that a proposal won't be "
-"more likely to be accepted because of being \"Novice\" level. We may contact "
-"you to change the talk level when we find the content is too-hard or too-"
-"easy for the target audience."
-msgstr ""
-
-#: core/models.py:160
+#: core/models.py:138
 msgid "detailed description"
 msgstr ""
 
-#: core/models.py:163
-msgid ""
-"<p><a href='#' data-toggle='modal' data-"
-"target='#proposalFieldExampleModal'data-content='detailed "
-"description'>Proposal Examples</a></p>Try not be too lengthy to scare away "
-"reviewers or potential audience. A comfortable length is less than 2000 "
-"characters (or about 1200 Chinese characters). Since most reviewers may not "
-"understand the topic as deep as you do, including related links to the talk "
-"topic will help reviewers understand the proposal. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>."
-msgstr ""
-
-#: core/models.py:177 reviews/models.py:92
+#: core/models.py:143 reviews/models.py:95
 msgid "Yes"
 msgstr ""
 
-#: core/models.py:178 reviews/models.py:93
+#: core/models.py:144 reviews/models.py:96
 msgid "No"
 msgstr ""
 
-#: core/models.py:181
+#: core/models.py:147 templates/pycontw-2017/_includes/header.html:77
 msgid "recording policy"
 msgstr ""
 
-#: core/models.py:185
-#, python-brace-format
-msgid ""
-"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
-"release audio and video of your presentation. More information can be found "
-"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
-"page."
-msgstr ""
-
-#: core/models.py:197
+#: core/models.py:153
 msgid "slide link"
 msgstr ""
 
-#: core/models.py:201
-msgid ""
-"You can add your slide link near or after the conference day. Not required "
-"for review."
+#: core/models.py:159 events/models.py:234
+msgid "created at"
 msgstr ""
 
-#: core/models.py:207 events/models.py:234
-msgid "created at"
+#: core/models.py:165
+msgid "last updated at"
 msgstr ""
 
 #: core/views.py:28
@@ -273,22 +235,16 @@ msgstr ""
 
 #: events/admin.py:19 events/admin.py:66 events/models.py:21
 #: templates/pycontw-2016/events/schedule.html:42
-#: templates/pycontw-2017/contents/en/events/schedules.html:42
-#: templates/pycontw-2017/contents/zh/events/schedules.html:42
 msgid "Day 1"
 msgstr ""
 
 #: events/admin.py:20 events/admin.py:67 events/models.py:22
 #: templates/pycontw-2016/events/schedule.html:45
-#: templates/pycontw-2017/contents/en/events/schedules.html:45
-#: templates/pycontw-2017/contents/zh/events/schedules.html:45
 msgid "Day 2"
 msgstr ""
 
 #: events/admin.py:21 events/admin.py:68 events/models.py:23
 #: templates/pycontw-2016/events/schedule.html:48
-#: templates/pycontw-2017/contents/en/events/schedules.html:48
-#: templates/pycontw-2017/contents/zh/events/schedules.html:48
 msgid "Day 3"
 msgstr ""
 
@@ -388,7 +344,7 @@ msgstr ""
 msgid "sponsored events"
 msgstr ""
 
-#: events/models.py:212 reviews/models.py:50
+#: events/models.py:212 reviews/models.py:52
 msgid "proposal"
 msgstr ""
 
@@ -407,10 +363,10 @@ msgstr ""
 #: events/models.py:239 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
-#: templates/pycontw-2017/contents/en/events/schedules.html:6
-#: templates/pycontw-2017/contents/en/events/schedules.html:8
-#: templates/pycontw-2017/contents/zh/events/schedules.html:6
-#: templates/pycontw-2017/contents/zh/events/schedules.html:8
+#: templates/pycontw-2017/contents/en/events/schedules.html:5
+#: templates/pycontw-2017/contents/en/events/schedules.html:7
+#: templates/pycontw-2017/contents/zh/events/schedules.html:5
+#: templates/pycontw-2017/contents/zh/events/schedules.html:7
 msgid "Schedule"
 msgstr ""
 
@@ -434,15 +390,108 @@ msgstr ""
 msgid "New talk schedule generated successfully."
 msgstr ""
 
-#: proposals/forms/mixins.py:12
+#: proposals/forms/mixins.py:16
 #, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
 msgstr ""
 
-#: proposals/forms/proposals.py:34 proposals/forms/proposals.py:71
-#: proposals/models.py:214 proposals/models.py:276
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:140
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
+"the talk is about. If the talk assume some domain knowledge please state it "
+"here. If your talk is accepted, this will be displayed on both the website "
+"and the handbook. Should be one paragraph.</p>"
+msgstr ""
+
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:149
+#, python-brace-format
+msgid ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href='{speaking_talk_url}' "
+"target='_blank'>How to Propose a Talk</a> page. Note that a proposal won't "
+"be more likely to be accepted because of being 'Novice' level. We may "
+"contact you to change the talk level when we find the content is too-hard or "
+"too-easy for the target audience."
+msgstr ""
+
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:162
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
+"too lengthy to scare away reviewers or potential audience. A comfortable "
+"length is less than 2000 characters (or about 1200 Chinese characters). "
+"Since most reviewers may not understand the topic as deep as you do, "
+"including related links to the talk topic will help reviewers understand the "
+"proposal. Edit using <a href='http://daringfireball.net/projects/markdown/"
+"basics' target='_blank' rel='noopener'>Markdown</a>."
+msgstr ""
+
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:176
+#, python-brace-format
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
+"release audio and video of your presentation. More information can be found "
+"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
+"page."
+msgstr ""
+
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:186
+msgid ""
+"You can add your slide link near or after the conference day. Not required "
+"for review."
+msgstr ""
+
+#: proposals/forms/mixins.py:94
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
+"audience for your talk? (Be specific, \"Python users\" is not a good "
+"answer). And what will the attendees get out of your talk? When they leave "
+"the room, what will they learn that they didn't know before? This is NOT "
+"made public and for REVIEW ONLY.</p>"
+msgstr ""
+
+#: proposals/forms/mixins.py:104 proposals/forms/mixins.py:197
+msgid ""
+"Anything else you'd like the program committee to know when making their "
+"selection: your past speaking experience, community experience, etc. This is "
+"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
+"daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>."
+msgstr ""
+
+#: proposals/forms/mixins.py:112
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
+"arranged. It is highly recommended to attach the estimated time length for "
+"each sections in the talk. Talks in favor of 45min should have a fallback "
+"plan about how to shrink the content into a 30min one. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
+msgstr ""
+
+#: proposals/forms/mixins.py:190
+msgid ""
+"Who is the intended audience for your talk? (Be specific, \"Python users\" "
+"is not a good answer). And what will the attendees get out of your talk? "
+"When they leave the room, what will they learn that they didn't know before? "
+"This is NOT made public and for REVIEW ONLY."
+msgstr ""
+
+#: proposals/forms/mixins.py:205
+msgid ""
+"How the tutorial will be arranged. You should enumerate over each section in "
+"your talk and attach each section with the estimated time length. Edit using "
+"<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
+msgstr ""
+
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
+#: proposals/models.py:201 proposals/models.py:246
 msgid "duration"
 msgstr ""
 
@@ -499,7 +548,7 @@ msgstr ""
 msgid "Pending"
 msgstr ""
 
-#: proposals/models.py:76 proposals/models.py:237
+#: proposals/models.py:76 proposals/models.py:207
 msgid "Accepted"
 msgstr ""
 
@@ -507,7 +556,7 @@ msgstr ""
 msgid "Declined"
 msgstr ""
 
-#: proposals/models.py:86 proposals/models.py:160
+#: proposals/models.py:86 proposals/models.py:147
 msgid "cancelled"
 msgstr ""
 
@@ -524,83 +573,46 @@ msgid "submitter"
 msgstr ""
 
 #: proposals/models.py:131
-msgid "objective"
-msgstr ""
-
-#: proposals/models.py:134
-msgid ""
-"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
-"data-content='objective'>Proposal Examples</a></p>Who is the intended "
-"audience for your talk? (Be specific, \"Python users\" is not a good "
-"answer). And what will the attendees get out of your talk? When they leave "
-"the room, what will they learn that they didn't know before? This is NOT "
-"made public and for REVIEW ONLY."
-msgstr ""
-
-#: proposals/models.py:146
-msgid "supplementary"
-msgstr ""
-
-#: proposals/models.py:150
-msgid ""
-"Anything else you'd like the program committee to know when making their "
-"selection: your past speaking experience, community experience, etc. This is "
-"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
-"daringfireball.net/projects/markdown/basics' target='_blank'>Markdown</a>."
-msgstr ""
-
-#: proposals/models.py:219 proposals/models.py:282
 msgid "outline"
 msgstr ""
 
-#: proposals/models.py:222
-msgid ""
-"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
-"data-content='outline'>Proposal Examples</a></p>How the talk will be "
-"arranged. It is highly recommended to attach the estimated time length for "
-"each sections in the talk. Talks in favor of 45min should have a fallback "
-"plan about how to shrink the content into a 25min one. Edit using <a "
-"href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
+#: proposals/models.py:136
+msgid "objective"
 msgstr ""
 
-#: proposals/models.py:238
+#: proposals/models.py:141
+msgid "supplementary"
+msgstr ""
+
+#: proposals/models.py:208
 msgid "Rejected"
 msgstr ""
 
-#: proposals/models.py:241
+#: proposals/models.py:211
 msgid "accepted"
 msgstr ""
 
-#: proposals/models.py:248
+#: proposals/models.py:218
 msgid "talk proposal"
 msgstr ""
 
-#: proposals/models.py:249
+#: proposals/models.py:219
 msgid "talk proposals"
 msgstr ""
 
-#: proposals/models.py:272
+#: proposals/models.py:242
 msgid "Half day"
 msgstr ""
 
-#: proposals/models.py:273
+#: proposals/models.py:243
 msgid "Full day"
 msgstr ""
 
-#: proposals/models.py:285
-msgid ""
-"How the tutorial will be arranged. You should enumerate over each section in "
-"your talk and attach each section with the estimated time length. Edit using "
-"<a href='http://daringfireball.net/projects/markdown/basics' "
-"target='_blank'>Markdown</a>.This is NOT made public and for REVIEW ONLY."
-msgstr ""
-
-#: proposals/models.py:295
+#: proposals/models.py:252
 msgid "tutorial proposal"
 msgstr ""
 
-#: proposals/models.py:296
+#: proposals/models.py:253
 msgid "tutorial proposals"
 msgstr ""
 
@@ -644,34 +656,159 @@ msgstr ""
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr ""
 
-#: proposals/views/update.py:39
+#: proposals/views/update.py:32 proposals/views/update.py:88
+msgid "Abstract Example"
+msgstr ""
+
+#: proposals/views/update.py:33
+msgid ""
+"For modern human beings, the data in computers are essentially an external "
+"place for storing our memories. No matter they're photographs of your daily "
+"life, music, videos, or even some data produced for work, school, research, "
+"they're all being stored in computers. As the time goes by, the folders in "
+"computers fall into a state of chaos. Or in another scenario, you're managed "
+"to manipulate a series of files, but ended up with changing them one by one "
+"using File Explorer. Well, is there any better methodology? This talk is "
+"going to introduce how you can \"programmatically\" manipulate directories "
+"and files, using Python and it's built-in module, pathlib. We'll look at "
+"examples from simple ones to complicated ones, and eventually combine "
+"looping and sorting techniques in Python, to conquer a complicated file re-"
+"categorize problem."
+msgstr ""
+
+#: proposals/views/update.py:51 proposals/views/update.py:104
+msgid "Objective Example"
+msgstr ""
+
+#: proposals/views/update.py:52
+msgid ""
+"Targeted at people who's a Python beginner, who tries to solve some daily "
+"life problems with programming. By the time I started to learn programming, "
+"I didn't know where I can use it. It sounds weird at first, but since I had "
+"only limited ability at the beginning, things like web development or data "
+"analysis were too hard for me to step into.\n"
+"\n"
+"But I found out that, managing data inside a computer is a very practical "
+"starting point, it's easy to see the result, and it does allow you to solve "
+"some problems that are rather difficult to do by hand. This kind of step-by-"
+"step learning process should be pretty helpful for beginners."
+msgstr ""
+
+#: proposals/views/update.py:66 proposals/views/update.py:118
+msgid "Description Example"
+msgstr ""
+
+#: proposals/views/update.py:67
+msgid ""
+"In the final example sharing, we'll try to move a series of images marked "
+"with date and file name, into \"YEAR/MONTH\" patterned directories that "
+"already have data in it, and also rename each image according to the "
+"chronological order."
+msgstr ""
+
+#: proposals/views/update.py:73 proposals/views/update.py:128
+msgid "Outline Example"
+msgstr ""
+
+#: proposals/views/update.py:74
+msgid ""
+"1. Common situations in data clean-up  [5 min]\n"
+"2. Introduction to pathlib's design  [10 min]\n"
+"  - Using Path object\n"
+"  - Exploring directory structure: Path.iterdir(), .glob()\n"
+"  - Using Path for changing paths\n"
+"3. Integrate for-loop and sorting  [5 min]\n"
+"  - sorted(key=) usage\n"
+"  - Integrate enumerated, zip to simultaneously process multiple related "
+"files\n"
+"4. Example sharing  [5 min]\n"
+msgstr ""
+
+#: proposals/views/update.py:89
+msgid ""
+"Nowadays, photographs always contain the information about the state where "
+"the photo was taken, they're called EXIF. Sometimes when building a blog "
+"about travel notes or nature photography, you'll have to put information of "
+"some EXIF fields under the pictures of the article, such as camera model, "
+"focal, aperture, shutter, GPS, etc. Sometimes even show information as a "
+"watermark on the image. In this talk, we're going to build a workflow on "
+"automated EXIF processing. First introduce the usage of exiftool, and "
+"integrate Pillow to reach the effect of watermark. Finally, we'll take a "
+"blog framework, Pelican, as an example, to build a Pelican plugin that "
+"automatically processes all the photographs in the article."
+msgstr ""
+
+#: proposals/views/update.py:105
+msgid ""
+"Targeted at people who'd like to process a batch of images, and do external "
+"processings using their EXIFs. And use Pelican blog framework to concretely "
+"demonstrate the integration scenario.\n"
+"\n"
+"While I was writing blog posts, I found out that manipulations involving "
+"processing images can take a huge amount of time. Thus hope the audiences "
+"will get an idea of how they can build a automated photograph processing "
+"workflow, and focus more on the article itself. Hope that the audiences will "
+"understand how to process EXIF and additional processing with Python, and "
+"also the framework of Pelican plugins."
+msgstr ""
+
+#: proposals/views/update.py:119
+msgid ""
+"### Third-party libraries used:\n"
+"  - [exiftool] A Perl tool for analyzing EXIF of images\n"
+"  - [Pillow] A Python tool for image processing, formerly known as PIL "
+"(Python Image Library)\n"
+"  - [Pelican] A static site generator in Python\n"
+"\n"
+"[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n"
+"[Pillow]: http://python-pillow.github.io/\n"
+"[Pelican]: http://blog.getpelican.com/\n"
+msgstr ""
+
+#: proposals/views/update.py:129
+msgid ""
+"1. Intro to EXIF and exiftool [5min]\n"
+"2. Usage of Pillow, use it to add watermark [5min]\n"
+"  - Selection of fonts\n"
+"  - Consistency of layout\n"
+"3. Automation [5min]\n"
+"  - Using stdlib to make a batch processing workflow\n"
+"  - Integrating joblib or multiprocessing to parallelize\n"
+"4. Example (using Pelican) [5min]\n"
+"  - Intro to Pelican's plugin system (integration between template tags and "
+"signals)\n"
+"  - Final resulting work\n"
+"5. Q&A [5min]\n"
+msgstr ""
+
+#: proposals/views/update.py:159
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr ""
 
-#: proposals/views/update.py:48
+#: proposals/views/update.py:168
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr ""
 
-#: pycontw2016/settings/base.py:238
+#: pycontw2016/settings/base.py:239
 msgid "PyCon Taiwan 2016"
 msgstr ""
 
-#: pycontw2016/settings/base.py:239
+#: pycontw2016/settings/base.py:240 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr ""
 
-#: pycontw2016/settings/base.py:257
+#: pycontw2016/settings/base.py:260
 #: pycontw2016/settings/production/pycontw2016.py:13
 msgid "No preference"
 msgstr ""
 
-#: pycontw2016/settings/base.py:258
+#: pycontw2016/settings/base.py:261
 msgid "Prefer 30min"
 msgstr ""
 
-#: pycontw2016/settings/base.py:259
+#: pycontw2016/settings/base.py:262
 #: pycontw2016/settings/production/pycontw2016.py:15
 msgid "Prefer 45min"
 msgstr ""
@@ -695,87 +832,87 @@ msgstr ""
 msgid "Could not review proposal {proposal}."
 msgstr ""
 
-#: reviews/models.py:41
+#: reviews/models.py:43
 msgid "reviewer"
 msgstr ""
 
-#: reviews/models.py:45
+#: reviews/models.py:47
 msgid "stage"
 msgstr ""
 
-#: reviews/models.py:62
+#: reviews/models.py:65
 msgid "+1 (strong accept)"
 msgstr ""
 
-#: reviews/models.py:63
+#: reviews/models.py:66
 msgid "+0 (weak accept)"
 msgstr ""
 
-#: reviews/models.py:64
+#: reviews/models.py:67
 msgid "-0 (weak reject)"
 msgstr ""
 
-#: reviews/models.py:65
+#: reviews/models.py:68
 msgid "-1 (strong reject)"
 msgstr ""
 
-#: reviews/models.py:72
+#: reviews/models.py:75
 msgid "vote"
 msgstr ""
 
-#: reviews/models.py:74
+#: reviews/models.py:77
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the google doc <a href=\"https://goo."
 "gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 msgstr ""
 
-#: reviews/models.py:83
+#: reviews/models.py:86
 msgid "comment"
 msgstr ""
 
-#: reviews/models.py:85
+#: reviews/models.py:88
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the "
 "proposal's submitter."
 msgstr ""
 
-#: reviews/models.py:98
+#: reviews/models.py:101
 msgid "discloses comment to proposal submitter"
 msgstr ""
 
-#: reviews/models.py:100
+#: reviews/models.py:103
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
 msgstr ""
 
-#: reviews/models.py:108
+#: reviews/models.py:111
 msgid "note"
 msgstr ""
 
-#: reviews/models.py:110
+#: reviews/models.py:113
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
 msgstr ""
 
-#: reviews/models.py:118
+#: reviews/models.py:121
 msgid "updated"
 msgstr ""
 
-#: reviews/models.py:123
+#: reviews/models.py:126
 msgid "review"
 msgstr ""
 
-#: reviews/models.py:124
+#: reviews/models.py:127
 msgid "reviews"
 msgstr ""
 
-#: reviews/models.py:129
+#: reviews/models.py:132
 #, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr ""
@@ -882,150 +1019,80 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:21
+#: templates/default/_includes/proposal_example_modal.html:35
 #: templates/default/reviews/review_form.html:36
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
 msgid "Abstract"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:22
+#: templates/default/_includes/proposal_example_modal.html:36
 #: templates/default/reviews/review_form.html:40
 msgid "Objective"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:23
+#: templates/default/_includes/proposal_example_modal.html:37
 #: templates/default/reviews/review_form.html:43
 msgid "Detailed description"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:24
+#: templates/default/_includes/proposal_example_modal.html:38
 #: templates/default/reviews/review_form.html:47
 msgid "Outline"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:27
+#: templates/default/_includes/proposal_example_modal.html:44
 msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照"
-"片、音 \\\n"
-"      \t樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月"
-"下來， \\\n"
-"      \t電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案"
-"總管一 \\\n"
-"      \t個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及"
-"內建的 \\\n"
-"      \tpathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結"
-"合 \\\n"
-"      \tPython 迴圈與排序技巧完成複雜的檔案重新歸類。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝"
-"影的部 \\\n"
-"        落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機"
-"型、鏡 \\\n"
-"        頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立"
-"一個自 \\\n"
-"        動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到"
-"浮水印 \\\n"
-"        的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件"
-"來完成 \\\n"
-"        自動處理所有放在文章的照片。 \\\n"
-"      </div>\"\n"
-"      "
+"If your proposed target is novice topic, the following is an example of an "
+"novice proposal that you can use for your reference."
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:48
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        針對初學 Python 、想試著用程式解決生活問題的人。 \\\n"
-"        我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為"
-"一開始 \\\n"
-"        自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。 "
-"\\\n"
-"        <br /> \\\n"
-"        但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看"
-"出效 \\\n"
-"      \t果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該"
-"對初學 \\\n"
-"      \t程式的人有幫助。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 "
-"blog 框架 \\\n"
-"        示範實際整合的情況。 \\\n"
-"        <br /> \\\n"
-"        寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽"
-"眾了解 \\\n"
-"        如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能"
-"知道 \\\n"
-"        如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。 "
-"\\\n"
-"      </div>\"\n"
-"      "
+#: templates/default/_includes/proposal_example_modal.html:46
+#: templates/default/_includes/proposal_example_modal.html:61
+#: templates/default/reviews/_includes/proposal_table.html:17
+#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
+#: templates/default/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:70
-msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"       最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的 \\\n"
-"      「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。 \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        ### 使用的第三方工具：<br /> \\\n"
-"        <br /> \\\n"
-"        - [exiftool] 為分析照片 EXIF 的 Perl 工具<br /> \\\n"
-"        - [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image "
-"Library)<br /> \\\n"
-"        - [Pelican] 為 Python 的 static site generator<br /> \\\n"
-"        <br /> \\\n"
-"        [exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/<br /> \\\n"
-"        [Pillow]: http://python-pillow.github.io/<br /> \\\n"
-"        [Pelican]: http://blog.getpelican.com/<br /> \\\n"
-"      </div>\"\n"
-"      "
+#: templates/default/_includes/proposal_example_modal.html:47
+msgid "Making Management of Computer Data Easier With Python"
 msgstr ""
 
-#: templates/default/_includes/proposal_example_modal.html:90
+#: templates/default/_includes/proposal_example_modal.html:49
+#: templates/default/_includes/proposal_example_modal.html:64
+#: templates/default/reviews/_includes/proposal_table.html:25
+#: templates/default/reviews/review_form.html:30
+#: templates/pycontw-2016/events/sponsored_event_detail.html:20
+#: templates/pycontw-2016/events/talk_detail.html:20
+msgid "Category"
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:50
+#: templates/default/_includes/proposal_example_modal.html:67
+#: templates/default/reviews/review_form.html:32
+msgid "Duration"
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:52
+#: templates/default/_includes/proposal_example_modal.html:69
+#: templates/default/reviews/review_form.html:34
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
+#: templates/default/users/_includes/dashboard_proposal_table.html:8
+#: templates/pycontw-2016/events/sponsored_event_detail.html:17
+#: templates/pycontw-2016/events/talk_detail.html:17
+msgid "Language"
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:59
 msgid ""
-"\n"
-"      \"<h4>初階</h4> \\\n"
-"      <div> \\\n"
-"        1. 資料整理的常見狀況 [5 min]<br /> \\\n"
-"        2. pathlib 模組設計介紹 [10 min]<br /> \\\n"
-"        &nbsp;&nbsp;- 運用 Path 物件<br /> \\\n"
-"        &nbsp;&nbsp;- 目錄結構探索 Path.iterdir(), .glob()<br /> \\\n"
-"        &nbsp;&nbsp;- 使用 Path 更動路徑<br /> \\\n"
-"        3. 結合 for 迴圈與排序 [5 min]<br /> \\\n"
-"        &nbsp;&nbsp;- sorted(key=) 用法<br /> \\\n"
-"        &nbsp;&nbsp;- 整合 enumerated, zip 同時處理多個關連檔案<br /> \\\n"
-"        4. 案例分享  [5 min]<br /> \\\n"
-"      </div> \\\n"
-"      <h4>中階</h4> \\\n"
-"      <div> \\\n"
-"        1. 簡介 EXIF 與 exiftool [5min]<br /> \\\n"
-"        2. Pillow 使用及如何用它加上浮水印 [5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 字型的選用<br /> \\\n"
-"        &nbsp;&nbsp;- 排版的一致性<br /> \\\n"
-"        3. 自動化 [5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 使用 stdlib 架出一個 batch 處理流程<br /> \\\n"
-"        &nbsp;&nbsp;- 搭配 joblib 或 multiprocessing 達成平行化<br /> \\\n"
-"        4. 舉例（使用 Pelican）[5min]<br /> \\\n"
-"        &nbsp;&nbsp;- 簡介 Pelican 擴充方式（template tag 與 signal 的搭配）"
-"<br /> \\\n"
-"        &nbsp;&nbsp;- 成果<br /> \\\n"
-"        5. Q&A [5min]<br /> \\\n"
-"      </div>\"\n"
-"      "
+"If your proposed target is intermediate topic, the following is an example "
+"of an interimediate proposal that you can use for your reference."
+msgstr ""
+
+#: templates/default/_includes/proposal_example_modal.html:62
+msgid "Automated Processing of Blog Photographs"
 msgstr ""
 
 #: templates/default/_includes/talk_proposal_alert.html:6
@@ -1037,7 +1104,7 @@ msgstr ""
 
 #: templates/default/dashboard_base.html:15
 #, python-format
-msgid "Hi %(user.email)s, welcome!"
+msgid "Hi %(name)s, welcome!"
 msgstr ""
 
 #: templates/default/dashboard_base.html:22
@@ -1221,20 +1288,6 @@ msgstr ""
 msgid "Reviewed"
 msgstr ""
 
-#: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:8
-#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
-#: templates/default/users/_includes/dashboard_proposal_table.html:6
-msgid "Title"
-msgstr ""
-
-#: templates/default/reviews/_includes/proposal_table.html:25
-#: templates/default/reviews/review_form.html:30
-#: templates/pycontw-2016/events/sponsored_event_detail.html:20
-#: templates/pycontw-2016/events/talk_detail.html:20
-msgid "Category"
-msgstr ""
-
 #: templates/default/reviews/_includes/proposal_table.html:33
 msgid "Level"
 msgstr ""
@@ -1257,32 +1310,24 @@ msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
-"\n"
-"\tIn review stage 1, you <strong>will not</strong> see score and comment "
-"made\n"
-"\tby other reviewers, nor the name and background of the speaker. In short,\n"
-"\tyou review based on the talk content itself.\n"
+"In review stage 1, you <strong>will not</strong> see score and comment made "
+"by other reviewers, nor the name and background of the speaker. In short, "
+"you review based on the talk content itself."
 msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_2_desc.html:3
 msgid ""
-"\n"
-"\tAfter review stage 1, some of the proposals have been accepted or "
-"rejected.\n"
-"\tThese proposals and their reviews (read-only) are shown in the separate "
-"tab.\n"
+"After review stage 1, some of the proposals have been accepted or rejected. "
+"These proposals and their reviews (read-only) are shown in the separate tab."
 msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_2_desc.html:8
 msgid ""
-"\n"
-"\tIn review stage 2, you will see score and comment made by other reviewers\n"
-"\tanonymously, including the name and background of the speaker. With more\n"
-"\tinformation provided, you may want to update your review. Updating or "
-"adding\n"
-"\treview in stage 2 follows the same way as stage 1. Only the last review "
-"you\n"
-"\tmade will be disclosed to the speaker (if you choose to).\n"
+"In review stage 2, you will see score and comment made by other reviewers "
+"anonymously, including the name and background of the speaker. With more "
+"information provided, you may want to update your review. Updating or adding "
+"review in stage 2 follows the same way as stage 1. Only the last review you "
+"made will be disclosed to the speaker (if you choose to)."
 msgstr ""
 
 #: templates/default/reviews/_includes/review_table.html:9
@@ -1301,18 +1346,6 @@ msgstr ""
 #: templates/default/reviews/review_form.html:27
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:8
 msgid "Submitter"
-msgstr ""
-
-#: templates/default/reviews/review_form.html:32
-msgid "Duration"
-msgstr ""
-
-#: templates/default/reviews/review_form.html:34
-#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
-#: templates/default/users/_includes/dashboard_proposal_table.html:8
-#: templates/pycontw-2016/events/sponsored_event_detail.html:17
-#: templates/pycontw-2016/events/talk_detail.html:17
-msgid "Language"
 msgstr ""
 
 #: templates/default/reviews/review_form.html:51
@@ -1338,38 +1371,33 @@ msgstr ""
 
 #: templates/default/reviews/talk_proposal_list.html:20
 msgid ""
-"\n"
-"        Note that at anytime, the identity of the reviewer, e.g. you, is "
-"hidden to\n"
-"        other reviewers and speakers.  For more information about the whole "
-"review\n"
-"        process, please refer to the google doc\n"
-"        <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review "
-"Guideline</a>.\n"
-"        "
+"Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
+"other reviewers and speakers. For more information about the whole review "
+"process, please refer to the google doc <a href=\"https://goo.gl/EPlUZx\" "
+"target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:30
+#: templates/default/reviews/talk_proposal_list.html:25
 msgid "Personal Review Stats"
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:58
+#: templates/default/reviews/talk_proposal_list.html:53
 msgid "Unreviewed Talk Proposals"
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:59
+#: templates/default/reviews/talk_proposal_list.html:54
 msgid "Reviewed Talk Proposals"
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:61
+#: templates/default/reviews/talk_proposal_list.html:56
 msgid "Talk Proposals With Decision"
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:71
+#: templates/default/reviews/talk_proposal_list.html:66
 msgid "You have reviewed all talk proposals."
 msgstr ""
 
-#: templates/default/reviews/talk_proposal_list.html:80
+#: templates/default/reviews/talk_proposal_list.html:75
 msgid "You haven't reviewed any talk proposals."
 msgstr ""
 
@@ -1533,7 +1561,6 @@ msgid "Events"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:39
-#: templates/pycontw-2017/_includes/header.html:39
 msgid "Overview"
 msgstr ""
 
@@ -1552,7 +1579,6 @@ msgid "Sprints"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:44
-#: templates/pycontw-2017/_includes/header.html:44
 msgid "BoF"
 msgstr ""
 
@@ -1561,7 +1587,6 @@ msgid "PyDay"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:46
-#: templates/pycontw-2017/_includes/header.html:42
 msgid "Tutorial"
 msgstr ""
 
@@ -1572,7 +1597,6 @@ msgid "Venue"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:53
-#: templates/pycontw-2017/_includes/header.html:53
 msgid "Accommodation"
 msgstr ""
 
@@ -1599,7 +1623,6 @@ msgid "Ticket Info"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2017/_includes/header.html:68
 msgid "Financial Aid"
 msgstr ""
 
@@ -1608,8 +1631,6 @@ msgid "Blog"
 msgstr ""
 
 #: templates/pycontw-2016/events/schedule.html:22
-#: templates/pycontw-2017/contents/en/events/schedules.html:22
-#: templates/pycontw-2017/contents/zh/events/schedules.html:22
 #, python-format
 msgid ""
 "This is the full schedule of talks for PyCon Taiwan 2016. See also: <ul> "
@@ -1621,16 +1642,12 @@ msgstr ""
 
 #: templates/pycontw-2016/events/schedule.html:32
 #: templates/pycontw-2016/events/talk_list.html:20
-#: templates/pycontw-2017/contents/en/events/schedules.html:32
-#: templates/pycontw-2017/contents/zh/events/schedules.html:32
 msgid ""
 "Program schedule are <span class=\"text-emphasize\">subject to change</"
 "span>. Please check this page frequently to get the latest version."
 msgstr ""
 
 #: templates/pycontw-2016/events/schedule.html:39
-#: templates/pycontw-2017/contents/en/events/schedules.html:39
-#: templates/pycontw-2017/contents/zh/events/schedules.html:39
 msgid "Quick Jump"
 msgstr ""
 
@@ -1699,7 +1716,6 @@ msgid "Conference"
 msgstr ""
 
 #: templates/pycontw-2016/index.html:33 templates/pycontw-2016/index.html:45
-#: templates/pycontw-2017/_includes/header.html:43
 msgid "Sprint"
 msgstr ""
 
@@ -1754,7 +1770,7 @@ msgid ""
 "class=\"volunteer__body\"> <p>Help us organize and make the conference "
 "successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
 "forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\" target="
-"\"_blank\">our volunteer form</a> </p> </div>"
+"\"_blank\" rel=\"noopener\">our volunteer form</a> </p> </div>"
 msgstr ""
 
 #: templates/pycontw-2016/index.html:132
@@ -1771,8 +1787,8 @@ msgid ""
 "patron! There will be a page for the list of all patrons (e.g. links to "
 "profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 "
 "website. </p> <br> <p> Go to be <a href=\"http://pycontw.kktix.cc/events/"
-"pycontw2016patron\" target=\"_blank\"> a patron of PyCon Taiwan 2016 </a> </"
-"p>"
+"pycontw2016patron\" target=\"_blank\" rel=\"noopener\"> a patron of PyCon "
+"Taiwan 2016 </a> </p>"
 msgstr ""
 
 #: templates/pycontw-2016/index.html:248
@@ -1795,38 +1811,136 @@ msgid ""
 "\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:30
+#: templates/pycontw-2017/_includes/header.html:46
 msgid "about"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:35
+#: templates/pycontw-2017/_includes/header.html:49
+msgid "pycon taiwan"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:50
+msgid "code of conduct"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:55
 msgid "events"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:41
-msgid "Talk"
+#: templates/pycontw-2017/_includes/header.html:59
+#: templates/pycontw-2017/_includes/header.html:73
+msgid "overview"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:49
+#: templates/pycontw-2017/_includes/header.html:61
+msgid "talk"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:62
+msgid "tutorial"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:63
+#: templates/pycontw-2017/_includes/header.html:76
+msgid "unconference"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:64
+msgid "sprints"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:65
+msgid "bof"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:70
+msgid "speaking"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:74
+msgid "talks"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:75
+msgid "tutorials"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:83
 msgctxt "conference location"
 msgid "venue"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:52
-msgctxt "conference location"
-msgid "Venue"
-msgstr ""
-
-#: templates/pycontw-2017/_includes/header.html:64
+#: templates/pycontw-2017/_includes/header.html:108
 msgid "registration"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:73
+#: templates/pycontw-2017/_includes/header.html:112
+msgid "financial aid"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:117
 msgid "blog"
 msgstr ""
 
-#: templates/pycontw-2017/_includes/header.html:79
+#: templates/pycontw-2017/_includes/header.html:124
+msgid "Back to Menu"
+msgstr ""
+
+#: templates/pycontw-2017/_includes/header.html:137
 msgid "dashboard"
+msgstr ""
+
+#: templates/pycontw-2017/contents/en/events/unconference.html:5
+msgid "Unconference"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:21
+msgid "9–11 June"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:25
+msgid "tutorial: "
+msgstr ""
+
+#: templates/pycontw-2017/index.html:25
+msgid "1 June"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:26
+msgid "cfp: "
+msgstr ""
+
+#: templates/pycontw-2017/index.html:26
+msgid "27 Mar"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:27
+msgid "sprint: "
+msgstr ""
+
+#: templates/pycontw-2017/index.html:27
+msgid "12 Mar"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:31
+msgid ""
+"<h2>what is pycon</h2> <p>The original PyCon was formed in North America in "
+"2003, and now there are many other conferences being run in the PyCon spirit "
+"around the world.</p>"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:37
+msgid ""
+"<h2>what is pycon taiwan</h2> <p>PyCon Taiwan is an annual convention in "
+"Taiwan for the discussion and promotion of the Python programming language. "
+"It is held by enthusiasts and focuses on Python technology and its versatile "
+"applications. We welcome people who are interested in Python to join PyCon "
+"Taiwan to share knowledge, exchange ideas, make connections and to help us "
+"grow our network.</p>"
+msgstr ""
+
+#: templates/pycontw-2017/index.html:47
+msgid "Python Communities in Taiwan"
 msgstr ""
 
 #: users/admin.py:18
