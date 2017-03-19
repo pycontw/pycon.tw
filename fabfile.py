@@ -98,7 +98,7 @@ def write_transifex_config():
 
 @task
 def pull_tx():
-    with lcd('src'):
+    with lcd(os.path.join(os.path.dirname(__file__), 'src')):
         local("ls locale/*/LC_MESSAGES/django.* | "
               "grep '^locale/[^_]' | "
               "xargs rm")
@@ -108,7 +108,7 @@ def pull_tx():
 
 @task
 def push_tx():
-    with lcd('src'):
+    with lcd(os.path.join(os.path.dirname(__file__), 'src')):
         local('python manage.py makemessages -a')
         local('tx push -s')
 
