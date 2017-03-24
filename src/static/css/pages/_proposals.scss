@@ -27,6 +27,17 @@ body.dashboard{
                         background-color: #F8F8F8;
                         border-left: 4px solid #F8F8F8;
                     }
+
+                    &.disabled {
+                        color: #DEDEDE;
+                        border: none;
+
+                        &:hover {
+                            cursor: not-allowed;
+                            color: #DEDEDE;
+                            background: none;
+                        }
+                    }
                 }
                 &.active a{
                     color:#3E6DF5;
