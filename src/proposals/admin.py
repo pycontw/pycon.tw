@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
 
-from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
+from import_export.admin import ExportMixin
+
+from .models import AdditionalSpeaker, TalkProposal, TutorialProposal
+from .resources import TalkProposalResource
 
 
 class AdditionalSpeakerInline(GenericTabularInline):
@@ -30,13 +33,14 @@ class ProposalAdmin(admin.ModelAdmin):
 
 
 @admin.register(TalkProposal)
-class TalkProposalAdmin(ProposalAdmin):
+class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     fields = ProposalAdmin.fields + ['accepted']
     list_display = [
         'title', 'category', 'duration', 'language',
         'python_level',
     ]
     list_filter = ['category', 'duration', 'language', 'python_level']
+    resource_class = TalkProposalResource
 
 
 @admin.register(TutorialProposal)

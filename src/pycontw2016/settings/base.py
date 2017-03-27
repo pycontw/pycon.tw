@@ -90,9 +90,10 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    'django_extensions',
-    'crispy_forms',
     'compressor',
+    'crispy_forms',
+    'django_extensions',
+    'import_export',
 )
 
 LOCAL_APPS = (
@@ -231,6 +232,10 @@ WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 GA_TRACK_ID = None
 
 SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+IMPORT_EXPORT_SKIP_ADMIN_LOG = True
 
 
 # Project settings.

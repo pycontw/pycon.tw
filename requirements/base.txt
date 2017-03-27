@@ -19,6 +19,11 @@ django-crispy-forms==1.6.1
 # http://django-environ.readthedocs.org
 django-environ==0.4.0
 
+# Django application and library for importing and exporting data with
+# included admin integration.
+# https://django-import-export.readthedocs.io
+django-import-export==0.5.1
+
 # A collection of custom extensions for the Django Framework
 # http://django-extensions.readthedocs.org/en/latest/
 django-extensions==1.6.1
