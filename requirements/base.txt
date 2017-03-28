@@ -66,3 +66,8 @@ tabulate==0.7.5
 # Transifex, an online translation collaboration platform
 # http://docs.transifex.com/client/
 transifex-client==0.11
+
+
+# Django-import-export, application and library for importing and exporting data with admin integration.
+# https://django-import-export.readthedocs.io/en/latest/
+django-import-export==0.5.1
