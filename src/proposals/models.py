@@ -218,6 +218,14 @@ class TalkProposal(AbstractProposal):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
 
+    @property
+    def duration_dict(self):
+        if not hasattr(TalkProposal, '_duration_dict'):
+            TalkProposal._duration_dict = dict(
+                settings.TALK_PROPOSAL_DURATION_CHOICES,
+            )
+        return TalkProposal._duration_dict
+
     def get_peek_url(self):
         return reverse('talk_proposal_peek', kwargs={'pk': self.pk})
 
@@ -234,6 +242,9 @@ class TalkProposal(AbstractProposal):
         return reverse('talk_proposal_remove_speaker', kwargs={
             'pk': self.pk, 'email': speaker.user.email,
         })
+
+    def get_duration_display(self):
+        return self.duration_dict.get(self.duration)
 
 
 class TutorialProposal(AbstractProposal):
