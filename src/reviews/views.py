@@ -61,7 +61,6 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .exclude(accepted__isnull=False)
             .exclude(review__reviewer=user)
             .annotate(review_count=Count('review'))
-            .order_by('pk')
         )
         # params = self.request.GET
         # category = params.get('category', '').upper()
@@ -72,7 +71,12 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             # We don't use order_by('?') because it is crazy slow, and instead
             # resolve the queryset to a list, and shuffle it normally. This is
             # OK since we will iterate through it in the template anyway.
-            proposal_list = list(qs)
+
+            # Note: This order by is necessary to override the default
+            # ordering, and add an appropriate DISTINCT on the query. This
+            # is caused by a Django logic error regarding how ORDER BY
+            # contributes to GROUP BY.
+            proposal_list = list(qs.order_by('pk'))
             random.shuffle(proposal_list)
             qs = SequenceQuerySet(proposal_list)
             ordering = '?'
@@ -92,6 +96,10 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
 
         vote_count_pairs = (
             self.get_reviews()
+            # This transform is needed to clear the default ordering in
+            # the model. The default ordering contributes to GROUP BY, and
+            # breaks the COUNT aggregation.
+            .order_by()
             .values_list('vote')
             .annotate(count=Count('vote'))
         )
