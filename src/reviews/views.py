@@ -61,7 +61,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .exclude(accepted__isnull=False)
             .exclude(review__reviewer=user)
             .annotate(review_count=Count('review'))
-            .distinct()
+            .order_by('pk')
         )
         # params = self.request.GET
         # category = params.get('category', '').upper()
