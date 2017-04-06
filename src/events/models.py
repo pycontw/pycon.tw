@@ -9,7 +9,10 @@ from django.db import models
 from django.utils.timezone import make_naive
 from django.utils.translation import ugettext, ugettext_lazy as _
 
-from core.models import BigForeignKey, ConferenceRelated, EventInfo
+from core.models import (
+    BigForeignKey, EventInfo,
+    ConferenceRelated, DefaultConferenceManagerMixin,
+)
 from core.utils import format_html_lazy
 from proposals.models import TalkProposal
 
@@ -197,7 +200,10 @@ class SponsoredEvent(EventInfo, BaseEvent):
         })
 
 
-class ProposedTalkEventManager(models.Manager):
+class ProposedTalkEventManager(DefaultConferenceManagerMixin, models.Manager):
+
+    conference_attr = 'proposal__conference'
+
     def get_queryset(self):
         """We almost always need the proposal info, so let's always JOIN it.
         """
