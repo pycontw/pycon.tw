@@ -59,7 +59,7 @@
 	<div role="tabpanel" class="tab-pane active" id="unreviewed">
 		<div class="talk-proposals proposals">
 		{% if object_list %}
-		  {% include 'reviews/_includes/proposal_table.html' with proposals=object_list %}
+		  {% include 'reviews/_includes/proposal_table.html' with proposals=object_list verdict=False %}
 		{% else %}
 		  <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
 		{% endif %}
