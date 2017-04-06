@@ -3,7 +3,7 @@
     DJANGO_SETTINGS_MODULE=my_proj.settings.production
 """
 
-from ..base import BASE_DIR, INSTALLED_APPS, TEMPLATES, env
+from ..base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, TEMPLATES, env
 from ..base import *            # noqa
 
 import logging.config
@@ -85,6 +85,11 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
+
+MIDDLEWARE += (
+    'raven.contrib.django.raven_compat.middleware.'
+    'SentryResponseErrorIdMiddleware',
+)
 
 EMAIL_BACKEND = env.email_url()['EMAIL_BACKEND']
 EMAIL_HOST = env.email_url()['EMAIL_HOST']

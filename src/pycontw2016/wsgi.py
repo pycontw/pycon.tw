@@ -18,17 +18,26 @@ os.environ.setdefault(
 )
 application = get_wsgi_application()
 
-# Wrap werkzeug debugger if DEBUG is on
-if settings.DEBUG and settings.WERKZEUG_DEBUG:
+if settings.DEBUG:
+    # Wrap werkzeug debugger.
+    if settings.WERKZEUG_DEBUG:
+        try:
+            import django.views.debug
+            import six
+            from werkzeug.debug import DebuggedApplication
+        except ImportError:
+            pass
+        else:
+            def null_response(request, exc_type, exc_value, tb):
+                six.reraise(exc_type, exc_value, tb)
+
+            django.views.debug.technical_500_response = null_response
+            application = DebuggedApplication(application, evalex=True)
+else:
+    # Wrap Sentry.
     try:
-        import django.views.debug
-        import six
-        from werkzeug.debug import DebuggedApplication
-
-        def null_technical_500_response(request, exc_type, exc_value, tb):
-            six.reraise(exc_type, exc_value, tb)
-
-        django.views.debug.technical_500_response = null_technical_500_response
-        application = DebuggedApplication(application, evalex=True)
+        from raven.contrib.django.raven_compat.middleware.wsgi import Sentry
     except ImportError:
         pass
+    else:
+        application = Sentry(application)
