@@ -22,4 +22,4 @@ redis==2.10.5
 
 # Sentry client for Python
 # https://raven.readthedocs.org/en/latest/
-raven==5.9.2
+raven==6.0.0
