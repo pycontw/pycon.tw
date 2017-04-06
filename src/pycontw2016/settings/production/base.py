@@ -118,7 +118,7 @@ import raven    # noqa
 
 RAVEN_CONFIG = {
     'dsn': env('DSN_URL'),
-    'release': raven.fetch_git_sha(BASE_DIR),
+    'release': raven.fetch_git_sha(os.path.dirname(BASE_DIR)),
 }
 
 GA_TRACK_ID = env('GA_TRACK_ID', default=None)
