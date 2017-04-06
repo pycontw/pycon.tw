@@ -28,7 +28,11 @@ script:
 - python src/manage.py migrate --verbosity 0 --noinput
 - cd src; py.test -n 2 --cov=.
 notifications:
-  slack: pycontw:Z1FrdUPAMxhG0MjnY8awlRm0
+  slack:
+    rooms:
+      - pycontw:Z1FrdUPAMxhG0MjnY8awlRm0#web
+    on_success: change
+    on_failure: always
 after_success:
 - cd src; codecov
 - cd ..
