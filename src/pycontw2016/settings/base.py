@@ -221,6 +221,10 @@ LOGIN_REDIRECT_URL = reverse_lazy('user_dashboard')
 
 AUTH_USER_MODEL = 'users.User'
 
+ADMINS = (
+    ('PyCon Taiwan Dev', 'dev@pycon.tw',),
+)
+
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
