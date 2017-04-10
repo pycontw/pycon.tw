@@ -11,23 +11,56 @@
 
 {% block main-content %}
 
-{% if not object.cancelled %}
 <h3 class="dashboard-header">
-  <span class="header-title">{{ object.title }}</span>
+	<span class="header-title">{{ object.title }}</span>
 </h3>
-{% block alert_content %}{% endblock alert_content %}
-<form method="post" class="proposal-form">
-  <div class="nesting-form-group">
-    {% crispy form %}
-    {% if not readonly %}
-    <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
-    {% endif %}
-  </div>
-</form>
 
-{% endif %}
+{% block alert_content %}{% endblock alert_content %}
+
+<div>
+
+	{% if reviews_public %}
+	<ul class="nav nav-tabs proposal-tabs" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#proposal" aria-controls="proposal" role="tab" data-toggle="tab">
+				{% trans 'Proposal' %}
+			</a>
+		</li>
+		<li role="presentation">
+			<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
+				{% trans 'Reviews' %}
+			</a>
+		</li>
+	</ul>
+	{% endif %}
+
+	<div class="tab-content">
+
+		<div role="tabpanel" class="proposal-tab-pane tab-pane active" id="proposal">
+			<form method="post" class="proposal-form">
+				<div class="nesting-form-group">
+					{% crispy form %}
+					{% if not readonly %}
+					<button type="submit" class="btn btn-primary">
+						{% trans 'Save' %}
+					</button>
+					{% endif %}
+				</div>
+			</form>
+		</div>
+
+		{% if reviews_public %}
+		<div role="tabpanel" class="proposal-tab-pane tab-pane" id="reviews">
+			{% include 'reviews/_includes/previous_review_table.html' with reviews=reviews %}
+		</div>
+		{% endif %}
+
+	</div>
+
+</div>
 
 {% include '_includes/character_counter_template.html' %}
+
 {% endblock main-content %}
 
 

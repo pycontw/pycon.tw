@@ -71,7 +71,7 @@ body.dashboard{
         border-radius:4px;
         margin-bottom: 20px;
 
-        .main{
+        .main {
             min-height: 712px;
             border-left-style: solid;
             border-left-width: 1px;
@@ -82,7 +82,16 @@ body.dashboard{
                 padding: 33px 33px 0px 33px;
             }
 
-            > form, .dashboard-body{
+            .proposal-tabs {
+                padding: 24px 0 0 33px;
+            }
+
+            .proposal-tab-pane {
+                padding: 33px;
+                margin-bottom: 41px;
+            }
+
+            > form, .dashboard-body {
                 padding: 33px;
             }
 

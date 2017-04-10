@@ -17,4 +17,13 @@
 		</tr>
 		{% endfor %}
 	</tbody>
+	{% if not reviews %}
+	<tfoot>
+		<tr>
+			<td colspan="3" class="text-danger">
+				<em>{% trans 'No reviews yet.' %}</em>
+			</td>
+		</tr>
+	</tfoot>
+	{% endif %}
 </table>
