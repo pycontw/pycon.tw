@@ -23,7 +23,6 @@ class TalkProposalMixin:
         review_iter = (
             Review.objects
             .filter_current_reviews(proposal=self.object)
-            .filter(appropriateness=True, discloses_comment=True)
             .iter_reviewer_latest_reviews()
         )
         return sorted(review_iter, key=lambda r: Review.VOTE_ORDER[r.vote])

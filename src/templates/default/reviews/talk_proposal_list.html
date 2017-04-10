@@ -68,7 +68,7 @@
 	<div role="tabpanel" class="tab-pane" id="reviewed">
 		<div class="talk-proposals proposals">
 		{% if reviews %}
-		  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews %}
+		  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews show_all_comments=True %}
 		{% else %}
 		  <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
 		{% endif %}

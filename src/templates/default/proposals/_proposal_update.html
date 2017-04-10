@@ -51,7 +51,7 @@
 
 		{% if reviews_public %}
 		<div role="tabpanel" class="proposal-tab-pane tab-pane" id="reviews">
-			{% include 'reviews/_includes/previous_review_table.html' with reviews=reviews %}
+			{% include 'reviews/_includes/previous_review_table.html' with reviews=reviews show_all_comments=False %}
 		</div>
 		{% endif %}
 

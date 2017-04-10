@@ -174,3 +174,6 @@ class Review(models.Model):
         if self.stage is None:
             self.stage = settings.REVIEWS_STAGE
         return super().save(*args, **kwargs)
+
+    def is_comment_visible_to_submitter(self):
+        return self.discloses_comment and self.appropriateness
