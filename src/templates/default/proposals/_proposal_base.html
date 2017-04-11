@@ -1,7 +1,19 @@
 {% extends 'dashboard_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load i18n static crispy_forms_tags pycontw_tools %}
 
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='dashboard' %}
 {% endblock dashboard_tablist %}
+
+{% block scripts %}
+{{ block.super }}
+<script>
+{% if last_updated_timestamp is not None %}
+var _FORM_LAST_SAVE_ = new Date({{ last_updated_timestamp|mul:1000 }});
+{% else %}
+var _FORM_LAST_SAVE_ = null;
+{% endif %}
+</script>
+<script src="{% static 'js/tools/form-autosave.js' %}"></script>
+{% endblock scripts %}

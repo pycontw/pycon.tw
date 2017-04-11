@@ -21,3 +21,14 @@ class ProposalEditMixin:
         if not self.can_edit():
             raise Http404
         return super().dispatch(request, *args, **kwargs)
+
+
+class ProposalLastUpdatedTimestampMixin:
+    def get_context_data(self, **kwargs):
+        if 'last_updated_timestamp' not in kwargs:
+            if self.object:
+                timestamp = self.object.last_updated_at.timestamp()
+            else:
+                timestamp = None
+            kwargs['last_updated_timestamp'] = timestamp
+        return super().get_context_data(**kwargs)
