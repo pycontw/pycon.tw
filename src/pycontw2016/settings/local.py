@@ -1,9 +1,14 @@
-from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, REVIEWS_STAGE, env
+from .base import (
+    BASE_DIR, INSTALLED_APPS, MIDDLEWARE, REVIEWS_STAGE,
+    REVIEWS_VISIBLE_TO_SUBMITTERS,
+    env,
+)
 from .base import *             # NOQA
 
 import logging.config
 import os
 import sys
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,3 +92,7 @@ logging.config.dictConfig(LOGGING)
 
 
 REVIEWS_STAGE = env.int('REVIEWS_STAGE', default=REVIEWS_STAGE)
+
+REVIEWS_VISIBLE_TO_SUBMITTERS = env.bool(
+    'REVIEWS_VISIBLE_TO_SUBMITTERS', default=REVIEWS_VISIBLE_TO_SUBMITTERS,
+)

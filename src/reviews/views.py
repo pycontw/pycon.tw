@@ -202,31 +202,18 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         review_stage = settings.REVIEWS_STAGE
         # Query all reviews made by others, including all stages
-        full_other_reviews = (
+        other_review_iter = (
             Review.objects
             .filter_current_reviews(
                 proposal=self.proposal,
                 exclude_user=self.request.user,
             )
-            .order_by('reviewer', '-stage')
+            .iter_reviewer_latest_reviews()
         )
-        # Select only the latest stage review for each reviewer
-        # by first grouping reviews based on reviewer.
-        # Note that this requires the QuerySet already sorted by reviewer
-        grouped_reviews_per_reviewers = itertools.groupby(
-            full_other_reviews, key=lambda r: r.reviewer
-        )
-        other_reviews = (
-            # we sorted the reviews by descending stage
-            next(reviews_by_same_reviewer)
-            for _, reviews_by_same_reviewer in grouped_reviews_per_reviewers
-        )
-        # Sort other_reviews by vote
-        VOTE_ORDER = {'+1': 3, '+0': 2, '-0': 1, '-1': 0}
+        # Sort other_reviews by vote.
         other_reviews = sorted(
-            other_reviews,
-            key=lambda r: VOTE_ORDER[r.vote],
-            reverse=True,
+            other_review_iter,
+            key=lambda r: Review.VOTE_ORDER[r.vote],
         )
         my_reviews = (
             Review.objects

@@ -56,14 +56,14 @@
 {% if review_stage == 2 and other_reviews %}
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Previous Reviews by Other Reviewers' %}</span></h3>
 <div class="dashboard-body">
-	{% include 'reviews/_includes/previous_review_table.html' with reviews=other_reviews %}
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=other_reviews show_all_comments=True %}
 </div>
 {% endif %}
 
 {% if review_stage == 2 and my_reviews %}
 <h3 class="dashboard-header"><span class="header-title">{% trans 'My Previous Reviews' %}</span></h3>
 <div class="dashboard-body">
-	{% include 'reviews/_includes/previous_review_table.html' with reviews=my_reviews %}
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=my_reviews show_all_comments=True %}
 </div>
 {% endif %}
 

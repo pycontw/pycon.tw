@@ -16,4 +16,5 @@ def proposals_states(requests):
 def reviews_states(request):
     return {
         'reviews_stage': settings.REVIEWS_STAGE,
+        'reviews_public': settings.REVIEWS_VISIBLE_TO_SUBMITTERS,
     }

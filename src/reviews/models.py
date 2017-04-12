@@ -1,3 +1,6 @@
+import itertools
+import operator
+
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
@@ -30,6 +33,21 @@ class ReviewQuerySet(models.QuerySet):
         )
         qs = qs.filter(reviewer=user)
         return qs
+
+    def iter_reviewer_latest_reviews(self):
+        review_qs = self.order_by('reviewer', '-stage')
+        # Select only the latest stage review for each reviewer
+        # by first grouping reviews based on reviewer.
+        # Note that this requires the QuerySet already sorted by reviewer.
+        grouped_per_reviewer_reviews = itertools.groupby(
+            review_qs, key=operator.attrgetter('reviewer')
+        )
+        # Since we sorted the reviews by descending stage, next() will return
+        # the latest review by each reviewer.
+        return [
+            next(reviews_by_same_reviewer)
+            for _, reviews_by_same_reviewer in grouped_per_reviewer_reviews
+        ]
 
 
 class ReviewManager(DefaultConferenceManager.from_queryset(ReviewQuerySet)):
@@ -67,6 +85,8 @@ class Review(models.Model):
         (Vote.MINUS_ZERO, _('-0 (weak reject)')),
         (Vote.MINUS_ONE, _('-1 (strong reject)')),
     )
+
+    VOTE_ORDER = {vote: i for i, (vote, _) in enumerate(VOTE_CHOICES)}
 
     vote = models.CharField(
         max_length=2,
@@ -106,6 +126,21 @@ class Review(models.Model):
         )
     )
 
+    APPROPRIATENESS_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No')),
+    )
+    appropriateness = models.BooleanField(
+        default=False,
+        choices=APPROPRIATENESS_CHOICES,
+        verbose_name=_('is appropriate'),
+        help_text=_(
+            "Administrators can use this field to hide a review from "
+            "submitters, even if the reviewer enables disclosure. The review "
+            "may be shown to the submitter only if this is set to True."
+        ),
+    )
+
     note = models.TextField(
         blank=True,
         verbose_name=_('note'),
@@ -139,3 +174,6 @@ class Review(models.Model):
         if self.stage is None:
             self.stage = settings.REVIEWS_STAGE
         return super().save(*args, **kwargs)
+
+    def is_comment_visible_to_submitter(self):
+        return self.discloses_comment and self.appropriateness
