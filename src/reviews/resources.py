@@ -13,6 +13,22 @@ class ReviewResource(resources.ModelResource):
         attribute='proposal__title',
         readonly=True,
     )
+    stage = fields.Field(
+        attribute='stage',
+        readonly=True,
+    )
+    vote = fields.Field(
+        attribute='vote',
+        readonly=True,
+    )
+    comment = fields.Field(
+        attribute='comment',
+        readonly=True,
+    )
+    discloses_comment = fields.Field(
+        attribute='discloses_comment',
+        readonly=True,
+    )
 
     class Meta:
         model = Review
