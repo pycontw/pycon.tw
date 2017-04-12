@@ -25,7 +25,7 @@ class TemplateExistanceStatusResponse(TemplateResponse):
     def resolve_template(self, template):
         try:
             return super().resolve_template(template)
-        except TemplateDoesNotExist:
+        except (UnicodeEncodeError, TemplateDoesNotExist):
             raise Http404
 
 
