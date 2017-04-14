@@ -73,11 +73,11 @@ class Review(models.Model):
     objects = ReviewManager()
     all_objects = ReviewQuerySet.as_manager()
 
-    class Vote(object):
-        PLUS_ONE = "+1"
-        PLUS_ZERO = "+0"
-        MINUS_ZERO = "-0"
-        MINUS_ONE = "-1"
+    class Vote:
+        PLUS_ONE = '+1'
+        PLUS_ZERO = '+0'
+        MINUS_ZERO = '-0'
+        MINUS_ONE = '-1'
 
     VOTE_CHOICES = (
         (Vote.PLUS_ONE, _('+1 (strong accept)')),
@@ -177,3 +177,6 @@ class Review(models.Model):
 
     def is_comment_visible_to_submitter(self):
         return self.discloses_comment and self.appropriateness
+
+    def is_outdated(self):
+        return self.updated < self.proposal.last_updated_at

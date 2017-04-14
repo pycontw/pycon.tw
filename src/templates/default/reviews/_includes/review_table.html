@@ -12,10 +12,12 @@
 	</thead>
 	<tbody>
 		{% for review in reviews %}
-			<tr>
+			<tr class="{% if review.is_outdated %}info{% endif %}">
 				<td>{{ review.stage }}</td>
 				<td>{{ review.get_vote_display }}</td>
-				<td class="proposal-title">{{ review.proposal.title }}</td>
+				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}">
+					{{ review.proposal.title }}
+				</td>
 				<td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
 				<td>
 					<a href="{% url 'review_edit' proposal_pk=review.proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>

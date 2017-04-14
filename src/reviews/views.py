@@ -130,6 +130,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         if review_stage == 1:
             reviews = (
                 Review.objects
+                .select_related('proposal')
                 .filter_reviewable(self.request.user)
                 .exclude(stage=2)
             )
@@ -145,6 +146,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             )
             reviews = (
                 Review.objects
+                .select_related('proposal')
                 .filter_reviewable(self.request.user)
                 .filter(proposal__accepted__isnull=True)
                 .exclude(proposal__in=proposals, stage=1)
