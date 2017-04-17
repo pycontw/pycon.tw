@@ -27,7 +27,10 @@
 {% compress css %}
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/main.css' %}">
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
+{% block styles %}{% endblock %}
 {% endcompress %}
+
+{% block extra_css %}{% endblock %}
 
 </head>
 
