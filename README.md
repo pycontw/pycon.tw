@@ -3,6 +3,8 @@
 
 # PyCon TW 2016
 
+[![Join the chat at https://gitter.im/pycontw/pycontw2016](https://badges.gitter.im/pycontw/pycontw2016.svg)](https://gitter.im/pycontw/pycontw2016?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This repository serves the website of PyCon TW 2016. This project is open source and the license can be found in LICENSE.
 
 ## Getting Started
