@@ -2,11 +2,6 @@
 
 {% load static %}
 
-{% block styles %}
-{{ block.super }}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2017/styles/registration.scss' %}">
-{% endblock styles %}
-
 {% block nav %}
 {% include '_includes/header.html' with active='registration' %}
 {% endblock nav %}
