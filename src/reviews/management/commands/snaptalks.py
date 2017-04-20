@@ -61,7 +61,10 @@ class Command(BaseCommand):
         current_stage = settings.REVIEWS_STAGE
         for dataset in dataset_iter:
             pk = dataset['pk']
-            field_data = dataset['fields']
+            field_data = {
+                k: v for k, v in dataset['fields'].items()
+                if k != 'submitter'
+            }
             dumped_json = json.dumps(field_data, cls=DjangoJSONEncoder)
             TalkProposalSnapshot.objects.update_or_create(
                 proposal_id=pk, stage=current_stage,
