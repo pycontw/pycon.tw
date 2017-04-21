@@ -17,7 +17,7 @@
 	</ul>
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane tab-pane-view active" id="{{ field }}-view">
-			<div class="markdown-field">{{ current }}</div>
+			<div class="text-field">{{ current }}</div>
 		</div>
 		<div role="tabpanel" class="tab-pane tab-pane-diff" id="{{ field }}-comp">
 			<div class="text-field">{% block_diff current snapshot %}</div>
@@ -25,5 +25,5 @@
 	</div>
 </div>
 {% else %}
-<div class="markdown-field">{{ current }}</div>
+<div class="text-field">{{ current }}</div>
 {% endif %}

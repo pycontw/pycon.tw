@@ -27,7 +27,7 @@ def diff_tag(f):
 @diff_tag
 def line_diff(current, snapshot):
     return format_html(
-        '<ins>{current}</ins><br><del>{snapshot}</del>',
+        '<del>{snapshot}</del><br><ins>{current}</ins>',
         current=current, snapshot=snapshot,
     )
 

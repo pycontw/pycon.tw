@@ -48,9 +48,7 @@
 	</div>
 
 	<h4>{% trans 'Abstract' %}</h4>
-	<div class="text-field">
-		{% block_diff proposal.abstract snapshot.abstract %}
-	</div>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.abstract snapshot=snapshot.abstract field="abstract" only %}
 
 	<h4>{% trans 'Python level' %}</h4>
 	<div class="simple-field">
@@ -58,21 +56,21 @@
 	</div>
 
 	<h4>{% trans 'Objective' %}</h4>
-	<div class="text-field">{% block_diff proposal.objective snapshot.objective %}</div>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.objective snapshot=snapshot.objective field="objective" only %}
 
 	{% if proposal.detailed_description %}
 	<h4>{% trans 'Detailed description' %}</h4>
-	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.detailed_description snapshot=snapshot.detailed_description only %}
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.detailed_description snapshot=snapshot.detailed_description field='detailed_description' only %}
 	{% endif %}
 
 	{% if proposal.outline %}
 	<h4>{% trans 'Outline' %}</h4>
-	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.outline snapshot=snapshot.outline only %}
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.outline snapshot=snapshot.outline field='outline' only %}
 	{% endif %}
 
 	{% if review_stage == 2 and proposal.supplementary %}
 	<h4>{% trans 'Supplementary' %}</h4>
-	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.supplementary snapshot=snapshot.supplementary only %}
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.supplementary snapshot=snapshot.supplementary field='supplementary' only %}
 	{% endif %}
 </div>
 

@@ -103,23 +103,39 @@ body.dashboard{
                     margin-top: 0;
                 }
                 .simple-field, .text-field, .markdown-field {
-                    line-height: 125%;
-                }
-                .simple-field, .text-field {
+                    line-height: 150%;
                     del {
-                        text-decoration: none;
-                        background-color: lighten($brand-danger, 33.5%);
+                        text-decoration: line-through;
+                        color: $gray-light;
                     }
                     ins {
                         text-decoration: none;
+                    }
+                }
+                .text-field {
+                    del, ins {
+                        display: inline-block;
+                        text-decoration: none;
+                        padding: 0 0.5em;
+                        color: $text-color;
+                    }
+                    del {
+                        background-color: lighten($brand-danger, 33.5%);
+                    }
+                    ins {
                         background-color: lighten($brand-success, 33.5%);
+                    }
+                    del + br + ins {
+                        margin-top: 0.2em;
                     }
                 }
                 .text-field {
                     del > del {
+                        padding: 0;
                         background-color: lighten($brand-danger, 20%);
                     }
                     ins > ins {
+                        padding: 0;
                         background-color: lighten($brand-success, 20%);
                     }
                 }
@@ -131,19 +147,19 @@ body.dashboard{
                     padding: 1em;
                     height: auto;
                 }
-                .tab-pane {
-                    > .markdown-field {
-                        border-top: none;
-                        border-top-left-radius: 0;
-                        border-top-right-radius: 0;
-                    }
-                    > .text-field {
-                        padding: 1em;
-                        font-family: monospace;
-                        border: 1px solid #ddd;
-                        border-top: none;
-                        border-radius: 0 0 4px 4px;
-                    }
+                .tab-pane > .text-field {
+                    padding: 1em;
+                    border: 1px solid #ddd;
+                    border-top: none;
+                    border-radius: 0 0 4px 4px;
+                }
+                .tab-pane-view > .markdown-field {
+                    border-top: none;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+                .tab-pane-diff > .text-field {
+                    font-family: monospace;
                 }
             }
 
