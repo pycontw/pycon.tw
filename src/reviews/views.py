@@ -1,5 +1,4 @@
 import collections
-import functools
 import json
 import random
 
@@ -176,14 +175,21 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
 
     def get_snapshot(self, proposal):
         try:
-            snapshot = self.snapshot_model.objects.get(proposal=proposal)
+            snapshot = (
+                self.snapshot_model.objects
+                .filter(
+                    proposal=proposal,
+                    stage__lt=settings.REVIEWS_STAGE,
+                )
+                .latest('dumped_at')
+            )
         except self.snapshot_model.DoesNotExist:
             return None
         try:
-            return TalkProposal(**json.loads(snapshot.dumped_json))
+            snapshot = TalkProposal(**json.loads(snapshot.dumped_json))
         except (TypeError, ValueError):
-            raise
             return None
+        return snapshot
 
     def get(self, request, *args, **kwargs):
         self.proposal = self.get_proposal()
@@ -251,7 +257,6 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             'my_reviews': my_reviews,
             'review_stage': review_stage,
         })
-        print(kwargs['snapshot'])
         return super().get_context_data(**kwargs)
 
     def get_success_url(self):

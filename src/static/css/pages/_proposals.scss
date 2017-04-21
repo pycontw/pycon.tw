@@ -102,26 +102,48 @@ body.dashboard{
                 > h4:first-child {
                     margin-top: 0;
                 }
-                > div {
+                .simple-field, .text-field, .markdown-field {
                     line-height: 125%;
                 }
-                > .simple-field {
-                    > del {
+                .simple-field, .text-field {
+                    del {
                         text-decoration: none;
                         background-color: lighten($brand-danger, 33.5%);
                     }
-                    > ins {
+                    ins {
                         text-decoration: none;
                         background-color: lighten($brand-success, 33.5%);
                     }
                 }
-                > .markdown-field {
+                .text-field {
+                    del > del {
+                        background-color: lighten($brand-danger, 20%);
+                    }
+                    ins > ins {
+                        background-color: lighten($brand-success, 20%);
+                    }
+                }
+                .markdown-field {
                     background-color: transparent;
                     border: 1px solid #ddd;
                     border-radius: 4px;
                     position: relative;
                     padding: 1em;
                     height: auto;
+                }
+                .tab-pane {
+                    > .markdown-field {
+                        border-top: none;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                    }
+                    > .text-field {
+                        padding: 1em;
+                        font-family: monospace;
+                        border: 1px solid #ddd;
+                        border-top: none;
+                        border-radius: 0 0 4px 4px;
+                    }
                 }
             }
 
