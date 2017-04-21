@@ -2,6 +2,7 @@
 
 {% load i18n staticfiles %}
 {% load compress crispy_forms_tags %}
+{% load review_tools %}
 
 
 {% block title %}{% blocktrans with proposal_title=proposal.title %}{{ proposal_title }} | Reviews{% endblocktrans %}
@@ -20,38 +21,61 @@
 
 {% block main-content %}
 
+
+{# Current proposal. #}
+
 <h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
 
 <div class="dashboard-body reviewed-proposal-view">
 	{% if review_stage == 2 %}
-		<h4>{% trans 'Submitter' %}</h4>
-		<div>{{ proposal.submitter.speaker_name }}</div>
+	<h4>{% trans 'Submitter' %}</h4>
+	<div class="simple-field">{{ proposal.submitter.speaker_name }}</div>
 	{% endif %}
+
 	<h4>{% trans 'Category' %}</h4>
-	<div>{{ proposal.get_category_display }}</div>
+	<div class="simple-field">
+		{% line_diff proposal.get_category_display snapshot.get_category_display %}
+	</div>
+
 	<h4>{% trans 'Duration' %}</h4>
-	<div>{{ proposal.get_duration_display }}</div>
+	<div class="simple-field">
+		{% line_diff proposal.get_duration_display snapshot.get_duration_display %}
+	</div>
+
 	<h4>{% trans 'Language' %}</h4>
-	<div>{{ proposal.get_language_display }}</div>
+	<div class="simple-field">
+		{% line_diff proposal.get_language_display snapshot.get_language_display %}
+	</div>
+
 	<h4>{% trans 'Abstract' %}</h4>
-	<div>{{ proposal.abstract|linebreaks }}</div>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.abstract snapshot=snapshot.abstract field="abstract" only %}
+
 	<h4>{% trans 'Python level' %}</h4>
-	<div>{{ proposal.get_python_level_display }}</div>
+	<div class="simple-field">
+		{% line_diff proposal.get_python_level_display snapshot.get_python_level_display %}
+	</div>
+
 	<h4>{% trans 'Objective' %}</h4>
-	<div>{{ proposal.objective|linebreaks }}</div>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.objective snapshot=snapshot.objective field="objective" only %}
+
 	{% if proposal.detailed_description %}
 	<h4>{% trans 'Detailed description' %}</h4>
-	<div class="markdown-field">{{ proposal.detailed_description }}</div>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.detailed_description snapshot=snapshot.detailed_description field='detailed_description' only %}
 	{% endif %}
+
 	{% if proposal.outline %}
 	<h4>{% trans 'Outline' %}</h4>
-	<div class="markdown-field">{{ proposal.outline }}</div>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.outline snapshot=snapshot.outline field='outline' only %}
 	{% endif %}
+
 	{% if review_stage == 2 and proposal.supplementary %}
-		<h4>{% trans 'Supplementary' %}</h4>
-		<div class="markdown-field">{{ proposal.supplementary }}</div>
+	<h4>{% trans 'Supplementary' %}</h4>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.supplementary snapshot=snapshot.supplementary field='supplementary' only %}
 	{% endif %}
 </div>
+
+
+{# Review table. #}
 
 {% if review_stage == 2 and other_reviews %}
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Previous Reviews by Other Reviewers' %}</span></h3>

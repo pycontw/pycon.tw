@@ -4,7 +4,7 @@ import operator
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext, ugettext_lazy as _
 
 from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
@@ -164,7 +164,7 @@ class Review(models.Model):
         ordering = ['-updated']
 
     def __str__(self):
-        return _('Review {proposal} by {reviewer}: {vote}').format(
+        return ugettext('Review {proposal} by {reviewer}: {vote}').format(
             reviewer=self.reviewer,
             proposal=self.proposal,
             vote=self.get_vote_display(),
@@ -180,3 +180,36 @@ class Review(models.Model):
 
     def is_outdated(self):
         return self.updated < self.proposal.last_updated_at
+
+
+class TalkProposalSnapshot(models.Model):
+    """Snapshot for a talk proposal during a review stage.
+    """
+    proposal = BigForeignKey(
+        to=TalkProposal,
+        verbose_name=_('proposal'),
+    )
+
+    stage = models.IntegerField(
+        verbose_name=_('stage'),
+    )
+
+    dumped_json = models.TextField(
+        verbose_name=_('dumped JSON'),
+    )
+
+    dumped_at = models.DateTimeField(
+        verbose_name=_('dumped at'),
+        auto_now=True,
+    )
+
+    class Meta:
+        verbose_name = _('talk proposal snapshot')
+        verbose_name_plural = _('talk proposal snapshots')
+        unique_together = ['proposal', 'stage']
+
+    def __str__(self):
+        return ugettext('Stage {stage} dump for {proposal}').format(
+            stage=self.stage,
+            proposal=self.proposal,
+        )
