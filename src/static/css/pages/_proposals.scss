@@ -122,6 +122,10 @@ body.dashboard{
                     del + br + ins {
                         margin-top: 0.2em;
                     }
+                    // Larger margin between ins and the next del.
+                    ins + br + del {
+                        margin-top: 0.5em;
+                    }
                 }
                 .text-field {
                     del > del {
