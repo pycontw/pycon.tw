@@ -104,15 +104,8 @@ body.dashboard{
                 }
                 .simple-field, .text-field, .markdown-field {
                     line-height: 150%;
-                    del {
-                        text-decoration: line-through;
-                        color: $gray-light;
-                    }
-                    ins {
-                        text-decoration: none;
-                    }
                 }
-                .text-field {
+                .simple-field, .text-field {
                     del, ins {
                         display: inline-block;
                         text-decoration: none;
@@ -125,6 +118,7 @@ body.dashboard{
                     ins {
                         background-color: lighten($brand-success, 33.5%);
                     }
+                    // Put a little margin between del and ins blocks.
                     del + br + ins {
                         margin-top: 0.2em;
                     }
