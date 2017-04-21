@@ -36,5 +36,5 @@ def line_diff(current, snapshot):
 @diff_tag
 def block_diff(current, snapshot):
     return html_join(mark_safe('<br>'), difftools.make_diff(
-        current.splitlines(), snapshot.splitlines(),
+        snapshot.splitlines(), current.splitlines(),
     ))
