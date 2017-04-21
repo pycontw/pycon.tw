@@ -102,6 +102,19 @@ body.dashboard{
                 > h4:first-child {
                     margin-top: 0;
                 }
+                > div {
+                    line-height: 125%;
+                }
+                > .simple-field {
+                    > del {
+                        text-decoration: none;
+                        background-color: lighten($brand-danger, 33.5%);
+                    }
+                    > ins {
+                        text-decoration: none;
+                        background-color: lighten($brand-success, 33.5%);
+                    }
+                }
                 > .markdown-field {
                     background-color: transparent;
                     border: 1px solid #ddd;

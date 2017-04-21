@@ -1,5 +1,6 @@
 import collections
-import itertools
+import functools
+import json
 import random
 
 from django.conf import settings
@@ -13,7 +14,7 @@ from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
 
 from .forms import ReviewForm
-from .models import REVIEW_REQUIRED_PERMISSIONS, Review
+from .models import REVIEW_REQUIRED_PERMISSIONS, Review, TalkProposalSnapshot
 
 
 class ReviewableMixin:
@@ -160,6 +161,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/review_form.html'
     proposal_model = TalkProposal
+    snapshot_model = TalkProposalSnapshot
 
     def get_proposal(self):
         try:
@@ -171,6 +173,17 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
         except self.proposal_model.DoesNotExist:
             raise Http404
         return proposal
+
+    def get_snapshot(self, proposal):
+        try:
+            snapshot = self.snapshot_model.objects.get(proposal=proposal)
+        except self.snapshot_model.DoesNotExist:
+            return None
+        try:
+            return TalkProposal(**json.loads(snapshot.dumped_json))
+        except (TypeError, ValueError):
+            raise
+            return None
 
     def get(self, request, *args, **kwargs):
         self.proposal = self.get_proposal()
@@ -233,10 +246,12 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
 
         kwargs.update({
             'proposal': self.proposal,
+            'snapshot': self.get_snapshot(self.proposal),
             'other_reviews': other_reviews,
             'my_reviews': my_reviews,
             'review_stage': review_stage,
         })
+        print(kwargs['snapshot'])
         return super().get_context_data(**kwargs)
 
     def get_success_url(self):
