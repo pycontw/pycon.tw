@@ -77,7 +77,7 @@ def dump_replace(a, b, alo, blo, ahi, bhi):
 def replace_helper(a, alo, ahi, b, blo, bhi):
     if alo < ahi:
         if blo < bhi:
-            yield from dump_replace(a, alo, ahi, b, blo, bhi)
+            yield from dump_replace(a, b, alo, blo, ahi, bhi)
         else:
             yield from dump_delete(a, b, alo, blo, ahi, bhi)
     elif blo < bhi:
