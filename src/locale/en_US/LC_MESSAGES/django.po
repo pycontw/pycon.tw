@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:20+0800\n"
-"PO-Revision-Date: 2017-03-30 18:12+0000\n"
+"POT-Creation-Date: 2017-04-22 23:01+0800\n"
+"PO-Revision-Date: 2017-04-22 15:01+0000\n"
 "Last-Translator: PyCon Taiwan\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,7 @@ msgstr "Intermediate"
 msgid "Experienced"
 msgstr "Experienced"
 
-#: core/models.py:132 templates/default/reviews/review_form.html:38
+#: core/models.py:132 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python level"
 
@@ -200,11 +200,11 @@ msgstr "Python level"
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:143 reviews/models.py:95
+#: core/models.py:143 reviews/models.py:115 reviews/models.py:130
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:144 reviews/models.py:96
+#: core/models.py:144 reviews/models.py:116 reviews/models.py:131
 msgid "No"
 msgstr "No"
 
@@ -345,7 +345,7 @@ msgstr "sponsored event"
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:218 reviews/models.py:52
+#: events/models.py:218 reviews/models.py:70 reviews/models.py:190
 msgid "proposal"
 msgstr "proposal"
 
@@ -650,11 +650,11 @@ msgstr "Talk proposal <strong>{title}</strong> created."
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "Tutorial proposal <strong>{title}</strong> created."
 
-#: proposals/views/update.py:32 proposals/views/update.py:88
+#: proposals/views/mixins.py:30 proposals/views/mixins.py:86
 msgid "Abstract Example"
 msgstr "Abstract Example"
 
-#: proposals/views/update.py:33
+#: proposals/views/mixins.py:31
 msgid ""
 "For modern human beings, the data in computers are essentially an external "
 "place for storing our memories. No matter they're photographs of your daily "
@@ -670,22 +670,22 @@ msgid ""
 "categorize problem."
 msgstr ""
 
-#: proposals/views/update.py:51 proposals/views/update.py:104
+#: proposals/views/mixins.py:49 proposals/views/mixins.py:102
 msgid "Objective Example"
 msgstr "Objective Example"
 
-#: proposals/views/update.py:52
+#: proposals/views/mixins.py:50
 msgid ""
 "Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
 "But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 msgstr ""
 
-#: proposals/views/update.py:66 proposals/views/update.py:118
+#: proposals/views/mixins.py:64 proposals/views/mixins.py:116
 msgid "Description Example"
 msgstr "Description Example"
 
-#: proposals/views/update.py:67
+#: proposals/views/mixins.py:65
 msgid ""
 "In the final example sharing, we'll try to move a series of images marked "
 "with date and file name, into \"YEAR/MONTH\" patterned directories that "
@@ -693,11 +693,11 @@ msgid ""
 "chronological order."
 msgstr ""
 
-#: proposals/views/update.py:73 proposals/views/update.py:128
+#: proposals/views/mixins.py:71 proposals/views/mixins.py:126
 msgid "Outline Example"
 msgstr "Outline Example"
 
-#: proposals/views/update.py:74
+#: proposals/views/mixins.py:72
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
@@ -710,7 +710,7 @@ msgid ""
 "4. Example sharing  [5 min]\n"
 msgstr ""
 
-#: proposals/views/update.py:89
+#: proposals/views/mixins.py:87
 msgid ""
 "Nowadays, photographs always contain the information about the state where "
 "the photo was taken, they're called EXIF. Sometimes when building a blog "
@@ -724,14 +724,14 @@ msgid ""
 "automatically processes all the photographs in the article."
 msgstr ""
 
-#: proposals/views/update.py:105
+#: proposals/views/mixins.py:103
 msgid ""
 "Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.\n"
 "\n"
 "While I was writing blog posts, I found out that manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins."
 msgstr ""
 
-#: proposals/views/update.py:119
+#: proposals/views/mixins.py:117
 msgid ""
 "### Third-party libraries used:\n"
 "  - [exiftool] A Perl tool for analyzing EXIF of images\n"
@@ -743,7 +743,7 @@ msgid ""
 "[Pelican]: http://blog.getpelican.com/\n"
 msgstr ""
 
-#: proposals/views/update.py:129
+#: proposals/views/mixins.py:127
 msgid ""
 "1. Intro to EXIF and exiftool [5min]\n"
 "2. Usage of Pillow, use it to add watermark [5min]\n"
@@ -758,32 +758,32 @@ msgid ""
 "5. Q&A [5min]\n"
 msgstr ""
 
-#: proposals/views/update.py:159
+#: proposals/views/update.py:59
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "Talk proposal <strong>{title}</strong> updated."
 
-#: proposals/views/update.py:168
+#: proposals/views/update.py:68
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:248
+#: pycontw2016/settings/base.py:249
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:249 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:250 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:269
+#: pycontw2016/settings/base.py:272
 #: pycontw2016/settings/production/pycontw2016.py:13
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:270
+#: pycontw2016/settings/base.py:273
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:271
+#: pycontw2016/settings/base.py:274
 #: pycontw2016/settings/production/pycontw2016.py:15
 msgid "Prefer 45min"
 msgstr "Prefer 45min"
@@ -791,6 +791,18 @@ msgstr "Prefer 45min"
 #: pycontw2016/settings/production/pycontw2016.py:14
 msgid "Prefer 25min"
 msgstr "Prefer 25min"
+
+#: reviews/admin.py:50
+msgid "Key"
+msgstr ""
+
+#: reviews/admin.py:52
+msgid "Value"
+msgstr ""
+
+#: reviews/admin.py:67
+msgid "dumped data"
+msgstr ""
 
 #: reviews/forms.py:14
 msgid "The current user is invalid to create a {model_name}."
@@ -804,89 +816,120 @@ msgstr "{model_name_cap} creation requires a proposal object."
 msgid "Could not review proposal {proposal}."
 msgstr "Could not review proposal {proposal}."
 
-#: reviews/models.py:43
+#: reviews/models.py:61
 msgid "reviewer"
 msgstr "reviewer"
 
-#: reviews/models.py:47
+#: reviews/models.py:65 reviews/models.py:194
 msgid "stage"
 msgstr "stage"
 
-#: reviews/models.py:65
+#: reviews/models.py:83
 msgid "+1 (strong accept)"
 msgstr "+1 (strong accept)"
 
-#: reviews/models.py:66
+#: reviews/models.py:84
 msgid "+0 (weak accept)"
 msgstr "+0 (weak accept)"
 
-#: reviews/models.py:67
+#: reviews/models.py:85
 msgid "-0 (weak reject)"
 msgstr "–0 (weak reject)"
 
-#: reviews/models.py:68
+#: reviews/models.py:86
 msgid "-1 (strong reject)"
 msgstr "–1 (strong reject)"
 
-#: reviews/models.py:75
+#: reviews/models.py:95
 msgid "vote"
 msgstr "vote"
 
-#: reviews/models.py:77
+#: reviews/models.py:97
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the google doc <a "
 "href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 msgstr "Your vote to accept or reject this talk. More information about the scoring and acceptance criteria can be found at the google doc <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 
-#: reviews/models.py:86
+#: reviews/models.py:106
 msgid "comment"
 msgstr "comment"
 
-#: reviews/models.py:88
+#: reviews/models.py:108
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the"
 " proposal's submitter."
 msgstr "Comments to this proposal. This may be available for other reviewers in later review stages, and you can choose whether or not to disclose it to the proposal's submitter."
 
-#: reviews/models.py:101
+#: reviews/models.py:121
 msgid "discloses comment to proposal submitter"
 msgstr "discloses comment to proposal submitter"
 
-#: reviews/models.py:103
+#: reviews/models.py:123
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
 msgstr "Whether the proposal submitter can read you comments. We will include your comments in the proposal acceptance/rejection notice sent to the submitter if you allow us to."
 
-#: reviews/models.py:111
+#: reviews/models.py:136
+msgid "is appropriate"
+msgstr ""
+
+#: reviews/models.py:138
+msgid ""
+"Administrators can use this field to hide a review from submitters, even if "
+"the reviewer enables disclosure. The review may be shown to the submitter "
+"only if this is set to True."
+msgstr ""
+
+#: reviews/models.py:146
 msgid "note"
 msgstr "note"
 
-#: reviews/models.py:113
+#: reviews/models.py:148
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
 msgstr "Personal notes about this proposal. You can use this field to record anything you like during the review process. We promise to never disclose them to anyone."
 
-#: reviews/models.py:121
+#: reviews/models.py:156
 msgid "updated"
 msgstr "updated"
 
-#: reviews/models.py:126
+#: reviews/models.py:161
 msgid "review"
 msgstr "review"
 
-#: reviews/models.py:127
+#: reviews/models.py:162
 msgid "reviews"
 msgstr "reviews"
 
-#: reviews/models.py:132
+#: reviews/models.py:167
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "Review {proposal} by {reviewer}: {vote}"
+
+#: reviews/models.py:198
+msgid "dumped JSON"
+msgstr ""
+
+#: reviews/models.py:202
+msgid "dumped at"
+msgstr ""
+
+#: reviews/models.py:207
+msgid "talk proposal snapshot"
+msgstr ""
+
+#: reviews/models.py:208
+msgid "talk proposal snapshots"
+msgstr ""
+
+#: reviews/models.py:212
+msgid "Stage {stage} dump for {proposal}"
+msgstr ""
 
 #: sponsors/models.py:16
 msgid "name"
@@ -970,6 +1013,7 @@ msgstr "Change Password"
 
 #: templates/default/_includes/dashboard_tablist.html:19
 #: templates/default/_includes/dashboard_tablist.html:21
+#: templates/default/proposals/_proposal_update.html:31
 msgid "Reviews"
 msgstr "Reviews"
 
@@ -992,24 +1036,24 @@ msgid "Change"
 msgstr "Change"
 
 #: templates/default/_includes/proposal_example_modal.html:35
-#: templates/default/reviews/review_form.html:36
+#: templates/default/reviews/review_form.html:50
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
 msgid "Abstract"
 msgstr "Abstract"
 
 #: templates/default/_includes/proposal_example_modal.html:36
-#: templates/default/reviews/review_form.html:40
+#: templates/default/reviews/review_form.html:58
 msgid "Objective"
 msgstr "Objective"
 
 #: templates/default/_includes/proposal_example_modal.html:37
-#: templates/default/reviews/review_form.html:43
+#: templates/default/reviews/review_form.html:62
 msgid "Detailed description"
 msgstr "Detailed description"
 
 #: templates/default/_includes/proposal_example_modal.html:38
-#: templates/default/reviews/review_form.html:47
+#: templates/default/reviews/review_form.html:67
 msgid "Outline"
 msgstr "Outline"
 
@@ -1034,7 +1078,7 @@ msgstr ""
 
 #: templates/default/_includes/proposal_example_modal.html:49
 #: templates/default/_includes/proposal_example_modal.html:64
-#: templates/default/reviews/review_form.html:30
+#: templates/default/reviews/review_form.html:35
 #: templates/pycontw-2016/events/sponsored_event_detail.html:20
 #: templates/pycontw-2016/events/talk_detail.html:20
 msgid "Category"
@@ -1042,13 +1086,13 @@ msgstr "Category"
 
 #: templates/default/_includes/proposal_example_modal.html:50
 #: templates/default/_includes/proposal_example_modal.html:67
-#: templates/default/reviews/review_form.html:32
+#: templates/default/reviews/review_form.html:40
 msgid "Duration"
 msgstr "Duration"
 
 #: templates/default/_includes/proposal_example_modal.html:52
 #: templates/default/_includes/proposal_example_modal.html:69
-#: templates/default/reviews/review_form.html:34
+#: templates/default/reviews/review_form.html:45
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
 #: templates/default/users/_includes/dashboard_proposal_table.html:8
 #: templates/pycontw-2016/events/sponsored_event_detail.html:17
@@ -1102,7 +1146,11 @@ msgstr "You need to complete your speaker profile first before submitting a prop
 msgid "Create Proposal"
 msgstr "Create Proposal"
 
-#: templates/default/proposals/_proposal_update.html:23
+#: templates/default/proposals/_proposal_update.html:26
+msgid "Proposal"
+msgstr ""
+
+#: templates/default/proposals/_proposal_update.html:45
 #: templates/default/users/user_profile_update.html:98
 msgid "Save"
 msgstr "Save"
@@ -1254,6 +1302,10 @@ msgstr "Vote"
 msgid "Comments"
 msgstr "Comments"
 
+#: templates/default/reviews/_includes/previous_review_table.html:28
+msgid "No reviews yet."
+msgstr ""
+
 #: templates/default/reviews/_includes/proposal_table.html:8
 msgid "Reviewed"
 msgstr "Reviewed"
@@ -1273,6 +1325,17 @@ msgstr "Review"
 #: templates/default/reviews/_includes/proposal_table.html:52
 msgid "Read"
 msgstr "Read"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:9
+#: templates/default/reviews/_includes/review_proposal_text_field.html:9
+#: templates/default/users/_includes/dashboard_proposal_table.html:41
+msgid "View"
+msgstr "View"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:14
+#: templates/default/reviews/_includes/review_proposal_text_field.html:14
+msgid "Compare"
+msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
@@ -1300,33 +1363,33 @@ msgstr "In review stage 2, you will see score and comment made by other reviewer
 msgid "Comment"
 msgstr "Comment"
 
-#: templates/default/reviews/_includes/review_table.html:21
+#: templates/default/reviews/_includes/review_table.html:23
 msgid "Update"
 msgstr "Update"
 
-#: templates/default/reviews/review_form.html:7
+#: templates/default/reviews/review_form.html:8
 #, python-format
 msgid "%(proposal_title)s | Reviews"
 msgstr "%(proposal_title)s | Reviews"
 
-#: templates/default/reviews/review_form.html:27
+#: templates/default/reviews/review_form.html:31
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:8
 msgid "Submitter"
 msgstr "Submitter"
 
-#: templates/default/reviews/review_form.html:51
+#: templates/default/reviews/review_form.html:72
 msgid "Supplementary"
 msgstr "Supplementary"
 
-#: templates/default/reviews/review_form.html:57
+#: templates/default/reviews/review_form.html:81
 msgid "Previous Reviews by Other Reviewers"
 msgstr "Previous Reviews by Other Reviewers"
 
-#: templates/default/reviews/review_form.html:64
+#: templates/default/reviews/review_form.html:88
 msgid "My Previous Reviews"
 msgstr "My Previous Reviews"
 
-#: templates/default/reviews/review_form.html:72
+#: templates/default/reviews/review_form.html:96
 msgid "Review Proposal"
 msgstr "Review Proposal"
 
@@ -1408,10 +1471,6 @@ msgstr "Edit"
 #: templates/default/users/_includes/dashboard_proposal_table.html:37
 msgid "Withdraw"
 msgstr "Withdraw"
-
-#: templates/default/users/_includes/dashboard_proposal_table.html:41
-msgid "View"
-msgstr "View"
 
 #: templates/default/users/_includes/dashboard_proposal_table.html:54
 #, python-format
@@ -1601,6 +1660,7 @@ msgid "Registration"
 msgstr "Registration"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:77
+#: templates/pycontw-2017/_includes/header.html:111
 msgid "Ticket Info"
 msgstr "Ticket Info"
 
