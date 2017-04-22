@@ -12,7 +12,8 @@
 {% with kktix_url='https://pycontw.kktix.cc/events/pycontw2017' %}
 <h1 class="ticket-h1"><span>Conference Tickets</span></h1>
 <section class="ticket-cards">
-	<a href="{{ kktix_url }}" class="card" target="_blank" rel="noopener">
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
 		<h3 class="title-box green">優惠票</h3>
 		<div class="price-box">
 			<div class="price">
@@ -27,10 +28,11 @@
 			</div>
 		</div>
 		<div class="desc">
-			<p>發票將捐贈給 <!--<a href="http://ocf.tw/">開放文化基金會</a>-->，對此大會予以票價優惠。</p>
+			<p>發票將捐贈給<a href="http://ocf.tw/">開放文化基金會</a>，對此大會予以票價優惠。</p>
 		</div>
-	</a>
-	<a href="{{ kktix_url }}" class="card" target="_blank" rel="noopener">
+	</div>
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
 		<h3 class="title-box orange">一般票</h3>
 		<div class="price-box">
 			<div class="price">
@@ -42,8 +44,9 @@
 		<div class="desc">
 			<p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 <em>N/A</em>。電子發票透過 email 寄送。</p>
 		</div>
-	</a>
-	<a href="{{ kktix_url }}" class="card" target="_blank" rel="noopener">
+	</div>
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
 		<h3 class="title-box blue">邀請票</h3>
 		<div class="price-box">
 			<div class="price">
@@ -60,7 +63,7 @@
 		<div class="desc">
 			<p>我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
 		</div>
-	</a>
+	</div>
 </section>
 {% endwith %}
 
