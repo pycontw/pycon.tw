@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:20+0800\n"
-"PO-Revision-Date: 2017-04-06 14:13+0000\n"
+"POT-Creation-Date: 2017-04-22 23:01+0800\n"
+"PO-Revision-Date: 2017-04-22 15:19+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -197,7 +197,7 @@ msgstr "中階"
 msgid "Experienced"
 msgstr "進階"
 
-#: core/models.py:132 templates/default/reviews/review_form.html:38
+#: core/models.py:132 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python 難易度"
 
@@ -205,11 +205,11 @@ msgstr "Python 難易度"
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:143 reviews/models.py:95
+#: core/models.py:143 reviews/models.py:115 reviews/models.py:130
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:144 reviews/models.py:96
+#: core/models.py:144 reviews/models.py:116 reviews/models.py:131
 msgid "No"
 msgstr "否"
 
@@ -350,7 +350,7 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:218 reviews/models.py:52
+#: events/models.py:218 reviews/models.py:70 reviews/models.py:190
 msgid "proposal"
 msgstr "提案"
 
@@ -655,11 +655,11 @@ msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的專業課程提案。"
 
-#: proposals/views/update.py:32 proposals/views/update.py:88
+#: proposals/views/mixins.py:30 proposals/views/mixins.py:86
 msgid "Abstract Example"
 msgstr "摘要範例"
 
-#: proposals/views/update.py:33
+#: proposals/views/mixins.py:31
 msgid ""
 "For modern human beings, the data in computers are essentially an external "
 "place for storing our memories. No matter they're photographs of your daily "
@@ -675,22 +675,22 @@ msgid ""
 "categorize problem."
 msgstr "對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音\n樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月下來，電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的 pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 Python 迴圈與排序技巧完成複雜的檔案重新歸類。"
 
-#: proposals/views/update.py:51 proposals/views/update.py:104
+#: proposals/views/mixins.py:49 proposals/views/mixins.py:102
 msgid "Objective Example"
 msgstr "演講目標範例"
 
-#: proposals/views/update.py:52
+#: proposals/views/mixins.py:50
 msgid ""
 "Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
 "But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 msgstr "針對初學 Python 、想試著用程式解決生活問題的人。我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。\n\n但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看出效果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學程式的人有幫助。"
 
-#: proposals/views/update.py:66 proposals/views/update.py:118
+#: proposals/views/mixins.py:64 proposals/views/mixins.py:116
 msgid "Description Example"
 msgstr "詳細說明範例"
 
-#: proposals/views/update.py:67
+#: proposals/views/mixins.py:65
 msgid ""
 "In the final example sharing, we'll try to move a series of images marked "
 "with date and file name, into \"YEAR/MONTH\" patterned directories that "
@@ -698,11 +698,11 @@ msgid ""
 "chronological order."
 msgstr "最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。"
 
-#: proposals/views/update.py:73 proposals/views/update.py:128
+#: proposals/views/mixins.py:71 proposals/views/mixins.py:126
 msgid "Outline Example"
 msgstr "大綱範例"
 
-#: proposals/views/update.py:74
+#: proposals/views/mixins.py:72
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
@@ -715,7 +715,7 @@ msgid ""
 "4. Example sharing  [5 min]\n"
 msgstr ""
 
-#: proposals/views/update.py:89
+#: proposals/views/mixins.py:87
 msgid ""
 "Nowadays, photographs always contain the information about the state where "
 "the photo was taken, they're called EXIF. Sometimes when building a blog "
@@ -729,14 +729,14 @@ msgid ""
 "automatically processes all the photographs in the article."
 msgstr ""
 
-#: proposals/views/update.py:105
+#: proposals/views/mixins.py:103
 msgid ""
 "Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.\n"
 "\n"
 "While I was writing blog posts, I found out that manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins."
 msgstr ""
 
-#: proposals/views/update.py:119
+#: proposals/views/mixins.py:117
 msgid ""
 "### Third-party libraries used:\n"
 "  - [exiftool] A Perl tool for analyzing EXIF of images\n"
@@ -748,7 +748,7 @@ msgid ""
 "[Pelican]: http://blog.getpelican.com/\n"
 msgstr "### 使用的第三方工具：\n- [exiftool] 為分析照片 EXIF 的 Perl 工具\n- [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)\n- [Pelican] 為 Python 的 static site generator\n\n[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n[Pillow]: http://python-pillow.github.io/\n[Pelican]: http://blog.getpelican.com/\n"
 
-#: proposals/views/update.py:129
+#: proposals/views/mixins.py:127
 msgid ""
 "1. Intro to EXIF and exiftool [5min]\n"
 "2. Usage of Pillow, use it to add watermark [5min]\n"
@@ -763,32 +763,32 @@ msgid ""
 "5. Q&A [5min]\n"
 msgstr "1. 簡介 EXIF 與 exiftool [5min]\n2. Pillow 使用及如何用它加上浮水印 [5min]\n- 字型的選用\n- 排版的一致性\n3. 自動化 [5min]\n- 使用 stdlib 架出一個 batch 處理流程\n- 搭配 joblib 或 multiprocessing 達成平行化\n4. 舉例 (使用 Pelican)[5min]\n- 簡介 Pelican 擴充方式 (template tag 與 signal 的搭配)\n- 成果\n5. Q&A [5min]\n\n"
 
-#: proposals/views/update.py:159
+#: proposals/views/update.py:59
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 
-#: proposals/views/update.py:168
+#: proposals/views/update.py:68
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:248
+#: pycontw2016/settings/base.py:249
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:249 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:250 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:269
+#: pycontw2016/settings/base.py:272
 #: pycontw2016/settings/production/pycontw2016.py:13
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:270
+#: pycontw2016/settings/base.py:273
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:271
+#: pycontw2016/settings/base.py:274
 #: pycontw2016/settings/production/pycontw2016.py:15
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -796,6 +796,18 @@ msgstr "偏好 45 分鐘"
 #: pycontw2016/settings/production/pycontw2016.py:14
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
+
+#: reviews/admin.py:50
+msgid "Key"
+msgstr "鍵"
+
+#: reviews/admin.py:52
+msgid "Value"
+msgstr "值"
+
+#: reviews/admin.py:67
+msgid "dumped data"
+msgstr "匯出資料"
 
 #: reviews/forms.py:14
 msgid "The current user is invalid to create a {model_name}."
@@ -809,89 +821,120 @@ msgstr "{model_name_cap} 的建立需要一個 proposal 物件。"
 msgid "Could not review proposal {proposal}."
 msgstr "無法審查提案 {proposal}。"
 
-#: reviews/models.py:43
+#: reviews/models.py:61
 msgid "reviewer"
 msgstr "審查者"
 
-#: reviews/models.py:47
+#: reviews/models.py:65 reviews/models.py:194
 msgid "stage"
 msgstr "階段"
 
-#: reviews/models.py:65
+#: reviews/models.py:83
 msgid "+1 (strong accept)"
 msgstr "+1（高度肯定地接受）"
 
-#: reviews/models.py:66
+#: reviews/models.py:84
 msgid "+0 (weak accept)"
 msgstr "+0（輕微贊成）"
 
-#: reviews/models.py:67
+#: reviews/models.py:85
 msgid "-0 (weak reject)"
 msgstr "−0（輕微反對）"
 
-#: reviews/models.py:68
+#: reviews/models.py:86
 msgid "-1 (strong reject)"
 msgstr "-1（高度肯定地拒絕）"
 
-#: reviews/models.py:75
+#: reviews/models.py:95
 msgid "vote"
 msgstr "投票"
 
-#: reviews/models.py:77
+#: reviews/models.py:97
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the google doc <a "
 "href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 msgstr "投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照 Google 文件上的<a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">審稿指南</a>。"
 
-#: reviews/models.py:86
+#: reviews/models.py:106
 msgid "comment"
 msgstr "評論"
 
-#: reviews/models.py:88
+#: reviews/models.py:108
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the"
 " proposal's submitter."
 msgstr "對於本提案的評論。本欄位內容將在之後的審查階段讓其他審查者看見，您可以選擇要或不要讓本提案的投稿者知道您的評論。 "
 
-#: reviews/models.py:101
+#: reviews/models.py:121
 msgid "discloses comment to proposal submitter"
 msgstr "讓本提案的投稿者知道您的評論"
 
-#: reviews/models.py:103
+#: reviews/models.py:123
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
 msgstr "本提案的投稿者是否能知道您的評論。我們會在通知提案接受或拒絕結果時，如果您同意讓投稿者知道，將這些評論加在通知結果中。"
 
-#: reviews/models.py:111
+#: reviews/models.py:136
+msgid "is appropriate"
+msgstr "認可"
+
+#: reviews/models.py:138
+msgid ""
+"Administrators can use this field to hide a review from submitters, even if "
+"the reviewer enables disclosure. The review may be shown to the submitter "
+"only if this is set to True."
+msgstr "管理員可以用這個欄位隱藏某個審稿意見，不讓投稿人看見（即使審稿人要求揭露）。只有當這個欄位設為 True 時，審稿意見才會被顯示給投稿人。"
+
+#: reviews/models.py:146
 msgid "note"
 msgstr "附註"
 
-#: reviews/models.py:113
+#: reviews/models.py:148
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
 msgstr "個人對本投稿的附註。您可以使用這個欄位記錄有關審查的任何資訊。我們不會把這欄位的資訊公布給任何人，只有您知道。"
 
-#: reviews/models.py:121
+#: reviews/models.py:156
 msgid "updated"
 msgstr "更新時間"
 
-#: reviews/models.py:126
+#: reviews/models.py:161
 msgid "review"
 msgstr "審查"
 
-#: reviews/models.py:127
+#: reviews/models.py:162
 msgid "reviews"
 msgstr "審查"
 
-#: reviews/models.py:132
+#: reviews/models.py:167
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
+
+#: reviews/models.py:198
+msgid "dumped JSON"
+msgstr "匯出 JSON"
+
+#: reviews/models.py:202
+msgid "dumped at"
+msgstr "匯出於"
+
+#: reviews/models.py:207
+msgid "talk proposal snapshot"
+msgstr "演講投稿封存"
+
+#: reviews/models.py:208
+msgid "talk proposal snapshots"
+msgstr "演講投稿封存"
+
+#: reviews/models.py:212
+msgid "Stage {stage} dump for {proposal}"
+msgstr "第 {stage} 階段封存《{proposal}》"
 
 #: sponsors/models.py:16
 msgid "name"
@@ -975,6 +1018,7 @@ msgstr "更改密碼"
 
 #: templates/default/_includes/dashboard_tablist.html:19
 #: templates/default/_includes/dashboard_tablist.html:21
+#: templates/default/proposals/_proposal_update.html:31
 msgid "Reviews"
 msgstr "審查"
 
@@ -997,24 +1041,24 @@ msgid "Change"
 msgstr "修改"
 
 #: templates/default/_includes/proposal_example_modal.html:35
-#: templates/default/reviews/review_form.html:36
+#: templates/default/reviews/review_form.html:50
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
 msgid "Abstract"
 msgstr "摘要"
 
 #: templates/default/_includes/proposal_example_modal.html:36
-#: templates/default/reviews/review_form.html:40
+#: templates/default/reviews/review_form.html:58
 msgid "Objective"
 msgstr "演講目標"
 
 #: templates/default/_includes/proposal_example_modal.html:37
-#: templates/default/reviews/review_form.html:43
+#: templates/default/reviews/review_form.html:62
 msgid "Detailed description"
 msgstr "詳細說明"
 
 #: templates/default/_includes/proposal_example_modal.html:38
-#: templates/default/reviews/review_form.html:47
+#: templates/default/reviews/review_form.html:67
 msgid "Outline"
 msgstr "大綱"
 
@@ -1039,7 +1083,7 @@ msgstr "使用 Python 讓管理電腦資料更容易"
 
 #: templates/default/_includes/proposal_example_modal.html:49
 #: templates/default/_includes/proposal_example_modal.html:64
-#: templates/default/reviews/review_form.html:30
+#: templates/default/reviews/review_form.html:35
 #: templates/pycontw-2016/events/sponsored_event_detail.html:20
 #: templates/pycontw-2016/events/talk_detail.html:20
 msgid "Category"
@@ -1047,13 +1091,13 @@ msgstr "分類"
 
 #: templates/default/_includes/proposal_example_modal.html:50
 #: templates/default/_includes/proposal_example_modal.html:67
-#: templates/default/reviews/review_form.html:32
+#: templates/default/reviews/review_form.html:40
 msgid "Duration"
 msgstr "時間長度"
 
 #: templates/default/_includes/proposal_example_modal.html:52
 #: templates/default/_includes/proposal_example_modal.html:69
-#: templates/default/reviews/review_form.html:34
+#: templates/default/reviews/review_form.html:45
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
 #: templates/default/users/_includes/dashboard_proposal_table.html:8
 #: templates/pycontw-2016/events/sponsored_event_detail.html:17
@@ -1107,7 +1151,11 @@ msgstr "在投稿前，您必須先完成填寫講者資訊。"
 msgid "Create Proposal"
 msgstr "建立提案"
 
-#: templates/default/proposals/_proposal_update.html:23
+#: templates/default/proposals/_proposal_update.html:26
+msgid "Proposal"
+msgstr "投稿"
+
+#: templates/default/proposals/_proposal_update.html:45
 #: templates/default/users/user_profile_update.html:98
 msgid "Save"
 msgstr "儲存"
@@ -1259,6 +1307,10 @@ msgstr "投票"
 msgid "Comments"
 msgstr "評論"
 
+#: templates/default/reviews/_includes/previous_review_table.html:28
+msgid "No reviews yet."
+msgstr "尚無審稿紀錄。"
+
 #: templates/default/reviews/_includes/proposal_table.html:8
 msgid "Reviewed"
 msgstr "已審查"
@@ -1278,6 +1330,17 @@ msgstr "審查"
 #: templates/default/reviews/_includes/proposal_table.html:52
 msgid "Read"
 msgstr "閱讀"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:9
+#: templates/default/reviews/_includes/review_proposal_text_field.html:9
+#: templates/default/users/_includes/dashboard_proposal_table.html:41
+msgid "View"
+msgstr "瀏覽"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:14
+#: templates/default/reviews/_includes/review_proposal_text_field.html:14
+msgid "Compare"
+msgstr "比較"
 
 #: templates/default/reviews/_includes/review_stage_1_desc.html:3
 msgid ""
@@ -1305,33 +1368,33 @@ msgstr "在第 2 階段審稿中，其他審稿人的分數與評語將匿名顯
 msgid "Comment"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/review_table.html:21
+#: templates/default/reviews/_includes/review_table.html:23
 msgid "Update"
 msgstr "更新"
 
-#: templates/default/reviews/review_form.html:7
+#: templates/default/reviews/review_form.html:8
 #, python-format
 msgid "%(proposal_title)s | Reviews"
 msgstr "%(proposal_title)s | 審查"
 
-#: templates/default/reviews/review_form.html:27
+#: templates/default/reviews/review_form.html:31
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:8
 msgid "Submitter"
 msgstr "提案人"
 
-#: templates/default/reviews/review_form.html:51
+#: templates/default/reviews/review_form.html:72
 msgid "Supplementary"
 msgstr "補充資訊"
 
-#: templates/default/reviews/review_form.html:57
+#: templates/default/reviews/review_form.html:81
 msgid "Previous Reviews by Other Reviewers"
 msgstr "其他審查員意見"
 
-#: templates/default/reviews/review_form.html:64
+#: templates/default/reviews/review_form.html:88
 msgid "My Previous Reviews"
 msgstr "我之前的審查意見"
 
-#: templates/default/reviews/review_form.html:72
+#: templates/default/reviews/review_form.html:96
 msgid "Review Proposal"
 msgstr "審查提案"
 
@@ -1354,19 +1417,19 @@ msgstr "個人審查數據"
 
 #: templates/default/reviews/talk_proposal_list.html:26
 msgid "Strong Accept (+1)"
-msgstr ""
+msgstr "高度肯定接受 (+1)"
 
 #: templates/default/reviews/talk_proposal_list.html:32
 msgid "Weak Accept (+0)"
-msgstr ""
+msgstr "輕微贊成 (+0)"
 
 #: templates/default/reviews/talk_proposal_list.html:38
 msgid "Weak Reject (-0)"
-msgstr ""
+msgstr "輕微反對 (–0)"
 
 #: templates/default/reviews/talk_proposal_list.html:44
 msgid "Strong Reject (-1)"
-msgstr ""
+msgstr "高度肯定拒絕 (–1)"
 
 #: templates/default/reviews/talk_proposal_list.html:51
 msgid "Unreviewed Talk Proposals"
@@ -1413,10 +1476,6 @@ msgstr "編輯"
 #: templates/default/users/_includes/dashboard_proposal_table.html:37
 msgid "Withdraw"
 msgstr "撤回"
-
-#: templates/default/users/_includes/dashboard_proposal_table.html:41
-msgid "View"
-msgstr "瀏覽"
 
 #: templates/default/users/_includes/dashboard_proposal_table.html:54
 #, python-format
@@ -1605,6 +1664,7 @@ msgid "Registration"
 msgstr "註冊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:77
+#: templates/pycontw-2017/_includes/header.html:111
 msgid "Ticket Info"
 msgstr "售票資訊"
 
