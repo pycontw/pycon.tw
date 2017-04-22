@@ -9,127 +9,126 @@
 {% url 'page' path='events/sprints' as events_sprints_url %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 
-<h2><span>日期</span></h2>
-<article>
-	<table class="registration-ticket-dates-table">
-		<tbody>
-			<tr>
-				<th>2017 年 4 月 17 日</th>
-				<td>開始售票。</td>
-			</tr>
-			<tr>
-				<th>2017 年 4 月 30 日</th>
-				<td>早鳥票截止，各票種恢復原價販售。</td>
-			</tr>
-			<tr>
-				<th>2017 年 5 月 19 日</th>
-				<td>截止售票。</td>
-			</tr>
-		</tbody>
-	</table>
-</article>
+{% with kktix_url='https://pycontw.kktix.cc/events/pycontw2017' %}
+<h1 class="ticket-h1"><span>Conference Tickets</span></h1>
+<section class="ticket-cards">
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
+		<h3 class="title-box green">優惠票</h3>
+		<div class="price-box">
+			<div class="price">
+				<h6>早鳥</h6>
+				<span class="figure">2,500</span>
+				<span class="currency">NTD</span>
+			</div>
+			<div class="price">
+				<h6>General</h6>
+				<span class="figure">3,500</span>
+				<span class="currency">NTD</span>
+			</div>
+		</div>
+		<div class="desc">
+			<p>發票將捐贈給<a href="http://ocf.tw/">開放文化基金會</a>，對此大會予以票價優惠。</p>
+		</div>
+	</div>
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
+		<h3 class="title-box orange">一般票</h3>
+		<div class="price-box">
+			<div class="price">
+				<h6>價格</h6>
+				<span class="figure">5,000</span>
+				<span class="currency">NTD</span>
+			</div>
+		</div>
+		<div class="desc">
+			<p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 <em>N/A</em>。電子發票透過 email 寄送。</p>
+		</div>
+	</div>
+	<div class="card">
+		<a href="{{ kktix_url }}" class="card-link" target="_blank" rel="noopener"></a>
+		<h3 class="title-box blue">邀請票</h3>
+		<div class="price-box">
+			<div class="price">
+				<h6>投稿貢獻</h6>
+				<span class="figure">2,500</span>
+				<span class="currency">NTD</span>
+			</div>
+			<div class="price">
+				<h6>贊助夥伴</h6>
+				<span class="figure">免費</span>
+				<span class="currency">&nbsp;</span>
+			</div>
+		</div>
+		<div class="desc">
+			<p>我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
+		</div>
+	</div>
+</section>
+{% endwith %}
 
-<h2><span>票種說明</span></h2>
-<article>
-
-	<p><em><a href="https://pycontw.kktix.cc/events/pycontw2017" taget="_blank" rel="noopener">前往 KKTIX 購票</a>。</em></p>
-
-	<p>下列票種用於報名 6 月 9 日至 11 日的議程活動；專業課程（tutorials）及衝刺開發（sprints）的報名方式，請另見相關網頁說明。</p>
-
-	<table class="registration-table">
-		<thead>
-			<tr>
-				<th>票種</th>
-				<th>早鳥票價</th>
-				<th>原票價</th>
-				<th>說明</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>一般票</th>
-				<td colspan="2">5,000</td>
-				<td class="description">
-					有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 <em>N/A</em>。電子發票透過 email 寄送。
-				</td>
-			</tr>
-
-			<tr>
-				<th>優惠票</th>
-				<td>2,500</td>
-				<td>3,500</td>
-				<td class="description">發票將捐贈給<a href="http://ocf.tw/">開放文化基金會</a>，對此大會予以票價優惠。</td>
-			</tr>
-
-			<tr>
-				<th>投稿優惠票</th>
-				<td colspan="2">2,500</td>
-				<td class="description">根據為台灣 Python 年會 2017 遞交之投稿，大會給予票價優惠。報名時請輸入邀請碼。</td>
-			</tr>
-		</tbody>
-	</table>
-
+<blockquote class="clip">
 	<ul>
+		<li>上列票種用於報名 6 月 9 日至 11 日的議程活動；專業課程（tutorials）及衝刺開發（sprints）的報名方式，請另見相關網頁說明。</li>
+		<li>早鳥票販售於 4 月 30 日結束，或售完為止。所有票種販售於 5 月 19 日結束。</li>
 		<li>若無特別標註，皆以台幣計價；參考匯率 USD 1.00 = NTD 30.35。</li>
-		<li><a href="http://itn.tw/knowledgebase.php?action=displayarticle&id=68">電子發票標示買方統編</a>，可用於公司報帳；個人留存之用的電子發票，只會顯示賣方統編。</li>
-		<li>如需開立英文收據，或票務相關問題，請來信 organizers[at]pycon.tw 洽詢。</li>
+		<li><a href="http://itn.tw/knowledgebase.php?action=displayarticle&id=68">電子發票標示買方統編</a>，可用於公司報帳；個人留存之用的電子發票，只會顯示賣方統編。如需開立英文收據，或票務相關問題，請來信 organizers[at]pycon.tw 洽詢。</li>
 	</ul>
-</article>
+</blockquote>
+
 
 <h2><span>注意事項</span></h2>
 
 <h3>1. T 裇尺寸</h3>
-<article>
-	<p>每一位報名參加者皆能獲得紀念 T 裇一件，請在報名時填寫您的尺寸。尺寸請參考下表：</p>
-	<table class="registration-table">
-		<thead>
-			<tr>
-				<th>尺寸</th>
-				<th>XS</th>
-				<th>S</th>
-				<th>M</th>
-				<th>L</th>
-				<th>XL</th>
-				<th>2XL</th>
-				<th>3XL</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>身高（cm）</th>
-				<td>150 以下</td>
-				<td>150–160</td>
-				<td>160–170</td>
-				<td>170–180</td>
-				<td colspan="3">180 以上</td>
-			</tr>
-			<tr>
-				<th>胸寬（cm）</th>
-				<td>44.5</td>
-				<td>47</td>
-				<td>49.5</td>
-				<td>52</td>
-				<td>54.5</td>
-				<td>57</td>
-				<td>59.5</td>
-			</tr>
-			<tr>
-				<th>衣長（cm）</th>
-				<td>62</td>
-				<td>63.5</td>
-				<td>66</td>
-				<td>68.5</td>
-				<td>71</td>
-				<td>73.5</td>
-				<td>73.5</td>
-			</tr>
-		</tbody>
-	</table>
-</article>
+<p class="table-desc">每一位報名參加者皆能獲得紀念 T 裇一件，請在報名時填寫您的尺寸。尺寸請參考下表：（單位為公分）</p>
+<table>
+	<thead>
+		<tr>
+			<th>尺寸</th>
+			<th>XS</th>
+			<th>S</th>
+			<th>M</th>
+			<th>L</th>
+			<th>XL</th>
+			<th>2XL</th>
+			<th>3XL</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>身高</th>
+			<td>150 以下</td>
+			<td>150–160</td>
+			<td>160–170</td>
+			<td>170–180</td>
+			<td colspan="3">180 以上</td>
+		</tr>
+		<tr>
+			<th>胸寬</th>
+			<td>44.5</td>
+			<td>47</td>
+			<td>49.5</td>
+			<td>52</td>
+			<td>54.5</td>
+			<td>57</td>
+			<td>59.5</td>
+		</tr>
+		<tr>
+			<th>衣長</th>
+			<td>62</td>
+			<td>63.5</td>
+			<td>66</td>
+			<td>68.5</td>
+			<td>71</td>
+			<td>73.5</td>
+			<td>73.5</td>
+		</tr>
+	</tbody>
+</table>
 
 <h3>2. Everybody Pays</h3>
 <article>
-	<p>PyCon Taiwan 2017 是需付費的活動，所有籌備人員和講者均自行付費參加。見<a href="https://tw.pycon.org/2013/zh/blog/2013/03/05/everybody-pays-zh/">公平付費</a>。</p>
+		<p>PyCon Taiwan 2017 是需付費的活動，所有籌備人員和講者均自行付費參加。見<a href="https://tw.pycon.org/2013/zh/blog/2013/03/05/everybody-pays-zh/">公平付費</a>。</p>
 </article>
 
 <h3>3. 付款方式</h3>
@@ -139,7 +138,7 @@
 
 <h3>4. 不接受退票</h3>
 <article>
-	<p>本次活動恕不受理退票。僅受理補差額更改優惠票成一般票，須於售票截止前 (2017 年 5 月 13 日) 寄信至 organizers[at]pycon.tw 告知，活動方將於更改完成後，寄信通知買方。</p>
+	<p>本次活動恕不受理退票。僅受理補差額更改優惠票成一般票，須於售票截止前寄信至 organizers[at]pycon.tw 告知，活動方將於更改完成後，寄信通知買方。</p>
 </article>
 
 <h3>5. 財務補助計畫（Financial Aid Plan）</h3>
@@ -164,10 +163,9 @@
 
 <h3>9. 專業課程 (Tutorials)</h3>
 <article>
-	<p>您可以透過本頁面最上方「活動」下拉選單，查詢 PyCon 課程 (待公告)、<a href="{{ events_sprints_url }}">Sprints</a>相關內容。</p>
+	<p>您可以透過本頁面最上方「活動」下拉選單，查詢課程 (待公告)與<a href="{{ events_sprints_url }}">衝刺開發</a>相關內容。</p>
 </article>
 
-<h1><span>歡迎所有 Python 愛好者的參加與宣傳<br>
-期待在 PyCon Taiwan 2017 會場與您相見 :)</span></h1>
+<h1><span>期待在 PyCon Taiwan 2017 會場與您相見 :)</span></h1>
 
 {% endblock %}
