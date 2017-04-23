@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-22 23:01+0800\n"
-"PO-Revision-Date: 2017-04-22 15:19+0000\n"
+"POT-Creation-Date: 2017-04-23 17:37+0800\n"
+"PO-Revision-Date: 2017-04-23 08:08+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -843,7 +843,7 @@ msgstr "−0（輕微反對）"
 
 #: reviews/models.py:86
 msgid "-1 (strong reject)"
-msgstr "-1（高度肯定地拒絕）"
+msgstr "–1（高度肯定地拒絕）"
 
 #: reviews/models.py:95
 msgid "vote"
@@ -1239,6 +1239,7 @@ msgid "Change Log In Password"
 msgstr "更改密碼"
 
 #: templates/default/registration/password_change_form.html:22
+#: templates/default/reviews/review_form.html:101
 msgid "Submit"
 msgstr "送出"
 

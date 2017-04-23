@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-22 23:01+0800\n"
-"PO-Revision-Date: 2017-04-22 15:01+0000\n"
-"Last-Translator: PyCon Taiwan\n"
+"POT-Creation-Date: 2017-04-23 17:37+0800\n"
+"PO-Revision-Date: 2017-04-23 08:10+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,7 +103,7 @@ msgstr "Embedded Systems"
 
 #: core/models.py:90
 msgid "FinTech"
-msgstr ""
+msgstr "FinTech"
 
 #: core/models.py:91
 msgid "Gaming"
@@ -222,7 +222,7 @@ msgstr "created at"
 
 #: core/models.py:165
 msgid "last updated at"
-msgstr ""
+msgstr "last updated at"
 
 #: core/views.py:28
 msgid "days"
@@ -668,7 +668,7 @@ msgid ""
 "examples from simple ones to complicated ones, and eventually combine "
 "looping and sorting techniques in Python, to conquer a complicated file re-"
 "categorize problem."
-msgstr ""
+msgstr "For modern human beings, the data in computers are essentially an external place for storing our memories. No matter they’re photographs of your daily life, music, videos, or even some data produced for work, school, research, they're all being stored in computers. As the time goes by, the folders in computers fall into a state of chaos. Or in another scenario, you’ve managed to manipulate a series of files, but ended up with changing them one by one using File Explorer. Well, is there any better methodology? This talk is going to introduce how you can “programmatically” manipulate directories and files, using Python and its built-in module, pathlib. We'll look at examples from simple ones to complicated ones, and eventually combine looping and sorting techniques in Python, to conquer a complicated file re-categorize problem."
 
 #: proposals/views/mixins.py:49 proposals/views/mixins.py:102
 msgid "Objective Example"
@@ -679,7 +679,7 @@ msgid ""
 "Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
 "But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
-msgstr ""
+msgstr "Targeted at people who’s a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n\nBut I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 
 #: proposals/views/mixins.py:64 proposals/views/mixins.py:116
 msgid "Description Example"
@@ -708,7 +708,7 @@ msgid ""
 "  - sorted(key=) usage\n"
 "  - Integrate enumerated, zip to simultaneously process multiple related files\n"
 "4. Example sharing  [5 min]\n"
-msgstr ""
+msgstr "1. Common situations in data clean-up  [5 min]\n2. Introduction to pathlib’s design  [10 min]\n  - Using Path object\n  - Exploring directory structure: Path.iterdir(), .glob()\n  - Using Path for changing paths\n3. Integrate for-loop and sorting  [5 min]\n  - sorted(key=) usage\n  - Integrate enumerated, zip to simultaneously process multiple related files\n4. Example sharing  [5 min]\n"
 
 #: proposals/views/mixins.py:87
 msgid ""
@@ -1234,6 +1234,7 @@ msgid "Change Log In Password"
 msgstr "Change Log In Password"
 
 #: templates/default/registration/password_change_form.html:22
+#: templates/default/reviews/review_form.html:101
 msgid "Submit"
 msgstr "Submit"
 
@@ -1424,7 +1425,7 @@ msgstr ""
 
 #: templates/default/reviews/talk_proposal_list.html:44
 msgid "Strong Reject (-1)"
-msgstr ""
+msgstr "Strong Reject (–1)"
 
 #: templates/default/reviews/talk_proposal_list.html:51
 msgid "Unreviewed Talk Proposals"
