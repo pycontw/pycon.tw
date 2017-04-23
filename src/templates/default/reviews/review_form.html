@@ -95,9 +95,11 @@
 
 <h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
 <form method="POST">
-{% csrf_token %}
-{{ form|crispy }}
-<input class="btn btn-primary btn-lg" type="submit" value="Submit">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-primary btn-lg">
+		{% trans 'Submit' %}
+	</button>
 </form>
 {% endif %}
 
