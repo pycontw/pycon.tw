@@ -241,27 +241,28 @@ button {
 .inner-wrapper table:not(:last-child) {
   margin-bottom: 54px;
 }
-/* line 148, ../sass/_normalize.scss */
-.inner-wrapper table tbody tr:not(:last-child) {
+/* line 149, ../sass/_normalize.scss */
+.inner-wrapper table tbody tr:not(:last-child) td {
   border-bottom: 1px solid rgba(100, 125, 146, 0.5);
 }
-/* line 158, ../sass/_normalize.scss */
+/* line 162, ../sass/_normalize.scss */
 .inner-wrapper table td {
   text-align: center;
   vertical-align: middle;
-  height: 61px;
   line-height: 20px;
+  padding: 2px;
+  height: 61px;
 }
-/* line 164, ../sass/_normalize.scss */
+/* line 167, ../sass/_normalize.scss */
 .inner-wrapper table th {
   text-align: center;
   vertical-align: middle;
+  line-height: 20px;
+  padding: 2px;
   height: 48px;
-  line-height: 48px;
   background-color: #21364d;
   color: #7fb8cc;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 /* line 5, ../sass/main.scss */
@@ -806,132 +807,164 @@ footer > .social > a {
   font-family: "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 
-/* line 5, ../sass/_ticket.scss */
+/* line 9, ../sass/_ticket.scss */
 .ticket-cards {
-  display: flex;
-  font-family: "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
   margin-bottom: 52px;
+  font-family: "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
 }
-/* line 12, ../sass/_ticket.scss */
+/* line 13, ../sass/_ticket.scss */
 .ticket-cards .card {
-  flex: 1;
-  position: relative;
-  border: 0;
+  width: 100%;
   padding: 0;
   background-color: #132637;
-  border-radius: 5px;
 }
-/* line 21, ../sass/_ticket.scss */
-.ticket-cards .card .card-link {
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* line 19, ../sass/_ticket.scss */
+.ticket-cards .card > .card-link:hover, .ticket-cards .card > .card-link:active {
   text-decoration: none;
 }
-/* line 31, ../sass/_ticket.scss */
-.ticket-cards .card:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
-}
-/* line 35, ../sass/_ticket.scss */
+/* line 25, ../sass/_ticket.scss */
 .ticket-cards .card:not(:last-child) {
   margin-right: 30px;
 }
-/* line 40, ../sass/_ticket.scss */
-.ticket-cards .title-box {
-  font: normal 24px/60px "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
+/* line 29, ../sass/_ticket.scss */
+.ticket-cards .card .title-box {
   margin: 0;
-  color: #fff;
-  text-align: center;
+  height: 60px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  text-align: center;
+  font: normal 24px/60px "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
+  color: #fff;
 }
-/* line 48, ../sass/_ticket.scss */
-.ticket-cards .title-box.orange {
+/* line 38, ../sass/_ticket.scss */
+.ticket-cards .card .title-box.orange {
   background: linear-gradient(to right, #fbda61, #f75b1c);
 }
-/* line 52, ../sass/_ticket.scss */
-.ticket-cards .title-box.green {
+/* line 41, ../sass/_ticket.scss */
+.ticket-cards .card .title-box.green {
   background: linear-gradient(to right, #00ff96, #1697e5);
 }
-/* line 56, ../sass/_ticket.scss */
-.ticket-cards .title-box.blue {
+/* line 44, ../sass/_ticket.scss */
+.ticket-cards .card .title-box.blue {
   background: #1697e5;
 }
-/* line 61, ../sass/_ticket.scss */
-.ticket-cards .price-box,
-.ticket-cards .desc {
-  border: 1px solid #3a5c6a;
-  color: #7fb8cc;
-  font-size: 14px;
-}
-/* line 68, ../sass/_ticket.scss */
-.ticket-cards .price-box {
+/* line 49, ../sass/_ticket.scss */
+.ticket-cards .card .price-box {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 141px;
-  border-width: 0 1px;
-  border-bottom: 1px dashed #3a5c6a;
+  justify-content: space-around;
+  height: 140px;
   padding: 34px 0 20px;
-}
-/* line 78, ../sass/_ticket.scss */
-.ticket-cards .price-box .price:not(:last-child) {
-  margin-right: 50px;
-}
-/* line 82, ../sass/_ticket.scss */
-.ticket-cards .price-box .price > * {
-  text-align: center;
-  display: block;
-}
-/* line 87, ../sass/_ticket.scss */
-.ticket-cards .price-box .price .figure {
-  color: #fff;
-  font-size: 24px;
-  line-height: 36px;
-  margin: 15px 0 3px;
-}
-/* line 96, ../sass/_ticket.scss */
-.ticket-cards .desc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 19px 23px;
-  height: 115px;
-  border-width: 0 1px 1px;
-  line-height: 20px;
+  border: 1px solid #3a5c6a;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  font-size: 14px;
+  color: #7fb8cc;
 }
-/* line 107, ../sass/_ticket.scss */
-.ticket-cards .desc > p {
+/* line 62, ../sass/_ticket.scss */
+.ticket-cards .card .price-box .price:first-child {
+  margin-left: 40px;
+}
+/* line 65, ../sass/_ticket.scss */
+.ticket-cards .card .price-box .price:last-child {
+  margin-right: 40px;
+}
+/* line 68, ../sass/_ticket.scss */
+.ticket-cards .card .price-box .price > * {
+  display: block;
+  text-align: center;
+}
+/* line 73, ../sass/_ticket.scss */
+.ticket-cards .card .price-box .price .figure {
+  margin: 15px 0 3px;
+  line-height: 36px;
+  font-size: 24px;
+  color: #fff;
+}
+/* line 82, ../sass/_ticket.scss */
+.ticket-cards .card .desc {
+  padding: 12px 19px 23px;
+  line-height: 20px;
+}
+/* line 86, ../sass/_ticket.scss */
+.ticket-cards .card .desc > p {
+  font-size: 14px;
   color: #7fb8cc;
   display: inline-block;
 }
-/* line 112, ../sass/_ticket.scss */
-.ticket-cards .desc a {
-  position: relative;
-  z-index: 2;
-}
 
-/* line 119, ../sass/_ticket.scss */
+/* line 95, ../sass/_ticket.scss */
 blockquote.clip {
   font: normal 14px/1 "Noto Sans", "Ubuntu", -apple-system, Arial, "Microsoft YaHei", "Microsoft Jhenghei", "Pingfang TC", "Hiragino Sans GB", "Lantinghei TC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "SimHei", "WenQuanYi Zen Hei Sharp", sans-serif;
-  padding: 15px 68px;
+  padding: 16px;
   border-radius: 20px;
   border: 2px solid #3a5c6a;
 }
-/* line 125, ../sass/_ticket.scss */
+/* line 101, ../sass/_ticket.scss */
 blockquote.clip li {
   line-height: 150%;
 }
-/* line 128, ../sass/_ticket.scss */
+/* line 104, ../sass/_ticket.scss */
 blockquote.clip li:not(:last-child) {
   margin-bottom: 7.5px;
 }
 
+@media only screen and (min-width: 781px) {
+  /* line 115, ../sass/_ticket.scss */
+  .ticket-cards {
+    display: flex;
+  }
+  /* line 118, ../sass/_ticket.scss */
+  .ticket-cards .card {
+    position: relative;
+  }
+  /* line 121, ../sass/_ticket.scss */
+  .ticket-cards .card:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  }
+  /* line 127, ../sass/_ticket.scss */
+  .ticket-cards .card .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+  /* line 136, ../sass/_ticket.scss */
+  .ticket-cards .card .price-box {
+    border-width: 0 1px;
+    border-bottom: 1px dashed #3a5c6a;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  /* line 143, ../sass/_ticket.scss */
+  .ticket-cards .card .desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    height: 115px;
+    border: 1px solid #3a5c6a;
+    border-top: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  /* line 154, ../sass/_ticket.scss */
+  .ticket-cards .card .desc > p {
+    display: inline-block;
+  }
+  /* line 158, ../sass/_ticket.scss */
+  .ticket-cards .card .desc a {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* line 166, ../sass/_ticket.scss */
+  blockquote.clip {
+    padding: 15px 68px;
+  }
+}
 @media only screen and (max-width: 780px) {
   /* line 3, ../sass/_rwd.scss */
   :root.overflow-hidden {
@@ -1376,5 +1409,10 @@ blockquote.clip li:not(:last-child) {
   .header-nav > a:hover .sub,
   .header-nav > div:hover .sub {
     display: block;
+  }
+
+  /* line 370, ../sass/_rwd.scss */
+  .inner-wrapper table th {
+    white-space: nowrap;
   }
 }
