@@ -1,0 +1,61 @@
+.inner-wrapper {
+    .talk-classifications-table {
+        table-layout: fixed;
+    }
+    .speaker-social {
+        margin-left: 1rem;
+        font-size: 72%;
+    }
+    .speaker-detail-info {
+        $space-between: 0.6rem;
+
+        display: flex;
+        align-items: flex-start;
+        flex-flow: row-reverse wrap;
+        justify-content: center;
+        margin: -$space-between / 2;
+
+        .speaker-bio {
+            flex: 1 1 auto;
+            max-width: 640px;
+            margin: $space-between / 2;
+        }
+        .speaker-photo {
+            flex: 0;
+            width: 260px;
+            margin: $space-between / 2;
+        }
+    }
+}
+
+
+// RWD for phone.
+
+@media only screen and (max-width: 780px) {
+
+.inner-wrapper {
+
+    // "Transpose" the table so it shows better on narrow screens.
+    .talk-classifications-table {
+        display: flex;
+
+        thead, tbody {
+            flex: 1;
+
+            tr {
+                display: block;
+                width: 100%;
+
+                th, td {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 61px;
+                    margin: 0 0.4rem;
+                }
+            }
+        }
+    }
+}
+
+}
