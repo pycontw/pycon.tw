@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-23 17:37+0800\n"
-"PO-Revision-Date: 2017-04-23 08:10+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2017-04-26 02:27+0800\n"
+"PO-Revision-Date: 2017-04-25 18:07+0000\n"
+"Last-Translator: PyCon Taiwan\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -676,10 +676,10 @@ msgstr "Objective Example"
 
 #: proposals/views/mixins.py:50
 msgid ""
-"Targeted at people who's a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
+"Targeted at Python beginners trying to solve some daily life problems with programming. When I started to learn programming, I didn't know where I could use it. It sounded weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
-"But I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
-msgstr "Targeted at people who’s a Python beginner, who tries to solve some daily life problems with programming. By the time I started to learn programming, I didn't know where I can use it. It sounds weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n\nBut I found out that, managing data inside a computer is a very practical starting point, it's easy to see the result, and it does allow you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
+"But I found that managing data inside a computer is a very practical starting point; its results are easy to see, but it stillallows you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
+msgstr ""
 
 #: proposals/views/mixins.py:64 proposals/views/mixins.py:116
 msgid "Description Example"
@@ -701,14 +701,14 @@ msgstr "Outline Example"
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
-"  - Using Path object\n"
+"  - Using Path objects\n"
 "  - Exploring directory structure: Path.iterdir(), .glob()\n"
 "  - Using Path for changing paths\n"
 "3. Integrate for-loop and sorting  [5 min]\n"
 "  - sorted(key=) usage\n"
 "  - Integrate enumerated, zip to simultaneously process multiple related files\n"
 "4. Example sharing  [5 min]\n"
-msgstr "1. Common situations in data clean-up  [5 min]\n2. Introduction to pathlib’s design  [10 min]\n  - Using Path object\n  - Exploring directory structure: Path.iterdir(), .glob()\n  - Using Path for changing paths\n3. Integrate for-loop and sorting  [5 min]\n  - sorted(key=) usage\n  - Integrate enumerated, zip to simultaneously process multiple related files\n4. Example sharing  [5 min]\n"
+msgstr ""
 
 #: proposals/views/mixins.py:87
 msgid ""
@@ -1039,6 +1039,7 @@ msgstr "Change"
 #: templates/default/reviews/review_form.html:50
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
+#: templates/pycontw-2017/events/talk_detail.html:36
 msgid "Abstract"
 msgstr "Abstract"
 
@@ -1081,6 +1082,7 @@ msgstr ""
 #: templates/default/reviews/review_form.html:35
 #: templates/pycontw-2016/events/sponsored_event_detail.html:20
 #: templates/pycontw-2016/events/talk_detail.html:20
+#: templates/pycontw-2017/events/talk_detail.html:17
 msgid "Category"
 msgstr "Category"
 
@@ -1097,6 +1099,7 @@ msgstr "Duration"
 #: templates/default/users/_includes/dashboard_proposal_table.html:8
 #: templates/pycontw-2016/events/sponsored_event_detail.html:17
 #: templates/pycontw-2016/events/talk_detail.html:17
+#: templates/pycontw-2017/events/talk_detail.html:16
 msgid "Language"
 msgstr "Language"
 
@@ -1458,6 +1461,7 @@ msgstr "Decline"
 #: templates/default/users/_includes/dashboard_proposal_table.html:7
 #: templates/pycontw-2016/events/sponsored_event_detail.html:23
 #: templates/pycontw-2016/events/talk_detail.html:23
+#: templates/pycontw-2017/events/talk_detail.html:18
 msgid "Python Level"
 msgstr "Python Level"
 
@@ -1704,11 +1708,13 @@ msgstr "Generate"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:27
 #: templates/pycontw-2016/events/talk_detail.html:27
+#: templates/pycontw-2017/events/talk_detail.html:32
 msgid "Slides Link"
 msgstr "Slides Link"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:35
 #: templates/pycontw-2016/events/talk_detail.html:35
+#: templates/pycontw-2017/events/talk_detail.html:40
 msgid "Description"
 msgstr "Description"
 
@@ -1938,6 +1944,18 @@ msgstr "dashboard"
 #: templates/pycontw-2017/contents/en/events/unconference.html:5
 msgid "Unconference"
 msgstr "Unconference"
+
+#: templates/pycontw-2017/events/talk_detail.html:12
+msgid "Classifications"
+msgstr ""
+
+#: templates/pycontw-2017/events/talk_detail.html:29
+msgid "Information"
+msgstr ""
+
+#: templates/pycontw-2017/events/talk_detail.html:46
+msgid "Speaker Information"
+msgstr ""
 
 #: templates/pycontw-2017/index.html:21
 msgid "9–11 June"
