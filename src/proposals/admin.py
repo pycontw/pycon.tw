@@ -37,9 +37,11 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     fields = ProposalAdmin.fields + ['accepted']
     list_display = [
         'title', 'category', 'duration', 'language',
-        'python_level',
+        'python_level', 'accepted',
     ]
-    list_filter = ['category', 'duration', 'language', 'python_level']
+    list_filter = [
+        'category', 'duration', 'language', 'python_level', 'accepted',
+    ]
     resource_class = TalkProposalResource
 
 
