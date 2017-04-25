@@ -4,7 +4,11 @@
     }
     .speaker-social {
         margin-left: 1rem;
-        font-size: 72%;
+        font-size: 76%;
+
+        > * {
+            margin-right: 4px;
+        }
     }
     .speaker-detail-info {
         $space-between: 0.6rem;
