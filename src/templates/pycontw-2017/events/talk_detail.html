@@ -66,11 +66,13 @@
 		{% endif %}
 	</span>
 </h3>
-<div class="speaker-detail-info">
+<div class="speaker-detail-info {% if user.photo %}speaker-detail-info-has-photo{% endif %}">
 	{% if user.photo %}
 	<img class="speaker-photo" src="{{ user.photo.url }}">
-	{% endif %}
 	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
+	{% else %}
+	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
+	{% endif %}
 </div>
 {% endwith %}
 {% endfor %}

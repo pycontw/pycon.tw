@@ -15,9 +15,14 @@
         justify-content: center;
         margin: -$space-between / 2;
 
+        &.speaker-detail-info-has-photo {
+            .speaker-bio {
+                max-width: 640px;
+            }
+        }
+
         .speaker-bio {
             flex: 1 1 auto;
-            max-width: 640px;
             margin: $space-between / 2;
         }
         .speaker-photo {
