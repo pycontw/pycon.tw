@@ -14,18 +14,33 @@
 
 <div class="wrapper">
 	<main>
-    <h1 class="logo">
-      <img src="{% static 'pycontw-2017/images/icon-logo.svg' %}">
-    </h1>
+
+		<h1 class="logo">
+			<img src="{% static 'pycontw-2017/images/icon-logo.svg' %}">
+		</h1>
+
 		<div class="date-panel">
 			<time>{% trans '9–11 June' %}</time>
 			<code class="def-future">def future():</code>
 		</div>
+
 		<nav class="index-session-links">
 			<a href="{{ events_tutorial_url }}"><span class="event-label">{% trans 'tutorial: '%}</span><time>{% trans '1 June' %}</time></a>
 			<a href="{{ speaking_cfp_url }}"><span class="event-label">{% trans 'cfp: '%}</span><time>{% trans '27 Mar' %}</time></a>
 			<a href="{{ events_sprint_url}}"><span class="event-label">{% trans 'sprint: '%}</span><time>{% trans '12 Mar' %}</time></a>
 		</nav>
+
+		<nav class="ticket">
+			<a href="{{ KKTIX_URL }}" target="_blank" rel="noopener">
+				{% trans 'Get Tickets' %}
+			</a>
+		</nav>
+
+		<section class="volunteers-needed">
+			<h4>{% trans 'Volunteers Needed' %}</h4>
+			<p>{% blocktrans %}Help us organize and make the conference successful! Please fill out <a href="{{ VOLUNTEER_FORM_URL }}">our volunteer form.</a>{% endblocktrans %}</p>
+		</section>
+
 		<section class="index-intro">
 			<article class="what-is-pycon">
 				{% blocktrans trimmed %}
