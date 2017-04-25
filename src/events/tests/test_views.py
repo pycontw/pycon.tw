@@ -22,12 +22,6 @@ def test_talk_detail(client, accepted_talk_proposal, pk, status):
     assert r.status_code == status
 
 
-@pytest.mark.parametrize('pk,status', [(918, 301), (819, 404)])
-def test_sponsored_event_redirect(client, sponsored_block_event, pk, status):
-    r = client.get('/en-us/events/sponsored/{pk}/'.format(pk=pk))
-    assert r.status_code == status
-
-
 @pytest.mark.skipif(
     not settings.EVENTS_PUBLISHED,
     reason='event pages not required yet',

@@ -12,6 +12,4 @@ urlpatterns = [
     url(r'^talk/sponsored/(?P<slug>[-\w]+)/$',
         views.SponsoredEventDetailView.as_view(),
         name='events_sponsored_event_detail'),
-    url(r'^sponsored/(?P<pk>\d+)/$',    # Kept for backward compatibility.
-        views.SponsoredEventRedirectView.as_view()),
 ]
