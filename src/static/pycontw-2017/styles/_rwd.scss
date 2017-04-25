@@ -242,7 +242,7 @@
   }
 
   .index-intro {
-    margin-top: 300px;
+    margin-top: 240px;
 
     > article {
       &:not(:last-child) {
@@ -276,8 +276,8 @@
     }
   }
 
-  .volunteers-needed {
-    width: 100%;
+  .ticket, .volunteers-needed {
+    display: none;
   }
 
   .speakers {

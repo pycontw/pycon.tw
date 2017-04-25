@@ -409,7 +409,8 @@ header {
 .volunteers-needed {
   display: block;
   position: relative;
-  width: 555px;
+  width: 80%;
+  max-width: 555px;
   padding: 36px 80px;
   margin: 313px auto 210px;
   text-align: center;
