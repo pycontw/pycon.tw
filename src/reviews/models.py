@@ -17,7 +17,9 @@ class ReviewQuerySet(models.QuerySet):
 
     def filter_current_reviews(
             self, proposal, exclude_user=None, filter_user=None):
-        qs = self.filter(proposal=proposal, stage__lte=settings.REVIEWS_STAGE)
+        qs = self.filter(proposal=proposal)
+        if settings.REVIEWS_STAGE:
+            qs = qs.filter(stage__lte=settings.REVIEWS_STAGE)
         if exclude_user:
             qs = qs.exclude(reviewer=exclude_user)
         if filter_user:
