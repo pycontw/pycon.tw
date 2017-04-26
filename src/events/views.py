@@ -18,6 +18,7 @@ class AcceptedTalkMixin:
     queryset = (
         TalkProposal.objects
         .filter_accepted()
+        .filter(created_at__lt='2017-01-01')
         .select_related('submitter')
         .order_by('title')
     )
