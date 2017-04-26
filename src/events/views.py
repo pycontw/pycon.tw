@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
+from django.db.models import Prefetch
 from django.http import Http404, HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import (
@@ -7,7 +8,7 @@ from django.views.generic import (
 )
 
 from core.mixins import FormValidMessageMixin
-from proposals.models import TalkProposal
+from proposals.models import TalkProposal, AdditionalSpeaker
 
 from .forms import ScheduleCreationForm
 from .models import Schedule, SponsoredEvent
@@ -19,6 +20,10 @@ class AcceptedTalkMixin:
         TalkProposal.objects
         .filter_accepted()
         .select_related('submitter')
+        .prefetch_related(Prefetch(
+            lookup='additionalspeaker_set',
+            queryset=AdditionalSpeaker.objects.select_related('user'),
+        ))
         .order_by('title')
     )
 

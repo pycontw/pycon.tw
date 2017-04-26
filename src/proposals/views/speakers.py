@@ -25,7 +25,10 @@ class ProposalManageSpeakersView(
     def get_proposal(self):
         try:
             proposal = (
-                self.proposal_model.objects.select_related('submitter').get(
+                self.proposal_model.objects
+                .select_related('submitter')
+                .prefetch_related('additionalspeaker_set__user')
+                .get(
                     pk=self.kwargs['pk'],
                     submitter=self.request.user,
                     cancelled=False,
