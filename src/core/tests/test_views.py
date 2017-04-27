@@ -87,7 +87,10 @@ def test_content_pages(client, parser, content_page_full_path):
     assert response.status_code == 200, content_page_full_path
 
 
+@pytest.mark.django_db
 def test_content_pages_links(client, parser, content_page_full_path):
+    """Test to make sure all in-site links in a content page work.
+    """
     body = parser.parse(client.get(content_page_full_path))
     link_tags = body.cssselect('a[href^="/"]:not(a[href^="//"])')
 
