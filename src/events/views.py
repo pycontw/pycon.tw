@@ -1,9 +1,9 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
-from django.http import Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import (
-    CreateView, DetailView, ListView, RedirectView, TemplateView,
+    CreateView, DetailView, ListView, TemplateView,
 )
 
 from core.mixins import FormValidMessageMixin
