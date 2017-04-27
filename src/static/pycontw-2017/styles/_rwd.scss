@@ -302,6 +302,15 @@
     }
   }
 
+  .communities-wrapper {
+    &::before {
+      top: -64px;
+      left: -24px;
+      background-position: 0 center;
+      background-size: auto 178px;
+    }
+  }
+
   .communities {
     display: block;
     width: 100%;

@@ -13,7 +13,7 @@
 {% url 'page' path='events/tutorial' as events_tutorial_url %}
 
 <div class="wrapper">
-	<main>
+	<main class="conference-info">
 
 		<h1 class="logo">
 			<img src="{% static 'pycontw-2017/images/icon-logo.svg' %}">
@@ -35,6 +35,10 @@
 				{% trans 'Get Tickets' %}
 			</a>
 		</nav>
+
+	</main>
+
+	<main>
 
 		<section class="volunteers-needed">
 			<h4>{% trans 'Volunteers Needed' %}</h4>
@@ -58,35 +62,37 @@
 	</main>
 </div>
 
-<section class="communities">
-	<h2>{% trans 'Python Communities in Taiwan' %}</h2>
-	<nav class="community-refs">
-		<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
-			PyLadies Taiwan
-		</a>
-		<a href="http://djangogirls.org/taipei" target="_blank" rel="noopener">
-			Django Girls Taipei
-		</a>
-		<a href="http://www.meetup.com/Taipei-py/" target="_blank" rel="noopener">
-			Taipei.py <span class="desc">Taipei Python User Group</span>
-		</a>
-		<a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/" target="_blank" rel="noopener">
-			Tainan.py <span class="desc">Tainan Python User Group</span>
-		</a>
-		<a href="http://www.meetup.com/pythonhug/" target="_blank" rel="noopener">
-			PyHUG <span class="desc">Python Hsinchu User Group</span>
-		</a>
-		<a href="http://www.meetup.com/Taichung-Python-Meetup/" target="_blank" rel="noopener">
-			Taichung.py <span class="desc">Taichung Python User Group</span>
-		</a>
-		<a href="http://www.meetup.com/Kaohsiung-Python-Meetup" target="_blank" rel="noopener">
-			Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span>
-		</a>
-		<a href="http://www.meetup.com/Hualien-Py/" target="_blank" rel="noopener">
-			Hualien.py <span class="desc">Hualien Python User Group</span>
-		</a>
-	</nav>
-</section>
+<div class="communities-wrapper">
+	<section class="communities">
+		<h2>{% trans 'Python Communities in Taiwan' %}</h2>
+		<nav class="community-refs">
+			<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
+				PyLadies Taiwan
+			</a>
+			<a href="http://djangogirls.org/taipei" target="_blank" rel="noopener">
+				Django Girls Taipei
+			</a>
+			<a href="http://www.meetup.com/Taipei-py/" target="_blank" rel="noopener">
+				Taipei.py <span class="desc">Taipei Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/" target="_blank" rel="noopener">
+				Tainan.py <span class="desc">Tainan Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/pythonhug/" target="_blank" rel="noopener">
+				PyHUG <span class="desc">Python Hsinchu User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Taichung-Python-Meetup/" target="_blank" rel="noopener">
+				Taichung.py <span class="desc">Taichung Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Kaohsiung-Python-Meetup" target="_blank" rel="noopener">
+				Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Hualien-Py/" target="_blank" rel="noopener">
+				Hualien.py <span class="desc">Hualien Python User Group</span>
+			</a>
+		</nav>
+	</section>
+</div>
 {% endblock content_full %}
 
 {% block extrabody %}

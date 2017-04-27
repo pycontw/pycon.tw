@@ -255,6 +255,19 @@ header {
   }
 }
 
+.conference-info {
+  position: relative;
+
+  // Left circle.
+  &::before {
+    @include deco(url('../images/icon-circle.svg'));
+    content: '';
+    bottom: -152px;
+    width: 88px;
+    height: 88px;
+  }
+}
+
 .logo {
   margin: 199px auto 83px;
   text-align: center;
@@ -320,9 +333,21 @@ header {
 }
 
 .index-intro {
+  position: relative;
   margin-top: 436px;
   padding: 0 15px;
+
   @extend %clearfix;
+
+  // Taiwan map.
+  &::before {
+    @include deco(url('../images/taiwan.svg'));
+    content: '';
+    top: 112px;
+    right: 50%;
+    width: 229px;
+    height: 427px;
+  }
 
   > article {
     display: block;
@@ -391,6 +416,15 @@ header {
 .what-is-pycon {
   width: 54%;
   float: left;
+
+  // Right circle.
+  &::before {
+    @include deco(url('../images/icon-circle.svg'));
+    content: '';
+    right: -56px;
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .what-is-pycon-taiwan {
@@ -494,6 +528,21 @@ header {
   }
 }
 
+.communities-wrapper {
+  position: relative;
+
+  // Polygon deco.
+  &::before {
+    @include deco(url('../images/icon-polygons.svg'));
+
+    content: '';
+    width: 325px;
+    height: 522px;
+    background-size: cover;
+    left: 0;
+    top: -80px;
+  }
+}
 .communities {
   width: 583px;
   margin: 317px auto 113px;
@@ -531,69 +580,26 @@ header {
   }
 }
 
-.deco {
-  position: absolute;
-  display: block;
-  z-index: -1;
+.deco.meteor {
+  @include deco($gradient-meteor);
+  height: 1px;
+  width: 329px;
+  transform: rotate(36deg);
+  transform-origin: 0 0;
 
-  &.polygons {
-    width: 325px;
-    height: 522px;
-    background: url('../images/icon-polygons.svg') center no-repeat;
-    background-size: cover;
+  &.top {
+    top: 301px;
+    left: -190px;
+  }
+
+  &.left {
+    top: 947px;
     left: 0;
-    top: 1837px;
   }
 
-  &.taiwan {
-    top: 2450px;
-    left: 352px;
-    width: 229px;
-    height: 427px;
-    background: url('../images/taiwan.svg') center no-repeat;
-    background-size: cover;
-  }
-
-  &.circle {
-    background: url('../images/icon-circle.svg') center no-repeat;
-    background-size: cover;
-
-    &.left {
-      top: 564px;
-      left: 148px;
-      width: 88px;
-      height: 88px;
-    }
-
-    &.right {
-      top: 1087px;
-      right: 10px;
-      width: 56px;
-      height: 56px;
-    }
-  }
-
-  &.meteor {
-    height: 1px;
-    width: 329px;
-    background-image: $gradient-meteor;
-    transform: rotate(36deg);
-    transform-origin: 0 0;
-
-    &.top {
-      top: 301px;
-      left: -190px;
-    }
-
-    &.left {
-      top: 947px;
-      left: 0;
-    }
-
-    &.right {
-      top: 783px;
-      right: -28px;
-    }
+  &.right {
+    top: 783px;
+    right: -28px;
   }
 }
 

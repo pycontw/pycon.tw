@@ -26,3 +26,11 @@ $font-family-article: 'Noto Sans', $font-family;
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
+
+@mixin deco($backgroud-image) {
+  position: absolute;
+  display: block;
+  z-index: -1;
+  background: $backgroud-image center no-repeat;
+  background-size: cover;
+}
