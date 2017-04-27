@@ -239,6 +239,10 @@
   .what-is-pycon-taiwan {
     width: 100%;
     float: none;
+
+    &:before {
+      display: none;
+    }
   }
 
   .index-intro {
