@@ -1,10 +1,10 @@
+import collections
+
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import (
-    CreateView, DetailView, ListView, TemplateView,
-)
+from django.views.generic import CreateView, DetailView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from proposals.models import TalkProposal
@@ -19,24 +19,33 @@ class AcceptedTalkMixin:
         TalkProposal.objects
         .filter_accepted()
         .select_related('submitter')
-        .order_by('title')
     )
 
 
-class TalkListView(AcceptedTalkMixin, ListView):
+class TalkListView(AcceptedTalkMixin, TemplateView):
 
     template_name = 'events/talk_list.html'
 
-    def get_context_data(self, **kwargs):
+    def get_categorized_talks(self):
+        category_map = collections.defaultdict(list)
+        for proposal in self.queryset:
+            category_map[proposal.get_category_display()].append(proposal)
+        return category_map
+
+    def get_sponsored_talks(self):
         sponsored_events = (
             SponsoredEvent.objects
             .select_related('host')
             .order_by('title')
         )
-        return super().get_context_data(
-            sponsored_events=sponsored_events,
-            **kwargs
-        )
+        return sponsored_events
+
+    def get_context_data(self, **kwargs):
+        kwargs.update({
+            'talk_category_list_pairs': self.get_categorized_talks().items(),
+            'sponsored_events': self.get_sponsored_talks(),
+        })
+        return super().get_context_data(**kwargs)
 
 
 class ScheduleView(TemplateView):

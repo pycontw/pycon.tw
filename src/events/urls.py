@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.views.generic import RedirectView
 
 from . import views
 
@@ -12,4 +13,7 @@ urlpatterns = [
     url(r'^talk/sponsored/(?P<slug>[-\w]+)/$',
         views.SponsoredEventDetailView.as_view(),
         name='events_sponsored_event_detail'),
+
+    # Backward compatibility to the static events page.
+    url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
 ]

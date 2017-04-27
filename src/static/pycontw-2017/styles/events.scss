@@ -35,6 +35,21 @@
             margin: $space-between / 2;
         }
     }
+
+    .talk-list > li {
+        font-size: 90%;
+
+        > p {
+            padding-top: 10px;
+        }
+
+        .proposal-title {
+            font-size: 115%;
+            font-weight: bold;
+            margin-right: 0.5ex;
+        }
+    }
+
 }
 
 

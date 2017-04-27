@@ -6,10 +6,10 @@
 {% block page_title %}<h1>活動總覽 (Events Overview)</h1>{% endblock %}
 
 {% block content %}
+{% url 'events_talk_list' as events_talk_url %}
 {% url 'page' path='events/tutorial' as events_tutorials_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
-{% url 'page' path='events/talk' as events_talk_url %}
 {% url 'page' path='events/unconference' as events_unconference_url %}
 {% url 'page' path='events/bof' as events_bof_url %}
 
