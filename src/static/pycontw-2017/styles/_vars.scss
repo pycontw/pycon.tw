@@ -1,8 +1,9 @@
-$color-header-link: #7FB9CC;
-$color-water-blue: #1697E5;
+$color-header-link: #7fb9CC;
+$color-water-blue: #1697e5;
 $color-bright-sea-green: #00ff96;
 $color-reddish-orange: #f75b1c;
 $color-sand-yellow: #fbda61;
+$color-dark-blue-grey: #132637;
 
 $gradient-green-blue: linear-gradient(102deg, $color-bright-sea-green, $color-water-blue);
 $gradient-green-blue-92deg: linear-gradient(92deg, $color-bright-sea-green, $color-water-blue);
@@ -10,8 +11,18 @@ $gradient-yellow-orange: linear-gradient(105deg, $color-sand-yellow, $color-redd
 $gradient-yellow-orange-99deg: linear-gradient(99deg, $color-sand-yellow, $color-reddish-orange);
 $gradient-header-bg: linear-gradient(to bottom, rgba(41, 84, 108, 0.55), rgba(34, 61, 83, 0.48));
 $gradient-meteor: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.19));
+$gradient-dark-blue-grey: linear-gradient($color-dark-blue-grey, $color-dark-blue-grey);
+
 
 $font-family: 'Ubuntu', -apple-system,  Arial, 'Microsoft YaHei', 'Microsoft Jhenghei', 'Pingfang TC', 'Hiragino Sans GB', 'Lantinghei TC','Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', 'SimHei', 'WenQuanYi Zen Hei Sharp', sans-serif;
 $font-family-condensed: 'Ubuntu Condensed', 'Roboto Condensed', $font-family;
 $font-family-mono: 'Ubuntu Mono', monospace;
 $font-family-article: 'Noto Sans', $font-family;
+
+@mixin notice-border-box($border-width) {
+  border: $border-width solid transparent;
+  background-image: #132637;
+  background: $gradient-dark-blue-grey, $gradient-green-blue;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}

@@ -363,19 +363,13 @@ header {
   margin: 96px 0;
 
   > a {
+    @include notice-border-box(3px);
+
     display: inline-block;
     padding: 0 79px;
     font-size: 24px;
     line-height: 83px;
     color: #fff;
-    border: 1px solid #ccc;
-    border-style: solid;
-    border-width: 3px;
-    border-image-source: -webkit-linear-gradient(32deg, #00ff96, #1697e5);
-    border-image-source: -moz-linear-gradient(32deg, #00ff96, #1697e5);
-    border-image-source: -o-linear-gradient(32deg, #00ff96, #1697e5);
-    border-image-source: linear-gradient(122deg, #00ff96, #1697e5);
-    border-image-slice: 1;
 
     &::before {
       content: '';
@@ -388,10 +382,8 @@ header {
     }
 
     &:hover {
-      background-image: -webkit-linear-gradient(32deg, #00ff96, #1697e5);
-      background-image: -moz-linear-gradient(32deg, #00ff96, #1697e5);
-      background-image: -o-linear-gradient(32deg, #00ff96, #1697e5);
-      background-image: linear-gradient(122deg, #00ff96, #1697e5);
+      background-clip: border-box;
+      background-image: $gradient-green-blue;
     }
   }
 }
@@ -407,6 +399,8 @@ header {
 }
 
 .volunteers-needed {
+  @include notice-border-box(2px);
+
   display: block;
   position: relative;
   width: 80%;
@@ -415,10 +409,6 @@ header {
   margin: 313px auto 210px;
   text-align: center;
   border-radius: 20px;
-  background-image: #132637;
-  border: 2px solid #00ff96;
-  // border-image-source: linear-gradient(122deg, #00ff96, #1697e5);
-  border-image-slice: 1;
 
   &::before {
     content: '';
@@ -556,7 +546,7 @@ header {
   }
 
   &.taiwan {
-    top: 1280px;
+    top: 2450px;
     left: 352px;
     width: 229px;
     height: 427px;
