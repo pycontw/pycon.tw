@@ -39,7 +39,7 @@
     .talk-list > li {
         font-size: 90%;
 
-        > p {
+        > p:not(:first-child) {
             padding-top: 10px;
         }
 
