@@ -21,7 +21,7 @@ $font-family-article: 'Noto Sans', $font-family;
 
 @mixin notice-border-box($border-width) {
   border: $border-width solid transparent;
-  background-image: #132637;
+  background-color: $color-dark-blue-grey;
   background: $gradient-dark-blue-grey, $gradient-green-blue;
   background-origin: border-box;
   background-clip: padding-box, border-box;

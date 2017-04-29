@@ -240,7 +240,7 @@
     width: 100%;
     float: none;
 
-    &:before {
+    &::before {
       display: none;
     }
   }

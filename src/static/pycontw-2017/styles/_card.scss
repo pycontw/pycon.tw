@@ -1,0 +1,244 @@
+.inner-wrapper {
+	.card-page-title {
+		border-bottom: none;
+		margin-top: -40px;
+	}
+
+	.popping-card {
+		@include notice-border-box(3px);
+
+		display: flex;
+		width: 100%;
+		padding: 16px;
+		border-bottom: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    font-family: $font-family-article;
+
+    .card-logo-block {
+    	$image-size: 150px;
+
+      flex: 0 0 auto;
+      width: $image-size;
+      margin: 32px 8px 16px;
+      text-align: center;
+
+      img {
+        height: $image-size;
+        max-height: 100%;
+        border: 1px solid transparent;
+        border-radius: $image-size;
+      }
+    }
+
+    .card-info-block {
+    	overflow: hidden;
+    	font-size: 16px;
+
+    	.card-title {
+				font-family: $font-family-article;
+				color: $color-header-link;
+
+				.card-title-accessory {
+					margin: 16px auto;
+					color: #46c1ea;
+					-webkit-text-fill-color: currentcolor;
+
+					a {
+            margin-left: 1rem;
+            font-size: 18px;
+            vertical-align: baseline;
+
+            &:active, &:hover {
+							text-decoration: none;
+						}
+
+            &:first-child {
+            	margin-left: 0;
+            }
+	        }
+				}
+			}
+
+			.card-info {
+        line-height: 140%;
+      }
+      .card-info-title {
+        margin: 48px auto 16px auto;
+        color: $color-header-link;
+        font-family: $font-family-article;
+        font-size: 24px;
+      }
+    }
+
+    .card-popper {
+	    flex: 0;
+	    display: none;
+	    height: 64px;
+	    line-height: 64px;
+	    font-size: 48px;
+	    font-family: Courier;
+	    text-align: center;
+	    vertical-align: middle;
+	    background: $color-dark-blue-grey;
+	    color: #647d92;
+
+	    &::before {
+	      content: '';
+	      display: block;
+	      width: 100%;
+	      height: 100%;
+	      background: url('../images/icon-plus-circle.svg') center no-repeat;
+	    }
+
+	    &:active, &:hover {
+	    	text-decoration: none;
+	      opacity: 0.6;
+	    }
+	  }
+	}
+
+	.popping-card-modal {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.85);
+
+		.modal-inner {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 16px;
+			bottom: 16px;
+			left: 16px;
+			right: 16px;
+			background: $color-dark-blue-grey;
+
+			.modal-content {
+				overflow-y: scroll;
+			}
+
+			.modal-function {
+				flex: 0 0 auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				height: 56px;
+				margin-top: 8px;
+				border-top: 2px solid rgba(100, 125, 146, 0.5);
+
+				a {
+					flex: 1;
+					display: block;
+					height: 100%;
+
+					&:active, &:hover {
+						text-decoration: none;
+						opacity: 0.6;
+					}
+
+					&.prev {
+						background: url('../images/icon-modal-prev.svg') center no-repeat;
+					}
+					&.next {
+						background: url('../images/icon-modal-next.svg') center no-repeat;
+					}
+					&.close {
+						background: url('../images/icon-modal-close.svg') center no-repeat;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Mobile only.
+
+@media only screen and (max-width: 720px) {
+
+.inner-wrapper {
+	.popping-card-deck {
+		display: flex;
+		height: 100vh;
+		padding: 32px 0;
+		overflow-x: scroll;     // TODO: Swipe to set offset.
+	}
+
+	.popping-card {
+		flex-direction: column;
+		overflow: hidden;
+		min-width: 336px;
+		height: 100%;
+		margin-right: 16px;
+		padding: 16px;
+
+		.card-logo-block {
+			width: 100%;
+			height: 96px;
+			margin: 16px auto;
+		}
+
+		.card-info-block {
+			text-align: justify;
+			padding-bottom: 32px;
+
+			.card-title {
+				margin-bottom: 24px;
+				font-size: 18px;
+				text-align: center;
+        white-space: nowrap;
+			}
+		}
+
+		.card-popper {
+	    display: block;
+	  }
+	}
+}
+
+}
+
+
+// Desktop only.
+
+@media only screen and (min-width: 721px) {
+
+.inner-wrapper {
+	.card-page-title {
+		margin-top: 0;
+	}
+
+	.popping-card {
+		flex-direction: row;
+		margin-bottom: 72px;
+		padding: 0 24px 40px;
+
+		.card-info-block {
+			margin: 56px 40px 24px 32px;
+
+			.card-title {
+				font-size: 32px;
+				margin-bottom: 32px;
+
+				.card-title-accessory {
+					display: inline-block;
+
+					&::before {
+	          content: '';
+	          display: inline-block;
+	          height: 26px;
+	          vertical-align: middle;
+	          border-left: 1px solid rgba(100, 125, 146, 0.5);
+	          margin: auto 1.2rem;
+	        }
+				}
+			}
+		}
+	}
+}
+
+}
