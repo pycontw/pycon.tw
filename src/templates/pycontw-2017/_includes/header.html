@@ -65,6 +65,7 @@
 				<a href="{{ events_bof_url }}">PyNight</a>
 			</nav>
 		</div>
+		{% comment %}
 		<div class="parent to-expand {% if active == 'speaking' %}active{% endif %}">
 			<a href="{{ speaking_cfp_url }}">
 				{% trans 'speaking' %}
@@ -77,6 +78,7 @@
 				<a href="{{ speaking_recording_url }}">{% trans 'recording policy' %}</a>
 			</nav>
 		</div>
+		{% endcomment %}
 
 		{# TODO: Replace the following with dropdown when accomodation info is done. #}
 		<a href="{{ venue_url }}" class="{% if active == 'venue' %}active{% endif %}">
