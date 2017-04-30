@@ -19,7 +19,7 @@
 			<h2 class="card-title">
 				{{ info.name }}
 				<div class="card-title-accessory">
-					<a v-for="(value, key) in info.social" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
+					<a v-for="(value, key) in info.social" v-bind:href="value" v-bind:class="getSocialIconClass(key)" target="_blank" rel="noopener"></a>
 				</div>
 			</h2>
 			<div class="card-info" v-html="info.bio"></div>
@@ -44,7 +44,7 @@
 					<h2 class="card-title">
 						{{ getCurrent('name') }}
 						<div class="card-title-accessory">
-							<a v-for="(value, key) in getCurrent('social')" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
+							<a v-for="(value, key) in getCurrent('social')" v-bind:href="value" v-bind:class="getSocialIconClass(key)" target="_blank" rel="noopener"></a>
 						</div>
 					</h2>
 					<div class="card-info" v-html="getCurrent('bio')"></div>
