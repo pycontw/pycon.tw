@@ -13,54 +13,54 @@
 {% verbatim %}
 
 <section class="popping-card-deck">
-  <div class="popping-card" v-for="(info, index) in backend.keynote">
-    <div class="card-logo-block"><img v-bind:src="info.photo"></div>
-    <div class="card-info-block">
-      <h2 class="card-title">
-        {{ info.name }}
-        <div class="card-title-accessory">
-          <a v-for="(value, key) in info.social" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
-        </div>
-      </h2>
-      <div class="card-info" v-html="info.bio"></div>
-      <template v-if="info.talk">
-      <h3 class="card-info-title">{{ info.talk.title }}</h3>
-      <div class="card-info" v-html="info.talk.abstract"></div>
-      </template>
-    </div>
-    <a href="#keynote-info-modal" class="card-popper" v-on:click="showModal($event, index)"></a>
-  </div>
+	<div class="popping-card" v-for="(info, index) in backend.keynote">
+		<div class="card-logo-block"><img v-bind:src="info.photo"></div>
+		<div class="card-info-block">
+			<h2 class="card-title">
+				{{ info.name }}
+				<div class="card-title-accessory">
+					<a v-for="(value, key) in info.social" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
+				</div>
+			</h2>
+			<div class="card-info" v-html="info.bio"></div>
+			<template v-if="info.talk">
+			<h3 class="card-info-title">{{ info.talk.title }}</h3>
+			<div class="card-info" v-html="info.talk.abstract"></div>
+			</template>
+		</div>
+		<a href="#keynote-info-modal" class="card-popper" v-on:click="showModal($event, index)"></a>
+	</div>
 </section>
 
 <template v-if="currentIndex !== null">
 <div class="popping-card-modal">
-  <div class="modal-inner">
-    <div class="modal-content">
-      <div class="popping-card">
-        <div class="card-logo-block">
-          <img v-bind:src="getCurrent('photo')">
-        </div>
-        <div class="card-info-block">
-          <h2 class="card-title">
-            {{ getCurrent('name') }}
-            <div class="card-title-accessory">
-              <a v-for="(value, key) in getCurrent('social')" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
-            </div>
-          </h2>
-          <div class="card-info" v-html="getCurrent('bio')"></div>
-          <template v-if="getCurrent('talk')">
-          <h3 class="card-info-title">{{ getCurrent('talk').title }}</h3>
-          <div class="card-info" v-html="getCurrent('talk').abstract"></div>
-          </template>
-        </div>
-      </div>
-    </div>
-    <div class="modal-function">
-      <a href="#" class="prev" v-on:click="showModal($event, currentIndex - 1)"></a>
-      <a href="#" class="close" v-on:click="showModal($event, null)"></a>
-      <a href="#" class="next" v-on:click="showModal($event, currentIndex + 1)"></a>
-    </div>
-  </div>
+	<div class="modal-inner">
+		<div class="popping-card">
+			<div>
+				<div class="card-logo-block">
+					<img v-bind:src="getCurrent('photo')">
+				</div>
+				<div class="card-info-block">
+					<h2 class="card-title">
+						{{ getCurrent('name') }}
+						<div class="card-title-accessory">
+							<a v-for="(value, key) in getCurrent('social')" v-bind:href="value" v-bind:class="getSocialIconClass(key)"></a>
+						</div>
+					</h2>
+					<div class="card-info" v-html="getCurrent('bio')"></div>
+					<template v-if="getCurrent('talk')">
+					<h3 class="card-info-title">{{ getCurrent('talk').title }}</h3>
+					<div class="card-info" v-html="getCurrent('talk').abstract"></div>
+					</template>
+				</div>
+			</div>
+		</div>
+		<div class="modal-function">
+			<a href="#" class="prev" v-on:click="showModal($event, currentIndex - 1)"></a>
+			<a href="#" class="close" v-on:click="showModal($event, null)"></a>
+			<a href="#" class="next" v-on:click="showModal($event, currentIndex + 1)"></a>
+		</div>
+	</div>
 </div>
 </template>
 
