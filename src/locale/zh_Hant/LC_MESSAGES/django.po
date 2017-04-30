@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-26 02:27+0800\n"
-"PO-Revision-Date: 2017-04-25 18:47+0000\n"
-"Last-Translator: Jason <chairco@gmail.com>\n"
+"POT-Creation-Date: 2017-05-01 00:35+0800\n"
+"PO-Revision-Date: 2017-04-30 03:07+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -205,15 +205,15 @@ msgstr "Python 難易度"
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:143 reviews/models.py:115 reviews/models.py:130
+#: core/models.py:143 reviews/models.py:117 reviews/models.py:132
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:144 reviews/models.py:116 reviews/models.py:131
+#: core/models.py:144 reviews/models.py:118 reviews/models.py:133
 msgid "No"
 msgstr "否"
 
-#: core/models.py:147 templates/pycontw-2017/_includes/header.html:77
+#: core/models.py:147
 msgid "recording policy"
 msgstr "議程錄影"
 
@@ -350,7 +350,7 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:218 reviews/models.py:70 reviews/models.py:190
+#: events/models.py:218 reviews/models.py:72 reviews/models.py:192
 msgid "proposal"
 msgstr "提案"
 
@@ -392,7 +392,7 @@ msgstr "基調演講"
 msgid "EN Slides"
 msgstr "英文投影片"
 
-#: events/views.py:67
+#: events/views.py:76
 msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
@@ -821,118 +821,118 @@ msgstr "{model_name_cap} 的建立需要一個 proposal 物件。"
 msgid "Could not review proposal {proposal}."
 msgstr "無法審查提案 {proposal}。"
 
-#: reviews/models.py:61
+#: reviews/models.py:63
 msgid "reviewer"
 msgstr "審查者"
 
-#: reviews/models.py:65 reviews/models.py:194
+#: reviews/models.py:67 reviews/models.py:196
 msgid "stage"
 msgstr "階段"
 
-#: reviews/models.py:83
+#: reviews/models.py:85
 msgid "+1 (strong accept)"
 msgstr "+1（高度肯定地接受）"
 
-#: reviews/models.py:84
+#: reviews/models.py:86
 msgid "+0 (weak accept)"
 msgstr "+0（輕微贊成）"
 
-#: reviews/models.py:85
+#: reviews/models.py:87
 msgid "-0 (weak reject)"
 msgstr "−0（輕微反對）"
 
-#: reviews/models.py:86
+#: reviews/models.py:88
 msgid "-1 (strong reject)"
 msgstr "–1（高度肯定地拒絕）"
 
-#: reviews/models.py:95
+#: reviews/models.py:97
 msgid "vote"
 msgstr "投票"
 
-#: reviews/models.py:97
+#: reviews/models.py:99
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the google doc <a "
 "href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
 msgstr "投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照 Google 文件上的<a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">審稿指南</a>。"
 
-#: reviews/models.py:106
+#: reviews/models.py:108
 msgid "comment"
 msgstr "評論"
 
-#: reviews/models.py:108
+#: reviews/models.py:110
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the"
 " proposal's submitter."
 msgstr "對於本提案的評論。本欄位內容將在之後的審查階段讓其他審查者看見，您可以選擇要或不要讓本提案的投稿者知道您的評論。 "
 
-#: reviews/models.py:121
+#: reviews/models.py:123
 msgid "discloses comment to proposal submitter"
 msgstr "讓本提案的投稿者知道您的評論"
 
-#: reviews/models.py:123
+#: reviews/models.py:125
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
 msgstr "本提案的投稿者是否能知道您的評論。我們會在通知提案接受或拒絕結果時，如果您同意讓投稿者知道，將這些評論加在通知結果中。"
 
-#: reviews/models.py:136
+#: reviews/models.py:138
 msgid "is appropriate"
 msgstr "認可"
 
-#: reviews/models.py:138
+#: reviews/models.py:140
 msgid ""
 "Administrators can use this field to hide a review from submitters, even if "
 "the reviewer enables disclosure. The review may be shown to the submitter "
 "only if this is set to True."
 msgstr "管理員可以用這個欄位隱藏某個審稿意見，不讓投稿人看見（即使審稿人要求揭露）。只有當這個欄位設為 True 時，審稿意見才會被顯示給投稿人。"
 
-#: reviews/models.py:146
+#: reviews/models.py:148
 msgid "note"
 msgstr "附註"
 
-#: reviews/models.py:148
+#: reviews/models.py:150
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
 msgstr "個人對本投稿的附註。您可以使用這個欄位記錄有關審查的任何資訊。我們不會把這欄位的資訊公布給任何人，只有您知道。"
 
-#: reviews/models.py:156
+#: reviews/models.py:158
 msgid "updated"
 msgstr "更新時間"
 
-#: reviews/models.py:161
+#: reviews/models.py:163
 msgid "review"
 msgstr "審查"
 
-#: reviews/models.py:162
+#: reviews/models.py:164
 msgid "reviews"
 msgstr "審查"
 
-#: reviews/models.py:167
+#: reviews/models.py:169
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
 
-#: reviews/models.py:198
+#: reviews/models.py:200
 msgid "dumped JSON"
 msgstr "匯出 JSON"
 
-#: reviews/models.py:202
+#: reviews/models.py:204
 msgid "dumped at"
 msgstr "匯出於"
 
-#: reviews/models.py:207
+#: reviews/models.py:209
 msgid "talk proposal snapshot"
 msgstr "演講投稿封存"
 
-#: reviews/models.py:208
+#: reviews/models.py:210
 msgid "talk proposal snapshots"
 msgstr "演講投稿封存"
 
-#: reviews/models.py:212
+#: reviews/models.py:214
 msgid "Stage {stage} dump for {proposal}"
 msgstr "第 {stage} 階段封存《{proposal}》"
 
@@ -1621,6 +1621,8 @@ msgstr "基調演講"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:42
 #: templates/pycontw-2016/events/talk_list.html:5
 #: templates/pycontw-2016/events/talk_list.html:7
+#: templates/pycontw-2017/events/talk_list.html:6
+#: templates/pycontw-2017/events/talk_list.html:7
 msgid "Talks"
 msgstr "演講"
 
@@ -1669,7 +1671,7 @@ msgid "Registration"
 msgstr "註冊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:77
-#: templates/pycontw-2017/_includes/header.html:111
+#: templates/pycontw-2017/_includes/header.html:114
 msgid "Ticket Info"
 msgstr "售票資訊"
 
@@ -1730,10 +1732,12 @@ msgid ""
 msgstr "您可由<a class=\"text-emphasize\" href=\"%(schedule_url)s\">此處</a>檢視議程時間表。"
 
 #: templates/pycontw-2016/events/talk_list.html:28
+#: templates/pycontw-2017/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "一般演講"
 
 #: templates/pycontw-2016/events/talk_list.html:32
+#: templates/pycontw-2017/events/talk_list.html:41
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1742,10 +1746,12 @@ msgid ""
 msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\"><cite>%(proposal_title)s</cite></a> %(speaker_names)s"
 
 #: templates/pycontw-2016/events/talk_list.html:38
+#: templates/pycontw-2017/events/talk_list.html:49
 msgid "Sponsored Events"
 msgstr "贊助演講"
 
 #: templates/pycontw-2016/events/talk_list.html:41
+#: templates/pycontw-2017/events/talk_list.html:53
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1883,20 +1889,22 @@ msgid "events"
 msgstr "活動"
 
 #: templates/pycontw-2017/_includes/header.html:59
-#: templates/pycontw-2017/_includes/header.html:73
 msgid "overview"
 msgstr "活動總覽"
 
+#: templates/pycontw-2017/_includes/header.html:60
+msgid "keynotes"
+msgstr "主題演講"
+
 #: templates/pycontw-2017/_includes/header.html:61
-msgid "talk"
+msgid "talks"
 msgstr "演講"
 
 #: templates/pycontw-2017/_includes/header.html:62
-msgid "tutorial"
+msgid "tutorials"
 msgstr "專業課程"
 
 #: templates/pycontw-2017/_includes/header.html:63
-#: templates/pycontw-2017/_includes/header.html:76
 msgid "unconference"
 msgstr "非正式會議"
 
@@ -1904,44 +1912,28 @@ msgstr "非正式會議"
 msgid "sprints"
 msgstr "衝刺開發"
 
-#: templates/pycontw-2017/_includes/header.html:65
-msgid "bof"
-msgstr "夜市（BoF）"
-
-#: templates/pycontw-2017/_includes/header.html:70
-msgid "speaking"
-msgstr "投稿"
-
-#: templates/pycontw-2017/_includes/header.html:74
-msgid "talks"
-msgstr "演講"
-
-#: templates/pycontw-2017/_includes/header.html:75
-msgid "tutorials"
-msgstr "專業課程"
-
-#: templates/pycontw-2017/_includes/header.html:83
+#: templates/pycontw-2017/_includes/header.html:86
 msgctxt "conference location"
 msgid "venue"
 msgstr "會場"
 
-#: templates/pycontw-2017/_includes/header.html:108
+#: templates/pycontw-2017/_includes/header.html:111
 msgid "registration"
 msgstr "註冊"
 
-#: templates/pycontw-2017/_includes/header.html:112
+#: templates/pycontw-2017/_includes/header.html:115
 msgid "financial aid"
 msgstr "財務補助"
 
-#: templates/pycontw-2017/_includes/header.html:117
+#: templates/pycontw-2017/_includes/header.html:119
 msgid "blog"
 msgstr "部落格"
 
-#: templates/pycontw-2017/_includes/header.html:124
+#: templates/pycontw-2017/_includes/header.html:125
 msgid "Back to Menu"
 msgstr "返回選單"
 
-#: templates/pycontw-2017/_includes/header.html:137
+#: templates/pycontw-2017/_includes/header.html:138
 msgid "dashboard"
 msgstr "控制面板"
 
@@ -1961,42 +1953,66 @@ msgstr "資訊"
 msgid "Speaker Information"
 msgstr "講者介紹"
 
-#: templates/pycontw-2017/index.html:21
+#: templates/pycontw-2017/events/talk_list.html:14
+msgid ""
+"The three conference days are packed with talks about Python by speakers "
+"from Taiwan and around the world. The talks will be either 30- or 45-minute "
+"long. Three tracks of talks will be delivered simultaneously, all with "
+"different topics and difficulties. We suggest you to make a schedule "
+"beforehand, and choose what you want ot listen based on your interests. Many"
+" people take notes on the program schedule before the meeting so they don't "
+"end up in some place wrong."
+msgstr ""
+
+#: templates/pycontw-2017/events/talk_list.html:25
+msgid ""
+"<em>Program schedule are subject to change.</em> Please check this page "
+"frequently to get the latest version."
+msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
+
+#: templates/pycontw-2017/index.html:23
 msgid "9–11 June"
 msgstr "6 月 9-11 日"
 
-#: templates/pycontw-2017/index.html:25
+#: templates/pycontw-2017/index.html:28
 msgid "tutorial: "
 msgstr "專業課程："
 
-#: templates/pycontw-2017/index.html:25
+#: templates/pycontw-2017/index.html:28
 msgid "1 June"
 msgstr "6 月 1 日"
 
-#: templates/pycontw-2017/index.html:26
-msgid "cfp: "
-msgstr "徵稿開始："
-
-#: templates/pycontw-2017/index.html:26
-msgid "27 Mar"
-msgstr "3 月 27 日"
-
-#: templates/pycontw-2017/index.html:27
+#: templates/pycontw-2017/index.html:29
 msgid "sprint: "
 msgstr "衝刺開發："
 
-#: templates/pycontw-2017/index.html:27
+#: templates/pycontw-2017/index.html:29
 msgid "12 Mar"
 msgstr "3 月 12 日"
 
-#: templates/pycontw-2017/index.html:31
+#: templates/pycontw-2017/index.html:34
+msgid "Get Tickets"
+msgstr "立即購票"
+
+#: templates/pycontw-2017/index.html:43
+msgid "Volunteers Needed"
+msgstr "徵求志工"
+
+#: templates/pycontw-2017/index.html:44
+#, python-format
+msgid ""
+"Help us organize and make the conference successful! Please fill out <a "
+"href=\"%(VOLUNTEER_FORM_URL)s\">our volunteer form.</a>"
+msgstr "幫我們一起讓會議變得更好！請填寫<a href=\"%(VOLUNTEER_FORM_URL)s\">志工表單</a>。"
+
+#: templates/pycontw-2017/index.html:49
 msgid ""
 "<h2>what is pycon</h2> <p>The original PyCon was formed in North America in "
 "2003, and now there are many other conferences being run in the PyCon spirit"
 " around the world.</p>"
 msgstr "<h2>何謂 PyCon</h2> <p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</p>"
 
-#: templates/pycontw-2017/index.html:37
+#: templates/pycontw-2017/index.html:55
 msgid ""
 "<h2>what is pycon taiwan</h2> <p>PyCon Taiwan is an annual convention in "
 "Taiwan for the discussion and promotion of the Python programming language. "
@@ -2006,7 +2022,7 @@ msgid ""
 "grow our network.</p>"
 msgstr "<h2>何謂 PyCon Taiwan</h2> <p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</p>"
 
-#: templates/pycontw-2017/index.html:47
+#: templates/pycontw-2017/index.html:66
 msgid "Python Communities in Taiwan"
 msgstr "臺灣的在地 Python 社群"
 
