@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 00:35+0800\n"
-"PO-Revision-Date: 2017-04-30 03:05+0000\n"
+"POT-Creation-Date: 2017-05-01 01:50+0800\n"
+"PO-Revision-Date: 2017-05-02 06:35+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -1971,20 +1971,20 @@ msgid "9–11 June"
 msgstr "9–11 June"
 
 #: templates/pycontw-2017/index.html:28
-msgid "tutorial: "
-msgstr "tutorial: "
+msgid "tutorials: "
+msgstr "tutorials: "
 
 #: templates/pycontw-2017/index.html:28
-msgid "1 June"
-msgstr "1 June"
+msgid "21, 28 May & 3 June"
+msgstr "21, 28 May & 3 June"
 
 #: templates/pycontw-2017/index.html:29
-msgid "sprint: "
-msgstr "sprint: "
+msgid "sprints: "
+msgstr "sprints: "
 
 #: templates/pycontw-2017/index.html:29
-msgid "12 Mar"
-msgstr "12 Mar"
+msgid "12 Mar, 20 May & 12 June"
+msgstr "12 Mar, 20 May & 12 June"
 
 #: templates/pycontw-2017/index.html:34
 msgid "Get Tickets"
