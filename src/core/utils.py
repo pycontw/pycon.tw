@@ -1,3 +1,5 @@
+import collections
+
 from django.conf import settings
 from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
@@ -97,3 +99,13 @@ class SequenceQuerySet:
 
     def exists(self):
         return bool(self._seq)
+
+
+class OrderedDefaultDict(collections.OrderedDict, collections.defaultdict):
+    """Marriage between OrderedDict and defaultdict.
+    """
+    def __init__(self, default_factory=None, *args, **kwargs):
+        if default_factory is not None and not callable(default_factory):
+            raise TypeError('first argument must be callable')
+        super().__init__(*args, **kwargs)
+        self.default_factory = default_factory

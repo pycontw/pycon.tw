@@ -1,5 +1,3 @@
-import collections
-
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -7,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, TemplateView
 
 from core.mixins import FormValidMessageMixin
+from core.utils import OrderedDefaultDict
 from proposals.models import TalkProposal
 
 from .forms import ScheduleCreationForm
@@ -27,7 +26,7 @@ class TalkListView(AcceptedTalkMixin, TemplateView):
     template_name = 'events/talk_list.html'
 
     def get_categorized_talks(self):
-        category_map = collections.defaultdict(list)
+        category_map = OrderedDefaultDict(list)
         for proposal in self.queryset:
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
