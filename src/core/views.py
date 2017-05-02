@@ -1,13 +1,10 @@
 import functools
-import pytz
 
-from datetime import datetime
-
-from django.utils.translation import ugettext_lazy as _
 from django.http import Http404
-from django.utils import timezone
 from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
+
+from sponsors.models import Sponsor
 
 from .data import EXTRA_DATA
 from .utils import (
@@ -17,20 +14,12 @@ from .utils import (
 
 
 class IndexView(TemplateView):
+
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
+        kwargs['sponsors'] = Sponsor.objects.order_by('level')
         context = super().get_context_data(**kwargs)
-        deadline = datetime(2016, 6, 3, 8, 20)
-        now = timezone.now()
-        countdown = pytz.timezone('Asia/Taipei').localize(deadline) - now
-        context['countdown'] = {
-            'type': _('days'),
-            'value': countdown.days
-        }
-        if countdown.days == 0:
-            context['countdown']['type'] = _('hours')
-            context['countdown']['value'] = countdown.seconds // 3600
         return context
 
 

@@ -3,6 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import override
 from django.utils.text import slugify
 
+from core.models import ConferenceRelated
+
 
 def logo_upload_to(instance, filename):
     return 'sponsors/{name}/{filename}'.format(
@@ -11,7 +13,8 @@ def logo_upload_to(instance, filename):
     )
 
 
-class Sponsor(models.Model):
+class Sponsor(ConferenceRelated):
+
     name = models.CharField(
         verbose_name=_('name'),
         max_length=100,
