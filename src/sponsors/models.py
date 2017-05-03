@@ -11,7 +11,17 @@ def logo_upload_to(instance, filename):
     )
 
 
+class SponsorManager(models.Manager):
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(conference='pycontw-2016')
+        return qs
+
+
 class Sponsor(models.Model):
+    conference = models.SlugField(
+        verbose_name=_('conference'),
+    )
     name = models.CharField(
         verbose_name=_('name'),
         max_length=100,
@@ -28,6 +38,8 @@ class Sponsor(models.Model):
         verbose_name=_('logo'),
         upload_to=logo_upload_to,
     )
+
+    objects = SponsorManager()
 
     class Level:
         PARTNER = 0
