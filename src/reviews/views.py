@@ -103,12 +103,16 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .values_list('vote')
             .annotate(count=Count('vote'))
         )
-        vote_mapping = collections.defaultdict(
-            (lambda: 0),
-            ((self.vote_keys[k], v)
-             for k, v in vote_count_pairs
-             if k in self.vote_keys),
-        )
+        #vote_mapping = collections.defaultdict(
+        #    (lambda: 0),
+        #    ((self.vote_keys[k], v)
+        #     for k, v in vote_count_pairs
+        #     if k in self.vote_keys),
+        #)
+        vote_mapping = collections.defaultdict(int)
+        for k, v in vote_count_pairs:
+             if k in self.vote_keys:
+                vote_mapping[self.vote_keys[k]] += 1
 
         context = super().get_context_data(**kwargs)
         context.update({
