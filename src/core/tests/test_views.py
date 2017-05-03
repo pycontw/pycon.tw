@@ -6,6 +6,7 @@ import pytest
 from django.utils.translation import activate
 
 
+@pytest.mark.django_db
 def test_index_page(client):
     response = client.get('/en-us/')
     assert response.status_code == 200

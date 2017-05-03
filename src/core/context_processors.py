@@ -1,5 +1,7 @@
 from django.conf import settings
 
+from sponsors.models import Sponsor
+
 
 def pycontw(request):
     return {
@@ -12,7 +14,7 @@ def pycontw(request):
     }
 
 
-def proposals_states(requests):
+def proposals_states(request):
     return {
         'proposals_creatable': settings.PROPOSALS_CREATABLE,
         'proposals_editable': settings.PROPOSALS_EDITABLE,
@@ -24,4 +26,10 @@ def reviews_states(request):
     return {
         'reviews_stage': settings.REVIEWS_STAGE,
         'reviews_public': settings.REVIEWS_VISIBLE_TO_SUBMITTERS,
+    }
+
+
+def sponsors(request):
+    return {
+        'sponsors': Sponsor.objects.order_by('level'),
     }
