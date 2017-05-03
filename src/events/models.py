@@ -14,7 +14,7 @@ from core.models import (
     ConferenceRelated, DefaultConferenceManagerMixin,
 )
 from core.utils import format_html_lazy
-from proposals.models import TalkProposal
+from proposals.models import TalkProposal, PrimarySpeaker
 
 
 DAY_1 = datetime.date(2016, 6, 3)
@@ -198,6 +198,10 @@ class SponsoredEvent(EventInfo, BaseEvent):
         return reverse('events_sponsored_event_detail', kwargs={
             'slug': self.slug,
         })
+
+    @property
+    def speakers(self):
+        yield PrimarySpeaker(user=self.host)
 
 
 class ProposedTalkEventManager(DefaultConferenceManagerMixin, models.Manager):
