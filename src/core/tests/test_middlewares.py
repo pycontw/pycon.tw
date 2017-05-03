@@ -1,6 +1,9 @@
+import pytest
+
 from django.test import override_settings
 
 
+@pytest.mark.django_db
 def test_locale_fallback_middleware(client, settings):
     response = client.get('/en/', follow=True)
     assert response.redirect_chain == [('/en-us/', 302)]
