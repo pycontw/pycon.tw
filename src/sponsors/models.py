@@ -36,6 +36,7 @@ class Sponsor(ConferenceRelated):
     )
     logo_image = models.ImageField(
         verbose_name=_('logo (image)'),
+        db_column='log',    # Backward compatibility.
         blank=True, upload_to=logo_upload_to,
         help_text=_(
             "Raster format of the logo, e.g. PNG, JPEG. This is used as "
