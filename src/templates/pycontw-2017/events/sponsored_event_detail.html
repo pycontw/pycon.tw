@@ -1,0 +1,87 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n static %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+
+{% block content %}
+
+<h1><span>{{ object.title }}</span></h1>
+
+<h2>{% trans 'Classifications' %}</h2>
+<table class="talk-classifications-table">
+	<thead>
+		<tr>
+			<th>{% trans 'Language' %}</th>
+			<th>{% trans 'Category' %}</th>
+			<th>{% trans 'Python Level' %}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{ object.get_language_display }}</td>
+			<td>{{ object.get_category_display }}</td>
+			<td>{{ object.get_python_level_display }}</td>
+	</tbody>
+</table>
+
+<h2>{% trans 'Information' %}</h2>
+
+{% if object.slide_link %}
+<h3>{% trans 'Slides Link' %}</h3>
+<article><a href="{{ object.slide_link }}">{{ object.slide_link }}</a></article>
+{% endif %}
+
+<h3>{% trans 'Abstract' %}</h3>
+<article>{{ object.abstract|linebreaks }}</article>
+
+{% if object.detailed_description %}
+<h3>{% trans 'Description' %}</h3>
+<article class="editor-readonly">
+	<div class="editor-preview">{{ object.detailed_description }}</div>
+</article>
+{% endif %}
+
+<h2 id="speaker-content">{% trans 'Speaker Information' %}</h2>
+{% for info in object.speakers %}
+{% with user=info.user %}
+<h3>
+	{{ user.speaker_name }}
+	<span class="speaker-social">
+		{% if user.github_id %}
+		<a href="{{ user.github_profile_url }}" target="_blank">
+			<span class="fa fa-github" aria-hidden="true"></span>
+		</a>
+		{% endif %}
+		{% if user.twitter_id %}
+		<a href="{{ user.twitter_profile_url }}" target="_blank">
+			<span class="fa fa-twitter" aria-hidden="true"></span>
+		</a>
+		{% endif %}
+		{% if user.facebook_profile_url %}
+		<a href="{{ user.facebook_profile_url }}" target="_blank">
+			<span class="fa fa-facebook" aria-hidden="true"></span>
+		</a>
+		{% endif %}
+	</span>
+</h3>
+<div class="speaker-detail-info {% if user.photo %}speaker-detail-info-has-photo{% endif %}">
+	{% if user.photo %}
+	<img class="speaker-photo" src="{{ user.photo.url }}">
+	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
+	{% else %}
+	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
+	{% endif %}
+</div>
+{% endwith %}
+{% endfor %}
+
+{% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/vendors/simplemde.min.js' %}"></script>
+<script src="{% static 'js/tools/simplemde-setup.js' %}"></script>
+{% endblock extra_js %}

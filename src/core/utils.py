@@ -101,7 +101,7 @@ class SequenceQuerySet:
         return bool(self._seq)
 
 
-class OrderedDefaultDict(collections.OrderedDict, collections.defaultdict):
+class OrderedDefaultDict(collections.OrderedDict):
     """Marriage between OrderedDict and defaultdict.
     """
     def __init__(self, default_factory=None, *args, **kwargs):
@@ -109,3 +109,9 @@ class OrderedDefaultDict(collections.OrderedDict, collections.defaultdict):
             raise TypeError('first argument must be callable')
         super().__init__(*args, **kwargs)
         self.default_factory = default_factory
+
+    def __missing__(self, key):
+        if self.default_factory is None:
+            raise KeyError(key,)
+        result = self[key] = self.default_factory()
+        return result
