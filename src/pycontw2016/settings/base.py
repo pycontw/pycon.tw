@@ -44,6 +44,7 @@ TEMPLATES = [
                 'core.context_processors.pycontw',
                 'core.context_processors.proposals_states',
                 'core.context_processors.reviews_states',
+                'core.context_processors.sponsors',
             ],
             'debug': True,
         },

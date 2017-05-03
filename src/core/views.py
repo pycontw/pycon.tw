@@ -4,8 +4,6 @@ from django.http import Http404
 from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
 
-from sponsors.models import Sponsor
-
 from .data import EXTRA_DATA
 from .utils import (
     TemplateExistanceStatusResponse,
@@ -14,13 +12,7 @@ from .utils import (
 
 
 class IndexView(TemplateView):
-
     template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['sponsors'] = Sponsor.objects.order_by('level')
-        context = super().get_context_data(**kwargs)
-        return context
 
 
 class FlatPageView(TemplateView):
