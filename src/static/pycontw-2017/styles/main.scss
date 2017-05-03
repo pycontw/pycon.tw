@@ -542,6 +542,7 @@ header {
     top: -80px;
   }
 }
+
 .communities {
   width: 583px;
   margin: 317px auto 113px;
@@ -626,7 +627,7 @@ footer {
 
 @import './card';
 @import './modal';
-
 @import './venue';
 @import './ticket';
+@import './sponsors';
 @import './rwd';

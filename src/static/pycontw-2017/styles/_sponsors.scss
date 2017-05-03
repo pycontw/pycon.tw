@@ -1,0 +1,27 @@
+section.sponsors {
+  padding: 147px 0 337px;
+  background: #fff url('../images/bg-sponsor.svg') right bottom no-repeat;
+
+  > .sponsors-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1012px;
+    margin: 0 auto;
+
+    > a, > span {
+      min-width: 33%;
+      display: inline-block;
+      margin-bottom: 240px;
+      text-align: center;
+      color: $color-dark-blue-grey;
+      font-size: 40px;
+
+      > img {
+        display: inline-block;
+        max-height: 90px;
+      }
+    }
+  }
+}

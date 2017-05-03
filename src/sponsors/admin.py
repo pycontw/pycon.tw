@@ -7,6 +7,9 @@ from .models import Sponsor
 
 @admin.register(Sponsor)
 class SponsorAdmin(TranslationAdmin):
+    fields = [
+        'name', 'level', 'website_url', 'intro',
+        'logo_svg', 'logo_image',
+    ]
     list_display = ['name', 'level']
     list_filter = ['level']
-    fields = ['name', 'level', 'website_url', 'intro', 'logo']

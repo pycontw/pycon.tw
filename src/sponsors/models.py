@@ -21,15 +21,26 @@ class Sponsor(ConferenceRelated):
     )
     website_url = models.URLField(
         verbose_name=_('website URL'),
-        max_length=255,
-        blank=True,
+        max_length=255, blank=True,
     )
     intro = models.TextField(
-        verbose_name=_('Introduction'),
+        verbose_name=_('introduction'),
     )
-    logo = models.ImageField(
-        verbose_name=_('logo'),
-        upload_to=logo_upload_to,
+    logo_svg = models.FileField(
+        verbose_name=_('logo (SVG)'),
+        blank=True, upload_to=logo_upload_to,
+        help_text=_(
+            "Vector format of the logo, in SVG. This takes precedence to the "
+            "raster format, if available."
+        ),
+    )
+    logo_image = models.ImageField(
+        verbose_name=_('logo (image)'),
+        blank=True, upload_to=logo_upload_to,
+        help_text=_(
+            "Raster format of the logo, e.g. PNG, JPEG. This is used as "
+            "fallback when the SVG file is not available."
+        ),
     )
 
     class Level:
@@ -66,3 +77,7 @@ class Sponsor(ConferenceRelated):
 
     def __str__(self):
         return self.name
+
+    @property
+    def logo(self):
+        return self.logo_svg or self.logo_image
