@@ -4,13 +4,17 @@ section.sponsors {
 
   > .sponsors-wrapper {
     $item-spacing: 16px;
+    $item-height: 90px;
+
     padding: 0 $item-spacing;
     margin: 0 auto;
     max-width: 1012px;
 
     > a, > span {
       display: block;
+      height: $item-height;
       margin-bottom: 112px;
+      vertical-align: middle;
       text-align: center;
       color: $color-dark-blue-grey;
       font-size: 40px;
@@ -23,7 +27,7 @@ section.sponsors {
       > img {
         display: inline-block;
         max-width: 100%;
-        max-height: 90px;
+        max-height: $item-height;
       }
     }
   }

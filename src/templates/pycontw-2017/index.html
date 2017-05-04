@@ -89,10 +89,11 @@
 	</div>
 </section>
 
+{% regroup sponsors by level as sponsor_groups %}
 <section class="sponsors">
-	{% for level, sponsors in sponsor_groups %}
+	{% for sponsor_group in sponsor_groups %}
 	<div class="sponsors-wrapper">
-		{% for sponsor in sponsors %}
+		{% for sponsor in sponsor_group.list %}
 		{% if sponsor.website_url %}
 		<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
 			{% if sponsor.logo %}
