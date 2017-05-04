@@ -90,6 +90,7 @@
 </section>
 
 <section class="sponsors">
+	{% for level, sponsors in sponsor_groups %}
 	<div class="sponsors-wrapper">
 		{% for sponsor in sponsors %}
 		{% if sponsor.website_url %}
@@ -111,6 +112,7 @@
 		{% endif %}
 		{% endfor %}
 	</div>
+	{% endfor %}
 </section>
 
 {% endblock content_full %}

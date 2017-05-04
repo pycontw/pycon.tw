@@ -1,5 +1,6 @@
 from django.conf import settings
 
+from core.utils import OrderedDefaultDict
 from sponsors.models import Sponsor
 
 
@@ -30,6 +31,9 @@ def reviews_states(request):
 
 
 def sponsors(request):
+    groups = OrderedDefaultDict(list)
+    for sponsor in Sponsor.objects.order_by('level'):
+        groups[sponsor.level].append(sponsor)
     return {
-        'sponsors': Sponsor.objects.order_by('level'),
+        'sponsor_groups': groups,
     }
