@@ -56,9 +56,11 @@
 			</div>
 		</div>
 		<div class="modal-function">
-			<a href="#" class="prev" v-on:click="showModal($event, currentIndex - 1)"></a>
+			<a href="#" class="prev" v-if="currentIndex > 0" v-on:click="showModal($event, currentIndex - 1)"></a>
+			<span v-else></span>
 			<a href="#" class="close" v-on:click="showModal($event, null)"></a>
-			<a href="#" class="next" v-on:click="showModal($event, currentIndex + 1)"></a>
+			<a href="#" class="next" v-if="currentIndex + 1 < backend.keynote.length" v-on:click="showModal($event, currentIndex + 1)"></a>
+			<span v-else></span>
 		</div>
 	</div>
 </div>
