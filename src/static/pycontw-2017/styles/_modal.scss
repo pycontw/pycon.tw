@@ -1,5 +1,8 @@
 body.popping-modal-open {
-	overflow: hidden;
+    .mother-wrapper {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 .popping-card-modal {
