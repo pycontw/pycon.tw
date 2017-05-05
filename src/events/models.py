@@ -1,4 +1,3 @@
-import collections
 import datetime
 import functools
 import urllib.parse
@@ -17,14 +16,7 @@ from core.utils import format_html_lazy
 from proposals.models import TalkProposal, PrimarySpeaker
 
 
-DAY_1 = datetime.date(2016, 6, 3)
-DAY_2 = datetime.date(2016, 6, 4)
-DAY_3 = datetime.date(2016, 6, 5)
-DAY_NAMES = collections.OrderedDict([
-    (DAY_1, _('Day 1')),
-    (DAY_2, _('Day 2')),
-    (DAY_3, _('Day 3')),
-])
+EVENT_DAYS = list(settings.EVENTS_DAY_NAMES.keys())
 
 
 class TimeManager(models.Manager):
@@ -32,6 +24,14 @@ class TimeManager(models.Manager):
         """We only has one field, so let's make it available without keyword.
         """
         return super().get(value=value)
+
+
+class LimitedTimeManager(TimeManager):
+    def get_queryset(self):
+        """Limit times to those in the current conference's time.
+        """
+        qs = super().get_queryset()
+        return qs.filter(value__in=EVENT_DAYS)
 
 
 @functools.total_ordering
@@ -42,7 +42,8 @@ class Time(models.Model):
         verbose_name=_('value'),
     )
 
-    objects = TimeManager()
+    objects = LimitedTimeManager()
+    all_objects = TimeManager()
 
     class Meta:
         verbose_name = _('time')

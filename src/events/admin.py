@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import admin
 from django.db.models import Q
 from django.utils.timezone import make_naive
@@ -5,7 +6,7 @@ from django.utils.translation import ugettext_lazy as _, pgettext_lazy as p
 
 from .models import (
     CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
-    Time, Schedule, DAY_1, DAY_2, DAY_3,
+    Time, Schedule,
 )
 
 
@@ -13,21 +14,20 @@ class TimeRangeFilter(admin.SimpleListFilter):
 
     title = _('time value')
     parameter_name = 'time-range'
+    day_queries = {
+        'day{}'.format(i): Q(value__date=date)
+        for i, date in enumerate(settings.EVENTS_DAY_NAMES, 1)
+    }
 
     def lookups(self, request, model_admin):
         return [
-            ('day1', _('Day 1')),
-            ('day2', _('Day 2')),
-            ('day3', _('Day 3')),
+            ('day{}'.format(i), name)
+            for i, name in enumerate(settings.EVENTS_DAY_NAMES.values(), 1)
         ]
 
     def queryset(self, request, queryset):
         try:
-            query = {
-                'day1': Q(value__date=DAY_1),
-                'day2': Q(value__date=DAY_2),
-                'day3': Q(value__date=DAY_3),
-            }[self.value()]
+            query = self.day_queries[self.value()]
         except KeyError:
             return queryset
         return queryset.filter(query)
@@ -61,6 +61,11 @@ class TimeAdmin(admin.ModelAdmin):
 
 class EventTimeRangeFilter(admin.SimpleListFilter):
 
+    filter_kwargs_dict = {
+        'day{}'.format(i): day
+        for i, day in enumerate(settings.EVENTS_DAY_NAMES, 1)
+    }
+
     def lookups(self, request, model_admin):
         return [
             ('day1', _('Day 1')),
@@ -71,9 +76,8 @@ class EventTimeRangeFilter(admin.SimpleListFilter):
     def queryset(self, request, queryset):
         try:
             filter_kwargs = {
-                'day1': {self.field_name + '__value__date': DAY_1},
-                'day2': {self.field_name + '__value__date': DAY_2},
-                'day3': {self.field_name + '__value__date': DAY_3},
+                key: {self.field_name + '__value__date': value}
+                for key, value in self.filter_kwargs_dict.items()
             }[self.value()]
         except KeyError:
             return queryset

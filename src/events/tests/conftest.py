@@ -16,3 +16,13 @@ def sponsored_block_event(user):
         location=Location.R2,
     )
     return e
+
+
+@pytest.fixture(autouse=True, scope='module')
+def time_stub_manager(request):
+    orig_objects, Time.objects = Time.objects, Time.all_objects
+
+    def unstub_manager():
+        Time.objects = orig_objects
+
+    request.addfinalizer(unstub_manager)

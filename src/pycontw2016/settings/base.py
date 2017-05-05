@@ -8,6 +8,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
+import collections
+import datetime
 import os
 
 import environ
@@ -274,3 +276,9 @@ TALK_PROPOSAL_DURATION_CHOICES = (
     ('PREF30', _('Prefer 30min')),
     ('PREF45', _('Prefer 45min')),
 )
+
+EVENTS_DAY_NAMES = collections.OrderedDict([
+    (datetime.date(2017, 6,  9), _('Day 1')),
+    (datetime.date(2017, 6, 10), _('Day 2')),
+    (datetime.date(2017, 6, 11), _('Day 3')),
+])

@@ -2,6 +2,7 @@ import itertools
 
 import sortedcontainers
 
+from django.conf import settings
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
 from django.utils.timezone import make_naive
@@ -11,8 +12,7 @@ from core.utils import html_join
 from proposals.utils import format_names
 
 from events.models import (
-    DAY_NAMES, Location,
-    CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
+    Location, CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
 )
 
 
@@ -397,5 +397,5 @@ def render_day(day, display):
 def render_all():
     return html_join('', (
         render_day(day, display)
-        for day, display in DAY_NAMES.items()
+        for day, display in settings.EVENTS_DAY_NAMES.items()
     ))
