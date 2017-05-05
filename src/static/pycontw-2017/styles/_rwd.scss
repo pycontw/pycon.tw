@@ -50,19 +50,27 @@
   }
 
   header {
-    height: 64px;
+    $header-height: 64px;
+
+    height: $header-height;
     position: relative;
 
-    .btn-menu {
+    > .btn {
       display: block;
-      width: 22px;
-      height: 18px;
+      width: $header-height;
+      height: $header-height;
       position: absolute;
-      background: url('../images/icon-menu.svg') left top no-repeat;
-      background-size: cover;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
+      background-size: contain;
+
+      &.btn-menu {
+        background: url('../images/icon-menu.svg') center no-repeat;
+      }
+
+      &.btn-home {
+        background: url('../images/pycon-logo.svg') center no-repeat;
+        background-size: auto 36%;
+        right: 0;
+      }
     }
   }
 

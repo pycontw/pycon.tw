@@ -32,7 +32,8 @@
 {% get_language_info for LANGUAGE_CODE as current_language %}
 
 <header>
-  <a href="#" class="btn-menu"></a>
+  <a href="#" class="btn btn-menu"></a>
+  <a href="{% url 'index' %}" class="btn btn-home"></a>
 	<nav class="wrapper header-nav">
     <div class="parent lang">
       <a href="#" class="btn-show-lang-menu">
@@ -98,7 +99,7 @@
 
 		{% comment %}
 		<div class="parent {% if active == 'sponsor' %}active{% endif %}">
-			<a href="#"">
+			<a href="#">
 				{% trans 'sponsors' %}
 			</a>
 		</div>
