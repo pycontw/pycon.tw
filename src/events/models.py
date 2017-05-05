@@ -16,7 +16,10 @@ from core.utils import format_html_lazy
 from proposals.models import TalkProposal, PrimarySpeaker
 
 
-EVENT_DAYS = list(settings.EVENTS_DAY_NAMES.keys())
+EVENT_DAY_START_END = (
+    min(settings.EVENTS_DAY_NAMES.keys()),
+    max(settings.EVENTS_DAY_NAMES.keys()) + datetime.timedelta(days=1),
+)
 
 
 class TimeManager(models.Manager):
@@ -31,7 +34,7 @@ class LimitedTimeManager(TimeManager):
         """Limit times to those in the current conference's time.
         """
         qs = super().get_queryset()
-        return qs.filter(value__in=EVENT_DAYS)
+        return qs.filter(value__range=EVENT_DAY_START_END)
 
 
 @functools.total_ordering
