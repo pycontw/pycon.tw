@@ -139,8 +139,17 @@ class BaseEvent(ConferenceRelated):
 class CustomEvent(BaseEvent):
 
     title = models.CharField(
-        max_length=140,
         verbose_name=_('title'),
+        max_length=140,
+    )
+    break_event = models.BooleanField(
+        verbose_name=_('is break event'),
+        default=False,
+        help_text=_(
+            "Whether this event is displays as a break. A break can be "
+            "visually distinguished from \"real\" conference sessions, such "
+            "as keynotes, talks, etc.",
+        )
     )
 
     class Meta:
