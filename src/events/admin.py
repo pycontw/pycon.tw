@@ -98,10 +98,17 @@ class EndTimeRangeFilter(EventTimeRangeFilter):
 
 @admin.register(CustomEvent)
 class CustomEventAdmin(admin.ModelAdmin):
-    fields = ['conference', 'title', 'begin_time', 'end_time', 'location']
+    fields = [
+        'conference', 'title', 'begin_time', 'end_time', 'location',
+        'break_event',
+    ]
     search_fields = ['title']
-    list_display = ['title', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_display = [
+        'title', 'begin_time', 'end_time', 'location', 'break_event',
+    ]
+    list_filter = [
+        BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'break_event',
+    ]
 
 
 @admin.register(KeynoteEvent)
