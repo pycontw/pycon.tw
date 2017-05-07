@@ -1,4 +1,5 @@
 from django.template import Context, Library, Template
+from django.utils import translation
 from django.utils.html import format_html
 
 from events.models import Location
@@ -96,6 +97,21 @@ TALK_LEVEL_TAG_DICT = {
 }
 
 
+def _render_talk_event_template(event, info, speaker_names, sponsored):
+    with translation.override('en-us'):
+        return TALK_EVENT_TEMPLATE.render(Context({
+            'event': event,
+            'title': info.title,
+            'language_display': info.get_language_display(),
+            'language_tag': TALK_LANGUAGE_TAG_DICT[info.language],
+            'level_display': info.get_python_level_display(),
+            'level_tag': TALK_LEVEL_TAG_DICT[info.python_level],
+            'speakers': format_names(speaker_names),
+            'recording_policy': info.recording_policy,
+            'sponsored': sponsored,
+        }))
+
+
 def get_proposed_talk_event_display(event):
     proposal = event.proposal
     speaker_names = [proposal.submitter.speaker_name]
@@ -104,31 +120,13 @@ def get_proposed_talk_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    return TALK_EVENT_TEMPLATE.render(Context({
-        'event': event,
-        'title': proposal.title,
-        'language_display': proposal.get_language_display(),
-        'language_tag': TALK_LANGUAGE_TAG_DICT[proposal.language],
-        'level_display': proposal.get_python_level_display(),
-        'level_tag': TALK_LEVEL_TAG_DICT[proposal.python_level],
-        'speakers': format_names(speaker_names),
-        'recording_policy': proposal.recording_policy,
-        'sponsored': False,
-    }))
+    return _render_talk_event_template(event, proposal, speaker_names, False)
 
 
 def get_sponsored_event_display(event):
-    return TALK_EVENT_TEMPLATE.render(Context({
-        'event': event,
-        'title': event.title,
-        'language_display': event.get_language_display(),
-        'language_tag': TALK_LANGUAGE_TAG_DICT[event.language],
-        'level_display': event.get_python_level_display(),
-        'level_tag': TALK_LEVEL_TAG_DICT[event.python_level],
-        'speakers': event.host.speaker_name,
-        'recording_policy': event.recording_policy,
-        'sponsored': True,
-    }))
+    return _render_talk_event_template(
+        event, event, [event.host.speaker_name], True,
+    )
 
 
 @register.filter
