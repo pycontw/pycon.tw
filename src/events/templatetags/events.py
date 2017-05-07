@@ -60,6 +60,11 @@ TALK_EVENT_TEMPLATE = Template("""
     <span>{{ language_tag }}</span>
     <span class="schedule-label-description">{{ language_display }}</span>
   </span>
+  <span class="schedule-label level-label"
+      data-balloon="{{ level_display }}" data-balloon-pos="down">
+    <span>{{ level_tag }}</span>
+    <span class="schedule-label-description">{{ level_display }}</span>
+  </span>
   {% if sponsored %}
   {% with label=_('Sponsored talk') %}
   <span class="schedule-label sponsor-label"
@@ -87,6 +92,12 @@ TALK_LANGUAGE_TAG_DICT = {
     'TAI':  'T',
 }
 
+TALK_LEVEL_TAG_DICT = {
+    'NOVICE': '–',
+    'INTERMEDIATE': '=',
+    'EXPERIENCED': '≡',
+}
+
 
 def get_proposed_talk_event_display(event):
     proposal = event.proposal
@@ -100,8 +111,10 @@ def get_proposed_talk_event_display(event):
         'event': event,
         'title': proposal.title,
         'language_display': proposal.get_language_display(),
-        'speakers': format_names(speaker_names),
         'language_tag': TALK_LANGUAGE_TAG_DICT[proposal.language],
+        'level_display': proposal.get_python_level_display(),
+        'level_tag': TALK_LEVEL_TAG_DICT[proposal.python_level],
+        'speakers': format_names(speaker_names),
         'recording_policy': proposal.recording_policy,
         'sponsored': False,
     }))
@@ -112,8 +125,10 @@ def get_sponsored_event_display(event):
         'event': event,
         'title': event.title,
         'language_display': event.get_language_display(),
-        'speakers': event.host.speaker_name,
         'language_tag': TALK_LANGUAGE_TAG_DICT[event.language],
+        'level_display': event.get_python_level_display(),
+        'level_tag': TALK_LEVEL_TAG_DICT[event.python_level],
+        'speakers': event.host.speaker_name,
         'recording_policy': event.recording_policy,
         'sponsored': True,
     }))
