@@ -2,6 +2,8 @@ import datetime
 import functools
 import urllib.parse
 
+import pytz
+
 from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
@@ -16,9 +18,17 @@ from core.utils import format_html_lazy
 from proposals.models import TalkProposal, PrimarySpeaker
 
 
-EVENT_DAY_START_END = (
-    min(settings.EVENTS_DAY_NAMES.keys()),
-    max(settings.EVENTS_DAY_NAMES.keys()) + datetime.timedelta(days=1),
+MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
+
+EVENT_DATETIME_START_END = (
+    datetime.datetime.combine(
+        min(settings.EVENTS_DAY_NAMES.keys()),
+        MIDNIGHT_TIME,
+    ),
+    datetime.datetime.combine(
+        max(settings.EVENTS_DAY_NAMES.keys()) + datetime.timedelta(days=1),
+        MIDNIGHT_TIME,
+    ),
 )
 
 
@@ -34,7 +44,7 @@ class LimitedTimeManager(TimeManager):
         """Limit times to those in the current conference's time.
         """
         qs = super().get_queryset()
-        return qs.filter(value__range=EVENT_DAY_START_END)
+        return qs.filter(value__range=EVENT_DATETIME_START_END)
 
 
 @functools.total_ordering
