@@ -1,11 +1,22 @@
 {% extends 'events/schedule.html' %}
 
-{% load i18n %}
+{% load i18n static %}
 {% load events %}
 
 
-{% block schedule %}
+{% block title %}{% trans 'Export New Schedule' %}{% endblock title %}
 
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2017/styles/schedule_gen.scss' %}">
+{% endblock styles %}
+
+
+{% block pagetitle %}{% trans 'Export New Schedule' %}{% endblock pagetitle %}
+
+
+{% block schedule %}
 
 <div class="schedule">
 
@@ -75,3 +86,9 @@
 
 
 {% endblock schedule %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'pycontw-2017/scripts/schedule_gen.js' %}"></script>
+{% endblock scripts %}

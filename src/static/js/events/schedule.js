@@ -1,4 +1,4 @@
-(function ($) {
+(function () {
 
 // $('.talk__title').addClass('hyphenate');
 // Hyphenator.config({useCSS3hyphenation: true});
@@ -25,4 +25,4 @@ if (window.history && window.history.replaceState) {
 	});
 }
 
-})(jQuery);
+})();

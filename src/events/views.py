@@ -76,6 +76,7 @@ class ScheduleView(TemplateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             schedule_html=self.schedule.html,
+            days=settings.EVENTS_DAY_NAMES,
             **kwargs
         )
 
@@ -112,7 +113,7 @@ class ScheduleCreateView(
                 'proposal__additionalspeaker_set',
             ))
         ),
-        SponsoredEvent.objects.all(),
+        SponsoredEvent.objects.select_related('host'),
     ]
 
     def get_day_grouped_events(self):
@@ -132,9 +133,10 @@ class ScheduleCreateView(
         def room_key(room):
             return room.split('-', 1)[-1]
 
-        end_time_iter = iter(Time.objects.order_by('value'))
+        times = list(Time.objects.order_by('value'))
+        end_time_iter = iter(times)
         next(end_time_iter)
-        for begin, end in zip(Time.objects.order_by('value'), end_time_iter):
+        for begin, end in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
             except KeyError:
@@ -161,9 +163,11 @@ class ScheduleCreateView(
 
     def get_context_data(self, **kwargs):
         schedule_days = self.get_day_grouped_events()
-        if 'schedule_days' not in kwargs:
-            kwargs['schedule_days'] = schedule_days
-        return super().get_context_data(**kwargs)
+        return super().get_context_data(
+            days=settings.EVENTS_DAY_NAMES,
+            schedule_days=schedule_days,
+            **kwargs
+        )
 
 
 class TalkDetailView(AcceptedTalkMixin, DetailView):

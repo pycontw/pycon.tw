@@ -1,9 +1,26 @@
 .inner-wrapper {
+    .quick-jumper-section {
+        .quick-jump-link {
+            display: inline-block;
+            line-height: 125%;
+            margin-right: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: $color-table-header-background;
+            color: $color-table-header-foreground;
+
+            &:hover {
+                text-decoration: none;
+                background: $color-water-blue;
+                color: $color-dark-blue-grey;
+            }
+        }
+    }
     .day-section {
         margin-bottom: 4rem;
 
         .day-title {
-            margin-bottom: 1rem;
+            margin: 4rem auto 1rem;
         }
     }
     .time-table {

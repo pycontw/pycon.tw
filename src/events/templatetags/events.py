@@ -1,4 +1,6 @@
 from django.template import Context, Library, Template
+from django.utils.html import format_html
+from django.utils.translation import ugettext
 
 from events.models import BaseEvent
 from proposals.utils import format_names
@@ -11,10 +13,16 @@ register = Library()
 
 @register.filter
 def event_cell_class(event):
-    return {
+    event_class = {
         'events.customevent': 'custom',
+        'events.keynoteevent': 'keynote',
         'events.proposedtalkevent': 'talk',
+        'events.sponsoredevent': 'talk',
     }[event._meta.label_lower]
+    classes = [event_class]
+    if getattr(event, 'break_event', False):
+        classes.append('is-break')
+    return ' '.join(classes)
 
 
 @register.filter
@@ -24,6 +32,14 @@ def room_display(value):
 
 def get_custom_event_display(event):
     return event.title
+
+
+def get_keynote_event_display(event):
+    return format_html(
+        '<p>{title}<span class="keynote-speaker">{name}</span></p>',
+        title=ugettext('Keynote: '),
+        name=event.speaker_name,
+    )
 
 
 TALK_EVENT_TEMPLATE = Template("""
@@ -80,7 +96,20 @@ def get_proposed_talk_event_display(event):
         'language_display': proposal.get_language_display(),
         'speakers': format_names(speaker_names),
         'language_tag': TALK_LANGUAGE_TAG_DICT[proposal.language],
+        'recording_policy': proposal.recording_policy,
         'sponsored': False,
+    }))
+
+
+def get_sponsored_event_display(event):
+    return TALK_EVENT_TEMPLATE.render(Context({
+        'event': event,
+        'title': event.title,
+        'language_display': event.get_language_display(),
+        'speakers': event.host.speaker_name,
+        'language_tag': TALK_LANGUAGE_TAG_DICT[event.language],
+        'recording_policy': event.recording_policy,
+        'sponsored': True,
     }))
 
 
@@ -88,6 +117,8 @@ def get_proposed_talk_event_display(event):
 def event_display(event):
     f = {
         'events.customevent': get_custom_event_display,
+        'events.keynoteevent': get_keynote_event_display,
         'events.proposedtalkevent': get_proposed_talk_event_display,
+        'events.sponsoredevent': get_sponsored_event_display,
     }[event._meta.label_lower]
     return f(event)

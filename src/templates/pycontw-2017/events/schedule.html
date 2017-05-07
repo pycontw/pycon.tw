@@ -14,9 +14,29 @@
 
 {% block content %}
 
-<h1><span>{% trans 'Schedule' %}</span></h1>
+<h1><span>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</span></h1>
+
+
+<section class="quick-jumper-section">
+<h3>{% trans 'Quick Jump' %}</h3>
+<div>
+	{% for day, name in days.items %}
+	<a href="#{{ day|date:'Y-m-d' }}" class="quick-jump-link">
+		{{ name }}
+	</a>
+	{% endfor %}
+</div>
+</section>
+
 
 {% block schedule %}
+{{ schedule_html|safe }}
 {% endblock schedule %}
 
 {% endblock content %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'pycontw-2017/scripts/schedule.js' %}"></script>
+{% endblock scripts %}
