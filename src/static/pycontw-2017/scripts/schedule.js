@@ -30,6 +30,11 @@ $('.quick-jump-link').on('click', function (e) {
 	scrollTo($(e.currentTarget).attr('href'))
 })
 
+$('.back-to-top').on('click', function (e) {
+	e.preventDefault()
+	smoothScroll($(window), 0, 200)
+})
+
 function padZero(number, digits) {
 	let s = number
 	while (s.length < digits) {
@@ -50,3 +55,4 @@ if ($(todayId).length > 0) {
 }
 
 })();
+

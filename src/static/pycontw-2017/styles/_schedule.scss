@@ -1,3 +1,30 @@
+.back-to-top {
+    $size: 2rem;
+
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: $size;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.6;
+    background: $color-header-link;
+    font-size: 24px;
+
+    * {
+        color: $color-table-header-background;
+    }
+
+    &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+}
+
 .inner-wrapper {
     .quick-jumper-section {
         .quick-jump-link {

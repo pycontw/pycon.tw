@@ -36,6 +36,12 @@
 {% endblock content %}
 
 
+{% block extrabody %}
+{{ block.super }}
+<a href="#" class="back-to-top"><span class="fa fa-arrow-up"></span></a>
+{% endblock extrabody %}
+
+
 {% block scripts %}
 {{ block.super }}
 <script src="{% static 'pycontw-2017/scripts/schedule.js' %}"></script>
