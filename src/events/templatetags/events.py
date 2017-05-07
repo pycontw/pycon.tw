@@ -1,6 +1,5 @@
 from django.template import Context, Library, Template
 from django.utils.html import format_html
-from django.utils.translation import ugettext
 
 from events.models import Location
 from proposals.utils import format_names
@@ -42,14 +41,12 @@ def get_custom_event_display(event):
 
 def get_keynote_event_display(event):
     return format_html(
-        '{title}<span class="keynote-speaker">{name}</span>',
-        title=ugettext('Keynote: '),
+        'Keynote: <span class="keynote-speaker">{name}</span>',
         name=event.speaker_name,
     )
 
 
 TALK_EVENT_TEMPLATE = Template("""
-{% load i18n %}
 <p class="talk-title">
   <a href="{{ event.get_absolute_url }}">{{ title }}</a>
 </p>
@@ -78,7 +75,7 @@ TALK_EVENT_TEMPLATE = Template("""
   <span class="schedule-label recording-label"
       data-balloon="No recording" data-balloon-pos="down">
     <span class="fa fa-microphone-slash"></span>
-    <span class="schedule-label-description">{% trans 'No recording' %}</span>
+    <span class="schedule-label-description">No recording</span>
   </span>
   {% endif %}
 </p>
