@@ -46,7 +46,11 @@ class ScheduleView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         try:
-            self.schedule = Schedule.objects.latest()
+            self.schedule = (
+                Schedule.objects
+                .filter(created_at__lt='2017-01-01')
+                .latest()
+            )
         except Schedule.DoesNotExist:
             return HttpResponseRedirect(
                 'https://docs.google.com/spreadsheets/d/'
