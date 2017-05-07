@@ -1,62 +1,62 @@
 body.popping-modal-open {
-        .mother-wrapper {
-                height: 100%;
-                overflow: hidden;
-        }
+    .mother-wrapper {
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 .popping-card-modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.85);
 
-    .modal-content {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 16px;
-        bottom: 16px;
-        left: 16px;
-        right: 16px;
-        background: $color-dark-blue-grey;
+	.modal-content {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 16px;
+		bottom: 16px;
+		left: 16px;
+		right: 16px;
+		background: $color-dark-blue-grey;
 
-        .popping-card {
-            overflow-x: hidden;
-            overflow-y: scroll;
-            box-shadow: none;
-        }
+		.popping-card {
+			overflow-x: hidden;
+			overflow-y: scroll;
+			box-shadow: none;
+		}
 
-        .modal-function {
-            flex: 0 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            height: 56px;
-            border-top: 2px solid rgba(100, 125, 146, 0.5);
+		.modal-function {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 56px;
+			border-top: 2px solid rgba(100, 125, 146, 0.5);
 
-            > a, > span {
-                flex: 1;
-                display: block;
-                height: 100%;
+			> a, > span {
+				flex: 1;
+				display: block;
+				height: 100%;
 
-                &:active, &:hover {
-                    text-decoration: none;
-                    opacity: 0.6;
-                }
+				&:hover {
+					text-decoration: none;
+					opacity: 0.6;
+				}
 
-                &.prev {
-                    background: url('../images/icon-modal-prev.svg') center no-repeat;
-                }
-                &.next {
-                    background: url('../images/icon-modal-next.svg') center no-repeat;
-                }
-                &.close {
-                    background: url('../images/icon-modal-close.svg') center no-repeat;
-                }
-            }
-        }
-    }
+				&.prev {
+					background: url('../images/icon-modal-prev.svg') center no-repeat;
+				}
+				&.next {
+					background: url('../images/icon-modal-next.svg') center no-repeat;
+				}
+				&.close {
+					background: url('../images/icon-modal-close.svg') center no-repeat;
+				}
+			}
+		}
+	}
 }

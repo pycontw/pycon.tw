@@ -1,0 +1,22 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n static %}
+
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+<h1><span>{% trans 'Schedule' %}</span></h1>
+
+{% block schedule %}
+{% endblock schedule %}
+
+{% endblock content %}

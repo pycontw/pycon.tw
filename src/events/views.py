@@ -1,3 +1,7 @@
+import collections
+import logging
+
+from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
@@ -10,8 +14,14 @@ from core.utils import OrderedDefaultDict
 from proposals.models import TalkProposal
 
 from .forms import ScheduleCreationForm
-from .models import Schedule, SponsoredEvent
+from .models import (
+    BaseEvent, Location, Schedule, Time,
+    CustomEvent, KeynoteEvent, SponsoredEvent, ProposedTalkEvent,
+)
 from .renderers import render_all
+
+
+logger = logging.getLogger(__name__)
 
 
 class AcceptedTalkMixin:
@@ -70,8 +80,7 @@ class ScheduleView(TemplateView):
         )
 
 
-class ScheduleCreateView(
-        FormValidMessageMixin, PermissionRequiredMixin, CreateView):
+class ScheduleCreateMixin:
 
     form_class = ScheduleCreationForm
     form_valid_message = _('New talk schedule generated successfully.')
@@ -81,8 +90,80 @@ class ScheduleCreateView(
     def get_success_url(self):
         return reverse('events_schedule')
 
+
+class ScheduleCreate2016View(
+        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+        CreateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(content=render_all(), **kwargs)
+
+
+class ScheduleCreateView(
+        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+        CreateView):
+
+    event_querysets = [
+        CustomEvent.objects.all(),
+        KeynoteEvent.objects.all(),
+        (
+            ProposedTalkEvent.objects
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
+                'proposal__additionalspeaker_set',
+            ))
+        ),
+        SponsoredEvent.objects.all(),
+    ]
+
+    def get_day_grouped_events(self):
+        begin_time_event_dict = collections.defaultdict(set)
+        for qs in self.event_querysets:
+            for event in qs.select_related('begin_time', 'end_time'):
+                begin_time_event_dict[event.begin_time].add(event)
+
+        day_info_dict = collections.OrderedDict(
+            (date, {
+                'name': name, 'rooms': set(),
+                'slots': OrderedDefaultDict(dict),
+            }) for date, name in settings.EVENTS_DAY_NAMES.items()
+        )
+        rooms = {Location.R0, Location.R1, Location.R2, Location.R3}
+
+        def room_key(room):
+            return room.split('-', 1)[-1]
+
+        end_time_iter = iter(Time.objects.order_by('value'))
+        next(end_time_iter)
+        for begin, end in zip(Time.objects.order_by('value'), end_time_iter):
+            try:
+                day_info = day_info_dict[begin.value.date()]
+            except KeyError:
+                logger.warn('Invalid time sot dropped: {}'.format(begin))
+                continue
+            for event in begin_time_event_dict[begin]:
+                location = event.location
+                if location in rooms:
+                    day_info['rooms'].add(location)
+                day_info['slots'][(begin, end)][location] = event
+
+        for info in day_info_dict.values():
+            # Sort rooms.
+            info['rooms'] = sorted(info['rooms'], key=room_key)
+            # Work around Django template unable to iter through defaultdict.
+            # http://stackoverflow.com/questions/4764110
+            info['slots'] = collections.OrderedDict(
+                (slot_time, sorted(
+                    slot_rooms.items(), key=lambda i: room_key(i[0])))
+                for slot_time, slot_rooms in info['slots'].items()
+            )
+
+        return day_info_dict
+
+    def get_context_data(self, **kwargs):
+        schedule_days = self.get_day_grouped_events()
+        if 'schedule_days' not in kwargs:
+            kwargs['schedule_days'] = schedule_days
+        return super().get_context_data(**kwargs)
 
 
 class TalkDetailView(AcceptedTalkMixin, DetailView):
