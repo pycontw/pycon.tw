@@ -49,4 +49,4 @@ if ($(todayId).length > 0) {
 	scrollTo(todayId, 200)
 }
 
-})()
+})();
