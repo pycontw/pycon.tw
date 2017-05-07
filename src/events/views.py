@@ -15,7 +15,7 @@ from proposals.models import TalkProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    BaseEvent, Location, Schedule, Time,
+    EVENT_ROOMS, Location, Schedule, Time,
     CustomEvent, KeynoteEvent, SponsoredEvent, ProposedTalkEvent,
 )
 from .renderers import render_all
@@ -128,7 +128,6 @@ class ScheduleCreateView(
                 'slots': OrderedDefaultDict(dict),
             }) for date, name in settings.EVENTS_DAY_NAMES.items()
         )
-        rooms = {Location.R0, Location.R1, Location.R2, Location.R3}
 
         def room_key(room):
             return room.split('-', 1)[-1]
@@ -144,7 +143,7 @@ class ScheduleCreateView(
                 continue
             for event in begin_time_event_dict[begin]:
                 location = event.location
-                if location in rooms:
+                if location in EVENT_ROOMS:
                     day_info['rooms'].add(location)
                 day_info['slots'][(begin, end)][location] = event
 

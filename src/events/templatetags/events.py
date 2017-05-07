@@ -2,11 +2,15 @@ from django.template import Context, Library, Template
 from django.utils.html import format_html
 from django.utils.translation import ugettext
 
-from events.models import BaseEvent
+from events.models import EVENT_ROOMS, BaseEvent
 from proposals.utils import format_names
 
 
-LOCATION_DICT = dict(BaseEvent.LOCATION_CHOICES)
+LOCATION_DICT = {
+    key: value
+    for key, value in BaseEvent.LOCATION_CHOICES
+    if key in EVENT_ROOMS
+}
 
 register = Library()
 
@@ -27,7 +31,7 @@ def event_cell_class(event):
 
 @register.filter
 def room_display(value):
-    return LOCATION_DICT[value]
+    return LOCATION_DICT.get(value, '')
 
 
 def get_custom_event_display(event):
