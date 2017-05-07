@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
+from django.db.models import Count
 from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, TemplateView
@@ -17,6 +18,7 @@ class AcceptedTalkMixin:
     queryset = (
         TalkProposal.objects
         .filter_accepted()
+        .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
         .select_related('submitter')
     )
 
