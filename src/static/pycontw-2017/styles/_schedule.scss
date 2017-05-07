@@ -36,11 +36,18 @@
         tr {
             display: block;
 
+            > th {
+                padding: 0.5rem;
+            }
+
+            > td {
+                padding: 0;
+            }
+
             > th, > td {
                 display: block;
                 height: auto;
                 margin: 0;
-                padding: 0.5rem;
                 color: $color-header-link;
                 font-size: 16px;
 
@@ -66,6 +73,10 @@
 
                 &.is-break {
                     background: $color-table-header-background;
+                }
+
+                .event-info {
+                    padding: 0.5rem;
                 }
 
                 p {
@@ -123,6 +134,8 @@
 }
 
 
+// Mobile-only.
+
 @media only screen and (max-width: 780px) {
 
 .inner-wrapper {
@@ -130,32 +143,29 @@
         tr {
             margin-bottom: 40px;
 
-            td {
-                border-bottom: 1px solid rgba(100, 125, 146, 0.5);
+            > .time-table-time {
+                display: none;
             }
 
-            > th, > td {
-                $ribbon-width: 1.25rem;
-
-                position: relative;
-                padding-left: $ribbon-width + 0.25rem;
-
-                &.time-table-time {
-                    display: none;
-                }
+            > td {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+                padding: 0;
+                border-bottom: 1px solid rgba(100, 125, 146, 0.5);
 
                 .time-stack-ribbon {
-                    position: absolute;
+                    flex: 0 0 auto;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    width: $ribbon-width;
                     padding: 0 4px;
                     color: $color-table-header-foreground;
                     background: $color-table-header-background;
+                }
+
+                .event-info {
+                    flex: 1 1 auto;
                 }
 
                 .talk-tags {
@@ -186,6 +196,8 @@
 
 }
 
+
+// Desktop-only.
 
 @media only screen and (min-width: 781px) {
 

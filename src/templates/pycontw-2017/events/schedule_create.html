@@ -49,7 +49,7 @@
 				{% for room, event in slot_info %}
 				<td class="{{ event|event_cell_class }}">
 					<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
-					{{ event|event_display }}
+					<div class="event-info">{{ event|event_display }}</div>
 				</td>
 				{% endfor %}
 			</tr>

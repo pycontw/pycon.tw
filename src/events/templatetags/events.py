@@ -11,7 +11,7 @@ LOCATION_DISPLAY_DICT = {
     Location.R1: 'R1',
     Location.R2: 'R2',
     Location.R3: 'R3',
-    Location.R012: 'R112',
+    Location.R012: 'R123',
 }
 
 register = Library()
@@ -42,7 +42,7 @@ def get_custom_event_display(event):
 
 def get_keynote_event_display(event):
     return format_html(
-        '<p>{title}<span class="keynote-speaker">{name}</span></p>',
+        '{title}<span class="keynote-speaker">{name}</span>',
         title=ugettext('Keynote: '),
         name=event.speaker_name,
     )
