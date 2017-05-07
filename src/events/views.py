@@ -15,7 +15,7 @@ from proposals.models import TalkProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Location, Schedule, Time,
+    EVENT_ROOMS, Schedule, Time,
     CustomEvent, KeynoteEvent, SponsoredEvent, ProposedTalkEvent,
 )
 from .renderers import render_all
