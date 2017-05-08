@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
@@ -324,7 +324,7 @@ msgstr "網址文字"
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
-msgstr "用來連結至基調演講頁面上的講者簡介，如「liang2」可連結至「{頁面連結}#keynote-speaker-liang2」。"
+msgstr "用來連結至基調演講頁面上的講者簡介，如「liang2」可連結至「{link}#keynote-speaker-liang2」。"
 
 #: events/models.py:167
 msgid "keynote event"
