@@ -278,7 +278,7 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2017, 6,  9), _('Day 1')),
-    (datetime.date(2017, 6, 10), _('Day 2')),
-    (datetime.date(2017, 6, 11), _('Day 3')),
+    (datetime.date(2017, 6,  9), 'Day 1'),
+    (datetime.date(2017, 6, 10), 'Day 2'),
+    (datetime.date(2017, 6, 11), 'Day 3'),
 ])
