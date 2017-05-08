@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.http import HttpResponseRedirect
+from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, TemplateView
 
@@ -122,12 +123,13 @@ class ScheduleCreateView(
             for event in qs.select_related('begin_time', 'end_time'):
                 begin_time_event_dict[event.begin_time].add(event)
 
-        day_info_dict = collections.OrderedDict(
-            (date, {
-                'name': name, 'rooms': set(),
-                'slots': OrderedDefaultDict(dict),
-            }) for date, name in settings.EVENTS_DAY_NAMES.items()
-        )
+        with translation.override('en-us'):
+            day_info_dict = collections.OrderedDict(
+                (date, {
+                    'name': name, 'rooms': set(),
+                    'slots': OrderedDefaultDict(dict),
+                }) for date, name in settings.EVENTS_DAY_NAMES.items()
+            )
 
         def room_key(room):
             return room.split('-', 1)[-1]
