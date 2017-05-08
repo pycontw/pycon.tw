@@ -11,28 +11,22 @@
         }
     }
     .speaker-detail-info {
-        $space-between: 0.6rem;
-
         display: flex;
         align-items: flex-start;
         flex-flow: row-reverse wrap;
-        justify-content: center;
-        margin: -$space-between / 2;
+        justify-content: space-between;
 
         &.speaker-detail-info-has-photo {
             .speaker-bio {
-                max-width: 640px;
+                max-width: 626px;
             }
         }
 
         .speaker-bio {
-            flex: 1 1 auto;
-            margin: $space-between / 2;
+            flex: 1 auto;
         }
         .speaker-photo {
-            flex: 0;
-            width: 260px;
-            margin: $space-between / 2;
+            flex: 0 264px;
         }
     }
 
