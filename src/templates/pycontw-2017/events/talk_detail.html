@@ -68,7 +68,7 @@
 </h3>
 <div class="speaker-detail-info {% if user.photo %}speaker-detail-info-has-photo{% endif %}">
 	{% if user.photo %}
-	<img class="speaker-photo" src="{{ user.photo.url }}">
+	<p><img class="speaker-photo" src="{{ user.photo.url }}"></p>
 	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
 	{% else %}
 	<article class="speaker-bio">{{ user.bio|linebreaks }}</article>
