@@ -1,0 +1,112 @@
+.inner-wrapper {
+    .talk-info-section {
+        margin: 0 -4px 75px;
+
+        article {
+            min-width: 184px;
+            margin: 8px 4px;
+        }
+    }
+
+    .classification-list {
+        $label-size: 22px;
+        $label-trailing: 8px;
+        $label-hanging: $label-size + $label-trailing;
+
+        padding-left: 0;
+        list-style: none;
+
+        > li {
+            margin-bottom: 8px;
+            padding-left: $label-hanging;
+            color: $color-header-link;
+            text-indent: 0 - $label-hanging;
+        }
+
+        .label {
+            display: inline-block;
+            width: $label-size;
+            height: $label-size;
+            line-height: $label-size * 0.95;
+            margin-right: $label-trailing;
+            border: 1px solid $color-header-link;
+            border-radius: $label-size;
+            background: $color-header-link;
+            color: $color-dark-blue-grey;
+            text-align: center;
+            text-indent: 0;
+            font-size: 14px;
+            cursor: default;
+        }
+    }
+
+    .speaker-social {
+        margin-left: 1rem;
+        font-size: 76%;
+
+        > * {
+            margin-right: 4px;
+        }
+    }
+    .speaker-detail-info {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: row-reverse wrap;
+        justify-content: space-between;
+
+        &.speaker-detail-info-has-photo {
+            .speaker-bio {
+                max-width: 626px;
+            }
+        }
+
+        .speaker-bio {
+            flex: 1 auto;
+        }
+        .speaker-photo {
+            flex: 0 auto;
+            width: 264px;
+        }
+    }
+
+    .talk-list > li {
+        font-size: 90%;
+
+        > p:not(:first-child) {
+            padding-top: 10px;
+        }
+
+        .proposal-title {
+            font-size: 115%;
+            font-weight: bold;
+            margin-right: 0.5ex;
+        }
+    }
+
+}
+
+
+// RWD for desktop.
+
+@media only screen and (min-width: 781px) {
+
+.inner-wrapper {
+    .talk-info-section {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+
+        > article {
+            &.classification-block {
+                flex: 0 auto;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            &.abstract-block {
+                flex: 1 auto;
+            }
+        }
+    }
+}
+
+}

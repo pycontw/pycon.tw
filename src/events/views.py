@@ -169,7 +169,11 @@ class ScheduleCreateView(
 
 
 class TalkDetailView(AcceptedTalkMixin, DetailView):
+
     template_name = 'events/talk_detail.html'
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(sponsored=False, **kwargs)
 
 
 class SponsoredEventDetailView(DetailView):
@@ -181,3 +185,6 @@ class SponsoredEventDetailView(DetailView):
         """Fetch user relation before-hand because we'll need it.
         """
         return super().get_queryset().select_related('host')
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(sponsored=True, **kwargs)

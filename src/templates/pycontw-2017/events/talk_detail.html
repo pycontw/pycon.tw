@@ -9,39 +9,37 @@
 
 <h1><span>{{ object.title }}</span></h1>
 
-<h2>{% trans 'Classifications' %}</h2>
-<table class="talk-classifications-table">
-	<thead>
-		<tr>
-			<th>{% trans 'Language' %}</th>
-			<th>{% trans 'Category' %}</th>
-			<th>{% trans 'Python Level' %}</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>{{ object.get_language_display }}</td>
-			<td>{{ object.get_category_display }}</td>
-			<td>{{ object.get_python_level_display }}</td>
-	</tbody>
-</table>
+<section class="talk-info-section">
+	<article class="classification-block">
+		<ul class="classification-list">
+			<li><span class="label" aria-hidden="true">{{ object.get_language_tag }}</span>{{ object.get_language_display }}</li>
+			<li><span class="label fa fa-tag" aria-hidden="true"></span>{{ object.get_category_display }}</li>
+			<li><span class="label" aria-hidden="true">{{ object.get_python_level_tag }}</span>{{ object.get_python_level_display }}</li>
+			{% if sponsored %}
+			<li><span class="label fa fa-handshake-o" aria-hidden="true"></span>{% trans 'Sponsored talk' %}</li>
+			{% endif %}
+			{% if object.recording_policy == False %}
+			<li><span class="label fa fa-microphone-slash" aria-hidden="true"></span>{% trans 'No recording' %}</li>
+			{% endif %}
+		</ul>
+	</article>
 
-<h2>{% trans 'Information' %}</h2>
+	<article>{{ object.abstract|linebreaks }}</article>
+</section>
+
+
+{% if object.detailed_description %}
+<h2>{% trans 'Talk Detail' %}</h2>
+<article class="editor-readonly">
+	<div class="editor-preview">{{ object.detailed_description }}</div>
+</article>
+{% endif %}
 
 {% if object.slide_link %}
 <h3>{% trans 'Slides Link' %}</h3>
 <article><a href="{{ object.slide_link }}">{{ object.slide_link }}</a></article>
 {% endif %}
 
-<h3>{% trans 'Abstract' %}</h3>
-<article>{{ object.abstract|linebreaks }}</article>
-
-{% if object.detailed_description %}
-<h3>{% trans 'Description' %}</h3>
-<article class="editor-readonly">
-	<div class="editor-preview">{{ object.detailed_description }}</div>
-</article>
-{% endif %}
 
 <h2 id="speaker-content">{% trans 'Speaker Information' %}</h2>
 {% for info in object.speakers %}

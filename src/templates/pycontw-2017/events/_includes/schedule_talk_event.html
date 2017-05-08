@@ -14,13 +14,11 @@
 		<span class="schedule-label-description">{{ info.get_level_display }}</span>
 	</span>
 	{% if sponsored %}
-	{% with label=_('Sponsored talk') %}
 	<span class="schedule-label sponsor-label"
-			data-balloon="{{ label }}" data-balloon-pos="down">
+			data-balloon="Sponsored talk" data-balloon-pos="down">
 		<span class="fa fa-handshake-o" aria-hidden="true"></span>
-		<span class="schedule-label-description">{{ label }}</span>
+		<span class="schedule-label-description">Sponsored talk</span>
 	</span>
-	{% endwith %}
 	{% endif %}
 	{% if not info.recording_policy %}
 	<span class="schedule-label recording-label"
