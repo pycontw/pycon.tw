@@ -1,0 +1,32 @@
+<p class="talk-title">
+	<a href="{{ event.get_absolute_url }}">{{ title }}</a>
+</p>
+<p class="talk-speakers">{{ speakers }}</p>
+<p class="talk-tags">
+	<span class="schedule-label lang-label"
+			data-balloon="{{ language_display }}" data-balloon-pos="down">
+		<span>{{ language_tag }}</span>
+		<span class="schedule-label-description">{{ language_display }}</span>
+	</span>
+	<span class="schedule-label level-label"
+			data-balloon="{{ level_display }}" data-balloon-pos="down">
+		<span>{{ level_tag }}</span>
+		<span class="schedule-label-description">{{ level_display }}</span>
+	</span>
+	{% if sponsored %}
+	{% with label=_('Sponsored talk') %}
+	<span class="schedule-label sponsor-label"
+			data-balloon="{{ label }}" data-balloon-pos="down">
+		<span class="fa fa-handshake-o"></span>
+		<span class="schedule-label-description">{{ label }}</span>
+	</span>
+	{% endwith %}
+	{% endif %}
+	{% if not recording_policy %}
+	<span class="schedule-label recording-label"
+			data-balloon="No recording" data-balloon-pos="down">
+		<span class="fa fa-microphone-slash"></span>
+		<span class="schedule-label-description">No recording</span>
+	</span>
+	{% endif %}
+</p>

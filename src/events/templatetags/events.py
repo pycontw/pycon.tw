@@ -1,4 +1,5 @@
-from django.template import Context, Library, Template
+from django.template import Context, Library
+from django.template.loader import get_template
 from django.utils import translation
 from django.utils.html import format_html
 
@@ -38,50 +39,13 @@ def room_display(value):
 
 
 def get_custom_event_display(event):
-    return event.title
+    template = get_template('events/_includes/schedule_custom_event.html')
+    return template.render(Context({'event': event}))
 
 
 def get_keynote_event_display(event):
-    return format_html(
-        'Keynote: <span class="keynote-speaker">{name}</span>',
-        name=event.speaker_name,
-    )
-
-
-TALK_EVENT_TEMPLATE = Template("""
-<p class="talk-title">
-  <a href="{{ event.get_absolute_url }}">{{ title }}</a>
-</p>
-<p class="talk-speakers">{{ speakers }}</p>
-<p class="talk-tags">
-  <span class="schedule-label lang-label"
-      data-balloon="{{ language_display }}" data-balloon-pos="down">
-    <span>{{ language_tag }}</span>
-    <span class="schedule-label-description">{{ language_display }}</span>
-  </span>
-  <span class="schedule-label level-label"
-      data-balloon="{{ level_display }}" data-balloon-pos="down">
-    <span>{{ level_tag }}</span>
-    <span class="schedule-label-description">{{ level_display }}</span>
-  </span>
-  {% if sponsored %}
-  {% with label=_('Sponsored talk') %}
-  <span class="schedule-label sponsor-label"
-      data-balloon="{{ label }}" data-balloon-pos="down">
-    <span class="fa fa-handshake-o"></span>
-    <span class="schedule-label-description">{{ label }}</span>
-  </span>
-  {% endwith %}
-  {% endif %}
-  {% if not recording_policy %}
-  <span class="schedule-label recording-label"
-      data-balloon="No recording" data-balloon-pos="down">
-    <span class="fa fa-microphone-slash"></span>
-    <span class="schedule-label-description">No recording</span>
-  </span>
-  {% endif %}
-</p>
-""")
+    template = get_template('events/_includes/schedule_keynote_event.html')
+    return template.render(Context({'event': event}))
 
 
 TALK_LANGUAGE_TAG_DICT = {
@@ -99,18 +63,18 @@ TALK_LEVEL_TAG_DICT = {
 
 
 def _render_talk_event_template(event, info, speaker_names, sponsored):
-    with translation.override('en-us'):
-        return TALK_EVENT_TEMPLATE.render(Context({
-            'event': event,
-            'title': info.title,
-            'language_display': info.get_language_display(),
-            'language_tag': TALK_LANGUAGE_TAG_DICT[info.language],
-            'level_display': info.get_python_level_display(),
-            'level_tag': TALK_LEVEL_TAG_DICT[info.python_level],
-            'speakers': format_names(speaker_names),
-            'recording_policy': info.recording_policy,
-            'sponsored': sponsored,
-        }))
+    template = get_template('events/_includes/schedule_talk_event.html')
+    return template.render(Context({
+        'event': event,
+        'title': info.title,
+        'language_display': info.get_language_display(),
+        'language_tag': TALK_LANGUAGE_TAG_DICT[info.language],
+        'level_display': info.get_python_level_display(),
+        'level_tag': TALK_LEVEL_TAG_DICT[info.python_level],
+        'speakers': format_names(speaker_names),
+        'recording_policy': info.recording_policy,
+        'sponsored': sponsored,
+    }))
 
 
 def get_proposed_talk_event_display(event):
@@ -132,10 +96,11 @@ def get_sponsored_event_display(event):
 
 @register.filter
 def event_display(event):
-    f = {
-        'events.customevent': get_custom_event_display,
-        'events.keynoteevent': get_keynote_event_display,
-        'events.proposedtalkevent': get_proposed_talk_event_display,
-        'events.sponsoredevent': get_sponsored_event_display,
-    }[event._meta.label_lower]
-    return f(event)
+    with translation.override('en-us'):
+        f = {
+            'events.customevent': get_custom_event_display,
+            'events.keynoteevent': get_keynote_event_display,
+            'events.proposedtalkevent': get_proposed_talk_event_display,
+            'events.sponsoredevent': get_sponsored_event_display,
+        }[event._meta.label_lower]
+        return f(event)
