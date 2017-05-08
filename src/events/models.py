@@ -93,6 +93,7 @@ class Location:
     R0   = '4-r0'
     R1   = '5-r1'
     R2   = '6-r2'
+    R4   = '7-r4'
 
     @classmethod
     def get_md_width(cls, value):
@@ -103,10 +104,11 @@ class Location:
             '5-r1': 1,
             '6-r2': 1,
             '1-r3': 1,
+            '7-r4': 1,
         }[value]
 
 
-EVENT_ROOMS = {Location.R0, Location.R1, Location.R2, Location.R3}
+EVENT_ROOMS = {Location.R0, Location.R1, Location.R2, Location.R3, Location.R4}
 
 
 class BaseEvent(ConferenceRelated):
@@ -119,6 +121,7 @@ class BaseEvent(ConferenceRelated):
         (Location.R1,   _('R1')),
         (Location.R2,   _('R2')),
         (Location.R3,   _('R3')),
+        (Location.R4,   _('R4')),
     ]
     location = models.CharField(
         max_length=6,

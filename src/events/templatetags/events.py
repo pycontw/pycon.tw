@@ -11,6 +11,7 @@ LOCATION_DISPLAY_DICT = {
     Location.R1: 'R1',
     Location.R2: 'R2',
     Location.R3: 'R3',
+    Location.R4: 'R4',
     Location.R012: 'R123',
 }
 
