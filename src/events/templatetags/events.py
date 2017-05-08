@@ -1,7 +1,6 @@
 from django.template import Context, Library
 from django.template.loader import get_template
 from django.utils import translation
-from django.utils.html import format_html
 
 from events.models import Location
 from proposals.utils import format_names
@@ -48,32 +47,11 @@ def get_keynote_event_display(event):
     return template.render(Context({'event': event}))
 
 
-TALK_LANGUAGE_TAG_DICT = {
-    'ENEN': 'E',
-    'ZHEN': 'ZE',
-    'ZHZH': 'Z',
-    'TAI':  'T',
-}
-
-TALK_LEVEL_TAG_DICT = {
-    'NOVICE': '–',
-    'INTERMEDIATE': '=',
-    'EXPERIENCED': '≡',
-}
-
-
 def _render_talk_event_template(event, info, speaker_names, sponsored):
     template = get_template('events/_includes/schedule_talk_event.html')
     return template.render(Context({
-        'event': event,
-        'title': info.title,
-        'language_display': info.get_language_display(),
-        'language_tag': TALK_LANGUAGE_TAG_DICT[info.language],
-        'level_display': info.get_python_level_display(),
-        'level_tag': TALK_LEVEL_TAG_DICT[info.python_level],
+        'event': event, 'info': info, 'sponsored': sponsored,
         'speakers': format_names(speaker_names),
-        'recording_policy': info.recording_policy,
-        'sponsored': sponsored,
     }))
 
 
