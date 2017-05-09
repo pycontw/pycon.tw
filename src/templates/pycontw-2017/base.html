@@ -66,6 +66,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 {% compress js %}
+<script src="{% static 'pycontw-2017/scripts/polyfill.js' %}"></script>
 <script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
 {% block scripts %}{% endblock %}
 {% endcompress %}
