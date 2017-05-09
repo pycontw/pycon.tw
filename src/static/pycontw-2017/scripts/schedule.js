@@ -33,6 +33,12 @@ $('.quick-jump-link').on('click', function (e) {
 $('.back-to-top').on('click', function (e) {
 	e.preventDefault()
 	smoothScroll($(window), 0, 200)
+	if (window.history && window.history.pushState) {
+		if (window.location.hash !== '') {
+			window.history.pushState(
+				'', '', window.location.pathname + window.location.search)
+		}
+	}
 })
 
 function padZero(number, digits) {
