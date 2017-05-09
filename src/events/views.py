@@ -77,7 +77,10 @@ class ScheduleView(TemplateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(
             schedule_html=self.schedule.html,
-            days=settings.EVENTS_DAY_NAMES,
+            schedule_days={
+                key: {'name': value}
+                for key, value in settings.EVENTS_DAY_NAMES.items()
+            },
             **kwargs
         )
 
