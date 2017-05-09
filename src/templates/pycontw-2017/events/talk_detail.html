@@ -15,7 +15,7 @@
 		<ul class="classification-list">
 			{% if event %}
 			<li><span class="label fa fa-map-marker" aria-hidden="true"></span>{{ event.get_location_display }}</li>
-			<li><span class="label fa fa-clock-o" aria-hidden="true"></span>{{ event|event_date_display }}, <wbr>{{ event.begin_time.value|date:'H:i' }}&#8209;{{ event.end_time.value|date:'H:i' }}</li>
+			<li><span class="label fa fa-clock-o" aria-hidden="true"></span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</li>
 			{% endif %}
 
 			<li><span class="label" aria-hidden="true">{{ object.get_language_tag }}</span>{{ object.get_language_display }}</li>
