@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.template import Context, Library
 from django.template.loader import get_template
 from django.utils import translation
@@ -82,3 +83,8 @@ def event_display(event):
             'events.sponsoredevent': get_sponsored_event_display,
         }[event._meta.label_lower]
         return f(event)
+
+
+@register.filter
+def event_date_display(event):
+    return settings.EVENTS_DAY_NAMES[event.begin_time.value.date()]

@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.http import HttpResponseRedirect
+from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, TemplateView
 
@@ -161,22 +162,50 @@ class ScheduleCreateView(
         return day_info_dict
 
     def get_context_data(self, **kwargs):
-        schedule_days = self.get_day_grouped_events()
+        with translation.override('en-us'):
+            schedule_days = self.get_day_grouped_events()
         return super().get_context_data(
             schedule_days=schedule_days,
             **kwargs
         )
 
 
-class TalkDetailView(AcceptedTalkMixin, DetailView):
+class EventInfoMixin:
+
+    def is_event_sponsored(self):
+        raise NotImplementedError
+
+    def get_event(self):
+        return self.object
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(
+            sponsored=self.is_event_sponsored(),
+            event=self.get_event(),
+            **kwargs
+        )
+
+
+class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
 
     template_name = 'events/talk_detail.html'
 
-    def get_context_data(self, **kwargs):
-        return super().get_context_data(sponsored=False, **kwargs)
+    def is_event_sponsored(self):
+        return False
+
+    def get_event(self):
+        try:
+            event = (
+                ProposedTalkEvent.objects
+                .select_related('begin_time', 'end_time')
+                .get(proposal=self.object)
+            )
+        except ProposedTalkEvent.DoesNotExist:
+            return None
+        return event
 
 
-class SponsoredEventDetailView(DetailView):
+class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     model = SponsoredEvent
     template_name = 'events/sponsored_event_detail.html'
@@ -184,7 +213,12 @@ class SponsoredEventDetailView(DetailView):
     def get_queryset(self):
         """Fetch user relation before-hand because we'll need it.
         """
-        return super().get_queryset().select_related('host')
+        return super().get_queryset().select_related(
+            'host', 'begin_time', 'end_time',
+        )
 
-    def get_context_data(self, **kwargs):
-        return super().get_context_data(sponsored=True, **kwargs)
+    def is_event_sponsored(self):
+        return True
+
+    def get_time_slot(self):
+        return (self.object.begin_time.value, self.object.end_time.value)
