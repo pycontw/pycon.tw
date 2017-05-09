@@ -29,7 +29,8 @@
 
   body {
     transition: transform 0.3s ease-in-out;
-    will-change: transform;
+    // This breaks position:fixed. Do not set it.
+    // will-change: transform;
     margin: 0;
     padding: 0;
 
