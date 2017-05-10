@@ -150,7 +150,7 @@ section.sponsors {
       }
     }
 
-    &.silver-deck, &.bronze-deck {
+    &.level-3-deck, &.level-4-deck, &.level-5-deck {
       $item-spacing: 24px;
       margin-left: -$item-spacing / 2;
       margin-right: -$item-spacing / 2;
@@ -180,12 +180,12 @@ section.sponsors {
       }
     }
 
-    &.silver-deck {
+    &.level-3-deck {
       .sponsor-card-chrome {
         width: 50%;
       }
     }
-    &.bronze-deck {
+    &.level-4-deck, &.level-5-deck {
       .sponsor-card-chrome {
         width: 33.33333%;
       }
