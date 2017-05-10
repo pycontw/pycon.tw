@@ -13,9 +13,11 @@ section.sponsors {
     max-width: 1012px;
 
     > a, > span {
-      display: block;
+      display: flex;
+      align-content: center;
+      justify-content: center;
       height: $item-height;
-      margin-bottom: 112px;
+      margin-bottom: 40px;
       vertical-align: middle;
       text-align: center;
       color: $color-dark-blue-grey;
@@ -27,7 +29,6 @@ section.sponsors {
       }
 
       > img {
-        display: inline-block;
         max-width: 100%;
         max-height: $item-height;
       }
@@ -45,11 +46,10 @@ section.sponsors {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 120px;
+    margin-bottom: 64px;
 
     > a, > span {
-      min-width: 100% / 3;
-      margin-bottom: 120px;
+      min-width: 33.333%;
     }
   }
 }
