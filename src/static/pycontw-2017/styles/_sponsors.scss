@@ -93,6 +93,7 @@ section.sponsors {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 8px;
       background-color: #fff;
     }
   }
@@ -106,6 +107,8 @@ section.sponsors {
     height: 504px;
 
     .sponsor-logo-block {
+      flex: 0 0 auto;
+      overflow: hidden;
       width: 100vw;
       height: 80vw / 8 * 5;
       margin: 0 -10vw 16px;
@@ -135,6 +138,7 @@ section.sponsors {
 
       .sponsor-logo-block {
         flex: 0 0 auto;
+        overflow: hidden;
         width: 240px;
         min-height: 240px;
         margin: 0;
@@ -167,6 +171,7 @@ section.sponsors {
 
         .sponsor-logo-block {
           width: 100%;
+          height: 128px;
           min-height: 0;
         }
         .card-info-block {
