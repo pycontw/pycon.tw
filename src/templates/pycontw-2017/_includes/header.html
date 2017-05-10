@@ -3,6 +3,7 @@
 
 {% url 'index' as home_url %}
 {% url 'events_talk_list' as events_talk_url %}
+{% url 'sponsor_list' as sponsors_list_url %}
 
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
@@ -97,13 +98,9 @@
 		</div>
 		{% endcomment %}
 
-		{% comment %}
-		<div class="parent {% if active == 'sponsor' %}active{% endif %}">
-			<a href="#">
-				{% trans 'sponsors' %}
-			</a>
-		</div>
-		{% endcomment %}
+		<a href="{{ sponsors_list_url }}" class="{% if active == 'sponsor' %}active{% endif %}">
+			{% trans 'partners' %}
+		</a>
 		<div class="parent to-expand {% if active == 'registration' %}active{% endif %}">
 			<a href="{{ reg_financial_aid_url }}">
 				{% trans 'registration' %}

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+{% load compress %}
+{% load sponsors %}
+
+{% block title %}{% trans 'Our Partners' %}{% endblock title %}
+
+{% block nav %}
+{% include '_includes/header.html' with active='sponsor' %}
+{% endblock nav %}
+
+
+{% block content %}
+
+<h1 class="card-page-title">
+	<span>{% trans 'Our Partners' %}</span>
+</h1>
+
+{% verbatim %}
+<section v-for="(info, level) in backend.sponsors">
+	<template v-if="info.sponsors.length">
+	<h2 class="section-title">{{ info.name }}</h2>
+	<div v-bind:class="getDeckClasses(level)">
+		<div class="sponsor-card-chrome" v-for="info in info.sponsors">
+			<div class="popping-card sponsor-card">
+				<a class="sponsor-logo-block" target="_blank" rel="noopener" v-bind:href="info.website_url">
+					<img v-bind:src="info.logo">
+				</a>
+				<div class="card-info-block">
+					<a target="_blank" rel="noopener" v-bind:href="info.website_url">
+						<h3 class="card-title">{{ info.name }}</h3>
+					</a>
+					<div class="card-info" v-html="info.intro_html"></div>
+				</div>
+				<a href="#sponsor-info-modal" class="card-popper" v-on:click="showModal($event, info.index)"></a>
+			</div>
+		</div>
+	</div>
+	</template>
+</section>
+
+<template v-if="currentIndex !== null">
+<div class="popping-card-modal">
+	<div class="modal-content">
+		<div class="popping-card sponsor-card">
+			<div>
+				<a class="sponsor-logo-block" v-bind:href="getCurrent('website_url')">
+					<img v-bind:src="getCurrent('logo')">
+				</a>
+				<div class="card-info-block">
+					<a v-bind:href="getCurrent('website_url')">
+						<h2 class="card-title">{{ getCurrent('name') }}</h2>
+					</a>
+					<div class="card-info" v-html="getCurrent('intro_html')"></div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-function">
+			<a href="#" class="prev" v-if="currentIndex > 0" v-on:click="showModal($event, currentIndex - 1)"></a>
+			<span v-else></span>
+			<a href="#" class="close" v-on:click="showModal($event, null)"></a>
+			<a href="#" class="next" v-if="currentIndex + 1 < sponsors.length" v-on:click="showModal($event, currentIndex + 1)"></a>
+			<span v-else></span>
+		</div>
+	</div>
+</div>
+</template>
+{% endverbatim %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/vendors/vue.min.js' %}"></script>
+{% endblock scripts %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/json" id="vue-app-data">
+{{ object_list|sponsor_jsonize|safe }}
+</script>
+{% compress js %}
+<script src="{% static 'pycontw-2017/scripts/sponsors.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
