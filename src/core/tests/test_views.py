@@ -5,6 +5,8 @@ import pytest
 
 from django.utils.translation import activate
 
+from events.models import Schedule
+
 
 @pytest.mark.django_db
 def test_index_page(client):
@@ -88,8 +90,14 @@ def test_content_pages(client, parser, content_page_full_path):
     assert response.status_code == 200, content_page_full_path
 
 
-@pytest.mark.django_db
-def test_content_pages_links(client, parser, content_page_full_path):
+@pytest.fixture
+def schedule(db):
+    """Generate a schedule to prevent the schedule page from returning 404.
+    """
+    return Schedule.objects.create(html='<div></div>')
+
+
+def test_content_pages_links(client, parser, schedule, content_page_full_path):
     """Test to make sure all in-site links in a content page work.
     """
     body = parser.parse(client.get(content_page_full_path))
