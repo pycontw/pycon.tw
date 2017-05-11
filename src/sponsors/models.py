@@ -45,15 +45,20 @@ class Sponsor(ConferenceRelated):
     )
 
     class Level:
-        PARTNER = 0
+        ORGANIZER = -1
+        COORGANIZER = 0
         PLATINUM = 1
         GOLD = 2
         SILVER = 3
         BRONZE = 4
         SPECIAL = 5
 
+        # Backward compatibility.
+        PARTNER = COORGANIZER
+
     LEVEL_CHOICES = (
-        (Level.PARTNER, _('partner')),
+        (Level.ORGANIZER, _('organizer')),
+        (Level.COORGANIZER, _('co-organizer')),
         (Level.PLATINUM, _('platinum')),
         (Level.GOLD, _('gold')),
         (Level.SILVER, _('silver')),
@@ -66,7 +71,7 @@ class Sponsor(ConferenceRelated):
         with override('en-us'):
             return self.get_level_display()
 
-    level = models.PositiveSmallIntegerField(
+    level = models.SmallIntegerField(
         verbose_name=_('level'),
         choices=LEVEL_CHOICES,
     )
