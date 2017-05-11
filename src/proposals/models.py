@@ -169,6 +169,8 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     @property
     def speakers(self):
         yield PrimarySpeaker(proposal=self)
+        if not getattr(self, '_additional_speaker_count', 1):
+            return
         additionals = self.additionalspeaker_set.filter(cancelled=False)
         for speaker in additionals.select_related('user'):
             yield speaker

@@ -58,6 +58,10 @@ def test_render_block_location(parser, utils, location):
             '<div class="slot-item__label slot-item__label--r3">'
             'R3</div>'
         ),
+        Location.R4: (
+            '<div class="slot-item__label slot-item__label--r4">'
+            'R4</div>'
+        ),
     }[location]
     assert parser.arrange(rendered) == parser.arrange(expected)
 

@@ -1,9 +1,14 @@
 from django.conf import settings
 from django.contrib import admin
+from django.core.urlresolvers import reverse
 from django.db.models import Q
+from django.utils.html import format_html
 from django.utils.timezone import make_naive
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy as p
+from django.utils.translation import (
+    ugettext, ugettext_lazy as _, pgettext_lazy as p,
+)
 
+from .forms import CustomEventForm
 from .models import (
     CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
     Time, Schedule,
@@ -98,17 +103,25 @@ class EndTimeRangeFilter(EventTimeRangeFilter):
 
 @admin.register(CustomEvent)
 class CustomEventAdmin(admin.ModelAdmin):
-    fields = [
-        'conference', 'title', 'begin_time', 'end_time', 'location',
-        'break_event',
-    ]
+
+    form = CustomEventForm
     search_fields = ['title']
     list_display = [
         'title', 'begin_time', 'end_time', 'location', 'break_event',
+        'get_edit_link',
     ]
     list_filter = [
         BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'break_event',
     ]
+
+    def get_edit_link(self, instance):
+        return format_html(
+            '<a href="{url}">{title}</a>',
+            url=reverse('admin:events_customevent_change', args=[instance.pk]),
+            title=ugettext('Edit'),
+        )
+
+    get_edit_link.short_description = ''
 
 
 @admin.register(KeynoteEvent)

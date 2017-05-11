@@ -2,6 +2,8 @@ import datetime
 import functools
 import urllib.parse
 
+import pytz
+
 from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
@@ -16,9 +18,17 @@ from core.utils import format_html_lazy
 from proposals.models import TalkProposal, PrimarySpeaker
 
 
-EVENT_DAY_START_END = (
-    min(settings.EVENTS_DAY_NAMES.keys()),
-    max(settings.EVENTS_DAY_NAMES.keys()) + datetime.timedelta(days=1),
+MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
+
+EVENT_DATETIME_START_END = (
+    datetime.datetime.combine(
+        min(settings.EVENTS_DAY_NAMES.keys()),
+        MIDNIGHT_TIME,
+    ),
+    datetime.datetime.combine(
+        max(settings.EVENTS_DAY_NAMES.keys()) + datetime.timedelta(days=1),
+        MIDNIGHT_TIME,
+    ),
 )
 
 
@@ -34,7 +44,7 @@ class LimitedTimeManager(TimeManager):
         """Limit times to those in the current conference's time.
         """
         qs = super().get_queryset()
-        return qs.filter(value__range=EVENT_DAY_START_END)
+        return qs.filter(value__range=EVENT_DATETIME_START_END)
 
 
 @functools.total_ordering
@@ -83,6 +93,7 @@ class Location:
     R0   = '4-r0'
     R1   = '5-r1'
     R2   = '6-r2'
+    R4   = '7-r4'
 
     @classmethod
     def get_md_width(cls, value):
@@ -93,7 +104,11 @@ class Location:
             '5-r1': 1,
             '6-r2': 1,
             '1-r3': 1,
+            '7-r4': 1,
         }[value]
+
+
+EVENT_ROOMS = {Location.R0, Location.R1, Location.R2, Location.R3, Location.R4}
 
 
 class BaseEvent(ConferenceRelated):
@@ -106,6 +121,7 @@ class BaseEvent(ConferenceRelated):
         (Location.R1,   _('R1')),
         (Location.R2,   _('R2')),
         (Location.R3,   _('R3')),
+        (Location.R4,   _('R4')),
     ]
     location = models.CharField(
         max_length=6,

@@ -26,7 +26,6 @@
 
 {% compress css %}
 <link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2017/styles/main.scss' %}">
-<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2017/styles/events.scss' %}">
 <link rel="stylesheet" href="{% static 'pycontw-2017/styles/nav.css' %}">
 {% block styles %}{% endblock %}
 {% endcompress %}
@@ -67,6 +66,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 {% compress js %}
+<script src="{% static 'pycontw-2017/scripts/polyfill.js' %}"></script>
 <script src="{% static 'pycontw-2017/scripts/nav.js' %}"></script>
 {% block scripts %}{% endblock %}
 {% endcompress %}

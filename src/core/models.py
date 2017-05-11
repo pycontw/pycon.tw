@@ -172,3 +172,18 @@ class EventInfo(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_language_tag(self):
+        return {
+            'ENEN': 'E',
+            'ZHEN': 'ZE',
+            'ZHZH': 'Z',
+            'TAI':  'T',
+        }[self.language]
+
+    def get_python_level_tag(self):
+        return {
+            'NOVICE': '–',
+            'INTERMEDIATE': '=',
+            'EXPERIENCED': '≡',
+        }[self.python_level]

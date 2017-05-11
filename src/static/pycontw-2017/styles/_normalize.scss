@@ -167,8 +167,8 @@
     th {
       @include cell();
       height: 48px;
-      background-color: #21364d;
-      color: #7fb8cc;
+      background-color: $color-table-header-background;
+      color: $color-table-header-foreground;
       font-weight: bold;
     }
   }

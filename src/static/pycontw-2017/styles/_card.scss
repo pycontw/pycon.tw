@@ -7,6 +7,7 @@
 	.popping-card {
 		@include notice-border-box(3px);
 
+		position: relative;
 		display: flex;
 		width: 100%;
 		padding: 16px;
@@ -74,7 +75,10 @@
 
 		.card-popper {
 			flex: 0;
+			position: absolute;
 			display: none;
+			bottom: 0;
+			width: 80vw;
 			height: 64px;
 			line-height: 64px;
 			font-size: 48px;
@@ -94,7 +98,10 @@
 
 			&:active, &:hover {
 				text-decoration: none;
-				opacity: 0.6;
+
+				&::before {
+					opacity: 0.6;
+				}
 			}
 		}
 	}
