@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-09 17:59+0800\n"
-"PO-Revision-Date: 2017-05-09 10:20+0000\n"
+"POT-Creation-Date: 2017-05-11 11:52+0800\n"
+"PO-Revision-Date: 2017-05-11 04:02+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -1696,7 +1696,7 @@ msgid "Registration"
 msgstr "註冊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:77
-#: templates/pycontw-2017/_includes/header.html:115
+#: templates/pycontw-2017/_includes/header.html:111
 msgid "Ticket Info"
 msgstr "售票資訊"
 
@@ -1899,68 +1899,80 @@ msgid ""
 "href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 msgstr "<span class=\"form-tip\">已經有帳號了？</span><a href=\"%(login_url)s\" class=\"btn btn-link\">請登入。</a>"
 
-#: templates/pycontw-2017/_includes/header.html:47
+#: templates/pycontw-2017/_includes/header.html:48
 msgid "about"
 msgstr "關於"
 
-#: templates/pycontw-2017/_includes/header.html:50
+#: templates/pycontw-2017/_includes/header.html:51
 msgid "pycon taiwan"
 msgstr "台灣 PyCon"
 
-#: templates/pycontw-2017/_includes/header.html:51
+#: templates/pycontw-2017/_includes/header.html:52
 msgid "code of conduct"
 msgstr "行為準則"
 
-#: templates/pycontw-2017/_includes/header.html:56
+#: templates/pycontw-2017/_includes/header.html:57
 msgid "events"
 msgstr "活動"
 
 #: templates/pycontw-2017/_includes/header.html:60
+msgid "schedule"
+msgstr "議程"
+
+#: templates/pycontw-2017/_includes/header.html:61
 msgid "overview"
 msgstr "活動總覽"
 
-#: templates/pycontw-2017/_includes/header.html:61
+#: templates/pycontw-2017/_includes/header.html:62
 msgid "keynotes"
 msgstr "基調演講"
 
-#: templates/pycontw-2017/_includes/header.html:62
+#: templates/pycontw-2017/_includes/header.html:63
 msgid "talks"
 msgstr "演講"
 
-#: templates/pycontw-2017/_includes/header.html:63
+#: templates/pycontw-2017/_includes/header.html:64
 msgid "tutorials"
 msgstr "專業課程"
 
-#: templates/pycontw-2017/_includes/header.html:64
+#: templates/pycontw-2017/_includes/header.html:65
 msgid "unconference"
 msgstr "非正式會議"
 
-#: templates/pycontw-2017/_includes/header.html:65
+#: templates/pycontw-2017/_includes/header.html:66
 msgid "sprints"
 msgstr "衝刺開發"
 
-#: templates/pycontw-2017/_includes/header.html:87
+#: templates/pycontw-2017/_includes/header.html:67
+msgid "pynight"
+msgstr "PyNight"
+
+#: templates/pycontw-2017/_includes/header.html:88
 msgctxt "conference location"
 msgid "venue"
 msgstr "會場"
 
-#: templates/pycontw-2017/_includes/header.html:112
+#: templates/pycontw-2017/_includes/header.html:104
+msgid "partners"
+msgstr "夥伴"
+
+#: templates/pycontw-2017/_includes/header.html:108
 msgid "registration"
 msgstr "註冊"
 
-#: templates/pycontw-2017/_includes/header.html:116
+#: templates/pycontw-2017/_includes/header.html:112
 msgid "financial aid"
 msgstr "財務補助"
 
-#: templates/pycontw-2017/_includes/header.html:120
+#: templates/pycontw-2017/_includes/header.html:116
 msgid "blog"
 msgstr "部落格"
 
-#: templates/pycontw-2017/_includes/header.html:126
+#: templates/pycontw-2017/_includes/header.html:122
 msgid "Back to Menu"
 msgstr "返回選單"
 
-#: templates/pycontw-2017/_includes/header.html:139
+#: templates/pycontw-2017/_includes/header.html:135
 msgid "dashboard"
 msgstr "控制面板"
 
@@ -2028,8 +2040,8 @@ msgid "sprints: "
 msgstr "衝刺開發："
 
 #: templates/pycontw-2017/index.html:29
-msgid "12 Mar, 20 May & 12 June"
-msgstr "5/12、5/20、6/12"
+msgid "12 March, 12 June"
+msgstr "3/12、6/12"
 
 #: templates/pycontw-2017/index.html:34
 msgid "Get Tickets"
@@ -2066,6 +2078,11 @@ msgstr "<h2>何謂 PyCon Taiwan</h2> <p>PyCon Taiwan 為一年一度由愛好者
 #: templates/pycontw-2017/index.html:62
 msgid "Python Communities in Taiwan"
 msgstr "臺灣的在地 Python 社群"
+
+#: templates/pycontw-2017/sponsors/sponsor_list.html:7
+#: templates/pycontw-2017/sponsors/sponsor_list.html:17
+msgid "Our Partners"
+msgstr "我們的夥伴"
 
 #: users/admin.py:18
 msgid "Personal info"

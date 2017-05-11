@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-09 17:59+0800\n"
-"PO-Revision-Date: 2017-05-09 10:20+0000\n"
+"POT-Creation-Date: 2017-05-11 11:52+0800\n"
+"PO-Revision-Date: 2017-05-11 04:03+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -1693,7 +1693,7 @@ msgid "Registration"
 msgstr "Registration"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:77
-#: templates/pycontw-2017/_includes/header.html:115
+#: templates/pycontw-2017/_includes/header.html:111
 msgid "Ticket Info"
 msgstr "Ticket Info"
 
@@ -1896,68 +1896,80 @@ msgid ""
 "href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 msgstr "<span class=\"form-tip\">Already have an account?</span><a href=\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
 
-#: templates/pycontw-2017/_includes/header.html:47
+#: templates/pycontw-2017/_includes/header.html:48
 msgid "about"
 msgstr "about"
 
-#: templates/pycontw-2017/_includes/header.html:50
+#: templates/pycontw-2017/_includes/header.html:51
 msgid "pycon taiwan"
 msgstr "pycon taiwan"
 
-#: templates/pycontw-2017/_includes/header.html:51
+#: templates/pycontw-2017/_includes/header.html:52
 msgid "code of conduct"
 msgstr "code of conduct"
 
-#: templates/pycontw-2017/_includes/header.html:56
+#: templates/pycontw-2017/_includes/header.html:57
 msgid "events"
 msgstr "events"
 
 #: templates/pycontw-2017/_includes/header.html:60
+msgid "schedule"
+msgstr "schedule"
+
+#: templates/pycontw-2017/_includes/header.html:61
 msgid "overview"
 msgstr "overview"
 
-#: templates/pycontw-2017/_includes/header.html:61
+#: templates/pycontw-2017/_includes/header.html:62
 msgid "keynotes"
 msgstr "keynotes"
 
-#: templates/pycontw-2017/_includes/header.html:62
+#: templates/pycontw-2017/_includes/header.html:63
 msgid "talks"
 msgstr "talks"
 
-#: templates/pycontw-2017/_includes/header.html:63
+#: templates/pycontw-2017/_includes/header.html:64
 msgid "tutorials"
 msgstr "tutorials"
 
-#: templates/pycontw-2017/_includes/header.html:64
+#: templates/pycontw-2017/_includes/header.html:65
 msgid "unconference"
 msgstr "unconference"
 
-#: templates/pycontw-2017/_includes/header.html:65
+#: templates/pycontw-2017/_includes/header.html:66
 msgid "sprints"
 msgstr "sprints"
 
-#: templates/pycontw-2017/_includes/header.html:87
+#: templates/pycontw-2017/_includes/header.html:67
+msgid "pynight"
+msgstr "PyNight"
+
+#: templates/pycontw-2017/_includes/header.html:88
 msgctxt "conference location"
 msgid "venue"
 msgstr "venue"
 
-#: templates/pycontw-2017/_includes/header.html:112
+#: templates/pycontw-2017/_includes/header.html:104
+msgid "partners"
+msgstr "partners"
+
+#: templates/pycontw-2017/_includes/header.html:108
 msgid "registration"
 msgstr "registration"
 
-#: templates/pycontw-2017/_includes/header.html:116
+#: templates/pycontw-2017/_includes/header.html:112
 msgid "financial aid"
 msgstr "financial aid"
 
-#: templates/pycontw-2017/_includes/header.html:120
+#: templates/pycontw-2017/_includes/header.html:116
 msgid "blog"
 msgstr "blog"
 
-#: templates/pycontw-2017/_includes/header.html:126
+#: templates/pycontw-2017/_includes/header.html:122
 msgid "Back to Menu"
 msgstr "Back to Menu"
 
-#: templates/pycontw-2017/_includes/header.html:139
+#: templates/pycontw-2017/_includes/header.html:135
 msgid "dashboard"
 msgstr "dashboard"
 
@@ -2025,8 +2037,8 @@ msgid "sprints: "
 msgstr "sprints: "
 
 #: templates/pycontw-2017/index.html:29
-msgid "12 Mar, 20 May & 12 June"
-msgstr "12 Mar, 20 May & 12 June"
+msgid "12 March, 12 June"
+msgstr "12 March, 12 June"
 
 #: templates/pycontw-2017/index.html:34
 msgid "Get Tickets"
@@ -2063,6 +2075,11 @@ msgstr "<h2>what is pycon taiwan</h2> <p>PyCon Taiwan is an annual convention in
 #: templates/pycontw-2017/index.html:62
 msgid "Python Communities in Taiwan"
 msgstr "Python Communities in Taiwan"
+
+#: templates/pycontw-2017/sponsors/sponsor_list.html:7
+#: templates/pycontw-2017/sponsors/sponsor_list.html:17
+msgid "Our Partners"
+msgstr "Our Partners"
 
 #: users/admin.py:18
 msgid "Personal info"
