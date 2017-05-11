@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-11 11:52+0800\n"
-"PO-Revision-Date: 2017-05-11 04:03+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2017-05-11 13:27+0800\n"
+"PO-Revision-Date: 2017-05-11 05:27+0000\n"
+"Last-Translator: PyCon Taiwan\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -380,10 +380,6 @@ msgstr "HTML"
 #: events/models.py:278 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
-#: templates/pycontw-2017/contents/en/events/schedules.html:5
-#: templates/pycontw-2017/contents/en/events/schedules.html:7
-#: templates/pycontw-2017/contents/zh/events/schedules.html:5
-#: templates/pycontw-2017/contents/zh/events/schedules.html:7
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
 msgid "Schedule"
@@ -981,39 +977,43 @@ msgid ""
 " SVG file is not available."
 msgstr "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the SVG file is not available."
 
-#: sponsors/models.py:56
-msgid "partner"
-msgstr "partner"
+#: sponsors/models.py:60
+msgid "organizer"
+msgstr ""
 
-#: sponsors/models.py:57
+#: sponsors/models.py:61
+msgid "co-organizer"
+msgstr ""
+
+#: sponsors/models.py:62
 msgid "platinum"
 msgstr "platinum"
 
-#: sponsors/models.py:58
+#: sponsors/models.py:63
 msgid "gold"
 msgstr "gold"
 
-#: sponsors/models.py:59
+#: sponsors/models.py:64
 msgid "silver"
 msgstr "silver"
 
-#: sponsors/models.py:60
+#: sponsors/models.py:65
 msgid "bronze"
 msgstr "bronze"
 
-#: sponsors/models.py:61
+#: sponsors/models.py:66
 msgid "special"
 msgstr "special"
 
-#: sponsors/models.py:70
+#: sponsors/models.py:75
 msgid "level"
 msgstr "level"
 
-#: sponsors/models.py:75
+#: sponsors/models.py:80
 msgid "sponsor"
 msgstr "sponsor"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:81
 msgid "sponsors"
 msgstr "sponsors"
 

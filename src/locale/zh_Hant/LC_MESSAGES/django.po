@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-11 11:52+0800\n"
-"PO-Revision-Date: 2017-05-11 04:02+0000\n"
+"POT-Creation-Date: 2017-05-11 13:27+0800\n"
+"PO-Revision-Date: 2017-05-11 05:28+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -384,10 +384,6 @@ msgstr "HTML"
 #: events/models.py:278 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
-#: templates/pycontw-2017/contents/en/events/schedules.html:5
-#: templates/pycontw-2017/contents/en/events/schedules.html:7
-#: templates/pycontw-2017/contents/zh/events/schedules.html:5
-#: templates/pycontw-2017/contents/zh/events/schedules.html:7
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
 msgid "Schedule"
@@ -985,39 +981,43 @@ msgid ""
 " SVG file is not available."
 msgstr ""
 
-#: sponsors/models.py:56
-msgid "partner"
-msgstr "夥伴"
+#: sponsors/models.py:60
+msgid "organizer"
+msgstr "主辦單位"
 
-#: sponsors/models.py:57
+#: sponsors/models.py:61
+msgid "co-organizer"
+msgstr "協辦單位"
+
+#: sponsors/models.py:62
 msgid "platinum"
 msgstr "白金級"
 
-#: sponsors/models.py:58
+#: sponsors/models.py:63
 msgid "gold"
 msgstr "金級"
 
-#: sponsors/models.py:59
+#: sponsors/models.py:64
 msgid "silver"
 msgstr "銀級"
 
-#: sponsors/models.py:60
+#: sponsors/models.py:65
 msgid "bronze"
 msgstr "銅級"
 
-#: sponsors/models.py:61
+#: sponsors/models.py:66
 msgid "special"
 msgstr "特別贊助"
 
-#: sponsors/models.py:70
+#: sponsors/models.py:75
 msgid "level"
 msgstr "等級"
 
-#: sponsors/models.py:75
+#: sponsors/models.py:80
 msgid "sponsor"
 msgstr "贊助"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:81
 msgid "sponsors"
 msgstr "贊助"
 
