@@ -27,9 +27,6 @@ class ProposalAdmin(admin.ModelAdmin):
     search_fields = ['title', 'abstract']
     inlines = [AdditionalSpeakerInline]
 
-    def has_add_permission(self, request):
-        # Disable proposal submission via admin. Always use the public form!
-        return False
 
 
 @admin.register(TalkProposal)
