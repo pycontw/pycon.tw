@@ -23,10 +23,8 @@ class ProposalAdmin(admin.ModelAdmin):
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled',
     ]
-    readonly_fields = ['conference', 'submitter']
     search_fields = ['title', 'abstract']
     inlines = [AdditionalSpeakerInline]
-
 
 
 @admin.register(TalkProposal)
