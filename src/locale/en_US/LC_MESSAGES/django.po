@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-11 13:27+0800\n"
-"PO-Revision-Date: 2017-05-11 05:27+0000\n"
-"Last-Translator: PyCon Taiwan\n"
+"POT-Creation-Date: 2017-05-12 16:05+0800\n"
+"PO-Revision-Date: 2017-05-12 08:53+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -979,11 +979,11 @@ msgstr "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when
 
 #: sponsors/models.py:60
 msgid "organizer"
-msgstr ""
+msgstr "organizer"
 
 #: sponsors/models.py:61
 msgid "co-organizer"
-msgstr ""
+msgstr "co-organizer"
 
 #: sponsors/models.py:62
 msgid "platinum"
@@ -1770,7 +1770,6 @@ msgid ""
 msgstr "<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by %(speaker_names)s"
 
 #: templates/pycontw-2016/events/talk_list.html:38
-#: templates/pycontw-2017/events/talk_list.html:49
 msgid "Sponsored Events"
 msgstr "Sponsored Events"
 
@@ -1988,8 +1987,8 @@ msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 
 #: templates/pycontw-2017/events/talk_detail.html:28
-msgid "Sponsored talk"
-msgstr "Sponsored talk"
+msgid "Invited event"
+msgstr "Invited event"
 
 #: templates/pycontw-2017/events/talk_detail.html:32
 msgid "No recording"
@@ -2019,6 +2018,10 @@ msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>Program schedule are subject to change.</em> Please check this page frequently to get the latest version."
+
+#: templates/pycontw-2017/events/talk_list.html:49
+msgid "Invited Events"
+msgstr "Invited Events"
 
 #: templates/pycontw-2017/index.html:23
 msgid "9–11 June"
