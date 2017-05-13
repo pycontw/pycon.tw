@@ -36,6 +36,11 @@ django-libsass==0.6
 # https://github.com/deschler/django-modeltranslation
 django-modeltranslation==0.12
 
+# Native Django task queue, scheduler and worker application using Python
+# multiprocessing.
+# https://django-q.readthedocs.io/
+django-q==0.8.0
+
 # Certifi, a carefully curated collection of Root Certificates for SSL
 certifi>=2015.11.20
 

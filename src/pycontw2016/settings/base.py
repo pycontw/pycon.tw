@@ -96,6 +96,7 @@ THIRD_PARTY_APPS = (
     'compressor',
     'crispy_forms',
     'django_extensions',
+    'django_q',
     'import_export',
 )
 
@@ -235,6 +236,10 @@ COMPRESS_PRECOMPILERS = (
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+FIREBASE_URL = 'https://pycon-630b8.firebaseio.com'
+
+FIREBASE_DB = '/pycontw2017'
+
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 
 GA_TRACK_ID = None
@@ -244,6 +249,16 @@ SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 IMPORT_EXPORT_SKIP_ADMIN_LOG = True
+
+Q_CLUSTER = {
+    'name': 'DjangORM',
+    'workers': 4,
+    'timeout': 90,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default',
+}
 
 
 # Project settings.

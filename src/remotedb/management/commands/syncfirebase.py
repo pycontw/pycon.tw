@@ -2,6 +2,7 @@ import itertools
 
 from firebase.firebase import FirebaseApplication
 
+from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from events.models import (
@@ -52,15 +53,15 @@ class Command(BaseCommand):
         })
         self.stdout.write('Done')
 
-        app = FirebaseApplication('https://pycon-630b8.firebaseio.com')
+        app = FirebaseApplication(settings.FIREBASE_URL)
 
         self.stdout.write('Uploading schedule...', ending=' ')
         for key, value in schedule_data.items():
             self.stdout.write(key, ending=' ')
             data = {'date': key, 'slots': value}
-            app.put('/pycontw2017/schedule', key, data)
+            app.put('{}/schedule'.format(settings.FIREBASE_DB), key, data)
         self.stdout.write('Done')
 
         self.stdout.write('Uploading events...', ending=' ')
-        app.put('/pycontw2017', 'events', event_data)
+        app.put(settings.FIREBASE_DB, 'events', event_data)
         self.stdout.write('Done')

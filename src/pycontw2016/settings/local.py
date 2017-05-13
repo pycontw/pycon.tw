@@ -85,6 +85,10 @@ LOGGING = {
             'handlers': ['proj_log_file', 'console', ],
             'level': 'DEBUG',
         },
+        '': {
+            'handlers': ['console'],
+            'level': 0,
+        },
     }
 }
 
