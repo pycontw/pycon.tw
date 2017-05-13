@@ -20,7 +20,8 @@ PROPOSAL_DUMP_KEYS = SPONSORED_EVENT_DUMP_KEYS = [
 
 def dump_user(user):
     data = {key: getattr(user, key) for key in USER_DUMP_KEYS}
-    data['photo_url'] = urllib.parse.urljoin(SITE_PREFIX, user.photo.url)
+    if user.photo:
+        data['photo_url'] = urllib.parse.urljoin(SITE_PREFIX, user.photo.url)
     return data
 
 

@@ -51,6 +51,10 @@ ipython==4.0.1
 # http://python-pillow.github.io
 Pillow==3.1.0
 
+# Python interface to the Firebase's REST API.
+# http://ozgur.github.io/python-firebase/
+python-firebase==1.2
+
 # World Timezone Definitions for Python.
 # http://pythonhosted.org/pytz/
 pytz==2015.7
