@@ -127,3 +127,5 @@ RAVEN_CONFIG = {
 }
 
 GA_TRACK_ID = env('GA_TRACK_ID', default=None)
+
+DJANGO_Q_DEBUG = False

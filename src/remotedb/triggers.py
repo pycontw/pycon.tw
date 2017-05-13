@@ -24,7 +24,7 @@ def mock_on_debug(f):
     """
     @functools.wraps(f)
     def wrapped(*args, **kwargs):
-        if settings.DEBUG:
+        if settings.DJANGO_Q_DEBUG:
             logger.info('Called {0} with args={args!r}, kwargs={kw!r}'.format(
                 f.__name__, args=args, kw=kwargs,
             ))
