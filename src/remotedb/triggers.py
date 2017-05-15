@@ -34,14 +34,14 @@ def mock_on_debug(f):
     return wrapped
 
 
-def update_firebase(key, data):
+def update_firebase(path, key, data):
     app = FirebaseApplication(settings.FIREBASE_URL)
-    app.put(settings.FIREBASE_DB, key, data)
+    app.put('{}/{}'.format(settings.FIREBASE_DB, path), key, data)
 
 
 def _sync_proposal_detail(proposal):
-    data = {str(proposal.pk): dumpers.dump_proposal(proposal)}
-    update_firebase('events', data)
+    detail_data = dumpers.dump_proposal(proposal)
+    update_firebase('events', str(proposal.pk), detail_data)
 
 
 @mock_on_debug
@@ -51,8 +51,7 @@ def sync_proposal_detail(proposal):
 
 def _sync_sponsored_talk_detail(event):
     detail_data = dumpers.dump_sponsored_event_detail(event)
-    data = {'sponsored_{}'.format(event.pk): detail_data}
-    update_firebase('events', data)
+    update_firebase('events', 'sponsored_{}'.format(event.pk), detail_data)
 
 
 @mock_on_debug
@@ -83,11 +82,9 @@ def _sync_schedule():
         proposed_talk_event_qs,
         sponsored_event_qs,
     ))
-    data = {
-        key: {'date': key, 'slots': value}
-        for key, value in schedule_data.items()
-    }
-    update_firebase('schedule', data)
+    for key, value in schedule_data.items():
+        schedule_date_data = {'date': key, 'slots': value}
+        update_firebase('schedule', key, schedule_date_data)
 
 
 @mock_on_debug
@@ -96,16 +93,10 @@ def sync_schedule():
 
 
 def _sync_user_events(user):
-    data = {
-        'sponsored_{}'.format(e.pk): dumpers.dump_sponsored_event_detail(e)
-        for e in SponsoredEvent.objects.filter(host=user)
-    }
-    data.update({
-        str(p.pk): dumpers.dump_proposal(p)
-        for p in TalkProposal.objects.filter_viewable(user=user)
-    })
-    if data:
-        update_firebase('events', data)
+    for e in SponsoredEvent.objects.filter(host=user):
+        _sync_sponsored_talk_detail(e)
+    for p in TalkProposal.objects.filter_viewable(user=user):
+        _sync_proposal_detail(p)
 
 
 @mock_on_debug
