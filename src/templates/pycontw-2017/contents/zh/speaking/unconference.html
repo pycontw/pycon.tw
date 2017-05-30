@@ -7,26 +7,26 @@
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 
 <h1><span>如何投稿非正式會議（Unconference Talk）？</span></h1>
+
+<h2><span>投稿方式</span></h2>
 <article>
   <p>
-    和一般議程比起來，非正式會議較不拘束，歡迎各種議題和各種形式的演講、討論、意見交流等，且議程是由會眾直接投票決定。因此非正式會議的投稿相較下簡單很多。
+  今年的非正式會議採用 GitHub Issues 功能作為投稿以及投票系統，因此<a href="https://github.com/pycontw/unconference/issues/new">發起一個新的 issue</a> 即為投稿非正式會議。以下是您在投稿時需要填入的資訊：
   </p>
+  <ul>
+    <li>Issue 標題即為您的<b>講題</b></li>
+    <li>Issue 內容即為您的<b>摘要</b>。例如：您會在會議中涵蓋什麼樣的議題？希望什麼樣的會眾來參與？您想和會眾有什麼樣的互動？</li>
+    <li>若有額外的備註，請直接寫在 issue 說明裡。</li>
+  </ul>
+
+  請到 <a href="https://github.com/pycontw/unconference/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc)">Unconference 的 GitHub Issues 版面</a>看目前的稿件列表。
+</article>
+
+<h2><span>投票方式</span></h2>
+<article>
   <p>
-  	Unconference talk 長度為 20 minutes. 因此我們希望 Unconference talk 內容儘量是一個心得、經驗的分享，也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。Unconference talk 可以使用<em>中文、英文或是台語</em>。
-	</p>
-	<p>
-	  一個 Unconference talk 可以以任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於 Unconference 不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
-	</p>
-  <p>
-      註：「各種」議題和「各種」內容是基於不違反 PyCon Taiwan 行為準則之下。
+  只要對一個 issue 作出 "+1 reaction" (👍) ，即計為一票。您可以投票給多個稿件，且 +1 以外的任何 reactions 皆不計數。
   </p>
 </article>
 
-<h2><span>投稿格式</span></h2>
-<article>
-  <ul>
-  	<li>題目</li>
-  	<li>摘要</li>
-  </ul>
-</article>
 {% endblock content %}
