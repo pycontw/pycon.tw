@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-12 16:05+0800\n"
-"PO-Revision-Date: 2017-05-12 08:52+0000\n"
+"POT-Creation-Date: 2017-06-03 14:29+0800\n"
+"PO-Revision-Date: 2017-06-03 06:32+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -233,19 +233,19 @@ msgstr "最後更新"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:281
+#: events/admin.py:76 pycontw2016/settings/base.py:296
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:282
+#: events/admin.py:77 pycontw2016/settings/base.py:297
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
 msgstr "第 2 天"
 
-#: events/admin.py:78 pycontw2016/settings/base.py:283
+#: events/admin.py:78 pycontw2016/settings/base.py:298
 #: pycontw2016/settings/production/pycontw2016.py:24
 #: templates/pycontw-2016/events/schedule.html:48
 msgid "Day 3"
@@ -384,6 +384,7 @@ msgstr "HTML"
 #: events/models.py:278 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
+#: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
 msgid "Schedule"
@@ -784,24 +785,24 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:252
+#: pycontw2016/settings/base.py:267
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:253 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:268 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:275
+#: pycontw2016/settings/base.py:290
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:276
+#: pycontw2016/settings/base.py:291
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:277
+#: pycontw2016/settings/base.py:292
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -809,6 +810,10 @@ msgstr "偏好 45 分鐘"
 #: pycontw2016/settings/production/pycontw2016.py:17
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
+
+#: remotedb/apps.py:11
+msgid "Remote DB"
+msgstr "遠端資料庫"
 
 #: reviews/admin.py:50
 msgid "Key"
@@ -973,7 +978,7 @@ msgstr ""
 
 #: sponsors/models.py:38
 msgid "logo (image)"
-msgstr ""
+msgstr "logo (圖片)"
 
 #: sponsors/models.py:42
 msgid ""
@@ -1926,10 +1931,6 @@ msgstr "活動總覽"
 msgid "keynotes"
 msgstr "基調演講"
 
-#: templates/pycontw-2017/_includes/header.html:63
-msgid "talks"
-msgstr "演講"
-
 #: templates/pycontw-2017/_includes/header.html:64
 msgid "tutorials"
 msgstr "專業課程"
@@ -1974,6 +1975,23 @@ msgstr "返回選單"
 #: templates/pycontw-2017/_includes/header.html:135
 msgid "dashboard"
 msgstr "控制面板"
+
+#: templates/pycontw-2017/contents/_default/portal.html:5
+#: templates/pycontw-2017/contents/_default/portal.html:10
+msgid "Portal"
+msgstr "傳送門"
+
+#: templates/pycontw-2017/contents/_default/portal.html:22
+msgid "Collaborative Notes"
+msgstr "共筆"
+
+#: templates/pycontw-2017/contents/_default/portal.html:29
+msgid "Chat Room"
+msgstr "聊天室"
+
+#: templates/pycontw-2017/contents/_default/portal.html:36
+msgid "Facebook Fan Page"
+msgstr "Facebook 粉絲頁"
 
 #: templates/pycontw-2017/contents/en/events/unconference.html:5
 msgid "Unconference"
