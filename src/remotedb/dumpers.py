@@ -76,6 +76,7 @@ def dump_custom_event(event):
 def dump_sponsored_event(event):
     return {
         'type': 'sponsored_talk',
+        'title': event.title,
         'speakers': [event.host.speaker_name],
         'detail_id': 'sponsored_{}'.format(event.pk)
     }
