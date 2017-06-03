@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Portal' %}{% endblock title %}
+
+
+{% block content %}
+
+<h1><span>{% trans 'Portal' %}</span></h1>
+
+<section class="portal-cards">
+
+	<div class="card">
+		<a href="{% url 'events_schedule' %}" class="card-link">
+			<h3 class="title-box">{% trans 'Schedule' %}</h3>
+		</a>
+	</div>
+
+	<div class="card">
+		<a href="#" class="card-link">
+			<h3 class="title-box">{% trans 'Collaborative Notes' %}</h3>
+		</a>
+	</div>
+
+	<div class="card">
+		<a href="https://gitter.im/pycontw/2017" class="card-link"
+				target="_blank" rel="noopener">
+			<h3 class="title-box">{% trans 'Chat Room' %}</h3>
+		</a>
+	</div>
+
+	<div class="card">
+		<a href="https://www.facebook.com/pycontw/" class="card-link"
+				target="_blank" rel="noopener">
+			<h3 class="title-box">{% trans 'Facebook Fan Page' %}</h3>
+		</a>
+	</div>
+
+	{# TODO: Mobile app links (Standard App Store and Google Play buttons). #}
+
+</section>
+
+{% endblock content %}

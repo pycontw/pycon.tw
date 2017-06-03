@@ -1,0 +1,37 @@
+.portal-cards {
+  margin-bottom: 52px;
+  font-family: $font-family-article;
+
+  .card {
+    width: 100%;
+    margin: 32px 0;
+    padding: 0;
+    background-color: #132637;
+
+    > .card-link {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+    }
+
+    .title-box {
+      margin: 0;
+      height: 60px;
+      border-radius: 5px;
+      text-align: center;
+      font: normal 24px/60px $font-family-article;
+      color: #fff;
+    }
+
+    &:nth-child(3n+1) .title-box {
+      background: linear-gradient(to right, #00ff96, #1697e5);
+    }
+    &:nth-child(3n+2) .title-box {
+      background: linear-gradient(to right, #fbda61, #f75b1c);
+    }
+    &:nth-child(3n) .title-box {
+      background: #1697e5;
+    }
+  }
+}
