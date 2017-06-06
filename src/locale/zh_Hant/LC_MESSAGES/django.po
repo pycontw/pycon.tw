@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-03 14:29+0800\n"
-"PO-Revision-Date: 2017-06-03 06:32+0000\n"
+"POT-Creation-Date: 2017-06-07 03:52+0800\n"
+"PO-Revision-Date: 2017-06-06 19:58+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -1981,17 +1981,45 @@ msgstr "控制面板"
 msgid "Portal"
 msgstr "傳送門"
 
-#: templates/pycontw-2017/contents/_default/portal.html:22
+#: templates/pycontw-2017/contents/_default/portal.html:23
 msgid "Collaborative Notes"
 msgstr "共筆"
 
-#: templates/pycontw-2017/contents/_default/portal.html:29
+#: templates/pycontw-2017/contents/_default/portal.html:30
 msgid "Chat Room"
 msgstr "聊天室"
 
-#: templates/pycontw-2017/contents/_default/portal.html:36
+#: templates/pycontw-2017/contents/_default/portal.html:38
+msgid "Quiz Leaderboard"
+msgstr "猜謎排行榜"
+
+#: templates/pycontw-2017/contents/_default/portal.html:45
 msgid "Facebook Fan Page"
 msgstr "Facebook 粉絲頁"
+
+#: templates/pycontw-2017/contents/_default/portal.html:52
+msgid "Quiz Bots"
+msgstr "猜謎機器人"
+
+#: templates/pycontw-2017/contents/_default/portal.html:56
+msgid "Chat on LINE"
+msgstr "在 LINE 上聊天"
+
+#: templates/pycontw-2017/contents/_default/portal.html:59
+msgid "Chat on Facebook Messenger"
+msgstr "在 Facebook Messenger 聊天"
+
+#: templates/pycontw-2017/contents/_default/portal.html:64
+msgid "Mobile Apps"
+msgstr "手機 Apps"
+
+#: templates/pycontw-2017/contents/_default/portal.html:68
+msgid "Download on the App Store"
+msgstr "從 App Store 下載"
+
+#: templates/pycontw-2017/contents/_default/portal.html:71
+msgid "Get it on Google Play"
+msgstr "於 Google Play 取得"
 
 #: templates/pycontw-2017/contents/en/events/unconference.html:5
 msgid "Unconference"
