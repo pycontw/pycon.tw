@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load i18n %}
+{% load i18n static %}
 
 {% block title %}{% trans 'Portal' %}{% endblock title %}
 
@@ -9,7 +9,7 @@
 
 <h1><span>{% trans 'Portal' %}</span></h1>
 
-<section class="portal-cards">
+<section class="portal-element portal-cards">
 
 	<div class="card">
 		<a href="{% url 'events_schedule' %}" class="card-link">
@@ -32,14 +32,44 @@
 	</div>
 
 	<div class="card">
+		<a href="https://pycontw2017-quizbot.herokuapp.com/leaderboard"
+				class="card-link"
+				target="_blank" rel="noopener">
+			<h3 class="title-box">{% trans 'Quiz Leaderboard' %}</h3>
+		</a>
+	</div>
+
+	<div class="card">
 		<a href="https://www.facebook.com/pycontw/" class="card-link"
 				target="_blank" rel="noopener">
 			<h3 class="title-box">{% trans 'Facebook Fan Page' %}</h3>
 		</a>
 	</div>
 
-	{# TODO: Mobile app links (Standard App Store and Google Play buttons). #}
+</section>
 
+
+<h2>{% trans 'Quiz Bots' %}</h2>
+
+<section class="portal-element portal-row">
+	<div class="fixed column">
+		<a href="https://line.me/R/ti/p/W1MINAEbHE" target="_blank" rel="noopener" class="portal-button line"><img src="{% static 'pycontw-2017/images/icon-line.png' %}" alt="{% trans 'Chat on LINE' %}" /></a>
+	</div>
+	<div class="fixed column">
+		<a href="https://www.facebook.com/pycontwchatbot/" target="_blank" rel="noopener" class="portal-button line"><img src="{% static 'pycontw-2017/images/icon-facebook-messenger.png' %}" alt="{% trans 'Chat on Facebook Messenger' %}" /></a>
+	</div>
+</section>
+
+
+<h2>{% trans 'Mobile Apps' %}</h2>
+
+<section class="portal-element portal-row">
+	<div class="fixed column">
+		<a href="https://itunes.apple.com/tw/app/pycontw-17/id1244168803" target="_blank" rel="noopener" class="portal-button app-store"><img src="{% static 'pycontw-2017/images/download-on-the-app-store.svg' %}" alt="{% trans 'Download on the App Store' %}" /></a>
+	</div>
+	<div class="fixed column">
+		<a href='https://play.google.com/store/apps/details?id=com.pycontwmobile' target="_blank" rel="noopener" class="portal-button"><img alt="{% trans 'Get it on Google Play' %}" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a>
+	</div>
 </section>
 
 {% endblock content %}

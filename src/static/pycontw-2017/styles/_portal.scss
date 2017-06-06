@@ -1,7 +1,9 @@
-.portal-cards {
+.portal-element {
   margin-bottom: 52px;
   font-family: $font-family-article;
+}
 
+.portal-cards {
   .card {
     width: 100%;
     margin: 32px 0;
@@ -24,14 +26,51 @@
       color: #fff;
     }
 
-    &:nth-child(3n+1) .title-box {
+    &:nth-of-type(3n+1) .title-box {
       background: linear-gradient(to right, #00ff96, #1697e5);
     }
-    &:nth-child(3n+2) .title-box {
+    &:nth-of-type(3n+2) .title-box {
       background: linear-gradient(to right, #fbda61, #f75b1c);
     }
-    &:nth-child(3n) .title-box {
+    &:nth-of-type(3n) .title-box {
       background: #1697e5;
+    }
+  }
+}
+
+.portal-card > .portal-card {
+
+}
+
+.portal-row {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .column {
+    flex: 1 1 auto;
+    margin: 0.25rem 0;
+
+    &.fixed {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.portal-button {
+  height: 4rem;
+
+  > img {
+    height: 4rem;
+  }
+
+  &.app-store {
+    padding: 0.65rem;
+
+    > img {
+      height: 2.7rem;
     }
   }
 }
