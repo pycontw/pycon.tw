@@ -60,17 +60,29 @@
 }
 
 .portal-button {
-  height: 4rem;
+  $button-height: 4rem;
 
-  > img {
-    height: 4rem;
+  height: $button-height;
+
+  &.icon-link {
+    > img {
+      height: $button-height;
+      max-height: 16vw;
+    }
+  }
+
+  &.store-link {
+    > img {
+      height: $button-height;
+    }
   }
 
   &.app-store {
-    padding: 0.65rem;
+    $vertical-padding: 0.65rem;
+    padding: $vertical-padding;
 
     > img {
-      height: 2.7rem;
+      height: $button-height - 2 * $vertical-padding;
     }
   }
 }
