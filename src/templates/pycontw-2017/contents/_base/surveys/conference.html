@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +20,11 @@ iframe { position: absolute; left: 0; right: 0; bottom: 0; top: 0; border: 0; }
 
 <iframe id="typeform-full" width="100%" height="100%" frameborder="0" src="https://pycontaiwan.typeform.com/to/pYZNOF"></iframe>
 <script type="text/javascript" src="https://embed.typeform.com/embed.js"></script>
+
+{% if GA_TRACK_ID %}
+<script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
+<script src="{% static 'js/vendors/google_analytics.js' %}"></script>
+{% endif %}
 
 </body>
 
