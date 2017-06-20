@@ -28,6 +28,8 @@
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
+{% url 'page' path='portal' as portal_url %}
+
 {% get_language_info_list for LANGUAGES as languages %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_language_info for LANGUAGE_CODE as current_language %}
@@ -112,6 +114,9 @@
 		</div>
 		<a href="https://pycontw.blogspot.tw/" target="_blank" rel="noopener">
 			{% trans 'blog' %}
+		</a>
+		<a href="{{ portal_url }}">
+			{% trans 'portal' %}
 		</a>
   </nav>
 
