@@ -25,7 +25,7 @@ install:
 - pip wheel -q -r requirements/travis.txt
 - pip install -r requirements/travis.txt
 script:
-- python src/manage.py migrate --verbosity 0 --noinput
+- python src/manage.py migrate --verbosity 1 --noinput
 - cd src; pytest -n 2 --cov=.
 notifications:
   slack:
