@@ -53,7 +53,6 @@ def test_time_range_filter(rf, djutils, time_admin, choices_factory):
         ('?', 'All', True),
         ('?time-range=day1', 'Day 1', False),
         ('?time-range=day2', 'Day 2', False),
-        ('?time-range=day3', 'Day 3', False),
     ]
 
 
@@ -65,7 +64,6 @@ def test_time_range_filter_selection(rf, djutils, time_admin, choices_factory):
         ('?', 'All', False),
         ('?time-range=day1', 'Day 1', False),
         ('?time-range=day2', 'Day 2', True),
-        ('?time-range=day3', 'Day 3', False),
     ]
 
 

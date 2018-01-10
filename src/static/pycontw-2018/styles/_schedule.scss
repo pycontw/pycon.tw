@@ -1,0 +1,266 @@
+.back-to-top {
+    $size: 2rem;
+
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: $size;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.6;
+    background: $color-header-link;
+    font-size: 24px;
+
+    * {
+        color: $color-table-header-background;
+    }
+
+    &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+}
+
+.inner-wrapper {
+    .quick-jumper-section {
+        .quick-jump-link {
+            display: inline-block;
+            line-height: 125%;
+            margin: 0 0.5rem 0.75rem 0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: $color-table-header-background;
+            color: $color-table-header-foreground;
+
+            &:hover {
+                text-decoration: none;
+                background: $color-water-blue;
+                color: $color-dark-blue-grey;
+            }
+        }
+    }
+    .day-section {
+        margin-bottom: 4rem;
+
+        .day-title {
+            margin: 4rem auto 1rem;
+        }
+    }
+    .time-table {
+        display: block;
+
+        thead, tfoot {
+            display: none;
+        }
+        tbody {
+            display: block;
+        }
+
+        tr {
+            display: block;
+
+            > th {
+                padding: 0.5rem;
+            }
+
+            > td {
+                padding: 0;
+            }
+
+            > th, > td {
+                display: block;
+                height: auto;
+                margin: 0;
+                color: $color-header-link;
+                font-size: 16px;
+
+                &.keynote {
+                    .keynote-speaker {
+                        display: inline;
+                        font-size: 110%;
+                        font-weight: bold;
+                    }
+                }
+
+                &.talk {
+                    p {
+                        font-size: 14px;
+                        margin-bottom: 8px;
+
+                        &.talk-title {
+                            font-weight: bold;
+                            margin-bottom: 14px;
+                        }
+                    }
+                }
+
+                &.is-break {
+                    background: $color-table-header-background;
+                }
+
+                .event-info {
+                    padding: 0.5rem;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: $color-header-link;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    a, .schedule-label {
+                        color: $color-header-link;
+
+                        &:hover {
+                            text-decoration: none;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+
+                .time-stack-ribbon {
+                    display: none;
+                }
+            }
+        }
+
+        .schedule-label {
+            $label-size: 22px;
+
+            display: inline-block;
+            min-width: $label-size;
+            height: $label-size;
+            margin-left: 0.125rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &::hover {
+                opacity: 0.6;
+            }
+
+            > span:first-child {
+                display: inline-block;
+                width: $label-size;
+                height: $label-size;
+                line-height: $label-size * 0.95;
+                border: 1px solid $color-header-link;
+                border-radius: $label-size;
+                background: $color-header-link;
+                color: $color-dark-blue-grey;
+                cursor: default;
+            }
+        }
+    }
+}
+
+
+// Mobile-only.
+
+@media only screen and (max-width: 780px) {
+
+.inner-wrapper {
+    .time-table {
+        tr {
+            margin-bottom: 40px;
+
+            > .time-table-time {
+                display: none;
+            }
+
+            > td {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+                padding: 0;
+                border-bottom: 1px solid rgba(100, 125, 146, 0.5);
+
+                .time-stack-ribbon {
+                    flex: 0 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 4px;
+                    color: $color-table-header-foreground;
+                    background: $color-table-header-background;
+                }
+
+                .event-info {
+                    flex: 1 1 auto;
+                }
+
+                .talk-tags {
+                    display: table;
+                    margin: auto;
+                    border-spacing: 4px;
+                    border-collapse: separate;
+
+                    .schedule-label {
+                        display: table-row;
+                        text-align: center;
+
+                        > span {
+                            display: table-cell;
+                            border: none;
+
+                            &.schedule-label-description {
+                                padding-left: 0.125rem;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+}
+
+
+// Desktop-only.
+
+@media only screen and (min-width: 781px) {
+
+.inner-wrapper {
+    .time-table {
+        thead {
+            display: block;
+        }
+
+        tr {
+            display: flex;
+            align-items: stretch;
+
+            > th, > td {
+                display: flex;
+                flex: 1 0 0;
+                flex-direction: column;
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                border: none;
+
+                &.time-table-time {
+                    flex: 0 0 auto;
+                    width: 112px;
+                }
+                &.time-stack-time {
+                    display: none;
+                }
+
+                .schedule-label-description {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+}

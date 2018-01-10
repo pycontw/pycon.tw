@@ -6,6 +6,7 @@ from sponsors.models import Sponsor
 def pycontw(request):
     return {
         'GA_TRACK_ID': settings.GA_TRACK_ID,
+        'SPONSORSHIP_PROPOSAL_URL': '',
         'KKTIX_URL': 'https://pycontw.kktix.cc/events/pycontw2017',
         'VOLUNTEER_FORM_URL': (
             'https://docs.google.com/forms/d/e/'

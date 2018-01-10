@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/openlayers.css' %}" type="text/css">
+{% endblock %}
+
+{% block nav %}
+{% include '_includes/header.html' with active='venue' %}
+{% endblock nav %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/vendors/openlayers.js' %}"></script>
+<script src="{% static 'js/venue/icon_layer.js' %}"></script>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+var locationLonLat = [121.6113, 25.0410];
+var map = new ol.Map({
+	'target': 'map',
+	'layers': [
+		new ol.layer.Tile({
+			'source': new ol.source.OSM({
+				'url': 'https://c.tile.thunderforest.com/transport/{z}/{x}/{y}.png',
+				'attributions': [
+					new ol.Attribution({
+						'html': 'Maps © <a href="http://www.thunderforest.com">Thunderforest</a>, Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+					})
+				]
+			}),
+		}),
+		mapMarkerLayer(
+			'main', '{% static "images/logo_blue_huge.png" %}',
+			locationLonLat, 0.15)
+	],
+	'view': new ol.View({
+		'center': ol.proj.fromLonLat(locationLonLat),
+		'zoom': 15.8
+	}),
+	'interactions': ol.interaction.defaults({'mouseWheelZoom': false}),
+	'controls': ol.control.defaults({'attribution': true})
+});
+</script>
+{% endblock %}

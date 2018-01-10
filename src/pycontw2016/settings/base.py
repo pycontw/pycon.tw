@@ -238,7 +238,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 FIREBASE_URL = 'https://pycon-630b8.firebaseio.com'
 
-FIREBASE_DB = '/pycontw2017'
+FIREBASE_DB = '/pycontw2018'
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 
@@ -266,9 +266,10 @@ Q_CLUSTER = {
 CONFERENCE_CHOICES = [
     ('pycontw-2016', _('PyCon Taiwan 2016')),
     ('pycontw-2017', _('PyCon Taiwan 2017')),
+    ('pycontw-2016', _('PyCon Taiwan 2018')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2018'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -293,7 +294,6 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2017, 6,  9), _('Day 1')),
-    (datetime.date(2017, 6, 10), _('Day 2')),
-    (datetime.date(2017, 6, 11), _('Day 3')),
+    (datetime.date(2018, 6, 1), _('Day 1')),
+    (datetime.date(2018, 6, 2), _('Day 2')),
 ])
