@@ -1,0 +1,77 @@
+{% load compress static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{% block description %}{% endblock description %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block titletag %}
+<title>{% block title %}{% endblock %} | PyCon Taiwan 2018</title>
+{% endblock titletag %}
+
+<link rel="icon" type="image/png" href="{% static 'pycontw-2018/images/favicon.png' %}">
+
+{% block meta_og %}
+<meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
+{% endblock %}
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono:400,400i" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+{% compress css %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/main.scss' %}">
+<link rel="stylesheet" href="{% static 'pycontw-2018/styles/nav.css' %}">
+{% block styles %}{% endblock %}
+{% endcompress %}
+
+{% block extra_css %}{% endblock extra_css %}
+
+</head>
+
+
+<body>
+
+<div class="mother-wrapper">
+
+{% block nav %}
+{% include '_includes/header.html' with active=None %}
+{% endblock nav %}
+
+{% block content_full %}
+<div class="wrapper">
+	<main class="inner-wrapper">
+		{% block content %}{% endblock content %}
+	</main>
+</div>
+{% endblock content_full %}
+
+<div class="push"></div>
+
+</div>
+
+{% include '_includes/footer.html' %}
+
+{% block extrabody %}{% endblock extrabody %}
+
+{% if GA_TRACK_ID %}
+<script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
+<script src="{% static 'js/vendors/google_analytics.js' %}"></script>
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+{% compress js %}
+<script src="{% static 'pycontw-2018/scripts/polyfill.js' %}"></script>
+<script src="{% static 'pycontw-2018/scripts/nav.js' %}"></script>
+{% block scripts %}{% endblock %}
+{% endcompress %}
+{% block extra_js %}{% endblock %}
+
+</body>
+
+</html>
