@@ -37,7 +37,10 @@ pytest-mock==1.6.3
 # xdist: pytest distributed testing plugin
 # Use this plugin to speed up the test speed
 # http://pytest.org/latest/xdist.html
-pytest-xdist==1.21.0
+#
+# Note(keitheis): After version by version test, 1.13.1 is currently the last
+# usable version for pycontw2016.
+pytest-xdist==1.13.1
 
 # The most feature-rich and easy-to-use library for processing XML and HTML in
 # the Python language.
