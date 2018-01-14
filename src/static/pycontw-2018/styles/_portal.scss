@@ -1,0 +1,88 @@
+.portal-element {
+  margin-bottom: 52px;
+  font-family: $font-family-article;
+}
+
+.portal-cards {
+  .card {
+    width: 100%;
+    margin: 32px 0;
+    padding: 0;
+    background-color: #132637;
+
+    > .card-link {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+    }
+
+    .title-box {
+      margin: 0;
+      height: 60px;
+      border-radius: 5px;
+      text-align: center;
+      font: normal 24px/60px $font-family-article;
+      color: #fff;
+    }
+
+    &:nth-of-type(3n+1) .title-box {
+      background: linear-gradient(to right, #00ff96, #1697e5);
+    }
+    &:nth-of-type(3n+2) .title-box {
+      background: linear-gradient(to right, #fbda61, #f75b1c);
+    }
+    &:nth-of-type(3n) .title-box {
+      background: #1697e5;
+    }
+  }
+}
+
+.portal-card > .portal-card {
+
+}
+
+.portal-row {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .column {
+    flex: 1 1 auto;
+    margin: 0.25rem 0;
+
+    &.fixed {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.portal-button {
+  $button-height: 4rem;
+
+  height: $button-height;
+
+  &.icon-link {
+    > img {
+      height: $button-height;
+      max-height: 16vw;
+    }
+  }
+
+  &.store-link {
+    > img {
+      height: $button-height;
+    }
+  }
+
+  &.app-store {
+    $vertical-padding: 0.65rem;
+    padding: $vertical-padding;
+
+    > img {
+      height: $button-height - 2 * $vertical-padding;
+    }
+  }
+}

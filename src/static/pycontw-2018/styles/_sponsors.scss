@@ -1,0 +1,201 @@
+/* Index page. */
+
+section.sponsors {
+  padding: 147px 0 337px;
+  background: #fff url('../../pycontw-2017/images/bg-sponsor.svg') right bottom no-repeat;
+
+  > .sponsors-wrapper {
+    $item-spacing: 16px;
+    $item-height: 90px;
+
+    padding: 0 $item-spacing;
+    margin: 0 auto;
+    max-width: 1012px;
+
+    > a, > span {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      height: $item-height;
+      margin-bottom: 40px;
+      vertical-align: middle;
+      text-align: center;
+      color: $color-dark-blue-grey;
+      font-size: 40px;
+
+      &:not(:last-child) {
+        margin-bottom: 64px;
+        padding: 0 $item-spacing;
+      }
+
+      > img {
+        max-width: 100%;
+        max-height: $item-height;
+      }
+    }
+  }
+}
+
+
+// RWD for desktop.
+@media only screen and (min-width: 781px) {
+
+section.sponsors {
+  > .sponsors-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+
+    > a, > span {
+      min-width: 33.333%;
+    }
+  }
+}
+
+}
+
+
+/* Sponsors page. */
+
+.inner-wrapper {
+  section {
+    .section-title {
+      margin: 64px 0 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  .sponsor-card-chrome {
+    display: flex;
+    align-items: stretch;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+
+  .sponsor-card {
+    @include notice-border-box(4px);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
+    padding-top: 0;
+    margin: 0;
+
+    a:hover, a:active {
+      text-decoration: none;
+    }
+
+    .sponsor-logo-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      background-color: #fff;
+    }
+  }
+}
+
+// Mobile only.
+@media only screen and (max-width: 780px) {
+
+.inner-wrapper {
+  .sponsor-card {
+    height: 504px;
+
+    .sponsor-logo-block {
+      flex: 0 0 auto;
+      overflow: hidden;
+      width: 100vw;
+      height: 80vw / 8 * 5;
+      margin: 0 -10vw 16px;
+      padding: 0 10vw;
+    }
+  }
+}
+
+}
+
+// RWD for desktop.
+@media only screen and (min-width: 781px) {
+
+.inner-wrapper {
+  .sponsor-card-deck {
+    display: flex;
+    flex-wrap: wrap;
+
+    .sponsor-card-chrome {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .sponsor-card {
+      padding-left: 0;
+      padding-bottom: 0;
+
+      .sponsor-logo-block {
+        flex: 0 0 auto;
+        overflow: hidden;
+        width: 240px;
+        min-height: 240px;
+        margin: 0;
+      }
+      .card-info-block {
+        margin: auto 24px auto 64px;
+        padding: 8px 0 40px;
+
+        .card-title {
+          margin-top: 16px;
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    &.level-3-deck, &.level-4-deck, &.level-5-deck {
+      $item-spacing: 24px;
+      margin-left: -$item-spacing / 2;
+      margin-right: -$item-spacing / 2;
+
+      .sponsor-card-chrome {
+        margin: 0;
+        padding: $item-spacing / 2;
+      }
+
+      .sponsor-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+
+        .sponsor-logo-block {
+          width: 100%;
+          height: 128px;
+          min-height: 0;
+        }
+        .card-info-block {
+          margin: 0 32px 40px;
+          padding: 0;
+
+          .card-title {
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &.level-3-deck {
+      .sponsor-card-chrome {
+        width: 50%;
+      }
+    }
+    &.level-4-deck, &.level-5-deck {
+      .sponsor-card-chrome {
+        width: 33.33333%;
+      }
+    }
+  }
+}
+
+}
