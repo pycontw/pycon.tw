@@ -100,6 +100,9 @@ def schedule(db):
 def test_content_pages_links(client, parser, schedule, content_page_full_path):
     """Test to make sure all in-site links in a content page work.
     """
+    if '/surveys/conference/' in content_page_full_path:
+        pytest.skip("Skip for surveys/conference/ by purpose (or ask TP).")
+
     body = parser.parse(client.get(content_page_full_path))
     link_tags = body.cssselect('a[href^="/"]:not(a[href^="//"])')
 
