@@ -73,11 +73,11 @@ Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/l
 
 Run the following command inside `src`:
 
-    py.test
+    pytest
 
 To run tests with coverage report:
 
-    py.test --cov=.
+    pytest --cov=.
 
 
 ### Testing with Tox

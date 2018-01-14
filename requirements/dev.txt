@@ -15,28 +15,31 @@ flake8==2.5.1
 
 # A mature full-featured Python testing tool.
 # http://pytest.org/latest/
-pytest==2.8.5
+pytest==3.3.2
 
 # A plugin for py.test that provides a set of useful tools for testing Django
 # applications and projects.
 # https://pytest-django.readthedocs.org/
-pytest-django==2.9.1
+pytest-django==3.1.2
 
 # Code coverage measurement for Python
 # https://coverage.readthedocs.org/en/coverage-4.0.3/
-coverage==4.0.3
+coverage==4.4.2
 
 # Pytest plugin for measuring coverage.
 # https://pypi.python.org/pypi/pytest-cov
-pytest-cov==2.2.0
+pytest-cov==2.5.1
 
 # Thin-wrapper around the mock package for easier use with py.test
 # https://github.com/pytest-dev/pytest-mock/
-pytest-mock==0.11.0
+pytest-mock==1.6.3
 
 # xdist: pytest distributed testing plugin
 # Use this plugin to speed up the test speed
 # http://pytest.org/latest/xdist.html
+#
+# Note(keitheis): After version by version test, 1.13.1 is currently the last
+# usable version for pycontw2016.
 pytest-xdist==1.13.1
 
 # The most feature-rich and easy-to-use library for processing XML and HTML in
