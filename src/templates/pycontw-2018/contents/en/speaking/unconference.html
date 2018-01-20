@@ -1,0 +1,28 @@
+{% extends 'contents/_base/speaking.html' %}
+{% block title %}Unconference Proposal{% endblock title %}
+{% block page_title %}<h1>How to Propose an Unconference Talk</h1>{% endblock page_title %}
+
+{% block content %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+
+<h1><span>How to Propose a Unconference Talk?</span></h1>
+
+<h2><span>Proposing</span></h2>
+<article>
+<p>We're going to use GitHub's Issues feature as our proposal and voting system for the unconference, so <a href="https://github.com/pycontw/unconference/issues/new">opening a new issue</a> is proposing an unconference talk. There are a few things you'll have to fill in when you propose:</p>
+  <ul>
+    <li>Issue's title is your proposal's <b>title</b>.</li>
+    <li>Issue's description is your proposal's <b>abstract</b>. e.g. What will you cover in your speech/discussion? What's your target audience? What kind of interaction would you like to have with the crowd?</li>
+    <li>If you have any external footnotes, please also include them inside the issue's description.</li>
+  </ul>
+
+  <p>To view the list of currently proposed proposals, please head to <a href="https://github.com/pycontw/unconference/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc">the issues page</a></p>
+</article>
+
+<h2><span>Voting</span></h2>
+<article>
+  <p>Simply <b>adding a "+1 reaction" (👍) against an issue</b> counts as a vote. You can vote for multiple proposals, and all the reactions other than "+1" don't count.</p>
+</article>
+
+{% endblock content %}
