@@ -1,7 +1,7 @@
 language: python
 sudo: false
 python:
-- '3.4'
+- '3.6'
 services:
 - postgresql
 env:
@@ -16,7 +16,7 @@ cache:
   directories:
   - "$HOME/.cache/pip"
   python:
-  - '3.4'
+  - '3.6'
 before_install:
 - source secret_sauce.bash
 install:
