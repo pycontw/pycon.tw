@@ -1,0 +1,157 @@
+{% extends 'contents/_base/speaking.html' %}
+{% block title %}How to Propose a Talk{% endblock %}
+{% block page_title %}<h1>How to Propose a Talk</h1>{% endblock page_title %}
+
+{% block content %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+
+<h1><span>How to Propose a Talk</span></h1>
+<article>
+  <p>
+    For general proposal calling information, see
+    <a href="{{ speaking_cfp_url }}">Call for Proposals</a>.
+  </p>
+
+  <p>
+    First of all, thank you considering giving a talk in PyCon Taiwan 2017. The following will help you submit an successful proposal. In the following, we are going to provide you the tips to make your proposal strong and informative and get the best chance of acceptance.
+  </p>
+
+  <p>
+    Generally, you will have the following aspects to think through before your proposal:
+  </p>
+
+  <p>
+    <ul>
+      <li>What’s your topic?</li>
+      <li>Who is your target audience?</li>
+      <li>What will the audience gain after your talk?</li>
+      <li>How you organize your talk time?</li>
+    </ul>
+  </p>
+
+  <p>
+    You will ask to fill up the following fields for your proposal:
+  </p>
+
+  <ul>
+    <li>Title</li>
+    <li>Category</li>
+    <li>Duration</li>
+    <li>Language</li>
+    <li>Abstract</li>
+    <li>Python Level</li>
+    <li>Objectives</li>
+    <li>Detailed Description (optional)</li>
+    <li>Outline (optional)</li>
+    <li>Supplementary (optional)</li>
+    <li>Recording Policy</li>
+    <li>Slide Link (optional)</li>
+  </ul>
+
+  <p>
+    Looks like quite a lot of fields to fill in. Well, you can skip those optional fields and the rest of the form will only take you about 500 chars to type. But we encourage you to fill most of the fields to help reviewer understand your proposal.
+  </p>
+
+  <p>
+    Some of the fields are for reviewers only so no need to worry about spoilers:
+  </p>
+
+  <ul>
+    <li>Objectives</li>
+    <li>Outline</li>
+    <li>Supplementary</li>
+  </ul>
+  <p>
+  	If you are a very experienced speaker, you can directly enter the <a href="{{ dashboard_url }}">DashBoard</a> to propose！
+  </p>
+  <p>Next we will give more detailed advice on each aspects.</p>
+</article>
+
+<h2><span>Topics and General Advice</span></h2>
+<article>
+  <p>
+    To pick a topic that suits PyCon Taiwan, you can first find out what accepted talks are about from the previous PyCons:
+  </p>
+
+  <ul>
+    <li><a href="//tw.pycon.org/2016/en-us/events/schedule/" target="_blank" rel="noopener">
+        PyCon TW 2016</a></li>
+    <li><a href="//tw.pycon.org/2015apac/en/schedule/" target="_blank" rel="noopener">PyCon
+        APAC 2015</a></li>
+    <li><a href="//tw.pycon.org/2014apac/en/program/" target="_blank" rel="noopener">PyCon
+        APAC 2014</a></li>
+    <li><a href="//tw.pycon.org/2013/en/program/" target="_blank" rel="noopener">PyCon
+        TW 2013</a></li>
+  </ul>
+
+  <h3>Good Ideas</h3>
+  <ul>
+		<li>The abstract or detail description should contain:</li>
+		<ul>
+			<li>Who is the intended audience?</li>
+			<li>What should they know before the talk?</li>
+			<li>Is there any special domain knowledge required?</li>
+			<li>What will they get after my talk?</li>
+		</ul>
+		<li>The abstract and the content are as close as possible to the title.</li>
+		<li>Content must be original. Should let the audience and reviewer understand which part is original content in your proposal.</li>
+		<li>Enumerate each of your talk section in outline with estimated time length.</li>
+		<li>If your topic is not that familiar to normal Pythonistas, make sure you provide sufficient information through links of blog posts, wiki, source codes, or materials that help the understanding of your content.</li>
+	</ul>
+
+  <h3>Bad Ideas</h3>
+  <ul>
+		<li>Avoid infomercials.</li>
+		<ul>
+			<li>That is, try not to merely sell your products or how to use them in your talk. However, we do welcome talks about how your company solve the problem or your open source project that can benefit the general attendees.</li>
+		</ul>
+		<li>Don’t assume everyone in the review committee knows you.Please always submit a full proposal.</li>
+		<li>Avoiding Plagiarism, welcome all forms of sharing, but it should be clear which sections are original and which are citation of previous work.</li>
+	</ul>
+</article>
+
+<h2><span>How to Choose the Python Level?</span></h2>
+<article>
+  <p>Choosing the Python level <em>is</em> important.</p>
+
+  <p>
+    Your talk won’t be simply accepted because it is either super hard or deadly simple.
+    The acceptance correlates with the specified Python level and your targeted audience.
+  </p>
+
+  <p>
+    If your talk is for Python first-timers and it is about your Python learning experience and how you solve some tricky issues you face. This is a proper proposal. If your talk is about inspecting the Python memory usage and coordinating two GC systems together with reusing pointers, and you specify your talk as being novice or intermediate, it is not a good idea.
+  </p>
+
+  <p>
+    For the extreme conditions (like topics above), it will be easy to decide. But topics lie somewhere in between are not. Therefore, we give more description below to help you find the proper level.
+  </p>
+
+  <h3><span>Novice</span></h3>
+  <p>
+    People who have little to none Python knowledge. One can expect them to have basic knowledge about Python syntax and control flow (e.g. if-else, for loops; functions), but the audience does not understand every modules in stdlib, nor the concepts of tricky variables visible scope and OOP (and MRO inheritance).
+  </p>
+
+  <p>
+    Sharing your experience learning Python, leading a community perfectly fits in this level. Generally a talk about non-builtin Python packages, say pandas and Django, is not a novice talk. Unless people can actually learn all the content you give right after your talk.
+  </p>
+
+  <h3><span>Intermediate</span></h3>
+  <p>
+    The possible applications are more diverse than novice talks. Intermediate talks are for those who just learned how Python works and wish to know more how it can be used in different tasks. The talk topic can be about setting up web frameworks, talking to databases, monitoring the web traffic, auto trading in the stock market and so on.
+  </p>
+
+  <p>
+    From previous submissions over the past few years, around a half of the talks should fall into this category. Note that we may contact you to adjust your talk to be novice or experienced based on your proposal.
+  </p>
+
+  <h3><span>Experienced</span></h3>
+  <p>
+    People coming to experienced talks should have good proficiency of audience’s Python (or programming) skill.
+  </p>
+
+  <p>
+    The main difference between intermediate and experienced talks is that experienced talks assume more domain knowledge about the talk topic. For example, talks about optimization and tool’s internals should be at this level.
+  </p>
+</article>
+{% endblock content %}
