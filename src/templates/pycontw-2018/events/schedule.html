@@ -1,0 +1,48 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n static %}
+
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+<h1><span>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</span></h1>
+
+
+<section class="quick-jumper-section">
+<h3>{% trans 'Quick Jump' %}</h3>
+<div>
+	{% for schedule_date, schedule_info in schedule_days.items %}
+	<a href="#{{ schedule_date|date:'Y-m-d' }}" class="quick-jump-link">
+		{{ schedule_info.name }}
+	</a>
+	{% endfor %}
+</div>
+</section>
+
+
+{% block schedule %}
+{{ schedule_html|safe }}
+{% endblock schedule %}
+
+{% endblock content %}
+
+
+{% block extrabody %}
+{{ block.super }}
+<a href="#" class="back-to-top"><span class="fa fa-arrow-up"></span></a>
+{% endblock extrabody %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'pycontw-2017/scripts/schedule.js' %}"></script>
+{% endblock scripts %}
