@@ -1,0 +1,32 @@
+{% extends 'contents/_base/speaking.html' %}
+{% block title %}非正式會議投稿{% endblock title %}
+{% block page_title %}<h1>如何投稿非正式會議（Unconference Talk）？</h1>{% endblock page_title %}
+
+{% block content %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+
+<h1><span>如何投稿非正式會議（Unconference Talk）？</span></h1>
+
+<h2><span>投稿方式</span></h2>
+<article>
+  <p>
+  今年的非正式會議採用 GitHub Issues 功能作為投稿以及投票系統，因此<a href="https://github.com/pycontw/unconference/issues/new">發起一個新的 issue</a> 即為投稿非正式會議。以下是您在投稿時需要填入的資訊：
+  </p>
+  <ul>
+    <li>Issue 標題即為您的<b>講題</b></li>
+    <li>Issue 內容即為您的<b>摘要</b>。例如：您會在會議中涵蓋什麼樣的議題？希望什麼樣的會眾來參與？您想和會眾有什麼樣的互動？</li>
+    <li>若有額外的備註，請直接寫在 issue 說明裡。</li>
+  </ul>
+
+  請到 <a href="https://github.com/pycontw/unconference/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc)">Unconference 的 GitHub Issues 版面</a>看目前的稿件列表。
+</article>
+
+<h2><span>投票方式</span></h2>
+<article>
+  <p>
+  只要對一個 issue 作出 "+1 reaction" (👍) ，即計為一票。您可以投票給多個稿件，且 +1 以外的任何 reactions 皆不計數。
+  </p>
+</article>
+
+{% endblock content %}

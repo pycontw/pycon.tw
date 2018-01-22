@@ -1,0 +1,28 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}非正式會議{% endblock %}
+{% block page_title %}<h1>非正式會議（Unconference）</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+<h1><span>非正式會議（Unconference）</span></h1>
+<article>
+ 	<p>
+  	假如您對於投稿非正式會議的議程有興趣，請參考<a href="{{ speaking_unconference_url }}">如何投稿非正式會議？</a>頁面。
+  </p>
+  <p>
+	  本次我們將在會議的最後一天開一軌 Talks 作為非正式會議議程（Unconference Talk），目的是希望讓講者與會眾能有不一樣的互動。非正式會議的議程不僅僅歡迎 Python 相關的 proposal，我們也歡迎與<em> Python 非相關</em>的題目。
+	</p>
+	<p>
+	  一個非正式會議議程可以採用任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於非正式會議不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
+	</p>
+	<p>
+	  非正式會議的議程長度為 20 minutes 因此我們希望內容儘量是一個心得、經驗的分享，也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。
+	</p>
+	<p>
+    目前非正式會議已經開放徵稿了，請到 <a href="https://github.com/pycontw/unconference">Unconference 的 GitHub Repository</a> 參考細節以及投稿和投票，歡迎大家踴躍報名！
+	</p>
+</article>
+{% endblock content %}
