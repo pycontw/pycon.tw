@@ -75,7 +75,6 @@ class EventTimeRangeFilter(admin.SimpleListFilter):
         return [
             ('day1', _('Day 1')),
             ('day2', _('Day 2')),
-            ('day3', _('Day 3')),
         ]
 
     def queryset(self, request, queryset):
