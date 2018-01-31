@@ -7,6 +7,7 @@
 {% endblock titletag %}
 
 
+
 {% block content_full %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
@@ -14,16 +15,6 @@
 
 <div class="wrapper">
 	<main class="conference-info">
-
-		<h1 class="logo">
-			PyCon Taiwan 2018
-			<!-- <img src="{% static 'pycontw-2018/images/icon-logo.svg' %}"> -->
-		</h1>
-
-		<div class="date-panel">
-			<time>{% trans '1-2 June' %}</time>
-			<code class="def-future">Hello, Future!</code>
-		</div>
 
     <!--
 		<nav class="ticket">
@@ -34,8 +25,7 @@
     -->
 
 		<nav class="index-session-links">
-			<a href="{{ events_tutorial_url }}"><span class="event-label">{% trans 'tutorials: '%}</span><time>{% trans 'TBD' %}</time></a>
-			<a href="{{ events_sprint_url}}"><span class="event-label">{% trans 'sprints: '%}</span><time>{% trans 'TBD' %}</time></a>
+			<a href="{{ speaking_cfp_url }}"><span class="event-label">Call for Proposal: </span><time>2 月 1 日</time></a>
 		</nav>
 
     <!--
@@ -100,33 +90,6 @@
 			</a>
 		</nav>
 	</div>
-</section>
-
-{% regroup sponsors by level as sponsor_groups %}
-<section class="sponsors">
-	{% for sponsor_group in sponsor_groups %}
-	<div class="sponsors-wrapper">
-		{% for sponsor in sponsor_group.list %}
-		{% if sponsor.website_url %}
-		<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
-			{% if sponsor.logo %}
-			<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
-			{% else %}
-			{{ sponsor.name }}
-			{% endif %}
-		</a>
-		{% else %}
-		<span>
-			{% if sponsor.logo %}
-			<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
-			{% else %}
-			{{ sponsor.name }}
-			{% endif %}
-		</span>
-		{% endif %}
-		{% endfor %}
-	</div>
-	{% endfor %}
 </section>
 
 {% endblock content_full %}
