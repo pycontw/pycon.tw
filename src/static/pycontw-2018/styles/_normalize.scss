@@ -69,7 +69,6 @@
 
   article {
     font: 400 16px/1.5 $font-family-article;
-    background-color: rgba(#0A1724, 0.75);
     padding: 30px 25px;
 
     &:not(:last-child) {
@@ -82,15 +81,12 @@
   }
 
   p {
-    color: #d4d4d4;
-
     &:not(:last-child) {
       margin-bottom: 24px;
     }
   }
 
   ul, ol {
-    color: #d4d4d4;
     padding-left: 25px;
 
     li {

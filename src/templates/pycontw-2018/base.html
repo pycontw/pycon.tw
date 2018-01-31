@@ -1,4 +1,5 @@
 {% load compress static %}
+{% load i18n static %}
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +22,7 @@
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
 {% endblock %}
 
-<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed|Ubuntu+Mono:400,400i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono" rel="stylesheet"> 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 {% compress css %}
@@ -38,10 +39,21 @@
 <body>
 
 <div class="mother-wrapper">
-
+<div class="cover-wrapper">
 {% block nav %}
 {% include '_includes/header.html' with active=None %}
 {% endblock nav %}
+
+	<h1 class="logo">
+		<img src="{% static 'pycontw-2018/images/logo-18.svg' %}" alg="PyCon Taiwan 2018">
+	</h1>
+
+  <div class="date-panel">
+    <time>{% trans '1-2 June' %}</time>
+    <code class="def-future">Hello, Future!</code>
+  </div>
+
+</div>
 
 {% block content_full %}
 <div class="wrapper">
@@ -71,6 +83,8 @@
 {% block scripts %}{% endblock %}
 {% endcompress %}
 {% block extra_js %}{% endblock %}
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
 </body>
 
