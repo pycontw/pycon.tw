@@ -8,6 +8,7 @@
 {% block meta_og %}
   <meta property="og:title" content="稿件徵求（Call for Proposals）| PyCon Taiwan 2018" />
   <meta property="og:description" content="台灣 PyCon 2018 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！" />
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
 {% endblock %}
 
 {% block content %}
