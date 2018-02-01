@@ -7,6 +7,7 @@
 
 {% block meta_og %}
 	<meta property="og:title" content="Call for Proposals | PyCon Taiwan 2018" />
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
 {% endblock %}
 
 {% block content %}
