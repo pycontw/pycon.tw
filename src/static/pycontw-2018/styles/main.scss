@@ -203,7 +203,7 @@ header {
     &.active {
       border-bottom-style: solid;
       border-bottom-width: 1px;
-      border-image-source: $gradient-green-blue-92deg;
+      border-image-source: $gradient-dark-blue-grey;
       border-image-slice: 1;
     }
 
@@ -313,7 +313,7 @@ header {
 
   > code {
     margin-top: 25px;
-    font: italic 30px/1 $font-family-mono;
+    font: 30px/1 $font-family-mono;
     background: $gradient-yellow-orange-99deg;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -332,10 +332,12 @@ header {
     font-size: 30px;
     line-height: 34px;
     padding-left: 41px;
-    background: url('../../pycontw-2017/images/icon-double-arrow.svg') left center no-repeat;
 
     &:not(:last-child) {
       margin-right: 116px;
+    }
+    &:hover {
+      text-decoration: underline;
     }
 
     > .event-label, > time {
@@ -346,7 +348,7 @@ header {
 
 .index-intro {
   position: relative;
-  margin-top: 436px;
+  margin-top: 236px;
   padding: 0 15px;
 
   @extend %clearfix;
@@ -374,7 +376,7 @@ header {
       margin-bottom: 30px;
       font-size: 36px;
       line-height: 41px;
-      background: $gradient-yellow-orange;
+      background: $gradient-dark-blue-grey;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -420,7 +422,7 @@ header {
 
     &:hover {
       background-clip: border-box;
-      background-image: $gradient-green-blue;
+      background-image: $gradient-dark-blue-grey;
     }
   }
 }
@@ -508,7 +510,7 @@ header {
     font-size: 36px;
     line-height: 41px;
     margin-bottom: 68px;
-    background-image: $gradient-green-blue;
+    background-image: $gradient-dark-blue-grey;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -565,7 +567,7 @@ header {
     font-size: 36px;
     line-height: 41px;
     margin-bottom: 68px;
-    background-image: $gradient-green-blue;
+    background-image: $gradient-dark-blue-grey;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
