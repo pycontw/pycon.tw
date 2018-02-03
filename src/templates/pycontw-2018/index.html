@@ -16,20 +16,27 @@
 <div class="wrapper">
 	<main class="conference-info">
 
-    <!--
-		<nav class="ticket">
-			<a href="{{ SPONSORSHIP_PROPOSAL_URL }}" target="_blank" rel="noopener">
-				{% trans 'Sponsorship Proposal' %}
-			</a>
-		</nav>
-    -->
-
 		<nav class="index-session-links">
 			<a href="{{ speaking_cfp_url }}">
         <code>
         <span class="event-label">Submit a proposal</span>
         </code>
       </a>
+     {% get_current_language as LANGUAGE_CODE %}
+     {% get_language_info for LANGUAGE_CODE as current_language %}
+     {% if current_language.code == "zh-hant" %}
+			 <a href="https://drive.google.com/file/d/1LHuzqO7dDU9SA73ERSnTYlaUQr_XQJtz/view?usp=sharing">
+         <code>
+         <span class="event-label">贊助企劃書</span>
+         </code>
+       </a>
+     {% else %}
+			 <a href="mailto:sponsorship@pycon.tw">
+         <code>
+           <span class="event-label">Ask Sponsorship</span>
+         </code>
+       </a>
+     {% endif %}
 		</nav>
 
     <!--
