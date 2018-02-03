@@ -328,14 +328,14 @@ header {
   margin: 81px auto 0;
 
   > a {
+    color: #5b299b;
     text-align: left;
     font-size: 30px;
     line-height: 34px;
     padding-left: 34px;
     background: url('../../pycontw-2017/images/icon-double-arrow.svg') left center no-repeat;
-
     &:not(:last-child) {
-      margin-right: 116px;
+      margin-right: 20px;
     }
     &:hover {
       text-decoration: underline;
