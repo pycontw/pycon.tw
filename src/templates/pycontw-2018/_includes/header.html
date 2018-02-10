@@ -33,123 +33,17 @@
 {% get_language_info for LANGUAGE_CODE as current_language %}
 
 <header>
-  <a href="#" class="btn btn-menu"></a>
-  <a href="{% url 'index' %}" class="btn btn-home"></a>
-	<nav class="wrapper header-nav">
-    <div class="parent lang">
-      <a href="#" class="btn-show-lang-menu">
-      	{{ current_language.name_translated }}
-      </a>
-      <button class="btn-close"></button>
-    </div>
-    <a href="{{ home_url }}" class="header-logo"></a>
-		<div class="parent to-expand {% if active == 'about' %}active{% endif %}">
-			<a href="{{ about_pycontw_url }}">
-				{% trans 'about' %}
-			</a>
-			<nav class="sub">
-				<a href="{{ about_pycontw_url }}">{% trans 'pycon taiwan' %}</a>
-				<a href="{{ about_coc_url }}">{% trans 'code of conduct' %}</a>
-			</nav>
-		</div>
-    <!--
-		<div class="parent to-expand {% if active == 'events' %}active{% endif %}">
-			<a href="{{ events_overview_url }}">
-				{% trans 'events' %}
-			</a>
-			<nav class="sub">
-				<a href="{{ events_schedule_url }}">{% trans 'schedule' %}</a>
-				<a href="{{ events_overview_url }}">{% trans 'overview' %}</a>
-				<a href="{{ events_keynote_url }}">{% trans 'keynotes' %}</a>
-				{# <a href="{{ events_talk_url }}">{% trans 'talks' %}</a> #}
-				<a href="{{ events_tutorial_url }}">{% trans 'tutorials' %}</a>
-				<a href="{{ events_unconference_url }}">{% trans 'unconference' %}</a>
-				<a href="{{ events_sprint_url }}">{% trans 'sprints' %}</a>
-				<a href="{{ events_bof_url }}">{% trans 'pynight' %}</a>
-			</nav>
-		</div>
-    -->
-		{% comment %}
-		<div class="parent to-expand {% if active == 'speaking' %}active{% endif %}">
-			<a href="{{ speaking_cfp_url }}">
-				{% trans 'speaking' %}
-			</a>
-			<nav class="sub">
-				<a href="{{ speaking_cfp_url }}">{% trans 'overview' %}</a>
-				<a href="{{ speaking_talk_url }}">{% trans 'talks' %}</a>
-				<a href="{{ speaking_tutorial_url }}">{% trans 'tutorials' %}</a>
-				<a href="{{ speaking_unconference_url }}">{% trans 'unconference' %}</a>
-				<a href="{{ speaking_recording_url }}">{% trans 'recording policy' %}</a>
-			</nav>
-		</div>
-		{% endcomment %}
-
-		{# TODO: Replace the following with dropdown when accomodation info is done. #}
-		<a href="{{ venue_url }}" class="{% if active == 'venue' %}active{% endif %}">
-			{% trans 'venue' context 'conference location' %}
-		</a>
-		{% comment %}
-		<div class="parent to-expand {% if active == 'venue' %}active{% endif %}">
-			<a href="{{ venue_url }}">
-				{% trans 'venue' context 'conference location' %}
-			</a>
-			<nav class="sub">
-				<a href="{{ venue_url }}">{% trans 'venue' context 'conference location' %}</a>
-				<a href="{{ venue_accommodation_url }}">{% trans 'accommodation' %}</a>
-			</nav>
-		</div>
-		{% endcomment %}
-
-    <!--
-		<a href="{{ sponsors_list_url }}" class="{% if active == 'sponsor' %}active{% endif %}">
-			{% trans 'partners' %}
-		</a>
-		<div class="parent to-expand {% if active == 'registration' %}active{% endif %}">
-			<a href="{{ reg_financial_aid_url }}">
-				{% trans 'registration' %}
-			</a>
-			<nav class="sub">
-				<a href="{{ reg_ticket_info_url }}">{% trans 'Ticket Info' %}</a>
-				<a href="{{ reg_financial_aid_url }}">{% trans 'financial aid' %}</a>
-			</nav>
-		</div>
-    -->
-		<a href="https://pycontw.blogspot.tw/" target="_blank" rel="noopener">
-			{% trans 'blog' %}
-		</a>
-  </nav>
-
-  <nav class="wrapper header-menu-nav">
-    <div class="parent lang">
-      <a href="#" class="btn-back-to-menu">{% trans 'Back to Menu' %}</a>
-      <button class="btn-close"></button>
-    </div>
+	<nav class="control-nav">
+    {% get_language_info_list for LANGUAGES as languages %}
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_language_info for LANGUAGE_CODE as current_language %}
     {% for language in languages %}
     <a href="{{ request|path_for_language:language.code }}"
-    		{% if language == current_language %}class="active"{% endif %}
-    		data-lang="{{ language.code }}">
-    	{{ language.name_local }}
+       {% if language == current_language %}class="active"{% endif %}
+        data-lang="{{ language.code }}">
+      {{ language.name_local }}
     </a>
     {% endfor %}
-  </nav>
-	<nav class="control-nav">
-		<a href="{% url 'user_dashboard' %}" class="dashboard">
-			{% trans 'dashboard' %}
-		</a>
-		<div class="parent lang">
-			{% get_language_info_list for LANGUAGES as languages %}
-			{% get_current_language as LANGUAGE_CODE %}
-			{% get_language_info for LANGUAGE_CODE as current_language %}
-			<a href="#">{{ current_language.name_translated }}</a>
-			<nav class="sub">
-				{% for language in languages %}
-				<a href="{{ request|path_for_language:language.code }}"
-						data-lang="{{ language.code }}">
-					{{ language.name_local }}
-				</a>
-				{% endfor %}
-			</nav>
-		</div>
 		<nav class="social">
 			<a href="https://www.facebook.com/pycontw" target="_blank" rel="noopener" class="fa fa-facebook"></a>
 			<a href="https://twitter.com/pycontw" target="_blank" rel="noopener" class="fa fa-twitter"></a>

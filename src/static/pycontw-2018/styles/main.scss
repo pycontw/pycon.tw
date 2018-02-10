@@ -3,13 +3,13 @@
 @import './normalize';
 
 :root {
-  color: #fff;
+  color: #333;
+  background: #fff;
   font: normal 20px/1.2 $font-family-condensed;
   text-rendering: optimizeLegibility;
   font-smooth: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #31046A;
 }
 
 %clearfix {
@@ -25,7 +25,23 @@ body {
 
 a:link,
 a:visited {
-  color: #fff;
+  color: #333;
+}
+
+.cover-wrapper {
+  height: 560px;
+  background-image: radial-gradient(circle at 69% 60%, #3b097b, #192660);
+  border: solid 1px rgba(230, 230, 230, 0.21);
+
+  .logo img {
+    height: 90px;
+    object-fit: contain;
+  }
+
+  a:link,
+  a:visited {
+    color: #fff;
+  }
 }
 
 .mother-wrapper {
@@ -45,14 +61,10 @@ a:visited {
 
 header {
   position: relative;
-  background-image: $gradient-header-bg;
-  border-bottom: 1px solid #B05FC4;
-  box-shadow: 0 1px 1px #091119;
 }
 
 .control-nav {
   white-space: nowrap;
-  border-top: 1px solid #B05FC4;
   display: block;
   font-size: 0;
   text-align: right;
@@ -66,7 +78,6 @@ header {
     line-height: 40px;
     padding: 0 24px 0 39px;
     text-transform: uppercase;
-    border-left: 1px solid #B05FC4;
   }
 
   .dashboard,
@@ -95,7 +106,6 @@ header {
       left: -1px;
       top: 40px;
       background-color: #1B3349;
-      border: 1px solid #3A5C6A;
       width: calc(100% + 2px);
 
       &::before {
@@ -108,6 +118,7 @@ header {
       }
 
       > a {
+        color: #fff;
         display: block;
         font-size: 14px;
         padding: 0 18px;
@@ -130,13 +141,14 @@ header {
     padding: 0;
 
     > a {
+      color: #fff;
       display: inline-block;
       padding: 0 16px;
       line-height: 40px;
       height: 40px;
 
       &:hover {
-        background-color: darken(#3A5C6A, 10%);
+        color: darken(#fff, 10%);
       }
     }
   }
@@ -186,13 +198,12 @@ header {
       width: 100%;
       height: 20.5px;
       left: 0;
-      bottom: -20.5px;
     }
 
     &.active {
       border-bottom-style: solid;
       border-bottom-width: 1px;
-      border-image-source: $gradient-green-blue-92deg;
+      border-image-source: $gradient-dark-blue-grey;
       border-image-slice: 1;
     }
 
@@ -269,7 +280,7 @@ header {
 }
 
 .logo {
-  margin: 199px auto 83px;
+  margin: 160px auto 83px;
   font-size: 72px;
   text-align: center;
 
@@ -280,6 +291,7 @@ header {
 }
 
 .date-panel {
+  color: #fff;
   text-align: center;
 
   > * {
@@ -301,7 +313,7 @@ header {
 
   > code {
     margin-top: 25px;
-    font: italic 30px/1 $font-family-mono;
+    font: 30px/1 $font-family-mono;
     background: $gradient-yellow-orange-99deg;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -316,14 +328,17 @@ header {
   margin: 81px auto 0;
 
   > a {
+    color: #5b299b;
     text-align: left;
     font-size: 30px;
     line-height: 34px;
-    padding-left: 41px;
+    padding-left: 34px;
     background: url('../../pycontw-2017/images/icon-double-arrow.svg') left center no-repeat;
-
     &:not(:last-child) {
-      margin-right: 116px;
+      margin-right: 20px;
+    }
+    &:hover {
+      text-decoration: underline;
     }
 
     > .event-label, > time {
@@ -334,7 +349,7 @@ header {
 
 .index-intro {
   position: relative;
-  margin-top: 436px;
+  margin-top: 236px;
   padding: 0 15px;
 
   @extend %clearfix;
@@ -362,13 +377,13 @@ header {
       margin-bottom: 30px;
       font-size: 36px;
       line-height: 41px;
-      background: $gradient-yellow-orange;
+      background: $gradient-dark-blue-grey;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     > p {
-      color: #fff;
+      color: #333;
       font: normal 20px/1.5 $font-family-article;
     }
 
@@ -394,7 +409,7 @@ header {
     padding: 0 79px;
     font-size: 24px;
     line-height: 83px;
-    color: #fff;
+    color: #333;
 
     &::before {
       content: '';
@@ -408,7 +423,7 @@ header {
 
     &:hover {
       background-clip: border-box;
-      background-image: $gradient-green-blue;
+      background-image: $gradient-dark-blue-grey;
     }
   }
 }
@@ -496,7 +511,7 @@ header {
     font-size: 36px;
     line-height: 41px;
     margin-bottom: 68px;
-    background-image: $gradient-green-blue;
+    background-image: $gradient-dark-blue-grey;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -553,7 +568,7 @@ header {
     font-size: 36px;
     line-height: 41px;
     margin-bottom: 68px;
-    background-image: $gradient-green-blue;
+    background-image: $gradient-dark-blue-grey;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -612,11 +627,12 @@ footer,
 footer {
   > .social {
     height: 120px;
-    background-color: #B05FC4;
+    background-color: #192660;
     padding-right: 19px;
     text-align: right;
 
     > a {
+      color: #fff;
       font-size: 20px;
       display: inline-block;
       margin-left: 48px;
