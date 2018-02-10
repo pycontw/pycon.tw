@@ -11,8 +11,15 @@
     width: 100%;
   }
 
+  .cover-wrapper {
+    height: 500px;
+  }
+
   .wrapper {
     width: 100%;
+    .index-intro {
+      margin-top: 86px;
+    }
   }
 
   .inner-wrapper {
@@ -20,9 +27,9 @@
   }
 
   .logo {
-    margin: 56px auto 58px;
+    margin: 30px auto;
 
-    > img {
+    img {
       max-width: 238px;
     }
   }
@@ -273,10 +280,6 @@
         line-height: 24px;
       }
     }
-  }
-
-  .index-session-links {
-    display: none;
   }
 
   .date-panel {

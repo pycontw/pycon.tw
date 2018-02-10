@@ -7,11 +7,11 @@
 
   a:link,
   a:visited {
-    color: #C07FE4;
+    color: #5b299b;
 
     &:hover,
     &:active {
-      color: #E09FF4;
+      color: #2b096b;
       text-decoration: underline;
     }
   }
@@ -29,7 +29,7 @@
     font-size: 36px;
     line-height: 60px;
     position: relative;
-    border-bottom: 1px solid #C07FE4;
+    border-bottom: 1px solid #333;
 
     &:not(:last-child) {
       margin-bottom: 40px;
@@ -37,7 +37,7 @@
 
     > span {
       display: inline-block;
-      background-image: $gradient-green-blue;
+      background-image: $gradient-dark-blue-grey;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       padding-bottom: 9px;
@@ -55,21 +55,20 @@
 
     > span {
       display: inline-block;
-      background: $gradient-yellow-orange;
+      background: $gradient-dark-blue-grey;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
   }
 
   h3 {
-    color: #D08FF4;
+    color: #333;
     margin-bottom: 24px;
     font: normal 24px/1.5 $font-family-condensed;
   }
 
   article {
     font: 400 16px/1.5 $font-family-article;
-    background-color: rgba(#0A1724, 0.75);
     padding: 30px 25px;
 
     &:not(:last-child) {
@@ -82,15 +81,12 @@
   }
 
   p {
-    color: #d4d4d4;
-
     &:not(:last-child) {
       margin-bottom: 24px;
     }
   }
 
   ul, ol {
-    color: #d4d4d4;
     padding-left: 25px;
 
     li {
