@@ -10,6 +10,10 @@ django-braces==1.8.1
 # https://django-compressor.readthedocs.org/en/latest/
 django-compressor==1.6
 
+# Set of add-ons for django-compressor that simply enables SCSS and ES6.
+# https://github.com/kottenator/django-compressor-toolkit
+django-compressor-toolkit==0.6.0
+
 # The best way to have DRY Django forms.
 # http://django-crispy-forms.readthedocs.org/en/latest/
 django-crispy-forms==1.6.1
@@ -27,10 +31,6 @@ django-import-export==0.5.1
 # A collection of custom extensions for the Django Framework
 # http://django-extensions.readthedocs.org/en/latest/
 django-extensions==1.7.8
-
-# A django-compressor filter to compile Sass files using libsass.
-# https://github.com/torchbox/django-libsass
-django-libsass==0.6
 
 # Translates Django models using a registration approach.
 # https://github.com/deschler/django-modeltranslation
