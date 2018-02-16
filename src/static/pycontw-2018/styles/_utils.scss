@@ -1,0 +1,59 @@
+@mixin menu-items {
+	list-style: none inside;
+}
+
+@mixin no-underline {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+dl.inline {
+	overflow: auto;
+
+	dt, dd {
+		display: inline-block;
+		float: left;
+	}
+	dt {
+		clear: left;
+	}
+	dd {
+		margin-left: 0;
+	}
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-round {
+	@include text-light;
+	@include no-underline;
+
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 100px;
+}
+
+@mixin gradient-hover($angle, $color1, $color2) {
+	background-image: linear-gradient($angle, $color2, $color1, $color2);
+	background-size: 200% 100%;
+
+	@keyframes Out {
+		0% { background-position-x: 100%; }
+		100% { background-position-x: 0%; }
+	}
+	animation: Out 0.5s ease 1 forwards;
+
+	&:hover {
+		@keyframes In {
+			0% { background-position-x: 0%; }
+			100% { background-position-x: 100%; }
+		}
+		animation: In 0.5s ease 1 forwards;
+	}
+}

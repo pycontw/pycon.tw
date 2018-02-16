@@ -1,0 +1,89 @@
+@mixin index-section {
+	@include content-section;
+
+	h2 {
+		@include h1;
+	}
+	p {
+		text-align: center;
+	}
+}
+
+@mixin index-button($angle, $color1, $color2) {
+	@include gradient-hover($angle, $color1, $color2);
+
+	margin: auto;
+	color: $link-light;
+
+  &:hover {
+    color: $link-hover-light;
+  }
+	@include on-desktop {
+		width: 336px;
+	}
+}
+
+// Apply this to any section to get a logo background after it.
+@mixin logo-background-section {
+	padding-bottom: calc(50vw + #{nth($content-section-padding, 3)});
+	background: url('../assets/logo-py-indigo.svg') left bottom no-repeat;
+	background-size: auto 50vw;
+
+	@include on-desktop {
+		padding-bottom: 264px;
+		background-size: 480px auto;
+	}
+}
+
+// Apply this to any section to get a grey background with circle decoration.
+@mixin circle-background-section {
+	padding: 42px 28px 42px 28px;
+	background: $pale-grey;
+
+	> article {
+		padding: 32px 12px 54px 12px;
+		background-color: $white;
+	}
+
+	@include on-desktop {
+		position: relative;
+		overflow: hidden;
+		padding: 160px 0 168px 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -40px;
+			width: 100%;
+			height: 304px;
+			margin-left: 296px;
+			background: url('../assets/deco-circle-yellow.svg') center no-repeat;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 80px;
+			margin-top: 40px;
+			margin-left: -560px;
+			background: url('../assets/deco-circle-blue.svg') center no-repeat;
+		}
+
+		> * {
+			$padding-x: (976px - $container-max-width) / 2;
+			padding: 16px $padding-x 48px $padding-x;
+			position: relative;
+
+			&:last-child::after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 80px;
+				margin-top: 24px;
+				margin-left: 208px;
+				background: url('../assets/deco-circle-grey.svg') center no-repeat;
+			}
+		}
+	}
+}

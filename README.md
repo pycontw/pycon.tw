@@ -11,6 +11,7 @@ This repository serves the website of PyCon TW 2016. This project is open source
 
 - Git 1.8+
 - Python 3.6+
+- Yarn 1.0+
 
 ### Set up a Virtual Environment
 
@@ -32,9 +33,13 @@ You need to specify your python path when creating the virtual environment:
 
 ### Install Dependencies
 
-Just use pip:
+Use pip to install Python depedencies:
 
     pip install -r requirements.txt
+
+Use Yarn to install Node dependencies:
+
+    yarn install --dev
 
 ### Set up Local Environment Variables and Database
 

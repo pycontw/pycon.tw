@@ -1,0 +1,41 @@
+@import 'site';
+
+.page-hero {
+	margin-top: 0 - $top-navbar-offset;
+	padding-top: $top-navbar-offset;
+	background-image: $top-navbar-background;
+}
+
+.menu-navbar-desktop {
+	@include menu-navbar-desktop(url('../assets/logo-white.svg'));
+	.menu {
+		@include text-light;
+	}
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 300%;
+	color: $text-light;
+}
+
+main {
+	@include content-section;
+	@include container;
+
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@include on-desktop {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	h2 {
+		margin-top: 48px;
+	}
+	h3 {
+		margin-top: 24px;
+	}
+}

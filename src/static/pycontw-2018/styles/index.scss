@@ -1,0 +1,73 @@
+@import 'site';
+@import 'index-mixins';
+
+.top-navbar {
+	@include on-desktop {
+		border-bottom-color: transparent;
+	}
+
+	.navbar-logo {
+		margin-top: (3 * $top-navbar-height - $top-navbar-logo-height) / 2;
+	}
+}
+
+$menu-desktop-border-radius: 8px;
+
+.menu-navbar-desktop {
+	@include menu-navbar-desktop(url('../assets/logo-indigo.svg'));
+	border-radius: $menu-desktop-border-radius;
+	background-color: $white;
+	// box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.14);
+
+	a:not(:hover) {
+		color: $text-dark;
+	}
+}
+
+.index-hero {
+	@import 'index-hero';
+}
+
+.index-proposal-call {
+	@include index-section;
+	@include logo-background-section;
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
+		padding-top: 160px;
+	}
+
+	.my-pycon {
+		@include index-button(276deg, $dark-peach, $maize);
+	}
+}
+
+.index-introduction {
+	@include index-section;
+	background-image: linear-gradient(159deg, $indigo, $dark-slate-blue);
+
+	article {
+		margin-top: 72px;
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+	h2, p {
+		color: $white;
+	}
+
+	.volunteer {
+		@include index-button(259deg, $azure, $ultramarine-blue);
+		margin-top: 40px;
+	}
+}
+
+.index-partners {
+	@include index-section;
+	@include circle-background-section;
+
+	.sponsorship {
+		@include index-button(276deg, $dark-peach, $maize);
+	}
+}
