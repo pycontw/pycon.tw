@@ -31,6 +31,9 @@ venv/
 assets/
 local.db
 
+# NPM
+node_modules/
+
 # Eclipse
 .project
 .pydevproject
