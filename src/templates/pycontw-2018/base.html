@@ -22,12 +22,11 @@
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
 {% endblock %}
 
-<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono" rel="stylesheet"> 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Raleway:300,400">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
 {% compress css %}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/main.scss' %}">
-<link rel="stylesheet" href="{% static 'pycontw-2018/styles/nav.css' %}">
 {% block styles %}{% endblock %}
 {% endcompress %}
 
@@ -38,50 +37,22 @@
 
 <body>
 
-<div class="mother-wrapper">
-<div class="cover-wrapper">
 {% block nav %}
-{% include '_includes/header.html' with active=None %}
+{% include '_includes/top_nav.html' %}
 {% endblock nav %}
 
-	<h1 class="logo">
-    <a href="{% url 'index' %}" class="btn btn-home">
-		<img src="{% static 'pycontw-2018/images/logo-18.svg' %}" alg="PyCon Taiwan 2018">
-    </a>
-	</h1>
-
-  <div class="date-panel">
-    <time>{% trans '1-2 June' %}</time>
-    <code class="def-future">Hello, Future!</code>
-  </div>
-
-</div>
-
 {% block content_full %}
-<div class="wrapper">
-	<main class="inner-wrapper">
-		{% block content %}{% endblock content %}
-	</main>
-</div>
+
 {% endblock content_full %}
 
-<div class="push"></div>
-
-</div>
-
 {% include '_includes/footer.html' %}
-
-{% block extrabody %}{% endblock extrabody %}
 
 {% if GA_TRACK_ID %}
 <script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
 <script src="{% static 'js/vendors/google_analytics.js' %}"></script>
 {% endif %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 {% compress js %}
-<script src="{% static 'pycontw-2018/scripts/polyfill.js' %}"></script>
-<script src="{% static 'pycontw-2018/scripts/nav.js' %}"></script>
 {% block scripts %}{% endblock %}
 {% endcompress %}
 {% block extra_js %}{% endblock %}

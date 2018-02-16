@@ -231,6 +231,33 @@ ADMINS = (
     ('PyCon Taiwan Dev', 'dev@pycon.tw',),
 )
 
+COMPRESS_NODE_MODULES = os.path.join(os.path.dirname(BASE_DIR), 'node_modules')
+
+
+def node_bin(name):
+    return os.path.join(COMPRESS_NODE_MODULES, '.bin', name)
+
+
+COMPRESS_BROWSERIFY_BIN = node_bin('browserify')
+
+COMPRESS_ES6_COMPILER_CMD = (
+    'export NODE_PATH="{paths}" && '
+    '{browserify_bin} "{infile}" -o "{outfile}" '
+    '-t [ "{node_modules}/babelify" '
+    '--presets="{node_modules}/babel-preset-env,{node_modules}/babel-preset-stage-2" ]'
+)
+
+COMPRESS_NODE_SASS_BIN = node_bin('node-sass')
+
+COMPRESS_POSTCSS_BIN = node_bin('postcss')
+
+COMPRESS_SCSS_COMPILER_CMD = (
+    '{node_sass_bin} --include --output-style expanded {paths} '
+    '--include-path="{node_modules}" "{infile}" "{outfile}" && '
+    '{postcss_bin} --use "{node_modules}/autoprefixer" '
+    '--autoprefixer.browsers "{autoprefixer_browsers}" -r "{outfile}"'
+)
+
 COMPRESS_PRECOMPILERS = (
     ('module', 'compressor_toolkit.precompilers.ES6Compiler'),
     ('text/x-scss', 'compressor_toolkit.precompilers.SCSSCompiler'),

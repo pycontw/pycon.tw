@@ -1,0 +1,239 @@
+$top-navbar-background: linear-gradient(119deg, $indigo, $dark-slate-blue);
+$top-navbar-height: 64px;
+$top-navbar-logo-height: 24px;
+
+.top-navbar {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	height: $top-navbar-height;
+	border-bottom: solid 1px rgba(230, 230, 230, 0.21);
+	overflow: hidden;
+
+	.navbar-logo {
+		margin-top: ($top-navbar-height - $top-navbar-logo-height) / 2;
+
+		@include on-desktop {
+			display: none;
+		}
+	}
+}
+
+$top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
+
+.navbar-centerbox {
+	position: absolute;
+	left: 50%;
+	width: 160px;
+	margin-left: -80px;
+	height: $top-navbar-height;
+	overflow: hidden;
+}
+
+.navbar-logo {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('../assets/logo-white.svg') top no-repeat;
+}
+
+.navbar-lang-switch {
+	@include no-underline;
+
+	margin: 0 8px;
+
+	> button {
+		width: 32px;
+		height: 32px;
+		margin: 16px 2px;
+		padding: 0;
+		border: none;
+		background: none;
+		color: $white-35;
+		font-size: 16px;
+		text-align: center;
+		cursor: pointer;
+
+		&:disabled {
+			border-radius: 100px;
+			background: $white-35;
+			color: $white;
+			cursor: default;
+		}
+		&:hover {
+			color: $white-65;
+		}
+	}
+}
+
+.navbar-toggler {
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	width: 64px;
+	height: 64px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+
+	$icon-height: 24px;
+
+	> div {
+		$bar-thickness: 4px;
+
+		position: relative;
+		width: 32px;
+		height: $icon-height;
+		transform: rotate(0deg);
+		cursor: pointer;
+
+		> span {
+			display: block;
+			position: absolute;
+			height: $bar-thickness;
+			width: 100%;
+			background: $bluey-grey;
+			border-radius: 8px;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transform-origin: left center;
+			transition: 0.25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: ($icon-height - $bar-thickness) / 2;
+			}
+			&:nth-child(3) {
+				top: $icon-height - $bar-thickness;
+			}
+		}
+	}
+
+	&[aria-expanded="true"] > div {
+		$center-fix: 1px;
+		$top-fix: -1px;
+
+		> span:nth-child(1) {
+			transform: rotate(45deg);
+			top: $center-fix + $top-fix;
+			left: $center-fix;
+		}
+		> span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+		}
+		> span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: $icon-height - $center-fix + $top-fix;
+			left: $center-fix;
+		}
+	}
+
+	@include on-desktop {
+		display: none;
+	}
+}
+
+.navbar-social {
+	display: none;
+
+	@include on-desktop {
+		display: flex;
+		align-content: center;
+		margin-right: 24px;
+
+		.fa {
+			@include no-underline;
+			margin-left: 28px;
+			color: $white-65;
+			font-size: 22px;
+			line-height: $top-navbar-height;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+.menu-navbar-mobile {
+	position: fixed;
+	top: $top-navbar-offset;
+	z-index: 99;
+
+	width: 100vw;
+	height: 0;
+	flex-direction: column;
+	background-image: $top-navbar-background;
+	transition: 0.25s ease-in-out;
+	overflow: scroll;
+
+	@include on-desktop {
+		display: none;
+	}
+
+	&.open {
+		height: calc(100vh - #{$top-navbar-offset});
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 12vh;
+		padding-bottom: 32px;
+
+		a {
+			@include no-underline;
+			margin-bottom: 24px;
+			line-height: 150%;
+			color: $white;
+			font-family: 'Roboto', 'Noto Sans TC', 'sans-sarif';
+		  font-size: 18px;
+		  font-weight: 300;
+		  text-align: center;
+		}
+	}
+}
+
+$menu-desktop-margin-x: 48px;
+$menu-desktop-height: 136px;
+
+@mixin menu-navbar-desktop($logo) {
+	display: none;
+
+	@include on-desktop {
+		display: flex;
+		flex-direction: column;
+		height: $menu-desktop-height;
+		margin: 0 $menu-desktop-margin-x;
+	}
+
+	.menu-logo {
+		flex: 1;
+		width: 100%;
+		background: $logo center 32px no-repeat;
+	}
+	.menu {
+		@include container;
+
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		a {
+			@include no-underline;
+			font-family: 'Roboto', 'Noto Sans TC', 'sans-sarif';
+		  font-size: 18px;
+		  font-weight: 300;
+		  text-align: center;
+		}
+	}
+}

@@ -2,115 +2,96 @@
 
 {% load i18n static %}
 
+{% block styles %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/index.scss' %}">
+{% endblock %}
+
 {% block titletag %}
 <title>{% trans 'PyCon Taiwan 2018' %}</title>
 {% endblock titletag %}
 
+{% block scripts %}
+<script type="module" src="{% static 'pycontw-2018/scripts/index.js' %}"></script>
+{% endblock scripts %}
 
 
 {% block content_full %}
-{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
-{% url 'page' path='events/sprints' as events_sprint_url %}
-{% url 'page' path='events/tutorial' as events_tutorial_url %}
 
-<div class="wrapper">
-	<main class="conference-info">
+<section class="index-hero">
+	<header>
+		<h1 class="hero-heading">PyCon TW 18</h1>
+		<div class="hero-subheading">
+			<span>Hello, Future!</span>
+			<span>June 1–2, 2018</span>
+		</div>
+	</header>
+	<blockquote>Simple is better than complex.</blockquote>
+</section>
 
-		<nav class="index-session-links">
-			<a href="{{ speaking_cfp_url }}">
-        <code>
-        <span class="event-label">Submit a proposal</span>
-        </code>
-      </a>
-     {% get_current_language as LANGUAGE_CODE %}
-     {% get_language_info for LANGUAGE_CODE as current_language %}
-     {% if current_language.code == "zh-hant" %}
-			 <a href="https://drive.google.com/file/d/1LHuzqO7dDU9SA73ERSnTYlaUQr_XQJtz/view?usp=sharing">
-         <code>
-         <span class="event-label">贊助企劃書</span>
-         </code>
-       </a>
-     {% else %}
-			 <a href="mailto:sponsorship@pycon.tw">
-         <code>
-           <span class="event-label">Ask Sponsorship</span>
-         </code>
-       </a>
-     {% endif %}
-		</nav>
-
-    <!--
-		<nav class="ticket">
-			<a href="{{ KKTIX_URL }}" target="_blank" rel="noopener">
-				{% trans 'Get Tickets' %}
-			</a>
-		</nav>
-    -->
-
-    <!--
-		<section class="volunteers-needed">
-			<h4>{% trans 'Volunteers Needed' %}</h4>
-			<p>{% blocktrans %}Help us organize and make the conference successful! Please fill out <a href="{{ VOLUNTEER_FORM_URL }}">our volunteer form.</a>{% endblocktrans %}</p>
-		</section>
-    -->
-
-		<section class="index-intro">
-			<article class="what-is-pycon">
-				{% blocktrans trimmed %}
-				<h2>what is pycon</h2>
-				<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
-				{% endblocktrans %}
-			</article>
-			<article class="what-is-pycon-taiwan align-right">
-				{% blocktrans trimmed %}
-				<h2>what is pycon taiwan</h2>
-				<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
-				{% endblocktrans %}
-			</article>
-		</section>
-	</main>
-</div>
-
-<section class="communities-wrapper">
-	<div class="communities">
-		<h2>{% trans 'Python Communities in Taiwan' %}</h2>
-		<nav class="community-refs">
-			<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
-				PyLadies Taiwan
-			</a>
-			<a href="http://djangogirls.org/taipei" target="_blank" rel="noopener">
-				Django Girls Taipei
-			</a>
-			<a href="http://www.meetup.com/Taipei-py/" target="_blank" rel="noopener">
-				Taipei.py <span class="desc">Taipei Python User Group</span>
-			</a>
-			<a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/" target="_blank" rel="noopener">
-				Tainan.py <span class="desc">Tainan Python User Group</span>
-			</a>
-			<a href="http://www.meetup.com/pythonhug/" target="_blank" rel="noopener">
-				PyHUG <span class="desc">Python Hsinchu User Group</span>
-			</a>
-			<a href="http://www.meetup.com/Taichung-Python-Meetup/" target="_blank" rel="noopener">
-				Taichung.py <span class="desc">Taichung Python User Group</span>
-			</a>
-			<a href="http://www.meetup.com/Kaohsiung-Python-Meetup" target="_blank" rel="noopener">
-				Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span>
-			</a>
-			<a href="http://www.meetup.com/Hualien-Py/" target="_blank" rel="noopener">
-				Hualien.py <span class="desc">Hualien Python User Group</span>
-			</a>
-		</nav>
+<nav class="menu-navbar-desktop">
+	<div class="menu-logo"></div>
+	<div class="menu">
+		<a href="./page.html">關於</a>
+		<a href="./page.html">議程</a>
+		<a href="./page.html">會場</a>
+		<a href="./page.html">合作</a>
+		<a href="./page.html">註冊</a>
+		<a href="https://pycontw.blogspot.tw/">Blog</a>
+		<a href="./page.html">My PyCon</a>
 	</div>
+</nav>
+
+<section class="index-proposal-call">
+
+	<article class="container">
+
+		<h2>投稿募集</h2>
+		<p>PyCon Taiwan 2018 即日起徵求議程，接受演講（talk）與專業課程（tutorial）提案，歡迎貢獻稿件！</p>
+
+		<div class="center">
+			<dl class="inline">
+				<dt>開始徵稿：</dt>
+				<dd>2 月 1 日</dd>
+				<dt>投稿截止：</dt>
+				<dd>3 月 5 日</dd>
+			</dl>
+		</div>
+
+		<p><a href="./page.html">詳細說明</a></p>
+
+		<a href="./page.html" class="center button-round my-pycon">My PyCon</a>
+
+	</article>
+
+</section>
+
+<section class="index-introduction">
+
+	<article class="container">
+		<h2>何謂 PyCon</h2>
+		<p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神成立的會議。</p>
+	</article>
+
+	<article class="container">
+		<h2>何謂 PyCon Taiwan</h2>
+		<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</p>
+	</article>
+
+	<article class="container">
+		<h2>徵求志工！</h2>
+		<p>協助我們規劃，讓會議變得更好！</p>
+		<a href="#" class="center button-round volunteer">填寫志工表單</a>
+	</article>
+
+</section>
+
+<section class="index-partners">
+
+	<article class="container">
+		<h2>協助夥伴</h2>
+		<a href="#" class="center button-round sponsorship">詢問贊助方法</a>
+	</article>
+
 </section>
 
 {% endblock content_full %}
-
-{% block extrabody %}
-<i class="deco polygons"></i>
-<i class="deco taiwan"></i>
-<i class="deco circle left"></i>
-<i class="deco circle right"></i>
-<i class="deco meteor top"></i>
-<i class="deco meteor left"></i>
-<i class="deco meteor right"></i>
-{% endblock extrabody %}
