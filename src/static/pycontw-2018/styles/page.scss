@@ -26,15 +26,21 @@ main {
 
 	h1 {
 		margin-top: 48px;
-		line-height: 300%;
+		line-height: 125%;
 	}
 
 	> h1:first-child {
 		width: 100vw;
-		margin-top: -192px;
-		margin-bottom: 80px;
+		margin-top: -160px;
+		margin-bottom: 48px;
 		margin-left: calc(50% - 50vw);	// Shove to left edge, ignoring container.
+		padding-bottom: 32px;
+		background-image: $top-navbar-background;
 		color: $text-light;
+
+		@include on-desktop {
+			margin-bottom: 72px;
+		}
 	}
 
 	h2 {
