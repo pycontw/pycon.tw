@@ -102,8 +102,14 @@ $link-hover-light: $white-two;
   }
 }
 
-a, button, dl, label, p, ul {
+blockquote, button, dl, label, p, ul {
   @include text($text-font-size);
+}
+
+blockquote {
+	margin-left: 0;
+	border-left: solid 0.5rem $pinkish-grey;
+	padding-left: 40px;
 }
 
 dl, p, ul {
