@@ -18,10 +18,6 @@ $menu-desktop-border-radius: 8px;
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
 	// box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.14);
-
-	a:not(:hover) {
-		color: $text-dark;
-	}
 }
 
 .index-hero {

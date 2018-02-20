@@ -20,10 +20,10 @@
 {% block meta_og %}
 <meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
-{% endblock %}
+{% endblock meta_og %}
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Raleway:300,400">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Raleway:300,400">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
 {% compress css %}
@@ -41,9 +41,7 @@
 {% include '_includes/top_nav.html' %}
 {% endblock nav %}
 
-{% block content_full %}
-
-{% endblock content_full %}
+{% block content_full %}{% endblock content_full %}
 
 {% include '_includes/footer.html' %}
 
@@ -53,9 +51,11 @@
 {% endif %}
 
 {% compress js %}
-{% block scripts %}{% endblock %}
+{% block scripts %}
+<script type="module" src="{% static 'pycontw-2018/scripts/app.js' %}"></script>
+{% endblock scripts %}
 {% endcompress %}
-{% block extra_js %}{% endblock %}
+{% block extra_js %}{% endblock extra_js %}
 
 </body>
 

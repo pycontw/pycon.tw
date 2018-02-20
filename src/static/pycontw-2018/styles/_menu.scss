@@ -1,0 +1,161 @@
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+}
+
+@mixin menu {
+  @include list-reset
+
+  li {  // General menu item styling.
+    > input:checked ~ .submenu {
+      display: block;
+    }
+
+    > * {
+      @include no-underline;
+      font-family: $header-font-family;
+      font-weight: 300;
+
+      &:first-child:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  > li {  // Styling specific to top-level menu items.
+    position: relative;
+    text-align: center;
+
+    > * {
+      font-size: 1.125rem;
+    }
+  }
+
+  .submenu {
+    @include list-reset
+    display: none;
+    margin-top: 8px;
+    border: solid 1px transparent;
+    border-radius: 4px;
+  }
+}
+
+.menu-navbar-mobile {
+  position: fixed;
+  top: $top-navbar-offset;
+  z-index: 99;
+
+  width: 100vw;
+  height: 0;
+  background-image: $top-navbar-background;
+  transition: 0.25s ease-in-out;
+  overflow: scroll;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &.no-script {
+    position: relative;
+    z-index: -1;
+    top: 0 - $top-navbar-offset;
+    height: auto;
+    border-bottom: $top-navbar-border-bottom;
+
+    .menu {
+      padding: $top-navbar-offset + 24px 16px 0 16px;
+    }
+  }
+
+  &.open {
+    height: calc(100vh - #{$top-navbar-offset});
+  }
+
+  .menu {
+    @include menu;
+    padding-top: calc(12vh - 32px);
+    padding-bottom: calc(12vh - 32px);
+
+    li > *:first-child {
+      @include link-light;
+    }
+
+    > li {
+      margin: 32px 0;
+      line-height: 150%;
+    }
+
+    .submenu {
+      margin: 8px 24px;
+      border-color: $indigo;
+      background: $dark-violet;
+      text-align: center;
+
+      li {
+        margin: 8px;
+      }
+    }
+  }
+}
+
+$menu-desktop-margin-x: 48px;
+$menu-desktop-height: 136px;
+
+@mixin menu-navbar-desktop($logo) {
+  display: none;
+
+  @include on-desktop {
+    display: flex;
+    flex-direction: column;
+    height: $menu-desktop-height;
+    margin: 0 $menu-desktop-margin-x;
+  }
+
+  .menu-logo {
+    flex: 1;
+    width: 100%;
+    background: $logo center 32px no-repeat;
+  }
+  .menu {
+    @include container;
+    @include menu;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    li > * {
+      @include link-dark;
+      color: $text-dark;
+    }
+
+    .submenu {
+      position: absolute;
+      left: -24px;
+      min-width: 136px;
+      margin: 4px 8px;
+      padding: 4px 0;
+      border-color: $pinkish-grey;
+      background: $white;
+      text-align: left;
+
+      li {
+        margin: 4px 16px;
+      }
+    }
+  }
+}
+
+// Applied when mobile menu is open to disable <body> scrolling.
+body.menu-overlay-open {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+
+  @include on-desktop {
+    max-width: none;
+    max-height: none;
+    overflow: auto;
+  }
+}
