@@ -14,10 +14,6 @@
 <title>{% trans 'PyCon Taiwan 2018' %}</title>
 {% endblock titletag %}
 
-{% block scripts %}
-<script type="module" src="{% static 'pycontw-2018/scripts/index.js' %}"></script>
-{% endblock scripts %}
-
 
 {% block content_full %}
 
@@ -26,7 +22,7 @@
 		<h1 class="hero-heading">PyCon TW 18</h1>
 		<div class="hero-subheading">
 			<span>Hello, Future!</span>
-			<span>June 1–2, 2018</span>
+			<span>1–2 June, 2018</span>
 		</div>
 	</header>
 	<blockquote>Simple is better than complex.</blockquote>
@@ -34,36 +30,28 @@
 
 <nav class="menu-navbar-desktop">
 	<div class="menu-logo"></div>
-	<div class="menu">
-		<a href="./page.html">關於</a>
-		<a href="./page.html">議程</a>
-		<a href="./page.html">會場</a>
-		<a href="./page.html">合作</a>
-		<a href="./page.html">註冊</a>
-		<a href="https://pycontw.blogspot.tw/">Blog</a>
-		<a href="./page.html">My PyCon</a>
-	</div>
+	{% include '_includes/menu.html' with type='desktop' %}
 </nav>
 
 <section class="index-proposal-call">
 
 	<article class="container">
 
-		<h2>投稿募集</h2>
-		<p>PyCon Taiwan 2018 即日起徵求議程，接受演講（talk）與專業課程（tutorial）提案，歡迎貢獻稿件！</p>
+		<h2>{% trans 'Calling for Proposals' %}</h2>
+		<p>{% trans 'PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit yours now!' %}</p>
 
 		<div class="center">
 			<dl class="inline">
-				<dt>開始徵稿：</dt>
-				<dd>2 月 1 日</dd>
-				<dt>投稿截止：</dt>
-				<dd>3 月 5 日</dd>
+				<dt>{% trans 'First call:&nbsp;' %}</dt>
+				<dd>{% trans '1st Februrary' context 'begin of cfp' %}</dd>
+				<dt>{% trans 'Deadline:&nbsp;' %}</dt>
+				<dd>{% trans '5th March' context 'end of cfp' %}</dd>
 			</dl>
 		</div>
 
-		<p><a href="./page.html">詳細說明</a></p>
+		<p><a href="{{ speaking_cfp_url }}">{% trans 'How to Propose' %}</a></p>
 
-		<a href="./page.html" class="center button-round my-pycon">My PyCon</a>
+		<a href="{% url 'user_dashboard' %}" class="center button-round my-pycon">{% trans 'Propose Now' %}</a>
 
 	</article>
 
@@ -72,19 +60,23 @@
 <section class="index-introduction">
 
 	<article class="container">
-		<h2>何謂 PyCon</h2>
-		<p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神成立的會議。</p>
+		<h2>{% trans 'What is PyCon' %}</h2>
+		{% blocktrans trimmed %}
+		<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
+		{% endblocktrans %}
 	</article>
 
 	<article class="container">
-		<h2>何謂 PyCon Taiwan</h2>
-		<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。</p>
+		<h2>{% trans 'What is PyCon Taiwan' %}</h2>
+		{% blocktrans trimmed %}
+		<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
+		{% endblocktrans %}
 	</article>
 
 	<article class="container">
-		<h2>徵求志工！</h2>
-		<p>協助我們規劃，讓會議變得更好！</p>
-		<a href="#" class="center button-round volunteer">填寫志工表單</a>
+		<h2>{% trans 'Volunteers Needed' %}</h2>
+		{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
+		<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Fill volunteer form' %}</a>
 	</article>
 
 </section>
@@ -92,8 +84,8 @@
 <section class="index-partners">
 
 	<article class="container">
-		<h2>協助夥伴</h2>
-		<a href="#" class="center button-round sponsorship">詢問贊助方法</a>
+		<h2>{% trans 'Partners' %}</h2>
+		<a href="#" class="center button-round sponsorship" target="_blank" rel="noopener">{% trans 'Ask about sponsorship' %}</a>
 	</article>
 
 </section>

@@ -8,8 +8,8 @@
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(url('../assets/logo-white.svg'));
-	.menu {
-		@include text-light;
+	.menu > li > * {
+		@include link-light;
 	}
 }
 
