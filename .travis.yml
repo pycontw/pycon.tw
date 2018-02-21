@@ -1,5 +1,9 @@
 language: python
 sudo: false
+branches:
+  except:
+  # FIXME: Remove this block when most pages are implemented.
+  - project/2018-ui
 python:
 - '3.6'
 services:
