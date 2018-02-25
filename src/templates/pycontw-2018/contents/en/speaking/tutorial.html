@@ -1,0 +1,62 @@
+{% extends 'contents/_base.html' %}
+
+{% block title %}How to Propose a Tutorial{% endblock title %}
+{% block page_title %}<h1>How to Propose a Tutorial</h1>{% endblock page_title %}
+
+{% block content %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+
+<h1><span>How to Propose a Tutorial?</span></h1>
+<article>
+  <p>
+      First of all, thank you considering giving a tutorial in PyCon Taiwan 2018.
+  </p>
+  <p>
+      Generally speaking, Good tutorials possess most of the traits good talks have. The most discernible differences of a tutorial from a <a href="{{ speaking_talk_url }}">talk</a> are the hands-on nature and the longer time length. By longer time length, generally more content is required and it should remain interesting and keep the attendees awake and hyped even after hours of lecture and exercises. By containing hands-on exercises, experience of teaching coding to people is necessary. You also need at least two teaching assistants for a general class size of 20 people, who you should be able to comfortably communicate with during the tutorial. Both differences requires many times of practice and experience.
+  </p>
+  <p>
+      Therefore, the tutorial speaker usually satisfies at least one of the following prerequisites:
+  </p>
+  <ul>
+      <li>A previous tutorial speaker in any programming conferences or
+          communities
+      </li>
+      <li>More than one time of speaking experience in open source
+          communities, preferably the local Python communities
+      </li>
+      <li>TA in previous tutorials</li>
+  </ul>
+  <br />
+  <p>
+      We might ask you to give the tutorial to the community before the conference if you lack the experience.
+  </p>
+</article>
+
+<h2><span>Tutorial Dates</span></h2>
+<article>
+  <p>
+      All tutorials are held at most three weeks before the conference dates (Jun 9-11). Given the availability of teaching space, tutorial speakers have full authority to decide when to give one's tutorial.
+  </p>
+  <p>
+      It is also possible to give tutorials on-site, that is, during the conference dates. In that case, please note your preference in the Supplementary section of your proposal and <a href="mailto:organizers@pycon.tw">contact us</a> directly.
+  </p>
+</article>
+
+<h2><span>Charging Policy</span></h2>
+<article>
+  <p>
+      The charging of tutorials are independent of the charging of conference itself. Charging policy will be jointly decided by both the tutorial speaker and PyCon TW Program committee. The charging can be determined respectively for each tutorial though we will seek an agreement on the overall policy between all tutorial speakers.
+  </p>
+  <p>
+      Note that if the tutorial is held on-site, there will be <em>no</em> extra charging.
+  </p>
+</article>
+
+<h2><span>How to become a tutorial speaker?</span></h2>
+<article>
+  <p>
+      The easiest and the best answer: Go speak and involved at the local Python communities!
+  </p>
+</article>
+{% endblock content %}
