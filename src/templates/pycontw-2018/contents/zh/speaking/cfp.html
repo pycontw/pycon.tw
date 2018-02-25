@@ -1,0 +1,94 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+
+{% block title %}稿件徵求{% endblock title %}
+
+{% block page_title %}<h1>稿件徵求（Call for Proposals）</h1>{% endblock %}
+
+{% block meta_og %}
+  <meta property="og:title" content="稿件徵求（Call for Proposals）| PyCon Taiwan 2016" />
+  <meta property="og:description" content="台灣 PyCon 2017 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！" />
+  <meta property="og:image" content="http://{ request.get_host }{% static 'images/PyConTW2017_facebook_shareImage.png' %}" />
+{% endblock %}
+
+
+{% block content %}
+{% url 'page' path='speaking/recording' as speaking_recording_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='speaking/unconference' as speaking_unconference_url %}
+{% url "signup" as signup_url %}
+{% url "user_dashboard" as dashboard_url %}
+
+<h1><span>投稿募集（Call for Proposals）</span></h1>
+<article>
+	<p>
+	    臺灣 PyCon 2017 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！
+	</p>
+</article>
+
+<h2><span>重要日期</span></h2>
+<article>
+  <ul>
+      <li>議程＆課程 開放徵稿：2 月 15 日</li>
+			<li>議程＆課程 投稿截止：<del>3 月 15 日</del> 3 月 27 日</li>
+      <li>公告完整議程：<del>4 月 30 日</del> 4 月 27 日</li>
+  </ul>
+  <p>
+      因為 PyCon 的目的之一在於推廣 Python 程式語言與其在教育上的影響力，您的演講（talk）預設將會被錄影、編輯。之後 PyCon Taiwan 會把錄影編輯後上傳至 <a href="http://pyvideo.org" target="_blank" rel="noopener">pyvideo.org</a> 該網站。如果不希望您的演講被記錄，請確定在送出投稿主題前，確認在「記錄選項（recording option）」中選擇正確的選項。更多資訊請參考<a href="{{ speaking_recording_url }}">錄影釋出</a>。
+  </p>
+  <p>
+      特別要注意的事，每一位講者也需要購買會議的門票。（更多資訊請參考 <a href="http://jessenoller.com/2011/05/25/pycon-everybody-pays/" target="_blank" rel="noopener">Everyone Pays Policy</a>）
+  </p>
+</article>
+
+<h2><span>如何提交您的稿件</span></h2>
+<article>
+  <p>
+    	您需要先在 tw.pycon.org <a href="{{ signup_url }}">註冊</a>一個新的帳號。在啟用您的帳號之後，就可以填寫講者資訊並且從您的<a href="{{ dashboard_url }}">控制面板</a>中創建新的投搞。
+  </p>
+  <p>
+  		我們強烈建議您儘早送出您的投稿。
+  </p>
+</article>
+
+<h2><span>稿件提交指南</span></h2>
+  <article>
+    <h3>演講（Talk）</h3>
+    <p>
+        我們接受泛 Python 相關的各類投稿，包括學術報告、商用專案或者案例研究等。正在閱讀本文件的您，想必也應該是要來投稿的！
+    </p>
+    <p>
+        今年 PyCon 臺灣 2017 的主題是 <em>AI 與資料科學<em>。若您在機械學習（machine learning）、深度學習（deep learning）等相關領域上有著成就與發現，我們誠摯歡迎您的投稿。呼應今年的標語<em>「定義未來」</em>如果講師有任何在 Python 應用、使用 Python 解決問題與如何主持您的社群圈的經驗，也都邀請您投稿到 PyCon 台灣。當然我們也非常歡迎適合進階者內容的投稿。
+    </p>
+    <p>
+        絕大部分的議程時間<em>長度為 30 分鐘</em>。此外我們也安排了時間<em>長度為 45 分鐘</em>的議程，此類的議程將會是我們認為比較重要並且能夠極大化影響族群並給予顯著幫助的主題。需要注意的是，議程的時間長度將會包含開場與 Q&amp;A 的時間。
+    </p>
+    <p>議程可以使用的語言為：<em>英文、中文、台語。</em></p>
+    <p>
+      為了幫助講者組織他們的想法，我們重新設計了投稿表單。更多資訊請參考<a href="{{ speaking_talk_url }}">議程投稿演講</a>。
+    </p>
+  </article>
+  <article>
+    <h3>非正式會議（Unconference）</h3>
+    <p>
+      本次我們將在會議的最後一天開一軌 Talks 作為非正式會議議程（Unconference Talk），目的是希望讓講者與會眾能有不一樣的互動。非正式會議的議程不僅僅歡迎 Python 相關的 proposal，我們也歡迎與<em> Python 非相關</em>的題目。
+    </p>
+    <p>
+      一個非正式會議議程可以採用任何方式進行，講者可以自由發揮的使用該空間與時間，且大會對於非正式會議不做任何錄影和記錄，歡迎參與這個比起正規議程來得更刺激性的議題討論。
+    </p>
+    <p>
+      非正式會議的議程長度為 20 minutes 因此我們希望內容儘量是一個心得、經驗的分享，也請注意 20 minutes 包含與會眾的 Q&amp;A 時間。<em>系統會在會議前 10 天開放系統報名非正式會議議程</em>，其議程則由會眾投票決定。
+    </p>
+    <p>
+      非正式會議的議程可以使用中文、英文或是台語。投稿格式請參見<a href="{{ speaking_unconference_url }}">如何投稿非正式會議？</a>頁面。
+    </p>
+  </article>
+  <article>
+    <h3>專業課程（Tutorial）</h3>
+    <p>
+        同演講，我們對專業課程的主題並不做任何限制。專業課程為半天或一整天的活動，相當於 3 或 6 小時的課程。投稿課程的方針基於演講，所以請先閱讀<a href="{{ speaking_talk_url }}">如何投稿演講？</a>除了該文中的事項外，我們對課程投稿本身有額外的規範，請參見<a href="{{ speaking_tutorial_url }}">如何投稿專業課程？</a>一文。
+    </p>
+	</article>
+{% endblock content %}
