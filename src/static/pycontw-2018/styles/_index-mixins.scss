@@ -11,13 +11,12 @@
 
 @mixin index-button($angle, $color1, $color2) {
 	@include gradient-hover($angle, $color1, $color2);
+	@include link($white, $white);
+	@include no-underline;
 
 	margin: auto;
-	color: $link-light;
+	font-weight: 300;
 
-  &:hover {
-    color: $link-hover-light;
-  }
 	@include on-desktop {
 		width: 336px;
 	}
@@ -26,12 +25,13 @@
 // Apply this to any section to get a logo background after it.
 @mixin logo-background-section {
 	padding-bottom: calc(50vw + #{nth($content-section-padding, 3)});
-	background: url('../assets/logo-py-indigo.svg') left bottom no-repeat;
+	background: url('../assets/logo-py-indigo.svg') center 103% no-repeat;
 	background-size: auto 50vw;
 
 	@include on-desktop {
 		padding-bottom: 264px;
 		background-size: 480px auto;
+		background-position: -10% 110%;
 	}
 }
 

@@ -1,13 +1,3 @@
-@import 'breakpoint-sass/stylesheets/breakpoint';
-
-$mobile-max-width: 900px;
-
-@mixin on-desktop {
-	@include breakpoint($mobile-max-width) {
-		@content;
-	}
-}
-
 $container-max-width: 720px;
 
 @mixin container {
@@ -34,6 +24,7 @@ footer {
 	.footer-logo {
 		width: 100%;
 		height: 40px;
+		margin: 0;
 		background: url('../assets/logo-py-white.svg') center no-repeat;
 	}
 
@@ -43,16 +34,16 @@ footer {
 	}
 	ul {
 		@include menu-items;
-
 		margin-bottom: 80px;
 		padding-left: 0;
 		line-height: 48px;
 
 		&::before {
-			content: '\2014\2014';
-			color: $bluey-grey;
-			margin-bottom: 32px;
-			letter-spacing: -0.2ex;
+			content: '';
+			display: inline-block;
+			width: 24px;
+			height: 8px;
+			border-top: solid 0.2px $white;
 		}
 	}
 
