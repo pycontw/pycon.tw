@@ -3,8 +3,16 @@
 	padding: 0;
 }
 
+@mixin menu-item($base-color, $hover-color) {
+	@include no-underline;
+	color: $base-color;
+	&:hover {
+		color: $hover-color;
+	}
+}
+
 @mixin menu {
-	@include list-reset
+	@include list-reset;
 
 	li {	// General menu item styling.
 		> input:checked ~ .submenu {
@@ -33,7 +41,7 @@
 
 	.submenu {
 		@include list-reset;
-		@include text($text-font-size);
+		@include text(1.125rem);
 		display: none;
 		margin-top: 8px;
 		border: solid 1px transparent;
@@ -72,18 +80,26 @@
 		height: calc(100vh - #{$top-navbar-offset});
 	}
 
+	> * {
+		margin: 11vh 0;
+
+		&:first-child {
+			margin-top: 11vh;
+		}
+		&:last-child {
+			margin-bottom: 11vh;
+		}
+	}
+
 	.menu {
 		@include menu;
-		padding-top: calc(12vh - 32px);
-		padding-bottom: calc(12vh - 32px);
 
 		li > *:first-child {
-			@include link-light;
+			@include menu-item($text-light, $link-light);
 		}
 
 		> li {
 			margin: 32px 0;
-			line-height: 150%;
 		}
 
 		.submenu {
@@ -102,7 +118,7 @@
 $menu-desktop-margin-x: 48px;
 $menu-desktop-height: 136px;
 
-@mixin menu-navbar-desktop($logo) {
+@mixin menu-navbar-desktop($logo, $menu-deco-color) {
 	display: none;
 
 	@include on-desktop {
@@ -123,26 +139,56 @@ $menu-desktop-height: 136px;
 		flex: 1;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
 		width: 100%;
 
-		li > * {
-			@include link-dark;
-			color: $text-dark;
+		li {
+			flex: 1;
+			> * {
+				@include menu-item($text-dark, $link-dark);
+			}
 		}
 
 		.submenu {
+			$width: 160px;
+			$margin-above: 16px;
+			$margin-between: 24px;
+			$item-padding: 8px;
+
 			position: absolute;
-			left: -24px;
-			width: 176px;
-			margin: 4px 8px;
-			padding: 4px 0;
+			left: calc(50% - #{$width / 2});
+			min-width: $width;
+			margin-top: $margin-above + $margin-between;
 			border-color: $pinkish-grey;
-			background: $white;
-			text-align: left;
+			background: rgba($white, 0.95);
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+			text-align: center;
+
+			&::before {
+				$width: 96px;
+				display: block;
+				content: '';
+				width: $width;
+				margin: -$margin-between 0 $margin-between calc(50% - #{$width / 2});
+				border-top: solid 1.5px $menu-deco-color;
+			}
 
 			li {
-				margin: 4px 16px;
+				display: flex;
+				flex-direction: column;
+				align-content: stretch;
+
+				> *:first-child {
+					display: inline-block;
+					padding: $item-padding;
+				}
+
+				&:first-child > *:first-child {
+					padding-top: 2 * $item-padding;
+				}
+				&:last-child > *:first-child {
+					padding-bottom: 2 * $item-padding;
+				}
 			}
 		}
 	}

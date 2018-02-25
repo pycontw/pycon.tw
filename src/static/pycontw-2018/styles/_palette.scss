@@ -29,7 +29,7 @@ $header-font-family: 'Roboto', 'Noto Sans TC', 'sans-serif';
   color: $black;
   font-family: $header-font-family;
   font-size: $font-size;
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -49,6 +49,65 @@ $header-font-family: 'Roboto', 'Noto Sans TC', 'sans-serif';
   @include header(1.125rem);	// ~ 18px.
 }
 
+
+/* Content styles. */
+
+$text-font-size: 1rem;					// ~ 16px.
+$text-font-size-small: 0.75rem;	// ~ 12px.
+
+$text-light: $white;
+$text-dark: $black;
+
+$link-dark: #9d50ff;
+$link-hover-dark: #9d50ff;
+$link-light: $white-two;
+$link-hover-light: $white;
+
+@mixin link($base-color, $hover-color) {
+	color: $base-color;
+	text-decoration: none;
+
+	&:hover {
+		color: $hover-color;
+		text-decoration: underline;
+	}
+}
+
+@mixin link-dark {
+	@include link($link-dark, $link-dark);
+}
+
+@mixin link-light {
+	@include link($link-light, $link-light);
+}
+
+@mixin text($font-size) {
+  color: $text-dark;
+  font-family: 'Raleway', 'Noto Sans TC', 'sans-serif';
+  font-weight: 200;
+  font-size: $font-size;
+
+  strong {
+    font-weight: 300;
+  }
+  em {  // Do not use slant.
+    font-style: normal;
+    font-weight: 300;
+  }
+}
+
+@mixin text-light {
+  a {
+    @include link-light;
+  }
+  button, dl, p, ul {
+    color: $text-light;
+  }
+}
+
+
+/* Apply default styling. */
+
 h1 {
   @include h1;
 }
@@ -61,73 +120,12 @@ h3 {
   @include h3;
 }
 
-
-/* Content styles. */
-
-$text-font-size: 1rem;					// ~ 16px.
-$text-font-size-small: 0.75rem;	// ~ 12px.
-
-$text-light: $white;
-$text-dark: $black;
-
-$link-dark: $indigo;
-$link-hover-dark: $purple;
-$link-light: $white;
-$link-hover-light: $white-two;
-
-@mixin text($font-size) {
-  color: $text-dark;
-  font-family: 'Raleway', 'Noto Sans TC', 'sans-serif';
-  font-weight: 300;
-  font-size: $font-size;
-
-  strong {
-    font-weight: 400;
-  }
-  em {  // Do not use slant.
-    font-style: normal;
-    font-weight: 400;
-  }
-}
-
-@mixin text-light {
-  a {
-    color: $link-light;
-    &:hover {
-      color: $link-hover-light;
-    }
-  }
-  button, dl, p, ul {
-    color: $text-light;
-  }
-}
-
-blockquote, button, dl, label, p, ul {
+button, dl, label, p, ul {
   @include text($text-font-size);
 }
 
-blockquote {
-	margin-left: 0;
-	border-left: solid 0.5rem $pinkish-grey;
-	padding-left: 40px;
-}
-
 dl, p, ul {
-  line-height: 150%;
-}
-
-@mixin link-dark {
-	color: $link-dark;
-	&:hover {
-		color: $link-hover-dark;
-	}
-}
-
-@mixin link-light {
-	color: $link-light;
-	&:hover {
-		color: $link-hover-light;
-	}
+  line-height: 160%;
 }
 
 a {

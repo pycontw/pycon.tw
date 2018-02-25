@@ -1,15 +1,24 @@
 @import 'site';
 
+body {
+	// Fix the fancy h1 overflowing width (because 100vw includes scrollbar).
+	overflow-x: hidden;
+}
+
 .page-hero {
 	margin-top: 0 - $top-navbar-offset;
 	padding: $top-navbar-offset 0 112px 0;
 	background-image: $top-navbar-background;
+
+	@include on-desktop {
+		padding-bottom: 200px;
+	}
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/logo-white.svg'));
+	@include menu-navbar-desktop(url('../assets/logo-white.svg'), $white);
 	.menu > li > * {
-		@include link-light;
+		@include menu-item($text-light, $link-light);
 	}
 }
 
@@ -30,11 +39,12 @@ main {
 	}
 
 	> h1:first-child {
-		width: 100vw;
+		$padding-y: 1rem;
+		width: calc(100vw - #{$padding-y * 2});
 		margin-top: -160px;
 		margin-bottom: 48px;
 		margin-left: calc(50% - 50vw);	// Shove to left edge, ignoring container.
-		padding-bottom: 32px;
+		padding: 0 $padding-y 32px $padding-y;
 		background-image: $top-navbar-background;
 		color: $text-light;
 
