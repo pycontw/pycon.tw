@@ -33,11 +33,7 @@ main {
 		padding-right: 0;
 	}
 
-	h1 {
-		margin-top: 48px;
-		line-height: 125%;
-	}
-
+	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
 		$padding-y: 1rem;
 		width: calc(100vw - #{$padding-y * 2});
@@ -53,10 +49,48 @@ main {
 		}
 	}
 
-	h2 {
+	h1 {
 		margin-top: 48px;
+		line-height: 125%;
+	}
+	h2 {
+		margin-top: 72px;
+		margin-bottom: 24px;
 	}
 	h3 {
 		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+
+	// Most content blocks are 20px apart.
+	> * {
+		margin-top: 20px;
+
+		// Cancel terminal margins for nested blocks.
+		> *:first-child {
+			margin-top: 0;
+		}
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Non-p elements are 48px apart.
+	$content-blocks: ul dl ol blockquote pre;
+	p {
+		@each $tag in $content-blocks {
+			+ $tag {
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+		}
+	}
+	@each $tag in $content-blocks {
+		@each $tag in $content-blocks {
+			+ $tag, + p {
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+		}
 	}
 }
