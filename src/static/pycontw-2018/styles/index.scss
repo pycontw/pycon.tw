@@ -14,7 +14,9 @@
 $menu-desktop-border-radius: 8px;
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/logo-indigo.svg'), $indigo);
+	@include menu-navbar-desktop(
+		url('../assets/logo-indigo.svg'), $indigo,
+		$text-dark, $text-dark);
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
 	box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.2);

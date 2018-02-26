@@ -16,10 +16,8 @@ body {
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/logo-white.svg'), $white);
-	.menu > li > * {
-		@include menu-item($text-light, $link-light);
-	}
+	@include menu-navbar-desktop(
+		url('../assets/logo-white.svg'), $white, $text-light, $link-light);
 }
 
 main {
@@ -76,20 +74,27 @@ main {
 	}
 
 	// Non-p elements are 48px apart.
+	@mixin container-block {
+		margin-top: 48px;
+		margin-bottom: 48px;
+	}
 	$content-blocks: ul dl ol blockquote pre;
 	p {
 		@each $tag in $content-blocks {
-			+ $tag {
-				margin-top: 48px;
-				margin-bottom: 48px;
+			& + #{$tag} {
+				@include container-block;
 			}
 		}
 	}
 	@each $tag in $content-blocks {
-		@each $tag in $content-blocks {
-			+ $tag, + p {
-				margin-top: 48px;
-				margin-bottom: 48px;
+		#{$tag} {
+			@each $tag in $content-blocks {
+				& + #{$tag}, {
+					@include container-block;
+				}
+			}
+			& + p {
+				@include container-block;
 			}
 		}
 	}
