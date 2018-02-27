@@ -1,4 +1,3 @@
-import 'babel-polyfill'
 import {Controller} from 'stimulus'
 
 export class MenuController extends Controller {
