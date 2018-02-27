@@ -1,3 +1,5 @@
+import './polyfills'
+
 import {Application} from 'stimulus'
 import {MenuController} from './controllers/menu'
 import {TopNavController} from './controllers/nav'
