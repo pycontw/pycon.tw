@@ -17,7 +17,7 @@ body {
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-white.svg'), $white, $text-light, $link-light);
+		url('../assets/logo-white.svg'), $white, $white-two, $text-light);
 }
 
 main {

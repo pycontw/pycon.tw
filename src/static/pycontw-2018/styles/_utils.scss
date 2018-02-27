@@ -40,20 +40,10 @@ dl.inline {
 }
 
 @mixin gradient-hover($angle, $color1, $color2) {
-	background-image: linear-gradient($angle, $color2, $color1, $color2);
-	background-size: 200% 100%;
-
-	@keyframes Out {
-		0% { background-position-x: 100%; }
-		100% { background-position-x: 0%; }
-	}
-	animation: Out 0.5s ease 1 forwards;
+	background: linear-gradient($angle, $color2, $color1, $color2) 0 / 200% 100%;
+	transition: background-position-x 0.5s ease-in-out;
 
 	&:hover {
-		@keyframes In {
-			0% { background-position-x: 0%; }
-			100% { background-position-x: 100%; }
-		}
-		animation: In 0.5s ease 1 forwards;
+		background-position-x: 100%;
 	}
 }
