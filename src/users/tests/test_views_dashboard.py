@@ -51,7 +51,7 @@ def test_dashboard_bare(bare_user, bare_user_client):
     assert response.redirect_chain == [('/en-us/accounts/profile/', 302)]
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
 def test_dashboard_bare_ui(bare_user_client, parser):
     response = bare_user_client.get('/en-us/dashboard/')
     body = parser.parse(response)
@@ -68,7 +68,7 @@ def test_dashboard(user_client):
     assert response.status_code == 200
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
 def test_dashboard_ui(user_client, parser):
     response = user_client.get('/en-us/dashboard/')
     body = parser.parse(response)
@@ -81,7 +81,7 @@ def test_dashboard_ui(user_client, parser):
     assert len(body.cssselect('.proposal')) == 0, 'no submitted proposals'
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
 def test_dashboard_proposal_list(user_client, proposals, parser):
     response = user_client.get('/en-us/dashboard/')
     body = parser.parse(response)

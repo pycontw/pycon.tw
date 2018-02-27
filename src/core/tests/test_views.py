@@ -15,7 +15,6 @@ def test_index_page(client):
     assert 'PyCon' in response.content.decode('utf-8')
 
 
-@pytest.mark.xfail(strict=True, reason='TODO: speaking pages not implemented')
 @pytest.mark.parametrize('path,expected', [
     ('/en-us/speaking/cfp/',  200),
     ('/en-us/speaking/talk/', 200),
