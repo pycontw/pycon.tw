@@ -42,7 +42,8 @@ export class MenuController extends Controller {
 		// the current menu item. This prevents the menu from being closed when
 		// the mouse is leaving parent to hover onto the submenu.
 		const item = this._getMenuItem(event.target)
-		for (let element of document.querySelectorAll(':hover')) {
+		for (const el of document.querySelectorAll(':hover')) {
+			let element = el
 			while (element) {
 				if (element === item) {
 					return
@@ -50,7 +51,7 @@ export class MenuController extends Controller {
 				element = element.parentNode
 			}
 		}
-		this.exclude(event)
+		item.querySelector('input').checked = false
 	}
 
 	exclude(event) {
