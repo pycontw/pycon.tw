@@ -21,7 +21,7 @@ $heading-margin-left-desktop: 50vw - $heading-width-desktop;
 	margin-top: 0 - $top-navbar-offset;
 	padding-top: $padding-top-mobile;
 	height: calc(100vh - #{$padding-top-mobile});
-	max-height: 175vw;
+	max-height: 150vw;
 	background:
 		url('../assets/perspective-mobile.svg') 60% 57% no-repeat,
 		radial-gradient(circle at 69% 60%, $indigo, $dark-slate-blue);
@@ -29,6 +29,7 @@ $heading-margin-left-desktop: 50vw - $heading-width-desktop;
 	@include on-desktop {
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
+		max-height: auto;
 		margin-bottom: 0 - $menu-overlap;
 		padding: $padding-top-desktop 0 $menu-overlap 0;
 		background:

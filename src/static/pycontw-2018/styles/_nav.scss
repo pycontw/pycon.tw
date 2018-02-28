@@ -166,6 +166,11 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 			@include navbar-social-icon(1.375rem, $white-65, $white);
 			margin: 0 16px 0 12px;
 			line-height: $top-navbar-height;
+
+			&.fa-envelope {
+				 // The envelope icon is visually larger than others. Compensate.
+				 font-size: $font-size * 0.9;
+			}
 		}
 	}
 }
