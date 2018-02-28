@@ -60,9 +60,9 @@ main {
 		margin-bottom: 24px;
 	}
 
-	// Most content blocks are 20px apart.
-	> * {
-		margin-top: 20px;
+	@mixin container-block($margin) {
+		margin-top: $margin;
+		margin-bottom: $margin;
 
 		// Cancel terminal margins for nested blocks.
 		> *:first-child {
@@ -73,16 +73,17 @@ main {
 		}
 	}
 
-	// Non-p elements are 48px apart.
-	@mixin container-block {
-		margin-top: 48px;
-		margin-bottom: 48px;
+	// Most content blocks are 20px apart.
+	> * {
+		@include container-block(20px);
 	}
-	$content-blocks: ul dl ol blockquote pre;
+
+	// Non-p elements are 48px apart.
+	$content-blocks: 'ul' 'dl' 'ol' 'blockquote' 'pre';
 	p {
 		@each $tag in $content-blocks {
 			& + #{$tag} {
-				@include container-block;
+				@include container-block(48px);
 			}
 		}
 	}
@@ -90,11 +91,8 @@ main {
 		#{$tag} {
 			@each $tag in $content-blocks {
 				& + #{$tag}, {
-					@include container-block;
+					@include container-block(48px);
 				}
-			}
-			& + p {
-				@include container-block;
 			}
 		}
 	}
