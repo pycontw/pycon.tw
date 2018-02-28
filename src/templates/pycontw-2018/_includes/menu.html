@@ -16,15 +16,15 @@
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
 {% url 'page' path='speaking/recording' as speaking_recording_url %}
 {% url 'sponsor_list' as sponsor_url %}
-{% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
-{% url 'page' path='registration/ticket-info' as reg_ticket_info_url%}
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
+{% url 'page' path='registration/ticket-info' as reg_ticket_info_url %}
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 
 <ul class="menu" data-controller="menu">
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-about" data-target="menu.item" data-action="change->menu#exclude">
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-about" data-target="menu.checker" data-action="change->menu#exclude">
 		<label for="menu-navbar-{{ type }}-about">{% trans 'About' %}</label>
 		<div class="dropdown">
 			<ul class="submenu">
@@ -35,7 +35,7 @@
 	</li>
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.item" data-action="change->menu#exclude">
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
 		<label for="menu-navbar-{{ type }}-propose">{% trans 'Speaking' %}</label>
 		<div class="dropdown">
 			<ul class="submenu">
