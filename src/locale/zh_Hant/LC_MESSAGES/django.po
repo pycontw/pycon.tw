@@ -6,17 +6,18 @@
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
 # Jason <chairco@gmail.com>, 2017
-# Liang Bo Wang <me@liang2.tw>, 2015-2016
-# Liang Bo Wang <me@liang2.tw>, 2016
+# Liang-Bo Wang <me@liang2.tw>, 2015-2016
+# Liang-Bo Wang <me@liang2.tw>, 2016
 # Michelle <flywindy2002@gmail.com>, 2016
-# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2017
+# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2018
 # Yuan CHAO <yuanchao@gmail.com>, 2017
+# 豆豆 (Tommy Lin) <gnat_lin@hotmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 03:52+0800\n"
-"PO-Revision-Date: 2017-06-06 19:58+0000\n"
+"POT-Creation-Date: 2018-02-28 22:56+0800\n"
+"PO-Revision-Date: 2018-02-28 15:17+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -71,6 +72,7 @@ msgid "Photography"
 msgstr "記錄組"
 
 #: core/forms.py:10
+#, python-brace-format
 msgid "{model_name_cap} creation requires a request object."
 msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 
@@ -86,7 +88,7 @@ msgstr "題目"
 msgid "Best Practices & Patterns"
 msgstr "最佳實踐與慣例"
 
-#: core/models.py:85
+#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:13
 msgid "Community"
 msgstr "社群"
 
@@ -233,33 +235,27 @@ msgstr "最後更新"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:296
+#: events/admin.py:76 pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:297
+#: events/admin.py:77 pycontw2016/settings/base.py:327
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
 msgstr "第 2 天"
 
-#: events/admin.py:78 pycontw2016/settings/base.py:298
-#: pycontw2016/settings/production/pycontw2016.py:24
-#: templates/pycontw-2016/events/schedule.html:48
-msgid "Day 3"
-msgstr "第 3 天"
-
-#: events/admin.py:93 events/models.py:140
+#: events/admin.py:92 events/models.py:140
 msgid "begin time"
 msgstr "開始時間"
 
-#: events/admin.py:99 events/models.py:148
+#: events/admin.py:98 events/models.py:148
 msgid "end time"
 msgstr "結束時間"
 
-#: events/admin.py:121
+#: events/admin.py:120
 #: templates/default/users/_includes/dashboard_proposal_table.html:29
 msgid "Edit"
 msgstr "編輯"
@@ -329,13 +325,14 @@ msgstr "自訂活動"
 
 #: events/models.py:182 users/models.py:110
 msgid "speaker name"
-msgstr "講者名"
+msgstr "演講者"
 
 #: events/models.py:186 events/models.py:219
 msgid "slug"
 msgstr "網址文字"
 
 #: events/models.py:188
+#, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
@@ -350,6 +347,7 @@ msgid "keynote events"
 msgstr "基調演講"
 
 #: events/models.py:200
+#, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
@@ -387,6 +385,8 @@ msgstr "HTML"
 #: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
+#: templates/pycontw-2018/events/schedule.html:6
+#: templates/pycontw-2018/events/schedule.html:17
 msgid "Schedule"
 msgstr "時間表"
 
@@ -411,6 +411,7 @@ msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
 #: proposals/forms/mixins.py:16
+#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
@@ -426,6 +427,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='abstract'>觀看範例</a>。</p><p>介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。</p>"
 
 #: proposals/forms/mixins.py:53 proposals/forms/mixins.py:149
+#, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
 "of talk level can be found at the <a href='{speaking_talk_url}' "
@@ -449,6 +451,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='detailed description'>觀看範例</a>。</p>本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1200 個中文字 (或約 2000 個西文字元)。由於多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。"
 
 #: proposals/forms/mixins.py:80 proposals/forms/mixins.py:176
+#, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation. More information can be found "
@@ -526,6 +529,7 @@ msgid ""
 msgstr "講者應該已於 tw.pycon.org 註冊帳號，並且完成 email 認證與講者資訊。"
 
 #: proposals/forms/speakers.py:29
+#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create an "
 "{model_name}."
@@ -646,26 +650,32 @@ msgid " and "
 msgstr "、"
 
 #: proposals/views/cancel.py:34
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》演講提案已撤回。"
 
 #: proposals/views/cancel.py:38
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
 
 #: proposals/views/cancel.py:56
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》專業課程提案已撤回。"
 
 #: proposals/views/cancel.py:60
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》專業課程提案已重新提交。"
 
 #: proposals/views/create.py:38
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
 
 #: proposals/views/create.py:48
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的專業課程提案。"
 
@@ -778,31 +788,37 @@ msgid ""
 msgstr "1. 簡介 EXIF 與 exiftool [5min]\n2. Pillow 使用及如何用它加上浮水印 [5min]\n- 字型的選用\n- 排版的一致性\n3. 自動化 [5min]\n- 使用 stdlib 架出一個 batch 處理流程\n- 搭配 joblib 或 multiprocessing 達成平行化\n4. 舉例 (使用 Pelican)[5min]\n- 簡介 Pelican 擴充方式 (template tag 與 signal 的搭配)\n- 成果\n5. Q&A [5min]\n\n"
 
 #: proposals/views/update.py:59
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 
 #: proposals/views/update.py:68
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:267
+#: pycontw2016/settings/base.py:296
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:268 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:297 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:290
+#: pycontw2016/settings/base.py:298 templates/pycontw-2018/index.html:14
+msgid "PyCon Taiwan 2018"
+msgstr "PyCon Taiwan 2018"
+
+#: pycontw2016/settings/base.py:320
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:291
+#: pycontw2016/settings/base.py:321
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:292
+#: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -810,6 +826,11 @@ msgstr "偏好 45 分鐘"
 #: pycontw2016/settings/production/pycontw2016.py:17
 msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
+
+#: pycontw2016/settings/production/pycontw2016.py:24
+#: templates/pycontw-2016/events/schedule.html:48
+msgid "Day 3"
+msgstr "第 3 天"
 
 #: remotedb/apps.py:11
 msgid "Remote DB"
@@ -828,14 +849,17 @@ msgid "dumped data"
 msgstr "匯出資料"
 
 #: reviews/forms.py:14
+#, python-brace-format
 msgid "The current user is invalid to create a {model_name}."
 msgstr "現在的使用者無法建立 {model_name}。"
 
 #: reviews/forms.py:17
+#, python-brace-format
 msgid "{model_name_cap} creation requires a proposal object."
 msgstr "{model_name_cap} 的建立需要一個 proposal 物件。"
 
 #: reviews/forms.py:49
+#, python-brace-format
 msgid "Could not review proposal {proposal}."
 msgstr "無法審查提案 {proposal}。"
 
@@ -931,6 +955,7 @@ msgid "reviews"
 msgstr "審查"
 
 #: reviews/models.py:169
+#, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
 
@@ -951,6 +976,7 @@ msgid "talk proposal snapshots"
 msgstr "演講投稿封存"
 
 #: reviews/models.py:214
+#, python-brace-format
 msgid "Stage {stage} dump for {proposal}"
 msgstr "第 {stage} 階段封存《{proposal}》"
 
@@ -974,7 +1000,7 @@ msgstr "logo (SVG)"
 msgid ""
 "Vector format of the logo, in SVG. This takes precedence to the raster "
 "format, if available."
-msgstr ""
+msgstr "即使有點陣式圖形格式的圖標，還是會優先採用向量式SVG格式的圖標。"
 
 #: sponsors/models.py:38
 msgid "logo (image)"
@@ -984,7 +1010,7 @@ msgstr "logo (圖片)"
 msgid ""
 "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the"
 " SVG file is not available."
-msgstr ""
+msgstr "當SVG格式的檔案不存在時，會回過頭來使用點陣式格式的圖標，例如PNG、JPEG。"
 
 #: sponsors/models.py:60
 msgid "organizer"
@@ -1623,10 +1649,13 @@ msgid "We screwed up. It’s not your fault."
 msgstr "我們搞砸了，這不是你的問題。"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
+#: templates/pycontw-2018/_includes/menu.html:28
 msgid "About"
 msgstr "關於"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:32
+#: templates/pycontw-2018/_includes/footer.html:10
+#: templates/pycontw-2018/_includes/menu.html:32
 msgid "Code of Conduct"
 msgstr "行為準則"
 
@@ -1653,6 +1682,8 @@ msgstr "基調演講"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
+#: templates/pycontw-2018/events/talk_list.html:6
+#: templates/pycontw-2018/events/talk_list.html:7
 msgid "Talks"
 msgstr "演講"
 
@@ -1732,22 +1763,26 @@ msgstr "議程時間表會<span class=\"text-emphasize\">隨狀況更新</span>�
 
 #: templates/pycontw-2016/events/schedule.html:39
 #: templates/pycontw-2017/events/schedule.html:21
+#: templates/pycontw-2018/events/schedule.html:21
 msgid "Quick Jump"
 msgstr "跳至"
 
 #: templates/pycontw-2016/events/schedule_create.html:15
 #: templates/pycontw-2017/events/schedule_create.html:71
+#: templates/pycontw-2018/events/schedule_create.html:71
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 
 #: templates/pycontw-2016/events/schedule_create.html:26
 #: templates/pycontw-2017/events/schedule_create.html:82
+#: templates/pycontw-2018/events/schedule_create.html:82
 msgid "Generate"
 msgstr "產生"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:27
 #: templates/pycontw-2016/events/talk_detail.html:27
 #: templates/pycontw-2017/events/talk_detail.html:49
+#: templates/pycontw-2018/events/talk_detail.html:49
 msgid "Slides Link"
 msgstr "投影片連結"
 
@@ -1765,11 +1800,13 @@ msgstr "您可由<a class=\"text-emphasize\" href=\"%(schedule_url)s\">此處</a
 
 #: templates/pycontw-2016/events/talk_list.html:28
 #: templates/pycontw-2017/events/talk_list.html:33
+#: templates/pycontw-2018/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "一般演講"
 
 #: templates/pycontw-2016/events/talk_list.html:32
 #: templates/pycontw-2017/events/talk_list.html:41
+#: templates/pycontw-2018/events/talk_list.html:41
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1783,6 +1820,7 @@ msgstr "贊助演講"
 
 #: templates/pycontw-2016/events/talk_list.html:41
 #: templates/pycontw-2017/events/talk_list.html:53
+#: templates/pycontw-2018/events/talk_list.html:53
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1994,6 +2032,7 @@ msgid "Quiz Leaderboard"
 msgstr "猜謎排行榜"
 
 #: templates/pycontw-2017/contents/_default/portal.html:45
+#: templates/pycontw-2017/contents/_default/portal.html:65
 msgid "Facebook Fan Page"
 msgstr "Facebook 粉絲頁"
 
@@ -2001,23 +2040,23 @@ msgstr "Facebook 粉絲頁"
 msgid "Quiz Bots"
 msgstr "猜謎機器人"
 
-#: templates/pycontw-2017/contents/_default/portal.html:56
+#: templates/pycontw-2017/contents/_default/portal.html:58
 msgid "Chat on LINE"
 msgstr "在 LINE 上聊天"
 
-#: templates/pycontw-2017/contents/_default/portal.html:59
+#: templates/pycontw-2017/contents/_default/portal.html:72
 msgid "Chat on Facebook Messenger"
 msgstr "在 Facebook Messenger 聊天"
 
-#: templates/pycontw-2017/contents/_default/portal.html:64
+#: templates/pycontw-2017/contents/_default/portal.html:78
 msgid "Mobile Apps"
 msgstr "手機 Apps"
 
-#: templates/pycontw-2017/contents/_default/portal.html:68
+#: templates/pycontw-2017/contents/_default/portal.html:82
 msgid "Download on the App Store"
 msgstr "從 App Store 下載"
 
-#: templates/pycontw-2017/contents/_default/portal.html:71
+#: templates/pycontw-2017/contents/_default/portal.html:85
 msgid "Get it on Google Play"
 msgstr "於 Google Play 取得"
 
@@ -2027,31 +2066,39 @@ msgstr "非正式會議"
 
 #: templates/pycontw-2017/events/schedule_create.html:7
 #: templates/pycontw-2017/events/schedule_create.html:16
+#: templates/pycontw-2018/events/schedule_create.html:7
+#: templates/pycontw-2018/events/schedule_create.html:16
 msgid "Export New Schedule"
 msgstr "輸出新時間表"
 
 #: templates/pycontw-2017/events/talk_detail.html:18
+#: templates/pycontw-2018/events/talk_detail.html:18
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s，%(begin_time_display)s&#8209;%(end_time_display)s"
 
 #: templates/pycontw-2017/events/talk_detail.html:28
+#: templates/pycontw-2018/events/talk_detail.html:28
 msgid "Invited event"
 msgstr "特邀活動"
 
 #: templates/pycontw-2017/events/talk_detail.html:32
+#: templates/pycontw-2018/events/talk_detail.html:32
 msgid "No recording"
 msgstr "不錄影"
 
 #: templates/pycontw-2017/events/talk_detail.html:42
+#: templates/pycontw-2018/events/talk_detail.html:42
 msgid "Talk Detail"
 msgstr "演講詳細內容"
 
 #: templates/pycontw-2017/events/talk_detail.html:54
+#: templates/pycontw-2018/events/talk_detail.html:54
 msgid "Speaker Information"
 msgstr "講者介紹"
 
 #: templates/pycontw-2017/events/talk_list.html:14
+#: templates/pycontw-2018/events/talk_list.html:14
 msgid ""
 "The three conference days are packed with talks about Python by speakers "
 "from Taiwan and around the world. The talks will be either 30- or 45-minute "
@@ -2063,12 +2110,14 @@ msgid ""
 msgstr "演講為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。"
 
 #: templates/pycontw-2017/events/talk_list.html:25
+#: templates/pycontw-2018/events/talk_list.html:25
 msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
 
 #: templates/pycontw-2017/events/talk_list.html:49
+#: templates/pycontw-2018/events/talk_list.html:49
 msgid "Invited Events"
 msgstr "特邀活動"
 
@@ -2096,7 +2145,7 @@ msgstr "3/12、6/12"
 msgid "Get Tickets"
 msgstr "立即購票"
 
-#: templates/pycontw-2017/index.html:39
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:79
 msgid "Volunteers Needed"
 msgstr "徵求志工"
 
@@ -2130,8 +2179,113 @@ msgstr "臺灣的在地 Python 社群"
 
 #: templates/pycontw-2017/sponsors/sponsor_list.html:7
 #: templates/pycontw-2017/sponsors/sponsor_list.html:17
+#: templates/pycontw-2018/sponsors/sponsor_list.html:7
+#: templates/pycontw-2018/sponsors/sponsor_list.html:17
 msgid "Our Partners"
 msgstr "我們的夥伴"
+
+#: templates/pycontw-2018/_includes/menu.html:31
+msgid "PyCon Taiwan"
+msgstr "PyCon Taiwan"
+
+#: templates/pycontw-2018/_includes/menu.html:39
+msgid "Speaking"
+msgstr "投稿"
+
+#: templates/pycontw-2018/_includes/menu.html:42
+msgid "Call for Proposal"
+msgstr "稿件募集"
+
+#: templates/pycontw-2018/_includes/menu.html:43
+msgid "Proposing a Talk"
+msgstr "投稿演講"
+
+#: templates/pycontw-2018/_includes/menu.html:44
+msgid "Proposing a Tutorial"
+msgstr "投稿教學"
+
+#: templates/pycontw-2018/_includes/menu.html:45
+msgid "Recording"
+msgstr "錄影"
+
+#: templates/pycontw-2018/_includes/menu.html:69
+msgid "My PyCon"
+msgstr "My PyCon"
+
+#: templates/pycontw-2018/index.html:42
+msgid "Calling for Proposals"
+msgstr "稿件募集中！"
+
+#: templates/pycontw-2018/index.html:43
+msgid ""
+"PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit "
+"yours now!"
+msgstr "PyCon Taiwan 2018 正募集演講與教學稿件。馬上投稿！"
+
+#: templates/pycontw-2018/index.html:47
+msgid "First call:&nbsp;"
+msgstr "募集開始："
+
+#: templates/pycontw-2018/index.html:48
+msgctxt "begin of cfp"
+msgid "1st February"
+msgstr "2 月 1 日"
+
+#: templates/pycontw-2018/index.html:49
+msgid "Deadline:&nbsp;"
+msgstr "募集截止："
+
+#: templates/pycontw-2018/index.html:50
+msgctxt "end of cfp"
+msgid "5th March"
+msgstr "3 月 5 日"
+
+#: templates/pycontw-2018/index.html:54
+msgid "How to Propose"
+msgstr "如何投稿"
+
+#: templates/pycontw-2018/index.html:56
+msgid "Propose Now"
+msgstr "馬上投稿"
+
+#: templates/pycontw-2018/index.html:65
+msgid "What is PyCon"
+msgstr "何謂 PyCon"
+
+#: templates/pycontw-2018/index.html:66
+msgid ""
+"<p>The original PyCon was formed in North America in 2003, and now there are"
+" many other conferences being run in the PyCon spirit around the world.</p>"
+msgstr "<p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</p>"
+
+#: templates/pycontw-2018/index.html:72
+msgid "What is PyCon Taiwan"
+msgstr "何謂 PyCon Taiwan"
+
+#: templates/pycontw-2018/index.html:73
+msgid ""
+"<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge,"
+" exchange ideas, make connections and to help us grow our network.</p>"
+msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
+
+#: templates/pycontw-2018/index.html:80
+msgid "<p>Help us organize and make the conference successful!</p>"
+msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
+
+#: templates/pycontw-2018/index.html:81
+msgid "Become a volunteer"
+msgstr "成為志工"
+
+#: templates/pycontw-2018/index.html:89
+msgid "Partners"
+msgstr "夥伴"
+
+#: templates/pycontw-2018/index.html:90
+msgid "Enquire about sponsorship"
+msgstr "詢問贊助辦法"
 
 #: users/admin.py:18
 msgid "Personal info"
@@ -2166,6 +2320,7 @@ msgid "Create Account"
 msgstr "新建帳號"
 
 #: users/forms.py:148
+#, python-brace-format
 msgid "Your image is too small ({width}\\u00d7{height} pixels)."
 msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
 
@@ -2181,6 +2336,7 @@ msgid ""
 msgstr "原始的密碼並沒有儲存在資料庫中，因此沒有任何方法能看到本使用者的密碼，但你可以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/forms.py:246
+#, python-brace-format
 msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼？</a>"
 
@@ -2281,6 +2437,7 @@ msgid "users"
 msgstr "使用者"
 
 #: users/models.py:260
+#, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
 
@@ -2293,6 +2450,7 @@ msgid "Email verification successful."
 msgstr "Email 認證成功。"
 
 #: users/views.py:67
+#, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "一封認證用的 email 已經寄送至 {email}"
 
