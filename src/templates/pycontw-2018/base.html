@@ -1,5 +1,5 @@
-{% load compress static %}
 {% load i18n static %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html>
@@ -12,22 +12,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block titletag %}
-<title>{% block title %}{% endblock %} | PyCon Taiwan 2018</title>
+<title>{% block title %}{% endblock title %} | PyCon Taiwan 2018</title>
 {% endblock titletag %}
 
-<link rel="icon" type="image/png" href="{% static 'pycontw-2018/images/favicon.png' %}">
+<link rel="shortcut icon" href="{% static 'pycontw-2018/assets/favicon.ico' %}">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2018/assets/favicon-16x16.png' %}" sizes="16x16">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2018/assets/favicon-32x32.png' %}" sizes="32x32">
 
 {% block meta_og %}
 <meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/images/og-image.png' %}">
-{% endblock %}
+{% endblock meta_og %}
 
-<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono" rel="stylesheet"> 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400|Raleway:300,400">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
 {% compress css %}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/main.scss' %}">
-<link rel="stylesheet" href="{% static 'pycontw-2018/styles/nav.css' %}">
 {% block styles %}{% endblock %}
 {% endcompress %}
 
@@ -38,53 +39,25 @@
 
 <body>
 
-<div class="mother-wrapper">
-<div class="cover-wrapper">
 {% block nav %}
-{% include '_includes/header.html' with active=None %}
+{% include '_includes/top_nav.html' %}
 {% endblock nav %}
 
-	<h1 class="logo">
-    <a href="{% url 'index' %}" class="btn btn-home">
-		<img src="{% static 'pycontw-2018/images/logo-18.svg' %}" alg="PyCon Taiwan 2018">
-    </a>
-	</h1>
-
-  <div class="date-panel">
-    <time>{% trans '1-2 June' %}</time>
-    <code class="def-future">Hello, Future!</code>
-  </div>
-
-</div>
-
-{% block content_full %}
-<div class="wrapper">
-	<main class="inner-wrapper">
-		{% block content %}{% endblock content %}
-	</main>
-</div>
-{% endblock content_full %}
-
-<div class="push"></div>
-
-</div>
+{% block content_full %}{% endblock content_full %}
 
 {% include '_includes/footer.html' %}
-
-{% block extrabody %}{% endblock extrabody %}
 
 {% if GA_TRACK_ID %}
 <script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
 <script src="{% static 'js/vendors/google_analytics.js' %}"></script>
 {% endif %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 {% compress js %}
-<script src="{% static 'pycontw-2018/scripts/polyfill.js' %}"></script>
-<script src="{% static 'pycontw-2018/scripts/nav.js' %}"></script>
-{% block scripts %}{% endblock %}
+{% block scripts %}
+<script type="module" src="{% static 'pycontw-2018/scripts/app.js' %}"></script>
+{% endblock scripts %}
 {% endcompress %}
-{% block extra_js %}{% endblock %}
+{% block extra_js %}{% endblock extra_js %}
 
 </body>
 

@@ -1,0 +1,133 @@
+/* Color palette. */
+$indigo: #3b097b;
+$dark-slate-blue: #192660;
+$dark-peach: #e57b5c;
+$maize: #eec850;
+$azure: #2bb1f7;
+$ultramarine-blue: #3000d1;
+$black: #333333;
+$white: #ffffff;
+$pale-grey: #f7f5fa;
+$dark-indigo: #280454;
+$dark-violet: #280356;
+$purple: #521f93;
+$light-indigo: #875bcd;
+$bluey-grey: #9997b7;
+$white-two: #e6e6e6;
+$pinkish-grey: #c9c9c9;
+$white-35: rgba(255, 255, 255, 0.35);
+
+/* Some extra styles not in the Zepplin palette. */
+$white-65: rgba(255, 255, 255, 0.65);
+
+
+/* Header styles. */
+
+$header-font-family: 'Roboto', 'Noto Sans TC', 'sans-serif';
+
+@mixin header($font-size) {
+  color: $black;
+  font-family: $header-font-family;
+  font-size: $font-size;
+  font-weight: 300;
+  text-align: center;
+}
+
+@mixin h0 {
+  @include header(3rem);			// ~ 48px.
+}
+
+@mixin h1 {
+  @include header(2.25rem);		// ~ 36px.
+}
+
+@mixin h2 {
+  @include header(1.75rem);		// ~ 24px.
+}
+
+@mixin h3 {
+  @include header(1.125rem);	// ~ 18px.
+}
+
+
+/* Content styles. */
+
+$text-font-size: 1.05rem;				// ~ 16px.
+$text-font-size-small: 0.75rem;	// ~ 12px.
+
+$text-light: $white;
+$text-dark: $black;
+
+$link-dark: #9d50ff;
+$link-hover-dark: #9d50ff;
+$link-light: $white-two;
+$link-hover-light: $white;
+
+@mixin link($base-color, $hover-color) {
+	color: $base-color;
+	text-decoration: none;
+
+	&:hover {
+		color: $hover-color;
+		text-decoration: underline;
+	}
+}
+
+@mixin link-dark {
+	@include link($link-dark, $link-dark);
+}
+
+@mixin link-light {
+	@include link($link-light, $link-light);
+}
+
+@mixin text($font-size) {
+  color: $text-dark;
+  font-family: 'Raleway', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+  font-weight: 200;
+  font-size: $font-size;
+
+  strong {
+    font-weight: 400;
+  }
+  em {  // Do not use slant.
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+@mixin text-light {
+  a {
+    @include link-light;
+  }
+  button, dl, p, ul {
+    color: $text-light;
+  }
+}
+
+
+/* Apply default styling. */
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+button, dl, label, p, ul {
+  @include text($text-font-size);
+}
+
+dl, p, ul {
+  line-height: 160%;
+}
+
+a {
+	@include link-dark;
+}

@@ -28,8 +28,11 @@ local.env
 *.pot
 *.log
 venv/
-assets/
+/src/assets/
 local.db
+
+# NPM
+node_modules/
 
 # Eclipse
 .project

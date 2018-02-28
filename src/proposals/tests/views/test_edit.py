@@ -61,7 +61,7 @@ def test_talk_proposal_edit_get(user_client, talk_proposal):
     assert response.status_code == 200
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
 def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
     body = parser.parse(user_client.get('/en-us/proposals/talk/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
@@ -79,7 +79,6 @@ def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
     assert form_element.get('action') == '/proposals/talk/42/cancel/'
 
 
-@pytest.mark.xfail
 def test_talk_proposal_edit_get_cancelled_ui(
         user_client, cancelled_talk_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
@@ -100,7 +99,7 @@ def test_tutorial_proposal_edit_get(user_client, tutorial_proposal):
     assert response.status_code == 200
 
 
-@pytest.mark.xfail
+@pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
 def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
     body = parser.parse(user_client.get('/en-us/proposals/tutorial/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
@@ -118,7 +117,6 @@ def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
     assert form_element.get('action') == '/en-us/proposals/tutorial/42/cancel/'
 
 
-@pytest.mark.xfail
 def test_tutorial_proposal_edit_get_cancelled(
         user_client, cancelled_tutorial_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to

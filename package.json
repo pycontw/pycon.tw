@@ -1,0 +1,22 @@
+{
+  "name": "pycontw2016",
+  "version": "1.0.0",
+  "repository": "https://github.com/pycontw/pycontw2016",
+  "author": "PyCon Taiwan <web@pycon.tw>",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "normalize-scss": "^7.0.1",
+    "stimulus": "^1.0.1"
+  }
+}

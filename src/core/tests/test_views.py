@@ -16,12 +16,18 @@ def test_index_page(client):
 
 
 @pytest.mark.parametrize('path,expected', [
-    ('/en-us/speaking/cfp/',   200),
-    ('/en-us/speaking/talk/',  200),
+    ('/en-us/speaking/cfp/',  200),
+    ('/en-us/speaking/talk/', 200),
+])
+def test_speaking_pages(client, path, expected):
+    assert client.get(path).status_code == expected
+
+
+@pytest.mark.parametrize('path,expected', [
     ('/en-us/speaking/base/',  404),
     ('/en-us/speaking/_base/', 404),
 ])
-def test_speaking_pages(client, path, expected):
+def test_speaking_bases(client, path, expected):
     assert client.get(path).status_code == expected
 
 
@@ -110,7 +116,7 @@ def test_content_pages_links(client, parser, schedule, content_page_full_path):
         link = tag.get('href')
         try:
             status = client.get(tag.get('href'), follow=True).status_code
-        except:     # Catch internal server error for better reporting.
+        except Exception:   # Catch internal server error for better reporting.
             status = 500
         return (link, status)
 

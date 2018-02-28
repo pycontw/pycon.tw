@@ -13,10 +13,10 @@ end_of_line = lf
 [*.yml]
 indent_size = 2
 
-[*.js]
+[*.{css,js,scss}]
 indent_style = tab
 indent_size = 2
 
-[*.{html,txt}]
+[*.{html,svg,txt}]
 indent_style = tab
 indent_size = 2
