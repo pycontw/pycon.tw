@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-07 03:52+0800\n"
-"PO-Revision-Date: 2017-06-06 19:59+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-02-28 22:56+0800\n"
+"PO-Revision-Date: 2018-02-28 14:56+0000\n"
+"Last-Translator: PyCon Taiwan\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,6 +67,7 @@ msgid "Photography"
 msgstr "Photography"
 
 #: core/forms.py:10
+#, python-brace-format
 msgid "{model_name_cap} creation requires a request object."
 msgstr "{model_name_cap} creation requires a request object."
 
@@ -82,7 +83,7 @@ msgstr "title"
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:85
+#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:13
 msgid "Community"
 msgstr "Community"
 
@@ -229,33 +230,27 @@ msgstr "last updated at"
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:296
+#: events/admin.py:76 pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:297
+#: events/admin.py:77 pycontw2016/settings/base.py:327
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
 msgstr "Day 2"
 
-#: events/admin.py:78 pycontw2016/settings/base.py:298
-#: pycontw2016/settings/production/pycontw2016.py:24
-#: templates/pycontw-2016/events/schedule.html:48
-msgid "Day 3"
-msgstr "Day 3"
-
-#: events/admin.py:93 events/models.py:140
+#: events/admin.py:92 events/models.py:140
 msgid "begin time"
 msgstr "begin time"
 
-#: events/admin.py:99 events/models.py:148
+#: events/admin.py:98 events/models.py:148
 msgid "end time"
 msgstr "end time"
 
-#: events/admin.py:121
+#: events/admin.py:120
 #: templates/default/users/_includes/dashboard_proposal_table.html:29
 msgid "Edit"
 msgstr "Edit"
@@ -332,6 +327,7 @@ msgid "slug"
 msgstr "slug"
 
 #: events/models.py:188
+#, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
@@ -346,6 +342,7 @@ msgid "keynote events"
 msgstr "keynote events"
 
 #: events/models.py:200
+#, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
@@ -383,6 +380,8 @@ msgstr "HTML"
 #: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
+#: templates/pycontw-2018/events/schedule.html:6
+#: templates/pycontw-2018/events/schedule.html:17
 msgid "Schedule"
 msgstr "Schedule"
 
@@ -407,6 +406,7 @@ msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
 
 #: proposals/forms/mixins.py:16
+#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
@@ -422,6 +422,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what the talk is about. If the talk assume some domain knowledge please state it here. If your talk is accepted, this will be displayed on both the website and the handbook. Should be one paragraph.</p>"
 
 #: proposals/forms/mixins.py:53 proposals/forms/mixins.py:149
+#, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
 "of talk level can be found at the <a href='{speaking_talk_url}' "
@@ -445,6 +446,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be too lengthy to scare away reviewers or potential audience. A comfortable length is less than 2000 characters (or about 1200 Chinese characters). Since most reviewers may not understand the topic as deep as you do, including related links to the talk topic will help reviewers understand the proposal. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a>."
 
 #: proposals/forms/mixins.py:80 proposals/forms/mixins.py:176
+#, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
 "release audio and video of your presentation. More information can be found "
@@ -522,6 +524,7 @@ msgid ""
 msgstr "The speaker should have a registered account, and have completed both email validation and the speaker profile."
 
 #: proposals/forms/speakers.py:29
+#, python-brace-format
 msgid ""
 "Only authenticated user with complete speaker profile may create an "
 "{model_name}."
@@ -642,26 +645,32 @@ msgid " and "
 msgstr " and "
 
 #: proposals/views/cancel.py:34
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
 msgstr "Talk proposal <strong>{title}</strong> withdrawn."
 
 #: proposals/views/cancel.py:38
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> reactivated."
 msgstr "Talk proposal <strong>{title}</strong> reactivated."
 
 #: proposals/views/cancel.py:56
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgstr "Tutorial proposal <strong>{title}</strong> withdrawn."
 
 #: proposals/views/cancel.py:60
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "Tutorial proposal <strong>{title}</strong> reactivated."
 
 #: proposals/views/create.py:38
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
 msgstr "Talk proposal <strong>{title}</strong> created."
 
 #: proposals/views/create.py:48
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "Tutorial proposal <strong>{title}</strong> created."
 
@@ -774,31 +783,37 @@ msgid ""
 msgstr "1. Intro to EXIF and exiftool [5min]\n2. Usage of Pillow, use it to add watermark [5min]\n  - Selection of fonts\n  - Consistency of layout\n3. Automation [5min]\n  - Using stdlib to make a batch processing workflow\n  - Integrating joblib or multiprocessing to parallelize\n4. Example (using Pelican) [5min]\n  - Intro to Pelican’s plugin system (integration between template tags and signals)\n  - Final resulting work\n5. Q&A [5min]\n"
 
 #: proposals/views/update.py:59
+#, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "Talk proposal <strong>{title}</strong> updated."
 
 #: proposals/views/update.py:68
+#, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:267
+#: pycontw2016/settings/base.py:296
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:268 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:297 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:290
+#: pycontw2016/settings/base.py:298 templates/pycontw-2018/index.html:14
+msgid "PyCon Taiwan 2018"
+msgstr ""
+
+#: pycontw2016/settings/base.py:320
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:291
+#: pycontw2016/settings/base.py:321
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:292
+#: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "Prefer 45min"
@@ -806,6 +821,11 @@ msgstr "Prefer 45min"
 #: pycontw2016/settings/production/pycontw2016.py:17
 msgid "Prefer 25min"
 msgstr "Prefer 25min"
+
+#: pycontw2016/settings/production/pycontw2016.py:24
+#: templates/pycontw-2016/events/schedule.html:48
+msgid "Day 3"
+msgstr "Day 3"
 
 #: remotedb/apps.py:11
 msgid "Remote DB"
@@ -824,14 +844,17 @@ msgid "dumped data"
 msgstr "dumped data"
 
 #: reviews/forms.py:14
+#, python-brace-format
 msgid "The current user is invalid to create a {model_name}."
 msgstr "The current user is invalid to create a {model_name}."
 
 #: reviews/forms.py:17
+#, python-brace-format
 msgid "{model_name_cap} creation requires a proposal object."
 msgstr "{model_name_cap} creation requires a proposal object."
 
 #: reviews/forms.py:49
+#, python-brace-format
 msgid "Could not review proposal {proposal}."
 msgstr "Could not review proposal {proposal}."
 
@@ -927,6 +950,7 @@ msgid "reviews"
 msgstr "reviews"
 
 #: reviews/models.py:169
+#, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "Review {proposal} by {reviewer}: {vote}"
 
@@ -947,6 +971,7 @@ msgid "talk proposal snapshots"
 msgstr "talk proposal snapshots"
 
 #: reviews/models.py:214
+#, python-brace-format
 msgid "Stage {stage} dump for {proposal}"
 msgstr "Stage {stage} dump for {proposal}"
 
@@ -1620,10 +1645,13 @@ msgid "We screwed up. It’s not your fault."
 msgstr "We screwed up. It’s not your fault."
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
+#: templates/pycontw-2018/_includes/menu.html:28
 msgid "About"
 msgstr "About"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:32
+#: templates/pycontw-2018/_includes/footer.html:10
+#: templates/pycontw-2018/_includes/menu.html:32
 msgid "Code of Conduct"
 msgstr "Code of Conduct"
 
@@ -1650,6 +1678,8 @@ msgstr "Keynotes"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
+#: templates/pycontw-2018/events/talk_list.html:6
+#: templates/pycontw-2018/events/talk_list.html:7
 msgid "Talks"
 msgstr "Talks"
 
@@ -1729,22 +1759,26 @@ msgstr "Program schedule are <span class=\"text-emphasize\">subject to change</s
 
 #: templates/pycontw-2016/events/schedule.html:39
 #: templates/pycontw-2017/events/schedule.html:21
+#: templates/pycontw-2018/events/schedule.html:21
 msgid "Quick Jump"
 msgstr "Quick Jump"
 
 #: templates/pycontw-2016/events/schedule_create.html:15
 #: templates/pycontw-2017/events/schedule_create.html:71
+#: templates/pycontw-2018/events/schedule_create.html:71
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 
 #: templates/pycontw-2016/events/schedule_create.html:26
 #: templates/pycontw-2017/events/schedule_create.html:82
+#: templates/pycontw-2018/events/schedule_create.html:82
 msgid "Generate"
 msgstr "Generate"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:27
 #: templates/pycontw-2016/events/talk_detail.html:27
 #: templates/pycontw-2017/events/talk_detail.html:49
+#: templates/pycontw-2018/events/talk_detail.html:49
 msgid "Slides Link"
 msgstr "Slides Link"
 
@@ -1762,11 +1796,13 @@ msgstr "You can check out the program schedule <a class=\"text-emphasize\" href=
 
 #: templates/pycontw-2016/events/talk_list.html:28
 #: templates/pycontw-2017/events/talk_list.html:33
+#: templates/pycontw-2018/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "Proposed Talks"
 
 #: templates/pycontw-2016/events/talk_list.html:32
 #: templates/pycontw-2017/events/talk_list.html:41
+#: templates/pycontw-2018/events/talk_list.html:41
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1780,6 +1816,7 @@ msgstr "Sponsored Events"
 
 #: templates/pycontw-2016/events/talk_list.html:41
 #: templates/pycontw-2017/events/talk_list.html:53
+#: templates/pycontw-2018/events/talk_list.html:53
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -1991,6 +2028,7 @@ msgid "Quiz Leaderboard"
 msgstr "Quiz Leaderboard"
 
 #: templates/pycontw-2017/contents/_default/portal.html:45
+#: templates/pycontw-2017/contents/_default/portal.html:65
 msgid "Facebook Fan Page"
 msgstr "Facebook Fan Page"
 
@@ -1998,23 +2036,23 @@ msgstr "Facebook Fan Page"
 msgid "Quiz Bots"
 msgstr "Quiz Bots"
 
-#: templates/pycontw-2017/contents/_default/portal.html:56
+#: templates/pycontw-2017/contents/_default/portal.html:58
 msgid "Chat on LINE"
 msgstr "Chat on LINE"
 
-#: templates/pycontw-2017/contents/_default/portal.html:59
+#: templates/pycontw-2017/contents/_default/portal.html:72
 msgid "Chat on Facebook Messenger"
 msgstr "Chat on Facebook Messenger"
 
-#: templates/pycontw-2017/contents/_default/portal.html:64
+#: templates/pycontw-2017/contents/_default/portal.html:78
 msgid "Mobile Apps"
 msgstr "Mobile Apps"
 
-#: templates/pycontw-2017/contents/_default/portal.html:68
+#: templates/pycontw-2017/contents/_default/portal.html:82
 msgid "Download on the App Store"
 msgstr "Download on the App Store"
 
-#: templates/pycontw-2017/contents/_default/portal.html:71
+#: templates/pycontw-2017/contents/_default/portal.html:85
 msgid "Get it on Google Play"
 msgstr "Get it on Google Play"
 
@@ -2024,31 +2062,39 @@ msgstr "Unconference"
 
 #: templates/pycontw-2017/events/schedule_create.html:7
 #: templates/pycontw-2017/events/schedule_create.html:16
+#: templates/pycontw-2018/events/schedule_create.html:7
+#: templates/pycontw-2018/events/schedule_create.html:16
 msgid "Export New Schedule"
 msgstr "Export New Schedule"
 
 #: templates/pycontw-2017/events/talk_detail.html:18
+#: templates/pycontw-2018/events/talk_detail.html:18
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 
 #: templates/pycontw-2017/events/talk_detail.html:28
+#: templates/pycontw-2018/events/talk_detail.html:28
 msgid "Invited event"
 msgstr "Invited event"
 
 #: templates/pycontw-2017/events/talk_detail.html:32
+#: templates/pycontw-2018/events/talk_detail.html:32
 msgid "No recording"
 msgstr "No recording"
 
 #: templates/pycontw-2017/events/talk_detail.html:42
+#: templates/pycontw-2018/events/talk_detail.html:42
 msgid "Talk Detail"
 msgstr "Talk Detail"
 
 #: templates/pycontw-2017/events/talk_detail.html:54
+#: templates/pycontw-2018/events/talk_detail.html:54
 msgid "Speaker Information"
 msgstr "Speaker Information"
 
 #: templates/pycontw-2017/events/talk_list.html:14
+#: templates/pycontw-2018/events/talk_list.html:14
 msgid ""
 "The three conference days are packed with talks about Python by speakers "
 "from Taiwan and around the world. The talks will be either 30- or 45-minute "
@@ -2060,12 +2106,14 @@ msgid ""
 msgstr "The three conference days are packed with talks about Python by speakers from Taiwan and around the world. The talks will be either 30- or 45-minute long. Three tracks of talks will be delivered simultaneously, all with different topics and difficulties. We suggest you to make a schedule beforehand, and choose what you want ot listen based on your interests. Many people take notes on the program schedule before the meeting so they don't end up in some place wrong."
 
 #: templates/pycontw-2017/events/talk_list.html:25
+#: templates/pycontw-2018/events/talk_list.html:25
 msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>Program schedule are subject to change.</em> Please check this page frequently to get the latest version."
 
 #: templates/pycontw-2017/events/talk_list.html:49
+#: templates/pycontw-2018/events/talk_list.html:49
 msgid "Invited Events"
 msgstr "Invited Events"
 
@@ -2093,7 +2141,7 @@ msgstr "12 March, 12 June"
 msgid "Get Tickets"
 msgstr "Get Tickets"
 
-#: templates/pycontw-2017/index.html:39
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:79
 msgid "Volunteers Needed"
 msgstr "Volunteers Needed"
 
@@ -2127,8 +2175,113 @@ msgstr "Python Communities in Taiwan"
 
 #: templates/pycontw-2017/sponsors/sponsor_list.html:7
 #: templates/pycontw-2017/sponsors/sponsor_list.html:17
+#: templates/pycontw-2018/sponsors/sponsor_list.html:7
+#: templates/pycontw-2018/sponsors/sponsor_list.html:17
 msgid "Our Partners"
 msgstr "Our Partners"
+
+#: templates/pycontw-2018/_includes/menu.html:31
+msgid "PyCon Taiwan"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:39
+msgid "Speaking"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:42
+msgid "Call for Proposal"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:43
+msgid "Proposing a Talk"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:44
+msgid "Proposing a Tutorial"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:45
+msgid "Recording"
+msgstr ""
+
+#: templates/pycontw-2018/_includes/menu.html:69
+msgid "My PyCon"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:42
+msgid "Calling for Proposals"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:43
+msgid ""
+"PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit "
+"yours now!"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:47
+msgid "First call:&nbsp;"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:48
+msgctxt "begin of cfp"
+msgid "1st February"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:49
+msgid "Deadline:&nbsp;"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:50
+msgctxt "end of cfp"
+msgid "5th March"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:54
+msgid "How to Propose"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:56
+msgid "Propose Now"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:65
+msgid "What is PyCon"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:66
+msgid ""
+"<p>The original PyCon was formed in North America in 2003, and now there are"
+" many other conferences being run in the PyCon spirit around the world.</p>"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:72
+msgid "What is PyCon Taiwan"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:73
+msgid ""
+"<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge,"
+" exchange ideas, make connections and to help us grow our network.</p>"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:80
+msgid "<p>Help us organize and make the conference successful!</p>"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:81
+msgid "Become a volunteer"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:89
+msgid "Partners"
+msgstr ""
+
+#: templates/pycontw-2018/index.html:90
+msgid "Enquire about sponsorship"
+msgstr ""
 
 #: users/admin.py:18
 msgid "Personal info"
@@ -2163,6 +2316,7 @@ msgid "Create Account"
 msgstr "Create Account"
 
 #: users/forms.py:148
+#, python-brace-format
 msgid "Your image is too small ({width}\\u00d7{height} pixels)."
 msgstr "Your image is too small ({width}\\u00d7{height} pixels)."
 
@@ -2178,6 +2332,7 @@ msgid ""
 msgstr "Raw passwords are not stored, so there is no way to see this user's password, but you can change the password using <a href=\"password/\">this form</a>."
 
 #: users/forms.py:246
+#, python-brace-format
 msgid "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
 
@@ -2278,6 +2433,7 @@ msgid "users"
 msgstr "users"
 
 #: users/models.py:260
+#, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"
 
@@ -2290,6 +2446,7 @@ msgid "Email verification successful."
 msgstr "Email verification successful."
 
 #: users/views.py:67
+#, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "A verification email has been sent to {email}"
 
