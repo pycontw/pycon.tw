@@ -41,23 +41,25 @@ export class MenuController extends Controller {
 		// Don't close menu if the current element under cursor is a descendant of
 		// the current menu item. This prevents the menu from being closed when
 		// the mouse is leaving parent to hover onto the submenu.
-		const item = this._getMenuItem(event.target)
-		for (const el of document.querySelectorAll(':hover')) {
-			let element = el
-			while (element) {
-				if (element === item) {
-					return
+		setTimeout(() => {
+			const item = this._getMenuItem(event.target)
+			for (const el of document.querySelectorAll(':hover')) {
+				let element = el
+				while (element) {
+					if (element === item) {
+						return
+					}
+					element = element.parentNode
 				}
-				element = element.parentNode
 			}
-		}
-		item.querySelector('input').checked = false
+			item.querySelector('input').checked = false
+		}, 1)	// Fraction delay to make sure the mouse leaves the menu item.
 	}
 
 	exclude(event) {
 		// Close all menus except the one triggering this event.
 		for (const target of this.checkerTargets) {
-			if (target !== event.target && target.checked) {
+			if (target !== event.target) {
 				target.checked = false
 			}
 		}
