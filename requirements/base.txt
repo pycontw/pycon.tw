@@ -16,7 +16,7 @@ django-compressor-toolkit==0.6.0
 
 # The best way to have DRY Django forms.
 # http://django-crispy-forms.readthedocs.org/en/latest/
-django-crispy-forms==1.6.1
+django-crispy-forms==1.7.0
 
 # Django-environ allows you to utilize 12factor inspired environment variables
 # to configure your Django application.
