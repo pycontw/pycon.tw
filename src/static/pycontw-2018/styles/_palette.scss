@@ -120,7 +120,7 @@ h3 {
   @include h3;
 }
 
-button, dl, label, p, ul {
+blockquote, button, dl, label, p, ul {
   @include text($text-font-size);
 }
 
@@ -130,4 +130,10 @@ dl, p, ul {
 
 a {
 	@include link-dark;
+}
+
+blockquote {
+	margin-left: 0;
+	padding-left: 2rem;
+	border-left: solid 8px rgba($link-dark, 0.5);
 }

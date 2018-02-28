@@ -2,6 +2,7 @@
 
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
+{% url 'page' path='about/community' as about_community_url %}
 {% url 'page' path='about/staff' as about_staff_url %}
 {% url 'page' path='events/overview' as events_overview_url %}
 {% url 'events_schedule' as events_schedule_url %}
@@ -30,6 +31,7 @@
 			<ul class="submenu">
 				<li><a href="{{ about_pycontw_url }}">{% trans 'PyCon Taiwan' %}</a></li>
 				<li><a href="{{ about_coc_url }}">{% trans 'Code of Conduct' %}</a></li>
+				<li><a href="{{ about_community_url }}">{% trans 'Community' %}</a></li>
 			</ul>
 		</div>
 	</li>
