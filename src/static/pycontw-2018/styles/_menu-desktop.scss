@@ -71,7 +71,7 @@ $menu-desktop-height: 136px;
 		}
 
 		.dropdown {
-			width: 100%;
+			min-width: 100%;
 			min-height: 40px;	// Arbitrary; enough to fill gap under menu item.
 		}
 
