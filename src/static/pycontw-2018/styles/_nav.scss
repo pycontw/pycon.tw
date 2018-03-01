@@ -79,17 +79,17 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	border: none;
 	background-color: transparent;
 
-	$icon-height: 24px;
+	$icon-width: 28px;
+	$icon-height: 20px;
+	$bar-thickness: 3px;
 
 	&.no-script {
 		display: none;
 	}
 
 	> div {
-		$bar-thickness: 4px;
-
 		position: relative;
-		width: 32px;
+		width: $icon-width;
 		height: $icon-height;
 		transform: rotate(0deg);
 		cursor: pointer;
@@ -120,13 +120,19 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	}
 
 	&[aria-expanded="true"] > div {
-		$center-fix: 1px;
-		$top-fix: -1px;
+		$sqrt-2: 1.4142;
+
+		// Cross the bars correctly.
+		$offset: $icon-width * (2 - $sqrt-2) / 4;
+
+		// Move the cross to the center of the button.
+		$fix-x: (2 - $sqrt-2) * $icon-width / 32;
+		$fix-y: $fix-x + ($icon-width - $icon-height) / 2;
 
 		> span:nth-child(1) {
 			transform: rotate(45deg);
-			top: $center-fix + $top-fix;
-			left: $center-fix;
+			top: $offset - $fix-y;
+			left: $offset + $fix-x;
 		}
 		> span:nth-child(2) {
 			width: 0%;
@@ -134,8 +140,8 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		}
 		> span:nth-child(3) {
 			transform: rotate(-45deg);
-			top: $icon-height - $center-fix + $top-fix;
-			left: $center-fix;
+			top: $icon-width - $offset - $fix-y;
+			left: $offset + $fix-x;
 		}
 	}
 
