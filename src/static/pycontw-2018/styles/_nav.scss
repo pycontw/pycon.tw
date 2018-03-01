@@ -131,7 +131,6 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 
 		> span:nth-child(1) {
 			transform: rotate(45deg);
-			transform-origin: left center;
 			top: $offset - $fix-y;
 			left: $offset + $fix-x;
 		}
@@ -141,7 +140,6 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		}
 		> span:nth-child(3) {
 			transform: rotate(-45deg);
-			transform-origin: left center;
 			top: $icon-width - $offset - $fix-y;
 			left: $offset + $fix-x;
 		}
