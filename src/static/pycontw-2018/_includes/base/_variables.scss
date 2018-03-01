@@ -1,7 +1,9 @@
+@import '../../styles/palette';
+
 $static_root: "./../../";
 
-$theme-color: #223d53;
-$theme-focus: #FFC525; // yellow
+$theme-color: $indigo;
+$theme-focus: $maize;
 
 $quote-color: $theme-focus;
 
@@ -45,20 +47,20 @@ $sponsor-platinum-color: #eddcad;
 
 // Buttons
 
-$btn-primary-bg: #367ABD;
-$btn-primary-hover-bg: #0b38ba;
+$btn-primary-bg: $ultramarine-blue;
+$btn-primary-hover-bg: lighter($ultramarine-blue);
 
-$btn-focus-color: #fff;
-$btn-focus-bg: $theme-focus;
-$btn-focus-border: #EFB413;
-$btn-focus-hover-bg: #f5bb1b;
+$btn-focus-color: $white;
+$btn-focus-bg: $light-indigo;
+$btn-focus-border: $light-indigo;
+$btn-focus-hover-bg: lighter($light-indigo);
 
 $btn-negative-color: #fff;
 $btn-negative-bg: #D4D4D4;
 $btn-negative-border: #D4D4D4;
 $btn-negative-hover-bg: #f5bb1b;
 
-$btn-natural-color: #3e6df5;
+$btn-natural-color: $azure;
 $btn-natural-bg: #f8f8f8;
 $btn-natural-border: #eee;
 $btn-natural-hover-bg: #f3f3f3;
@@ -74,12 +76,11 @@ $btn-action-border: transparent;
 
 $btn-link-color: $theme-color;
 
-// pycon2017 color
-$bright-sea-green: #00ff96;
-$water-blue: #1697e5;
-$sand-yellow: #fbda61;
-$reddish-orange: #f75b1c;
-
-$proposals-alert-warning-bg: $sand-yellow;
+$proposals-alert-warning-bg: $maize;
 
 $navbar-em-bg: $btn-primary-bg;
+
+
+// Fonts.
+
+$font-family-sans-serif: $header-font-family !default;

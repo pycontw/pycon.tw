@@ -4,3 +4,35 @@ body {	// Remove WebKit body padding.
 	margin: 0;
 	padding: 0;
 }
+
+/* Apply default styling. */
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+blockquote, button, dl, label, p, ul {
+  @include text($text-font-size);
+}
+
+dl, p, ul {
+  line-height: 160%;
+}
+
+a {
+	@include link-dark;
+}
+
+blockquote {
+	margin-left: 0;
+	padding-left: 2rem;
+	border-left: solid 8px rgba($link-dark, 0.5);
+}
