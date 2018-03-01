@@ -33,9 +33,9 @@ $menu-item-types: '> a, > label';
 	> li {	// Styling specific to top-level menu items.
 		position: relative;
 		text-align: center;
-		font-family: $header-font-family;
 
 		#{$menu-item-types} {
+			font-family: $header-font-family;
 			font-size: 1.125rem;
 		}
 	}
