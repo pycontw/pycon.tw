@@ -126,11 +126,12 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		$offset: $icon-width * (2 - $sqrt-2) / 4;
 
 		// Move the cross to the center of the button.
-		$fix-x: (2 - $sqrt-2) * $icon-width / 32;
+		$fix-x: (2 - $sqrt-2) * $icon-width / 8;
 		$fix-y: $fix-x + ($icon-width - $icon-height) / 2;
 
 		> span:nth-child(1) {
 			transform: rotate(45deg);
+			transform-origin: left center;
 			top: $offset - $fix-y;
 			left: $offset + $fix-x;
 		}
@@ -140,6 +141,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		}
 		> span:nth-child(3) {
 			transform: rotate(-45deg);
+			transform-origin: left center;
 			top: $icon-width - $offset - $fix-y;
 			left: $offset + $fix-x;
 		}
