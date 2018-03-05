@@ -2,7 +2,7 @@
 # Psycopg is the most popular PostgreSQL database adapter for the Python
 # programming language.
 # http://pythonhosted.org/psycopg2/
-psycopg2==2.7.3.2
+psycopg2-binary==2.7.4
 
 # Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
 # http://gunicorn.org/
