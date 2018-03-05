@@ -19,11 +19,11 @@ h3 {
   @include h3;
 }
 
-blockquote, button, dl, label, p, ul {
+blockquote, button, dl, label, ol, p, ul {
   @include text($text-font-size);
 }
 
-dl, p, ul {
+dl, ol, p, ul {
   line-height: 160%;
 }
 

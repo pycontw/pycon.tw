@@ -24,7 +24,7 @@
 
 <ul class="menu" data-controller="menu">
 	<li>
-			<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
+		<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
 	</li>
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
@@ -38,6 +38,9 @@
 				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
 			</ul>
 		</div>
+	</li>
+	<li>
+		<a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a>
 	</li>
 	{% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>

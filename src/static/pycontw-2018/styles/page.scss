@@ -47,22 +47,28 @@ main {
 		}
 	}
 
+	@mixin header-geometry($margin-top, $margin-bottom: 24px) {
+		margin-top: $margin-top;
+		margin-bottom: $margin-bottom;
+		+ * {
+			margin-top: 0;
+		}
+	}
+
 	h1 {
-		margin-top: 48px;
+		@include header-geometry(48px);
 		line-height: 125%;
 	}
 	h2 {
-		margin-top: 72px;
-		margin-bottom: 24px;
+		@include header-geometry(72px);
 	}
 	h3 {
-		margin-top: 24px;
-		margin-bottom: 24px;
+		@include header-geometry(24px);
 	}
 
-	@mixin container-block($margin) {
-		margin-top: $margin;
-		margin-bottom: $margin;
+	@mixin container-block($margin-top, $margin-bottom) {
+		margin-top: $margin-top;
+		margin-bottom: $margin-bottom;
 
 		// Cancel terminal margins for nested blocks.
 		> *:first-child {
@@ -73,27 +79,13 @@ main {
 		}
 	}
 
-	// Most content blocks are 20px apart.
+	// Most content blocks are 48px apart.
 	> * {
-		@include container-block(20px);
+		@include container-block(48px, 20px);
 	}
 
-	// Non-p elements are 48px apart.
-	$content-blocks: 'ul' 'dl' 'ol' 'blockquote' 'pre';
-	p {
-		@each $tag in $content-blocks {
-			& + #{$tag} {
-				@include container-block(48px);
-			}
-		}
-	}
-	@each $tag in $content-blocks {
-		#{$tag} {
-			@each $tag in $content-blocks {
-				& + #{$tag}, {
-					@include container-block(48px);
-				}
-			}
-		}
+	// p elements are 20px apart.
+	p + p {
+		margin-top: 20px;
 	}
 }
