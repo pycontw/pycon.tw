@@ -93,6 +93,7 @@ class EventInfo(models.Model):
         ('OTHER', _('Other')),
         ('CORE',  _('Python Core (language, stdlib, etc.)')),
         ('INTNL', _('Python Internals')),
+        ('IOT',   _('Internet Of Things')),
         ('LIBS',  _('Python Libraries')),
         ('SCI',   _('Science')),
         ('SEC',   _('Security')),
