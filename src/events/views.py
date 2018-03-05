@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, TemplateView
 
 from core.mixins import FormValidMessageMixin
-from core.utils import OrderedDefaultDict
+from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
 from proposals.models import TalkProposal
 
 from .forms import ScheduleCreationForm
@@ -37,6 +37,7 @@ class AcceptedTalkMixin:
 class TalkListView(AcceptedTalkMixin, TemplateView):
 
     template_name = 'events/talk_list.html'
+    response_class = TemplateExistanceStatusResponse
 
     def get_categorized_talks(self):
         category_map = OrderedDefaultDict(list)
@@ -63,6 +64,7 @@ class TalkListView(AcceptedTalkMixin, TemplateView):
 class ScheduleView(TemplateView):
 
     template_name = 'events/schedule.html'
+    response_class = TemplateExistanceStatusResponse
 
     def get(self, request, *args, **kwargs):
         try:
@@ -91,6 +93,7 @@ class ScheduleCreateMixin:
     form_valid_message = _('New talk schedule generated successfully.')
     permission_required = ['events.add_schedule']
     template_name = 'events/schedule_create.html'
+    response_class = TemplateExistanceStatusResponse
 
     def get_success_url(self):
         return reverse('events_schedule')
@@ -192,6 +195,7 @@ class EventInfoMixin:
 class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
 
     template_name = 'events/talk_detail.html'
+    response_class = TemplateExistanceStatusResponse
 
     def is_event_sponsored(self):
         return False
@@ -212,6 +216,7 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     model = SponsoredEvent
     template_name = 'events/sponsored_event_detail.html'
+    response_class = TemplateExistanceStatusResponse
 
     def get_queryset(self):
         """Fetch user relation before-hand because we'll need it.
