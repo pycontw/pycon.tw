@@ -16,7 +16,6 @@ class AdditionalSpeakerInline(GenericTabularInline):
 
 
 class ProposalAdmin(admin.ModelAdmin):
-
     fields = [
         'conference', 'submitter', 'title', 'category', 'duration',
         'language', 'abstract', 'python_level', 'objective',
@@ -36,7 +35,8 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
         'python_level', 'accepted',
     ]
     list_filter = [
-        'category', 'duration', 'language', 'python_level', 'accepted',
+        'cancelled', 'accepted',
+        'category', 'duration', 'language', 'python_level',
     ]
     resource_class = TalkProposalResource
 
