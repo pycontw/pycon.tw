@@ -306,7 +306,7 @@ STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
 
-PROPOSALS_CREATABLE = True
+PROPOSALS_CREATABLE = False
 
 PROPOSALS_EDITABLE = True
 
@@ -314,7 +314,7 @@ PROPOSALS_WITHDRAWABLE = False
 
 REVIEWS_STAGE = 0
 
-REVIEWS_VISIBLE_TO_SUBMITTERS = True
+REVIEWS_VISIBLE_TO_SUBMITTERS = False
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
@@ -323,6 +323,6 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2017, 6, 1), _('Day 1')),
-    (datetime.date(2017, 6, 2), _('Day 2')),
+    (datetime.date(2018, 6, 1), _('Day 1')),
+    (datetime.date(2018, 6, 2), _('Day 2')),
 ])
