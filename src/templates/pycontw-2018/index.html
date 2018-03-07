@@ -35,30 +35,6 @@
 	{% include '_includes/menu.html' with type='desktop' %}
 </nav>
 
-<section class="index-proposal-call">
-
-	<article class="container">
-
-		<h2>{% trans 'Calling for Proposals' %}</h2>
-		<p>{% trans 'PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit yours now!' %}</p>
-
-		<div class="center">
-			<dl class="inline">
-				<dt>{% trans 'First call:&nbsp;' %}</dt>
-				<dd>{% trans '1st February' context 'begin of cfp' %}</dd>
-				<dt>{% trans 'Deadline:&nbsp;' %}</dt>
-				<dd>{% trans '5th March' context 'end of cfp' %}</dd>
-			</dl>
-		</div>
-
-		<p><a href="{{ speaking_cfp_url }}">{% trans 'How to Propose' %}</a></p>
-
-		<a href="{% url 'user_dashboard' %}" class="center button-round my-pycon">{% trans 'Propose Now' %}</a>
-
-	</article>
-
-</section>
-
 <section class="index-introduction">
 
 	<article class="container">
@@ -75,12 +51,16 @@
 		{% endblocktrans %}
 	</article>
 
+	<a href="{% url 'user_dashboard' %}" class="center button-round my-pycon">{% trans 'My PyCon' %}</a>
+
+</section>
+
+<section class="index-volenteer">
 	<article class="container">
 		<h2>{% trans 'Volunteers Needed' %}</h2>
 		{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
 		<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a volunteer' %}</a>
 	</article>
-
 </section>
 
 <section class="index-partners">
