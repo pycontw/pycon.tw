@@ -198,7 +198,7 @@ class Review(models.Model):
             m.hexdigest()[:5]
             .encode('utf-8')
         ).decode('utf-8')
-        return f"{hashed_reviewer}"
+        return f"#{hashed_reviewer}"
 
 
 class TalkProposalSnapshot(models.Model):
