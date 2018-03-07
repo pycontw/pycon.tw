@@ -64,6 +64,37 @@ $menu-desktop-border-radius: 8px;
 	@include index-section;
 	@include circle-background-section;
 
+	.partners {
+		$item-spacing: 32px;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 32px 0;
+		padding: 0;
+		list-style: none inside;
+
+		@include on-desktop {
+			margin: 32px #{0 - $item-spacing};
+		}
+
+		> li {
+			flex: 1;
+			text-align: center;
+			margin: $item-spacing / 2;
+
+			@include on-desktop {
+				flex: 0 0 calc(33.3333% - #{$item-spacing});
+			}
+
+			a, img {
+				width: 100%;
+				min-width: 120px;
+				max-width: 320px;
+			}
+		}
+	}
+
 	.sponsorship {
 		@include index-button(276deg, $dark-peach, $maize);
 	}

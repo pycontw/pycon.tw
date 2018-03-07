@@ -11,11 +11,19 @@ from .utils import (
 )
 
 
-class IndexView(TemplateView):
+class ExtraDataMixin:
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data.update(EXTRA_DATA.get(self.path, {}))
+        return data
+
+
+class IndexView(ExtraDataMixin, TemplateView):
     template_name = 'index.html'
+    path = ''
 
 
-class FlatPageView(TemplateView):
+class FlatPageView(ExtraDataMixin, TemplateView):
 
     response_class = TemplateExistanceStatusResponse
 
@@ -25,11 +33,6 @@ class FlatPageView(TemplateView):
             raise Http404
         self.path = path
         return super().get(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-        data.update(EXTRA_DATA.get(self.path, {}))
-        return data
 
     def get_template_names(self):
         """Look up template from path.
