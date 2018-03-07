@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Adrian Liaw <adrianliaw2000@gmail.com>, 2018
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
 # Jason <chairco@gmail.com>, 2017
@@ -16,60 +17,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 16:03+0800\n"
-"PO-Revision-Date: 2018-03-05 10:44+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-03-07 23:21+0800\n"
+"PO-Revision-Date: 2018-03-07 15:49+0000\n"
+"Last-Translator: Adrian Liaw <adrianliaw2000@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: core/data.py:8
-msgid "Coordinators"
-msgstr "整體會議"
-
-#: core/data.py:11
-msgid "Chairperson"
-msgstr "主席"
-
-#: core/data.py:15
-msgid "Vice Chairperson"
-msgstr "副主席"
-
-#: core/data.py:21
-msgid "Program"
-msgstr "議程組"
-
-#: core/data.py:23 core/data.py:39 core/data.py:51 core/data.py:64
-#: core/data.py:70 core/data.py:79 core/data.py:99
-msgid "lead"
-msgstr "組長"
-
-#: core/data.py:37
-msgid "Web"
-msgstr "網站組"
-
-#: core/data.py:49
-msgid "Public Relation"
-msgstr "公關組"
-
-#: core/data.py:68
-msgid "Registration"
-msgstr "註冊組"
-
-#: core/data.py:77
-msgid "Sponsorship"
-msgstr "贊助組"
-
-#: core/data.py:90
-msgid "Finance"
-msgstr "財務會計組"
-
-#: core/data.py:97
-msgid "Photography"
-msgstr "記錄組"
 
 #: core/forms.py:10
 #, python-brace-format
@@ -896,9 +852,10 @@ msgstr "投票"
 #: reviews/models.py:99
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
-"and acceptance criteria can be found at the google doc <a "
-"href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
-msgstr "投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照 Google 文件上的<a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">審稿指南</a>。"
+"and acceptance criteria can be found at the GitBook <a "
+"href=\"https://pycontw.github.io/reviewer-guidebook\" "
+"target=\"_blank\">Review Guideline</a>."
+msgstr "投票接受或拒絕本講題。關於評分與接受與否的詳細標準，請參照<a href=\"https://pycontw.github.io/reviewer-guidebook\" target=\"_blank\">審稿指南</a> GitBook。"
 
 #: reviews/models.py:108
 msgid "comment"
@@ -1478,9 +1435,10 @@ msgstr "目前審查階段：%(review_stage)s"
 msgid ""
 "Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
 "other reviewers and speakers. For more information about the whole review "
-"process, please refer to the google doc <a href=\"https://goo.gl/EPlUZx\" "
-"target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
-msgstr "注意：投稿人與其他審稿人都不會知道你的身份。審稿程序的詳細資訊參見<a href=\"https://goo.gl/EPlUZx\" target=\"_blank\" rel=\"noopener\">審稿規範</a>。"
+"process, please refer to the GitBook <a href=\"https://pycontw.github.io"
+"/reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review "
+"Guideline</a>."
+msgstr "注意：投稿人與其他審稿人都不會知道你的身份。審稿程序的詳細資訊參見<a href=\"https://pycontw.github.io/reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">審稿指南</a>。"
 
 #: templates/default/reviews/talk_proposal_list.html:23
 msgid "Personal Review Stats"
@@ -2266,7 +2224,7 @@ msgstr "成為志工"
 msgid "Partners"
 msgstr "夥伴"
 
-#: templates/pycontw-2018/index.html:90
+#: templates/pycontw-2018/index.html:105
 msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
 

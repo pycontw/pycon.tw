@@ -11,60 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 16:03+0800\n"
-"PO-Revision-Date: 2018-03-05 10:32+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-03-07 23:21+0800\n"
+"PO-Revision-Date: 2018-03-07 15:21+0000\n"
+"Last-Translator: PyCon Taiwan\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: core/data.py:8
-msgid "Coordinators"
-msgstr "Coordinators"
-
-#: core/data.py:11
-msgid "Chairperson"
-msgstr "Chairperson"
-
-#: core/data.py:15
-msgid "Vice Chairperson"
-msgstr "Vice Chairperson"
-
-#: core/data.py:21
-msgid "Program"
-msgstr "Program"
-
-#: core/data.py:23 core/data.py:39 core/data.py:51 core/data.py:64
-#: core/data.py:70 core/data.py:79 core/data.py:99
-msgid "lead"
-msgstr "lead"
-
-#: core/data.py:37
-msgid "Web"
-msgstr "Web"
-
-#: core/data.py:49
-msgid "Public Relation"
-msgstr "Public Relation"
-
-#: core/data.py:68
-msgid "Registration"
-msgstr "Registration"
-
-#: core/data.py:77
-msgid "Sponsorship"
-msgstr "Sponsorship"
-
-#: core/data.py:90
-msgid "Finance"
-msgstr "Finance"
-
-#: core/data.py:97
-msgid "Photography"
-msgstr "Photography"
 
 #: core/forms.py:10
 #, python-brace-format
@@ -891,9 +846,10 @@ msgstr "vote"
 #: reviews/models.py:99
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
-"and acceptance criteria can be found at the google doc <a "
-"href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
-msgstr "Your vote to accept or reject this talk. More information about the scoring and acceptance criteria can be found at the google doc <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\">Review Guideline</a>."
+"and acceptance criteria can be found at the GitBook <a "
+"href=\"https://pycontw.github.io/reviewer-guidebook\" "
+"target=\"_blank\">Review Guideline</a>."
+msgstr ""
 
 #: reviews/models.py:108
 msgid "comment"
@@ -1473,9 +1429,10 @@ msgstr "Current Review Stage: %(review_stage)s"
 msgid ""
 "Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
 "other reviewers and speakers. For more information about the whole review "
-"process, please refer to the google doc <a href=\"https://goo.gl/EPlUZx\" "
-"target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
-msgstr "Note that at anytime, the identity of the reviewer, e.g. you, is hidden to other reviewers and speakers. For more information about the whole review process, please refer to the google doc <a href=\"https://goo.gl/EPlUZx\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
+"process, please refer to the GitBook <a href=\"https://pycontw.github.io"
+"/reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review "
+"Guideline</a>."
+msgstr ""
 
 #: templates/default/reviews/talk_proposal_list.html:23
 msgid "Personal Review Stats"
@@ -2262,7 +2219,7 @@ msgstr "Become a volunteer"
 msgid "Partners"
 msgstr "Partners"
 
-#: templates/pycontw-2018/index.html:90
+#: templates/pycontw-2018/index.html:105
 msgid "Enquire about sponsorship"
 msgstr "Enquire about sponsorship"
 

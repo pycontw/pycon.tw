@@ -25,7 +25,7 @@ $menu-desktop-border-radius: 8px;
 	@import 'index-hero';
 }
 
-.index-proposal-call {
+.index-introduction {
 	@include index-section;
 	@include logo-background-section;
 
@@ -36,10 +36,11 @@ $menu-desktop-border-radius: 8px;
 
 	.my-pycon {
 		@include index-button(276deg, $dark-peach, $maize);
+		margin-top: 40px;
 	}
 }
 
-.index-introduction {
+.index-volunteer {
 	@include index-section;
 	background-image: linear-gradient(159deg, $indigo, $dark-slate-blue);
 
