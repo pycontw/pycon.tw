@@ -4,6 +4,7 @@
 	<thead>
 		<tr>
 			<th width="1%">{% trans 'Stage' %}</th>
+			<th width="1%">{% trans 'Reviewer' %}</th>
 			<th width="1%">{% trans 'Vote' %}</th>
 			<th class="proposal-title">{% trans 'Title' %}</th>
 			<th width="1%" class="hidden-xs">{% trans 'Comment' %}</th>
@@ -14,6 +15,7 @@
 		{% for review in reviews %}
 			<tr class="{% if review.is_outdated %}info{% endif %}">
 				<td>{{ review.stage }}</td>
+				<td>{{ review.md5_reviewer }}</td>
 				<td>{{ review.get_vote_display }}</td>
 				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}">
 					{{ review.proposal.title }}
