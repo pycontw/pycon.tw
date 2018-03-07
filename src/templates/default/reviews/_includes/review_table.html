@@ -15,7 +15,7 @@
 		{% for review in reviews %}
 			<tr class="{% if review.is_outdated %}info{% endif %}">
 				<td>{{ review.stage }}</td>
-				<td>{{ review.md5_reviewer }}</td>
+				<td>{{ review.reviewer.as_hash }}</td>
 				<td>{{ review.get_vote_display }}</td>
 				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}">
 					{{ review.proposal.title }}
