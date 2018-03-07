@@ -1,4 +1,6 @@
 import datetime
+import hashlib
+import base64
 
 from django.conf import settings
 from django.contrib.auth.models import (
@@ -193,6 +195,23 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    @property
+    def as_hash(self):
+        """Return user as hash.
+
+        Pipeline:
+            - email -> top5-md5-str -> b16 -> str.
+        """
+        m = hashlib.md5()
+        m.update(self.email.encode('utf-8'))
+        return '#{hash_user}'.format(
+            hash_user=(
+                base64.b16encode(
+                    m.hexdigest()[:5].encode('utf-8')
+                ).decode('utf-8')
+            )
+        )
 
     def get_full_name(self):
         return self.speaker_name
