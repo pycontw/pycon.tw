@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-05 16:01+0800\n"
-"PO-Revision-Date: 2018-03-05 10:31+0000\n"
+"POT-Creation-Date: 2018-03-06 16:03+0800\n"
+"PO-Revision-Date: 2018-03-05 10:44+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -131,7 +131,7 @@ msgstr "Python Core（語言本身、標準函式庫…）"
 
 #: core/models.py:95
 msgid "Python Internals"
-msgstr "Python 實作"
+msgstr "Python 內部運作"
 
 #: core/models.py:96
 msgid "Internet Of Things"
