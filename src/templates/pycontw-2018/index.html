@@ -72,7 +72,7 @@
 			{% for sponsor in sponsors %}
 			<li>
 				{% if sponsor.website_url %}
-				<a href="{{ sponsor.website_url }}">
+				<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
 					<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
 				</a>
 				{% else %}
