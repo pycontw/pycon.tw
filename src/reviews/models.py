@@ -98,8 +98,8 @@ class Review(models.Model):
         help_text=_(
             "Your vote to accept or reject this talk. "
             "More information about the scoring and acceptance criteria "
-            "can be found at the google doc "
-            "<a href=\"https://goo.gl/EPlUZx\" "
+            "can be found at the GitBook "
+            "<a href=\"https://pycontw.github.io/reviewer-guidebook\" "
             "target=\"_blank\">Review Guideline</a>."
         ),
     )
