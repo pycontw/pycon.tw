@@ -196,7 +196,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-    @property
     def as_hash(self):
         """Return user as hash.
 
