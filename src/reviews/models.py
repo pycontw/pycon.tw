@@ -1,5 +1,7 @@
 import itertools
 import operator
+import hashlib
+import base64
 
 from django.conf import settings
 from django.db import models
@@ -182,6 +184,21 @@ class Review(models.Model):
 
     def is_outdated(self):
         return self.updated < self.proposal.last_updated_at
+
+    @property
+    def md5_reviewer(self):
+        """MD5 Reviewer.
+
+        Pipeline
+            - reviewer str -> top5-md5-str -> b16 -> str.
+        """
+        m = hashlib.md5()
+        m.update(f'{self.reviewer}'.encode('utf-8'))
+        hashed_reviewer = base64.b16encode(
+            m.hexdigest()[:5]
+            .encode('utf-8')
+        ).decode('utf-8')
+        return f"{hashed_reviewer}"
 
 
 class TalkProposalSnapshot(models.Model):
