@@ -87,6 +87,21 @@
 
 	<article class="container">
 		<h2>{% trans 'Partners' %}</h2>
+		{% if sponsors %}
+		<ul class="partners">
+			{% for sponsor in sponsors %}
+			<li>
+				{% if sponsor.website_url %}
+				<a href="{{ sponsor.website_url }}">
+					<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+				</a>
+				{% else %}
+				<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+				{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
 		<a href="{{ SPONSOR_FORM_URL }}" class="center button-round sponsorship" target="_blank" rel="noopener">{% trans 'Enquire about sponsorship' %}</a>
 	</article>
 
