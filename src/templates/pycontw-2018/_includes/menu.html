@@ -42,7 +42,6 @@
 	<li>
 		<a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a>
 	</li>
-	{% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-venue" data-target="menu.item" data-action="change->menu#exclude">
@@ -50,14 +49,15 @@
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a></li>
+	{% comment %}
 				<li><a href="{{ venue_accommodation_url }}">{% trans 'Accommodation' %}</a></li>
+	{% endcomment %}
 			</ul>
 		</div>
 	</li>
 	<li>
 		<a href="./page.html">{% trans 'Sponsor' %}</a>
 	</li>
-	{% endcomment %}
 	<li>
 		<a href="https://pycontw.blogspot.tw/" target="_blank" rel="noopener">Blog</a>
 	</li>
