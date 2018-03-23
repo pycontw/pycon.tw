@@ -1323,6 +1323,11 @@ msgstr "階段"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
 #: templates/default/reviews/_includes/review_table.html:7
+msgid "Reviewer ID"
+msgstr "審稿者"
+
+#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:8
 msgid "Vote"
 msgstr "投票"
 
