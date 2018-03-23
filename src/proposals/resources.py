@@ -12,6 +12,6 @@ class TalkProposalResource(resources.ModelResource):
         model = TalkProposal
         fields = [
             'id', 'title', 'category', 'python_level', 'duration',
-            'name', 'email',
+            'language', 'name', 'email',
         ]
         export_order = fields
