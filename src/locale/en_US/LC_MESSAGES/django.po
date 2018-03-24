@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-07 23:21+0800\n"
-"PO-Revision-Date: 2018-03-07 15:21+0000\n"
-"Last-Translator: PyCon Taiwan\n"
+"POT-Creation-Date: 2018-03-24 14:59+0800\n"
+"PO-Revision-Date: 2018-03-24 10:44+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -277,7 +277,7 @@ msgstr "custom event"
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:182 users/models.py:110
+#: events/models.py:182 users/models.py:112
 msgid "speaker name"
 msgstr "speaker name"
 
@@ -507,7 +507,7 @@ msgstr "No valid speaker found with your selection."
 msgid "Proposal author"
 msgstr "Proposal author"
 
-#: proposals/models.py:59 users/models.py:190
+#: proposals/models.py:59 users/models.py:192
 msgid "user"
 msgstr "user"
 
@@ -849,7 +849,7 @@ msgid ""
 "and acceptance criteria can be found at the GitBook <a "
 "href=\"https://pycontw.github.io/reviewer-guidebook\" "
 "target=\"_blank\">Review Guideline</a>."
-msgstr ""
+msgstr "Your vote to accept or reject this talk. More information about the scoring and acceptance criteria can be found at the GitBook <a href=\"https://pycontw.github.io/reviewer-guidebook\" target=\"_blank\">Review Guideline</a>."
 
 #: reviews/models.py:108
 msgid "comment"
@@ -1082,7 +1082,7 @@ msgstr "If your proposed target is novice topic, the following is an example of 
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
 #: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:9
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
@@ -1316,15 +1316,20 @@ msgid "Stage"
 msgstr "Stage"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: templates/default/reviews/_includes/review_table.html:7
+#: templates/default/reviews/_includes/review_table.html:7 users/models.py:216
+msgid "Reviewer ID"
+msgstr "Reviewer ID"
+
+#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:8
 msgid "Vote"
 msgstr "Vote"
 
-#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/previous_review_table.html:9
 msgid "Comments"
 msgstr "Comments"
 
-#: templates/default/reviews/_includes/previous_review_table.html:28
+#: templates/default/reviews/_includes/previous_review_table.html:30
 msgid "No reviews yet."
 msgstr "No reviews yet."
 
@@ -1381,11 +1386,11 @@ msgid ""
 " made will be disclosed to the speaker (if you choose to)."
 msgstr "In review stage 2, you will see score and comment made by other reviewers anonymously, including the name and background of the speaker. With more information provided, you may want to update your review. Updating or adding review in stage 2 follows the same way as stage 1. Only the last review you made will be disclosed to the speaker (if you choose to)."
 
-#: templates/default/reviews/_includes/review_table.html:9
+#: templates/default/reviews/_includes/review_table.html:10
 msgid "Comment"
 msgstr "Comment"
 
-#: templates/default/reviews/_includes/review_table.html:23
+#: templates/default/reviews/_includes/review_table.html:25
 msgid "Update"
 msgstr "Update"
 
@@ -1427,7 +1432,7 @@ msgid ""
 "process, please refer to the GitBook <a href=\"https://pycontw.github.io"
 "/reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review "
 "Guideline</a>."
-msgstr ""
+msgstr "Note that at anytime, the identity of the reviewer, e.g. you, is hidden to other reviewers and speakers. For more information about the whole review process, please refer to the GitBook <a href=\"https://pycontw.github.io/reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
 
 #: templates/default/reviews/talk_proposal_list.html:23
 msgid "Personal Review Stats"
@@ -2080,7 +2085,7 @@ msgstr "12 March, 12 June"
 msgid "Get Tickets"
 msgstr "Get Tickets"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:79
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:60
 msgid "Volunteers Needed"
 msgstr "Volunteers Needed"
 
@@ -2140,60 +2145,25 @@ msgid "Recording"
 msgstr "Recording"
 
 #: templates/pycontw-2018/_includes/menu.html:66
+#: templates/pycontw-2018/index.html:54
 msgid "My PyCon"
 msgstr "My PyCon"
 
-#: templates/pycontw-2018/index.html:42
-msgid "Calling for Proposals"
-msgstr "Calling for Proposals"
-
-#: templates/pycontw-2018/index.html:43
-msgid ""
-"PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit "
-"yours now!"
-msgstr "PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit yours now!"
-
-#: templates/pycontw-2018/index.html:47
-msgid "First call:&nbsp;"
-msgstr "First call:&nbsp;"
-
-#: templates/pycontw-2018/index.html:48
-msgctxt "begin of cfp"
-msgid "1st February"
-msgstr "1st February"
-
-#: templates/pycontw-2018/index.html:49
-msgid "Deadline:&nbsp;"
-msgstr "Deadline:&nbsp;"
-
-#: templates/pycontw-2018/index.html:50
-msgctxt "end of cfp"
-msgid "5th March"
-msgstr "5th March"
-
-#: templates/pycontw-2018/index.html:54
-msgid "How to Propose"
-msgstr "How to Propose"
-
-#: templates/pycontw-2018/index.html:56
-msgid "Propose Now"
-msgstr "Propose Now"
-
-#: templates/pycontw-2018/index.html:65
+#: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
 msgstr "What is PyCon"
 
-#: templates/pycontw-2018/index.html:66
+#: templates/pycontw-2018/index.html:42
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are"
 " many other conferences being run in the PyCon spirit around the world.</p>"
 msgstr "<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>"
 
-#: templates/pycontw-2018/index.html:72
+#: templates/pycontw-2018/index.html:48
 msgid "What is PyCon Taiwan"
 msgstr "What is PyCon Taiwan"
 
-#: templates/pycontw-2018/index.html:73
+#: templates/pycontw-2018/index.html:49
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -2202,19 +2172,19 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>"
 
-#: templates/pycontw-2018/index.html:80
+#: templates/pycontw-2018/index.html:61
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>Help us organize and make the conference successful!</p>"
 
-#: templates/pycontw-2018/index.html:81
+#: templates/pycontw-2018/index.html:62
 msgid "Become a volunteer"
 msgstr "Become a volunteer"
 
-#: templates/pycontw-2018/index.html:89
+#: templates/pycontw-2018/index.html:69
 msgid "Partners"
 msgstr "Partners"
 
-#: templates/pycontw-2018/index.html:105
+#: templates/pycontw-2018/index.html:85
 msgid "Enquire about sponsorship"
 msgstr "Enquire about sponsorship"
 
@@ -2283,28 +2253,28 @@ msgstr "Request Password Reset"
 msgid "Set Password"
 msgstr "Set Password"
 
-#: users/models.py:106
+#: users/models.py:108
 msgid "email address"
 msgstr "email address"
 
-#: users/models.py:114
+#: users/models.py:116
 msgid "biography"
 msgstr "biography"
 
-#: users/models.py:117
+#: users/models.py:119
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "Describe yourself with 500 characters or less. There will be no formatting."
 
-#: users/models.py:122
+#: users/models.py:124
 msgid "photo"
 msgstr "photo"
 
-#: users/models.py:126
+#: users/models.py:128
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:129
+#: users/models.py:131
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2313,61 +2283,61 @@ msgid ""
 "first!"
 msgstr "Link to your Facebook profile page. This will be shown when we display your public information. If you do not know what your profile page link is, click on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and copy-paste the URL of the page opened. Remember to log in to Facebook first!"
 
-#: users/models.py:138
+#: users/models.py:140
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:143
+#: users/models.py:145
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your Twitter handle, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:148
+#: users/models.py:150
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:153
+#: users/models.py:155
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your GitHub account, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:158
+#: users/models.py:160
 msgid "verified"
 msgstr "verified"
 
-#: users/models.py:161
+#: users/models.py:163
 msgid "Designates whether the user has verified email ownership."
 msgstr "Designates whether the user has verified email ownership."
 
-#: users/models.py:165
+#: users/models.py:167
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:168
+#: users/models.py:170
 msgid "Designates whether the user can log into this admin site."
 msgstr "Designates whether the user can log into this admin site."
 
-#: users/models.py:172
+#: users/models.py:174
 msgid "active"
 msgstr "active"
 
-#: users/models.py:175
+#: users/models.py:177
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
 
-#: users/models.py:180
+#: users/models.py:182
 msgid "date joined"
 msgstr "date joined"
 
-#: users/models.py:191
+#: users/models.py:193
 msgid "users"
 msgstr "users"
 
-#: users/models.py:260
+#: users/models.py:281
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"
