@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-07 23:21+0800\n"
-"PO-Revision-Date: 2018-03-07 15:49+0000\n"
-"Last-Translator: Adrian Liaw <adrianliaw2000@gmail.com>\n"
+"POT-Creation-Date: 2018-03-24 14:59+0800\n"
+"PO-Revision-Date: 2018-03-24 10:44+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -283,7 +283,7 @@ msgstr "自訂活動"
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:182 users/models.py:110
+#: events/models.py:182 users/models.py:112
 msgid "speaker name"
 msgstr "演講者"
 
@@ -513,7 +513,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:59 users/models.py:190
+#: proposals/models.py:59 users/models.py:192
 msgid "user"
 msgstr "使用者"
 
@@ -1088,7 +1088,7 @@ msgstr "如果您的投稿目標為入門題目，以下為一篇入門投稿範
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
 #: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:9
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
@@ -1322,15 +1322,20 @@ msgid "Stage"
 msgstr "階段"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: templates/default/reviews/_includes/review_table.html:7
+#: templates/default/reviews/_includes/review_table.html:7 users/models.py:216
+msgid "Reviewer ID"
+msgstr "審稿人代號"
+
+#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:8
 msgid "Vote"
 msgstr "投票"
 
-#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/previous_review_table.html:9
 msgid "Comments"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/previous_review_table.html:28
+#: templates/default/reviews/_includes/previous_review_table.html:30
 msgid "No reviews yet."
 msgstr "尚無審稿紀錄。"
 
@@ -1387,11 +1392,11 @@ msgid ""
 " made will be disclosed to the speaker (if you choose to)."
 msgstr "在第 2 階段審稿中，其他審稿人的分數與評語將匿名顯示，且你可知道投稿人的姓名與背景。你可以根據這些額外資訊更新自己的評審內容。第 2 階段審稿的方式與第 1 階段相同，但投稿人只會看到你對稿件的最終評語 (若你願意)。"
 
-#: templates/default/reviews/_includes/review_table.html:9
+#: templates/default/reviews/_includes/review_table.html:10
 msgid "Comment"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/review_table.html:23
+#: templates/default/reviews/_includes/review_table.html:25
 msgid "Update"
 msgstr "更新"
 
@@ -2085,7 +2090,7 @@ msgstr "3/12、6/12"
 msgid "Get Tickets"
 msgstr "立即購票"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:79
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:60
 msgid "Volunteers Needed"
 msgstr "徵求志工"
 
@@ -2145,60 +2150,25 @@ msgid "Recording"
 msgstr "錄影"
 
 #: templates/pycontw-2018/_includes/menu.html:66
+#: templates/pycontw-2018/index.html:54
 msgid "My PyCon"
 msgstr "My PyCon"
 
-#: templates/pycontw-2018/index.html:42
-msgid "Calling for Proposals"
-msgstr "稿件募集中！"
-
-#: templates/pycontw-2018/index.html:43
-msgid ""
-"PyCon Taiwan 2018 is calling for proposals for talks and tutorials. Submit "
-"yours now!"
-msgstr "PyCon Taiwan 2018 正募集演講與教學稿件。馬上投稿！"
-
-#: templates/pycontw-2018/index.html:47
-msgid "First call:&nbsp;"
-msgstr "募集開始："
-
-#: templates/pycontw-2018/index.html:48
-msgctxt "begin of cfp"
-msgid "1st February"
-msgstr "2 月 1 日"
-
-#: templates/pycontw-2018/index.html:49
-msgid "Deadline:&nbsp;"
-msgstr "募集截止："
-
-#: templates/pycontw-2018/index.html:50
-msgctxt "end of cfp"
-msgid "5th March"
-msgstr "3 月 5 日"
-
-#: templates/pycontw-2018/index.html:54
-msgid "How to Propose"
-msgstr "如何投稿"
-
-#: templates/pycontw-2018/index.html:56
-msgid "Propose Now"
-msgstr "馬上投稿"
-
-#: templates/pycontw-2018/index.html:65
+#: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
 msgstr "何謂 PyCon"
 
-#: templates/pycontw-2018/index.html:66
+#: templates/pycontw-2018/index.html:42
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are"
 " many other conferences being run in the PyCon spirit around the world.</p>"
 msgstr "<p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</p>"
 
-#: templates/pycontw-2018/index.html:72
+#: templates/pycontw-2018/index.html:48
 msgid "What is PyCon Taiwan"
 msgstr "何謂 PyCon Taiwan"
 
-#: templates/pycontw-2018/index.html:73
+#: templates/pycontw-2018/index.html:49
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -2207,19 +2177,19 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
 
-#: templates/pycontw-2018/index.html:80
+#: templates/pycontw-2018/index.html:61
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
-#: templates/pycontw-2018/index.html:81
+#: templates/pycontw-2018/index.html:62
 msgid "Become a volunteer"
 msgstr "成為志工"
 
-#: templates/pycontw-2018/index.html:89
+#: templates/pycontw-2018/index.html:69
 msgid "Partners"
 msgstr "夥伴"
 
-#: templates/pycontw-2018/index.html:105
+#: templates/pycontw-2018/index.html:85
 msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
 
@@ -2288,28 +2258,28 @@ msgstr "申請密碼重設"
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: users/models.py:106
+#: users/models.py:108
 msgid "email address"
 msgstr "電子郵件信箱"
 
-#: users/models.py:114
+#: users/models.py:116
 msgid "biography"
 msgstr "自我介紹"
 
-#: users/models.py:117
+#: users/models.py:119
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
 
-#: users/models.py:122
+#: users/models.py:124
 msgid "photo"
 msgstr "個人照"
 
-#: users/models.py:126
+#: users/models.py:128
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:129
+#: users/models.py:131
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2318,61 +2288,61 @@ msgid ""
 "first!"
 msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
 
-#: users/models.py:138
+#: users/models.py:140
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:143
+#: users/models.py:145
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 Twitter 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:148
+#: users/models.py:150
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:153
+#: users/models.py:155
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 GitHub 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:158
+#: users/models.py:160
 msgid "verified"
 msgstr "已認證"
 
-#: users/models.py:161
+#: users/models.py:163
 msgid "Designates whether the user has verified email ownership."
 msgstr "指定本使用者是否已完成 email 認證。"
 
-#: users/models.py:165
+#: users/models.py:167
 msgid "staff status"
 msgstr "管理員權限"
 
-#: users/models.py:168
+#: users/models.py:170
 msgid "Designates whether the user can log into this admin site."
 msgstr "指定本使用者是否可以登入本管理站台。"
 
-#: users/models.py:172
+#: users/models.py:174
 msgid "active"
 msgstr "已啟用"
 
-#: users/models.py:175
+#: users/models.py:177
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
 
-#: users/models.py:180
+#: users/models.py:182
 msgid "date joined"
 msgstr "註冊日期"
 
-#: users/models.py:191
+#: users/models.py:193
 msgid "users"
 msgstr "使用者"
 
-#: users/models.py:260
+#: users/models.py:281
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
