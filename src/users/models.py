@@ -213,6 +213,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                 ).decode('utf-8')
             )
         )
+    as_hash.short_description = _('Reviewer ID')
 
     def get_full_name(self):
         return self.speaker_name

@@ -52,7 +52,7 @@ class UserAdmin(UserAdmin):
     form = AdminUserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'is_staff')
+    list_display = ('email', 'is_staff', 'as_hash')
     list_filter = (
         'verified', 'is_active', 'is_staff', 'is_superuser',
         'groups',
