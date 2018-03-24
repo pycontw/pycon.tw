@@ -1,4 +1,6 @@
 import datetime
+import base64
+import hashlib
 
 from django.conf import settings
 from django.contrib.auth.models import (
@@ -193,6 +195,25 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    def as_hash(self):
+        """Return the user's hash representation.
+
+        Pipeline:
+            - pk -> md5 -> first 2 bytes -> b16 -> str.
+        """
+        return '#{hash_user}'.format(
+            hash_user=(
+                base64.b16encode(
+                    # Picking the first 2 bytes may still run into hash
+                    # collisions if you take the whole users list into account,
+                    # but as this is used for representing reviewers which is a
+                    # comparatively small subset, it's not a big deal.
+                    hashlib.md5(str(self.pk).encode('utf-8')).digest()[:2],
+                ).decode('utf-8')
+            )
+        )
+    as_hash.short_description = _('Reviewer ID')
 
     def get_full_name(self):
         return self.speaker_name
