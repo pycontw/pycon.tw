@@ -33,26 +33,34 @@ $header-font-family: 'Roboto', 'Noto Sans TC', 'sans-serif';
   text-align: center;
 }
 
-@mixin h0 {
-  @include header(3rem);			// ~ 48px.
+@mixin header-geometry($margin-top, $margin-bottom: 24px) {
+	margin-top: $margin-top;
+	margin-bottom: $margin-bottom;
+	+ * {
+		margin-top: 0;
+	}
 }
 
 @mixin h1 {
-  @include header(2.25rem);		// ~ 36px.
+	@include header(2.25rem);		// ~ 36px.
+	@include header-geometry(48px);
+	line-height: 125%;
 }
 
 @mixin h2 {
-  @include header(1.75rem);		// ~ 24px.
+	@include header(1.75rem);		// ~ 24px.
+	@include header-geometry(72px);
 }
 
 @mixin h3 {
-  @include header(1.125rem);	// ~ 18px.
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(24px);
 }
 
 
 /* Content styles. */
 
-$text-font-size: 1.05rem;				// ~ 16px.
+$text-font-size: 1.125rem;			// ~ 18px.
 $text-font-size-small: 0.75rem;	// ~ 12px.
 
 $text-light: $white;

@@ -24,8 +24,6 @@ main {
 	@include content-section;
 	@include container;
 
-	padding: 80px 16px nth($content-section-padding, 3) 16px;
-
 	@include on-desktop {
 		padding-left: 0;
 		padding-right: 0;
@@ -45,25 +43,6 @@ main {
 		@include on-desktop {
 			margin-bottom: 72px;
 		}
-	}
-
-	@mixin header-geometry($margin-top, $margin-bottom: 24px) {
-		margin-top: $margin-top;
-		margin-bottom: $margin-bottom;
-		+ * {
-			margin-top: 0;
-		}
-	}
-
-	h1 {
-		@include header-geometry(48px);
-		line-height: 125%;
-	}
-	h2 {
-		@include header-geometry(72px);
-	}
-	h3 {
-		@include header-geometry(24px);
 	}
 
 	@mixin container-block($margin-top, $margin-bottom) {
