@@ -1,7 +1,7 @@
 $container-max-width: 720px;
 
-@mixin container {
-	max-width: $container-max-width;
+@mixin container($max-width: $container-max-width) {
+	max-width: $max-width;
 	margin: auto;
 }
 
