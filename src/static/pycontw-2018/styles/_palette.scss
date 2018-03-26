@@ -52,9 +52,9 @@ $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 	@include header-geometry(72px);
 }
 
-@mixin h3 {
+@mixin h3($margin-top: 24px) {
 	@include header(1.125rem);	// ~ 18px.
-	@include header-geometry(24px);
+	@include header-geometry($margin-top);
 }
 
 
