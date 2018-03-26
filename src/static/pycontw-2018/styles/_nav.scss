@@ -1,5 +1,5 @@
 $top-navbar-background: linear-gradient(119deg, $indigo, $dark-slate-blue);
-$top-navbar-height: 64px;
+$top-navbar-height: 48px;
 $top-navbar-logo-height: 24px;
 $top-navbar-border-bottom: solid 1px rgba(230, 230, 230, 0.21);
 
@@ -37,7 +37,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	display: block;
 	width: 100%;
 	height: 100%;
-	background: url('../assets/logo-white.svg') top no-repeat;
+	background: url('../assets/logo-white.svg') top no-repeat 50% / 80%;
 }
 
 .navbar-lang-switch {
@@ -45,9 +45,11 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	margin: 0 8px;
 
 	> button {
-		width: 32px;
-		height: 32px;
-		margin: 16px 2px;
+		$size: 32px;
+
+		width: $size;
+		height: $size;
+		margin: #{($top-navbar-height - $size) / 2} 2px;
 		padding: 0;
 		border: none;
 		background: none;
@@ -70,11 +72,13 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 }
 
 .navbar-toggler {
+	$size: $top-navbar-height;
+
 	display: flex;
 	justify-content: center;
 	margin-left: auto;
-	width: 64px;
-	height: 64px;
+	width: $size;
+	height: $size;
 	padding: 0;
 	border: none;
 	background-color: transparent;
