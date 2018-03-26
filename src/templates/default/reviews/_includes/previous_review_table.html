@@ -13,7 +13,13 @@
 		{% for review in reviews %}
 		<tr>
 			<td width="1">{{ review.stage }}</td>
-			<td width="1">{{ review.reviewer.as_hash }}</td>
+			{% with hash=review.reviewer.as_hash %}
+			<td width="1" style="background-color: {{ hash }}; filter: invert(100%)">
+				<span style="color: {{ hash }}; filter: invert(100%)">
+					{{ hash }}
+				</span>
+			</td>
+			{% endwith %}
 			<td width="1" class="vote-display">{{ review.get_vote_display }}</td>
 			<td class="comment-display">
 				{% if show_all_comments or review.is_comment_visible_to_submitter %}
