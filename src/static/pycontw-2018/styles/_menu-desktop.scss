@@ -18,26 +18,23 @@ $menu-desktop-height: 136px;
 	}
 
 	.menu {
-		@include container;
+		@include container(760px);
 		@include menu($top-item-color, $top-item-color);
 
 		$menu-item-height: $menu-desktop-height / 2;
 
-		display: flex;
-		align-items: stretch;
-		justify-content: space-around;
-		width: 100%;
+		display: inline-block;
 		height: $menu-item-height;
 
 		> li {
-			flex: 1;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			float: left;
+			padding: 0 24px;
 
 			#{$menu-item-types} {
 				width: 100%;
-				max-width: 112px;
 				// TODO: This only works for single-line text, and is a hack anyway
 				// because we're relying on the half-logo/half-item nature of the
 				// menubar. Real vertical centering would require additional markup.
