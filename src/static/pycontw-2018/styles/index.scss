@@ -42,14 +42,11 @@ $menu-desktop-border-radius: 8px;
 
 .index-volunteer {
 	@include index-section;
+	padding: 120px inherit;
 	background-image: linear-gradient(159deg, $indigo, $dark-slate-blue);
 
-	article {
-		margin-top: 72px;
-
-		&:first-of-type {
-			margin-top: 0;
-		}
+	article:first-of-type {
+		margin-top: 0;
 	}
 	h2, p {
 		color: $white;
