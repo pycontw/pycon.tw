@@ -19,7 +19,7 @@
 				{% if show_all_comments or review.is_comment_visible_to_submitter %}
 				{{ review.comment|linebreaks }}
 				{% elif review.comment %}
-				<span class="text-danger">{% trans 'Comment redacted by the reviewer or organizers.' %}</span>
+				<span class="text-muted">{% trans '(Comment redacted by the reviewer or organizers.)' %}</span>
 				{% endif %}
 			</td>
 		</tr>
