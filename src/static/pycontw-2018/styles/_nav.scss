@@ -155,8 +155,11 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	color: $base-color;
 	font-size: $font-size;
 
+	// Visually compensate for icon size.
+	&.fa-twitter {
+		font-size: $font-size * 1.1;
+	}
 	&.fa-envelope {
-		// The envelope icon is visually larger than others. Compensate.
 		font-size: $font-size * 0.9;
 	}
 
