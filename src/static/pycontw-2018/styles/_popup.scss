@@ -1,0 +1,140 @@
+.popup {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	&.open {
+		display: block;
+	}
+
+	@mixin card($spacing) {
+		top: $spacing;
+		bottom: $spacing;
+		left: $spacing;
+		right: $spacing;
+	}
+
+	> .card {
+		@include card(32px);
+		position: fixed;
+		border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.95);
+		box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+
+		@include on-desktop() {
+			@include card(48px);
+		}
+	}
+
+	.popup-close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		width: 40px;
+		height: 40px;
+		max-width: 10vmin;
+		max-height: 10vmin;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+
+		&:hover {
+			cursor: pointer;
+
+			> span {
+				border-color: #a8a8a8;
+			}
+		}
+
+		> span {
+			display: block;
+			width: 100%;
+			border: 1px solid #cacaca;
+			transform-origin: center;
+
+			&:first-child {
+				transform: rotate(45deg) translate(#{$sqrt-2}px, #{$sqrt-2}px);
+			}
+			&:last-child {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+.card-content {
+	@mixin card-content($spacing, $extra-top-padding, $overflow) {
+		overflow: $overflow;
+		width: calc(100% - #{2 * $spacing});
+		height: calc(100% - #{2 * $spacing + $extra-top-padding});
+		padding: $spacing + $extra-top-padding $spacing $spacing $spacing;
+
+		> * {
+			padding: $spacing;
+		}
+	}
+
+	@include card-content(16px, 16px, scroll);
+
+	a:hover {
+		cursor: pointer;
+	}
+
+	.logo {
+		display: block;
+
+		img {
+			width: 100%;
+			max-width: 256px;
+		}
+	}
+
+	.name {
+		@include header(1.5rem);
+		@include header-geometry(0, 16px);
+		text-align: center;
+	}
+
+	@include on-desktop() {
+		@include card-content(32px, 0, visible);
+		display: flex;
+		align-items: center;
+
+		.logo {
+			flex: 0 0 216px;
+			display: flex;
+		}
+
+		.text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			article {
+				display: flex;
+				flex-direction: column;
+				max-height: 100%;
+
+				.name {
+					flex: 0;
+					text-align: left;
+				}
+
+				.description {
+					flex: 1;
+					max-height: 560px;
+					overflow: scroll;
+
+					&, * {
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}
