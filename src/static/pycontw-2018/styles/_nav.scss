@@ -124,8 +124,6 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	}
 
 	&[aria-expanded="true"] > div {
-		$sqrt-2: 1.4142;
-
 		// Cross the bars correctly.
 		$offset: $icon-width * (2 - $sqrt-2) / 4;
 
