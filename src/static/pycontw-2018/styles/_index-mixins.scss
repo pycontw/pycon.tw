@@ -47,8 +47,6 @@
 	}
 }
 
-$index-background-deco-index: 0;
-
 // Apply this to any section to get a grey background with circle decoration.
 @mixin circle-background-section {
 	padding: 42px 28px 42px 28px;
@@ -66,7 +64,7 @@ $index-background-deco-index: 0;
 		&::after {
 			content: '';
 			position: absolute;
-			z-index: $index-background-deco-index;
+			z-index: $background-deco-index;
 			width: 100%;
 			height: 80px;
 			margin-top: 40px;
@@ -77,7 +75,7 @@ $index-background-deco-index: 0;
 			&::before {
 				content: '';
 				position: absolute;
-				z-index: $index-background-deco-index;
+				z-index: $background-deco-index;
 				top: calc(-100% - 200px);
 				width: 100%;
 				height: 304px;
@@ -87,7 +85,7 @@ $index-background-deco-index: 0;
 			&::after {
 				content: '';
 				position: absolute;
-				z-index: $index-background-deco-index;
+				z-index: $background-deco-index;
 				width: 100%;
 				height: 80px;
 				margin-top: 24px;
