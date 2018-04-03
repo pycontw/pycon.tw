@@ -1,14 +1,17 @@
 .popup {
-	display: none;
 	position: fixed;
 	z-index: 1;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	transform: scale(0, 0);
+	opacity: 0;
+	transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 
 	&.open {
-		display: block;
+		transform: scale(1, 1);
+		opacity: 1;
 	}
 
 	@mixin card($spacing) {
@@ -34,8 +37,8 @@
 		position: absolute;
 		top: 16px;
 		right: 16px;
-		width: 40px;
-		height: 40px;
+		width: 24px;
+		height: 24px;
 		max-width: 10vmin;
 		max-height: 10vmin;
 		margin: 0;
@@ -81,10 +84,6 @@
 
 	@include card-content(16px, 16px, scroll);
 
-	a:hover {
-		cursor: pointer;
-	}
-
 	.logo {
 		display: block;
 
@@ -97,7 +96,9 @@
 	.name {
 		@include header(1.5rem);
 		@include header-geometry(0, 16px);
-		text-align: center;
+	}
+	.name, .description .description * {
+		text-align: left;
 	}
 
 	@include on-desktop() {
@@ -122,7 +123,6 @@
 
 				.name {
 					flex: 0;
-					text-align: left;
 				}
 
 				.description {
