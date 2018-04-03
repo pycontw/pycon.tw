@@ -42,11 +42,17 @@ def reviews_states(request):
     }
 
 
+def iter_sponsor_section():
+    groups = itertools.groupby(
+        Sponsor.objects.order_by('level'),
+        key=operator.methodcaller('get_level_display'),
+    )
+    for k, v in groups:
+        yield k, list(v)
+
+
 def sponsors(request):
-    sponsors = Sponsor.objects.order_by('level')
     return {
-        'sponsors': sponsors,
-        'sponsor_sections': ((k, list(v)) for k, v in itertools.groupby(
-            sponsors, key=operator.methodcaller('get_level_display'),
-        )),
+        'sponsors': Sponsor.objects.order_by('level'),
+        'sponsor_sections': iter_sponsor_section(),
     }
