@@ -60,7 +60,7 @@ $menu-desktop-border-radius: 8px;
 
 .index-partners {
 	@include index-section;
-	@include circle-background-section;
+	@include circle-background-section();
 
 	.partners {
 		$item-spacing: 32px;
