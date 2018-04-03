@@ -61,26 +61,60 @@
 	</article>
 </section>
 
-<section class="index-partners">
+<section class="index-partners" data-controller="mediaPopup">
 
 	<article class="container">
+
 		<h2>{% trans 'Partners' %}</h2>
+
 		{% if sponsors %}
 		<ul class="partners">
 			{% for sponsor in sponsors %}
 			<li>
-				{% if sponsor.website_url %}
-				<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
+				<a href="{{ sponsor.website_url|default:'#' }}" target="_blank" rel="noopener"
+						data-target="mediaPopup.presenter" data-action="mediaPopup#open">
 					<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
 				</a>
-				{% else %}
-				<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
-				{% endif %}
+				<div class="popup" data-target="mediaPopup.popup">
+					<div class="card">
+						<button class="popup-close" data-action="mediaPopup#close">
+							<span></span>
+							<span></span>
+						</button>
+						<div class="card-content">
+							{% if sponsor.website_url %}
+							<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener" class="logo">
+								<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+							</a>
+							{% else %}
+							<span class="logo">
+								<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+							</span>
+							{% endif %}
+							<div class="text">
+								<article>
+									<h4 class="name">
+										{% if sponsor.website_url %}
+										<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
+											{{ sponsor.name }}
+										</a>
+										{% else %}
+										<span>{{ sponsor.name }}</span>
+										{% endif %}
+									</h4>
+									<section class="description">{{ sponsor.intro }}</section>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
 			</li>
 			{% endfor %}
 		</ul>
 		{% endif %}
+
 		<a href="{{ SPONSOR_FORM_URL }}" class="center button-round sponsorship" target="_blank" rel="noopener">{% trans 'Enquire about sponsorship' %}</a>
+
 	</article>
 
 </section>
