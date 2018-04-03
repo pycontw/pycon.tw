@@ -5,7 +5,7 @@ $top-navbar-border-bottom: solid 1px rgba(230, 230, 230, 0.21);
 
 .top-navbar {
 	position: relative;
-	z-index: 1;
+	z-index: $background-deco-index + 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
@@ -93,6 +93,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 
 	> div {
 		position: relative;
+		z-index: $background-deco-index;
 		width: $icon-width;
 		height: $icon-height;
 		transform: rotate(0deg);

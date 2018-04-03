@@ -1,7 +1,7 @@
 .menu-navbar-mobile {
 	position: fixed;
 	top: $top-navbar-offset;
-	z-index: 99;
+	z-index: $overlay-index;
 
 	width: 100vw;
 	height: 0;
