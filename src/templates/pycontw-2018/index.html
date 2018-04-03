@@ -67,9 +67,12 @@
 
 		<h2>{% trans 'Partners' %}</h2>
 
-		{% if sponsors %}
+		{% for name, section in sponsor_sections %}
+
+		<h3>{{ name }}</h3>
+
 		<ul class="partners">
-			{% for sponsor in sponsors %}
+			{% for sponsor in section %}
 			<li>
 				<a href="{{ sponsor.website_url|default:'#' }}" target="_blank" rel="noopener"
 						data-target="mediaPopup.presenter" data-action="mediaPopup#open">
@@ -111,10 +114,13 @@
 			</li>
 			{% endfor %}
 		</ul>
-		{% endif %}
 
+		{% endfor %}
+
+	</article>
+
+	<article>
 		<a href="{{ SPONSOR_FORM_URL }}" class="center button-round sponsorship" target="_blank" rel="noopener">{% trans 'Enquire about sponsorship' %}</a>
-
 	</article>
 
 </section>

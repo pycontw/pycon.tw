@@ -1,3 +1,6 @@
+import itertools
+import operator
+
 from django.conf import settings
 from django.utils.translation import get_language
 
@@ -40,6 +43,10 @@ def reviews_states(request):
 
 
 def sponsors(request):
+    sponsors = Sponsor.objects.order_by('level')
     return {
-        'sponsors': Sponsor.objects.order_by('level'),
+        'sponsors': sponsors,
+        'sponsor_sections': ((k, list(v)) for k, v in itertools.groupby(
+            sponsors, key=operator.methodcaller('get_level_display'),
+        )),
     }
