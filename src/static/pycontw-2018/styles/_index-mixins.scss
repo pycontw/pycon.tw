@@ -2,10 +2,13 @@
 	@include content-section;
 
 	h2 {
-		@include h1;
+		@include h1();
 		&:first-child {
 			margin-top: 0;
 		}
+	}
+	h3 {
+		@include h2();
 	}
 	article {
 		margin-bottom: 64px;
@@ -51,7 +54,6 @@
 
 	> article {
 		padding: 32px 12px 54px 12px;
-		background-color: $white;
 	}
 
 	@include on-desktop {
@@ -59,40 +61,43 @@
 		overflow: hidden;
 		padding: 160px 0 168px 0;
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: -40px;
-			width: 100%;
-			height: 304px;
-			margin-left: 296px;
-			background: url('../assets/deco-circle-yellow.svg') center no-repeat;
-		}
-
 		&::after {
 			content: '';
 			position: absolute;
+			z-index: $background-deco-index;
 			width: 100%;
 			height: 80px;
 			margin-top: 40px;
 			margin-left: -560px;
 			background: url('../assets/deco-circle-blue.svg') center no-repeat;
 		}
-
-		> * {
-			$padding-x: (976px - $container-max-width) / 2;
-			padding: 16px $padding-x 48px $padding-x;
-			position: relative;
-
-			&:last-child::after {
+		> article:last-of-type {
+			&::before {
 				content: '';
 				position: absolute;
+				z-index: $background-deco-index;
+				top: calc(-100% - 200px);
+				width: 100%;
+				height: 304px;
+				margin-left: 296px;
+				background: url('../assets/deco-circle-yellow.svg') center no-repeat;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				z-index: $background-deco-index;
 				width: 100%;
 				height: 80px;
 				margin-top: 24px;
 				margin-left: 208px;
 				background: url('../assets/deco-circle-grey.svg') center no-repeat;
 			}
+		}
+
+		> * {
+			$padding-x: (976px - $container-max-width) / 2;
+			padding: 16px $padding-x 48px $padding-x;
+			position: relative;
 		}
 	}
 }
