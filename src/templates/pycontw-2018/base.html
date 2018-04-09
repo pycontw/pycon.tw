@@ -46,7 +46,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% endif %}
 </head>
 
-
 <body class="{% block body_class %}{% endblock body_class %}">
 {% if GTM_TRACK_ID %}
 <!-- Google Tag Manager (noscript) -->
@@ -61,11 +60,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% block content_full %}{% endblock content_full %}
 
 {% include '_includes/footer.html' %}
-
-{% if GA_TRACK_ID %}
-<script>GA_TRACK_ID = '{{ GA_TRACK_ID }}';</script>
-<script src="{% static 'js/vendors/google_analytics.js' %}"></script>
-{% endif %}
 
 {% compress js %}
 {% block scripts %}
