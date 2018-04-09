@@ -205,11 +205,11 @@ class User(AbstractBaseUser, PermissionsMixin):
         return '#{hash_user}'.format(
             hash_user=(
                 base64.b16encode(
-                    # Picking the first 2 bytes may still run into hash
+                    # Picking the first 3 bytes may still run into hash
                     # collisions if you take the whole users list into account,
                     # but as this is used for representing reviewers which is a
                     # comparatively small subset, it's not a big deal.
-                    hashlib.md5(str(self.pk).encode('utf-8')).digest()[:2],
+                    hashlib.md5(str(self.pk).encode('utf-8')).digest()[:3],
                 ).decode('utf-8')
             )
         )
