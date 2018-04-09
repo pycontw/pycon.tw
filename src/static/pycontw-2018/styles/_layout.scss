@@ -52,3 +52,19 @@ footer {
 		padding-top: 16px;
 	}
 }
+
+// Applied when a fullscreen popup is open to disable <body> scrolling.
+body.overlay-open {
+	max-width: 100vw;
+	max-height: 100vh;
+	overflow: hidden;
+
+	@include on-desktop {
+		max-width: none;
+		max-height: none;
+		overflow: auto;
+	}
+}
+
+$background-deco-index: 0;
+$overlay-index: 99;
