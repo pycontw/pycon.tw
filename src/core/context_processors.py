@@ -18,6 +18,7 @@ def pycontw(request):
         volun_id = '1FAIpQLSeEHdCEv7R_BQb6eawQpndSlEPLpUHQDoc7URvJU0fpFeJHIA'
     return {
         'GA_TRACK_ID': settings.GA_TRACK_ID,
+        'GTM_TRACK_ID': settings.GTM_TRACK_ID,
         'KKTIX_URL': 'https://pycontw.kktix.cc/events/pycontw2017',
         'SPONSOR_FORM_URL': _build_google_form_url(sponsor_id),
         'VOLUNTEER_FORM_URL': _build_google_form_url(volun_id),
