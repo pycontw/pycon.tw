@@ -1,0 +1,13 @@
+@import 'site';
+
+#google-map {
+    margin-top: -48px;
+    @include on-desktop {
+        margin-top: -72px;
+    }
+}
+
+#mapid {
+    width: 100%;
+    height: 502px;
+}
