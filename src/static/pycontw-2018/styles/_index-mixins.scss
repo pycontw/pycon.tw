@@ -21,19 +21,6 @@
 	}
 }
 
-@mixin index-button($angle, $color1, $color2) {
-	@include gradient-hover($angle, $color1, $color2);
-	@include link($white, $white);
-	@include no-underline;
-
-	margin: auto;
-	font-weight: 300;
-
-	@include on-desktop {
-		width: 336px;
-	}
-}
-
 // Apply this to any section to get a logo background after it.
 @mixin logo-background-section {
 	padding-bottom: calc(50vw + 35px);
