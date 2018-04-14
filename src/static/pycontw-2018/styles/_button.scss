@@ -1,0 +1,22 @@
+@mixin button($angle, $color1, $color2) {
+	@include gradient-hover($angle, $color1, $color2);
+	@include link($white, $white);
+	@include no-underline;
+
+	margin: auto;
+	font-weight: 300;
+
+	@include on-desktop {
+		width: 336px;
+	}
+}
+
+.button-round {
+	@include text($text-font-size);
+	@include text-light;
+	@include no-underline;
+
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-radius: 100px;
+}

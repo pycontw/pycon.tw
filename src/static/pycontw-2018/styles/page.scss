@@ -97,3 +97,54 @@ main {
 		}
 	}
 }
+
+.ticket-info-page {
+	.price-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include on-desktop() {
+			flex-direction: row;
+		}
+
+		table {
+			th, td {
+				width: 176px;
+				padding: 4px 0;
+				text-align: center;
+				font-weight: 300;
+				font-size: 1.125rem;
+
+				@include on-desktop() {
+					text-align: left;
+				}
+			}
+			.price {
+				color: $indigo;
+				font-weight: 300;
+				font-size: 1.75rem;
+
+				@include on-desktop() {
+					text-align: right;
+					padding-right: 1rem;
+				}
+			}
+		}
+
+		.buy {
+			@include button(276deg, $dark-peach, $maize);
+			width: 100%;
+			margin: 24px 0;
+			text-align: center;
+
+			@include on-desktop {
+				max-width: 160px;
+			}
+		}
+	}
+
+	.desc {
+		margin-bottom: -16px;
+	}
+}

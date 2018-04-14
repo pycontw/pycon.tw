@@ -108,7 +108,7 @@ $link-hover-light: $white;
   a {
     @include link-light;
   }
-  button, dl, p, ul, ol {
+  button, dl, p, ul, ol, th, td {
     color: $text-light;
   }
 }

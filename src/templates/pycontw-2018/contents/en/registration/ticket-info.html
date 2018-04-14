@@ -1,0 +1,88 @@
+{% extends 'contents/_base.html' %}
+
+{% block title %}Ticket Info{% endblock title %}
+
+{% block meta_description %}Tickets are on sale for PyCon Taiwan 2018. Get yours now before it’s too late!{% endblock meta_description %}
+
+{% block body_class %}{{ block.super }} ticket-info-page{% endblock body_class %}
+
+{% block content %}
+
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
+
+<h1>Ticket Information</h1>
+
+<div class="box">
+	<h3 class="box-title">Individual</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Early Bird</th>
+						<td class="price">2,500</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>General</th>
+						<td class="price">3,500</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+			<p>Invoice will be donated to the <a href="http://ocf.tw/">Open Culture Foundation</a>. A discount is thus offered to appreciate your donation.</p>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">Corporate</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Price</th>
+						<td class="price">5,000</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+			<p>Invoice will be donated to the <a href="http://ocf.tw/">Open Culture Foundation</a>. A discount is thus offered to appreciate your donation.</p>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">Invited</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+						<tr>
+							<th>Contributor</th>
+							<td class="price">1,900</td>
+							<td>NTD</td>
+						</tr>
+					<tr>
+						<th>Sponsor</th>
+						<td class="price">Free</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+			<p>Invoice will be donated to the <a href="http://ocf.tw/">Open Culture Foundation</a>. A discount is thus offered to appreciate your donation.</p>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

@@ -35,7 +35,7 @@ $menu-desktop-border-radius: 8px;
 	}
 
 	.my-pycon {
-		@include index-button(276deg, $dark-peach, $maize);
+		@include button(276deg, $dark-peach, $maize);
 		margin-top: 40px;
 	}
 }
@@ -53,7 +53,7 @@ $menu-desktop-border-radius: 8px;
 	}
 
 	.volunteer {
-		@include index-button(259deg, $azure, $ultramarine-blue);
+		@include button(259deg, $azure, $ultramarine-blue);
 		margin-top: 40px;
 	}
 }
@@ -112,6 +112,6 @@ $menu-desktop-border-radius: 8px;
 	}
 
 	.sponsorship {
-		@include index-button(276deg, $dark-peach, $maize);
+		@include button(276deg, $dark-peach, $maize);
 	}
 }
