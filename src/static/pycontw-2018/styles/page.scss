@@ -91,7 +91,7 @@ main {
 		}
 	}
 
-	table:not([class]), table.table, .table > table {
+	> table:not([class]), table.table, .table > table {
 		min-width: 100%;
 		text-align: center;
 		border-collapse: collapse;
