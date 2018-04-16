@@ -1,3 +1,6 @@
+$box-content-padding-x: 24px;
+$box-content-padding-y: 16px;
+
 .box {
 	border: solid 1px #1b2561;
 	border-radius: 5px;
@@ -13,6 +16,6 @@
 	}
 
 	.box-content {
-		padding: 16px 24px;
+		padding: $box-content-padding-y $box-content-padding-x;
 	}
 }
