@@ -159,6 +159,10 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	font-size: $font-size;
 
 	// Visually compensate for icon size.
+	&.fa-book {
+		font-size: $font-size * 1.075;
+		padding-right: $font-size * 0.175;
+	}
 	&.fa-twitter {
 		font-size: $font-size * 1.1;
 	}

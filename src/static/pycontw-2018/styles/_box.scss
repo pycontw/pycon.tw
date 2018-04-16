@@ -1,0 +1,21 @@
+$box-content-padding-x: 24px;
+$box-content-padding-y: 16px;
+
+.box {
+	border: solid 1px #1b2561;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.box-title {
+		line-height: 48px;
+		margin: 0;
+		background-image: linear-gradient(101deg, $indigo, $dark-slate-blue);
+		color: $white;
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+
+	.box-content {
+		padding: $box-content-padding-y $box-content-padding-x;
+	}
+}

@@ -67,6 +67,52 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
+
+	// Custom UL bullets.
+	ul {
+		$mark-indent: 1.125rem;
+		$text-indent: 2.125rem;
+
+		list-style: none;
+		padding-left: $text-indent;
+		text-indent: $mark-indent - $text-indent;
+
+		> li {
+			&::before {
+				content: '•';
+				display: block;
+				float: left;
+				width: $text-indent - $mark-indent;
+			}
+
+			> p {
+				margin-top: 0;
+			}
+		}
+	}
+
+	> table:not([class]), table.table, .table > table {
+		min-width: 100%;
+		text-align: center;
+		border-collapse: collapse;
+
+		tr {
+			> th, > td {
+				height: 3.5rem;
+				padding: 4px 8px;
+				border-bottom: solid thin $indigo;
+				font-size: 1rem;
+				font-weight: 400;
+			}
+			> th {
+				color: $indigo;
+			}
+		}
+	}
+	.table {
+		width: 100%;
+		overflow: auto;
+	}
 }
 
 // Page-specific styling.
@@ -95,5 +141,63 @@ main {
 			content: '/';
 			margin-left: 1rem;
 		}
+	}
+}
+
+.ticket-info-page {
+	.price-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include on-desktop() {
+			flex-direction: row;
+		}
+
+		$buy-button-max-width: 160px;
+
+		table {
+			@include on-desktop() {
+				max-width: $container-max-width - 2 * $box-content-padding-x - $buy-button-max-width;
+			}
+
+			th, td {
+				width: 176px;
+				padding: 4px 0;
+				text-align: center;
+				font-weight: 300;
+				font-size: 1.125rem;
+
+				@include on-desktop() {
+					max-width: 33%;
+					text-align: left;
+				}
+			}
+			.price {
+				color: $indigo;
+				font-weight: 300;
+				font-size: 1.75rem;
+
+				@include on-desktop() {
+					text-align: right;
+					padding-right: 1rem;
+				}
+			}
+		}
+
+		.buy {
+			@include button(276deg, $dark-peach, $maize);
+			width: 100%;
+			margin: 24px 0;
+			text-align: center;
+
+			@include on-desktop {
+				max-width: $buy-button-max-width;
+			}
+		}
+	}
+
+	.desc {
+		margin-bottom: -16px;
 	}
 }

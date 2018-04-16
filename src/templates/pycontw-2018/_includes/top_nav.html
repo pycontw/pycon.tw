@@ -26,21 +26,13 @@
 			<div><span></span><span></span><span></span></div>
 		</button>
 
-		<div class="navbar-social-desktop">
-			<a href="https://www.facebook.com/pycontw" aria-label="Facebook" class="fa fa-facebook-official" target="_blank" rel="noopener"></a>
-			<a href="https://twitter.com/pycontw" aria-label="Twitter" class="fa fa-twitter" target="_blank" rel="noopener"></a>
-			<a href="mailto:organizers@pycon.tw" aria-label="Email" class="fa fa-envelope"></a>
-		</div>
+		{% include '_includes/social.html' with type='desktop' %}
 
 	</nav>
 
 	<nav class="menu-navbar-mobile no-script" data-target="topNav.menu">
 		{% include '_includes/menu.html' with type='mobile' %}
-		<div class="navbar-social-mobile">
-			<a href="https://www.facebook.com/pycontw" aria-label="Facebook" class="fa fa-facebook-official" target="_blank" rel="noopener"></a>
-			<a href="https://twitter.com/pycontw" aria-label="Twitter" class="fa fa-twitter" target="_blank" rel="noopener"></a>
-			<a href="mailto:organizers@pycon.tw" aria-label="Email" class="fa fa-envelope"></a>
-		</div>
+		{% include '_includes/social.html' with type='mobile' %}
 	</nav>
 
 </div>
