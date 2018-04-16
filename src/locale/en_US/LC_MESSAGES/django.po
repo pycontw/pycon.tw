@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-24 14:59+0800\n"
-"PO-Revision-Date: 2018-03-24 10:44+0000\n"
+"POT-Creation-Date: 2018-04-15 23:12+0800\n"
+"PO-Revision-Date: 2018-04-15 15:12+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -189,13 +189,13 @@ msgstr "last updated at"
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:326
+#: events/admin.py:76 pycontw2016/settings/base.py:327
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:327
+#: events/admin.py:77 pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -749,28 +749,28 @@ msgstr "Talk proposal <strong>{title}</strong> updated."
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:296
+#: pycontw2016/settings/base.py:297
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:297 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:298 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:298 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:299 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/base.py:321
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:321
+#: pycontw2016/settings/base.py:322
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:323
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "Prefer 45min"
@@ -1082,7 +1082,7 @@ msgstr "If your proposed target is novice topic, the following is an example of 
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
 #: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:9
+#: templates/default/reviews/_includes/review_table.html:8
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
@@ -1316,12 +1316,12 @@ msgid "Stage"
 msgstr "Stage"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: templates/default/reviews/_includes/review_table.html:7 users/models.py:216
+#: users/models.py:216
 msgid "Reviewer ID"
 msgstr "Reviewer ID"
 
 #: templates/default/reviews/_includes/previous_review_table.html:8
-#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:7
 msgid "Vote"
 msgstr "Vote"
 
@@ -1329,7 +1329,11 @@ msgstr "Vote"
 msgid "Comments"
 msgstr "Comments"
 
-#: templates/default/reviews/_includes/previous_review_table.html:30
+#: templates/default/reviews/_includes/previous_review_table.html:22
+msgid "(Comment redacted by the reviewer or organizers.)"
+msgstr "(Comment redacted by the reviewer or organizers.)"
+
+#: templates/default/reviews/_includes/previous_review_table.html:32
 msgid "No reviews yet."
 msgstr "No reviews yet."
 
@@ -1386,11 +1390,11 @@ msgid ""
 " made will be disclosed to the speaker (if you choose to)."
 msgstr "In review stage 2, you will see score and comment made by other reviewers anonymously, including the name and background of the speaker. With more information provided, you may want to update your review. Updating or adding review in stage 2 follows the same way as stage 1. Only the last review you made will be disclosed to the speaker (if you choose to)."
 
-#: templates/default/reviews/_includes/review_table.html:10
+#: templates/default/reviews/_includes/review_table.html:9
 msgid "Comment"
 msgstr "Comment"
 
-#: templates/default/reviews/_includes/review_table.html:25
+#: templates/default/reviews/_includes/review_table.html:23
 msgid "Update"
 msgstr "Update"
 
@@ -1587,11 +1591,11 @@ msgstr "GitHub Username"
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
-#: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:31
+#: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
 msgstr "Ooops! It’s a <span class=\"error-code\">404</span> problem."
 
-#: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:32
+#: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:30
 msgid "We cannot find what you’re looking for."
 msgstr "We cannot find what you’re looking for."
 
@@ -1599,11 +1603,11 @@ msgstr "We cannot find what you’re looking for."
 msgid "Server Error"
 msgstr "Server Error"
 
-#: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:31
+#: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
 msgstr "Ooops! It’s a <span class=\"error-code\">500</span> problem."
 
-#: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:32
+#: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:30
 msgid "We screwed up. It’s not your fault."
 msgstr "We screwed up. It’s not your fault."
 
@@ -1693,7 +1697,7 @@ msgid "Ticket Info"
 msgstr "Ticket Info"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:43
+#: templates/pycontw-2018/_includes/menu.html:49
 msgid "Financial Aid"
 msgstr "Financial Aid"
 
@@ -2085,7 +2089,7 @@ msgstr "12 March, 12 June"
 msgid "Get Tickets"
 msgstr "Get Tickets"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:60
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:58
 msgid "Volunteers Needed"
 msgstr "Volunteers Needed"
 
@@ -2119,8 +2123,6 @@ msgstr "Python Communities in Taiwan"
 
 #: templates/pycontw-2017/sponsors/sponsor_list.html:7
 #: templates/pycontw-2017/sponsors/sponsor_list.html:17
-#: templates/pycontw-2018/sponsors/sponsor_list.html:7
-#: templates/pycontw-2018/sponsors/sponsor_list.html:17
 msgid "Our Partners"
 msgstr "Our Partners"
 
@@ -2144,8 +2146,15 @@ msgstr "Proposing a Tutorial"
 msgid "Recording"
 msgstr "Recording"
 
-#: templates/pycontw-2018/_includes/menu.html:66
-#: templates/pycontw-2018/index.html:54
+#: templates/pycontw-2018/_includes/menu.html:45
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/menu.html:48
+msgid "Conference Ticket"
+msgstr "Conference Ticket"
+
+#: templates/pycontw-2018/_includes/menu.html:71
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2172,19 +2181,19 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>"
 
-#: templates/pycontw-2018/index.html:61
+#: templates/pycontw-2018/index.html:59
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>Help us organize and make the conference successful!</p>"
 
-#: templates/pycontw-2018/index.html:62
+#: templates/pycontw-2018/index.html:60
 msgid "Become a volunteer"
 msgstr "Become a volunteer"
 
-#: templates/pycontw-2018/index.html:69
+#: templates/pycontw-2018/index.html:68
 msgid "Partners"
 msgstr "Partners"
 
-#: templates/pycontw-2018/index.html:85
+#: templates/pycontw-2018/index.html:123
 msgid "Enquire about sponsorship"
 msgstr "Enquire about sponsorship"
 

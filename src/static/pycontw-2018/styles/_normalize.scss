@@ -19,7 +19,7 @@ h3 {
   @include h3;
 }
 
-blockquote, button, dl, label, ol, p, ul {
+blockquote, button, dl, label, ol, p, ul, th, td {
   @include text($text-font-size);
 }
 

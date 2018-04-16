@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-24 14:59+0800\n"
-"PO-Revision-Date: 2018-03-24 10:44+0000\n"
+"POT-Creation-Date: 2018-04-15 23:12+0800\n"
+"PO-Revision-Date: 2018-04-15 15:12+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -195,13 +195,13 @@ msgstr "最後更新"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:326
+#: events/admin.py:76 pycontw2016/settings/base.py:327
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:327
+#: events/admin.py:77 pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -755,28 +755,28 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:296
+#: pycontw2016/settings/base.py:297
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:297 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:298 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:298 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:299 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/base.py:321
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:321
+#: pycontw2016/settings/base.py:322
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:323
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -1088,7 +1088,7 @@ msgstr "如果您的投稿目標為入門題目，以下為一篇入門投稿範
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
 #: templates/default/reviews/_includes/proposal_table.html:17
-#: templates/default/reviews/_includes/review_table.html:9
+#: templates/default/reviews/_includes/review_table.html:8
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
@@ -1322,12 +1322,12 @@ msgid "Stage"
 msgstr "階段"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: templates/default/reviews/_includes/review_table.html:7 users/models.py:216
+#: users/models.py:216
 msgid "Reviewer ID"
 msgstr "審稿人代號"
 
 #: templates/default/reviews/_includes/previous_review_table.html:8
-#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:7
 msgid "Vote"
 msgstr "投票"
 
@@ -1335,7 +1335,11 @@ msgstr "投票"
 msgid "Comments"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/previous_review_table.html:30
+#: templates/default/reviews/_includes/previous_review_table.html:22
+msgid "(Comment redacted by the reviewer or organizers.)"
+msgstr "（評論被審稿人或主辦單位隱藏。）"
+
+#: templates/default/reviews/_includes/previous_review_table.html:32
 msgid "No reviews yet."
 msgstr "尚無審稿紀錄。"
 
@@ -1392,11 +1396,11 @@ msgid ""
 " made will be disclosed to the speaker (if you choose to)."
 msgstr "在第 2 階段審稿中，其他審稿人的分數與評語將匿名顯示，且你可知道投稿人的姓名與背景。你可以根據這些額外資訊更新自己的評審內容。第 2 階段審稿的方式與第 1 階段相同，但投稿人只會看到你對稿件的最終評語 (若你願意)。"
 
-#: templates/default/reviews/_includes/review_table.html:10
+#: templates/default/reviews/_includes/review_table.html:9
 msgid "Comment"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/review_table.html:25
+#: templates/default/reviews/_includes/review_table.html:23
 msgid "Update"
 msgstr "更新"
 
@@ -1592,11 +1596,11 @@ msgstr "GitHub 帳號"
 msgid "Page Not Found"
 msgstr "頁面不存在"
 
-#: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:31
+#: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
 msgstr "糟惹！這是個 <span class=\"error-code\">404</span> 錯誤。"
 
-#: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:32
+#: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:30
 msgid "We cannot find what you’re looking for."
 msgstr "我們找不到你想去的頁面。"
 
@@ -1604,11 +1608,11 @@ msgstr "我們找不到你想去的頁面。"
 msgid "Server Error"
 msgstr "伺服器錯誤"
 
-#: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:31
+#: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
 msgstr "糟惹！這是個 <span class=\"error-code\">500</span> 錯誤。"
 
-#: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:32
+#: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:30
 msgid "We screwed up. It’s not your fault."
 msgstr "我們搞砸了，這不是你的問題。"
 
@@ -1698,7 +1702,7 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:43
+#: templates/pycontw-2018/_includes/menu.html:49
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -2090,7 +2094,7 @@ msgstr "3/12、6/12"
 msgid "Get Tickets"
 msgstr "立即購票"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:60
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:58
 msgid "Volunteers Needed"
 msgstr "徵求志工"
 
@@ -2124,8 +2128,6 @@ msgstr "臺灣的在地 Python 社群"
 
 #: templates/pycontw-2017/sponsors/sponsor_list.html:7
 #: templates/pycontw-2017/sponsors/sponsor_list.html:17
-#: templates/pycontw-2018/sponsors/sponsor_list.html:7
-#: templates/pycontw-2018/sponsors/sponsor_list.html:17
 msgid "Our Partners"
 msgstr "我們的夥伴"
 
@@ -2149,8 +2151,15 @@ msgstr "投稿教學"
 msgid "Recording"
 msgstr "錄影"
 
-#: templates/pycontw-2018/_includes/menu.html:66
-#: templates/pycontw-2018/index.html:54
+#: templates/pycontw-2018/_includes/menu.html:45
+msgid "Registration"
+msgstr "註冊"
+
+#: templates/pycontw-2018/_includes/menu.html:48
+msgid "Conference Ticket"
+msgstr "會議門票"
+
+#: templates/pycontw-2018/_includes/menu.html:71
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2177,19 +2186,19 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
 
-#: templates/pycontw-2018/index.html:61
+#: templates/pycontw-2018/index.html:59
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
-#: templates/pycontw-2018/index.html:62
+#: templates/pycontw-2018/index.html:60
 msgid "Become a volunteer"
 msgstr "成為志工"
 
-#: templates/pycontw-2018/index.html:69
+#: templates/pycontw-2018/index.html:68
 msgid "Partners"
 msgstr "夥伴"
 
-#: templates/pycontw-2018/index.html:85
+#: templates/pycontw-2018/index.html:123
 msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
 
