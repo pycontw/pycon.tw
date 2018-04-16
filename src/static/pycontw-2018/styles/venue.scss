@@ -25,13 +25,12 @@ $map-height: 502px;
 @include on-desktop {
     #map-info {
         display: block;
-        background-color: red;
-        width: 50%;
+        width: 20%;
         height: $map-height;
         position: absolute;
         z-index: 2;
         background-color: rgba(255, 255, 255, 0.95);
-        padding-left: 13%;
+        padding: 0 5%;
  
         h2 {
             font-size: 2rem;
