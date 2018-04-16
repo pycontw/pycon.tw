@@ -2,6 +2,8 @@
 
 #google-map {
     margin-top: -48px;
+    width: calc(100vw - #{1rem * 2});
+    margin-left: calc(50% - 50vw);	// Shove to left edge, ignoring container.
     @include on-desktop {
         margin-top: -72px;
     }
