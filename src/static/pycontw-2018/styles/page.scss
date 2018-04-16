@@ -154,7 +154,13 @@ main {
 			flex-direction: row;
 		}
 
+		$buy-button-max-width: 160px;
+
 		table {
+			@include on-desktop() {
+				max-width: $container-max-width - 2 * $box-content-padding-x - $buy-button-max-width;
+			}
+
 			th, td {
 				width: 176px;
 				padding: 4px 0;
@@ -163,6 +169,7 @@ main {
 				font-size: 1.125rem;
 
 				@include on-desktop() {
+					max-width: 33%;
 					text-align: left;
 				}
 			}
@@ -185,7 +192,7 @@ main {
 			text-align: center;
 
 			@include on-desktop {
-				max-width: 160px;
+				max-width: $buy-button-max-width;
 			}
 		}
 	}
