@@ -10,13 +10,7 @@
 {% block content %}
 <section id="google-map">
   <div id="map-info">
-
-    <h2>中央研究院</h2>
-
-    <h2>人文社會科學館</h2>
-
-    <p>115 台北市南港區研究院路 2 段 1</p>
-
+    {% block map_info %}{% endblock map_info %}
   </div>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 
