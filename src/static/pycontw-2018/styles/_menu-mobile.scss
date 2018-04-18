@@ -7,7 +7,7 @@
 	height: 0;
 	background-image: $top-navbar-background;
 	transition: 0.25s ease-in-out;
-	overflow: scroll;
+	overflow: auto;
 
 	@include on-desktop {
 		display: none;
