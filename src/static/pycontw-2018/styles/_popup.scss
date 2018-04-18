@@ -70,7 +70,7 @@
 	}
 }
 
-.card-content {
+.popup .card-content {
 	@mixin card-content($spacing, $extra-top-padding, $overflow) {
 		overflow: $overflow;
 		width: calc(100% - #{2 * $spacing});
@@ -82,7 +82,7 @@
 		}
 	}
 
-	@include card-content(16px, 16px, scroll);
+	@include card-content(16px, 16px, auto);
 
 	.logo {
 		display: block;
@@ -128,7 +128,7 @@
 				.description {
 					flex: 1;
 					max-height: 560px;
-					overflow: scroll;
+					overflow: auto;
 
 					&, * {
 						text-align: left;
