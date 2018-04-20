@@ -20,6 +20,11 @@ body {
 		url('../assets/logo-white.svg'), $white, $white-two, $text-light);
 }
 
+// Shove to left edge, ignoring container.
+@mixin shove-left() {
+	margin-left: calc(50% - 50vw);
+}
+
 main {
 	@include content-section;
 	@include container;
@@ -32,10 +37,11 @@ main {
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
 		$padding-y: 1rem;
+
+		@include shove-left();
 		width: calc(100vw - #{$padding-y * 2});
 		margin-top: -160px;
 		margin-bottom: 48px;
-		margin-left: calc(50% - 50vw);	// Shove to left edge, ignoring container.
 		padding: 0 $padding-y 32px $padding-y;
 		background-image: $top-navbar-background;
 		color: $text-light;
@@ -205,31 +211,27 @@ main {
 .venue-page {
 	$map-height: 502px;
 
-	@mixin venue-map {
+	.map-section {
+		@include shove-left();
 		margin-top: -48px;
 		width: calc(100vw);
-		margin-left: calc(50% - 50vw);	// Shove to left edge, ignoring container.
-	}
-
-	.google-map {
-		@include venue-map;
 		height: $map-height;
 
-		@include on-desktop {
+		@include on-desktop() {
 			margin-top: -72px;
 		}
 	}
 
-	#mapid {
+	.map {
 		width: 100%;
 		height: 100%;
 		z-index: 1;
 	}
 
 	.map-info {
-		display: None;
+		display: none;
 
-		@include on-desktop {
+		@include on-desktop() {
 			display: block;
 			position: absolute;
 			height: $map-height;
