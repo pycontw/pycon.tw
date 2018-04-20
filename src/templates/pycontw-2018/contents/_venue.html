@@ -14,11 +14,9 @@
 
 {% block content %}
 
-<section class="google-map">
-	<div class="map-info">
-		{% block map_info %}{% endblock map_info %}
-	</div>
-	<div id="mapid"></div>
+<section class="map-section">
+	<div class="map-info">{% block map_info %}{% endblock map_info %}</div>
+	<div id="map" class="map"></div>
 </section>
 
 {% endblock content %}
@@ -58,7 +56,7 @@ transport = L.tileLayer(mbUrl2, {
 	attribution: mbAttr2
 });
 //初始化地圖
-var pymap = L.map('mapid', {
+var pymap = L.map('map', {
 	center: [25.040997, 121.611417],
 	zoom: 12,
 	layers: [stamen, venue]
