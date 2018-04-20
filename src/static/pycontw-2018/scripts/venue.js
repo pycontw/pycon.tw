@@ -29,10 +29,23 @@ const transport = L.tileLayer(mbUrl2, {attribution: mbAttr2})
 
 // Initialize map.
 const pymap = L.map('venue-map', {
-	center: [25.040997, 121.611417],
-	zoom: 12,
 	layers: [stamen, venue],
+	zoomControl: true,
+	scrollWheelZoom: false,
 })
+pymap.zoomControl.setPosition('topright')
+
+// Adjust map to center the icon in the non-covered area.
+function getCenter() {
+	const mapw = document.getElementById('venue-map').clientWidth
+	const ovlw = document.getElementById('venue-info-overlay').clientWidth
+	const lng = 121.71 - 0.00018 * (mapw - ovlw)	// Magic!
+	return [25.041, lng]
+}
+pymap.setView(getCenter(), 12)
+window.addEventListener('resize', () => setTimeout(() => {
+		pymap.setView(getCenter(), 12)
+}, 100))
 
 // Layers and functionalities.
 const baseLayers = {Stamen: stamen, Transport: transport}

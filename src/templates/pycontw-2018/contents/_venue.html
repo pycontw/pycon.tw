@@ -12,7 +12,9 @@
 
 {% block content %}
 <section class="map-section">
-	<div class="map-info">{% block map_info %}{% endblock map_info %}</div>
+	<div id="venue-info-overlay" class="map-info">
+		{% block map_info %}{% endblock map_info %}
+	</div>
 	<div id="venue-map" class="map"></div>
 </section>
 <script>window.VENUE_ICON = '{% static "pycontw-2018/assets/venue-icon.png" %}'</script>
