@@ -1,13 +1,17 @@
 .venue-page {
-	$map-height: 502px;
+	$map-height-mobile: 280px;
+	$map-height-desktop: 496px;
 
 	.map-section {
 		@include shove-left();
+		width: 100vw;
+		height: $map-height-mobile;
+		max-height: 50vh;		// Make sure the user has some room to flick.
 		margin-top: -48px;
-		width: calc(100vw);
-		height: $map-height;
 
 		@include on-desktop() {
+			height: $map-height-desktop;
+			max-height: none;
 			margin-top: -72px;
 		}
 	}
@@ -28,7 +32,7 @@
 
 			display: block;
 			position: absolute;
-			height: $map-height;
+			height: $map-height-desktop;
 			width: $total-width - $padding-left - $padding-right;
 			z-index: 2;
 			background-color: rgba(255, 255, 255, 0.95);
