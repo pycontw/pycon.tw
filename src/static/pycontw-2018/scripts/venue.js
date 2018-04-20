@@ -30,6 +30,8 @@ const transport = L.tileLayer(mbUrl2, {attribution: mbAttr2})
 
 // Initialize map.
 const pymap = L.map('venue-map', {
+	center: [25.040997, 121.611417],
+	zoom: 12,
 	layers: [stamen, venue],
 	scrollWheelZoom: false,
 	zoomControl: false,
@@ -40,13 +42,16 @@ L.control.zoom({position: 'topright'}).addTo(pymap)
 function centerMap() {
 	const mapw = document.getElementById('venue-map').clientWidth
 	const ovlw = document.getElementById('venue-info-overlay').clientWidth
-	const lng = 121.71 - 0.00018 * (mapw - ovlw)	// Magic!
-	pymap.setView([25.041, lng], 12)
+
+	let lng = 121.611417
+	if (ovlw && mapw > ovlw) {
+		const bs = pymap.getBounds()
+		lng -= (bs.getEast() - bs.getWest()) * ovlw / mapw / 2
+	}
+	pymap.panTo([25.040997, lng])
 }
 centerMap()
-window.addEventListener('resize', () => {
-	setTimeout(() => centerMap(), 100)
-})
+window.map = pymap
 
 // Icon for venue.
 L.easyButton(
