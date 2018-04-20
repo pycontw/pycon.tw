@@ -1,4 +1,5 @@
 import L from 'leaflet'
+import 'leaflet-easybutton'
 
 const venue = L.layerGroup()
 
@@ -6,14 +7,13 @@ const venue = L.layerGroup()
 L.marker([25.040997, 121.611417], {
 	icon: L.icon({
 		iconUrl: window.VENUE_ICON,
-		iconSize: [32, 32],
-		iconAnchor: [16, 16],
+		iconSize: [56, 51],
+		iconAnchor: [28, 28],
 	}),
 })
 .addTo(venue)
 .bindTooltip(window.VENUE_NAME, {
-	offset: [0, 11],
-	permanent: 'True',
+	offset: [-4, 20],
 	direction: 'bottom',
 })
 .openTooltip()
@@ -24,22 +24,31 @@ const mbUrl1 = 'http://{s}.sm.mapstack.stamen.com/((toner-background,$fff[@20],$
 const mbAttr2 = 'Maps &copy; <a href="http://www.thunderforest.com" target="_blank" rel="noopener">Thunderforest</a>, Data &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap </a> contributors.'
 const mbUrl2 = 'https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=6170aad10dfd42a38d4d8c709a536f38'
 
+
 const stamen = L.tileLayer(mbUrl1, {attribution: mbAttr1})
 const transport = L.tileLayer(mbUrl2, {attribution: mbAttr2})
 
 // Initialize map.
 const pymap = L.map('venue-map', {
-	center: [25.040997, 121.611417],
-	zoom: 12,
+	center: [25.044622, 121.584852],
+	zoom: 14,
 	layers: [stamen, venue],
+	scrollWheelZoom: false,
+	zoomControl: false,
 })
+
+L.control.zoom({position: 'topright'}).addTo(pymap);
+
+L.easyButton( '<img src="https://i.imgur.com/sJwJhis.png" alt="Map Home" width="12" height="12">', function(){
+	  pymap.setView([25.044622, 121.584852], 14);
+},{position: 'topright'} ).addTo(pymap);
 
 // Layers and functionalities.
 const baseLayers = {
 	'Stamen': stamen,
-	'Transport': transport
+	'Transport': transport,
 }
 const overlays = {
-	'Location': venue
+	'Venue': venue
 }
 L.control.layers(baseLayers, overlays).addTo(pymap)
