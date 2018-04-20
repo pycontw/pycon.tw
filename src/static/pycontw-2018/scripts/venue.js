@@ -30,18 +30,30 @@ const transport = L.tileLayer(mbUrl2, {attribution: mbAttr2})
 
 // Initialize map.
 const pymap = L.map('venue-map', {
-	center: [25.044622, 121.584852],
-	zoom: 14,
 	layers: [stamen, venue],
 	scrollWheelZoom: false,
 	zoomControl: false,
 })
+L.control.zoom({position: 'topright'}).addTo(pymap)
 
-L.control.zoom({position: 'topright'}).addTo(pymap);
+// Adjust map to center the icon in the non-covered area.
+function centerMap() {
+	const mapw = document.getElementById('venue-map').clientWidth
+	const ovlw = document.getElementById('venue-info-overlay').clientWidth
+	const lng = 121.71 - 0.00018 * (mapw - ovlw)	// Magic!
+	pymap.setView([25.041, lng], 12)
+}
+centerMap()
+window.addEventListener('resize', () => {
+	setTimeout(() => centerMap(), 100)
+})
 
-L.easyButton( '<img src="https://i.imgur.com/sJwJhis.png" alt="Map Home" width="12" height="12">', function(){
-	  pymap.setView([25.044622, 121.584852], 14);
-},{position: 'topright'} ).addTo(pymap);
+// Icon for venue.
+L.easyButton(
+	`<img src="${window.VENUE_BUTTON}" alt="Map Home" width="12" height="12">`,
+	centerMap,
+	{position: 'topright'},
+).addTo(pymap)
 
 // Layers and functionalities.
 const baseLayers = {
@@ -51,18 +63,6 @@ const baseLayers = {
 const overlays = {
 	'Venue': venue
 }
-
-// Adjust map to center the icon in the non-covered area.
-function getCenter() {
-	const mapw = document.getElementById('venue-map').clientWidth
-	const ovlw = document.getElementById('venue-info-overlay').clientWidth
-	const lng = 121.71 - 0.00018 * (mapw - ovlw)	// Magic!
-	return [25.041, lng]
-}
-pymap.setView(getCenter(), 12)
-window.addEventListener('resize', () => setTimeout(() => {
-		pymap.setView(getCenter(), 12)
-}, 100))
 
 // Layers and functionalities.
 L.control.layers(baseLayers, overlays, {position: 'bottomright'}).addTo(pymap)
