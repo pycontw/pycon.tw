@@ -5,13 +5,13 @@ const venue = L.layerGroup()
 // Marker style and layer definition.
 L.marker([25.040997, 121.611417], {
 	icon: L.icon({
-		iconUrl: 'https://i.imgur.com/AwHZfrC.png',
+		iconUrl: window.VENUE_ICON,
 		iconSize: [32, 32],
 		iconAnchor: [16, 16],
 	}),
 })
 .addTo(venue)
-.bindTooltip("中央研究院 人文社會科學館", {		// TODO: Localize this.
+.bindTooltip(window.VENUE_NAME, {
 	offset: [0, 11],
 	permanent: 'True',
 	direction: 'bottom',
