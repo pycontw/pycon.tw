@@ -65,4 +65,4 @@ window.addEventListener('resize', () => setTimeout(() => {
 }, 100))
 
 // Layers and functionalities.
-L.control.layers(baseLayers, overlays).addTo(pymap)
+L.control.layers(baseLayers, overlays, {position: 'bottomright'}).addTo(pymap)
