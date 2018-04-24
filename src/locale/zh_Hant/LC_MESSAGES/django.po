@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-15 23:12+0800\n"
-"PO-Revision-Date: 2018-04-15 15:12+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-04-24 17:33+0800\n"
+"PO-Revision-Date: 2018-04-24 09:58+0000\n"
+"Last-Translator: Adrian Liaw <adrianliaw2000@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1633,6 +1633,7 @@ msgid "Staff"
 msgstr "工作人員"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:37
+#: templates/pycontw-2018/_includes/menu.html:48
 msgid "Events"
 msgstr "活動"
 
@@ -1649,6 +1650,9 @@ msgstr "基調演講"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
+#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/events/talk_list.html:6
+#: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
 msgstr "演講"
 
@@ -1670,6 +1674,7 @@ msgstr "專業課程"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
+#: templates/pycontw-2018/_includes/menu.html:68
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1702,11 +1707,12 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:49
+#: templates/pycontw-2018/_includes/menu.html:63
 msgid "Financial Aid"
 msgstr "財務補助"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:81
+#: templates/pycontw-2018/_includes/social.html:4
 msgid "Blog"
 msgstr "部落格"
 
@@ -1762,6 +1768,7 @@ msgstr "您可由<a class=\"text-emphasize\" href=\"%(schedule_url)s\">此處</a
 
 #: templates/pycontw-2016/events/talk_list.html:28
 #: templates/pycontw-2017/events/talk_list.html:33
+#: templates/pycontw-2018/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "一般演講"
 
@@ -1780,6 +1787,7 @@ msgstr "贊助演講"
 
 #: templates/pycontw-2016/events/talk_list.html:41
 #: templates/pycontw-2017/events/talk_list.html:53
+#: templates/pycontw-2018/events/talk_list.html:62
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -2061,12 +2069,14 @@ msgid ""
 msgstr "演講為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。"
 
 #: templates/pycontw-2017/events/talk_list.html:25
+#: templates/pycontw-2018/events/talk_list.html:25
 msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
 
 #: templates/pycontw-2017/events/talk_list.html:49
+#: templates/pycontw-2018/events/talk_list.html:58
 msgid "Invited Events"
 msgstr "特邀活動"
 
@@ -2131,37 +2141,40 @@ msgstr "臺灣的在地 Python 社群"
 msgid "Our Partners"
 msgstr "我們的夥伴"
 
-#: templates/pycontw-2018/_includes/menu.html:32
-msgid "Speaking"
-msgstr "投稿"
-
-#: templates/pycontw-2018/_includes/menu.html:35
-msgid "Call for Proposal"
-msgstr "稿件募集"
-
-#: templates/pycontw-2018/_includes/menu.html:36
-msgid "Proposing a Talk"
-msgstr "投稿演講"
-
-#: templates/pycontw-2018/_includes/menu.html:37
-msgid "Proposing a Tutorial"
-msgstr "投稿教學"
-
-#: templates/pycontw-2018/_includes/menu.html:38
+#: templates/pycontw-2018/_includes/menu.html:52
 msgid "Recording"
 msgstr "錄影"
 
-#: templates/pycontw-2018/_includes/menu.html:45
+#: templates/pycontw-2018/_includes/menu.html:59
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/pycontw-2018/_includes/menu.html:48
+#: templates/pycontw-2018/_includes/menu.html:62
 msgid "Conference Ticket"
 msgstr "會議門票"
 
-#: templates/pycontw-2018/_includes/menu.html:71
+#: templates/pycontw-2018/_includes/menu.html:73
 msgid "My PyCon"
 msgstr "My PyCon"
+
+#: templates/pycontw-2018/events/talk_list.html:14
+msgid ""
+"The two conference days are packed with talks about Python by speakers from "
+"Taiwan and around the world. The talks will be either 30- or 45-minute long."
+" Three tracks of talks will be delivered simultaneously, all with different "
+"topics and difficulties. We suggest you to make a schedule beforehand, and "
+"choose what you want ot listen based on your interests. Many people take "
+"notes on the program schedule before the meeting so they don't end up in "
+"some place wrong."
+msgstr "演講為會期兩天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。"
+
+#: templates/pycontw-2018/events/talk_list.html:42
+#, python-format
+msgid ""
+"\n"
+"      <b>%(proposal_title)s</b> by %(speaker_names)s\n"
+"      "
+msgstr ""
 
 #: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
