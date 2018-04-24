@@ -26,6 +26,7 @@
 	<li>
 		<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
 	</li>
+  {% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
@@ -36,6 +37,17 @@
 				<li><a href="{{ speaking_talk_url }}">{% trans 'Proposing a Talk' %}</a></li>
 				<li><a href="{{ speaking_tutorial_url }}">{% trans 'Proposing a Tutorial' %}</a></li>
 				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
+			</ul>
+		</div>
+	</li>
+  {% endcomment %}
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-propose">{% trans 'Events' %}</label>
+		<div class="dropdown">
+			<ul class="submenu">
+				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
 			</ul>
 		</div>
 	</li>
