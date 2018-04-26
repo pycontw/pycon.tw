@@ -86,4 +86,4 @@ class Sponsor(ConferenceRelated):
 
     @property
     def logo(self):
-        return self.logo_svg or self.logo_image
+        return self.logo_svg or self.logo_image or None
