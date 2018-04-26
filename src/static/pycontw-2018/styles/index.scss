@@ -98,15 +98,20 @@ $menu-desktop-border-radius: 8px;
 			margin: $item-spacing / 2;
 
 			@include on-desktop() {
-				flex: 0 1 calc(33.3333% - #{$item-spacing});
+				flex: 0 1 calc(33.3333% - #{2 * $item-spacing});
 			}
 
-			> a img {
-				position: relative;
-				z-index: $background-deco-index + 1;
-				height: 64px;
-				min-width: 120px;
-				max-width: 320px;
+			> a {
+				img, > span {
+					position: relative;
+					z-index: $background-deco-index + 1;
+					min-width: 120px;
+					max-width: 320px;
+					height: 64px;
+					line-height: 64px;
+					vertical-align: middle;
+					font-size: 175%;
+				}
 			}
 		}
 	}
