@@ -98,7 +98,7 @@ $menu-desktop-border-radius: 8px;
 			margin: $item-spacing / 2;
 
 			@include on-desktop() {
-				flex: 0 1 calc(33.3333% - #{2 * $item-spacing});
+				flex: 0 1 calc(33.3333% - #{$item-spacing});
 			}
 
 			> a {
@@ -111,6 +111,10 @@ $menu-desktop-border-radius: 8px;
 					line-height: 64px;
 					vertical-align: middle;
 					font-size: 175%;
+
+					@include on-desktop() {
+						max-width: 100%;
+					}
 				}
 			}
 		}
