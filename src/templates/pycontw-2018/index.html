@@ -76,7 +76,11 @@
 			<li>
 				<a href="{{ sponsor.website_url|default:'#' }}" target="_blank" rel="noopener"
 						data-target="mediaPopup.presenter" data-action="mediaPopup#open">
+					{% if sponsor.logo %}
 					<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+					{% else %}
+					<span>{{ sponsor.name }}</span>
+					{% endif %}
 				</a>
 				<div class="popup" data-target="mediaPopup.popup">
 					<div class="card">
@@ -87,9 +91,13 @@
 						<div class="card-content">
 							{% if sponsor.website_url %}
 							<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener" class="logo">
+								{% if sponsor.logo %}
 								<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+								{% else %}
+								<span>{{ sponsor.name }}</span>
+								{% endif %}
 							</a>
-							{% else %}
+							{% elif sponsor.logo %}
 							<span class="logo">
 								<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
 							</span>
