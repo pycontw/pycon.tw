@@ -1,6 +1,7 @@
 {% extends 'contents/_base.html' %}
 
 {% load static %}
+{% load compress %}
 
 {% block extra_css %}
 {{ block.super }}
@@ -22,3 +23,10 @@ window.VENUE_ICON = '{% static "pycontw-2018/assets/venue-icon.png" %}'
 window.VENUE_BUTTON = '{% static "pycontw-2018/assets/venue-button.png" %}'
 </script>
 {% endblock content %}
+
+{% block extra_js %}
+{{ block.super }}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2018/scripts/venue.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
