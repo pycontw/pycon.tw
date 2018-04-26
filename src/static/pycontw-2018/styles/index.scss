@@ -59,7 +59,7 @@ $menu-desktop-border-radius: 8px;
 }
 
 .index-partners {
-	@include index-section;
+	@include index-section();
 	@include circle-background-section();
 
 	> .container {
@@ -88,7 +88,7 @@ $menu-desktop-border-radius: 8px;
 			border-bottom: 1px solid #dad0ea;
 		}
 
-		@include on-desktop {
+		@include on-desktop() {
 			margin: 32px #{0 - $item-spacing};
 		}
 
@@ -97,7 +97,7 @@ $menu-desktop-border-radius: 8px;
 			text-align: center;
 			margin: $item-spacing / 2;
 
-			@include on-desktop {
+			@include on-desktop() {
 				flex: 0 1 calc(33.3333% - #{$item-spacing});
 			}
 
