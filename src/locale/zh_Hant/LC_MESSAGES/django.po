@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 17:33+0800\n"
-"PO-Revision-Date: 2018-04-24 09:58+0000\n"
-"Last-Translator: Adrian Liaw <adrianliaw2000@gmail.com>\n"
+"POT-Creation-Date: 2018-04-29 15:45+0800\n"
+"PO-Revision-Date: 2018-04-29 07:45+0000\n"
+"Last-Translator: PyCon Taiwan\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2172,7 +2172,7 @@ msgstr "演講為會期兩天最主要的活動，屆時將會有來自台灣各
 #, python-format
 msgid ""
 "\n"
-"      <b>%(proposal_title)s</b> by %(speaker_names)s\n"
+"      <strong>%(proposal_title)s</strong> by %(speaker_names)s\n"
 "      "
 msgstr ""
 
@@ -2211,7 +2211,7 @@ msgstr "成為志工"
 msgid "Partners"
 msgstr "夥伴"
 
-#: templates/pycontw-2018/index.html:123
+#: templates/pycontw-2018/index.html:131
 msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
 
