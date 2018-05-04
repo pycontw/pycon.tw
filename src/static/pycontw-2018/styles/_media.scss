@@ -1,0 +1,96 @@
+.media {
+	> header {
+		> figure {
+			display: flex;
+			flex-direction: column;
+
+			img {
+				$size: 136px;
+				align-self: center;
+				height: $size;
+				border-radius: $size / 2;
+			}
+
+			figcaption {
+				@include header(1.125rem);	// ~ 18px.
+				margin-top: 32px;
+			}
+		}
+
+		.title {
+			@include header(1.125rem);	// ~ 18px.
+			margin-top: 16px;
+		}
+	}
+
+	> * + * {
+		margin-top: 32px;
+	}
+}
+
+.tabbing {
+	$background-color: $pale-grey;
+
+	&:not(.enabled) {
+		> .tabs {
+			height: 0;
+		}
+		> *:not(.tabs) > *:first-child {
+			margin-top: -16px;
+		}
+	}
+	&.enabled {
+		> .tabs ~ * {
+			border-top: 1px solid $dark-slate-blue;
+		}
+		.tab-title {
+			display: none;
+		}
+	}
+
+	> .tabs {
+		$item-spacing: 8px;
+
+		display: flex;
+		overflow-x: auto;
+		overflow-y: hidden;
+		margin: 0 0 - $item-spacing / 2 -1px;
+		padding: 0;
+
+		> li {
+			flex: 1 0 112px;
+			margin: 0 $item-spacing / 2;
+			padding: 8px 0;
+			border-radius: 2px 2px 0 0;
+			background: $background-color;
+			text-indent: 0;
+			text-align: center;
+
+			@include on-desktop() {
+				flex-grow: 0;
+			}
+
+			&::before {	// Override custom list items...
+				content: none;
+			}
+
+			&.active {
+				background: linear-gradient(112deg, $indigo, $dark-slate-blue);
+				color: $white;
+			}
+
+			&:not(.active) {
+				cursor: pointer;
+			}
+		}
+	}
+
+	> *:not(.tabs) {
+		padding: 32px 24px;
+		background: $background-color;
+
+		> .hidden {
+			display: none;
+		}
+	}
+}
