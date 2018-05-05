@@ -30,7 +30,7 @@
 		{% for proposal in talk_list %}
     <li>
 			<p>
-      	{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
+      	{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display trimmed %}
       	<span class="talk-title">{{ proposal_title }}</span> by {{ speaker_names }}
       	{% endblocktrans %}
 			</p>
