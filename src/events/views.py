@@ -72,7 +72,7 @@ class ScheduleView(TemplateView):
         except Schedule.DoesNotExist:
             return HttpResponseRedirect(
                 'https://docs.google.com/spreadsheets/d/'
-                '17-8E1OhfgiG4pIOIrp3OpNY4OaK1QxUn4TJK9oVmRSw/htmlview',
+                '1FiGx7ou-OxMK8yTgwYkqM5vOcUPYCMz7cQiFInES654/pubhtml#'
             )
         return super().get(request, *args, **kwargs)
 
