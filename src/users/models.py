@@ -12,6 +12,7 @@ from django.core.urlresolvers import reverse
 from django.core.validators import RegexValidator
 from django.db import models
 from django.template.loader import render_to_string
+from django.templatetags.static import static
 from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
 
@@ -213,6 +214,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                 ).decode('utf-8')
             )
         )
+
     as_hash.short_description = _('Reviewer ID')
 
     def get_full_name(self):
@@ -220,6 +222,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.speaker_name
+
+    def get_photo_url(self):
+        """Return the photo URL if set, otherwise a default image.
+        """
+        if self.photo:
+            return self.photo.url
+        return static('images/default_head.png')
 
     def is_valid_speaker(self):
         """Whether the user is a valid speaker.
