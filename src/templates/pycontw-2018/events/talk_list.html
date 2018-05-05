@@ -43,7 +43,7 @@
 		{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
     <li><p>
       {% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
-      <strong class="proposal_title">{{ proposal_title }}</strong> by {{ speaker_names }}
+      <span class="talk-title">{{ proposal_title }}</span> by {{ speaker_names }}
       {% endblocktrans %}
     </p></li>
     {% comment %}
