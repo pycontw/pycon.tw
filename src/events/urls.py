@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from django.views.generic import RedirectView
+from events.api_proposals import get_ccip_events_json
 
 from . import views
 
@@ -16,4 +17,7 @@ urlpatterns = [
 
     # Backward compatibility to the static events page.
     url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
+
+    # API for CCIP
+    url(r'^ccip-json/$', get_ccip_events_json),
 ]
