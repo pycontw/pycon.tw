@@ -1,0 +1,91 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+
+{% block title %}基調演講{% endblock title %}
+
+{% block body_class %}keynotes-page{% endblock body_class %}
+
+
+{% block content %}
+
+<h1>基調演講</h1>
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'pycontw-2018/assets/keynotes/katie.jpg' %}">
+			<figcaption>Katie McLaughlin</figcaption>
+		</figure>
+		<h2 class="title">
+			Communication strategies beyond the Basic Multilingual Plane
+		</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Biography
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Abstract
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Biography</h3>
+				<p>Katie has worn many different hats over the years. She has been a software developer for many languages, systems administrator for multiple operating systems, and speaker on many different topics.</p>
+				<p>When she’s not changing the world, she enjoys making tapestries, cooking, and seeing just how well various application stacks handle emoji.</p>
+				<div class="social">
+					<a href="https://glasnt.com/" target="_blank" rel="noopener">
+						<span class="fa fa-link"></span>
+					</a>
+					<a href="https://twitter.com/glasnt" target="_blank" rel="noopener">
+						<span class="fa fa-twitter"></span>
+					</a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Abstract</h3>
+				<p>The standardisation of the universal character set has paved the way for the ability for data to be freely transferred between computers around the world. However, the most volatile part of this standard is still causing prolific issues with miscommunication between humans.</p>
+				<p>In this keynote, Katie McLaughlin will share knowledge from her years of research and contributions to this field and rant about emoji for a bit.</p>
+			</article>
+		</div>
+	</div>
+</article>
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'images/default_head.png' %}">
+			<figcaption>Sheng-Wei Chen</figcaption>
+		</figure>
+		<!--<h2 class="title"></h2>-->
+	</header>
+	<!--<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Biography
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Abstract
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Biography</h3>
+				<p></p>
+				<div class="social">
+					<a href="http://www.iis.sinica.edu.tw/~swc/" target="_blank" rel="noopener">
+						<span class="fa fa-link"></span>
+					</a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Abstract</h3>
+				<p></p>
+			</article>
+		</div>
+	</div>-->
+</article>
+
+{% endblock content %}
