@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-05 17:25+0800\n"
-"PO-Revision-Date: 2018-05-05 09:24+0000\n"
+"POT-Creation-Date: 2018-05-06 02:16+0800\n"
+"PO-Revision-Date: 2018-05-05 18:17+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -283,7 +283,7 @@ msgstr "自訂活動"
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:182 users/models.py:112
+#: events/models.py:182 users/models.py:113
 msgid "speaker name"
 msgstr "演講者"
 
@@ -513,7 +513,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:59 users/models.py:192
+#: proposals/models.py:59 users/models.py:193
 msgid "user"
 msgstr "使用者"
 
@@ -1322,7 +1322,7 @@ msgid "Stage"
 msgstr "階段"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: users/models.py:216
+#: users/models.py:218
 msgid "Reviewer ID"
 msgstr "審稿人代號"
 
@@ -1768,7 +1768,6 @@ msgstr "您可由<a class=\"text-emphasize\" href=\"%(schedule_url)s\">此處</a
 
 #: templates/pycontw-2016/events/talk_list.html:28
 #: templates/pycontw-2017/events/talk_list.html:33
-#: templates/pycontw-2018/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "一般演講"
 
@@ -1787,7 +1786,6 @@ msgstr "贊助演講"
 
 #: templates/pycontw-2016/events/talk_list.html:41
 #: templates/pycontw-2017/events/talk_list.html:53
-#: templates/pycontw-2018/events/talk_list.html:62
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -2069,14 +2067,12 @@ msgid ""
 msgstr "演講為會期三天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。"
 
 #: templates/pycontw-2017/events/talk_list.html:25
-#: templates/pycontw-2018/events/talk_list.html:25
 msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
 
 #: templates/pycontw-2017/events/talk_list.html:49
-#: templates/pycontw-2018/events/talk_list.html:58
 msgid "Invited Events"
 msgstr "特邀活動"
 
@@ -2162,7 +2158,7 @@ msgstr "會議門票"
 msgid "My PyCon"
 msgstr "My PyCon"
 
-#: templates/pycontw-2018/events/talk_list.html:14
+#: templates/pycontw-2018/events/talk_list.html:13
 msgid ""
 "The two conference days are packed with talks about Python by speakers from "
 "Taiwan and around the world. The talks will be either 30- or 45-minute long."
@@ -2173,13 +2169,20 @@ msgid ""
 "some place wrong."
 msgstr "演講為會期兩天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆記想聽的議程，才不會跑錯地點。"
 
-#: templates/pycontw-2018/events/talk_list.html:42
-#, python-format
+#: templates/pycontw-2018/events/talk_list.html:14
 msgid ""
-"\n"
-"      <strong>%(proposal_title)s</strong> by %(speaker_names)s\n"
-"      "
-msgstr ""
+"<em>Program schedule is subject to change.</em> Please check this page "
+"frequently to get the latest version."
+msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
+
+#: templates/pycontw-2018/events/talk_list.html:17
+msgid "Categories"
+msgstr "主題分類"
+
+#: templates/pycontw-2018/events/talk_list.html:33
+#, python-format
+msgid "<span class=\"talk-title\">%(proposal_title)s</span> by %(speaker_names)s"
+msgstr "<span class=\"proposal-title\">%(proposal_title)s</span>講者：%(speaker_names)s"
 
 #: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
@@ -2285,28 +2288,28 @@ msgstr "申請密碼重設"
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: users/models.py:108
+#: users/models.py:109
 msgid "email address"
 msgstr "電子郵件信箱"
 
-#: users/models.py:116
+#: users/models.py:117
 msgid "biography"
 msgstr "自我介紹"
 
-#: users/models.py:119
+#: users/models.py:120
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
 
-#: users/models.py:124
+#: users/models.py:125
 msgid "photo"
 msgstr "個人照"
 
-#: users/models.py:128
+#: users/models.py:129
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:131
+#: users/models.py:132
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2315,61 +2318,61 @@ msgid ""
 "first!"
 msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
 
-#: users/models.py:140
+#: users/models.py:141
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:145
+#: users/models.py:146
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 Twitter 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:150
+#: users/models.py:151
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:155
+#: users/models.py:156
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 GitHub 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:160
+#: users/models.py:161
 msgid "verified"
 msgstr "已認證"
 
-#: users/models.py:163
+#: users/models.py:164
 msgid "Designates whether the user has verified email ownership."
 msgstr "指定本使用者是否已完成 email 認證。"
 
-#: users/models.py:167
+#: users/models.py:168
 msgid "staff status"
 msgstr "管理員權限"
 
-#: users/models.py:170
+#: users/models.py:171
 msgid "Designates whether the user can log into this admin site."
 msgstr "指定本使用者是否可以登入本管理站台。"
 
-#: users/models.py:174
+#: users/models.py:175
 msgid "active"
 msgstr "已啟用"
 
-#: users/models.py:177
+#: users/models.py:178
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
 
-#: users/models.py:182
+#: users/models.py:183
 msgid "date joined"
 msgstr "註冊日期"
 
-#: users/models.py:193
+#: users/models.py:194
 msgid "users"
 msgstr "使用者"
 
-#: users/models.py:281
+#: users/models.py:290
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"

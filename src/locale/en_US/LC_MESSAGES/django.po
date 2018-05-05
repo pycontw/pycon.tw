@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-05 17:19+0800\n"
-"PO-Revision-Date: 2018-05-05 09:20+0000\n"
+"POT-Creation-Date: 2018-05-06 02:16+0800\n"
+"PO-Revision-Date: 2018-05-05 18:17+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -277,7 +277,7 @@ msgstr "custom event"
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:182 users/models.py:112
+#: events/models.py:182 users/models.py:113
 msgid "speaker name"
 msgstr "speaker name"
 
@@ -507,7 +507,7 @@ msgstr "No valid speaker found with your selection."
 msgid "Proposal author"
 msgstr "Proposal author"
 
-#: proposals/models.py:59 users/models.py:192
+#: proposals/models.py:59 users/models.py:193
 msgid "user"
 msgstr "user"
 
@@ -1316,7 +1316,7 @@ msgid "Stage"
 msgstr "Stage"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: users/models.py:216
+#: users/models.py:218
 msgid "Reviewer ID"
 msgstr "Reviewer ID"
 
@@ -1763,7 +1763,6 @@ msgstr "You can check out the program schedule <a class=\"text-emphasize\" href=
 
 #: templates/pycontw-2016/events/talk_list.html:28
 #: templates/pycontw-2017/events/talk_list.html:33
-#: templates/pycontw-2018/events/talk_list.html:33
 msgid "Proposed Talks"
 msgstr "Proposed Talks"
 
@@ -1782,7 +1781,6 @@ msgstr "Sponsored Events"
 
 #: templates/pycontw-2016/events/talk_list.html:41
 #: templates/pycontw-2017/events/talk_list.html:53
-#: templates/pycontw-2018/events/talk_list.html:62
 #, python-format
 msgid ""
 "<a class=\"proposal-title\" "
@@ -2064,14 +2062,12 @@ msgid ""
 msgstr "The three conference days are packed with talks about Python by speakers from Taiwan and around the world. The talks will be either 30- or 45-minute long. Three tracks of talks will be delivered simultaneously, all with different topics and difficulties. We suggest you to make a schedule beforehand, and choose what you want ot listen based on your interests. Many people take notes on the program schedule before the meeting so they don't end up in some place wrong."
 
 #: templates/pycontw-2017/events/talk_list.html:25
-#: templates/pycontw-2018/events/talk_list.html:25
 msgid ""
 "<em>Program schedule are subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>Program schedule are subject to change.</em> Please check this page frequently to get the latest version."
 
 #: templates/pycontw-2017/events/talk_list.html:49
-#: templates/pycontw-2018/events/talk_list.html:58
 msgid "Invited Events"
 msgstr "Invited Events"
 
@@ -2157,7 +2153,7 @@ msgstr "Conference Ticket"
 msgid "My PyCon"
 msgstr "My PyCon"
 
-#: templates/pycontw-2018/events/talk_list.html:14
+#: templates/pycontw-2018/events/talk_list.html:13
 msgid ""
 "The two conference days are packed with talks about Python by speakers from "
 "Taiwan and around the world. The talks will be either 30- or 45-minute long."
@@ -2168,13 +2164,20 @@ msgid ""
 "some place wrong."
 msgstr "The two conference days are packed with talks about Python by speakers from Taiwan and around the world. The talks will be either 30- or 45-minute long. Three tracks of talks will be delivered simultaneously, all with different topics and difficulties. We suggest you to make a schedule beforehand, and choose what you want ot listen based on your interests. Many people take notes on the program schedule before the meeting so they don’t end up in some place wrong."
 
-#: templates/pycontw-2018/events/talk_list.html:42
-#, python-format
+#: templates/pycontw-2018/events/talk_list.html:14
 msgid ""
-"\n"
-"      <strong>%(proposal_title)s</strong> by %(speaker_names)s\n"
-"      "
-msgstr "\n      <strong>%(proposal_title)s</strong> by %(speaker_names)s\n      "
+"<em>Program schedule is subject to change.</em> Please check this page "
+"frequently to get the latest version."
+msgstr "<em>Program schedule is subject to change.</em> Please check this page frequently to get the latest version."
+
+#: templates/pycontw-2018/events/talk_list.html:17
+msgid "Categories"
+msgstr "Categories"
+
+#: templates/pycontw-2018/events/talk_list.html:33
+#, python-format
+msgid "<span class=\"talk-title\">%(proposal_title)s</span> by %(speaker_names)s"
+msgstr "<span class=\"talk-title\">%(proposal_title)s</span> by %(speaker_names)s"
 
 #: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
@@ -2280,28 +2283,28 @@ msgstr "Request Password Reset"
 msgid "Set Password"
 msgstr "Set Password"
 
-#: users/models.py:108
+#: users/models.py:109
 msgid "email address"
 msgstr "email address"
 
-#: users/models.py:116
+#: users/models.py:117
 msgid "biography"
 msgstr "biography"
 
-#: users/models.py:119
+#: users/models.py:120
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "Describe yourself with 500 characters or less. There will be no formatting."
 
-#: users/models.py:124
+#: users/models.py:125
 msgid "photo"
 msgstr "photo"
 
-#: users/models.py:128
+#: users/models.py:129
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:131
+#: users/models.py:132
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2310,61 +2313,61 @@ msgid ""
 "first!"
 msgstr "Link to your Facebook profile page. This will be shown when we display your public information. If you do not know what your profile page link is, click on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and copy-paste the URL of the page opened. Remember to log in to Facebook first!"
 
-#: users/models.py:140
+#: users/models.py:141
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:145
+#: users/models.py:146
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your Twitter handle, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:150
+#: users/models.py:151
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:155
+#: users/models.py:156
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your GitHub account, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:160
+#: users/models.py:161
 msgid "verified"
 msgstr "verified"
 
-#: users/models.py:163
+#: users/models.py:164
 msgid "Designates whether the user has verified email ownership."
 msgstr "Designates whether the user has verified email ownership."
 
-#: users/models.py:167
+#: users/models.py:168
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:170
+#: users/models.py:171
 msgid "Designates whether the user can log into this admin site."
 msgstr "Designates whether the user can log into this admin site."
 
-#: users/models.py:174
+#: users/models.py:175
 msgid "active"
 msgstr "active"
 
-#: users/models.py:177
+#: users/models.py:178
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
 
-#: users/models.py:182
+#: users/models.py:183
 msgid "date joined"
 msgstr "date joined"
 
-#: users/models.py:193
+#: users/models.py:194
 msgid "users"
 msgstr "users"
 
-#: users/models.py:281
+#: users/models.py:290
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"
