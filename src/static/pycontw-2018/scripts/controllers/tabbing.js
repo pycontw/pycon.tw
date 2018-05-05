@@ -1,5 +1,27 @@
 import {Controller} from 'stimulus'
 
+function formatTabStorageKey(tabKey) {
+	return `${window.location.pathname}-tabbing-${tabKey}`
+}
+
+function setTabState(tabKey, value) {
+	if (!window.localStorage) {
+		return
+	}
+	window.localStorage.setItem(formatTabStorageKey(tabKey), value)
+}
+
+function getTabState(tabKey) {
+	if (!window.localStorage) {
+		return
+	}
+	let value = Number(window.localStorage.getItem(formatTabStorageKey(tabKey)))
+	if (isNaN(value)) {
+		value = 0
+	}
+	return value
+}
+
 export class TabbingController extends Controller {
 
 	static targets = ['tab', 'pane']
