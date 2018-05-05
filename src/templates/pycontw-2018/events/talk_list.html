@@ -29,26 +29,30 @@
 	</p>
 </article>
 
+<h3>{% trans 'Category' %}</h2>
 
 {% for category, talk_list in talk_category_list_pairs %}
+<a class="tag" href="#{{category}}">{{ category }}</a>
+{% endfor %}
 
-<h3>{{ category }}</h3>
-
-<ul class="talk-list">
-	{% for proposal in talk_list %}
-	{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
-	<li><p>
-		{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
-		<strong>{{ proposal_title }}</strong> by {{ speaker_names }}
-		{% endblocktrans %}
-	</p></li>
-	{% comment %}
-	We should change them back to links once we're done with schedule
-	<li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
-	{% endcomment %}
-	{% endfor %}
-</ul>
-
+{% for category, talk_list in talk_category_list_pairs %}
+<h3 id="{{category}}">{{ category }}</h3>
+<article>
+	<ul class="talk-list">
+		{% for proposal in talk_list %}
+		{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
+    <li><p>
+      {% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
+      <strong class="proposal_title">{{ proposal_title }}</strong> by {{ speaker_names }}
+      {% endblocktrans %}
+    </p></li>
+    {% comment %}
+    We should change them back to links once we're done with schedule
+    <li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
+    {% endcomment %}
+		{% endfor %}
+	</ul>
+</article>
 {% endfor %}
 
 {% endblock content %}
