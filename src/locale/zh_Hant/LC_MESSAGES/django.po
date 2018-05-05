@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-05 17:19+0800\n"
-"PO-Revision-Date: 2018-05-05 09:20+0000\n"
+"POT-Creation-Date: 2018-05-05 17:25+0800\n"
+"PO-Revision-Date: 2018-05-05 09:24+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -1654,7 +1654,7 @@ msgstr "基調演講"
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
-msgstr "演講"
+msgstr "一般演講"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:43
 msgid "Sprints"
