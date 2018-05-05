@@ -1,11 +1,13 @@
 .tag {
+	@include text($text-font-size);
+
 	display: inline-block;
-	color: $white;
+	margin: 2px;
+	padding: 4px 16px;
+	border-radius: 4px;
 	background: #cea9ff;
+	color: $white;
 	text-align: center;
-	padding: 4px 24px;
-	margin: 4px 2px;
-	border-radius: 2px;
 
 	&:hover {
 		background-color: $link-hover-dark;
