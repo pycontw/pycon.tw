@@ -17,9 +17,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-29 15:45+0800\n"
-"PO-Revision-Date: 2018-04-29 07:45+0000\n"
-"Last-Translator: PyCon Taiwan\n"
+"POT-Creation-Date: 2018-05-05 17:19+0800\n"
+"PO-Revision-Date: 2018-05-05 09:20+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1633,7 +1633,6 @@ msgid "Staff"
 msgstr "工作人員"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:37
-#: templates/pycontw-2018/_includes/menu.html:48
 msgid "Events"
 msgstr "活動"
 
@@ -1642,6 +1641,7 @@ msgid "Overview"
 msgstr "總覽"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:41
+#: templates/pycontw-2018/_includes/menu.html:51
 msgid "Keynotes"
 msgstr "基調演講"
 
@@ -1650,7 +1650,7 @@ msgstr "基調演講"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
-#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/_includes/menu.html:52
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
@@ -1674,7 +1674,7 @@ msgstr "專業課程"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
-#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/_includes/menu.html:69
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1707,7 +1707,7 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:63
+#: templates/pycontw-2018/_includes/menu.html:64
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -2141,19 +2141,24 @@ msgstr "臺灣的在地 Python 社群"
 msgid "Our Partners"
 msgstr "我們的夥伴"
 
-#: templates/pycontw-2018/_includes/menu.html:52
+#: templates/pycontw-2018/_includes/menu.html:48
+msgctxt "menu"
+msgid "Conference"
+msgstr "議程"
+
+#: templates/pycontw-2018/_includes/menu.html:53
 msgid "Recording"
 msgstr "錄影"
 
-#: templates/pycontw-2018/_includes/menu.html:59
+#: templates/pycontw-2018/_includes/menu.html:60
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/pycontw-2018/_includes/menu.html:62
+#: templates/pycontw-2018/_includes/menu.html:63
 msgid "Conference Ticket"
 msgstr "會議門票"
 
-#: templates/pycontw-2018/_includes/menu.html:73
+#: templates/pycontw-2018/_includes/menu.html:74
 msgid "My PyCon"
 msgstr "My PyCon"
 
