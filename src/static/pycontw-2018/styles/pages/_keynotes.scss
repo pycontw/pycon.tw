@@ -1,0 +1,17 @@
+.keynotes-page {
+	.social {
+		padding-top: 0.5rem;
+
+		.fa {
+			display: inline-block;
+			margin-right: 0.75rem;
+			font-size: 112.5%;
+		}
+	}
+	.media {
+		margin-bottom: 120px;
+		&:last-child {
+			margin-bottom: inherit;
+		}
+	}
+}

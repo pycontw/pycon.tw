@@ -35,8 +35,6 @@
 <a class="tag" href="#{{category}}">{{ category }}</a>
 {% endfor %}
 
-<h2>{% trans 'Proposed Talks' %}</h2>
-
 {% for category, talk_list in talk_category_list_pairs %}
 <h3 id="{{category}}">{{ category }}</h3>
 <article>
@@ -56,17 +54,5 @@
 	</ul>
 </article>
 {% endfor %}
-
-
-{% if sponsored_events %}
-<h2>{% trans 'Invited Events' %}</h2>
-<article>
-	<ul class="talk-list">
-		{% for event in sponsored_events %}
-		<li><p>{% blocktrans with event_title=event.title host_name=event.host.speaker_name sponsored_event_url=event.get_absolute_url %}<a class="proposal-title" href="{{ sponsored_event_url }}">{{ event_title }}</a> by {{ host_name }}{% endblocktrans %}</p></li>
-		{% endfor %}
-	</ul>
-</article>
-{% endif %}
 
 {% endblock content %}
