@@ -1,4 +1,5 @@
 $soft-violet: #cea9ff;
+$strong-violet: #9013fe;
 
 .tag {
 	display: inline-block;
@@ -7,4 +8,19 @@ $soft-violet: #cea9ff;
 	text-align: center;
 	padding: 4px 24px;
 	margin: 4px 2px;
+	border-radius: 2px;
+	&:hover {
+	   background-color: $link-hover-dark;
+		 color: #fff;
+		 text-decoration: none;
+	}
 }
+
+.proposal_title {
+	color: $strong-violet;
+}
+
+
+
+
+
