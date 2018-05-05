@@ -8,4 +8,10 @@
 			font-size: 112.5%;
 		}
 	}
+	.media {
+		margin-bottom: 120px;
+		&:last-child {
+			margin-bottom: inherit;
+		}
+	}
 }

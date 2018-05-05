@@ -17,18 +17,22 @@
 			<img src="{% static 'pycontw-2018/assets/keynotes/katie.jpg' %}">
 			<figcaption>Katie McLaughlin</figcaption>
 		</figure>
-		<h2 class="title">Communication strategies beyond the Basic Multilingual Plane</h2>
+		<h2 class="title">基本多文種平面外的溝通策略</h2>
 	</header>
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
-			<li data-target="tabbing.tab" data-action="click->tabbing#activate">簡歷</li>
-			<li data-target="tabbing.tab" data-action="click->tabbing#activate">演講摘要</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				自傳
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				摘要
+			</li>
 		</ul>
 		<div>
 			<article data-target="tabbing.pane">
-				<h3 class="tab-title">簡歷</h3>
-				<p>Katie has worn many different hats over the years. She has been a software developer for many languages, systems administrator for multiple operating systems, and speaker on many different topics.</p>
-				<p>When she’s not changing the world, she enjoys making tapestries, cooking, and seeing just how well various application stacks handle emoji.</p>
+				<h3 class="tab-title">自傳</h3>
+				<p>Katie 多年來從事過許多工作，使用各式各樣的語言開發軟體、擔任各式各樣平台的系統管理員、發表了各式各樣的演講。</p>
+				<p>在改變世界之餘，她也喜歡編織、烹飪、以及研究各種應用程式對 emoji 的支援。</p>
 				<div class="social">
 					<a href="https://glasnt.com/" target="_blank" rel="noopener">
 						<span class="fa fa-link"></span>
@@ -39,12 +43,47 @@
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
-				<h3 class="tab-title">演講摘要</h3>
-				<p>The standardisation of the universal character set has paved the way for the ability for data to be freely transferred between computers around the world. However, the most volatile part of this standard is still causing prolific issues with miscommunication between humans.</p>
-				<p>In this keynote, Katie McLaughlin will share knowledge from her years of research and contributions to this field and rant about emoji for a bit.</p>
+				<h3 class="tab-title">摘要</h3>
+				<p>通用字元集的標準化，為世界各地的電腦能夠自由地互相交換資料，奠定了良好的基礎。然而，這個標準中，仍然存在一個十分不穩定的部份，不斷在人類的溝通中成為阻礙，造成無盡的誤會。</p>
+				<p>在此基調演講中，Katie McLaughlin 將根據她在本領域中多年的研究與貢獻，分享自己學到的知識，並好好對 emoji 抱怨一番。</p>
 			</article>
 		</div>
 	</div>
+</article>
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'images/default_head.png' %}">
+			<figcaption>Sheng-Wei Chen</figcaption>
+		</figure>
+		<!--<h2 class="title"></h2>-->
+	</header>
+	<!--<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				自傳
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				摘要
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">自傳</h3>
+				<p></p>
+				<div class="social">
+					<a href="http://www.iis.sinica.edu.tw/~swc/" target="_blank" rel="noopener">
+						<span class="fa fa-link"></span>
+					</a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">摘要</h3>
+				<p></p>
+			</article>
+		</div>
+	</div>-->
 </article>
 
 {% endblock content %}
