@@ -1,0 +1,25 @@
+.tutorials-page {
+
+	$buy-button-max-width: 240px;
+
+	dt {
+		font-weight: 400;
+	}
+
+	.buy {
+		text-align: center;
+
+		a {
+			@include button(276deg, $dark-peach, $maize);
+
+			display: inline-block;
+			width: 100%;
+			margin: 8px auto 16px auto;
+			text-align: center;
+
+			@include on-desktop() {
+				max-width: $buy-button-max-width;
+			}
+		}
+	}
+}
