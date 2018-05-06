@@ -44,7 +44,7 @@ $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 @mixin h1 {
 	@include header(2.25rem);		// ~ 36px.
 	@include header-geometry(48px);
-	line-height: 125%;
+	line-height: 150%;
 }
 
 @mixin h2 {
@@ -53,8 +53,28 @@ $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 }
 
 @mixin h3($margin-top: 24px) {
-	@include header(1.125rem);	// ~ 18px.
+	@include header(1.25rem);		// ~ 20px.
 	@include header-geometry($margin-top);
+}
+
+@mixin h4() {
+	@include header(1.25rem);		// ~ 20px.
+	@include header-geometry(16px);
+}
+
+@mixin h5() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(16px);
+}
+
+@mixin h5() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(8px);
+}
+
+@mixin h6() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(0);
 }
 
 

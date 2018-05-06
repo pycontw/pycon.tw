@@ -87,4 +87,11 @@ def event_display(event):
 
 @register.filter
 def event_date_display(event):
-    return settings.EVENTS_DAY_NAMES[event.begin_time.value.date()]
+    try:
+        date = event.begin_time.value.date()
+    except AttributeError:
+        return '‑'
+    try:
+        return settings.EVENTS_DAY_NAMES[date]
+    except KeyError:
+        return str(date)
