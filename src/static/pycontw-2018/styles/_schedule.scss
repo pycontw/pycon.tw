@@ -1,17 +1,19 @@
+$color-info: rgba(25, 38, 96, 0.03);
+$color-background: #f7f5fa;
+$color-label: rgba(25, 38, 96, 0.08);
+
 .time-table {
 
 	text-align: center;
 	border-radius: 2px;
 	border-collapse: collapse;
-	background-color: #f7f5fa;
+	background-color: $color-background;
 	background-color: var(--pale-grey);
 	width: 100%;
 	height: 1315px;
 	font-size: 14px;
 
-	thead {
-		display: block;
-  }
+
 
 	tr, td {
 		border: 2px solid rgba(0, 0, 0, 0);
@@ -29,10 +31,14 @@
       align-content: center;
 			align-items: center;
       justify-content: space-around;
-			border: 2px solid #f7f5fa;;
+			border: 2px solid $color-background;
 
 			// color
-			background-color: rgba(25, 38, 96, 0.03);
+			background-color: $color-info;
+			&.room {
+				background-color: $color-label;
+
+			}
 
       &.time-table-time {
 				flex: 0 0 auto;
@@ -47,7 +53,16 @@
 				letter-spacing: normal;
 				color: #333333;
 				color: var(--black);
-				background-color: rgba(25, 38, 96, 0.08);
+				background-color: $color-label;
+			}
+		}
+  }
+
+	thead {
+		display: block;
+		td  {
+      &.time-table-time {
+				background-color: #f7f5fa;
 			}
 		}
   }
