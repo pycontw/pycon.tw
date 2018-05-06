@@ -2,14 +2,14 @@
 
 {% load static %}
 
-{% block title %}基調演講{% endblock title %}
+{% block title %}Keynotes{% endblock title %}
 
 {% block body_class %}keynotes-page{% endblock body_class %}
 
 
 {% block content %}
 
-<h1>基調演講</h1>
+<h1>Keynotes</h1>
 
 <article class="media">
 	<header>
@@ -36,12 +36,8 @@
 				<p>Katie has worn many different hats over the years. She has been a software developer for many languages, systems administrator for multiple operating systems, and speaker on many different topics.</p>
 				<p>When she’s not changing the world, she enjoys making tapestries, cooking, and seeing just how well various application stacks handle emoji.</p>
 				<div class="social">
-					<a href="https://glasnt.com/" target="_blank" rel="noopener">
-						<span class="fa fa-link"></span>
-					</a>
-					<a href="https://twitter.com/glasnt" target="_blank" rel="noopener">
-						<span class="fa fa-twitter"></span>
-					</a>
+					<a href="https://glasnt.com/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<a href="https://twitter.com/glasnt" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
@@ -56,12 +52,12 @@
 <article class="media">
 	<header>
 		<figure>
-			<img src="{% static 'images/default_head.png' %}">
+			<img src="{% static 'pycontw-2018/assets/keynotes/sw.jpg' %}">
 			<figcaption>Sheng-Wei Chen</figcaption>
 		</figure>
-		<!--<h2 class="title"></h2>-->
+	<h2 class="title">AI Democratization in Taiwan</h2>
 	</header>
-	<!--<div class="tabbing" data-controller="tabbing">
+	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
 			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
 				Biography
@@ -73,19 +69,21 @@
 		<div>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Biography</h3>
-				<p></p>
+				<p>Dr. Sheng-Wei Chen (a.k.a. Kuan-Ta Chen) is a Research Fellow at the Institute of Information Science and the Research Center for Information Technology Innovation (joint appointment) of Academia Sinica. He is currently the Chairman of Taiwan Data Science Association, the Director of Artificial Intelligence Foundation, the Director of Taiwan AI Academy, and the CTO of E.SUN Financial Holding Company. He was an Assistant Research Fellow from 2006 to 2011 and an Associate Research Fellow from 2011 to 2015 at the Institute of Information Science, Academia Sinica. He received his Ph.D. in Electrical Engineering from National Taiwan University in 2006, and his B.S. and M.S. in Computer Science from National Tsing Hua University in 1998 and 2000, respectively. Prior to taking his academic path, he was active as a programmer specialized in Windows system programming, a technical writer, and a freeware/shareware developer.</p>
+				<p>His research interests span in various application domains of AI and data science, such as social computing, crowdsourcing, and computational social science, quality of experience (QoE), and multimedia systems. He received the Best Paper Award in IWSEC 2008 and K. T. Li Distinguished Young Scholar Award from ACM Taipei/Taiwan Chapter in 2009. He also received the Outstanding Young Electrical Engineer Award from The Chinese Institute of Electrical Engineering in 2010, the Young Scholar's Creativity Award from Foundation for the Advancement of Outstanding Scholarship in 2013, and IEEE ComSoc MMTC Best Journal Paper Award in 2014. He was an Associate Editor of IEEE Transactions on Multimedia (IEEE TMM) during 2011 to 2014 and has been an Associate Editor of ACM Transactions on Multimedia Computing, Communications, and Applications (ACM TOMM) since 2015. He organized ACM Multimedia Systems 2017 in Taiwan and served the lead program chair of ACM Multimedia 2017. He is a Senior Member of ACM and a Senior Member of IEEE.</p>
 				<div class="social">
-					<a href="http://www.iis.sinica.edu.tw/~swc/" target="_blank" rel="noopener">
-						<span class="fa fa-link"></span>
-					</a>
+					<a href="http://www.iis.sinica.edu.tw/~swc/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Abstract</h3>
-				<p></p>
+				<p>Some day in March 2017, I encountered Prof. HT Kung from Harvard University in the campus of Academia Sinica which is located in Taipei, Taiwan.  We were both excited about emerging deep learning technology and looking forward to its potentials in industry technology upgrade in a variety of ways.</p>
+				<p>We started our journey by visiting more than a dozen of manufacturing companies in Taiwan and collecting the challenges they face when adopting AI in the different aspects of business and manufacturing processes.  The second step involved assembling an AI consulting team called Project Theta in order to address the common technical challenges faced by manufacturers.  Within the next six months, Project Theta did a wonderful job in resolving those common challenges using deep learning technology.  However, how to scale our efforts became the biggest challenge of our own. </p>
+				<p>Thus, Taiwan AI Academy was founded in January 2018 to address the scaling problem, after we finally identified that the lack of AI talents is the most fundamental and critical issue in Taiwan in this AI era.  Taiwan AI Academy is unique in many ways, in particular its close collaborations with industry in order to empower domain experts from various fields by machine learning and deep learning techniques within a short 3-4 month.</p>
+				<p>In this talk, I will elaborate the story --- starting from the achievements of Project Theta --- to the foundation of Taiwan AI Academy, and how we will transform the AI talent development in Taiwan starting from these efforts.</p>
 			</article>
 		</div>
-	</div>-->
+	</div>
 </article>
 
 {% endblock content %}
