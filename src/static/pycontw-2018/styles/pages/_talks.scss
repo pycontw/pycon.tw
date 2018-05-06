@@ -4,3 +4,132 @@
 		font-weight: 400;
 	}
 }
+
+// Styling for Markdown-rendered fields
+.talk-detail .editor-preview {
+	* {
+		max-width: 100%;
+	}
+	h1, h2, h3 {
+		@include h3();
+	}
+	h4 {
+		@include h4();
+	}
+	h5 {
+		@include h5();
+	}
+	h6 {
+		@include h6();
+	}
+	h1, h2, h3, h4, h5, h6 {
+		+ hr {
+			margin-top: -8px;
+		}
+	}
+	hr {
+		height: 1px;
+		margin: 0;
+	}
+}
+
+.talk-content {
+	padding: 32px 16px;
+	background: $pale-grey;
+
+	@include on-desktop() {
+		padding: 32px;
+	}
+
+	.social {
+		padding-top: 0.5rem;
+
+		a:hover {
+			color: darken($link-dark, 20%);
+		}
+
+		.fa {
+			display: inline-block;
+			margin-right: 0.75rem;
+			font-size: 125%;
+		}
+	}
+}
+
+.talk-info {
+	$icon-width: 56px;
+	$spacing: 0.75rem;
+
+	padding: 32px 24px;
+
+	@include on-desktop() {
+		columns: 2;
+	}
+
+	ul {
+		@include list-reset();
+		text-indent: 0;
+
+		li {
+			display: flex;
+			align-content: baseline;
+			align-items: flex-start;
+
+			@include on-desktop() {
+				margin-left: 0 - $icon-width / 4;
+			}
+
+			> * {
+				flex: 1;
+				min-height: 24px;
+				margin-bottom: 12px;
+			}
+
+			dfn {
+				flex: 0 0 $icon-width;
+				margin-right: $spacing;
+				font-size: 0;
+
+				@mixin icon($name, $margin-top: 0) {
+					background: url('../assets/icon-#{$name}.svg') top right no-repeat;
+					margin-top: $margin-top;	// Visual compensation.
+				}
+
+				&.location {
+					@include icon('location');
+				}
+				&.slot {
+					@include icon('clock');
+				}
+				&.category {
+					@include icon('tag', -2px);
+				}
+				&.language {
+					&.enen {
+						@include icon('language-enen');
+					}
+					&.zhen {
+						@include icon('language-zhen');
+					}
+					&.zhzh {
+						@include icon('language-zhzh');
+					}
+				}
+				&.python-level {
+					&.novice {
+						@include icon('level-1');
+					}
+					&.intermediate {
+						@include icon('level-2');
+					}
+					&.experienced {
+						@include icon('level-3');
+					}
+				}
+				&.recording-no {
+					@include icon('no-recording');
+				}
+			}
+		}
+	}
+}

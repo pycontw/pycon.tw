@@ -19,12 +19,25 @@ h3 {
   @include h3;
 }
 
+h4 {
+	@include h4;
+}
+
+h5 {
+	@include h5;
+}
+
+h6 {
+	@include h6;
+}
+
 blockquote, button, dl, label, ol, p, ul, th, td {
   @include text($text-font-size);
 }
 
 dl, ol, p, ul {
   line-height: 160%;
+  letter-spacing: 0.075ex;
 }
 
 a {
@@ -35,4 +48,28 @@ blockquote {
 	margin-left: 0;
 	padding-left: 2rem;
 	border-left: solid 8px rgba($link-dark, 0.5);
+}
+
+code {
+	margin: 0;
+	padding: 0.2rem 0.4rem;
+	border-radius: 4px;
+	background: rgba(27, 31, 35, 0.05);
+	letter-spacing: 0;
+	font-family: 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
+	font-size: 85%;
+}
+
+pre {
+	overflow: auto;
+	background: rgba(27, 31, 35, 0.05);
+	padding: 1rem;
+	border: 1px solid $white-35;
+	border-radius: 4px;
+	line-height: 120%;
+
+	code {
+		padding: 0;
+		background: transparent;
+	}
 }

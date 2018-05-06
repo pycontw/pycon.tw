@@ -30,16 +30,12 @@
 		{% for proposal in talk_list %}
     <li>
 			<p>
+				{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
       	{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display trimmed %}
-      	<span class="talk-title">{{ proposal_title }}</span> by {{ speaker_names }}
+      	<a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}
       	{% endblocktrans %}
 			</p>
 		</li>
-    {% comment %}
-		We should change them back to links once we're done with schedule.
-		{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
-    <li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
-    {% endcomment %}
 		{% endfor %}
 	</ul>
 
