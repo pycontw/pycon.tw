@@ -34,11 +34,12 @@
 						<h3 class="tab-title">{{ schedule_info.name }}</h3>
 						<table class="time-table">
 							<thead>
-								<td>td</td>
-								{% for room in schedule_info.rooms %}
-									<th class="room">{{ room | room_display }}</th>
-								{% endfor %}
-							</tr>
+								<tr>
+									<td class="time-table-time">td</td>
+									{% for room in schedule_info.rooms %}
+										<th class="room">{{ room | room_display }}</th>
+									{% endfor %}
+								</tr>
 							</thead>
 							<tbody>
 								{% for slot_time, slot_info in schedule_info.slots.items %}
@@ -49,7 +50,6 @@
 									</th>
 									{% for room, event in slot_info %}
 									<td class="{{ event|event_cell_class }}">
-										<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
 										<div class="event-info">{{ event|event_display }}</div>
 									</td>
 									{% endfor %}
