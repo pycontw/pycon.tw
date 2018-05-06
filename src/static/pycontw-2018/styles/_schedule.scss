@@ -1,0 +1,22 @@
+.time-table {
+
+	text-align: center;
+	th {
+		background-color: rgba(25, 38, 96, 0.08);
+		border-radius: 2px;
+	}
+	.time-table-time {
+		width: 56px;
+		min-height: 52px;
+		font-size: 14px;
+		line-height: 1.93;
+		font-family: Raleway;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		letter-spacing: normal;
+		color: #333333;
+		color: var(--black);
+
+	}
+}
