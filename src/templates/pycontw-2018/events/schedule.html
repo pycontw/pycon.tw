@@ -17,18 +17,6 @@
 <h1><span>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</span></h1>
 
 
-<section class="quick-jumper-section">
-<h3>{% trans 'Quick Jump' %}</h3>
-<div>
-	{% for schedule_date, schedule_info in schedule_days.items %}
-	<a href="#{{ schedule_date|date:'Y-m-d' }}" class="quick-jump-link">
-		{{ schedule_info.name }}
-	</a>
-	{% endfor %}
-</div>
-</section>
-
-
 {% block schedule %}
 {{ schedule_html|safe }}
 {% endblock schedule %}

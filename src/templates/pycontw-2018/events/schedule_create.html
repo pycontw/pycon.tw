@@ -9,7 +9,6 @@
 
 {% block styles %}
 {{ block.super }}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2017/styles/schedule_gen.scss' %}">
 {% endblock styles %}
 
 
@@ -19,47 +18,50 @@
 {% block schedule %}
 
 <div class="schedule">
+	<article class="media">
+		<div class="tabbing" data-controller="tabbing">
 
-{% for schedule_date, schedule_info in schedule_days.items %}
-
-<section id="{{ schedule_date|date:'Y-m-d' }}" class="day-section">
-
-	<h2 class="day-title">{{ schedule_info.name }}</h2>
-
-	<table class="time-table">
-		<thead>
-			<tr>
-				<td class="time-table-time"></td>
-				{% for room in schedule_info.rooms %}
-				<th>{{ room|room_display }}</th>
+			<ul class="tabs">
+				{% for schedule_date, schedule_info in schedule_days.items %}
+					<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+						{{ schedule_info.name }}
+					</li>
 				{% endfor %}
-			</tr>
-		</thead>
-		<tbody>
-			{% for slot_time, slot_info in schedule_info.slots.items %}
-			<tr>
-				<th class="time-table-time">
-					{{ slot_time.0.value|date:'H:i' }}<br>
-					|<br>
-					{{ slot_time.1.value|date:'H:i' }}
-				</th>
-				<th class="time-stack-time">
-					{{ slot_time.0.value|date:'H:i' }}–{{ slot_time.1.value|date:'H:i' }}
-				</th>
-				{% for room, event in slot_info %}
-				<td class="{{ event|event_cell_class }}">
-					<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
-					<div class="event-info">{{ event|event_display }}</div>
-				</td>
+			</ul>
+			<div>
+				{% for schedule_date, schedule_info in schedule_days.items %}
+					<article data-target="tabbing.pane">
+						<h3 class="tab-title">{{ schedule_info.name }}</h3>
+						<table class="time-table">
+							<thead>
+								<td>td</td>
+								{% for room in schedule_info.rooms %}
+									<th class="room">{{ room | room_display }}</th>
+								{% endfor %}
+							</tr>
+							</thead>
+							<tbody>
+								{% for slot_time, slot_info in schedule_info.slots.items %}
+								<tr>
+									<th class="time-table-time">
+										{{ slot_time.0.value|date:'H:i' }}<br>
+										{{ slot_time.1.value|date:'H:i' }}
+									</th>
+									{% for room, event in slot_info %}
+									<td class="{{ event|event_cell_class }}">
+										<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
+										<div class="event-info">{{ event|event_display }}</div>
+									</td>
+									{% endfor %}
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</article>
 				{% endfor %}
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-
-</section>
-
-{% endfor %}
+			</div>
+		</div>
+	</article>
 
 </div>
 
