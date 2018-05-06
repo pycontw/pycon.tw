@@ -87,8 +87,13 @@
 
 {% endblock schedule %}
 
+{% block preload_js %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock preload_js %}
 
 {% block scripts %}
 {{ block.super }}
 <script src="{% static 'pycontw-2017/scripts/schedule_gen.js' %}"></script>
 {% endblock scripts %}
+
