@@ -106,6 +106,10 @@
 		display: flex;
 		align-items: center;
 
+		> * {
+			max-height: 100%;
+		}
+
 		.logo {
 			flex: 0 0 216px;
 			display: flex;
