@@ -22,7 +22,7 @@
 	}
 
 	> .card {
-		@include card(10px);
+		@include card(16px);
 		position: fixed;
 		border-radius: 5px;
 		background-color: rgba(255, 255, 255, 0.95);
