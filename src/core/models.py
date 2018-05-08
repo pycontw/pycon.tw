@@ -197,3 +197,10 @@ class EventInfo(models.Model):
             # no TAI svg provide, so use zhzh.
             'TAI': 'zh-talk-zh-slides.svg',
         }[self.language]
+
+    def get_python_level_url(self):
+        return {
+            'NOVICE': 'python-level-novice.svg',
+            'INTERMEDIATE': 'python-level-intermediate.svg',
+            'EXPERIENCED': 'python-level-experienced.svg',
+        }[self.python_level]
