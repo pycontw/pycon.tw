@@ -26,10 +26,15 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 		> th {
 			padding: 0.5rem;
+			border-radius: 2px;
 		}
 
 		> .time-table-time {
 			display: none;
+		}
+
+		> .time-stack-time {
+			background-color: $color-label;
 		}
 
 		> td {
@@ -49,6 +54,8 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 			.event-info {
 				flex: 1 1 auto;
+				margin-top: 4px;
+				background-color: $color-info;
 			}
 
 			.talk-tags {
@@ -98,9 +105,6 @@ $color-label: rgba(25, 38, 96, 0.08);
         }
       }
 
-      &.is-break {
-				background: $color-label;
-      }
 
       .event-info {
 				padding: 0.5rem;
