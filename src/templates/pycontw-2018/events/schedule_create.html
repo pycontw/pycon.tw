@@ -48,8 +48,12 @@
 										{{ slot_time.0.value|date:'H:i' }}<br>
 										{{ slot_time.1.value|date:'H:i' }}
 									</th>
+									<th class="time-stack-time">
+										{{ slot_time.0.value|date:'H:i' }}–{{ slot_time.1.value|date:'H:i' }}
+									</th>
 									{% for room, event in slot_info %}
 									<td class="{{ event|event_cell_class }}">
+										<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
 										<div class="event-info">{{ event|event_display }}</div>
 									</td>
 									{% endfor %}

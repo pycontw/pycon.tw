@@ -4,69 +4,195 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 .time-table {
 
+	display: block;
 	text-align: center;
 	border-radius: 2px;
 	border-collapse: collapse;
 	background-color: $color-background;
 	background-color: var(--pale-grey);
 	width: 100%;
-	height: 1315px;
 	font-size: 14px;
 
-
-
-	tr, td {
-		border: 2px solid rgba(0, 0, 0, 0);
+	thead, tfoot {
+			display: none;
+	}
+	tbody {
+		display: block;
 	}
 
-  tr {
-		display: flex;
-		align-items: stretch;
+	tr {
+		display: block;
+		margin-bottom: 40px;
+
+		> th {
+			padding: 0.5rem;
+		}
+
+		> .time-table-time {
+			display: none;
+		}
+
+		> td {
+			display: flex;
+			align-items: stretch;
+			justify-content: space-between;
+			padding: 0;
+			border-bottom: 1px solid rgba(100, 125, 146, 0.5);
+
+			.time-stack-ribbon {
+				flex: 0 0 auto;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0 4px;
+			}
+
+			.event-info {
+				flex: 1 1 auto;
+			}
+
+			.talk-tags {
+				display: table;
+				margin: auto;
+				border-spacing: 4px;
+				border-collapse: separate;
+
+				.schedule-label {
+					display: table-row;
+					text-align: center;
+
+					> span {
+						display: table-cell;
+						border: none;
+
+						&.schedule-label-description {
+							padding-left: 0.125rem;
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
 
 		> th, > td {
-			// flex
+			display: block;
+			height: auto;
+			margin: 0;
+			font-size: 16px;
+			&.keynote {
+				.keynote-speaker {
+					display: inline;
+          font-size: 110%;
+          font-weight: bold;
+        }
+      }
+
+      &.talk {
+				p {
+					font-size: 14px;
+          margin-bottom: 8px;
+          &.talk-title {
+						font-weight: bold;
+            margin-bottom: 14px;
+          }
+        }
+      }
+
+      &.is-break {
+				background: $color-label;
+      }
+
+      .event-info {
+				padding: 0.5rem;
+      }
+
+      p {
+				font-size: 16px;
+        // color: $color-label;
+
+				&:last-child {
+					margin-bottom: 0;
+        }
+        a, .schedule-label {
+					// color: $color-label;
+
+          &:hover {
+						text-decoration: none;
+						opacity: 0.8;
+					}
+        }
+      }
+
+      .time-stack-ribbon {
+				display: none;
+      }
+		}
+	}
+}
+
+
+
+@include on-desktop {
+	.time-table {
+
+		tr, td {
+			border: 2px solid rgba(0, 0, 0, 0);
+		}
+
+	  tr {
 			display: flex;
-      flex: 1 0 0;
-      flex-direction: column;
-      align-content: center;
-			align-items: center;
-      justify-content: space-around;
-			border: 2px solid $color-background;
+			align-items: stretch;
+			margin-bottom: 0px;
 
-			// color
-			background-color: $color-info;
-			&.room {
-				background-color: $color-label;
+			> th, > td {
+				// flex
+				display: flex;
+	      flex: 1 0 0;
+	      flex-direction: column;
+	      align-content: center;
+				align-items: center;
+	      justify-content: space-around;
+				border: 2px solid $color-background;
 
+				// color
+				background-color: $color-info;
+				&.room {
+					background-color: $color-label;
+
+				}
+
+	      &.time-table-time {
+					flex: 0 0 auto;
+					min-height: 52px;
+					width: 56px;
+					font-size: 14px;
+					line-height: 1.93;
+					font-family: Raleway;
+					font-weight: normal;
+					font-style: normal;
+					font-stretch: normal;
+					letter-spacing: normal;
+					color: #333333;
+					color: var(--black);
+					background-color: $color-label;
+				}
+				.schedule-label-description {
+					display: none;
+        }
+
+				&.time-stack-time {
+					display: none;
+				}
 			}
+	  }
 
-      &.time-table-time {
-				flex: 0 0 auto;
-				min-height: 52px;
-				width: 56px;
-				font-size: 14px;
-				line-height: 1.93;
-				font-family: Raleway;
-				font-weight: normal;
-				font-style: normal;
-				font-stretch: normal;
-				letter-spacing: normal;
-				color: #333333;
-				color: var(--black);
-				background-color: $color-label;
+		thead {
+			display: block;
+			td  {
+	      &.time-table-time {
+					background-color: #f7f5fa;
+				}
 			}
-		}
-  }
-
-	thead {
-		display: block;
-		td  {
-      &.time-table-time {
-				background-color: #f7f5fa;
-			}
-		}
-  }
-
-
-
+	  }
+	}
 }
