@@ -188,3 +188,12 @@ class EventInfo(models.Model):
             'INTERMEDIATE': '=',
             'EXPERIENCED': '≡',
         }[self.python_level]
+
+    def get_language_url(self):
+        return {
+            'ENEN': 'en-talk-en-slides.svg',
+            'ZHZH': 'zh-talk-zh-slides.svg',
+            'ZHEN': 'zh-talk-en-slides.svg',
+            # no TAI svg provide, so use zhzh.
+            'TAI': 'zh-talk-zh-slides.svg',
+        }[self.language]
