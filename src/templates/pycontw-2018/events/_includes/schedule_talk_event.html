@@ -4,12 +4,11 @@
 </p>
 <p class="talk-speakers">{{ speakers }}</p>
 <p class="talk-tags">
-	<img src="{% static 'pycontw-2018/assets/schedule/' %}{{ info.get_language_url }}" alt=""></img>
-	<span class="schedule-label level-label"
-			data-balloon="{{ info.get_python_level_display }}" data-balloon-pos="down">
-		<span aria-hidden="true">{{ info.get_python_level_tag }}</span>
-		<span class="schedule-label-description">{{ info.get_python_level_display }}</span>
-	</span>
+	<img src="{% static 'pycontw-2018/assets/schedule/' %}{{ info.get_language_url }}"
+			title="{{ info.get_language_display }}" alt="{{ info.get_language_display }}"></img>
+	<img src="{% static 'pycontw-2018/assets/schedule/' %}{{ info.get_python_level_url }}"
+			title="{{ info.get_python_level_display }}" alt="{{ info.get_python_level_display }}"></img>
+	{% comment 'no sponsor svg' %}
 	{% if sponsored %}
 	<span class="schedule-label sponsor-label"
 			data-balloon="Invited event" data-balloon-pos="down">
@@ -17,11 +16,9 @@
 		<span class="schedule-label-description">Invited event</span>
 	</span>
 	{% endif %}
+	{% endcomment %}
 	{% if not info.recording_policy %}
-	<span class="schedule-label recording-label"
-			data-balloon="No recording" data-balloon-pos="down">
-		<span class="fa fa-microphone-slash" aria-hidden="true"></span>
-		<span class="schedule-label-description">No recording</span>
-	</span>
+	<img src="{% static 'pycontw-2018/assets/schedule/no-recording.svg' %}"
+			title="No recording" alt="No recording"></img>
 	{% endif %}
 </p>
