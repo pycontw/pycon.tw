@@ -22,7 +22,7 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 	tr {
 		display: block;
-		margin-bottom: 40px;
+		margin-bottom: 18px;
 
 		> th {
 			padding: 0.5rem;
@@ -35,6 +35,15 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 		> .time-stack-time {
 			background-color: $color-label;
+			font-size: 14px;
+			line-height: 1.93;
+			font-family: Raleway;
+			font-weight: normal;
+			font-style: normal;
+			font-stretch: normal;
+			letter-spacing: normal;
+			color: #333333;
+			color: var(--black);
 		}
 
 		> td {
@@ -42,7 +51,6 @@ $color-label: rgba(25, 38, 96, 0.08);
 			align-items: stretch;
 			justify-content: space-between;
 			padding: 0;
-			border-bottom: 1px solid rgba(100, 125, 146, 0.5);
 
 			.time-stack-ribbon {
 				flex: 0 0 auto;
@@ -56,6 +64,13 @@ $color-label: rgba(25, 38, 96, 0.08);
 				flex: 1 1 auto;
 				margin-top: 4px;
 				background-color: $color-info;
+				border-radius: 2px;
+				line-height: 1.69;
+				padding: 0.5rem;
+			}
+
+			.custom {
+				font-family: Raleway;
 			}
 
 			.talk-tags {
@@ -87,10 +102,11 @@ $color-label: rgba(25, 38, 96, 0.08);
 			margin: 0;
 			font-size: 16px;
 			&.keynote {
+        font-size: 14px;
 				.keynote-speaker {
 					display: inline;
-          font-size: 110%;
-          font-weight: bold;
+					font-family: NotoSansTC;
+
         }
       }
 
@@ -99,15 +115,9 @@ $color-label: rgba(25, 38, 96, 0.08);
 					font-size: 14px;
           margin-bottom: 8px;
           &.talk-title {
-						font-weight: bold;
             margin-bottom: 14px;
           }
         }
-      }
-
-
-      .event-info {
-				padding: 0.5rem;
       }
 
       p {
@@ -147,6 +157,13 @@ $color-label: rgba(25, 38, 96, 0.08);
 			display: flex;
 			align-items: stretch;
 			margin-bottom: 0px;
+
+			> td {
+				.event-info {
+					background-color: rgba(0, 0, 0, 0);
+				}
+
+			}
 
 			> th, > td {
 				// flex
