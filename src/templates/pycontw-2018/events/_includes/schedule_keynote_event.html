@@ -1,1 +1,4 @@
-Keynote: <span class="keynote-speaker">{{ event.speaker_name }}</span>
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+
+Keynote<br>
+<a href="{{ events_keynote_url }}"><span class="keynote-speaker">{{ event.speaker_name }}</span></a>
