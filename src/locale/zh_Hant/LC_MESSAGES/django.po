@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 16:32+0800\n"
-"PO-Revision-Date: 2018-05-07 08:33+0000\n"
+"POT-Creation-Date: 2018-05-08 14:31+0800\n"
+"PO-Revision-Date: 2018-05-08 06:52+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -1061,6 +1061,7 @@ msgstr "修改"
 #: templates/default/reviews/review_form.html:50
 #: templates/pycontw-2016/events/sponsored_event_detail.html:31
 #: templates/pycontw-2016/events/talk_detail.html:31
+#: templates/pycontw-2018/events/talk_detail.html:46
 msgid "Abstract"
 msgstr "摘要"
 
@@ -1756,6 +1757,7 @@ msgstr "投影片連結"
 
 #: templates/pycontw-2016/events/sponsored_event_detail.html:35
 #: templates/pycontw-2016/events/talk_detail.html:35
+#: templates/pycontw-2018/events/talk_detail.html:53
 msgid "Description"
 msgstr "說明"
 
@@ -2035,6 +2037,7 @@ msgid "Export New Schedule"
 msgstr "輸出新時間表"
 
 #: templates/pycontw-2017/events/talk_detail.html:18
+#: templates/pycontw-2018/events/talk_detail.html:22
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s，%(begin_time_display)s&#8209;%(end_time_display)s"
@@ -2163,6 +2166,40 @@ msgstr "會議門票"
 msgid "My PyCon"
 msgstr "My PyCon"
 
+#: templates/pycontw-2018/events/talk_detail.html:17
+msgid "Location: "
+msgstr "地點："
+
+#: templates/pycontw-2018/events/talk_detail.html:21
+msgid "Slot: "
+msgstr "時段："
+
+#: templates/pycontw-2018/events/talk_detail.html:25
+msgid "Category: "
+msgstr "主題分類："
+
+#: templates/pycontw-2018/events/talk_detail.html:29
+msgid "Language: "
+msgstr "語言："
+
+#: templates/pycontw-2018/events/talk_detail.html:33
+msgid "Python Level: "
+msgstr "Python 難易度："
+
+#: templates/pycontw-2018/events/talk_detail.html:39
+msgid "No Recording"
+msgstr "不錄影"
+
+#: templates/pycontw-2018/events/talk_detail.html:62
+msgctxt "speaker info in talk detail"
+msgid "Speakers"
+msgstr "講者"
+
+#: templates/pycontw-2018/events/talk_detail.html:64
+msgctxt "speaker info in talk detail"
+msgid "Speaker"
+msgstr "講者"
+
 #: templates/pycontw-2018/events/talk_list.html:13
 msgid ""
 "The two conference days are packed with talks about Python by speakers from "
@@ -2183,10 +2220,13 @@ msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲
 msgid "Categories"
 msgstr "主題分類"
 
-#: templates/pycontw-2018/events/talk_list.html:33
+#: templates/pycontw-2018/events/talk_list.html:34
 #, python-format
-msgid "<span class=\"talk-title\">%(proposal_title)s</span> by %(speaker_names)s"
-msgstr "<span class=\"talk-title\">%(proposal_title)s</span> —— %(speaker_names)s"
+msgid ""
+"<a class=\"talk-title\" "
+"href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by "
+"%(speaker_names)s"
+msgstr "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> — %(speaker_names)s"
 
 #: templates/pycontw-2018/index.html:41
 msgid "What is PyCon"
