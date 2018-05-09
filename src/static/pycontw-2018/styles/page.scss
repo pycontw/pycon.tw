@@ -36,17 +36,21 @@ main {
 
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
-		$padding-y: 1rem;
+		@mixin fill-vw($p) {
+			width: calc(100vw - #{$p * 2});
+			padding: 0 $p 32px $p;
+		}
 
 		@include shove-left();
-		width: calc(100vw - #{$padding-y * 2});
+		@include fill-vw(2rem);
 		margin-top: -160px;
 		margin-bottom: 48px;
-		padding: 0 $padding-y 32px $padding-y;
+
 		background-image: $top-navbar-background;
 		color: $text-light;
 
 		@include on-desktop {
+			@include fill-vw(6rem);
 			margin-bottom: 72px;
 		}
 	}
@@ -126,4 +130,5 @@ main {
 @import 'pages/keynotes';
 @import 'pages/talks';
 @import 'pages/ticket-info';
+@import 'pages/tutorials';
 @import 'pages/venue';

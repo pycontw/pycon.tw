@@ -22,7 +22,7 @@
 	}
 
 	> .card {
-		@include card(32px);
+		@include card(16px);
 		position: fixed;
 		border-radius: 5px;
 		background-color: rgba(255, 255, 255, 0.95);
@@ -105,6 +105,10 @@
 		@include card-content(32px, 0, visible);
 		display: flex;
 		align-items: center;
+
+		> * {
+			max-height: 100%;
+		}
 
 		.logo {
 			flex: 0 0 216px;

@@ -18,9 +18,10 @@ $menu-desktop-height: 136px;
 	}
 
 	.menu {
-		@include container(760px);
+		@include container(100%);
 		@include menu($top-item-color, $top-item-color);
 
+		$menu-item-spacing: 40px;
 		$menu-item-height: $menu-desktop-height / 2;
 
 		display: inline-block;
@@ -31,7 +32,7 @@ $menu-desktop-height: 136px;
 			flex-direction: column;
 			align-items: center;
 			float: left;
-			padding: 0 24px;
+			padding: 0 $menu-item-spacing / 2;
 
 			#{$menu-item-types} {
 				width: 100%;
