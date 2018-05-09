@@ -2,6 +2,19 @@ $color-info: rgba(25, 38, 96, 0.03);
 $color-background: #f7f5fa;
 $color-label: rgba(25, 38, 96, 0.08);
 
+@mixin font-normal($font-family) {
+	font-family: $font-family;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+}
+
+// override tabbing padding
+.tabbing > *:not(.tabs) {
+	padding: 16px 8px 11px 8px;
+}
+
 .time-table {
 
 	display: block;
@@ -35,13 +48,9 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 		> .time-stack-time {
 			background-color: $color-label;
-			font-size: 14px;
+			@include font-normal(Raleway);
 			line-height: 1.93;
-			font-family: Raleway;
-			font-weight: normal;
-			font-style: normal;
-			font-stretch: normal;
-			letter-spacing: normal;
+			font-size: 14px;
 			color: #333333;
 			color: var(--black);
 		}
@@ -58,6 +67,15 @@ $color-label: rgba(25, 38, 96, 0.08);
 				align-items: center;
 				justify-content: center;
 				padding: 0 4px;
+				background-color: $color-label;
+
+				@include font-normal(Raleway);
+				font-size: 14px;
+				line-height: 1.93;
+				color: #333333;
+				color: var(--black);
+				margin-top: 4px;
+				width: 34px;
 			}
 
 			.event-info {
@@ -101,12 +119,12 @@ $color-label: rgba(25, 38, 96, 0.08);
 			height: auto;
 			margin: 0;
 			font-size: 16px;
+
 			&.keynote {
         font-size: 14px;
 				.keynote-speaker {
 					display: inline;
 					font-family: NotoSansTC;
-
         }
       }
 
@@ -155,62 +173,50 @@ $color-label: rgba(25, 38, 96, 0.08);
 @include on-desktop {
 	.time-table {
 
-		tr, td {
-			border: 2px solid rgba(0, 0, 0, 0);
-		}
-
 	  tr {
 			display: flex;
 			align-items: stretch;
 			margin-bottom: 0px;
 
-			> td {
-				.event-info {
-					background-color: rgba(0, 0, 0, 0);
-				}
-
-				.time-stack-ribbon {
-					display: none;
-
-
-				}
-			}
-
 			> th, > td {
 				// flex
 				display: flex;
 	      flex: 1 0 0;
-	      flex-direction: column;
 	      align-content: center;
 				align-items: center;
 	      justify-content: space-around;
 				border: 2px solid $color-background;
-
-				// color
 				background-color: $color-info;
+
+				.event-info {
+					background-color: rgba(0, 0, 0, 0);
+				}
+
 				&.room {
 					background-color: $color-label;
-
 				}
 
 	      &.time-table-time {
+					display: flex;
+					@include font-normal(Raleway);
 					flex: 0 0 auto;
-					min-height: 52px;
 					width: 56px;
 					font-size: 14px;
 					line-height: 1.93;
-					font-family: Raleway;
-					font-weight: normal;
-					font-style: normal;
-					font-stretch: normal;
-					letter-spacing: normal;
 					color: #333333;
 					color: var(--black);
 					background-color: $color-label;
+					padding: 0.5rem;
 				}
+
+				// display none
 				.schedule-label-description {
 					display: none;
         }
+
+				.time-stack-ribbon {
+					display: none;
+				}
 
 				&.time-stack-time {
 					display: none;
@@ -220,9 +226,10 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 		thead {
 			display: block;
-			td  {
-	      &.time-table-time {
-					background-color: #f7f5fa;
+
+			>tr, > td {
+				.time-table-time {
+					background-color: rgba(0, 0, 0, 0);
 				}
 			}
 	  }
