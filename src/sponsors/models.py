@@ -45,25 +45,25 @@ class Sponsor(ConferenceRelated):
     )
 
     class Level:
-        ORGANIZER = -1
-        COORGANIZER = 0
         PLATINUM = 1
         GOLD = 2
         SILVER = 3
         BRONZE = 4
         SPECIAL = 5
+        ORGANIZER = 6
+        COORGANIZER = 7
 
         # Backward compatibility.
         PARTNER = COORGANIZER
 
     LEVEL_CHOICES = (
-        (Level.ORGANIZER, _('organizer')),
-        (Level.COORGANIZER, _('co-organizer')),
         (Level.PLATINUM, _('platinum')),
         (Level.GOLD, _('gold')),
         (Level.SILVER, _('silver')),
         (Level.BRONZE, _('bronze')),
         (Level.SPECIAL, _('special')),
+        (Level.ORGANIZER, _('organizer')),
+        (Level.COORGANIZER, _('co-organizer')),
     )
 
     @property

@@ -1,6 +1,10 @@
-@mixin list-reset {
+@mixin list-reset() {
 	list-style: none;
 	padding: 0;
+
+	> li::before {	// Override custom list bullet.
+		content: none;
+	}
 }
 
 $menu-item-types: '> a, > label';

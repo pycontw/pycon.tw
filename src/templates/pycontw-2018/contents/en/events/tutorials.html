@@ -1,0 +1,27 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+{% load i18n_plus %}
+
+{% block title %}Learning{% endblock title %}
+
+{% block body_class %}{{ block.super }} tutorials-page{% endblock body_class %}
+
+
+{% block content %}
+
+<h1>Learning</h1>
+
+<h2>Tutorials</h2>
+
+<p>Tutorials are paid events that will be held one to three weeks around the main conference. They are one-day events (six hours) held to help participants better understand talks during the conference, or get their hands on more Python applications.</p>
+
+<h2>Workshops</h2>
+
+<p>Workshops are collaborative efforts between PyCon Taiwan and our corporate or community partners, held to help them share their knowledge and resource with others. These events are generally free, focused on the hands-on experience, with content, time, and venue chosen based on tour partners’ needs.</p>
+
+<hr>
+
+<p>All tutorials and workshops held in conjunction with PyCon Taiwan 2018 would be in Chinese. Please refer to the <a href="{{ request|path_for_language:'zh-hant' }}" target="_blank" rel="noopener">Chinese version of this page</a> for more information.</p>
+
+{% endblock content %}
