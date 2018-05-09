@@ -1,5 +1,5 @@
 $color-info: rgba(25, 38, 96, 0.03);
-$color-background: #f7f5fa;
+$color-background: $pale-grey;
 $color-label: rgba(25, 38, 96, 0.08);
 
 @mixin font-normal($font-family) {
@@ -13,6 +13,48 @@ $color-label: rgba(25, 38, 96, 0.08);
 // override tabbing padding
 .tabbing > *:not(.tabs) {
 	padding: 16px 8px 11px 8px;
+}
+
+.icon-info {
+	background-color: $color-background;
+	margin-bottom: 80px;
+	width: 100%;
+	padding: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	> .icon-group {
+		display: flex;
+		flex-direction: column;
+			justify-content: space-around;
+		> .icon-block {
+			margin: 0.5rem 0;
+			display: flex;
+			span {
+				display: flex;
+				justify-content: flex-start;
+				padding-left: 2rem;
+			}
+		}
+	}
+	> .icon-group-1 {
+		flex-direction: column;
+		> .icon-block {
+			justify-content: space-around;
+			span {
+				width: 50%;
+			}
+		}
+	}
+
+	> .icon-group-2 {
+		flex-direction: row;
+		align-items: flex-start;
+		.icon-block {
+			flex-direction: column;
+			width: 50%;
+		}
+	}
 }
 
 .time-table {
