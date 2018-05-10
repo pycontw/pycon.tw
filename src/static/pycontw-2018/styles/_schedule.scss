@@ -10,11 +10,6 @@ $color-label: rgba(25, 38, 96, 0.08);
 	letter-spacing: normal;
 }
 
-// override tabbing padding
-.tabbing > *:not(.tabs) {
-	padding: 16px 8px 11px 8px;
-}
-
 .icon-info {
 	background-color: $color-background;
 	margin-bottom: 80px;
@@ -97,223 +92,230 @@ $color-label: rgba(25, 38, 96, 0.08);
 	}
 }
 
-.time-table {
-
-	display: block;
-	text-align: center;
-	border-radius: 2px;
-	border-collapse: collapse;
-	background-color: $color-background;
-	background-color: var(--pale-grey);
-	width: 100%;
-	font-size: 14px;
-
-	thead, tfoot {
-			display: none;
-	}
-	tbody {
-		display: block;
+.schedule {
+	// override tabbing padding
+	.tabbing > *:not(.tabs) {
+		padding: 16px 8px 11px 8px;
 	}
 
-	tr {
-		display: block;
-		margin-bottom: 18px;
-
-		> th {
-			padding: 0.5rem;
-			border-radius: 2px;
-		}
-
-		> .time-table-time {
-			display: none;
-		}
-
-		> .time-stack-time {
-			background-color: $color-label;
-			@include font-normal(Raleway);
-			line-height: 1.93;
-			font-size: 14px;
-			color: #333333;
-			color: var(--black);
-		}
-
-		> td {
-			display: flex;
-			align-items: stretch;
-			justify-content: space-between;
-			padding: 0;
-
-			.time-stack-ribbon {
-				flex: 0 0 auto;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 0 4px;
-				background-color: $color-label;
-
-				@include font-normal(Raleway);
-				font-size: 14px;
-				line-height: 1.93;
-				color: #333333;
-				color: var(--black);
-				margin-top: 4px;
-				width: 34px;
-			}
-
-			.event-info {
-				flex: 1 1 auto;
-				margin-top: 4px;
-				background-color: $color-info;
-				border-radius: 2px;
-				line-height: 1.69;
-				padding: 0.5rem;
-			}
-
-			.custom {
-				font-family: Raleway;
-			}
-
-			.talk-tags {
-				display: table;
-				margin: auto;
-				border-spacing: 4px;
-				border-collapse: separate;
-
-				.schedule-label {
-					display: table-row;
-					text-align: center;
-
-					> span {
-						display: table-cell;
-						border: none;
-
-						&.schedule-label-description {
-							padding-left: 0.125rem;
-							text-align: left;
-						}
-					}
-				}
-			}
-		}
-
-		> th, > td {
-			display: block;
-			height: auto;
-			margin: 0;
-			font-size: 16px;
-
-			&.keynote {
-        font-size: 14px;
-				.keynote-speaker {
-					display: inline;
-					font-family: NotoSansTC;
-        }
-      }
-
-      &.talk {
-				display: flex;
-				p {
-					font-size: 14px;
-          margin-bottom: 8px;
-          &.talk-title {
-            margin-bottom: 14px;
-          }
-        }
-      }
-
-      p {
-				font-size: 16px;
-        // color: $color-label;
-
-				&:last-child {
-					margin-bottom: 0;
-        }
-        a, .schedule-label {
-					// color: $color-label;
-
-          &:hover {
-						text-decoration: none;
-						opacity: 0.8;
-					}
-        }
-      }
-
-      .time-stack-ribbon {
-				display: flex;
-				flex: 0 0 auto;
-				align-items: center;
-				justify-content: center;
-				padding: 0 4px;
-
-      }
-		}
-	}
-}
-
-
-
-@include on-desktop {
 	.time-table {
 
-	  tr {
-			display: flex;
-			align-items: stretch;
-			margin-bottom: 0px;
+		display: block;
+		text-align: center;
+		border-radius: 2px;
+		border-collapse: collapse;
+		background-color: $color-background;
+		background-color: var(--pale-grey);
+		width: 100%;
+		font-size: 14px;
 
-			> th, > td {
-				// flex
+		thead, tfoot {
+				display: none;
+		}
+		tbody {
+			display: block;
+		}
+
+		tr {
+			display: block;
+			margin-bottom: 18px;
+
+			> th {
+				padding: 0.5rem;
+				border-radius: 2px;
+			}
+
+			> .time-table-time {
+				display: none;
+			}
+
+			> .time-stack-time {
+				background-color: $color-label;
+				@include font-normal(Raleway);
+				line-height: 1.93;
+				font-size: 14px;
+				color: #333333;
+				color: var(--black);
+			}
+
+			> td {
 				display: flex;
-	      flex: 1 0 0;
-	      align-content: center;
-				align-items: center;
-	      justify-content: space-around;
-				border: 2px solid $color-background;
-				background-color: $color-info;
+				align-items: stretch;
+				justify-content: space-between;
+				padding: 0;
 
-				.event-info {
-					background-color: rgba(0, 0, 0, 0);
-				}
-
-				&.room {
-					background-color: $color-label;
-				}
-
-	      &.time-table-time {
-					display: flex;
-					@include font-normal(Raleway);
+				.time-stack-ribbon {
 					flex: 0 0 auto;
-					width: 56px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0 4px;
+					background-color: $color-label;
+
+					@include font-normal(Raleway);
 					font-size: 14px;
 					line-height: 1.93;
 					color: #333333;
 					color: var(--black);
-					background-color: $color-label;
+					margin-top: 4px;
+					width: 34px;
+				}
+
+				.event-info {
+					flex: 1 1 auto;
+					margin-top: 4px;
+					background-color: $color-info;
+					border-radius: 2px;
+					line-height: 1.69;
 					padding: 0.5rem;
 				}
 
-				// display none
-				.schedule-label-description {
-					display: none;
-        }
-
-				.time-stack-ribbon {
-					display: none;
+				.custom {
+					font-family: Raleway;
 				}
 
-				&.time-stack-time {
-					display: none;
+				.talk-tags {
+					display: table;
+					margin: auto;
+					border-spacing: 4px;
+					border-collapse: separate;
+
+					.schedule-label {
+						display: table-row;
+						text-align: center;
+
+						> span {
+							display: table-cell;
+							border: none;
+
+							&.schedule-label-description {
+								padding-left: 0.125rem;
+								text-align: left;
+							}
+						}
+					}
 				}
 			}
-	  }
 
-		thead {
-			display: block;
+			> th, > td {
+				display: block;
+				height: auto;
+				margin: 0;
+				font-size: 16px;
 
-			>tr, > td {
-				.time-table-time {
-					background-color: rgba(0, 0, 0, 0);
-				}
+				&.keynote {
+	        font-size: 14px;
+					.keynote-speaker {
+						display: inline;
+						font-family: NotoSansTC;
+	        }
+	      }
+
+	      &.talk {
+					display: flex;
+					p {
+						font-size: 14px;
+	          margin-bottom: 8px;
+	          &.talk-title {
+	            margin-bottom: 14px;
+	          }
+	        }
+	      }
+
+	      p {
+					font-size: 16px;
+	        // color: $color-label;
+
+					&:last-child {
+						margin-bottom: 0;
+	        }
+	        a, .schedule-label {
+						// color: $color-label;
+
+	          &:hover {
+							text-decoration: none;
+							opacity: 0.8;
+						}
+	        }
+	      }
+
+	      .time-stack-ribbon {
+					display: flex;
+					flex: 0 0 auto;
+					align-items: center;
+					justify-content: center;
+					padding: 0 4px;
+
+	      }
 			}
-	  }
+		}
+	}
+
+
+
+	@include on-desktop {
+		.time-table {
+
+		  tr {
+				display: flex;
+				align-items: stretch;
+				margin-bottom: 0px;
+
+				> th, > td {
+					// flex
+					display: flex;
+		      flex: 1 0 0;
+		      align-content: center;
+					align-items: center;
+		      justify-content: space-around;
+					border: 2px solid $color-background;
+					background-color: $color-info;
+
+					.event-info {
+						background-color: rgba(0, 0, 0, 0);
+					}
+
+					&.room {
+						background-color: $color-label;
+					}
+
+		      &.time-table-time {
+						display: flex;
+						@include font-normal(Raleway);
+						flex: 0 0 auto;
+						width: 56px;
+						font-size: 14px;
+						line-height: 1.93;
+						color: #333333;
+						color: var(--black);
+						background-color: $color-label;
+						padding: 0.5rem;
+					}
+
+					// display none
+					.schedule-label-description {
+						display: none;
+	        }
+
+					.time-stack-ribbon {
+						display: none;
+					}
+
+					&.time-stack-time {
+						display: none;
+					}
+				}
+		  }
+
+			thead {
+				display: block;
+
+				>tr, > td {
+					.time-table-time {
+						background-color: rgba(0, 0, 0, 0);
+					}
+				}
+		  }
+		}
 	}
 }
