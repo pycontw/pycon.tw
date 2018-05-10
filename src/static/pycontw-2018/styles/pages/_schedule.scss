@@ -1,6 +1,8 @@
 $color-info: rgba(25, 38, 96, 0.03);
 $color-background: $pale-grey;
 $color-label: rgba(25, 38, 96, 0.08);
+$icon-width: 60px;
+$spacing: 0.75rem;
 
 @mixin font-normal($font-family) {
 	font-family: $font-family;
@@ -168,6 +170,8 @@ $color-label: rgba(25, 38, 96, 0.08);
 					border-radius: 2px;
 					line-height: 1.69;
 					padding: 0.5rem;
+
+
 				}
 
 				.custom {
@@ -180,18 +184,43 @@ $color-label: rgba(25, 38, 96, 0.08);
 					border-spacing: 4px;
 					border-collapse: separate;
 
-					.schedule-label {
-						display: table-row;
-						text-align: center;
+					img {
+						display: inline-block;
+						height: 25px;
+							width: 23px;
+						// margin-right: $spacing;
 
-						> span {
-							display: table-cell;
-							border: none;
+						@mixin icon($name, $margin-top: 0) {
+							background: url('../assets/icon-#{$name}.svg') top right no-repeat;
+							margin-left: 5px;
 
-							&.schedule-label-description {
-								padding-left: 0.125rem;
-								text-align: left;
+						}
+
+						&.language {
+							width: 60px;
+							&.enen {
+								@include icon('language-enen');
 							}
+							&.zhzh {
+								@include icon('language-zhzh');
+							}
+							&.zhen {
+								@include icon('language-zhen');
+							}
+						}
+						&.python-level {
+							&.novice {
+								@include icon('level-1');
+							}
+							&.intermediate {
+								@include icon('level-2');
+							}
+							&.experienced {
+								@include icon('level-3');
+							}
+						}
+						&.recording-no {
+							@include icon('no-recording');
 						}
 					}
 				}
@@ -255,7 +284,6 @@ $color-label: rgba(25, 38, 96, 0.08);
 
 	@include on-desktop {
 		.time-table {
-
 		  tr {
 				display: flex;
 				align-items: stretch;
