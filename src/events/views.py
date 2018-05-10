@@ -1,14 +1,18 @@
 import collections
+import json
 import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse
 from django.db.models import Count
-from django.http import HttpResponseRedirect
-from django.utils import translation
+from django.http import HttpResponseRedirect, JsonResponse
+from django.templatetags.static import static
+from django.utils import timezone, translation
+from django.utils.dateparse import parse_datetime
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DetailView, TemplateView
+from django.views.generic import CreateView, DetailView, TemplateView, View
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
@@ -230,3 +234,55 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     def get_time_slot(self):
         return (self.object.begin_time.value, self.object.end_time.value)
+
+
+BIO_MCLAUGHLIN = """\
+Katie has worn many different hats over the years. She has been a software \
+developer for many languages, systems administrator for multiple operating \
+systems, and speaker on many different topics.
+
+When she’s not changing the world, she enjoys making tapestries, cooking, \
+and seeing just how well various application stacks handle emoji.
+"""
+
+
+ABSTRACT_MCLAUGHLIN = """
+"""
+
+def transform_keynote_info(i, info):
+    info['id'] = f'keynote-{i}'
+    info['type'] = '',  # Not used.
+    info['start'] = timezone.make_aware(parse_datetime(info['start']))
+    info['end'] = timezone.make_aware(parse_datetime(info['end']))
+    info['speaker']['avatar'] = static(info['speaker']['avatar'])
+    return info
+
+
+class CCIPAPIView(View):
+
+    def get(self, request):
+        dataset = [
+            {
+                'id': f'talk-{event.pk}',
+                'subject': event.proposal.title,
+                'summary': event.proposal.abstract,
+                'type': '',     # Not used.
+                'room': event.get_location_display(),
+                'start': event.begin_time.value.isoformat(),
+                'end': event.end_time.value.isoformat(),
+                'speaker': {
+                    'name': event.proposal.submitter.speaker_name,
+                    'avatar': event.proposal.submitter.get_photo_url(),
+                    'bio': event.proposal.submitter.bio,
+                },
+            }
+            for event in ProposedTalkEvent.objects.select_related(
+                'proposal', 'proposal__submitter',
+            )
+        ]
+        with open(finders.find('pycontw-2018/assets/keynotes/info.json')) as f:
+            dataset.extend(
+                transform_keynote_info(i, info)
+                for i, info in enumerate(json.load(f), 1)
+            )
+        return JsonResponse(dataset, safe=False)
