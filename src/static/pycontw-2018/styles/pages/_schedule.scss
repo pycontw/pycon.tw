@@ -299,8 +299,28 @@ $spacing: 0.75rem;
 					border: 2px solid $color-background;
 					background-color: $color-info;
 
+					&.talk {
+						align-items: baseline;
+					}
+
 					.event-info {
+						padding: 10px 12px;
+						display: flex;
+						height: 90%;
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-around;
 						background-color: rgba(0, 0, 0, 0);
+						p {
+							margin: 0 auto;
+							&.talk-title {
+								flex: 1 1 30%;
+								margin-bottom: 0.5rem;
+							}
+							&.talk-speakers {
+								// margin: 0px auto;
+							}
+						}
 					}
 
 					&.room {
