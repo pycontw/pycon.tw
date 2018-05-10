@@ -16,4 +16,7 @@ urlpatterns = [
 
     # Backward compatibility to the static events page.
     url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
+
+    # API for CCIP
+    url(r'^ccip/$', views.CCIPAPIView.as_view()),
 ]
