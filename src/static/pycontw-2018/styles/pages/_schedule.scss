@@ -4,14 +4,6 @@ $color-label: rgba(25, 38, 96, 0.08);
 $icon-width: 60px;
 $spacing: 0.75rem;
 
-@mixin font-normal($font-family) {
-	font-family: $font-family;
-	font-weight: normal;
-	font-style: normal;
-	font-stretch: normal;
-	letter-spacing: normal;
-}
-
 .icon-info {
 	background-color: $color-background;
 	margin-bottom: 80px;
@@ -30,9 +22,7 @@ $spacing: 0.75rem;
 			margin: 0.5rem 0;
 			display: flex;
 			span {
-				@include font-normal(NotoSansTC);
-				font-size: 16px;
-				color: var(--black);
+				@include text(16px);
 				display: flex;
 				justify-content: flex-start;
 				padding-left: 1rem;
@@ -105,13 +95,12 @@ $spacing: 0.75rem;
 		text-align: center;
 		border-radius: 2px;
 		border-collapse: collapse;
-		background-color: $color-background;
-		background-color: var(--pale-grey);
+		background-color: $pale-grey;
 		width: 100%;
 		font-size: 14px;
 
 		thead, tfoot {
-				display: none;
+			display: none;
 		}
 		tbody {
 			display: block;
@@ -131,12 +120,11 @@ $spacing: 0.75rem;
 			}
 
 			> .time-stack-time {
+				@include text(14px);
 				background-color: $color-label;
-				@include font-normal(Raleway);
 				line-height: 1.93;
 				font-size: 14px;
 				color: #333333;
-				color: var(--black);
 			}
 
 			> td {
@@ -153,11 +141,9 @@ $spacing: 0.75rem;
 					padding: 0 4px;
 					background-color: $color-label;
 
-					@include font-normal(Raleway);
-					font-size: 14px;
+					@include text(14px);
 					line-height: 1.93;
 					color: #333333;
-					color: var(--black);
 					margin-top: 4px;
 					width: 34px;
 				}
@@ -174,7 +160,7 @@ $spacing: 0.75rem;
 				}
 
 				.custom {
-					font-family: Raleway;
+					font-family: $text-font-family;
 				}
 
 				.talk-tags {
@@ -232,49 +218,49 @@ $spacing: 0.75rem;
 				font-size: 16px;
 
 				&.keynote {
-	        font-size: 14px;
+					font-size: 14px;
 					.keynote-speaker {
 						display: inline;
 						font-family: NotoSansTC;
-	        }
-	      }
+					}
+				}
 
-	      &.talk {
+				&.talk {
 					display: flex;
 					p {
 						font-size: 14px;
-	          margin-bottom: 8px;
-	          &.talk-title {
-	            margin-bottom: 14px;
-	          }
-	        }
-	      }
+						margin-bottom: 8px;
+						&.talk-title {
+							margin-bottom: 14px;
+						}
+					}
+				}
 
-	      p {
+				p {
 					font-size: 16px;
-	        // color: $color-label;
+					// color: $color-label;
 
 					&:last-child {
 						margin-bottom: 0;
-	        }
-	        a, .schedule-label {
+					}
+					a, .schedule-label {
 						// color: $color-label;
 
-	          &:hover {
+						&:hover {
 							text-decoration: none;
 							opacity: 0.8;
 						}
-	        }
-	      }
+					}
+				}
 
-	      .time-stack-ribbon {
+				.time-stack-ribbon {
 					display: flex;
 					flex: 0 0 auto;
 					align-items: center;
 					justify-content: center;
 					padding: 0 4px;
 
-	      }
+				}
 			}
 		}
 	}
@@ -283,7 +269,7 @@ $spacing: 0.75rem;
 
 	@include on-desktop {
 		.time-table {
-		  tr {
+			tr {
 				display: flex;
 				align-items: stretch;
 				margin-bottom: 0px;
@@ -291,10 +277,10 @@ $spacing: 0.75rem;
 				> th, > td {
 					// flex
 					display: flex;
-		      flex: 1 0 0;
-		      align-content: center;
+					flex: 1 0 0;
+					align-content: center;
 					align-items: center;
-		      justify-content: space-around;
+					justify-content: space-around;
 					border: 2px solid $color-background;
 					background-color: $color-info;
 
@@ -326,15 +312,13 @@ $spacing: 0.75rem;
 						background-color: $color-label;
 					}
 
-		      &.time-table-time {
+					&.time-table-time {
+						@include text(14px);
 						display: flex;
-						@include font-normal(Raleway);
 						flex: 0 0 auto;
 						width: 56px;
-						font-size: 14px;
 						line-height: 1.93;
 						color: #333333;
-						color: var(--black);
 						background-color: $color-label;
 						padding: 0.5rem;
 					}
@@ -342,7 +326,7 @@ $spacing: 0.75rem;
 					// display none
 					.schedule-label-description {
 						display: none;
-	        }
+					}
 
 					.time-stack-ribbon {
 						display: none;
@@ -352,17 +336,17 @@ $spacing: 0.75rem;
 						display: none;
 					}
 				}
-		  }
+			}
 
 			thead {
 				display: block;
 
-				>tr, > td {
+				> tr, > td {
 					.time-table-time {
 						background-color: rgba(0, 0, 0, 0);
 					}
 				}
-		  }
+			}
 		}
 	}
 }

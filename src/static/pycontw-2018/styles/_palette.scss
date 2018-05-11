@@ -80,6 +80,8 @@ $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 
 /* Content styles. */
 
+$text-font-family: 'Raleway', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+
 $text-font-size: 1.125rem;			// ~ 18px.
 $text-font-size-small: 0.75rem;	// ~ 12px.
 
@@ -111,7 +113,7 @@ $link-hover-light: $white;
 
 @mixin text($font-size) {
   color: $text-dark;
-  font-family: 'Raleway', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+  font-family: $text-font-family;
   font-weight: 200;
   font-size: $font-size;
 
