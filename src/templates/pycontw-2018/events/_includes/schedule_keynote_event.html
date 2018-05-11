@@ -1,4 +1,6 @@
+{% load i18n_plus %}
+
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 
-<p>Keynote</p>
-<p><a href="{{ events_keynote_url }}" class="talk-title keynote-speaker">{{ event.speaker_name }}</a></p>
+<p class="talk-title">Keynote</p>
+<p class="talk-speakers"><a href="{{ events_keynote_url|language_free_path }}" class="talk-title keynote-speaker">{{ event.speaker_name }}</a></p>
