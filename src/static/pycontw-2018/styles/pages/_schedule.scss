@@ -207,6 +207,17 @@
 		margin-top: 4px;
 		background: $color-info;
 		line-height: 1.75;
+
+		@include on-desktop() {
+			> * {
+				flex: 0;
+			}
+			.talk-title {
+				flex: 1;
+				display: flex;
+				align-items: center;
+			}
+		}
 	}
 
 	// Icons.
@@ -215,6 +226,7 @@
 		display: flex;
 		justify-content: center;
 		margin: 0.375rem;
+		text-indent: 0;
 
 		> li::before {
 			content: ' ';
