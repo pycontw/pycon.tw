@@ -12,12 +12,15 @@
 {% endblock styles %}
 
 
+{% block body_class %} schedule-page{% endblock body_class %}
+
+
 {% block content %}
 
 <h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
 
 <section class="talk-content talk-info">
-	<ul class="schedule-legend">
+	<ul class="schedule-legend talk-tags">
 		<li class="speech-en">{% trans 'English speech' %}</li>
 		<li class="speech-zh">{% trans 'Mandarin speech' %}</li>
 		<li class="slides-en">{% trans 'English slides' %}</li>
@@ -29,7 +32,7 @@
 	</ul>
 </section>
 
-<article class="media schedule">
+<article class="media">
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
 			{% for schedule_date, schedule_info in schedule_days.items %}
