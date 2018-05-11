@@ -1,5 +1,9 @@
+{% load i18n_plus %}
+
 <p class="talk-title">
-	<a href="{{ event.get_absolute_url }}">{{ info.title }}</a>
+	<a href="{{ event.get_absolute_url }}" class="localed-url">
+		{{ info.title }}
+	</a>
 </p>
 <p class="talk-speakers">{{ speakers }}</p>
 <ul class="talk-tags">
