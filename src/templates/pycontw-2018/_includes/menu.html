@@ -47,6 +47,7 @@
 		<label for="menu-navbar-{{ type }}-conference">{% trans 'Conference' context 'menu' %}</label>
 		<div class="dropdown">
 			<ul class="submenu">
+				<li><a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a></li>
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
 				<li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
