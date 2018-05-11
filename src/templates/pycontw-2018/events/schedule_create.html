@@ -38,7 +38,7 @@
 							{{ slot_time.1.value|date:'H:i' }}
 						</th>
 						<th class="time-stack-time">
-							{{ slot_time.0.value|date:'H:i' }} ~ {{ slot_time.1.value|date:'H:i' }}
+							{{ slot_time.0.value|date:'H:i' }}–{{ slot_time.1.value|date:'H:i' }}
 						</th>
 						{% for room, event in slot_info %}
 						<td class="{{ event|event_cell_class }}">
