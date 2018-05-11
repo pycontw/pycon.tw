@@ -49,7 +49,9 @@
 			{% endfor %}
 		</ul>
 		{% block schedule %}
-		{{ schedule_html|safe }}
+		<div class="schedule-content">
+			{{ schedule_html|safe }}
+		</div>
 		{% endblock schedule %}
 	</div>
 </article>
