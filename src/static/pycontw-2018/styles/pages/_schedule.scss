@@ -172,13 +172,11 @@ $spacing: 0.75rem;
 					img {
 						display: inline-block;
 						height: 25px;
-							width: 23px;
-						// margin-right: $spacing;
+						width: 25px;
 
 						@mixin icon($name, $margin-top: 0) {
 							background: url('../assets/icon-#{$name}.svg') top right no-repeat;
 							margin-left: 5px;
-
 						}
 
 						&.language {
