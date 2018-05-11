@@ -70,7 +70,7 @@
 	}
 
 	// Round corners.
-	th, td, .time-stack-ribbon.2-all + .event-info {
+	th, td, .time-stack-ribbon[class~='2-all'] + .event-info {
 		border-radius: 2px;
 	}
 	.time-stack-ribbon + .event-info {

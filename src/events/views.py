@@ -145,7 +145,10 @@ class ScheduleCreateView(
 
         times = list(Time.objects.order_by('value'))
         end_time_iter = iter(times)
-        next(end_time_iter)
+        try:
+            next(end_time_iter)
+        except StopIteration:   # Nothing at all.
+            return day_info_dict
         for begin, end in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
