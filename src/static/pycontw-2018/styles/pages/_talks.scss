@@ -66,6 +66,7 @@
 	$spacing: 0.75rem;
 
 	padding: 32px 24px;
+	border-radius: 2px;
 
 	@include on-desktop() {
 		columns: 2;
@@ -99,6 +100,7 @@
 					background: url('../assets/icon-#{$name}.svg') top right no-repeat;
 					margin-top: $margin-top;	// Visual compensation.
 				}
+
 
 				&.location {
 					@include icon('location');
