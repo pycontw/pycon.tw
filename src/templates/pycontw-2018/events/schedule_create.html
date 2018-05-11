@@ -1,0 +1,131 @@
+{% extends 'events/schedule.html' %}
+
+{% load i18n static %}
+{% load events %}
+
+
+{% block title %}{% trans 'Export New Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+{% endblock styles %}
+
+
+{% block pagetitle %}{% trans 'Export New Schedule' %}{% endblock pagetitle %}
+
+
+{% block schedule %}
+
+<div class="schedule">
+
+	<div class="icon-info">
+		<div class="icon-group icon-group-1">
+			<div class="icon-block en">
+				<span><img src="{% static 'pycontw-2018/assets/schedule/en-talk.svg' %}"></img>英文演講</span>
+				<span><img src="{% static 'pycontw-2018/assets/schedule/en-slides.svg' %}"></img>英文投影片</span>
+			</div>
+			<div class="icon-block zh">
+				<span><img src="{% static 'pycontw-2018/assets/schedule/zh-talk.svg' %}"></img>中文演講</span>
+				<span><img src="{% static 'pycontw-2018/assets/schedule/zh-slides.svg' %}"></img>中文投影片</span>
+			</div>
+		</div>
+		<div class="icon-group icon-group-2">
+			<div class="icon-block level">
+				<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-novice.svg' %}"></img>難易度-初階</span>
+				<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-intermediate.svg' %}"></img>難易度-中階</span>
+				<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-experienced.svg' %}"></img>難易度-高階</span>
+			</div>
+			<div class="icon-block recording">
+				<span><img src="{% static 'pycontw-2018/assets/schedule/no-recording.svg' %}"></img>靜止錄音</span>
+			</div>
+
+		</div>
+
+	</div>
+
+	<article class="media schedule">
+		<div class="tabbing" data-controller="tabbing">
+
+			<ul class="tabs">
+				{% for schedule_date, schedule_info in schedule_days.items %}
+					<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+						{{ schedule_info.name }}
+					</li>
+				{% endfor %}
+			</ul>
+			<div>
+				{% for schedule_date, schedule_info in schedule_days.items %}
+					<article data-target="tabbing.pane">
+						<h3 class="tab-title">{{ schedule_info.name }}</h3>
+						<table class="time-table">
+							<thead>
+								<tr>
+									<td class="time-table-time">td</td>
+									{% for room in schedule_info.rooms %}
+										<th class="room">{{ room | room_display }}</th>
+									{% endfor %}
+								</tr>
+							</thead>
+							<tbody>
+								{% for slot_time, slot_info in schedule_info.slots.items %}
+								<tr>
+									<th class="time-table-time">
+										{{ slot_time.0.value|date:'H:i' }}<br>
+										{{ slot_time.1.value|date:'H:i' }}
+									</th>
+									<th class="time-stack-time">
+										{{ slot_time.0.value|date:'H:i' }} ~ {{ slot_time.1.value|date:'H:i' }}
+									</th>
+									{% for room, event in slot_info %}
+									<td class="{{ event|event_cell_class }}">
+										<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
+										<div class="event-info">{{ event|event_display }}</div>
+									</td>
+									{% endfor %}
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+	</article>
+
+</div>
+
+
+<div>
+	<noscript>
+		<div class="pycon-list">
+			<div class="pycon-list-item text-theme-highlight">
+				{% blocktrans trimmed %}
+				Schedule table generation requires JavaScript. Please. (´･_･`)
+				{% endblocktrans %}
+			</div>
+		</div>
+	</noscript>
+
+	<form method="post" class="generation-form" style="display:none;">
+		{% csrf_token %}
+		<input type="hidden" name="html">
+		<button class="btn btn-primary btn-lg" type="submit">
+			{% trans 'Generate' %}
+		</button>
+	</form>
+</div>
+
+
+{% endblock schedule %}
+
+{% block preload_js %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock preload_js %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'pycontw-2017/scripts/schedule_gen.js' %}"></script>
+{% endblock scripts %}
+

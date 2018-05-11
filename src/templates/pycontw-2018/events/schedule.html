@@ -1,0 +1,36 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+<h1><span>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</span></h1>
+
+
+{% block schedule %}
+{{ schedule_html|safe }}
+{% endblock schedule %}
+
+{% endblock content %}
+
+
+{% block extrabody %}
+{{ block.super }}
+<a href="#" class="back-to-top"><span class="fa fa-arrow-up"></span></a>
+{% endblock extrabody %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'pycontw-2017/scripts/schedule.js' %}"></script>
+{% endblock scripts %}
