@@ -49,18 +49,6 @@
 	</div>
 </article>
 
-{% block controls %}{% endblock controls %}
-
-{% endblock content %}
-
-
-{% block scripts %}
-{{ block.super }}
-<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
-{% endblock scripts %}
-
-{% block extra_js %}
-{{ block.super }}
 <script type="application/json" id="i18n_variables">
 {
 	"LANGUAGE_PREFIXES": [
@@ -71,4 +59,13 @@
 	"LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
 }
 </script>
-{% endblock extra_js %}
+
+{% block controls %}{% endblock controls %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
+{% endblock scripts %}
