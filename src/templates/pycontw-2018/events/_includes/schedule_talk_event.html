@@ -3,13 +3,10 @@
 	<a href="{{ event.get_absolute_url }}">{{ info.title }}</a>
 </p>
 <p class="talk-speakers">{{ speakers }}</p>
-<p class="talk-tags">
-	<img class="icon language {{ info.language.lower }}"
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
-	<img class="icon python-level {{ info.python_level.lower }}"
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
+<ul class="talk-tags">
+	<li class="language-{{ info.language.lower }}"></li>
+	<li class="python-level-{{ info.python_level.lower }}"></li>
 	{% if not info.recording_policy %}
-	<img class="icon recording-no {{ info.python_level.lower }}"
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
+	<li class="no-recording"></li>
 	{% endif %}
-</p>
+</ul>
