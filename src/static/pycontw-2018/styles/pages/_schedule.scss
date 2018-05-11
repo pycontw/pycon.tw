@@ -4,81 +4,52 @@ $color-label: rgba(25, 38, 96, 0.08);
 $icon-width: 60px;
 $spacing: 0.75rem;
 
-.icon-info {
-	background-color: $color-background;
-	margin-bottom: 80px;
-	padding: 1rem;
+.talk-info > .schedule-legend {
+	$icon-width: 26px;
+	$icon-height: 26px;
 
-	display: flex;
-	flex-direction: column;
-	> .icon-group {
-
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-
-		> .icon-block {
-			margin: 0.5rem 0;
-			display: flex;
-			span {
-				@include text(16px);
-				display: flex;
-				justify-content: flex-start;
-				padding-left: 1rem;
-				> img {
-					margin-right: 12px;
-				}
-			}
+	> li {
+		@include on-desktop() {
+			margin-left: 2 * $icon-width;
+		}
+		&::before {
+			content: ' ';
+			width: $icon-width;
+			height: $icon-height;
+			margin-right: 1rem;
 		}
 	}
-	> .icon-group:first-child {
-		flex-direction: column;
-		> .icon-block {
-			justify-content: space-around;
-			span {
-				width: 50%;
-			}
+
+	@mixin icon($name, $margin-top: 0, $x: left) {
+		&::before {
+			background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
+			margin-top: $margin-top;	// Visual compensation.
 		}
 	}
-	> .icon-group:last-child {
-		flex-direction: row;
-		align-items: flex-start;
-		.icon-block {
-			flex-direction: column;
-			width: 50%;
-		}
+
+	.speech-en {
+		@include icon('language-enen', -1px);
 	}
-}
-
-@include on-desktop {
-	.icon-info {
-		flex-direction: row;
-		justify-content: flex-start;
-
-		> .icon-group {
-				width: 50%;
-			> .icon-block {
-				justify-content: space-around;
-				span {
-					padding-left: 0;
-					> img {
-						margin-right: 16px;
-					}
-				}
-			}
-		}
-		> .icon-group-1 {
-			> .icon-block {
-				span {
-					width: auto;
-				}
-			}
-		}
-		> .icon-group-2 {
-			.icon-block {
-				width: auto;
-			}
-		}
+	.speech-zh {
+		@include icon('language-zhzh', -1px);
+	}
+	.slides-en {
+		@include icon('language-enen', 0, right);
+	}
+	.slides-zh {
+		@include icon('language-zhzh', 0, right);
+	}
+	.python-level-novice {
+		@include icon('level-1');
+	}
+	.python-level-intermediate {
+		@include icon('level-2');
+	}
+	.python-level-experienced {
+		@include icon('level-3');
+	}
+	.no-recording {
+		@include icon('no-recording');
 	}
 }
 

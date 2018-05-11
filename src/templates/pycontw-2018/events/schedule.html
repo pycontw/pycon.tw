@@ -16,28 +16,18 @@
 
 <h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
 
-<div class="icon-info">
-	<div class="icon-group">
-		<div class="icon-block en">
-			<span><img src="{% static 'pycontw-2018/assets/schedule/en-talk.svg' %}"></img>{% trans 'English Speech' %}</span>
-			<span><img src="{% static 'pycontw-2018/assets/schedule/en-slides.svg' %}"></img>{% trans 'English Slides' %}</span>
-		</div>
-		<div class="icon-block zh">
-			<span><img src="{% static 'pycontw-2018/assets/schedule/zh-talk.svg' %}"></img>{% trans 'Mandarin Speech' %}</span>
-			<span><img src="{% static 'pycontw-2018/assets/schedule/zh-slides.svg' %}"></img>{% trans 'Chinese Slides' %}</span>
-		</div>
-	</div>
-	<div class="icon-group">
-		<div class="icon-block level">
-			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-novice.svg' %}"></img>{% trans 'Novice' %}</span>
-			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-intermediate.svg' %}"></img>{% trans 'Intermediate' %}</span>
-			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-experienced.svg' %}"></img>{% trans 'Experienced' %}</span>
-		</div>
-		<div class="icon-block recording">
-			<span><img src="{% static 'pycontw-2018/assets/schedule/no-recording.svg' %}"></img>{% trans 'No recording' %}</span>
-		</div>
-	</div>
-</div>
+<section class="talk-content talk-info">
+	<ul class="schedule-legend">
+		<li class="speech-en">{% trans 'English speech' %}</li>
+		<li class="speech-zh">{% trans 'Mandarin speech' %}</li>
+		<li class="slides-en">{% trans 'English slides' %}</li>
+		<li class="slides-zh">{% trans 'Chinese slides' %}</li>
+		<li class="python-level-novice">{% trans 'Novice' %}</li>
+		<li class="python-level-intermediate">{% trans 'Intermediate' %}</li>
+		<li class="python-level-experienced">{% trans 'Experienced' %}</li>
+		<li class="no-recording">{% trans 'No recording' %}</li>
+	</ul>
+</section>
 
 <article class="media schedule">
 	<div class="tabbing" data-controller="tabbing">
