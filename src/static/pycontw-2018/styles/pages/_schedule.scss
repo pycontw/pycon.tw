@@ -272,13 +272,13 @@ $spacing: 0.75rem;
 				margin-bottom: 0px;
 
 				> th, > td {
-					// flex
 					display: flex;
 					flex: 1 0 0;
 					align-content: center;
 					align-items: center;
 					justify-content: space-around;
 					border: 2px solid $color-background;
+					border-radius: 2px;
 					background-color: $color-info;
 
 					&.talk {
