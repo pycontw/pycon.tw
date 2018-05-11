@@ -24,12 +24,6 @@
 {% endblock content %}
 
 
-{% block extrabody %}
-{{ block.super }}
-<a href="#" class="back-to-top"><span class="fa fa-arrow-up"></span></a>
-{% endblock extrabody %}
-
-
 {% block scripts %}
 {{ block.super }}
 <script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
