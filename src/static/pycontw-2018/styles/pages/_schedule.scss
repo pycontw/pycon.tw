@@ -146,11 +146,13 @@ $spacing: 0.75rem;
 
 						@mixin icon($name, $margin-top: 0) {
 							background: url('../assets/icon-#{$name}.svg') top right no-repeat;
-							margin-left: 5px;
+							&:not(:first-child) {
+								margin-left: 5px;
+							}
 						}
 
 						&.language {
-							width: 60px;
+							width: 55px;
 							&.enen {
 								@include icon('language-enen');
 							}
