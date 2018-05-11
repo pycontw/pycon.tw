@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-10 10:58+0800\n"
-"PO-Revision-Date: 2018-05-08 06:51+0000\n"
+"POT-Creation-Date: 2018-05-11 23:36+0800\n"
+"PO-Revision-Date: 2018-05-11 15:36+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -141,15 +141,17 @@ msgstr "abstract"
 
 #: core/models.py:128
 #: templates/default/_includes/proposal_example_modal.html:43
+#: templates/pycontw-2018/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
 #: core/models.py:129
 #: templates/default/_includes/proposal_example_modal.html:58
+#: templates/pycontw-2018/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
-#: core/models.py:130
+#: core/models.py:130 templates/pycontw-2018/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
@@ -339,6 +341,9 @@ msgstr "HTML"
 #: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
+#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/events/schedule.html:6
+#: templates/pycontw-2018/events/schedule.html:20
 msgid "Schedule"
 msgstr "Schedule"
 
@@ -1637,7 +1642,7 @@ msgid "Overview"
 msgstr "Overview"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:41
-#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/_includes/menu.html:52
 msgid "Keynotes"
 msgstr "Keynotes"
 
@@ -1646,14 +1651,14 @@ msgstr "Keynotes"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
-#: templates/pycontw-2018/_includes/menu.html:52
+#: templates/pycontw-2018/_includes/menu.html:53
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
 msgstr "Talks"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:43
-#: templates/pycontw-2018/_includes/menu.html:53
+#: templates/pycontw-2018/_includes/menu.html:54
 msgid "Sprints"
 msgstr "Sprints"
 
@@ -1671,7 +1676,7 @@ msgstr "Tutorial"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
-#: templates/pycontw-2018/_includes/menu.html:73
+#: templates/pycontw-2018/_includes/menu.html:74
 msgctxt "conf location"
 msgid "Venue"
 msgstr "Venue"
@@ -1704,7 +1709,7 @@ msgid "Ticket Info"
 msgstr "Ticket Info"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/_includes/menu.html:69
 msgid "Financial Aid"
 msgstr "Financial Aid"
 
@@ -1737,11 +1742,13 @@ msgstr "Quick Jump"
 
 #: templates/pycontw-2016/events/schedule_create.html:15
 #: templates/pycontw-2017/events/schedule_create.html:71
+#: templates/pycontw-2018/events/schedule_create.html:64
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 
 #: templates/pycontw-2016/events/schedule_create.html:26
 #: templates/pycontw-2017/events/schedule_create.html:82
+#: templates/pycontw-2018/events/schedule_create.html:73
 msgid "Generate"
 msgstr "Generate"
 
@@ -2029,6 +2036,8 @@ msgstr "Unconference"
 
 #: templates/pycontw-2017/events/schedule_create.html:7
 #: templates/pycontw-2017/events/schedule_create.html:16
+#: templates/pycontw-2018/events/schedule_create.html:7
+#: templates/pycontw-2018/events/schedule_create.html:15
 msgid "Export New Schedule"
 msgstr "Export New Schedule"
 
@@ -2043,6 +2052,7 @@ msgid "Invited event"
 msgstr "Invited event"
 
 #: templates/pycontw-2017/events/talk_detail.html:32
+#: templates/pycontw-2018/events/schedule.html:31
 msgid "No recording"
 msgstr "No recording"
 
@@ -2141,26 +2151,42 @@ msgctxt "menu"
 msgid "Conference"
 msgstr "Conference"
 
-#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/_includes/menu.html:55
 msgid "Recording"
 msgstr "Recording"
 
-#: templates/pycontw-2018/_includes/menu.html:59
+#: templates/pycontw-2018/_includes/menu.html:60
 msgctxt "menu"
 msgid "Learning"
 msgstr "Learning"
 
-#: templates/pycontw-2018/_includes/menu.html:64
+#: templates/pycontw-2018/_includes/menu.html:65
 msgid "Registration"
 msgstr "Registration"
 
-#: templates/pycontw-2018/_includes/menu.html:67
+#: templates/pycontw-2018/_includes/menu.html:68
 msgid "Conference Ticket"
 msgstr "Conference Ticket"
 
-#: templates/pycontw-2018/_includes/menu.html:76
+#: templates/pycontw-2018/_includes/menu.html:77
 msgid "My PyCon"
 msgstr "My PyCon"
+
+#: templates/pycontw-2018/events/schedule.html:24
+msgid "English speech"
+msgstr "English speech"
+
+#: templates/pycontw-2018/events/schedule.html:25
+msgid "Mandarin speech"
+msgstr "Mandarin speech"
+
+#: templates/pycontw-2018/events/schedule.html:26
+msgid "English slides"
+msgstr "English slides"
+
+#: templates/pycontw-2018/events/schedule.html:27
+msgid "Chinese slides"
+msgstr "Chinese slides"
 
 #: templates/pycontw-2018/events/talk_detail.html:17
 msgid "Location: "
