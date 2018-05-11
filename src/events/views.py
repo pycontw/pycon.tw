@@ -239,19 +239,6 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
         return (self.object.begin_time.value, self.object.end_time.value)
 
 
-BIO_MCLAUGHLIN = """\
-Katie has worn many different hats over the years. She has been a software \
-developer for many languages, systems administrator for multiple operating \
-systems, and speaker on many different topics.
-
-When she’s not changing the world, she enjoys making tapestries, cooking, \
-and seeing just how well various application stacks handle emoji.
-"""
-
-
-ABSTRACT_MCLAUGHLIN = """
-"""
-
 def transform_keynote_info(i, info):
     info['id'] = f'keynote-{i}'
     info['type'] = '',  # Not used.
