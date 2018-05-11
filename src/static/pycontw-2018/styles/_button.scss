@@ -7,7 +7,7 @@
 	font-weight: 300;
 
 	@include on-desktop {
-		width: 336px;
+		max-width: 336px;
 	}
 }
 
@@ -18,5 +18,6 @@
 
 	padding-top: 16px;
 	padding-bottom: 16px;
+	border: none;
 	border-radius: 100px;
 }

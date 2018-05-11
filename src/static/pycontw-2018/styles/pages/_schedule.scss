@@ -1,59 +1,69 @@
-.schedule-page .schedule-legend li {
-	@include on-desktop() {
-		margin-left: 56px;
-	}
-}
-
-.schedule-page .talk-tags {
-	$icon-width: 26px;
-	$icon-height: 26px;
-
-	> li::before {
-		content: ' ';
-		height: $icon-height;
-		margin-right: 1rem;
+.schedule-page {
+	form .button-round {
+		@include button(276deg, $dark-peach, $maize);
+		width: 160px;
+		margin: 24px 0;
+		text-align: center;
+		cursor: pointer;
 	}
 
-	@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
-		&::before {
-			width: $width;
-			margin-top: $margin-top;	// Visual compensation.
-			background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
+	.schedule-legend li {
+		@include on-desktop() {
+			margin-left: 56px;
 		}
 	}
 
-	.speech-en {
-		@include icon('language-enen', -1px);
-	}
-	.speech-zh {
-		@include icon('language-zhzh', -1px);
-	}
-	.slides-en {
-		@include icon('language-enen', 0, right);
-	}
-	.slides-zh {
-		@include icon('language-zhzh', 0, right);
-	}
-	.language-enen {
-		@include icon('language-enen', 0, center, 2 * $icon-width);
-	}
-	.language-zhen {
-		@include icon('language-zhen', 0, center, 2 * $icon-width);
-	}
-	.language-zhzh {
-		@include icon('language-zhzh', 0, center, 2 * $icon-width);
-	}
-	.python-level-novice {
-		@include icon('level-1');
-	}
-	.python-level-intermediate {
-		@include icon('level-2');
-	}
-	.python-level-experienced {
-		@include icon('level-3');
-	}
-	.no-recording {
-		@include icon('no-recording', -1px);
+	.talk-tags {
+		$icon-width: 26px;
+		$icon-height: 26px;
+
+		> li::before {
+			content: ' ';
+			height: $icon-height;
+			margin-right: 1rem;
+		}
+
+		@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
+			&::before {
+				width: $width;
+				margin-top: $margin-top;	// Visual compensation.
+				background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
+			}
+		}
+
+		.speech-en {
+			@include icon('language-enen', -1px);
+		}
+		.speech-zh {
+			@include icon('language-zhzh', -1px);
+		}
+		.slides-en {
+			@include icon('language-enen', 0, right);
+		}
+		.slides-zh {
+			@include icon('language-zhzh', 0, right);
+		}
+		.language-enen {
+			@include icon('language-enen', 0, center, 2 * $icon-width);
+		}
+		.language-zhen {
+			@include icon('language-zhen', 0, center, 2 * $icon-width);
+		}
+		.language-zhzh {
+			@include icon('language-zhzh', 0, center, 2 * $icon-width);
+		}
+		.python-level-novice {
+			@include icon('level-1');
+		}
+		.python-level-intermediate {
+			@include icon('level-2');
+		}
+		.python-level-experienced {
+			@include icon('level-3');
+		}
+		.no-recording {
+			@include icon('no-recording', 1px);
+		}
 	}
 }
 
