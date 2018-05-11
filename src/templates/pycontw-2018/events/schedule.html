@@ -14,12 +14,47 @@
 
 {% block content %}
 
-<h1><span>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</span></h1>
+<h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
 
+<div class="icon-info">
+	<div class="icon-group">
+		<div class="icon-block en">
+			<span><img src="{% static 'pycontw-2018/assets/schedule/en-talk.svg' %}"></img>{% trans 'Talk in English' %}</span>
+			<span><img src="{% static 'pycontw-2018/assets/schedule/en-slides.svg' %}"></img>{% trans 'Slides in English' %}</span>
+		</div>
+		<div class="icon-block zh">
+			<span><img src="{% static 'pycontw-2018/assets/schedule/zh-talk.svg' %}"></img>{% trans 'Talk in Mandarin Chinese' %}</span>
+			<span><img src="{% static 'pycontw-2018/assets/schedule/zh-slides.svg' %}"></img>{% trans 'Slides in Chinese' %}</span>
+		</div>
+	</div>
+	<div class="icon-group">
+		<div class="icon-block level">
+			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-novice.svg' %}"></img>{% trans 'Novice' %}</span>
+			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-intermediate.svg' %}"></img>{% trans 'Intermediate' %}</span>
+			<span><img src="{% static 'pycontw-2018/assets/schedule/python-level-experienced.svg' %}"></img>{% trans 'Experienced' %}</span>
+		</div>
+		<div class="icon-block recording">
+			<span><img src="{% static 'pycontw-2018/assets/schedule/no-recording.svg' %}"></img>{% trans 'No recording' %}</span>
+		</div>
+	</div>
+</div>
 
-{% block schedule %}
-{{ schedule_html|safe }}
-{% endblock schedule %}
+<article class="media schedule">
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			{% for schedule_date, schedule_info in schedule_days.items %}
+				<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+					{{ schedule_info.name }}
+				</li>
+			{% endfor %}
+		</ul>
+		{% block schedule %}
+		{{ schedule_html|safe }}
+		{% endblock schedule %}
+	</div>
+</article>
+
+{% block controls %}{% endblock controls %}
 
 {% endblock content %}
 

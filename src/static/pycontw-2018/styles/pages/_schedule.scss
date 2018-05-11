@@ -42,7 +42,7 @@ $spacing: 0.75rem;
 			}
 		}
 	}
-	> .icon-group-1 {
+	> .icon-group:first-child {
 		flex-direction: column;
 		> .icon-block {
 			justify-content: space-around;
@@ -51,8 +51,7 @@ $spacing: 0.75rem;
 			}
 		}
 	}
-
-	> .icon-group-2 {
+	> .icon-group:last-child {
 		flex-direction: row;
 		align-items: flex-start;
 		.icon-block {
