@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.urlresolvers import get_script_prefix
 from django.template import Library
 
@@ -26,3 +27,11 @@ def path_for_language(request, language_code):
     else:
         path = path.replace(script_prefix, i18n_prefix, 1)
     return path
+
+
+@register.filter
+def strip_language_prefix(path):
+    parts = path.split('/')
+    if parts[1] in (x[0] for x in settings.LANGUAGES):
+        parts = parts[:1] + parts[2:]
+    return '/'.join(parts)
