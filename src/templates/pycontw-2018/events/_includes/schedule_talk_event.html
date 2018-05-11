@@ -8,15 +8,6 @@
 			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
 	<img class="icon python-level {{ info.python_level.lower }}"
 			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
-	{% comment 'No sponsor talk this year.' %}
-	{% if sponsored %}
-	<span class="schedule-label sponsor-label"
-			data-balloon="Invited event" data-balloon-pos="down">
-		<span class="fa fa-handshake-o" aria-hidden="true"></span>
-		<span class="schedule-label-description">Invited event</span>
-	</span>
-	{% endif %}
-	{% endcomment %}
 	{% if not info.recording_policy %}
 	<img class="icon recording-no {{ info.python_level.lower }}"
 			src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></img>
