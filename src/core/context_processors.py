@@ -2,6 +2,7 @@ import itertools
 import operator
 
 from django.conf import settings
+from django.core.urlresolvers import get_script_prefix
 from django.utils.translation import get_language
 
 from sponsors.models import Sponsor
@@ -9,6 +10,12 @@ from sponsors.models import Sponsor
 
 def _build_google_form_url(uid):
     return 'https://docs.google.com/forms/d/e/{uid}/viewform'.format(uid=uid)
+
+
+def script_prefix(request):
+    return {
+        'SCRIPT_PREFIX': get_script_prefix(),
+    }
 
 
 def pycontw(request):

@@ -58,3 +58,17 @@
 {{ block.super }}
 <script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
 {% endblock scripts %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="application/json" id="i18n_variables">
+{
+	"LANGUAGE_PREFIXES": [
+		{% for code, _ in LANGUAGES %}
+		"{{ SCRIPT_PREFIX }}{{ code }}"{% if not forloop.last %}, {% endif %}
+		{% endfor %}
+	],
+	"LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
+}
+</script>
+{% endblock extra_js %}

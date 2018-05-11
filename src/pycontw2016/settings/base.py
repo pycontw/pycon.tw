@@ -43,6 +43,7 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.request',
+                'core.context_processors.script_prefix',
                 'core.context_processors.pycontw',
                 'core.context_processors.proposals_states',
                 'core.context_processors.reviews_states',
