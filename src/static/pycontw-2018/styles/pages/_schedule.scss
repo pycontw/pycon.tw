@@ -220,7 +220,7 @@
 
 		@include on-desktop() {
 			> * {
-				flex: 0;
+				flex: 0 0 auto;
 			}
 			.talk-title {
 				flex: 1;
