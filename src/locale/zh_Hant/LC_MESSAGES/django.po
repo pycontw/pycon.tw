@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 23:36+0800\n"
-"PO-Revision-Date: 2018-05-11 15:36+0000\n"
+"POT-Creation-Date: 2018-05-12 21:35+0800\n"
+"PO-Revision-Date: 2018-05-12 13:35+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -197,13 +197,13 @@ msgstr "最後更新"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:327
+#: events/admin.py:76 pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:328
+#: events/admin.py:77 pycontw2016/settings/base.py:329
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -760,28 +760,28 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:297
+#: pycontw2016/settings/base.py:298
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:298 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:299 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:299 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:300 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:321
+#: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:323
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:323
+#: pycontw2016/settings/base.py:324
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -1663,7 +1663,7 @@ msgid "Talks"
 msgstr "一般演講"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:43
-#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/_includes/menu.html:64
 msgid "Sprints"
 msgstr "衝刺開發"
 
@@ -1681,7 +1681,7 @@ msgstr "專業課程"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
-#: templates/pycontw-2018/_includes/menu.html:74
+#: templates/pycontw-2018/_includes/menu.html:81
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1714,7 +1714,7 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:69
+#: templates/pycontw-2018/_includes/menu.html:76
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -2156,24 +2156,32 @@ msgctxt "menu"
 msgid "Conference"
 msgstr "議程"
 
-#: templates/pycontw-2018/_includes/menu.html:55
+#: templates/pycontw-2018/_includes/menu.html:54
 msgid "Recording"
 msgstr "錄影"
 
 #: templates/pycontw-2018/_includes/menu.html:60
+msgid "Exchange"
+msgstr "交流"
+
+#: templates/pycontw-2018/_includes/menu.html:63
 msgctxt "menu"
 msgid "Learning"
-msgstr "學習交流"
+msgstr "學習"
 
 #: templates/pycontw-2018/_includes/menu.html:65
+msgid "Open Spaces"
+msgstr "開放空間"
+
+#: templates/pycontw-2018/_includes/menu.html:72
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/_includes/menu.html:75
 msgid "Conference Ticket"
 msgstr "會議門票"
 
-#: templates/pycontw-2018/_includes/menu.html:77
+#: templates/pycontw-2018/_includes/menu.html:84
 msgid "My PyCon"
 msgstr "My PyCon"
 
