@@ -9,7 +9,7 @@
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
-{% url 'page' path='events/openspaces' as events_openspaces_url %}
+{% url 'page' path='events/open-spaces' as events_openspaces_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
 {% url 'page' path='events/tutorials' as events_tutorial_url %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
@@ -56,7 +56,7 @@
 	</li>
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-events">{% trans 'Events' %}</label>
+		<label for="menu-navbar-{{ type }}-events">{% trans 'Exchange' %}</label>
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ events_tutorial_url }}">{% trans 'Learning' context 'menu' %}</a></li>
