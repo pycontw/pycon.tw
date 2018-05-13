@@ -241,7 +241,7 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
 def transform_keynote_info(i, info):
     info['id'] = f'keynote-{i}'
-    info['type'] = '',  # Not used.
+    info['type'] = ''   # Not used.
     info['start'] = timezone.make_aware(parse_datetime(info['start']))
     info['end'] = timezone.make_aware(parse_datetime(info['end']))
     info['speaker']['avatar'] = static(info['speaker']['avatar'])
