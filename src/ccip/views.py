@@ -1,8 +1,10 @@
 import json
 from django.http import JsonResponse
-from django.views.generic import View
+from django.views.generic import View, TemplateView
 from django.contrib.staticfiles import finders
 
+from core.views import IndexView
+from core.utils import TemplateExistanceStatusResponse
 from events.models import ProposedTalkEvent
 from events.views import transform_keynote_info
 
@@ -38,3 +40,8 @@ class CCIPAPIView(View):
                 for i, info in enumerate(json.load(f), 1)
             )
         return JsonResponse(dataset, safe=False)
+
+class CCIPSponsorsView(IndexView):
+
+    template_name = 'ccip/sponsors.html'
+    response_class = TemplateExistanceStatusResponse
