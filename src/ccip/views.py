@@ -45,3 +45,8 @@ class CCIPSponsorsView(IndexView):
 
     template_name = 'ccip/sponsors.html'
     response_class = TemplateExistanceStatusResponse
+
+class CCIPStaffView(TemplateView):
+
+    template_name = 'ccip/staff.html'
+    response_class = TemplateExistanceStatusResponse
