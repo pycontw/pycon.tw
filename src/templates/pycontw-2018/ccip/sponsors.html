@@ -1,8 +1,26 @@
-{% extends "index.html" %}
+{% extends 'base.html' %}
 
-{% load i18n static %}
+{% load static %}
 
 {% block styles %}
-{{ block.super }}
 <link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/ccip.scss' %}">
 {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block titletag %}
+<title>PyCon Taiwan 2018</title>
+{% endblock titletag %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+{% include '_includes/hero.html' %}
+{% include '_includes/sponsors.html' %}
+{% endblock content_full %}
+
+{% block footer %}
+<footer></footer>
+{% endblock footer %}
