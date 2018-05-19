@@ -110,6 +110,7 @@ LOCAL_APPS = (
     'reviews',
     'sponsors',
     'users',
+    'ccip',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
