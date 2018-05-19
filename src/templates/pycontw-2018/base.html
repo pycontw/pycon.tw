@@ -66,7 +66,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% block content_full %}{% endblock content_full %}
 
+{% block footer %}
 {% include '_includes/footer.html' %}
+{% endblock footer %}
 
 {% compress js %}
 {% block scripts %}
