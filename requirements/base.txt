@@ -64,6 +64,10 @@ python-firebase==1.2
 # http://pythonhosted.org/pytz/
 pytz==2015.7
 
+# Thumbnails for Django.
+# https://sorl-thumbnail.readthedocs.io
+sorl-thumbnail==12.4.1
+
 # Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
 # http://www.grantjenks.com/docs/sortedcontainers/
 sortedcontainers==1.4.4
