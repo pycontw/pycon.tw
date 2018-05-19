@@ -1,6 +1,7 @@
 import datetime
 import base64
 import hashlib
+import os
 
 from django.conf import settings
 from django.contrib.auth.models import (
@@ -15,6 +16,8 @@ from django.template.loader import render_to_string
 from django.templatetags.static import static
 from django.utils import timezone
 from django.utils.translation import ugettext, ugettext_lazy as _
+
+from sorl.thumbnail import get_thumbnail
 
 from core.utils import format_html_lazy
 from core.models import EAWTextField
@@ -223,11 +226,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.speaker_name
 
-    def get_photo_url(self):
-        """Return the photo URL if set, otherwise a default image.
+    def get_thumbnail_url(self):
+        """Return URL to compressed profile photo if set, or a default image.
         """
-        if self.photo:
-            return self.photo.url
+        if self.photo and os.path.exists(self.photo.path):
+            return get_thumbnail(self.photo, '800x800').url
         return static('images/default_head.png')
 
     def is_valid_speaker(self):

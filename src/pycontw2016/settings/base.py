@@ -100,6 +100,7 @@ THIRD_PARTY_APPS = (
     'django_extensions',
     'django_q',
     'import_export',
+    'sorl.thumbnail',
 )
 
 LOCAL_APPS = (

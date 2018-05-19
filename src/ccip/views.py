@@ -29,25 +29,29 @@ def transform_keynote_info(request, i, info):
     return info
 
 
+def transform_talk_info(request, event):
+    return {
+        'id': f'talk-{event.pk}',
+        'subject': event.proposal.title,
+        'summary': event.proposal.abstract,
+        'type': '',     # Not used.
+        'room': event.get_location_display(),
+        'start': event.begin_time.value.isoformat(),
+        'end': event.end_time.value.isoformat(),
+        'speaker': {
+            'name': event.proposal.submitter.speaker_name,
+            'avatar': request.build_absolute_uri(
+                event.proposal.submitter.get_thumbnail_url(),
+            ),
+            'bio': event.proposal.submitter.bio,
+        },
+    }
+
+
 class CCIPAPIView(View):
     def get(self, request):
         dataset = [
-            {
-                'id': f'talk-{event.pk}',
-                'subject': event.proposal.title,
-                'summary': event.proposal.abstract,
-                'type': '',     # Not used.
-                'room': event.get_location_display(),
-                'start': event.begin_time.value.isoformat(),
-                'end': event.end_time.value.isoformat(),
-                'speaker': {
-                    'name': event.proposal.submitter.speaker_name,
-                    'avatar': request.build_absolute_uri(
-                        event.proposal.submitter.get_photo_url(),
-                    ),
-                    'bio': event.proposal.submitter.bio,
-                },
-            }
+            transform_talk_info(request, event)
             for event in ProposedTalkEvent.objects.select_related(
                 'proposal', 'proposal__submitter',
             )
