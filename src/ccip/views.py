@@ -1,17 +1,35 @@
 import json
-from django.http import JsonResponse
-from django.views.generic import View, TemplateView
+
 from django.contrib.staticfiles import finders
+from django.templatetags.static import static
+from django.http import JsonResponse
+from django.utils import timezone
+from django.utils.dateparse import parse_datetime
+from django.views.generic import View, TemplateView
 
 from core.views import IndexView
 from core.utils import TemplateExistanceStatusResponse
 from events.models import ProposedTalkEvent
-from events.views import transform_keynote_info
 
-# Create your views here.
+
+def convert_to_utc(value):
+    # CCIP on Android does not take offset well because Java's timezone API
+    # sucks. Convert to UTC because we ought to help those poor souls.
+    return timezone.make_aware(parse_datetime(value)).astimezone(timezone.utc)
+
+
+def transform_keynote_info(request, i, info):
+    info['id'] = f'keynote-{i}'
+    info['type'] = ''   # Not used.
+    info['start'] = convert_to_utc(info['start'])
+    info['end'] = convert_to_utc(info['end'])
+    info['speaker']['avatar'] = request.build_absolute_uri(
+        static(info['speaker']['avatar']),
+    )
+    return info
+
 
 class CCIPAPIView(View):
-
     def get(self, request):
         dataset = [
             {
@@ -41,12 +59,12 @@ class CCIPAPIView(View):
             )
         return JsonResponse(dataset, safe=False)
 
-class CCIPSponsorsView(IndexView):
 
+class CCIPSponsorsView(IndexView):
     template_name = 'ccip/sponsors.html'
     response_class = TemplateExistanceStatusResponse
 
-class CCIPStaffView(TemplateView):
 
+class CCIPStaffView(TemplateView):
     template_name = 'ccip/staff.html'
     response_class = TemplateExistanceStatusResponse

@@ -1,18 +1,14 @@
 import collections
-import json
 import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse
 from django.db.models import Count
-from django.http import HttpResponseRedirect, JsonResponse
-from django.templatetags.static import static
-from django.utils import timezone, translation
-from django.utils.dateparse import parse_datetime
+from django.http import HttpResponseRedirect
+from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DetailView, TemplateView, View
+from django.views.generic import CreateView, DetailView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
@@ -237,14 +233,3 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     def get_time_slot(self):
         return (self.object.begin_time.value, self.object.end_time.value)
-
-
-def transform_keynote_info(request, i, info):
-    info['id'] = f'keynote-{i}'
-    info['type'] = ''   # Not used.
-    info['start'] = timezone.make_aware(parse_datetime(info['start']))
-    info['end'] = timezone.make_aware(parse_datetime(info['end']))
-    info['speaker']['avatar'] = request.build_absolute_uri(
-        static(info['speaker']['avatar']),
-    )
-    return info
