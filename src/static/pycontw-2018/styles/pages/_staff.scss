@@ -1,0 +1,9 @@
+.staff-list {
+	@include list-reset();
+	margin: auto auto 64px auto;
+	margin-left: calc(50% - 80px);
+
+	li {
+		text-indent: 0;
+	}
+}
