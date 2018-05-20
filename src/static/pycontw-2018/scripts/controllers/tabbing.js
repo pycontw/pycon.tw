@@ -1,5 +1,7 @@
 import {Controller} from 'stimulus'
 
+let controllerID = 0
+
 function formatTabStorageKey(tabKey) {
 	return `${window.location.pathname}-tabbing-${tabKey}`
 }
@@ -13,7 +15,7 @@ function setTabState(tabKey, value) {
 
 function getTabState(tabKey) {
 	if (!window.localStorage) {
-		return
+		return null
 	}
 	let value = Number(window.localStorage.getItem(formatTabStorageKey(tabKey)))
 	if (isNaN(value)) {
@@ -43,16 +45,23 @@ export class TabbingController extends Controller {
 				p.classList.add('hidden')
 			}
 		}
+		setTabState(this.data.get('id'), index.toString())
 	}
 
 	_ensureSingleActive(tabs) {
 		if (tabs.length < 1) {
 			return
 		}
+
 		let activeTabs = []
-		for (const tab of tabs) {
-			if (tab.classList.contains('active')) {
-				activeTabs.push(tab)
+		const state = Number(getTabState(this.data.get('id')))
+		if (Number.isInteger(state) && state >= 0 && state < tabs.length) {
+			activeTabs.push(tabs[state])
+		} else {
+			for (const tab of tabs) {
+				if (tab.classList.contains('active')) {
+					activeTabs.push(tab)
+				}
 			}
 		}
 		if (activeTabs.length < 1) {
@@ -65,6 +74,11 @@ export class TabbingController extends Controller {
 	connect() {
 		this.element.classList.add('enabled')
 		this._ensureSingleActive(this.tabTargets)
+	}
+
+	initialize() {
+		this.data.set('id', controllerID.toString())
+		controllerID += 1
 	}
 
 	activate(event) {
