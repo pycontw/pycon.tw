@@ -30,6 +30,8 @@ export class TabbingController extends Controller {
 
 	_activateTab(tab) {
 		let index = -1
+
+		// Find a tab to activate.
 		for (const [i, t] of this.tabTargets.entries()) {
 			if (t === tab) {
 				t.classList.add('active')
@@ -38,6 +40,8 @@ export class TabbingController extends Controller {
 				t.classList.remove('active')
 			}
 		}
+
+		// Find the corresponding pane to show.
 		for (const [i, p] of this.paneTargets.entries()) {
 			if (i === index) {
 				p.classList.remove('hidden')
@@ -45,6 +49,8 @@ export class TabbingController extends Controller {
 				p.classList.add('hidden')
 			}
 		}
+
+		// Record this into local storage.
 		setTabState(this.data.get('id'), index.toString())
 	}
 
@@ -53,6 +59,9 @@ export class TabbingController extends Controller {
 			return
 		}
 
+		// Find an initial tab to show with the following priority:
+		// 1. Check if the user has already set it in the local storage.
+		// 2. Look for a tab marked as "active" in HTML.
 		let activeTabs = []
 		const state = Number(getTabState(this.data.get('id')))
 		if (Number.isInteger(state) && state >= 0 && state < tabs.length) {
@@ -64,6 +73,8 @@ export class TabbingController extends Controller {
 				}
 			}
 		}
+
+		// If an initial tab is found, use it; otherwise activate the first tab.
 		if (activeTabs.length < 1) {
 			this._activateTab(tabs[0])
 		} else {
@@ -77,6 +88,7 @@ export class TabbingController extends Controller {
 	}
 
 	initialize() {
+		// Give this tabbing group an ID, to be used when saving to local storage.
 		this.data.set('id', controllerID.toString())
 		controllerID += 1
 	}
