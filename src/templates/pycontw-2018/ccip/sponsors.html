@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load i18n static %}
 
 {% block styles %}
 <link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2018/styles/ccip.scss' %}">
@@ -17,7 +17,9 @@
 {% block nav %}{% endblock nav %}
 
 {% block content_full %}
+{% language 'en-us' %}
 {% include '_includes/sponsors.html' %}
+{% endlanguage %}
 {% endblock content_full %}
 
 {% block footer %}
