@@ -264,7 +264,7 @@ class ProposedTalkEvent(BaseEvent):
         return reverse('events_talk_detail', kwargs={'pk': self.proposal.pk})
 
 
-class Schedule(models.Model):
+class Schedule(ConferenceRelated):
 
     html = models.TextField(
         verbose_name=_('HTML'),
