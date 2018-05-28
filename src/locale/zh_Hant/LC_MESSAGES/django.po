@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Adrian Liaw <adrianliaw2000@gmail.com>, 2018
 # Michelle <flywindy2002@gmail.com>, 2015-2016
@@ -2301,51 +2301,6 @@ msgstr "夥伴"
 #: templates/pycontw-2018/index.html:131
 msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
-
-#: templates/pycontw2018/_includes/staff.html:3
-msgid "Staff Chairperson"
-msgstr "主席"
-
-#: templates/pycontw2018/_includes/staff.html:8
-msgid "Staff Registration"
-msgstr "註冊"
-
-#: templates/pycontw2018/_includes/staff.html:16
-msgid "Staff Development"
-msgstr "開發"
-
-#: templates/pycontw2018/_includes/staff.html:25
-msgid "Staff Public Relations"
-msgstr "公關"
-
-#: templates/pycontw2018/_includes/staff.html:34
-msgid "Staff Design"
-msgstr "設計"
-
-
-#: templates/pycontw2018/_includes/staff.html:41
-msgid "Staff Photography"
-msgstr "紀錄"
-
-#: templates/pycontw2018/_includes/staff.html:54
-msgid "Staff Program"
-msgstr "議程"
-
-#: templates/pycontw2018/_includes/staff.html:65
-msgid "Staff Sponsorship"
-msgstr "贊助"
-
-#: templates/pycontw2018/_includes/staff.html:80
-msgid "Staff Financial"
-msgstr "財務"
-
-#: templates/pycontw2018/_includes/staff.html:85
-msgid "Staff Venue"
-msgstr "場務"
-
-#: templates/pycontw2018/_includes/staff.html:98
-msgid "Staff Review Committee"
-msgstr "審稿委員"
 
 #: users/admin.py:18
 msgid "Personal info"

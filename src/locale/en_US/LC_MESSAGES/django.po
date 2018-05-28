@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 # Dorian Gray <t_true@mail.ru>, 2017
 # Jason <chairco@gmail.com>, 2017
@@ -2296,50 +2296,6 @@ msgstr "Partners"
 #: templates/pycontw-2018/index.html:131
 msgid "Enquire about sponsorship"
 msgstr "Enquire about sponsorship"
-
-#: templates/pycontw2018/_includes/staff.html:3
-msgid "Staff Chairperson"
-msgstr "Chairperson"
-
-#: templates/pycontw2018/_includes/staff.html:8
-msgid "Staff Registration"
-msgstr "Registration"
-
-#: templates/pycontw2018/_includes/staff.html:16
-msgid "Staff Development"
-msgstr "Development"
-
-#: templates/pycontw2018/_includes/staff.html:25
-msgid "Staff Public Relations"
-msgstr "Public Relations"
-
-#: templates/pycontw2018/_includes/staff.html:34
-msgid "Staff Design"
-msgstr "Design"
-
-#: templates/pycontw2018/_includes/staff.html:41
-msgid "Staff Photography"
-msgstr "Photography"
-
-#: templates/pycontw2018/_includes/staff.html:54
-msgid "Staff Program"
-msgstr "Program"
-
-#: templates/pycontw2018/_includes/staff.html:65
-msgid "Staff Sponsorship"
-msgstr "Sponsorship"
-
-#: templates/pycontw2018/_includes/staff.html:80
-msgid "Staff Financial"
-msgstr "Financial"
-
-#: templates/pycontw2018/_includes/staff.html:85
-msgid "Staff Venue"
-msgstr "Venue"
-
-#: templates/pycontw2018/_includes/staff.html:98
-msgid "Staff Review Committee"
-msgstr "Review Committee"
 
 #: users/admin.py:18
 msgid "Personal info"
