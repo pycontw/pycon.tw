@@ -1,7 +1,7 @@
 .staff-list {
 	@include list-reset();
 	margin: auto auto 64px auto;
-	margin-left: calc(50% - 80px);
+	text-align: center;
 
 	li {
 		text-indent: 0;
