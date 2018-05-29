@@ -5,64 +5,31 @@
 
 {% block title %}{% trans 'Portal' %}{% endblock title %}
 
+{% block body_class%}portal-page{% endblock body_class%}
+
 {% block content%}
 <h1>{% trans 'Portal' %}</h1>
 
-<section class="index-volunteer">
-<a href="{% url 'events_schedule' %}" class="card-link">
-		<h3 class="title-box">{% trans 'Schedule' %}</h3>
-	</a>
-</section>
+<h2>{% trans 'Portal' %}</h2>
+
 <section class="portal-element portal-cards">
 
-<div class="card">
-	<a href="{% url 'events_schedule' %}" class="card-link">
-		<h3 class="title-box">{% trans 'Schedule' %}</h3>
-	</a>
-</div>
-
-<div class="card">
-	<a href="https://hackfoldr.org/pycontw2017/" class="card-link"
-		target="_blank" rel="noopener">
-		<h3 class="title-box">{% trans 'Collaborative Notes' %}</h3>
-	</a>
-</div>
-
 	<div class="card">
-		<a href="https://gitter.im/pycontw/2017" class="card-link"
-				target="_blank" rel="noopener">
-			<h3 class="title-box">{% trans 'Chat Room' %}</h3>
-		</a>
+		<a class="button-round" href="{% url 'events_schedule' %}" class="card-link">{% trans 'Schedule' %}</a>
 	</div>
 
 	<div class="card">
-		<a href="https://pycontw2017-quizbot.herokuapp.com/leaderboard"
-				class="card-link"
-				target="_blank" rel="noopener">
-			<h3 class="title-box">{% trans 'Quiz Leaderboard' %}</h3>
-		</a>
+		<a class="button-round" href="https://hackmd.io/c/pycontw2018" class="card-link">{% trans 'Collaborative Notes' %}</a>
 	</div>
 
 	<div class="card">
-		<a href="https://www.facebook.com/pycontw/" class="card-link"
-				target="_blank" rel="noopener">
-			<h3 class="title-box">{% trans 'Facebook Fan Page' %}</h3>
-		</a>
+		<a class="button-round" href="http://t.me/pycontw2018" class="card-link">{% trans 'Chat Room' %}</a>
 	</div>
 
-</section>
-
-<h2>{% trans 'Mobile Apps' %}</h2>
-
-<section class="portal-element portal-row">
-	<div class="fixed column">
-		<a href="https://itunes.apple.com/tw/app/pycontw-17/id1244168803" target="_blank" rel="noopener" class="portal-button store-link app-store"><img src="{% static 'pycontw-2017/images/download-on-the-app-store.svg' %}" alt="{% trans 'Download on the App Store' %}" /></a>
-	</div>
-	<div class="fixed column">
-		<a href='https://play.google.com/store/apps/details?id=com.pycontwmobile' target="_blank" rel="noopener" class="portal-button store-link"><img alt="{% trans 'Get it on Google Play' %}" src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' /></a>
+	<div class="card">
+		<a class="button-round" href="https://www.facebook.com/pycontw/" class="card-link">{% trans 'Facebook Fan Page' %}</a>
 	</div>
 </section>
-
 
 {% endblock content%}
 
