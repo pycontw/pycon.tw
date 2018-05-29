@@ -21,6 +21,7 @@
 {% url 'page' path='registration/ticket-info' as reg_ticket_info_url %}
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
+{% url 'page' path='portal' as portal_url %}
 
 <ul class="menu" data-controller="menu">
 	<li>
@@ -51,6 +52,7 @@
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
 				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
+				<li><a href="{{ portal_url }}">{% trans 'Portal' %}</a></li>
 			</ul>
 		</div>
 	</li>
