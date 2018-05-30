@@ -19,6 +19,7 @@
 {% url 'sponsor_list' as sponsor_url %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 {% url 'page' path='registration/ticket-info' as reg_ticket_info_url %}
+{% url 'page' path='registration/registration' as reg_registration_url %}
 {% url 'page' path='venue' as venue_url %}
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 {% url 'page' path='portal' as portal_url %}
@@ -76,6 +77,7 @@
 			<ul class="submenu">
 				<li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
 				<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
+				<li><a href="{{ reg_registration_url }}">{% trans 'Registration' context 'registration' %}</a></li>
 			</ul>
 		</div>
 	</li>
