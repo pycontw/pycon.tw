@@ -5,15 +5,16 @@
 # Translators:
 # Dorian Gray <t_true@mail.ru>, 2017
 # Jason <chairco@gmail.com>, 2017
+# jneo8 <james0910238727@gmail.com>, 2018
 # Michelle <flywindy2002@gmail.com>, 2016
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 21:35+0800\n"
-"PO-Revision-Date: 2018-05-12 13:35+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-05-30 18:39+0800\n"
+"PO-Revision-Date: 2018-05-30 15:45+0000\n"
+"Last-Translator: jneo8 <james0910238727@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgstr "title"
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:13
+#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:12
 msgid "Community"
 msgstr "Community"
 
@@ -191,13 +192,13 @@ msgstr "last updated at"
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:328
+#: events/admin.py:76 pycontw2016/settings/base.py:330
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:329
+#: events/admin.py:77 pycontw2016/settings/base.py:331
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -279,7 +280,7 @@ msgstr "custom event"
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:182 users/models.py:113
+#: events/models.py:182 users/models.py:116
 msgid "speaker name"
 msgstr "speaker name"
 
@@ -341,7 +342,8 @@ msgstr "HTML"
 #: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
-#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/contents/_default/portal.html:17
 #: templates/pycontw-2018/events/schedule.html:6
 #: templates/pycontw-2018/events/schedule.html:20
 msgid "Schedule"
@@ -363,7 +365,7 @@ msgstr "Keynote"
 msgid "EN Slides"
 msgstr "EN Slides"
 
-#: events/views.py:97
+#: events/views.py:93
 msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
 
@@ -512,7 +514,7 @@ msgstr "No valid speaker found with your selection."
 msgid "Proposal author"
 msgstr "Proposal author"
 
-#: proposals/models.py:59 users/models.py:193
+#: proposals/models.py:59 users/models.py:196
 msgid "user"
 msgstr "user"
 
@@ -754,28 +756,28 @@ msgstr "Talk proposal <strong>{title}</strong> updated."
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:298
+#: pycontw2016/settings/base.py:300
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:299 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:301 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:300 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:302 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:324
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:323
+#: pycontw2016/settings/base.py:325
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:324
+#: pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "Prefer 45min"
@@ -1322,7 +1324,7 @@ msgid "Stage"
 msgstr "Stage"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: users/models.py:218
+#: users/models.py:221
 msgid "Reviewer ID"
 msgstr "Reviewer ID"
 
@@ -1618,7 +1620,7 @@ msgid "We screwed up. It’s not your fault."
 msgstr "We screwed up. It’s not your fault."
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
-#: templates/pycontw-2018/_includes/menu.html:27
+#: templates/pycontw-2018/_includes/menu.html:29
 msgid "About"
 msgstr "About"
 
@@ -1630,6 +1632,9 @@ msgstr "Code of Conduct"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:33
 #: templates/pycontw-2016/contents/_default/about/staff.html:6
 #: templates/pycontw-2016/contents/_default/about/staff.html:7
+#: templates/pycontw-2018/_includes/footer.html:11
+#: templates/pycontw-2018/contents/_staff.html:5
+#: templates/pycontw-2018/contents/_staff.html:9
 msgid "Staff"
 msgstr "Staff"
 
@@ -1642,7 +1647,9 @@ msgid "Overview"
 msgstr "Overview"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:41
-#: templates/pycontw-2018/_includes/menu.html:52
+#: templates/pycontw-2018/_includes/menu.html:55
+#: templates/pycontw-2018/contents/en/events/overview.html:38
+#: templates/pycontw-2018/contents/zh/events/overview.html:38
 msgid "Keynotes"
 msgstr "Keynotes"
 
@@ -1651,14 +1658,18 @@ msgstr "Keynotes"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
-#: templates/pycontw-2018/_includes/menu.html:53
+#: templates/pycontw-2018/_includes/menu.html:56
+#: templates/pycontw-2018/contents/en/events/overview.html:44
+#: templates/pycontw-2018/contents/zh/events/overview.html:44
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
 msgstr "Talks"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:43
-#: templates/pycontw-2018/_includes/menu.html:64
+#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/contents/en/events/overview.html:30
+#: templates/pycontw-2018/contents/zh/events/overview.html:30
 msgid "Sprints"
 msgstr "Sprints"
 
@@ -1676,7 +1687,7 @@ msgstr "Tutorial"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
-#: templates/pycontw-2018/_includes/menu.html:81
+#: templates/pycontw-2018/_includes/menu.html:86
 msgctxt "conf location"
 msgid "Venue"
 msgstr "Venue"
@@ -1709,7 +1720,7 @@ msgid "Ticket Info"
 msgstr "Ticket Info"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:76
+#: templates/pycontw-2018/_includes/menu.html:80
 msgid "Financial Aid"
 msgstr "Financial Aid"
 
@@ -1932,6 +1943,7 @@ msgid "schedule"
 msgstr "schedule"
 
 #: templates/pycontw-2017/_includes/header.html:61
+#: templates/pycontw-2018/_includes/menu.html:53
 msgid "overview"
 msgstr "overview"
 
@@ -1986,14 +1998,19 @@ msgstr "dashboard"
 
 #: templates/pycontw-2017/contents/_default/portal.html:5
 #: templates/pycontw-2017/contents/_default/portal.html:10
+#: templates/pycontw-2018/_includes/menu.html:58
+#: templates/pycontw-2018/contents/_default/portal.html:6
+#: templates/pycontw-2018/contents/_default/portal.html:12
 msgid "Portal"
 msgstr "Portal"
 
 #: templates/pycontw-2017/contents/_default/portal.html:23
+#: templates/pycontw-2018/contents/_default/portal.html:21
 msgid "Collaborative Notes"
 msgstr "Collaborative Notes"
 
 #: templates/pycontw-2017/contents/_default/portal.html:30
+#: templates/pycontw-2018/contents/_default/portal.html:25
 msgid "Chat Room"
 msgstr "Chat Room"
 
@@ -2003,6 +2020,7 @@ msgstr "Quiz Leaderboard"
 
 #: templates/pycontw-2017/contents/_default/portal.html:45
 #: templates/pycontw-2017/contents/_default/portal.html:65
+#: templates/pycontw-2018/contents/_default/portal.html:29
 msgid "Facebook Fan Page"
 msgstr "Facebook Fan Page"
 
@@ -2109,7 +2127,7 @@ msgstr "12 March, 12 June"
 msgid "Get Tickets"
 msgstr "Get Tickets"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:58
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:49
 msgid "Volunteers Needed"
 msgstr "Volunteers Needed"
 
@@ -2146,39 +2164,111 @@ msgstr "Python Communities in Taiwan"
 msgid "Our Partners"
 msgstr "Our Partners"
 
-#: templates/pycontw-2018/_includes/menu.html:48
+#: templates/pycontw-2018/_includes/menu.html:50
 msgctxt "menu"
 msgid "Conference"
 msgstr "Conference"
 
-#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/_includes/menu.html:57
 msgid "Recording"
 msgstr "Recording"
 
-#: templates/pycontw-2018/_includes/menu.html:60
+#: templates/pycontw-2018/_includes/menu.html:64
 msgid "Exchange"
 msgstr "Exchange"
 
-#: templates/pycontw-2018/_includes/menu.html:63
+#: templates/pycontw-2018/_includes/menu.html:67
+#: templates/pycontw-2018/contents/en/events/overview.html:22
+#: templates/pycontw-2018/contents/zh/events/overview.html:22
 msgctxt "menu"
 msgid "Learning"
 msgstr "Learning"
 
-#: templates/pycontw-2018/_includes/menu.html:65
+#: templates/pycontw-2018/_includes/menu.html:69
+#: templates/pycontw-2018/contents/en/events/overview.html:58
+#: templates/pycontw-2018/contents/zh/events/overview.html:60
 msgid "Open Spaces"
 msgstr "Open Spaces"
 
-#: templates/pycontw-2018/_includes/menu.html:72
+#: templates/pycontw-2018/_includes/menu.html:76
 msgid "Registration"
 msgstr "Registration"
 
-#: templates/pycontw-2018/_includes/menu.html:75
+#: templates/pycontw-2018/_includes/menu.html:79
 msgid "Conference Ticket"
 msgstr "Conference Ticket"
 
-#: templates/pycontw-2018/_includes/menu.html:84
+#: templates/pycontw-2018/_includes/menu.html:81
+msgctxt "registration"
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/menu.html:89
 msgid "My PyCon"
 msgstr "My PyCon"
+
+#: templates/pycontw-2018/_includes/sponsors.html:7
+msgid "Partners"
+msgstr "Partners"
+
+#: templates/pycontw-2018/_includes/sponsors.html:70
+msgid "Enquire about sponsorship"
+msgstr "Enquire about sponsorship"
+
+#: templates/pycontw-2018/_includes/staff.html:3
+msgctxt "staff"
+msgid "Chairperson"
+msgstr "Chairperson"
+
+#: templates/pycontw-2018/_includes/staff.html:8
+msgctxt "staff"
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/staff.html:16
+msgctxt "staff"
+msgid "Development"
+msgstr "Development"
+
+#: templates/pycontw-2018/_includes/staff.html:25
+msgctxt "staff"
+msgid "Public Relations"
+msgstr "Public Relations"
+
+#: templates/pycontw-2018/_includes/staff.html:34
+msgctxt "staff"
+msgid "Design"
+msgstr "Design"
+
+#: templates/pycontw-2018/_includes/staff.html:41
+msgctxt "staff"
+msgid "Photography"
+msgstr "Photography"
+
+#: templates/pycontw-2018/_includes/staff.html:54
+msgctxt "staff"
+msgid "Program"
+msgstr "Program"
+
+#: templates/pycontw-2018/_includes/staff.html:65
+msgctxt "staff"
+msgid "Sponsorship"
+msgstr "Sponsorship"
+
+#: templates/pycontw-2018/_includes/staff.html:80
+msgctxt "staff"
+msgid "Financial"
+msgstr "Financial"
+
+#: templates/pycontw-2018/_includes/staff.html:85
+msgctxt "staff"
+msgid "Venue"
+msgstr "Venue"
+
+#: templates/pycontw-2018/_includes/staff.html:98
+msgctxt "staff"
+msgid "Review Committee"
+msgstr "Review Committee"
 
 #: templates/pycontw-2018/events/schedule.html:24
 msgid "English speech"
@@ -2258,21 +2348,21 @@ msgid ""
 "%(speaker_names)s"
 msgstr "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> by %(speaker_names)s"
 
-#: templates/pycontw-2018/index.html:41
+#: templates/pycontw-2018/index.html:32
 msgid "What is PyCon"
 msgstr "What is PyCon"
 
-#: templates/pycontw-2018/index.html:42
+#: templates/pycontw-2018/index.html:33
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are"
 " many other conferences being run in the PyCon spirit around the world.</p>"
 msgstr "<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>"
 
-#: templates/pycontw-2018/index.html:48
+#: templates/pycontw-2018/index.html:39
 msgid "What is PyCon Taiwan"
 msgstr "What is PyCon Taiwan"
 
-#: templates/pycontw-2018/index.html:49
+#: templates/pycontw-2018/index.html:40
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -2281,21 +2371,13 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>"
 
-#: templates/pycontw-2018/index.html:59
+#: templates/pycontw-2018/index.html:50
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>Help us organize and make the conference successful!</p>"
 
-#: templates/pycontw-2018/index.html:60
+#: templates/pycontw-2018/index.html:51
 msgid "Become a volunteer"
 msgstr "Become a volunteer"
-
-#: templates/pycontw-2018/index.html:68
-msgid "Partners"
-msgstr "Partners"
-
-#: templates/pycontw-2018/index.html:131
-msgid "Enquire about sponsorship"
-msgstr "Enquire about sponsorship"
 
 #: users/admin.py:18
 msgid "Personal info"
@@ -2362,28 +2444,28 @@ msgstr "Request Password Reset"
 msgid "Set Password"
 msgstr "Set Password"
 
-#: users/models.py:109
+#: users/models.py:112
 msgid "email address"
 msgstr "email address"
 
-#: users/models.py:117
+#: users/models.py:120
 msgid "biography"
 msgstr "biography"
 
-#: users/models.py:120
+#: users/models.py:123
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "Describe yourself with 500 characters or less. There will be no formatting."
 
-#: users/models.py:125
+#: users/models.py:128
 msgid "photo"
 msgstr "photo"
 
-#: users/models.py:129
+#: users/models.py:132
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:132
+#: users/models.py:135
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2392,61 +2474,61 @@ msgid ""
 "first!"
 msgstr "Link to your Facebook profile page. This will be shown when we display your public information. If you do not know what your profile page link is, click on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and copy-paste the URL of the page opened. Remember to log in to Facebook first!"
 
-#: users/models.py:141
+#: users/models.py:144
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:146
+#: users/models.py:149
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your Twitter handle, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:151
+#: users/models.py:154
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:156
+#: users/models.py:159
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "Your GitHub account, without the “@” sign. This will be shown when we display your public information."
 
-#: users/models.py:161
+#: users/models.py:164
 msgid "verified"
 msgstr "verified"
 
-#: users/models.py:164
+#: users/models.py:167
 msgid "Designates whether the user has verified email ownership."
 msgstr "Designates whether the user has verified email ownership."
 
-#: users/models.py:168
+#: users/models.py:171
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:171
+#: users/models.py:174
 msgid "Designates whether the user can log into this admin site."
 msgstr "Designates whether the user can log into this admin site."
 
-#: users/models.py:175
+#: users/models.py:178
 msgid "active"
 msgstr "active"
 
-#: users/models.py:178
+#: users/models.py:181
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
 
-#: users/models.py:183
+#: users/models.py:186
 msgid "date joined"
 msgstr "date joined"
 
-#: users/models.py:194
+#: users/models.py:197
 msgid "users"
 msgstr "users"
 
-#: users/models.py:290
+#: users/models.py:293
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"

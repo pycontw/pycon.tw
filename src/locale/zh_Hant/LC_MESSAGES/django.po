@@ -7,6 +7,7 @@
 # Michelle <flywindy2002@gmail.com>, 2015-2016
 # Michelle <flywindy2002@gmail.com>, 2015
 # Jason <chairco@gmail.com>, 2017
+# jneo8 <james0910238727@gmail.com>, 2018
 # Liang-Bo Wang <me@liang2.tw>, 2015-2016
 # Liang-Bo Wang <me@liang2.tw>, 2016
 # Michelle <flywindy2002@gmail.com>, 2016
@@ -17,9 +18,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 21:35+0800\n"
-"PO-Revision-Date: 2018-05-12 13:35+0000\n"
-"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
+"POT-Creation-Date: 2018-05-30 18:39+0800\n"
+"PO-Revision-Date: 2018-05-30 15:42+0000\n"
+"Last-Translator: jneo8 <james0910238727@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr "題目"
 msgid "Best Practices & Patterns"
 msgstr "最佳實踐與慣例"
 
-#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:13
+#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:12
 msgid "Community"
 msgstr "社群"
 
@@ -197,13 +198,13 @@ msgstr "最後更新"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:76 pycontw2016/settings/base.py:328
+#: events/admin.py:76 pycontw2016/settings/base.py:330
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: events/admin.py:77 pycontw2016/settings/base.py:329
+#: events/admin.py:77 pycontw2016/settings/base.py:331
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -285,7 +286,7 @@ msgstr "自訂活動"
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:182 users/models.py:113
+#: events/models.py:182 users/models.py:116
 msgid "speaker name"
 msgstr "演講者"
 
@@ -347,7 +348,8 @@ msgstr "HTML"
 #: templates/pycontw-2017/contents/_default/portal.html:16
 #: templates/pycontw-2017/events/schedule.html:6
 #: templates/pycontw-2017/events/schedule.html:17
-#: templates/pycontw-2018/_includes/menu.html:51
+#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/contents/_default/portal.html:17
 #: templates/pycontw-2018/events/schedule.html:6
 #: templates/pycontw-2018/events/schedule.html:20
 msgid "Schedule"
@@ -369,7 +371,7 @@ msgstr "基調演講"
 msgid "EN Slides"
 msgstr "英文投影片"
 
-#: events/views.py:97
+#: events/views.py:93
 msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
@@ -518,7 +520,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:59 users/models.py:193
+#: proposals/models.py:59 users/models.py:196
 msgid "user"
 msgstr "使用者"
 
@@ -760,28 +762,28 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:298
+#: pycontw2016/settings/base.py:300
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:299 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:301 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:300 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:302 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:324
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:323
+#: pycontw2016/settings/base.py:325
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:324
+#: pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
@@ -1328,7 +1330,7 @@ msgid "Stage"
 msgstr "階段"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: users/models.py:218
+#: users/models.py:221
 msgid "Reviewer ID"
 msgstr "審稿人代號"
 
@@ -1623,7 +1625,7 @@ msgid "We screwed up. It’s not your fault."
 msgstr "我們搞砸了，這不是你的問題。"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
-#: templates/pycontw-2018/_includes/menu.html:27
+#: templates/pycontw-2018/_includes/menu.html:29
 msgid "About"
 msgstr "關於"
 
@@ -1635,6 +1637,9 @@ msgstr "行為準則"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:33
 #: templates/pycontw-2016/contents/_default/about/staff.html:6
 #: templates/pycontw-2016/contents/_default/about/staff.html:7
+#: templates/pycontw-2018/_includes/footer.html:11
+#: templates/pycontw-2018/contents/_staff.html:5
+#: templates/pycontw-2018/contents/_staff.html:9
 msgid "Staff"
 msgstr "工作人員"
 
@@ -1647,7 +1652,9 @@ msgid "Overview"
 msgstr "總覽"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:41
-#: templates/pycontw-2018/_includes/menu.html:52
+#: templates/pycontw-2018/_includes/menu.html:55
+#: templates/pycontw-2018/contents/en/events/overview.html:38
+#: templates/pycontw-2018/contents/zh/events/overview.html:38
 msgid "Keynotes"
 msgstr "基調演講"
 
@@ -1656,14 +1663,18 @@ msgstr "基調演講"
 #: templates/pycontw-2016/events/talk_list.html:7
 #: templates/pycontw-2017/events/talk_list.html:6
 #: templates/pycontw-2017/events/talk_list.html:7
-#: templates/pycontw-2018/_includes/menu.html:53
+#: templates/pycontw-2018/_includes/menu.html:56
+#: templates/pycontw-2018/contents/en/events/overview.html:44
+#: templates/pycontw-2018/contents/zh/events/overview.html:44
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
 msgid "Talks"
 msgstr "一般演講"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:43
-#: templates/pycontw-2018/_includes/menu.html:64
+#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/contents/en/events/overview.html:30
+#: templates/pycontw-2018/contents/zh/events/overview.html:30
 msgid "Sprints"
 msgstr "衝刺開發"
 
@@ -1681,7 +1692,7 @@ msgstr "專業課程"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
-#: templates/pycontw-2018/_includes/menu.html:81
+#: templates/pycontw-2018/_includes/menu.html:86
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1714,7 +1725,7 @@ msgid "Ticket Info"
 msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
-#: templates/pycontw-2018/_includes/menu.html:76
+#: templates/pycontw-2018/_includes/menu.html:80
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -1937,6 +1948,7 @@ msgid "schedule"
 msgstr "議程"
 
 #: templates/pycontw-2017/_includes/header.html:61
+#: templates/pycontw-2018/_includes/menu.html:53
 msgid "overview"
 msgstr "活動總覽"
 
@@ -1991,14 +2003,19 @@ msgstr "控制面板"
 
 #: templates/pycontw-2017/contents/_default/portal.html:5
 #: templates/pycontw-2017/contents/_default/portal.html:10
+#: templates/pycontw-2018/_includes/menu.html:58
+#: templates/pycontw-2018/contents/_default/portal.html:6
+#: templates/pycontw-2018/contents/_default/portal.html:12
 msgid "Portal"
 msgstr "傳送門"
 
 #: templates/pycontw-2017/contents/_default/portal.html:23
+#: templates/pycontw-2018/contents/_default/portal.html:21
 msgid "Collaborative Notes"
 msgstr "共筆"
 
 #: templates/pycontw-2017/contents/_default/portal.html:30
+#: templates/pycontw-2018/contents/_default/portal.html:25
 msgid "Chat Room"
 msgstr "聊天室"
 
@@ -2008,6 +2025,7 @@ msgstr "猜謎排行榜"
 
 #: templates/pycontw-2017/contents/_default/portal.html:45
 #: templates/pycontw-2017/contents/_default/portal.html:65
+#: templates/pycontw-2018/contents/_default/portal.html:29
 msgid "Facebook Fan Page"
 msgstr "Facebook 粉絲頁"
 
@@ -2114,7 +2132,7 @@ msgstr "3/12、6/12"
 msgid "Get Tickets"
 msgstr "立即購票"
 
-#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:58
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:49
 msgid "Volunteers Needed"
 msgstr "徵求志工"
 
@@ -2151,39 +2169,111 @@ msgstr "臺灣的在地 Python 社群"
 msgid "Our Partners"
 msgstr "我們的夥伴"
 
-#: templates/pycontw-2018/_includes/menu.html:48
+#: templates/pycontw-2018/_includes/menu.html:50
 msgctxt "menu"
 msgid "Conference"
 msgstr "議程"
 
-#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/_includes/menu.html:57
 msgid "Recording"
 msgstr "錄影"
 
-#: templates/pycontw-2018/_includes/menu.html:60
+#: templates/pycontw-2018/_includes/menu.html:64
 msgid "Exchange"
 msgstr "交流"
 
-#: templates/pycontw-2018/_includes/menu.html:63
+#: templates/pycontw-2018/_includes/menu.html:67
+#: templates/pycontw-2018/contents/en/events/overview.html:22
+#: templates/pycontw-2018/contents/zh/events/overview.html:22
 msgctxt "menu"
 msgid "Learning"
 msgstr "學習"
 
-#: templates/pycontw-2018/_includes/menu.html:65
+#: templates/pycontw-2018/_includes/menu.html:69
+#: templates/pycontw-2018/contents/en/events/overview.html:58
+#: templates/pycontw-2018/contents/zh/events/overview.html:60
 msgid "Open Spaces"
 msgstr "開放空間"
 
-#: templates/pycontw-2018/_includes/menu.html:72
+#: templates/pycontw-2018/_includes/menu.html:76
 msgid "Registration"
 msgstr "註冊"
 
-#: templates/pycontw-2018/_includes/menu.html:75
+#: templates/pycontw-2018/_includes/menu.html:79
 msgid "Conference Ticket"
 msgstr "會議門票"
 
-#: templates/pycontw-2018/_includes/menu.html:84
+#: templates/pycontw-2018/_includes/menu.html:81
+msgctxt "registration"
+msgid "Registration"
+msgstr "報到"
+
+#: templates/pycontw-2018/_includes/menu.html:89
 msgid "My PyCon"
 msgstr "My PyCon"
+
+#: templates/pycontw-2018/_includes/sponsors.html:7
+msgid "Partners"
+msgstr "夥伴"
+
+#: templates/pycontw-2018/_includes/sponsors.html:70
+msgid "Enquire about sponsorship"
+msgstr "詢問贊助辦法"
+
+#: templates/pycontw-2018/_includes/staff.html:3
+msgctxt "staff"
+msgid "Chairperson"
+msgstr "主席"
+
+#: templates/pycontw-2018/_includes/staff.html:8
+msgctxt "staff"
+msgid "Registration"
+msgstr "註冊組"
+
+#: templates/pycontw-2018/_includes/staff.html:16
+msgctxt "staff"
+msgid "Development"
+msgstr "開發"
+
+#: templates/pycontw-2018/_includes/staff.html:25
+msgctxt "staff"
+msgid "Public Relations"
+msgstr "公關"
+
+#: templates/pycontw-2018/_includes/staff.html:34
+msgctxt "staff"
+msgid "Design"
+msgstr "設計"
+
+#: templates/pycontw-2018/_includes/staff.html:41
+msgctxt "staff"
+msgid "Photography"
+msgstr "記錄"
+
+#: templates/pycontw-2018/_includes/staff.html:54
+msgctxt "staff"
+msgid "Program"
+msgstr "議程"
+
+#: templates/pycontw-2018/_includes/staff.html:65
+msgctxt "staff"
+msgid "Sponsorship"
+msgstr "贊助"
+
+#: templates/pycontw-2018/_includes/staff.html:80
+msgctxt "staff"
+msgid "Financial"
+msgstr "財務"
+
+#: templates/pycontw-2018/_includes/staff.html:85
+msgctxt "staff"
+msgid "Venue"
+msgstr "場務"
+
+#: templates/pycontw-2018/_includes/staff.html:98
+msgctxt "staff"
+msgid "Review Committee"
+msgstr "審稿委員"
 
 #: templates/pycontw-2018/events/schedule.html:24
 msgid "English speech"
@@ -2263,21 +2353,21 @@ msgid ""
 "%(speaker_names)s"
 msgstr "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">%(proposal_title)s</a> — %(speaker_names)s"
 
-#: templates/pycontw-2018/index.html:41
+#: templates/pycontw-2018/index.html:32
 msgid "What is PyCon"
 msgstr "何謂 PyCon"
 
-#: templates/pycontw-2018/index.html:42
+#: templates/pycontw-2018/index.html:33
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are"
 " many other conferences being run in the PyCon spirit around the world.</p>"
 msgstr "<p>PyCon 最初於 2003 成立於北美，現在世界各地皆有以 PyCon 精神而成立的會議。</p>"
 
-#: templates/pycontw-2018/index.html:48
+#: templates/pycontw-2018/index.html:39
 msgid "What is PyCon Taiwan"
 msgstr "何謂 PyCon Taiwan"
 
-#: templates/pycontw-2018/index.html:49
+#: templates/pycontw-2018/index.html:40
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -2286,21 +2376,13 @@ msgid ""
 " exchange ideas, make connections and to help us grow our network.</p>"
 msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
 
-#: templates/pycontw-2018/index.html:59
+#: templates/pycontw-2018/index.html:50
 msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
-#: templates/pycontw-2018/index.html:60
+#: templates/pycontw-2018/index.html:51
 msgid "Become a volunteer"
 msgstr "成為志工"
-
-#: templates/pycontw-2018/index.html:68
-msgid "Partners"
-msgstr "夥伴"
-
-#: templates/pycontw-2018/index.html:131
-msgid "Enquire about sponsorship"
-msgstr "詢問贊助辦法"
 
 #: users/admin.py:18
 msgid "Personal info"
@@ -2367,28 +2449,28 @@ msgstr "申請密碼重設"
 msgid "Set Password"
 msgstr "設定密碼"
 
-#: users/models.py:109
+#: users/models.py:112
 msgid "email address"
 msgstr "電子郵件信箱"
 
-#: users/models.py:117
+#: users/models.py:120
 msgid "biography"
 msgstr "自我介紹"
 
-#: users/models.py:120
+#: users/models.py:123
 msgid ""
 "Describe yourself with 500 characters or less. There will be no formatting."
 msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
 
-#: users/models.py:125
+#: users/models.py:128
 msgid "photo"
 msgstr "個人照"
 
-#: users/models.py:129
+#: users/models.py:132
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:132
+#: users/models.py:135
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click"
@@ -2397,61 +2479,61 @@ msgid ""
 "first!"
 msgstr "您的 Facebook 個人頁。我們會在你的公開資料中顯示這個連結。若您不知道自己的個人頁連結為何，可以使用<a href='https://www.facebook.com/me' target='_blank'>這個連結</a>，並將開啟頁面的網址列內容貼至本欄位。記得先登入 Facebook！"
 
-#: users/models.py:141
+#: users/models.py:144
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:146
+#: users/models.py:149
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 Twitter 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:151
+#: users/models.py:154
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:156
+#: users/models.py:159
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
 msgstr "您的 GitHub 帳號，不包含 @ 符號。這個名稱會出現在您的公開資料中。"
 
-#: users/models.py:161
+#: users/models.py:164
 msgid "verified"
 msgstr "已認證"
 
-#: users/models.py:164
+#: users/models.py:167
 msgid "Designates whether the user has verified email ownership."
 msgstr "指定本使用者是否已完成 email 認證。"
 
-#: users/models.py:168
+#: users/models.py:171
 msgid "staff status"
 msgstr "管理員權限"
 
-#: users/models.py:171
+#: users/models.py:174
 msgid "Designates whether the user can log into this admin site."
 msgstr "指定本使用者是否可以登入本管理站台。"
 
-#: users/models.py:175
+#: users/models.py:178
 msgid "active"
 msgstr "已啟用"
 
-#: users/models.py:178
+#: users/models.py:181
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr "指定本使用者是否被視為 active。取消勾選此選項而非刪除帳號。"
 
-#: users/models.py:183
+#: users/models.py:186
 msgid "date joined"
 msgstr "註冊日期"
 
-#: users/models.py:194
+#: users/models.py:197
 msgid "users"
 msgstr "使用者"
 
-#: users/models.py:290
+#: users/models.py:293
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
