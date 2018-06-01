@@ -41,6 +41,7 @@
 .talk-content {
 	padding: 32px 16px;
 	background: $pale-grey;
+	word-wrap: break-word;
 
 	@include on-desktop() {
 		padding: 32px;
