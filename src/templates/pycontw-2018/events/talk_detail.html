@@ -56,6 +56,13 @@
 </section>
 {% endif %}
 
+{% if object.slide_link %}
+<h2>{% trans 'Slides' %}</h2>
+<section class="talk-content">
+	<a href="{{ object.slide_link }}">{{ object.slide_link }}</a>
+</section>
+{% endif %}
+
 
 <h2>
 	{% if object.speaker_count > 1 %}
