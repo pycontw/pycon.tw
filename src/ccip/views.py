@@ -19,10 +19,12 @@ def convert_to_utc(value):
 
 
 def transform_keynote_info(request, i, info):
-    info['id'] = f'keynote-{i}'
-    info['type'] = ''   # Not used.
-    info['start'] = convert_to_utc(info['start'])
-    info['end'] = convert_to_utc(info['end'])
+    info.update({
+        'id': f'keynote-{i}',
+        'type': '',     # Not used.
+        'start': convert_to_utc(info['start']),
+        'end': convert_to_utc(info['end']),
+    })
     info['speaker']['avatar'] = request.build_absolute_uri(
         static(info['speaker']['avatar']),
     )
@@ -38,6 +40,7 @@ def transform_talk_info(request, event):
         'room': event.get_location_display(),
         'start': event.begin_time.value.isoformat(),
         'end': event.end_time.value.isoformat(),
+        'slides': event.proposal.slide_link,
         'speaker': {
             'name': event.proposal.submitter.speaker_name,
             'avatar': request.build_absolute_uri(

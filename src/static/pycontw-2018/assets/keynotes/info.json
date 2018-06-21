@@ -5,6 +5,7 @@
         "room": "R0",
         "start": "2018-06-01T09:20:00",
         "end": "2018-06-01T10:20:00",
+        "slides": "https://www.slideshare.net/swchen11/ss-97741195",
         "speaker": {
             "name": "陳昇瑋",
             "bio": "陳昇瑋博士現為台灣人工智慧學校執行長、玉山金控科技長、台灣資料科學協會理事長、財團法人人工智慧科技基金會執行長、中央研究院資訊科學研究所研究員暨資料洞察實驗室主持人，研究領域為大數據分析、人工智慧、計算社會科學及多媒體系統等，在人工智慧的產業應用上持續有代表性的研究創見。\n\n陳博士堅信資料的價值，長期推廣人工智慧、資料科學及其在各領域的應用，發起台灣人工智慧學校及台灣人工智慧暨資料科學年會，期能將對於人工智慧及資料科學的熱情傳達給大眾，一起來探索它們的潛力，並將人工智慧及資料科學引入每個人的專業領域之中。他期待讓這些由資料而生的技術不再是口號，而是大家真實拿來解決問題及創造價值的工具。欲瞭解陳博士的研究及心得分享，請至他的個人網頁 http://www.iis.sinica.edu.tw/~swc/index_c.html 一探究竟。",
@@ -17,6 +18,7 @@
         "room": "R0",
         "start": "2018-06-02T09:10:00",
         "end": "2018-06-02T10:10:00",
+        "slides": "",
         "speaker": {
             "name": "Katie McLaughlin",
             "bio": "The standardisation of the universal character set has paved the way for the ability for data to be freely transferred between computers around the world. However, the most volatile part of this standard is still causing prolific issues with miscommunication between humans.\n\nIn this keynote, Katie McLaughlin will share knowledge from her years of research and contributions to this field and rant about emoji for a bit.",
