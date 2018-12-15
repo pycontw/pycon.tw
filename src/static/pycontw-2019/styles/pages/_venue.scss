@@ -1,0 +1,60 @@
+.venue-page {
+	$map-height-mobile: 320px;
+	$map-height-desktop: 496px;
+
+	.map-section {
+		@include shove-left();
+		width: 100vw;
+		height: $map-height-mobile;
+		max-height: 50vh;		// Make sure the user has some room to flick.
+		margin-top: -48px;
+
+		@include on-desktop() {
+			height: $map-height-desktop;
+			max-height: none;
+			margin-top: -72px;
+		}
+	}
+
+	.map {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.map-info {
+		display: none;
+
+		@include on-desktop() {
+			$total-width: 28%;
+			$padding-left: 4%;
+			$padding-right: 3%;
+
+			display: block;
+			position: absolute;
+			height: $map-height-desktop;
+			width: $total-width - $padding-left - $padding-right;
+			z-index: 2;
+			background-color: rgba(255, 255, 255, 0.95);
+			padding: 0 $padding-right 0 $padding-left;
+
+			h2 {
+				font-size: 1.8rem;
+				text-align: left;
+
+				> span {
+					display: inline-block;
+					margin-top: 1.2rem;
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+
+			p {
+				font-size: 1.3rem;
+				text-align: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@mixin list-reset() {
+	list-style: none;
+	padding: 0;
+
+	> li::before {	// Override custom list bullet.
+		content: none;
+	}
+}
+
+$menu-item-types: '> a, > label';
+
+@mixin menu-item($base-color, $hover-color) {
+	#{$menu-item-types} {
+		@include no-underline;
+		color: $base-color;
+		&:hover {
+			cursor: pointer;
+			color: $hover-color;
+		}
+		@content;
+	}
+}
+
+@mixin menu($top-item-color, $top-item-hover-color) {
+	@include list-reset;
+
+	li {	// General menu item styling.
+		> input:checked ~ .dropdown, > .dropdown:hover {
+			height: auto;
+			overflow: visible;
+		}
+		@include menu-item($top-item-color, $top-item-hover-color) {
+			font-weight: 300;
+		}
+	}
+
+	> li {	// Styling specific to top-level menu items.
+		position: relative;
+		text-align: center;
+
+		#{$menu-item-types} {
+			font-family: $header-font-family;
+			font-size: 1.125rem;
+		}
+	}
+
+	.dropdown {
+		height: 0;
+		overflow: hidden;
+	}
+
+	.submenu {
+		@include list-reset;
+		@include text(1rem);
+		margin-top: 8px;
+		border: solid 1px transparent;
+		border-radius: 4px;
+	}
+}
+
+@import 'menu-mobile';
+@import 'menu-desktop';
