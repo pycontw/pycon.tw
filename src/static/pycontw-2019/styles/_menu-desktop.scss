@@ -1,0 +1,111 @@
+$menu-desktop-margin-x: 48px;
+$menu-desktop-height: 136px;
+
+@mixin menu-navbar-desktop($logo, $decocolor1, $decocolor2, $top-item-color) {
+	display: none;
+
+	@include on-desktop {
+		display: flex;
+		flex-direction: column;
+		height: $menu-desktop-height;
+		margin: 0 $menu-desktop-margin-x;
+	}
+
+	.menu-logo {
+		flex: 1;
+		width: 100%;
+		background: $logo center 32px no-repeat;
+	}
+
+	.menu {
+		@include container(100%);
+		@include menu($top-item-color, $top-item-color);
+
+		$menu-item-spacing: 40px;
+		$menu-item-height: $menu-desktop-height / 2;
+
+		display: inline-block;
+		height: $menu-item-height;
+
+		> li {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			float: left;
+			padding: 0 $menu-item-spacing / 2;
+
+			#{$menu-item-types} {
+				width: 100%;
+				// TODO: This only works for single-line text, and is a hack anyway
+				// because we're relying on the half-logo/half-item nature of the
+				// menubar. Real vertical centering would require additional markup.
+				// The minus 1px is the bottom border decoration.
+				line-height: $menu-item-height - 1px;
+
+				&::after {
+					content: '';
+					display: block;
+					width: 0;
+					height: 1px;
+					margin: -4px auto auto auto;
+					background: linear-gradient(119deg, $decocolor1, $decocolor2);
+					transition: width 0.25s ease-in-out;
+				}
+
+				&:hover::after {
+					width: 100%;
+				}
+			}
+
+			> input:checked ~ .dropdown > .submenu {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+
+			// This requires the input to be *before* the label element in markup.
+			> input:checked ~ label::after {
+				width: 100%;
+			}
+		}
+
+		.dropdown {
+			min-width: 100%;
+			min-height: 40px;	// Arbitrary; enough to fill gap under menu item.
+		}
+
+		.submenu {
+			$width: 160px;
+			$item-padding: 8px;
+
+			position: absolute;
+			top: $menu-item-height + 12px;
+			left: calc(50% - #{$width / 2});
+			min-width: $width;
+			background: rgba($white, 0.95);
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+			text-align: center;
+			opacity: 0;
+			transform: scaleY(0);
+			transform-origin: top;
+			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+			li {
+				display: flex;
+				flex-direction: column;
+				align-content: stretch;
+
+				@include menu-item($text-dark, $link-hover-dark) {
+					flex: 1;
+					padding: $item-padding;
+				}
+
+				&:first-child > *:first-child {
+					padding-top: 2 * $item-padding;
+				}
+				&:last-child > *:first-child {
+					padding-bottom: 2 * $item-padding;
+				}
+			}
+		}
+	}
+}

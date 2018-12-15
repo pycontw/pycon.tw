@@ -12,16 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block titletag %}
-<title>{% block title %}{% endblock title %} | PyCon Taiwan 2018</title>
+<title>{% block title %}{% endblock title %} | PyCon Taiwan 2019</title>
 {% endblock titletag %}
 
-<link rel="shortcut icon" href="{% static 'pycontw-2018/assets/favicon.ico' %}">
-<link rel="icon" type="image/png" href="{% static 'pycontw-2018/assets/favicon-16x16.png' %}" sizes="16x16">
-<link rel="icon" type="image/png" href="{% static 'pycontw-2018/assets/favicon-32x32.png' %}" sizes="32x32">
+<link rel="shortcut icon" href="{% static 'pycontw-2019/assets/favicon.ico' %}">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2019/assets/favicon-16x16.png' %}" sizes="16x16">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2019/assets/favicon-32x32.png' %}" sizes="32x32">
 
 {% block meta_og %}
 <meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
-<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2018/assets/og-image.png' %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2019/assets/og-image.png' %}">
 {% endblock meta_og %}
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
@@ -72,7 +72,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {% compress js %}
 {% block scripts %}
-<script type="module" src="{% static 'pycontw-2018/scripts/app.js' %}"></script>
+<script type="module" src="{% static 'pycontw-2019/scripts/app.js' %}"></script>
 {% endblock scripts %}
 {% endcompress %}
 {% block extra_js %}{% endblock extra_js %}

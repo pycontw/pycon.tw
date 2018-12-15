@@ -1,0 +1,96 @@
+.index-hero {
+	$padding-top-mobile: calc(12.5vh + #{$top-navbar-offset * 7 / 8});
+	$padding-top-desktop: 168px;
+
+	$heading-aspect: 528 / 95;
+	$heading-width-mobile: 70vw;
+	$heading-height-mobile: $heading-width-mobile / $heading-aspect;
+	$heading-width-desktop: 37vw;
+	$heading-margin-left-desktop: 50vw - $heading-width-desktop;
+
+	@mixin hero-text($font-size) {
+		color: $white;
+		font-family: $header-font-family;
+		font-size: $font-size;
+		font-style: italic;
+		font-weight: 100;
+	}
+
+	display: flex;
+	flex-direction: column;
+	margin-top: 0 - $top-navbar-offset;
+	padding-top: $padding-top-mobile;
+	height: calc(100vh - #{$padding-top-mobile});
+	max-height: 150vw;
+	background:
+		url('../assets/perspective-mobile.svg') 60% 57% no-repeat,
+		radial-gradient(circle at 69% 60%, $indigo, $dark-slate-blue);
+
+	@include on-desktop {
+		$menu-overlap: $menu-desktop-height / 2;
+		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
+		max-height: auto;
+		margin-bottom: 0 - $menu-overlap;
+		padding: $padding-top-desktop 0 $menu-overlap 0;
+		background:
+			url('../assets/perspective-desktop.svg') 17% 83% / 120% no-repeat,
+			radial-gradient(circle at 69% 60%, $indigo, $dark-slate-blue);
+	}
+
+	header {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		.hero-heading {
+			@include hero-text(2rem);
+			width: $heading-width-mobile;
+			height: $heading-height-mobile;
+			margin: 0 0 32px 0;
+			// color: transparent;
+	    // background: url('../assets/logo-white.svg') center / contain no-repeat;
+
+	    @include on-desktop {
+	    	align-self: flex-start;
+	    	width: $heading-width-desktop;
+	    	height: $heading-width-desktop / $heading-aspect;
+	    	margin-left: $heading-margin-left-desktop;
+	    }
+		}
+
+		.hero-subheading {
+			@include hero-text(1.25rem);
+			align-self: flex-start;
+			display: flex;
+			flex-direction: column;
+			line-height: 160%;
+			margin-left: calc(50vw - #{$heading-width-mobile / 2});
+			font-size: 1.5rem;
+
+			@include on-desktop {
+				margin-left: $heading-margin-left-desktop;
+				flex-direction: row;
+
+				> * {
+					margin-right: 1ex;
+				}
+			}
+		}
+	}
+
+	blockquote {
+		@include hero-text(1rem);
+		margin: 0 12px 12px 0;
+		border: none;
+		text-align: right;
+		font-size: 1.2rem;
+
+		@include on-desktop {
+			margin-right: $menu-desktop-margin-x + $menu-desktop-border-radius;
+			margin-bottom: 20px;
+			font-size: 1.25rem;
+		}
+	}
+}

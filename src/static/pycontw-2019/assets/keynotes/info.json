@@ -1,0 +1,28 @@
+[
+    {
+        "subject": "人工智慧民主化在台灣",
+        "summary": "有人說，資料是新時代的石油；那麼，人工智慧 (AI) 就是新時代的電力，未來將不會有任何現代產業與 AI 無關。\n\n問題在於 AI 技術的引入會面臨兩大挑戰，挑戰一，AI 是解決特定問題的技術：同樣是深度學習模型，要解決什麼問題，能解決什麼問題，能解到什麼程度，產生多少價值，在每家公司都不一樣，多元性及客製化程度遠比導入 ERP (企業資源計畫)、 CRM (客戶關係管理) 系統高得太多。例如，同樣是 AOI (自動光學檢測) 技術，在 A 公司做來檢測電路板的瑕疵，在 B 公司檢測織物的瑕疵，在 C 公司檢測玻璃的瑕疵，以高標準來要求的話，絕對不是調整參數就好。因此，未來的五年甚至更久的時間內，很難期待會有套裝系統可以直接購入及進行簡單客製化，符合各產業、各公司、各種問題的期待。\n\n挑戰二，AI 並沒有辦法 plug & play (即插即用)：目前的 AI 皆由機器學習模型來驅動，而機器學習必須要有大量資料來訓練。若公司內原本並沒有蒐集某個想要解決的問題的資料，或是資料蒐集時間不夠長，任你找到絕世高手或買到厲害的系統也沒有用。例如，若要進行未來半年的某產品銷量預測，通常需要該產品或同類型產品及競品在過去三年或五年以上資料，以及搭配的各式環境因素、客戶訂單資料等等。若是沒有這些資料準備好，AI 系統就是不能動，沒有油就沒有辦法發電的道理。\n\n幸運的是，這一波 (也是人類史上的第三波) 的 AI 浪潮伴隨著「人工智慧民主化 (AI democratization)」的趨勢，最重要的概念是，AI 技術不應該只被某些跨國企業所壟斷，應該讓所有需要的人都有機會參與及使用。具體的作法包含各種深度學習開發工具及模型的開放源碼，以及各式最新核心技術的分享等等。\n\n我個人所看到的是機會，因為這個 AI 民主化趨勢，AI 技術發展在各領域所帶來的機會無窮無盡，是習慣等待國外大廠解決方案的我們應該把握的。\n\n當然，目前普遍遇到的挑戰是 AI 人才的缺乏，台灣人工智慧學校為此而成立。希望很快地讓「找不到人才」不再成為企業發展人工智慧的障礙，同時建立「自己的問題自己解決」的文化，打破被技術殖民的慣性，重建社會自信。\n\n台灣人工智慧學校將以最好的師資及與產學界的密切合作，進行人工智慧技術人才的密集培訓。讓不同專業領域的學員都能如虎添翼，以人工智慧加上原本的領域知識，具備協助各企業解決問題，以及帶領人工智慧團隊的能力。他們將擔任技術種子角色，深入台灣產業的各個層面，以其本身專業及人工智慧技術協助企業解決在邁向智慧化的過程中所面臨的難題。\n\n我將在這場演講中，分享台灣人工智慧學校的來龍去脈，如何從一個稱為 Project Theta 的計畫開始，慢慢確認人才培育的需求，以及形塑台灣人工智慧學校的雛型。這個故事從 2017 年三月的某個早晨開始…",
+        "room": "R0",
+        "start": "2018-06-01T09:20:00",
+        "end": "2018-06-01T10:20:00",
+        "slides": "https://www.slideshare.net/swchen11/ss-97741195",
+        "speaker": {
+            "name": "陳昇瑋",
+            "bio": "陳昇瑋博士現為台灣人工智慧學校執行長、玉山金控科技長、台灣資料科學協會理事長、財團法人人工智慧科技基金會執行長、中央研究院資訊科學研究所研究員暨資料洞察實驗室主持人，研究領域為大數據分析、人工智慧、計算社會科學及多媒體系統等，在人工智慧的產業應用上持續有代表性的研究創見。\n\n陳博士堅信資料的價值，長期推廣人工智慧、資料科學及其在各領域的應用，發起台灣人工智慧學校及台灣人工智慧暨資料科學年會，期能將對於人工智慧及資料科學的熱情傳達給大眾，一起來探索它們的潛力，並將人工智慧及資料科學引入每個人的專業領域之中。他期待讓這些由資料而生的技術不再是口號，而是大家真實拿來解決問題及創造價值的工具。欲瞭解陳博士的研究及心得分享，請至他的個人網頁 http://www.iis.sinica.edu.tw/~swc/index_c.html 一探究竟。",
+            "avatar": "pycontw-2018/assets/keynotes/sw.jpg"
+        }
+    },
+    {
+        "subject": "Communication strategies beyond the Basic Multilingual Plane",
+        "summary": "The standardisation of the universal character set has paved the way for the ability for data to be freely transferred between computers around the world. However, the most volatile part of this standard is still causing prolific issues with miscommunication between humans.\n\nIn this keynote, Katie McLaughlin will share knowledge from her years of research and contributions to this field and rant about emoji for a bit.\n\n\n通用字元集的標準化，為世界各地的電腦能夠自由地互相交換資料，奠定了良好的基礎。然而，這個標準中，仍然存在一個十分不穩定的部份，不斷在人類的溝通中成為阻礙，造成無盡的誤會。\n\n在此基調演講中，Katie McLaughlin 將根據她在本領域中多年的研究與貢獻，分享自己學到的知識，並好好對 emoji 抱怨一番。",
+        "room": "R0",
+        "start": "2018-06-02T09:10:00",
+        "end": "2018-06-02T10:10:00",
+        "slides": "https://glasnt.com/talks/2018_06_PyConTW/#/",
+        "speaker": {
+            "name": "Katie McLaughlin",
+            "bio": "Katie has worn many different hats over the years. She has been a software developer for many languages, systems administrator for multiple operating systems, and speaker on many different topics.\n\nWhen she’s not changing the world, she enjoys making tapestries, cooking, and seeing just how well various application stacks handle emoji.\n\n\nKatie 多年來從事過許多工作，使用各式各樣的語言開發軟體、擔任各式各樣平台的系統管理員、發表了各式各樣的演講。\n\n在改變世界之餘，她也喜歡編織、烹飪、以及研究各種應用程式對 emoji 的支援。",
+            "avatar": "pycontw-2018/assets/keynotes/katie.jpg"
+        }
+    }
+]
