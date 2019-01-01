@@ -1,12 +1,11 @@
 .index-hero {
 	$padding-top-mobile: calc(12.5vh + #{$top-navbar-offset * 7 / 8});
-	$padding-top-desktop: 168px;
-
+	$padding-top-desktop: 100px;
 	$heading-aspect: 528 / 95;
 	$heading-width-mobile: 70vw;
 	$heading-height-mobile: $heading-width-mobile / $heading-aspect;
-	$heading-width-desktop: 37vw;
-	$heading-margin-left-desktop: 50vw - $heading-width-desktop;
+	$heading-width-desktop: 20vw;
+	$heading-margin-left-desktop: 100vw - $heading-width-desktop;
 
 	@mixin hero-text($font-size) {
 		color: $white;
@@ -22,59 +21,69 @@
 	padding-top: $padding-top-mobile;
 	height: calc(100vh - #{$padding-top-mobile});
 	max-height: 150vw;
-	background:
-		url('../assets/perspective-mobile.svg') 60% 57% no-repeat,
-		radial-gradient(circle at 69% 60%, $indigo, $dark-slate-blue);
-
+	background-color:$strong-violet; 
 	@include on-desktop {
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
 		max-height: auto;
 		margin-bottom: 0 - $menu-overlap;
 		padding: $padding-top-desktop 0 $menu-overlap 0;
-		background:
-			url('../assets/perspective-desktop.svg') 17% 83% / 120% no-repeat,
-			radial-gradient(circle at 69% 60%, $indigo, $dark-slate-blue);
+		
 	}
-
 	header {
+		height:100%;
 		flex: 1;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		justify-content: flex-start;
-
+		position: relative;
+		.hero-logo{
+			position: absolute;
+			margin-top:3px;
+			width:80%;
+			top:10%;
+			@include on-desktop{
+				align-self: flex-start;
+				width:60%;
+				padding-left: 5vw;
+			}
+		}
 		.hero-heading {
+			position: absolute;
 			@include hero-text(2rem);
-			width: $heading-width-mobile;
 			height: $heading-height-mobile;
-			margin: 0 0 32px 0;
-			// color: transparent;
-	    // background: url('../assets/logo-white.svg') center / contain no-repeat;
-
-	    @include on-desktop {
-	    	align-self: flex-start;
-	    	width: $heading-width-desktop;
-	    	height: $heading-width-desktop / $heading-aspect;
-	    	margin-left: $heading-margin-left-desktop;
-	    }
+			text-align:center;
+			display: flex;
+			align-items: center;
+			bottom: 30%;
+			@include on-desktop {
+				align-self: flex-start;
+				text-align: start;
+				width: $heading-width-desktop;
+				height: $heading-width-desktop / $heading-aspect;
+				right:10%;
+				top: 50%;
+			}
 		}
 
 		.hero-subheading {
+			position: absolute;
 			@include hero-text(1.25rem);
-			align-self: flex-start;
-			display: flex;
-			flex-direction: column;
 			line-height: 160%;
-			margin-left: calc(50vw - #{$heading-width-mobile / 2});
+			// margin-left: calc(50vw - #{$heading-width-mobile / 2});
 			font-size: 1.5rem;
-
+			bottom: 20%;
+			display: flex;
+			align-items: center;
 			@include on-desktop {
-				margin-left: $heading-margin-left-desktop;
+				align-self: flex-start;
+				// margin-left: $heading-margin-left-desktop;
+				bottom: 20%;
+				right: 10%;
 				flex-direction: row;
-
+				// border: 1px solid black;
 				> * {
-					margin-right: 1ex;
+					margin-right: 1px;
 				}
 			}
 		}
