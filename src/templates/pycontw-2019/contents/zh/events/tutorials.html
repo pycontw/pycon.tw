@@ -1,0 +1,106 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+
+{% block title %}學習交流{% endblock title %}
+
+{% block body_class %}{{ block.super }} exchange-page{% endblock body_class %}
+
+
+{% block content %}
+
+<h1>學習交流</h1>
+
+<h2>專業課程</h2>
+
+<p>專業課程 (Tutorial) 是 PyCon Taiwan 的一部份，採付費方式。舉辦時間會在研討會前後一至三週，提供全天（6 小時）課程。課程內容採取公開遴選方式徵求提案。</p>
+
+<div class="box">
+	<h3 class="box-title">用 Python 做股票分析</h3>
+	<div class="box-content">
+		<dl class="inline">
+			<dt>日期</dt>
+			<dd>2018-05-26</dd>
+			<dt>地點</dt>
+			<dd>社團法人高雄市企業管理交流協會</dd>
+			<dt>講師</dt>
+			<dd>Victor Gau、沈弘哲、楊熲煜 (Malo)</dd>
+		</dl>
+
+		<p>面對一大堆線圖，一大堆數字，不知道如何找出最可能獲利的股票嗎？何妨讓 Python 幫您篩選出最好的候選股呢？</p>
+		<p>本課程的主要目的，是希望手把手的帶著大家使用 Python 來做股票的量化分析，以提高自己獲利的機會。課程首先會講解股票分析系統的架構，接著教大家使用爬蟲來擷取自己想要的資訊，之後我們會說明如何訂定策略及藉由回測來判斷策略的好壞，希望藉由循序漸進的引導，最後可以讓學員建構出自己的股票分析系統。</p>
+
+		<div class="buy">
+			<a href="https://pycontw.kktix.cc/events/20180526-pystock" target="_blank" rel="noopener" class="button-round">報名</a>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">打造獨一無二的 Line Bot 之手把手教學</h3>
+	<div class="box-content">
+		<dl class="inline">
+			<dt>日期</dt>
+			<dd>2018-05-27</dd>
+			<dt>地點</dt>
+			<dd>社團法人高雄市企業管理交流協會</dd>
+			<dt>講師</dt>
+			<dd>沈弘哲、Victor Gau、楊熲煜 (Malo)</dd>
+		</dl>
+
+		<p>Line 在台灣真的非常多人使用，相信大家也都聽過不少 Bot 機器人，以 Line 來說，像是卡米狗、微股力 - 台股大數據、TaxiGo，這些都是不少人使用過的 Line Bot，相信大家第一次接觸時，一定都會覺得超酷。講師將用 Python Flask 帶大家建立屬於自己的 Line Bot，將 Line Bot 佈署到雲端的 Heroku 上，並說明需要特別注意的細節。</p>
+		<p>本場教學內容，皆講師學習內化過後，分享出來的教學。</p>
+
+		<div class="buy">
+			<a href="https://pycontw.kktix.cc/events/20180527-linebot" target="_blank" rel="noopener" class="button-round">報名</a>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">老司機帶你飛——手把手使用 PySpark 探索大數據</h3>
+	<div class="box-content">
+		<dl class="inline">
+			<dt>日期</dt>
+			<dd>2018-06-03</dd>
+			<dt>地點</dt>
+			<dd>資策會科技服務大樓 102 會議室</dd>
+			<dt>講師</dt>
+			<dd>Bryan Yang</dd>
+		</dl>
+
+		<p>Spark 是處理大數據最熱門的框架之一，透過 PySpark 可以方便熟悉 Python 的資料科學家處理大量資料． 本堂課程將手把手實戰教學大數據分析，結合 Python 以及最新的 Spark 2.2 從 0 開始掌握 Spark。</p>
+
+		<div class="buy">
+			<a href="https://pycontw.kktix.cc/events/20180603-pyspark" target="_blank" rel="noopener" class="button-round">報名</a>
+		</div>
+	</div>
+</div>
+
+
+<h2>工作坊</h2>
+
+<p>工作坊（Workshop）是 PyCon Taiwan 與企業或社群合作，讓夥伴們能夠進行知識與資源分享的平台，不向學員收取費用，而完全專注於分享與推廣。工作坊的內容以實作為主，舉辦時間、地點、內容皆由合作夥伴需求而定。</p>
+
+<div class="box">
+	<h3 class="box-title">域名註冊好簡單，用 Python 輕鬆成為域名註冊商</h3>
+	<div class="box-content">
+		<dl class="inline">
+			<dt>日期</dt>
+			<dd>2018-05-27</dd>
+			<dt>地點</dt>
+			<dd>五倍紅寶石</dd>
+			<dt>夥伴</dt>
+			<dd><a href="https://www.gandi.net" target="_blank" rel="noopener">Gandi</a></dd>
+		</dl>
+
+		<p>域名註冊其實是一個很看似容易的技術，但其實流程與規範多如毛。然而我們只需要花個半天好好學一下關於域名的正確註冊流程，就可以輕鬆成為一個註冊商。</p>
+		<p>這次 Workshop 會教大家如何利用 Python 串接 API 來完成域名註冊與管理 DNS 紀錄。當然我們也會討論到許多域名的知識，希望能提昇台灣對於域名這塊的認知，讓您了解它不只是一個「網址」。</p>
+
+		<div class="buy">
+			<a href="https://pycontw.kktix.cc/events/20180527-domain" target="_blank" rel="noopener" class="button-round">報名</a>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
