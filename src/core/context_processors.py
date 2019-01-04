@@ -22,7 +22,7 @@ def pycontw(request):
     lang = get_language()
     if lang and lang.startswith('zh'):
         sponsor_id = '1FAIpQLSf5pgDeYtspU1AfexFlAw-gZXWjcXhPxNTj7HGb258bD-0Eig'
-        volun_id = '1FAIpQLSe7-q3Ae3yBA4TepszIMCCHQzU3hg8Hy03X-9VcCv7DO5f_oA'
+        volun_id = '1FAIpQLSfZyBNTA577CkeLSAw6OtpA8aWQGLKymCgvtKRwvuCXORgMxg'
     else:
         sponsor_id = '1FAIpQLSeB7I99Jugc9qGqzxZfF_sYQTz3nE7--NDu0hHhoBpYSqrtyg'
         volun_id = '1FAIpQLSeEHdCEv7R_BQb6eawQpndSlEPLpUHQDoc7URvJU0fpFeJHIA'
