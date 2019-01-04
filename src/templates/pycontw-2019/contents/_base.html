@@ -11,7 +11,9 @@
 
 <header class="page-hero">
 	<nav class="menu-navbar-desktop">
+		{% comment %}
 		<a href="{% url 'index' %}" class="menu-logo"></a>
+		{% endcomment %}
 		{% include '_includes/menu.html' with type='desktop' %}
 	</nav>
 </header>
