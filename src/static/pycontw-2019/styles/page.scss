@@ -8,8 +8,7 @@ body {
 .page-hero {
 	margin-top: 0 - $top-navbar-offset;
 	padding: $top-navbar-offset 0 112px 0;
-	background-image: $top-navbar-background;
-
+	background-color: $top-navbar-background-color;
 	@include on-desktop {
 		padding-bottom: 200px;
 	}
@@ -46,7 +45,7 @@ main {
 		margin-top: -160px;
 		margin-bottom: 48px;
 
-		background-image: $top-navbar-background;
+		background-color: $top-navbar-background-color;
 		color: $text-light;
 
 		@include on-desktop {
