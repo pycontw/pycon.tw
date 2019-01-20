@@ -15,7 +15,7 @@
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-indigo.svg'), $strong-violet, $strong-violet, $text-dark);
+		url('../assets/logo-strong-violet.svg'), $strong-violet, $strong-violet, $text-dark);
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
 	box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.2);
