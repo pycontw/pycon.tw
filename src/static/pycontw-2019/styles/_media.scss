@@ -1,0 +1,29 @@
+.media {
+	> header {
+		> figure {
+			display: flex;
+			flex-direction: column;
+
+			img {
+				$size: 136px;
+				align-self: center;
+				height: $size;
+				border-radius: $size / 2;
+			}
+
+			figcaption {
+				@include header(1.125rem);	// ~ 18px.
+				margin-top: 32px;
+			}
+		}
+
+		.title {
+			@include header(1.125rem);	// ~ 18px.
+			margin-top: 16px;
+		}
+	}
+
+	> * + * {
+		margin-top: 32px;
+	}
+}

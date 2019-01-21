@@ -1,0 +1,136 @@
+@import 'site';
+
+body {
+	// Fix the fancy h1 overflowing width (because 100vw includes scrollbar).
+	overflow-x: hidden;
+}
+
+.page-hero {
+	margin-top: 0 - $top-navbar-offset;
+	padding: $top-navbar-offset 0 112px 0;
+	background-color: $top-navbar-background-color;
+	@include on-desktop {
+		padding-bottom: 200px;
+	}
+}
+
+.menu-navbar-desktop {
+	@include menu-navbar-desktop(
+		url('../assets/logo-white.svg'), $white, $white-two, $text-light);
+}
+
+// Shove to left edge, ignoring container.
+@mixin shove-left() {
+	margin-left: calc(50% - 50vw);
+}
+
+main {
+	@include content-section;
+	@include container;
+
+	@include on-desktop {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// Fancy h1 that merges into the navbar.
+	> h1:first-child {
+		@mixin fill-vw($p) {
+			width: calc(100vw - #{$p * 2});
+			padding: 0 $p 32px $p;
+		}
+
+		@include shove-left();
+		@include fill-vw(2rem);
+		margin-top: -160px;
+		margin-bottom: 48px;
+
+		background-color: $top-navbar-background-color;
+		color: $text-light;
+
+		@include on-desktop {
+			@include fill-vw(6rem);
+			margin-bottom: 72px;
+		}
+	}
+
+	@mixin container-block($margin-top, $margin-bottom) {
+		margin-top: $margin-top;
+		margin-bottom: $margin-bottom;
+
+		// Cancel terminal margins for nested blocks.
+		> *:first-child {
+			margin-top: 0;
+		}
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Most content blocks are 48px apart.
+	> * {
+		@include container-block(48px, 20px);
+	}
+
+	// p elements are 20px apart.
+	p + p {
+		margin-top: 20px;
+	}
+
+	// Custom UL bullets.
+	ul {
+		$mark-indent: 1.125rem;
+		$text-indent: 2.125rem;
+
+		list-style: none;
+		padding-left: $text-indent;
+		text-indent: $mark-indent - $text-indent;
+
+		> li {
+			&::before {
+				content: '•';
+				display: block;
+				float: left;
+				width: $text-indent - $mark-indent;
+			}
+
+			> p {
+				margin-top: 0;
+			}
+		}
+	}
+
+	> table:not([class]), table.table, .table > table {
+		min-width: 100%;
+		text-align: center;
+		border-collapse: collapse;
+
+		tr {
+			> th, > td {
+				height: 3.5rem;
+				padding: 4px 8px;
+				border-bottom: solid thin $indigo;
+				font-size: 1rem;
+				font-weight: 400;
+			}
+			> th {
+				color: $indigo;
+			}
+		}
+	}
+	.table {
+		width: 100%;
+		overflow: auto;
+	}
+}
+
+// Page-specific styling.
+@import 'pages/about';
+@import 'pages/keynotes';
+@import 'pages/talks';
+@import 'pages/ticket-info';
+@import 'pages/tutorials';
+@import 'pages/venue';
+@import 'pages/schedule';
+@import 'pages/staff';
+@import 'pages/portal';
