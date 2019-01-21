@@ -300,9 +300,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2016', _('PyCon Taiwan 2016')),
     ('pycontw-2017', _('PyCon Taiwan 2017')),
     ('pycontw-2018', _('PyCon Taiwan 2018')),
+    ('pycontw-2019', _('PyCon Taiwan 2019')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2018'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2019'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -310,7 +311,7 @@ STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
 
-PROPOSALS_CREATABLE = False
+PROPOSALS_CREATABLE = True
 
 PROPOSALS_EDITABLE = True
 

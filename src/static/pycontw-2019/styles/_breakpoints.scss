@@ -1,0 +1,23 @@
+@import 'breakpoint-sass/stylesheets/breakpoint';
+
+$mobile-max: 900px;
+
+@mixin on-desktop {
+	@include breakpoint($mobile-max) {
+		@content;
+	}
+}
+
+html {
+	font-size: 80%;
+
+	@include breakpoint(350px) {
+		font-size: 85%;
+	}
+	@include breakpoint(600px) {
+		font-size: 90%;
+	}
+	@include breakpoint(900px) {
+		font-size: 100%;
+	}
+}
