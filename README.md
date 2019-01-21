@@ -107,6 +107,19 @@ Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/py
 
 Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](http://docs.transifex.com/client/config/) first by adding the file `~/.transifexrc`.
 
+For maintainer update transifex
+
+```
+# maybe
+# pip install -U transifex-client
+
+python manage.py makemessages
+
+tx push -s
+``
+
+Then update the translation in transifex.
+
 Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
 
     rm locale/en_US/LC_MESSAGES/django.*
