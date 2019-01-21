@@ -116,7 +116,7 @@ For maintainer update transifex
 python manage.py makemessages
 
 tx push -s
-``
+```
 
 Then update the translation in transifex.
 
