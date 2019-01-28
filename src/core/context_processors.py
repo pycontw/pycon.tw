@@ -9,7 +9,7 @@ from sponsors.models import Sponsor
 
 
 def _build_google_form_url(uid):
-    return 'https://docs.google.com/forms/d/e/{uid}/viewform'.format(uid=uid)
+    return 'https://docs.google.com/forms/d/{uid}/viewform'.format(uid=uid)
 
 
 def script_prefix(request):
@@ -21,11 +21,11 @@ def script_prefix(request):
 def pycontw(request):
     lang = get_language()
     if lang and lang.startswith('zh'):
-        sponsor_id = '1FAIpQLScEIeCrTHNvwbdNbZt4nK1mteC6NzHtXgF5bVn1KTtR0_sorA'
-        volun_id = '1FAIpQLSfZyBNTA577CkeLSAw6OtpA8aWQGLKymCgvtKRwvuCXORgMxg'
+        sponsor_id = '1QxpLZm1KOQ3cffJQM5wxeA1dadZSoViyGjNAx4VCdxY'
+        volun_id = 'e/1FAIpQLSfZyBNTA577CkeLSAw6OtpA8aWQGLKymCgvtKRwvuCXORgMxg'
     else:
-        sponsor_id = '1FAIpQLScEIeCrTHNvwbdNbZt4nK1mteC6NzHtXgF5bVn1KTtR0_sorA'
-        volun_id = '1FAIpQLSeEHdCEv7R_BQb6eawQpndSlEPLpUHQDoc7URvJU0fpFeJHIA'
+        sponsor_id = '1QxpLZm1KOQ3cffJQM5wxeA1dadZSoViyGjNAx4VCdxY'
+        volun_id = 'e/1FAIpQLSeEHdCEv7R_BQb6eawQpndSlEPLpUHQDoc7URvJU0fpFeJHIA'
     return {
         'GA_TRACK_ID': settings.GA_TRACK_ID,
         'GTM_TRACK_ID': settings.GTM_TRACK_ID,
