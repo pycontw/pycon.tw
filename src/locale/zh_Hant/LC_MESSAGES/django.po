@@ -2384,10 +2384,6 @@ msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 msgid "Become a volunteer"
 msgstr "成為志工"
 
-#: templates/pycontw-2019/index.html
-msgid "Apply"
-msgstr "應徵"
-
 #: users/admin.py:18
 msgid "Personal info"
 msgstr "個人介紹"

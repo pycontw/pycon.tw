@@ -2379,9 +2379,6 @@ msgstr "<p>Help us organize and make the conference successful!</p>"
 msgid "Become a volunteer"
 msgstr "Become a volunteer"
 
-#: templates/pycontw-2019/index.html
-msgid "Apply"
-msgstr "Apply"
 
 #: users/admin.py:18
 msgid "Personal info"
