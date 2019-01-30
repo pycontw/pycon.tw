@@ -9,7 +9,7 @@ from sponsors.models import Sponsor
 
 
 def _build_google_form_url(uid):
-    return 'https://docs.google.com/forms/d/e/{uid}/viewform'.format(uid=uid)
+    return 'https://docs.google.com/forms/d/{uid}/viewform'.format(uid=uid)
 
 
 def script_prefix(request):
