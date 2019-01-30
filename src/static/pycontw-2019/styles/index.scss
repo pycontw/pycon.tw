@@ -53,3 +53,21 @@
 		margin-top: 40px;
 	}
 }
+.index-cfp {
+	@include index-section;
+	padding: 120px inherit;
+	background-image: linear-gradient(159deg, $indigo, $strong-violet);
+
+	article:first-of-type {
+		margin-top: 0;
+	}
+	h2, p {
+		color: $white;
+	}
+
+	.volunteer {
+		@include button(259deg, $azure, $ultramarine-blue);
+		margin-top: 40px;
+	}
+}
+
