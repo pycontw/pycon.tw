@@ -6,6 +6,9 @@
 	$heading-height-mobile: $heading-width-mobile / $heading-aspect;
 	$heading-width-desktop: 20vw;
 	$heading-margin-left-desktop: 100vw - $heading-width-desktop;
+	max-width:100%;
+	height:100vh;
+	margin: 0 auto;
 
 	@mixin hero-text($font-size) {
 		color: $white;
@@ -18,17 +21,23 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 0 - $top-navbar-offset;
-	padding-top: $padding-top-mobile;
+	// padding-top: $padding-top-mobile;
 	height: calc(100vh - #{$padding-top-mobile});
 	max-height: 150vw;
-	background-color:$strong-violet; 
 	@include on-desktop {
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
 		max-height: auto;
-		margin-bottom: 0 - $menu-overlap;
+		margin-bottom: -100px;
 		padding: $padding-top-desktop 0 $menu-overlap 0;
 		
+	}
+	.hero-logo{
+		width: 100vw;
+		max-width:100%;
+		margin-top: 0-$padding-top-desktop;
+		@include on-desktop{
+		}
 	}
 	header {
 		height:100%;
@@ -37,56 +46,8 @@
 		align-items: center;
 		flex-direction: column;
 		position: relative;
-		.hero-logo{
-			position: absolute;
-			margin-top:3px;
-			width:80%;
-			top:10%;
-			@include on-desktop{
-				align-self: flex-start;
-				width:60%;
-				padding-left: 5vw;
-			}
-		}
-		.hero-heading {
-			position: absolute;
-			@include hero-text(2rem);
-			height: $heading-height-mobile;
-			text-align:center;
-			display: flex;
-			align-items: center;
-			bottom: 30%;
-			@include on-desktop {
-				align-self: flex-start;
-				text-align: start;
-				width: $heading-width-desktop;
-				height: $heading-width-desktop / $heading-aspect;
-				right:10%;
-				top: 50%;
-			}
-		}
-
-		.hero-subheading {
-			position: absolute;
-			@include hero-text(1.25rem);
-			line-height: 160%;
-			// margin-left: calc(50vw - #{$heading-width-mobile / 2});
-			font-size: 1.5rem;
-			bottom: 20%;
-			display: flex;
-			align-items: center;
-			@include on-desktop {
-				align-self: flex-start;
-				// margin-left: $heading-margin-left-desktop;
-				bottom: 20%;
-				right: 10%;
-				flex-direction: row;
-				// border: 1px solid black;
-				> * {
-					margin-right: 1px;
-				}
-			}
-		}
+		background-position: center;
+		
 	}
 
 	blockquote {
