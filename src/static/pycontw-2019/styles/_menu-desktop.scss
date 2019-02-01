@@ -10,13 +10,6 @@ $menu-desktop-height: 136px;
 		height: $menu-desktop-height;
 		margin: 0 $menu-desktop-margin-x;
 	}
-
-	.menu-logo {
-		flex: 1;
-		width: 100%;
-		background: $logo center 32px no-repeat;
-	}
-
 	.menu {
 		@include container(100%);
 		@include menu($top-item-color, $top-item-color);

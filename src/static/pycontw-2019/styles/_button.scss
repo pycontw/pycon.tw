@@ -2,9 +2,9 @@
 	@include gradient-hover($angle, $color1, $color2);
 	@include link($white, $white);
 	@include no-underline;
-
+	font-weight: 500;
+	text-shadow: 0 2px 4px rgba(135, 135, 135, 0.5);
 	margin: auto;
-	font-weight: 300;
 
 	@include on-desktop {
 		max-width: 336px;
@@ -15,7 +15,7 @@
 	@include text($text-font-size);
 	@include text-light;
 	@include no-underline;
-
+	
 	padding-top: 16px;
 	padding-bottom: 16px;
 	border: none;
