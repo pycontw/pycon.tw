@@ -3,12 +3,18 @@
 	@include link($white, $white);
 	@include no-underline;
 	font-weight: 500;
-	text-shadow: 0 2px 4px rgba(135, 135, 135, 0.5);
 	margin: auto;
 
 	@include on-desktop {
 		max-width: 336px;
 	}
+}
+
+@mixin outline-button($color) {
+	@include button(0, $color, $color);
+	border: 2px solid $color;
+	background: transparent;
+	color: $color;
 }
 
 .button-round {
@@ -19,5 +25,5 @@
 	padding-top: 16px;
 	padding-bottom: 16px;
 	border: none;
-	border-radius: 100px;
+	border-radius: 4px;
 }
