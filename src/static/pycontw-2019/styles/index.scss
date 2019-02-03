@@ -35,38 +35,51 @@
 	}
 }
 
-.index-volunteer {
-	@include index-section;
-	padding: 120px inherit;
-	background-color:$egyptian-blue;
+.index-volunteer-container {
+	display: flex;
+	flex-flow: row wrap;
+	background: $egyptian-blue;
+	justify-content: center;
+	align-items: flex-end;
 
-	article:first-of-type {
-		margin-top: 0;
-	}
-	h2, p {
-		color: $white;
+	.index-volunteer, .index-cfp {
+		flex: 1 1 0;
 	}
 
-	.volunteer {
-		@include button(276deg, $portica, $portica);
-		margin-top: 40px;
+	.index-volunteer {
+		@include index-section;
+		padding: 120px;
+	
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $white;
+		}
+	
+		.volunteer {
+			@include outline-button($portica);
+			margin-top: 40px;
+		}
+	}
+
+	.index-cfp {
+		@include index-section;
+		padding: 120px;
+		background-color: $egyptian-blue;
+	
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $white;
+		}
+	
+		.volunteer {
+			@include outline-button($portica);
+			margin-top: 40px;
+		}
 	}
 }
-.index-cfp {
-	@include index-section;
-	padding: 120px inherit;
-	background-color: $egyptian-blue;
 
-	article:first-of-type {
-		margin-top: 0;
-	}
-	h2, p {
-		color: $white;
-	}
-
-	.volunteer {
-		@include button(276deg, $portica, $portica);
-		margin-top: 40px;
-	}
-}
 
