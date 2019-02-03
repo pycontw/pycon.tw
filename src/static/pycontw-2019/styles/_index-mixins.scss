@@ -58,7 +58,9 @@ $menu-desktop-border-radius: 8px;
 			height: 80px;
 			margin-top: 40px;
 			margin-left: -560px;
-			background: url('../assets/deco-circle-blue.svg') center no-repeat;
+			background: url('../assets/grass-blue.svg') center no-repeat;
+			background-size:20vw;
+			transform: rotate(45deg);
 		}
 		> article:last-of-type {
 			&::before {
@@ -69,17 +71,20 @@ $menu-desktop-border-radius: 8px;
 				width: 100%;
 				height: 304px;
 				margin-left: 296px;
-				background: url('../assets/deco-circle-yellow.svg') center no-repeat;
+				background: url('../assets/grass-yellow.svg') center no-repeat;
+				background-size:20vw;
+				transform: rotate(-135deg);
 			}
 			&::after {
 				content: '';
 				position: absolute;
 				z-index: $background-deco-index;
 				width: 100%;
-				height: 80px;
+				height: 400px;
 				margin-top: 24px;
 				margin-left: 208px;
-				background: url('../assets/deco-circle-grey.svg') center no-repeat;
+				background: url('../assets/grass-green.svg') center no-repeat;
+				background-size:20vw;
 			}
 		}
 
