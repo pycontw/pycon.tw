@@ -20,11 +20,17 @@
 
 	display: flex;
 	flex-direction: column;
-	margin-top: 0 - $top-navbar-offset;
+	margin-top: 0;
 	// padding-top: $padding-top-mobile;
 	height: calc(100vh - #{$padding-top-mobile});
-	max-height: 150vw;
+	max-height: 130vw;
+	
+	background: url('../assets/landingpage-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: 100vw;
 	@include on-desktop {
+		background: url('../assets/landingpage-desktop.svg');
+		
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
 		max-height: auto;
