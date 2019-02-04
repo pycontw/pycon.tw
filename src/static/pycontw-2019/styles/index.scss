@@ -4,6 +4,7 @@
 @import 'index-partners';
 
 .top-navbar {
+	background-color: $portica;
 	@include on-desktop {
 		border-bottom-color: transparent;
 	}
@@ -15,15 +16,13 @@
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-strong-violet.svg'), $strong-violet, $strong-violet, $text-dark);
+		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue, $text-dark);
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
-	box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .index-introduction {
 	@include index-section;
-	@include logo-background-section;
 
 	@include on-desktop {
 		margin-top: 0 - $menu-desktop-height / 2;
@@ -36,38 +35,51 @@
 	}
 }
 
-.index-volunteer {
-	@include index-section;
-	padding: 120px inherit;
-	background-image: linear-gradient(159deg, $indigo, $strong-violet);
+.index-volunteer-container {
+	display: flex;
+	flex-flow: row wrap;
+	background: $egyptian-blue;
+	justify-content: center;
+	align-items: flex-end;
 
-	article:first-of-type {
-		margin-top: 0;
-	}
-	h2, p {
-		color: $white;
+	.index-volunteer, .index-cfp {
+		flex: 1 1 0;
 	}
 
-	.volunteer {
-		@include button(259deg, $azure, $ultramarine-blue);
-		margin-top: 40px;
+	.index-volunteer {
+		@include index-section;
+		padding: 120px;
+	
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $white;
+		}
+	
+		.volunteer {
+			@include outline-button($portica);
+			margin-top: 40px;
+		}
+	}
+
+	.index-cfp {
+		@include index-section;
+		padding: 120px;
+		background-color: $egyptian-blue;
+	
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $white;
+		}
+	
+		.volunteer {
+			@include outline-button($portica);
+			margin-top: 40px;
+		}
 	}
 }
-.index-cfp {
-	@include index-section;
-	padding: 120px inherit;
-	background-image: linear-gradient(159deg, $indigo, $strong-violet);
 
-	article:first-of-type {
-		margin-top: 0;
-	}
-	h2, p {
-		color: $white;
-	}
-
-	.volunteer {
-		@include button(259deg, $azure, $ultramarine-blue);
-		margin-top: 40px;
-	}
-}
 
