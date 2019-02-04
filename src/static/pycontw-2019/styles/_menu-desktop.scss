@@ -8,7 +8,7 @@ $menu-desktop-height: 136px;
 		display: flex;
 		flex-direction: column;
 		height: $menu-desktop-height;
-		margin: 0 $menu-desktop-margin-x;
+		margin: 49px $menu-desktop-margin-x;
 	}
 	.menu {
 		@include container(100%);
