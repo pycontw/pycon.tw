@@ -9,7 +9,7 @@ $container-max-width: 720px;
 	@include container;
 }
 
-$content-section-padding: 96px 40px 80px 40px;
+$content-section-padding: 20px 40px 80px 40px;
 
 @mixin content-section {
 	padding: $content-section-padding;
