@@ -1,9 +1,12 @@
+@import 'index-mixins';
+
 .index-partners {
 	@include index-section();
 	@include circle-background-section();
 
 	> .container {
 		@include container(904px);
+		padding-bottom: 8px;
 	}
 
 	h3 {
@@ -61,6 +64,38 @@
 	}
 
 	.sponsorship {
-		@include button(276deg, $dark-peach, $maize);
+		@include button(259deg,$elf-green,$elf-green);
+	}
+
+	.sponsor-form-block {
+		&::after {
+			@include grass-python-logo('../assets/grass-green.svg', 50px);
+			margin: 20px auto;
+		}
+	}
+
+	&::before {
+		@include grass-python-logo('../assets/grass-blue.svg', 200px);
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: rotate(-135deg);
+	}
+
+	&::after {
+		@include grass-python-logo('../assets/grass-blue.svg', 200px);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: rotate(45deg);
+	}
+}
+
+
+@media (max-width: 760px) {
+	.index-partners {
+		&::before, &::after {
+			display: none;
+		}
 	}
 }

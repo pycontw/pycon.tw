@@ -22,7 +22,6 @@
 {% include '_includes/hero.html' %}
 
 <nav class="menu-navbar-desktop">
-	<div class="menu-logo"></div>
 	{% include '_includes/menu.html' with type='desktop' %}
 </nav>
 
@@ -44,19 +43,21 @@
 
 </section>
 
-<section class="index-volunteer">
-	<article class="container">
-		<h2>{% trans 'Volunteers Needed' %}</h2>
-		{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
-		<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a volunteer' %}</a>
-	</article>
-</section>
-<section class="index-cfp">
-	<article class="container">
-		<h2>{% trans 'Call for Proposals' %}</h2>
-		{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
-		<a href="{{ speaking_cfp_url }}" class="center button-round volunteer" target="_blank" rel="noopener">Apply</a>
-	</article>
+<section class="index-volunteer-container">
+	<section class="index-volunteer">
+		<article class="container">
+			<h2>{% trans 'Volunteers Needed' %}</h2>
+			{% comment %} {% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %} {% endcomment %}
+			<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a volunteer' %}</a>
+		</article>
+	</section>
+	<section class="index-cfp">
+		<article class="container">
+			<h2>{% trans 'Call for Proposals' %}</h2>
+			{% comment %} {% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %} {% endcomment %}
+			<a href="{{ speaking_cfp_url }}" class="center button-round volunteer" target="_blank" rel="noopener">Apply</a>
+		</article>
+	</section>
 </section>
 {% include '_includes/sponsors.html' %}
 

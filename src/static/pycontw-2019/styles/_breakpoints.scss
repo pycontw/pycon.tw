@@ -1,6 +1,6 @@
 @import 'breakpoint-sass/stylesheets/breakpoint';
 
-$mobile-max: 900px;
+$mobile-max: 768px;
 
 @mixin on-desktop {
 	@include breakpoint($mobile-max) {
