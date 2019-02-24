@@ -42,7 +42,7 @@ main {
 
 		@include shove-left();
 		@include fill-vw(2rem);
-		margin-top: -160px;
+		margin-top: -10vh;
 		margin-bottom: 48px;
 
 		background-color: $top-navbar-background-color;
