@@ -4,9 +4,9 @@
 # http://pythonhosted.org/psycopg2/
 psycopg2==2.7.3.2
 
-# Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX.
-# http://gunicorn.org/
-gunicorn==19.7.1
+# uWSGI aims at developing a full stack for building hosting services
+# https://uwsgi-docs.readthedocs.io/
+uWSGI==2.0.17.1
 
 # django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.
 # http://niwinz.github.io/django-redis/latest/
