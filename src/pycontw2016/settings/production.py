@@ -27,7 +27,7 @@ loaders = [
 
 TEMPLATES[0]['OPTIONS'].update({"loaders": loaders})
 TEMPLATES[0]['OPTIONS'].update({"debug": False})
-del TEMPLATES[0]['APP_DIRS']
+TEMPLATES[0].pop('APP_DIRS', None)
 
 # Explicitly tell Django where to find translations.
 LOCALE_PATHS = [join(BASE_DIR, 'locale')]

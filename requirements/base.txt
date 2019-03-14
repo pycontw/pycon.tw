@@ -27,6 +27,9 @@ django-extensions==1.6.1
 # https://github.com/torchbox/django-libsass
 django-libsass==0.6
 
+# Pin libsass's version to get aways with the '@return can only be used in function' error
+libsass==0.12.3
+
 # Translates Django models using a registration approach.
 # https://github.com/deschler/django-modeltranslation
 django-modeltranslation==0.11
