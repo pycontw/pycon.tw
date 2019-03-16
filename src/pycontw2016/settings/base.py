@@ -274,7 +274,6 @@ FIREBASE_DB = '/pycontw2018'
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 
-GA_TRACK_ID = None
 GTM_TRACK_ID = None
 
 SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
