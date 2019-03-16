@@ -7,13 +7,13 @@ $menu-desktop-height: 136px;
 	@include on-desktop {
 		display: flex;
 		flex-direction: column;
-		height: $menu-desktop-height;
-		margin: 49px $menu-desktop-margin-x;
+		height: $top-navbar-height;
+		margin: -$top-navbar-height;
 	}
 	.menu {
 		@include container(100%);
 		@include menu($top-item-color, $top-item-color);
-
+		z-index: 1000;
 		$menu-item-spacing: 40px;
 		$menu-item-height: $menu-desktop-height / 2;
 
@@ -33,8 +33,10 @@ $menu-desktop-height: 136px;
 				// because we're relying on the half-logo/half-item nature of the
 				// menubar. Real vertical centering would require additional markup.
 				// The minus 1px is the bottom border decoration.
-				line-height: $menu-item-height - 1px;
-
+				line-height: $top-navbar-height;
+				font-size: 18px;
+				font-weight: 500;
+				font-style: normal;
 				&::after {
 					content: '';
 					display: block;
@@ -71,7 +73,6 @@ $menu-desktop-height: 136px;
 			$item-padding: 8px;
 
 			position: absolute;
-			top: $menu-item-height + 12px;
 			left: calc(50% - #{$width / 2});
 			min-width: $width;
 			background: rgba($white, 0.95);
@@ -86,12 +87,11 @@ $menu-desktop-height: 136px;
 				display: flex;
 				flex-direction: column;
 				align-content: stretch;
-
+				
 				@include menu-item($text-dark, $link-hover-dark) {
 					flex: 1;
 					padding: $item-padding;
 				}
-
 				&:first-child > *:first-child {
 					padding-top: 2 * $item-padding;
 				}

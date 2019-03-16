@@ -16,7 +16,7 @@ body {
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-white.svg'), $white, $white-two, $text-light);
+		url('../assets/logo-white.svg'), $white, $white-two, $portica);
 }
 
 // Shove to left edge, ignoring container.

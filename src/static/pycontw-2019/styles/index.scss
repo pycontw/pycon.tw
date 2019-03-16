@@ -4,21 +4,22 @@
 @import 'index-partners';
 
 .top-navbar {
-	background-color: $portica;
 	@include on-desktop {
 		border-bottom-color: transparent;
+		z-index: 1;
 	}
-
 	.navbar-logo {
 		margin-top: (3 * $top-navbar-height - $top-navbar-logo-height) / 2;
 	}
+	background-color: $portica;
 }
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue, $text-dark);
+		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue, $egyptian-blue);
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
+	
 }
 
 .index-introduction {
