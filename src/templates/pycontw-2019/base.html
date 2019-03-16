@@ -34,14 +34,6 @@
 
 {% block extra_css %}{% endblock extra_css %}
 
-{# Google Analytics. #}
-{% if GA_TRACK_ID %}
-<script>
-window.GA_TRACK_ID = '{{ GA_TRACK_ID }}';
-</script>
-<script src="{% static 'js/vendors/google_analytics.js' %}"></script>
-{% endif %}
-
 {# Google Tag Manager. #}
 {% if GTM_TRACK_ID %}
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -126,7 +126,6 @@ RAVEN_CONFIG = {
     'release': raven.fetch_git_sha(os.path.dirname(BASE_DIR)),
 }
 
-GA_TRACK_ID = env('GA_TRACK_ID', default=None)
 GTM_TRACK_ID = env('GTM_TRACK_ID', default=None)
 
 DJANGO_Q_DEBUG = False
