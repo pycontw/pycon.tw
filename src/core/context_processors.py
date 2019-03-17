@@ -27,7 +27,6 @@ def pycontw(request):
         sponsor_id = '1FAIpQLScEIeCrTHNvwbdNbZt4nK1mteC6NzHtXgF5bVn1KTtR0_sorA'
         volun_id = '1FAIpQLScslZSIKPylGvnw2yFNMEINIdoA1avj89FrIfOP2N9H0xbCrg'
     return {
-        'GA_TRACK_ID': settings.GA_TRACK_ID,
         'GTM_TRACK_ID': settings.GTM_TRACK_ID,
         'KKTIX_URL': {
             'RSVD': 'https://pycontw.kktix.cc/events/20180601-reserved',
