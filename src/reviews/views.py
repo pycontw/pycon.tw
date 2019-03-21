@@ -210,6 +210,24 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             )
         except Review.DoesNotExist:
             review = None
+
+        if review is None and settings.REVIEWS_STAGE == 2:
+            # If the reviewer reviewed the same proposal in the first stage,
+            # initialise the form with previous vote and comment as default values.
+            try:
+                previous_review = Review.objects.get(
+                    proposal=self.proposal,
+                    reviewer=self.request.user,
+                    stage=1,
+                )
+                review = Review(
+                    vote=previous_review.vote,
+                    comment=previous_review.comment,
+                    note=previous_review.note,
+                    discloses_comment=previous_review.discloses_comment,
+                )
+            except Review.DoesNotExist:
+                review = None
         return review
 
     def get_form_kwargs(self):
