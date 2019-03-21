@@ -1,5 +1,4 @@
 from django import forms
-from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 from core.forms import RequestUserValidationMixin
@@ -27,16 +26,6 @@ class ReviewForm(RequestUserValidationMixin, forms.ModelForm):
     def __init__(self, proposal, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._proposal = proposal
-        if self.instance.id is None and settings.REVIEWS_STAGE == 2:
-            # Fill the values from previous review if the reviewer reviewed
-            # the proposal in the first round
-            try:
-                previous_review = Review.objects.get(
-                    proposal=proposal, reviewer=self._request.user, stage=1)
-                for name, field in self.fields.items():
-                    field.initial = getattr(previous_review, name)
-            except Review.DoesNotExist:
-                pass
 
     def clean(self):
         """Validate user and proposal for saving later.
