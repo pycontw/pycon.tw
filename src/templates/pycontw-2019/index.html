@@ -51,13 +51,15 @@
 			<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a volunteer' %}</a>
 		</article>
 	</section>
+	{% comment %}
 	<section class="index-cfp">
 		<article class="container">
 			<h2>{% trans 'Call for Proposals' %}</h2>
-			{% comment %} {% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %} {% endcomment %}
+			{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
 			<a href="{{ speaking_cfp_url }}" class="center button-round volunteer" target="_blank" rel="noopener">Apply</a>
 		</article>
 	</section>
+	{% endcomment %}
 </section>
 {% include '_includes/sponsors.html' %}
 
