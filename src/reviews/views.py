@@ -218,6 +218,22 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             'request': self.request,
             'proposal': self.proposal,
         })
+        if kwargs.get('object') is not None or kwargs.get('initial'):
+            return kwargs
+        try:
+            review = Review.objects.get(
+                proposal=self.proposal,
+                reviewer=self.request.user,
+                stage=settings.REVIEWS_STAGE - 1,
+            )
+        except Review.DoesNotExist:
+            return kwargs
+        kwargs['initial'] = {
+            'vote': review.vote,
+            'comment': review.comment,
+            'note': review.note,
+            'discloses_comment': review.discloses_comment,
+        }
         return kwargs
 
     def get_context_data(self, **kwargs):
