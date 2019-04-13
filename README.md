@@ -10,12 +10,19 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 ### Requirements
 
 - Git 1.8+
-- Python 3.6+
+- Python > 3.6, < 3.7
 - Yarn 1.0+
+- Node.js 8.0+
 
 ### Set up a Virtual Environment
 
-#### Built-in `venv`
+#### Database - Docker (Optional)
+
+Create and start the database for development:
+
+    docker-compose up -d
+
+#### Python - Built-in `venv`
 
 Create your virtual environment:
 
@@ -25,11 +32,17 @@ And enable it:
 
     . venv/bin/activate
 
-#### [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
+#### Python - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
 
 You need to specify your python path when creating the virtual environment:
 
     mkvirtualenv --python=$(which python3) pycontw2016
+
+#### Node.js - [nvm](https://github.com/creationix/nvm)
+
+Switch to version specified in `.nvmrc`:
+
+    nvm use
 
 ### Install Dependencies
 
