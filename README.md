@@ -10,7 +10,7 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 ### Requirements
 
 - Git 1.8+
-- Python > 3.6, < 3.7
+- Python 3.6.x
 - Yarn 1.0+
 - Node.js 8.0+
 
