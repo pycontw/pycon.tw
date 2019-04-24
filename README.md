@@ -43,6 +43,10 @@ You need to specify your python path when creating the virtual environment:
 Switch to version specified in `.nvmrc`:
 
     nvm use
+    
+Install dependencies:
+
+    npm ci
 
 ### Install Dependencies
 
