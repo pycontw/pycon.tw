@@ -147,3 +147,21 @@ Run `tx pull` to get newer translation and recompile the PO files:
 
     tx pull -a
     python manage.py compilemessages -x _src
+
+## Troubleshooting
+
+### Cannot install Pillow on macOS Mojave
+
+You might see the following message or similar one when trying to install Pillow:
+
+```
+ValueError: --enable-zlib requested but zlib not found, aborting.
+```
+
+According to [python-pillow/Pillow#3438](https://github.com/python-pillow/Pillow/issues/3438), please run the following command:
+
+```bash
+sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+```
+
+...and run `pip install -r requirements.txt` again.
