@@ -50,3 +50,7 @@ lxml==4.1.1
 # Parses CSS3 Selectors and translate them to XPath 1.0 expressions.
 # https://pythonhosted.org/cssselect/
 cssselect==0.9.1
+
+# HTTP library with thread-safe connection pooling, file post, and more.
+# https://urllib3.readthedocs.io/
+urllib3==1.24.1
