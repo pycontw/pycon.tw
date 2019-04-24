@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import override
 from django.utils.text import slugify
+from ordered_model.models import OrderedModel
 
 from core.models import ConferenceRelated
 
@@ -13,8 +14,7 @@ def logo_upload_to(instance, filename):
     )
 
 
-class Sponsor(ConferenceRelated):
-
+class Sponsor(ConferenceRelated, OrderedModel):
     name = models.CharField(
         verbose_name=_('name'),
         max_length=100,
@@ -36,7 +36,7 @@ class Sponsor(ConferenceRelated):
     )
     logo_image = models.ImageField(
         verbose_name=_('logo (image)'),
-        db_column='logo',   # Backward compatibility.
+        db_column='logo',  # Backward compatibility.
         blank=True, upload_to=logo_upload_to,
         help_text=_(
             "Raster format of the logo, e.g. PNG, JPEG. This is used as "
@@ -76,10 +76,10 @@ class Sponsor(ConferenceRelated):
         choices=LEVEL_CHOICES,
     )
 
-    class Meta:
+    class Meta(OrderedModel.Meta):
         verbose_name = _('sponsor')
         verbose_name_plural = _('sponsors')
-        ordering = ('level', 'name',)
+        ordering = ('order',)
 
     def __str__(self):
         return self.name

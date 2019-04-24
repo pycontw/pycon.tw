@@ -101,6 +101,7 @@ THIRD_PARTY_APPS = (
     'django_q',
     'import_export',
     'sorl.thumbnail',
+    'ordered_model',
 )
 
 LOCAL_APPS = (
