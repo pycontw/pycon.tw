@@ -79,3 +79,7 @@ tabulate==0.7.5
 # Transifex, an online translation collaboration platform
 # http://docs.transifex.com/client/
 transifex-client==0.11
+
+# Allows Django models to be ordered and provides a simple admin interface for reordering them.
+# https://github.com/bfirsh/django-ordered-model
+django-ordered-model==1.5.0
