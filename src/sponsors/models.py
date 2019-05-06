@@ -75,6 +75,7 @@ class Sponsor(ConferenceRelated, OrderedModel):
         verbose_name=_('level'),
         choices=LEVEL_CHOICES,
     )
+    order_with_respect_to = 'level'
 
     class Meta(OrderedModel.Meta):
         verbose_name = _('sponsor')
