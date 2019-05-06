@@ -55,7 +55,7 @@ def reviews_states(request):
 
 def iter_sponsor_section():
     groups = itertools.groupby(
-        Sponsor.objects.order_by('level'),
+        Sponsor.objects.order_by('level', 'order'),
         key=operator.methodcaller('get_level_display'),
     )
     for k, v in groups:
