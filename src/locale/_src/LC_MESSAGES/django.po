@@ -2257,6 +2257,7 @@ msgstr ""
 #: templates/pycontw-2018/_includes/sponsors.html:70
 #: templates/pycontw-2019/_includes/sponsors.html:70
 msgid "Enquire about sponsorship"
+msgstr ""
 
 #: templates/pycontw-2018/_includes/staff.html:3
 #: templates/pycontw-2019/_includes/staff.html:3

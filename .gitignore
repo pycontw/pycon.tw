@@ -76,6 +76,9 @@ Desktop.ini
 *.sublime-workspace
 *.sublime-project
 
+# cache files for vsode
+.vscode/
+
 # Cache
 CACHE
 

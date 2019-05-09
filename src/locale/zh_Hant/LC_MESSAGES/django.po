@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Adrian Liaw <adrianliaw2000@gmail.com>, 2018-2019
 # Michelle <flywindy2002@gmail.com>, 2015-2016
@@ -1727,7 +1727,7 @@ msgstr "住宿"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:68
 #: templates/pycontw-2019/_includes/menu.html:33
 msgid "Sponsor"
-msgstr "贊助合作"
+msgstr "贊助"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:70
 #: templates/pycontw-2016/sponsors/sponsor_list.html:5
@@ -2256,7 +2256,7 @@ msgstr "夥伴"
 #: templates/pycontw-2018/_includes/sponsors.html:70
 #: templates/pycontw-2019/_includes/sponsors.html:70
 msgid "Enquire about sponsorship"
-msgstr "協助我們舉辦，讓年會變得更好！"
+msgstr "詢問贊助辦法"
 
 #: templates/pycontw-2018/_includes/staff.html:3
 #: templates/pycontw-2019/_includes/staff.html:3
@@ -2427,7 +2427,7 @@ msgid ""
 "focuses on Python technology and its versatile applications. We welcome "
 "people who are interested in Python to join PyCon Taiwan to share knowledge,"
 " exchange ideas, make connections and to help us grow our network.</p>"
-msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
+msgstr "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
 
 #: templates/pycontw-2018/index.html:50 templates/pycontw-2019/index.html:50
 msgid "<p>Help us organize and make the conference successful!</p>"
@@ -2435,7 +2435,7 @@ msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
 #: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:51
 msgid "Become a volunteer"
-msgstr "想成為 PYCON 志工一員！"
+msgstr "成為志工"
 
 #: templates/pycontw-2019/_includes/menu.html:38
 msgid "Speaking"
