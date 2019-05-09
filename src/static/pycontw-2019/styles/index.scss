@@ -37,29 +37,31 @@
 .index-volunteer-container {
 	display: flex;
 	flex-flow: row wrap;
-	background: $egyptian-blue;
+	background: transparent;
 	justify-content: center;
 	align-items: flex-end;
 
 	.index-volunteer, .index-cfp {
-		flex: 1 1 0;
+		@include index-container-background;
 	}
 
 	.index-volunteer {
 		@include index-section;
-		padding: 120px;
 	
 		article:first-of-type {
-			margin-top: 0;
+			background: $portica-65;
 		}
+
 		h2, p {
-			color: $white;
+			color: $egyptian-blue;
 		}
 	
 		.volunteer {
-			@include outline-button($portica);
+			@include button(259deg, $portica, $portica);
+			text-shadow: 1px 1px 0 darken($portica, 10%);
 			margin-top: 40px;
 		}
+
 	}
 
 	.index-cfp {
@@ -68,6 +70,7 @@
 		background-color: $egyptian-blue;
 	
 		article:first-of-type {
+			max-width: 100%;
 			margin-top: 0;
 		}
 		h2, p {

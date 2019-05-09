@@ -2256,7 +2256,7 @@ msgstr "夥伴"
 #: templates/pycontw-2018/_includes/sponsors.html:70
 #: templates/pycontw-2019/_includes/sponsors.html:70
 msgid "Enquire about sponsorship"
-msgstr "詢問贊助辦法"
+msgstr "協助我們舉辦，讓年會變得更好！"
 
 #: templates/pycontw-2018/_includes/staff.html:3
 #: templates/pycontw-2019/_includes/staff.html:3
@@ -2435,7 +2435,7 @@ msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
 #: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:51
 msgid "Become a volunteer"
-msgstr "成為志工"
+msgstr "想成為 PYCON 志工一員！"
 
 #: templates/pycontw-2019/_includes/menu.html:38
 msgid "Speaking"

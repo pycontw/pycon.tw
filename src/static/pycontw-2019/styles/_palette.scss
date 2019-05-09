@@ -19,18 +19,19 @@ $white-35: rgba(255, 255, 255, 0.35);
 $strong-violet:#7200d6;
 $portica:#F4D35E;
 $elf-green:#169B64;
+$elf-green-light: #e7f5ef;
 $egyptian-blue:#224398;
 
 /* Some extra styles not in the Zepplin palette. */
 $white-65: rgba(255, 255, 255, 0.65);
-
+$portica-65: rgba(253, 246, 223, 0.6);
 
 /* Header styles. */
 
 $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 
 @mixin header($font-size) {
-  color: $black;
+  color: $egyptian-blue;
   font-family: $header-font-family;
   font-size: $font-size;
   font-weight: 300;
