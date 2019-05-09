@@ -39,7 +39,8 @@ $menu-desktop-height: 136px;
 				// menubar. Real vertical centering would require additional markup.
 				// The minus 1px is the bottom border decoration.
 				line-height: $menu-item-height - 1px;
-
+				font-weight: normal;
+				color: $egyptian-blue;
 				&::after {
 					content: '';
 					display: block;
@@ -92,7 +93,7 @@ $menu-desktop-height: 136px;
 				flex-direction: column;
 				align-content: stretch;
 
-				@include menu-item($text-dark, $link-hover-dark) {
+				@include menu-item($egyptian-blue, $link-hover-dark) {
 					flex: 1;
 					padding: $item-padding;
 				}
