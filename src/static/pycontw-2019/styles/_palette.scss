@@ -20,6 +20,7 @@ $strong-violet:#7200d6;
 $portica:#F4D35E;
 $elf-green:#169B64;
 $egyptian-blue:#224398;
+$waikawa-grey: #616e86; 
 
 /* Some extra styles not in the Zepplin palette. */
 $white-65: rgba(255, 255, 255, 0.65);
@@ -30,7 +31,7 @@ $white-65: rgba(255, 255, 255, 0.65);
 $header-font-family: 'Roboto Mono', 'Noto Sans TC', 'sans-serif';
 
 @mixin header($font-size) {
-  color: $black;
+  color: $egyptian-blue;
   font-family: $header-font-family;
   font-size: $font-size;
   font-weight: 300;
@@ -92,8 +93,8 @@ $text-font-size-small: 0.75rem;	// ~ 12px.
 $text-light: $white;
 $text-dark: $black;
 
-$link-dark: #9d50ff;
-$link-hover-dark: #9d50ff;
+$link-dark: #2cb57c;
+$link-hover-dark: #2cb57c;
 $link-light: $white-two;
 $link-hover-light: $white;
 
