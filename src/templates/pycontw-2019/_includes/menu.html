@@ -29,9 +29,7 @@
 	<li>
 		<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
 	</li>
-	<li>
-		<a href="{{ sponsor_url }}">{% trans 'Sponsor' %}</a>
-	</li>
+
 	{% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
@@ -47,7 +45,6 @@
 		</div>
 	</li>
 	{% endcomment %}
-  {% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker" data-action="change->menu#exclude">
@@ -63,7 +60,12 @@
 			</ul>
 		</div>
 	</li>
-  {% endcomment %}
+	<li>
+		<a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a>
+	</li>
+	<li>
+		<a href="{{ sponsor_url }}">{% trans 'Sponsor' %}</a>
+	</li>
   {% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
@@ -77,7 +79,6 @@
 		</div>
 	</li>
   {% endcomment %}
-  {% comment %}
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker" data-action="change->menu#exclude">
@@ -90,10 +91,7 @@
 			</ul>
 		</div>
 	</li>
-	<li>
-		<a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a>
-	</li>
-  {% endcomment %}
+
 	<li>
 		<a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
 	</li>
