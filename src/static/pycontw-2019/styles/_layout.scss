@@ -53,7 +53,9 @@ footer {
 		margin-bottom: 80px;
 		padding-left: 0;
 		line-height: 48px;
-
+		a:hover{
+			color: $portica;
+		}
 		&::before {
 			content: '';
 			display: inline-block;
