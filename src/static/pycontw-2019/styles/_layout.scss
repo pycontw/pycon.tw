@@ -80,7 +80,6 @@ body.overlay-open {
 	@include on-desktop {
 		max-width: none;
 		max-height: none;
-		overflow: auto;
 	}
 }
 
