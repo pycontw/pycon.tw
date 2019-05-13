@@ -27,20 +27,10 @@ footer {
 		align-items: flex-end;
     justify-content: center;
 		.footer-logo {
-			width: 38px;
+			width: 145px;
 			height: 52px;
 			margin: 0px 7px 0px 0px;
-			background: url('../assets/logo-icon-yellow.svg') center no-repeat;
-		}
-		.footer-grass {
-			width: 23px;
-			margin: 0px 34px;
-			height: 25px;
-			background-image: url('../assets/one-grass-yellow.svg');
-			background-position: center center;
-			background-size: cover;
-			background-repeat: no-repeat;
-			transform: rotate(-45deg);
+			background: url('../assets/footer-image.svg') center no-repeat;
 		}
 	}
 
