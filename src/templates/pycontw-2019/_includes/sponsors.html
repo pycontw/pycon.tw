@@ -44,15 +44,14 @@
 							<div class="text">
 								<article>
 									<h4 class="name">
-										{% if sponsor.website_url %}
-										<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
-											{{ sponsor.name }}
-										</a>
-										{% else %}
 										<span>{{ sponsor.name }}</span>
-										{% endif %}
 									</h4>
 									<section class="description">{{ sponsor.intro|linebreaks }}</section>
+									{% if sponsor.website_url %}
+									<a class="link-to-website" href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
+										<span>{% trans '前往官網' %}</span>
+									</a>
+									{% endif %}
 								</article>
 							</div>
 						</div>
@@ -65,9 +64,16 @@
 		{% endfor %}
 
 	</article>
-
-	<article class="sponsor-form-block">
-		<a href="{{ SPONSOR_FORM_URL }}" class="center button-round sponsorship" target="_blank" rel="noopener">{% trans 'Enquire about sponsorship' %}</a>
-	</article>
-
 </section>
+
+<section class="sponsor-form-block">
+	<section class="sponsor-container">
+			<article class="container">
+				<h2>{% trans 'Sponsors Needed' %}</h2>
+				<a href="{{ SPONSOR_FORM_URL }}" class="center button-round sponsorship" target="_blank" rel="noopener">
+					{% trans 'Enquire about sponsorship' %}
+				</a>
+			</article>
+		</section>
+</section>
+

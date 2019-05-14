@@ -5,13 +5,12 @@
 {% url 'page' path='about/community' as community_url %}
 
 <footer>
-	<h2 class="footer-logo"></h2>
+	<div class="footer-logos">
+		<div class='footer-logo'></div>
+	</div>
 	<ul>
 		<li><a href="{{ coc_url }}">{% trans 'Code of Conduct' %}</a></li>
-
-  {% comment %}
 		<li><a href="{{ staff_url }}">{% trans 'Staff' %}</a></li>
-  {% endcomment %}
 		<li><a href="{{ community_url }}">{% trans 'Community' %}</a></li>
 	</ul>
 	<p class="copyright">2019 PyCon Taiwan</p>

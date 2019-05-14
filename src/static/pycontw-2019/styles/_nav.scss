@@ -54,20 +54,21 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		padding: 0;
 		border: none;
 		background: none;
-		color: $white;
+		color: $waikawa-grey;
+		font-weight: 500;
 		font-size: 16px;
 		text-align: center;
 		text-transform: uppercase;
 		cursor: pointer;
 
 		&:disabled {
-			border-radius: 100px;
+			border-radius: 8px;
 			background: $white-35;
-			color: $white;
+			color: $egyptian-blue;
 			cursor: default;
 		}
 		&:not(:disabled):hover {
-			color: $white-65;
+			color: $waikawa-grey;
 		}
 	}
 }
@@ -186,7 +187,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		margin-right: 8px;
 
 		.fa {
-			@include navbar-social-icon(1.375rem, $white, $white);
+			@include navbar-social-icon(1.375rem, $egyptian-blue, $elf-green);
 			margin: 0 16px 0 12px;
 			line-height: $top-navbar-height;
 		}
