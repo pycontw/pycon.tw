@@ -74,7 +74,9 @@
 }
 
 .sponsorship {
-	@include button(259deg,$elf-green,$elf-green);
+	@include bgimg-hover-button($elf-green, url('../assets/button-hover-bg.svg'));
+	font-size: 1.75rem;
+	text-shadow: 1px 1px 0 #058550;
 }
 
 .sponsor-form-block {

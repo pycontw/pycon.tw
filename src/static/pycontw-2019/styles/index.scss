@@ -59,7 +59,7 @@
 		}
 	
 		.volunteer {
-			@include button(0, $portica, $portica);
+			@include bgimg-hover-button($portica, url('../assets/button-hover-bg.svg'));
 			margin-top: 40px;
 			text-shadow: 1px 1px 0 #b09120;
 			font-size: 1.75rem;

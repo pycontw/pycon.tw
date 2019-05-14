@@ -17,6 +17,20 @@
 	color: $color;
 }
 
+@mixin bgimg-hover-button($color, $image){
+	@include link($white, $white);
+	@include no-underline;
+	margin: auto;
+	font-weight: 300;
+	background-color: $color;
+	&:hover{
+		background-image: $image;
+	}
+	@include on-desktop {
+		max-width: 336px;
+	}
+}
+
 .button-round {
 	@include text($text-font-size);
 	@include text-light;
