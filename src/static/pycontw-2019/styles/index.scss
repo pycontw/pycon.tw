@@ -16,7 +16,7 @@
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue, $text-dark);
+		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
 	border-radius: $menu-desktop-border-radius;
 	background-color: $white;
 }
@@ -35,11 +35,13 @@
 }
 
 .index-volunteer-container {
+	@include container(960px);
 	display: flex;
 	flex-flow: row wrap;
-	background: $egyptian-blue;
+	background: rgba(253, 246, 223, 0.6);;
+	border-radius: 12px;
 	justify-content: center;
-	align-items: flex-end;
+	align-items:flex-end;
 
 	.index-volunteer, .index-cfp {
 		flex: 1 1 0;
@@ -47,18 +49,20 @@
 
 	.index-volunteer {
 		@include index-section;
-		padding: 120px;
+		margin-top: 40px;
 	
 		article:first-of-type {
 			margin-top: 0;
 		}
 		h2, p {
-			color: $white;
+			color: $egyptian-blue;
 		}
 	
 		.volunteer {
-			@include outline-button($portica);
+			@include bgimg-hover-button($portica, url('../assets/button-hover-bg.svg'));
 			margin-top: 40px;
+			text-shadow: 1px 1px 0 #b09120;
+			font-size: 1.75rem;
 		}
 	}
 
