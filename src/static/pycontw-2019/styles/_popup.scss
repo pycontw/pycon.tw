@@ -101,8 +101,8 @@
 		display: block;
 
 		img {
-			width: 100%;
 			max-width: 256px;
+			max-height: 38px;
 		}
 	}
 
@@ -144,6 +144,7 @@
 				.description {
 					flex: 1;
 					max-height: 560px;
+					word-wrap: break-word;
 					overflow: auto;
 					margin: 28px 0px;
 
