@@ -36,8 +36,6 @@
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
 		max-height: auto;
-		margin-bottom: -100px;
-		padding: $padding-top-desktop 0 $menu-overlap 0;
 		
 	}
 	.hero-logo{
