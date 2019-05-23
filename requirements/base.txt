@@ -32,6 +32,8 @@ django-extensions==1.7.8
 # https://github.com/torchbox/django-libsass
 django-libsass==0.6
 
+# Binding for libsass, a Sass (Syntactically Awesome Style Sheets) to CSS compiler.
+# https://sass.github.io/libsass-python/
 # Pin libsass's version to get away with the '@return can only be used in function' error
 libsass==0.12.3
 
