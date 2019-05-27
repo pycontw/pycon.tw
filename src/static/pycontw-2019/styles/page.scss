@@ -81,7 +81,14 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
+  h3{
+		text-align: left;
 
+		&::before{
+			content: url('../assets/grass-group.svg');
+			margin-right: 10px;
+		}
+	}
 	// Custom UL bullets.
 	ul {
 		$mark-indent: 1.125rem;
