@@ -32,6 +32,13 @@ def event_cell_class(event):
         classes.append('is-break')
     return ' '.join(classes)
 
+@register.filter
+def event_tr_class(slot_info):
+    for room, event in slot_info:
+        if event._meta.label_lower == 'events.customevent':
+            return 'custom'
+    return ''
+
 
 @register.filter
 def room_display(value):
