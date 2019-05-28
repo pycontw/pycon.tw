@@ -1,0 +1,71 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+{% endblock styles %}
+
+
+{% block body_class %} schedule-page{% endblock body_class %}
+
+
+{% block content %}
+
+<h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
+
+<section class="talk-content talk-info">
+	<ul class="schedule-legend talk-tags">
+		<li class="speech-en">{% trans 'English speech' %}</li>
+		<li class="speech-zh">{% trans 'Mandarin speech' %}</li>
+		<li class="slides-en">{% trans 'English slides' %}</li>
+		<li class="slides-zh">{% trans 'Chinese slides' %}</li>
+		<li class="python-level-novice">{% trans 'Novice' %}</li>
+		<li class="python-level-intermediate">{% trans 'Intermediate' %}</li>
+		<li class="python-level-experienced">{% trans 'Experienced' %}</li>
+		<li class="no-recording">{% trans 'No recording' %}</li>
+	</ul>
+</section>
+
+<article class="media">
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			{% for schedule_date, schedule_info in schedule_days.items %}
+				<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+					{{ schedule_info.name }}
+				</li>
+			{% endfor %}
+		</ul>
+		{% block schedule %}
+		<div class="schedule-content">
+			{{ schedule_html|safe }}
+		</div>
+		{% endblock schedule %}
+	</div>
+</article>
+
+<script type="application/json" id="i18n_variables">
+{
+	"LANGUAGE_PREFIXES": [
+		{% for code, _ in LANGUAGES %}
+		"{{ SCRIPT_PREFIX }}{{ code }}"{% if not forloop.last %}, {% endif %}
+		{% endfor %}
+	],
+	"LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
+}
+</script>
+
+{% block controls %}{% endblock controls %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
+{% endblock scripts %}
