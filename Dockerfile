@@ -1,11 +1,14 @@
 FROM python:3.5
 
+ENV TINI_VERSION=v0.18.0
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
 ENV VENV_DIR $BASE_DIR/venv
 
-RUN apt-get update \
+RUN wget -O /tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-amd64" \
+ && chmod +x /tini \
+ && apt-get update \
  && apt-get install -y wait-for-it \
  && adduser --system --disabled-login docker \
  && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" "$VENV_DIR" \
@@ -34,8 +37,5 @@ COPY --chown=docker:nogroup . $APP_DIR
 WORKDIR $APP_DIR/src
 VOLUME $APP_DIR/src/media
 EXPOSE 8000
-CMD ["uwsgi", "--http-socket", ":8000", "--master", "--hook-master-start", \
-     "unix_signal:15 gracefully_kill_them_all", "--static-map", \
-     "/static=assets", "--static-map", "/media=media", "--mount", \
-     "/2016=pycontw2016/wsgi.py", "--manage-script-name", "--offload-threads", \
-     "2"]
+ENTRYPOINT "$VENV_DIR/bin/python3"
+
