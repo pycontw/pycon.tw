@@ -34,8 +34,4 @@ COPY --chown=docker:nogroup . $APP_DIR
 WORKDIR $APP_DIR/src
 VOLUME $APP_DIR/src/media
 EXPOSE 8000
-CMD ["uwsgi", "--http-socket", ":8000", "--master", "--hook-master-start", \
-     "unix_signal:15 gracefully_kill_them_all", "--static-map", \
-     "/static=assets", "--static-map", "/media=media", "--mount", \
-     "/2017=pycontw2016/wsgi.py", "--manage-script-name", "--offload-threads", \
-     "2"]
+ENTRYPOINT "$VENV_DIR/bin/python3"
