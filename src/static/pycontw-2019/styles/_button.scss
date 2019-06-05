@@ -27,7 +27,7 @@
 		background-image: $image;
 	}
 	@include on-desktop {
-		max-width: 336px;
+		max-width: 480px;
 	}
 }
 
@@ -38,6 +38,9 @@
 	
 	padding-top: 16px;
 	padding-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
 	border: none;
 	border-radius: 4px;
+	text-align: center;
 }
