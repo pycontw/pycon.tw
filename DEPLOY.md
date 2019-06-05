@@ -27,7 +27,7 @@ There are four configurations that must be set when running the container.
    [Sentry's documentation on how to obtain Data Source Name](https://docs.sentry.io/error-reporting/quickstart/?platform=python)
  * (optional) `SLACK_WEBHOOK_URL`
 
-Write them in a `.env` file at the same directory that contains
+Write them in a [`.env` file](https://docs.docker.com/compose/env-file/) at the same directory that contains
 `docker-compose.yml`.
 
 # Run the Production Server
