@@ -64,7 +64,14 @@ Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` int
 
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
 
-After that, just run the migration
+If you’re using a database for the first time, create a database named `pycontw2016` owned by the database user specified in the env file:
+
+```sql
+# Replace "postgres" with your specified role.
+create database pycontw2016 with owner = postgres;
+```
+
+After that, just run the migration.
 
 ### Get Ready for Development
 
