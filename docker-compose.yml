@@ -26,7 +26,6 @@ services:
       # Save us from having to type `--setting=pycontw2016.settings.production`
       DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2019
       SCRIPT_NAME: /2019
-      GTM_TRACK_ID: GTM-TNZ39PD
 
     volumes:
       - ${MEDIA_ROOT}:/usr/local/app/src/media
