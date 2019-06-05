@@ -20,7 +20,7 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 Create and start the database for development:
 
-    docker-compose up -d
+    docker-compose up -f docker-compose-dev.yml
 
 #### Python - Built-in `venv`
 
