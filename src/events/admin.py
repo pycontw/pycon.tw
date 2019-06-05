@@ -73,8 +73,8 @@ class EventTimeRangeFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         return [
-            ('day1', _('Day 1')),
-            ('day2', _('Day 2')),
+            ('day{}'.format(i), name)
+            for i, name in enumerate(settings.EVENTS_DAY_NAMES.values(), 1)
         ]
 
     def queryset(self, request, queryset):
