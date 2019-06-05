@@ -1,5 +1,5 @@
 $menu-desktop-margin-x: 48px;
-$menu-desktop-height: 136px;
+$menu-desktop-height: 70px;
 
 @mixin menu-navbar-desktop($logo, $decocolor1, $decocolor2, $top-item-color) {
 	display: none;
@@ -8,12 +8,13 @@ $menu-desktop-height: 136px;
 		display: flex;
 		flex-direction: column;
 		height: $menu-desktop-height;
-		margin: 49px $menu-desktop-margin-x;
+		margin: 0px $menu-desktop-margin-x 100px $menu-desktop-margin-x;
 	}
 	.menu-logo {
-		flex: 1;
-		width: 100%;
-		background: $logo center 32px no-repeat;
+		width: 221.4px;
+		height: 35.5px;
+		margin: 0px 40px;
+		background: $logo center no-repeat;
 	}
 	.menu {
 		@include container(100%);
@@ -39,7 +40,8 @@ $menu-desktop-height: 136px;
 				// menubar. Real vertical centering would require additional markup.
 				// The minus 1px is the bottom border decoration.
 				line-height: $menu-item-height - 1px;
-
+				font-weight: normal;
+				color: $egyptian-blue;
 				&::after {
 					content: '';
 					display: block;
@@ -92,7 +94,7 @@ $menu-desktop-height: 136px;
 				flex-direction: column;
 				align-content: stretch;
 
-				@include menu-item($text-dark, $link-hover-dark) {
+				@include menu-item($egyptian-blue, $link-hover-dark) {
 					flex: 1;
 					padding: $item-padding;
 				}

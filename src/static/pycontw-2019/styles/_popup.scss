@@ -70,6 +70,19 @@
 	}
 }
 
+@mixin link-to-website($button-color) {
+	@include button(0,$button-color, $button-color);
+	@include on-desktop{
+		max-width: 80px;
+	}
+	border-radius: 10px;
+	padding: 12px;
+	margin: 0px;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: normal;
+}
+
 .popup .card-content {
 	@mixin card-content($spacing, $extra-top-padding, $overflow) {
 		overflow: $overflow;
@@ -88,8 +101,8 @@
 		display: block;
 
 		img {
-			width: 100%;
 			max-width: 256px;
+			max-height: 38px;
 		}
 	}
 
@@ -104,14 +117,13 @@
 	@include on-desktop() {
 		@include card-content(32px, 0, visible);
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 
 		> * {
 			max-height: 100%;
 		}
 
 		.logo {
-			flex: 0 0 216px;
 			display: flex;
 		}
 
@@ -132,10 +144,20 @@
 				.description {
 					flex: 1;
 					max-height: 560px;
+					word-wrap: break-word;
 					overflow: auto;
+					margin: 28px 0px;
 
 					&, * {
 						text-align: left;
+					}
+				}
+				
+				.link-to-website {
+					@include link-to-website($elf-green);
+					
+					&:hover{
+						@include link-to-website($portica);
 					}
 				}
 			}

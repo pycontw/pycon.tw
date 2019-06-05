@@ -6,17 +6,26 @@ body {
 }
 
 .page-hero {
-	margin-top: 0 - $top-navbar-offset;
-	padding: $top-navbar-offset 0 112px 0;
 	background-color: $top-navbar-background-color;
-	@include on-desktop {
-		padding-bottom: 200px;
-	}
+	display: flex;
+	flex-direction: row;
+	height: $menu-desktop-height;
+	@include on-desktop;
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(
-		url('../assets/logo-white.svg'), $white, $white-two, $text-light);
+	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
+	.menu {
+		margin: 0;
+	}
+	@include on-desktop{
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
 }
 
 // Shove to left edge, ignoring container.
@@ -42,15 +51,11 @@ main {
 
 		@include shove-left();
 		@include fill-vw(2rem);
-		margin-top: -10vh;
-		margin-bottom: 48px;
 
-		background-color: $top-navbar-background-color;
-		color: $text-light;
+		background-color: $white;
 
 		@include on-desktop {
 			@include fill-vw(6rem);
-			margin-bottom: 72px;
 		}
 	}
 
@@ -76,7 +81,14 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
+  h3{
+		text-align: left;
 
+		&::before{
+			content: url('../assets/grass-group.svg');
+			margin-right: 10px;
+		}
+	}
 	// Custom UL bullets.
 	ul {
 		$mark-indent: 1.125rem;
