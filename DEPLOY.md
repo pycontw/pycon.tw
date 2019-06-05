@@ -25,6 +25,7 @@ There are four configurations that must be set when running the container.
  * `DSN_URL` specify how to connect to Sentry error reporting service
    (e.g. `https://key@sentry.io/project`), please refer to
    [Sentry's documentation on how to obtain Data Source Name](https://docs.sentry.io/error-reporting/quickstart/?platform=python)
+ * (optional) `GTM_TRACK_ID`
  * (optional) `SLACK_WEBHOOK_URL`
 
 Write them in a [`.env` file](https://docs.docker.com/compose/env-file/) at the same directory that contains
