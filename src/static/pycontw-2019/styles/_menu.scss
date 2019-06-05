@@ -53,8 +53,8 @@ $menu-item-types: '> a, > label';
 		@include list-reset;
 		@include text(1rem);
 		margin-top: 8px;
-		border: solid 1px transparent;
-		border-radius: 4px;
+		border-radius: 5px;
+		border: solid 2px $portica;
 	}
 }
 

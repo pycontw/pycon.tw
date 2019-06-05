@@ -63,17 +63,6 @@
 		}
 	}
 
-	.sponsorship {
-		@include button(259deg,$elf-green,$elf-green);
-	}
-
-	.sponsor-form-block {
-		&::after {
-			@include grass-python-logo('../assets/grass-green.svg', 50px);
-			margin: 20px auto;
-		}
-	}
-
 	&::before {
 		@include grass-python-logo('../assets/grass-blue.svg', 200px);
 		position: absolute;
@@ -82,19 +71,48 @@
 		transform: rotate(-135deg);
 	}
 
+}
+
+.sponsorship {
+	@include bgimg-hover-button($elf-green, url('../assets/button-hover-bg.svg'));
+	font-size: 1.75rem;
+	text-shadow: 1px 1px 0 #058550;
+}
+
+.sponsor-form-block {
+	position: relative;
+	padding: 0px 0px 50px 0px;
+	.sponsor-container{
+		@include index-section;
+		@include container(960px);
+		display: flex;
+		flex-flow: row wrap;
+		background: #e7f5ef;
+		border-radius: 12px;
+		justify-content: center;
+		align-items:flex-end;
+		padding-top: 40px; 
+		padding-bottom: 50px; 
+	}
 	&::after {
 		@include grass-python-logo('../assets/grass-blue.svg', 200px);
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		transform: rotate(45deg);
+		z-index: -10;
 	}
 }
 
 
 @media (max-width: 760px) {
 	.index-partners {
-		&::before, &::after {
+		&::before{
+			display: none;
+		}
+	}
+	.sponsor-form-block {
+		&::after {
 			display: none;
 		}
 	}

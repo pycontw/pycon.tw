@@ -39,7 +39,7 @@ $menu-desktop-border-radius: 8px;
 // Apply this to any section to get a grey background with circle decoration.
 @mixin circle-background-section {
 	padding: 42px 28px 42px 28px;
-	background: $pale-grey;
+	background: $white;
 
 	> article {
 		padding: 32px 12px 54px 12px;

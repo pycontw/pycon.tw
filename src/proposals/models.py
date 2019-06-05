@@ -104,7 +104,7 @@ class AdditionalSpeaker(ConferenceRelated):
 class ProposalQuerySet(models.QuerySet):
 
     def filter_accepted(self):
-        return self.filter(accepted=True)
+        return self.filter(cancelled=False, accepted=True)
 
     def filter_viewable(self, user):
         return self.filter(
