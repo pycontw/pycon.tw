@@ -41,6 +41,11 @@ django-modeltranslation==0.12
 # https://django-q.readthedocs.io/
 django-q==0.8.0
 
+# A pickled object field for Django. (Dependency of django-q)
+# https://github.com/gintas/django-picklefield
+# Pin to version 1.0.0, the last version that supports Django < 1.11
+django-picklefield==1.0.0
+
 # Certifi, a carefully curated collection of Root Certificates for SSL
 certifi>=2015.11.20
 
