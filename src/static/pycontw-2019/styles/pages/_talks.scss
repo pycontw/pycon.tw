@@ -71,12 +71,12 @@
 
 	@include on-desktop() {
 		columns: 2;
+		font-size: 95%;		// HACK: So text does not break on Chome. (GH-556)
 	}
 
 	ul {
 		@include list-reset();
 		text-indent: 0;
-		font-size: 95%;		// HACK: So text does not break on Chome. (GH-556)
 
 		li {
 			display: flex;
