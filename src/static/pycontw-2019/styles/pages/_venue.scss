@@ -7,12 +7,10 @@
 		width: 100vw;
 		height: $map-height-mobile;
 		max-height: 50vh;		// Make sure the user has some room to flick.
-		margin-top: -48px;
 
 		@include on-desktop() {
 			height: $map-height-desktop;
 			max-height: none;
-			margin-top: -72px;
 		}
 	}
 
