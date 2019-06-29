@@ -19,7 +19,7 @@ L.marker([25.040997, 121.611417], {
 .openTooltip()
 
 // Tile attributions.
-const mbAttr1 = 'Tiles by <a href="http://stamen.com">Stamen Design</a>. Data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors.'
+const mbAttr1 = 'Tiles by <a href="https://stamen.com">Stamen Design</a>. Data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors.'
 const mbUrl1 = 'http://{s}.sm.mapstack.stamen.com/((toner-background,$fff[@20],$224298[hsl-color])[@90],(toner-lines,$fff[@80],$fff[hsl-saturation@20],$f4d45f[hsl-color]),(toner-labels,$fff[@30]))/{z}/{x}/{y}.png'
 const mbAttr2 = 'Maps &copy; <a href="https://www.thunderforest.com" target="_blank" rel="noopener">Thunderforest</a>, Data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap </a> contributors.'
 const mbUrl2 = 'https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=6170aad10dfd42a38d4d8c709a536f38'
