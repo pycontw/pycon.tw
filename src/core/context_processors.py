@@ -29,9 +29,9 @@ def pycontw(request):
     return {
         'GTM_TRACK_ID': settings.GTM_TRACK_ID,
         'KKTIX_URL': {
-            'RSVD': 'https://pycontw.kktix.cc/events/20180601-reserved',
-            'INDI': 'https://pycontw.kktix.cc/events/20180601-individual',
-            'CORP': 'https://pycontw.kktix.cc/events/20180601-corporate',
+            'RSVD': 'https://pycontw.kktix.cc/events/20190920-reserved',
+            'INDI': 'https://pycontw.kktix.cc/events/20190920-individual',
+            'CORP': 'https://pycontw.kktix.cc/events/20190920-corporate',
         },
         'SPONSOR_FORM_URL': _build_google_form_url(sponsor_id),
         'VOLUNTEER_FORM_URL': _build_google_form_url(volun_id),
