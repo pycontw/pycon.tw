@@ -41,7 +41,9 @@ class TalkListView(AcceptedTalkMixin, TemplateView):
 
     def get_categorized_talks(self):
         category_map = OrderedDefaultDict(list)
-        for proposal in self.queryset:
+        # queryset will cache the result
+        # using all() will create new queryset every time(no cache).
+        for proposal in self.queryset.all():
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
 
