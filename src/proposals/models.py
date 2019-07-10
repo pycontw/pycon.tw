@@ -149,6 +149,18 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         db_index=True,
     )
 
+    ACCEPTED_CHOICES = (
+        (None,  '----------'),
+        (True,  _('Accepted')),
+        (False, _('Rejected')),
+    )
+    accepted = models.NullBooleanField(
+        verbose_name=_('accepted'),
+        default=None,
+        choices=ACCEPTED_CHOICES,
+        db_index=True,
+    )
+
     additionalspeaker_set = GenericRelation(
         to=AdditionalSpeaker,
         content_type_field='proposal_type',
@@ -202,18 +214,6 @@ class TalkProposal(AbstractProposal):
     duration = models.CharField(
         verbose_name=_('duration'),
         max_length=6,
-    )
-
-    ACCEPTED_CHOICES = (
-        (None,  '----------'),
-        (True,  _('Accepted')),
-        (False, _('Rejected')),
-    )
-    accepted = models.NullBooleanField(
-        verbose_name=_('accepted'),
-        default=None,
-        choices=ACCEPTED_CHOICES,
-        db_index=True,
     )
 
     class Meta(AbstractProposal.Meta):

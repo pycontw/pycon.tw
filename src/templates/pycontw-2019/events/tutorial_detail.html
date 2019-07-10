@@ -5,11 +5,11 @@
 
 {% block title %}{{ object.title }}{% endblock %}
 
-{% block body_class %}{{ block.super }} talk-detail{% endblock body_class %}
+{% block body_class %}{{ block.super }} tutorial-detail{% endblock body_class %}
 
 {% block content %}
 
-<h1>{{ object.title }}</h1>
+<h1>{% trans 'Tutorial: ' %}{{ object.title }}</h1>
 
 <section class="content info">
 	<ul>
@@ -35,12 +35,11 @@
 			<dfn class="python-level {{ object.python_level.lower }}">{% trans 'Python Level: ' %}</dfn>
 			<span>{{ object.get_python_level_display }}</span>
 		</li>
-		{% if not object.recording_policy %}
+		{# Tutorials are never recorded. #}
 		<li>
 			<dfn class="recording-no"></dfn>
 			<span>{% trans 'No Recording' %}</span>
 		</li>
-		{% endif %}
 	</ul>
 </section>
 
@@ -68,9 +67,9 @@
 
 <h2>
 	{% if object.speaker_count > 1 %}
-	{% trans 'Speakers' context 'speaker info in talk detail' %}
+	{% trans 'Lecturers' context 'speaker info in tutorial detail' %}
 	{% else %}
-	{% trans 'Speaker' context 'speaker info in talk detail' %}
+	{% trans 'Lecturer' context 'speaker info in tutorial detail' %}
 	{% endif %}
 </h2>
 

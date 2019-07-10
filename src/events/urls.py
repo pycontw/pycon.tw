@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^talk/sponsored/(?P<slug>[-\w]+)/$',
         views.SponsoredEventDetailView.as_view(),
         name='events_sponsored_event_detail'),
+    url(r'^tutorial/(?P<pk>\d+)/$', views.TutorialDetailView.as_view(),
+        name='events_tutorial_detail'),
 
     # Backward compatibility to the static events page.
     url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
