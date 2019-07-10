@@ -1,5 +1,6 @@
 import json
 
+from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.templatetags.static import static
 from django.http import JsonResponse
@@ -9,7 +10,7 @@ from django.views.generic import View, TemplateView
 
 from core.views import IndexView
 from core.utils import TemplateExistanceStatusResponse
-from events.models import ProposedTalkEvent
+from events.models import ProposedTalkEvent, ProposedTutorialEvent
 
 
 def convert_to_utc(value):
@@ -31,9 +32,9 @@ def transform_keynote_info(request, i, info):
     return info
 
 
-def transform_talk_info(request, event):
+def transform_proposed_info(request, event, prefix):
     return {
-        'id': f'talk-{event.pk}',
+        'id': f'{prefix}-{event.pk}',
         'subject': event.proposal.title,
         'summary': event.proposal.abstract,
         'type': '',     # Not used.
@@ -54,16 +55,25 @@ def transform_talk_info(request, event):
 class CCIPAPIView(View):
     def get(self, request):
         dataset = [
-            transform_talk_info(request, event)
+            transform_proposed_info(request, event, 'talk')
             for event in ProposedTalkEvent.objects.select_related(
                 'proposal', 'proposal__submitter',
             )
-        ]
-        with open(finders.find('pycontw-2018/assets/keynotes/info.json')) as f:
-            dataset.extend(
-                transform_keynote_info(request, i, info)
-                for i, info in enumerate(json.load(f), 1)
+        ] + [
+            transform_proposed_info(request, event, 'tutorial')
+            for event in ProposedTutorialEvent.objects.select_related(
+                'proposal', 'proposal__submitter',
             )
+        ]
+
+        slug = settings.CONFERENCE_DEFAULT_SLUG
+        keynote_info = finders.find(f'{slug}/assets/keynotes/info.json')
+        if keynote_info:
+            with open(keynote_info) as f:
+                dataset.extend(
+                    transform_keynote_info(request, i, info)
+                    for i, info in enumerate(json.load(f), 1)
+                )
         return JsonResponse(dataset, safe=False)
 
 
