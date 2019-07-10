@@ -8,16 +8,17 @@ from django.db.models import Count
 from django.http import HttpResponseRedirect
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DetailView, TemplateView
+from django.views.generic import CreateView, DetailView, ListView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
-from proposals.models import TalkProposal
+from proposals.models import TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
     EVENT_ROOMS, Schedule, Time,
-    CustomEvent, KeynoteEvent, SponsoredEvent, ProposedTalkEvent,
+    CustomEvent, KeynoteEvent, SponsoredEvent,
+    ProposedTalkEvent, ProposedTutorialEvent,
 )
 from .renderers import render_all
 
@@ -25,17 +26,19 @@ from .renderers import render_all
 logger = logging.getLogger(__name__)
 
 
-class AcceptedTalkMixin:
-    queryset = (
-        TalkProposal.objects
-        .filter_accepted()
-        .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
-        .select_related('submitter')
-    )
+class AcceptedProposalMixin:
+    def get_queryset(self):
+        return (
+            super().get_queryset()
+            .filter_accepted()
+            .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
+            .select_related('submitter')
+        )
 
 
-class TalkListView(AcceptedTalkMixin, TemplateView):
+class TalkListView(AcceptedProposalMixin, ListView):
 
+    model = TalkProposal
     template_name = 'events/talk_list.html'
     response_class = TemplateExistanceStatusResponse
 
@@ -43,7 +46,7 @@ class TalkListView(AcceptedTalkMixin, TemplateView):
         category_map = OrderedDefaultDict(list)
         # Use all() to create a new instance every time, to avoid Django
         # queryset caching the result.
-        for proposal in self.queryset.all():
+        for proposal in self.get_queryset():
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
 
@@ -197,10 +200,9 @@ class EventInfoMixin:
         )
 
 
-class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
+class ProposedEventMixin:
 
-    template_name = 'events/talk_detail.html'
-    response_class = TemplateExistanceStatusResponse
+    event_model = None
 
     def is_event_sponsored(self):
         return False
@@ -208,13 +210,22 @@ class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
     def get_event(self):
         try:
             event = (
-                ProposedTalkEvent.objects
+                self.event_model.objects
                 .select_related('begin_time', 'end_time')
                 .get(proposal=self.object)
             )
-        except ProposedTalkEvent.DoesNotExist:
+        except self.event_model.DoesNotExist:
             return None
         return event
+
+
+class TalkDetailView(
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
+    model = TalkProposal
+    event_model = ProposedTalkEvent
+    template_name = 'events/talk_detail.html'
+    response_class = TemplateExistanceStatusResponse
 
 
 class SponsoredEventDetailView(EventInfoMixin, DetailView):
@@ -235,3 +246,12 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     def get_time_slot(self):
         return (self.object.begin_time.value, self.object.end_time.value)
+
+
+class TutorialDetailView(
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
+    model = TutorialProposal
+    event_model = ProposedTutorialEvent
+    template_name = 'events/tutorial_detail.html'
+    response_class = TemplateExistanceStatusResponse
