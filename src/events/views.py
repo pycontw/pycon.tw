@@ -76,8 +76,9 @@ class ScheduleView(TemplateView):
             self.schedule = Schedule.objects.latest()
         except Schedule.DoesNotExist:
             return HttpResponseRedirect(
-                'https://docs.google.com/spreadsheets/d/'
-                '1FiGx7ou-OxMK8yTgwYkqM5vOcUPYCMz7cQiFInES654/pubhtml#'
+                'https://docs.google.com/spreadsheets/d/e/'
+                '2PACX-1vShbY20tmKca-i8Rzm4i2vaeifCHNCSM4e_'
+                '6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml'
             )
         return super().get(request, *args, **kwargs)
 
@@ -146,10 +147,8 @@ class ScheduleCreateView(
 
         times = list(Time.objects.order_by('value'))
         end_time_iter = iter(times)
-        try:
-            next(end_time_iter)
-        except StopIteration:   # Nothing at all.
-            return day_info_dict
+        next(end_time_iter, None)
+
         for begin, end in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
