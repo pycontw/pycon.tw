@@ -15,7 +15,7 @@ from core.models import (
     ConferenceRelated, DefaultConferenceManagerMixin,
 )
 from core.utils import format_html_lazy
-from proposals.models import TalkProposal, PrimarySpeaker
+from proposals.models import TalkProposal, TutorialProposal, PrimarySpeaker
 
 
 MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
@@ -233,14 +233,15 @@ class SponsoredEvent(EventInfo, BaseEvent):
         yield PrimarySpeaker(user=self.host)
 
 
-class ProposedTalkEventManager(DefaultConferenceManagerMixin, models.Manager):
+class ProposedEventManager(DefaultConferenceManagerMixin, models.Manager):
 
+    proposal_attr = 'proposal'
     conference_attr = 'proposal__conference'
 
     def get_queryset(self):
         """We almost always need the proposal info, so let's always JOIN it.
         """
-        return super().get_queryset().select_related('proposal')
+        return super().get_queryset().select_related(self.proposal_attr)
 
 
 class ProposedTalkEvent(BaseEvent):
@@ -251,7 +252,7 @@ class ProposedTalkEvent(BaseEvent):
         verbose_name=_('proposal'),
     )
 
-    objects = ProposedTalkEventManager()
+    objects = ProposedEventManager()
 
     class Meta:
         verbose_name = _('talk event')
@@ -262,6 +263,28 @@ class ProposedTalkEvent(BaseEvent):
 
     def get_absolute_url(self):
         return reverse('events_talk_detail', kwargs={'pk': self.proposal.pk})
+
+
+class ProposedTutorialEvent(BaseEvent):
+
+    proposal = BigForeignKey(
+        to=TutorialProposal,
+        verbose_name=_('proposal'),
+    )
+
+    objects = ProposedEventManager()
+
+    class Meta:
+        verbose_name = _('tutorial event')
+        verbose_name_plural = _('tutorial events')
+
+    def __str__(self):
+        return self.proposal.title
+
+    def get_absolute_url(self):
+        return reverse('events_tutorial_detail', kwargs={
+            'pk': self.proposal.pk,
+        })
 
 
 class Schedule(ConferenceRelated):
