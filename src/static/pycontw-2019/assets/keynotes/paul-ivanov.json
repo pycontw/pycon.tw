@@ -1,0 +1,23 @@
+{
+    "photo": "pycontw-2019/assets/keynotes/paul-ivanov.jpg",
+    "speaker": {
+        "en": {
+            "name": "Paul Ivanov",
+            "bio": "Paul Ivanov is a member of the Jupyter Steering Council and a senior software engineer at Bloomberg LP working on IPython- and Jupyter-related open source projects. Previously, Paul worked on backend and data engineering at Disqus; was a code monkey at the Brain Imaging Center at UC Berkeley, where he worked on IPython and taught at UC Berkeley’s Python bootcamps; worked in Bruno Olshausen’s lab at the Redwood Center for Theoretical Neuroscience; and was a PhD candidate in the Vision Science program at UC Berkeley. He holds a degree in computer science from UC Davis."
+        },
+        "zh": {
+            "name": "Paul Ivanov",
+            "bio": "Paul Ivanov 是 Jupyter 指導評議會的成員，於彭博公司任職資深軟體工程師，從事 IPython 與 Jupyter 相關的開源專案。在此之前，Paul 曾經：於 Disqus 從事後端與資料工程；於柏克萊大學腦成像中心當程式猿玩轉 IPython，並在柏克萊大學的 Python 集訓課進行教學；任職於 Redwood 理論神經科學中心 Bruno Olshausen 實驗室；為柏克萊大學視覺科學博士候選人。他擁有戴維斯大學計算機科學學位。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "Keynote: Paul Ivanov",
+            "description": "TBD"
+        },
+        "zh": {
+            "title": "基調演講：Paul Ivanov",
+            "description": "待定"
+        }
+    }
+}
