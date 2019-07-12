@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-11 15:38+0800\n"
-"PO-Revision-Date: 2019-07-11 07:39+0000\n"
+"POT-Creation-Date: 2019-07-12 15:13+0800\n"
+"PO-Revision-Date: 2019-07-12 07:18+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -28,15 +28,35 @@ msgstr ""
 "Language: zh-Hant\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ccip/views.py:90
+#: ccip/views.py:203
 msgctxt "CCIP event type"
-msgid "talk"
-msgstr "演講"
+msgid "event"
+msgstr "活動"
 
-#: ccip/views.py:97
+#: ccip/views.py:211
+msgctxt "CCIP event type"
+msgid "break"
+msgstr "休息"
+
+#: ccip/views.py:219
+msgctxt "CCIP event type"
+msgid "keynote"
+msgstr "基調演講"
+
+#: ccip/views.py:227
+msgctxt "CCIP event type"
+msgid "sponsored"
+msgstr "贊助"
+
+#: ccip/views.py:235
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "專業課程"
+
+#: ccip/views.py:247
+msgctxt "CCIP event type"
+msgid "talk"
+msgstr "演講"
 
 #: core/forms.py:10
 #, python-brace-format
@@ -47,7 +67,7 @@ msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 msgid "conference"
 msgstr "會議"
 
-#: core/models.py:79 events/models.py:167
+#: core/models.py:79 events/models.py:158
 msgid "title"
 msgstr "題目"
 
@@ -200,7 +220,7 @@ msgstr "議程錄影"
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:160 events/models.py:317
+#: core/models.py:160 events/models.py:296
 msgid "created at"
 msgstr "建立時間"
 
@@ -269,91 +289,91 @@ msgstr "R4"
 msgid "location"
 msgstr "地點"
 
-#: events/models.py:171
+#: events/models.py:162
 msgid "is break event"
 msgstr "休息"
 
-#: events/models.py:174
+#: events/models.py:165
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
 "etc."
 msgstr "此活動是否應該被顯示為休息時間。休息時間的顯示會與「真的」會議時段，例如基調演講、一般演講不同。"
 
-#: events/models.py:181
+#: events/models.py:172
 msgid "custom event"
 msgstr "自訂活動"
 
-#: events/models.py:182
+#: events/models.py:173
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:191 users/models.py:116
+#: events/models.py:182 users/models.py:116
 msgid "speaker name"
 msgstr "演講者"
 
-#: events/models.py:195 events/models.py:232
+#: events/models.py:186 events/models.py:219
 msgid "slug"
 msgstr "網址文字"
 
-#: events/models.py:197
+#: events/models.py:188
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
 msgstr "用來連結至基調演講頁面上的講者簡介，如「liang2」可連結至「{link}#keynote-speaker-liang2」。"
 
-#: events/models.py:205
+#: events/models.py:196
 msgid "keynote event"
 msgstr "基調演講"
 
-#: events/models.py:206
+#: events/models.py:197
 msgid "keynote events"
 msgstr "基調演講"
 
-#: events/models.py:209
+#: events/models.py:200
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
-#: events/models.py:228
+#: events/models.py:215
 msgid "host"
 msgstr "主持人"
 
-#: events/models.py:236
+#: events/models.py:223
 msgid "sponsored event"
 msgstr "贊助演講"
 
-#: events/models.py:237
+#: events/models.py:224
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:265 events/models.py:289 reviews/models.py:72
+#: events/models.py:252 events/models.py:272 reviews/models.py:72
 #: reviews/models.py:192
 msgid "proposal"
 msgstr "提案"
 
-#: events/models.py:271
+#: events/models.py:258
 msgid "talk event"
 msgstr "演講"
 
-#: events/models.py:272
+#: events/models.py:259
 msgid "talk events"
 msgstr "演講"
 
-#: events/models.py:295
+#: events/models.py:278
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:296
+#: events/models.py:279
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:314
+#: events/models.py:293
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:322 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:301 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -369,11 +389,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:323
+#: events/models.py:302
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:328
+#: events/models.py:307
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 
