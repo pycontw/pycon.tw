@@ -5,8 +5,7 @@ from django.conf import settings
 from django.contrib.staticfiles import finders
 from django.http import JsonResponse
 from django.templatetags.static import static
-from django.utils import timezone, translation
-from django.utils.dateparse import parse_datetime
+from django.utils import translation
 from django.utils.text import force_text
 from django.utils.translation import pgettext_lazy
 from django.views.generic import View, TemplateView
@@ -19,12 +18,6 @@ from events.models import (
     SponsoredEvent,
 )
 from proposals.models import PrimarySpeaker
-
-
-def _convert_to_utc(value):
-    # CCIP on Android does not take offset well because Java's timezone API
-    # sucks. Convert to UTC because we ought to help those poor souls.
-    return timezone.make_aware(parse_datetime(value)).astimezone(timezone.utc)
 
 
 def _get_lazy_display(instance, attr):
@@ -206,46 +199,6 @@ class CCIPAPIView(View):
     def get(self, request):
         session_sources = [
             (
-                'keynote',
-                pgettext_lazy('CCIP event type', 'keynote'),
-                KeynoteEvent.objects.select_related(
-                    'begin_time', 'end_time',
-                ),
-                _get_keynote_event_info,
-            ),
-            (
-                'talk',
-                pgettext_lazy('CCIP event type', 'talk'),
-                (
-                    ProposedTalkEvent.objects
-                    .select_related(
-                        'begin_time', 'end_time',
-                        'proposal', 'proposal__submitter',
-                    )
-                ),
-                operator.attrgetter('proposal'),
-            ),
-            (
-                'tutorial',
-                pgettext_lazy('CCIP event type', 'tutorial'),
-                (
-                    ProposedTutorialEvent.objects
-                    .select_related(
-                        'begin_time', 'end_time',
-                        'proposal', 'proposal__submitter',
-                    )
-                ),
-                operator.attrgetter('proposal'),
-            ),
-            (
-                'sponsored',
-                pgettext_lazy('CCIP event type', 'sponsored'),
-                SponsoredEvent.objects.select_related(
-                    'begin_time', 'end_time', 'host',
-                ),
-                lambda event: event,
-            ),
-            (
                 'event',
                 pgettext_lazy('CCIP event type', 'event'),
                 CustomEvent.objects.filter(break_event=False).select_related(
@@ -260,6 +213,46 @@ class CCIPAPIView(View):
                     'begin_time', 'end_time',
                 ),
                 _get_empty_event_info,
+            ),
+            (
+                'keynote',
+                pgettext_lazy('CCIP event type', 'keynote'),
+                KeynoteEvent.objects.select_related(
+                    'begin_time', 'end_time',
+                ),
+                _get_keynote_event_info,
+            ),
+            (
+                'sponsored',
+                pgettext_lazy('CCIP event type', 'sponsored'),
+                SponsoredEvent.objects.select_related(
+                    'begin_time', 'end_time', 'host',
+                ),
+                lambda event: event,
+            ),
+            (
+                'tutorial',
+                pgettext_lazy('CCIP event type', 'tutorial'),
+                (
+                    ProposedTutorialEvent.objects
+                    .select_related(
+                        'begin_time', 'end_time',
+                        'proposal', 'proposal__submitter',
+                    )
+                ),
+                operator.attrgetter('proposal'),
+            ),
+            (
+                'talk',
+                pgettext_lazy('CCIP event type', 'talk'),
+                (
+                    ProposedTalkEvent.objects
+                    .select_related(
+                        'begin_time', 'end_time',
+                        'proposal', 'proposal__submitter',
+                    )
+                ),
+                operator.attrgetter('proposal'),
             ),
         ]
 
