@@ -4,7 +4,7 @@ import logging
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
-from django.db.models import Count
+from django.db.models import Count, Prefetch
 from django.http import HttpResponseRedirect
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
@@ -12,7 +12,7 @@ from django.views.generic import CreateView, DetailView, ListView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
-from proposals.models import TalkProposal, TutorialProposal
+from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
@@ -44,9 +44,19 @@ class TalkListView(AcceptedProposalMixin, ListView):
 
     def get_categorized_talks(self):
         category_map = OrderedDefaultDict(list)
-        # Use all() to create a new instance every time, to avoid Django
-        # queryset caching the result.
-        for proposal in self.get_queryset():
+        proposals = (
+            self.get_queryset()
+            .prefetch_related(Prefetch(
+                'additionalspeaker_set',
+                queryset=(
+                    AdditionalSpeaker.objects
+                    .filter(cancelled=False)
+                    .select_related('user')
+                ),
+                to_attr='_additional_speakers',
+            ))
+        )
+        for proposal in proposals:
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
 
