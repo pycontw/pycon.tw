@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-10 16:57+0800\n"
-"PO-Revision-Date: 2019-07-10 08:53+0000\n"
+"POT-Creation-Date: 2019-07-11 15:38+0800\n"
+"PO-Revision-Date: 2019-07-11 07:40+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ccip/views.py:90
+msgctxt "CCIP event type"
+msgid "talk"
+msgstr "talk"
+
+#: ccip/views.py:97
+msgctxt "CCIP event type"
+msgid "tutorial"
+msgstr "tutorial"
 
 #: core/forms.py:10
 #, python-brace-format
@@ -31,7 +41,7 @@ msgstr "{model_name_cap} creation requires a request object."
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:79 events/models.py:158
+#: core/models.py:79 events/models.py:167
 msgid "title"
 msgstr "title"
 
@@ -184,7 +194,7 @@ msgstr "recording policy"
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:160 events/models.py:296
+#: core/models.py:160 events/models.py:317
 msgid "created at"
 msgstr "created at"
 
@@ -253,91 +263,91 @@ msgstr "R4"
 msgid "location"
 msgstr "location"
 
-#: events/models.py:162
+#: events/models.py:171
 msgid "is break event"
 msgstr "is break event"
 
-#: events/models.py:165
+#: events/models.py:174
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
 "etc."
 msgstr "Whether this event is displays as a break. A break can be visually distinguished from “real” conference sessions, such as keynotes, talks, etc."
 
-#: events/models.py:172
+#: events/models.py:181
 msgid "custom event"
 msgstr "custom event"
 
-#: events/models.py:173
+#: events/models.py:182
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:182 users/models.py:116
+#: events/models.py:191 users/models.py:116
 msgid "speaker name"
 msgstr "speaker name"
 
-#: events/models.py:186 events/models.py:219
+#: events/models.py:195 events/models.py:232
 msgid "slug"
 msgstr "slug"
 
-#: events/models.py:188
+#: events/models.py:197
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
 msgstr "This is used to link to the speaker's introduction on the Keynote page, e.g. 'liang2' will link to '{link}#keynote-speaker-liang2'."
 
-#: events/models.py:196
+#: events/models.py:205
 msgid "keynote event"
 msgstr "keynote event"
 
-#: events/models.py:197
+#: events/models.py:206
 msgid "keynote events"
 msgstr "keynote events"
 
-#: events/models.py:200
+#: events/models.py:209
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:215
+#: events/models.py:228
 msgid "host"
 msgstr "host"
 
-#: events/models.py:223
+#: events/models.py:236
 msgid "sponsored event"
 msgstr "sponsored event"
 
-#: events/models.py:224
+#: events/models.py:237
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:252 events/models.py:272 reviews/models.py:72
+#: events/models.py:265 events/models.py:289 reviews/models.py:72
 #: reviews/models.py:192
 msgid "proposal"
 msgstr "proposal"
 
-#: events/models.py:258
+#: events/models.py:271
 msgid "talk event"
 msgstr "talk event"
 
-#: events/models.py:259
+#: events/models.py:272
 msgid "talk events"
 msgstr "talk events"
 
-#: events/models.py:278
+#: events/models.py:295
 msgid "tutorial event"
 msgstr "tutorial event"
 
-#: events/models.py:279
+#: events/models.py:296
 msgid "tutorial events"
 msgstr "tutorial events"
 
-#: events/models.py:293
+#: events/models.py:314
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:301 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:322 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -353,11 +363,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: events/models.py:302
+#: events/models.py:323
 msgid "Schedules"
 msgstr "Schedules"
 
-#: events/models.py:307
+#: events/models.py:328
 msgid "Schedule created at {}"
 msgstr "Schedule created at {}"
 
@@ -369,7 +379,7 @@ msgstr "Keynote"
 msgid "EN Slides"
 msgstr "EN Slides"
 
-#: events/views.py:98
+#: events/views.py:99
 msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
 
