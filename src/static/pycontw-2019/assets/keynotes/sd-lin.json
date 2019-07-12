@@ -1,0 +1,23 @@
+{
+    "photo": "pycontw-2019/assets/keynotes/sd-lin.jpeg",
+    "speaker": {
+        "en": {
+            "name": "Shou-de Lin",
+            "bio": "Shou-de Lin is currently a full professor in the CSIE department of National Taiwan University. He holds a BS degree in EE department from National Taiwan University, an MS-EE degree from the University of Michigan, an MS degree in Computational Linguistics and PhD in Computer Science both from the University of Southern California. He leads the Machine Discovery and Social Network Mining Lab in NTU. Before joining NTU, he was a post-doctoral research fellow at the Los Alamos National Lab. Prof. Lin’s research includes the areas of machine learning and data mining, social network analysis, and natural language processing. His international recognition includes the best paper award in IEEE Web Intelligent conference 2003, Google Research Award in 2007, Microsoft research award in 2008, 2015, 2016 merit paper award in TAAI 2010, 2014, 2016, best paper award in ASONAM 2011, US Aerospace AFOSR/AOARD research award winner for 5 years. He is the all-time winners in ACM KDD Cup, leading or co-leading the NTU team to win 5 championships. He also leads a team to win WSDM Cup 2016. He has served as the senior PC for SIGKDD and area chair for ACL. He is currently the associate editor for International Journal on Social Network Mining, Journal of Information Science and Engineering, and International Journal of Computational Linguistics and Chinese Language Processing. He is also a freelance writer for Scientific American."
+        },
+        "zh": {
+            "name": "林守德",
+            "bio": "林守德教授擁有台灣大學電機工程學士、密西根大學電機碩士、南加州大學計算語言學碩士學位和計算機科學博士學位，目前為國立臺灣大學資訊工程學系的教授。他創立台大的機器發明與社群網路探勘實驗室。在加入台大之前，他是羅沙拉摩斯國家實驗室的博士後研究員。林教授的研究包括機器學習和資料探勘、社群網絡分析和自然語言處理等領域。他的國際學術成就包括 2003 年 IEEE 網路智能會議最佳論文獎、2007 年 Google 研究獎、三度獲得微軟研究獎、IBM 研究獎助，2010 年及 2014 TAAI 優秀論文獎、2011 年 ASONAM 最佳論文獎，以及連續 5 年獲得美國空軍 AFOSR / AOARD 研究獎。他亦是 ACM KDD Cup 的 All Time Leader，領導或共同領導台大團隊贏得 5 次冠軍，也帶領研究團隊贏得 2016 年 WSDM Cup。他也曾獲得科技部吳大猷先生紀念獎，傑出人才基金會年輕學者研究獎，曾擔任 SIGKDD 的 senior program chair 及 ACL 的 area chair，目前是國際社群網絡探勘期刊、資訊科學與工程期刊和中文計算語言學期刊的副主編，也是科學人的「網路不打烊」單元作家之一。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "Understanding Deep Neural Networks",
+            "description": "Artificial Intelligence has become overwhelming popular in recent years thanks to availability of big data and the advance of machine learning based models. Among them, solutions based on the Deep Neural Network (or DNN) have produced tremendous success in various applications including computer vision, natural language processing, etc. Nevertheless, one common concern for DNN-based solutions is that they are generally very complicated and can hardly be understood by human beings. This talk focuses on a specific type of deep neural networks called recurrent neural networks (RNN). It will not only demonstrate the power of an RNN model to learn from implicit information but also explain why the overwhelming performance can be achieved given its architecture."
+        },
+        "zh": {
+            "title": "Understanding Deep Neural Networks",
+            "description": "Artificial Intelligence has become overwhelming popular in recent years thanks to availability of big data and the advance of machine learning based models. Among them, solutions based on the Deep Neural Network (or DNN) have produced tremendous success in various applications including computer vision, natural language processing, etc. Nevertheless, one common concern for DNN-based solutions is that they are generally very complicated and can hardly be understood by human beings. This talk focuses on a specific type of deep neural networks called recurrent neural networks (RNN). It will not only demonstrate the power of an RNN model to learn from implicit information but also explain why the overwhelming performance can be achieved given its architecture."
+        }
+    }
+}
