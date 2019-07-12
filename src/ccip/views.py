@@ -217,9 +217,7 @@ class CCIPAPIView(View):
             (
                 'keynote',
                 pgettext_lazy('CCIP event type', 'keynote'),
-                KeynoteEvent.objects.select_related(
-                    'begin_time', 'end_time',
-                ),
+                KeynoteEvent.objects.select_related('begin_time', 'end_time'),
                 _get_keynote_event_info,
             ),
             (
@@ -271,7 +269,6 @@ class CCIPAPIView(View):
                 rooms[room['id']] = room
                 speakers.update({s['id']: s for s in sess_speakers})
                 tags.update({t['id']: t for t in sess_tags})
-
                 sessions.append(session)
 
         def _room_sort_key(v):
