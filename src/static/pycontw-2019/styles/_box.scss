@@ -1,8 +1,10 @@
-$box-content-padding-x: 24px;
+$box-content-padding-x: 32px;
 $box-content-padding-y: 16px;
 
 .box {
-	border: solid 1px #1b2561;
+	$box-border: solid 1px $egyptian-blue;
+
+	border: $box-border;
 	border-radius: 5px;
 	overflow: hidden;
 
@@ -17,5 +19,30 @@ $box-content-padding-y: 16px;
 
 	.box-content {
 		padding: $box-content-padding-y $box-content-padding-x;
+	}
+
+	.box-control {
+		display: flex;
+		overflow: hidden;
+
+		> * {
+			@include header(1.25rem);
+			@include no-underline();
+
+			flex: 1;
+			border-top: $box-border;
+			line-height: 48px;
+			text-align: center;
+			font-weight: 400;
+		}
+
+		> * + * {
+			border-left: $box-border;
+		}
+
+		> a:hover {
+			background: $egyptian-blue;
+			color: $white;
+		}
 	}
 }
