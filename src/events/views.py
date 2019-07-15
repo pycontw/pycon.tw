@@ -76,6 +76,12 @@ class TalkListView(AcceptedProposalMixin, ListView):
         return super().get_context_data(**kwargs)
 
 
+class TutorialListView(AcceptedProposalMixin, ListView):
+    model = TutorialProposal
+    template_name = 'events/tutorial_list.html'
+    response_class = TemplateExistanceStatusResponse
+
+
 class ScheduleView(TemplateView):
 
     template_name = 'events/schedule.html'
