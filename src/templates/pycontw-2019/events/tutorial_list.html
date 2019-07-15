@@ -17,20 +17,24 @@
 
 {% for object in object_list %}
 
+{% with event=object proposal=object.proposal %}
+
 <article class="box">
-	<h2 class="box-title">{{ object.title }}</h2>
-	<div class="box-content"><p>{{ object.abstract }}</p></div>
+	<h2 class="box-title">{{ proposal.title }}</h2>
+	<div class="box-content"><p>{{ proposal.abstract }}</p></div>
 	<div class="box-control">
-		<a href="{{ object.get_absolute_url }}">
+		<a href="{{ event.get_absolute_url }}">
 			{% trans 'Show Details' %}
 		</a>
-		{% if object.registration_link %}
-		<a href="{{ object.registration_link }}" target="_blank" rel="noopener">
+		{% if event.registration_link %}
+		<a href="{{ event.registration_link }}" target="_blank" rel="noopener">
 			{% trans 'Register' %}
 		</a>
 		{% endif %}
 	</div>
 </article>
+
+{% endwith %}
 
 {% endfor %}
 
