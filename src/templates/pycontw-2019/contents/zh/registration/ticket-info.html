@@ -12,86 +12,87 @@
 
 <h1>會議售票</h1>
 
-<div class="box">
-	<h3 class="box-title">個人</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>早鳥</th>
-						<td class="price">2,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>一般</th>
-						<td class="price">3,500</td>
-						<td>NTD</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="button-round buy">購票</a>
-		</div>
-		<div class="desc">
-			<p>限時限量，請及早購買。電子發票於會後統一以 email 寄送。無法使用統一編號。</p>
-		</div>
+<div class="box-row">
+	<div class="ticket-box">
+		<p class="ticket-box-title">個人</h3>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>早鳥</th>
+							<td class="price">2,600</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>一般</th>
+							<td class="price">3,500</td>
+							<td>NTD</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">購票</a>
+			</div>
+	</div>
+	<div class="ticket-box">
+		<p class="ticket-box-title">企業</h3>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>價格</th>
+							<td class="price">5,500</td>
+							<td>NTD</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">購票</a>
+			</div>
+	</div>
+
+	<div class="ticket-box">
+		<p class="ticket-box-title">保留</h3>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>講者</th>
+							<td class="price">1,500</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>工作人員</th>
+							<td class="price">1,500</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>贊助夥伴</th>
+							<td class="price">免費</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">購票</a>
+			</div>
 	</div>
 </div>
-
-<div class="box">
-	<h3 class="box-title">企業</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>價格</th>
-						<td class="price">5,000</td>
-						<td>NTD</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="button-round buy">購票</a>
-		</div>
-		<div class="desc">
-			<p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 <em>N/A</em>。電子發票於會後統一以 email 寄送。</p>
-		</div>
-	</div>
-</div>
-
-<div class="box">
-	<h3 class="box-title">保留</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>講者</th>
-						<td class="price">1,800</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>工作人員</th>
-						<td class="price">1,800</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>贊助夥伴</th>
-						<td class="price">免費</td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="button-round buy">購票</a>
-		</div>
-		<div class="desc">
-			<p>請於報名時輸入邀請碼。</p>
-		</div>
-	</div>
+<script>
+		document.querySelectorAll(".buy").forEach((link) => {
+			link.addEventListener("mouseover", (e) => {
+				e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
+			});
+			link.addEventListener("mouseleave", (e) => {
+				e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
+			})
+		})
+	</script>
+<div class="desc-box">
+		<p class="desc">個人票：限時限量，請及早購買。電子發票於會後統一以 email 寄送。無法使用統一編號。</p>
+		<p class="desc">企業票：有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 N/A。電子發票於會後統一以 email 寄送。</p>
+		<p  class="desc">保留票：我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
 </div>
 
 <ul>
-	<li><p>上列票種用於報名 6 月 1 日至 2 日的議程活動；專業課程（tutorials）及衝刺開發（sprints）的報名方式，請另見相關網頁說明。</p></li>
+	<li><p>上列票種用於報名 9 月 20 日至 22 日的議程活動；專業課程（tutorials）及衝刺開發（sprints）的報名方式，請另見相關網頁說明。</p></li>
 	<li><p>早鳥票販售於 4 月 30 日結束，或售完為止。所有票種販售於 5 月 19 日結束。</p></li>
 	<li><p>若無特別標註，皆以台幣計價；參考匯率 USD 1.00 = NTD 29.31。</p></li>
 	<li><p>所有票種預設將於會後統一寄發電子發票。</p></li>
