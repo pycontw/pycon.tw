@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-12 15:13+0800\n"
-"PO-Revision-Date: 2019-07-12 07:18+0000\n"
+"POT-Creation-Date: 2019-07-15 18:30+0800\n"
+"PO-Revision-Date: 2019-07-15 10:33+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -43,17 +43,17 @@ msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "基調演講"
 
-#: ccip/views.py:227
+#: ccip/views.py:225
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "贊助"
 
-#: ccip/views.py:235
+#: ccip/views.py:233
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "專業課程"
 
-#: ccip/views.py:247
+#: ccip/views.py:245
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "演講"
@@ -220,7 +220,7 @@ msgstr "議程錄影"
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:160 events/models.py:296
+#: core/models.py:160 events/models.py:301
 msgid "created at"
 msgstr "建立時間"
 
@@ -361,19 +361,23 @@ msgstr "演講"
 msgid "talk events"
 msgstr "演講"
 
-#: events/models.py:278
+#: events/models.py:275
+msgid "registration link"
+msgstr "報名連結"
+
+#: events/models.py:283
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:279
+#: events/models.py:284
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:293
+#: events/models.py:298
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:301 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:306 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -383,17 +387,18 @@ msgstr "HTML"
 #: templates/pycontw-2018/contents/_default/portal.html:17
 #: templates/pycontw-2018/events/schedule.html:6
 #: templates/pycontw-2018/events/schedule.html:20
+#: templates/pycontw-2019/_includes/menu.html:64
 #: templates/pycontw-2019/contents/_default/portal.html:17
 #: templates/pycontw-2019/events/schedule.html:6
 #: templates/pycontw-2019/events/schedule.html:20
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:302
+#: events/models.py:307
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:307
+#: events/models.py:312
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 
@@ -405,7 +410,7 @@ msgstr "基調演講"
 msgid "EN Slides"
 msgstr "英文投影片"
 
-#: events/views.py:99
+#: events/views.py:122
 msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
@@ -513,7 +518,7 @@ msgid ""
 msgstr "本教學的安排規劃。應該要列舉課程的子主題與各主題預計的時間長度。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
-#: proposals/models.py:215 proposals/models.py:259
+#: proposals/models.py:252 proposals/models.py:296
 msgid "duration"
 msgstr "時間長度"
 
@@ -550,91 +555,91 @@ msgstr "本使用者已經是此提案的講者。"
 msgid "No valid speaker found with your selection."
 msgstr "您的選擇找不到對應講者。"
 
-#: proposals/models.py:52
+#: proposals/models.py:54
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:59 users/models.py:196
+#: proposals/models.py:61 users/models.py:196
 msgid "user"
 msgstr "使用者"
 
-#: proposals/models.py:64
+#: proposals/models.py:66
 msgid "proposal model type"
 msgstr "提案 model 類型"
 
-#: proposals/models.py:67
+#: proposals/models.py:69
 msgid "proposal ID"
 msgstr "提案 ID"
 
-#: proposals/models.py:75
+#: proposals/models.py:77
 msgid "Pending"
 msgstr "待回覆"
 
-#: proposals/models.py:76 proposals/models.py:154
+#: proposals/models.py:78 proposals/models.py:156
 msgid "Accepted"
 msgstr "已接受"
 
-#: proposals/models.py:77
+#: proposals/models.py:79
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:86 proposals/models.py:147
+#: proposals/models.py:88 proposals/models.py:149
 msgid "cancelled"
 msgstr "已取消"
 
-#: proposals/models.py:94
+#: proposals/models.py:96
 msgid "additional speaker"
 msgstr "額外講者"
 
-#: proposals/models.py:95
+#: proposals/models.py:97
 msgid "additional speakers"
 msgstr "額外講者"
 
-#: proposals/models.py:127
+#: proposals/models.py:129
 msgid "submitter"
 msgstr "提案人"
 
-#: proposals/models.py:131
+#: proposals/models.py:133
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:136
+#: proposals/models.py:138
 msgid "objective"
 msgstr "演講目標"
 
-#: proposals/models.py:141
+#: proposals/models.py:143
 msgid "supplementary"
 msgstr "補充資訊"
 
-#: proposals/models.py:155
+#: proposals/models.py:157
 msgid "Rejected"
 msgstr "已拒絕"
 
-#: proposals/models.py:158
+#: proposals/models.py:160
 msgid "accepted"
 msgstr "已接受"
 
-#: proposals/models.py:220
+#: proposals/models.py:257
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:221
+#: proposals/models.py:258
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:255
+#: proposals/models.py:292
 msgid "Half day"
 msgstr "半天"
 
-#: proposals/models.py:256
+#: proposals/models.py:293
 msgid "Full day"
 msgstr "全天"
 
-#: proposals/models.py:265
+#: proposals/models.py:302
 msgid "tutorial proposal"
 msgstr "專業課程提案"
 
-#: proposals/models.py:266
+#: proposals/models.py:303
 msgid "tutorial proposals"
 msgstr "專業課程提案"
 
@@ -1685,7 +1690,7 @@ msgstr "我們搞砸了，這不是你的問題。"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
 #: templates/pycontw-2018/_includes/menu.html:29
-#: templates/pycontw-2019/_includes/menu.html:30
+#: templates/pycontw-2019/_includes/menu.html:31
 msgid "About"
 msgstr "關於"
 
@@ -1734,7 +1739,7 @@ msgstr "基調演講"
 #: templates/pycontw-2018/contents/zh/events/overview.html:44
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
-#: templates/pycontw-2019/_includes/menu.html:63
+#: templates/pycontw-2019/_includes/menu.html:65
 #: templates/pycontw-2019/contents/en/events/overview.html:44
 #: templates/pycontw-2019/contents/zh/events/overview.html:44
 #: templates/pycontw-2019/events/talk_list.html:6
@@ -1766,7 +1771,7 @@ msgstr "專業課程"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
 #: templates/pycontw-2018/_includes/menu.html:86
-#: templates/pycontw-2019/_includes/menu.html:99
+#: templates/pycontw-2019/_includes/menu.html:102
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1776,7 +1781,7 @@ msgid "Accommodation"
 msgstr "住宿"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:68
-#: templates/pycontw-2019/_includes/menu.html:33
+#: templates/pycontw-2019/_includes/menu.html:34
 msgid "Sponsor"
 msgstr "贊助"
 
@@ -1801,7 +1806,7 @@ msgstr "售票資訊"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
 #: templates/pycontw-2018/_includes/menu.html:80
-#: templates/pycontw-2019/_includes/menu.html:93
+#: templates/pycontw-2019/_includes/menu.html:96
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -1904,6 +1909,9 @@ msgid ""
 msgstr "PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。"
 
 #: templates/pycontw-2016/index.html:31 templates/pycontw-2016/index.html:37
+#: templates/pycontw-2019/_includes/menu.html:66
+#: templates/pycontw-2019/events/tutorial_list.html:6
+#: templates/pycontw-2019/events/tutorial_list.html:10
 msgid "Tutorials"
 msgstr "專業課程"
 
@@ -2261,13 +2269,13 @@ msgid "Our Partners"
 msgstr "我們的夥伴"
 
 #: templates/pycontw-2018/_includes/menu.html:50
-#: templates/pycontw-2019/_includes/menu.html:54
+#: templates/pycontw-2019/_includes/menu.html:55
 msgctxt "menu"
 msgid "Conference"
 msgstr "議程"
 
 #: templates/pycontw-2018/_includes/menu.html:57
-#: templates/pycontw-2019/_includes/menu.html:64
+#: templates/pycontw-2019/_includes/menu.html:67
 msgid "Recording"
 msgstr "錄影"
 
@@ -2293,7 +2301,7 @@ msgid "Open Spaces"
 msgstr "開放空間"
 
 #: templates/pycontw-2018/_includes/menu.html:76
-#: templates/pycontw-2019/_includes/menu.html:89
+#: templates/pycontw-2019/_includes/menu.html:92
 msgid "Registration"
 msgstr "註冊"
 
@@ -2307,7 +2315,7 @@ msgid "Registration"
 msgstr "報到"
 
 #: templates/pycontw-2018/_includes/menu.html:89
-#: templates/pycontw-2019/_includes/menu.html:102
+#: templates/pycontw-2019/_includes/menu.html:105
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2474,6 +2482,7 @@ msgstr "演講為會期兩天最主要的活動，屆時將會有來自台灣各
 
 #: templates/pycontw-2018/events/talk_list.html:14
 #: templates/pycontw-2019/events/talk_list.html:14
+#: templates/pycontw-2019/events/tutorial_list.html:14
 msgid ""
 "<em>Program schedule is subject to change.</em> Please check this page "
 "frequently to get the latest version."
@@ -2542,6 +2551,22 @@ msgstr "講師"
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturer"
 msgstr "講師"
+
+#: templates/pycontw-2019/events/tutorial_list.html:13
+msgid ""
+"Tutorial are events held as part of the main conference, but attendees need "
+"to register separately in order to join. They are either half- or one-day "
+"(three or six hours) events held to help participants better understand "
+"talks during the conference, or get their hands on more Python applications."
+msgstr "專業課程（Tutorial）是 PyCon Taiwan 的一部份，但需要另外報名，以獲得參加資格。提供全天（6 小時）或半天（3 小時）課程。"
+
+#: templates/pycontw-2019/events/tutorial_list.html:27
+msgid "Show Details"
+msgstr "顯示詳細內容"
+
+#: templates/pycontw-2019/events/tutorial_list.html:31
+msgid "Register"
+msgstr "報名"
 
 #: users/admin.py:18
 msgid "Personal info"
