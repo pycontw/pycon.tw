@@ -4,8 +4,8 @@ from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
 from .base import *     # noqa
 
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2017'
-TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'pycontw-2017')
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2019'
+TEMPLATES[0]['DIRS'][1] = os.path.join(BASE_DIR, 'templates', 'pycontw-2019')
 STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
