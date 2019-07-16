@@ -37,6 +37,9 @@
 			word-wrap: break-word;
 			word-break: break-word;
 		}
+		li > ol {
+			text-indent: 0rem;
+		}
 	}
 
 	.content {
