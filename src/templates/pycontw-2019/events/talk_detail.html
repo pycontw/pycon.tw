@@ -24,15 +24,15 @@
 		</li>
 		{% endif %}
 		<li>
-			<dfn class="category"></dfn>
+			<dfn class="category">{% trans 'Category: ' %}</dfn>
 			<span>{{ object.get_category_display }}</span>
 		</li>
 		<li>
-			<dfn class="language {{ object.language.lower }}"></dfn>
+			<dfn class="language {{ object.language.lower }}">{% trans 'Language: ' %}</dfn>
 			<span>{{ object.get_language_display }}</span>
 		</li>
 		<li>
-			<dfn class="python-level {{ object.python_level.lower }}"></dfn>
+			<dfn class="python-level {{ object.python_level.lower }}">{% trans 'Python Level: ' %}</dfn>
 			<span>{{ object.get_python_level_display }}</span>
 		</li>
 		{% if not object.recording_policy %}
