@@ -71,7 +71,7 @@
 		$spacing: 0.75rem;
 		padding-left: 0;
 		padding-top:10px;
-		padding-bottom: 10px;	
+		padding-bottom: 10px;
 		border-radius: 2px;
 		ul {
 			@include list-reset();
@@ -111,6 +111,7 @@
 					min-height: 24px;
 					min-width: 60px;
 					margin-right: 1.5rem;
+					font-size: 0;
 					@mixin icon($name, $margin-top: 0) {
 						background: url('../assets/icon-#{$name}.svg') top right no-repeat;
 						margin-top: $margin-top;	// Visual compensation.
