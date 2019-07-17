@@ -187,7 +187,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         # Optimization: Callers of this method can annotate the queryset to
         # avoid lookups when a proposal doesn't have any additional speakers.
         with contextlib.suppress(AttributeError):
-            if self._additional_speaker_count < 2:
+            if self._additional_speaker_count < 1:
                 return
 
         # Optimization: Callers of this method can prefetch the additional
