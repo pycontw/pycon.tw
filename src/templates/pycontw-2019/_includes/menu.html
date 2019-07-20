@@ -85,7 +85,9 @@
 		<label for="menu-navbar-{{ type }}-registration">{% trans 'Registration' %}</label>
 		<div class="dropdown">
 			<ul class="submenu">
+				{% comment %}
 				<li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
+				{% endcomment %}
 				<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
 				{# <li><a href="{{ reg_registration_url }}">{% trans 'Registration' context 'registration' %}</a></li> #}
 			</ul>
