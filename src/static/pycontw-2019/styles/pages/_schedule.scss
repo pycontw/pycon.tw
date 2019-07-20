@@ -7,21 +7,9 @@
 		cursor: pointer;
 	}
 
-	.schedule-legend li {
-		@include on-desktop() {
-			margin-left: 56px;
-		}
-	}
-
-	.talk-tags {
+	.schedule-legend {
 		$icon-width: 26px;
 		$icon-height: 26px;
-
-		> li::before {
-			content: ' ';
-			height: $icon-height;
-			margin-right: 1rem;
-		}
 
 		@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
 			&::before {
@@ -31,38 +19,75 @@
 			}
 		}
 
-		.speech-en {
-			@include icon('language-enen', -1px);
+		background: $pale-grey;
+		word-wrap: break-word;
+		padding: 32px 24px;
+		border-radius: 2px;
+
+		@include on-desktop() {
+			padding: 32px;
+			columns: 2;
 		}
-		.speech-zh {
-			@include icon('language-zhzh', -1px);
-		}
-		.slides-en {
-			@include icon('language-enen', 0, right);
-		}
-		.slides-zh {
-			@include icon('language-zhzh', 0, right);
-		}
-		.language-enen {
-			@include icon('language-enen', 0, center, 2 * $icon-width);
-		}
-		.language-zhen {
-			@include icon('language-zhen', 0, center, 2 * $icon-width);
-		}
-		.language-zhzh {
-			@include icon('language-zhzh', 0, center, 2 * $icon-width);
-		}
-		.python-level-novice {
-			@include icon('level-1');
-		}
-		.python-level-intermediate {
-			@include icon('level-2');
-		}
-		.python-level-experienced {
-			@include icon('level-3');
-		}
-		.no-recording {
-			@include icon('no-recording', 1px);
+
+		ul {
+			@include list-reset();
+			text-indent: 0;
+			li {
+
+				display: flex;
+				align-content: baseline;
+				align-items: flex-start;
+
+				> * {
+					flex: 1;
+					min-height: 24px;
+					margin-bottom: 12px;
+				}
+
+				@include on-desktop() {
+					// margin-left: 56px;
+					margin-left: 0 - $icon-width / 4;
+				}
+				&:before {
+					content: ' ';
+					height: $icon-height;
+					margin-right: 1rem;
+				}
+
+				&.speech-en {
+					@include icon('language-enen', -1px);
+				}
+				&.speech-zh {
+					@include icon('language-zhzh', -1px);
+				}
+				&.slides-en {
+					@include icon('language-enen', 0, right);
+				}
+				&.slides-zh {
+					@include icon('language-zhzh', 0, right);
+				}
+				&.language-enen {
+					@include icon('language-enen', 0, center, 2 * $icon-width);
+				}
+				&.language-zhen {
+					@include icon('language-zhen', 0, center, 2 * $icon-width);
+				}
+				&.language-zhzh {
+					@include icon('language-zhzh', 0, center, 2 * $icon-width);
+				}
+				&.python-level-novice {
+					@include icon('level-1');
+				}
+				&.python-level-intermediate {
+					@include icon('level-2');
+				}
+				&.python-level-experienced {
+					@include icon('level-3');
+				}
+				&.no-recording {
+					@include icon('no-recording', 1px);
+				}
+			}
 		}
 	}
 }
