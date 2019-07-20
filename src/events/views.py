@@ -4,20 +4,21 @@ import logging
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
-from django.db.models import Count
+from django.db.models import Count, Prefetch
 from django.http import HttpResponseRedirect
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import CreateView, DetailView, TemplateView
+from django.views.generic import CreateView, DetailView, ListView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
-from proposals.models import TalkProposal
+from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
     EVENT_ROOMS, Schedule, Time,
-    CustomEvent, KeynoteEvent, SponsoredEvent, ProposedTalkEvent,
+    CustomEvent, KeynoteEvent, SponsoredEvent,
+    ProposedTalkEvent, ProposedTutorialEvent,
 )
 from .renderers import render_all
 
@@ -25,23 +26,37 @@ from .renderers import render_all
 logger = logging.getLogger(__name__)
 
 
-class AcceptedTalkMixin:
-    queryset = (
-        TalkProposal.objects
-        .filter_accepted()
-        .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
-        .select_related('submitter')
-    )
+class AcceptedProposalMixin:
+    def get_queryset(self):
+        return (
+            super().get_queryset()
+            .filter_accepted()
+            .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
+            .select_related('submitter')
+        )
 
 
-class TalkListView(AcceptedTalkMixin, TemplateView):
+class TalkListView(AcceptedProposalMixin, ListView):
 
+    model = TalkProposal
     template_name = 'events/talk_list.html'
     response_class = TemplateExistanceStatusResponse
 
     def get_categorized_talks(self):
         category_map = OrderedDefaultDict(list)
-        for proposal in self.queryset:
+        proposals = (
+            self.get_queryset()
+            .prefetch_related(Prefetch(
+                'additionalspeaker_set',
+                queryset=(
+                    AdditionalSpeaker.objects
+                    .filter(cancelled=False)
+                    .select_related('user')
+                ),
+                to_attr='_additional_speakers',
+            ))
+        )
+        for proposal in proposals:
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
 
@@ -61,6 +76,19 @@ class TalkListView(AcceptedTalkMixin, TemplateView):
         return super().get_context_data(**kwargs)
 
 
+class TutorialListView(ListView):
+
+    model = ProposedTutorialEvent
+    template_name = 'events/tutorial_list.html'
+    response_class = TemplateExistanceStatusResponse
+
+    def get_queryset(self):
+        qs = super().get_queryset().select_related(
+            'proposal', 'proposal__submitter',
+        )
+        return qs
+
+
 class ScheduleView(TemplateView):
 
     template_name = 'events/schedule.html'
@@ -71,8 +99,9 @@ class ScheduleView(TemplateView):
             self.schedule = Schedule.objects.latest()
         except Schedule.DoesNotExist:
             return HttpResponseRedirect(
-                'https://docs.google.com/spreadsheets/d/'
-                '1FiGx7ou-OxMK8yTgwYkqM5vOcUPYCMz7cQiFInES654/pubhtml#'
+                'https://docs.google.com/spreadsheets/d/e/'
+                '2PACX-1vShbY20tmKca-i8Rzm4i2vaeifCHNCSM4e_'
+                '6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml'
             )
         return super().get(request, *args, **kwargs)
 
@@ -141,10 +170,8 @@ class ScheduleCreateView(
 
         times = list(Time.objects.order_by('value'))
         end_time_iter = iter(times)
-        try:
-            next(end_time_iter)
-        except StopIteration:   # Nothing at all.
-            return day_info_dict
+        next(end_time_iter, None)
+
         for begin, end in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
@@ -195,10 +222,9 @@ class EventInfoMixin:
         )
 
 
-class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
+class ProposedEventMixin:
 
-    template_name = 'events/talk_detail.html'
-    response_class = TemplateExistanceStatusResponse
+    event_model = None
 
     def is_event_sponsored(self):
         return False
@@ -206,13 +232,22 @@ class TalkDetailView(AcceptedTalkMixin, EventInfoMixin, DetailView):
     def get_event(self):
         try:
             event = (
-                ProposedTalkEvent.objects
+                self.event_model.objects
                 .select_related('begin_time', 'end_time')
                 .get(proposal=self.object)
             )
-        except ProposedTalkEvent.DoesNotExist:
+        except self.event_model.DoesNotExist:
             return None
         return event
+
+
+class TalkDetailView(
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
+    model = TalkProposal
+    event_model = ProposedTalkEvent
+    template_name = 'events/talk_detail.html'
+    response_class = TemplateExistanceStatusResponse
 
 
 class SponsoredEventDetailView(EventInfoMixin, DetailView):
@@ -233,3 +268,12 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
     def get_time_slot(self):
         return (self.object.begin_time.value, self.object.end_time.value)
+
+
+class TutorialDetailView(
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
+    model = TutorialProposal
+    event_model = ProposedTutorialEvent
+    template_name = 'events/tutorial_detail.html'
+    response_class = TemplateExistanceStatusResponse

@@ -16,20 +16,6 @@ class AdditionalSpeakerInline(GenericTabularInline):
 
 
 class ProposalAdmin(admin.ModelAdmin):
-    fields = [
-        'conference', 'submitter', 'title', 'category', 'duration',
-        'language', 'abstract', 'python_level', 'objective',
-        'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'slide_link', 'cancelled',
-    ]
-    raw_id_fields = ['submitter']
-    search_fields = ['title', 'abstract']
-    inlines = [AdditionalSpeakerInline]
-
-
-@admin.register(TalkProposal)
-class TalkProposalAdmin(ExportMixin, ProposalAdmin):
-    fields = ProposalAdmin.fields + ['accepted']
     list_display = [
         'title', 'category', 'duration', 'language',
         'python_level', 'accepted',
@@ -38,10 +24,22 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
         'cancelled', 'accepted',
         'category', 'duration', 'language', 'python_level',
     ]
+    fields = [
+        'conference', 'submitter', 'title', 'category', 'duration',
+        'language', 'abstract', 'python_level', 'objective',
+        'detailed_description', 'outline', 'supplementary',
+        'recording_policy', 'slide_link', 'cancelled', 'accepted',
+    ]
+    raw_id_fields = ['submitter']
+    search_fields = ['title', 'abstract']
+    inlines = [AdditionalSpeakerInline]
+
+
+@admin.register(TalkProposal)
+class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     resource_class = TalkProposalResource
 
 
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
-    list_display = ['title', 'category', 'language', 'python_level']
-    list_filter = ['category', 'language', 'python_level']
+    pass

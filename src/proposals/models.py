@@ -1,3 +1,5 @@
+import contextlib
+
 from django.conf import settings
 from django.contrib.contenttypes.fields import (
     GenericForeignKey, GenericRelation,
@@ -149,6 +151,18 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         db_index=True,
     )
 
+    ACCEPTED_CHOICES = (
+        (None,  '----------'),
+        (True,  _('Accepted')),
+        (False, _('Rejected')),
+    )
+    accepted = models.NullBooleanField(
+        verbose_name=_('accepted'),
+        default=None,
+        choices=ACCEPTED_CHOICES,
+        db_index=True,
+    )
+
     additionalspeaker_set = GenericRelation(
         to=AdditionalSpeaker,
         content_type_field='proposal_type',
@@ -169,15 +183,50 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     @property
     def speakers(self):
         yield PrimarySpeaker(proposal=self)
-        if not getattr(self, '_additional_speaker_count', 1):
-            return
-        additionals = self.additionalspeaker_set.filter(cancelled=False)
-        for speaker in additionals.select_related('user'):
+
+        # Optimization: Callers of this method can annotate the queryset to
+        # avoid lookups when a proposal doesn't have any additional speakers.
+        with contextlib.suppress(AttributeError):
+            if self._additional_speaker_count < 1:
+                return
+
+        # Optimization: Callers of this method can prefetch the additional
+        # speaker queryset to avoid n+1 lookups when operating on multiple
+        # proposals. Example::
+        #
+        #   proposals = TalkProposal.objects.prefetch_related(Prefetch(
+        #       'additionalspeaker_set',
+        #       to_attr='_additional_speakers',
+        #       queryset=(
+        #           AdditionalSpeaker.objects
+        #           .filter(cancelled=False)
+        #           .select_related('user')
+        #       ),
+        #   ))
+        #   for p in proposals:   # Only two queries: proposals, and speakers.
+        #       for s in p.speakers:
+        #           print(s.user.email)
+        try:
+            additionals = self._additional_speakers
+        except AttributeError:
+            additionals = (
+                self.additionalspeaker_set
+                .filter(cancelled=False)
+                .select_related('user')
+            )
+
+        for speaker in additionals:
             yield speaker
 
     @property
     def speaker_count(self):
-        return self.additionalspeaker_set.filter(cancelled=False).count() + 1
+        # Optimization: Callers of this method can annotate the queryset to
+        # avoid n+1 lookups when operating on multiple proposals.
+        try:
+            count = self._additional_speaker_count
+        except AttributeError:
+            count = self.additionalspeaker_set.filter(cancelled=False).count()
+        return count + 1
 
     @property
     def must_fill_fields_count(self):
@@ -202,18 +251,6 @@ class TalkProposal(AbstractProposal):
     duration = models.CharField(
         verbose_name=_('duration'),
         max_length=6,
-    )
-
-    ACCEPTED_CHOICES = (
-        (None,  '----------'),
-        (True,  _('Accepted')),
-        (False, _('Rejected')),
-    )
-    accepted = models.NullBooleanField(
-        verbose_name=_('accepted'),
-        default=None,
-        choices=ACCEPTED_CHOICES,
-        db_index=True,
     )
 
     class Meta(AbstractProposal.Meta):

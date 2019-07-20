@@ -10,8 +10,8 @@ from django.utils.translation import (
 
 from .forms import CustomEventForm
 from .models import (
-    CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
-    Time, Schedule,
+    CustomEvent, KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent,
+    SponsoredEvent, Time, Schedule,
 )
 
 
@@ -136,6 +136,14 @@ class KeynoteEventAdmin(admin.ModelAdmin):
 
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
+    list_display = ['proposal', 'begin_time', 'end_time', 'location']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    raw_id_fields = ['proposal']
+
+
+@admin.register(ProposedTutorialEvent)
+class ProposedTutorialEventAdmin(admin.ModelAdmin):
     fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
     list_display = ['proposal', 'begin_time', 'end_time', 'location']
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
