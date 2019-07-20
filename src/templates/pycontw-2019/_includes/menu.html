@@ -8,6 +8,7 @@
 {% url 'events_schedule' as events_schedule_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
+{% url 'events_tutorial_list' as events_tutorial_list_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/open-spaces' as events_openspaces_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
@@ -58,7 +59,9 @@
 				<li><a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a></li>
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				{% endcomment %}
+				<li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vShbY20tmKca-i8Rzm4i2vaeifCHNCSM4e_6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml" target="_blank" rel="noopener">{% trans 'Schedule' %}</a></li>
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
+				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>
 				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
 				{% comment %}
 				<li><a href="{{ portal_url }}">{% trans 'Portal' %}</a></li>
@@ -91,11 +94,9 @@
 			</ul>
 		</div>
 	</li>
-	{% comment %}
 	<li>
 		<a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a>
 	</li>
-  {% endcomment %}
 	<li>
 		<a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
 	</li>
