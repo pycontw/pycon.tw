@@ -7,8 +7,8 @@ const venue = L.layerGroup()
 L.marker([25.040997, 121.611417], {
 	icon: L.icon({
 		iconUrl: window.VENUE_ICON,
-		iconSize: [56, 51],
-		iconAnchor: [28, 28],
+		iconSize: [100, 78],
+		iconAnchor: [50, 55],
 	}),
 })
 .addTo(venue)
@@ -55,7 +55,7 @@ window.map = pymap
 
 // Icon for venue.
 L.easyButton(
-	`<img src="${window.VENUE_BUTTON}" alt="Map Home" width="12" height="12">`,
+	`<img src="${window.VENUE_BUTTON}" alt="Map Home">`,
 	centerMap,
 	{position: 'topright'},
 ).addTo(pymap)
