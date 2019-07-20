@@ -7,7 +7,12 @@ from . import views
 urlpatterns = [
     url(r'^schedule/$', views.ScheduleView.as_view(), name='events_schedule'),
     url(r'^schedule/new/$', views.ScheduleCreateView.as_view()),
-    url(r'^talks/$', views.TalkListView.as_view(), name='events_talk_list'),
+
+    url(r'^talks/$', views.TalkListView.as_view(),
+        name='events_talk_list'),
+    url(r'^tutorials/$', views.TutorialListView.as_view(),
+        name='events_tutorial_list'),
+
     url(r'^talk/(?P<pk>\d+)/$', views.TalkDetailView.as_view(),
         name='events_talk_detail'),
     url(r'^talk/sponsored/(?P<slug>[-\w]+)/$',
