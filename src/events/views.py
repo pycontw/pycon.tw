@@ -4,7 +4,7 @@ import logging
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
-from django.db.models import Count
+from django.db.models import Count, Prefetch
 from django.http import HttpResponseRedirect
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
@@ -12,7 +12,7 @@ from django.views.generic import CreateView, DetailView, ListView, TemplateView
 
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
-from proposals.models import TalkProposal, TutorialProposal
+from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
@@ -44,9 +44,19 @@ class TalkListView(AcceptedProposalMixin, ListView):
 
     def get_categorized_talks(self):
         category_map = OrderedDefaultDict(list)
-        # Use all() to create a new instance every time, to avoid Django
-        # queryset caching the result.
-        for proposal in self.get_queryset():
+        proposals = (
+            self.get_queryset()
+            .prefetch_related(Prefetch(
+                'additionalspeaker_set',
+                queryset=(
+                    AdditionalSpeaker.objects
+                    .filter(cancelled=False)
+                    .select_related('user')
+                ),
+                to_attr='_additional_speakers',
+            ))
+        )
+        for proposal in proposals:
             category_map[proposal.get_category_display()].append(proposal)
         return category_map
 
@@ -66,6 +76,19 @@ class TalkListView(AcceptedProposalMixin, ListView):
         return super().get_context_data(**kwargs)
 
 
+class TutorialListView(ListView):
+
+    model = ProposedTutorialEvent
+    template_name = 'events/tutorial_list.html'
+    response_class = TemplateExistanceStatusResponse
+
+    def get_queryset(self):
+        qs = super().get_queryset().select_related(
+            'proposal', 'proposal__submitter',
+        )
+        return qs
+
+
 class ScheduleView(TemplateView):
 
     template_name = 'events/schedule.html'
@@ -76,8 +99,9 @@ class ScheduleView(TemplateView):
             self.schedule = Schedule.objects.latest()
         except Schedule.DoesNotExist:
             return HttpResponseRedirect(
-                'https://docs.google.com/spreadsheets/d/'
-                '1FiGx7ou-OxMK8yTgwYkqM5vOcUPYCMz7cQiFInES654/pubhtml#'
+                'https://docs.google.com/spreadsheets/d/e/'
+                '2PACX-1vShbY20tmKca-i8Rzm4i2vaeifCHNCSM4e_'
+                '6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml'
             )
         return super().get(request, *args, **kwargs)
 
@@ -146,10 +170,8 @@ class ScheduleCreateView(
 
         times = list(Time.objects.order_by('value'))
         end_time_iter = iter(times)
-        try:
-            next(end_time_iter)
-        except StopIteration:   # Nothing at all.
-            return day_info_dict
+        next(end_time_iter, None)
+
         for begin, end in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]

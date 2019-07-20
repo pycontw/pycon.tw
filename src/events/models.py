@@ -271,6 +271,11 @@ class ProposedTutorialEvent(BaseEvent):
         to=TutorialProposal,
         verbose_name=_('proposal'),
     )
+    registration_link = models.URLField(
+        verbose_name=_('registration link'),
+        blank=True,
+        default='',
+    )
 
     objects = ProposedEventManager()
 
