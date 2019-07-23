@@ -24,16 +24,22 @@
 		<table class="time-table">
 			<thead>
 				<tr>
-					<td>{# Empty cell in top-left corner. #}</td>
-					{% for room in schedule_info.rooms %}
-					<th class="room">{{ room|room_display }}</th>
-					{% endfor %}
 				</tr>
 			</thead>
 			<tbody>
+				<tr>
+					<td colspan={{ schedule_info.rooms | length }} class="room-info">
+						<ul>
+							<li>場地圖示</li>
+							{% for room in schedule_info.rooms %}
+								<li class="room-{{ room|room_display }}"></li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
 				{% for slot_time, slot_info in schedule_info.slots.items %}
-					<tr>
-					<th class="time-table-time {{ slot_info|event_tr_class }}" >
+				<tr>
+					<th class="time-table-time">
 						{{ slot_time.0.value|date:'H:i' }}<br>
 						{{ slot_time.1.value|date:'H:i' }}
 					</th>
