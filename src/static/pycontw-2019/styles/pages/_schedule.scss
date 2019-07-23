@@ -7,28 +7,19 @@
 		cursor: pointer;
 	}
 
-	.schedule-legend {
-		$icon-width: 26px;
-		$icon-height: 26px;
+	// Icon
+	$icon-width: 26px;
+	$icon-height: 26px;
 
-		@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
-			&::before {
-				width: $width;
-				margin-top: $margin-top;	// Visual compensation.
-				background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
-			}
+	@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
+		&::before {
+			width: $width;
+			margin-top: $margin-top;	// Visual compensation.
+			background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
 		}
+	}
 
-		background: $pale-grey;
-		word-wrap: break-word;
-		padding: 32px 24px;
-		border-radius: 2px;
-
-		@include on-desktop() {
-			padding: 32px;
-			columns: 2;
-		}
-
+	@mixin icon-info() {
 		ul {
 			@include list-reset();
 			text-indent: 0;
@@ -87,194 +78,228 @@
 				&.no-recording {
 					@include icon('no-recording', 1px);
 				}
+				&.room-R0 {
+					@include icon('room-R0', 1px, center);
+				}
+				&.room-R1 {
+					@include icon('room-R1', 1px, center);
+				}
+				&.room-R2 {
+					@include icon('room-R2', 1px, center);
+				}
 			}
 		}
 	}
-}
 
-.time-table {
-	width: calc(100% + 32px);
-	margin: -16px;
-	background: transparent;
-	text-align: center;
+	.schedule-legend {
 
-	// Fonts.
-	@include text(14px);
-	.time-table-time, .talk p {
-		@include text(14px);
-	}
+		background: $pale-grey;
+		word-wrap: break-word;
+		padding: 32px 24px;
+		border-radius: 2px;
 
-	$border-color: $pale-grey;
-	// Round corners.
-	th, td, .time-stack-ribbon[class~='2-all'] + .event-info {
-		border-radius: 0;
-	}
-	.time-stack-ribbon + .event-info {
-		border-radius: 0;
-	}
-	.time-stack-ribbon {
-		border-radius: 0;
-	}
-
-	// Not actually a table!
-	display: block;
-	thead, tfoot {
-		display: none;
 		@include on-desktop() {
+			padding: 32px;
+			columns: 2;
+		}
+		@include icon-info();
+	}
+
+	.time-table {
+		width: calc(100% + 32px);
+		margin: -16px;
+		background: transparent;
+		text-align: center;
+
+		// Fonts.
+		@include text(14px);
+		.time-table-time, .talk p {
+			@include text(14px);
+		}
+
+		$border-color: $pale-grey;
+		// Round corners.
+		th, td, .time-stack-ribbon[class~='2-all'] + .event-info {
+			border-radius: 0;
+		}
+		.time-stack-ribbon + .event-info {
+			border-radius: 0;
+		}
+		.time-stack-ribbon {
+			border-radius: 0;
+		}
+
+		// Not actually a table!
+		display: block;
+		thead, tfoot {
+			display: none;
+			@include on-desktop() {
+				display: block;
+			}
+		}
+		tbody, tr, th, td {
 			display: block;
 		}
-	}
-	tbody, tr, th, td {
-		display: block;
-	}
 
-	// Spacing.
-	$cell-padding: 8px;
-	th, .time-table-time, .event-info {
-		padding: $cell-padding;
-	}
-	p {
-		margin: 0.25rem 0;
-	}
+		// Spacing.
+		$cell-padding: 8px;
+		th, .time-table-time, .event-info {
+			padding: $cell-padding;
+		}
+		p {
+			margin: 0.25rem 0;
+		}
 
-	tr {
-		margin-bottom: 16px;
+		tr {
+			margin-bottom: 16px;
 
-		@include on-desktop() {
+			@include on-desktop() {
+				display: flex;
+				align-items: stretch;
+				margin-bottom: 0;
+			}
+		}
+		th, td {
 			display: flex;
 			align-items: stretch;
-			margin-bottom: 0;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
 		}
-	}
-	th, td {
-		display: flex;
-		align-items: stretch;
-		justify-content: center;
-		margin: 0;
-		padding: 0;
-	}
-	td {
-		justify-content: space-between;
+		td {
+			justify-content: space-between;
 
-		a, .schedule-label {
-			&:hover {
-				text-decoration: none;
-				opacity: 0.8;
+			a, .schedule-label {
+				&:hover {
+					text-decoration: none;
+					opacity: 0.8;
+				}
 			}
-		}
-	}
-
-	@include on-desktop() {
-		th, td {
-			flex: 1;
-			display: flex;
-		}
-	}
-
-	$ribbon-width: 40px;
-	$spacing: 0px;
-	$color-info: white;
-	$color-label: $egyptian-blue;
-
-	tr {
-		th, td {
-			margin-left: $spacing;
-			&:first-child {
-				margin-left: 0;
-			}
-		}
-	}
-	.room, .time-table-time, .time-stack-time, .time-stack-ribbon {
-		background: $color-label;
-		line-height: 2;
-		color: white;
-	}
-	.custom {
-		background: $color-info;
-		color: $black;
-	}
-
-	.time-table-time {
-		display: none;
-	}
-	@include on-desktop() {
-		$time-cell-width: 56px;
-		.time-table-time {
-			display: flex;
-			flex: 0 0 $time-cell-width;
-			align-items: center;
-			margin-top: $spacing;
-		}
-		thead > tr > td:first-child {
-			flex: 0 0 #{$time-cell-width + $cell-padding * 2};
-		}
-	}
-
-	.time-stack-time {
-		padding-left: $ribbon-width;	// So the time and event content align,
-		@include on-desktop() {
-			display: none;
-		}
-	}
-
-	.time-stack-ribbon {
-		flex: 0 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: $ribbon-width - 2 * $spacing;
-		margin-top: $spacing;
-		padding: $spacing;
-
-		&[class~='2-all'] {		// Selector can't start with a number. WAT.
-			background: $color-info;
 		}
 
 		@include on-desktop() {
-			display: none;
-		}
-	}
-
-	.event-info {
-		flex: 1 1 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		margin-top: 0;
-		background: $color-info;
-		line-height: 1.75;
-		border: 0.2px solid $border-color;
-		// max-height: 136px;
-
-		@include on-desktop() {
-			> * {
-				flex: 0 0 auto;
-			}
-			.talk-title {
+			th, td {
 				flex: 1;
 				display: flex;
-				align-items: center;
-				height: 35px;
-				font-size:14px;
-			}
-			.talk-speakers{
-				color: $egyptian-blue;
 			}
 		}
-	}
 
-	// Icons.
-	.talk-tags {
-		@include list-reset();
-		display: flex;
-		justify-content: center;
-		margin: 0.375rem;
-		text-indent: 0;
+		$ribbon-width: 40px;
+		$spacing: 0px;
+		$color-info: white;
+		$color-label: $egyptian-blue;
 
-		> li::before {
-			content: ' ';
-			margin-right: 5px;
+		tr {
+			th, td {
+				margin-left: $spacing;
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+		.room, .time-table-time, .time-stack-time, .time-stack-ribbon {
+			background: $color-label;
+			line-height: 2;
+			color: white;
+		}
+		.custom {
+			background: $color-info;
+			color: $black;
+		}
+
+		.time-table-time {
+			display: none;
+		}
+		@include on-desktop() {
+			$time-cell-width: 56px;
+			.time-table-time {
+				display: flex;
+				flex: 0 0 $time-cell-width;
+				align-items: center;
+				margin-top: $spacing;
+			}
+			thead > tr > td:first-child {
+				flex: 0 0 #{$time-cell-width + $cell-padding * 2};
+			}
+		}
+
+		.time-stack-time {
+			padding-left: $ribbon-width;	// So the time and event content align,
+			@include on-desktop() {
+				display: none;
+			}
+		}
+
+		.time-stack-ribbon {
+			flex: 0 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: $ribbon-width - 2 * $spacing;
+			margin-top: $spacing;
+			padding: $spacing;
+
+			&[class~='2-all'] {		// Selector can't start with a number. WAT.
+				background: $color-info;
+			}
+
+			@include on-desktop() {
+				display: none;
+			}
+		}
+
+		.event-info {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 0;
+			background: $color-info;
+			line-height: 1.75;
+			border: 0.2px solid $border-color;
+			// max-height: 136px;
+
+			@include on-desktop() {
+				> * {
+					flex: 0 0 auto;
+				}
+				.talk-title {
+					flex: 1;
+					display: flex;
+					align-items: center;
+					height: 35px;
+					font-size:14px;
+				}
+				.talk-speakers{
+					color: $egyptian-blue;
+				}
+			}
+		}
+
+		// Icons.
+		.room-info {
+			@include list-reset();
+			@include icon-info();
+			ul {
+				display: flex;
+				justify-content: center;
+				// margin: 0.375rem;
+				text-indent: $icon-width;
+			}
+		}
+
+		.talk-tags {
+			@include list-reset();
+			display: flex;
+			justify-content: center;
+			margin: 0.375rem;
+			text-indent: 0;
+
+			> li::before {
+				content: ' ';
+				margin-right: 5px;
+			}
 		}
 	}
 }
