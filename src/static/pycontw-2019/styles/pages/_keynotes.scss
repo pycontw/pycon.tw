@@ -1,11 +1,38 @@
 .keynotes-page {
+	.breadcrumbs{
+		height: 40px;
+		margin-top:0px;
+		margin-bottom: 0px;
+		border-bottom: 1px solid  #dbdbdb;
+		font-size: 16px;
+		color: black;
+		ol{
+			display: block;
+			list-style: none;
+			padding-left: 0;
+			li{
+				display: inline;
+				list-style: none;
+			}
+			a{
+				color: black;
+			}
+			a:hover {
+				color: $elf-green;
+			  }
+			li+li:before {
+				content: "> ";
+				padding: 0 5px;
+			}
+		}
+		
+	}
 	.social {
 		padding-top: 0.5rem;
 
 		a:hover {
 			color: darken($link-dark, 20%);
 		}
-
 		.fa {
 			display: inline-block;
 			margin-right: 0.75rem;
@@ -17,5 +44,13 @@
 		&:last-child {
 			margin-bottom: inherit;
 		}
+		figcaption{
+			color: black;
+		}
+		.title{
+			color: black;
+		}
+		
 	}
 }
+

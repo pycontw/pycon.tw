@@ -8,16 +8,22 @@
 
 
 {% block content %}
-
+<div class="breadcrumbs">
+  <ol>
+	<li><a href="{% url 'index' %}">首頁</a></li>
+	<li>議程</li>
+	<li>基調演講</li>
+  </ol>
+</div>
 <h1>基調演講</h1>
 
 <article class="media">
 	<header>
 		<figure>
-			<img src="{% static 'pycontw-2018/assets/keynotes/katie.jpg' %}">
-			<figcaption>Katie McLaughlin</figcaption>
+			<img src="{% static 'pycontw-2019/assets/keynotes/paul-ivanov.jpg' %}">
+			<figcaption>Paul Ivanov</figcaption>
 		</figure>
-		<h2 class="title">基本多文種平面外的溝通策略</h2>
+		<h2 class="title">基調演講：Paul Ivanov</h2>
 	</header>
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
@@ -31,18 +37,16 @@
 		<div>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">自傳</h3>
-				<p>Katie 多年來從事過許多工作，使用各式各樣的語言開發軟體、擔任各式各樣平台的系統管理員、發表了各式各樣的演講。</p>
-				<p>在改變世界之餘，她也喜歡編織、烹飪、以及研究各種應用程式對 emoji 的支援。</p>
+				<p>Paul Ivanov 是 Jupyter 指導評議會的成員，於彭博公司任職資深軟體工程師，從事 IPython 與 Jupyter 相關的開源專案。在此之前，Paul 曾經：於 Disqus 從事後端與資料工程；於柏克萊大學腦成像中心當程式猿玩轉 IPython，並在柏克萊大學的 Python 集訓課進行教學；任職於 Redwood 理論神經科學中心 Bruno Olshausen 實驗室；為柏克萊大學視覺科學博士候選人。他擁有戴維斯大學計算機科學學位。</p>
 				<div class="social">
-					<a href="https://glasnt.com/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
-					<a href="https://twitter.com/glasnt" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href="http://pirsquared.org/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<a href="https://twitter.com/ivanov" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href="https://github.com/ivanov" target="_blank" rel="noopener"><span class="fa fa-github"></span></a>
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">演講</h3>
-				<p>通用字元集的標準化，為世界各地的電腦能夠自由地互相交換資料，奠定了良好的基礎。然而，這個標準中，仍然存在一個十分不穩定的部份，不斷在人類的溝通中成為阻礙，造成無盡的誤會。</p>
-				<p>在此基調演講中，Katie McLaughlin 將根據她在本領域中多年的研究與貢獻，分享自己學到的知識，並好好對 emoji 抱怨一番。</p>
-				<p>演講投影片：<a href="https://glasnt.com/talks/2018_06_PyConTW/#/" target="_blank" rel="noopener">https://glasnt.com/talks/2018_06_PyConTW/#/</a></p>
+				<p>TBD</p>
 			</article>
 		</div>
 	</div>
@@ -51,10 +55,10 @@
 <article class="media">
 	<header>
 		<figure>
-			<img src="{% static 'pycontw-2018/assets/keynotes/sw.jpg' %}">
-			<figcaption>陳昇瑋</figcaption>
+			<img src="{% static 'pycontw-2019/assets/keynotes/sd-lin.jpeg' %}">
+			<figcaption>林守德</figcaption>
 		</figure>
-		<h2 class="title">人工智慧民主化在台灣</h2>
+		<h2 class="title">Understanding Deep Neural Networks</h2>
 	</header>
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
@@ -68,27 +72,90 @@
 		<div>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">自傳</h3>
-				<p>陳昇瑋博士現為台灣人工智慧學校執行長、玉山金控科技長、台灣資料科學協會理事長、財團法人人工智慧科技基金會執行長、中央研究院資訊科學研究所研究員暨資料洞察實驗室主持人，研究領域為大數據分析、人工智慧、計算社會科學及多媒體系統等，在人工智慧的產業應用上持續有代表性的研究創見。</p>
-				<p>陳博士堅信資料的價值，長期推廣人工智慧、資料科學及其在各領域的應用，發起台灣人工智慧學校及台灣人工智慧暨資料科學年會，期能將對於人工智慧及資料科學的熱情傳達給大眾，一起來探索它們的潛力，並將人工智慧及資料科學引入每個人的專業領域之中。他期待讓這些由資料而生的技術不再是口號，而是大家真實拿來解決問題及創造價值的工具。</p>
-				<p>欲瞭解陳博士的研究及心得分享，請至他的個人網頁 <a href="http://www.iis.sinica.edu.tw/~swc/index_c.html">http://www.iis.sinica.edu.tw/~swc/index_c.html</a> 一探究竟。</p>
+					<p>林守德教授擁有台灣大學電機工程學士、密西根大學電機碩士、南加州大學計算語言學碩士學位和計算機科學博士學位，目前為國立臺灣大學資訊工程學系的教授。他創立台大的機器發明與社群網路探勘實驗室。在加入台大之前，他是羅沙拉摩斯國家實驗室的博士後研究員。林教授的研究包括機器學習和資料探勘、社群網絡分析和自然語言處理等領域。他的國際學術成就包括 2003 年 IEEE 網路智能會議最佳論文獎、2007 年 Google 研究獎、三度獲得微軟研究獎、IBM 研究獎助，2010 年及 2014 TAAI 優秀論文獎、2011 年 ASONAM 最佳論文獎，以及連續 5 年獲得美國空軍 AFOSR / AOARD 研究獎。他亦是 ACM KDD Cup 的 All Time Leader，領導或共同領導台大團隊贏得 5 次冠軍，也帶領研究團隊贏得 2016 年 WSDM Cup。他也曾獲得科技部吳大猷先生紀念獎，傑出人才基金會年輕學者研究獎，曾擔任 SIGKDD 的 senior program chair 及 ACL 的 area chair，目前是國際社群網絡探勘期刊、資訊科學與工程期刊和中文計算語言學期刊的副主編，也是科學人的「網路不打烊」單元作家之一。</p>
 				<div class="social">
-					<a href="http://www.iis.sinica.edu.tw/~swc/index_c.html" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">演講</h3>
-				<p>有人說，資料是新時代的石油；那麼，人工智慧 (AI) 就是新時代的電力，未來將不會有任何現代產業與 AI 無關。</p>
-				<p>問題在於 AI 技術的引入會面臨兩大挑戰，挑戰一，AI 是解決特定問題的技術：同樣是深度學習模型，要解決什麼問題，能解決什麼問題，能解到什麼程度，產生多少價值，在每家公司都不一樣，多元性及客製化程度遠比導入 ERP (企業資源計畫)、 CRM (客戶關係管理) 系統高得太多。例如，同樣是 AOI (自動光學檢測) 技術，在 A 公司做來檢測電路板的瑕疵，在 B 公司檢測織物的瑕疵，在 C 公司檢測玻璃的瑕疵，以高標準來要求的話，絕對不是調整參數就好。因此，未來的五年甚至更久的時間內，很難期待會有套裝系統可以直接購入及進行簡單客製化，符合各產業、各公司、各種問題的期待。</p>
-				<p>挑戰二，AI 並沒有辦法 plug &amp; play (即插即用)：目前的 AI 皆由機器學習模型來驅動，而機器學習必須要有大量資料來訓練。若公司內原本並沒有蒐集某個想要解決的問題的資料，或是資料蒐集時間不夠長，任你找到絕世高手或買到厲害的系統也沒有用。例如，若要進行未來半年的某產品銷量預測，通常需要該產品或同類型產品及競品在過去三年或五年以上資料，以及搭配的各式環境因素、客戶訂單資料等等。若是沒有這些資料準備好，AI 系統就是不能動，沒有油就沒有辦法發電的道理。</p>
-				<p>幸運的是，這一波 (也是人類史上的第三波) 的 AI 浪潮伴隨著「人工智慧民主化 (AI Democratization)」的趨勢，最重要的概念是，AI 技術不應該只被某些跨國企業所壟斷，應該讓所有需要的人都有機會參與及使用。具體的作法包含各種深度學習開發工具及模型的開放源碼，以及各式最新核心技術的分享等等。</p>
-				<p>我個人所看到的是機會，因為這個 AI 民主化趨勢，AI 技術發展在各領域所帶來的機會無窮無盡，是習慣等待國外大廠解決方案的我們應該把握的。</p>
-				<p>當然，目前普遍遇到的挑戰是 AI 人才的缺乏，台灣人工智慧學校為此而成立。希望很快地讓「找不到人才」不再成為企業發展人工智慧的障礙，同時建立「自己的問題自己解決」的文化，打破被技術殖民的慣性，重建社會自信。</p>
-				<p>台灣人工智慧學校將以最好的師資及與產學界的密切合作，進行人工智慧技術人才的密集培訓。讓不同專業領域的學員都能如虎添翼，以人工智慧加上原本的領域知識，具備協助各企業解決問題，以及帶領人工智慧團隊的能力。他們將擔任技術種子角色，深入台灣產業的各個層面，以其本身專業及人工智慧技術協助企業解決在邁向智慧化的過程中所面臨的難題。</p>
-				<p>我將在這場演講中，分享台灣人工智慧學校的來龍去脈，如何從一個稱為 Project Theta 的計畫開始，慢慢確認人才培育的需求，以及形塑台灣人工智慧學校的雛型。這個故事從 2017 年三月的某個早晨開始…</p>
-				<p>演講投影片：<a href="https://www.slideshare.net/swchen11/ss-97741195" target="_blank" rel="noopener">https://www.slideshare.net/swchen11/ss-97741195</a></p>
+					<p>Artificial Intelligence has become overwhelming popular in recent years thanks to availability of big data and the advance of machine learning based models. Among them, solutions based on the Deep Neural Network (or DNN) have produced tremendous success in various applications including computer vision, natural language processing, etc. Nevertheless, one common concern for DNN-based solutions is that they are generally very complicated and can hardly be understood by human beings. This talk focuses on a specific type of deep neural networks called recurrent neural networks (RNN). It will not only demonstrate the power of an RNN model to learn from implicit information but also explain why the overwhelming performance can be achieved given its architecture.</p>
 			</article>
 		</div>
 	</div>
 </article>
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'pycontw-2019/assets/keynotes/tracy-osborn.jpg' %}">
+			<figcaption>Tracy Osborn</figcaption>
+		</figure>
+		<h2 class="title">程序員們選擇的不同道路</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				自傳
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				演講
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">自傳</h3>
+					<p>Tracy Osborn 是一位程序員、設計師、作家、也是創業者。她於 2010 自學 Python 以建立她的第一個公司，最終讓她寫了 Hello Web App，一本介紹 Django 網路程式開發的書。她同時於創業加速器公司 TinySeed 擔任專案經理。</p>
+				<div class="social">
+					<a href=" https://twitter.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href=" https://github.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-github"></span></a>
+					<a href=" https://instagram.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-instagram"></span></a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">演講</h3>
+					<p>不是每個人都是為了成為後端工程師而學 Python。Tracy 將在本演講中描述她學寫程式、使用 Python、以及在她現在的工作中使用程式的歷程，並根據我們在 2019 年使用 Python 與程式的方法，探討程式設計教育能夠（且必須）如何改變。</p>
+			</article>
+		</div>
+	</div>
+</article>
+
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'pycontw-2019/assets/keynotes/yves-hilpisch.jpg' %}">
+			<figcaption>Yves J Hilpisch</figcaption>
+		</figure>
+		<h2 class="title">金融中的人工智慧</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				自傳
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				演講
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">自傳</h3>
+					<p>Yves J. Hilpisch 博士創辦並合作管理 <a href=" http://tpq.io" target="_blank" rel="noopener">Python Quants</a></p>
+				<div class="social">
+					<a href=" http://hilpisch.com" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<a href=" http://twitter.com/dyjh" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href=" http://linkedin.com/in/dyjh" target="_blank" rel="noopener"><span class="fa fa-linkedin"></span></a>
+					<a href=" http://youtube.com/c/yves-hilpisch" target="_blank" rel="noopener"><span class="fa fa-youtube"></span></a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">演講</h3>
+					<p>受到今日幾乎任何（金融）資料皆可以程式分析的影響，金融已經由原本基於理論的學科，轉型成受資料驅動。近年在 AI 領域的進展與（金融）資料的可程式性交互作用，更進一步將金融轉變為由 AI 領頭的領域。這個演講將討論此方面的數個重要面向，並提供實際使用 Python 的例子。</p>
+				</article>
+		</div>
+	</div>
+</article>
+
+
 
 {% endblock content %}
