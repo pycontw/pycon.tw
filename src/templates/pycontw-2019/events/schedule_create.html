@@ -22,10 +22,6 @@
 	<article data-target="tabbing.pane">
 		<h3 class="tab-title">{{ schedule_info.name }}</h3>
 		<table class="time-table">
-			<thead>
-				<tr>
-				</tr>
-			</thead>
 			<tbody>
 				<tr>
 					<td colspan={{ schedule_info.rooms | length }} class="room-info">
@@ -38,21 +34,30 @@
 					</td>
 				</tr>
 				{% for slot_time, slot_info in schedule_info.slots.items %}
-				<tr>
-					<th class="time-table-time">
-						{{ slot_time.0.value|date:'H:i' }}<br>
-						{{ slot_time.1.value|date:'H:i' }}
-					</th>
-					<th class="time-stack-time">
-						{{ slot_time.0.value|date:'H:i' }}–{{ slot_time.1.value|date:'H:i' }}
-					</th>
 					{% for room, event in slot_info %}
-					<td class="{{ event|event_cell_class }}">
-						<div class="time-stack-ribbon {{ room }}">{{ room|room_display }}</div>
-						<div class="event-info">{{ event|event_display }}</div>
-					</td>
+						<tr class="{% if forloop.first %}first-slot{% endif %} slot">
+							<td class="time-table-time">
+									{% if "3-r012" in room %}
+										<ul class="room">
+											{% for room in schedule_info.rooms %}
+												<li class="room-{{ room|room_display }}"></li>
+											{% endfor %}
+										</ul>
+									{% elif "r" in room %}
+										<ul class="room">
+											<li class="room-{{ room|room_display }}"></li>
+										</ul>
+									{% else %}
+									{% endif%}
+								<ul class="time">
+									<li class="time">{{ slot_time.0.value|date:'H:i' }} - {{ slot_time.1.value|date:'H:i' }}</li>
+								</ul>
+							</td>
+							<td class="event {% if not forloop.first %}event-not-first{% endif %} {{ event|event_cell_class }}">
+								<div class="event-info">{{ event|event_display }}</div>
+							</td>
+						</tr>
 					{% endfor %}
-				</tr>
 				{% endfor %}
 			</tbody>
 		</table>
