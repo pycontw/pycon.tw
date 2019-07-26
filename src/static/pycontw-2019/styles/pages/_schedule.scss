@@ -148,6 +148,7 @@
 		}
 
 		tr {
+			margin-top: 10px;
 			align-items: center;
 			&.slot {
 				min-height: 100px;
@@ -163,10 +164,41 @@
 		td {
 			&.event {
 				flex: 2;
+
+
 				.event-info {
+					display: flex;
+					flex: 1;
 					text-align: left;
+					flex-direction: column;
+
+					.talk-info {
+						flex: 3;
+					}
+
+					.talk-tags {
+						@include list-reset();
+						display: flex;
+						justify-content: left;
+						margin: 0.375rem;
+						text-indent: 0;
+						flex: 1;
+
+						> li::before {
+							content: ' ';
+							margin-right: 5px;
+						}
+						@include on-desktop() {
+							justify-content: center;
+						}
+
+					}
+
 					* > a {
 						color: #224398
+					}
+					@include on-desktop() {
+						flex-direction: row;
 					}
 				}
 
@@ -177,6 +209,10 @@
 
 				&.custom {
 					align-self: center;
+				}
+				&.talk {
+					@include list-reset();
+					@include icon-info();
 				}
 			}
 
@@ -201,8 +237,6 @@
 				}
 			}
 		}
-
-		// Icons.
 		.room-info {
 			@include list-reset();
 			@include icon-info();
@@ -212,19 +246,6 @@
 				justify-content: center;
 				// margin: 0.375rem;
 				text-indent: $icon-width;
-			}
-		}
-
-		.talk-tags {
-			@include list-reset();
-			display: flex;
-			justify-content: center;
-			margin: 0.375rem;
-			text-indent: 0;
-
-			> li::before {
-				content: ' ';
-				margin-right: 5px;
 			}
 		}
 	}

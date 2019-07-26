@@ -37,17 +37,10 @@
 					{% for room, event in slot_info %}
 						<tr class="{% if forloop.first %}first-slot{% endif %} slot">
 							<td class="time-table-time">
-									{% if "3-r012" in room %}
-										<ul class="room">
-											{% for room in schedule_info.rooms %}
-												<li class="room-{{ room|room_display }}"></li>
-											{% endfor %}
-										</ul>
-									{% elif "r" in room %}
+									{% if "r" in room %}
 										<ul class="room">
 											<li class="room-{{ room|room_display }}"></li>
 										</ul>
-									{% else %}
 									{% endif%}
 								<ul class="time">
 									<li class="time">{{ slot_time.0.value|date:'H:i' }} - {{ slot_time.1.value|date:'H:i' }}</li>
