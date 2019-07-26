@@ -19,5 +19,10 @@
             "title": "程序員們選擇的不同道路",
             "description": "不是每個人都是為了成為後端工程師而學 Python。Tracy 將在本演講中描述她學寫程式、使用 Python、以及在她現在的工作中使用程式的歷程，並根據我們在 2019 年使用 Python 與程式的方法，探討程式設計教育能夠（且必須）如何改變。"
         }
+    },
+    "social": {
+        "twitter": "https://twitter.com/tracymakes",
+        "github": "https://github.com/tracymakes",
+        "instagram": "https://instagram.com/tracymakes"
     }
 }

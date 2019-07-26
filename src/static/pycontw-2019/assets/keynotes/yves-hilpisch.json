@@ -19,5 +19,11 @@
             "title": "金融中的人工智慧",
             "description": "受到今日幾乎任何（金融）資料皆可以程式分析的影響，金融已經由原本基於理論的學科，轉型成受資料驅動。近年在 AI 領域的進展與（金融）資料的可程式性交互作用，更進一步將金融轉變為由 AI 領頭的領域。這個演講將討論此方面的數個重要面向，並提供實際使用 Python 的例子。"
         }
+    },
+    "social": {
+        "link": "http://hilpisch.com/",
+        "twitter": "https://twitter.com/dyjh",
+        "linkedin": "https://linkedin.com/in/dyjh",
+        "youtube": "https://youtube.com/c/yves-hilpsch"
     }
 }

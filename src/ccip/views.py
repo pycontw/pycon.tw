@@ -1,8 +1,6 @@
-import json
 import operator
 
 from django.conf import settings
-from django.contrib.staticfiles import finders
 from django.http import JsonResponse
 from django.templatetags.static import static
 from django.utils import translation
@@ -105,16 +103,7 @@ class _KeynoteUser:
 
 
 def _get_keynote_event_info(event):
-    keynote_info = finders.find('/'.join([
-        settings.CONFERENCE_DEFAULT_SLUG,
-        'assets/keynotes',
-        f'{event.slug}.json',
-    ]))
-    if not keynote_info:
-        return _get_empty_event_info(event)
-
-    with open(keynote_info) as f:
-        data = json.load(f)
+    data = event.get_static_data()
 
     user = _KeynoteUser(
         pk=event.slug,
