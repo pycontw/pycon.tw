@@ -8,18 +8,22 @@
 
 
 {% block content %}
-
+<div class="breadcrumbs">
+  <ol>
+	<li><a href="{% url 'index' %}">Home</a></li>
+	<li>Events</li>
+	<li>Keynotes</li>
+  </ol>
+</div>
 <h1>Keynotes</h1>
 
 <article class="media">
 	<header>
 		<figure>
-			<img src="{% static 'pycontw-2018/assets/keynotes/katie.jpg' %}">
-			<figcaption>Katie McLaughlin</figcaption>
+			<img src="{% static 'pycontw-2019/assets/keynotes/paul-ivanov.jpg' %}">
+			<figcaption>Paul Ivanov</figcaption>
 		</figure>
-		<h2 class="title">
-			Communication strategies beyond the Basic Multilingual Plane
-		</h2>
+		<h2 class="title">Keynote: Paul Ivanov</h2>
 	</header>
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
@@ -33,18 +37,16 @@
 		<div>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Biography</h3>
-				<p>Katie has worn many different hats over the years. She has been a software developer for many languages, systems administrator for multiple operating systems, and speaker on many different topics.</p>
-				<p>When she’s not changing the world, she enjoys making tapestries, cooking, and seeing just how well various application stacks handle emoji.</p>
+					<p>Paul Ivanov is a member of the Jupyter Steering Council and a senior software engineer at Bloomberg LP working on IPython- and Jupyter-related open source projects. Previously, Paul worked on backend and data engineering at Disqus; was a code monkey at the Brain Imaging Center at UC Berkeley, where he worked on IPython and taught at UC Berkeley’s Python bootcamps; worked in Bruno Olshausen’s lab at the Redwood Center for Theoretical Neuroscience; and was a PhD candidate in the Vision Science program at UC Berkeley. He holds a degree in computer science from UC Davis.</p>
 				<div class="social">
-					<a href="https://glasnt.com/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
-					<a href="https://twitter.com/glasnt" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href="http://pirsquared.org/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<a href="https://twitter.com/ivanov" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href="https://github.com/ivanov" target="_blank" rel="noopener"><span class="fa fa-github"></span></a>
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Speech</h3>
-				<p>The standardisation of the universal character set has paved the way for the ability for data to be freely transferred between computers around the world. However, the most volatile part of this standard is still causing prolific issues with miscommunication between humans.</p>
-				<p>In this keynote, Katie McLaughlin will share knowledge from her years of research and contributions to this field and rant about emoji for a bit.</p>
-				<p>Slides: <a href="https://glasnt.com/talks/2018_06_PyConTW/#/" target="_blank" rel="noopener">https://glasnt.com/talks/2018_06_PyConTW/#/</a></p>
+				<p>TBD</p>
 			</article>
 		</div>
 	</div>
@@ -53,10 +55,10 @@
 <article class="media">
 	<header>
 		<figure>
-			<img src="{% static 'pycontw-2018/assets/keynotes/sw.jpg' %}">
-			<figcaption>Sheng-Wei Chen</figcaption>
+			<img src="{% static 'pycontw-2019/assets/keynotes/sd-lin.jpeg' %}">
+			<figcaption>Shou-de Lin</figcaption>
 		</figure>
-	<h2 class="title">AI Democratization in Taiwan</h2>
+		<h2 class="title">Understanding Deep Neural Networks</h2>
 	</header>
 	<div class="tabbing" data-controller="tabbing">
 		<ul class="tabs">
@@ -70,22 +72,97 @@
 		<div>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Biography</h3>
-				<p>Dr. Sheng-Wei Chen (a.k.a. Kuan-Ta Chen) is a Research Fellow at the Institute of Information Science and the Research Center for Information Technology Innovation (joint appointment) of Academia Sinica. He is currently the Chairman of Taiwan Data Science Association, the Director of Artificial Intelligence Foundation, the Director of Taiwan AI Academy, and the CTO of E.SUN Financial Holding Company. He was an Assistant Research Fellow from 2006 to 2011 and an Associate Research Fellow from 2011 to 2015 at the Institute of Information Science, Academia Sinica. He received his Ph.D. in Electrical Engineering from National Taiwan University in 2006, and his B.S. and M.S. in Computer Science from National Tsing Hua University in 1998 and 2000, respectively. Prior to taking his academic path, he was active as a programmer specialized in Windows system programming, a technical writer, and a freeware/shareware developer.</p>
-				<p>His research interests span in various application domains of AI and data science, such as social computing, crowdsourcing, and computational social science, quality of experience (QoE), and multimedia systems. He received the Best Paper Award in IWSEC 2008 and K. T. Li Distinguished Young Scholar Award from ACM Taipei/Taiwan Chapter in 2009. He also received the Outstanding Young Electrical Engineer Award from The Chinese Institute of Electrical Engineering in 2010, the Young Scholar's Creativity Award from Foundation for the Advancement of Outstanding Scholarship in 2013, and IEEE ComSoc MMTC Best Journal Paper Award in 2014. He was an Associate Editor of IEEE Transactions on Multimedia (IEEE TMM) during 2011 to 2014 and has been an Associate Editor of ACM Transactions on Multimedia Computing, Communications, and Applications (ACM TOMM) since 2015. He organized ACM Multimedia Systems 2017 in Taiwan and served the lead program chair of ACM Multimedia 2017. He is a Senior Member of ACM and a Senior Member of IEEE.</p>
-				<div class="social">
-					<a href="http://www.iis.sinica.edu.tw/~swc/" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<p>Shou-de Lin is currently a full professor in the CSIE department of National Taiwan University. He holds a BS degree in EE department from National Taiwan University, an MS-EE degree from the University of Michigan, an MS degree in Computational Linguistics and PhD in Computer Science both from the University of Southern California. He leads the Machine Discovery and Social Network Mining Lab in NTU. Before joining NTU, he was a post-doctoral research fellow at the Los Alamos National Lab. Prof. Lin’s research includes the areas of machine learning and data mining, social network analysis, and natural language processing. His international recognition includes the best paper award in IEEE Web Intelligent conference 2003, Google Research Award in 2007, Microsoft research award in 2008, 2015, 2016 merit paper award in TAAI 2010, 2014, 2016, best paper award in ASONAM 2011, US Aerospace AFOSR/AOARD research award winner for 5 years. He is the all-time winners in ACM KDD Cup, leading or co-leading the NTU team to win 5 championships. He also leads a team to win WSDM Cup 2016. He has served as the senior PC for SIGKDD and area chair for ACL. He is currently the associate editor for International Journal on Social Network Mining, Journal of Information Science and Engineering, and International Journal of Computational Linguistics and Chinese Language Processing. He is also a freelance writer for Scientific American.</p>			<div class="social">
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">Speech</h3>
-				<p>Some day in March 2017, I encountered Prof. HT Kung from Harvard University in the campus of Academia Sinica which is located in Taipei, Taiwan.  We were both excited about emerging deep learning technology and looking forward to its potentials in industry technology upgrade in a variety of ways.</p>
-				<p>We started our journey by visiting more than a dozen of manufacturing companies in Taiwan and collecting the challenges they face when adopting AI in the different aspects of business and manufacturing processes.  The second step involved assembling an AI consulting team called Project Theta in order to address the common technical challenges faced by manufacturers.  Within the next six months, Project Theta did a wonderful job in resolving those common challenges using deep learning technology.  However, how to scale our efforts became the biggest challenge of our own. </p>
-				<p>Thus, Taiwan AI Academy was founded in January 2018 to address the scaling problem, after we finally identified that the lack of AI talents is the most fundamental and critical issue in Taiwan in this AI era.  Taiwan AI Academy is unique in many ways, in particular its close collaborations with industry in order to empower domain experts from various fields by machine learning and deep learning techniques within a short 3-4 month.</p>
-				<p>In this talk, I will elaborate the story --- starting from the achievements of Project Theta --- to the foundation of Taiwan AI Academy, and how we will transform the AI talent development in Taiwan starting from these efforts.</p>
-				<p>Slides: <a href="https://www.slideshare.net/swchen11/ss-97741195" target="_blank" rel="noopener">https://www.slideshare.net/swchen11/ss-97741195</a></p>
+					<p>Artificial Intelligence has become overwhelming popular in recent years thanks to availability of big data and the advance of machine learning based models. Among them, solutions based on the Deep Neural Network (or DNN) have produced tremendous success in various applications including computer vision, natural language processing, etc. Nevertheless, one common concern for DNN-based solutions is that they are generally very complicated and can hardly be understood by human beings. This talk focuses on a specific type of deep neural networks called recurrent neural networks (RNN). It will not only demonstrate the power of an RNN model to learn from implicit information but also explain why the overwhelming performance can be achieved given its architecture.</p>
 			</article>
 		</div>
 	</div>
 </article>
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'pycontw-2019/assets/keynotes/tracy-osborn.jpg' %}">
+			<figcaption>Tracy Osborn</figcaption>
+		</figure>
+		<h2 class="title">The Different Paths We Take As Programmers</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Biography
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Speech
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Biography</h3>
+					<p>Tracy Osborn is a programmer, designer, author, and entrepreneur. In 2010, she taught herself Python to launch her first startup, which lead to writing Hello Web App, a book teaching introductory Django web app development. She’s also the Program Manager at TinySeed, an accelerator program for bootstrapped businesses.</p>
+		<div class="social">
+					<a href=" https://twitter.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href=" https://github.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-github"></span></a>
+					<a href=" https://instagram.com/tracymakes" target="_blank" rel="noopener"><span class="fa fa-instagram"></span></a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Speech</h3>
+					<p>Not everyone who learns Python is using it to become a back-end programmer. In this keynote, Tracy will cover her process on how she learned how to program and how she uses Python and programming in her current work, as well as why programming education can (and should) change considering all the ways we can use Python and programming in 2019.</p>
+     		</article>
+		</div>
+	</div>
+</article>
+
+
+<article class="media">
+	<header>
+		<figure>
+			<img src="{% static 'pycontw-2019/assets/keynotes/yves-hilpisch.jpg' %}">
+			<figcaption>Yves J Hilpisch</figcaption>
+		</figure>
+		<h2 class="title">Artificial Intelligence in Finance</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Biography
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				Speech
+			</li>
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Biography</h3>
+					<p>Dr. Yves J. Hilpisch is founder and managing partner of <a href=" http://tpq.io" target="_blank" rel="noopener">The Python Quants</a>, a group focusing on the use of open source technologies for financial data science, artificial intelligence, algorithmic trading, and computational finance. He is also founder and CEO of <a href="http://aimachine.io" target="_blank" rel="noopener">The AI Machine </a>, a company focused on AI-powered algorithmic trading based a proprietary strategy execution platform.</p>
+					<p>Yves has a Diploma in Business Administration, a Ph.D. in mathematical finance and is Adjunct Professor for Computational Finance at Miami Business School (University of Miami). He is the author of  <a href="http://books.tpq.io" target="_blank" rel="noopener">four books</a>:</p>
+					<ul>
+						<li>Artificial Intelligence in Finance (O’Reilly, current project)</li>
+						<li>Python for Finance (2018, 2nd ed., O’Reilly)</li>
+						<li>Listed Volatility and Variance Derivatives (2017, Wiley Finance)</li>
+						<li>Derivatives Analytics with Python (2015, Wiley Finance)</li>
+					</ul> 
+					<p>Yves is the director of the first online training program leading to a University Certificates in Python for  <a href="http://certificate.tpq.io" target="_blank" rel="noopener">Algorithmic Trading </a> and  <a href="http://compfinance.tpq.io" target="_blank" rel="noopener">Computational Finance </a>. He also lectures on computational finance, machine learning and algorithmic trading at <a href="http://cqf.com" target="_blank" rel="noopener">the CQF Program</a> .</p>
+					<p>Yves is the main author of the financial analytics library <a href="http://dx-analytics.com" target="_blank" rel="noopener">DX Analytics</a>  and organizes meetups, conferences, and bootcamps about Python, artificial intelligence and algorithmic trading in <a href="http://pqf.tpq.io" target="_blank" rel="noopener">London</a> ,  <a href="http://aifat.tpq.io" target="_blank" rel="noopener">New York </a>, Frankfurt, Berlin and Paris. He has given keynote speeches at technology conferences in the United States, Europe, and Asia. </p>
+				<div class="social">
+					<a href=" http://hilpisch.com" target="_blank" rel="noopener"><span class="fa fa-link"></span></a>
+					<a href=" http://twitter.com/dyjh" target="_blank" rel="noopener"><span class="fa fa-twitter"></span></a>
+					<a href=" http://linkedin.com/in/dyjh" target="_blank" rel="noopener"><span class="fa fa-linkedin"></span></a>
+					<a href=" http://youtube.com/c/yves-hilpisch" target="_blank" rel="noopener"><span class="fa fa-youtube"></span></a>
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">Speech</h3>
+					<p>The programmatic availability of basically any kind of (financial) data has reshaped finance from a theory-driven to a data-driven discipline. Recent advances in AI in combination with the programmatic availability of (financial) data with further change finance to an AI-first discipline. The talk discusses several important aspects in this regard and provides concrete examples in Python.</p>				
+			</article>
+		</div>
+	</div>
+</article>
+
 
 {% endblock content %}
