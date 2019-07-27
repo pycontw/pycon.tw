@@ -149,7 +149,7 @@
 
 		tr {
 			margin-top: 10px;
-			align-items: center;
+			align-items: flex-start;
 			&.slot {
 				min-height: 100px;
 			}
@@ -160,17 +160,19 @@
 			}
 		}
 
-		$event-padding-top: 20px;
-		td {
-			&.event {
-				flex: 2;
 
+		td {
+			$slot-padding-top: 20px;
+
+			&.event {
+				flex: 3;
 
 				.event-info {
 					display: flex;
 					flex: 1;
 					text-align: left;
 					flex-direction: column;
+					padding-top: $slot-padding-top;
 
 					.talk-info {
 						flex: 3;
@@ -203,16 +205,17 @@
 				}
 
 				&.event-not-first {
-					border-width: 1px 0px 0px 0px;
-					border-style: dashed;
+					border-top: dashed 1px #979797;
 				}
 
-				&.custom {
-					align-self: center;
-				}
 				&.talk {
 					@include list-reset();
 					@include icon-info();
+				}
+				&.keynote {
+					.event-info {
+						flex-direction: column;
+					}
 				}
 			}
 
@@ -221,14 +224,13 @@
 				flex-direction: column;
 				@include list-reset();
 				@include icon-info();
+				padding-top: $slot-padding-top;
 
 				ul {
 					margin: 0;
-					&.room {
-						display: flex;
-					}
 					li {
 						&.time {
+							text-align: left;
 							&:before {
 								content: none;
 							}
