@@ -9,10 +9,11 @@ $box-content-padding-y: 16px;
 	overflow: hidden;
 
 	.box-title {
-		line-height: 48px;
 		margin: 0;
+		padding: (2rem / 3) 1rem;
 		background-color: $egyptian-blue;
 		color: $white;
+		line-height: 150%;
 		font-size: 1.25rem;
 		font-weight: 400;
 	}
