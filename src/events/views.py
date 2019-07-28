@@ -83,8 +83,11 @@ class TutorialListView(ListView):
     response_class = TemplateExistanceStatusResponse
 
     def get_queryset(self):
-        qs = super().get_queryset().select_related(
-            'proposal', 'proposal__submitter',
+        qs = (
+            super().get_queryset()
+            .filter(proposal__in=TutorialProposal.objects.filter_accepted())
+            .order_by('begin_time', 'end_time', 'location')
+            .select_related('proposal', 'proposal__submitter')
         )
         return qs
 

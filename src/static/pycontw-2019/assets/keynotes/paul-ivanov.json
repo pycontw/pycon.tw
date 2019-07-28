@@ -19,5 +19,10 @@
             "title": "基調演講：Paul Ivanov",
             "description": "待定"
         }
+    },
+    "social": {
+        "link": "http://pirsquared.org/",
+        "twitter": "https://twitter.com/ivanov",
+        "github": "https://github.com/ivanov"
     }
 }

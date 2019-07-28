@@ -161,7 +161,7 @@
 				min-height: 100px;
 				&.custom {
 					border: 0;
-					background-color: $light-goldenrod-yellow;
+					background-color: $light-grayish-yellow;
 				}
 			}
 			&.first-slot {
@@ -214,7 +214,7 @@
 					}
 
 					* > a {
-						color: $duke-blue;
+						color: $portica;
 						font-weight: 500;
 					}
 					@include on-desktop() {
