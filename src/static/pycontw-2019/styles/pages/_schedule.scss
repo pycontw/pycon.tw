@@ -1,4 +1,5 @@
 .schedule-page {
+
 	form .button-round {
 		@include button(276deg, $dark-peach, $maize);
 		width: 160px;
@@ -118,9 +119,11 @@
 		text-align: center;
 
 		// Fonts.
-		@include text(14px);
-		.time-table-time, .talk p {
-			@include text(14px);
+		@include text(16px);
+		tbody, tr, th, td, ul {
+			// display: block;
+			@include text(16px);
+			font-weight: normal;
 		}
 
 		$border-color: $pale-grey;
@@ -140,10 +143,9 @@
 		thead, tfoot {
 			display: none;
 		}
-		tbody, tr, th, td {
+		tbody, tr, th, td, ul {
 			// display: block;
 		}
-
 
 		th, td, tr{
 			display: flex;
@@ -183,9 +185,15 @@
 					text-align: left;
 					flex-direction: column;
 					padding-top: $slot-padding-top;
+					font-weight: 500;
 
 					.talk-info {
 						flex: 3;
+						p {
+							&.talk-speakers {
+								color: #666666;
+							}
+						}
 					}
 
 					.talk-tags {
@@ -206,7 +214,8 @@
 					}
 
 					* > a {
-						color: #224398
+						color: #224398;
+						font-weight: 500;
 					}
 					@include on-desktop() {
 						flex-direction: row;
@@ -240,6 +249,7 @@
 							margin-left: 1rem;
 							li {
 								flex: 1;
+								font-weight: 500;
 								&.snake {
 									&:before {
 										background-size: contain;
@@ -279,12 +289,12 @@
 				&.custom {
 					display: none;
 				}
-
 				ul {
 					margin: 0;
 					li {
 						&.time {
 							text-align: left;
+							font-size: 16px;
 							&:before {
 								content: none;
 							}
