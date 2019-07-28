@@ -29,7 +29,7 @@
 <article class="media" id="keynote-speaker-{{ event.slug }}">
 	<header>
 		<figure>
-			<div class="image" style="background-image:url('{% static data.photo %}')"></div>
+			<img src="{% static data.photo %}">
 			<figcaption>{{ data.speaker.name }}</figcaption>
 		</figure>
 		<h2 class="title">{{ data.session.title }}</h2>
