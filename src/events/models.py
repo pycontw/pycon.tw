@@ -1,14 +1,16 @@
 import datetime
 import functools
+import json
 import urllib.parse
 
 import pytz
 
 from django.conf import settings
+from django.contrib.staticfiles import finders
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.db import models
 from django.utils.timezone import make_naive
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import get_language, ugettext, ugettext_lazy as _
 
 from core.models import (
     BigForeignKey, EventInfo,
@@ -206,6 +208,30 @@ class KeynoteEvent(BaseEvent):
         split = urllib.parse.urlsplit(url)
         frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
+
+    def get_static_data(self):
+        path = '/'.join([
+            settings.CONFERENCE_DEFAULT_SLUG,
+            'assets/keynotes',
+            f'{self.slug}.json',
+        ])
+
+        keynote_info = finders.find(path)
+        if not keynote_info:
+            raise FileNotFoundError(path)
+
+        with open(keynote_info) as f:
+            data = json.load(f)
+        return data
+
+    def get_static_data_for_locale(self, code=None):
+        if code is None:
+            code = get_language()
+        code = code.split('-', 1)[0]
+
+        data = self.get_static_data()
+        data = {k: v[code] if code in v else v for k, v in data.items()}
+        return data
 
 
 class SponsoredEvent(EventInfo, BaseEvent):

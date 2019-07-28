@@ -1,14 +1,18 @@
 .media {
 	> header {
 		> figure {
+			$image-size: 136px;
+
 			display: flex;
 			flex-direction: column;
 
 			img {
-				$size: 136px;
 				align-self: center;
-				height: $size;
-				border-radius: $size / 2;
+				width: $image-size;
+				height: $image-size;
+				border-radius: $image-size / 2;
+				object-fit: cover;
+				object-position: center;
 			}
 
 			figcaption {

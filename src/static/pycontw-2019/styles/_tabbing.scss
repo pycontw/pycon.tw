@@ -1,5 +1,5 @@
 .tabbing {
-	$background-color: $light-goldenrod-yellow;
+	$background-color: $light-grayish-yellow;
 
 	&:not(.enabled) {
 		> .tabs {
@@ -11,7 +11,7 @@
 	}
 	&.enabled {
 		> .tabs ~ * {
-			border-top: 1px solid $dark-slate-blue;
+			border-top: 2px solid $portica;
 		}
 		.tab-title {
 			display: none;
@@ -43,8 +43,8 @@
 			}
 
 			&.active {
-				background: $gold-yellow;
-				color: $duke-blue;
+				background: $portica;
+				color: $egyptian-blue;
 			}
 
 			&:not(.active) {
