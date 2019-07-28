@@ -87,6 +87,12 @@
 				&.room-R2 {
 					@include icon('room-R2', 1px, center);
 				}
+				&.grass {
+					@include icon('grass-group', 1px, center);
+				}
+				&.snake {
+					@include icon('snake', 1px, center);
+				}
 			}
 		}
 	}
@@ -152,6 +158,10 @@
 			align-items: flex-start;
 			&.slot {
 				min-height: 100px;
+				&.custom {
+					border: 0;
+					background-color: #fdf6df;
+				}
 			}
 			&.first-slot {
 				border-style: solid;
@@ -193,7 +203,6 @@
 						@include on-desktop() {
 							justify-content: center;
 						}
-
 					}
 
 					* > a {
@@ -217,6 +226,48 @@
 						flex-direction: column;
 					}
 				}
+				&.custom {
+					align-self: center;
+					.event-info {
+						@include list-reset();
+						@include icon-info();
+						padding-top: 0;
+						justify-content: center;
+						ul {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							margin-left: 1rem;
+							li {
+								flex: 1;
+								&.snake {
+									&:before {
+										background-size: contain;
+										height: 34px;
+									}
+								}
+								&.grass {
+									&:before {
+										background-size: contain;
+									}
+								}
+								&.info {
+									text-align: center;
+									flex: 2;
+									margin-right: 1.2rem;
+									width: 100px;
+									&:before {
+										content: none;
+									}
+
+									@include on-desktop() {
+										width: 200px;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 
 			&.time-table-time {
@@ -225,6 +276,9 @@
 				@include list-reset();
 				@include icon-info();
 				padding-top: $slot-padding-top;
+				&.custom {
+					display: none;
+				}
 
 				ul {
 					margin: 0;
