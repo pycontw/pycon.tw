@@ -1,5 +1,5 @@
 .tabbing {
-	$background-color: $pale-grey;
+	$background-color: $light-goldenrod-yellow;
 
 	&:not(.enabled) {
 		> .tabs {
@@ -35,14 +35,16 @@
 			background: $background-color;
 			text-indent: 0;
 			text-align: center;
+			font-weight: normal;
+			color: $light-gray;
 
 			@include on-desktop() {
 				flex-grow: 0;
 			}
 
 			&.active {
-				background: $egyptian-blue;
-				color: $white;
+				background: $gold-yellow;
+				color: $duke-blue;
 			}
 
 			&:not(.active) {
