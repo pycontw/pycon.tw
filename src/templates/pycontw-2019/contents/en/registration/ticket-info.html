@@ -12,95 +12,92 @@ late!{% endblock meta_description %}
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 
 <h1>Conference Tickets</h1>
-
-<div class="box">
-	<h3 class="box-title">Individual</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>EarlyBird/Discount</th>
-						<td class="price">2,600</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Regular</th>
-						<td class="price">3,500</td>
-						<td>NTD</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+<div class="box-row">
+	<div class="ticket-box">
+		<p class="ticket-box-title">Individual</p>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>EarlyBird / Discount</th>
+							<td class="price">2,600</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>Regular</th>
+							<td class="price">3,500</td>
+							<td>NTD</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
-		<div class="desc">
-			<p>Tickets are limited. Please purchase as soon as possible. We will send out electronic invoices by email
-				after the conference. Unified Business Numbers are not accepted.</p>
+	</div>
+	<div class="ticket-box">
+		<p class="ticket-box-title">Corporate</p>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>Regular</th>
+							<td class="price">5,500</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>GroudBuy</th>
+							<td class="price">5,500</td>
+							<td>NTD</td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">Buy</a>
+		</div>
+	</div>
+	<div class="ticket-box">
+		<p class="ticket-box-title">Reserved</p>
+			<div class="price-box">
+				<table>
+					<tbody>
+						<tr>
+							<th>Speaker</th>
+							<td class="price">1,500</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>Contributor</th>
+							<td class="price">1,500</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>Fanatic</th>
+							<td class="price">1,800</td>
+							<td>NTD</td>
+						</tr>
+						<tr>
+							<th>Invited</th>
+							<td class="price">Free</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
 	</div>
 </div>
-
-<div class="box">
-	<h3 class="box-title">Corporate</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>Regular</th>
-						<td class="price">5,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>GroupBuy</th>
-						<td class="price">Free</td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
-		</div>
-		<div class="desc">
-			<p>Provide company name and Unified Business Number, or <em>N/A</em> if re&shy;im&shy;burse&shy;ment is not
-				required. We will send out electronic invoices by email after the conference.</p>
-		</div>
-	</div>
-</div>
-
-<div class="box">
-	<h3 class="box-title">Reserved</h3>
-	<div class="box-content">
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>Speaker</th>
-						<td class="price">1,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Contributor</th>
-						<td class="price">1,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Fanatic</th>
-						<td class="price">1,800</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Invited</th>
-						<td class="price">Free</td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
-		</div>
-		<div class="desc">
-			<p>Please enter your invitation code on checkout.</p>
-		</div>
-	</div>
+<script>
+		document.querySelectorAll(".buy").forEach((link) => {
+			link.addEventListener("mouseover", (e) => {
+				e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
+			});
+			link.addEventListener("mouseleave", (e) => {
+				e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
+			})
+		})
+	</script>
+<div class="desc-box">
+	<p class="desc"><strong>Individual:</strong> Tickets are limited. Please purchase as soon as possible. We will send out electronic invoices by email after the conference. Unified Business Numbers are not accepted.</p>
+	<p class="desc"><strong>Corporate:</strong> Provide company name and Unified Business Number, or <em>N/A</em> if re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the conference.</p>
+	<p class="desc"><strong>Reserved:</strong> Please enter your invitation code on checkout.</p>
 </div>
 
 <ul>

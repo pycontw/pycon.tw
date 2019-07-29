@@ -1,57 +1,101 @@
 .ticket-info-page {
-	.price-box {
+	.box-row{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
-		@include on-desktop() {
+		@include on-desktop{
 			flex-direction: row;
+			justify-content: space-between;
 		}
 
-		$buy-button-max-width: 160px;
+		$ticket_box_height: 330px;
+		$ticket_box_width: $ticket_box_height * 0.8;
+		$ticket_box_title_height: 40px;
+		$price_box_height: $ticket_box_height - $ticket_box_title_height;
 
-		table {
-			@include on-desktop() {
-				max-width: $container-max-width - 2 * $box-content-padding-x - $buy-button-max-width;
+		.ticket-box{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: $ticket_box_height;
+			width: $ticket_box_width;
+			border-radius: 4px;
+			border: solid 2px #224398;
+			margin-bottom: 20px;
+			.ticket-box-title{
+				height: $ticket_box_title_height;
+				font-family: NotoSansTC;
+				font-size: 20px;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: -0.03px;
+				color: #333333;
+				margin: 30px auto 20px auto;
 			}
+			.price-box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				width:100%;
+				height: $price_box_height;
 
-			th, td {
-				width: 176px;
-				padding: 4px 0;
-				text-align: center;
-				font-weight: 300;
-				font-size: 1.125rem;
+				table {
+					th, td {
+						padding: 4px 1px;
+						text-align: center;
+						font-weight: 300;
+						font-size: 1rem;
+						line-height: normal;
+						letter-spacing: normal;
 
-				@include on-desktop() {
-					max-width: 33%;
-					text-align: left;
+						@include on-desktop() {
+							max-width: 33%;
+							text-align: left;
+						}
+					}
+					.price {
+						color: $elf-green;
+						font-weight: 300;
+						font-size: 1.75rem;
+
+						@include on-desktop() {
+							text-align: right;
+							padding-right: 1rem;
+						}
+					}
 				}
-			}
-			.price {
-				color: $indigo;
-				font-weight: 300;
-				font-size: 1.75rem;
-
-				@include on-desktop() {
-					text-align: right;
-					padding-right: 1rem;
+				.buy {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background: center;
+					width: 100%;
+					height: 50px;
+					text-align: center;
+					border-top: solid 2px $egyptian-blue;
+					color: $egyptian-blue;
+					text-decoration: none;
+					font-family: PingFangTC;
+					font-size: 1rem;
+					font-weight: 300;
+					line-height: normal;
+					letter-spacing: normal;
+					&:hover{
+						border-top: solid 2px #f4d35e;
+						background-color: #fad341;
+						background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+					}
 				}
-			}
-		}
-
-		.buy {
-			@include button(276deg, $dark-peach, $maize);
-			width: 100%;
-			margin: 24px 0;
-			text-align: center;
-
-			@include on-desktop {
-				max-width: $buy-button-max-width;
 			}
 		}
 	}
 
-	.desc {
-		margin-bottom: -16px;
+	.desc-box{
+		display: flex;
+		flex-direction: column;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		padding: 20px 40px;
 	}
 }
