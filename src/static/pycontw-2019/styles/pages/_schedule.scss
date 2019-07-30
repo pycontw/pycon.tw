@@ -84,19 +84,23 @@
 					@include icon('room-R2', 1px, center);
 				}
 				&.grass {
-					@include icon('grass-group', 1px, center);
+					@include icon('grass-group', 0, right);
 					&:before {
 						background-size: contain;
-						height: $icon-height * 1.5;
-						width: $icon-width * 1.5;
+						@include on-desktop() {
+							height: $icon-height * 1.5;
+							width: $icon-width * 1.5;
+						}
 					}
 				}
 				&.snake {
-					@include icon('snake', 1px, center);
+					@include icon('snake', 0, right);
 					&:before {
 						background-size: contain;
-						height: $icon-height * 1.5;
-						width: $icon-width * 1.5;
+						@include on-desktop() {
+							height: $icon-height * 1.5;
+							width: $icon-width * 1.5;
+						}
 					}
 				}
 			}
@@ -149,7 +153,7 @@
 			display: none;
 		}
 		tbody, tr, th, td, ul {
-			// display: block;
+			display: block;
 		}
 
 		th, td, tr{
@@ -266,6 +270,7 @@
 				}
 				&.custom {
 					align-self: center;
+					width: 100%;
 					.event-info {
 						@include list-reset();
 						@include icon-info();
@@ -275,22 +280,20 @@
 							display: flex;
 							justify-content: center;
 							align-items: center;
-							margin-left: 1rem;
 							li {
-								flex: 1;
+								margin: 0px 5px 0px 0px;
 								font-weight: 500;
+								&:before {
+									margin-right: 0;
+								}
 								&.info {
 									text-align: center;
-									flex: 2;
-									margin-right: 1.2rem;
-									width: 100px;
 									&:before {
 										content: none;
 									}
-
-									@include on-desktop() {
-										width: 200px;
-									}
+								}
+								@include on-desktop {
+									margin: 0px 10px 0px 0px;
 								}
 							}
 						}
