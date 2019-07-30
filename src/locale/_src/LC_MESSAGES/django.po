@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 14:29+0800\n"
+"POT-Creation-Date: 2019-07-30 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -375,7 +375,7 @@ msgstr ""
 #: templates/pycontw-2018/contents/_default/portal.html:17
 #: templates/pycontw-2018/events/schedule.html:6
 #: templates/pycontw-2018/events/schedule.html:20
-#: templates/pycontw-2019/_includes/menu.html:64
+#: templates/pycontw-2019/_includes/menu.html:63
 #: templates/pycontw-2019/contents/_default/portal.html:17
 #: templates/pycontw-2019/events/schedule.html:6
 #: templates/pycontw-2019/events/schedule.html:20
@@ -398,7 +398,7 @@ msgstr ""
 msgid "EN Slides"
 msgstr ""
 
-#: events/views.py:122
+#: events/views.py:125
 msgid "New talk schedule generated successfully."
 msgstr ""
 
@@ -1717,12 +1717,14 @@ msgid "Staff"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:37
+#: templates/pycontw-2019/_includes/menu.html:75
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:16
 msgid "Events"
 msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:39
 #: templates/pycontw-2018/_includes/menu.html:53
+#: templates/pycontw-2019/_includes/menu.html:58
 msgid "Overview"
 msgstr ""
 
@@ -1730,12 +1732,12 @@ msgstr ""
 #: templates/pycontw-2018/_includes/menu.html:55
 #: templates/pycontw-2018/contents/en/events/overview.html:38
 #: templates/pycontw-2018/contents/zh/events/overview.html:38
-#: templates/pycontw-2019/_includes/menu.html:63
+#: templates/pycontw-2019/_includes/menu.html:78
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:6
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:17
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:21
-#: templates/pycontw-2019/contents/en/events/overview.html:38
-#: templates/pycontw-2019/contents/zh/events/overview.html:38
+#: templates/pycontw-2019/contents/en/events/overview.html:20
+#: templates/pycontw-2019/contents/zh/events/overview.html:21
 msgid "Keynotes"
 msgstr ""
 
@@ -1749,9 +1751,9 @@ msgstr ""
 #: templates/pycontw-2018/contents/zh/events/overview.html:44
 #: templates/pycontw-2018/events/talk_list.html:6
 #: templates/pycontw-2018/events/talk_list.html:10
-#: templates/pycontw-2019/_includes/menu.html:65
-#: templates/pycontw-2019/contents/en/events/overview.html:44
-#: templates/pycontw-2019/contents/zh/events/overview.html:44
+#: templates/pycontw-2019/_includes/menu.html:79
+#: templates/pycontw-2019/contents/en/events/overview.html:27
+#: templates/pycontw-2019/contents/zh/events/overview.html:28
 #: templates/pycontw-2019/events/talk_list.html:6
 #: templates/pycontw-2019/events/talk_list.html:10
 msgid "Talks"
@@ -1761,8 +1763,6 @@ msgstr ""
 #: templates/pycontw-2018/_includes/menu.html:68
 #: templates/pycontw-2018/contents/en/events/overview.html:30
 #: templates/pycontw-2018/contents/zh/events/overview.html:30
-#: templates/pycontw-2019/contents/en/events/overview.html:30
-#: templates/pycontw-2019/contents/zh/events/overview.html:30
 msgid "Sprints"
 msgstr ""
 
@@ -1781,7 +1781,7 @@ msgstr ""
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
 #: templates/pycontw-2018/_includes/menu.html:86
-#: templates/pycontw-2019/_includes/menu.html:102
+#: templates/pycontw-2019/_includes/menu.html:98
 msgctxt "conf location"
 msgid "Venue"
 msgstr ""
@@ -1816,7 +1816,7 @@ msgstr ""
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
 #: templates/pycontw-2018/_includes/menu.html:80
-#: templates/pycontw-2019/_includes/menu.html:96
+#: templates/pycontw-2019/_includes/menu.html:92
 msgid "Financial Aid"
 msgstr ""
 
@@ -1918,7 +1918,9 @@ msgid ""
 msgstr ""
 
 #: templates/pycontw-2016/index.html:31 templates/pycontw-2016/index.html:37
-#: templates/pycontw-2019/_includes/menu.html:66
+#: templates/pycontw-2019/_includes/menu.html:80
+#: templates/pycontw-2019/contents/en/events/overview.html:34
+#: templates/pycontw-2019/contents/zh/events/overview.html:35
 #: templates/pycontw-2019/events/tutorial_list.html:6
 #: templates/pycontw-2019/events/tutorial_list.html:10
 msgid "Tutorials"
@@ -2283,7 +2285,7 @@ msgid "Conference"
 msgstr ""
 
 #: templates/pycontw-2018/_includes/menu.html:57
-#: templates/pycontw-2019/_includes/menu.html:67
+#: templates/pycontw-2019/_includes/menu.html:64
 msgid "Recording"
 msgstr ""
 
@@ -2294,8 +2296,6 @@ msgstr ""
 #: templates/pycontw-2018/_includes/menu.html:67
 #: templates/pycontw-2018/contents/en/events/overview.html:22
 #: templates/pycontw-2018/contents/zh/events/overview.html:22
-#: templates/pycontw-2019/contents/en/events/overview.html:22
-#: templates/pycontw-2019/contents/zh/events/overview.html:22
 msgctxt "menu"
 msgid "Learning"
 msgstr ""
@@ -2303,17 +2303,19 @@ msgstr ""
 #: templates/pycontw-2018/_includes/menu.html:69
 #: templates/pycontw-2018/contents/en/events/overview.html:58
 #: templates/pycontw-2018/contents/zh/events/overview.html:60
-#: templates/pycontw-2019/contents/en/events/overview.html:58
-#: templates/pycontw-2019/contents/zh/events/overview.html:60
+#: templates/pycontw-2019/_includes/menu.html:81
+#: templates/pycontw-2019/contents/en/events/overview.html:46
+#: templates/pycontw-2019/contents/zh/events/overview.html:49
 msgid "Open Spaces"
 msgstr ""
 
 #: templates/pycontw-2018/_includes/menu.html:76
-#: templates/pycontw-2019/_includes/menu.html:92
+#: templates/pycontw-2019/_includes/menu.html:88
 msgid "Registration"
 msgstr ""
 
 #: templates/pycontw-2018/_includes/menu.html:79
+#: templates/pycontw-2019/_includes/menu.html:91
 msgid "Conference Ticket"
 msgstr ""
 
@@ -2323,7 +2325,7 @@ msgid "Registration"
 msgstr ""
 
 #: templates/pycontw-2018/_includes/menu.html:89
-#: templates/pycontw-2019/_includes/menu.html:105
+#: templates/pycontw-2019/_includes/menu.html:101
 msgid "My PyCon"
 msgstr ""
 
