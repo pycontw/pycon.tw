@@ -15,78 +15,83 @@ late!{% endblock meta_description %}
 <div class="box-row">
 	<div class="ticket-box">
 		<p class="ticket-box-title">Individual</p>
-			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>EarlyBird / Discount</th>
-							<td class="price">2,600</td>
-							<td>NTD</td>
-						</tr>
-						<tr>
-							<th>Regular</th>
-							<td class="price">3,500</td>
-							<td>NTD</td>
-						</tr>
-					</tbody>
-				</table>
-				<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>EarlyBird / Discount</th>
+						<td class="price">2,600</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>Regular</th>
+						<td class="price">3,500</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
 	</div>
 	<div class="ticket-box">
 		<p class="ticket-box-title">Corporate</p>
-			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>Regular</th>
-							<td class="price">5,500</td>
-							<td>NTD</td>
-						</tr>
-						<tr>
-							<th>GroudBuy</th>
-							<td class="price">Contact</td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-				<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">Buy</a>
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Regular</th>
+						<td class="price">5,500</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>GroupBuy</th>
+						<td class="price">Contact</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
 	</div>
 	<div class="ticket-box">
 		<p class="ticket-box-title">Reserved</p>
-			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>Speaker</th>
-							<td class="price">1,500</td>
-							<td>NTD</td>
-						</tr>
-						<tr>
-							<th>Contributor</th>
-							<td class="price">1,500</td>
-							<td>NTD</td>
-						</tr>
-					</tbody>
-				</table>
-				<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Speaker</th>
+						<td class="price">1,500</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>Contributor</th>
+						<td class="price">1,500</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
 	</div>
 </div>
 <script>
-		document.querySelectorAll(".buy").forEach((link) => {
-			link.addEventListener("mouseover", (e) => {
-				e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
-			});
-			link.addEventListener("mouseleave", (e) => {
-				e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
-			})
+	document.querySelectorAll(".buy").forEach((link) => {
+		link.addEventListener("mouseover", (e) => {
+			e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
+		});
+		link.addEventListener("mouseleave", (e) => {
+			e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
 		})
-	</script>
+	})
+</script>
 <div class="desc-box">
-	<p class="desc"><strong>Individual:</strong> Tickets are limited. Please purchase as soon as possible. We will send out electronic invoices by email after the conference. Unified Business Numbers are not accepted.</p>
-	<p class="desc"><strong>Corporate:</strong> Provide company name and Unified Business Number, or <em>N/A</em> if re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the conference.</p>
+	<p class="desc"><strong>Individual:</strong> Tickets are limited. Be sure to get your ticket before they are sold
+		out. We will send
+		out electronic invoices by email after the conference. If you need reimbursement from your company, you might
+		want a corporate ticket to meet our local tax regulation.</p>
+	<p class="desc"><strong>Corporate:</strong> Provide company name and Unified Business Number, or <em>N/A</em> if
+		re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the
+		conference.</p>
 	<p class="desc"><strong>Reserved:</strong> Please enter your invitation code on checkout.</p>
 </div>
 
@@ -176,8 +181,8 @@ late!{% endblock meta_description %}
 
 <h3>Everybody Contributes</h3>
 
-<p>PyCon Taiwan is a paid conference. Everybody, including staffs and speakers, pays for attending (see <a
-		href="http://jessenoller.com/blog/2011/05/25/pycon-everybody-pays" target="_blank" rel="noopener">PyCon:
+<p>PyCon Taiwan is a paid conference. Everybody, including staffs and speakers, contributes or pays for attending (see
+	<a href="http://jessenoller.com/blog/2011/05/25/pycon-everybody-pays" target="_blank" rel="noopener">PyCon:
 		Everybody Pays</a>).</p>
 
 <h3>Ways to Pay for Tickets</h3>
@@ -196,9 +201,9 @@ late!{% endblock meta_description %}
 
 <h3>Dietary Requirements</h3>
 
-<p>We provide lunch during the conference. Please let us know if you have any specific dietary requirements.</p>
+<p>We provide lunch during the conference. Please let us know if you have any specific dietary habit.</p>
 
-<h3>Contact Information Accuracy</h3>
+<h3>Valid Contact Required</h3>
 
 <p>Please provide valid means of contact (phone number and email) on purchase, so that we will be able to inform you of
 	any important notices.</p>
@@ -210,6 +215,7 @@ late!{% endblock meta_description %}
 
 <h3>Other Events</h3>
 
-<p>You will be able to verify information about tutorials through the website’s navigation menu.</p>
+<p>Events like Tutorials or Sprints might need a separate registration. Be sure to check out the related details on the
+	event's page.</p>
 
 {% endblock content %}
