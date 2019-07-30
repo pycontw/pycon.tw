@@ -35,10 +35,6 @@
 					margin-bottom: 12px;
 				}
 
-				@include on-desktop() {
-					// margin-left: 56px;
-					margin-left: 0 - $icon-width / 4;
-				}
 				&:before {
 					content: ' ';
 					height: $icon-height;
@@ -89,9 +85,19 @@
 				}
 				&.grass {
 					@include icon('grass-group', 1px, center);
+					&:before {
+						background-size: contain;
+						height: $icon-height * 1.5;
+						width: $icon-width * 1.5;
+					}
 				}
 				&.snake {
 					@include icon('snake', 1px, center);
+					&:before {
+						background-size: contain;
+						height: $icon-height * 1.5;
+						width: $icon-width * 1.5;
+					}
 				}
 			}
 		}
@@ -159,6 +165,28 @@
 			align-items: flex-start;
 			&.slot {
 				min-height: 100px;
+				&:hover {
+					border-style: solid;
+					border-width: 0px 0px 0px 3px;
+					border-radius: 4px;
+				}
+
+				&.slot-room-R0 {
+					&:hover {
+						border-color: $gold-yellow;
+					}
+				}
+				&.slot-room-R1 {
+					&:hover {
+						border-color: $egyptian-blue;
+					}
+				}
+				&.slot-room-R2 {
+					&:hover {
+						border-color: $forest-green;
+					}
+				}
+
 				&.custom {
 					border: 0;
 					background-color: $light-grayish-yellow;
@@ -168,6 +196,7 @@
 				border-style: solid;
 				border-width: 1px 0px 0px 0px;
 				border-color: $gold-yellow;
+				border-radius: 4px;
 
 			}
 		}
@@ -250,17 +279,6 @@
 							li {
 								flex: 1;
 								font-weight: 500;
-								&.snake {
-									&:before {
-										background-size: contain;
-										height: 34px;
-									}
-								}
-								&.grass {
-									&:before {
-										background-size: contain;
-									}
-								}
 								&.info {
 									text-align: center;
 									flex: 2;
@@ -286,6 +304,7 @@
 				@include list-reset();
 				@include icon-info();
 				padding-top: $slot-padding-top;
+				padding-left: 20px;
 				&.custom {
 					display: none;
 				}
