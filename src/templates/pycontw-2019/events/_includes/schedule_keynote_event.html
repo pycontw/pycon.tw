@@ -1,6 +1,6 @@
-<div class="talk-title">Keynote</div>
-<p class="talk-speakers">
-	<a href="{% url 'page' path='events/keynotes' %}" class="talk-title keynote-speaker localed-url">
-		{{ event.speaker_name }}
-	</a>
-</p>
+{% load i18n %}
+
+<a href="{% url 'page' path='events/keynotes' %}" class="localed-url">
+	<div class="talk-title">{% trans 'Keynote' %}</div>
+	<p class="talk-speakers talk-title keynote-speaker">{{ event.speaker_name }}</p>
+</a>
