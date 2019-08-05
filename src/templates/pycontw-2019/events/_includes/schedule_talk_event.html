@@ -1,12 +1,9 @@
 {% load i18n_plus %}
-<div class="talk-info">
-	<div class="talk-title">
-		<a href="{{ event.get_absolute_url }}" class="localed-url">
-			{{ info.title }}
-		</a>
-	</div class="talk-title">
+
+<a href="{{ event.get_absolute_url }}" class="talk-info localed-url">
+	<div class="talk-title">{{ info.title }}</div>
 	<p class="talk-speakers">{{ speakers }}</p>
-</div>
+</a>
 <ul class="talk-tags">
 	<li class="language-{{ info.language.lower }}"></li>
 	<li class="python-level-{{ info.python_level.lower }}"></li>
