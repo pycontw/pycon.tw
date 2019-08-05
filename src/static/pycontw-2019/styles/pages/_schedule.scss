@@ -189,8 +189,7 @@
 					border-left-color: $gold-yellow;
 				}
 
-				$slot-room-border-colors: ("R1": $egyptian-blue, "R2": $forest-green);
-				@each $name, $color in $slot-room-border-colors {
+				@each $name, $color in ("R1": $egyptian-blue, "R2": $forest-green) {
 					&.slot-room-#{$name} {
 						&.first-slot {
 							border-top-color: $color;
