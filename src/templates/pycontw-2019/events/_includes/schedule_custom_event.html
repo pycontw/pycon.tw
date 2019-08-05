@@ -1,1 +1,7 @@
-{{ event.title }}
+<ul>
+	<li class="grass"></li>
+	<li class="snake"></li>
+	<li class="info">{{ event.begin_time.value|date:'H:i' }} {{ event.title }}</li>
+	<li class="snake"></li>
+	<li class="grass"></li>
+</ul>

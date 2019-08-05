@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="24" height="24" fill="#009F5F" rx="4"/>
+        <text fill="#FFF" font-family="NotoSansTC-Regular, Noto Sans TC Regular" font-size="14">
+            <tspan x="3.67" y="18">R2</tspan>
+        </text>
+    </g>
+</svg>
