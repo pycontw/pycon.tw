@@ -1,7 +1,7 @@
-version: '2'
+version: '2.1'
 
 services:
   db:
     image: postgres:11-alpine
     ports:
-      - '5432:5432'
+      - ${COMPOSE_DB_PORT:-5432}:5432
