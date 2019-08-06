@@ -15,3 +15,8 @@ TEMPLATES[0]['DIRS'][1] = os.path.join(
 STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
+
+SCHEDULE_REDIRECT_URL = (
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vShbY20tmKca-i8Rzm4i2vae'
+    'ifCHNCSM4e_6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml'
+)
