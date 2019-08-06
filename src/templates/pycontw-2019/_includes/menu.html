@@ -55,11 +55,10 @@
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
-				{% if schedule_exists %}
+				{% comment %}
 				<li><a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a></li>
-				{% elif schedule_redirect_url %}
+				{% endcomment %}
 				<li><a href="{{ schedule_redirect_url }}" target="_blank" rel="noopener">{% trans 'Schedule' %}</a></li>
-				{% endif %}
 				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
 				{% comment %}
 				<li><a href="{{ portal_url }}">{% trans 'Portal' %}</a></li>
