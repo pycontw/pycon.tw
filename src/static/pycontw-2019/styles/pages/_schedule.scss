@@ -215,7 +215,7 @@
 					text-align: left;
 					flex-direction: column;
 					padding-top: $slot-padding-top;
-					font-weight: 500;
+					font-weight: 400;
 
 					a:hover {
 						text-decoration: none;
@@ -329,7 +329,6 @@
 				margin: 0;
 				display: flex;
 				justify-content: center;
-				// margin: 0.375rem;
 				text-indent: $icon-width;
 			}
 		}
