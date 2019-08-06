@@ -5,7 +5,6 @@ from django.conf import settings
 from django.core.urlresolvers import get_script_prefix
 from django.utils.translation import get_language
 
-from events.models import Schedule
 from sponsors.models import Sponsor
 
 
@@ -71,7 +70,4 @@ def sponsors(request):
 
 
 def events(request):
-    return {
-        'schedule_exists': Schedule.objects.exists(),
-        'schedule_redirect_url': settings.SCHEDULE_REDIRECT_URL,
-    }
+    return {'schedule_redirect_url': settings.SCHEDULE_REDIRECT_URL}
