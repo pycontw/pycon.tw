@@ -25,6 +25,7 @@ def event_cell_class(event):
         'events.customevent': 'custom',
         'events.keynoteevent': 'keynote',
         'events.proposedtalkevent': 'talk',
+        'events.proposedtutorialevent': 'tutorial',
         'events.sponsoredevent': 'talk',
     }[event._meta.label_lower]
     classes = [event_class]
@@ -64,7 +65,18 @@ def _render_talk_event_template(event, info, speaker_names, sponsored):
     }))
 
 
-def get_proposed_talk_event_display(event):
+def get_talk_event_display(event):
+    proposal = event.proposal
+    speaker_names = [proposal.submitter.speaker_name]
+    if getattr(event, '_additional_speaker_count', 1):
+        speaker_names.extend(
+            proposal.additionalspeaker_set
+            .values_list('user__speaker_name', flat=True),
+        )
+    return _render_talk_event_template(event, proposal, speaker_names, False)
+
+
+def get_tutorial_event_display(event):
     proposal = event.proposal
     speaker_names = [proposal.submitter.speaker_name]
     if getattr(event, '_additional_speaker_count', 1):
@@ -87,7 +99,8 @@ def event_display(event):
         f = {
             'events.customevent': get_custom_event_display,
             'events.keynoteevent': get_keynote_event_display,
-            'events.proposedtalkevent': get_proposed_talk_event_display,
+            'events.proposedtalkevent': get_talk_event_display,
+            'events.proposedtutorialevent': get_tutorial_event_display,
             'events.sponsoredevent': get_sponsored_event_display,
         }[event._meta.label_lower]
         return f(event)

@@ -1,4 +1,5 @@
 import collections
+import itertools
 import logging
 
 from django.conf import settings
@@ -137,6 +138,10 @@ class ScheduleCreate2016View(
         return super().get_context_data(content=render_all(), **kwargs)
 
 
+def _room_sort_key(room):
+    return room.split('-', 1)[-1]
+
+
 class ScheduleCreateView(
         ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
         CreateView):
@@ -152,6 +157,13 @@ class ScheduleCreateView(
             ))
         ),
         SponsoredEvent.objects.select_related('host'),
+        (
+            ProposedTutorialEvent.objects
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
+                'proposal__additionalspeaker_set',
+            ))
+        ),
     ]
 
     def get_day_grouped_events(self):
@@ -166,9 +178,6 @@ class ScheduleCreateView(
                 'slots': OrderedDefaultDict(dict),
             }) for date, name in settings.EVENTS_DAY_NAMES.items()
         )
-
-        def room_key(room):
-            return room.split('-', 1)[-1]
 
         times = list(Time.objects.order_by('value'))
         end_time_iter = iter(times)
@@ -188,12 +197,12 @@ class ScheduleCreateView(
 
         for info in day_info_dict.values():
             # Sort rooms.
-            info['rooms'] = sorted(info['rooms'], key=room_key)
+            info['rooms'] = sorted(info['rooms'], key=_room_sort_key)
             # Work around Django template unable to iter through defaultdict.
             # http://stackoverflow.com/questions/4764110
             info['slots'] = collections.OrderedDict(
                 (slot_time, sorted(
-                    slot_rooms.items(), key=lambda i: room_key(i[0])))
+                    slot_rooms.items(), key=lambda i: _room_sort_key(i[0])))
                 for slot_time, slot_rooms in info['slots'].items()
             )
 
@@ -202,8 +211,14 @@ class ScheduleCreateView(
     def get_context_data(self, **kwargs):
         with translation.override('en-us'):
             schedule_days = self.get_day_grouped_events()
+
+        all_rooms = sorted(set(itertools.chain.from_iterable(
+            info['rooms'] for info in schedule_days.values()
+        )), key=_room_sort_key)
+
         return super().get_context_data(
             schedule_days=schedule_days,
+            all_rooms=all_rooms,
             **kwargs
         )
 

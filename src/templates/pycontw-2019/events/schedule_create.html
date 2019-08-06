@@ -23,16 +23,6 @@
 		<h3 class="tab-title">{{ schedule_info.name }}</h3>
 		<table class="time-table">
 			<tbody>
-				<tr>
-					<td colspan={{ schedule_info.rooms | length }} class="room-info">
-						<ul>
-							<li>場地圖示</li>
-							{% for room in schedule_info.rooms %}
-								<li class="room-{{ room|room_display }}"></li>
-							{% endfor %}
-						</ul>
-					</td>
-				</tr>
 				{% for slot_time, slot_info in schedule_info.slots.items %}
 					{% for room, event in slot_info %}
 					<tr class="slot {% if forloop.first %}first-slot{% endif %} {{ event|event_cell_class }} slot-room-{{ room|room_display }}">

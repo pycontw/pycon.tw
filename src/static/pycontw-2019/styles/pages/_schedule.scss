@@ -256,7 +256,7 @@
 					border-top: dashed 1px $light-gray;
 				}
 
-				&.talk {
+				&.talk, &.tutorial {
 					@include list-reset();
 					@include icon-info();
 				}
@@ -322,15 +322,15 @@
 				}
 			}
 		}
-		.room-info {
-			@include list-reset();
-			@include icon-info();
-			ul {
-				margin: 0;
-				display: flex;
-				justify-content: center;
-				text-indent: $icon-width;
-			}
+	}
+
+	.room-info {
+		@include icon-info();
+		ul {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			text-indent: $icon-width;
 		}
 	}
 }
