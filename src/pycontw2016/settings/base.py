@@ -45,6 +45,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'core.context_processors.script_prefix',
                 'core.context_processors.pycontw',
+                'core.context_processors.events',
                 'core.context_processors.proposals_states',
                 'core.context_processors.reviews_states',
                 'core.context_processors.sponsors',
@@ -247,7 +248,8 @@ COMPRESS_ES6_COMPILER_CMD = (
     'export NODE_PATH="{paths}" && '
     '{browserify_bin} "{infile}" -o "{outfile}" '
     '-t [ "{node_modules}/babelify" '
-    '--presets="{node_modules}/babel-preset-env,{node_modules}/babel-preset-stage-2" ]'
+    '--presets="{node_modules}/babel-preset-env,'
+    '{node_modules}/babel-preset-stage-2" ]'
 )
 
 COMPRESS_NODE_SASS_BIN = node_bin('node-sass')
@@ -331,3 +333,5 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2019, 9, 21), _('Day 2')),
     (datetime.date(2019, 9, 22), _('Day 3')),
 ])
+
+SCHEDULE_REDIRECT_URL = None

@@ -37,14 +37,15 @@
 					{% for room, event in slot_info %}
 					<tr class="slot {% if forloop.first %}first-slot{% endif %} {{ event|event_cell_class }} slot-room-{{ room|room_display }}">
 						<td class="time-table-time {{ event|event_cell_class }}">
-									{% if room in '4-r0,5-r1,6-r2' %}
-										<ul class="room">
-											<li class="room-{{ room|room_display }}"></li>
-										</ul>
-									{% endif%}
-								<ul class="time">
-									<li class="time">{{ slot_time.0.value|date:'H:i' }} - {{ slot_time.1.value|date:'H:i' }}</li>
-								</ul>
+							<ul>
+								{% if room in '4-r0,5-r1,6-r2' %}
+								<li class="room room-{{ room|room_display }}"></li>
+								{% endif %}
+								<li class="time">
+									{{ event.begin_time.value|date:'H:i' }}
+									-
+									{{ event.end_time.value|date:'H:i' }}
+								</li>
 							</td>
 							<td class="event {% if not forloop.first %}event-not-first{% endif %} {{ event|event_cell_class }}">
 								<div class="event-info">{{ event|event_display }}</div>

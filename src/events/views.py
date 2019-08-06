@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.urlresolvers import reverse
 from django.db.models import Count, Prefetch
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import translation
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import CreateView, DetailView, ListView, TemplateView
@@ -101,11 +101,10 @@ class ScheduleView(TemplateView):
         try:
             self.schedule = Schedule.objects.latest()
         except Schedule.DoesNotExist:
-            return HttpResponseRedirect(
-                'https://docs.google.com/spreadsheets/d/e/'
-                '2PACX-1vShbY20tmKca-i8Rzm4i2vaeifCHNCSM4e_'
-                '6gfSykBzJMstMhsmxrNAFgIwezHkMCTUEgbUaL-DNHOD/pubhtml'
-            )
+            redirect_url = settings.SCHEDULE_REDIRECT_URL
+            if not redirect_url:
+                return HttpResponseNotFound()
+            return HttpResponseRedirect(redirect_url)
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
