@@ -3,6 +3,7 @@ FROM python:3.6
 # NodeJS's version is not pinned becuase nodesource only serve the latest
 # version.
 ENV YARN_VERSION 1.15.2-1
+ENV NODEJS_VERSION 8.16.0-1nodesource1
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
@@ -13,7 +14,7 @@ RUN curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add 
  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
  && echo 'deb http://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list \
  && apt-get update \
- && apt-get install -y nodejs yarn=$YARN_VERSION \
+ && apt-get install -y nodejs=$NODEJS_VERSION yarn=$YARN_VERSION \
  && rm -rf /var/lib/apt/lists/*
 RUN adduser --system --disabled-login docker \
  && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" \
