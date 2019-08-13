@@ -31,6 +31,35 @@ There are four configurations that must be set when running the container.
 Write them in a [`.env` file](https://docs.docker.com/compose/env-file/) at the same directory that contains
 `docker-compose.yml`.
 
+## Deploying Associated Services
+
+To deploy the website, we also need the following two service (at least):
+
+  * [Nginx service for PyCon Taiwan website](https://github.com/pycontw/pycontw-nginx)
+  * [PostgreSQL service for PyCon Taiwan website](https://github.com/pycontw/pycontw-postgresql)
+
+Firstly, fetch the `docker-compose.yaml` files from the above links of the Nginx and PostgreSQL service respectively, and then deploy the PostgresSQL service by
+
+```
+# cd pycontw-postgresql
+docker-compose up --build -d
+```
+
+and then deploy the Nginx service by
+
+```
+# cd pycontw-nginx
+docker-compose up --build -d
+```
+
+If your docker processes are up correctly by checking `docker container ls`, you are ready to deploy the website like
+
+```
+docker-compose stop ; docker-compose rm -f ; docker-compose pull ; docker-compose up --build -d
+```
+
+You may skip the part of `docker-compose stop`, `docker-compose rm -f`, and `docker-compose pull` if you are build from scratch so there is no pre-existing pycontw website containers.
+
 # Run the Production Server
 
 Run the production server container:
