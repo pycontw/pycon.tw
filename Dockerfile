@@ -1,21 +1,29 @@
 FROM python:3.6
 
-# NodeJS's version is not pinned becuase nodesource only serve the latest
-# version.
-ENV YARN_VERSION 1.15.2-1
-ENV NODEJS_VERSION 8.16.0-1nodesource1
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
 
+ENV NVM_INSTALLER_URL https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh
+ENV NVM_DIR $BASE_DIR/nvm
+ENV YARN_VERSION 1.15.2-1
+ENV NODE_VERSION 8.16.0
+
 # Install Node and Yarn from upstream
-RUN curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
- && echo 'deb http://deb.nodesource.com/node_8.x stretch main' | tee /etc/apt/sources.list.d/nodesource.list \
- && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
- && echo 'deb http://dl.yarnpkg.com/debian/ stable main' | tee /etc/apt/sources.list.d/yarn.list \
- && apt-get update \
- && apt-get install -y nodejs=$NODEJS_VERSION yarn=$YARN_VERSION \
- && rm -rf /var/lib/apt/lists/*
+RUN curl -o- $NVM_INSTALLER_URL | bash \
+ && . $NVM_DIR/nvm.sh \
+ && nvm install $NODE_VERSION \
+ && nvm alias default $NODE_VERSION \
+ && nvm use default \
+ && nvm --version
+RUN . $NVM_DIR/nvm.sh \
+ && npm install -g yarn \
+ && yarn --version \
+# make nodejs and yarn accessible and executable globally
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# APP directory setup
 RUN adduser --system --disabled-login docker \
  && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" \
  && chown -R docker:nogroup "$BASE_DIR" "$APP_DIR"
