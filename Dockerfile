@@ -9,19 +9,21 @@ ENV NVM_DIR $BASE_DIR/nvm
 ENV YARN_VERSION 1.15.2-1
 ENV NODE_VERSION 8.16.0
 
+# make nodejs and yarn accessible and executable globally
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+# Add bin directory used by `pip install --user`
+ENV PATH "/home/docker/.local/bin:${PATH}"
+
 # Install Node and Yarn from upstream
 RUN curl -o- $NVM_INSTALLER_URL | bash \
  && . $NVM_DIR/nvm.sh \
  && nvm install $NODE_VERSION \
  && nvm alias default $NODE_VERSION \
  && nvm use default \
- && nvm --version
-RUN . $NVM_DIR/nvm.sh \
+ && nvm --version \
  && npm install -g yarn \
- && yarn --version \
-# make nodejs and yarn accessible and executable globally
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+ && yarn --version
 
 # APP directory setup
 RUN adduser --system --disabled-login docker \
@@ -30,8 +32,6 @@ RUN adduser --system --disabled-login docker \
 
 USER docker
 WORKDIR $APP_DIR
-# Add bin directory used by `pip install --user`
-ENV PATH "/home/docker/.local/bin:${PATH}"
 
 # Only copy and install requirements to improve caching between builds
 # Install Python dependencies
