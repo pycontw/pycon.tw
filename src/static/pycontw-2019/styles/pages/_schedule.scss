@@ -83,6 +83,9 @@
 				&.room-R2 {
 					@include icon('room-R2', 1px, center);
 				}
+				&.room-R3 {
+					@include icon('room-R3', 1px, center);
+				}
 				&.grass {
 					@include icon('grass-group', 0, right);
 					&:before {
@@ -177,8 +180,8 @@
 				border-radius: 4px;
 
 				&.custom {
-					border: 0;
 					background-color: $light-grayish-yellow;
+					border: 0px;
 				}
 
 				&.first-slot {
@@ -189,10 +192,10 @@
 					border-left-color: $gold-yellow;
 				}
 
-				@each $name, $color in ("R1": $egyptian-blue, "R2": $forest-green) {
+				@each $name, $color in ("R1": $egyptian-blue, "R2": $forest-green, "R3": $dark-orange) {
 					&.slot-room-#{$name} {
 						&.first-slot {
-							border-top-color: $color;
+							border-top-color: $gold-yellow;
 						}
 						&:hover {
 							border-left-color: $color;
