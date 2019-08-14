@@ -28,7 +28,7 @@
 					<tr class="slot {% if forloop.first %}first-slot{% endif %} {{ event|event_cell_class }} slot-room-{{ room|room_display }}">
 						<td class="time-table-time {{ event|event_cell_class }}">
 							<ul>
-								{% if room in '4-r0,5-r1,6-r2' %}
+								{% if room in '1-r3,4-r0,5-r1,6-r2' %}
 								<li class="room room-{{ room|room_display }}"></li>
 								{% endif %}
 								<li class="time">
