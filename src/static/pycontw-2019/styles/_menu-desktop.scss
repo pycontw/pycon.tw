@@ -47,7 +47,7 @@ $menu-desktop-height: 70px;
 					display: block;
 					width: 0;
 					height: 1px;
-					margin: -4px auto auto auto;
+					margin: 0px auto auto auto;
 					background: linear-gradient(119deg, $decocolor1, $decocolor2);
 					transition: width 0.25s ease-in-out;
 				}
@@ -94,7 +94,7 @@ $menu-desktop-height: 70px;
 				flex-direction: column;
 				align-content: stretch;
 
-				@include menu-item($egyptian-blue, $link-hover-dark) {
+				@include menu-item($egyptian-blue, $jungle-green) {
 					flex: 1;
 					padding: $item-padding;
 				}
