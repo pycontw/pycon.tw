@@ -73,7 +73,7 @@
 @mixin link-to-website($button-color) {
 	@include button(0,$button-color, $button-color);
 	@include on-desktop{
-		max-width: 80px;
+		max-width: 225px;
 	}
 	border-radius: 10px;
 	padding: 12px;
