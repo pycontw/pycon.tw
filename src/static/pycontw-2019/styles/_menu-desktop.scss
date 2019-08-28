@@ -1,5 +1,5 @@
 $menu-desktop-margin-x: 48px;
-$menu-desktop-height: 70px;
+$menu-desktop-height: 80px;
 
 @mixin menu-navbar-desktop($logo, $decocolor1, $decocolor2, $top-item-color) {
 	display: none;
@@ -9,11 +9,11 @@ $menu-desktop-height: 70px;
 		flex-direction: column;
 		height: $menu-desktop-height;
 		margin: 0px $menu-desktop-margin-x 100px $menu-desktop-margin-x;
+		padding: 0px 40px;
 	}
 	.menu-logo {
 		width: 221.4px;
 		height: 35.5px;
-		margin: 0px 40px;
 		background: $logo center no-repeat;
 	}
 	.menu {
