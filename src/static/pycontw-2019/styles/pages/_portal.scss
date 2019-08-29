@@ -3,22 +3,38 @@
 	text-align: center;
 
 	.portal-cards {
+		display: grid;
+		grid-template-rows: 25% 25% 25% 25%;
+		@include on-desktop(){
+			grid-template-rows: 50% 50%;
+			grid-template-columns: 50% 50%;
+		}
+		justify-items: center;
+		align-items: center;
+		margin: 0;
 		.card {
-			margin: 8px auto 16px auto;
-			text-align: center;
+			display: flex;
+			width: 310px;
+			height: 120px;
+			margin: 10px;
+			justify-content: center;
+			align-items: center;
+			border-radius: 12px;
+			border: solid 2px #23a16d;
+			background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
 			a {
-				@include button(276deg, $dark-peach, $maize);
-				display: inline-block;
+				display: flex;
 				width: 100%;
-				@include on-desktop() {
-					max-width: $buy-button-max-width;
-				}
+				height: 100%;
+				align-items: center;
+				justify-content: center;
+				color: $egyptian-blue;
+				font-size: 28px;
+				font-weight: normal;
+				letter-spacing: -0.08px;
 			}
-			&:nth-of-type(2n+1) a {
-				@include button(276deg, $dark-peach, $maize);
-			}
-			&:nth-of-type(2n+2) a {
-				@include button(259deg, $azure, $ultramarine-blue);
+			&:hover {
+				border: solid 2px $portica;
 			}
 		}
 	}
