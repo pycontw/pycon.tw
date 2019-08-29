@@ -17,8 +17,8 @@
 	color: $color;
 }
 
-@mixin bgimg-hover-button($color, $image){
-	@include link($white, $white);
+@mixin bgimg-hover-button($color, $image, $text-color:$white){
+	@include link($text-color, $text-color);
 	@include no-underline;
 	margin: auto;
 	font-weight: 300;

@@ -50,7 +50,7 @@
 									<section class="description">{{ sponsor.intro|linebreaks }}</section>
 									{% if sponsor.website_url %}
 									<a class="link-to-website" href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
-										<span>{{ sponsor.name }}</span>
+										<span>{%trans 'Redirect to official website' %}</span>
 									</a>
 									{% endif %}
 								</article>

@@ -4,10 +4,10 @@
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	height: 120px;
+	height: 125px;
 	margin: 0;
 	padding: 0 2rem;
-	background-color: $pale-grey;
+	background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
 
 	li {
 		@include menu-items();
@@ -21,6 +21,10 @@
 		&:not(:last-of-type)::after {
 			content: '/';
 			margin-left: 1rem;
+		}
+		color: $black;
+		a {
+			color: $jungle-green;
 		}
 	}
 }
