@@ -32,6 +32,7 @@
 		background: url('../assets/landingpage-desktop.svg');
 		background-repeat: no-repeat;
 		background-size: 100vw;
+		background-position-y: -30px;
 
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
