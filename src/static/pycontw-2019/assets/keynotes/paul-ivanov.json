@@ -12,12 +12,12 @@
     },
     "session": {
         "en": {
-            "title": "Keynote: Paul Ivanov",
-            "description": "TBD"
+            "title": "Programming Language Tourism: Leave Python and see the world!",
+            "description": "Programming languages are places. The idea of abandoning the convenience and familiarity of your primary coding language might seem anything from tedious and inconvenient to scary and stressful. But, switching to an alternative other than your primary development language -- especially when such a challenge is not a requirement -- can be both fun and productive. You will likely grow your abilities as a developer and gain new perspective that is currently beyond your reach.\nLet's push out of our comfort zone together to leave Python and voyage to a different language! We will go into details about why and how we can do that, along with some possible destinations. Upon our return, we will see -- and appreciate -- Python in a different light. Plus, we can use the justifications for our departure to entice and welcome folks from other language communities to visit us in the land of the snake."
         },
         "zh": {
-            "title": "基調演講：Paul Ivanov",
-            "description": "待定"
+            "title": "程式語言之旅： 離開 Python 看看這個世界",
+            "description": "拋棄當前熟悉且便利的慣用程式語言，聽起來令人厭惡且不便，甚至是可怕且讓人感到有壓力的。但是，能夠在慣用與非慣用語言之間轉換，並以此作為一個挑戰而非工作要求時，這其實可以是一件有趣且具有產值的事。你很可能透過這個機會增加你的開發能力，並且能達到你現在的眼界所看不到的新觀點。\n\n讓我們一起離開我們的舒適圈，離開 Python 航向不同的語言！我們將詳細的說明為什麼要這麼做以及如何做到，還有我們可能抵達的目標。航程結束之後，我們就能用不同的視角重新看待並讚嘆 Python 。此時，我們就能更有自信的歡迎其他語言社群的夥伴一起進入 Python 的殿堂。"
         }
     },
     "social": {
