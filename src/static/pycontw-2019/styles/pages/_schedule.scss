@@ -168,16 +168,17 @@
 		}
 
 		tr {
-			margin-top: 10px;
 			align-items: flex-start;
 
 			&.slot {
 				min-height: 100px;
 
 				border-style: solid;
+				border-width: 0px;
 				border-left-width: 3px;
 				border-color: transparent;
 				border-radius: 4px;
+				background: $ghost-gray;
 
 				&.custom {
 					background-color: $light-grayish-yellow;
@@ -187,18 +188,20 @@
 				&.first-slot {
 					border-top-color: $gold-yellow;
 					border-top-width: 1px;
+					margin-top: 10px;
 				}
 				&:hover {
 					border-left-color: $gold-yellow;
 				}
 
-				@each $name, $color in ("R1": $egyptian-blue, "R2": $forest-green, "R3": $dark-orange) {
+				@each $name, $color in ("R123": $gold-yellow, "R0": $gold-yellow, "R1": $egyptian-blue, "R2": $forest-green, "R3": $dark-orange) {
 					&.slot-room-#{$name} {
 						&.first-slot {
 							border-top-color: $gold-yellow;
 						}
 						&:hover {
 							border-left-color: $color;
+							background: $white;
 						}
 					}
 				}
