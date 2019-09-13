@@ -28,6 +28,24 @@
 <section class="index-introduction">
 
 	<article class="container">
+		<h2>{% trans 'Portal' %}</h2>
+		<div class="portal-container">
+			<div class="card">
+				<a class="button-round" href="{% url 'events_schedule' %}" class="card-link">{% trans 'Schedule' %}</a>
+			</div>
+			<div class="card">
+				<a class="button-round" href="https://hackmd.io/c/pycontw2018" class="card-link">{% trans 'Collaborative Notes' %}</a>
+			</div>
+			<div class="card">
+				<a class="button-round" href="http://t.me/pycontw2018" class="card-link">{% trans 'Chat Room' %}</a>
+			</div>
+			<div class="card">
+				<a class="button-round" href="https://www.facebook.com/pycontw/" class="card-link">{% trans 'Facebook Fan Page' %}</a>
+			</div>
+		</div>
+	</article>
+
+	<article class="container">
 		<h2>{% trans 'What is PyCon' %}</h2>
 		{% blocktrans trimmed %}
 		<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
