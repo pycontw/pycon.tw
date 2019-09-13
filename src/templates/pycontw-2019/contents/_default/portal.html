@@ -12,22 +12,7 @@
 <h1>{% trans 'Portal' %}</h1>
 
 <section class="portal-element portal-cards">
-
-	<div class="card">
-		<a class="button-round" href="{% url 'events_schedule' %}" class="card-link">{% trans 'Schedule' %}</a>
-	</div>
-
-	<div class="card">
-		<a class="button-round" href="https://hackmd.io/c/pycontw2018" class="card-link">{% trans 'Collaborative Notes' %}</a>
-	</div>
-
-	<div class="card">
-		<a class="button-round" href="http://t.me/pycontw2018" class="card-link">{% trans 'Chat Room' %}</a>
-	</div>
-
-	<div class="card">
-		<a class="button-round" href="https://www.facebook.com/pycontw/" class="card-link">{% trans 'Facebook Fan Page' %}</a>
-	</div>
+		{% include '_includes/portal.html' %}
 </section>
 
 {% endblock content %}
