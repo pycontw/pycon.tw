@@ -4,17 +4,18 @@
 
 	.portal-cards {
 		display: grid;
-		grid-template-rows: 25% 25% 25% 25%;
+		grid-template-rows: 20% 20% 20% 20%;
 		@include on-desktop(){
-			grid-template-rows: 50% 50%;
+			grid-template-rows: 33% 33%;
 			grid-template-columns: 50% 50%;
 		}
+
 		justify-items: center;
 		align-items: center;
 		margin: 0;
 		.card {
 			display: flex;
-			width: 310px;
+			width: 100%;
 			height: 120px;
 			margin: 10px;
 			justify-content: center;
@@ -22,6 +23,11 @@
 			border-radius: 12px;
 			border: solid 2px #23a16d;
 			background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+
+			@include on-desktop(){
+				width: 80%;
+			}
+
 			a {
 				display: flex;
 				width: 100%;
