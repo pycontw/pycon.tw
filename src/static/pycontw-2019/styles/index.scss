@@ -3,6 +3,42 @@
 @import 'index-hero';
 @import 'index-partners';
 
+.portal-container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-around;
+	height: 260px;
+	@include on-desktop {
+		flex-flow: row;
+		height: 100px;
+	}
+}
+
+.card {
+	display: flex;
+	width: 156px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 4px;
+  border: solid 2px #224398;
+	a {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		color: #224298;
+		font-size: 16px;
+		font-weight: normal;
+		letter-spacing: -0.08px;
+	}
+	&:hover {
+		border: solid 2px $portica;
+	}
+}
+
 .top-navbar {
 	background-color: $portica;
 	@include on-desktop {
