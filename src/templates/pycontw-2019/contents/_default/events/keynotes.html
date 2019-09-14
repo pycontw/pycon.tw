@@ -42,6 +42,9 @@
 			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
 				{% trans 'Speech' %}
 			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				{% trans 'Slido' %}
+			</li>
 		</ul>
 		<div>
 			<article data-target="tabbing.pane">
@@ -56,6 +59,9 @@
 			<article data-target="tabbing.pane">
 				<h3 class="tab-title">{% trans 'Speech' %}</h3>
 				{{ data.session.description|linebreaks }}
+			</article>
+			<article data-target="tabbing.pane">
+				<iframe src="{{ data.slido }}" height="100%" width="100%"></iframe></iframe>
 			</article>
 		</div>
 	</div>

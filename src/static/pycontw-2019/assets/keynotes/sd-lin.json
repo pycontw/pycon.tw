@@ -19,5 +19,6 @@
             "title": "Understanding Deep Neural Networks",
             "description": "Artificial Intelligence has become overwhelming popular in recent years thanks to availability of big data and the advance of machine learning based models. Among them, solutions based on the Deep Neural Network (or DNN) have produced tremendous success in various applications including computer vision, natural language processing, etc. Nevertheless, one common concern for DNN-based solutions is that they are generally very complicated and can hardly be understood by human beings. This talk focuses on a specific type of deep neural networks called recurrent neural networks (RNN). It will not only demonstrate the power of an RNN model to learn from implicit information but also explain why the overwhelming performance can be achieved given its architecture."
         }
-    }
+    },
+    "slido": "https://app.sli.do/event/mteq4e0u"
 }
