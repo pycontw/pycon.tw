@@ -156,6 +156,12 @@ class EventInfo(models.Model):
         default='',
     )
 
+    slido_embed_link = models.URLField(
+        verbose_name=_('slido_embed_link'),
+        blank=True,
+        default='',
+    )
+
     created_at = models.DateTimeField(
         verbose_name=_('created at'),
         auto_now_add=True,
