@@ -29,6 +29,7 @@ class ProposalAdmin(admin.ModelAdmin):
         'language', 'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'cancelled', 'accepted',
+        'slido_embed_link',
     ]
     raw_id_fields = ['submitter']
     search_fields = ['title', 'abstract']
