@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <g fill="none" fill-rule="evenodd">
         <rect width="24" height="24" fill="#19409E" rx="4"/>
-        <text fill="#FFF" font-family="NotoSansTC-Regular, Noto Sans TC Regular" font-size="14">
-            <tspan x="3.67" y="18">R1</tspan>
-        </text>
+        <path fill="#FFF" fill-rule="nonzero" d="M6.372 8.788v3.808h1.722c1.61 0 2.492-.644 2.492-1.974 0-1.358-.882-1.834-2.492-1.834H6.372zM12.182 18h-1.47L8.22 13.646H6.372V18H5.07V7.738h3.22c2.086 0 3.584.742 3.584 2.884 0 1.596-.924 2.548-2.324 2.884L12.182 18zm1.61 0v-1.064h2.282V9.278h-1.82v-.812c.91-.168 1.568-.406 2.128-.728h.98v9.198h2.058V18h-5.628z"/>
     </g>
 </svg>
