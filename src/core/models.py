@@ -157,7 +157,7 @@ class EventInfo(models.Model):
     )
 
     slido_embed_link = models.URLField(
-        verbose_name=_('slido_embed_link'),
+        verbose_name=_('slido embed link'),
         blank=True,
         default='',
     )
