@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-14 01:24+0800\n"
+"POT-Creation-Date: 2019-09-18 16:49+0800\n"
 "PO-Revision-Date: 2019-07-26 06:30+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -214,11 +214,17 @@ msgstr "recording policy"
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:160 events/models.py:327
+#: core/models.py:160
+#, fuzzy
+#| msgid "slide link"
+msgid "slido embed link"
+msgstr "slide link"
+
+#: core/models.py:166 events/models.py:327
 msgid "created at"
 msgstr "created at"
 
-#: core/models.py:166
+#: core/models.py:172
 msgid "last updated at"
 msgstr "last updated at"
 
@@ -1866,7 +1872,7 @@ msgstr "Your Name"
 
 #: templates/default/users/user_profile_update.html:51
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:40
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:48
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:53
 msgid "Biography"
 msgstr "Biography"
 
@@ -2878,9 +2884,15 @@ msgid "Home"
 msgstr ""
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:43
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:57
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:62
 msgid "Speech"
 msgstr ""
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:47
+#, fuzzy
+#| msgid "Slides"
+msgid "Slido"
+msgstr "Slides"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
 #, fuzzy
