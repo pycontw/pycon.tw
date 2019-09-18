@@ -19,9 +19,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-18 16:49+0800\n"
-"PO-Revision-Date: 2019-09-13 17:42+0000\n"
-"Last-Translator: james_lin <james0910238727@gmail.com>\n"
+"POT-Creation-Date: 2019-09-18 16:54+0800\n"
+"PO-Revision-Date: 2019-09-18 08:54+0000\n"
+"Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
 "pycon-tw/language/zh-Hant/)\n"
 "Language: zh-Hant\n"
@@ -222,10 +222,8 @@ msgid "slide link"
 msgstr "投影片連結"
 
 #: core/models.py:160
-#, fuzzy
-#| msgid "slide link"
 msgid "slido embed link"
-msgstr "投影片連結"
+msgstr "Slido 嵌入連結"
 
 #: core/models.py:166 events/models.py:327
 msgid "created at"
@@ -2779,7 +2777,7 @@ msgstr "大會手冊"
 
 #: templates/pycontw-2019/_includes/sponsors.html:53
 msgid "Redirect to official website"
-msgstr ""
+msgstr "導回官方網站"
 
 #: templates/pycontw-2019/_includes/sponsors.html:73
 msgid "Sponsors Needed"
@@ -2788,12 +2786,12 @@ msgstr "贊助徵求中"
 #: templates/pycontw-2019/_includes/staff.html:30
 msgctxt "staff"
 msgid "OPass Development"
-msgstr ""
+msgstr "OPass 開發"
 
 #: templates/pycontw-2019/_includes/staff.html:124
 msgctxt "staff"
 msgid "Maneuvering"
-msgstr ""
+msgstr "機動"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:15
 msgid "Home"
@@ -2805,14 +2803,12 @@ msgid "Speech"
 msgstr "演講"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:47
-#, fuzzy
-#| msgid "Slides"
 msgid "Slido"
-msgstr "投影片"
+msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
 msgid "Keynote: "
-msgstr ""
+msgstr "基調演講："
 
 #: templates/pycontw-2019/events/tutorial_detail.html:12
 msgid "Tutorial: "
