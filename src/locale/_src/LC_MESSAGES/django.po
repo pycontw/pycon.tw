@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-14 01:24+0800\n"
+"POT-Creation-Date: 2019-09-18 16:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,11 +208,15 @@ msgstr ""
 msgid "slide link"
 msgstr ""
 
-#: core/models.py:160 events/models.py:327
+#: core/models.py:160
+msgid "slido embed link"
+msgstr ""
+
+#: core/models.py:166 events/models.py:327
 msgid "created at"
 msgstr ""
 
-#: core/models.py:166
+#: core/models.py:172
 msgid "last updated at"
 msgstr ""
 
@@ -1647,7 +1651,7 @@ msgstr ""
 
 #: templates/default/users/user_profile_update.html:51
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:40
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:48
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:53
 msgid "Biography"
 msgstr ""
 
@@ -2570,8 +2574,12 @@ msgid "Home"
 msgstr ""
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:43
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:57
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:62
 msgid "Speech"
+msgstr ""
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:47
+msgid "Slido"
 msgstr ""
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5

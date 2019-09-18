@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-14 01:24+0800\n"
-"PO-Revision-Date: 2019-07-26 06:30+0000\n"
+"POT-Creation-Date: 2019-09-18 16:54+0800\n"
+"PO-Revision-Date: 2019-09-18 08:53+0000\n"
 "Last-Translator: Tzu-ping Chung <uranusjr@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
 "taiwan/pycon-tw/language/en_US/)\n"
@@ -214,11 +214,15 @@ msgstr "recording policy"
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:160 events/models.py:327
+#: core/models.py:160
+msgid "slido embed link"
+msgstr "Slido embed link"
+
+#: core/models.py:166 events/models.py:327
 msgid "created at"
 msgstr "created at"
 
-#: core/models.py:166
+#: core/models.py:172
 msgid "last updated at"
 msgstr "last updated at"
 
@@ -1866,7 +1870,7 @@ msgstr "Your Name"
 
 #: templates/default/users/user_profile_update.html:51
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:40
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:48
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:53
 msgid "Biography"
 msgstr "Biography"
 
@@ -2846,47 +2850,43 @@ msgid "Become a volunteer"
 msgstr "Become a volunteer"
 
 #: templates/pycontw-2019/_includes/portal.html:20
-#, fuzzy
-#| msgctxt "staff"
-#| msgid "Program"
 msgid "Program Book"
-msgstr "Program"
+msgstr "Program Book"
 
 #: templates/pycontw-2019/_includes/sponsors.html:53
 msgid "Redirect to official website"
-msgstr ""
+msgstr "Redirect to official website"
 
 #: templates/pycontw-2019/_includes/sponsors.html:73
 msgid "Sponsors Needed"
 msgstr "Sponsors Needed"
 
 #: templates/pycontw-2019/_includes/staff.html:30
-#, fuzzy
-#| msgctxt "staff"
-#| msgid "Development"
 msgctxt "staff"
 msgid "OPass Development"
-msgstr "Development"
+msgstr "OPass Development"
 
 #: templates/pycontw-2019/_includes/staff.html:124
 msgctxt "staff"
 msgid "Maneuvering"
-msgstr ""
+msgstr "Maneuvering"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:15
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:43
-#: templates/pycontw-2019/contents/_default/events/keynotes.html:57
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:62
 msgid "Speech"
-msgstr ""
+msgstr "Speech"
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:47
+msgid "Slido"
+msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
-#, fuzzy
-#| msgid "Keynote"
 msgid "Keynote: "
-msgstr "Keynote"
+msgstr "Keynote: "
 
 #: templates/pycontw-2019/events/tutorial_detail.html:12
 msgid "Tutorial: "
@@ -3123,9 +3123,3 @@ msgstr ""
 #: users/views.py:134
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
-
-#, fuzzy
-#~| msgid "Speaker Information"
-#~ msgctxt "menu"
-#~ msgid "Information"
-#~ msgstr "Speaker Information"
