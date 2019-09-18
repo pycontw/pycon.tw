@@ -15,11 +15,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='talkproposal',
             name='slido_embed_link',
-            field=models.URLField(blank=True, default='', verbose_name='slido_embed_link'),
+            field=models.URLField(blank=True, default='', verbose_name='slido embed link'),
         ),
         migrations.AddField(
             model_name='tutorialproposal',
             name='slido_embed_link',
-            field=models.URLField(blank=True, default='', verbose_name='slido_embed_link'),
+            field=models.URLField(blank=True, default='', verbose_name='slido embed link'),
         ),
     ]
