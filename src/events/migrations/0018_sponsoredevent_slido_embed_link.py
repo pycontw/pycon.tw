@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='sponsoredevent',
             name='slido_embed_link',
-            field=models.URLField(blank=True, default='', verbose_name='slido_embed_link'),
+            field=models.URLField(blank=True, default='', verbose_name='slido embed link'),
         ),
     ]
