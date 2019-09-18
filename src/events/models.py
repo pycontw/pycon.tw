@@ -230,7 +230,7 @@ class KeynoteEvent(BaseEvent):
         code = code.split('-', 1)[0]
 
         data = self.get_static_data()
-        data = {k: v[code] if code in v else v for k, v in data.items()}
+        data = {k: v[code] if isinstance(v, dict) and code in v else v for k, v in data.items()}
         return data
 
 
