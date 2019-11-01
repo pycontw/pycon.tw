@@ -24,12 +24,12 @@
 	// padding-top: $padding-top-mobile;
 	height: calc(100vh - #{$padding-top-mobile});
 	max-height: 130vw;
-	
-	background: url('../assets/landingpage-mobile.svg');
+
+	background: url('../assets/landingpage-mobile.png');
 	background-repeat: no-repeat;
 	background-size: 100vw;
 	@include on-desktop {
-		background: url('../assets/landingpage-desktop.svg');
+		background: url('../assets/landingpage-desktop.png');
 		background-repeat: no-repeat;
 		background-size: 100vw;
 		background-position-y: -30px;
@@ -37,7 +37,7 @@
 		$menu-overlap: $menu-desktop-height / 2;
 		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
 		max-height: auto;
-		
+
 	}
 	.hero-logo{
 		width: 100vw;
@@ -54,7 +54,7 @@
 		flex-direction: column;
 		position: relative;
 		background-position: center;
-		
+
 	}
 
 	blockquote {
