@@ -1,0 +1,29 @@
+{
+    "photo": "pycontw-2019/assets/keynotes/paul-ivanov.jpg",
+    "speaker": {
+        "en": {
+            "name": "Paul Ivanov",
+            "bio": "Paul Ivanov is a member of the Jupyter Steering Council and a senior software engineer at Bloomberg LP working on IPython- and Jupyter-related open source projects. Previously, Paul worked on backend and data engineering at Disqus; was a code monkey at the Brain Imaging Center at UC Berkeley, where he worked on IPython and taught at UC Berkeley’s Python bootcamps; worked in Bruno Olshausen’s lab at the Redwood Center for Theoretical Neuroscience; and was a PhD candidate in the Vision Science program at UC Berkeley. He holds a degree in computer science from UC Davis."
+        },
+        "zh": {
+            "name": "Paul Ivanov",
+            "bio": "Paul Ivanov 是 Jupyter 指導評議會的成員，於彭博公司任職資深軟體工程師，從事 IPython 與 Jupyter 相關的開源專案。在此之前，Paul 曾經：於 Disqus 從事後端與資料工程；於柏克萊大學腦成像中心當程式猿玩轉 IPython，並在柏克萊大學的 Python 集訓課進行教學；任職於 Redwood 理論神經科學中心 Bruno Olshausen 實驗室；為柏克萊大學視覺科學博士候選人。他擁有戴維斯大學計算機科學學位。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "Programming Language Tourism: Leave Python and see the world!",
+            "description": "Programming languages are places. The idea of abandoning the convenience and familiarity of your primary coding language might seem anything from tedious and inconvenient to scary and stressful. But, switching to an alternative other than your primary development language -- especially when such a challenge is not a requirement -- can be both fun and productive. You will likely grow your abilities as a developer and gain new perspective that is currently beyond your reach.\nLet's push out of our comfort zone together to leave Python and voyage to a different language! We will go into details about why and how we can do that, along with some possible destinations. Upon our return, we will see -- and appreciate -- Python in a different light. Plus, we can use the justifications for our departure to entice and welcome folks from other language communities to visit us in the land of the snake."
+        },
+        "zh": {
+            "title": "程式語言之旅： 離開 Python 看看這個世界",
+            "description": "拋棄當前熟悉且便利的慣用程式語言，聽起來令人厭惡且不便，甚至是可怕且讓人感到有壓力的。但是，能夠在慣用與非慣用語言之間轉換，並以此作為一個挑戰而非工作要求時，這其實可以是一件有趣且具有產值的事。你很可能透過這個機會增加你的開發能力，並且能達到你現在的眼界所看不到的新觀點。\n\n讓我們一起離開我們的舒適圈，離開 Python 航向不同的語言！我們將詳細的說明為什麼要這麼做以及如何做到，還有我們可能抵達的目標。航程結束之後，我們就能用不同的視角重新看待並讚嘆 Python 。此時，我們就能更有自信的歡迎其他語言社群的夥伴一起進入 Python 的殿堂。"
+        }
+    },
+    "social": {
+        "link": "http://pirsquared.org/",
+        "twitter": "https://twitter.com/ivanov",
+        "github": "https://github.com/ivanov"
+    },
+    "slido": "https://app.sli.do/event/adohlrml"
+}

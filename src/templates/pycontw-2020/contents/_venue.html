@@ -1,0 +1,32 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+{% load compress %}
+
+{% block extra_css %}
+{{ block.super }}
+{# Use the CDN because I can't get the local images load correctly. #}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+{% endblock extra_css %}
+
+{% block body_class %}{{ block.super }} venue-page{% endblock body_class %}
+
+{% block content %}
+<section class="map-section">
+	<div id="venue-info-overlay" class="map-info">
+		{% block map_info %}{% endblock map_info %}
+	</div>
+	<div id="venue-map" class="map"></div>
+</section>
+<script>
+window.VENUE_ICON = '{% static "pycontw-2019/assets/venue-icon.png" %}'
+window.VENUE_BUTTON = '{% static "pycontw-2019/assets/venue-button.png" %}'
+</script>
+{% endblock content %}
+
+{% block extra_js %}
+{{ block.super }}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2019/scripts/venue.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
