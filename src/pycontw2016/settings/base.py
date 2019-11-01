@@ -302,9 +302,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2017', _('PyCon Taiwan 2017')),
     ('pycontw-2018', _('PyCon Taiwan 2018')),
     ('pycontw-2019', _('PyCon Taiwan 2019')),
+    ('pycontw-2020', _('PyCon Taiwan 2020')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2019'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2020'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -329,9 +330,8 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2019, 9, 20), _('Day 1')),
-    (datetime.date(2019, 9, 21), _('Day 2')),
-    (datetime.date(2019, 9, 22), _('Day 3')),
+    (datetime.date(2019, 9, 5), _('Day 1')),
+    (datetime.date(2019, 9, 6), _('Day 2')),
 ])
 
 SCHEDULE_REDIRECT_URL = None
