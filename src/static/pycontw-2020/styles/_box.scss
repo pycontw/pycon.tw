@@ -1,0 +1,49 @@
+$box-content-padding-x: 32px;
+$box-content-padding-y: 16px;
+
+.box {
+	$box-border: solid 1px $egyptian-blue;
+
+	border: $box-border;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.box-title {
+		margin: 0;
+		padding: (2rem / 3) 1rem;
+		background-color: $egyptian-blue;
+		color: $white;
+		line-height: 150%;
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+
+	.box-content {
+		padding: $box-content-padding-y $box-content-padding-x;
+	}
+
+	.box-control {
+		display: flex;
+		overflow: hidden;
+
+		> * {
+			@include header(1.25rem);
+			@include no-underline();
+
+			flex: 1;
+			border-top: $box-border;
+			line-height: 48px;
+			text-align: center;
+			font-weight: 400;
+		}
+
+		> * + * {
+			border-left: $box-border;
+		}
+
+		> a:hover {
+			background: $egyptian-blue;
+			color: $white;
+		}
+	}
+}

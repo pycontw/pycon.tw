@@ -1,0 +1,17 @@
+.tag {
+	@include text($text-font-size);
+
+	display: inline-block;
+	margin: 3px 1px;
+	padding: 4px 12px;
+	border-radius: 2px;
+	background: #224398;
+	color: $white;
+	text-align: center;
+
+	&:hover {
+		background-color: $link-hover-dark;
+		color: $white;
+		text-decoration: none;
+	}
+}
