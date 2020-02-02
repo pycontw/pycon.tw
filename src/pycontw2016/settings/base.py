@@ -16,8 +16,8 @@ import environ
 
 from django.conf import locale
 from django.contrib.messages import constants as messages
-from django.core.urlresolvers import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, "directory")
 BASE_DIR = os.path.abspath(os.path.join(__file__, '..', '..', '..'))
@@ -130,7 +130,6 @@ MIDDLEWARE = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -147,7 +146,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
     ('zh-hant', 'Traditional Chinese'),

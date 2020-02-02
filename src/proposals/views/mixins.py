@@ -2,13 +2,13 @@ from django.conf import settings
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class UserProfileRequiredMixin(UserPassesTestMixin):
     def test_func(self):
         user = self.request.user
-        if user.is_anonymous() or not user.verified:
+        if user.is_anonymous or not user.verified:
             raise PermissionDenied
         return True
 

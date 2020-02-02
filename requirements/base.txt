@@ -1,86 +1,90 @@
 # Django
 # https://www.djangoproject.com/
-Django==1.10.4
+Django==3.0.2
 
 # Reusable mixins for Django
-# http://django-braces.readthedocs.org/en/latest/index.html
-django-braces==1.8.1
+# https://django-braces.readthedocs.io/en/latest/index.html
+django-braces==1.14.0
 
 # Compresses linked and inline JavaScript or CSS into a single cached file.
-# https://django-compressor.readthedocs.org/en/latest/
-django-compressor==1.6
+# https://django-compressor.readthedocs.io/en/latest/
+django-compressor==2.4
 
 # Set of add-ons for django-compressor that simply enables SCSS and ES6.
 # https://github.com/kottenator/django-compressor-toolkit
 django-compressor-toolkit==0.6.0
 
 # The best way to have DRY Django forms.
-# http://django-crispy-forms.readthedocs.org/en/latest/
-django-crispy-forms==1.7.0
+# https://django-crispy-forms.readthedocs.io/en/latest/
+django-crispy-forms==1.8.1
 
 # Django-environ allows you to utilize 12factor inspired environment variables
 # to configure your Django application.
-# http://django-environ.readthedocs.org
-django-environ==0.4.0
+# https://django-environ.readthedocs.io/en/latest/
+django-environ==0.4.5
 
 # Django application and library for importing and exporting data with
 # included admin integration.
 # https://django-import-export.readthedocs.io
-django-import-export==0.5.1
+django-import-export==2.0.1
 
 # A collection of custom extensions for the Django Framework
-# http://django-extensions.readthedocs.org/en/latest/
-django-extensions==1.7.8
+# https://django-extensions.readthedocs.io/en/latest/
+django-extensions==2.2.6
 
 # Translates Django models using a registration approach.
 # https://github.com/deschler/django-modeltranslation
-django-modeltranslation==0.12
+django-modeltranslation==0.14.2
 
 # Native Django task queue, scheduler and worker application using Python
 # multiprocessing.
 # https://django-q.readthedocs.io/
-django-q==0.8.0
+django-q==1.1.0
 
 # A pickled object field for Django. (Dependency of django-q)
 # https://github.com/gintas/django-picklefield
-# Pin to version 1.0.0, the last version that supports Django < 1.11
-django-picklefield==1.0.0
+django-picklefield==2.1.1
 
 # Certifi, a carefully curated collection of Root Certificates for SSL
-certifi>=2015.11.20
+certifi>=2019.11.28
 
 # Faker is a Python package that generates fake data for you.
-# http://www.joke2k.net/faker/
-fake-factory==0.5.3
+# https://faker.readthedocs.io/en/master/
+# 
+# Note(yychen): I cannot find where this package is used.
+# It was originally called "fake-factory", and the name has changed
+# to "Faker"
+#
+# fake-factory==0.5.6
 
 # Better python shell.
 # http://ipython.org/
-ipython==4.0.1
+ipython==7.12.0
 
 # Python Imaging Library.
-# http://python-pillow.github.io
-Pillow==6.2.0
+# https://python-pillow.org/
+Pillow==7.0.0
 
 # Python interface to the Firebase's REST API.
 # http://ozgur.github.io/python-firebase/
 python-firebase==1.2
 
 # World Timezone Definitions for Python.
-# http://pythonhosted.org/pytz/
-pytz==2015.7
+# https://pythonhosted.org/pytz/
+pytz==2019.3
 
 # Thumbnails for Django.
 # https://sorl-thumbnail.readthedocs.io
-sorl-thumbnail==12.4.1
+sorl-thumbnail==12.6.2
 
 # Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
 # http://www.grantjenks.com/docs/sortedcontainers/
-sortedcontainers==1.4.4
+sortedcontainers==2.1.0
 
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
-tabulate==0.7.5
+tabulate==0.8.6
 
 # Transifex, an online translation collaboration platform
 # http://docs.transifex.com/client/
-transifex-client==0.11
+transifex-client==0.13.7

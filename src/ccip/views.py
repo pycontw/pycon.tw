@@ -4,7 +4,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.templatetags.static import static
 from django.utils import translation
-from django.utils.text import force_text
+from django.utils.encoding import force_text
 from django.utils.translation import pgettext_lazy
 from django.views.generic import View, TemplateView
 

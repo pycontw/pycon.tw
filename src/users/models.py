@@ -9,13 +9,13 @@ from django.contrib.auth.models import (
 )
 from django.core import signing
 from django.core.mail import send_mail
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.core.validators import RegexValidator
 from django.db import models
 from django.template.loader import render_to_string
 from django.templatetags.static import static
 from django.utils import timezone
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 
 from sorl.thumbnail import get_thumbnail
 
@@ -290,7 +290,7 @@ class User(AbstractBaseUser, PermissionsMixin):
             'registration/verification_email.txt', context,
         )
         self.email_user(
-            subject=ugettext('Verify your email address on {host}').format(
+            subject=gettext('Verify your email address on {host}').format(
                 **context
             ),
             message=message, fail_silently=False,

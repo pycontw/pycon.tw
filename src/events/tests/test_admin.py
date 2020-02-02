@@ -2,7 +2,8 @@ import pytest
 
 from django.contrib.admin import site
 from django.contrib.admin.views.main import ChangeList
-from django.utils.text import force_text
+from django.contrib.auth.models import AnonymousUser
+from django.utils.encoding import force_str
 
 from events.admin import (
     CustomEventAdmin, KeynoteEventAdmin, ProposedTalkEventAdmin,
@@ -17,12 +18,21 @@ from events.models import (
 def choices_factory():
 
     def build_changelist_choices(request, model_class, modeladmin, index=0):
+        request.user = AnonymousUser()
+        # yychen 2020-02-02: the request factory does not support middleware,
+        # so no user would be set in request.
+        # However, a check of request.user is performed in ChangeList()
+        # which will cause error.
+        # So we inject AnonymousUser here
+        # https://stackoverflow.com/questions/54183451/django-unit-testing-attributeerror-wsgirequest-object-has-no-attribute-user
+        # https://docs.djangoproject.com/en/3.0/topics/testing/advanced/#the-request-factory
         changelist = ChangeList(
             request, model_class, modeladmin.list_display,
             modeladmin.list_display_links, modeladmin.list_filter,
             modeladmin.date_hierarchy, modeladmin.search_fields,
             modeladmin.list_select_related, modeladmin.list_per_page,
             modeladmin.list_max_show_all, modeladmin.list_editable, modeladmin,
+            modeladmin.sortable_by,
         )
         filterspec = changelist.get_filters(request)[0][index]
         choices = filterspec.choices(changelist)
@@ -36,7 +46,7 @@ def conv_choice(choice):
     """
     return (
         choice['query_string'],
-        force_text(choice['display']),
+        force_str(choice['display']),
         choice['selected'],
     )
 

@@ -7,10 +7,10 @@ import pytz
 
 from django.conf import settings
 from django.contrib.staticfiles import finders
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.db import models
 from django.utils.timezone import make_naive
-from django.utils.translation import get_language, ugettext, ugettext_lazy as _
+from django.utils.translation import get_language, gettext, gettext_lazy as _
 
 from core.models import (
     BigForeignKey, EventInfo,
@@ -140,6 +140,7 @@ class BaseEvent(ConferenceRelated):
         null=True,
         related_name='begined_%(class)s_set',
         verbose_name=_('begin time'),
+        on_delete=models.CASCADE,
     )
 
     end_time = models.ForeignKey(
@@ -148,6 +149,7 @@ class BaseEvent(ConferenceRelated):
         null=True,
         related_name='ended_%(class)s_set',
         verbose_name=_('end time'),
+        on_delete=models.CASCADE,
     )
 
     class Meta:
@@ -199,7 +201,7 @@ class KeynoteEvent(BaseEvent):
         verbose_name_plural = _('keynote events')
 
     def __str__(self):
-        return ugettext('Keynote: {speaker}'.format(
+        return gettext('Keynote: {speaker}'.format(
             speaker=self.speaker_name,
         ))
 
@@ -239,6 +241,7 @@ class SponsoredEvent(EventInfo, BaseEvent):
     host = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('host'),
+        on_delete=models.CASCADE,
     )
     slug = models.SlugField(
         allow_unicode=True,
@@ -276,6 +279,7 @@ class ProposedTalkEvent(BaseEvent):
         to=TalkProposal,
         limit_choices_to={'accepted': True},
         verbose_name=_('proposal'),
+        on_delete=models.CASCADE,
     )
 
     objects = ProposedEventManager()
@@ -296,6 +300,7 @@ class ProposedTutorialEvent(BaseEvent):
     proposal = BigForeignKey(
         to=TutorialProposal,
         verbose_name=_('proposal'),
+        on_delete=models.CASCADE,
     )
     registration_link = models.URLField(
         verbose_name=_('registration link'),
@@ -335,4 +340,4 @@ class Schedule(ConferenceRelated):
         get_latest_by = 'created_at'
 
     def __str__(self):
-        return ugettext('Schedule created at {}').format(self.created_at)
+        return gettext('Schedule created at {}').format(self.created_at)

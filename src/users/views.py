@@ -1,14 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import (
-    login as base_login, password_reset as base_password_reset,
-    password_reset_confirm as base_password_reset_confirm,
-)
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
@@ -34,7 +30,7 @@ def user_signup(request):
             user.send_verification_email(request)
 
             login(request, user)
-            messages.success(request, ugettext(
+            messages.success(request, gettext(
                 'Sign up successful. You are now logged in.'
             ))
             return redirect('user_dashboard')
@@ -52,7 +48,7 @@ def user_verify(request, verification_key):
         raise Http404
     user.verified = True
     user.save()
-    messages.success(request, ugettext('Email verification successful.'))
+    messages.success(request, gettext('Email verification successful.'))
     return redirect('user_dashboard')
 
 
@@ -64,7 +60,7 @@ def request_verification(request):
     user.send_verification_email(request)
     messages.success(
         request,
-        ugettext('A verification email has been sent to {email}').format(
+        gettext('A verification email has been sent to {email}').format(
             email=user.email,
         ),
     )
@@ -91,7 +87,7 @@ def user_profile_update(request):
         )
         if form.is_valid():
             form.save()
-            messages.success(request, ugettext(
+            messages.success(request, gettext(
                 'Your profile has been updated successfully.',
             ))
             return redirect('user_dashboard')
@@ -102,27 +98,15 @@ def user_profile_update(request):
     })
 
 
-def login_view(request):
-    return base_login(request, authentication_form=AuthenticationForm)
-
-
 def password_change_done(request):
-    messages.success(request, ugettext(
+    messages.success(request, gettext(
         'Your new password has been applied successfully.'
     ))
     return redirect('user_dashboard')
 
 
-def password_reset(request):
-    return base_password_reset(
-        request, password_reset_form=PasswordResetForm,
-        template_name='registration/password_reset.html',
-        email_template_name='registration/password_reset_email.txt',
-    )
-
-
 def password_reset_done(request):
-    messages.success(request, ugettext(
+    messages.success(request, gettext(
         'An email is sent to your email account. Please check your inbox for '
         'furthur instructions to reset your password.'
     ))
@@ -130,7 +114,7 @@ def password_reset_done(request):
 
 
 def password_reset_complete(request):
-    messages.success(request, ugettext(
+    messages.success(request, gettext(
         'Password reset successful. You can now login.'
     ))
     return redirect('login')

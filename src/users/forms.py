@@ -7,9 +7,9 @@ from django.contrib.auth.forms import (
     ReadOnlyPasswordHashField,
 )
 from django.core.files.images import get_image_dimensions
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
