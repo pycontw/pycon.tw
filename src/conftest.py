@@ -1,11 +1,11 @@
 import collections
+import six
 
 import pytest
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
-from django.utils import six
 
 from proposals.models import TalkProposal
 

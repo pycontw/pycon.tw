@@ -4,10 +4,10 @@ from django.conf import settings
 from django.contrib.contenttypes.fields import (
     GenericForeignKey, GenericRelation,
 )
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.db.models import Q
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 
 from core.models import (
     ConferenceRelated, DefaultConferenceManager,
@@ -51,7 +51,7 @@ class PrimarySpeaker:
         return False
 
     def get_status_display(self):
-        return ugettext('Proposal author')
+        return gettext('Proposal author')
 
 
 class AdditionalSpeaker(ConferenceRelated):
@@ -59,11 +59,13 @@ class AdditionalSpeaker(ConferenceRelated):
     user = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('user'),
+        on_delete=models.CASCADE,
     )
 
     proposal_type = models.ForeignKey(
         to='contenttypes.ContentType',
         verbose_name=_('proposal model type'),
+        on_delete=models.CASCADE,
     )
     proposal_id = models.BigIntegerField(
         verbose_name=_('proposal ID'),
@@ -127,6 +129,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     submitter = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('submitter'),
+        on_delete=models.CASCADE,
     )
 
     outline = models.TextField(

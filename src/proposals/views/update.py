@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.utils.html import format_html
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 from django.views.generic import UpdateView
 
 from core.mixins import FormValidMessageMixin
@@ -56,7 +56,7 @@ class TalkProposalUpdateView(TalkProposalMixin, ProposalUpdateView):
     template_name = 'proposals/talk_proposal_update.html'
 
     def get_form_valid_message(self):
-        msg = ugettext('Talk proposal <strong>{title}</strong> updated.')
+        msg = gettext('Talk proposal <strong>{title}</strong> updated.')
         return format_html(msg, title=self.object.title)
 
 
@@ -65,7 +65,7 @@ class TutorialProposalUpdateView(TutorialProposalMixin, ProposalUpdateView):
     template_name = 'proposals/tutorial_proposal_update.html'
 
     def get_form_valid_message(self):
-        msg = ugettext('Tutorial proposal <strong>{title}</strong> updated.')
+        msg = gettext('Tutorial proposal <strong>{title}</strong> updated.')
         return format_html(msg, title=self.object.title)
 
 

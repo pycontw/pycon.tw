@@ -1,11 +1,11 @@
 from django.conf import settings
 from django.contrib import admin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Q
 from django.utils.html import format_html
 from django.utils.timezone import make_naive
 from django.utils.translation import (
-    ugettext, ugettext_lazy as _, pgettext_lazy as p,
+    ugettext, gettext_lazy as _, pgettext_lazy as p,
 )
 
 from .forms import CustomEventForm
