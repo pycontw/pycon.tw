@@ -1,0 +1,30 @@
+.year-ribbon {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 125px;
+	margin: 0;
+	padding: 0 2rem;
+	background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+
+	li {
+		@include menu-items();
+		@include h3(0);
+		margin: 0;
+		line-height: 2rem;
+
+		&:not(:first-of-type) {
+			margin-left: 1rem;
+		}
+		&:not(:last-of-type)::after {
+			content: '/';
+			margin-left: 1rem;
+		}
+		color: $black;
+		a {
+			color: $jungle-green;
+		}
+	}
+}
