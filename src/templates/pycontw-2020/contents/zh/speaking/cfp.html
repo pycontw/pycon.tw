@@ -2,13 +2,14 @@
 
 {% block title %}稿件徵求{% endblock title %}
 
-{% block meta_description %}台灣 PyCon 2020 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！{% endblock meta_description %}
+{% block meta_description %}PyCon Taiwan 2020 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！{% endblock meta_description %}
 
 {% block content %}
 {% url 'page' path='speaking/recording' as speaking_recording_url %}
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
 {% url 'page' path='event/open-space' as event_open-space_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
 {% url 'signup' as signup_url %}
 {% url 'user_dashboard' as dashboard_url %}
 
@@ -21,7 +22,7 @@
 
 <ul>
 	<li>議程、課程 開放徵稿：3 月 1 日</li>
-	<li>議程、課程 投稿截止：4 月 19 日（23:59 後）</li>
+	<li>議程、課程 投稿截止：4 月 19 日（23:59）</li>
   <li>公告完整議程： 6 月 中旬（暫定）</li>
   <li>研討會日：9 月 5 日, 9 月 6 日</li>
 </ul>
@@ -83,6 +84,6 @@
 
 <h3>不適當的言語或圖像</h3>
 
-<p>請注意，PyCon Taiwan 是一次會議，聽眾來自不同文化背景，某些團體認為有趣的笑話對於其他團體來說可能是無禮的。 如果您想在演講過程加入一些幽默的圖像或用詞，請再三檢視是否會有冒犯的可能，並請參考我們的行為準則。</p>
+<p>請注意，PyCon Taiwan 是一次會議，聽眾來自不同文化背景，某些團體認為有趣的笑話對於其他團體來說可能是無禮的。 如果您想在演講過程加入一些幽默的圖像或用詞，請再三檢視是否會有冒犯的可能，並請參考我們的<a href="{{ about_coc_url }}">行為準則</a>。</p>
 
 {% endblock content %}
