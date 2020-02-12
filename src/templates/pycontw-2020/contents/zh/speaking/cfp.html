@@ -1,0 +1,89 @@
+{% extends 'contents/_base.html' %}
+
+{% block title %}稿件徵求{% endblock title %}
+
+{% block meta_description %}PyCon Taiwan 2020 正式開始徵稿，接受包括議程 (Talk) 與課程 (Tutorial) 的稿件喔！{% endblock meta_description %}
+
+{% block content %}
+{% url 'page' path='speaking/recording' as speaking_recording_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='event/open-space' as event_open-space_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
+{% url 'signup' as signup_url %}
+{% url 'user_dashboard' as dashboard_url %}
+
+<h1>投稿募集<br>Call for Proposals </h1>
+
+<p>PyCon Taiwan 2020 正式開始徵稿，接受包括議程 (talk) 與課程 (tutorial) 的稿件！</p>
+
+
+<h2>重要日期 (採用<a href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">AoE</a>時區)</h2>
+
+<ul>
+	<li>議程、課程 開放徵稿：3 月 1 日</li>
+	<li>議程、課程 投稿截止：4 月 19 日（23:59）</li>
+  <li>公告完整議程： 6 月 中旬（暫定）</li>
+  <li>研討會日：9 月 5 日, 9 月 6 日</li>
+</ul>
+
+<p>演講（talk）預設將會被錄影、編輯。之後 PyCon Taiwan 會把錄影編輯後上傳至 <a href="http://pyvideo.org" target="_blank" rel="noopener">pyvideo.org</a>，除非講者特別要求。參考<a href="{{ speaking_recording_url }}">錄影釋出</a>。</p>
+
+<p>每一位講者皆需購買會議門票（<a href="http://pyfound.blogspot.com/2017/10/psfs-october-board-meeting.html" target="_blank" rel="noopener">Everyone Contributes Policy</a>）</p>
+
+
+<h2>如何提交您的稿件</h2>
+
+<p>您需要先在 tw.pycon.org <a href="{{ signup_url }}">註冊</a>一個新的帳號。在啟用您的帳號之後，就可以填寫講者資訊，並從 <a href="{{ dashboard_url }}">My PyCon</a> 頁面中創建新的投搞。</p>
+
+<p>我們強烈建議您儘早送出您的投稿。</p>
+
+
+<h2>稿件提交指南</h2>
+
+<h3>演講（Talk）</h3>
+
+<p>我們接受泛 Python 相關的各類投稿，包括學術報告、商用專案或者案例研究等，或是社群經營、溝通、心理健康、失敗經驗等軟議題。正在閱讀本文件的您，想必也應該是要來投稿的！</p>
+
+<p>若您在金融科技（FinTech）、機器學習（machine learning）、物聯網（IoT）、硬體（sensors, RaspberryPi, Gadgets）等相關領域上有著成就與發現，我們誠摯歡迎您的投稿。如果講師有任何在 Python 應用、使用 Python 解決問題與如何主持您的社群圈的經驗，也都邀請您投稿到 PyCon Taiwan。當然我們也非常歡迎適合進階者內容的投稿，例如探討 Python 內部運作等。 另外如果您的演講是關於特定的 Python package，請確保他已被廣泛使用，或者您可以考慮將重點放在相關的最佳實踐上，這類主題會有更多的受眾。</p>
+
+<p>在考慮不同的主題時，您可能會有興趣回顧過去幾年在 PyCon Taiwan 被選上的演講</p>
+
+<ul>
+  <li><a href="https://tw.pycon.org/2019/zh-hant/events/schedule/">PyCon Taiwan 2019</a></li>
+  <li><a href="https://tw.pycon.org/2018/zh-hant/events/schedule/">PyCon Taiwan 2018</a></li>
+  <li><a href="https://tw.pycon.org/2017/zh-hant/events/schedule/">PyCon Taiwan 2017</a></li>
+  <li><a href="https://tw.pycon.org/2016/zh-hant/events/schedule/">PyCon Taiwan 2016</a></li>
+</ul>
+
+<p>您可以投稿 <em>長度為 30 分鐘</em>或是 <em>15 分鐘</em>的演講，根據您自己評估所需的時間而決定。需要注意的是，議程的時間長度將會包含開場與 Q&amp;A 的時間。</p>
+
+<p>議程可以使用的語言為：<em>英文、中文、台語</em>。</p>
+
+<p>若您是第一次投稿 PyCon Taiwan，請您參考<a href="{{ speaking_talk_url }}">如何投稿演講？</a>一文，以了解更多相關規範以及協助您組織投稿的想法。</p>
+
+<p>若最後並未錄取 PyCon Taiwan，可選擇是否願意到在地社群進行分享，PyCon Taiwan 將提供部分交通補助。</p>
+
+<h3>專業課程（Tutorial）</h3>
+
+<p>同演講，我們對專業課程的主題並不做任何限制。專業課程為一個半小時的活動，不額外收費，將與 PyCon Taiwan 同時進行，場地會在會場外，暫定於 <a href="https://www.facebook.com/GoodideasStudio/">好想工作室</a>舉行。投稿課程的方針基於演講，所以請先閱讀<a href="{{ speaking_talk_url }}">如何投稿演講？</a>除了該文中的事項外，我們對課程投稿本身有額外的規範，請參見<a href="{{ speaking_tutorial_url }}">如何投稿專業課程？</a>一文。</p>
+
+<h2>審稿流程</h2>
+
+<p>在投稿截止與公告完整議程之間是審稿的時段，每篇演講和專業課程的稿件將會由 PyCon Taiwan 的審稿委員會進行評分與評論。審稿分成三個階段：</p>
+<ul>
+  <li>第一階段審稿：審稿者會依據投稿內容給予評分與評論。此階段大約為期二到三週，在此階段我們不會看到您的名子。</li>
+  <li><em>修稿階段：根據第一階段審稿者的評論與建議，您可以修改稿件。</em>此階段大約為期一到二週</li>
+  <li>第二階段審稿：審稿者會依據修改後的內容重新評分與評論，此階段大約為期二週</li>
+</ul>
+
+<h3>修稿階段</h3>
+<p>在第一與第二階段審稿之間的修稿階段，您可以依據審稿者給予的評論，修改您的稿件。若您想強調您根據某個評論進行了某個更改，您可以在<em>「補充說明」</em>欄位中指名評論的編號以及說明您所做的修改，例如：<em>「#4: 修改了 xxx 段落的時間分配」</em>。或是如果您對於某個評論持反對意見，也可以依照同樣的方式向審稿者回覆。</p>
+
+<p>如果您有任何疑問，請發送電子郵件至 program@pycon.tw </p>
+
+<h3>不適當的言語或圖像</h3>
+
+<p>請注意，PyCon Taiwan 是一次會議，聽眾來自不同文化背景，某些團體認為有趣的笑話對於其他團體來說可能是無禮的。 如果您想在演講過程加入一些幽默的圖像或用詞，請再三檢視是否會有冒犯的可能，並請參考我們的<a href="{{ about_coc_url }}">行為準則</a>。</p>
+
+{% endblock content %}
