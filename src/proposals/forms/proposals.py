@@ -13,6 +13,7 @@ from .mixins import (
     TalkProposalMixin, TutorialProposalMixin,
 )
 
+from proposals.models import TutorialProposal
 
 class ProposalCreateForm(RequestUserSpeakerValidationMixin, forms.ModelForm):
     def save(self, commit=True):
@@ -49,6 +50,12 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
+    duration = forms.ChoiceField(
+        label=_('duration'),
+        choices=TutorialProposal.DURATION_CHOICES,
+        required=False,
+    )
+
     class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
@@ -91,6 +98,12 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
+    duration = forms.ChoiceField(
+        label=_('duration'),
+        choices=TutorialProposal.DURATION_CHOICES,
+        required=False,
+    )
+
     class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
