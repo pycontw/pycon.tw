@@ -289,8 +289,7 @@ class TalkProposal(AbstractProposal):
 class TutorialProposal(AbstractProposal):
 
     DURATION_CHOICES = (
-        ('HALFDAY', _('Half day')),
-        ('FULLDAY', _('Full day')),
+        ('1.5hr', _('1.5hr')),
     )
     duration = models.CharField(
         verbose_name=_('duration'),
