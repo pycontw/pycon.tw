@@ -49,6 +49,10 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['duration'].required = False
+        self.fields['duration'].widget.attrs['disabled'] = True
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
