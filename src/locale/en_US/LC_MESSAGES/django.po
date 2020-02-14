@@ -569,6 +569,10 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
+#: proposals/forms/mixins.py:140
+msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgstr "Tutorial is only open for 1.5 hours this year."
+
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
 #: proposals/models.py:252 proposals/models.py:296
 msgid "duration"
