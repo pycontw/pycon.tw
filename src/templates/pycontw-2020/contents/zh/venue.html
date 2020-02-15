@@ -1,0 +1,100 @@
+{% extends 'contents/_venue.html' %}
+
+{% block title %}會場{% endblock title %}
+
+{% block map_info %}
+
+<h2>
+	<span>國立成功大學</span>
+	<span>國際會議廳</span>
+</h2>
+<p>701 台南市東區大學路 1 號</p>
+
+<script>window.VENUE_NAME = '國立成功大學 國際會議廳'</script>
+
+{% endblock map_info %}
+
+{% block content %}
+
+<h1>會場</h1>
+
+{{ block.super }}
+
+<h2>交通方式</h2>
+
+<h3>桃園機場（TPE）出發</h3>
+
+<h4>1. 捷運機場航廈站（A12 or A13）到高鐵桃園站（A18）</h4>
+
+<ul>
+  <li><a href="https://www.tymetro.com.tw/tymetro-new/tw/_pages/travel-guide/timetable-search.php">時刻表</a></li>
+  <li>票價：NT$ 25</li>
+</ul>
+
+<h4>2. 桃園高鐵站到台南高鐵站</h4>
+
+<ul>
+  <li><a href="https://www.thsrc.com.tw/tw/TimeTable/SearchResult">時刻表</a></li>
+  <li>票價：NT$ 1,190</li>
+</ul>
+
+<h4>3. 台鐵沙崙站（4272）到台南火車站（4220）</h4>
+
+<ul>
+  <li><a href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime">時刻表</a></li>
+  <li>票價：NT$ 25</li>
+</ul>
+
+<h4>4. 台南火車站到成功大學</h4>
+
+<ul>
+  <li>由台南火車站後站出來，沿著大學路走，看見成功大學校門時左轉，進校門後第一個路口左轉，即可看見國際會議廳。走路大約 7 分鐘，約 550 公尺。</li>
+  <li><a href="https://goo.gl/maps/w8uJKDGVhEbwwpMCA">Google Maps 路線</a></li>
+</ul>
+
+<h3>小港機場（KHH）出發</h3>
+
+<h4>1. 捷運小港站（R3）到高雄車站（R11）</h4>
+
+<ul>
+  <li><a href="https://www.krtc.com.tw/Guide/timetable">時刻表</a></li>
+  <li>票價：NT$ 30</li>
+</ul>
+
+<h4>2. 台鐵高雄火車站（4400）到台南火車站（4220）</h4>
+
+<ul>
+  <li><a href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime">時刻表</a></li>
+  <li>票價：NT$ 68 ~ 106</li>
+</ul>
+
+<h4>3. 台南火車站到成功大學</h4>
+
+<ul>
+  <li>由台南火車站後站出來，沿著大學路走，看見成功大學校門時左轉，進校門後第一個路口左轉，即可看見國際會議廳。走路大約 7 分鐘，約 550 公尺。</li>
+  <li><a href="https://goo.gl/maps/w8uJKDGVhEbwwpMCA">Google Maps 路線</a></li>
+</ul>
+
+<h1>專業課程與衝刺開發場地</h1>
+
+{% block map_info %}
+
+<h2>
+	<span>好想工作室</span>
+</h2>
+<p>701 台南市東區北門路二段 16 號 L2A</p>
+
+<script>window.VENUE_NAME = '好想工作室'</script>
+
+{% endblock map_info %}
+
+<h2>交通方式</h2>
+
+<h3>國立成功大學出發</h3>
+
+<ul>
+  <li>由成功大學校門離開，沿著大學路走回台南火車站，由台南火車站後站前往前站，出站後右轉沿著北門路二段直走，便會看到好想工作室。走路大約 12 分鐘，約 1 公里</li>
+  <li><a href="https://goo.gl/maps/LmAT9mauPiqVtEag6">Google Maps 路線</a></li>
+</ul>
+
+{% endblock content %}
