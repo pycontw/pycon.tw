@@ -51,8 +51,7 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['duration'].required = False
-        self.fields['duration'].widget.attrs['disabled'] = True
+        self.fields['duration'].disabled = True
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
@@ -98,8 +97,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['duration'].required = False
-        self.fields['duration'].widget.attrs['disabled'] = True
+        self.fields['duration'].disabled = True
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
