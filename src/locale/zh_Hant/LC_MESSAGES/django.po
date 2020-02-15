@@ -560,6 +560,10 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
+#: proposals/forms/mixins.py:140
+msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgstr "今年 Tutorial 時間長度僅開放 1.5 小時。"
+
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
 #: proposals/models.py:252 proposals/models.py:296
 msgid "duration"
@@ -677,6 +681,10 @@ msgstr "半天"
 #: proposals/models.py:293
 msgid "Full day"
 msgstr "全天"
+
+#: proposals/models.py:293
+msgid "1.5hr"
+msgstr "1.5 小時"
 
 #: proposals/models.py:302
 msgid "tutorial proposal"
@@ -939,10 +947,13 @@ msgid "No preference"
 msgstr "無偏好"
 
 #: pycontw2016/settings/base.py:327
+msgid "Prefer 15min"
+msgstr "偏好 15 分鐘"
+
+#: pycontw2016/settings/base.py:328
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
