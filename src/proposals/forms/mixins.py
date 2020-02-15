@@ -136,6 +136,9 @@ class TutorialProposalMixin:
             'supplementary': SimpleMDEWidget(),
         }
         help_texts = {
+            'duration': _(
+                "<p>Tutorial is only open for 1.5 hours this year.</p>"
+            ),
             'abstract': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
