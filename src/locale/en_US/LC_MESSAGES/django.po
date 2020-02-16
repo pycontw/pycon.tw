@@ -569,6 +569,10 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
+#: proposals/forms/mixins.py:140
+msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgstr "Tutorial is only open for 1.5 hours this year."
+
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:76
 #: proposals/models.py:252 proposals/models.py:296
 msgid "duration"
@@ -690,6 +694,10 @@ msgstr "Half day"
 #: proposals/models.py:293
 msgid "Full day"
 msgstr "Full day"
+
+#: proposals/models.py:293
+msgid "1.5hr"
+msgstr "1.5hr"
 
 #: proposals/models.py:302
 msgid "tutorial proposal"
@@ -974,10 +982,13 @@ msgid "No preference"
 msgstr "No preference"
 
 #: pycontw2016/settings/base.py:327
+msgid "Prefer 15min"
+msgstr "Prefer 15min"
+
+#: pycontw2016/settings/base.py:328
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:18
 msgid "Prefer 45min"
 msgstr "Prefer 45min"

@@ -1,0 +1,101 @@
+.ticket-info-page {
+	.box-row{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include on-desktop{
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		$ticket_box_height: 280px;
+		$ticket_box_width: $ticket_box_height * 0.85;
+		$ticket_box_title_height: 40px;
+		$price_box_height: $ticket_box_height - $ticket_box_title_height;
+
+		.ticket-box{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: $ticket_box_height;
+			width: $ticket_box_width;
+			border-radius: 4px;
+			border: solid 2px #224398;
+			margin-bottom: 20px;
+			.ticket-box-title{
+				height: $ticket_box_title_height;
+				font-family: NotoSansTC;
+				font-size: 20px;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: -0.03px;
+				color: #333333;
+				margin: 30px auto 20px auto;
+			}
+			.price-box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-between;
+				width:100%;
+				height: $price_box_height;
+
+				table {
+					th, td {
+						padding: 4px 1px;
+						text-align: center;
+						font-weight: 300;
+						font-size: 1rem;
+						line-height: normal;
+						letter-spacing: normal;
+
+						@include on-desktop() {
+							max-width: 33%;
+							text-align: left;
+						}
+					}
+					.price {
+						color: $elf-green;
+						font-weight: 300;
+						font-size: 1.75rem;
+
+						@include on-desktop() {
+							text-align: right;
+							padding-right: 1rem;
+						}
+					}
+				}
+				.buy {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background: center;
+					width: 100%;
+					height: 50px;
+					text-align: center;
+					border-top: solid 2px $egyptian-blue;
+					color: $egyptian-blue;
+					text-decoration: none;
+					font-family: PingFangTC;
+					font-size: 1rem;
+					font-weight: 300;
+					line-height: normal;
+					letter-spacing: normal;
+					&:hover{
+						border-top: solid 2px #f4d35e;
+						background-color: #fad341;
+						background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+					}
+				}
+			}
+		}
+	}
+
+	.desc-box{
+		display: flex;
+		flex-direction: column;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		padding: 20px 40px;
+	}
+}
