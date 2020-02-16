@@ -63,10 +63,42 @@
 				}
 			}
 
+            .name-block {
+                h2 {
+                    margin-bottom: 0;
+                }
+
+                .hint {
+                    color: #333;
+                    font-weight: 300;
+                }
+            }
+
 			p {
 				font-size: 1.3rem;
 				text-align: left;
 			}
 		}
 	}
+
+    .tutorial-block {
+        padding-top: 50px;
+
+        h1 {
+            margin: 0;
+        }
+
+        .location-block {
+            h2 {
+                margin-top: 50px;
+                color: #333;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
 }
