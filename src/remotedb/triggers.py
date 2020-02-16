@@ -46,7 +46,7 @@ def _sync_proposal_detail(proposal):
 
 @mock_on_debug
 def sync_proposal_detail(proposal):
-    tasks.async(_sync_proposal_detail, proposal)
+    tasks.async_task(_sync_proposal_detail, proposal)
 
 
 def _sync_sponsored_talk_detail(event):
@@ -56,7 +56,7 @@ def _sync_sponsored_talk_detail(event):
 
 @mock_on_debug
 def sync_sponsored_talk_detail(event):
-    tasks.async(_sync_sponsored_talk_detail, event)
+    tasks.async_task(_sync_sponsored_talk_detail, event)
 
 
 def _sync_schedule():
@@ -89,7 +89,7 @@ def _sync_schedule():
 
 @mock_on_debug
 def sync_schedule():
-    tasks.async(_sync_schedule)
+    tasks.async_task(_sync_schedule)
 
 
 def _sync_user_events(user):
@@ -101,4 +101,4 @@ def _sync_user_events(user):
 
 @mock_on_debug
 def sync_user_events(user):
-    tasks.async(_sync_user_events, user)
+    tasks.async_task(_sync_user_events, user)
