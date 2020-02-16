@@ -121,11 +121,11 @@ We strongly recommend you configure your editor to match our coding styles. You 
 
 ## Internationalisation
 
-Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw-2016/). When new commits are added into master branch, Travis CI will automatically push new translation strings to Transifex, so simply fix or edit the translation online.
+Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw/). When new commits are added into master branch, Travis CI will automatically push new translation strings to Transifex, so simply fix or edit the translation online.
 
 ### Update translation
 
-Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](http://docs.transifex.com/client/config/) first by adding the file `~/.transifexrc`.
+Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](https://docs.transifex.com/client/client-configuration) first by adding the file `~/.transifexrc`.
 
 For maintainer update transifex
 
