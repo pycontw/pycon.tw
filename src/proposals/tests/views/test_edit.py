@@ -136,7 +136,7 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
     response = user_client.post('/en-us/proposals/talk/42/edit/', {
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
-        'duration': 'PREF45',
+        'duration': 'PREF15',
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
