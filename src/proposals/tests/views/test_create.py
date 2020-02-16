@@ -73,7 +73,7 @@ def test_talk_proposal_create_post(user, user_client):
     response = user_client.post('/en-us/proposals/talk/submit/', {
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
-        'duration': 'PREF45',
+        'duration': 'PREF15',
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
