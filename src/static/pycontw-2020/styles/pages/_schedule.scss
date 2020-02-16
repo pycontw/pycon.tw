@@ -1,0 +1,342 @@
+.schedule-page {
+	form .button-round {
+		@include button(276deg, $dark-peach, $maize);
+		width: 160px;
+		margin: 24px 0;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	// Icon
+	$icon-width: 26px;
+	$icon-height: 26px;
+
+	@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
+		&::before {
+			width: $width;
+			margin-top: $margin-top;	// Visual compensation.
+			background: url('../assets/icon-#{$name}.svg') top $x no-repeat;
+		}
+	}
+
+	@mixin icon-info() {
+		ul {
+			@include list-reset();
+			text-indent: 0;
+			li {
+
+				display: flex;
+				align-content: baseline;
+				align-items: flex-start;
+
+				> * {
+					flex: 1;
+					min-height: 24px;
+					margin-bottom: 12px;
+				}
+
+				&:before {
+					content: ' ';
+					height: $icon-height;
+					margin-right: 1rem;
+				}
+
+				&.speech-en {
+					@include icon('language-enen', -1px);
+				}
+				&.speech-zh {
+					@include icon('language-zhzh', -1px);
+				}
+				&.slides-en {
+					@include icon('language-enen', 0, right);
+				}
+				&.slides-zh {
+					@include icon('language-zhzh', 0, right);
+				}
+				&.language-enen {
+					@include icon('language-enen', 0, center, 2 * $icon-width);
+				}
+				&.language-zhen {
+					@include icon('language-zhen', 0, center, 2 * $icon-width);
+				}
+				&.language-zhzh {
+					@include icon('language-zhzh', 0, center, 2 * $icon-width);
+				}
+				&.python-level-novice {
+					@include icon('level-1');
+				}
+				&.python-level-intermediate {
+					@include icon('level-2');
+				}
+				&.python-level-experienced {
+					@include icon('level-3');
+				}
+				&.no-recording {
+					@include icon('no-recording', 1px);
+				}
+				&.room-R0 {
+					@include icon('room-R0', 1px, center);
+				}
+				&.room-R1 {
+					@include icon('room-R1', 1px, center);
+				}
+				&.room-R2 {
+					@include icon('room-R2', 1px, center);
+				}
+				&.room-R3 {
+					@include icon('room-R3', 1px, center);
+				}
+				&.grass {
+					@include icon('grass-group', 0, right);
+					&:before {
+						background-size: contain;
+						@include on-desktop() {
+							height: $icon-height * 1.5;
+							width: $icon-width * 1.5;
+						}
+					}
+				}
+				&.snake {
+					@include icon('snake', 0, right);
+					&:before {
+						background-size: contain;
+						@include on-desktop() {
+							height: $icon-height * 1.5;
+							width: $icon-width * 1.5;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.schedule-legend {
+
+		background: $pale-grey;
+		word-wrap: break-word;
+		padding: 32px 24px;
+		border-radius: 2px;
+
+		@include on-desktop() {
+			padding: 32px;
+			columns: 2;
+		}
+		@include icon-info();
+	}
+
+	.time-table {
+		width: calc(100% + 50px);
+		margin: -16px;
+		background: transparent;
+		text-align: center;
+
+		// Fonts.
+		@include text(16px);
+		tbody, tr, th, td, ul {
+			// display: block;
+			@include text(16px);
+			font-weight: normal;
+		}
+
+		$border-color: $pale-grey;
+		// Round corners.
+		th, td, .time-stack-ribbon[class~='2-all'] + .event-info {
+			border-radius: 0;
+		}
+		.time-stack-ribbon + .event-info {
+			border-radius: 0;
+		}
+		.time-stack-ribbon {
+			border-radius: 0;
+		}
+
+		// Not actually a table!
+		display: block;
+		thead, tfoot {
+			display: none;
+		}
+		tbody, tr, th, td, ul {
+			display: block;
+		}
+
+		th, td, tr{
+			display: flex;
+			align-items: stretch;
+			justify-content: left;
+			margin: 0;
+			padding: 0;
+		}
+
+		tr {
+			align-items: flex-start;
+
+			&.slot {
+				min-height: 100px;
+
+				border-style: solid;
+				border-width: 0px;
+				border-left-width: 3px;
+				border-color: transparent;
+				border-radius: 4px;
+				background: $ghost-gray;
+
+				&.custom {
+					background-color: $light-grayish-yellow;
+					border: 0px;
+				}
+
+				&.first-slot {
+					border-top-color: $gold-yellow;
+					border-top-width: 1px;
+					margin-top: 10px;
+				}
+				&:hover {
+					border-left-color: $gold-yellow;
+				}
+
+				@each $name, $color in ("R123": $gold-yellow, "R0": $gold-yellow, "R1": $egyptian-blue, "R2": $forest-green, "R3": $dark-orange) {
+					&.slot-room-#{$name} {
+						&.first-slot {
+							border-top-color: $gold-yellow;
+						}
+						&:hover {
+							border-left-color: $color;
+							background: $white;
+						}
+					}
+				}
+			}
+		}
+
+
+		td {
+			$slot-padding-top: 20px;
+
+			&.event {
+				flex: 3;
+
+				.event-info {
+					display: flex;
+					flex: 1;
+					text-align: left;
+					flex-direction: column;
+					padding-top: $slot-padding-top;
+					font-weight: 400;
+
+					a:hover {
+						text-decoration: none;
+					}
+
+					.talk-info {
+						flex: 3;
+						p {
+							&.talk-speakers {
+								color: $light-gray;
+							}
+						}
+					}
+
+					.talk-tags {
+						@include list-reset();
+						display: flex;
+						justify-content: left;
+						margin: 0.375rem;
+						text-indent: 0;
+						flex: 1;
+
+						> li::before {
+							content: ' ';
+							margin-right: 5px;
+						}
+						@include on-desktop() {
+							justify-content: center;
+						}
+					}
+
+					@include on-desktop() {
+						flex-direction: row;
+					}
+				}
+
+				&.event-not-first {
+					border-top: dashed 1px $light-gray;
+				}
+
+				&.talk, &.tutorial {
+					@include list-reset();
+					@include icon-info();
+				}
+				&.keynote {
+					.event-info {
+						flex-direction: column;
+					}
+				}
+				&.custom {
+					align-self: center;
+					width: 100%;
+					.event-info {
+						@include list-reset();
+						@include icon-info();
+						padding-top: 0;
+						justify-content: center;
+						ul {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							li {
+								margin: 0px 5px 0px 0px;
+								font-weight: 500;
+								&:before {
+									margin-right: 0;
+								}
+								&.info {
+									text-align: center;
+									&:before {
+										content: none;
+									}
+								}
+								@include on-desktop {
+									margin: 0px 10px 0px 0px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.time-table-time {
+				flex: 1;
+				flex-direction: column;
+				@include list-reset();
+				@include icon-info();
+				padding-top: $slot-padding-top;
+				padding-left: 20px;
+				&.custom {
+					display: none;
+				}
+				ul {
+					margin: 0;
+					li {
+						&.time {
+							text-align: left;
+							font-size: 16px;
+							&:before {
+								content: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.room-info {
+		@include icon-info();
+		ul {
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			text-indent: $icon-width;
+		}
+	}
+}
