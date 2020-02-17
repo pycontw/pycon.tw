@@ -13,7 +13,7 @@ def talk_proposal_data():
     return {
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
-        'duration': 'PREF45',
+        'duration': 'PREF15',
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
