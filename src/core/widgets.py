@@ -29,8 +29,8 @@ class SimpleMDEWidget(forms.Textarea):
         }
         js = ['js/vendors/simplemde.min.js', 'js/tools/simplemde-setup.js']
 
-    def render(self, name, value, attrs=None):
-        attrs = self.build_attrs(attrs, name=name)
+    def render(self, name, value, attrs=None, renderer=None):
+        attrs = self.build_attrs(attrs, {'name': name})
         if attrs.get('disabled', False):
             return format_html(
                 '<div class="editor-readonly">'
