@@ -1,6 +1,6 @@
 # Django
 # https://www.djangoproject.com/
-Django==1.10.4
+Django==1.11.28
 
 # Reusable mixins for Django
 # http://django-braces.readthedocs.org/en/latest/index.html
