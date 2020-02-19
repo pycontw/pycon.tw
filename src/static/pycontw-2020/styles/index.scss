@@ -4,6 +4,10 @@
 @import 'index-partners';
 @import 'pycontw-year-ribbon';
 
+body {
+    background-color: $top-navbar-background-color;
+}
+
 .portal {
 	@include index-section;
 
@@ -50,9 +54,9 @@
 }
 
 .top-navbar {
-	background-color: $portica;
+	background-color: $top-navbar-background-color;
 	@include on-desktop {
-		border-bottom-color: transparent;
+		// border-bottom-color: transparent;
 	}
 
 	.navbar-logo {

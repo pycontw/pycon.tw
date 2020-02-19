@@ -1,0 +1,570 @@
+/*!
+* @package twicon
+* @version 1.001
+* @author twicon https://twicon.page
+* @copyright Copyright (c) 2020 twicon
+* @license - https://twicon.page/license/
+*/
+@font-face {
+  font-family: twicon;
+  font-weight: 400;
+  font-style: Regular;
+  src: url(twicon.woff2) format("woff2"),
+    url(twicon.woff) format("woff");
+}
+[class*=" twicon-"],
+[class^="twicon-"] {
+  font-family: twicon !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  line-height: 1;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.twicon-td-flag:before {
+  content: "\a000";
+}
+.twicon-roc-flag:before {
+  content: "\a001";
+}
+.twicon-main-island:before {
+  content: "\a002";
+}
+.twicon-penghu-islands:before {
+  content: "\a003";
+}
+.twicon-kinmen-island:before {
+  content: "\a004";
+}
+.twicon-green-island:before {
+  content: "\a005";
+}
+.twicon-lamay-island:before {
+  content: "\a006";
+}
+.twicon-gueishan-island:before {
+  content: "\a007";
+}
+.twicon-orchid-island:before {
+  content: "\a008";
+}
+.twicon-grave-sense:before {
+  content: "\a009";
+}
+.twicon-cks-hall:before {
+  content: "\a00a";
+}
+.twicon-gate-cks:before {
+  content: "\a00b";
+}
+.twicon-president-office:before {
+  content: "\a00c";
+}
+.twicon-taipei101:before {
+  content: "\a00d";
+}
+.twicon-np-mus:before {
+  content: "\a00e";
+}
+.twicon-shrine-tp:before {
+  content: "\a00f";
+}
+.twicon-longshan-tmp:before {
+  content: "\a010";
+}
+.twicon-sys-hall:before {
+  content: "\a011";
+}
+.twicon-confucius-tmp:before {
+  content: "\a012";
+}
+.twicon-xingtian-tmp:before {
+  content: "\a013";
+}
+.twicon-nt-mus:before {
+  content: "\a014";
+}
+.twicon-grand-hotel:before {
+  content: "\a015";
+}
+.twicon-228-park:before {
+  content: "\a016";
+}
+.twicon-san-domingo:before {
+  content: "\a017";
+}
+.twicon-raohe-nm:before {
+  content: "\a018";
+}
+.twicon-red-house:before {
+  content: "\a019";
+}
+.twicon-beimen:before {
+  content: "\a01a";
+}
+.twicon-xiaonanmen:before {
+  content: "\a01b";
+}
+.twicon-taipei-stn:before {
+  content: "\a01c";
+}
+.twicon-zeelandia:before {
+  content: "\a01d";
+}
+.twicon-eg-castle:before {
+  content: "\a01e";
+}
+.twicon-provintia:before {
+  content: "\a01f";
+}
+.twicon-hy-statue:before {
+  content: "\a020";
+}
+.twicon-85tower:before {
+  content: "\a021";
+}
+.twicon-fb-stn:before {
+  content: "\a022";
+}
+.twicon-dt-pagoda:before {
+  content: "\a023";
+}
+.twicon-rosary-church:before {
+  content: "\a024";
+}
+.twicon-longteng-brg:before {
+  content: "\a025";
+}
+.twicon-ly-mus:before {
+  content: "\a026";
+}
+.twicon-lovers-brg:before {
+  content: "\a027";
+}
+.twicon-hotspring-mus:before {
+  content: "\a028";
+}
+.twicon-tunghai-uni:before {
+  content: "\a029";
+}
+.twicon-taichung-park:before {
+  content: "\a02a";
+}
+.twicon-queens-head:before {
+  content: "\a02b";
+}
+.twicon-ntc-theater:before {
+  content: "\a02c";
+}
+.twicon-bagua:before {
+  content: "\a02d";
+}
+.twicon-foguangshan:before {
+  content: "\a02e";
+}
+.twicon-vase-rock:before {
+  content: "\a02f";
+}
+.twicon-tropic-cancer:before {
+  content: "\a030";
+}
+.twicon-fuguijiao-lh:before {
+  content: "\a031";
+}
+.twicon-yuweng-lh:before {
+  content: "\a032";
+}
+.twicon-eluanbi-lh:before {
+  content: "\a033";
+}
+.twicon-kano-staue:before {
+  content: "\a034";
+}
+.twicon-ershawan:before {
+  content: "\a035";
+}
+.twicon-dahu-park:before {
+  content: "\a036";
+}
+.twicon-balloon:before {
+  content: "\a037";
+}
+.twicon-taiwan-rw:before {
+  content: "\a038";
+}
+.twicon-taipei-mrt:before {
+  content: "\a039";
+}
+.twicon-alishan-rw:before {
+  content: "\a03a";
+}
+.twicon-high-speed-rail:before {
+  content: "\a03b";
+}
+.twicon-gondola:before {
+  content: "\a03c";
+}
+.twicon-youbike:before {
+  content: "\a03d";
+}
+.twicon-yami-boat:before {
+  content: "\a03e";
+}
+.twicon-dragon-boat:before {
+  content: "\a03f";
+}
+.twicon-lantern1:before {
+  content: "\a040";
+}
+.twicon-lantern2:before {
+  content: "\a041";
+}
+.twicon-sky-lantern:before {
+  content: "\a042";
+}
+.twicon-taiwanese-bag:before {
+  content: "\a043";
+}
+.twicon-postbox1:before {
+  content: "\a044";
+}
+.twicon-postbox2:before {
+  content: "\a045";
+}
+.twicon-jug:before {
+  content: "\a046";
+}
+.twicon-tea-pot:before {
+  content: "\a047";
+}
+.twicon-tapioca:before {
+  content: "\a048";
+}
+.twicon-beer:before {
+  content: "\a049";
+}
+.twicon-apple-cider:before {
+  content: "\a04a";
+}
+.twicon-couplets:before {
+  content: "\a04b";
+}
+.twicon-fortune:before {
+  content: "\a04c";
+}
+.twicon-electric-pot:before {
+  content: "\a04d";
+}
+.twicon-slipper:before {
+  content: "\a04e";
+}
+.twicon-flying-fish:before {
+  content: "\a04f";
+}
+.twicon-black-bear:before {
+  content: "\a050";
+}
+.twicon-trash:before {
+  content: "\a052";
+}
+.twicon-recycling:before {
+  content: "\a051";
+}
+.twicon-queue-box:before {
+  content: "\a053";
+}
+.twicon-bicycle-lane:before {
+  content: "\a054";
+}
+.twicon-red-man:before {
+  content: "\a055";
+}
+.twicon-green-man:before {
+  content: "\a056";
+}
+.twicon-l-nh-insurance:before {
+  content: "\a057";
+}
+.twicon-l-pixnet:before {
+  content: "\a058";
+}
+.twicon-l-17live:before {
+  content: "\a059";
+}
+.twicon-l-wemo:before {
+  content: "\a05a";
+}
+.twicon-l-dcard:before {
+  content: "\a05b";
+}
+.twicon-l-easy-card:before {
+  content: "\a05c";
+}
+.twicon-l-ipass:before {
+  content: "\a05d";
+}
+.twicon-l-youbike:before {
+  content: "\a05e";
+}
+.twicon-l-luxgen:before {
+  content: "\a05f";
+}
+.twicon-l-post:before {
+  content: "\a060";
+}
+.twicon-l-taiwan-rw:before {
+  content: "\a061";
+}
+.twicon-l-taipei-mrt:before {
+  content: "\a062";
+}
+.twicon-l-kaoxiong-mrt:before {
+  content: "\a063";
+}
+.twicon-xs {
+  font-size: 0.5em;
+}
+.twicon-sm {
+  font-size: 0.75em;
+}
+.twicon-md {
+  font-size: 1.25em;
+}
+.twicon-lg {
+  font-size: 1.5em;
+}
+.twicon-1x {
+  font-size: 1em;
+}
+.twicon-2x {
+  font-size: 2em;
+}
+.twicon-3x {
+  font-size: 3em;
+}
+.twicon-4x {
+  font-size: 4em;
+}
+.twicon-5x {
+  font-size: 5em;
+}
+.twicon-6x {
+  font-size: 6em;
+}
+.twicon-7x {
+  font-size: 7em;
+}
+.twicon-8x {
+  font-size: 8em;
+}
+.twicon-9x {
+  font-size: 9em;
+}
+.twicon-10x {
+  font-size: 10em;
+}
+.twicon-fw {
+  text-align: center;
+  width: 1.25em;
+}
+.twicon-ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.twicon-ul > li {
+  position: relative;
+  line-height: 2em;
+}
+.twicon-ul > li .twicon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.twicon-border {
+  border: solid 0.08em #f1f1f1;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+.twicon-pull-left {
+  float: left;
+}
+.twicon-pull-right {
+  float: right;
+}
+.twicon.twicon-pull-left {
+  margin-right: 0.3em;
+}
+.twicon.twicon-pull-right {
+  margin-left: 0.3em;
+}
+.twicon-spin {
+  -webkit-animation: twicon-spin 2s infinite linear;
+  animation: twicon-spin 2s infinite linear;
+  display: inline-block;
+}
+.twicon-pulse {
+  -webkit-animation: twicon-spin 1s infinite steps(8);
+  animation: twicon-spin 1s infinite steps(8);
+  display: inline-block;
+}
+@-webkit-keyframes twicon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes twicon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.twicon-rotate-90 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.twicon-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.twicon-rotate-270 {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.twicon-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.twicon-flip-vertical {
+  -webkit-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+.twicon-flip-horizontal.twicon-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+:root .twicon-flip-horizontal,
+:root .twicon-flip-vertical,
+:root .twicon-rotate-180,
+:root .twicon-rotate-270,
+:root .twicon-rotate-90 {
+  -webkit-filter: none;
+  filter: none;
+  display: inline-block;
+}
+.twicon-inverse {
+  color: #fff;
+}
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+/* NEW */
+/* GLOBAL STYLES */
+
+.main-nav {
+  max-width: 1200px;
+}
+
+.navigation ul {
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation li {
+  flex: 3;
+}
+
+.navigation .user {
+  flex: 1;
+}
+
+
+/* HEADER */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  overflow: hidden;
+  padding: 16px 10px;
+}
+
+.header a {
+  float: left;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 23px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.header a.logo {
+  font-size: 22px;
+}
+
+.header a:hover {
+  background-color: #ddd;
+}
+
+.header a.active {
+  background-color: rgb(110, 172, 125);
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 550px) {
+  .header a {
+    padding: 8px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-right: 2px;
+  }
+  .header a.logo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

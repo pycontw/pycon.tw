@@ -3,6 +3,7 @@
 body {
 	// Fix the fancy h1 overflowing width (because 100vw includes scrollbar).
 	overflow-x: hidden;
+	background-color: $top-navbar-background-color;
 }
 
 .page-hero {
@@ -52,7 +53,8 @@ main {
 		@include shove-left();
 		@include fill-vw(2rem);
 
-		background-color: $white;
+        // 2020
+		// background-color: $white;
 
 		@include on-desktop {
 			@include fill-vw(6rem);

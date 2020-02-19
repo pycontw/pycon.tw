@@ -1,4 +1,85 @@
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.index-hero-outer {
+    margin: 0 40px 80px;
+}
+
 .index-hero {
+    margin: 40px auto 10px;
+    max-width: 1160px;
+    font-size: 100%;
+
+    .welcome-text {
+        font-size: 1.5rem;
+        font-family: $text-font-family;
+        color: $jinger-bread;
+        margin-bottom: 10px;
+    }
+
+    .banner {
+        // 2020-hero-bg.svg, 799x338
+        @include aspect-ratio(799, 338);
+        background: url('../assets/2020-hero-bg.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: 7px 7px 5px rgba(26, 19, 17, 0.5);
+
+        position: relative;
+
+        .logo {
+            // 2020-logo.svg, 391x55
+            width: calc(100% * 391/799);
+            position: absolute;
+            left: 49.9%;
+            top: 51%;
+            transform: translate(-50%, -50%);
+        }
+
+        .time-location {
+            width: calc(100% * 220/799);
+            position: absolute;
+            left: 50%;
+            top: 69%;
+            transform: translate(-50%, -50%);
+            /*
+            font-size: 22px;
+            font-family: $text-font-family;
+            */
+            text {
+                font-size: 22px;
+                fill: white;
+                font-family: $text-font-family;
+            }
+        }
+
+        .icon {
+            // snake-icon.svg, 50x50
+            width: calc(100% * 50/799);
+
+            position: absolute;
+            left: 49.9%;
+            bottom: 6.5%;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+.index-hero-old {
 	$padding-top-mobile: calc(12.5vh + #{$top-navbar-offset * 7 / 8});
 	$padding-top-desktop: 100px;
 	$heading-aspect: 528 / 95;
@@ -8,7 +89,7 @@
 	$heading-margin-left-desktop: 100vw - $heading-width-desktop;
 	max-width:100%;
 	height:100vh;
-	margin: 0 auto;
+	margin: 0 40px;
 
 	@mixin hero-text($font-size) {
 		color: $white;
@@ -29,7 +110,7 @@
 	background-repeat: no-repeat;
 	background-size: 100vw;
 	@include on-desktop {
-		background: url('../assets/landingpage-desktop.png');
+		background: url('../assets/2020-hero-bg.svg');
 		background-repeat: no-repeat;
 		background-size: 100vw;
 		background-position-y: -30px;
