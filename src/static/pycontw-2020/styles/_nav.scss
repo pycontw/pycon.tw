@@ -1,10 +1,10 @@
-$top-navbar-background-color: $portica;
-$top-navbar-height: 60px;
+$top-navbar-background-color: $brick;
+$top-navbar-height: 48px;
 $top-navbar-logo-height: 24px;
-$top-navbar-border-bottom: solid 1px rgba(230, 230, 230, 0.21);
+$top-navbar-border-bottom: solid 2px $jinger-bread;
 
 .top-navbar {
-	background-color: $portica;
+	background-color: $top-navbar-background-color;
 	position: relative;
 	z-index: $background-deco-index + 1;
 	display: flex;
@@ -13,8 +13,8 @@ $top-navbar-border-bottom: solid 1px rgba(230, 230, 230, 0.21);
 	height: $top-navbar-height;
 	border-bottom: $top-navbar-border-bottom;
 	overflow: hidden;
-	margin-bottom: 1px;
-	padding: 0px 40px;
+	// margin-bottom: 1px;
+	margin: 10px 40px 0;
 	
 
 	.navbar-logo {
@@ -44,30 +44,45 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 	background: url('../assets/2019whitelogo.svg') no-repeat 50% top / 80%;
 }
 
+.navbar-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: -2px;
+    margin-left: 12px;
+}
+
+.navbar-provintia {
+    font-size: 52px;
+    position: relative;
+    bottom: -5px;
+    color: $jinger-bread;
+}
+
 .navbar-lang-switch {
 	@include no-underline;
 	margin: 0 0px;
 
 	> button {
-		$size: 32px;
+		$size: 36px;
 
 		width: $size;
 		height: $size;
-		margin: #{($top-navbar-height - $size) / 2} 2px;
+		// margin: #{($top-navbar-height - $size) / 2} 2px;
 		padding: 0;
 		border: none;
 		background: none;
-		color: $waikawa-grey;
+		color: $jinger-bread;
 		font-weight: 500;
-		font-size: 16px;
+		font-size: 20px;
 		text-align: center;
 		text-transform: uppercase;
 		cursor: pointer;
 
 		&:disabled {
 			border-radius: 8px;
-			background: $white-35;
-			color: $egyptian-blue;
+			background: $salmon;
+			color: $jinger-bread;
 			cursor: default;
 		}
 		&:not(:disabled):hover {
@@ -190,7 +205,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		margin-right: 8px;
 
 		.fa {
-			@include navbar-social-icon(1.375rem, $egyptian-blue, $elf-green);
+			@include navbar-social-icon(1.375rem, $jinger-bread, $waikawa-grey);
 			margin: 0 16px 0 12px;
 			line-height: $top-navbar-height;
 		}

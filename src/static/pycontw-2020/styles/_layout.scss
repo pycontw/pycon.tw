@@ -19,7 +19,7 @@ footer {
 	@include text-light;
 
 	padding: 80px 0 10px;
-	background-color: $egyptian-blue;
+	background-color: $jinger-bread;
 
 	.footer-logos{
 		display: flex;
@@ -27,10 +27,9 @@ footer {
 		align-items: flex-end;
     justify-content: center;
 		.footer-logo {
-			width: 145px;
-			height: 52px;
-			margin: 0px 7px 0px 0px;
-			background: url('../assets/footer-image.svg') center no-repeat;
+            width: 59px;
+            height: 38px;
+            background: url('../assets/2020-py-logo.svg') center no-repeat;
 		}
 	}
 
@@ -40,24 +39,18 @@ footer {
 	}
 	ul {
 		@include menu-items;
-		margin-bottom: 80px;
 		padding-left: 0;
 		line-height: 48px;
 		a:hover{
 			color: $portica;
 		}
-		&::before {
-			content: '';
-			display: inline-block;
-			width: 24px;
-			height: 8px;
-			border-top: solid 0.2px $white;
-		}
 	}
 
 	.copyright {
-		border-top: 1px solid $bluey-grey;
-		padding-top: 16px;
+		border-top: 1px solid $brick;
+		padding-top: 8px;
+        max-width: 1160px;
+        margin: 20px auto;
 	}
 }
 

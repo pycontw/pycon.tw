@@ -5,18 +5,21 @@
 
 	<nav class="top-navbar">
 
-		<form class="navbar-lang-switch" method="post" action="{% url 'set_language' %}">
-			{% csrf_token %}
-			<input type="hidden" name="next" value="{{ request|language_free_path }}">
-			{% get_language_info_list for LANGUAGES as languages %}
-			{% get_current_language as LANGUAGE_CODE %}
-			{% get_language_info for LANGUAGE_CODE as current_language %}
-			{% for language in languages %}
-			<button type="submit" name="language" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}disabled="disabled"{% endif %}>
-				{{ language.code.upper|slice:'0:2' }}
-			</button>
-			{% endfor %}
-		</form>
+        <div class="navbar-left">
+            <form class="navbar-lang-switch" method="post" action="{% url 'set_language' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request|language_free_path }}">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as current_language %}
+                {% for language in languages %}
+                <button type="submit" name="language" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}disabled="disabled"{% endif %}>
+                    {{ language.code.upper|slice:'0:2' }}
+                </button>
+                {% endfor %}
+            </form>
+            <i class="twicon-provintia navbar-provintia"></i>
+        </div>
 
 		<div class="navbar-centerbox">
 			<a href="{% url 'index' %}" class="navbar-logo"></a>
