@@ -1,5 +1,6 @@
 $top-navbar-background-color: $brick;
 $top-navbar-height: 48px;
+$top-navbar-margin-y: 10px;
 $top-navbar-logo-height: 24px;
 $top-navbar-border-bottom: solid 2px $jinger-bread;
 
@@ -13,8 +14,11 @@ $top-navbar-border-bottom: solid 2px $jinger-bread;
 	height: $top-navbar-height;
 	border-bottom: $top-navbar-border-bottom;
 	overflow: hidden;
-	// margin-bottom: 1px;
-	margin: 10px 40px 0;
+    margin: $top-navbar-margin-y 0;
+
+    @include on-desktop {
+        margin: $top-navbar-margin-y 40px 0;
+    }
 	
 
 	.navbar-logo {
@@ -26,7 +30,7 @@ $top-navbar-border-bottom: solid 2px $jinger-bread;
 	}
 }
 
-$top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
+$top-navbar-offset: $top-navbar-height + $top-navbar-margin-y * 2 + 1px;		// Plus border.
 
 .navbar-centerbox {
 	position: absolute;
@@ -57,6 +61,18 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
     position: relative;
     bottom: -5px;
     color: $jinger-bread;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: $text-font-family;
+    padding-left: 7px;
+    color: $jinger-bread;
+
+	@include no-underline;
+    &:hover {
+        color: $waikawa-grey;
+    }
 }
 
 .navbar-lang-switch {
@@ -118,6 +134,7 @@ $top-navbar-offset: $top-navbar-height + 1px;		// Plus border.
 		height: $icon-height;
 		transform: rotate(0deg);
 		cursor: pointer;
+        top: 15px;
 
 		> span {
 			display: block;

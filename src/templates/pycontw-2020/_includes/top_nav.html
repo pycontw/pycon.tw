@@ -19,11 +19,14 @@
                 {% endfor %}
             </form>
             <i class="twicon-provintia navbar-provintia"></i>
+			<a href="{% url 'index' %}" class="navbar-brand">PyCon TW20</a>
         </div>
 
+        {% comment %}
 		<div class="navbar-centerbox">
-			<a href="{% url 'index' %}" class="navbar-logo"></a>
+            <a href="{% url 'index' %}" class="navbar-logo"></a>
 		</div>
+        {% endcomment %}
 
 		<button class="navbar-toggler no-script" type="button" aria-expanded="false" aria-label="Toggle navigation" data-target="topNav.toggler" data-action="topNav#toggle">
 			<div><span></span><span></span><span></span></div>

@@ -16,7 +16,9 @@
 }
 
 .index-hero-outer {
-    margin: 0 40px 80px;
+    @include on-desktop {
+        margin: 0 40px 80px;
+    }
 }
 
 .index-hero {
@@ -29,6 +31,11 @@
         font-family: $text-font-family;
         color: $jinger-bread;
         margin-bottom: 10px;
+        margin-left: 12px;
+
+        @include on-desktop {
+            margin-left: 0;
+        }
     }
 
     .banner {
@@ -37,44 +44,63 @@
         background: url('../assets/2020-hero-bg.svg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        box-shadow: 7px 7px 5px rgba(26, 19, 17, 0.5);
+        margin-bottom: 60px;
+
+        @include on-desktop {
+            box-shadow: 7px 7px 5px rgba(26, 19, 17, 0.5);
+            margin-bottom: 0;
+        }
 
         position: relative;
 
         .logo {
-            // 2020-logo.svg, 391x55
-            width: calc(100% * 391/799);
             position: absolute;
             left: 49.9%;
-            top: 51%;
             transform: translate(-50%, -50%);
+
+            width: calc(100% * 600/799);
+            top: 50%;
+
+            @include on-desktop {
+                // 2020-logo.svg, 391x55
+                width: calc(100% * 391/799);
+                top: 51%;
+            }
         }
 
         .time-location {
-            width: calc(100% * 220/799);
+            width: calc(100% * 450/799);
             position: absolute;
             left: 50%;
-            top: 69%;
+            top: 80%;
             transform: translate(-50%, -50%);
-            /*
-            font-size: 22px;
-            font-family: $text-font-family;
-            */
             text {
                 font-size: 22px;
                 fill: white;
                 font-family: $text-font-family;
             }
+
+
+            @include on-desktop {
+                width: calc(100% * 220/799);
+                top: 69%;
+            }
         }
 
         .icon {
-            // snake-icon.svg, 50x50
-            width: calc(100% * 50/799);
+            width: calc(100% * 70/799);
 
             position: absolute;
             left: 49.9%;
-            bottom: 6.5%;
+            top: 105%;
             transform: translate(-50%, 0);
+
+            @include on-desktop {
+                // snake-icon.svg, 50x50
+                width: calc(100% * 50/799);
+                top: auto;
+                bottom: 6.5%;
+            }
         }
     }
 }
