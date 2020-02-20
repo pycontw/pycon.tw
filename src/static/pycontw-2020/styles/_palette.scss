@@ -33,6 +33,8 @@ $ghost-gray: #f8f8f8;
 $brick: #FBD9CA;
 $salmon: #F4AF9E;
 $jinger-bread: #502526;
+$dark-gray: #262626;
+$imperial: #E23728;
 
 
 /* Some extra styles not in the Zepplin palette. */
@@ -108,8 +110,8 @@ $text-dark: $black;
 
 $link-dark: #224398;
 $link-hover-dark: #4e69ad;
-$link-light: $white-two;
-$link-hover-light: $white;
+$link-light: $brick;
+$link-hover-light: $waikawa-grey;
 
 @mixin link($base-color, $hover-color) {
 	color: $base-color;

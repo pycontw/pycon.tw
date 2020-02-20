@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 01:52+0800\n"
+"POT-Creation-Date: 2020-02-20 15:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1712,6 +1712,7 @@ msgstr ""
 #: templates/pycontw-2016/_includes/nav/front_nav.html:32
 #: templates/pycontw-2018/_includes/footer.html:10
 #: templates/pycontw-2019/_includes/footer.html:12
+#: templates/pycontw-2020/_includes/footer.html:14
 msgid "Code of Conduct"
 msgstr ""
 
@@ -2255,7 +2256,7 @@ msgid "Get Tickets"
 msgstr ""
 
 #: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:49
-#: templates/pycontw-2019/index.html:57 templates/pycontw-2020/index.html:42
+#: templates/pycontw-2019/index.html:57 templates/pycontw-2020/index.html:60
 msgid "Volunteers Needed"
 msgstr ""
 
@@ -2556,6 +2557,7 @@ msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr ""
 
 #: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:60
+#: templates/pycontw-2020/index.html:47
 msgid "Become a volunteer"
 msgstr ""
 
@@ -2628,7 +2630,15 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: templates/pycontw-2020/index.html:45
+#: templates/pycontw-2020/index.html:42
+msgid "Call for Proposals"
+msgstr ""
+
+#: templates/pycontw-2020/index.html:52
+msgid "Sponsor PyCon TW"
+msgstr ""
+
+#: templates/pycontw-2020/index.html:63
 msgid "Become a PyCon TW 2020 volunteer"
 msgstr ""
 

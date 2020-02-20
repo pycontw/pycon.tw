@@ -36,6 +36,24 @@
 	</article>
 </section>
 
+<section class="index-actions">
+    <a class="index-big-button color-jinger-bread" href="{% url 'page' path='speaking/cfp' %}">
+        <i class="icon icon-speaking"></i>
+        {% trans 'Call for Proposals' %}
+    </a>
+
+    <a class="index-big-button color-imperial" href="{{ VOLUNTEER_FORM_URL }}" target="_blank" rel="noopener">
+        <i class="icon icon-volunteering"></i>
+        {% trans 'Become a volunteer' %}
+    </a>
+
+    <a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
+        <i class="icon icon-sponsor"></i>
+        {% trans 'Sponsor PyCon TW' %}
+    </a>
+</section>
+
+<!--
 <section class="index-volunteer-container">
 	<section class="index-volunteer">
 		<article class="container">
@@ -45,6 +63,7 @@
 		</article>
 	</section>
 </section>
+-->
 
 {% include '_includes/pycontw_year_ribbon.html' %}
 

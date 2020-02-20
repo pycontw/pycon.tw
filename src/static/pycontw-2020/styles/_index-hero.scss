@@ -32,8 +32,8 @@
     }
 
     .banner {
-        // 2020-hero-bg.svg, 799x338
-        @include aspect-ratio(799, 338);
+        // 2020-hero-bg.svg, 799x334
+        @include aspect-ratio(799, 334);
         background: url('../assets/2020-hero-bg.svg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
