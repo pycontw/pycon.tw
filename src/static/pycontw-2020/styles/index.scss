@@ -90,25 +90,35 @@ body {
 @mixin big-button-icon($name) {
     .icon-#{$name} {
         mask: url('../assets/icon-#{$name}.svg');
+        mask-size: 100% 100%;
     }
 }
 
 .index-big-button {
     width: 510px;
-    height: 113px;
-    border-radius: 57px;
-    font-size: 2.25rem;
-    margin: 50px auto;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 35px;
+    font-size: 1.6rem;
+    margin: 30px auto;
 
     // FIXME: This is not okay
     max-width: 100%;
+
+	@include on-desktop {
+        width: 510px;
+        height: 113px;
+        line-height: 113px;
+        border-radius: 57px;
+        font-size: 2.25rem;
+        margin: 50px auto;
+	}
 
     text-decoration: none;
     color: $brick;
     position: relative;
     text-align: center;
     display: block;
-    line-height: 113px;
 
 
     @include big-button-color(jinger-bread, $jinger-bread);
@@ -116,15 +126,22 @@ body {
     @include big-button-color(dark-gray, $dark-gray);
 
     .icon {
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         background-repeat: no-repeat;
         position: absolute;
-        left: 33px;
+        left: 13px;
         background-color: $brick;
 
         top: 50%;
-        transform: translate(0, -54%);
+        transform: translate(0, -52%);
+
+        @include on-desktop {
+            left: 33px;
+            width: 50px;
+            height: 50px;
+            transform: translate(0, -54%);
+        }
     }
 
     @include big-button-icon(speaking);
@@ -147,6 +164,8 @@ body {
 
 .index-actions {
 	@include index-section;
+
+    padding: 0 40px;
 
 	@include on-desktop {
 		margin-top: 0 - $menu-desktop-height / 2;
