@@ -50,14 +50,14 @@ main {
 			padding: 0 $p 32px $p;
 		}
 
-		@include shove-left();
-		@include fill-vw(2rem);
+		// @include shove-left();
+		// @include fill-vw(2rem);
 
         // 2020
 		// background-color: $white;
 
 		@include on-desktop {
-			@include fill-vw(6rem);
+			// @include fill-vw(6rem);
 		}
 	}
 
