@@ -71,6 +71,64 @@ body {
 	background-color: $white;
 }
 
+@mixin big-button-color($color-name, $color) {
+    &.color-#{$color-name} {
+        background-color: $color;
+        border: 2px solid $color;
+
+        &:hover {
+            color: $color;
+            background-color: transparent;
+            text-decoration: none;
+            .icon {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+@mixin big-button-icon($name) {
+    .icon-#{$name} {
+        mask: url('../assets/icon-#{$name}.svg');
+    }
+}
+
+.index-big-button {
+    width: 510px;
+    height: 113px;
+    border-radius: 57px;
+    font-size: 2.25rem;
+    margin: 50px auto;
+
+    text-decoration: none;
+    color: $brick;
+    position: relative;
+    text-align: center;
+    display: block;
+    line-height: 113px;
+
+
+    @include big-button-color(jinger-bread, $jinger-bread);
+    @include big-button-color(imperial, $imperial);
+    @include big-button-color(dark-gray, $dark-gray);
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 33px;
+        background-color: $brick;
+
+        top: 50%;
+        transform: translate(0, -54%);
+    }
+
+    @include big-button-icon(speaking);
+    @include big-button-icon(volunteering);
+    @include big-button-icon(sponsor);
+}
+
 .index-introduction {
 	@include index-section;
 
@@ -81,6 +139,14 @@ body {
 	.my-pycon {
 		@include button(276deg, $dark-peach, $maize);
 		margin-top: 40px;
+	}
+}
+
+.index-actions {
+	@include index-section;
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
 	}
 }
 
