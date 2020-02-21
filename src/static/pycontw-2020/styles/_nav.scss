@@ -30,7 +30,7 @@ $top-navbar-border-bottom: solid 2px $jinger-bread;
 	}
 }
 
-$top-navbar-offset: $top-navbar-height + $top-navbar-margin-y * 2 + 1px;		// Plus border.
+$top-navbar-offset: $top-navbar-height + $top-navbar-margin-y;
 
 .navbar-centerbox {
 	position: absolute;
