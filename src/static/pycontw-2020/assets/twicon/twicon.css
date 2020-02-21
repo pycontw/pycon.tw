@@ -470,6 +470,7 @@
 .twicon-inverse {
   color: #fff;
 }
+/*
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -489,9 +490,11 @@
   position: static;
   width: auto;
 }
+*/
 /* NEW */
 /* GLOBAL STYLES */
 
+/*
 .main-nav {
   max-width: 1200px;
 }
@@ -511,10 +514,12 @@
 .navigation .user {
   flex: 1;
 }
+*/
 
 
 /* HEADER */
 
+/*
 * {
   box-sizing: border-box;
 }
@@ -568,3 +573,4 @@ body {
     font-weight: bold;
   }
 }
+*/
