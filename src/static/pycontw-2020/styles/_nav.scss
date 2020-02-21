@@ -114,7 +114,9 @@ $top-navbar-offset: $top-navbar-height + $top-navbar-margin-y * 2 + 1px;		// Plu
 	justify-content: center;
 	margin-left: auto;
 	width: $size;
-	height: $size;
+    // Fix firefox style problem
+    // if you set height here, the hamberger would be misplaced
+	// height: $size;
 	padding: 0;
 	border: none;
 	background-color: transparent;
@@ -134,7 +136,6 @@ $top-navbar-offset: $top-navbar-height + $top-navbar-margin-y * 2 + 1px;		// Plu
 		height: $icon-height;
 		transform: rotate(0deg);
 		cursor: pointer;
-        top: 15px;
 
 		> span {
 			display: block;
