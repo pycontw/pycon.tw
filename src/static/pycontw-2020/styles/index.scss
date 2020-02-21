@@ -86,7 +86,7 @@ body {
 
         &:hover {
             color: $color;
-            background-color: transparent;
+            background-color: transparentize($brick, 0.3);
             text-decoration: none;
             .icon {
                 background-color: $color;
@@ -127,6 +127,8 @@ body {
     position: relative;
     text-align: center;
     display: block;
+
+    transition: background 150ms linear, border 150ms linear;
 
 
     @include big-button-color(jinger-bread, $jinger-bread);
