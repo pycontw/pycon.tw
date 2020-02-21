@@ -54,14 +54,11 @@ body {
 }
 
 .top-navbar {
-	background-color: $top-navbar-background-color;
-	@include on-desktop {
-		// border-bottom-color: transparent;
-	}
-
-	.navbar-logo {
-		margin-top: (3 * $top-navbar-height - $top-navbar-logo-height) / 2;
-	}
+    .navbar-brand {
+        // Tom: Don't display "PyCon TW20" at navbar in index
+        // It collides with the hero image
+        display: none;
+    }
 }
 
 .menu-navbar-desktop {
