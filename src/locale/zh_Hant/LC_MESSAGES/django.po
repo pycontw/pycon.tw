@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-20 15:20+0800\n"
+"POT-Creation-Date: 2020-02-21 12:18+0800\n"
 "PO-Revision-Date: 2020-02-16 17:55+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -80,6 +80,7 @@ msgstr "最佳實踐與慣例"
 
 #: core/models.py:85 templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
+#: templates/pycontw-2020/_includes/footer.html:19
 msgid "Community"
 msgstr "社群"
 
@@ -1867,6 +1868,7 @@ msgstr "我們搞砸了，這不是你的問題。"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
 #: templates/pycontw-2018/_includes/menu.html:29
 #: templates/pycontw-2019/_includes/menu.html:31
+#: templates/pycontw-2020/_includes/menu.html:31
 msgid "About"
 msgstr "關於"
 
@@ -1955,6 +1957,7 @@ msgstr "專業課程"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
 #: templates/pycontw-2018/_includes/menu.html:86
 #: templates/pycontw-2019/_includes/menu.html:91
+#: templates/pycontw-2020/_includes/menu.html:91
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -1965,6 +1968,7 @@ msgstr "住宿"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:68
 #: templates/pycontw-2019/_includes/menu.html:34
+#: templates/pycontw-2020/_includes/menu.html:34
 msgid "Sponsor"
 msgstr "贊助"
 
@@ -2462,7 +2466,7 @@ msgid "Get Tickets"
 msgstr "立即購票"
 
 #: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:49
-#: templates/pycontw-2019/index.html:57 templates/pycontw-2020/index.html:60
+#: templates/pycontw-2019/index.html:57 templates/pycontw-2020/index.html:63
 msgid "Volunteers Needed"
 msgstr "徵求志工"
 
@@ -2515,6 +2519,7 @@ msgstr "議程"
 
 #: templates/pycontw-2018/_includes/menu.html:57
 #: templates/pycontw-2019/_includes/menu.html:60
+#: templates/pycontw-2020/_includes/menu.html:45
 msgid "Recording"
 msgstr "錄影"
 
@@ -2555,6 +2560,7 @@ msgstr "報到"
 
 #: templates/pycontw-2018/_includes/menu.html:89
 #: templates/pycontw-2019/_includes/menu.html:94
+#: templates/pycontw-2020/_includes/menu.html:94
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2745,12 +2751,12 @@ msgstr ""
 "%(proposal_title)s</a> — %(speaker_names)s"
 
 #: templates/pycontw-2018/index.html:32 templates/pycontw-2019/index.html:39
-#: templates/pycontw-2020/index.html:25
+#: templates/pycontw-2020/index.html:28
 msgid "What is PyCon"
 msgstr "何謂 PyCon"
 
 #: templates/pycontw-2018/index.html:33 templates/pycontw-2019/index.html:40
-#: templates/pycontw-2020/index.html:26
+#: templates/pycontw-2020/index.html:29
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are "
 "many other conferences being run in the PyCon spirit around the world.</p>"
@@ -2759,12 +2765,12 @@ msgstr ""
 "</p>"
 
 #: templates/pycontw-2018/index.html:39 templates/pycontw-2019/index.html:46
-#: templates/pycontw-2020/index.html:32
+#: templates/pycontw-2020/index.html:35
 msgid "What is PyCon Taiwan"
 msgstr "何謂 PyCon Taiwan"
 
 #: templates/pycontw-2018/index.html:40 templates/pycontw-2019/index.html:47
-#: templates/pycontw-2020/index.html:33
+#: templates/pycontw-2020/index.html:36
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -2782,7 +2788,7 @@ msgid "<p>Help us organize and make the conference successful!</p>"
 msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 
 #: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:60
-#: templates/pycontw-2020/index.html:47
+#: templates/pycontw-2020/index.html:50
 msgid "Become a volunteer"
 msgstr "成為志工"
 
@@ -2857,15 +2863,31 @@ msgstr "顯示詳細內容"
 msgid "Register"
 msgstr "報名"
 
-#: templates/pycontw-2020/index.html:42
+#: templates/pycontw-2020/_includes/menu.html:39
+msgid "Speaking"
+msgstr "投稿"
+
+#: templates/pycontw-2020/_includes/menu.html:42
+msgid "Call for Proposal"
+msgstr "徵求稿件"
+
+#: templates/pycontw-2020/_includes/menu.html:43
+msgid "Proposing a Talk"
+msgstr "演講"
+
+#: templates/pycontw-2020/_includes/menu.html:44
+msgid "Proposing a Tutorial"
+msgstr "專業課程"
+
+#: templates/pycontw-2020/index.html:45
 msgid "Call for Proposals"
 msgstr "徵求稿件"
 
-#: templates/pycontw-2020/index.html:52
+#: templates/pycontw-2020/index.html:55
 msgid "Sponsor PyCon TW"
 msgstr "贊助方案"
 
-#: templates/pycontw-2020/index.html:63
+#: templates/pycontw-2020/index.html:66
 msgid "Become a PyCon TW 2020 volunteer"
 msgstr "成為 PyCon TW 2020 志工"
 

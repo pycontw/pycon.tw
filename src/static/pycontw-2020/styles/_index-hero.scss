@@ -15,9 +15,11 @@
 	}
 }
 
+$hero-desktop-margin: 40px;
+
 .index-hero-outer {
     @include on-desktop {
-        margin: 0 40px 80px;
+        margin: 0 $hero-desktop-margin 0px;
     }
 }
 

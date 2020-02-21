@@ -10,17 +10,20 @@ body {
 	background-color: $top-navbar-background-color;
 	display: flex;
 	flex-direction: row;
-	height: $menu-desktop-height;
+	height: $menu-desktop-height - 20;
 	@include on-desktop;
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
+	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $jinger-bread, $jinger-bread, $jinger-bread);
+
 	.menu {
-		margin: 0;
+        height: $menu-desktop-height - 20;
+		margin: 0 auto;
 	}
-	@include on-desktop{
-		margin: 0;
+
+	@include on-desktop {
+		margin: 0 40px;
 		display: flex;
 		flex-direction: row;
 		width: 100%;
