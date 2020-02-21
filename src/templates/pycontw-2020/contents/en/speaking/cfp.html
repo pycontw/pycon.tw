@@ -1,4 +1,5 @@
 {% extends 'contents/_base.html' %}
+{% load static %}
 
 {% block title %}Call for Proposals {% endblock title %}
 
@@ -13,7 +14,10 @@
 {% url 'signup' as signup_url %}
 {% url 'user_dashboard' as dashboard_url %}
 
-<h1>Call for Proposals </h1>
+<h1 class="alt">
+    Call for Proposals
+    <i class="icon icon-speaking"></i>
+</h1>
 
 <p>The Call for Proposals is now open. PyCon 2020 Taiwan is accepting talks and tutorials!</p>
 
@@ -94,5 +98,8 @@
 <h3>Inappropriate words or images</h3>
 
 <p>Please note that PyCon Taiwan is a conference where the audience comes from different cultural backgrounds. Some jokes may be rude to others. If you want to add some humorous images or words to your speech, please double check if there is any possibility of offense, and refer to our <a href="{{ about_coc_url }}"> Code of Conduct </a>.</p>
+
+<img class="deco-b-1" src="{% static 'pycontw-2020/assets/deco-c-1.svg' %}" />
+<img class="deco-b-2" src="{% static 'pycontw-2020/assets/deco-c-2.svg' %}" />
 
 {% endblock content %}

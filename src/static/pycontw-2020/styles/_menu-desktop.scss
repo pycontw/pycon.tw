@@ -111,7 +111,7 @@ $menu-desktop-height: 70px;
 			top: $menu-item-height;
 			left: calc(50% - #{$width / 2});
 			min-width: $width;
-			background: $salmon-dark;
+			background: transparentize($salmon-dark, 0.05);
 			text-align: center;
 			opacity: 0;
 			transform: scaleY(0);

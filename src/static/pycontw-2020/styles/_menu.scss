@@ -54,6 +54,7 @@ $menu-item-types: '> a, > label';
 		@include text(0.875rem);
 		margin-top: 6px;
 		border-radius: 5.36px;
+        z-index: 10;
 	}
 }
 
