@@ -61,11 +61,22 @@ body {
     }
 }
 
+.menu-navbar-desktop-outer {
+    @include on-desktop {
+        margin: 0 $hero-desktop-margin;
+    }
+}
+
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
-	border-radius: $menu-desktop-border-radius;
-	background-color: $white;
+		url('../assets/logo-strong-violet.svg'), $jinger-bread, $jinger-bread,  $jinger-bread);
+
+    @include on-desktop {
+        // Align with hero-image-bg
+        margin: 0 auto 100px;
+        max-width: 1160px;
+        padding: 0;
+    }
 }
 
 @mixin big-button-color($color-name, $color) {

@@ -51,10 +51,9 @@ $menu-item-types: '> a, > label';
 
 	.submenu {
 		@include list-reset;
-		@include text(1rem);
-		margin-top: 8px;
-		border-radius: 5px;
-		border: solid 2px $portica;
+		@include text(0.875rem);
+		margin-top: 6px;
+		border-radius: 5.36px;
 	}
 }
 
