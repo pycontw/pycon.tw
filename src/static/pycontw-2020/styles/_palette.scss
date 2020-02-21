@@ -47,7 +47,7 @@ $white-65: rgba(255, 255, 255, 0.65);
 $header-font-family: 'Tenor Sans', 'Noto Sans TC', 'sans-serif';
 
 @mixin header($font-size) {
-  color: $egyptian-blue;
+  color: $jinger-bread;
   font-family: $header-font-family;
   font-size: $font-size;
   font-weight: normal;
@@ -109,8 +109,8 @@ $text-font-size-small: 0.75rem;	// ~ 12px.
 $text-light: $white;
 $text-dark: $black;
 
-$link-dark: #224398;
-$link-hover-dark: #4e69ad;
+$link-dark: lighten($jinger-bread, 25%);
+$link-hover-dark: $waikawa-grey;
 $link-light: $brick;
 $link-hover-light: $waikawa-grey;
 

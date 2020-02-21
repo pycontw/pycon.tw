@@ -1,4 +1,5 @@
 {% extends 'contents/_base.html' %}
+{% load static %}
 
 {% block title %}稿件徵求{% endblock title %}
 
@@ -13,7 +14,13 @@
 {% url 'signup' as signup_url %}
 {% url 'user_dashboard' as dashboard_url %}
 
-<h1>投稿募集<br>Call for Proposals </h1>
+<h1 class="alt">
+    <div class="multi">
+        <div>投稿募集</div>
+        <div>Call for Proposals</div>
+    </div>
+    <i class="icon icon-speaking"></i>
+</h1>
 
 <p>PyCon Taiwan 2020 正式開始徵稿，接受包括議程 (talk) 與課程 (tutorial) 的稿件！</p>
 
@@ -85,5 +92,8 @@
 <h3>不適當的言語或圖像</h3>
 
 <p>請注意，PyCon Taiwan 是一次會議，聽眾來自不同文化背景，某些團體認為有趣的笑話對於其他團體來說可能是無禮的。 如果您想在演講過程加入一些幽默的圖像或用詞，請再三檢視是否會有冒犯的可能，並請參考我們的<a href="{{ about_coc_url }}">行為準則</a>。</p>
+
+<img class="deco-b-1" src="{% static 'pycontw-2020/assets/deco-c-1.svg' %}" />
+<img class="deco-b-2" src="{% static 'pycontw-2020/assets/deco-c-2.svg' %}" />
 
 {% endblock content %}

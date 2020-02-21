@@ -2,11 +2,13 @@ $menu-desktop-border-radius: 8px;
 
 @mixin index-section {
 	@include content-section;
+    margin: 0 auto;
+    max-width: 1160px;
 
 	h2 {
 		@include h1();
 		&:first-child {
-			margin-top: 0;
+			margin-top: 24px;
 		}
 	}
 	h3 {

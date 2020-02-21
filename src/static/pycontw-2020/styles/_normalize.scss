@@ -33,6 +33,7 @@ h6 {
 
 blockquote, button, dl, label, ol, p, ul, th, td {
   @include text($text-font-size);
+  outline: none;
 }
 
 dl, ol, p, ul {

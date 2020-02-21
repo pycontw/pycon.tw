@@ -15,15 +15,16 @@
 
     .shadow {
         position: absolute;
-        left: 88px;
-        top: -43px;
+        left: 99px;
+        top: -62px;
         margin: 0 !important;
         font-size: 52px;
         transform: scaleY(-1) skew(45deg, 0);
         transform-origin: bottom;
         color: rgba(0, 0, 0, 0.3);
-        height: 42px;
+        // height: 42px;
         filter: blur(1px);
+        line-height: 52px;
     }
 
 	&.no-script {
