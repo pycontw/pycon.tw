@@ -334,3 +334,5 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
 ])
 
 SCHEDULE_REDIRECT_URL = None
+
+COC_VERSION = '2020.0'
