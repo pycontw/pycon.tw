@@ -295,3 +295,19 @@ class User(AbstractBaseUser, PermissionsMixin):
             ),
             message=message, fail_silently=False,
         )
+
+
+class CocRecord(models.Model):
+    user = models.OneToOneField(
+        to=settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+    coc_version = models.CharField(
+        verbose_name=_('latest agreed CoC version'),
+        max_length=15,
+        validators=[
+            RegexValidator(r'^202[\d].[\d]+$', 'Not a valid CoC version'),
+        ]
+    )
