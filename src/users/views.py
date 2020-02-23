@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.decorators import login_required
@@ -14,6 +15,7 @@ from .forms import (
     AuthenticationForm, PublicUserCreationForm, UserProfileUpdateForm,
     PasswordResetForm, SetPasswordForm,
 )
+from .models import CocRecord
 
 
 User = get_user_model()
@@ -125,3 +127,13 @@ def password_reset_confirm(request, uidb64, token):
         request, uidb64=uidb64, token=token,
         set_password_form=SetPasswordForm
     )
+
+@login_required
+def coc_agree(request):
+    user = request.user
+
+    # TODO: Should do some checking (e.g. whether the user really press the button)
+    new_coc_agreement = CocRecord(user=user, coc_version=settings.COC_VERSION)
+    new_coc_agreement.save()
+
+    return render(request, 'users/coc_agreement.html')
