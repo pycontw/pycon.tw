@@ -37,21 +37,32 @@
 		}
 
 		@include on-desktop() {
-			$total-width: 28%;
-			$padding-left: 4%;
-			$padding-right: 3%;
+            $total-width: 32%;
+            $padding-left: 4%;
+            $padding-right: 3%;
 
-			display: block;
-			position: absolute;
-			height: $map-height-desktop;
-			width: $total-width - $padding-left - $padding-right;
-			z-index: 2;
-			background-color: rgba(255, 255, 255, 0.95);
-			padding: 0 $padding-right 0 $padding-left;
-			margin-top: 2px;
+            display: block;
+            position: absolute;
+            height: $map-height-desktop;
+            width: $total-width - $padding-left - $padding-right;
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 0 $padding-right 0 $padding-left;
+            margin-top: 2px;
+
+            @include breakpoint(1280px) {
+                $total-width: 28%;
+                $padding-left: 4%;
+                $padding-right: 3%;
+
+                height: $map-height-desktop;
+                width: $total-width - $padding-left - $padding-right;
+                padding: 0 $padding-right 0 $padding-left;
+            }
 
 			h2 {
-				font-size: 1.8rem;
+				font-size: 1.4rem;
+                line-height: 1;
 				text-align: left;
 
 				> span {
@@ -63,10 +74,62 @@
 				}
 			}
 
+            .name-block {
+                h2 {
+                    margin-bottom: 12px;
+                }
+
+                .hint {
+                    color: #333;
+                    font-weight: 300;
+                    font-size: 0.9rem;
+                }
+            }
+
 			p {
-				font-size: 1.3rem;
+				font-size: 1rem;
 				text-align: left;
 			}
 		}
+
+        font-size: 0.6rem;
+        h2 {
+            margin-top: 40px;
+        }
+
+        @include breakpoint(90px) {
+            h2 {
+                margin-top: 60px;
+            }
+            font-size: 1rem;
+        }
+
+        @include breakpoint(1900px) {
+            h2 {
+                margin-top: 72px;
+            }
+            font-size: 1rem;
+        }
 	}
+
+    .tutorial-block {
+        padding-top: 50px;
+
+        h1 {
+            margin: 0;
+        }
+
+        .location-block {
+            h2 {
+                margin-top: 50px;
+                color: #333;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
 }
