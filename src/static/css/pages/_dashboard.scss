@@ -28,3 +28,28 @@
 .dashboard-alert {
   padding: 10px 33px 0px 33px;
 }
+
+.agreement-form {
+    font-size: 16px;
+
+    blockquote {
+        margin: 40px 0;
+
+        p {
+            line-height: 1.5;
+            margin: 20px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+    }
+}
