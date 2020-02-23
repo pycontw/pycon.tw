@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from .models import User
+from .models import User, CocRecord
 from .forms import AdminUserChangeForm, UserCreationForm
 
 
@@ -60,3 +60,10 @@ class UserAdmin(UserAdmin):
     search_fields = ('email',)
     ordering = ('email',)
     filter_horizontal = ('groups', 'user_permissions',)
+
+
+@admin.register(CocRecord)
+class CocRecordAdmin(admin.ModelAdmin):
+    list_display = ('user', 'coc_version', 'agreed_at', )
+    list_filter = ('coc_version', )
+    raw_id_fields = ('user', )
