@@ -1,0 +1,110 @@
+{% extends 'contents/_venue.html' %}
+
+{% block title %}Venue{% endblock title %}
+
+{% block map_info %}
+
+<h2>
+	<span>International conference room</span>
+	<span>National Cheng Kung University</span>
+</h2>
+<p>No. 1, Daxue Rd., East Dist., Tainan City 701, Taiwan</p>
+<div class="name-block">
+    <h2>
+      Goodideas Studio
+    </h2>
+    <div class="hint">
+      Tutorial Place
+    </div>
+</div>
+<p>Rm. L2A, No. 16, Sec. 2, Beimen Rd., East Dist., Tainan City 701, Taiwan</p>
+
+<script>
+    window.MARKERS = [
+        {name: 'International conference room,<br>National Cheng Kung University', coord: [22.997908, 120.215657]},
+        {name: 'Goodideas Studio', coord: [22.999672, 120.212878]},
+    ];
+</script>
+
+{% endblock map_info %}
+
+{% block content %}
+
+<h1>Venue</h1>
+
+{{ block.super }}
+
+<h2>Transportation</h2>
+
+<h3>From Taiwan Taoyuan International Airport (TPE)</h3>
+
+<h4>1. MRT: Airport Terminal Station (A12 or A13) to Taoyuan HSR Station (A18)</h4>
+
+<ul>
+  <li><a href="https://www.tymetro.com.tw/tymetro-new/en/_pages/travel-guide/timetable-search.php">Timetable</a></li>
+  <li>Fare: NT$ 25</li>
+</ul>
+
+<h4>2. Taiwan High Speed Rail: Taoyuan to Tainan</h4>
+
+<ul>
+  <li><a href="https://www.thsrc.com.tw/en/TimeTable/SearchResult">Timetable</a></li>
+  <li>Fare: NT$ 1,190</li>
+</ul>
+
+<h4>3. Train: Shalun Station (4272) to Tainan Sation (4220)</h4>
+
+<ul>
+  <li><a href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/gobytime">Timetable</a></li>
+  <li>Fare: NT$ 25</li>
+</ul>
+
+<h4>4. Tainan Sation to National Cheng Kung University</h4>
+
+<ul>
+  <li>Please exit by Rear Exit. And then Go along Daxue Road. When you see the school gate, please turn left. After entering the school gate, please turn left at the next intersection. And you can find an International conference room. It takes around 7 minutes to walk.</li>
+  <li><a href="https://goo.gl/maps/w8uJKDGVhEbwwpMCA">Google Maps</a></li>
+</ul>
+
+<h3>From Kaohsiung International Airport (KHH)</h3>
+
+<h4>1. MRT: Siaogang Station (R3) to Kaohsiung Main Station (R11)</h4>
+
+<ul>
+  <li><a href="https://www.krtc.com.tw/eng/Guide/timetable">Timetable</a></li>
+  <li>Fare: NT$ 30</li>
+</ul>
+
+<h4>2. Train: Kaohsiung Sation (4400) to Tainan Sation（4220）</h4>
+
+<ul>
+  <li><a href="https://tip.railway.gov.tw/tra-tip-web/tip/tip001/tip112/gobytime">Timetable</a></li>
+  <li>Fare: NT$ 68 ~ 106</li>
+</ul>
+
+<h4>3. Tainan Sation to National Cheng Kung University</h4>
+
+<ul>
+  <li>Please exit by Rear Exit. And then Go along Daxue Road. When you see the school gate, please turn left. After entering the school gate, please turn left at the next intersection. And you can find an International conference room. It takes around 7 minutes to walk.</li>
+  <li><a href="https://goo.gl/maps/w8uJKDGVhEbwwpMCA">Google Maps</a></li>
+</ul>
+
+<div class="tutorial-block">
+    <h1>Tutorial Place</h1>
+
+    <div class="location-block">
+        <h2>Goodideas Studio</h2>
+        <p>Rm. L2A, No. 16, Sec. 2, Beimen Rd., East Dist., Tainan City 701, Taiwan</p>
+    </div>
+
+    <h2>Transportation</h2>
+
+    <h3>From National Cheng Kung University</h3>
+
+    <ul>
+    <li>Please exit by school gat. And then go along Daxue Road to Tainan Station. Exit the station by Front Exit. After exiting Front Exit, turn right and go along Beimen Road. And you can find Goodideas Studio. It takes around 12 minutes to walk.</li>
+    <li><a href="https://goo.gl/maps/LmAT9mauPiqVtEag6">Google Maps</a></li>
+    </ul>
+</div>
+
+{% endblock content %}

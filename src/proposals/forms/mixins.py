@@ -137,7 +137,7 @@ class TutorialProposalMixin:
         }
         help_texts = {
             'duration': _(
-                "<p>Tutorial is only open for 1.5 hours this year.</p>"
+                "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
             ),
             'abstract': _(
                 "<p><a href='#' data-toggle='modal' "
