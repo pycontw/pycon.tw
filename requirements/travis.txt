@@ -1,8 +1,5 @@
 -r dev.txt
-# Quick fix for CI.
-# If python-firebase ever fix their dependency problem
-# then we'll need to uncomment pycrypto after that
-# pycrypto
+pycrypto
 codecov
 fabric3
 psycopg2-binary
