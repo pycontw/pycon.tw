@@ -44,7 +44,8 @@ class TutorialProposalMixin:
 class ProposalUpdateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         ProposalEditMixin, ProposalExamplesMixin,
-        FormValidMessageMixin, CocAgreementMixin, UpdateView):
+        CocAgreementMixin,
+        FormValidMessageMixin, UpdateView):
 
     success_url = reverse_lazy('user_dashboard')
 

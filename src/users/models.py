@@ -296,6 +296,10 @@ class User(AbstractBaseUser, PermissionsMixin):
             message=message, fail_silently=False,
         )
 
+    @property
+    def has_agreed_coc(self):
+        return CocRecord.objects.filter(user=self, coc_version=settings.COC_VERSION).count() == 1
+
 
 class CocRecord(models.Model):
     user = BigForeignKey(
