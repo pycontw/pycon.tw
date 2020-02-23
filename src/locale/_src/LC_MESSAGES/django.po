@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 01:52+0800\n"
+"POT-Creation-Date: 2020-02-23 17:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,11 +192,13 @@ msgstr ""
 msgid "detailed description"
 msgstr ""
 
-#: core/models.py:144 reviews/models.py:117 reviews/models.py:132
+#: core/models.py:144 core/models.py:154 reviews/models.py:117
+#: reviews/models.py:132
 msgid "Yes"
 msgstr ""
 
-#: core/models.py:145 reviews/models.py:118 reviews/models.py:133
+#: core/models.py:145 core/models.py:155 reviews/models.py:118
+#: reviews/models.py:133
 msgid "No"
 msgstr ""
 
@@ -204,19 +206,23 @@ msgstr ""
 msgid "recording policy"
 msgstr ""
 
-#: core/models.py:154
+#: core/models.py:158
+msgid "referring policy"
+msgstr ""
+
+#: core/models.py:164
 msgid "slide link"
 msgstr ""
 
-#: core/models.py:160
+#: core/models.py:170
 msgid "slido embed link"
 msgstr ""
 
-#: core/models.py:166 events/models.py:327
+#: core/models.py:176 events/models.py:327
 msgid "created at"
 msgstr ""
 
-#: core/models.py:172
+#: core/models.py:182
 msgid "last updated at"
 msgstr ""
 
@@ -413,7 +419,7 @@ msgid ""
 "{model_name}."
 msgstr ""
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:143
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:148
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -422,7 +428,7 @@ msgid ""
 "and the handbook. Should be one paragraph.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:152
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:157
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -433,7 +439,7 @@ msgid ""
 "too-easy for the target audience."
 msgstr ""
 
-#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:165
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:170
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -445,7 +451,7 @@ msgid ""
 "basics' target='_blank' rel='noopener'>Markdown</a>."
 msgstr ""
 
-#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:179
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:184
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -454,13 +460,19 @@ msgid ""
 "page."
 msgstr ""
 
-#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:189
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:194
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr ""
 
 #: proposals/forms/mixins.py:94
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to refer your talk "
+"proposal to local communities if your proposal did not get accepted."
+msgstr ""
+
+#: proposals/forms/mixins.py:99
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
@@ -470,7 +482,7 @@ msgid ""
 "made public and for REVIEW ONLY.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:104 proposals/forms/mixins.py:200
+#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:205
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -479,7 +491,7 @@ msgid ""
 "rel='noopener'>Markdown</a>."
 msgstr ""
 
-#: proposals/forms/mixins.py:112
+#: proposals/forms/mixins.py:117
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
@@ -490,11 +502,11 @@ msgid ""
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:140
+#: proposals/forms/mixins.py:145
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:193
+#: proposals/forms/mixins.py:198
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -502,7 +514,7 @@ msgid ""
 "This is NOT made public and for REVIEW ONLY."
 msgstr ""
 
-#: proposals/forms/mixins.py:208
+#: proposals/forms/mixins.py:213
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
