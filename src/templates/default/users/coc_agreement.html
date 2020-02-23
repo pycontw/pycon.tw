@@ -10,26 +10,21 @@
 
 {% block main-content %}
 
-{% if user.is_valid_speaker %}
-
 <h3 class="dashboard-header">
     <span class="header__title">{% trans 'code of conduct' %}</span>
 </h3>
 
 
-<form action="" method="post">
+<form action="" method="post" class="agreement-form">
     {% csrf_token %}
-	<p>在您繼續之前，請先同意下列行為準則。</p>
+    <p>{% blocktrans %}Before we move on, please agree to the code of conudct first.{% endblocktrans %}</p>
     <blockquote>
     {{ coc|safe }}
     </blockquote>
 	{{ form|crispy }}
     <button type="submit" class="btn btn-primary">
-    {% trans 'Save and continue' %}
+    {% trans 'Confirm and continue' %}
     </button>
 </form>
-
-
-{% endif %}
 
 {% endblock main-content %}
