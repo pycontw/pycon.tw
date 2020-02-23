@@ -1,0 +1,33 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n %}
+
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
+
+
+{% block main-content %}
+
+{% if user.is_valid_speaker %}
+
+  {% url 'talk_proposal_create' as talk_proposal_create_url %}
+  {% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
+
+  <div class="talk-proposals proposals">
+    <h3 class="dashboard-header">
+        <!-- TODO: should redirect to the right create proposal page -->
+        <!-- TODO: display the content of CoC in right language -->
+        <span class="header__title">{% trans 'code of conduct' %}</span>
+        <p> coc content: whatever blah blah blah omg whatever blah blah blah omg whatever blah blah blah omg whatever blah blah blah omg whatever blah blah blah omg whatever blah blah blah omg whatever blah blah blah omg </p>
+        <a href="{% url 'talk_proposal_create' %}" class="btn btn-primary hidden-xs" role="button">
+          <i class="fa fa-plus"></i>&nbsp;Agree</a>
+        <a href="{{ talk_proposal_create_url }}" class="btn btn-primary visible-xs-inline" role="button">
+          <i class="fa fa-plus"></i></a>
+    </h3>
+	</div>
+
+{% endif %}
+
+{% endblock main-content %}

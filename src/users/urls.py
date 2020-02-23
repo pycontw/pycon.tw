@@ -41,4 +41,7 @@ urlpatterns = [
     url(r'^password-reset/complete/$',
         views.password_reset_complete, name='password_reset_complete'),
 
+    url(r'^coc_agreement/$',
+        views.coc_agree, name='coc_agreement'),
+
 ]
