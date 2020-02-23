@@ -30,8 +30,7 @@ class ProposalEditMixin:
 
 class CocAgreementMixin:
     def dispatch(self, request, *args, **kwargs):
-        agreed = CocRecord.objects.filter(user=self.request.user, coc_version=settings.COC_VERSION).count() == 1
-        if not agreed:
+        if not self.request.user.has_agreed_coc:
             return redirect('%s?next=%s' % (reverse('coc_agreement'), request.path))
 
         return super().dispatch(request, *args, **kwargs)
