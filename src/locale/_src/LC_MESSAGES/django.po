@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 23:57+0800\n"
+"POT-Creation-Date: 2020-02-24 00:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -491,7 +491,7 @@ msgid ""
 msgstr ""
 
 #: proposals/forms/mixins.py:140
-msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr ""
 
 #: proposals/forms/mixins.py:193

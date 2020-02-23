@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 23:57+0800\n"
-"PO-Revision-Date: 2020-02-23 16:01+0000\n"
+"POT-Creation-Date: 2020-02-24 00:11+0800\n"
+"PO-Revision-Date: 2020-02-23 16:11+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -507,7 +507,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>觀看範例</a>。</p><p>本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 30 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
 #: proposals/forms/mixins.py:140
-msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr ""
 
 #: proposals/forms/mixins.py:193

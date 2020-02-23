@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 23:57+0800\n"
-"PO-Revision-Date: 2020-02-23 15:58+0000\n"
+"POT-Creation-Date: 2020-02-24 00:11+0800\n"
+"PO-Revision-Date: 2020-02-23 16:11+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -499,7 +499,7 @@ msgid ""
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be arranged. It is highly recommended to attach the estimated time length for each sections in the talk. Talks in favor of 45min should have a fallback plan about how to shrink the content into a 30min one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
 
 #: proposals/forms/mixins.py:140
-msgid "<p>Tutorial is only open for 1.5 hours this year.</p>"
+msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr ""
 
 #: proposals/forms/mixins.py:193
