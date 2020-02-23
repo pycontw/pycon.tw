@@ -21,8 +21,8 @@ class ProposalCreateView(
         if not settings.PROPOSALS_CREATABLE:
             raise Http404
 
-        coc_version = CocRecord.objects.get(user=self.request.user).coc_version
-        if coc_version != settings.COC_VERSION:
+        agreed = CocRecord.objects.filter(user=self.request.user, coc_version=settings.COC_VERSION).count() == 1
+        if not agreed:
             return redirect('coc_agreement')
 
         return super().dispatch(request, *args, **kwargs)
