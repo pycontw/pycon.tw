@@ -5,17 +5,21 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
-from django.utils.translation import gettext
+from django.utils.translation import gettext, get_language
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
+from django.template.loader import get_template, render_to_string
 
 from .decorators import login_forbidden
 from .forms import (
     AuthenticationForm, PublicUserCreationForm, UserProfileUpdateForm,
-    PasswordResetForm, SetPasswordForm,
+    PasswordResetForm, SetPasswordForm, CocAgreementForm,
 )
 from .models import CocRecord
+
+from lxml import etree
+import lxml.html
 
 
 User = get_user_model()
@@ -128,12 +132,34 @@ def password_reset_confirm(request, uidb64, token):
         set_password_form=SetPasswordForm
     )
 
+
 @login_required
 def coc_agree(request):
-    user = request.user
+    if request.method == 'POST':
+        form = CocAgreementForm(data=request.POST)
+        if form.is_valid():
+            try:
+                agreement = CocRecord.objects.get(user=request.user, coc_version=settings.COC_VERSION)
+            except CocRecord.DoesNotExist:
+                agreement = CocRecord(user=request.user, coc_version=settings.COC_VERSION)
 
-    # TODO: Should do some checking (e.g. whether the user really press the button)
-    new_coc_agreement = CocRecord(user=user, coc_version=settings.COC_VERSION)
-    new_coc_agreement.save()
+            agreement.save()
+            return redirect(request.GET.get('next'))
+    else:
+        form = CocAgreementForm()
 
-    return render(request, 'users/coc_agreement.html')
+    # Get code of conduct
+    lang = get_language()
+    content = render_to_string('contents/%s/about/code-of-conduct.html' % lang[:2], {}, request)
+    tree = lxml.html.document_fromstring(content)
+    main = tree.xpath('//main')[0]
+
+    # Remove the title
+    for h1 in main.xpath('//h1'):
+        main.remove(h1)
+    coc = etree.tostring(main, encoding='utf-8').decode('utf-8')
+
+    return render(request, 'users/coc_agreement.html', {
+        'form': form,
+        'coc': coc,
+    })

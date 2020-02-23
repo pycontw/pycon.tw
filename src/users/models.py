@@ -307,3 +307,9 @@ class CocRecord(models.Model):
         verbose_name=_('latest agreed CoC version'),
         max_length=15
     )
+    agreed_at = models.DateTimeField(
+        verbose_name=_('agreed at'),
+        auto_now_add=True,
+        blank=True,
+        null=True,
+    )

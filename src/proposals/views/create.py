@@ -4,26 +4,20 @@ from django.http import Http404
 from django.utils.html import format_html
 from django.utils.translation import gettext
 from django.views.generic import CreateView
-from django.shortcuts import redirect
 
 from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
-from users.models import CocRecord
 
-from .mixins import UserProfileRequiredMixin
+from .mixins import UserProfileRequiredMixin, CocAgreementMixin
 
 
 class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, CreateView):
+        FormValidMessageMixin, CocAgreementMixin, CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if not settings.PROPOSALS_CREATABLE:
             raise Http404
-
-        agreed = CocRecord.objects.filter(user=self.request.user, coc_version=settings.COC_VERSION).count() == 1
-        if not agreed:
-            return redirect('coc_agreement')
 
         return super().dispatch(request, *args, **kwargs)
 
