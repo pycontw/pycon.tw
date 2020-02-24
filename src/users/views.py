@@ -1,5 +1,7 @@
 from django.contrib import messages
-from django.contrib.auth import get_user_model, login
+from django.contrib import auth
+# from django.contrib.auth import get_user_model, login
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import Http404
@@ -16,7 +18,7 @@ from .forms import (
 )
 
 
-User = get_user_model()
+User = auth.get_user_model()
 
 
 @sensitive_post_parameters()
@@ -29,7 +31,7 @@ def user_signup(request):
             user = form.save()
             user.send_verification_email(request)
 
-            login(request, user)
+            auth.login(request, user)
             messages.success(request, gettext(
                 'Sign up successful. You are now logged in.'
             ))
@@ -120,8 +122,12 @@ def password_reset_complete(request):
     return redirect('login')
 
 
-def password_reset_confirm(request, uidb64, token):
-    return base_password_reset_confirm(
-        request, uidb64=uidb64, token=token,
-        set_password_form=SetPasswordForm
-    )
+login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
+logout = auth_views.LogoutView.as_view()
+password_change = auth_views.PasswordChangeView.as_view()
+password_reset = auth_views.PasswordResetView.as_view(form_class=PasswordResetForm,
+        template_name='registration/password_reset.html',
+        email_template_name='registration/password_reset_email.txt')
+password_reset_confirm = auth_views.PasswordResetConfirmView.as_view(
+        form_class=SetPasswordForm
+)
