@@ -1,4 +1,4 @@
-from django.core.urlresolvers import get_script_prefix
+from django.urls import get_script_prefix
 from django.template import Library
 
 

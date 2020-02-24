@@ -4,7 +4,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.templatetags.static import static
 from django.utils import translation
-from django.utils.text import force_text
+from django.utils.encoding import force_str
 from django.utils.translation import pgettext_lazy
 from django.views.generic import View, TemplateView
 
@@ -21,7 +21,7 @@ from proposals.models import PrimarySpeaker
 def _get_lazy_display(instance, attr):
     """Django's ``get_XXX_display()`` resolve lazy strings, we don't want that.
 
-    This duplicates the actual implementation (except calling ``force_text()``)
+    This duplicates the actual implementation (except calling ``force_str()``)
     so we can get the underlying lazy object for translation later.
 
     github.com/django/django/blob/8dd5877f58f84f2/django/db/models/base.py#L929
@@ -37,7 +37,7 @@ def _iter_translations(value):
             if isinstance(value, dict):
                 tran = value[code]
             else:
-                tran = force_text(value)
+                tran = force_str(value)
         yield code, tran
 
 

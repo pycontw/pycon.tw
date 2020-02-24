@@ -4,7 +4,7 @@ import random
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Count
 from django.http import Http404
 from django.views.generic import ListView, UpdateView
