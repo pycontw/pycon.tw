@@ -1,19 +1,19 @@
 -r base.txt
 # Psycopg is the most popular PostgreSQL database adapter for the Python
 # programming language.
-# http://pythonhosted.org/psycopg2/
-psycopg2==2.7.3.2
+# https://www.psycopg.org/
+psycopg2==2.8.4
 
 # uWSGI aims at developing a full stack for building hosting services
 # https://uwsgi-docs.readthedocs.io/
-uWSGI==2.0.17.1
+uWSGI==2.0.18
 
 # django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.
 # http://niwinz.github.io/django-redis/latest/
 django-redis==4.8.0
 
 # huey, a little task queue
-# http://huey.readthedocs.org/en/latest/index.html
+# https://huey.readthedocs.io/en/latest/index.html
 huey==0.4.9
 
 # Redis client for Python

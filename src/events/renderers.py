@@ -6,7 +6,7 @@ from django.conf import settings
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
 from django.utils.timezone import make_naive
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 
 from core.utils import html_join
 from proposals.utils import format_names
@@ -31,7 +31,7 @@ def render_keynoteevent(e):
         '<div class="slot-item__title">{title}</div>'
         '<a href="{link}" class="talk__speaker">{speaker}</a>'
         '</div>',
-        title=ugettext('Keynote'),
+        title=gettext('Keynote'),
         link=e.get_absolute_url(),
         speaker=e.speaker_name,
     )

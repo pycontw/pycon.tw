@@ -4,7 +4,7 @@ import operator
 
 from django.contrib import admin
 from django.utils.html import linebreaks
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext, gettext_lazy as _
 
 from import_export.admin import ImportExportMixin
 

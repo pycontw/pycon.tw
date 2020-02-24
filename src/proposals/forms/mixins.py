@@ -1,6 +1,6 @@
 from django import forms
-from django.core.urlresolvers import reverse_lazy
-from django.utils.translation import ugettext_lazy as _
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 from core.forms import RequestUserValidationMixin
 from core.utils import format_html_lazy
@@ -22,7 +22,7 @@ class RequestUserSpeakerValidationMixin(RequestUserValidationMixin):
         """
         self.cleaned_data = super().clean()
         user = self._request.user
-        if user.is_anonymous() or not user.is_valid_speaker():
+        if user.is_anonymous or not user.is_valid_speaker():
             raise forms.ValidationError(self.get_error_message('bad_speaker'))
         return self.cleaned_data
 

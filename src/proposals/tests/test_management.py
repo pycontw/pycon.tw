@@ -207,14 +207,19 @@ def test_command_improper_slack_url():
 )
 def test_command_with_slack():
     from proposals.management.commands.slack import Slack
-    Slack.notify = unittest.mock.MagicMock(
-        return_value=(200, b'ok')
-    )
-    call_command(
-        'recent_proposals',
-        slack=True,
-    )
-    assert Slack.notify.call_count == 1
+
+    with unittest.mock.patch.object(
+            Slack, 'notify',
+            unittest.mock.MagicMock(
+                return_value=(200, b'ok')
+            )
+    ):
+
+        call_command(
+            'recent_proposals',
+            slack=True,
+        )
+        assert Slack.notify.call_count == 1
 
 
 # Testing edge cases

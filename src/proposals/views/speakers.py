@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import Http404
 from django.views.generic import CreateView, UpdateView
 

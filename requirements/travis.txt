@@ -2,4 +2,4 @@
 pycrypto
 codecov
 fabric3
-psycopg2
+psycopg2-binary

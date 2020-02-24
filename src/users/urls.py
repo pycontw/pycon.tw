@@ -6,11 +6,11 @@ from . import views
 
 urlpatterns = [
 
-    url(r'^login/$', views.login_view, name='login'),
-    url(r'^logout/$', auth.logout, name='logout'),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^logout/$', views.logout, name='logout'),
     url(r'^profile/$', views.user_profile_update, name='user_profile_update'),
 
-    url(r'^password-change/$', auth.password_change, name='password_change'),
+    url(r'^password-change/$', views.password_change, name='password_change'),
     url(r'^password-change/done/$',
         views.password_change_done, name='password_change_done'),
 
@@ -21,8 +21,7 @@ urlpatterns = [
     url(r'^verification-request/$',
         views.request_verification, name='request_verification'),
 
-    url(r'^password-reset/$',
-        views.password_reset, name='password_reset'),
+    url(r'^password-reset/$', views.password_reset, name='password_reset'),
     url(r'^password-reset/done/$',
         views.password_reset_done, name='password_reset_done'),
     url(r'^password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/'
