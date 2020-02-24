@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-23 17:36+0800\n"
-"PO-Revision-Date: 2020-02-23 09:41+0000\n"
+"PO-Revision-Date: 2020-02-24 16:39+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -485,7 +485,7 @@ msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to refer your talk "
 "proposal to local communities if your proposal did not get accepted."
-msgstr "若提案沒有入選，是否有意願將此提案轉介至地方社群。"
+msgstr "若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至 Python 地方社群。"
 
 #: proposals/forms/mixins.py:99
 msgid ""
