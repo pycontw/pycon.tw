@@ -1,6 +1,6 @@
 from django import forms
 from django.forms.utils import flatatt
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.html import format_html
 
 from .utils import split_css_class
@@ -29,8 +29,8 @@ class SimpleMDEWidget(forms.Textarea):
         }
         js = ['js/vendors/simplemde.min.js', 'js/tools/simplemde-setup.js']
 
-    def render(self, name, value, attrs=None):
-        attrs = self.build_attrs(attrs, name=name)
+    def render(self, name, value, attrs=None, renderer=None):
+        attrs = self.build_attrs(attrs, {'name': name})
         if attrs.get('disabled', False):
             return format_html(
                 '<div class="editor-readonly">'
@@ -42,5 +42,5 @@ class SimpleMDEWidget(forms.Textarea):
             attrs['data-simplemde'] = True
             return format_html(
                 '<textarea{attrs}>\r\n{content}</textarea>',
-                attrs=flatatt(attrs), content=force_text(value),
+                attrs=flatatt(attrs), content=force_str(value),
             )

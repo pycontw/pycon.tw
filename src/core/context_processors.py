@@ -2,7 +2,7 @@ import itertools
 import operator
 
 from django.conf import settings
-from django.core.urlresolvers import get_script_prefix
+from django.urls import get_script_prefix
 from django.utils.translation import get_language
 
 from sponsors.models import Sponsor

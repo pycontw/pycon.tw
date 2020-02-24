@@ -1,7 +1,7 @@
 import re
 
 from django.conf import settings
-from django.core.urlresolvers import get_script_prefix
+from django.urls import get_script_prefix
 from django.http import HttpResponseRedirect
 
 

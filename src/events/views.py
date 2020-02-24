@@ -4,11 +4,11 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import translation
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DetailView, ListView, TemplateView
 
 from core.mixins import FormValidMessageMixin
