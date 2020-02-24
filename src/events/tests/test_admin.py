@@ -24,7 +24,7 @@ def choices_factory():
         # However, a check of request.user is performed in ChangeList()
         # which will cause error.
         # So we inject AnonymousUser here
-        # https://stackoverflow.com/questions/54183451/django-unit-testing-attributeerror-wsgirequest-object-has-no-attribute-user
+        # https://stackoverflow.com/questions/54183451
         # https://docs.djangoproject.com/en/3.0/topics/testing/advanced/#the-request-factory
         changelist = ChangeList(
             request, model_class, modeladmin.list_display,

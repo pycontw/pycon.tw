@@ -208,20 +208,18 @@ def test_command_improper_slack_url():
 def test_command_with_slack():
     from proposals.management.commands.slack import Slack
 
-    # yychen 2020-02-02: I don't think this is a good idea
-    # but change Slack.notify directly poisons test_slack_connect() which
-    # relies on notify()
-    # so we restore it back at the end
-    _restore = Slack.notify
-    Slack.notify = unittest.mock.MagicMock(
-        return_value=(200, b'ok')
-    )
-    call_command(
-        'recent_proposals',
-        slack=True,
-    )
-    assert Slack.notify.call_count == 1
-    Slack.notify = _restore
+    with unittest.mock.patch.object(
+            Slack, 'notify',
+            unittest.mock.MagicMock(
+                return_value=(200, b'ok')
+            )
+    ):
+
+        call_command(
+            'recent_proposals',
+            slack=True,
+        )
+        assert Slack.notify.call_count == 1
 
 
 # Testing edge cases
