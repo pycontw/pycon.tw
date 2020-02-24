@@ -4,7 +4,7 @@ import operator
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import ugettext, gettext_lazy as _
 
 from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
@@ -61,6 +61,7 @@ class Review(models.Model):
     reviewer = BigForeignKey(
         to=settings.AUTH_USER_MODEL,
         verbose_name=_('reviewer'),
+        on_delete=models.CASCADE,
     )
 
     stage = models.IntegerField(
@@ -70,6 +71,7 @@ class Review(models.Model):
     proposal = models.ForeignKey(
         to=TalkProposal,
         verbose_name=_('proposal'),
+        on_delete=models.CASCADE,
     )
 
     objects = ReviewManager()
@@ -190,6 +192,7 @@ class TalkProposalSnapshot(models.Model):
     proposal = BigForeignKey(
         to=TalkProposal,
         verbose_name=_('proposal'),
+        on_delete=models.CASCADE,
     )
 
     stage = models.IntegerField(

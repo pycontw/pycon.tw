@@ -123,7 +123,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='proposal',
             name='submitter',
-            field=models.ForeignKey(verbose_name='submitter', to=settings.AUTH_USER_MODEL, default=1),
+            field=models.ForeignKey(verbose_name='submitter', on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL, default=1),
             preserve_default=False,
         ),
     ]

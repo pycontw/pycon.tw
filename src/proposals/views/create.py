@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 from django.utils.html import format_html
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 from django.views.generic import CreateView
 
 from core.mixins import FormValidMessageMixin
@@ -35,7 +35,7 @@ class TalkProposalCreateView(ProposalCreateView):
     template_name = 'proposals/talk_proposal_create.html'
 
     def get_form_valid_message(self):
-        msg = ugettext('Talk proposal <strong>{title}</strong> created.')
+        msg = gettext('Talk proposal <strong>{title}</strong> created.')
         return format_html(msg, title=self.object.title)
 
 
@@ -45,5 +45,5 @@ class TutorialProposalCreateView(ProposalCreateView):
     template_name = 'proposals/tutorial_proposal_create.html'
 
     def get_form_valid_message(self):
-        msg = ugettext('Tutorial proposal <strong>{title}</strong> created.')
+        msg = gettext('Tutorial proposal <strong>{title}</strong> created.')
         return format_html(msg, title=self.object.title)
