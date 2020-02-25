@@ -11,6 +11,7 @@ from reviews.models import Review
 
 from .mixins import (
     ProposalEditMixin, ProposalExamplesMixin, UserProfileRequiredMixin,
+    CocAgreementMixin,
 )
 
 
@@ -43,6 +44,7 @@ class TutorialProposalMixin:
 class ProposalUpdateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
         ProposalEditMixin, ProposalExamplesMixin,
+        CocAgreementMixin,
         FormValidMessageMixin, UpdateView):
 
     success_url = reverse_lazy('user_dashboard')

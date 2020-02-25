@@ -1,0 +1,30 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
+
+
+{% block main-content %}
+
+<h3 class="dashboard-header">
+    <span class="header__title">{% trans 'code of conduct' %}</span>
+</h3>
+
+
+<form action="" method="post" class="agreement-form">
+    {% csrf_token %}
+    <p>{% blocktrans %}Before we move on, please agree to the code of conudct first.{% endblocktrans %}</p>
+    <blockquote>
+    {{ coc|safe }}
+    </blockquote>
+	{{ form|crispy }}
+    <button type="submit" class="btn btn-primary">
+    {% trans 'Confirm and continue' %}
+    </button>
+</form>
+
+{% endblock main-content %}

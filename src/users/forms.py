@@ -13,7 +13,7 @@ from django.utils.translation import gettext_lazy as _
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
-from crispy_forms.bootstrap import FormActions
+from crispy_forms.bootstrap import FormActions, InlineCheckboxes
 
 
 User = get_user_model()
@@ -324,3 +324,12 @@ class SetPasswordForm(BaseSetPasswordForm):
             ))
         )
         return helper
+
+
+class CocAgreementForm(forms.Form):
+    agree = forms.BooleanField(label=_('I agree to the code of conduct.'), required=False, widget=forms.CheckboxInput)
+
+    def clean_agree(self):
+        agree = self.cleaned_data["agree"]
+        if not agree:
+            raise forms.ValidationError(_('You must agree to continue.'))

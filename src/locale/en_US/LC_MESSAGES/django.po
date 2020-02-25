@@ -7,13 +7,14 @@
 # Jason <chairco@gmail.com>, 2017
 # james_lin <james0910238727@gmail.com>, 2018
 # Michelle <flywindy2002@gmail.com>, 2016
+# Tom Chen <ctchen@gmail.com>, 2020
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-23 17:36+0800\n"
-"PO-Revision-Date: 2020-02-24 16:34+0000\n"
+"POT-Creation-Date: 2020-02-25 14:32+0800\n"
+"PO-Revision-Date: 2020-02-25 06:43+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-taiwan/pycon-tw/language/en_US/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +62,7 @@ msgstr "{model_name_cap} creation requires a request object."
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:79 events/models.py:160
+#: core/models.py:79 events/models.py:162
 msgid "title"
 msgstr "title"
 
@@ -198,13 +199,13 @@ msgstr "Python level"
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:144 core/models.py:154 reviews/models.py:117
-#: reviews/models.py:132
+#: core/models.py:144 core/models.py:154 reviews/models.py:119
+#: reviews/models.py:134
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:145 core/models.py:155 reviews/models.py:118
-#: reviews/models.py:133
+#: core/models.py:145 core/models.py:155 reviews/models.py:120
+#: reviews/models.py:135
 msgid "No"
 msgstr "No"
 
@@ -214,7 +215,7 @@ msgstr "recording policy"
 
 #: core/models.py:158
 msgid "referring policy"
-msgstr ""
+msgstr "referring policy"
 
 #: core/models.py:164
 msgid "slide link"
@@ -224,7 +225,7 @@ msgstr "slide link"
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:176 events/models.py:327
+#: core/models.py:176 events/models.py:332
 msgid "created at"
 msgstr "created at"
 
@@ -240,7 +241,7 @@ msgstr "time value"
 msgid "begin time"
 msgstr "begin time"
 
-#: events/admin.py:98 events/models.py:150
+#: events/admin.py:98 events/models.py:151
 msgid "end time"
 msgstr "end time"
 
@@ -293,95 +294,95 @@ msgstr "R4"
 msgid "location"
 msgstr "location"
 
-#: events/models.py:164
+#: events/models.py:166
 msgid "is break event"
 msgstr "is break event"
 
-#: events/models.py:167
+#: events/models.py:169
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
 "etc."
 msgstr "Whether this event is displays as a break. A break can be visually distinguished from “real” conference sessions, such as keynotes, talks, etc."
 
-#: events/models.py:174
+#: events/models.py:176
 msgid "custom event"
 msgstr "custom event"
 
-#: events/models.py:175
+#: events/models.py:177
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:184 users/models.py:116
+#: events/models.py:186 users/models.py:116
 msgid "speaker name"
 msgstr "speaker name"
 
-#: events/models.py:188 events/models.py:245
+#: events/models.py:190 events/models.py:248
 msgid "slug"
 msgstr "slug"
 
-#: events/models.py:190
+#: events/models.py:192
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g."
 " 'liang2' will link to '{link}#keynote-speaker-liang2'."
 msgstr "This is used to link to the speaker's introduction on the Keynote page, e.g. 'liang2' will link to '{link}#keynote-speaker-liang2'."
 
-#: events/models.py:198
+#: events/models.py:200
 msgid "keynote event"
 msgstr "keynote event"
 
-#: events/models.py:199
+#: events/models.py:201
 msgid "keynote events"
 msgstr "keynote events"
 
-#: events/models.py:202
+#: events/models.py:204
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:241
+#: events/models.py:243
 msgid "host"
 msgstr "host"
 
-#: events/models.py:249
+#: events/models.py:252
 msgid "sponsored event"
 msgstr "sponsored event"
 
-#: events/models.py:250
+#: events/models.py:253
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:278 events/models.py:298 reviews/models.py:72
-#: reviews/models.py:192
+#: events/models.py:281 events/models.py:302 reviews/models.py:73
+#: reviews/models.py:194
 msgid "proposal"
 msgstr "proposal"
 
-#: events/models.py:284
+#: events/models.py:288
 msgid "talk event"
 msgstr "talk event"
 
-#: events/models.py:285
+#: events/models.py:289
 msgid "talk events"
 msgstr "talk events"
 
-#: events/models.py:301
+#: events/models.py:306
 msgid "registration link"
 msgstr "registration link"
 
-#: events/models.py:309
+#: events/models.py:314
 msgid "tutorial event"
 msgstr "tutorial event"
 
-#: events/models.py:310
+#: events/models.py:315
 msgid "tutorial events"
 msgstr "tutorial events"
 
-#: events/models.py:324
+#: events/models.py:329
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:332 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:337 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -398,11 +399,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: events/models.py:333
+#: events/models.py:338
 msgid "Schedules"
 msgstr "Schedules"
 
-#: events/models.py:338
+#: events/models.py:343
 msgid "Schedule created at {}"
 msgstr "Schedule created at {}"
 
@@ -477,7 +478,7 @@ msgstr "You can add your slide link near or after the conference day. Not requir
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to refer your talk "
 "proposal to local communities if your proposal did not get accepted."
-msgstr ""
+msgstr "Whether you agree to give permission to PyCon Taiwan to refer your talk proposal to local communities if your proposal did not get accepted."
 
 #: proposals/forms/mixins.py:99
 msgid ""
@@ -512,7 +513,7 @@ msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleMod
 
 #: proposals/forms/mixins.py:145
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
-msgstr ""
+msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 
 #: proposals/forms/mixins.py:198
 msgid ""
@@ -532,7 +533,7 @@ msgid ""
 msgstr "How the tutorial will be arranged. You should enumerate over each section in your talk and attach each section with the estimated time length. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:80
-#: proposals/models.py:252 proposals/models.py:296
+#: proposals/models.py:255 proposals/models.py:299
 msgid "duration"
 msgstr "duration"
 
@@ -573,83 +574,83 @@ msgstr "No valid speaker found with your selection."
 msgid "Proposal author"
 msgstr "Proposal author"
 
-#: proposals/models.py:61 users/models.py:196
+#: proposals/models.py:61 users/models.py:196 users/models.py:307
 msgid "user"
 msgstr "user"
 
-#: proposals/models.py:66
+#: proposals/models.py:67
 msgid "proposal model type"
 msgstr "proposal model type"
 
-#: proposals/models.py:69
+#: proposals/models.py:71
 msgid "proposal ID"
 msgstr "proposal ID"
 
-#: proposals/models.py:77
+#: proposals/models.py:79
 msgid "Pending"
 msgstr "Pending"
 
-#: proposals/models.py:78 proposals/models.py:156
+#: proposals/models.py:80 proposals/models.py:159
 msgid "Accepted"
 msgstr "Accepted"
 
-#: proposals/models.py:79
+#: proposals/models.py:81
 msgid "Declined"
 msgstr "Declined"
 
-#: proposals/models.py:88 proposals/models.py:149
+#: proposals/models.py:90 proposals/models.py:152
 msgid "cancelled"
 msgstr "cancelled"
 
-#: proposals/models.py:96
+#: proposals/models.py:98
 msgid "additional speaker"
 msgstr "additional speaker"
 
-#: proposals/models.py:97
+#: proposals/models.py:99
 msgid "additional speakers"
 msgstr "additional speakers"
 
-#: proposals/models.py:129
+#: proposals/models.py:131
 msgid "submitter"
 msgstr "submitter"
 
-#: proposals/models.py:133
+#: proposals/models.py:136
 msgid "outline"
 msgstr "outline"
 
-#: proposals/models.py:138
+#: proposals/models.py:141
 msgid "objective"
 msgstr "objective"
 
-#: proposals/models.py:143
+#: proposals/models.py:146
 msgid "supplementary"
 msgstr "supplementary"
 
-#: proposals/models.py:157
+#: proposals/models.py:160
 msgid "Rejected"
 msgstr "Rejected"
 
-#: proposals/models.py:160
+#: proposals/models.py:163
 msgid "accepted"
 msgstr "accepted"
 
-#: proposals/models.py:257
+#: proposals/models.py:260
 msgid "talk proposal"
 msgstr "talk proposal"
 
-#: proposals/models.py:258
+#: proposals/models.py:261
 msgid "talk proposals"
 msgstr "talk proposals"
 
-#: proposals/models.py:292
+#: proposals/models.py:295
 msgid "1.5hr"
-msgstr ""
+msgstr "1.5hr"
 
-#: proposals/models.py:303
+#: proposals/models.py:306
 msgid "tutorial proposal"
 msgstr "tutorial proposal"
 
-#: proposals/models.py:304
+#: proposals/models.py:307
 msgid "tutorial proposals"
 msgstr "tutorial proposals"
 
@@ -683,21 +684,21 @@ msgstr "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "Tutorial proposal <strong>{title}</strong> reactivated."
 
-#: proposals/views/create.py:38
+#: proposals/views/create.py:39
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
 msgstr "Talk proposal <strong>{title}</strong> created."
 
-#: proposals/views/create.py:48
+#: proposals/views/create.py:49
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "Tutorial proposal <strong>{title}</strong> created."
 
-#: proposals/views/mixins.py:30 proposals/views/mixins.py:86
+#: proposals/views/mixins.py:42 proposals/views/mixins.py:98
 msgid "Abstract Example"
 msgstr "Abstract Example"
 
-#: proposals/views/mixins.py:31
+#: proposals/views/mixins.py:43
 msgid ""
 "For modern human beings, the data in computers are essentially an external "
 "place for storing our memories. No matter they're photographs of your daily "
@@ -713,22 +714,22 @@ msgid ""
 "categorize problem."
 msgstr "For modern human beings, the data in computers are essentially an external place for storing our memories. No matter they’re photographs of your daily life, music, videos, or even some data produced for work, school, research, they're all being stored in computers. As the time goes by, the folders in computers fall into a state of chaos. Or in another scenario, you’ve managed to manipulate a series of files, but ended up with changing them one by one using File Explorer. Well, is there any better methodology? This talk is going to introduce how you can “programmatically” manipulate directories and files, using Python and its built-in module, pathlib. We'll look at examples from simple ones to complicated ones, and eventually combine looping and sorting techniques in Python, to conquer a complicated file re-categorize problem."
 
-#: proposals/views/mixins.py:49 proposals/views/mixins.py:102
+#: proposals/views/mixins.py:61 proposals/views/mixins.py:114
 msgid "Objective Example"
 msgstr "Objective Example"
 
-#: proposals/views/mixins.py:50
+#: proposals/views/mixins.py:62
 msgid ""
 "Targeted at Python beginners trying to solve some daily life problems with programming. When I started to learn programming, I didn't know where I could use it. It sounded weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
 "But I found that managing data inside a computer is a very practical starting point; its results are easy to see, but it stillallows you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 msgstr "Targeted at Python beginners trying to solve some daily life problems with programming. When I started to learn programming, I didn’t know where I could use it. It sounded weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n\nBut I found that managing data inside a computer is a very practical starting point; its results are easy to see, but it stillallows you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 
-#: proposals/views/mixins.py:64 proposals/views/mixins.py:116
+#: proposals/views/mixins.py:76 proposals/views/mixins.py:128
 msgid "Description Example"
 msgstr "Description Example"
 
-#: proposals/views/mixins.py:65
+#: proposals/views/mixins.py:77
 msgid ""
 "In the final example sharing, we'll try to move a series of images marked "
 "with date and file name, into \"YEAR/MONTH\" patterned directories that "
@@ -736,11 +737,11 @@ msgid ""
 "chronological order."
 msgstr "In the final example sharing, we’ll try to move a series of images marked with date and file name, into “YEAR/MONTH” patterned directories that already have data in it, and also rename each image according to the chronological order."
 
-#: proposals/views/mixins.py:71 proposals/views/mixins.py:126
+#: proposals/views/mixins.py:83 proposals/views/mixins.py:138
 msgid "Outline Example"
 msgstr "Outline Example"
 
-#: proposals/views/mixins.py:72
+#: proposals/views/mixins.py:84
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
@@ -753,7 +754,7 @@ msgid ""
 "4. Example sharing  [5 min]\n"
 msgstr "1. Common situations in data clean-up  [5 min]\n2. Introduction to pathlib's design  [10 min]\n  - Using Path objects\n  - Exploring directory structure: Path.iterdir(), .glob()\n  - Using Path for changing paths\n3. Integrate for-loop and sorting  [5 min]\n  - sorted(key=) usage\n  - Integrate enumerated, zip to simultaneously process multiple related files\n4. Example sharing  [5 min]\n"
 
-#: proposals/views/mixins.py:87
+#: proposals/views/mixins.py:99
 msgid ""
 "Nowadays, photographs always contain the information about the state where "
 "the photo was taken, they're called EXIF. Sometimes when building a blog "
@@ -767,14 +768,14 @@ msgid ""
 "automatically processes all the photographs in the article."
 msgstr "Nowadays, photographs always contain the information about the state where the photo was taken, they’re called EXIF. Sometimes when building a blog about travel notes or nature photography, you'll have to put information of some EXIF fields under the pictures of the article, such as camera model, focal, aperture, shutter, GPS, etc. Sometimes even show information as a watermark on the image. In this talk, we’re going to build a workflow on automated EXIF processing. First introduce the usage of exiftool, and integrate Pillow to reach the effect of watermark. Finally, we'll take a blog framework, Pelican, as an example, to build a Pelican plugin that automatically processes all the photographs in the article."
 
-#: proposals/views/mixins.py:103
+#: proposals/views/mixins.py:115
 msgid ""
 "Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.\n"
 "\n"
 "While I was writing blog posts, I found out that manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins."
 msgstr "Targeted at people who’d like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.\n\nWhile I was writing blog posts, I found out that manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins."
 
-#: proposals/views/mixins.py:117
+#: proposals/views/mixins.py:129
 msgid ""
 "### Third-party libraries used:\n"
 "  - [exiftool] A Perl tool for analyzing EXIF of images\n"
@@ -786,7 +787,7 @@ msgid ""
 "[Pelican]: http://blog.getpelican.com/\n"
 msgstr "### Third-party libraries used:\n\n  - [exiftool] A Perl tool for analyzing EXIF of images\n  - [Pillow] A Python tool for image processing, formerly known as PIL (Python Image Library)\n  - [Pelican] A static site generator in Python\n\n[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n[Pillow]: http://python-pillow.github.io/\n[Pelican]: http://blog.getpelican.com/\n"
 
-#: proposals/views/mixins.py:127
+#: proposals/views/mixins.py:139
 msgid ""
 "1. Intro to EXIF and exiftool [5min]\n"
 "2. Usage of Pillow, use it to add watermark [5min]\n"
@@ -801,56 +802,56 @@ msgid ""
 "5. Q&A [5min]\n"
 msgstr "1. Intro to EXIF and exiftool [5min]\n2. Usage of Pillow, use it to add watermark [5min]\n  - Selection of fonts\n  - Consistency of layout\n3. Automation [5min]\n  - Using stdlib to make a batch processing workflow\n  - Integrating joblib or multiprocessing to parallelize\n4. Example (using Pelican) [5min]\n  - Intro to Pelican’s plugin system (integration between template tags and signals)\n  - Final resulting work\n5. Q&A [5min]\n"
 
-#: proposals/views/update.py:59
+#: proposals/views/update.py:61
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "Talk proposal <strong>{title}</strong> updated."
 
-#: proposals/views/update.py:68
+#: proposals/views/update.py:70
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:301
+#: pycontw2016/settings/base.py:300
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:302 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:301 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:303 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:302 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:304 templates/pycontw-2019/index.html:14
+#: pycontw2016/settings/base.py:303 templates/pycontw-2019/index.html:14
 msgid "PyCon Taiwan 2019"
 msgstr "PyCon Taiwan 2019"
 
-#: pycontw2016/settings/base.py:305 templates/pycontw-2020/index.html:14
+#: pycontw2016/settings/base.py:304 templates/pycontw-2020/index.html:14
 msgid "PyCon Taiwan 2020"
-msgstr ""
+msgstr "PyCon Taiwan 2020"
 
-#: pycontw2016/settings/base.py:327
+#: pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:328
+#: pycontw2016/settings/base.py:327
 msgid "Prefer 15min"
-msgstr ""
+msgstr "Prefer 15min"
 
-#: pycontw2016/settings/base.py:329
+#: pycontw2016/settings/base.py:328
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:333
+#: pycontw2016/settings/base.py:332
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: pycontw2016/settings/base.py:334
+#: pycontw2016/settings/base.py:333
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -904,31 +905,31 @@ msgstr "Could not review proposal {proposal}."
 msgid "reviewer"
 msgstr "reviewer"
 
-#: reviews/models.py:67 reviews/models.py:196
+#: reviews/models.py:68 reviews/models.py:199
 msgid "stage"
 msgstr "stage"
 
-#: reviews/models.py:85
+#: reviews/models.py:87
 msgid "+1 (strong accept)"
 msgstr "+1 (strong accept)"
 
-#: reviews/models.py:86
+#: reviews/models.py:88
 msgid "+0 (weak accept)"
 msgstr "+0 (weak accept)"
 
-#: reviews/models.py:87
+#: reviews/models.py:89
 msgid "-0 (weak reject)"
 msgstr "–0 (weak reject)"
 
-#: reviews/models.py:88
+#: reviews/models.py:90
 msgid "-1 (strong reject)"
 msgstr "–1 (strong reject)"
 
-#: reviews/models.py:97
+#: reviews/models.py:99
 msgid "vote"
 msgstr "vote"
 
-#: reviews/models.py:99
+#: reviews/models.py:101
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the GitBook <a "
@@ -936,84 +937,84 @@ msgid ""
 "target=\"_blank\">Review Guideline</a>."
 msgstr "Your vote to accept or reject this talk. More information about the scoring and acceptance criteria can be found at the GitBook <a href=\"https://pycontw.github.io/reviewer-guidebook\" target=\"_blank\">Review Guideline</a>."
 
-#: reviews/models.py:108
+#: reviews/models.py:110
 msgid "comment"
 msgstr "comment"
 
-#: reviews/models.py:110
+#: reviews/models.py:112
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the"
 " proposal's submitter."
 msgstr "Comments to this proposal. This may be available for other reviewers in later review stages, and you can choose whether or not to disclose it to the proposal's submitter."
 
-#: reviews/models.py:123
+#: reviews/models.py:125
 msgid "discloses comment to proposal submitter"
 msgstr "discloses comment to proposal submitter"
 
-#: reviews/models.py:125
+#: reviews/models.py:127
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
 "if you allow us to."
 msgstr "Whether the proposal submitter can read you comments. We will include your comments in the proposal acceptance/rejection notice sent to the submitter if you allow us to."
 
-#: reviews/models.py:138
+#: reviews/models.py:140
 msgid "is appropriate"
 msgstr "is appropriate"
 
-#: reviews/models.py:140
+#: reviews/models.py:142
 msgid ""
 "Administrators can use this field to hide a review from submitters, even if "
 "the reviewer enables disclosure. The review may be shown to the submitter "
 "only if this is set to True."
 msgstr "Administrators can use this field to hide a review from submitters, even if the reviewer enables disclosure. The review may be shown to the submitter only if this is set to True."
 
-#: reviews/models.py:148
+#: reviews/models.py:150
 msgid "note"
 msgstr "note"
 
-#: reviews/models.py:150
+#: reviews/models.py:152
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
 "them to anyone."
 msgstr "Personal notes about this proposal. You can use this field to record anything you like during the review process. We promise to never disclose them to anyone."
 
-#: reviews/models.py:158
+#: reviews/models.py:160
 msgid "updated"
 msgstr "updated"
 
-#: reviews/models.py:163
+#: reviews/models.py:165
 msgid "review"
 msgstr "review"
 
-#: reviews/models.py:164
+#: reviews/models.py:166
 msgid "reviews"
 msgstr "reviews"
 
-#: reviews/models.py:169
+#: reviews/models.py:171
 #, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "Review {proposal} by {reviewer}: {vote}"
 
-#: reviews/models.py:200
+#: reviews/models.py:203
 msgid "dumped JSON"
 msgstr "dumped JSON"
 
-#: reviews/models.py:204
+#: reviews/models.py:207
 msgid "dumped at"
 msgstr "dumped at"
 
-#: reviews/models.py:209
+#: reviews/models.py:212
 msgid "talk proposal snapshot"
 msgstr "talk proposal snapshot"
 
-#: reviews/models.py:210
+#: reviews/models.py:213
 msgid "talk proposal snapshots"
 msgstr "talk proposal snapshots"
 
-#: reviews/models.py:214
+#: reviews/models.py:217
 #, python-brace-format
 msgid "Stage {stage} dump for {proposal}"
 msgstr "Stage {stage} dump for {proposal}"
@@ -1595,6 +1596,19 @@ msgid_plural "%(counter)s fields to go!"
 msgstr[0] "Last field to go!"
 msgstr[1] "%(counter)s fields to go!"
 
+#: templates/default/users/coc_agreement.html:14
+#: templates/pycontw-2017/_includes/header.html:52
+msgid "code of conduct"
+msgstr "code of conduct"
+
+#: templates/default/users/coc_agreement.html:20
+msgid "Before we move on, please agree to the code of conudct first."
+msgstr "Before we move on, please agree to the code of conudct first."
+
+#: templates/default/users/coc_agreement.html:26
+msgid "Confirm and continue"
+msgstr "Confirm and continue"
+
 #: templates/default/users/user_dashboard.html:20
 msgid "Talk Proposals"
 msgstr "Talk Proposals"
@@ -2051,10 +2065,6 @@ msgstr "about"
 #: templates/pycontw-2017/_includes/header.html:51
 msgid "pycon taiwan"
 msgstr "pycon taiwan"
-
-#: templates/pycontw-2017/_includes/header.html:52
-msgid "code of conduct"
-msgstr "code of conduct"
 
 #: templates/pycontw-2017/_includes/header.html:57
 msgid "events"
@@ -2637,7 +2647,7 @@ msgstr "Register"
 
 #: templates/pycontw-2020/index.html:45
 msgid "Become a PyCon TW 2020 volunteer"
-msgstr ""
+msgstr "Become a PyCon TW 2020 volunteer"
 
 #: users/admin.py:18
 msgid "Personal info"
@@ -2703,6 +2713,14 @@ msgstr "Request Password Reset"
 #: users/forms.py:318
 msgid "Set Password"
 msgstr "Set Password"
+
+#: users/forms.py:330
+msgid "I agree to the code of conduct."
+msgstr "I agree to the code of conduct."
+
+#: users/forms.py:335
+msgid "You must agree to continue."
+msgstr "You must agree to continue."
 
 #: users/models.py:112
 msgid "email address"
@@ -2793,20 +2811,28 @@ msgstr "users"
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"
 
-#: users/views.py:38
+#: users/models.py:311
+msgid "latest agreed CoC version"
+msgstr "latest agreed CoC version"
+
+#: users/models.py:315
+msgid "agreed at"
+msgstr "agreed at"
+
+#: users/views.py:42
 msgid "Sign up successful. You are now logged in."
 msgstr "Sign up successful. You are now logged in."
 
-#: users/views.py:55
+#: users/views.py:59
 msgid "Email verification successful."
 msgstr "Email verification successful."
 
-#: users/views.py:67
+#: users/views.py:71
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "A verification email has been sent to {email}"
 
-#: users/views.py:95
+#: users/views.py:99
 msgid "Your profile has been updated successfully."
 msgstr "Your profile has been updated successfully."
 
@@ -2814,12 +2840,12 @@ msgstr "Your profile has been updated successfully."
 msgid "Your new password has been applied successfully."
 msgstr "Your new password has been applied successfully."
 
-#: users/views.py:126
+#: users/views.py:118
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
 msgstr "An email is sent to your email account. Please check your inbox for furthur instructions to reset your password."
 
-#: users/views.py:134
+#: users/views.py:126
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."

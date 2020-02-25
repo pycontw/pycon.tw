@@ -20,7 +20,7 @@ from django.utils.translation import gettext, gettext_lazy as _
 from sorl.thumbnail import get_thumbnail
 
 from core.utils import format_html_lazy
-from core.models import EAWTextField
+from core.models import EAWTextField, BigForeignKey
 
 
 class UserQueryset(models.QuerySet):
@@ -295,3 +295,25 @@ class User(AbstractBaseUser, PermissionsMixin):
             ),
             message=message, fail_silently=False,
         )
+
+    @property
+    def has_agreed_coc(self):
+        return CocRecord.objects.filter(user=self, coc_version=settings.COC_VERSION).count() == 1
+
+
+class CocRecord(models.Model):
+    user = BigForeignKey(
+        to=settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.CASCADE,
+    )
+    coc_version = models.CharField(
+        verbose_name=_('latest agreed CoC version'),
+        max_length=15
+    )
+    agreed_at = models.DateTimeField(
+        verbose_name=_('agreed at'),
+        auto_now_add=True,
+        blank=True,
+        null=True,
+    )

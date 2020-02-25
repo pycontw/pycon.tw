@@ -45,19 +45,22 @@ def test_tutorial_proposal_edit_denied_post(bare_user_client):
     assert response.status_code == 403
 
 
-def test_talk_proposal_edit_not_owned(another_user_client, talk_proposal):
-    response = another_user_client.get('/en-us/proposals/talk/42/edit/')
+# yychen(2020-02-24): I think coc agreement check should come after owner check
+# But I have no idea how to do it
+# So this is just a workaround
+def test_talk_proposal_edit_not_owned(another_agreed_user_client, talk_proposal):
+    response = another_agreed_user_client.get('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 404
 
 
 def test_tutorial_proposal_edit_not_owned(
-        another_user_client, tutorial_proposal):
-    response = another_user_client.get('/en-us/proposals/tutorial/42/edit/')
+        another_agreed_user_client, tutorial_proposal):
+    response = another_agreed_user_client.get('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 404
 
 
-def test_talk_proposal_edit_get(user_client, talk_proposal):
-    response = user_client.get('/en-us/proposals/talk/42/edit/')
+def test_talk_proposal_edit_get(agreed_user_client, talk_proposal):
+    response = agreed_user_client.get('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 200
 
 
@@ -80,11 +83,11 @@ def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
 
 
 def test_talk_proposal_edit_get_cancelled_ui(
-        user_client, cancelled_talk_proposal, parser):
+        agreed_user_client, cancelled_talk_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
     re-activate it.
     """
-    body = parser.parse(user_client.get('/en-us/proposals/talk/42/edit/'))
+    body = parser.parse(agreed_user_client.get('/en-us/proposals/talk/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
@@ -94,8 +97,8 @@ def test_talk_proposal_edit_get_cancelled_ui(
     assert not form_element.get('action')   # Posts to the same view.
 
 
-def test_tutorial_proposal_edit_get(user_client, tutorial_proposal):
-    response = user_client.get('/en-us/proposals/tutorial/42/edit/')
+def test_tutorial_proposal_edit_get(agreed_user_client, tutorial_proposal):
+    response = agreed_user_client.get('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 200
 
 
@@ -118,11 +121,11 @@ def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
 
 
 def test_tutorial_proposal_edit_get_cancelled(
-        user_client, cancelled_tutorial_proposal, parser):
+        agreed_user_client, cancelled_tutorial_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
     re-activate it.
     """
-    body = parser.parse(user_client.get('/en-us/proposals/tutorial/42/edit/'))
+    body = parser.parse(agreed_user_client.get('/en-us/proposals/tutorial/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
         'form:not(.navbar-form) button[type="submit"]'
     )
@@ -132,14 +135,15 @@ def test_tutorial_proposal_edit_get_cancelled(
     assert not form_element.get('action')   # Posts to the same view.
 
 
-def test_talk_proposal_edit_post(user_client, talk_proposal):
-    response = user_client.post('/en-us/proposals/talk/42/edit/', {
+def test_talk_proposal_edit_post(agreed_user_client, talk_proposal):
+    response = agreed_user_client.post('/en-us/proposals/talk/42/edit/', {
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF15',
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'referring_policy': False,
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
@@ -174,8 +178,8 @@ def test_talk_proposal_edit_post(user_client, talk_proposal):
     ]
 
 
-def test_tutorial_proposal_edit_post(user_client, tutorial_proposal):
-    response = user_client.post('/en-us/proposals/tutorial/42/edit/', {
+def test_tutorial_proposal_edit_post(agreed_user_client, tutorial_proposal):
+    response = agreed_user_client.post('/en-us/proposals/tutorial/42/edit/', {
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
