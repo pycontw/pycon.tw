@@ -90,6 +90,11 @@ class TalkProposalMixin:
                 "You can add your slide link near or after the conference "
                 "day. Not required for review."
             ),
+            'referring_policy': _(
+                "Whether you agree to give permission to PyCon Taiwan to "
+                "refer your talk proposal to local communities if your "
+                "proposal did not get accepted."
+            ),
             'objective': _(
                 "<p><a href='#' data-toggle='modal' "
                 "data-target='#proposalFieldExampleModal' "
