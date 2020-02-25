@@ -17,6 +17,7 @@ def talk_proposal_data():
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'referring_policy': True,
     }
 
 
@@ -24,7 +25,7 @@ def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy',
+        'python_level', 'recording_policy', 'referring_policy',
     ]
 
 
@@ -107,11 +108,17 @@ def test_tutorial_proposal_create_form_valid(
     assert form.is_valid()
 
 
-@pytest.mark.parametrize('form_class', [
-    TalkProposalUpdateForm, TutorialProposalUpdateForm,
-])
-def test_proposal_update_form(form_class):
-    form = form_class()
+def test_talk_proposal_update_form():
+    form = TalkProposalUpdateForm()
+    assert list(form.fields) == [
+        'title', 'category', 'duration', 'language',
+        'abstract', 'python_level', 'objective', 'detailed_description',
+        'outline', 'supplementary', 'recording_policy', 'slide_link', 'referring_policy',
+    ]
+
+
+def test_tutorial_proposal_update_form():
+    form = TutorialProposalUpdateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
         'abstract', 'python_level', 'objective', 'detailed_description',

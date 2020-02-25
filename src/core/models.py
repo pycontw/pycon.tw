@@ -150,6 +150,16 @@ class EventInfo(models.Model):
         choices=RECORDING_POLICY_CHOICES,
     )
 
+    REFERRING_POLICY_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+    referring_policy = models.BooleanField(
+        verbose_name=_('referring policy'),
+        default=False,
+        choices=REFERRING_POLICY_CHOICES,
+    )
+
     slide_link = models.URLField(
         verbose_name=_('slide link'),
         blank=True,

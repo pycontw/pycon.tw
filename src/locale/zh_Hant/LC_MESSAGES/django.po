@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-24 00:11+0800\n"
-"PO-Revision-Date: 2020-02-23 16:11+0000\n"
+"POT-Creation-Date: 2020-02-25 14:32+0800\n"
+"PO-Revision-Date: 2020-02-25 06:41+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -206,11 +206,13 @@ msgstr "Python 難易度"
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:144 reviews/models.py:119 reviews/models.py:134
+#: core/models.py:144 core/models.py:154 reviews/models.py:119
+#: reviews/models.py:134
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:145 reviews/models.py:120 reviews/models.py:135
+#: core/models.py:145 core/models.py:155 reviews/models.py:120
+#: reviews/models.py:135
 msgid "No"
 msgstr "否"
 
@@ -218,19 +220,23 @@ msgstr "否"
 msgid "recording policy"
 msgstr "議程錄影"
 
-#: core/models.py:154
+#: core/models.py:158
+msgid "referring policy"
+msgstr "轉介至地方社群"
+
+#: core/models.py:164
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:160
+#: core/models.py:170
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:166 events/models.py:332
+#: core/models.py:176 events/models.py:332
 msgid "created at"
 msgstr "建立時間"
 
-#: core/models.py:172
+#: core/models.py:182
 msgid "last updated at"
 msgstr "最後更新"
 
@@ -427,7 +433,7 @@ msgid ""
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:143
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:148
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -436,7 +442,7 @@ msgid ""
 "and the handbook. Should be one paragraph.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='abstract'>觀看範例</a>。</p><p>介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:152
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:157
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -447,7 +453,7 @@ msgid ""
 " too-easy for the target audience."
 msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href='{speaking_talk_url}' target='_blank'>如何投稿</a>一文。注意：投稿不會因為級別是「入門」就比較容易上。若我們認為這講題對聽眾來說過於簡單或困難時，可能會和你討論是否需要修改。"
 
-#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:165
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:170
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -460,7 +466,7 @@ msgid ""
 "rel='noopener'>Markdown</a>."
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='detailed description'>觀看範例</a>。</p>本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1200 個中文字 (或約 2000 個西文字元)。由於多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。"
 
-#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:179
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:184
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -469,13 +475,19 @@ msgid ""
 "page."
 msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
 
-#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:189
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:194
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
 #: proposals/forms/mixins.py:94
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to refer your talk "
+"proposal to local communities if your proposal did not get accepted."
+msgstr "若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至 Python 地方社群。"
+
+#: proposals/forms/mixins.py:99
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
@@ -485,7 +497,7 @@ msgid ""
 "made public and for REVIEW ONLY.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'data-content='objective'>觀看範例</a>。</p><p>你的目標聽眾是誰？(請寫明確，「Python 使用者」不是個好答案)；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:104 proposals/forms/mixins.py:200
+#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:205
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is"
@@ -494,7 +506,7 @@ msgid ""
 "rel='noopener'>Markdown</a>."
 msgstr "任何你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/forms/mixins.py:112
+#: proposals/forms/mixins.py:117
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
@@ -506,11 +518,11 @@ msgid ""
 "ONLY.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>觀看範例</a>。</p><p>本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 30 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:140
+#: proposals/forms/mixins.py:145
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
-msgstr ""
+msgstr "<p>今年 Tutorial 時間長度僅開放 1.5 小時。</p>"
 
-#: proposals/forms/mixins.py:193
+#: proposals/forms/mixins.py:198
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -518,7 +530,7 @@ msgid ""
 " This is NOT made public and for REVIEW ONLY."
 msgstr "你的目標聽眾是誰？(請寫明確，「Python 使用者」不是個好答案)；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
-#: proposals/forms/mixins.py:208
+#: proposals/forms/mixins.py:213
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
 " your talk and attach each section with the estimated time length. Edit "
@@ -569,7 +581,7 @@ msgstr "您的選擇找不到對應講者。"
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:61 users/models.py:196 users/models.py:303
+#: proposals/models.py:61 users/models.py:196 users/models.py:307
 msgid "user"
 msgstr "使用者"
 
@@ -689,11 +701,11 @@ msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "已創建題目為《<strong>{title}</strong>》的專業課程提案。"
 
-#: proposals/views/mixins.py:43 proposals/views/mixins.py:99
+#: proposals/views/mixins.py:42 proposals/views/mixins.py:98
 msgid "Abstract Example"
 msgstr "摘要範例"
 
-#: proposals/views/mixins.py:44
+#: proposals/views/mixins.py:43
 msgid ""
 "For modern human beings, the data in computers are essentially an external "
 "place for storing our memories. No matter they're photographs of your daily "
@@ -709,22 +721,22 @@ msgid ""
 "categorize problem."
 msgstr "對於現代人來說，電腦裡的資料相當於是外部記憶存放區。不論是日常的照片、音\n樂、影片，或者辦公、就學、研究產生的資料， 通通都放在電腦裡。經年累月下來，電腦資料夾就長期處於混沌狀態。又或者，拿到一系列的檔案，卻只能用檔案總管一個一個改。有沒有更好的做法？在這個演講中，將會介紹如何用 Python 以及內建的 pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 Python 迴圈與排序技巧完成複雜的檔案重新歸類。"
 
-#: proposals/views/mixins.py:62 proposals/views/mixins.py:115
+#: proposals/views/mixins.py:61 proposals/views/mixins.py:114
 msgid "Objective Example"
 msgstr "演講目標範例"
 
-#: proposals/views/mixins.py:63
+#: proposals/views/mixins.py:62
 msgid ""
 "Targeted at Python beginners trying to solve some daily life problems with programming. When I started to learn programming, I didn't know where I could use it. It sounded weird at first, but since I had only limited ability at the beginning, things like web development or data analysis were too hard for me to step into.\n"
 "\n"
 "But I found that managing data inside a computer is a very practical starting point; its results are easy to see, but it stillallows you to solve some problems that are rather difficult to do by hand. This kind of step-by-step learning process should be pretty helpful for beginners."
 msgstr "針對初學 Python 、想試著用程式解決生活問題的人。我在初學寫程式的時候，並不知道程式可以用在哪裡。乍聽之下很怪，但因為一開始自己會的東西很有限， 像是架網站、資料分析的門檻對我來說都太高了。\n\n但我發現整理電腦裡面的的資料，是個很實用的切入點， 一開始能很簡單就看出效果，最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學程式的人有幫助。"
 
-#: proposals/views/mixins.py:77 proposals/views/mixins.py:129
+#: proposals/views/mixins.py:76 proposals/views/mixins.py:128
 msgid "Description Example"
 msgstr "詳細說明範例"
 
-#: proposals/views/mixins.py:78
+#: proposals/views/mixins.py:77
 msgid ""
 "In the final example sharing, we'll try to move a series of images marked "
 "with date and file name, into \"YEAR/MONTH\" patterned directories that "
@@ -732,11 +744,11 @@ msgid ""
 "chronological order."
 msgstr "最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的「年 / 月」 目錄底下，並且按照時間先後重新依序命名照片。"
 
-#: proposals/views/mixins.py:84 proposals/views/mixins.py:139
+#: proposals/views/mixins.py:83 proposals/views/mixins.py:138
 msgid "Outline Example"
 msgstr "大綱範例"
 
-#: proposals/views/mixins.py:85
+#: proposals/views/mixins.py:84
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
@@ -749,7 +761,7 @@ msgid ""
 "4. Example sharing  [5 min]\n"
 msgstr "1. 資料整理的常見狀況 [5 min]\n2. pathlib 模組設計介紹 [10 min]\n- 運用 Path 物件\n- 目錄結構探索 Path.iterdir(), .glob()\n- 使用 Path 更動路徑\n3. 結合 for 迴圈與排序 [5 min]\n- sorted(key=) 用法\n- 整合 enumerated, zip 同時處理多個關連檔案\n4. 案例分享  [5 min]\n"
 
-#: proposals/views/mixins.py:100
+#: proposals/views/mixins.py:99
 msgid ""
 "Nowadays, photographs always contain the information about the state where "
 "the photo was taken, they're called EXIF. Sometimes when building a blog "
@@ -763,14 +775,14 @@ msgid ""
 "automatically processes all the photographs in the article."
 msgstr "現在的照片中都有內含拍攝時的資訊，稱為 EXIF。在建構一個以遊記、自然攝影的部\n落格時，需要把照片中的 EXIF 一些欄位整理在文章中照片的下方，如相機機型、鏡\n頭、光圈、快門、GPS 等訊息，有時也需要加註在浮水印之中。本演講將建立一個自\n動化處理 EXIF 的流程。首先介紹 exiftool 的使用，並且結合 Pillow 達到浮水印\n的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成\n自動處理所有放在文章的照片。"
 
-#: proposals/views/mixins.py:116
+#: proposals/views/mixins.py:115
 msgid ""
 "Targeted at people who'd like to process a batch of images, and do external processings using their EXIFs. And use Pelican blog framework to concretely demonstrate the integration scenario.\n"
 "\n"
 "While I was writing blog posts, I found out that manipulations involving processing images can take a huge amount of time. Thus hope the audiences will get an idea of how they can build a automated photograph processing workflow, and focus more on the article itself. Hope that the audiences will understand how to process EXIF and additional processing with Python, and also the framework of Pelican plugins."
 msgstr "針對需要批次處理照片並利用其 EXIF 做額外處理的人，並以 Pelican 此 blog 框架\n示範實際整合的情況。\n\n寫部落格文章時，發現處理照片相關的操作花上非常多時間，因此希望能讓聽眾了解\n如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道\n如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。"
 
-#: proposals/views/mixins.py:130
+#: proposals/views/mixins.py:129
 msgid ""
 "### Third-party libraries used:\n"
 "  - [exiftool] A Perl tool for analyzing EXIF of images\n"
@@ -782,7 +794,7 @@ msgid ""
 "[Pelican]: http://blog.getpelican.com/\n"
 msgstr "### 使用的第三方工具：\n- [exiftool] 為分析照片 EXIF 的 Perl 工具\n- [Pillow] 為 Python 影像處理工具，前身為 PIL (Python Image Library)\n- [Pelican] 為 Python 的 static site generator\n\n[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n[Pillow]: http://python-pillow.github.io/\n[Pelican]: http://blog.getpelican.com/\n"
 
-#: proposals/views/mixins.py:140
+#: proposals/views/mixins.py:139
 msgid ""
 "1. Intro to EXIF and exiftool [5min]\n"
 "2. Usage of Pillow, use it to add watermark [5min]\n"
@@ -797,12 +809,12 @@ msgid ""
 "5. Q&A [5min]\n"
 msgstr "1. 簡介 EXIF 與 exiftool [5min]\n2. Pillow 使用及如何用它加上浮水印 [5min]\n- 字型的選用\n- 排版的一致性\n3. 自動化 [5min]\n- 使用 stdlib 架出一個 batch 處理流程\n- 搭配 joblib 或 multiprocessing 達成平行化\n4. 舉例 (使用 Pelican)[5min]\n- 簡介 Pelican 擴充方式 (template tag 與 signal 的搭配)\n- 成果\n5. Q&A [5min]\n\n"
 
-#: proposals/views/update.py:60
+#: proposals/views/update.py:61
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 
-#: proposals/views/update.py:69
+#: proposals/views/update.py:70
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
@@ -2805,41 +2817,41 @@ msgstr "使用者"
 msgid "Verify your email address on {host}"
 msgstr "於 {host} 認證您的信箱地址"
 
-#: users/models.py:307
+#: users/models.py:311
 msgid "latest agreed CoC version"
 msgstr "最後同意的 CoC 版本"
 
-#: users/models.py:311
+#: users/models.py:315
 msgid "agreed at"
 msgstr "同意於"
 
-#: users/views.py:40
+#: users/views.py:42
 msgid "Sign up successful. You are now logged in."
 msgstr "註冊成功。您現在已被登入。"
 
-#: users/views.py:57
+#: users/views.py:59
 msgid "Email verification successful."
 msgstr "Email 認證成功。"
 
-#: users/views.py:69
+#: users/views.py:71
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "一封認證用的 email 已經寄送至 {email}"
 
-#: users/views.py:97
+#: users/views.py:99
 msgid "Your profile has been updated successfully."
 msgstr "您的講者資訊已成功地更新。"
 
-#: users/views.py:109
+#: users/views.py:111
 msgid "Your new password has been applied successfully."
 msgstr "已成功地使用您的新密碼。"
 
-#: users/views.py:116
+#: users/views.py:118
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
 msgstr "一封電子郵件已經發送至您的信箱。請檢查您的收件匣並參照信中指示重設密碼。"
 
-#: users/views.py:124
+#: users/views.py:126
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
