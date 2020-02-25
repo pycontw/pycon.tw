@@ -6,8 +6,10 @@ import pytest
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
+from django.conf import settings
 
 from proposals.models import TalkProposal
+from users.models import CocRecord
 
 
 class HTMLParser:
@@ -123,6 +125,17 @@ def user_client(user, bare_user_client):
 
 
 @pytest.fixture
+def agreed_user(user):
+    coc = CocRecord.objects.create(user=user, coc_version=settings.COC_VERSION)
+    return user
+
+
+@pytest.fixture
+def agreed_user_client(agreed_user, user_client):
+    return user_client
+
+
+@pytest.fixture
 def another_bare_user(db):
     user = get_user_model().objects.create_user(
         email='another@ayatsuji.itou',
@@ -142,9 +155,20 @@ def another_user(another_bare_user):
 
 
 @pytest.fixture
+def another_agreed_user(another_user):
+    coc = CocRecord.objects.create(user=another_user, coc_version=settings.COC_VERSION)
+    return another_user
+
+
+@pytest.fixture
 def another_user_client(another_user, client):
     client.login(email='another@ayatsuji.itou', password='7uk1T0n01sY')
     return client
+
+
+@pytest.fixture
+def another_agreed_user_client(another_agreed_user, another_user_client):
+    return another_user_client
 
 
 @pytest.fixture

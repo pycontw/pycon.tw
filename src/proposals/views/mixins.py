@@ -3,6 +3,10 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.utils.translation import gettext_lazy as _
+from django.shortcuts import redirect
+from django.urls import reverse
+
+from users.models import CocRecord
 
 
 class UserProfileRequiredMixin(UserPassesTestMixin):
@@ -21,6 +25,14 @@ class ProposalEditMixin:
     def dispatch(self, request, *args, **kwargs):
         if not self.can_edit():
             raise Http404
+        return super().dispatch(request, *args, **kwargs)
+
+
+class CocAgreementMixin:
+    def dispatch(self, request, *args, **kwargs):
+        if not self.request.user.has_agreed_coc:
+            return redirect('%s?next=%s' % (reverse('coc_agreement'), request.path))
+
         return super().dispatch(request, *args, **kwargs)
 
 
