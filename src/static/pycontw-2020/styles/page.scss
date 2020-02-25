@@ -3,23 +3,27 @@
 body {
 	// Fix the fancy h1 overflowing width (because 100vw includes scrollbar).
 	overflow-x: hidden;
+	background-color: $top-navbar-background-color;
 }
 
 .page-hero {
 	background-color: $top-navbar-background-color;
 	display: flex;
 	flex-direction: row;
-	height: $menu-desktop-height;
+	height: $menu-desktop-height - 20;
 	@include on-desktop;
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
+	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $jinger-bread, $jinger-bread, $jinger-bread);
+
 	.menu {
-		margin: 0;
+        height: $menu-desktop-height - 20;
+		margin: 0 auto;
 	}
-	@include on-desktop{
-		margin: 0;
+
+	@include on-desktop {
+		margin: 0 40px;
 		display: flex;
 		flex-direction: row;
 		width: 100%;
@@ -42,6 +46,8 @@ main {
 		padding-right: 0;
 	}
 
+	position: relative;
+
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
 		@mixin fill-vw($p) {
@@ -49,13 +55,14 @@ main {
 			padding: 0 $p 32px $p;
 		}
 
-		@include shove-left();
-		@include fill-vw(2rem);
+		// @include shove-left();
+		// @include fill-vw(2rem);
 
-		background-color: $white;
+        // 2020
+		// background-color: $white;
 
 		@include on-desktop {
-			@include fill-vw(6rem);
+			// @include fill-vw(6rem);
 		}
 	}
 
@@ -139,6 +146,91 @@ main {
 	}
 }
 
+
+
+[class*=" deco-"],
+[class^="deco-"] {
+	position: absolute;
+	z-index: -1;
+    opacity: 0.4;
+}
+
+.deco-b-1 {
+	top: 16%;
+	right: -2%;
+}
+
+.deco-b-2 {
+	bottom: 14%;
+	left: -8%;
+}
+
+@include on-desktop {
+	// margin: 0 $hero-desktop-margin 0px;
+	.deco-b-1 {
+		top: 16%;
+		right: -20%;
+	}
+
+	.deco-b-2 {
+		bottom: 14%;
+		left: -20%;
+	}
+}
+
+
+@mixin big-button-icon($name) {
+	.icon-#{$name} {
+		mask: url('../assets/icon-#{$name}.svg');
+		mask-size: 100% 100%;
+	}
+}
+
+h1 {
+    color: $jinger-bread;
+    background-color: transparentize($imperial, 0.9);
+    border-radius: 65px;
+    height: 113px;
+    line-height: 113px;
+    margin-top: 20px;
+    border: 10px solid transparent;
+
+    &.alt {
+		position: relative;
+        background-color: transparent;
+        border-color: transparentize($imperial, 0.9);
+
+		.icon {
+			width: 35px;
+			height: 35px;
+			background-repeat: no-repeat;
+			position: absolute;
+			left: 13px;
+			background-color: $jinger-bread;
+
+			top: 50%;
+			transform: translate(0, -50%);
+            display: none;
+
+			@include on-desktop {
+				left: 33px;
+				width: 50px;
+				height: 50px;
+                display: block;
+			}
+		}
+
+		@include big-button-icon(speaking);
+    }
+
+    &.multi {
+        line-height: 1;
+    }
+}
+
+
+
+
 // Page-specific styling.
 @import 'pages/about';
 @import 'pages/keynotes';
@@ -149,3 +241,4 @@ main {
 @import 'pages/schedule';
 @import 'pages/staff';
 @import 'pages/portal';
+@import 'pages/cfp';

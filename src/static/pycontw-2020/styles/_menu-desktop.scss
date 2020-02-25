@@ -1,15 +1,16 @@
 $menu-desktop-margin-x: 48px;
-$menu-desktop-height: 80px;
+$menu-desktop-height: 70px;
 
 @mixin menu-navbar-desktop($logo, $decocolor1, $decocolor2, $top-item-color) {
 	display: none;
 
 	@include on-desktop {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		height: $menu-desktop-height;
 		margin: 0px $menu-desktop-margin-x 100px $menu-desktop-margin-x;
 		padding: 0px 40px;
+        position: relative;
 	}
 	.menu-logo {
 		width: 221.4px;
@@ -20,7 +21,7 @@ $menu-desktop-height: 80px;
 		@include container(100%);
 		@include menu($top-item-color, $top-item-color);
 
-		$menu-item-spacing: 40px;
+		$menu-item-spacing: 25px;
 		$menu-item-height: $menu-desktop-height / 2;
 
 		display: inline-block;
@@ -41,7 +42,7 @@ $menu-desktop-height: 80px;
 				// The minus 1px is the bottom border decoration.
 				line-height: $menu-item-height - 1px;
 				font-weight: normal;
-				color: $egyptian-blue;
+				color: $jinger-bread;
 				&::after {
 					content: '';
 					display: block;
@@ -66,6 +67,35 @@ $menu-desktop-height: 80px;
 			> input:checked ~ label::after {
 				width: 100%;
 			}
+
+            &.dashboard-item {
+                position: absolute;
+                right: 0;
+                padding-right: 0;
+
+                a {
+                    font-family: "Alegreya SC";
+                    text-transform: uppercase;
+
+                    line-height: 1;
+                    border: 1px solid $jinger-bread;
+                    border-radius: 7px;
+                    padding: 4px 6px;
+
+                    transition: background 100ms linear, border 100ms linear;
+
+                    &:hover {
+                        background-color: $salmon;
+                        border-color: transparent;
+                    }
+                }
+
+                > a, > label {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
 		}
 
 		.dropdown {
@@ -74,27 +104,32 @@ $menu-desktop-height: 80px;
 		}
 
 		.submenu {
-			$width: 160px;
-			$item-padding: 8px;
+			$width: 140px;
+			$item-padding: 5px;
 
 			position: absolute;
-			top: $menu-item-height + 12px;
+			top: $menu-item-height;
 			left: calc(50% - #{$width / 2});
 			min-width: $width;
-			background: rgba($white, 0.95);
-			box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15);
+			background: transparentize($salmon-dark, 0.05);
 			text-align: center;
 			opacity: 0;
 			transform: scaleY(0);
 			transform-origin: top;
 			transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 
+            &.submenu-wide {
+                $width: 180px;
+                left: calc(50% - #{$width / 2});
+                min-width: $width;
+            }
+
 			li {
 				display: flex;
 				flex-direction: column;
 				align-content: stretch;
 
-				@include menu-item($egyptian-blue, $jungle-green) {
+				@include menu-item($jinger-bread, $waikawa-grey) {
 					flex: 1;
 					padding: $item-padding;
 				}

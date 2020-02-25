@@ -5,9 +5,27 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	height: 125px;
-	margin: 0;
+	margin: 0 0 30px;
 	padding: 0 2rem;
-	background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+
+    @mixin arrow($arrow) {
+        color: $jinger-bread;
+        content: $arrow;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        position: relative;
+        top: 2px;
+    }
+
+    &::before {
+        @include arrow("◀");
+        padding-right: 1rem;
+    }
+
+    &::after {
+        @include arrow("▶");
+        padding-left: 1rem;
+    }
 
 	li {
 		@include menu-items();
@@ -16,15 +34,16 @@
 		line-height: 2rem;
 
 		&:not(:first-of-type) {
-			margin-left: 1rem;
+			margin-left: 0.7rem;
 		}
 		&:not(:last-of-type)::after {
-			content: '/';
-			margin-left: 1rem;
+			content: '.';
+			margin-left: 0.7rem;
 		}
 		color: $black;
 		a {
-			color: $jungle-green;
+            font-family: "Alegreya SC";
+			color: $jinger-bread;
 		}
 	}
 }
