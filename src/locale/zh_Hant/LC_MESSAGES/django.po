@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 01:52+0800\n"
-"PO-Revision-Date: 2020-02-16 17:55+0000\n"
+"POT-Creation-Date: 2020-02-23 17:36+0800\n"
+"PO-Revision-Date: 2020-02-24 16:39+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/pycon-tw/language/zh-Hant/)\n"
 "MIME-Version: 1.0\n"
@@ -206,11 +206,13 @@ msgstr "Python 難易度"
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:144 reviews/models.py:117 reviews/models.py:132
+#: core/models.py:144 core/models.py:154 reviews/models.py:117
+#: reviews/models.py:132
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:145 reviews/models.py:118 reviews/models.py:133
+#: core/models.py:145 core/models.py:155 reviews/models.py:118
+#: reviews/models.py:133
 msgid "No"
 msgstr "否"
 
@@ -218,19 +220,23 @@ msgstr "否"
 msgid "recording policy"
 msgstr "議程錄影"
 
-#: core/models.py:154
+#: core/models.py:158
+msgid "referring policy"
+msgstr "轉介至地方社群"
+
+#: core/models.py:164
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:160
+#: core/models.py:170
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:166 events/models.py:327
+#: core/models.py:176 events/models.py:327
 msgid "created at"
 msgstr "建立時間"
 
-#: core/models.py:172
+#: core/models.py:182
 msgid "last updated at"
 msgstr "最後更新"
 
@@ -427,7 +433,7 @@ msgid ""
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:143
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:148
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -436,7 +442,7 @@ msgid ""
 "and the handbook. Should be one paragraph.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='abstract'>觀看範例</a>。</p><p>介紹整個演講的主軸。如果演講有需要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會公佈在網站與大會手冊中。應為單一段落。</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:152
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:157
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -447,7 +453,7 @@ msgid ""
 " too-easy for the target audience."
 msgstr "講題的 Python 難易度選擇非常重要，攸關整個審稿過程。每個 Python 難易度級別的定義可以參考<a href='{speaking_talk_url}' target='_blank'>如何投稿</a>一文。注意：投稿不會因為級別是「入門」就比較容易上。若我們認為這講題對聽眾來說過於簡單或困難時，可能會和你討論是否需要修改。"
 
-#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:165
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:170
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -460,7 +466,7 @@ msgid ""
 "rel='noopener'>Markdown</a>."
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='detailed description'>觀看範例</a>。</p>本欄位太長可能會嚇到審查員或者潛在的聽眾。按慣例一個舒適的長度不會超過 1200 個中文字 (或約 2000 個西文字元)。由於多數的審查員不一定如你這麼了解投稿的主題，可以把與主題相關的文章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。"
 
-#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:179
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:184
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -469,13 +475,19 @@ msgid ""
 "page."
 msgstr "是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a href='{recording_policy_url}' target='_blank'>錄影釋出</a>一頁。"
 
-#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:189
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:194
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
 #: proposals/forms/mixins.py:94
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to refer your talk "
+"proposal to local communities if your proposal did not get accepted."
+msgstr "若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至 Python 地方社群。"
+
+#: proposals/forms/mixins.py:99
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
@@ -485,7 +497,7 @@ msgid ""
 "made public and for REVIEW ONLY.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal'data-content='objective'>觀看範例</a>。</p><p>你的目標聽眾是誰？(請寫明確，「Python 使用者」不是個好答案)；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:104 proposals/forms/mixins.py:200
+#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:205
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is"
@@ -494,7 +506,7 @@ msgid ""
 "rel='noopener'>Markdown</a>."
 msgstr "任何你想讓審查員或議程組在決定稿件時知道的訊息，包括：過去的演講經驗、社群經驗等。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/forms/mixins.py:112
+#: proposals/forms/mixins.py:117
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
@@ -506,11 +518,11 @@ msgid ""
 "ONLY.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>觀看範例</a>。</p><p>本演講的進行將會如何安排。非常建議列舉講題的子項目與各項目預計的時間長度。偏好 45 分鐘的提案應包含 30 分鐘的安排備案，告訴我們你計畫如何刪減講題，以符合較短的時間限制。使用 <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:140
+#: proposals/forms/mixins.py:145
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>今年 Tutorial 時間長度僅開放 1.5 小時。</p>"
 
-#: proposals/forms/mixins.py:193
+#: proposals/forms/mixins.py:198
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -518,7 +530,7 @@ msgid ""
 " This is NOT made public and for REVIEW ONLY."
 msgstr "你的目標聽眾是誰？(請寫明確，「Python 使用者」不是個好答案)；聽完之後能從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開僅供審查使用。"
 
-#: proposals/forms/mixins.py:208
+#: proposals/forms/mixins.py:213
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in"
 " your talk and attach each section with the estimated time length. Edit "
