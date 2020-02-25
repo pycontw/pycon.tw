@@ -21,8 +21,10 @@
 
 
 // Remove input shadow for iOS
+// Tom: it will remove all native input visual, like checkbox or radio buttons
+// The CoC agreement form need this
 input {
-    -webkit-appearance:none;
+    // -webkit-appearance:none;
 }
 
 

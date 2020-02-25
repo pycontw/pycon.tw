@@ -61,6 +61,11 @@ certifi>=2019.11.28
 # http://ipython.org/
 ipython==7.12.0
 
+# The most feature-rich and easy-to-use library for processing XML and HTML in
+# the Python language.
+# https://lxml.de/
+lxml==4.5.0
+
 # Python Imaging Library.
 # https://python-pillow.org/
 Pillow==7.0.0
