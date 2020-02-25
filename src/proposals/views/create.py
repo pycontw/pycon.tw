@@ -8,16 +8,17 @@ from django.views.generic import CreateView
 from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
 
-from .mixins import UserProfileRequiredMixin
+from .mixins import UserProfileRequiredMixin, CocAgreementMixin
 
 
 class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, CreateView):
+        FormValidMessageMixin, CocAgreementMixin, CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if not settings.PROPOSALS_CREATABLE:
             raise Http404
+
         return super().dispatch(request, *args, **kwargs)
 
     def get_form_kwargs(self):

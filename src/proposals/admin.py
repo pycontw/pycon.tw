@@ -28,8 +28,8 @@ class ProposalAdmin(admin.ModelAdmin):
         'conference', 'submitter', 'title', 'category', 'duration',
         'language', 'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'slide_link', 'cancelled', 'accepted',
-        'slido_embed_link',
+        'recording_policy', 'slide_link', 'referring_policy', 'cancelled',
+        'accepted', 'slido_embed_link',
     ]
     raw_id_fields = ['submitter']
     search_fields = ['title', 'abstract']
