@@ -5,13 +5,27 @@
 
 	width: 100vw;
 	height: 0;
-	background-color: $top-navbar-background-color;
+	background-color: lighten($jinger-bread, 10%);
 	transition: 0.25s ease-in-out;
 	overflow: auto;
 
 	@include on-desktop {
 		display: none;
 	}
+
+    .shadow {
+        position: absolute;
+        left: 99px;
+        top: -62px;
+        margin: 0 !important;
+        font-size: 52px;
+        transform: scaleY(-1) skew(45deg, 0);
+        transform-origin: bottom;
+        color: rgba(0, 0, 0, 0.3);
+        // height: 42px;
+        filter: blur(1px);
+        line-height: 52px;
+    }
 
 	&.no-script {
 		position: relative;

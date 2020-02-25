@@ -4,6 +4,10 @@
 @import 'index-partners';
 @import 'pycontw-year-ribbon';
 
+body {
+    background-color: $top-navbar-background-color;
+}
+
 .portal {
 	@include index-section;
 
@@ -50,21 +54,108 @@
 }
 
 .top-navbar {
-	background-color: $portica;
-	@include on-desktop {
-		border-bottom-color: transparent;
-	}
+    .navbar-brand {
+        // Tom: Don't display "PyCon TW20" at navbar in index
+        // It collides with the hero image
+        display: none;
+    }
+}
 
-	.navbar-logo {
-		margin-top: (3 * $top-navbar-height - $top-navbar-logo-height) / 2;
-	}
+.menu-navbar-desktop-outer {
+    @include on-desktop {
+        margin: 0 $hero-desktop-margin;
+    }
 }
 
 .menu-navbar-desktop {
 	@include menu-navbar-desktop(
-		url('../assets/logo-strong-violet.svg'), $egyptian-blue, $egyptian-blue,  $egyptian-blue);
-	border-radius: $menu-desktop-border-radius;
-	background-color: $white;
+		url('../assets/logo-strong-violet.svg'), $jinger-bread, $jinger-bread,  $jinger-bread);
+
+    @include on-desktop {
+        // Align with hero-image-bg
+        margin: 0 auto 100px;
+        max-width: 1160px;
+        padding: 0;
+    }
+}
+
+@mixin big-button-color($color-name, $color) {
+    &.color-#{$color-name} {
+        background-color: $color;
+        border: 2px solid $color;
+
+        &:hover {
+            color: $color;
+            background-color: transparentize($brick, 0.3);
+            text-decoration: none;
+            .icon {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+@mixin big-button-icon($name) {
+    .icon-#{$name} {
+        mask: url('../assets/icon-#{$name}.svg');
+        mask-size: 100% 100%;
+    }
+}
+
+.index-big-button {
+    width: 510px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 35px;
+    font-size: 1.6rem;
+    margin: 30px auto;
+
+    // FIXME: This is not okay
+    max-width: 100%;
+
+	@include on-desktop {
+        width: 510px;
+        height: 113px;
+        line-height: 113px;
+        border-radius: 57px;
+        font-size: 2.25rem;
+        margin: 50px auto;
+	}
+
+    text-decoration: none;
+    color: $brick;
+    position: relative;
+    text-align: center;
+    display: block;
+
+    transition: background 150ms linear, border 150ms linear;
+
+
+    @include big-button-color(jinger-bread, $jinger-bread);
+    @include big-button-color(imperial, $imperial);
+    @include big-button-color(dark-gray, $dark-gray);
+
+    .icon {
+        width: 35px;
+        height: 35px;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 13px;
+        background-color: $brick;
+
+        top: 50%;
+        transform: translate(0, -50%);
+
+        @include on-desktop {
+            left: 33px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    @include big-button-icon(speaking);
+    @include big-button-icon(volunteering);
+    @include big-button-icon(sponsor);
 }
 
 .index-introduction {
@@ -77,6 +168,16 @@
 	.my-pycon {
 		@include button(276deg, $dark-peach, $maize);
 		margin-top: 40px;
+	}
+}
+
+.index-actions {
+	@include index-section;
+
+    padding: 0 40px 80px;
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
 	}
 }
 
@@ -128,6 +229,50 @@
 			@include outline-button($portica);
 			margin-top: 40px;
 		}
+	}
+}
+
+.main-content {
+    position: relative;
+    overflow: hidden;
+
+	[class*=" deco-"],
+	[class^="deco-"] {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .deco-a-1 {
+        top: 0%;
+        right: -5%;
+    }
+
+    .deco-a-2 {
+        top: 50%;
+        left: -6%;
+    }
+
+    .deco-a-3 {
+        bottom: -1%;
+        right: -8%;
+    }
+
+	@include on-desktop {
+		margin: 0 $hero-desktop-margin 0px;
+        .deco-a-1 {
+            top: 0%;
+            right: 18%;
+        }
+
+        .deco-a-2 {
+            top: 50%;
+            left: 16%;
+        }
+
+        .deco-a-3 {
+            bottom: -1%;
+            right: 20%;
+        }
 	}
 }
 
