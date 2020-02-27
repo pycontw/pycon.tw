@@ -19,13 +19,6 @@
 </div>
 <p>Rm. L2A, No. 16, Sec. 2, Beimen Rd., East Dist., Tainan City 701, Taiwan</p>
 
-<script>
-    window.MARKERS = [
-        {name: 'International conference room,<br>National Cheng Kung University', coord: [22.997908, 120.215657]},
-        {name: 'Goodideas Studio', coord: [22.999672, 120.212878]},
-    ];
-</script>
-
 {% endblock map_info %}
 
 {% block content %}
@@ -108,3 +101,13 @@
 </div>
 
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+    window.MARKERS = [
+        {name: 'International conference room,<br>National Cheng Kung University', coord: [22.997908, 120.215657], icon: window.VENUE_ICON_MAIN},
+        {name: 'Goodideas Studio', coord: [22.999660, 120.212871], icon: window.VENUE_ICON_TUTORIAL},
+    ];
+</script>
+{{ block.super }}
+{% endblock %}
