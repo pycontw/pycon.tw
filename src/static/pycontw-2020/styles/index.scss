@@ -175,6 +175,7 @@ body {
 	@include index-section;
 
     padding: 0 40px 80px;
+    font-family: 'Noto Sans TC';
 
 	@include on-desktop {
 		margin-top: 0 - $menu-desktop-height / 2;
