@@ -19,12 +19,6 @@
 </div>
 <p>701 台南市東區北門路二段 16 號 L2A</p>
 
-<script>
-    window.MARKERS = [
-        {name: '國立成功大學 國際會議廳', coord: [22.997908, 120.215657]},
-        {name: '好想工作室', coord: [22.999672, 120.212878]},
-    ];
-</script>
 
 {% endblock map_info %}
 
@@ -108,3 +102,13 @@
 </div>
 
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+    window.MARKERS = [
+        {name: '國立成功大學 國際會議廳', coord: [22.997908, 120.215657], icon: window.VENUE_ICON_MAIN},
+        {name: '好想工作室', coord: [22.999660, 120.212871], icon: window.VENUE_ICON_TUTORIAL},
+    ];
+</script>
+{{ block.super }}
+{% endblock %}
