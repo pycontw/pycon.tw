@@ -65,7 +65,7 @@ $top-navbar-offset: $top-navbar-height + $top-navbar-margin-y;
 
 .navbar-brand {
     font-size: 20px;
-    font-family: $text-font-family;
+    font-family: $classic-font-family;
     padding-left: 7px;
     color: $jinger-bread;
 
@@ -82,6 +82,7 @@ $top-navbar-offset: $top-navbar-height + $top-navbar-margin-y;
 	> button {
 		$size: 36px;
 
+        font-family: $classic-font-family;
 		width: $size;
 		height: $size;
 		// margin: #{($top-navbar-height - $size) / 2} 2px;
