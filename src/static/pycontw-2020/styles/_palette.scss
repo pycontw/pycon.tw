@@ -120,6 +120,7 @@ $link-hover-light: $waikawa-grey;
 @mixin link($base-color, $hover-color) {
 	color: $base-color;
 	text-decoration: none;
+    transition: color 100ms linear, text-decoartion 100ms linear;
 
 	&:hover {
 		color: $hover-color;
@@ -128,7 +129,7 @@ $link-hover-light: $waikawa-grey;
 }
 
 @mixin link-dark {
-	@include link($link-dark, $link-dark);
+	@include link($link-dark, $imperial);
 }
 
 @mixin link-light {

@@ -88,12 +88,26 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
-  h3{
+    h3 {
 		text-align: left;
 
 		&::before{
-			content: url('../assets/grass-group.svg');
-			margin-right: 10px;
+			// content: url('../assets/snake-icon-dark.svg');
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../assets/snake-icon-dark.svg');
+            background-repeat: no-repeat;
+            background-size: 110% 110%;
+            background-position: 50% 50%;
+			margin-right: 5px;
+            position: relative;
+            top: 8px;
+
+            @include on-desktop {
+                background-size: 125% 125%;
+            }
 		}
 	}
 	// Custom UL bullets.
