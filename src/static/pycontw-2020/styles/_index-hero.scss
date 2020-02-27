@@ -97,11 +97,23 @@ $hero-desktop-margin: 40px;
             top: 105%;
             transform: translate(-50%, 0);
 
+            &.desktop {
+                display: none;
+            }
+
             @include on-desktop {
                 // snake-icon.svg, 50x50
                 width: calc(100% * 50/799);
                 top: auto;
                 bottom: 6.5%;
+
+                &.desktop {
+                    display: block;
+                }
+
+                &.mobile {
+                    display: none;
+                }
             }
         }
     }
