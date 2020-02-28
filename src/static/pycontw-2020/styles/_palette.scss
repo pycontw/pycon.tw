@@ -36,6 +36,7 @@ $jinger-bread: #502526;
 $dark-gray: #262626;
 $imperial: #E23728;
 $salmon-dark: #F6B197;
+$brown: #6A3F3B;
 
 
 /* Some extra styles not in the Zepplin palette. */
@@ -44,7 +45,7 @@ $white-65: rgba(255, 255, 255, 0.65);
 
 /* Header styles. */
 
-$header-font-family: 'Tenor Sans', 'Noto Sans TC', 'sans-serif';
+$header-font-family: 'Philosopher', 'Noto Sans TC', 'sans-serif';
 
 @mixin header($font-size) {
   color: $jinger-bread;
@@ -63,7 +64,7 @@ $header-font-family: 'Tenor Sans', 'Noto Sans TC', 'sans-serif';
 }
 
 @mixin h1 {
-	@include header(2.25rem);		// ~ 36px.
+	@include header(1.875rem);		// ~ 30px.
 	@include header-geometry(48px);
 	line-height: 150%;
 }
@@ -101,7 +102,9 @@ $header-font-family: 'Tenor Sans', 'Noto Sans TC', 'sans-serif';
 
 /* Content styles. */
 
-$text-font-family: 'Tenor Sans', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+$text-font-family: 'Quicksand', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+
+$classic-font-family: 'Philosopher', 'Noto Sans TC', 'sans-serif';
 
 $text-font-size: 1.125rem;			// ~ 18px.
 $text-font-size-small: 0.75rem;	// ~ 12px.
@@ -117,6 +120,7 @@ $link-hover-light: $waikawa-grey;
 @mixin link($base-color, $hover-color) {
 	color: $base-color;
 	text-decoration: none;
+    transition: color 100ms linear, text-decoartion 100ms linear;
 
 	&:hover {
 		color: $hover-color;
@@ -125,7 +129,7 @@ $link-hover-light: $waikawa-grey;
 }
 
 @mixin link-dark {
-	@include link($link-dark, $link-dark);
+	@include link($link-dark, $imperial);
 }
 
 @mixin link-light {

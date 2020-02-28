@@ -51,7 +51,7 @@ $menu-item-types: '> a, > label';
 
 	.submenu {
 		@include list-reset;
-		@include text(0.875rem);
+		@include text(0.975rem);
 		margin-top: 6px;
 		border-radius: 5.36px;
         z-index: 10;
