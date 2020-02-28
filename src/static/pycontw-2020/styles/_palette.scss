@@ -64,7 +64,7 @@ $header-font-family: 'Philosopher', 'Noto Sans TC', 'sans-serif';
 }
 
 @mixin h1 {
-	@include header(2.25rem);		// ~ 36px.
+	@include header(1.875rem);		// ~ 30px.
 	@include header-geometry(48px);
 	line-height: 150%;
 }
