@@ -71,10 +71,9 @@ $menu-desktop-height: 70px;
             &.dashboard-item {
                 position: absolute;
                 right: 0;
-                padding-right: 0;
 
                 a {
-                    font-family: "Alegreya SC";
+                    font-family: "Quicksand";
                     text-transform: uppercase;
 
                     line-height: 1;
@@ -129,7 +128,7 @@ $menu-desktop-height: 70px;
 				flex-direction: column;
 				align-content: stretch;
 
-				@include menu-item($jinger-bread, $waikawa-grey) {
+				@include menu-item($jinger-bread, $imperial) {
 					flex: 1;
 					padding: $item-padding;
 				}

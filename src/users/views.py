@@ -157,8 +157,20 @@ def coc_agree(request):
     main = tree.xpath('//main')[0]
 
     # Remove the title
+    # Since the HTML structure has changed
+    # need to find the direct child from main which contains h1 as its descendant
+    # and remove it
     for h1 in main.xpath('//h1'):
-        main.remove(h1)
+        target = h1
+        parent = h1.getparent()
+
+        while parent != main and parent != None:
+            target = parent
+            parent = parent.getparent()
+
+        if parent == main:
+            main.remove(target)
+
     coc = etree.tostring(main, encoding='utf-8').decode('utf-8')
 
     return render(request, 'users/coc_agreement.html', {
