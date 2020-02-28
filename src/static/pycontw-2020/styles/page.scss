@@ -228,7 +228,7 @@ main {
 	}
 }
 
-h1 {
+.pill-title {
     color: $jinger-bread;
     background-color: transparentize($imperial, 0.9);
     border-radius: 65px;
@@ -236,6 +236,15 @@ h1 {
     line-height: 113px;
     margin-top: 20px;
     border: 10px solid transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        margin: 0;
+    }
 
     &.alt {
 		position: relative;
@@ -268,10 +277,6 @@ h1 {
 		@include big-button-icon(sponsor);
 		@include big-button-icon(volunteering);
 		@include big-button-icon(about);
-    }
-
-    &.multi {
-        line-height: 1;
     }
 }
 
