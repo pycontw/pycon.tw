@@ -19,18 +19,7 @@
   font-weight: 400;
   @include button-variant($btn-logout-color, $btn-logout-bg, $btn-logout-border);
 }
-.registration-panel .btn-primary {
-  background-color: #E23728; //2020
-  border-color: #E23728; //2020
-  color: #FBD9CA; //2020
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: #502526; //2020
-    border-color: #502526; //2020
-    color: #FBD9CA; //2020
-  }
-}
+
 .btn-primary {
   &:hover {
     background-color: $btn-primary-hover-bg;
