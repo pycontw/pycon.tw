@@ -105,18 +105,14 @@ body {
 .index-big-button {
     width: 510px;
     height: 70px;
-    line-height: 70px;
     border-radius: 35px;
     font-size: 1.6rem;
     margin: 30px auto;
-
-    // FIXME: This is not okay
     max-width: 100%;
 
 	@include on-desktop {
         width: 510px;
         height: 113px;
-        line-height: 113px;
         border-radius: 57px;
         font-size: 1.875rem;
         margin: 50px auto;
@@ -126,10 +122,9 @@ body {
     color: $brick;
     position: relative;
     text-align: center;
-    display: block;
-
+    display: flex;
+    align-items: center;
     transition: background 150ms linear, border 150ms linear;
-
 
     @include big-button-color(jinger-bread, $jinger-bread);
     @include big-button-color(imperial, $imperial);
@@ -138,19 +133,20 @@ body {
     .icon {
         width: 35px;
         height: 35px;
+        margin-left: 5.493%;
         background-repeat: no-repeat;
-        position: absolute;
-        left: 13px;
         background-color: $brick;
 
-        top: 50%;
-        transform: translate(0, -50%);
-
         @include on-desktop {
-            left: 33px;
             width: 50px;
             height: 50px;
+            margin-left: 5.493%;
         }
+    }
+
+    > div {
+        flex-grow: 1;
+        margin-right: 9.805%;
     }
 
     @include big-button-icon(speaking);

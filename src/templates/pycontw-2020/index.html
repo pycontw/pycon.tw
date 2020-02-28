@@ -45,31 +45,19 @@
     <section class="index-actions">
         <a class="index-big-button color-jinger-bread" href="{% url 'page' path='speaking/cfp' %}">
             <i class="icon icon-speaking"></i>
-            {% trans 'Call for Proposals' %}
+            <div>{% trans 'Call for Proposals' %}</div>
         </a>
 
         <a class="index-big-button color-imperial" href="{{ VOLUNTEER_FORM_URL }}" target="_blank" rel="noopener">
             <i class="icon icon-volunteering"></i>
-            {% trans 'Become a volunteer' %}
+            <div>{% trans 'Become a volunteer' %}</div>
         </a>
 
         <a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
             <i class="icon icon-sponsor"></i>
-            {% trans 'Sponsor PyCon TW' %}
+            <div>{% trans 'Sponsor PyCon TW' %}</div>
         </a>
     </section>
-
-    <!--
-    <section class="index-volunteer-container">
-        <section class="index-volunteer">
-            <article class="container">
-                <h2>{% trans 'Volunteers Needed' %}</h2>
-                {% comment %} {% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %} {% endcomment %}
-                <a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a PyCon TW 2020 volunteer' %}</a>
-            </article>
-        </section>
-    </section>
-    -->
 
     <img class="deco-a-1" src="{% static 'pycontw-2020/assets/deco-a-1.svg' %}" />
     <img class="deco-a-2" src="{% static 'pycontw-2020/assets/deco-a-2.svg' %}" />
