@@ -179,6 +179,30 @@ main {
 	left: -8%;
 }
 
+.deco-c-1 {
+	top: 15.2%;
+	right: -15%;
+    transform: rotate(42deg);
+    width: 145px;
+    opacity: 0.15;
+}
+
+.deco-c-2 {
+	bottom: 18%;
+	left: -31%;
+    transform: rotate(42deg);
+    width: 250px;
+    opacity: 0.05;
+}
+
+.deco-c-3 {
+	bottom: 12.2%;
+	left: -32%;
+    transform: rotate(42deg);
+    width: 190px;
+    opacity: 0.1;
+}
+
 @include on-desktop {
 	// margin: 0 $hero-desktop-margin 0px;
 	.deco-b-1 {
@@ -190,8 +214,12 @@ main {
 		bottom: 14%;
 		left: -20%;
 	}
-}
 
+    .deco-c-1 {
+        top: 15.1%;
+        right: -20%;
+    }
+}
 
 @mixin big-button-icon($name) {
 	.icon-#{$name} {
