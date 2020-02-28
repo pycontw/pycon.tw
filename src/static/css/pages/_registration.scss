@@ -22,6 +22,26 @@
     }
 }
 
+.registration-panel .btn-primary {
+  background-color: #E23728; //2020
+  border-color: #E23728; //2020
+  color: #FBD9CA; //2020
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #502526; //2020
+    border-color: #502526; //2020
+    color: #FBD9CA; //2020
+  }
+}
+
+.registration-panel .form-group .controls .form-control{
+  border-color: #502526; //2020
+}
+
+.registration-panel .btn-link{
+  color: #502526; //2020
+}
 
 // Styles specific to PyCon TW 2016.
 
