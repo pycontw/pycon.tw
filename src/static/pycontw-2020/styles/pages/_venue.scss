@@ -19,7 +19,7 @@
 		height: 100%;
 		z-index: 1;
 		border-style: solid;
-		border-color: #f4d35e;
+		border-color: $salmon;
 		border-width: 2px 0px 2px 0px;
 	}
 
@@ -37,9 +37,9 @@
 		}
 
 		@include on-desktop() {
-            $total-width: 32%;
-            $padding-left: 4%;
-            $padding-right: 3%;
+            $total-width: 32vw;
+            $padding-left: 4vw;
+            $padding-right: 3vw;
 
             display: block;
             position: absolute;
@@ -51,9 +51,9 @@
             margin-top: 2px;
 
             @include breakpoint(1280px) {
-                $total-width: 28%;
-                $padding-left: 4%;
-                $padding-right: 3%;
+                $total-width: 28vw;
+                $padding-left: 4vw;
+                $padding-right: 3vw;
 
                 height: $map-height-desktop;
                 width: $total-width - $padding-left - $padding-right;

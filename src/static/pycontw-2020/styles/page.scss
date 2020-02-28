@@ -88,12 +88,26 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
-  h3{
+    h3 {
 		text-align: left;
 
 		&::before{
-			content: url('../assets/grass-group.svg');
-			margin-right: 10px;
+			// content: url('../assets/snake-icon-dark.svg');
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../assets/snake-icon-dark.svg');
+            background-repeat: no-repeat;
+            background-size: 110% 110%;
+            background-position: 50% 50%;
+			margin-right: 5px;
+            position: relative;
+            top: 8px;
+
+            @include on-desktop {
+                background-size: 125% 125%;
+            }
 		}
 	}
 	// Custom UL bullets.
@@ -165,6 +179,30 @@ main {
 	left: -8%;
 }
 
+.deco-c-1 {
+	top: 15.2%;
+	right: -15%;
+    transform: rotate(42deg);
+    width: 145px;
+    opacity: 0.15;
+}
+
+.deco-c-2 {
+	bottom: 18%;
+	left: -31%;
+    transform: rotate(42deg);
+    width: 250px;
+    opacity: 0.05;
+}
+
+.deco-c-3 {
+	bottom: 12.2%;
+	left: -32%;
+    transform: rotate(42deg);
+    width: 190px;
+    opacity: 0.1;
+}
+
 @include on-desktop {
 	// margin: 0 $hero-desktop-margin 0px;
 	.deco-b-1 {
@@ -176,8 +214,12 @@ main {
 		bottom: 14%;
 		left: -20%;
 	}
-}
 
+    .deco-c-1 {
+        top: 15.1%;
+        right: -20%;
+    }
+}
 
 @mixin big-button-icon($name) {
 	.icon-#{$name} {
@@ -186,7 +228,7 @@ main {
 	}
 }
 
-h1 {
+.pill-title {
     color: $jinger-bread;
     background-color: transparentize($imperial, 0.9);
     border-radius: 65px;
@@ -194,6 +236,15 @@ h1 {
     line-height: 113px;
     margin-top: 20px;
     border: 10px solid transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        margin: 0;
+    }
 
     &.alt {
 		position: relative;
@@ -221,12 +272,30 @@ h1 {
 		}
 
 		@include big-button-icon(speaking);
-    }
-
-    &.multi {
-        line-height: 1;
+		@include big-button-icon(venue);
+		@include big-button-icon(registration);
+		@include big-button-icon(sponsor);
+		@include big-button-icon(volunteering);
+		@include big-button-icon(about);
     }
 }
+
+.multi {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+
+    > div {
+        line-height: 1.2;
+        .icon {
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
 
 
 
@@ -241,5 +310,4 @@ h1 {
 @import 'pages/schedule';
 @import 'pages/staff';
 @import 'pages/portal';
-@import 'pages/cfp';
 @import 'pages/sponsorship-prospectus';

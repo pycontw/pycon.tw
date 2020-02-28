@@ -5,7 +5,8 @@
 
 	width: 100vw;
 	height: 0;
-	background-color: lighten($jinger-bread, 10%);
+	// background-color: lighten($jinger-bread, 10%);
+	background-color: $jinger-bread;
 	transition: 0.25s ease-in-out;
 	overflow: auto;
 
@@ -15,7 +16,7 @@
 
     .shadow {
         position: absolute;
-        left: 99px;
+        left: 107px;
         top: -62px;
         margin: 0 !important;
         font-size: 52px;
@@ -55,16 +56,19 @@
 	}
 
 	.menu {
-		@include menu($text-light, $link-light);
+		@include menu($brick, $imperial);
 
 		> li {
 			margin: 32px 0;
 		}
 
 		.submenu {
-			margin: 8px 24px;
-			border-color: $indigo;
-			background: $dark-violet;
+			background: $brown;
+            border-radius: 0;
+            border: none;
+            padding: 1px;
+            margin-top: 20px;
+
 			text-align: center;
 
 			li {
