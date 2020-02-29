@@ -8,14 +8,17 @@
 }
 
 .dashboard-header {
-    padding: 20px 0 0 33px;
-    height: 65px;
+    padding: 20px 33px;
+    min-height: 65px;
     margin: 0;
     border-bottom: 1px solid #f8f8f8;
     font-size:21px;
     font-weight: 500;
     color:#4A4A4A;
     line-height:24px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     > .header__title {
         margin-right: 24px;
