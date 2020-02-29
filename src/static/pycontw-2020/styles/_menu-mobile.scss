@@ -16,7 +16,7 @@
 
     .shadow {
         position: absolute;
-        left: 107px;
+        left: 99px;
         top: -62px;
         margin: 0 !important;
         font-size: 52px;
@@ -26,6 +26,7 @@
         // height: 42px;
         filter: blur(1px);
         line-height: 52px;
+        display: none;
     }
 
 	&.no-script {
