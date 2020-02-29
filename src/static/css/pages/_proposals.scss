@@ -199,6 +199,12 @@ body.dashboard{
 
         &.proposal-title {
             white-space: normal;
+
+            > div {
+                max-width: calc(100vw - 160px);
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
         }
     }
     th {
