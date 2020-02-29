@@ -44,6 +44,7 @@ $hero-desktop-margin: 40px;
         // 2020-hero-bg.svg, 799x333
         @include aspect-ratio(799, 333);
         background: url('../assets/2020-hero-bg.svg');
+        background-color: black;
         background-repeat: no-repeat;
         background-size: 100% 100%;
         margin-bottom: 60px;
