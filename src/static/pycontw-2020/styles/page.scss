@@ -162,6 +162,21 @@ main {
 
 
 
+.decoration {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    // Prevent scrolling on mobile devices
+    overflow: hidden;
+
+    @include on-desktop {
+        overflow: visible;
+    }
+}
+
 [class*=" deco-"],
 [class^="deco-"] {
 	position: absolute;
