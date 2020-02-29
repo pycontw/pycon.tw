@@ -1,4 +1,5 @@
 .year-ribbon {
+    flex: 1 0 auto; // Fix for sticky footer
 	display: flex;
 	align-content: center;
 	align-items: center;
