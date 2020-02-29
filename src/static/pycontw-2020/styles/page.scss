@@ -47,6 +47,7 @@ main {
 	}
 
 	position: relative;
+    flex: 1 0 auto; // Fix for sticky footer
 
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {

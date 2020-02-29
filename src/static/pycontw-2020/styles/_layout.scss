@@ -20,6 +20,7 @@ footer {
 
 	padding: 80px 0 10px;
 	background-color: $jinger-bread;
+    flex-shrink: 0; // Fix for sticky footer
 
 	.footer-logos{
 		display: flex;
@@ -70,3 +71,14 @@ body.overlay-open {
 
 $background-deco-index: 0;
 $overlay-index: 99;
+
+
+// Fix for sticky footer
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
