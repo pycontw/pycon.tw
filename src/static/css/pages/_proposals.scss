@@ -1,6 +1,6 @@
 body.dashboard{
     font-weight: 400;
-    background:#F3F3F3;
+    background: #FBD9CA;
 
     p.welcome{
         font-size: 21px;
@@ -23,7 +23,8 @@ body.dashboard{
                     border-bottom: 1px solid #EEEEEE;
 
                     &:hover{
-                        color:#BBBBBB;
+                        color: #502526; //2020
+                        //color:#BBBBBB; ~2019
                         background-color: #F8F8F8;
                         border-left: 4px solid #F8F8F8;
                     }
@@ -40,8 +41,10 @@ body.dashboard{
                     }
                 }
                 &.active a{
-                    color:#3E6DF5;
-                    border-left: 4px solid #3E6DF5;
+                    color: #502526; //2020
+                    //color:#3E6DF5; ~2019
+                    border-left: 4px solid #502526; //2020
+                    //border-left: 4px solid #3E6DF5; ~2019
                     // &:hover{
                     //     color:#BBBBBB;
                     //     background-color: transparent;

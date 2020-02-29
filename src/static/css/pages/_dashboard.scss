@@ -1,6 +1,9 @@
 .dashboard{
-    .navbar-site .navbar-brand{
-        padding-right: 5px;
+    .navbar-site{
+      background-color: #502526; //2020
+      .navbar-brand{
+          padding-right: 5px;
+      }
     }
 }
 
@@ -16,6 +19,7 @@
 
     > .header__title {
         margin-right: 24px;
+        color: #502526;
     }
 
     .btn {
