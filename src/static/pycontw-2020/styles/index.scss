@@ -230,6 +230,7 @@ body {
 }
 
 .main-content {
+    flex: 1 0 auto; // Fix for sticky footer
     position: relative;
     overflow: hidden;
 
