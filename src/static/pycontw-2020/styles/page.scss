@@ -47,6 +47,7 @@ main {
 	}
 
 	position: relative;
+    flex: 1 0 auto; // Fix for sticky footer
 
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
@@ -158,9 +159,28 @@ main {
 	.closing-para {
 		text-align: right;
 	}
+
+    .no-top-margin {
+        margin-top: 0;
+    }
 }
 
 
+
+.decoration {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    // Prevent scrolling on mobile devices
+    overflow: hidden;
+
+    @include on-desktop {
+        overflow: visible;
+    }
+}
 
 [class*=" deco-"],
 [class^="deco-"] {

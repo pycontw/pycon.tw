@@ -237,7 +237,7 @@ class AuthenticationForm(BaseAuthenticationForm):
         helper.layout = Layout(
             Fieldset(
                 '',
-                Field('username', placeholder=self.fields['username'].label),
+                Field('username', placeholder=self.fields['username'].label, autofocus=''),
                 Field('password', placeholder=self.fields['password'].label),
             ),
             FormActions(Div(
