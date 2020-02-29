@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th class="proposal-title">{% trans 'Title' %}</th>
-			<th width="1%" class="hidden-xs">{% trans 'Python Level' %}</th>
+			<th width="1%" class="hidden-xs" style="padding-left: 0px;">{% trans 'Python Level' %}</th>
 			<th width="1%" class="hidden-xs">{% trans 'Language' %}</th>
 			<th width="1%"></th>
 		</tr>
@@ -12,15 +12,15 @@
 	<tbody>
 		{% for proposal in proposals %}
 		<tr class="proposal-info-row">
-			<td class="proposal-title" style="padding-right: 0px;">
+			<td class="proposal-title">
                 <div>
                     {{ proposal.title }}
                     <br>
                 </div>
 			</td>
-			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_python_level_display }}</td>
+			<td class="hidden-xs"  style="padding-bottom: 0px; padding-left: 0px;">{{ proposal.get_python_level_display }}</td>
 			<td class="hidden-xs"  style="padding-bottom: 0px;">{{ proposal.get_language_display }}</td>
-			<td  style="padding-bottom: 10px;">
+			<td  style="padding-bottom: 10px; padding-left: 0px;">
 				{% if proposals_editable or proposals_withdrawable %}
 				<form action="{{ proposal.get_cancel_url }}" method="post">
 					{% csrf_token %}
