@@ -132,6 +132,37 @@ main {
 				margin-top: 0;
 			}
 		}
+
+        // Different styles:
+        &.square {
+            $mark-indent: 0.8rem;
+            $text-indent: 2.125rem;
+
+            padding-left: $text-indent;
+            text-indent: $mark-indent - $text-indent;
+
+            > li {
+                &::before {
+                    content: '▪';
+                    width: $text-indent - $mark-indent;
+                }
+            }
+        }
+
+        &.white-circle {
+            $mark-indent: 0.6rem;
+            $text-indent: 2.125rem;
+
+            padding-left: $text-indent;
+            text-indent: $mark-indent - $text-indent;
+
+            > li {
+                &::before {
+                    content: '◦';
+                    width: $text-indent - $mark-indent;
+                }
+            }
+        }
 	}
 
 	> table:not([class]), table.table, .table > table {
