@@ -6,4 +6,36 @@
   width: 130%;
   word-wrap: break-word;
   position: relative;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  th, td {
+      text-indent: 0;
+      text-align: left;
+
+      line-height: 1.2;
+      padding-top: 10px;
+      vertical-align: top;
+
+      border-top: 1px solid #999;
+      padding: 10px 5px;
+  }
+
+  th {
+      font-weight: 500;
+  }
+
+  tbody {
+      tr:first-child {
+          td, th {
+              border-top: 2px solid #999;
+          }
+      }
+  }
+
+  thead {
+      th {
+        border-top: none;
+      }
+  }
 }
