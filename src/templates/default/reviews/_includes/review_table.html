@@ -14,9 +14,11 @@
 		{% for review in reviews %}
 			<tr class="{% if review.is_outdated %}info{% endif %}">
 				<td>{{ review.stage }}</td>
-				<td>{{ review.get_vote_display }}</td>
-				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}">
-					{{ review.proposal.title }}
+				<td style="padding-right: 0px;">{{ review.get_vote_display }}</td>
+				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}" style="padding-right: 0px;">
+                    <div>
+                        {{ review.proposal.title }}
+                    </div>
 				</td>
 				<td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
 				<td>
