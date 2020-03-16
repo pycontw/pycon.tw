@@ -133,7 +133,7 @@ For maintainer update transifex
 # maybe
 # pip install -U transifex-client
 
-python manage.py makemessages
+python manage.py makemessages --locale _src
 
 tx push -s
 ```
