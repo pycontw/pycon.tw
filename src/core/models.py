@@ -94,7 +94,7 @@ class EventInfo(models.Model):
         ('ML',    _('Machine Learning')),
         ('NLP',   _('Natural Language Processing')),
         ('CORE',  _('Python Core (language, stdlib, etc.)')),
-        ('PACK',  _('Python Packaging')),
+        ('TOOL',  _('Project Tooling')),
         ('SCI',   _('Science')),
         ('SEC',   _('Security')),
         ('ADMIN', _('Systems Administration')),
