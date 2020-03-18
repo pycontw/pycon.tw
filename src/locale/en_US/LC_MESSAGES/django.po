@@ -240,7 +240,7 @@ msgstr "last updated at"
 
 #: core/models.py:192
 msgid "remoting policy"
-msgstr "remoting policy"
+msgstr "remote policy"
 
 #: events/admin.py:20
 msgid "time value"
