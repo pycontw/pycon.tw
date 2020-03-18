@@ -56,7 +56,7 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language',
-            'python_level', 'recording_policy', 'remoting_policy',
+            'python_level', 'recording_policy'
         ]
 
 
@@ -103,7 +103,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
         fields = [
             'title', 'category', 'duration', 'language',
             'abstract', 'python_level', 'objective', 'detailed_description',
-            'outline', 'supplementary', 'recording_policy', 'remoting_policy', 'slide_link',
+            'outline', 'supplementary', 'recording_policy', 'slide_link',
         ]
 
 
