@@ -94,6 +94,7 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'referring_policy': False,
+        'remoting_policy': True,
     }, follow=True)
 
     proposal = TalkProposal.objects.get(
