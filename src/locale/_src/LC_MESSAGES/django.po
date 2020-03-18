@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-17 19:43+0800\n"
+"POT-Creation-Date: 2020-03-18 21:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,13 +197,13 @@ msgstr ""
 msgid "detailed description"
 msgstr ""
 
-#: core/models.py:145 core/models.py:155 reviews/models.py:119
-#: reviews/models.py:134
+#: core/models.py:145 core/models.py:155 core/models.py:188
+#: reviews/models.py:119 reviews/models.py:134
 msgid "Yes"
 msgstr ""
 
-#: core/models.py:146 core/models.py:156 reviews/models.py:120
-#: reviews/models.py:135
+#: core/models.py:146 core/models.py:156 core/models.py:189
+#: reviews/models.py:120 reviews/models.py:135
 msgid "No"
 msgstr ""
 
@@ -229,6 +229,10 @@ msgstr ""
 
 #: core/models.py:183
 msgid "last updated at"
+msgstr ""
+
+#: core/models.py:193
+msgid "remoting policy"
 msgstr ""
 
 #: events/admin.py:20
@@ -424,7 +428,7 @@ msgid ""
 "{model_name}."
 msgstr ""
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:148
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:153
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -433,7 +437,7 @@ msgid ""
 "and the handbook. Should be one paragraph.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:157
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:162
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -444,7 +448,7 @@ msgid ""
 "too-easy for the target audience."
 msgstr ""
 
-#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:170
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:175
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -456,7 +460,7 @@ msgid ""
 "basics' target='_blank' rel='noopener'>Markdown</a>."
 msgstr ""
 
-#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:184
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:189
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -465,7 +469,7 @@ msgid ""
 "page."
 msgstr ""
 
-#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:194
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:199
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -487,7 +491,7 @@ msgid ""
 "made public and for REVIEW ONLY.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:205
+#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:210
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -507,11 +511,17 @@ msgid ""
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:145
+#: proposals/forms/mixins.py:129
+msgid ""
+"Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
+"is still raging this August?"
+msgstr ""
+
+#: proposals/forms/mixins.py:150
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr ""
 
-#: proposals/forms/mixins.py:198
+#: proposals/forms/mixins.py:203
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -519,7 +529,7 @@ msgid ""
 "This is NOT made public and for REVIEW ONLY."
 msgstr ""
 
-#: proposals/forms/mixins.py:213
+#: proposals/forms/mixins.py:218
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
