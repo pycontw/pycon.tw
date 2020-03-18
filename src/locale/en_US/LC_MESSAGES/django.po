@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # Dorian Gray <t_true@mail.ru>, 2017
 # Jason <chairco@gmail.com>, 2017
@@ -237,6 +237,10 @@ msgstr "created at"
 #: core/models.py:183
 msgid "last updated at"
 msgstr "last updated at"
+
+#: core/models.py:192
+msgid "remoting policy"
+msgstr "remoting policy"
 
 #: events/admin.py:20
 msgid "time value"
@@ -515,6 +519,12 @@ msgid ""
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW "
 "ONLY.</p>"
 msgstr "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be arranged. It is highly recommended to attach the estimated time length for each sections in the talk. Talks in favor of 45min should have a fallback plan about how to shrink the content into a 30min one. Edit using <a href='http://daringfireball.net/projects/markdown/basics' target='_blank' rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
+
+#: prosals/forms/mixins.py:128
+msgid ""
+"Whether you agree to deliver the talk remotely if the epidemic "
+"(coronavirus) is still raging this August?"
+msgstr "Whether you agree to deliver the talk remotely if the epidemic (coronavirus) is still raging this August?"
 
 #: proposals/forms/mixins.py:145
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
