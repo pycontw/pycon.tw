@@ -18,6 +18,7 @@ def talk_proposal_data():
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'referring_policy': True,
+        'remoting_policy': True,
     }
 
 
@@ -25,7 +26,7 @@ def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'referring_policy',
+        'python_level', 'recording_policy', 'remoting_policy', 'referring_policy',
     ]
 
 
@@ -113,7 +114,7 @@ def test_talk_proposal_update_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
         'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy', 'slide_link', 'referring_policy',
+        'outline', 'supplementary', 'recording_policy', 'remoting_policy', 'slide_link', 'referring_policy',
     ]
 
 
