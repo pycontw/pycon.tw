@@ -184,6 +184,17 @@ class EventInfo(models.Model):
         auto_now=True,
     )
 
+    REMOTE_POLICY_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+
+    remoting_policy = models.BooleanField(
+        verbose_name=_('remoting policy'),
+        default=False,
+        choices=REMOTE_POLICY_CHOICES
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']

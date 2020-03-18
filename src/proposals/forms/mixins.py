@@ -125,6 +125,11 @@ class TalkProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>. "
                 "This is NOT made public and for REVIEW ONLY.</p>"
             ),
+            'remoting_policy': _(
+                "Whether you agree to deliver the talk remotely if the epidemic "
+                "(coronavirus) is still raging this August?"
+
+            ),
         }
 
 
