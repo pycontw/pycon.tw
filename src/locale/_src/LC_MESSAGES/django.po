@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-18 21:29+0800\n"
+"POT-Creation-Date: 2020-03-19 19:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,177 +61,181 @@ msgid "title"
 msgstr ""
 
 #: core/models.py:84
+msgid "Application"
+msgstr ""
+
+#: core/models.py:85
 msgid "Best Practices & Patterns"
 msgstr ""
 
-#: core/models.py:85 templates/pycontw-2018/_includes/footer.html:12
+#: core/models.py:86 templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:19
 msgid "Community"
 msgstr ""
 
-#: core/models.py:86
+#: core/models.py:87
 msgid "Databases"
 msgstr ""
 
-#: core/models.py:87
+#: core/models.py:88
 msgid "Data Analysis"
 msgstr ""
 
-#: core/models.py:88
+#: core/models.py:89
 msgid "Education"
 msgstr ""
 
-#: core/models.py:89
+#: core/models.py:90
 msgid "Embedded Systems"
 msgstr ""
 
-#: core/models.py:90
+#: core/models.py:91
 msgid "FinTech"
 msgstr ""
 
-#: core/models.py:91
+#: core/models.py:92
 msgid "Internet of Things"
 msgstr ""
 
-#: core/models.py:92
+#: core/models.py:93
 msgid "Gaming"
 msgstr ""
 
-#: core/models.py:93 templates/default/_includes/proposal_example_modal.html:65
+#: core/models.py:94 templates/default/_includes/proposal_example_modal.html:65
 msgid "Graphics"
 msgstr ""
 
-#: core/models.py:94
+#: core/models.py:95
 msgid "Machine Learning"
 msgstr ""
 
-#: core/models.py:95
+#: core/models.py:96
 msgid "Natural Language Processing"
 msgstr ""
 
-#: core/models.py:96
+#: core/models.py:97
 msgid "Python Core (language, stdlib, etc.)"
 msgstr ""
 
-#: core/models.py:97
+#: core/models.py:98
 msgid "Project Tooling"
 msgstr ""
 
-#: core/models.py:98
+#: core/models.py:99
 msgid "Science"
 msgstr ""
 
-#: core/models.py:99
+#: core/models.py:100
 msgid "Security"
 msgstr ""
 
-#: core/models.py:100
+#: core/models.py:101
 msgid "Systems Administration"
 msgstr ""
 
-#: core/models.py:101
+#: core/models.py:102
 msgid "Testing"
 msgstr ""
 
-#: core/models.py:102
+#: core/models.py:103
 msgid "Web Frameworks"
 msgstr ""
 
-#: core/models.py:103
+#: core/models.py:104
 msgid "Other"
 msgstr ""
 
-#: core/models.py:106
+#: core/models.py:107
 msgid "category"
 msgstr ""
 
-#: core/models.py:112
+#: core/models.py:113
 msgid "English talk"
 msgstr ""
 
-#: core/models.py:113
+#: core/models.py:114
 msgid "Chinese talk w. English slides"
 msgstr ""
 
-#: core/models.py:114
+#: core/models.py:115
 msgid "Chinese talk w. Chinese slides"
 msgstr ""
 
-#: core/models.py:115
+#: core/models.py:116
 msgid "Taiwanese Hokkien"
 msgstr ""
 
-#: core/models.py:118
+#: core/models.py:119
 msgid "language"
 msgstr ""
 
-#: core/models.py:124
+#: core/models.py:125
 msgid "abstract"
 msgstr ""
 
-#: core/models.py:129
+#: core/models.py:130
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr ""
 
-#: core/models.py:130
+#: core/models.py:131
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr ""
 
-#: core/models.py:131 templates/pycontw-2018/events/schedule.html:30
+#: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr ""
 
-#: core/models.py:134 templates/default/reviews/review_form.html:53
+#: core/models.py:135 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr ""
 
-#: core/models.py:140
+#: core/models.py:141
 msgid "detailed description"
 msgstr ""
 
-#: core/models.py:145 core/models.py:155 core/models.py:188
+#: core/models.py:146 core/models.py:156 core/models.py:189
 #: reviews/models.py:119 reviews/models.py:134
 msgid "Yes"
 msgstr ""
 
-#: core/models.py:146 core/models.py:156 core/models.py:189
+#: core/models.py:147 core/models.py:157 core/models.py:190
 #: reviews/models.py:120 reviews/models.py:135
 msgid "No"
 msgstr ""
 
-#: core/models.py:149
+#: core/models.py:150
 msgid "recording policy"
 msgstr ""
 
-#: core/models.py:159
+#: core/models.py:160
 msgid "referring policy"
 msgstr ""
 
-#: core/models.py:165
+#: core/models.py:166
 msgid "slide link"
 msgstr ""
 
-#: core/models.py:171
+#: core/models.py:172
 msgid "slido embed link"
 msgstr ""
 
-#: core/models.py:177 events/models.py:332
+#: core/models.py:178 events/models.py:332
 msgid "created at"
 msgstr ""
 
-#: core/models.py:183
+#: core/models.py:184
 msgid "last updated at"
 msgstr ""
 
-#: core/models.py:193
+#: core/models.py:194
 msgid "remoting policy"
 msgstr ""
 
