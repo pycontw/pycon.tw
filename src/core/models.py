@@ -81,6 +81,7 @@ class EventInfo(models.Model):
     )
 
     CATEGORY_CHOICES = (
+        ('APPL',  _('Application')),
         ('PRAC',  _('Best Practices & Patterns')),
         ('COM',   _('Community')),
         ('DB',    _('Databases')),
