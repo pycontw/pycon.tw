@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load pycontw_tools %}
 
 {% url 'page' path='about/pycontw' as about_pycontw_url %}
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
@@ -27,18 +28,25 @@
 {% url 'page' path='sponsor/sponsor' as sponsor_url %}
 
 <ul class="menu" data-controller="menu">
+	{% with category=request.path|get_path_category %}
 	<li>
-		<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
+		<a href="{{ about_pycontw_url }}" {% if category == 'about' %}class="active"{% endif %}>
+			{% trans 'About' %}
+		</a>
 	</li>
 	<li>
-		<a href="{{ sponsor_url }}">{% trans 'Sponsor' %}</a>
+		<a href="{{ sponsor_url }}" {% if category == 'sponsor' %}class="active"{% endif %}>
+			{% trans 'Sponsor' %}
+		</a>
 	</li>
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-propose">{% trans 'Speaking' %}</label>
+		<label for="menu-navbar-{{ type }}-propose" {% if category == 'speaking' %}class="active"{% endif %}>
+			{% trans 'Speaking' %}
+		</label>
 		<div class="dropdown">
-            <ul class="submenu{% if LANGUAGE_CODE == 'en-us' %} submenu-wide{% endif %}">
+			<ul class="submenu{% if LANGUAGE_CODE == 'en-us' %} submenu-wide{% endif %}">
 				<li><a href="{{ speaking_cfp_url }}">{% trans 'Call for Proposal' %}</a></li>
 				<li><a href="{{ speaking_talk_url }}">{% trans 'Proposing a Talk' %}</a></li>
 				<li><a href="{{ speaking_tutorial_url }}">{% trans 'Proposing a Tutorial' %}</a></li>
@@ -50,7 +58,9 @@
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-conference">{% trans 'Conference' context 'menu' %}</label>
+		<label for="menu-navbar-{{ type }}-conference" {% if category == 'conference' %}class="active"{% endif %}>
+			{% trans 'Conference' context 'menu' %}
+		</label>
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
@@ -63,7 +73,9 @@
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-events">{% trans 'Events' %}</label>
+		<label for="menu-navbar-{{ type }}-events" {% if category == 'events' %}class="active"{% endif %}>
+			{% trans 'Events' %}
+		</label>
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
@@ -76,7 +88,9 @@
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-registration">{% trans 'Registration' %}</label>
+		<label for="menu-navbar-{{ type }}-registration" {% if category == 'registration' %}class="active"{% endif %}>
+			{% trans 'Registration' %}
+		</label>
 		<div class="dropdown">
 			<ul class="submenu">
 				<li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
@@ -87,9 +101,12 @@
 	</li>
 	{% endcomment %}
 	<li>
-		<a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a>
+		<a href="{{ venue_url }}" {% if category == 'venue' %}class="active"{% endif %}>
+			{% trans 'Venue' context 'conf location' %}
+		</a>
 	</li>
-    <li class="dashboard-item">
-        <a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
-    </li>
+	<li class="dashboard-item">
+		<a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
+	</li>
+	{% endwith %}
 </ul>
