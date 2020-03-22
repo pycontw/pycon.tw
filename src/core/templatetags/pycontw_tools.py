@@ -14,7 +14,7 @@ def message_bootstrap_class_str(message):
 @register.filter
 def get_path_category(url):
     pattern = r'/(?P<lang>zh\-hant|en\-us)/(?P<category>[0-9a-z-]*)/'
-    result = re.match(pattern, url)
+    result = re.search(pattern, url)
     if not result:
         return 'unmatched'
     return result.groupdict().get('category', 'uncategorized')
