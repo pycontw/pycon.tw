@@ -8,8 +8,6 @@ body {
 
 .page-hero {
 	background-color: $top-navbar-background-color;
-	display: flex;
-	flex-direction: row;
 	height: $menu-desktop-height - 20;
 	@include on-desktop;
 }
@@ -26,9 +24,9 @@ body {
 		margin: 0 40px;
 		display: flex;
 		flex-direction: row;
-		width: 100%;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0;
 	}
 }
 
