@@ -22,10 +22,10 @@ def pycontw(request):
     lang = get_language()
     if lang and lang.startswith('zh'):
         sponsor_id = '1FAIpQLScEIeCrTHNvwbdNbZt4nK1mteC6NzHtXgF5bVn1KTtR0_sorA'
-        volun_id = '1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g'
+        volun_id = '1FAIpQLSfdqEqqjzPnVU7S8ya1slXKszSIHOpljKEzY8odGRBjjAv-fw'
     else:
         sponsor_id = '1FAIpQLScEIeCrTHNvwbdNbZt4nK1mteC6NzHtXgF5bVn1KTtR0_sorA'
-        volun_id = '1FAIpQLSe6whkZAEZD10LlPQuSWRYsshySoNR_pux8grGZ0OgmOIkQ3g'
+        volun_id = '1FAIpQLSfdqEqqjzPnVU7S8ya1slXKszSIHOpljKEzY8odGRBjjAv-fw'
     return {
         'GTM_TRACK_ID': settings.GTM_TRACK_ID,
         'KKTIX_URL': {
