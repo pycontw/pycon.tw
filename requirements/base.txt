@@ -2,6 +2,10 @@
 # https://www.djangoproject.com/
 Django==3.0.3
 
+# A simple, easy access key-value registry for Django
+# https://github.com/yychen/dj-registry
+dj-registry==0.2
+
 # Reusable mixins for Django
 # https://django-braces.readthedocs.io/en/latest/index.html
 django-braces==1.14.0
