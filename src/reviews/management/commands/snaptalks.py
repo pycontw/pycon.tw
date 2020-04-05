@@ -7,6 +7,8 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
+from registry.helper import reg
+
 from proposals.models import TalkProposal
 from reviews.models import TalkProposalSnapshot
 
@@ -58,7 +60,7 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def make_snapshots(self, dataset_iter):
-        current_stage = settings.REVIEWS_STAGE
+        current_stage = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.reviews.stage', 0)
         for dataset in dataset_iter:
             pk = dataset['pk']
             field_data = {

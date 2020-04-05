@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.utils.html import format_html
 from django.utils.translation import ugettext
 
+from registry.helper import reg
+
 from proposals.forms import TalkProposalCancelForm, TutorialProposalCancelForm
 from proposals.models import TalkProposal, TutorialProposal
 
@@ -15,7 +17,7 @@ class ProposalCancelView(ProposalUpdateView):
     form_valid_message_level = messages.INFO
 
     def can_edit(self):
-        return settings.PROPOSALS_WITHDRAWABLE
+        return reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.proposals.withdrawable', False)
 
 
 class TalkProposalCancelView(ProposalCancelView):
