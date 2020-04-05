@@ -19,6 +19,7 @@ from .forms import (
     PasswordResetForm, SetPasswordForm, CocAgreementForm,
 )
 from .models import CocRecord
+from reviews.context import proposals_state, reviews_state
 
 from lxml import etree
 import lxml.html
@@ -82,6 +83,8 @@ def user_dashboard(request):
     logout_next = reverse('login')
     return render(request, 'users/user_dashboard.html', {
         'logout_next': logout_next,
+        **proposals_state(),
+        **reviews_state(),
     })
 
 
@@ -103,6 +106,7 @@ def user_profile_update(request):
         form = UserProfileUpdateForm(instance=request.user)
     return render(request, 'users/user_profile_update.html', {
         'form': form, 'logout_next': logout_next,
+        **reviews_state(),
     })
 
 
@@ -176,12 +180,25 @@ def coc_agree(request):
     return render(request, 'users/coc_agreement.html', {
         'form': form,
         'coc': coc,
+        **reviews_state(),
     })
+
+
+class PasswordChangeView(auth_views.PasswordChangeView):
+    # cannot merely pass extra_context=reviews_state() to
+    # auth_views.PasswordChangeView because
+    # we need to resolve reviews_state() everytime when
+    # reaching this view
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(**reviews_state())
+        return context
 
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()
-password_change = auth_views.PasswordChangeView.as_view()
+password_change = PasswordChangeView.as_view()
 password_reset = auth_views.PasswordResetView.as_view(form_class=PasswordResetForm,
         template_name='registration/password_reset.html',
         email_template_name='registration/password_reset_email.txt')

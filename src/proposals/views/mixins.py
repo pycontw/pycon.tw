@@ -6,7 +6,10 @@ from django.utils.translation import gettext_lazy as _
 from django.shortcuts import redirect
 from django.urls import reverse
 
+from registry.helper import reg
+
 from users.models import CocRecord
+from reviews.context import reviews_state
 
 
 class UserProfileRequiredMixin(UserPassesTestMixin):
@@ -20,7 +23,7 @@ class UserProfileRequiredMixin(UserPassesTestMixin):
 class ProposalEditMixin:
 
     def can_edit(self):
-        return settings.PROPOSALS_EDITABLE
+        return reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.proposals.editable', False)
 
     def dispatch(self, request, *args, **kwargs):
         if not self.can_edit():
@@ -34,6 +37,13 @@ class CocAgreementMixin:
             return redirect('%s?next=%s' % (reverse('coc_agreement'), request.path))
 
         return super().dispatch(request, *args, **kwargs)
+
+
+class ReviewsStateMixin:
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data.update(**reviews_state())
+        return data
 
 
 class ProposalExamplesMixin:

@@ -6,6 +6,8 @@ from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext, gettext_lazy as _
 
+from registry.helper import reg
+
 from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
 
@@ -18,8 +20,9 @@ class ReviewQuerySet(models.QuerySet):
     def filter_current_reviews(
             self, proposal, exclude_user=None, filter_user=None):
         qs = self.filter(proposal=proposal)
-        if settings.REVIEWS_STAGE:
-            qs = qs.filter(stage__lte=settings.REVIEWS_STAGE)
+        stage = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.reviews.stage', 0)
+        if stage:
+            qs = qs.filter(stage__lte=stage)
         if exclude_user:
             qs = qs.exclude(reviewer=exclude_user)
         if filter_user:
@@ -176,7 +179,7 @@ class Review(models.Model):
 
     def save(self, *args, **kwargs):
         if self.stage is None:
-            self.stage = settings.REVIEWS_STAGE
+            self.stage = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.reviews.stage', 0)
         return super().save(*args, **kwargs)
 
     def is_comment_visible_to_submitter(self):

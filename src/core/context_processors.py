@@ -38,21 +38,6 @@ def pycontw(request):
     }
 
 
-def proposals_states(request):
-    return {
-        'proposals_creatable': settings.PROPOSALS_CREATABLE,
-        'proposals_editable': settings.PROPOSALS_EDITABLE,
-        'proposals_withdrawable': settings.PROPOSALS_WITHDRAWABLE,
-    }
-
-
-def reviews_states(request):
-    return {
-        'reviews_stage': settings.REVIEWS_STAGE,
-        'reviews_public': settings.REVIEWS_VISIBLE_TO_SUBMITTERS,
-    }
-
-
 def _iter_sponsor_section():
     groups = itertools.groupby(
         Sponsor.objects.order_by('level'),
