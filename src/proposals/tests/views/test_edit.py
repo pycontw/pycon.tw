@@ -3,11 +3,7 @@ import pytest
 from django.conf import settings
 from django.contrib import messages
 
-
-pytestmark = pytest.mark.skipif(
-    not settings.PROPOSALS_EDITABLE,
-    reason='proposal edit disabled',
-)
+from core.utils import set_registry
 
 
 def test_talk_proposal_edit_login(client):
@@ -25,46 +21,78 @@ def test_tutorial_proposal_edit_login(client):
     ]
 
 
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_denied_get(bare_user_client):
     response = bare_user_client.get('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 403
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_denied_get(bare_user_client):
     response = bare_user_client.get('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 403
 
 
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_denied_post(bare_user_client):
     response = bare_user_client.post('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 403
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_denied_post(bare_user_client):
     response = bare_user_client.post('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 403
 
 
+@set_registry(**{'proposals.editable': False})
+def test_talk_proposal_edit_disabled_get(agreed_user_client, talk_proposal):
+    response = agreed_user_client.get('/en-us/proposals/talk/42/edit/')
+    assert response.status_code == 404
+
+
+@set_registry(**{'proposals.editable': False})
+def test_tutorial_proposal_edit_disabled_get(agreed_user_client, tutorial_proposal):
+    response = agreed_user_client.get('/en-us/proposals/tutorial/42/edit/')
+    assert response.status_code == 404
+
+
+@set_registry(**{'proposals.editable': False})
+def test_talk_proposal_edit_disabled_post(agreed_user_client, talk_proposal):
+    response = agreed_user_client.post('/en-us/proposals/talk/42/edit/')
+    assert response.status_code == 404
+
+
+@set_registry(**{'proposals.editable': False})
+def test_tutorial_proposal_edit_disabled_post(agreed_user_client, tutorial_proposal):
+    response = agreed_user_client.post('/en-us/proposals/tutorial/42/edit/')
+    assert response.status_code == 404
+
+
 # yychen(2020-02-24): I think coc agreement check should come after owner check
 # But I have no idea how to do it
 # So this is just a workaround
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_not_owned(another_agreed_user_client, talk_proposal):
     response = another_agreed_user_client.get('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 404
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_not_owned(
         another_agreed_user_client, tutorial_proposal):
     response = another_agreed_user_client.get('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 404
 
 
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_get(agreed_user_client, talk_proposal):
     response = agreed_user_client.get('/en-us/proposals/talk/42/edit/')
     assert response.status_code == 200
 
 
 @pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
     body = parser.parse(user_client.get('/en-us/proposals/talk/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
@@ -82,6 +110,7 @@ def test_talk_proposal_edit_get_ui(user_client, talk_proposal, parser):
     assert form_element.get('action') == '/proposals/talk/42/cancel/'
 
 
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_get_cancelled_ui(
         agreed_user_client, cancelled_talk_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
@@ -97,12 +126,14 @@ def test_talk_proposal_edit_get_cancelled_ui(
     assert not form_element.get('action')   # Posts to the same view.
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_get(agreed_user_client, tutorial_proposal):
     response = agreed_user_client.get('/en-us/proposals/tutorial/42/edit/')
     assert response.status_code == 200
 
 
 @pytest.mark.xfail(strict=True, reason='TODO: why is this xfail?')
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
     body = parser.parse(user_client.get('/en-us/proposals/tutorial/42/edit/'))
     submit_buttons = body.cssselect(    # Except form inside navbar.
@@ -120,6 +151,7 @@ def test_tutorial_proposal_edit_get_ui(user_client, tutorial_proposal, parser):
     assert form_element.get('action') == '/en-us/proposals/tutorial/42/cancel/'
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_get_cancelled(
         agreed_user_client, cancelled_tutorial_proposal, parser):
     """If a proposal is cancelled, the edit view should have only one form to
@@ -135,6 +167,7 @@ def test_tutorial_proposal_edit_get_cancelled(
     assert not form_element.get('action')   # Posts to the same view.
 
 
+@set_registry(**{'proposals.editable': True})
 def test_talk_proposal_edit_post(agreed_user_client, talk_proposal):
     response = agreed_user_client.post('/en-us/proposals/talk/42/edit/', {
         'title': 'Beyond the Style Guides<br>',
@@ -179,6 +212,7 @@ def test_talk_proposal_edit_post(agreed_user_client, talk_proposal):
     ]
 
 
+@set_registry(**{'proposals.editable': True})
 def test_tutorial_proposal_edit_post(agreed_user_client, tutorial_proposal):
     response = agreed_user_client.post('/en-us/proposals/tutorial/42/edit/', {
         'title': 'Beyond the Style Guides<br>',
