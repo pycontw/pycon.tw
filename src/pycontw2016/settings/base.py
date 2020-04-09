@@ -108,7 +108,6 @@ LOCAL_APPS = (
     'core',
     'events',
     'proposals',
-    'remotedb',
     'reviews',
     'sponsors',
     'users',

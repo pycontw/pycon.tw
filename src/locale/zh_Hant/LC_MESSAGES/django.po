@@ -878,10 +878,6 @@ msgstr "偏好 45 分鐘"
 msgid "Day 3"
 msgstr "第 3 天"
 
-#: remotedb/apps.py:11
-msgid "Remote DB"
-msgstr "遠端資料庫"
-
 #: reviews/admin.py:50
 msgid "Key"
 msgstr "鍵"
