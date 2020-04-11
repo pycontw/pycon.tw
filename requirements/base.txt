@@ -74,10 +74,6 @@ lxml==4.5.0
 # https://python-pillow.org/
 Pillow==7.0.0
 
-# Python interface to the Firebase's REST API.
-# http://ozgur.github.io/python-firebase/
-python-firebase==1.2
-
 # World Timezone Definitions for Python.
 # https://pythonhosted.org/pytz/
 pytz==2019.3
