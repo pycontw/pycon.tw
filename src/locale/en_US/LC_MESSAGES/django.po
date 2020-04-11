@@ -885,10 +885,6 @@ msgstr "Prefer 45min"
 msgid "Day 3"
 msgstr "Day 3"
 
-#: remotedb/apps.py:11
-msgid "Remote DB"
-msgstr "Remote DB"
-
 #: reviews/admin.py:50
 msgid "Key"
 msgstr "Key"
