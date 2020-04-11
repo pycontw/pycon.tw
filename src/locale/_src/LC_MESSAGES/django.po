@@ -896,10 +896,6 @@ msgstr ""
 msgid "Day 3"
 msgstr ""
 
-#: remotedb/apps.py:11
-msgid "Remote DB"
-msgstr ""
-
 #: reviews/admin.py:50
 msgid "Key"
 msgstr ""

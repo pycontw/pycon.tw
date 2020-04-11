@@ -108,7 +108,6 @@ LOCAL_APPS = (
     'core',
     'events',
     'proposals',
-    'remotedb',
     'reviews',
     'sponsors',
     'users',
@@ -268,10 +267,6 @@ COMPRESS_PRECOMPILERS = (
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-
-FIREBASE_URL = 'https://pycon-630b8.firebaseio.com'
-
-FIREBASE_DB = '/pycontw2018'
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 
