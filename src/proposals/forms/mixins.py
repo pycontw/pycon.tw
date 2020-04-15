@@ -223,7 +223,7 @@ class TutorialProposalMixin:
                 "This is NOT made public and for REVIEW ONLY."
             ),
             'remoting_policy': _(
-                "Whether you agree to deliver the talk remotely if the epidemic "
+                "Whether you agree to deliver the tutorial remotely if the epidemic "
                 "(coronavirus) is still raging this August?"
 
             ),
