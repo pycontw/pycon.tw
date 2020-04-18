@@ -4,12 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 
 from proposals.models import TalkProposal, TutorialProposal
-
-
-pytestmark = pytest.mark.skipif(
-    not settings.PROPOSALS_WITHDRAWABLE,
-    reason='proposal withdrawal disabled',
-)
+from core.utils import set_registry
 
 
 def test_talk_proposal_cancel_login(client):
@@ -28,6 +23,7 @@ def test_tutorial_proposal_cancel_login(client):
 
 
 @pytest.mark.parametrize('method', ['get', 'post'])
+@set_registry(**{'proposals.withdrawable': True})
 def test_talk_proposal_cancel_denied(bare_user_client, method):
     response = getattr(bare_user_client, method)(
         '/en-us/proposals/talk/42/cancel/',
@@ -36,6 +32,7 @@ def test_talk_proposal_cancel_denied(bare_user_client, method):
 
 
 @pytest.mark.parametrize('method', ['get', 'post'])
+@set_registry(**{'proposals.withdrawable': True})
 def test_tutorial_proposal_cancel_denied(bare_user_client, method):
     response = getattr(bare_user_client, method)(
         '/en-us/proposals/tutorial/42/cancel/',
@@ -43,6 +40,7 @@ def test_tutorial_proposal_cancel_denied(bare_user_client, method):
     assert response.status_code == 403
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_talk_proposal_cancel_get(agreed_user_client, talk_proposal):
     """The cancel view should not allow GET, only POST.
     """
@@ -50,6 +48,7 @@ def test_talk_proposal_cancel_get(agreed_user_client, talk_proposal):
     assert response.status_code == 405
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_tutorial_proposal_cancel_get(agreed_user_client, tutorial_proposal):
     """The cancel view should not allow GET, only POST.
     """
@@ -57,17 +56,26 @@ def test_tutorial_proposal_cancel_get(agreed_user_client, tutorial_proposal):
     assert response.status_code == 405
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_talk_proposal_cancel_not_owned(another_agreed_user_client, talk_proposal):
     response = another_agreed_user_client.post('/en-us/proposals/talk/42/cancel/')
     assert response.status_code == 404
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_tutorial_proposal_cancel_not_owned(
         another_agreed_user_client, tutorial_proposal):
     response = another_agreed_user_client.post('/en-us/proposals/tutorial/42/cancel/')
     assert response.status_code == 404
 
 
+@set_registry(**{'proposals.withdrawable': False})
+def test_talk_proposal_cancel_disabled(agreed_user_client, talk_proposal):
+    response = agreed_user_client.post('/en-us/proposals/talk/42/cancel/')
+    assert response.status_code == 404
+
+
+@set_registry(**{'proposals.withdrawable': True})
 def test_talk_proposal_cancel(agreed_user_client, talk_proposal):
     assert not talk_proposal.cancelled
 
@@ -88,6 +96,7 @@ def test_talk_proposal_cancel(agreed_user_client, talk_proposal):
     ]
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_talk_proposal_reactivate(agreed_user_client, cancelled_talk_proposal):
     assert cancelled_talk_proposal.cancelled
 
@@ -108,6 +117,13 @@ def test_talk_proposal_reactivate(agreed_user_client, cancelled_talk_proposal):
     ]
 
 
+@set_registry(**{'proposals.withdrawable': False})
+def test_tutorial_proposal_cancel_disabled(agreed_user_client, tutorial_proposal):
+    response = agreed_user_client.post('/en-us/proposals/tutorial/42/cancel/')
+    assert response.status_code == 404
+
+
+@set_registry(**{'proposals.withdrawable': True})
 def test_tutorial_proposal_cancel(agreed_user_client, tutorial_proposal):
     assert not tutorial_proposal.cancelled
 
@@ -128,6 +144,7 @@ def test_tutorial_proposal_cancel(agreed_user_client, tutorial_proposal):
     ]
 
 
+@set_registry(**{'proposals.withdrawable': True})
 def test_tutorial_proposal_reactivate(
         agreed_user_client, cancelled_tutorial_proposal):
     assert cancelled_tutorial_proposal.cancelled

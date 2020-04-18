@@ -14,11 +14,14 @@ from proposals.models import TalkProposal
 
 from .forms import ReviewForm
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review, TalkProposalSnapshot
+from .context import reviews_state
 
 
 class ReviewableMixin:
     def dispatch(self, request, *args, **kwargs):
-        if settings.REVIEWS_STAGE < 1:
+        self.reviews_state = reviews_state()
+
+        if self.reviews_state.reviews_stage < 1:
             raise Http404
         return super().dispatch(request, *args, **kwargs)
 
@@ -86,7 +89,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         return qs
 
     def get_context_data(self, **kwargs):
-        review_stage = settings.REVIEWS_STAGE
+        review_stage = self.reviews_state.reviews_stage
         verdicted_proposals = (
             TalkProposal.objects
             .filter_reviewable(self.request.user)
@@ -122,11 +125,12 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             'vote': vote_mapping,
             'ordering': self.ordering,
             'query_string': self.request.GET.urlencode(),
+            **self.reviews_state._asdict(),
         })
         return context
 
     def get_reviews(self):
-        review_stage = settings.REVIEWS_STAGE
+        review_stage = self.reviews_state.reviews_stage
         if review_stage == 1:
             reviews = (
                 Review.objects
@@ -179,7 +183,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
                 self.snapshot_model.objects
                 .filter(
                     proposal=proposal,
-                    stage__lt=settings.REVIEWS_STAGE,
+                    stage__lt=self.reviews_state.reviews_stage
                 )
                 .latest('dumped_at')
             )
@@ -206,7 +210,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             review = Review.objects.get(
                 proposal=self.proposal,
                 reviewer=self.request.user,
-                stage=settings.REVIEWS_STAGE,
+                stage=self.reviews_state.reviews_stage,
             )
         except Review.DoesNotExist:
             review = None
@@ -224,7 +228,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             review = Review.objects.get(
                 proposal=self.proposal,
                 reviewer=self.request.user,
-                stage=settings.REVIEWS_STAGE - 1,
+                stage=self.reviews_state.reviews_stage - 1,
             )
         except Review.DoesNotExist:
             return kwargs
@@ -237,7 +241,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
         return kwargs
 
     def get_context_data(self, **kwargs):
-        review_stage = settings.REVIEWS_STAGE
+        review_stage = self.reviews_state.reviews_stage
         # Query all reviews made by others, including all stages
         other_review_iter = (
             Review.objects
@@ -272,6 +276,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             'other_reviews': other_reviews,
             'my_reviews': my_reviews,
             'review_stage': review_stage,
+            **self.reviews_state._asdict(),
         })
         return super().get_context_data(**kwargs)
 

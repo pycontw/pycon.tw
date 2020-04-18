@@ -6,6 +6,9 @@ from django.template.loader import TemplateDoesNotExist
 from django.template.response import TemplateResponse
 from django.utils.functional import lazy
 from django.utils.html import conditional_escape, format_html, mark_safe
+from django.test import override_settings
+
+from registry.helper import reg
 
 
 format_html_lazy = lazy(format_html, str)
@@ -115,3 +118,13 @@ class OrderedDefaultDict(collections.OrderedDict):
             raise KeyError(key)
         self[key] = self.default_factory()
         return self[key]
+
+
+class set_registry(override_settings):
+    def enable(self):
+        for key, value in self.options.items():
+            reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}'] = value
+
+    def disable(self):
+        for key, value in self.options.items():
+            del reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}']
