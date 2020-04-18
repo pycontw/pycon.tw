@@ -123,6 +123,7 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'remoting_policy': True,
     }, follow=True)
 
     proposal = TutorialProposal.objects.get(

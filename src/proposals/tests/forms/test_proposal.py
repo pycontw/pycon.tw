@@ -66,6 +66,7 @@ def tutorial_proposal_data():
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'remoting_policy': True,
     }
 
 
@@ -73,7 +74,7 @@ def test_tutorial_proposal_create_form():
     form = TutorialProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy',
+        'python_level', 'recording_policy', 'remoting_policy',
     ]
 
 
@@ -123,7 +124,7 @@ def test_tutorial_proposal_update_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
         'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy', 'slide_link',
+        'outline', 'supplementary', 'recording_policy', 'remoting_policy', 'slide_link',
     ]
 
 
