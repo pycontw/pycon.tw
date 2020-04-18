@@ -21,9 +21,9 @@ class CurrentConferenceFilter(admin.filters.SimpleListFilter):
         if self.value() == 'all':
             return queryset
         elif self.value() == 'other':
-            return queryset.exclude(key__startswith=f'{settings.CONFERENCE_DEFAULT_SLUG}')
+            return queryset.exclude(key__startswith=settings.CONFERENCE_DEFAULT_SLUG)
 
-        return queryset.filter(key__startswith=f'{settings.CONFERENCE_DEFAULT_SLUG}')
+        return queryset.filter(key__startswith=settings.CONFERENCE_DEFAULT_SLUG)
 
     def choices(self, changelist):
         for lookup, title in self.lookup_choices:
