@@ -221,6 +221,7 @@ def test_tutorial_proposal_edit_post(agreed_user_client, tutorial_proposal):
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'remoting_policy': True,
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
