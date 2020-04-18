@@ -83,8 +83,8 @@ def user_dashboard(request):
     logout_next = reverse('login')
     return render(request, 'users/user_dashboard.html', {
         'logout_next': logout_next,
-        **proposals_state(),
-        **reviews_state(),
+        **proposals_state()._asdict(),
+        **reviews_state()._asdict(),
     })
 
 
@@ -106,7 +106,7 @@ def user_profile_update(request):
         form = UserProfileUpdateForm(instance=request.user)
     return render(request, 'users/user_profile_update.html', {
         'form': form, 'logout_next': logout_next,
-        **reviews_state(),
+        **reviews_state()._asdict(),
     })
 
 
@@ -180,19 +180,19 @@ def coc_agree(request):
     return render(request, 'users/coc_agreement.html', {
         'form': form,
         'coc': coc,
-        **reviews_state(),
+        **reviews_state()._asdict(),
     })
 
 
 class PasswordChangeView(auth_views.PasswordChangeView):
-    # cannot merely pass extra_context=reviews_state() to
+    # cannot merely pass extra_context=reviews_state()._asdict() to
     # auth_views.PasswordChangeView because
-    # we need to resolve reviews_state() everytime when
+    # we need to resolve reviews_state()._asdict() everytime when
     # reaching this view
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update(**reviews_state())
+        context.update(**reviews_state()._asdict())
         return context
 
 

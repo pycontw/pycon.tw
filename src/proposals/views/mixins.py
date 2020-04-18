@@ -42,7 +42,7 @@ class CocAgreementMixin:
 class ReviewsStateMixin:
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data.update(**reviews_state())
+        data.update(**reviews_state()._asdict())
         return data
 
 
