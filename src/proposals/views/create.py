@@ -5,18 +5,21 @@ from django.utils.html import format_html
 from django.utils.translation import gettext
 from django.views.generic import CreateView
 
+from registry.helper import reg
+
 from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
 
-from .mixins import UserProfileRequiredMixin, CocAgreementMixin
+from .mixins import UserProfileRequiredMixin, CocAgreementMixin, ReviewsStateMixin
 
 
 class ProposalCreateView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        FormValidMessageMixin, CocAgreementMixin, CreateView):
+        ReviewsStateMixin, FormValidMessageMixin, CocAgreementMixin,
+        CreateView):
 
     def dispatch(self, request, *args, **kwargs):
-        if not settings.PROPOSALS_CREATABLE:
+        if not reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.proposals.creatable', False):
             raise Http404
 
         return super().dispatch(request, *args, **kwargs)

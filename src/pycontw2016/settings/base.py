@@ -46,8 +46,6 @@ TEMPLATES = [
                 'core.context_processors.script_prefix',
                 'core.context_processors.pycontw',
                 'core.context_processors.events',
-                'core.context_processors.proposals_states',
-                'core.context_processors.reviews_states',
                 'core.context_processors.sponsors',
             ],
             'debug': True,
@@ -102,6 +100,7 @@ THIRD_PARTY_APPS = (
     'django_q',
     'import_export',
     'sorl.thumbnail',
+    'registry',
 )
 
 LOCAL_APPS = (

@@ -10,12 +10,13 @@ from proposals.forms import (
 )
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
-from .mixins import ProposalEditMixin, UserProfileRequiredMixin
+from .mixins import ProposalEditMixin, UserProfileRequiredMixin, ReviewsStateMixin
 
 
 class ProposalManageSpeakersView(
         LoginRequiredMixin, UserProfileRequiredMixin,
-        ProposalEditMixin, FormValidMessageMixin, CreateView):
+        ReviewsStateMixin, ProposalEditMixin, FormValidMessageMixin,
+        CreateView):
 
     http_method_names = ['get', 'post', 'options']
     model = AdditionalSpeaker
