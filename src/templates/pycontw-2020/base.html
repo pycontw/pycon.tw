@@ -20,6 +20,11 @@
 <link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-32x32.png' %}" sizes="32x32">
 <link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-192x192.png' %}" sizes="192x192">
 
+{% block meta_og %}
+<meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2020/assets/og-image.png' %}">
+{% endblock meta_og %}
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400|Raleway:300,400|Philosopher|Quicksand&display=swap">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
