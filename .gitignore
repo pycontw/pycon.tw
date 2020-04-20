@@ -32,6 +32,7 @@ local.env
 venv/
 /src/assets/
 local.db
+*.mo
 
 # NPM
 node_modules/
