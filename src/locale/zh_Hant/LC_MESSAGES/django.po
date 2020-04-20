@@ -628,7 +628,7 @@ msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}�
 
 #: proposals/forms/speakers.py:33
 msgid "Additional speaker creation requires a proposal instance."
-msgstr "增加額外講者需要一個已創建的提案。"
+msgstr "增加額外講者需要一個已建立的提案。"
 
 #: proposals/forms/speakers.py:36
 msgid "User can only add additional speakers to owned proposals."
@@ -759,12 +759,12 @@ msgstr "《<strong>{title}</strong>》專業課程提案已重新提交。"
 #: proposals/views/create.py:39
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
-msgstr "已創建題目為《<strong>{title}</strong>》的演講提案。"
+msgstr "已建立題目為《<strong>{title}</strong>》的演講提案。"
 
 #: proposals/views/create.py:49
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
-msgstr "已創建題目為《<strong>{title}</strong>》的專業課程提案。"
+msgstr "已建立題目為《<strong>{title}</strong>》的專業課程提案。"
 
 #: proposals/views/mixins.py:42 proposals/views/mixins.py:98
 msgid "Abstract Example"
@@ -1809,7 +1809,7 @@ msgid ""
 "You haven't submitted any talk proposals. Why not <a href="
 "\"%(talk_proposal_create_url)s\">submit one now</a>?"
 msgstr ""
-"您尚未投稿演講，何不馬上<a href=\"%(talk_proposal_create_url)s\">創建一個</"
+"您尚未投稿演講，何不馬上<a href=\"%(talk_proposal_create_url)s\">建立一個</"
 "a>？"
 
 #: templates/default/users/user_dashboard.html:35
@@ -1830,7 +1830,7 @@ msgid ""
 "You haven't submitted any tutorial proposals. Why not <a href="
 "\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
 msgstr ""
-"您尚未投稿專業課程，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">創建"
+"您尚未投稿專業課程，何不馬上<a href=\"%(tutorial_proposal_create_url)s\">建立"
 "一個</a>？"
 
 #: templates/default/users/user_dashboard.html:60
