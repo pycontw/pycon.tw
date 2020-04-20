@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6-buster
 
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
@@ -14,6 +14,13 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # Add bin directory used by `pip install --user`
 ENV PATH "/home/docker/.local/bin:${PATH}"
+
+# Infrastructure tools
+# gettext is used for django to compile .po to .mo files.
+RUN apt-get update
+RUN apt-get install apt-utils -y
+RUN apt-get update
+RUN apt-get install gettext python3-pip -y
 
 # Install Node and Yarn from upstream
 RUN curl -o- $NVM_INSTALLER_URL | bash \
