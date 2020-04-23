@@ -5,7 +5,7 @@ DJANGO_TELEGRAMBOT = {
                         # NB: if use polling you must provide to run
                         # a management command that starts a worker
 
-    'WEBHOOK_SITE' : 'https://c4e0cfba.ngrok.io/bot',
+    'WEBHOOK_SITE' : 'https://tw.pycon.org/2020/bot',
     'WEBHOOK_PREFIX' : '/prefix', # (Optional[str]) # If this value is specified,
                                   # a prefix is added to webhook url
 
