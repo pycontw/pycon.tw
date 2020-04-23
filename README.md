@@ -18,6 +18,15 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 #### Database - Docker (Optional)
 
+Write database password in .env:
+
+    POSTGRES_PASSWORD=somepassword
+
+Define .env location in docker-compose-dev.yml:
+
+    env_file:
+    - .env
+
 Create and start the database for development:
 
     docker-compose -f docker-compose-dev.yml up
@@ -65,6 +74,11 @@ Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` int
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
 
 If you’re using a database for the first time, create a database named `pycontw2016` owned by the database user specified in the env file:
+
+> Enter pycontw_db_1 container
+```cmd
+docker exec -it pycontw_db_1 su - postgres
+```
 
 ```sql
 # Replace "postgres" with your specified role.
