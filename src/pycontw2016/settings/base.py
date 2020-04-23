@@ -69,7 +69,7 @@ if os.path.exists(env_file):
 # Raises ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -101,6 +101,7 @@ THIRD_PARTY_APPS = (
     'import_export',
     'sorl.thumbnail',
     'registry',
+    'django_telegrambot',
 )
 
 LOCAL_APPS = (
