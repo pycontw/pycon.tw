@@ -13,6 +13,8 @@ from telegram.error import (TelegramError, Unauthorized, BadRequest,
 # import the logging library
 import logging
 
+from . import telegramBotSettings
+
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
@@ -20,7 +22,7 @@ logger = logging.getLogger(__name__)
 @staff_member_required
 def home(request):
     bot_list = DjangoTelegramBot.bots
-    context = {'bot_list': bot_list, 'update_mode':settings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK')}
+    context = {'bot_list': bot_list, 'update_mode':telegramBotSettings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK')}
     return render(request, 'django_telegrambot/index.html', context)
 
 
