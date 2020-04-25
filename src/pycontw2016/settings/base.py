@@ -101,7 +101,6 @@ THIRD_PARTY_APPS = (
     'import_export',
     'sorl.thumbnail',
     'registry',
-    'django_telegrambot',
 )
 
 LOCAL_APPS = (
@@ -112,6 +111,7 @@ LOCAL_APPS = (
     'sponsors',
     'users',
     'ccip',
+    'django_telegrambot',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -275,6 +275,8 @@ GTM_TRACK_ID = None
 SLACK_WEBHOOK_URL = env.str('SLACK_WEBHOOK_URL', default=None)
 
 TELEGRAM_BOT_TOKEN = env.str('TELEGRAM_BOT_TOKEN', default=None)
+
+TELEGRAM_WEBHOOK_URL = env.str('TELEGRAM_WEBHOOK_URL', default=None)
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 

@@ -28,8 +28,8 @@ class Command(BaseCommand):
         return updater
 
     def handle(self, *args, **options):
-        from django.conf import settings
-        if settings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK') == 'WEBHOOK':
+        from .django_telegrambot import telegramBotSettings
+        if telegramBotSettings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK') == 'WEBHOOK':
             self.stderr.write("Webhook mode active in settings.py, change in POLLING if you want use polling update")
             return
 
@@ -49,7 +49,7 @@ class Command(BaseCommand):
         logger.addHandler(console)
 
 
-        bots_list = settings.DJANGO_TELEGRAMBOT.get('BOTS', [])
+        bots_list = telegramBotSettings.DJANGO_TELEGRAMBOT.get('BOTS', [])
         b = None
         for bot_set in bots_list:
             if bot_set.get('TOKEN', None) == updater.bot.token:
