@@ -3,8 +3,8 @@ from .base import (
     REVIEWS_VISIBLE_TO_SUBMITTERS,
     env,
 )
-from .base import *             # NOQA
 from .tgBot import *
+from .base import *             # NOQA
 import logging.config
 import os
 import sys
