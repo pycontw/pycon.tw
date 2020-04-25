@@ -1,3 +1,5 @@
+from django.conf import settings
+
 DJANGO_TELEGRAMBOT = {
 
     'MODE' : 'WEBHOOK', #(Optional [str]) # The default value is WEBHOOK,
@@ -19,7 +21,7 @@ DJANGO_TELEGRAMBOT = {
 
     'BOTS' : [
         {
-           'TOKEN': '1069790487:AAGdcYRpaTD_I6dg9Ql_f4SyOrekrYormu0', #Your bot token.
+           'TOKEN': settings.TELEGRAM_BOT_TOKEN, #Your bot token.
 
            #'ALLOWED_UPDATES':(Optional[list[str]]), # List the types of
                                                    #updates you want your bot to receive. For example, specify
