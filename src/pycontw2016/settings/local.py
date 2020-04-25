@@ -4,7 +4,7 @@ from .base import (
     env,
 )
 from .base import *             # NOQA
-
+from .tgBot import *
 import logging.config
 import os
 import sys

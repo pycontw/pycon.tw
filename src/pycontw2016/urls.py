@@ -34,6 +34,7 @@ urlpatterns += [
     url(r'^ccip/', include('ccip.urls')),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
+    url(r'^bot/', include('django_telegrambot.urls')),
 ]
 
 # User-uploaded files like profile pics need to be served in development.
