@@ -11,6 +11,5 @@ if not webhook_base.endswith("/"):
     webhook_base += "/"
 
 urlpatterns = [
-    url(r'admin/django-telegrambot/$', views.home, name='django-telegrambot'),
     url(r'{}(?P<bot_token>.+?)/$'.format(webhook_base), views.webhook, name='webhook'),
 ]
