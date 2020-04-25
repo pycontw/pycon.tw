@@ -24,6 +24,6 @@ redis==2.10.6
 # https://raven.readthedocs.org/en/latest/
 raven==6.5.0
 
-# telegram bot api for django
-# https://github.com/JungDev/django-telegrambot
-django-telegrambot==1.0.1
+# telegram bot api
+# https://github.com/python-telegram-bot/python-telegram-bot
+python-telegram-bot==12.6.1
