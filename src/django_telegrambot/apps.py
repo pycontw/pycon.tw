@@ -16,6 +16,8 @@ import os.path
 
 import logging
 
+from . import telegramBotSettings
+
 logger = logging.getLogger(__name__)
 
 TELEGRAM_BOT_MODULE_NAME = 'telegrambot'
@@ -130,29 +132,29 @@ class DjangoTelegramBot(AppConfig):
         DjangoTelegramBot.ready_run = True
 
         self.mode = WEBHOOK_MODE
-        if settings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK') == 'POLLING':
+        if telegramBotSettings.DJANGO_TELEGRAMBOT.get('MODE', 'WEBHOOK') == 'POLLING':
             self.mode = POLLING_MODE
 
         modes = ['WEBHOOK','POLLING']
         logger.info('Django Telegram Bot <{} mode>'.format(modes[self.mode]))
 
-        bots_list = settings.DJANGO_TELEGRAMBOT.get('BOTS', [])
+        bots_list = telegramBotSettings.DJANGO_TELEGRAMBOT.get('BOTS', [])
 
         if self.mode == WEBHOOK_MODE:
-            webhook_site = settings.DJANGO_TELEGRAMBOT.get('WEBHOOK_SITE', None)
+            webhook_site = telegramBotSettings.DJANGO_TELEGRAMBOT.get('WEBHOOK_SITE', None)
             if not webhook_site:
                 logger.warn('Required TELEGRAM_WEBHOOK_SITE missing in settings')
                 return
             if webhook_site.endswith("/"):
                 webhook_site = webhook_site[:-1]
 
-            webhook_base = settings.DJANGO_TELEGRAMBOT.get('WEBHOOK_PREFIX','/')
+            webhook_base = telegramBotSettings.DJANGO_TELEGRAMBOT.get('WEBHOOK_PREFIX','/')
             if webhook_base.startswith("/"):
                 webhook_base = webhook_base[1:]
             if webhook_base.endswith("/"):
                 webhook_base = webhook_base[:-1]
 
-            cert = settings.DJANGO_TELEGRAMBOT.get('WEBHOOK_CERTIFICATE', None)
+            cert = telegramBotSettings.DJANGO_TELEGRAMBOT.get('WEBHOOK_CERTIFICATE', None)
             certificate = None
             if cert and os.path.exists(cert):
                 logger.info('WEBHOOK_CERTIFICATE found in {}'.format(cert))
@@ -234,7 +236,7 @@ class DjangoTelegramBot(AppConfig):
                     logger.debug('Run {}'.format(module_name))
 
             except ImportError as er:
-                if settings.DJANGO_TELEGRAMBOT.get('STRICT_INIT'):
+                if telegramBotSettings.DJANGO_TELEGRAMBOT.get('STRICT_INIT'):
                     raise er
                 else:
                     logger.error('{} : {}'.format(module_name, repr(er)))

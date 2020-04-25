@@ -101,16 +101,3 @@ REVIEWS_VISIBLE_TO_SUBMITTERS = env.bool(
 )
 
 DJANGO_Q_DEBUG = True
-
-DJANGO_TELEGRAMBOT = {
-    'MODE': 'WEBHOOK',
-    'WEBHOOK_SITE': 'https://staging.pycon.tw/2020/bot',
-    'WEBHOOK_PREFIX': '/prefix',
-    'STRICT_INIT': True,
-    'BOTS': [
-        {
-           'TOKEN': '1069790487:AAGdcYRpaTD_I6dg9Ql_f4SyOrekrYormu0',
-        },
-    ],
-
-}
