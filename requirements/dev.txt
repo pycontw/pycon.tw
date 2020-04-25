@@ -48,3 +48,7 @@ pytest-xdist==1.31.0
 # Parses CSS3 Selectors and translate them to XPath 1.0 expressions.
 # https://cssselect.readthedocs.io/en/latest/
 cssselect==1.1.0
+
+# telegram bot api
+# https://github.com/python-telegram-bot/python-telegram-bot
+python-telegram-bot==12.6.1
