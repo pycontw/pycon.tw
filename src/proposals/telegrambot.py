@@ -11,7 +11,7 @@ def get(bot, update):
     talk = TalkProposal.objects.all()
     tutorial = TutorialProposal.objects.all()
     bot.sendMessage(update.message.chat_id,
-        text='talk:{}\ntutorial:{}'.format(len(talk),len(tutorial))
+        text='talk: {}\ntutorial: {}'.format(len(talk),len(tutorial))
         )
 
 def start(bot, update):
