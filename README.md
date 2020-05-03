@@ -92,6 +92,16 @@ After that, just run the migration.
 `cd` into the `src` directory:
 
     cd src
+    
+#### DB Connection
+Default is sqlite3, you can change to connect `postgres`.
+Copy `local.sample.env` and change its parameters to your personal setting.
+
+    cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
+    
+#### Create Super User
+
+    python manage.py createsuperuser
 
 And migrate the database:
 
