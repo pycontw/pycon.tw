@@ -3,5 +3,10 @@ version: '2.1'
 services:
   db:
     image: postgres:11-alpine
+    env_file:
+      - .env
     ports:
       - ${COMPOSE_DB_PORT:-5432}:5432
+
+env_file:
+- .env
