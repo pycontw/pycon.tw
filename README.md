@@ -22,10 +22,13 @@ Write database password in .env:
 
     POSTGRES_PASSWORD=somepassword
 
-Define .env location in docker-compose-dev.yml:
+Define .env location in docker-compose-dev.yml under the corresponding database service:
 
-    env_file:
-    - .env
+    services:
+      db:
+        image: postgres:11-alpine
+        env_file:
+          - .env
 
 Create and start the database for development:
 
@@ -98,6 +101,8 @@ Default is sqlite3, you can change to connect `postgres`.
 Copy `local.sample.env` and change its parameters to your personal setting.
 
     cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
+
+The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
     
 #### Create Super User
 
