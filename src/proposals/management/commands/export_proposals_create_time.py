@@ -19,13 +19,10 @@ class Command(BaseCommand):
     def export_proposals_create_time(self):
         joint_proposals = []
         for ptype, Proposal in PROPOSAL_TYPE_MAPPING.items():
-            for p in Proposal.objects.all():
+            for p in Proposal.objects.filter(cancelled=False):
                 timezone.activate(pytz.timezone('Asia/Taipei'))
                 # ^you can edit 'Asia/Taipei to other area.'
-                current_tz = timezone.get_current_timezone()
-                time = p.created_at
-                time = current_tz.normalize(time.astimezone(current_tz))
-                time = datetime.strftime(time, '%Y-%m-%d %H:%M:%S')
+                time = timezone.localtime(p.created_at).strftime('%Y-%m-%d %H:%M:%S')
                 joint_proposals.append({
                     'proposal_type(id)': ptype+'({})'.format(p.id),
                     'title': p.title,
