@@ -1,14 +1,8 @@
-import pytest
-
-from django.conf import settings
-
+from unittest.mock import MagicMock
 from core.utils import set_registry
 
 
-pytestmark = pytest.mark.skipif(
-    not settings.PROPOSALS_EDITABLE,
-    reason='call for proposals ends',
-)
+#def test_proposals_state()
 
 
 def test_talk_proposal_manage_speakers_login(client):
