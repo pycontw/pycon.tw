@@ -20,4 +20,5 @@ A clear and concise description of any alternative solutions or features you've 
 Add any other context or screenshots about the feature request here.
 
 **Invite the community to discuss and vote**
-Earn votes and support by involving the community and invite everybody to discuss your feature and to vote for it (votes are +1 , 0 or -1 via adding a thumbs-up/down)
+Earn votes and support by involving the community and invite everybody to discuss your feature and
+to vote for it (votes are +1 , 0 or -1 via adding a **thumbs-up/down**)
