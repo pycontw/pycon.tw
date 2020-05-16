@@ -1,8 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: ''
+title: "[Component name if available, e.g. Review System] Good bug title tells us
+  about precise symptom, not about the root cause."
+labels: triage needed
 assignees: ''
 
 ---
