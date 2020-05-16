@@ -1,6 +1,5 @@
 from .base import (
-    BASE_DIR, INSTALLED_APPS, MIDDLEWARE, REVIEWS_STAGE,
-    REVIEWS_VISIBLE_TO_SUBMITTERS,
+    BASE_DIR, INSTALLED_APPS, MIDDLEWARE,
     env,
 )
 from .base import *             # NOQA
@@ -95,10 +94,7 @@ LOGGING = {
 logging.config.dictConfig(LOGGING)
 
 
-REVIEWS_STAGE = env.int('REVIEWS_STAGE', default=REVIEWS_STAGE)
 
-REVIEWS_VISIBLE_TO_SUBMITTERS = env.bool(
-    'REVIEWS_VISIBLE_TO_SUBMITTERS', default=REVIEWS_VISIBLE_TO_SUBMITTERS,
-)
+
 
 DJANGO_Q_DEBUG = True
