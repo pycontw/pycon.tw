@@ -46,7 +46,8 @@ def proposals_state():
 
 
 ReviewsState = namedtuple('ReviewsState', ['reviews_stage',
-                                           'reviews_public'])
+                                           'reviews_public',
+                                           'reviews_enough'])
 
 def reviews_state():
     slug = settings.CONFERENCE_DEFAULT_SLUG
@@ -59,4 +60,5 @@ def reviews_state():
     return ReviewsState(
         reviews_stage=reg.get(f'{slug}.reviews.stage', 0),
         reviews_public=reg.get(f'{slug}.reviews.visible.to.submitters', False),
+        reviews_enough=reg.get(f'{slug}.reviews.enough', 10),
     )
