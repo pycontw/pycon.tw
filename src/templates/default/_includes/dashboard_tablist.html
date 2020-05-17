@@ -16,7 +16,7 @@
 	{% if user.is_reviewer %}
 	<li class="{% if active == 'review' %}active{% endif %}">
 		{% if reviews_stage > 0 %}
-		<a href="{% url 'review_proposal_list' %}">{% trans 'Reviews' %}</a>
+		<a href="{% url 'review_proposal_list' %}?order=-count">{% trans 'Reviews' %}</a>
 		{% else %}
 		<a class="disabled" href="javascript:void(0)">{% trans 'Reviews' %}</a>
 		{% endif %}

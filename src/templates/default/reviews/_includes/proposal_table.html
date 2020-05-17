@@ -40,7 +40,13 @@
 			{% if proposal.accepted == None %}
 				<td>{{ proposal.review_count }}</td>
 			{% endif %}
-            <td class="proposal-title"><div>{{ proposal.title }}</div></td>
+            <td class="proposal-title">
+							{% if proposal.review_count > reviews_enough %}
+								<div style="color: darkgray">{{ proposal.title }}</div>
+							{% else %}
+								<div>{{ proposal.title }}</div>
+							{% endif %}
+						</td>
 			<td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
 			{% if proposal.accepted != None %}
 				<td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_accepted_display }}</td>
