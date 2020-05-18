@@ -179,3 +179,7 @@ Run `tx pull` to get newer translation and recompile the PO files:
 
     tx pull -a
     python manage.py compilemessages -x _src
+
+## Deployment
+
+For site administrators, please refer to `contrib/DEPLOY.md`.
