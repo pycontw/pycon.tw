@@ -8,3 +8,7 @@
 .text-emphasize {
     @include roboto-medium();
 }
+
+.input-customized-size input{
+    width: 16.2em;
+}

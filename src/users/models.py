@@ -246,6 +246,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     def is_reviewer(self):
         return self.has_perm('reviews.add_review')
 
+    def is_admin(self):
+        return self.is_superuser
+
     @property
     def cospeaking_info_set(self):
         return self.additionalspeaker_set.filter(
