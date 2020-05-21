@@ -1298,6 +1298,12 @@ msgstr "更改密碼"
 msgid "Reviews"
 msgstr "審查"
 
+#: templates/default/_includes/dashboard_tablist.html:28
+#: templates/default/reviews/review_change.html:12
+#: templates/default/reviews/review_change.html:18
+msgid "Change Review"
+msgstr "更改審查設定"
+
 #: templates/default/_includes/nav/dashboard_nav.html:10
 msgid "Log out"
 msgstr "登出"

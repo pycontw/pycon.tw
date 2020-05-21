@@ -32,5 +32,6 @@ urlpatterns = [
 
     url(r'^agreement/$',
         views.coc_agree, name='coc_agreement'),
+    url(r'^review-change/$', views.review_change, name='review_change'),
 
 ]

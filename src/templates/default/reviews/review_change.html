@@ -1,0 +1,76 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='admin' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
+
+<h3 class="dashboard-header">
+	<span class="header-title">{% trans 'Change Review' %}</span>
+</h3>
+
+<div class="col-md-9">
+	<div class="dashboard-body">
+		<div class="panel panel-default">
+		<div class="panel-heading">{% trans 'Change Review' %}</div>
+			<ul class="list-group">
+				<li class="panel-title list-group-item">
+					pycontw-2020.proposals.creatable 
+					<div class="material-switch pull-right">
+						<input id="pycontw-2020.proposals.creatable" name="pycontw-2020.proposals.creatable" type="checkbox" />
+						<label for="pycontw-2020.proposals.creatable" class="label-info"></label>
+					</div>
+				</li>
+				<li class="panel-title list-group-item">
+					pycontw-2020.proposals.editable
+					<div class="material-switch pull-right">
+						<input id="pycontw-2020.proposals.editable" name="pycontw-2020.proposals.editable" type="checkbox" />
+						<label for="pycontw-2020.proposals.editable" class="label-info"></label>
+					</div>
+				</li>
+				<li class="panel-title list-group-item">
+					pycontw-2020.proposals.withdrawable
+					<div class="material-switch pull-right">
+						<input id="pycontw-2020.proposals.withdrawable" name="pycontw-2020.proposals.withdrawable" type="checkbox" />
+						<label for="pycontw-2020.proposals.withdrawable" class="label-info"></label>
+					</div>
+				</li>
+				<li class="panel-title list-group-item">
+					pycontw-2020.reviews.visible.to.submitters
+					<div class="material-switch pull-right">
+						<input id="pycontw-2020.reviews.visible.to.submitters" name="pycontw-2020.reviews.visible.to.submitters" type="checkbox" />
+						<label for="pycontw-2020.reviews.visible.to.submitters" class="label-info"></label>
+					</div>
+				</li>
+				<li class="panel-title list-group-item">
+					pycontw-2020.reviews.stage
+					<div class="input-customized-size pull-right">
+						<input id="pycontw-2020.reviews.stage" name="pycontw-2020.reviews.stage" type="number" min="0" max="2" placeholder="Int" required >
+					</div>
+				</li>
+				<li class="panel-title list-group-item">
+					pycontw-2020.proposals.disable.after
+					<div class="input-customized-size pull-right">
+						<input id="pycontw-2020.proposals.disable.after" name="pycontw-2020.proposals.disable.after" type="datetime-local" step="1" placeholder="yyyy-mm-dd hh:mm:ss"
+							required> 
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	<form action="{% url 'review_change' %}" method="post">
+		{% csrf_token %}
+		<div class="nesting-form-group">
+			{{ form|crispy }}
+			<button type="submit" class="btn btn-primary">
+				{% trans 'Submit' %}
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+
+{% endblock main-content %}
