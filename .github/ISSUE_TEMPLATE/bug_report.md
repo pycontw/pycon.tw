@@ -5,31 +5,29 @@ title: "[Component name if available, e.g. Review System] Good bug title tells u
   about precise symptom, not about the root cause."
 labels: triage needed
 assignees: ''
-
 ---
 
-# Description
+## Description
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-# Steps to Reproduce
-**To Reproduce**
+## Steps to Reproduce
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-# Expected Behavior
+## Expected Behavior
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-# Actual Behavior
+## Actual Behavior
 What happens actually so you think this is a bug.
 
-# More Information
+## More Information
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
  - Browser [e.g. chrome, safari]
@@ -41,5 +39,5 @@ What happens actually so you think this is a bug.
  - Browser [e.g. stock browser, safari]
  - Version [e.g. 22]
 
-**Additional context**
+## Additional context
 Add any other context about the problem here.
