@@ -1,0 +1,224 @@
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+{% load compress %}
+{% load i18n %}
+
+{% block title %}Sponsor{% endblock title %}
+{% block body_class %}scroll-x{% endblock %}
+
+{% comment %} import js {% endcomment %}
+{% compress js %}
+{% block scripts %}
+{{ block.super }}
+<script type="module" src="{% static 'pycontw-2020/scripts/community-track.js' %}"></script>
+{% endblock scripts %}
+{% endcompress %}
+
+{% compress css %}
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/vendors/blueimp/css/blueimp-gallery.min.css' %}">
+<link rel="stylesheet"  type="text/x-scss" href="{% static 'pycontw-2020/styles/gallery.scss' %}">
+{% endblock styles %}
+{% endcompress %}
+{% comment %} {% block extrastyle %}
+
+{% endblock %} {% endcomment %}
+
+
+{% block content %}
+<section class="pill-title">
+    <h1>會議場地</h1>
+</section>
+<p>
+    台灣 Python 年會 2020 大會主席  曾君宇
+    <br>
+    台灣 Python 年會 2020 議程主席  李唯
+    <br>
+    台灣 Python 年會 2020 贊助總監  張祐豪
+    <br>
+</p>
+
+<h2>三道門香見Brunch</h2>
+<div class="links">
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/3doors/3doors_1.jpg' %}" title="三道門香見Brunch-場景">
+          <img  src="{% static 'pycontw-2020/assets/3doors/thumbnails/3doors_1.jpg' %}" alt="三道門香見Brunch-場景" />
+      </a>
+    </div>
+  </div>
+  <div class="frame-square">
+    <div class="crop">
+        <a href="{% static 'pycontw-2020/assets/3doors/3doors_2.jpg' %}" title="三道門香見Brunch-場景">
+          <img src="{% static 'pycontw-2020/assets/3doors/thumbnails/3doors_2.jpg' %}" alt="三道門香見Brunch-場景" />
+        </a>
+    </div>
+  </div>
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/3doors/3doors_3.jpg' %}" title="三道門香見Brunch-場景">
+        <img src="{% static 'pycontw-2020/assets/3doors/thumbnails/3doors_3.jpg' %}" alt="三道門香見Brunch-場景" />
+      </a>
+    </div>
+  </div>
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/3doors/3doors_4.jpg' %}" title="三道門香見Brunch-場景">
+        <img src="{% static 'pycontw-2020/assets/3doors/thumbnails/3doors_4.jpg' %}" alt="三道門香見Brunch-場景" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<h2>Masa Loft</h2>
+<div class="links">
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_1.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_1.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_2.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_2.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_3.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_3.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_4.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_4.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_5.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_5.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_6.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_6.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_7.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_7.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+
+  <div class="frame-square">
+    <div class="crop">
+      <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_8.jpg' %}" title="Masa Loft-場景">
+        <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_8.jpg' %}" alt="Masa Loft-場景" />
+      </a>
+    </div>
+  </div>
+  
+  <div class="frame-square">
+    <div class="crop">
+        <a href="{% static 'pycontw-2020/assets/venue/masa_loft/masa_9.jpg' %}" title="Masa Loft-場景">
+          <img src="{% static 'pycontw-2020/assets/venue/masa_loft/thumbnails/masa_9.jpg' %}" alt="Masa Loft-場景" />
+        </a>
+      </div>
+  </div>
+</div>
+
+<h2>台南雅悅會館</h2>
+<div class="links">
+  <a href="{% static 'pycontw-2020/assets/venue/GLB/GLB_1.jpg' %}" title="台南雅悅會館-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/GLB/thumbnails/GLB_1.jpg' %}" alt="台南雅悅會館-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/GLB/GLB_2.jpg' %}" title="台南雅悅會館-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/GLB/thumbnails/GLB_2.jpg' %}" alt="台南雅悅會館-場景" />
+  </a>
+</div>
+
+<h2>巷木Shamu</h2>
+<div class="links">
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_1.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_1.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_1.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_1.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_2.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_2.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_3.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_3.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_4.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_4.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_5.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_5.jpg' %}" alt="巷木-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/shamu/shamu_6.jpg' %}" title="巷木-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/shamu/thumbnails/shamu_6.jpg' %}" alt="巷木-場景" />
+  </a>
+</div>
+
+<h2>藏風藝文空間</h2>
+<div class="links">
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/TsangFong_1.jpg' %}" title="藏風藝文空間-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/TsangFong_1.jpg' %}" alt="藏風藝文空間-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/TsangFong_2.jpg' %}" title="藏風藝文空間-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/TsangFong_2.jpg' %}" alt="藏風藝文空間-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/TsangFong_3.jpg' %}" title="藏風藝文空間-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/TsangFong_3.jpg' %}" alt="藏風藝文空間-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/TsangFong_4.jpg' %}" title="藏風藝文空間-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/TsangFong_4.jpg' %}" alt="藏風藝文空間-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/TsangFong_5.jpg' %}" title="藏風藝文空間-場景">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/TsangFong_5.jpg' %}" alt="藏風藝文空間-場景" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/large_room.jpg' %}" title="藏風藝文空間-大包廂座位圖">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/large_room.jpg' %}" alt="藏風藝文空間-大包廂座位圖" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/medium_room.jpg' %}" title="藏風藝文空間-中包廂座位圖">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/medium_room.jpg' %}" alt="藏風藝文空間-中包廂座位圖" />
+  </a>
+  <a href="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/small_room.jpg' %}" title="藏風藝文空間-小包廂座位圖">
+    <img src="{% static 'pycontw-2020/assets/venue/TsangFongCoffee/thumbnails/small_room.jpg' %}" alt="藏風藝文空間-小包廂座位圖" />
+  </a>
+</div>
+
+<!-- The Gallery as lightbox dialog, should be a document body child element -->
+<div id="blueimp-gallery" class="blueimp-gallery gallery">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+{% endblock content %}
