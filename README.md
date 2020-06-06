@@ -85,7 +85,7 @@ docker exec -it pycontw_db_1 su - postgres
 
 ```sql
 # Replace "postgres" with your specified role.
-create database pycontw2016 with owner = postgres;
+psql -c "create database pycontw2016 with owner = postgres;"
 ```
 
 After that, just run the migration.
@@ -95,7 +95,7 @@ After that, just run the migration.
 `cd` into the `src` directory:
 
     cd src
-    
+
 #### DB Connection
 Default is sqlite3, you can change to connect `postgres`.
 Copy `local.sample.env` and change its parameters to your personal setting.
@@ -103,7 +103,7 @@ Copy `local.sample.env` and change its parameters to your personal setting.
     cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
 
 The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
-    
+
 #### Create Super User
 
     python manage.py createsuperuser
