@@ -104,13 +104,15 @@ Copy `local.sample.env` and change its parameters to your personal setting.
 
 The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
 
+And migrate the database:
+
+    python manage.py migrate
+
 #### Create Super User
 
     python manage.py createsuperuser
 
-And migrate the database:
 
-    python manage.py migrate
 
 Now you’re all set!
 
