@@ -16,9 +16,13 @@ class AdditionalSpeakerInline(GenericTabularInline):
 
 
 class ProposalAdmin(admin.ModelAdmin):
+
+    def vote(self,obj):
+        return sum([int(review.vote) for review in obj.review_set.all()])
+
     list_display = [
         'title', 'category', 'duration', 'language',
-        'python_level', 'remoting_policy', 'accepted',
+        'python_level', 'remoting_policy', 'cancelled','accepted','vote'
     ]
     list_filter = [
         'cancelled', 'accepted',
