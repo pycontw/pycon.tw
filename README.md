@@ -80,12 +80,12 @@ If you’re using a database for the first time, create a database named `pycont
 
 > Enter pycontw_db_1 container
 ```cmd
-docker exec -it pycontw_db_1 su - postgres
+docker exec -it pycontw_db_1 psql -U postgres
 ```
 
 ```sql
 # Replace "postgres" with your specified role.
-psql -c "create database pycontw2016 with owner = postgres;"
+CREATE DATABASE pycontw2016 with owner = postgres;
 ```
 
 After that, just run the migration.
