@@ -222,7 +222,7 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             'request': self.request,
             'proposal': self.proposal,
         })
-        if kwargs.get('object') is not None or kwargs.get('initial'):
+        if kwargs.get('instance') is not None or kwargs.get('initial'):
             return kwargs
         try:
             review = Review.objects.get(
