@@ -1,4 +1,10 @@
+
 {% extends 'contents/_base.html' %}
+
+{% load static %}
+{% load compress %}
+{% load i18n %}
+{% load events %}
 
 {% block title %}Warm-up Seaasion{% endblock title %}
 
@@ -13,7 +19,7 @@
 
 <h2>第壹次Python NPF百香果 x 南投.py</h2>
 
-<img src="https://i.imgur.com/FRIbiSE.png">
+<img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/info.png' %}" width="100%">
 <p>Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！</p>
 
 <ul><li>活動時間:</li></ul>
@@ -43,15 +49,27 @@
     <p>2019年底，由南開科技大學副校長林正敏教授，號召、帶領並群聚著中台灣喜愛Python的人們。起初聚會地點在草屯768藝術空間，藉由768的公益性平台固定於每月舉行分享會，來自各行各業的大夥，無私地向大家分享自身經驗。在南投，人稱科技沙漠的地區，有著這一群人，為python貢獻己力，帶動產業連結，並為有意學習的大家，帶來一場無私、無限的學習地。</p>
 </blockquote>
 
-<ul><h2> 講者介紹: </h2></ul>
-<li><img width="50" height="50" src="https://i.imgur.com/Ossx5gR.png"> Mosky</li>
-<blockquote>
-    <p>Mosky 是個熱愛 open source 精神的 Python 工程師，也是 Pinkoi 的 Python Charmer，工作時和同事一起打造能夠買到獨特禮物的設計品購物平台。自從寫下人生第一支程式後，就難以忘懷以敘述為磚、邏輯為泥，堆砌出腦中藍圖的成就感，也熱愛分享自己所學，業餘時是 Python 課程講師，偶爾講點資料科學。也是數場國內外研討會的講者，包含臺灣的 PyCon、COSCUP、TEDxNTUST，以及在日本、新加坡、香港、韓國、馬來西亞等地的 PyCon。More: <a href="http://mosky.tw" target="_blank" rel="noopener">mosky.tw</a>。</p>
-</blockquote>
-<li><img width="50" height="50" src="https://i.imgur.com/CPxFpQx.png"> Tzu-ping Chung</li>
-<blockquote>
-    <p>TP 的職業生涯建立在開源軟體上，喜歡花費自己的精力讓這個世界更好。為了生活而寫過各式各樣的軟體，從嵌入式系統到 SPA 都是狩獵範圍，且只要有能力，就會盡量回饋社群。最近的空閒時間大多花在籌辦 PyCon Taiwan、貢獻核心 Python 工具、以及研究怎麼用 Python 與現代前端技術做網站。他有點太喜歡（人類）語言，常常扯到太多語言學和語音學，讓聊天內容變得無聊。</p>
-</blockquote>
+<article class="media">
+    <ul><h2> 講者介紹: </h2></ul>
+    <header>
+        <figure>
+            <img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/Mosky.png' %}">
+            <figcaption> Mosky </figcaption>
+        </figure>
+    </header>
+    <blockquote>
+        <p>Mosky 是個熱愛 open source 精神的 Python 工程師，也是 Pinkoi 的 Python Charmer，工作時和同事一起打造能夠買到獨特禮物的設計品購物平台。自從寫下人生第一支程式後，就難以忘懷以敘述為磚、邏輯為泥，堆砌出腦中藍圖的成就感，也熱愛分享自己所學，業餘時是 Python 課程講師，偶爾講點資料科學。也是數場國內外研討會的講者，包含臺灣的 PyCon、COSCUP、TEDxNTUST，以及在日本、新加坡、香港、韓國、馬來西亞等地的 PyCon。More: <a href="http://mosky.tw" target="_blank" rel="noopener">mosky.tw</a>。</p>
+    </blockquote>
+    <header>
+        <figure>
+            <img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/TP.png' %}">
+            <figcaption> Tzu-ping Chung </figcaption> 
+        </figure>
+    </header>
+    <blockquote>
+        <p>TP 的職業生涯建立在開源軟體上，喜歡花費自己的精力讓這個世界更好。為了生活而寫過各式各樣的軟體，從嵌入式系統到 SPA 都是狩獵範圍，且只要有能力，就會盡量回饋社群。最近的空閒時間大多花在籌辦 PyCon Taiwan、貢獻核心 Python 工具、以及研究怎麼用 Python 與現代前端技術做網站。他有點太喜歡（人類）語言，常常扯到太多語言學和語音學，讓聊天內容變得無聊。</p>
+    </blockquote>
+</article>
 
 <h2> 活動議程</h2>
 <table>
