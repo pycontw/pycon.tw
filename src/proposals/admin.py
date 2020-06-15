@@ -18,7 +18,6 @@ class AdditionalSpeakerInline(GenericTabularInline):
 class ProposalAdmin(admin.ModelAdmin):
     list_display = [
         'title', 'category', 'duration', 'language',
-        'python_level', 'accepted',
         'python_level', 'remoting_policy', 'accepted',
     ]
     list_filter = [
@@ -29,7 +28,6 @@ class ProposalAdmin(admin.ModelAdmin):
         'conference', 'submitter', 'title', 'category', 'duration',
         'language', 'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'slide_link', 'referring_policy', 'cancelled',
         'recording_policy', 'slide_link', 'referring_policy', 'remoting_policy', 'cancelled',
         'accepted', 'slido_embed_link',
     ]
@@ -46,4 +44,3 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
     pass
-
