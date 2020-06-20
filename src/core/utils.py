@@ -31,6 +31,8 @@ class TemplateExistanceStatusResponse(TemplateResponse):
         try:
             return super().resolve_template(template)
         except (UnicodeEncodeError, TemplateDoesNotExist):
+            if settings.DEBUG:
+                raise
             raise Http404
 
 
