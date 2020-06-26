@@ -1,0 +1,74 @@
+{% extends 'events/schedule.html' %}
+
+{% load i18n static %}
+{% load events %}
+
+
+{% block title %}{% trans 'Export New Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+{{ block.super }}
+{% endblock styles %}
+
+
+{% block pagetitle %}{% trans 'Export New Schedule' %}{% endblock pagetitle %}
+
+
+{% block schedule %}
+
+<div class="schedule-content">
+	{% for schedule_date, schedule_info in schedule_days.items %}
+	<article data-target="tabbing.pane">
+		<h3 class="tab-title">{{ schedule_info.name }}</h3>
+		<table class="time-table">
+			<tbody>
+				{% for slot_time, slot_info in schedule_info.slots.items %}
+					{% for room, event in slot_info %}
+						<tr class="slot {% if forloop.first %}first-slot{% endif %} {{ event|event_cell_class }} slot-room-{{ room|room_display }}">
+							<td class="time-table-time {{ event|event_cell_class }}">
+								<ul>
+									{% if room in '1-r3,4-r0,5-r1,6-r2' %}
+										<li class="room room-{{ room|room_display }}"></li>
+									{% endif %}
+									<li class="time">
+										{{ event.begin_time.value|date:'H:i' }}
+										-
+										{{ event.end_time.value|date:'H:i' }}
+									</li>
+								</ul>
+							</td>
+							<td class="event {% if not forloop.first %}event-not-first{% endif %} {{ event|event_cell_class }}">
+								<div class="event-info">{{ event|event_display }}</div>
+							</td>
+						</tr>
+					{% endfor %}
+				{% endfor %}
+			</tbody>
+		</table>
+	</article>
+	{% endfor %}
+</div>
+
+{% endblock schedule %}
+
+
+{% block controls %}
+
+<div>
+	<noscript>
+		{% blocktrans trimmed %}
+		Schedule table generation requires JavaScript. Please. (´･_･`)
+		{% endblocktrans %}
+	</noscript>
+
+	<form method="post" class="generation-form" style="display: none;">
+		{% csrf_token %}
+		<input type="hidden" name="html">
+		<button type="submit" class="button-round">
+			{% trans 'Generate' %}
+		</button>
+	</form>
+</div>
+
+{% endblock controls %}
