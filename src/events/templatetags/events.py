@@ -49,20 +49,20 @@ def room_display(value):
 
 def get_custom_event_display(event):
     template = get_template('events/_includes/schedule_custom_event.html')
-    return template.render(Context({'event': event}))
+    return template.render({'event': event})
 
 
 def get_keynote_event_display(event):
     template = get_template('events/_includes/schedule_keynote_event.html')
-    return template.render(Context({'event': event}))
+    return template.render({'event': event})
 
 
 def _render_talk_event_template(event, info, speaker_names, sponsored):
     template = get_template('events/_includes/schedule_talk_event.html')
-    return template.render(Context({
+    return template.render({
         'event': event, 'info': info, 'sponsored': sponsored,
         'speakers': format_names(speaker_names),
-    }))
+    })
 
 
 def get_talk_event_display(event):
