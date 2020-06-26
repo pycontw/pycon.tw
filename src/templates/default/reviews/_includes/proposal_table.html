@@ -1,58 +1,67 @@
 {% load i18n %}
 <table class="proposals-table table table-responsive">
 	<thead>
-		<tr>
-			{% if not verdict %}
+	<tr>
+		{% if not verdict %}
 			<th width="1%">
-				<a {% if ordering == 'review_count' %}class="active asc" href="?order=-count" {% elif ordering == '-review_count' %}class="active desc" href="?order=count"{% else %}href="?order=count"{% endif %}>
+				<a {% if ordering == 'review_count' %}class="active asc" href="?order=-count"
+					 {% elif ordering == '-review_count' %}class="active desc" href="?order=count"
+					 {% else %}href="?order=count"{% endif %}>
 					{% trans 'Reviewed' %}
 					<i class="fa fa-sort fa-lg"></i>
 					<i class="fa fa-sort-asc fa-lg"></i>
 					<i class="fa fa-sort-desc fa-lg"></i>
 				</a>
 			</th>
-			{% endif %}
-			<th class="proposal-title">
-				<a {% if ordering == 'title' %}class="active asc" href="?order=-title" {% elif ordering == '-title' %}class="active desc" href="?order=title"{% else %}href="?order=title"{% endif %}>
-					{% trans 'Title' %}
-					<i class="fa fa-sort fa-lg"></i>
-					<i class="fa fa-sort-asc fa-lg"></i>
-					<i class="fa fa-sort-desc fa-lg"></i>
-				</a>
-			</th>
-			<th width="1%" class="hidden-md hidden-sm hidden-xs">
-				<a {% if ordering == 'language' %}class="active asc" href="?order=-lang" {% elif ordering == '-language' %}class="active desc" href="?order=lang"{% else %}href="?order=lang"{% endif %}>
-					{% trans 'Lang' %}
-					<i class="fa fa-sort fa-lg"></i>
-					<i class="fa fa-sort-asc fa-lg"></i>
-					<i class="fa fa-sort-desc fa-lg"></i>
-				</a>
-			</th>
-			{% if verdict %}
-				<th width="1%">{% trans 'Decision' %}</th>
-			{% endif %}
-			<th width="1%"></th>
-		</tr>
+		{% endif %}
+		<th class="proposal-title">
+			<a {% if ordering == 'title' %}class="active asc" href="?order=-title"
+				 {% elif ordering == '-title' %}class="active desc" href="?order=title"{% else %}href="?order=title"{% endif %}>
+				{% trans 'Title' %}
+				<i class="fa fa-sort fa-lg"></i>
+				<i class="fa fa-sort-asc fa-lg"></i>
+				<i class="fa fa-sort-desc fa-lg"></i>
+			</a>
+		</th>
+		<th width="1%" class="hidden-md hidden-sm hidden-xs">
+			<a {% if ordering == 'language' %}class="active asc" href="?order=-lang"
+				 {% elif ordering == '-language' %}class="active desc" href="?order=lang"
+				 {% else %}href="?order=lang"{% endif %}>
+				{% trans 'Lang' %}
+				<i class="fa fa-sort fa-lg"></i>
+				<i class="fa fa-sort-asc fa-lg"></i>
+				<i class="fa fa-sort-desc fa-lg"></i>
+			</a>
+		</th>
+		{% if verdict %}
+			<th width="1%">{% trans 'Decision' %}</th>
+		{% endif %}
+		<th width="1%"></th>
+	</tr>
 	</thead>
 	<tbody>
-		{% for proposal in proposals %}
+	{% for proposal in proposals %}
 		<tr>
 			{% if proposal.accepted == None %}
 				<td>{{ proposal.review_count }}</td>
 			{% endif %}
-            <td class="proposal-title"><div>{{ proposal.title }}</div></td>
+			<td class="proposal-title">
+				<div  {% if proposal.review_count > reviews_enough %} class="grayed-out" {% endif %} >{{ proposal.title }}</div>
+			</td>
 			<td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
 			{% if proposal.accepted != None %}
 				<td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_accepted_display }}</td>
 			{% endif %}
 			<td>
-			  {% if proposal.accepted == None %}
-				<a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Review' %}</a>
-			  {% else %}
-				<a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural">{% trans 'Read' %}</a>
-			  {% endif %}
+				{% if proposal.accepted == None %}
+					<a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}"
+						 class="btn btn-natural">{% trans 'Review' %}</a>
+				{% else %}
+					<a href="{% url 'review_edit' proposal_pk=proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}"
+						 class="btn btn-natural">{% trans 'Read' %}</a>
+				{% endif %}
 			</td>
 		</tr>
-		{% endfor %}
+	{% endfor %}
 	</tbody>
 </table>
