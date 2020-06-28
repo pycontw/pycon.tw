@@ -54,7 +54,7 @@ certifi>=2019.11.28
 
 # Faker is a Python package that generates fake data for you.
 # https://faker.readthedocs.io/en/master/
-# 
+#
 # Note(yychen): I cannot find where this package is used.
 # It was originally called "fake-factory", and the name has changed
 # to "Faker"
@@ -89,7 +89,3 @@ sortedcontainers==2.1.0
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.8.6
-
-# Transifex, an online translation collaboration platform
-# http://docs.transifex.com/client/
-transifex-client==0.13.7
