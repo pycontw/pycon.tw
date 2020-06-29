@@ -5,12 +5,13 @@
 	margin: 3px 1px;
 	padding: 4px 12px;
 	border-radius: 2px;
-	background: #224398;
+	background: $imperial;
 	color: $white;
 	text-align: center;
+	transition: background-color 150ms linear;
 
 	&:hover {
-		background-color: $link-hover-dark;
+		background-color: $jinger-bread;
 		color: $white;
 		text-decoration: none;
 	}
