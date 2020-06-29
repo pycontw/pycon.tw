@@ -14,12 +14,6 @@
 
 // Styling for Markdown-rendered fields
 .talk-detail, .tutorial-detail {
-	p {
-		text-align: left;
-		letter-spacing: 0;
-		font-weight: normal;
-	}
-
 	.editor-preview {
 		* {
 			max-width: 100%;
@@ -56,6 +50,12 @@
 	}
 
 	.content {
+		p, ul, li {
+			text-align: left;
+			letter-spacing: 0;
+			font-weight: normal;
+		}
+
 		padding: 32px 16px;
 		background: transparentize($imperial, 0.9);
 		word-wrap: break-word;
