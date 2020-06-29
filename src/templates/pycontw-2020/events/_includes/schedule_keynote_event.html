@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% with data=event.get_static_data_for_locale %}
+<a href="{% url 'page' path='events/keynotes' %}#{{ event.slug }}" class="localed-url">
+	<div class="talk-title">{% trans 'Keynote: ' %}{{ data.session.title }}</div>
+	<p class="talk-speakers talk-title keynote-speaker">{{ data.speaker.name }}</p>
+</a>
+{% endwith %}
