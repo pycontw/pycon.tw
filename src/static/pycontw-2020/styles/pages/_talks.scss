@@ -5,6 +5,8 @@
 	}
 
 	p {
+		text-align: left;
+		letter-spacing: 0;
 		color: $imperial;
 		font-weight: 500;
 	}
@@ -12,6 +14,12 @@
 
 // Styling for Markdown-rendered fields
 .talk-detail, .tutorial-detail {
+	p {
+		text-align: left;
+		letter-spacing: 0;
+		font-weight: normal;
+	}
+
 	.editor-preview {
 		* {
 			max-width: 100%;
@@ -95,6 +103,8 @@
 				max-height: 180px;
 				margin-left: -4px;
 			}
+			text-align: left;
+			letter-spacing: 0;
 			li {
     			flex-grow: 1;
 				flex-basis: 30px;
