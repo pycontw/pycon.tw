@@ -39,6 +39,7 @@
 			{% trans 'Sponsor' %}
 		</a>
 	</li>
+	<!--{% comment %}-->
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
@@ -54,7 +55,6 @@
 			</ul>
 		</div>
 	</li>
-	<!--{% comment %}-->
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker" data-action="change->menu#exclude">
@@ -70,6 +70,7 @@
 			</ul>
 		</div>
 	</li>
+	<!--{% endcomment %}-->
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
@@ -78,14 +79,17 @@
 		</label>
 		<div class="dropdown">
 			<ul class="submenu">
+				<!--{% comment %}-->
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
+				<!--{% endcomment %}-->
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
+				<!--{% comment %}-->
 				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>
 				<li><a href="{{ events_openspaces_url }}">{% trans 'Open Spaces' %}</a></li>
+				<!--{% endcomment %}-->
 			</ul>
 		</div>
 	</li>
-	<!--{% endcomment %}-->
 	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
 		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker" data-action="change->menu#exclude">
