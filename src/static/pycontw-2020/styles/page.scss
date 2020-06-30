@@ -119,6 +119,10 @@ main {
 		text-indent: $mark-indent - $text-indent;
 
 		> li {
+			&.event-info {
+				margin-top: 1em;
+			}
+
 			&::before {
 				content: '•';
 				display: block;
