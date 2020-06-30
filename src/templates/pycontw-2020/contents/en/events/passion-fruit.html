@@ -1,0 +1,107 @@
+
+{% extends 'contents/_base.html' %}
+
+{% load static %}
+
+{% block title %}Python NPF 百香果{% endblock title %}
+
+{% block meta_description %}Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！{% endblock meta_description %}
+
+
+{% block content %}
+
+<section class="pill-title alt">
+    <h1>第壹次Python NPF百香果 x 南投.py</h1>
+</section>
+
+<img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/info.png' %}" width="100%">
+<p>Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！</p>
+
+<ul>
+    <li class="event-info">
+        <b>活動時間</b><br />
+        2020/05/30 14:00
+    </li>
+    <li class="event-info">		
+        <b>活動形式</b><br />
+        Youtube 線上直播（
+        <a href="https://www.youtube.com/watch?v=azBkQtZn1iw">
+            影片連結
+        </a>、
+        <a href="https://hackmd.io/L1JbNZSUQDiQsKznN7PJKA?fbclid=IwAR1xjGjz3WPDZXeZh3En1VbsYZiRbnl6qH0MCjByCJDO9YHWR-hcwfZuAMQ">
+            線上共筆
+        </a>）
+    </li>
+    <li class="event-info">
+        <b>線下聚會</b><br />
+        <a href="https://www.facebook.com/768space/">768藝術空間</a>
+    </li>
+    <li class="event-info">
+        <b>主持人</b><br />
+        南投.py創辦人 - 林正敏
+    </li>
+</ul>
+
+<h2> 社群介紹: <a href="https://www.facebook.com/%E5%8D%97%E6%8A%95python-113209870215893/">南投.py</a></h2>
+<p>2019年底，由南開科技大學副校長林正敏教授，號召、帶領並群聚著中台灣喜愛Python的人們。起初聚會地點在草屯768藝術空間，藉由768的公益性平台固定於每月舉行分享會，來自各行各業的大夥，無私地向大家分享自身經驗。在南投，人稱科技沙漠的地區，有著這一群人，為python貢獻己力，帶動產業連結，並為有意學習的大家，帶來一場無私、無限的學習地。</p>
+
+<article class="media">
+    <h2> 講者介紹: </h2>
+    <header>
+        <figure>
+            <img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/Mosky.png' %}">
+            <figcaption> Mosky </figcaption>
+        </figure>
+    </header>
+    <p>Mosky 是個熱愛 open source 精神的 Python 工程師，也是 Pinkoi 的 Python Charmer，工作時和同事一起打造能夠買到獨特禮物的設計品購物平台。自從寫下人生第一支程式後，就難以忘懷以敘述為磚、邏輯為泥，堆砌出腦中藍圖的成就感，也熱愛分享自己所學，業餘時是 Python 課程講師，偶爾講點資料科學。也是數場國內外研討會的講者，包含臺灣的 PyCon、COSCUP、TEDxNTUST，以及在日本、新加坡、香港、韓國、馬來西亞等地的 PyCon。More: <a href="http://mosky.tw" target="_blank" rel="noopener">mosky.tw</a>。</p>
+    <header>
+        <figure>
+            <img src="{% static 'pycontw-2020/assets/warm-session/passion-fruit/TP.png' %}">
+            <figcaption> Tzu-ping Chung </figcaption> 
+        </figure>
+    </header>
+    <p>TP 的職業生涯建立在開源軟體上，喜歡花費自己的精力讓這個世界更好。為了生活而寫過各式各樣的軟體，從嵌入式系統到 SPA 都是狩獵範圍，且只要有能力，就會盡量回饋社群。最近的空閒時間大多花在籌辦 PyCon Taiwan、貢獻核心 Python 工具、以及研究怎麼用 Python 與現代前端技術做網站。他有點太喜歡（人類）語言，常常扯到太多語言學和語音學，讓聊天內容變得無聊。</p>
+</article>
+
+<h2>活動議程</h2>
+<table>
+	<thead>
+		<tr>
+			<th>時間</th>
+			<th>執行項目</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>14:00 - 14:05</td>
+			<td>活動開始</td>
+		</tr>
+		<tr>
+			<td>14:05 - 14:20</td>
+			<td>
+				主持人開場與社群介紹－<a
+					href="https://www.facebook.com/%E5%8D%97%E6%8A%95python-113209870215893/"
+					target="_blank"
+					rel="noopener"
+					>南投.py</a
+				>
+			</td>
+		</tr>
+		<tr>
+			<td>14:20 - 15:00</td>
+			<td>講者分享1 : Mosky－Python 的隱藏魔法：符號計算、統計到機器學習</td>
+		</tr>
+		<tr>
+			<td>15:00 - 15:40</td>
+			<td>
+				講者分享2 : Tzu-ping Chung －pip install --unstable-feature=resolver
+			</td>
+		</tr>
+		<tr>
+			<td>15:40 - 16:00</td>
+			<td>活動結尾</td>
+		</tr>
+	</tbody>
+</table>
+
+{% endblock content %}
