@@ -30,19 +30,46 @@
 
 	<ul class="talk-list">
 		{% for proposal in talk_list %}
-    <li>
+        <li>
 			<p>
 				{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
-      	{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display trimmed %}
-      	<a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}
-      	{% endblocktrans %}
+                <!--
+                {% if proposal.labels == 'Community Track' %}
+                {% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display trimmed %}
+                <a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a><span class="label">Community Track</span> by {{ speaker_names }}
+                {% endblocktrans %}
+                {% else %}
+                {% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display trimmed %}
+                <a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}
+                {% endblocktrans %}
+                {% endif %}
+                -->
+                
+                {% with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
+                <a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a>
+                {% if proposal.labels %}
+                <span class="talk-label"><a href="#community-track">{% trans proposal.labels %}</a></span>
+                {% endif %}
+                {% blocktrans %} by {{ speaker_names }}{% endblocktrans %}
+                {% endwith %}
 			</p>
 		</li>
 		{% endfor %}
 	</ul>
 
+
 </article>
 
 {% endfor %}
+
+<section class="note">
+    <a name="community-track"></a>
+    <span class="talk-label">{% trans 'Community Track' %}</span>
+    <p>
+    {% blocktrans %}
+    This is the description of the community track
+    {% endblocktrans %}
+    </p>
+</section>
 
 {% endblock content %}
