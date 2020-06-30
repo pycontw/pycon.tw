@@ -26,6 +26,7 @@
 {% url 'page' path='venue/accommodation' as venue_accommodation_url %}
 {% url 'page' path='portal' as portal_url %}
 {% url 'page' path='sponsor/sponsor' as sponsor_url %}
+{% url 'page' path='events/warmup-session' as warmup_session %}
 
 <ul class="menu" data-controller="menu">
 	{% with category=request.path|get_path_category %}
@@ -79,6 +80,7 @@
 		</label>
 		<div class="dropdown">
 			<ul class="submenu">
+				<li><a href="{{ warmup_session }}">{% trans 'Warm-Up Session' %}</a></li>
 				<!--{% comment %}-->
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<!--{% endcomment %}-->
