@@ -1,0 +1,19 @@
+{% extends 'contents/_base.html' %}q
+
+{% block title %}Warm-up session{% endblock title %}
+
+{% block meta_description %}Overview on how to submit a financial aid application to PyCon Taiwan, and allow us to help you attend the conference.{% endblock meta_description %}
+
+
+{% block content %}
+{% url 'page' path='events/passion-fruit' as passion_fruit_url %}
+
+<section class="pill-title alt">
+    <h1>Warm-up session</h1>
+</section>
+
+<h3><a href="{{ passion_fruit_url }}">第壹次Python NPF百香果 x 南投.py</a></h3>
+
+<p>Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！</p>
+
+{% endblock content %}

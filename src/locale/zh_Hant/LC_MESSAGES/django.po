@@ -1915,7 +1915,7 @@ msgstr "我們搞砸了，這不是你的問題。"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
 #: templates/pycontw-2018/_includes/menu.html:29
 #: templates/pycontw-2019/_includes/menu.html:31
-#: templates/pycontw-2020/_includes/menu.html:34
+#: templates/pycontw-2020/_includes/menu.html:35
 msgid "About"
 msgstr "關於"
 
@@ -2000,11 +2000,15 @@ msgstr "PyDay"
 msgid "Tutorial"
 msgstr "專業課程"
 
+#: templates/pycontw-2020/_includes/menu.html:83
+msgid "Warm-Up Session"
+msgstr "暖身活動"
+
 #: templates/pycontw-2016/_includes/nav/front_nav.html:50
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
 #: templates/pycontw-2018/_includes/menu.html:86
 #: templates/pycontw-2019/_includes/menu.html:91
-#: templates/pycontw-2020/_includes/menu.html:106
+#: templates/pycontw-2020/_includes/menu.html:104
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -2015,7 +2019,7 @@ msgstr "住宿"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:68
 #: templates/pycontw-2019/_includes/menu.html:34
-#: templates/pycontw-2020/_includes/menu.html:39
+#: templates/pycontw-2020/_includes/menu.html:40
 msgid "Sponsor"
 msgstr "贊助"
 
@@ -2562,7 +2566,7 @@ msgstr "議程"
 
 #: templates/pycontw-2018/_includes/menu.html:57
 #: templates/pycontw-2019/_includes/menu.html:60
-#: templates/pycontw-2020/_includes/menu.html:53
+#: templates/pycontw-2020/_includes/menu.html:54
 msgid "Recording"
 msgstr "錄影"
 
@@ -2603,7 +2607,7 @@ msgstr "報到"
 
 #: templates/pycontw-2018/_includes/menu.html:89
 #: templates/pycontw-2019/_includes/menu.html:94
-#: templates/pycontw-2020/_includes/menu.html:110
+#: templates/pycontw-2020/_includes/menu.html:108
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2906,19 +2910,19 @@ msgstr "顯示詳細內容"
 msgid "Register"
 msgstr "報名"
 
-#: templates/pycontw-2020/_includes/menu.html:46
+#: templates/pycontw-2020/_includes/menu.html:47
 msgid "Speaking"
 msgstr "投稿"
 
-#: templates/pycontw-2020/_includes/menu.html:50
+#: templates/pycontw-2020/_includes/menu.html:51
 msgid "Call for Proposal"
 msgstr "徵求稿件"
 
-#: templates/pycontw-2020/_includes/menu.html:51
+#: templates/pycontw-2020/_includes/menu.html:52
 msgid "Proposing a Talk"
 msgstr "演講"
 
-#: templates/pycontw-2020/_includes/menu.html:52
+#: templates/pycontw-2020/_includes/menu.html:53
 msgid "Proposing a Tutorial"
 msgstr "專業課程"
 
