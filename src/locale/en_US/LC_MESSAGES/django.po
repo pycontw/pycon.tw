@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 00:17+0800\n"
+"POT-Creation-Date: 2020-07-01 12:10+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -2943,7 +2943,6 @@ msgstr "Categories"
 
 #: templates/pycontw-2018/events/talk_list.html:34
 #: templates/pycontw-2019/events/talk_list.html:34
-#: templates/pycontw-2020/events/talk_list.html:42
 #, python-format
 msgid ""
 "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
@@ -3085,24 +3084,26 @@ msgstr "Register"
 msgid "Warm-Up Session"
 msgstr ""
 
-#: templates/pycontw-2020/events/talk_list.html:38
-#, fuzzy, python-format
-#| msgid ""
-#| "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
-#| "%(proposal_title)s</a> by %(speaker_names)s"
-msgid ""
-"<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
-"%(proposal_title)s</a><span class=\"label\">Community Track</span> by "
-"%(speaker_names)s"
-msgstr ""
-"<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
-"%(proposal_title)s</a> by %(speaker_names)s"
-
-#: templates/pycontw-2020/events/talk_list.html:53
+#: templates/pycontw-2020/events/talk_list.html:41
 #, fuzzy, python-format
 #| msgid "speaker name"
 msgid " by %(speaker_names)s"
 msgstr "speaker name"
+
+#: templates/pycontw-2020/events/talk_list.html:55
+#, fuzzy
+#| msgid "Community"
+msgid "Community Track"
+msgstr "Community"
+
+#: templates/pycontw-2020/events/talk_list.html:57
+msgid ""
+"The community track is a new event in PyCon TW. We choose the talks with "
+"specific topics and package them into the same session. We'll leave the "
+"conference rooms and go to characteristic cafes, exhibition spaces, and even "
+"monuments so that the attendees and speakers can interact with each other "
+"more comfortably and closely."
+msgstr ""
 
 #: templates/pycontw-2020/index.html:48
 msgid "Call for Proposals"
@@ -3329,6 +3330,18 @@ msgstr ""
 #: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
+
+#, fuzzy
+#~| msgid ""
+#~| "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~| "%(proposal_title)s</a> by %(speaker_names)s"
+#~ msgid ""
+#~ "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~ "%(proposal_title)s</a><span class=\"label\">Community Track</span> by "
+#~ "%(speaker_names)s"
+#~ msgstr ""
+#~ "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~ "%(proposal_title)s</a> by %(speaker_names)s"
 
 #~ msgid "Speaking"
 #~ msgstr "Speaking"
