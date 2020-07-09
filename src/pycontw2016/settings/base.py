@@ -318,6 +318,6 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2020, 9, 6), _('Day 2')),
 ])
 
-SCHEDULE_REDIRECT_URL = None
+SCHEDULE_REDIRECT_URL = "https://docs.google.com/spreadsheets/d/1efjxIesuNWaXBPwnaM8XPNpVF9Fo6dStGDjXVNG8AVo"
 
 COC_VERSION = '2020.0'
