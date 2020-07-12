@@ -1,6 +1,7 @@
 {% extends 'contents/_base.html' %}
 
 {% load i18n static %}
+{% load tz %}
 {% load events %}
 
 {% block title %}{{ object.title }}{% endblock %}
@@ -15,8 +16,6 @@
 
 <section class="content info">
 	<ul>
-		{% comment %}
-		<!-- yycnen-2020-06-29: Hide event info for now. Program scheduling in progress -->
 		{% if event %}
 		<li>
 			<dfn class="location"></dfn>
@@ -24,10 +23,9 @@
 		</li>
 		<li>
 			<dfn class="slot"></dfn>
-			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
+			<span>{% blocktrans with date_display=event.begin_time.value|localtime|date:'n/j' begin_time_display=event.begin_time.value|localtime|date:'H:i' end_time_display=event.end_time.value|localtime|date:'H:i' offset=event.begin_time.value|localtime|date:'O' %}{{ date_display }} <span>{{ begin_time_display }}</span>&#8209;<span>{{ end_time_display }} ({{ offset }})</span>{% endblocktrans %}</span>
 		</li>
 		{% endif %}
-		{% endcomment %}
 		<li>
 			<dfn class="category">{% trans 'Category: ' %}</dfn>
 			<span>{{ object.get_category_display }}</span>
