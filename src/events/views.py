@@ -99,16 +99,14 @@ class ScheduleView(TemplateView):
     response_class = TemplateExistanceStatusResponse
 
     def get(self, request, *args, **kwargs):
-        # try:
-        #     self.schedule = Schedule.objects.latest()
-        # except Schedule.DoesNotExist:
-        #     redirect_url = settings.SCHEDULE_REDIRECT_URL
-        #     if not redirect_url:
-        #         return HttpResponseNotFound()
-        #     return HttpResponseRedirect(redirect_url)
-        # return super().get(request, *args, **kwargs)
-        redirect_url = settings.SCHEDULE_REDIRECT_URL
-        return HttpResponseRedirect(redirect_url)
+        try:
+            self.schedule = Schedule.objects.latest()
+        except Schedule.DoesNotExist:
+            redirect_url = settings.SCHEDULE_REDIRECT_URL
+            if not redirect_url:
+                return HttpResponseNotFound()
+            return HttpResponseRedirect(redirect_url)
+        return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         return super().get_context_data(
