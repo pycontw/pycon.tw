@@ -108,6 +108,7 @@ def photo_upload_to(instance, filename):
 
 class User(AbstractBaseUser, PermissionsMixin):
 
+    id = models.BigAutoField(primary_key=True)
     email = models.EmailField(
         verbose_name=_('email address'),
         max_length=255, unique=True, db_index=True,
