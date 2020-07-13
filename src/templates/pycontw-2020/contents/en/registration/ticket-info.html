@@ -19,38 +19,45 @@ late!{% endblock meta_description %}
 			<table>
 				<tbody>
 					<tr>
-						<th>EarlyBird / Discount</th>
-						<td class="price">2,600</td>
-						<td>NTD</td>
+						<th colspan="2">EarlyBird / Discount</th>
 					</tr>
 					<tr>
-						<th>Regular</th>
+						<td class="price">2,600</td>
+						<td class="price">NTD</td>
+					</tr>
+					<tr>
+						<th colspan="2">Regular</th>
+					</tr>
+					<tr>
 						<td class="price">3,500</td>
-						<td>NTD</td>
+						<td class="price">NTD</td>
 					</tr>
 				</tbody>
 			</table>
 			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
 		</div>
 	</div>
-	<div class="ticket-box">
-		<p class="ticket-box-title">Corporate</p>
-		<div class="price-box">
+	<div class="ticket-box-imperial">
+		<p class="ticket-box-title-imperial">Corporate</p>
+		<div class="price-box-imperial">
 			<table>
 				<tbody>
 					<tr>
-						<th>Regular</th>
-						<td class="price">5,500</td>
-						<td>NTD</td>
+						<th colspan="2">Regular</th>
 					</tr>
 					<tr>
-						<th>GroupBuy</th>
-						<td class="price">Contact</td>
-						<td></td>
+						<td class="price-imperial">5,500</td>
+						<td price-imperial>NTD</td>
+					</tr>
+					<tr>
+						<th colspan="2">GroupBuy</th>
+					</tr>
+					<tr>
+						<td colspan="2" class="price-imperial">Contact</td>
 					</tr>
 				</tbody>
 			</table>
-			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">Buy</a>
+			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial en">Buy</a>
 		</div>
 	</div>
 	<div class="ticket-box">
@@ -59,14 +66,18 @@ late!{% endblock meta_description %}
 			<table>
 				<tbody>
 					<tr>
-						<th>Speaker</th>
-						<td class="price">1,500</td>
-						<td>NTD</td>
+						<th colspan="2">Speaker</th>
 					</tr>
 					<tr>
-						<th>Contributor</th>
 						<td class="price">1,500</td>
-						<td>NTD</td>
+						<td class="price">NTD</td>
+					</tr>
+					<tr>
+						<th colspan="2">Contributor</th>
+					</tr>
+					<tr>
+						<td class="price">1,500</td>
+						<td class="price">NTD</td>
 					</tr>
 				</tbody>
 			</table>
@@ -74,16 +85,7 @@ late!{% endblock meta_description %}
 		</div>
 	</div>
 </div>
-<script>
-	document.querySelectorAll(".buy").forEach((link) => {
-		link.addEventListener("mouseover", (e) => {
-			e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
-		});
-		link.addEventListener("mouseleave", (e) => {
-			e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
-		})
-	})
-</script>
+
 <div class="desc-box">
 	<p class="desc"><strong>Individual:</strong> Tickets are limited. Be sure to get your ticket before they are sold
 		out. We will send
