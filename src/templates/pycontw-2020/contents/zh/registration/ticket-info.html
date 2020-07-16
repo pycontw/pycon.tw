@@ -10,87 +10,96 @@
 
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 
-<h1>會議售票</h1>
+<section class="pill-title">
+    <h1>會議售票</h1>
+</section>
+
 <div class="box-row">
-	<div class="ticket-box">
-		<p class="ticket-box-title">個人</h3>
+	<div class="ticket-info">
+		<div class="ticket-box">
+			<p class="ticket-box-title">個人</p>
 			<div class="price-box">
 				<table>
 					<tbody>
 						<tr>
-							<th colspan="2">早鳥 / 優惠價</th>
+							<th>早鳥 / 優惠價</th>
 						</tr>
 						<tr>
-							<td class="price">2,600</td>
-							<td class="price">NTD</td>
+							<td class="price">2,600 NTD</td>
 						</tr>
 						<tr>
-							<th colspan="2">一般</th>
+							<th>一般</th>
 						</tr>
 						<tr>
-							<td class="price">3,500</td>
-							<td class="price">NTD</td>
+							<td class="price">3,500 NTD</td>
 						</tr>
 					</tbody>
 				</table>
-				<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">購票</a>
 			</div>
+		</div>
+		<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">購票</a>
 	</div>
 
-	<div class="ticket-box-imperial">
-		<p class="ticket-box-title-imperial">企業</h3>
+	<div class="ticket-info-imperial">
+		<div class="ticket-box-imperial">
+		<p class="ticket-box-title-imperial">企業</p>
 			<div class="price-box-imperial">
 				<table>
 					<tbody>
 						<tr>
-							<th colspan="2">原價</th>
+							<th>原價</th>
 						</tr>
 						<tr>
-							<td class="price-imperial">5,500</td>
-							<td class="price-imperial">NTD</td>
+							<td class="price-imperial">5,500 NTD</td>
 						</tr>
 						<tr>
-							<th colspan="2">團購價</th>
+							<th>團購價</th>
 						</tr>
 						<tr>
-							<td colspan="2" class="price-imperial">洽詢</td>
+							<td class="price-imperial">洽詢</td>
 						</tr>
 					</tbody>
 				</table>
-				<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial zh">購票</a>
 			</div>
+		</div>
+		<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial">購票</a>
 	</div>
 
-	<div class="ticket-box">
-		<p class="ticket-box-title">保留</h3>
+	<div class="ticket-info">
+		<div class="ticket-box">
+		<p class="ticket-box-title">保留</p>
 			<div class="price-box">
 				<table>
 					<tbody>
 						<tr>
-							<th colspan="2">講者票</th>
+							<th>講者票</th>
 						</tr>
 						<tr>
-							<td class="price">1,500</td>
-							<td class="price">NTD</td>
+							<td class="price">1,500 NTD</td>
 						</tr>
 						<tr>
-							<th colspan="2">貢獻者 / 工作人員票</th>
+							<th>貢獻者/工作人員票</th>
 						</tr>
 						<tr>
-							<td class="price">1,500</td>
-							<td class="price">NTD</td>
+							<td class="price">1,500 NTD</td>
 						</tr>
 					</tbody>
 				</table>
-				<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">購票</a>
 			</div>
+		</div>
+		<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">購票</a>
 	</div>
 </div>
 
 <div class="desc-box">
-	<p class="desc"><p class='title'>個人票：</p>限時限量，請及早購買。電子發票於會後統一以 email 寄送。無法使用統一編號。</p>
-	<p class="desc"><p class='title'>企業票：</p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 N/A。電子發票於會後統一以 email 寄送。</p>
-	<p class="desc"><p class='title'>保留票：</p>我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
+	<div class="entry">
+		<h4>個人票：</h4>
+		<p>限時限量，請及早購買。電子發票於會後統一以 email 寄送。無法使用統一編號。</p>
+		<h4>企業票：</h4>
+		<p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 N/A。電子發票於會後統一以 email 寄送。</p>
+		<h4>保留票：</h4>
+		<p>我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
+	</div>
 </div>
 
 <ul>
