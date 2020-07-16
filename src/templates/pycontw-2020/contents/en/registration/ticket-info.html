@@ -19,22 +19,14 @@ late!{% endblock meta_description %}
 		<div class="ticket-box">
 			<p class="ticket-box-title">Individual</p>
 			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>EarlyBird / Discount</th>
-						</tr>
-						<tr>
-							<td class="price">2,600 NTD</td>
-						</tr>
-						<tr>
-							<th>Regular</th>
-						</tr>
-						<tr>
-							<td class="price">3,500 NTD</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title">
+					<p class="price">EarlyBird / Discount</p>
+					<p class="price">2,600 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Regular</p>
+					<p class="price">3,500 NTD</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
@@ -44,22 +36,14 @@ late!{% endblock meta_description %}
 		<div class="ticket-box-imperial">
 			<p class="ticket-box-title-imperial">Corporate</p>
 			<div class="price-box-imperial">
-				<table>
-					<tbody>
-						<tr>
-							<th>Regular</th>
-						</tr>
-						<tr>
-							<td class="price-imperial">5,500 NTD</td>
-						</tr>
-						<tr>
-							<th>GroupBuy</th>
-						</tr>
-						<tr>
-							<td class="price-imperial">Contact</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title-imperial">
+					<p class="price-imperial">Regular</p>
+					<p class="price-imperial">5,500 NTD</p>
+				</div>
+				<div class="price-title-imperial">
+					<p class="price-imperial">GroupBuy</p>
+					<p class="price-imperial">Contact</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial">Buy</a>
@@ -69,22 +53,14 @@ late!{% endblock meta_description %}
 		<div class="ticket-box">
 			<p class="ticket-box-title">Reserved</p>
 			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>Speaker</th>
-						</tr>
-						<tr>
-							<td class="price">1,500 NTD</td>
-						</tr>
-						<tr>
-							<th>Contributor</th>
-						</tr>
-						<tr>
-							<td class="price">1,500 NTD</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title">
+					<p class="price">Speaker</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Contributor</p>
+					<p class="price">1,500 NTD</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
@@ -98,10 +74,14 @@ late!{% endblock meta_description %}
 			out. We will send
 			out electronic invoices by email after the conference. If you need reimbursement from your company, you might
 			want a corporate ticket to meet our local tax regulation.</p>
+	</div>
+	<div class="entry">
 		<h4>Corporate:</h4>
 		<p>Provide company name and Unified Business Number, or <em>N/A</em> if
 			re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the
 			conference.</p>
+	</div>
+	<div class="entry">
 		<h4>Reserved:</h4>
 		<p>Please enter your invitation code on checkout.</p>
 	</div>

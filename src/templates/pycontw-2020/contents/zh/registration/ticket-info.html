@@ -19,22 +19,14 @@
 		<div class="ticket-box">
 			<p class="ticket-box-title">個人</p>
 			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>早鳥 / 優惠價</th>
-						</tr>
-						<tr>
-							<td class="price">2,600 NTD</td>
-						</tr>
-						<tr>
-							<th>一般</th>
-						</tr>
-						<tr>
-							<td class="price">3,500 NTD</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title">
+					<p class="price">早鳥 / 優惠價</p>
+					<p class="price">2,600 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">一般</p>
+					<p class="price">3,500 NTD</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">購票</a>
@@ -44,22 +36,14 @@
 		<div class="ticket-box-imperial">
 		<p class="ticket-box-title-imperial">企業</p>
 			<div class="price-box-imperial">
-				<table>
-					<tbody>
-						<tr>
-							<th>原價</th>
-						</tr>
-						<tr>
-							<td class="price-imperial">5,500 NTD</td>
-						</tr>
-						<tr>
-							<th>團購價</th>
-						</tr>
-						<tr>
-							<td class="price-imperial">洽詢</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title-imperial">
+					<p class="price-imperial">原價</p>
+					<p class="price-imperial">5,500 NTD</p>
+				</div>
+				<div class="price-title-imperial">
+					<p class="price-imperial">團購價</p>
+					<p class="price-imperial">洽詢</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial">購票</a>
@@ -69,22 +53,14 @@
 		<div class="ticket-box">
 		<p class="ticket-box-title">保留</p>
 			<div class="price-box">
-				<table>
-					<tbody>
-						<tr>
-							<th>講者票</th>
-						</tr>
-						<tr>
-							<td class="price">1,500 NTD</td>
-						</tr>
-						<tr>
-							<th>貢獻者/工作人員票</th>
-						</tr>
-						<tr>
-							<td class="price">1,500 NTD</td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="price-title">
+					<p class="price">講者票</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">貢獻者/工作人員票</p>
+					<p class="price">1,500 NTD</p>
+				</div>
 			</div>
 		</div>
 		<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">購票</a>
@@ -95,8 +71,12 @@
 	<div class="entry">
 		<h4>個人票：</h4>
 		<p>限時限量，請及早購買。電子發票於會後統一以 email 寄送。無法使用統一編號。</p>
+	</div>
+	<div class="entry">
 		<h4>企業票：</h4>
 		<p>有統編需求，請填寫公司抬頭與統一編號。無統編需求，請於抬頭與統編填寫 N/A。電子發票於會後統一以 email 寄送。</p>
+	</div>
+	<div class="entry">
 		<h4>保留票：</h4>
 		<p>我們誠摯邀請您以貴賓身份參與本會議。請於報名時輸入邀請碼。</p>
 	</div>

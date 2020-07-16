@@ -3,6 +3,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		font-family: $text-font-family;
 		@include on-desktop{
 			flex-direction: row;
 			justify-content: space-between;
@@ -26,7 +27,6 @@
 			}
 
 		.ticket-box{
-
 			height: $ticket_box_height;
 			width: $ticket_box_width;
 			border-radius: 10px;
@@ -41,7 +41,6 @@
 
 			.ticket-box-title{
 				height: $ticket_box_title_height;
-				font-family: NotoSansTC;
 				font-size: 2rem;
 				font-weight: normal;
 				line-height: normal;
@@ -54,34 +53,25 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-between;
 				width:100%;
 				height: $price_box_height;
 
-				table {
-					th, td {
-						padding: 4px 1px;
-						text-align: center;
-						font-family: NotoSansTC;
-						font-weight: 300;
-						font-size: 1.25rem;
-						line-height: normal;
-						letter-spacing: normal;
+				.price-title {
+					width: 100%;
+					margin: 4px 1px;
+					padding: 4px 1px;
+					text-align: center;
+					font-weight: 300;
+					font-size: 1.25rem;
+					line-height: normal;
+					letter-spacing: normal;
 
-						@include on-desktop() {
-							max-width: 33%;
-							text-align: center;
-						}
-					}
 					.price {
-						font-family: NotoSansTC;
 						color: #6A3F3B;
 						font-weight: 300;
 						font-size: 1.25rem;
-
-						@include on-desktop() {
-							text-align: center;
-						}
+						text-align: center;
+						margin: 0;
 					}
 				}
 			}
@@ -97,8 +87,8 @@
 			border: solid 2px #6A3F3B;
 			color: #FBD9CA;
 			text-decoration: none;
-			font-family: PingFangTC;
-			font-size: 1.75rem;
+
+			font-size: 1.5rem;
 			font-weight: 300;
 			line-height: normal;
 			letter-spacing: normal;
@@ -124,9 +114,6 @@
 		}
 
 		.ticket-box-imperial{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
 			height: $ticket_box_height;
 			width: $ticket_box_width;
 			border-radius: 10px;
@@ -139,7 +126,6 @@
 
 			.ticket-box-title-imperial{
 				height: $ticket_box_title_height;
-				font-family: NotoSansTC;
 				font-size: 2rem;
 				font-weight: normal;
 				line-height: normal;
@@ -152,35 +138,25 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-between;
 				width:100%;
 				height: $price_box_height;
 
-				table {
-					th, td {
-						padding: 4px 1px;
-						text-align: center;
-						font-family: NotoSansTC;
-						font-weight: 300;
-						font-size: 1.25rem;
-						line-height: normal;
-						letter-spacing: normal;
-						color: #E23728;
+				.price-title-imperial {
+					width: 100%;
+					margin: 4px 1px;
+					padding: 4px 1px;
+					text-align: center;
+					font-weight: 300;
+					font-size: 1.25rem;
+					line-height: normal;
+					letter-spacing: normal;
 
-						@include on-desktop() {
-							max-width: 33%;
-							text-align: center;
-						}
-					}
 					.price-imperial {
-						font-family: NotoSansTC;
 						color: #E23728;
 						font-weight: 300;
 						font-size: 1.25rem;
-
-						@include on-desktop() {
-							text-align: center;
-						}
+						text-align: center;
+						margin: 0;
 					}
 				}
 			}
@@ -196,8 +172,7 @@
 			border: solid 2px #E23728;
 			color: #FBD9CA;
 			text-decoration: none;
-			font-family: PingFangTC;
-			font-size: 1.75rem;
+			font-size: 1.5rem;
 			font-weight: 300;
 			line-height: normal;
 			letter-spacing: normal;
@@ -205,7 +180,7 @@
 			border-radius: 10px;
 			&:hover{
 				color: #E23728;
-				border: solid 4px #E23728;
+				border: solid 2px #E23728;
 				background-color: #FBD9CA;
 			}
 		}
@@ -217,14 +192,11 @@
 		padding: 20px 5px;
 		.entry{
 			padding-left: 20px;
-
+			margin-bottom: 40px;
 			h4 {
 				color: #E23728;
 				text-align: left;
 				margin-bottom: 10px;
-			}
-			p {
-				margin-bottom: 40px;
 			}
 		}
 	}
