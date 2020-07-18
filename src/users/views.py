@@ -20,10 +20,13 @@ from .forms import (
 )
 from .models import CocRecord
 from reviews.context import proposals_state, reviews_state
+from registry.helper import reg
 
 from lxml import etree
 import lxml.html
 
+from pytz import timezone
+from datetime import datetime, timedelta
 
 User = auth.get_user_model()
 
@@ -196,6 +199,28 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         return context
 
 def review_change(request):
+    if request.method == 'POST':
+
+        CONFERENCE_DEFAULT_SLUG = settings.CONFERENCE_DEFAULT_SLUG
+        TIME_ZONE = settings.TIME_ZONE
+
+        fmt = '%Y-%m-%d %H:%M:%S%z'
+        date_time_obj = datetime.strptime(
+            request.POST['proposals.disable.after'], '%Y-%m-%dT%H:%M:%S')
+        loc_dt = timezone(TIME_ZONE).localize(date_time_obj)
+        messages.info(request, 'Your setting has been changed successfully at '  + str(datetime.now()))
+
+        reg[CONFERENCE_DEFAULT_SLUG +
+            '.proposals.creatable'] = request.POST['proposals.creatable']
+        reg[CONFERENCE_DEFAULT_SLUG +
+            '.proposals.editable'] = request.POST['proposals.editable']
+        reg[CONFERENCE_DEFAULT_SLUG + '.proposals.withdrawable'] = request.POST[
+            'proposals.withdrawable']
+        reg[CONFERENCE_DEFAULT_SLUG + '.reviews.visible.to.submitters'] = request.POST[
+            'reviews.visible.to.submitters']
+        reg[CONFERENCE_DEFAULT_SLUG + '.reviews.stage'] = int(request.POST['reviews.stage'])
+        reg[CONFERENCE_DEFAULT_SLUG + '.proposals.disable.after'] = loc_dt
+
     return render(request, 'reviews/review_change.html')
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
