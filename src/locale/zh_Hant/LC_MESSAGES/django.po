@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 00:58+0800\n"
+"POT-Creation-Date: 2020-07-01 12:10+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -60,6 +60,18 @@ msgstr "專業課程"
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "演講"
+
+#: core/admin.py:15
+msgid "Current"
+msgstr ""
+
+#: core/admin.py:16 core/models.py:104
+msgid "Other"
+msgstr "其他"
+
+#: core/admin.py:17
+msgid "All"
+msgstr ""
 
 #: core/forms.py:10
 #, python-brace-format
@@ -156,10 +168,6 @@ msgstr "測試"
 msgid "Web Frameworks"
 msgstr "網站框架"
 
-#: core/models.py:104
-msgid "Other"
-msgstr "其他"
-
 #: core/models.py:107
 msgid "category"
 msgstr "分類"
@@ -192,6 +200,7 @@ msgstr "摘要"
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
+#: templates/pycontw-2020/events/schedule.html:28
 msgid "Novice"
 msgstr "入門"
 
@@ -199,11 +208,13 @@ msgstr "入門"
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
+#: templates/pycontw-2020/events/schedule.html:29
 msgid "Intermediate"
 msgstr "中階"
 
 #: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
+#: templates/pycontw-2020/events/schedule.html:30
 msgid "Experienced"
 msgstr "進階"
 
@@ -216,12 +227,12 @@ msgid "detailed description"
 msgstr "詳細說明"
 
 #: core/models.py:146 core/models.py:156 core/models.py:189
-#: reviews/models.py:119 reviews/models.py:134
+#: reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "是"
 
 #: core/models.py:147 core/models.py:157 core/models.py:190
-#: reviews/models.py:120 reviews/models.py:135
+#: reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "否"
 
@@ -377,8 +388,8 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:281 events/models.py:302 reviews/models.py:73
-#: reviews/models.py:194
+#: events/models.py:281 events/models.py:302 reviews/models.py:76
+#: reviews/models.py:197
 msgid "proposal"
 msgstr "提案"
 
@@ -420,6 +431,9 @@ msgstr "HTML"
 #: templates/pycontw-2019/_includes/portal.html:4
 #: templates/pycontw-2019/events/schedule.html:6
 #: templates/pycontw-2019/events/schedule.html:20
+#: templates/pycontw-2020/_includes/portal.html:4
+#: templates/pycontw-2020/events/schedule.html:6
+#: templates/pycontw-2020/events/schedule.html:20
 msgid "Schedule"
 msgstr "時間表"
 
@@ -605,7 +619,7 @@ msgstr ""
 "因應新型冠狀病毒疫情，若到八月疫情未趨緩，是否同意以遠端方式進行專業課程？"
 
 #: proposals/forms/proposals.py:35 proposals/forms/proposals.py:80
-#: proposals/models.py:255 proposals/models.py:299
+#: proposals/models.py:262 proposals/models.py:306
 msgid "duration"
 msgstr "時間長度"
 
@@ -706,23 +720,27 @@ msgstr "已拒絕"
 msgid "accepted"
 msgstr "已接受"
 
-#: proposals/models.py:260
+#: proposals/models.py:177
+msgid "labels"
+msgstr ""
+
+#: proposals/models.py:267
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:261
+#: proposals/models.py:268
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:295
+#: proposals/models.py:302
 msgid "1.5hr"
 msgstr "1.5 小時"
 
-#: proposals/models.py:306
+#: proposals/models.py:313
 msgid "tutorial proposal"
 msgstr "專業課程提案"
 
-#: proposals/models.py:307
+#: proposals/models.py:314
 msgid "tutorial proposals"
 msgstr "專業課程提案"
 
@@ -736,41 +754,41 @@ msgctxt "speaker name last separator"
 msgid " and "
 msgstr "、"
 
-#: proposals/views/cancel.py:34
+#: proposals/views/cancel.py:36
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》演講提案已撤回。"
 
-#: proposals/views/cancel.py:38
+#: proposals/views/cancel.py:40
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》演講提案已重新提交。"
 
-#: proposals/views/cancel.py:56
+#: proposals/views/cancel.py:58
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
 msgstr "《<strong>{title}</strong>》專業課程提案已撤回。"
 
-#: proposals/views/cancel.py:60
+#: proposals/views/cancel.py:62
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> reactivated."
 msgstr "《<strong>{title}</strong>》專業課程提案已重新提交。"
 
-#: proposals/views/create.py:39
+#: proposals/views/create.py:42
 #, python-brace-format
 msgid "Talk proposal <strong>{title}</strong> created."
 msgstr "已建立題目為《<strong>{title}</strong>》的演講提案。"
 
-#: proposals/views/create.py:49
+#: proposals/views/create.py:52
 #, python-brace-format
 msgid "Tutorial proposal <strong>{title}</strong> created."
 msgstr "已建立題目為《<strong>{title}</strong>》的專業課程提案。"
 
-#: proposals/views/mixins.py:42 proposals/views/mixins.py:98
+#: proposals/views/mixins.py:52 proposals/views/mixins.py:108
 msgid "Abstract Example"
 msgstr "摘要範例"
 
-#: proposals/views/mixins.py:43
+#: proposals/views/mixins.py:53
 msgid ""
 "For modern human beings, the data in computers are essentially an external "
 "place for storing our memories. No matter they're photographs of your daily "
@@ -792,11 +810,11 @@ msgstr ""
 "pathlib 模組「程式化」地管理目錄與檔案，並藉由簡單至複雜案例，最後結合 "
 "Python 迴圈與排序技巧完成複雜的檔案重新歸類。"
 
-#: proposals/views/mixins.py:61 proposals/views/mixins.py:114
+#: proposals/views/mixins.py:71 proposals/views/mixins.py:124
 msgid "Objective Example"
 msgstr "演講目標範例"
 
-#: proposals/views/mixins.py:62
+#: proposals/views/mixins.py:72
 msgid ""
 "Targeted at Python beginners trying to solve some daily life problems with "
 "programming. When I started to learn programming, I didn't know where I "
@@ -817,11 +835,11 @@ msgstr ""
 "最後的確也能完成用人工很難做到的問題。這種漸近式的學習過程，應該對初學程式的"
 "人有幫助。"
 
-#: proposals/views/mixins.py:76 proposals/views/mixins.py:128
+#: proposals/views/mixins.py:86 proposals/views/mixins.py:138
 msgid "Description Example"
 msgstr "詳細說明範例"
 
-#: proposals/views/mixins.py:77
+#: proposals/views/mixins.py:87
 msgid ""
 "In the final example sharing, we'll try to move a series of images marked "
 "with date and file name, into \"YEAR/MONTH\" patterned directories that "
@@ -831,11 +849,11 @@ msgstr ""
 "最後的案例分享，將一系列有標註日期檔名的照片，移動到已經有資料的「年 / 月」 "
 "目錄底下，並且按照時間先後重新依序命名照片。"
 
-#: proposals/views/mixins.py:83 proposals/views/mixins.py:138
+#: proposals/views/mixins.py:93 proposals/views/mixins.py:148
 msgid "Outline Example"
 msgstr "大綱範例"
 
-#: proposals/views/mixins.py:84
+#: proposals/views/mixins.py:94
 msgid ""
 "1. Common situations in data clean-up  [5 min]\n"
 "2. Introduction to pathlib's design  [10 min]\n"
@@ -858,7 +876,7 @@ msgstr ""
 "- 整合 enumerated, zip 同時處理多個關連檔案\n"
 "4. 案例分享  [5 min]\n"
 
-#: proposals/views/mixins.py:99
+#: proposals/views/mixins.py:109
 msgid ""
 "Nowadays, photographs always contain the information about the state where "
 "the photo was taken, they're called EXIF. Sometimes when building a blog "
@@ -878,7 +896,7 @@ msgstr ""
 "的效果。最後以 Pelican 這個部落格框架為例，建立一個 Pelican 擴充套件來完成\n"
 "自動處理所有放在文章的照片。"
 
-#: proposals/views/mixins.py:115
+#: proposals/views/mixins.py:125
 msgid ""
 "Targeted at people who'd like to process a batch of images, and do external "
 "processings using their EXIFs. And use Pelican blog framework to concretely "
@@ -898,7 +916,7 @@ msgstr ""
 "如何建立一個自動處理照片的流程，更加專心在文章的內容上。會希望會眾能知道\n"
 "如何使用 Python 處理 EXIF 與影像加工，以及 Pelican 擴充套件的架構。"
 
-#: proposals/views/mixins.py:129
+#: proposals/views/mixins.py:139
 msgid ""
 "### Third-party libraries used:\n"
 "  - [exiftool] A Perl tool for analyzing EXIF of images\n"
@@ -919,7 +937,7 @@ msgstr ""
 "[Pillow]: http://python-pillow.github.io/\n"
 "[Pelican]: http://blog.getpelican.com/\n"
 
-#: proposals/views/mixins.py:139
+#: proposals/views/mixins.py:149
 msgid ""
 "1. Intro to EXIF and exiftool [5min]\n"
 "2. Usage of Pillow, use it to add watermark [5min]\n"
@@ -957,46 +975,46 @@ msgstr "已完成更新《<strong>{title}</strong>》演講提案。"
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "已完成更新《<strong>{title}</strong>》專業課程提案。"
 
-#: pycontw2016/settings/base.py:300
+#: pycontw2016/settings/base.py:294
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:301 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:295 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:302 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:296 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:303 templates/pycontw-2019/index.html:14
+#: pycontw2016/settings/base.py:297 templates/pycontw-2019/index.html:14
 msgid "PyCon Taiwan 2019"
 msgstr "PyCon Taiwan 2019"
 
-#: pycontw2016/settings/base.py:304 templates/pycontw-2020/index.html:14
+#: pycontw2016/settings/base.py:298 templates/pycontw-2020/index.html:14
 msgid "PyCon Taiwan 2020"
 msgstr "PyCon Taiwan 2020"
 
-#: pycontw2016/settings/base.py:326
+#: pycontw2016/settings/base.py:311
 #: pycontw2016/settings/production/pycontw2016.py:16
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:327
+#: pycontw2016/settings/base.py:312
 msgid "Prefer 15min"
 msgstr "偏好 15 分鐘"
 
-#: pycontw2016/settings/base.py:328
+#: pycontw2016/settings/base.py:313
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:332
+#: pycontw2016/settings/base.py:317
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: pycontw2016/settings/base.py:333
+#: pycontw2016/settings/base.py:318
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -1042,35 +1060,35 @@ msgstr "{model_name_cap} 的建立需要一個 proposal 物件。"
 msgid "Could not review proposal {proposal}."
 msgstr "無法審查提案 {proposal}。"
 
-#: reviews/models.py:63
+#: reviews/models.py:66
 msgid "reviewer"
 msgstr "審查者"
 
-#: reviews/models.py:68 reviews/models.py:199
+#: reviews/models.py:71 reviews/models.py:202
 msgid "stage"
 msgstr "階段"
 
-#: reviews/models.py:87
+#: reviews/models.py:90
 msgid "+1 (strong accept)"
 msgstr "+1（高度肯定地接受）"
 
-#: reviews/models.py:88
+#: reviews/models.py:91
 msgid "+0 (weak accept)"
 msgstr "+0（輕微贊成）"
 
-#: reviews/models.py:89
+#: reviews/models.py:92
 msgid "-0 (weak reject)"
 msgstr "−0（輕微反對）"
 
-#: reviews/models.py:90
+#: reviews/models.py:93
 msgid "-1 (strong reject)"
 msgstr "–1（高度肯定地拒絕）"
 
-#: reviews/models.py:99
+#: reviews/models.py:102
 msgid "vote"
 msgstr "投票"
 
-#: reviews/models.py:101
+#: reviews/models.py:104
 msgid ""
 "Your vote to accept or reject this talk. More information about the scoring "
 "and acceptance criteria can be found at the GitBook <a href=\"https://"
@@ -1081,11 +1099,11 @@ msgstr ""
 "pycontw.github.io/reviewer-guidebook\" target=\"_blank\">審稿指南</a> "
 "GitBook。"
 
-#: reviews/models.py:110
+#: reviews/models.py:113
 msgid "comment"
 msgstr "評論"
 
-#: reviews/models.py:112
+#: reviews/models.py:115
 msgid ""
 "Comments to this proposal. This may be available for other reviewers in "
 "later review stages, and you can choose whether or not to disclose it to the "
@@ -1094,11 +1112,11 @@ msgstr ""
 "對於本提案的評論。本欄位內容將在之後的審查階段讓其他審查者看見，您可以選擇要"
 "或不要讓本提案的投稿者知道您的評論。 "
 
-#: reviews/models.py:125
+#: reviews/models.py:128
 msgid "discloses comment to proposal submitter"
 msgstr "讓本提案的投稿者知道您的評論"
 
-#: reviews/models.py:127
+#: reviews/models.py:130
 msgid ""
 "Whether the proposal submitter can read you comments. We will include your "
 "comments in the proposal acceptance/rejection notice sent to the submitter "
@@ -1107,11 +1125,11 @@ msgstr ""
 "本提案的投稿者是否能知道您的評論。我們會在通知提案接受或拒絕結果時，如果您同"
 "意讓投稿者知道，將這些評論加在通知結果中。"
 
-#: reviews/models.py:140
+#: reviews/models.py:143
 msgid "is appropriate"
 msgstr "認可"
 
-#: reviews/models.py:142
+#: reviews/models.py:145
 msgid ""
 "Administrators can use this field to hide a review from submitters, even if "
 "the reviewer enables disclosure. The review may be shown to the submitter "
@@ -1120,11 +1138,11 @@ msgstr ""
 "管理員可以用這個欄位隱藏某個審稿意見，不讓投稿人看見（即使審稿人要求揭露）。"
 "只有當這個欄位設為 True 時，審稿意見才會被顯示給投稿人。"
 
-#: reviews/models.py:150
+#: reviews/models.py:153
 msgid "note"
 msgstr "附註"
 
-#: reviews/models.py:152
+#: reviews/models.py:155
 msgid ""
 "Personal notes about this proposal. You can use this field to record "
 "anything you like during the review process. We promise to never disclose "
@@ -1133,40 +1151,40 @@ msgstr ""
 "個人對本投稿的附註。您可以使用這個欄位記錄有關審查的任何資訊。我們不會把這欄"
 "位的資訊公布給任何人，只有您知道。"
 
-#: reviews/models.py:160
+#: reviews/models.py:163
 msgid "updated"
 msgstr "更新時間"
 
-#: reviews/models.py:165
+#: reviews/models.py:168
 msgid "review"
 msgstr "審查"
 
-#: reviews/models.py:166
+#: reviews/models.py:169
 msgid "reviews"
 msgstr "審查"
 
-#: reviews/models.py:171
+#: reviews/models.py:174
 #, python-brace-format
 msgid "Review {proposal} by {reviewer}: {vote}"
 msgstr "提案《{proposal}》審查：{vote}（{reviewer}）"
 
-#: reviews/models.py:203
+#: reviews/models.py:206
 msgid "dumped JSON"
 msgstr "匯出 JSON"
 
-#: reviews/models.py:207
+#: reviews/models.py:210
 msgid "dumped at"
 msgstr "匯出於"
 
-#: reviews/models.py:212
+#: reviews/models.py:215
 msgid "talk proposal snapshot"
 msgstr "演講投稿封存"
 
-#: reviews/models.py:213
+#: reviews/models.py:216
 msgid "talk proposal snapshots"
 msgstr "演講投稿封存"
 
-#: reviews/models.py:217
+#: reviews/models.py:220
 #, python-brace-format
 msgid "Stage {stage} dump for {proposal}"
 msgstr "第 {stage} 階段封存《{proposal}》"
@@ -1299,6 +1317,8 @@ msgstr "修改"
 #: templates/pycontw-2018/events/talk_detail.html:46
 #: templates/pycontw-2019/events/talk_detail.html:48
 #: templates/pycontw-2019/events/tutorial_detail.html:47
+#: templates/pycontw-2020/events/talk_detail.html:54
+#: templates/pycontw-2020/events/tutorial_detail.html:47
 msgid "Abstract"
 msgstr "摘要"
 
@@ -1326,7 +1346,7 @@ msgstr ""
 
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
-#: templates/default/reviews/_includes/proposal_table.html:17
+#: templates/default/reviews/_includes/proposal_table.html:20
 #: templates/default/reviews/_includes/review_table.html:8
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
@@ -1604,23 +1624,23 @@ msgstr "（評論被審稿人或主辦單位隱藏。）"
 msgid "No reviews yet."
 msgstr "尚無審稿紀錄。"
 
-#: templates/default/reviews/_includes/proposal_table.html:8
+#: templates/default/reviews/_includes/proposal_table.html:10
 msgid "Reviewed"
 msgstr "已審查"
 
-#: templates/default/reviews/_includes/proposal_table.html:25
+#: templates/default/reviews/_includes/proposal_table.html:30
 msgid "Lang"
 msgstr "語言"
 
-#: templates/default/reviews/_includes/proposal_table.html:32
+#: templates/default/reviews/_includes/proposal_table.html:37
 msgid "Decision"
 msgstr "結果"
 
-#: templates/default/reviews/_includes/proposal_table.html:50
+#: templates/default/reviews/_includes/proposal_table.html:58
 msgid "Review"
 msgstr "審查"
 
-#: templates/default/reviews/_includes/proposal_table.html:52
+#: templates/default/reviews/_includes/proposal_table.html:61
 msgid "Read"
 msgstr "閱讀"
 
@@ -1867,6 +1887,8 @@ msgstr "您的大名"
 #: templates/default/users/user_profile_update.html:51
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:40
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:53
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:40
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:53
 msgid "Biography"
 msgstr "自我介紹"
 
@@ -1915,7 +1937,7 @@ msgstr "我們搞砸了，這不是你的問題。"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:29
 #: templates/pycontw-2018/_includes/menu.html:29
 #: templates/pycontw-2019/_includes/menu.html:31
-#: templates/pycontw-2020/_includes/menu.html:34
+#: templates/pycontw-2020/_includes/menu.html:35
 msgid "About"
 msgstr "關於"
 
@@ -1941,6 +1963,8 @@ msgstr "工作人員"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:37
 #: templates/pycontw-2019/_includes/menu.html:68
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:16
+#: templates/pycontw-2020/_includes/menu.html:80
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:16
 msgid "Events"
 msgstr "活動"
 
@@ -1960,6 +1984,11 @@ msgstr "總覽"
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:21
 #: templates/pycontw-2019/contents/en/events/overview.html:20
 #: templates/pycontw-2019/contents/zh/events/overview.html:21
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:6
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:17
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:21
+#: templates/pycontw-2020/contents/en/events/overview.html:20
+#: templates/pycontw-2020/contents/zh/events/overview.html:21
 msgid "Keynotes"
 msgstr "基調演講"
 
@@ -1978,6 +2007,11 @@ msgstr "基調演講"
 #: templates/pycontw-2019/contents/zh/events/overview.html:28
 #: templates/pycontw-2019/events/talk_list.html:6
 #: templates/pycontw-2019/events/talk_list.html:10
+#: templates/pycontw-2020/_includes/menu.html:89
+#: templates/pycontw-2020/contents/en/events/overview.html:27
+#: templates/pycontw-2020/contents/zh/events/overview.html:28
+#: templates/pycontw-2020/events/talk_list.html:6
+#: templates/pycontw-2020/events/talk_list.html:11
 msgid "Talks"
 msgstr "一般演講"
 
@@ -2004,7 +2038,7 @@ msgstr "專業課程"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:52
 #: templates/pycontw-2018/_includes/menu.html:86
 #: templates/pycontw-2019/_includes/menu.html:91
-#: templates/pycontw-2020/_includes/menu.html:106
+#: templates/pycontw-2020/_includes/menu.html:114
 msgctxt "conf location"
 msgid "Venue"
 msgstr "會場"
@@ -2015,7 +2049,7 @@ msgstr "住宿"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:68
 #: templates/pycontw-2019/_includes/menu.html:34
-#: templates/pycontw-2020/_includes/menu.html:39
+#: templates/pycontw-2020/_includes/menu.html:40
 msgid "Sponsor"
 msgstr "贊助"
 
@@ -2041,6 +2075,7 @@ msgstr "售票資訊"
 #: templates/pycontw-2016/_includes/nav/front_nav.html:78
 #: templates/pycontw-2018/_includes/menu.html:80
 #: templates/pycontw-2019/_includes/menu.html:85
+#: templates/pycontw-2020/_includes/menu.html:107
 msgid "Financial Aid"
 msgstr "財務補助"
 
@@ -2083,6 +2118,7 @@ msgstr "跳至"
 #: templates/pycontw-2017/events/schedule_create.html:71
 #: templates/pycontw-2018/events/schedule_create.html:64
 #: templates/pycontw-2019/events/schedule_create.html:60
+#: templates/pycontw-2020/events/schedule_create.html:60
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 
@@ -2090,6 +2126,7 @@ msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 #: templates/pycontw-2017/events/schedule_create.html:82
 #: templates/pycontw-2018/events/schedule_create.html:73
 #: templates/pycontw-2019/events/schedule_create.html:69
+#: templates/pycontw-2020/events/schedule_create.html:69
 msgid "Generate"
 msgstr "產生"
 
@@ -2104,6 +2141,8 @@ msgstr "投影片連結"
 #: templates/pycontw-2018/events/talk_detail.html:53
 #: templates/pycontw-2019/events/talk_detail.html:55
 #: templates/pycontw-2019/events/tutorial_detail.html:54
+#: templates/pycontw-2020/events/talk_detail.html:61
+#: templates/pycontw-2020/events/tutorial_detail.html:54
 msgid "Description"
 msgstr "說明"
 
@@ -2163,6 +2202,10 @@ msgstr ""
 #: templates/pycontw-2019/contents/zh/events/overview.html:35
 #: templates/pycontw-2019/events/tutorial_list.html:6
 #: templates/pycontw-2019/events/tutorial_list.html:10
+#: templates/pycontw-2020/contents/en/events/overview.html:34
+#: templates/pycontw-2020/contents/zh/events/overview.html:35
+#: templates/pycontw-2020/events/tutorial_list.html:6
+#: templates/pycontw-2020/events/tutorial_list.html:10
 msgid "Tutorials"
 msgstr "專業課程"
 
@@ -2370,18 +2413,22 @@ msgstr "控制面板"
 #: templates/pycontw-2019/contents/_default/portal.html:6
 #: templates/pycontw-2019/contents/_default/portal.html:12
 #: templates/pycontw-2019/index.html:30
+#: templates/pycontw-2020/contents/_default/portal.html:6
+#: templates/pycontw-2020/contents/_default/portal.html:12
 msgid "Portal"
 msgstr "傳送門"
 
 #: templates/pycontw-2017/contents/_default/portal.html:23
 #: templates/pycontw-2018/contents/_default/portal.html:21
 #: templates/pycontw-2019/_includes/portal.html:8
+#: templates/pycontw-2020/_includes/portal.html:8
 msgid "Collaborative Notes"
 msgstr "共筆"
 
 #: templates/pycontw-2017/contents/_default/portal.html:30
 #: templates/pycontw-2018/contents/_default/portal.html:25
 #: templates/pycontw-2019/_includes/portal.html:12
+#: templates/pycontw-2020/_includes/portal.html:12
 msgid "Chat Room"
 msgstr "聊天室"
 
@@ -2393,6 +2440,7 @@ msgstr "猜謎排行榜"
 #: templates/pycontw-2017/contents/_default/portal.html:65
 #: templates/pycontw-2018/contents/_default/portal.html:29
 #: templates/pycontw-2019/_includes/portal.html:16
+#: templates/pycontw-2020/_includes/portal.html:16
 msgid "Facebook Fan Page"
 msgstr "Facebook 粉絲頁"
 
@@ -2430,6 +2478,8 @@ msgstr "非正式會議"
 #: templates/pycontw-2018/events/schedule_create.html:15
 #: templates/pycontw-2019/events/schedule_create.html:7
 #: templates/pycontw-2019/events/schedule_create.html:15
+#: templates/pycontw-2020/events/schedule_create.html:7
+#: templates/pycontw-2020/events/schedule_create.html:15
 msgid "Export New Schedule"
 msgstr "輸出新時間表"
 
@@ -2437,6 +2487,7 @@ msgstr "輸出新時間表"
 #: templates/pycontw-2018/events/talk_detail.html:22
 #: templates/pycontw-2019/events/talk_detail.html:23
 #: templates/pycontw-2019/events/tutorial_detail.html:23
+#: templates/pycontw-2020/events/tutorial_detail.html:23
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s，%(begin_time_display)s&#8209;%(end_time_display)s"
@@ -2448,6 +2499,7 @@ msgstr "特邀活動"
 #: templates/pycontw-2017/events/talk_detail.html:32
 #: templates/pycontw-2018/events/schedule.html:31
 #: templates/pycontw-2019/events/schedule.html:31
+#: templates/pycontw-2020/events/schedule.html:31
 msgid "No recording"
 msgstr "不錄影"
 
@@ -2562,7 +2614,6 @@ msgstr "議程"
 
 #: templates/pycontw-2018/_includes/menu.html:57
 #: templates/pycontw-2019/_includes/menu.html:60
-#: templates/pycontw-2020/_includes/menu.html:53
 msgid "Recording"
 msgstr "錄影"
 
@@ -2583,11 +2634,14 @@ msgstr "學習"
 #: templates/pycontw-2019/_includes/menu.html:74
 #: templates/pycontw-2019/contents/en/events/overview.html:46
 #: templates/pycontw-2019/contents/zh/events/overview.html:49
+#: templates/pycontw-2020/contents/en/events/overview.html:46
+#: templates/pycontw-2020/contents/zh/events/overview.html:49
 msgid "Open Spaces"
 msgstr "開放空間"
 
 #: templates/pycontw-2018/_includes/menu.html:76
 #: templates/pycontw-2019/_includes/menu.html:81
+#: templates/pycontw-2020/_includes/menu.html:102
 msgid "Registration"
 msgstr "註冊"
 
@@ -2603,7 +2657,7 @@ msgstr "報到"
 
 #: templates/pycontw-2018/_includes/menu.html:89
 #: templates/pycontw-2019/_includes/menu.html:94
-#: templates/pycontw-2020/_includes/menu.html:110
+#: templates/pycontw-2020/_includes/menu.html:118
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -2685,94 +2739,115 @@ msgstr "審稿委員"
 
 #: templates/pycontw-2018/events/schedule.html:24
 #: templates/pycontw-2019/events/schedule.html:24
+#: templates/pycontw-2020/events/schedule.html:24
 msgid "English speech"
 msgstr "英語演講"
 
 #: templates/pycontw-2018/events/schedule.html:25
 #: templates/pycontw-2019/events/schedule.html:25
+#: templates/pycontw-2020/events/schedule.html:25
 msgid "Mandarin speech"
 msgstr "國語演講"
 
 #: templates/pycontw-2018/events/schedule.html:26
 #: templates/pycontw-2019/events/schedule.html:26
+#: templates/pycontw-2020/events/schedule.html:26
 msgid "English slides"
 msgstr "英文投影片"
 
 #: templates/pycontw-2018/events/schedule.html:27
 #: templates/pycontw-2019/events/schedule.html:27
+#: templates/pycontw-2020/events/schedule.html:27
 msgid "Chinese slides"
 msgstr "中文投影片"
 
 #: templates/pycontw-2018/events/talk_detail.html:17
 #: templates/pycontw-2019/events/tutorial_detail.html:18
+#: templates/pycontw-2020/events/tutorial_detail.html:18
 msgid "Location: "
 msgstr "地點："
 
 #: templates/pycontw-2018/events/talk_detail.html:21
 #: templates/pycontw-2019/events/tutorial_detail.html:22
+#: templates/pycontw-2020/events/tutorial_detail.html:22
 msgid "Slot: "
 msgstr "時段："
 
 #: templates/pycontw-2018/events/talk_detail.html:25
 #: templates/pycontw-2019/events/talk_detail.html:27
 #: templates/pycontw-2019/events/tutorial_detail.html:27
+#: templates/pycontw-2020/events/talk_detail.html:33
+#: templates/pycontw-2020/events/tutorial_detail.html:27
 msgid "Category: "
 msgstr "主題分類："
 
 #: templates/pycontw-2018/events/talk_detail.html:29
 #: templates/pycontw-2019/events/talk_detail.html:31
 #: templates/pycontw-2019/events/tutorial_detail.html:31
+#: templates/pycontw-2020/events/talk_detail.html:37
+#: templates/pycontw-2020/events/tutorial_detail.html:31
 msgid "Language: "
 msgstr "語言："
 
 #: templates/pycontw-2018/events/talk_detail.html:33
 #: templates/pycontw-2019/events/talk_detail.html:35
 #: templates/pycontw-2019/events/tutorial_detail.html:35
+#: templates/pycontw-2020/events/talk_detail.html:41
+#: templates/pycontw-2020/events/tutorial_detail.html:35
 msgid "Python Level: "
 msgstr "Python 難易度："
 
 #: templates/pycontw-2018/events/talk_detail.html:39
 #: templates/pycontw-2019/events/talk_detail.html:41
 #: templates/pycontw-2019/events/tutorial_detail.html:41
+#: templates/pycontw-2020/events/talk_detail.html:47
+#: templates/pycontw-2020/events/tutorial_detail.html:41
 msgid "No Recording"
 msgstr "不錄影"
 
 #: templates/pycontw-2018/events/talk_detail.html:60
 #: templates/pycontw-2019/events/talk_detail.html:62
 #: templates/pycontw-2019/events/tutorial_detail.html:61
+#: templates/pycontw-2020/events/talk_detail.html:68
+#: templates/pycontw-2020/events/tutorial_detail.html:61
 msgid "Slides"
 msgstr "投影片"
 
 #: templates/pycontw-2018/events/talk_detail.html:69
 #: templates/pycontw-2019/events/talk_detail.html:71
+#: templates/pycontw-2020/events/talk_detail.html:77
 msgctxt "speaker info in talk detail"
 msgid "Speakers"
 msgstr "講者"
 
 #: templates/pycontw-2018/events/talk_detail.html:71
 #: templates/pycontw-2019/events/talk_detail.html:73
+#: templates/pycontw-2020/events/talk_detail.html:79
 msgctxt "speaker info in talk detail"
 msgid "Speaker"
 msgstr "講者"
 
 #: templates/pycontw-2018/events/talk_list.html:13
 #: templates/pycontw-2019/events/talk_list.html:13
+#: templates/pycontw-2020/events/talk_list.html:15
 msgid ""
 "The two conference days are packed with talks about Python by speakers from "
-"Taiwan and around the world. The talks will be either 30- or 45-minute long. "
+"Taiwan and around the world. The talks will be either 15- or 30-minute long. "
 "Three tracks of talks will be delivered simultaneously, all with different "
 "topics and difficulties. We suggest you to plan beforehand, and choose what "
 "you want to listen based on your interests. Many people take notes on the "
 "program schedule before the meeting so they don't end up in the wrong place."
 msgstr ""
 "演講為會期兩天最主要的活動，屆時將會有來自台灣各地與全球的講者分享他們在 "
-"Python 相關的發現。Talk 有 30 分鐘與 45 分鐘兩種長度，每天都將有三軌議程同步"
+"Python 相關的發現。Talk 有 15 分鐘與 30 分鐘兩種長度，每天都將有三軌議程同步"
 "進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆"
 "記想聽的議程，才不會跑錯地點。"
 
 #: templates/pycontw-2018/events/talk_list.html:14
 #: templates/pycontw-2019/events/talk_list.html:14
 #: templates/pycontw-2019/events/tutorial_list.html:14
+#: templates/pycontw-2020/events/talk_list.html:16
+#: templates/pycontw-2020/events/tutorial_list.html:14
 msgid ""
 "<em>Program schedule is subject to change.</em> Please check this page "
 "frequently to get the latest version."
@@ -2780,6 +2855,7 @@ msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲
 
 #: templates/pycontw-2018/events/talk_list.html:17
 #: templates/pycontw-2019/events/talk_list.html:17
+#: templates/pycontw-2020/events/talk_list.html:19
 msgid "Categories"
 msgstr "主題分類"
 
@@ -2836,6 +2912,7 @@ msgid "Become a volunteer"
 msgstr "成為志工"
 
 #: templates/pycontw-2019/_includes/portal.html:20
+#: templates/pycontw-2020/_includes/portal.html:20
 msgid "Program Book"
 msgstr "大會手冊"
 
@@ -2858,37 +2935,46 @@ msgid "Maneuvering"
 msgstr "機動"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:15
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:15
 msgid "Home"
 msgstr "首頁"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:43
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:62
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:43
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:62
 msgid "Speech"
 msgstr "演講"
 
 #: templates/pycontw-2019/contents/_default/events/keynotes.html:47
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:47
 msgid "Slido"
 msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
+#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:5
 msgid "Keynote: "
 msgstr "基調演講："
 
 #: templates/pycontw-2019/events/tutorial_detail.html:12
+#: templates/pycontw-2020/events/tutorial_detail.html:12
 msgid "Tutorial: "
 msgstr "專業課程："
 
 #: templates/pycontw-2019/events/tutorial_detail.html:70
+#: templates/pycontw-2020/events/tutorial_detail.html:70
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturers"
 msgstr "講師"
 
 #: templates/pycontw-2019/events/tutorial_detail.html:72
+#: templates/pycontw-2020/events/tutorial_detail.html:72
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturer"
 msgstr "講師"
 
 #: templates/pycontw-2019/events/tutorial_list.html:13
+#: templates/pycontw-2020/events/tutorial_list.html:13
 msgid ""
 "Tutorial are events held as part of the main conference, but attendees need "
 "to register separately in order to join. They are either half- or one-day "
@@ -2899,28 +2985,40 @@ msgstr ""
 "格。提供全天（6 小時）或半天（3 小時）課程。"
 
 #: templates/pycontw-2019/events/tutorial_list.html:27
+#: templates/pycontw-2020/events/tutorial_list.html:27
 msgid "Show Details"
 msgstr "顯示詳細內容"
 
 #: templates/pycontw-2019/events/tutorial_list.html:31
+#: templates/pycontw-2020/events/tutorial_list.html:31
 msgid "Register"
 msgstr "報名"
 
-#: templates/pycontw-2020/_includes/menu.html:46
-msgid "Speaking"
-msgstr "投稿"
+#: templates/pycontw-2020/_includes/menu.html:84
+msgid "Warm-Up Session"
+msgstr "暖身活動"
 
-#: templates/pycontw-2020/_includes/menu.html:50
-msgid "Call for Proposal"
-msgstr "徵求稿件"
+#: templates/pycontw-2020/events/talk_list.html:41
+#, python-format
+msgid " by %(speaker_names)s"
+msgstr " — %(speaker_names)s"
 
-#: templates/pycontw-2020/_includes/menu.html:51
-msgid "Proposing a Talk"
-msgstr "演講"
+#: templates/pycontw-2020/events/talk_list.html:55
+msgid "Community Track"
+msgstr "社群軌"
 
-#: templates/pycontw-2020/_includes/menu.html:52
-msgid "Proposing a Tutorial"
-msgstr "專業課程"
+#: templates/pycontw-2020/events/talk_list.html:57
+msgid ""
+"The community track is a new event in PyCon TW. We choose the talks with "
+"specific topics and package them into the same session. We'll leave the "
+"conference rooms and go to characteristic cafes, exhibition spaces, and even "
+"monuments so that the attendees and speakers can interact with each other "
+"more comfortably and closely."
+msgstr ""
+"社群軌是 PyCon TW 的一項新活動。我們選定數個熱門的主題，並且將同主題的精采演"
+"講打包成 N 場連續放送的形式，讓會眾能聽得過癮。我們捨棄了儘管專業但是死板的會"
+"議室，在有特色的咖啡廳、展演空間、甚至是古蹟內來舉辦上述各種主題的演講，讓會"
+"眾能更加舒適地且近距離地與他人互動。"
 
 #: templates/pycontw-2020/index.html:48
 msgid "Call for Proposals"
@@ -3105,34 +3203,58 @@ msgstr "最後同意的 CoC 版本"
 msgid "agreed at"
 msgstr "同意於"
 
-#: users/views.py:42
+#: users/views.py:43
 msgid "Sign up successful. You are now logged in."
 msgstr "註冊成功。您現在已被登入。"
 
-#: users/views.py:59
+#: users/views.py:60
 msgid "Email verification successful."
 msgstr "Email 認證成功。"
 
-#: users/views.py:71
+#: users/views.py:72
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "一封認證用的 email 已經寄送至 {email}"
 
-#: users/views.py:99
+#: users/views.py:102
 msgid "Your profile has been updated successfully."
 msgstr "您的講者資訊已成功地更新。"
 
-#: users/views.py:111
+#: users/views.py:115
 msgid "Your new password has been applied successfully."
 msgstr "已成功地使用您的新密碼。"
 
-#: users/views.py:118
+#: users/views.py:122
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
 msgstr ""
 "一封電子郵件已經發送至您的信箱。請檢查您的收件匣並參照信中指示重設密碼。"
 
-#: users/views.py:126
+#: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
+
+#, fuzzy
+#~| msgid ""
+#~| "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~| "%(proposal_title)s</a> by %(speaker_names)s"
+#~ msgid ""
+#~ "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~ "%(proposal_title)s</a><span class=\"label\">Community Track</span> by "
+#~ "%(speaker_names)s"
+#~ msgstr ""
+#~ "<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+#~ "%(proposal_title)s</a> — %(speaker_names)s"
+
+#~ msgid "Speaking"
+#~ msgstr "投稿"
+
+#~ msgid "Call for Proposal"
+#~ msgstr "徵求稿件"
+
+#~ msgid "Proposing a Talk"
+#~ msgstr "演講"
+
+#~ msgid "Proposing a Tutorial"
+#~ msgstr "專業課程"

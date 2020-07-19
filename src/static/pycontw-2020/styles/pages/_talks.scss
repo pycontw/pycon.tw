@@ -1,7 +1,50 @@
 .talk-list {
 	.talk-title {
-		color: $jungle-green;
+		color: #262727;
 		font-weight: 400;
+	}
+
+	p {
+		text-align: left;
+		letter-spacing: 0;
+		color: $imperial;
+		font-weight: 500;
+	}
+
+}
+
+.talk-label {
+	font-size: 0.8rem;
+	color: white;
+	background-color: $jinger-bread;
+
+	// color: $jinger-bread;
+	// background-color: $salmon;
+
+	padding: 1px 4px;
+	border-radius: 3px;
+	position: relative;
+	top: -2px;
+
+	a {
+		color: #EEE;
+
+		&:hover {
+			color: white;
+			text-decoration: none;
+		}
+	}
+}
+
+section.note {
+	border-top: 1px solid transparentize($dark-gray, 0.9);
+	margin-top: 70px;
+	padding-top: 70px;
+
+	font-family: $text-font-family;
+
+	.talk-label {
+		font-size: 1rem;
 	}
 }
 
@@ -43,8 +86,14 @@
 	}
 
 	.content {
+		p, ul, li {
+			text-align: left;
+			letter-spacing: 0;
+			font-weight: normal;
+		}
+
 		padding: 32px 16px;
-		background: $light-grayish-yellow;
+		background: transparentize($imperial, 0.9);
 		word-wrap: break-word;
 
 		@include on-desktop() {
@@ -90,6 +139,8 @@
 				max-height: 180px;
 				margin-left: -4px;
 			}
+			text-align: left;
+			letter-spacing: 0;
 			li {
     			flex-grow: 1;
 				flex-basis: 30px;
@@ -111,6 +162,7 @@
 					min-height: 24px;
 					min-width: 60px;
 					margin-right: 1.5rem;
+					margin-left: 1.5rem;
 					font-size: 0;
 					@mixin icon($name, $margin-top: 0) {
 						background: url('../assets/icon-#{$name}.svg') top right no-repeat;

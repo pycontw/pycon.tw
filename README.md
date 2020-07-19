@@ -80,12 +80,12 @@ If you’re using a database for the first time, create a database named `pycont
 
 > Enter pycontw_db_1 container
 ```cmd
-docker exec -it pycontw_db_1 su - postgres
+docker exec -it pycontw_db_1 psql -U postgres
 ```
 
 ```sql
 # Replace "postgres" with your specified role.
-create database pycontw2016 with owner = postgres;
+CREATE DATABASE pycontw2016 with owner = postgres;
 ```
 
 After that, just run the migration.
@@ -95,7 +95,7 @@ After that, just run the migration.
 `cd` into the `src` directory:
 
     cd src
-    
+
 #### DB Connection
 Default is sqlite3, you can change to connect `postgres`.
 Copy `local.sample.env` and change its parameters to your personal setting.
@@ -103,14 +103,18 @@ Copy `local.sample.env` and change its parameters to your personal setting.
     cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
 
 The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
-    
-#### Create Super User
-
-    python manage.py createsuperuser
 
 And migrate the database:
 
     python manage.py migrate
+
+#### Create Super User
+
+    python manage.py createsuperuser
+
+#### Compile localized translation
+
+    python manage.py compilemessages
 
 Now you’re all set!
 
@@ -147,38 +151,6 @@ Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please *
 
 We strongly recommend you configure your editor to match our coding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
 
-
-## Internationalisation
-
-Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw/). When new commits are added into master branch, Travis CI will automatically push new translation strings to Transifex, so simply fix or edit the translation online.
-
-### Update translation
-
-Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](https://docs.transifex.com/client/client-configuration) first by adding the file `~/.transifexrc`.
-
-For maintainer update transifex
-
-```
-# maybe
-# pip install -U transifex-client
-
-python manage.py makemessages --locale _src
-
-tx push -s
-```
-
-Then update the translation in transifex.
-
-Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
-
-    rm locale/en_US/LC_MESSAGES/django.*
-    rm locale/zh_Hant/LC_MESSAGES/django.*
-    # ... more languages
-
-Run `tx pull` to get newer translation and recompile the PO files:
-
-    tx pull -a
-    python manage.py compilemessages -x _src
 
 ## Deployment
 

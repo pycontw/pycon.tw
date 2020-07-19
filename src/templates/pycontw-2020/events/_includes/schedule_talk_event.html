@@ -1,0 +1,13 @@
+{% load i18n_plus %}
+
+<a href="{{ event.get_absolute_url }}" class="talk-info localed-url">
+	<div class="talk-title">{{ info.title }}</div>
+	<p class="talk-speakers">{{ speakers }}</p>
+</a>
+<ul class="talk-tags">
+	<li class="language-{{ info.language.lower }}"></li>
+	<li class="python-level-{{ info.python_level.lower }}"></li>
+	{% if not info.recording_policy %}
+	<li class="no-recording"></li>
+	{% endif %}
+</ul>

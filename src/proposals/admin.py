@@ -23,13 +23,14 @@ class ProposalAdmin(admin.ModelAdmin):
     list_filter = [
         'cancelled', 'accepted',
         'category', 'duration', 'language', 'python_level',
+        'labels',
     ]
     fields = [
         'conference', 'submitter', 'title', 'category', 'duration',
         'language', 'abstract', 'python_level', 'objective',
         'detailed_description', 'outline', 'supplementary',
         'recording_policy', 'slide_link', 'referring_policy', 'remoting_policy', 'cancelled',
-        'accepted', 'slido_embed_link',
+        'accepted', 'slido_embed_link', 'labels',
     ]
     raw_id_fields = ['submitter']
     search_fields = ['title', 'abstract']
