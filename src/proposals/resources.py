@@ -17,34 +17,53 @@ class TalkProposalResource(resources.ModelResource):
     stage_2_minus_1_count = fields.Field()
 
     def dehydrate_stage_1_plus_1_count(self, obj):
-        return obj.review_set.filter(stage=1,vote=Review.Vote.PLUS_ONE).count()
+        return self.data['stage_1']['+1']
 
     def dehydrate_stage_1_plus_0_count(self, obj):
-        return obj.review_set.filter(stage=1,vote=Review.Vote.PLUS_ZERO).count()
+        return self.data['stage_1']['+0']
 
     def dehydrate_stage_1_minus_0_count(self, obj):
-        return obj.review_set.filter(stage=1,vote=Review.Vote.MINUS_ZERO).count()
+        return self.data['stage_1']['-0']
 
     def dehydrate_stage_1_minus_1_count(self, obj):
-        return obj.review_set.filter(stage=1,vote=Review.Vote.MINUS_ONE).count()
+        return self.data['stage_1']['-1']
 
     def dehydrate_stage_2_plus_1_count(self, obj):
-        return obj.review_set.filter(stage=2,vote=Review.Vote.PLUS_ONE).count()
+        return self.data['stage_2']['+1']
 
     def dehydrate_stage_2_plus_0_count(self, obj):
-        return obj.review_set.filter(stage=2,vote=Review.Vote.PLUS_ZERO).count()
+        return self.data['stage_2']['+0']
 
     def dehydrate_stage_2_minus_0_count(self, obj):
-        return obj.review_set.filter(stage=2,vote=Review.Vote.MINUS_ZERO).count()
+        return self.data['stage_2']['-0']
 
     def dehydrate_stage_2_minus_1_count(self, obj):
-        return obj.review_set.filter(stage=2,vote=Review.Vote.MINUS_ONE).count()
+        return self.data['stage_2']['-1']
+
+    def prepare(self, obj):
+        self.count = 0
+        self.data = {
+            'stage_1': {"+1": 0, "+0": 0, "-0": 0, "-1": 0},
+            'stage_2': {"+1": 0, "+0": 0, "-0": 0, "-1": 0},
+        }
+        reviewer = []
+        for review in obj.review_set.all().order_by('-updated'):
+            if review.reviewer.email not in reviewer:
+                reviewer.append(review.reviewer.email)
+                self.data['stage_%d' % review.stage][review.vote] += 1
+                self.count += 1
+
+    def before_export(self,queryset, *args, **kwargs):
+        super().before_export(queryset, *args, **kwargs)
+        queryset = self.get_queryset()
+        list(map(lambda obj:self.prepare(obj), queryset))
+
 
     class Meta:
         model = TalkProposal
         fields = [
             'id', 'title', 'category', 'python_level', 'duration',
-            'language', 'name', 'email','cancelled','accepted',
+            'language', 'name', 'email','cancelled','accepted','last_updated_at',
             'stage_1_plus_1_count', 'stage_1_plus_0_count', 'stage_1_minus_0_count', 'stage_1_minus_1_count',
             'stage_2_plus_1_count', 'stage_2_plus_0_count', 'stage_2_minus_0_count', 'stage_2_minus_1_count'
         ]
