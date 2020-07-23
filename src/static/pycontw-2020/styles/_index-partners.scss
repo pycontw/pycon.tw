@@ -2,6 +2,7 @@
 
 .index-partners {
 	@include index-section();
+	padding: 0;
 
 	> .container {
 		@include container(904px);
@@ -21,8 +22,16 @@
 				border: 1px solid white;
 				display: flex;
 				height: 200px;
+				justify-content: center;
+				align-items: center;
 				flex-direction: column;
 				padding: 10px;
+				position: relative;
+				> span {
+					position: absolute;
+					top: 0.7em;
+					left: 0.7em;
+				}
 				> span.platinum {
 					color: black;
 				}
@@ -43,8 +52,8 @@
 						margin: 40px 0px;
 						position: relative;
 						z-index: $background-deco-index + 1;
-						min-width: 120px;
 						max-width: 200px;
+						max-height: 200px;
 						height: 64px;
 						line-height: 64px;
 						vertical-align: middle;
