@@ -7,13 +7,20 @@
 
 {% block content %}
 {% url 'page' path='events/passion-fruit' as passion_fruit_url %}
+{% url 'page' path='events/taipei-dot-py' as taipei_dot_py %}
+
 
 <section class="pill-title alt">
     <h1>Warm-up session</h1>
 </section>
 
-<h3><a href="{{ passion_fruit_url }}">第壹次Python NPF百香果 x 南投.py</a></h3>
+<h3><a href="{{ passion_fruit_url }}">1st Python NPF x nantou.py</a></h3>
 
-<p>Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！</p>
+<p>Python NPF is the first event collaborated with nantou.py to host a mixed online/offline event. We expect we could get familiar with this type of mixed meetup event so we could enjoy our pythonic time during COVID-19 era.</p>
+
+<h3><a href="{{ taipei_dot_py }}">PyCon TW x taipei.py Co-hosting Online/Offline Meet-up Streaming</a></h3>
+
+<p>Following the previous Python NPF x nantou.py event, we are co-hosting the mixed online/offline event together
+	with taipei.py this time!</p>
 
 {% endblock content %}
