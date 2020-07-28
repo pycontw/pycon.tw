@@ -8,6 +8,7 @@
 {% block content %}
 {% url 'page' path='events/passion-fruit' as passion_fruit_url %}
 {% url 'page' path='events/taipei-dot-py' as taipei_dot_py %}
+{% url 'page' path='events/pyhug' as pyhug %}
 
 
 <section class="pill-title alt">
@@ -22,5 +23,10 @@
 
 <p>Following the previous Python NPF x nantou.py event, we are co-hosting the mixed online/offline event together
 	with taipei.py this time!</p>
+
+<h3><a href="{{ pyhug }}">PyCon TW x PyHUG Co-hosting Online/Offline Meet-up Streaming</a></h3>
+
+<p>Here comes the third warm-up event. We are co-hosting the mixed online/offline event together
+	with PyHUG this time!</p>
 
 {% endblock content %}

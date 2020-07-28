@@ -8,6 +8,7 @@
 {% block content %}
 {% url 'page' path='events/passion-fruit' as passion_fruit_url %}
 {% url 'page' path='events/taipei-dot-py' as taipei_dot_py %}
+{% url 'page' path='events/pyhug' as pyhug %}
 
 
 <section class="pill-title alt">
@@ -21,5 +22,9 @@
 <h3><a href="{{ taipei_dot_py }}">PyCon TW x taipei.py 聯合線上直播</a></h3>
 
 <p>接續 Python NPF x 南投.py 活動的經驗，PyCon Taiwan 這次合併 taipei.py 實體聚會進行線上與線下聯播活動。</p>
+
+<h3><a href="{{ pyhug }}">PyCon TW x PyHUG 聯合線上直播</a></h3>
+
+<p>暖身活動來到第三場，PyCon Taiwan 與地方社群 PyHUG 實體聚會進行線上與線下聯播活動。</p>
 
 {% endblock content %}
