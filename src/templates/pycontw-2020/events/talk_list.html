@@ -7,6 +7,8 @@
 
 {% block content %}
 
+{% url 'page' path='events/community-track' as community_track_url %}
+
 <section class="pill-title">
 	<h1>{% trans 'Talks' %}</h1>
 </section>
@@ -52,7 +54,7 @@
 
 <section class="note">
 	<a name="community-track"></a>
-	<span class="talk-label">{% trans 'Community Track' %}</span>
+	<span class="talk-label"><a href="{{ community_track_url }}">{% trans 'Community Track' %}</a></span>
 	<p>
 	{% blocktrans %}The community track is a new event in PyCon TW. We choose the talks with specific topics and package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}
 	</p>
