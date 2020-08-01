@@ -2,7 +2,7 @@ $box-content-padding-x: 32px;
 $box-content-padding-y: 16px;
 
 .box {
-	$box-border: solid 1px $egyptian-blue;
+	$box-border: solid 1px $brown;
 
 	border: $box-border;
 	border-radius: 5px;
@@ -11,7 +11,7 @@ $box-content-padding-y: 16px;
 	.box-title {
 		margin: 0;
 		padding: (2rem / 3) 1rem;
-		background-color: $egyptian-blue;
+		background-color: $brown;
 		color: $white;
 		line-height: 150%;
 		font-size: 1.25rem;
@@ -23,6 +23,7 @@ $box-content-padding-y: 16px;
 	}
 
 	.box-control {
+		color:$jinger-bread;
 		display: flex;
 		overflow: hidden;
 
@@ -31,10 +32,10 @@ $box-content-padding-y: 16px;
 			@include no-underline();
 
 			flex: 1;
-			border-top: $box-border;
+			border-top: solid 1px $jinger-bread;
 			line-height: 48px;
 			text-align: center;
-			font-weight: 400;
+			font-family: "Philosopher", "Noto Sans TC", "sans-serif";
 		}
 
 		> * + * {
@@ -42,7 +43,7 @@ $box-content-padding-y: 16px;
 		}
 
 		> a:hover {
-			background: $egyptian-blue;
+			background: $brown;
 			color: $white;
 		}
 	}
