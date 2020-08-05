@@ -1,5 +1,5 @@
 .tabbing {
-	$background-color: $light-grayish-yellow;
+	$background-color: adjust-color($imperial, $alpha: -0.9);
 
 	&:not(.enabled) {
 		> .tabs {
@@ -11,7 +11,7 @@
 	}
 	&.enabled {
 		> .tabs ~ * {
-			border-top: 2px solid $portica;
+			border-top: 2px solid $my-pink;
 		}
 		.tab-title {
 			display: none;
@@ -37,21 +37,22 @@
 			text-indent: 0;
 			text-align: center;
 			font-weight: normal;
-			color: $light-gray;
+			color: $jazz;
 
 			@include on-desktop() {
 				flex-grow: 0;
 			}
 
 			&.active {
-				background: $portica;
-				color: $egyptian-blue;
+				background: $imperial;
+				color: $white;
 			}
 
 			&:not(.active) {
 				cursor: pointer;
 				&:hover {
-					background: darken($background-color, 5%);
+					background: $imperial;
+					color: $white;
 				}
 			}
 		}
