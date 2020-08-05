@@ -2998,6 +2998,10 @@ msgstr "報名"
 msgid "Warm-Up Session"
 msgstr "暖身活動"
 
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:64
+msgid "To be announced"
+msgstr "即將公佈"
+
 #: templates/pycontw-2020/events/talk_list.html:41
 #, python-format
 msgid " by %(speaker_names)s"
