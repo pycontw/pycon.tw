@@ -9,11 +9,9 @@
 {% url 'events_schedule' as events_schedule_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
-{% url 'events_tutorial_list' as events_tutorial_list_url %}
 {% url 'page' path='events/sprints' as events_sprint_url %}
 {% url 'page' path='events/open-spaces' as events_openspaces_url %}
 {% url 'page' path='events/pyday' as events_pyday_url %}
-{% url 'page' path='events/tutorials' as events_tutorial_url %}
 {% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 {% url 'page' path='speaking/talk' as speaking_talk_url %}
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
@@ -27,6 +25,7 @@
 {% url 'page' path='portal' as portal_url %}
 {% url 'page' path='sponsor/sponsor' as sponsor_url %}
 {% url 'page' path='events/warmup-session' as warmup_session %}
+{% url 'page' path='events/tutorials' as events_tutorial_list_url %}
 
 <ul class="menu" data-controller="menu">
 	{% with category=request.path|get_path_category %}
@@ -85,8 +84,8 @@
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<!--{% endcomment %}-->
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
-				<!--{% comment %}-->
 				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>
+				<!--{% comment %}-->
 				<li><a href="{{ events_openspaces_url }}">{% trans 'Open Spaces' %}</a></li>
 				<!--{% endcomment %}-->
 			</ul>
