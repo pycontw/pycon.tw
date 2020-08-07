@@ -3,8 +3,8 @@ from import_export import fields, resources
 from .models import TalkProposal
 from reviews.models import Review
 
-class TalkProposalResource(resources.ModelResource):
 
+class TalkProposalResource(resources.ModelResource):
     name = fields.Field(attribute='submitter__speaker_name')
     email = fields.Field(attribute='submitter__email')
     stage_1_plus_1_count = fields.Field()
@@ -53,18 +53,18 @@ class TalkProposalResource(resources.ModelResource):
                 self.data['stage_%d' % review.stage][review.vote] += 1
                 self.count += 1
 
-    def before_export(self,queryset, *args, **kwargs):
+    def before_export(self, queryset, *args, **kwargs):
         super().before_export(queryset, *args, **kwargs)
         queryset = self.get_queryset()
-        list(map(lambda obj:self.prepare(obj), queryset))
-
+        list(map(lambda obj: self.prepare(obj), queryset))
 
     class Meta:
         model = TalkProposal
         fields = [
             'id', 'title', 'category', 'python_level', 'duration',
-            'language', 'name', 'email','cancelled','accepted','last_updated_at',
+            'language', 'name', 'email', 'cancelled', 'accepted', 'last_updated_at',
             'stage_1_plus_1_count', 'stage_1_plus_0_count', 'stage_1_minus_0_count', 'stage_1_minus_1_count',
-            'stage_2_plus_1_count', 'stage_2_plus_0_count', 'stage_2_minus_0_count', 'stage_2_minus_1_count'
+            'stage_2_plus_1_count', 'stage_2_plus_0_count', 'stage_2_minus_0_count', 'stage_2_minus_1_count',
+            'cancelled', 'remoting_policy', 'referring_policy'
         ]
         export_order = fields
