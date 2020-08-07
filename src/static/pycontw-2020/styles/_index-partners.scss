@@ -1,10 +1,50 @@
 @import 'index-mixins';
 
+
 .index-partners {
 	@include index-section();
 	padding: 0;
+	position: relative;
 
 	> .container {
+
+		[class*=" deco-"],
+		[class^="deco-"] {
+					position: absolute;
+					z-index: -1;
+			}
+
+		.deco-a-1 {
+				top: 0%;
+				right: -5%;
+		}
+
+		.deco-a-2 {
+				top: 50%;
+				left: -6%;
+		}
+
+		.deco-a-3 {
+				bottom: -1%;
+				right: -8%;
+		}
+
+		@include on-desktop {
+			.deco-a-1 {
+				top: 0%;
+				right: 18%;
+			}
+
+			.deco-a-2 {
+					top: 50%;
+					left: 16%;
+			}
+
+			.deco-a-3 {
+					bottom: -1%;
+					right: 20%;
+			}
+		}
 		@include container(904px);
 		padding-bottom: 8px;
 		> .grid-layout {

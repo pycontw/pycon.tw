@@ -234,43 +234,8 @@ body {
     position: relative;
     overflow: hidden;
 
-	[class*=" deco-"],
-	[class^="deco-"] {
-        position: absolute;
-        z-index: -1;
-    }
-
-    .deco-a-1 {
-        top: 0%;
-        right: -5%;
-    }
-
-    .deco-a-2 {
-        top: 50%;
-        left: -6%;
-    }
-
-    .deco-a-3 {
-        bottom: -1%;
-        right: -8%;
-    }
-
 	@include on-desktop {
 		margin: 0 $hero-desktop-margin 0px;
-        .deco-a-1 {
-            top: 0%;
-            right: 18%;
-        }
-
-        .deco-a-2 {
-            top: 50%;
-            left: 16%;
-        }
-
-        .deco-a-3 {
-            bottom: -1%;
-            right: 20%;
-        }
 	}
 }
 
