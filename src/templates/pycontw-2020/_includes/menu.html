@@ -5,7 +5,7 @@
 {% url 'page' path='about/code-of-conduct' as about_coc_url %}
 {% url 'page' path='about/community' as about_community_url %}
 {% url 'page' path='about/staff' as about_staff_url %}
-{% url 'page' path='events/overview' as events_overview_url %}
+{% url 'page' path='conference/overview' as events_overview_url %}
 {% url 'events_schedule' as events_schedule_url %}
 {% url 'page' path='events/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
@@ -30,20 +30,22 @@
 <ul class="menu" data-controller="menu">
 	{% with category=request.path|get_path_category %}
 	<li>
-		<a href="{{ about_pycontw_url }}" {% if category == 'about' %}class="active"{% endif %}>
+		<a href="{{ about_pycontw_url }}" {% if category == 'about' %}class="active" {% endif %}>
 			{% trans 'About' %}
 		</a>
 	</li>
 	<li>
-		<a href="{{ sponsor_url }}" {% if category == 'sponsor' %}class="active"{% endif %}>
+		<a href="{{ sponsor_url }}" {% if category == 'sponsor' %}class="active" {% endif %}>
 			{% trans 'Sponsor' %}
 		</a>
 	</li>
 	<!--{% comment %}-->
-	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"
+		{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-propose" {% if category == 'speaking' %}class="active"{% endif %}>
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker"
+			data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-propose" {% if category == 'speaking' %}class="active" {% endif %}>
 			{% trans 'Speaking' %}
 		</label>
 		<div class="dropdown">
@@ -56,10 +58,12 @@
 		</div>
 	</li>
 	<!--{% endcomment %}-->
-	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"
+		{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-conference" {% if category == 'conference' %}class="active"{% endif %}>
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker"
+			data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-conference" {% if category == 'conference' %}class="active" {% endif %}>
 			{% trans 'Conference' context 'menu' %}
 		</label>
 		<div class="dropdown">
@@ -71,10 +75,12 @@
 			</ul>
 		</div>
 	</li>
-	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"
+		{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-events" {% if category == 'events' %}class="active"{% endif %}>
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker"
+			data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-events" {% if category == 'events' %}class="active" {% endif %}>
 			{% trans 'Events' %}
 		</label>
 		<div class="dropdown">
@@ -89,22 +95,24 @@
 			</ul>
 		</div>
 	</li>
-	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"
+		{% endif %}>
 		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
-		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker" data-action="change->menu#exclude">
-		<label for="menu-navbar-{{ type }}-registration" {% if category == 'registration' %}class="active"{% endif %}>
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker"
+			data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-registration" {% if category == 'registration' %}class="active" {% endif %}>
 			{% trans 'Registration' %}
 		</label>
 		<div class="dropdown">
 			<ul class="submenu">
-                <li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
+				<li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
 				<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
 				{# <li><a href="{{ reg_registration_url }}">{% trans 'Registration' context 'registration' %}</a></li> #}
 			</ul>
 		</div>
 	</li>
 	<li>
-		<a href="{{ venue_url }}" {% if category == 'venue' %}class="active"{% endif %}>
+		<a href="{{ venue_url }}" {% if category == 'venue' %}class="active" {% endif %}>
 			{% trans 'Venue' context 'conf location' %}
 		</a>
 	</li>
