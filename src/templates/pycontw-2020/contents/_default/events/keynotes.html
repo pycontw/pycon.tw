@@ -54,13 +54,16 @@
 					{{ data.speaker.bio|linebreaks }}
 				<div class="social">
 					{% for key, url in data.social.items %}
+					{% if url %}
 					<a href="{{ url }}" target="_blank" rel="noopener"><span class="fa fa-{{ key }}"></span></a>
+					{% endif %}
 					{% endfor %}
 				</div>
 			</article>
 			<article data-target="tabbing.pane">
+				{% trans "To be announced" as placeholder_description %}
 				<h3 class="tab-title">{% trans 'Speech' %}</h3>
-				{{ data.session.description|linebreaks }}
+				{{ data.session.description|default:placeholder_description|linebreaks }}
 			</article>
 			{% if data.slido %}
 			<article data-target="tabbing.pane">

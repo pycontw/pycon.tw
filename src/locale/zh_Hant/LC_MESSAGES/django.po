@@ -3031,6 +3031,10 @@ msgstr ""
 "進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆"
 "記想聽的議程，才不會跑錯地點。"
 
+#: templates/pycontw-2020/contents/_default/events/keynotes.html:64
+msgid "To be announced"
+msgstr "即將公佈"
+
 #: templates/pycontw-2020/events/talk_list.html:41
 #, python-format
 msgid " by %(speaker_names)s"
