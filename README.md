@@ -112,7 +112,9 @@ And migrate the database:
 
     python manage.py createsuperuser
 
+#### Compile localized translation
 
+    python manage.py compilemessages
 
 Now you’re all set!
 
@@ -149,38 +151,6 @@ Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please *
 
 We strongly recommend you configure your editor to match our coding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
 
-
-## Internationalisation
-
-Translations are hosted on [Transifex](https://www.transifex.com/pycon-taiwan/pycon-tw/). When new commits are added into master branch, Travis CI will automatically push new translation strings to Transifex, so simply fix or edit the translation online.
-
-### Update translation
-
-Translation updates into code base are done **manually** under `src/`. You need to [configure the Transifex client](https://docs.transifex.com/client/client-configuration) first by adding the file `~/.transifexrc`.
-
-For maintainer update transifex
-
-```
-# maybe
-# pip install -U transifex-client
-
-python manage.py makemessages --locale _src
-
-tx push -s
-```
-
-Then update the translation in transifex.
-
-Old translation files will stop `tx pull` updating if they have later modified time, which they generally have when they are pulled from the remote repo. So old translation files should be removed first:
-
-    rm locale/en_US/LC_MESSAGES/django.*
-    rm locale/zh_Hant/LC_MESSAGES/django.*
-    # ... more languages
-
-Run `tx pull` to get newer translation and recompile the PO files:
-
-    tx pull -a
-    python manage.py compilemessages -x _src
 
 ## Deployment
 

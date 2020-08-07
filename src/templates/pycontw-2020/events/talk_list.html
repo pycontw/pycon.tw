@@ -1,0 +1,63 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n proposals %}
+
+
+{% block title %}{% trans 'Talks' %}{% endblock %}
+
+{% block content %}
+
+{% url 'page' path='events/community-track' as community_track_url %}
+
+<section class="pill-title">
+	<h1>{% trans 'Talks' %}</h1>
+</section>
+
+<article>
+	<p>{% blocktrans trimmed %}The two conference days are packed with talks about Python by speakers from Taiwan and around the world. The talks will be either 15- or 30-minute long. Three tracks of talks will be delivered simultaneously, all with different topics and difficulties. We suggest you to plan beforehand, and choose what you want to listen based on your interests. Many people take notes on the program schedule before the meeting so they don't end up in the wrong place.{% endblocktrans %}</p>
+	<p>{% blocktrans trimmed %}<em>Program schedule is subject to change.</em> Please check this page frequently to get the latest version.{% endblocktrans %}</p>
+</article>
+
+<h3>{% trans 'Categories' %}</h3>
+
+{% for category, talk_list in talk_category_list_pairs %}
+<a class="tag" href="#talk-category-{{ category }}">{{ category }}</a>
+{% endfor %}
+
+{% for category, talk_list in talk_category_list_pairs %}
+
+<article>
+
+	<h3 id="talk-category-{{ category }}">{{ category }}</h3>
+
+	<ul class="talk-list">
+		{% for proposal in talk_list %}
+        <li>
+			<p>
+				{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
+				{% with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}
+				<a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a>
+				{% if proposal.labels %}
+				<span class="talk-label"><a href="#community-track">{% trans proposal.labels %}</a></span>
+				{% endif %}
+				{% blocktrans %} by {{ speaker_names }}{% endblocktrans %}
+				{% endwith %}
+			</p>
+		</li>
+		{% endfor %}
+	</ul>
+
+
+</article>
+
+{% endfor %}
+
+<section class="note">
+	<a name="community-track"></a>
+	<span class="talk-label"><a href="{{ community_track_url }}">{% trans 'Community Track' %}</a></span>
+	<p>
+	{% blocktrans %}The community track is a new event in PyCon TW. We choose the talks with specific topics and package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}
+	</p>
+</section>
+
+{% endblock content %}

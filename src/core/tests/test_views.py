@@ -3,10 +3,11 @@ import os
 
 import pytest
 
+from django.conf import settings
 from django.utils.translation import activate
 
 from events.models import Schedule
-
+from pytest_django.asserts import assertRedirects
 
 @pytest.mark.django_db
 def test_index_page(client):
@@ -112,18 +113,22 @@ def test_content_pages_links(client, parser, schedule, content_page_full_path):
     body = parser.parse(client.get(content_page_full_path))
     link_tags = body.cssselect('a[href^="/"]:not(a[href^="//"])')
 
-    def get_link_status_pair(tag):
+    link_status_codes = []
+    for tag in link_tags:
         link = tag.get('href')
+        if "/events/schedule/" in link \
+            and settings.SCHEDULE_REDIRECT_URL:
+            assertRedirects(
+                client.get(link),
+                settings.SCHEDULE_REDIRECT_URL,
+                fetch_redirect_response=False
+            )
+            continue
         try:
-            status = client.get(tag.get('href'), follow=True).status_code
+            status = client.get(link, follow=True).status_code
         except Exception:   # Catch internal server error for better reporting.
             status = 500
-        return (link, status)
-
-    link_status_codes = [
-        get_link_status_pair(tag)
-        for tag in link_tags
-    ]
+        link_status_codes.append((link, status))
     assert link_status_codes, 'isolated page: no links found'
 
     def get_error_message():

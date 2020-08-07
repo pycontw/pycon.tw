@@ -26,7 +26,8 @@
 		position: fixed;
 		border-radius: 5px;
 		background-color: rgba(255, 255, 255, 0.95);
-		box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.15);
+		box-shadow: 0 0 14px 0 rgba(39, 39, 39, 1);
+		border: solid 1px $imperial;
 
 		@include on-desktop() {
 			@include card(48px);
@@ -37,27 +38,28 @@
 		position: absolute;
 		top: 16px;
 		right: 16px;
-		width: 24px;
-		height: 24px;
+		width: 30px;
+		height: 30px;
 		max-width: 10vmin;
 		max-height: 10vmin;
 		margin: 0;
-		padding: 0;
+		padding: 5px;
 		border: none;
-		background: none;
+		background: $imperial;
+		border-radius: 50%;
 
 		&:hover {
 			cursor: pointer;
 
 			> span {
-				border-color: #a8a8a8;
+				border-color: #535353;
 			}
 		}
 
 		> span {
 			display: block;
 			width: 100%;
-			border: 1px solid #cacaca;
+			border: 1px solid #fdfbfb;
 			transform-origin: center;
 
 			&:first-child {
@@ -71,16 +73,18 @@
 }
 
 @mixin link-to-website($button-color) {
-	@include button(0,$button-color, $button-color);
+	@include button(0, $button-color, $button-color, $white, $imperial);
 	@include on-desktop{
 		max-width: 225px;
 	}
-	border-radius: 10px;
-	padding: 12px;
+	border-radius: 30px;
+	padding: 12px 45px;
 	margin: 0px;
 	font-weight: normal;
 	line-height: normal;
 	letter-spacing: normal;
+	text-align: center;
+	margin-left: auto;
 }
 
 .popup .card-content {
@@ -109,9 +113,14 @@
 	.name {
 		@include header(1.5rem);
 		@include header-geometry(0, 16px);
+		color: $imperial;
 	}
 	.name, .description .description * {
-		text-align: left;
+		text-align: center;
+	}
+	.horizontal-rule {
+		border: 1px solid $imperial;
+		width: 15%;
 	}
 
 	@include on-desktop() {
@@ -154,10 +163,11 @@
 				}
 				
 				.link-to-website {
-					@include link-to-website($elf-green);
+					@include link-to-website($imperial);
 					
 					&:hover{
-						@include link-to-website($portica);
+						@include link-to-website(transparent);
+						border: 1px solid $imperial;
 					}
 				}
 			}

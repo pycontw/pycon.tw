@@ -26,6 +26,7 @@ class ReviewAdmin(ImportExportMixin, admin.ModelAdmin):
     list_filter = [
         'vote', 'stage', 'discloses_comment', 'appropriateness',
     ]
+    search_fields = ['proposal__title']
     resource_class = ReviewResource
 
 

@@ -172,6 +172,13 @@ class AbstractProposal(ConferenceRelated, EventInfo):
         object_id_field='proposal_id',
     )
 
+    # Generic labels field
+    labels = models.CharField(
+        verbose_name=_('labels'),
+        blank=True,
+        max_length=128,
+    )
+
     objects = DefaultConferenceManager.from_queryset(ProposalQuerySet)()
     all_objects = ProposalQuerySet.as_manager()
 

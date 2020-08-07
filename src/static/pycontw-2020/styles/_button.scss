@@ -1,6 +1,6 @@
-@mixin button($angle, $color1, $color2) {
+@mixin button($angle, $color1, $color2, $base-color:$white, $hover-color:$white) {
 	@include gradient-hover($angle, $color1, $color2);
-	@include link($white, $white);
+	@include link($base-color, $hover-color);
 	@include no-underline;
 	font-weight: 500;
 	margin: auto;
