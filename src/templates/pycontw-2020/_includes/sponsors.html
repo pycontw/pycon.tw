@@ -14,7 +14,12 @@
 				<a href="{{ sponsor.website_url|default:'#' }}" target="_blank" rel="noopener"
 					data-target="mediaPopup.presenter" data-action="mediaPopup#open">
 					{% if sponsor.logo %}
-					<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+					<div
+						class="logo"
+						style="
+							background-image: url({{sponsor.logo.url}})
+						">
+					</div>
 					{% else %}
 					<span>{{ sponsor.name }}</span>
 					{% endif %}
