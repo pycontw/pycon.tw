@@ -3015,6 +3015,10 @@ msgstr "Program Book"
 msgid "Redirect to official website"
 msgstr "Redirect to official website"
 
+#: templates/pycontw-2020/_includes/sponsors.html:5
+msgid "Sponsor Partners"
+msgstr "Sponsor Partners"
+
 #: templates/pycontw-2019/_includes/sponsors.html:73
 msgid "Sponsors Needed"
 msgstr "Sponsors Needed"
