@@ -6,6 +6,8 @@
 {% block body_class %}scroll-x{% endblock %}
 {% block content %}
 
+{% url 'page' path='sponsor/community-tracks' as community_track_url %}
+
 <section class="pill-title">
     <h1>贊助方案</h1>
 </section>
@@ -303,7 +305,7 @@
         PyCon TW 2020 無迎賓袋以及實體文宣，贊助商可自行自作發放。
     </li>
     <li>
-        PyCon TW 2020 社群軌共有 5 個場地，PyCon TW 2020 主辦方擁有社群軌場地最終決定權，鑽石級以及白金級贊助商擁有最優先場地選擇權 (已包含在贊助方案中)，金級贊助商則擁有選擇認購權 (次於鑽石級以及白金級)，數量有限故採先搶先贏制度，優先者可預先認購以及<a href="/sponsor/community-tracks/" target="_blank">選擇場地</a>。若金級以上方案皆額滿且仍有社群軌空間尚未被認領，則開放至特別贊助方案。
+        PyCon TW 2020 社群軌共有 5 個場地，PyCon TW 2020 主辦方擁有社群軌場地最終決定權，鑽石級以及白金級贊助商擁有最優先場地選擇權 (已包含在贊助方案中)，金級贊助商則擁有選擇認購權 (次於鑽石級以及白金級)，數量有限故採先搶先贏制度，優先者可預先認購以及<a href="{{community_track_url}}" target="_blank">選擇場地</a>。若金級以上方案皆額滿且仍有社群軌空間尚未被認領，則開放至特別贊助方案。
     </li>
     <li>
         贊助商方案中已包含之社群軌技術演講，或是加購之社群軌技術演講，以 30 分鐘為上限，且每個社群軌上限為 1 組。
