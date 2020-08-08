@@ -6,6 +6,8 @@
 {% block body_class %}scroll-x{% endblock %}
 {% block content %}
 
+{% url 'page' path='sponsor/community-tracks' as community_track_url %}
+
 <section class="pill-title">
     <h1>Sponsorship Prospectus</h1>
 </section>
@@ -307,7 +309,7 @@
         PyCon TW 2020 do not provide tote bag and physical brochure to our participants. However, sponsors have the liberty to design, print and provide copies of their own handbook.
     </li>
     <li>
-        PyCon TW 2020 community track is currently divided into 5 sectors. The PyCon TW organization holds the final right to decide the location of each sponsor. Diamond and Platinum sponsors have the highest priority for venue selection (already included in the sponsorship plan). Gold sponsors have the option to select subscriptions (right after Diamond and Platinum). The total amount is limited, so the first-come-first-served is adopted. Priorities can pre-subscribe and choose venue.
+        PyCon TW 2020 community track is currently divided into 5 sectors. The PyCon TW organization holds the final right to decide the location of each sponsor. Diamond and Platinum sponsors have the highest priority for venue selection (already included in the sponsorship plan). Gold sponsors have the option to select subscriptions (right after Diamond and Platinum). The total amount is limited, so the first-come-first-served is adopted. Priorities can pre-subscribe and <a href="{{community_track_url}}" target="_blank">choose venue</a>.
     </li>
     <li>
         The sponsoring talk in the community track is limited to 30 minutes, and 1 talk per community track.
