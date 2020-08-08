@@ -73,7 +73,7 @@ body {
 
     @include on-desktop {
         // Align with hero-image-bg
-        margin: 0 auto 100px;
+        margin: 0 auto 50px;
         max-width: 1160px;
         padding: 0;
     }
@@ -233,44 +233,11 @@ body {
     flex: 1 0 auto; // Fix for sticky footer
     position: relative;
     overflow: hidden;
-
-	[class*=" deco-"],
-	[class^="deco-"] {
-        position: absolute;
-        z-index: -1;
-    }
-
-    .deco-a-1 {
-        top: 0%;
-        right: -5%;
-    }
-
-    .deco-a-2 {
-        top: 50%;
-        left: -6%;
-    }
-
-    .deco-a-3 {
-        bottom: -1%;
-        right: -8%;
-    }
+    background: #f4af9e;
 
 	@include on-desktop {
-		margin: 0 $hero-desktop-margin 0px;
-        .deco-a-1 {
-            top: 0%;
-            right: 18%;
-        }
-
-        .deco-a-2 {
-            top: 50%;
-            left: 16%;
-        }
-
-        .deco-a-3 {
-            bottom: -1%;
-            right: 20%;
-        }
+        margin: 0;
+        padding-top: 80px;
 	}
 }
 

@@ -2940,6 +2940,10 @@ msgstr "大會手冊"
 msgid "Redirect to official website"
 msgstr "導回官方網站"
 
+#: templates/pycontw-2020/_includes/sponsors.html:5
+msgid "Sponsor Partners"
+msgstr "贊助夥伴"
+
 #: templates/pycontw-2019/_includes/sponsors.html:73
 msgid "Sponsors Needed"
 msgstr "贊助徵求中"
