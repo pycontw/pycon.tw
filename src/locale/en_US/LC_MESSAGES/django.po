@@ -3400,3 +3400,12 @@ msgstr "Password reset successful. You can now login."
 
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "Proposing a Tutorial"
+
+#: templates/pycontw-2020/_includes/menu.html:124
+msgctxt "COVID-19 Guidelines"
+msgid "COVID-19 Guidelines"
+msgstr "COVID-19 Guidelines"
+
+#: templates/pycontw-2020/_includes/footer.html:20
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
