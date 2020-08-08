@@ -7,13 +7,24 @@
 
 {% block content %}
 {% url 'page' path='events/passion-fruit' as passion_fruit_url %}
+{% url 'page' path='events/taipei-dot-py' as taipei_dot_py %}
+{% url 'page' path='events/pyhug' as pyhug %}
+
 
 <section class="pill-title alt">
     <h1>暖身活動</h1>
 </section>
 
-<h3><a href="{{ passion_fruit_url }}">第壹次Python NPF百香果 x 南投.py</a></h3>
+<h3><a href="{{ passion_fruit_url }}">第壹次 Python NPF 百香果 x 南投.py</a></h3>
 
 <p>Python NPF百香果是今年一個由PyCon Taiwan所籌備的小型線上會議，在疫情肆虐全球的情況下，我們希望藉由這樣的線上活動來拉近彼此間的距離，並利用此本次活動向大家揭露南投.py的神秘面紗！</p>
+
+<h3><a href="{{ taipei_dot_py }}">PyCon TW x taipei.py 聯合線上直播</a></h3>
+
+<p>接續 Python NPF x 南投.py 活動的經驗，PyCon Taiwan 這次合併 taipei.py 實體聚會進行線上與線下聯播活動。</p>
+
+<h3><a href="{{ pyhug }}">PyCon TW x PyHUG 聯合線上直播</a></h3>
+
+<p>暖身活動來到第三場，PyCon Taiwan 與地方社群 PyHUG 實體聚會進行線上與線下聯播活動。</p>
 
 {% endblock content %}
