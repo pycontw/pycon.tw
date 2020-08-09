@@ -3,6 +3,7 @@
 {% block title %}PyCon Taiwan COVID-19 防疫守則{% endblock title %}
 
 {% block content %}
+{% url 'page' path='about/privacy_policy' as privacy_policy %}
 
 <section class="pill-title alt">
 	<h1>PyCon Taiwan COVID-19 防疫守則</h1>
@@ -79,7 +80,7 @@
 	<li>
 		PyCon TW 配合防疫期間所蒐集的資料，將在活動日起 28 天後刪除。參與者進出各館與各廳紀錄將作為疫情管控使用，若會後有任何疑似感染情況，PyCon TW
 		將主動通知可能被影響的群眾，且得提供我國衛生主管機關依傳染病防治法等規定進行疫情調查及聯繫使用。詳細聲明請參照：<a
-		href="../about/privacy_policy/">PyCon Taiwan
+		href="{{ privacy_policy }}">PyCon Taiwan
 		個人資料保護聲明。</a>
 	</li>
 </ul>

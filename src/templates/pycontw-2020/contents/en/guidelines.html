@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{% url 'page' path='about/privacy_policy' as privacy_policy %}
+
 <section class="pill-title alt">
 	<h1>PyCon Taiwan COVID-19 Guidelines</h1>
 </section>
@@ -100,7 +102,7 @@
 		COVID-19. All collected information will be deleted after 28 days. attendees’ access in each venue will be recorded
 		for epidemic control measures. We will inform everyone that if any suspected COVID-19 and provide such information
 		for CECC for the purpose of preventing spread of COVID-19 and tracing contacts. For more details please
-		visit：<a href="../about/privacy_policy/">Privacy Policy
+		visit：<a href="{{ privacy_policy }}">Privacy Policy
 		of PyCon Taiwan.</a>
 	</li>
 </ul>
