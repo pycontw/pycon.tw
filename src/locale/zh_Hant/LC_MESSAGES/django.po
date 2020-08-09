@@ -2742,7 +2742,13 @@ msgctxt "staff"
 msgid "Venue"
 msgstr "場務"
 
-#: templates/pycontw-2018/_includes/staff.html:98
+#: templates/pycontw-2018/_includes/staff.html:97
+#: templates/pycontw-2019/_includes/staff.html:104
+msgctxt "staff"
+msgid "Recruitment"
+msgstr "招募"
+
+#: templates/pycontw-2018/_includes/staff.html:107
 #: templates/pycontw-2019/_includes/staff.html:145
 msgctxt "staff"
 msgid "Review Committee"
