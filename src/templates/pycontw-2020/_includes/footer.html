@@ -2,6 +2,7 @@
 
 {% url 'page' path='about/code-of-conduct' as coc_url %}
 {% url 'page' path='about/community' as community_url %}
+{% url 'page' path='about/privacy_policy' as privacy_policy_url %}
 {% comment %}
 {% url 'page' path='about/staff' as staff_url %}
 {% endcomment %}
@@ -16,6 +17,7 @@
         <li><a href="{{ staff_url }}">{% trans 'Staff' %}</a></li>
         {% endcomment %}
         <li><a href="{{ community_url }}">{% trans 'Community' %}</a></li>
+        <li><a href="{{ privacy_policy_url }}">{% trans 'Privacy Policy' %}</a></li>
     </ul>
 	<p class="copyright">2020 PyCon Taiwan</p>
 </footer>

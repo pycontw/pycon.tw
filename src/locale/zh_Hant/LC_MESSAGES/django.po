@@ -3309,3 +3309,12 @@ msgstr "密碼重設成功。您現在即可登入。"
 
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "專業課程"
+
+#: templates/pycontw-2020/_includes/menu.html:124
+msgctxt "COVID-19 Guidelines"
+msgid "COVID-19 Guidelines"
+msgstr "COVID-19 防疫守則"
+
+#: templates/pycontw-2020/_includes/footer.html:20
+msgid "Privacy Policy"
+msgstr "個人資料保護聲明"
