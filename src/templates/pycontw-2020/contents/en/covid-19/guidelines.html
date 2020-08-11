@@ -1,5 +1,5 @@
 {% extends 'contents/_base.html' %}
-
+{% load static %}
 {% block title %}PyCon Taiwan COVID-19 Guidelines{% endblock title %}
 
 {% block content %}
@@ -120,7 +120,7 @@
 	This document is licensed under a <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">Attribution-ShareAlike
 	3.0 Taiwan</a> license.
 </p>
-<p><img src="/static/images/CC_icon.png"></p>
+<p><img src="{% static 'images/CC_icon.png' %}"></p>
 
 <p>The Privacy Policy of PyCon TW will be effective July 1th, 2020.</p>
 <p>
