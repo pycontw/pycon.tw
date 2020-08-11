@@ -1,8 +1,9 @@
 {% extends 'contents/_base.html' %}
-
+{% load static %}
 {% block title %}PyCon Taiwan 個人資料保護聲明{% endblock title %}
 
 {% block content %}
+
 
 <section class="pill-title alt">
 	<h1>PyCon Taiwan 個人資料保護聲明</h1>
@@ -61,8 +62,8 @@
 	將主動通知可能被影響的群眾，且得提供我國衛生主管機關依傳染病防治法等規定進行疫情調查及聯繫使用。</p>
 
 <h4>授權 License (CC BY-SA 3.0 TW)</h4>
-<p>此文件採用 <a href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">姓名標示-相同方式分享 3.0 台灣</a> 授權條款。</p>
-<p><img src="/static/images/CC_icon.png"></p>
+<p>此文件採用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">姓名標示-相同方式分享 3.0 台灣</a> 授權條款。</p>
+<p><img src="{% static 'images/CC_icon.png' %}"></p>
 
 <p>本個人資料保護聲明從 2020 年 07 月 01 日起開始生效，惟為因應社會環境及法令的變遷與科技的進步，為保護客戶個人資料安全及隱私，我們將隨時修改這份公告聲明，並將儘速更新與公告予您。</p>
 <p>感謝。</p>

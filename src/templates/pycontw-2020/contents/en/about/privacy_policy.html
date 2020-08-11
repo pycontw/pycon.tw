@@ -1,5 +1,5 @@
 {% extends 'contents/_base.html' %}
-
+{% load static %}
 {% block title %}Privacy Policy of PyCon Taiwan{% endblock title %}
 
 {% block content %}
@@ -73,7 +73,9 @@
 	<li>Any requests to make duplications of the personal information</li>
 	<li>Any requests to add supplements or correct the personal information</li>
 	<li>Any requests to discontinue the collection, processing or using of personal information</li>
-	<li>Any requests to delete the personal information unless you do not agree the process of registration and legal regulation</li>
+	<li>Any requests to delete the personal information unless you do not agree the process of registration and legal
+		regulation
+	</li>
 </ol>
 <p>
 	We would keep it and change your request all according to Taiwan’s legal obligations.
@@ -111,9 +113,9 @@
 </p>
 
 <h4>License (CC BY-SA 3.0 TW)</h4>
-<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">Attribution-ShareAlike
+<p>This document is licensed under a <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">Attribution-ShareAlike
 	3.0 Taiwan</a> license.</p>
-<p><img src="/static/images/CC_icon.png"></p>
+<p><img src="{% static 'images/CC_icon.png' %}"></p>
 
 <p>The Privacy Policy of PyCon TW will be effective July 1th, 2020.</p>
 <p>
