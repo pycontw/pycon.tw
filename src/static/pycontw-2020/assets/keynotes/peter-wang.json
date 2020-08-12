@@ -3,7 +3,7 @@
     "speaker": {
         "en": {
             "name": "Peter Wang",
-            "bio":"Peter Wang has been developing commercial scientific computing and visualization software for over 15 years. He has extensive experience in software design and development across a broad range of areas, including 3D graphics, geophysics, large data simulation and visualization, financial risk modeling, and medical imaging.\n\nPeter’s interests in the fundamentals of vector computing and interactive visualization led him to co-found Anaconda (formerly Continuum Analytics). Peter leads the open-source and community, innovation group.\n\nAs a creator of the PyData community and conferences, he devotes time and energy to growing the Python data science community and advocating and teaching Python at conferences around the world. Peter holds a BA in Physics from Cornell University." 
+            "bio": "Peter Wang has been developing commercial scientific computing and visualization software for over 15 years. He has extensive experience in software design and development across a broad range of areas, including 3D graphics, geophysics, large data simulation and visualization, financial risk modeling, and medical imaging.\n\nPeter’s interests in the fundamentals of vector computing and interactive visualization led him to co-found Anaconda (formerly Continuum Analytics). Peter leads the open source and community innovation group.\n\nAs a creator of the PyData community and conferences, he devotes time and energy to growing the Python data science community and advocating and teaching Python at conferences around the world. Peter holds a BA in Physics from Cornell University."
         },
         "zh": {
             "name": "Peter Wang",
