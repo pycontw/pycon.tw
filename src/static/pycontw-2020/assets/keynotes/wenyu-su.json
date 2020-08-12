@@ -12,12 +12,12 @@
     },
     "session": {
         "en": {
-            "title": "",
-            "description": ""
+            "title": "A New Era of Teaching - Starting from Online Machine Learning Platform And Entry Level Courses",
+            "description": "The world’s response to COVID-19 has resulted in the most rapid transformation of work styles and teaching methods. Many world-renowned companies like Google and Facebook had made announcements that WFH (Work From Home) will be extended until at least 2021.\nIn February 2020, National Cheng Kung University announced that courses with more than a hundred students enrolled should be moved into online courses. Many professors have to prepare online learning materials in a short time frame. Most of them made teaching videos and used moodle in the school as support for student learning.\nMy class, The Basics of Game-based Machine Learning, is an undergraduate elective course. I prepared to move it online for students because of the pandemic. I heard that online classes are not effective in educating students, so my graduate students and I, along with an online learning expert, think together on how to get through this semester of this class without too much effect on students’ learnings.\nBesides pre-recorded teaching videos, we also use several online applications and social media, build collaborative FAQs for all questions, and establish an online competition platform that allows students to upload programming tasks for tests.  The competition for all uploaded programming tasks will be significant evaluation factors and be broadcast live on the platform.\nIn my keynote section, I will give details on how the class is conducted, the use of the platform, and the future prospects of it. As a teacher, adapting trends and changes of students and the world in my way of teachings and thinking is a necessary step to maintain the competitive strength of Taiwan."
         },
         "zh": {
-            "title": "",
-            "description": ""
+            "title": "新世代的教學思維 - 從機器學習線上平台與入門課程談起",
+            "description": "隨著新冠病毒，全世界的工作型態與教學方式劇烈地改變，許多知名的世界級公司如 Google 與 Facebook 都陸續宣布 WFH(Work From Home) 會至少持續到明年為止。\n國立成功大學在 2020/2 也宣布超過 100 人的課程要改用線上教學，許多教授緊急準備線上教學，但是多數教授除了錄製教學影片之外往往只能搭配學校的 moodle 來輔助學生的學習。\n我開設的「遊戲式機器學習入門」為大學部選修課，也在上述要求下開始準備線上教學。因為風聞線上教學的效果不佳，所以我的研究生與我，加上一位預先申請的業界專家，共同思考如何度過這學期，同時希望教學成效不要打太多折。\n除了預錄教學影片外，我們使用了數個線上應用軟體與社群，並且共筆 FAQ 盡可能回答各式問題外，還架設了一個線上競賽平台，讓學生在考試日可以上傳程式後以競賽得分作為主要評量方式，並直播比賽過程。\n除說明這門課的上課方式之外，也會介紹此平台的使用方式與未來的發展，同時也深深感到，身為老師要為了世界與新世代學生的改變而變更自己的教學思維與方式，以維持台灣的競爭力。"
         }
     },
     "social": {
