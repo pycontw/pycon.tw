@@ -3,7 +3,7 @@
     "speaker": {
         "en": {
             "name": "Mariatta Wijaya",
-            "bio": "Mariatta is a Python Core Developer, a software engineer at Zapier, Vancouver PyLadies co-organizer, and one of the founding members of the PyCascades conference. She moved to Canada almost two decades ago and now lives in Vancouver with her husband and two children. In her free time, she contributes to open source, builds GitHub bots, fixes typos, and likes to tell you about f-strings. Her favorite emoji is 😝." 
+            "bio": "Mariatta is a Python Core Developer, a software engineer at Zapier, Vancouver PyLadies co-organizer, and one of the founding members of the PyCascades conference. She moved to Canada almost two decades ago and now lives in Vancouver with her husband and two children. In her free time, she contributes to open source, builds GitHub bots, fixes typos, and likes to tell you about f-strings. Her favorite emoji is 😝."
         },
         "zh": {
             "name": "Mariatta Wijaya",
@@ -17,8 +17,7 @@
         },
         "zh": {
             "title": "哎呀! 我成為了開源專案的維護者! 😱",
-            "description": "在開源程式碼的世界裡，我自認還相對陌生。我貢獻的第一個開源專案是在2016年的夏天，在參與不久後，我發現我獲得了可以在別人的開源專案裡提交 (commit) 的權限。成為開源專案的維護者帶來一系列我還沒完全準備好的讀特挑戰。在本次演講中，我將分享我的旅程和我在過程中學到的事情，並為其他有抱負的開源維護者和貢獻者提供一些建議。"
-
+            "description": "在開源程式碼的世界裡，我自認還相對陌生。我貢獻的第一個開源專案是在2016年的夏天，在參與不久後，我發現我獲得了可以在別人的開源專案裡提交 (commit) 的權限。成為開源專案的維護者帶來一系列我還沒完全準備好的獨特挑戰。在本次演講中，我將分享我的旅程和我在過程中學到的事情，並為其他有抱負的開源維護者和貢獻者提供一些建議。"
         }
     },
     "social": {
