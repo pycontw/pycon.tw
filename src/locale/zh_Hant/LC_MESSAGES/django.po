@@ -2683,73 +2683,73 @@ msgid "Enquire about sponsorship"
 msgstr "詢問贊助辦法"
 
 #: templates/pycontw-2018/_includes/staff.html:3
-#: templates/pycontw-2019/_includes/staff.html:3
+#: templates/pycontw-2019/_includes/staff.html:6
 msgctxt "staff"
 msgid "Chairperson"
 msgstr "主席"
 
 #: templates/pycontw-2018/_includes/staff.html:8
-#: templates/pycontw-2019/_includes/staff.html:8
+#: templates/pycontw-2019/_includes/staff.html:10
 msgctxt "staff"
 msgid "Registration"
 msgstr "註冊組"
 
-#: templates/pycontw-2018/_includes/staff.html:16
-#: templates/pycontw-2019/_includes/staff.html:25
+#: templates/pycontw-2018/_includes/staff.html:14
+#: templates/pycontw-2019/_includes/staff.html:31
 msgctxt "staff"
 msgid "Development"
 msgstr "開發"
 
-#: templates/pycontw-2018/_includes/staff.html:25
-#: templates/pycontw-2019/_includes/staff.html:47
+#: templates/pycontw-2018/_includes/staff.html:41
+#: templates/pycontw-2019/_includes/staff.html:45
 msgctxt "staff"
 msgid "Public Relations"
 msgstr "公關"
 
-#: templates/pycontw-2018/_includes/staff.html:34
-#: templates/pycontw-2019/_includes/staff.html:58
+#: templates/pycontw-2018/_includes/staff.html:47
+#: templates/pycontw-2019/_includes/staff.html:53
 msgctxt "staff"
 msgid "Design"
 msgstr "設計"
 
-#: templates/pycontw-2018/_includes/staff.html:41
-#: templates/pycontw-2019/_includes/staff.html:72
+#: templates/pycontw-2018/_includes/staff.html:57
+#: templates/pycontw-2019/_includes/staff.html:65
 msgctxt "staff"
 msgid "Photography"
 msgstr "記錄"
 
-#: templates/pycontw-2018/_includes/staff.html:54
-#: templates/pycontw-2019/_includes/staff.html:88
+#: templates/pycontw-2018/_includes/staff.html:69
+#: templates/pycontw-2019/_includes/staff.html:94
 msgctxt "staff"
 msgid "Program"
 msgstr "議程"
 
-#: templates/pycontw-2018/_includes/staff.html:65
-#: templates/pycontw-2019/_includes/staff.html:104
+#: templates/pycontw-2018/_includes/staff.html:98
+#: templates/pycontw-2019/_includes/staff.html:114
 msgctxt "staff"
 msgid "Sponsorship"
 msgstr "贊助"
 
-#: templates/pycontw-2018/_includes/staff.html:80
-#: templates/pycontw-2019/_includes/staff.html:118
+#: templates/pycontw-2018/_includes/staff.html:118
+#: templates/pycontw-2019/_includes/staff.html:122
 msgctxt "staff"
 msgid "Financial"
 msgstr "財務"
 
-#: templates/pycontw-2018/_includes/staff.html:85
-#: templates/pycontw-2019/_includes/staff.html:124
+#: templates/pycontw-2018/_includes/staff.html:126
+#: templates/pycontw-2019/_includes/staff.html:159
 msgctxt "staff"
 msgid "Venue"
 msgstr "場務"
 
-#: templates/pycontw-2018/_includes/staff.html:97
-#: templates/pycontw-2019/_includes/staff.html:104
+#: templates/pycontw-2018/_includes/staff.html:164
+#: templates/pycontw-2019/_includes/staff.html:169
 msgctxt "staff"
 msgid "Recruitment"
 msgstr "招募"
 
-#: templates/pycontw-2018/_includes/staff.html:107
-#: templates/pycontw-2019/_includes/staff.html:145
+#: templates/pycontw-2018/_includes/staff.html:174
+#: templates/pycontw-2019/_includes/staff.html:217
 msgctxt "staff"
 msgid "Review Committee"
 msgstr "審稿委員"
@@ -3315,3 +3315,12 @@ msgstr "密碼重設成功。您現在即可登入。"
 
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "專業課程"
+
+#: templates/pycontw-2020/_includes/menu.html:124
+msgctxt "COVID-19 Guidelines"
+msgid "COVID-19 Guidelines"
+msgstr "COVID-19 防疫守則"
+
+#: templates/pycontw-2020/_includes/footer.html:20
+msgid "Privacy Policy"
+msgstr "個人資料保護聲明"

@@ -365,6 +365,22 @@ main {
     }
 }
 
+
+// customize privacy_policy and guidelines page ol
+ol.custom_ol, ul.custom_ul {
+		margin-top: 20px;
+
+		> * {
+				line-height: 35px;
+		}
+}
+
+// customize privacy_policy and guidelines page h5 edited_info
+.edited_info {
+		text-align: right;
+		color: darkgray;
+}
+
 .multi {
     height: 100%;
     display: flex;
@@ -380,9 +396,6 @@ main {
         }
     }
 }
-
-
-
 
 
 // Page-specific styling.

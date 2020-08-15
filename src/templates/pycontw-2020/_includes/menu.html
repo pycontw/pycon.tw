@@ -26,6 +26,8 @@
 {% url 'page' path='sponsor/sponsor' as sponsor_url %}
 {% url 'page' path='events/warmup-session' as warmup_session %}
 {% url 'page' path='events/tutorials' as events_tutorial_list_url %}
+{% url 'page' path='covid-19/guidelines' as guidelines_url %}
+
 
 <ul class="menu" data-controller="menu">
 	{% with category=request.path|get_path_category %}
@@ -89,10 +91,8 @@
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
 				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>
-				<li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
-				<!--{% comment %}-->
 				<li><a href="{{ events_openspaces_url }}">{% trans 'Open Spaces' %}</a></li>
-				<!--{% endcomment %}-->
+				<li><a href="{{ events_sprint_url }}">{% trans 'Sprints' %}</a></li>
 			</ul>
 		</div>
 	</li>
@@ -112,11 +112,19 @@
 			</ul>
 		</div>
 	</li>
+
 	<li>
 		<a href="{{ venue_url }}" {% if category == 'venue' %}class="active" {% endif %}>
 			{% trans 'Venue' context 'conf location' %}
 		</a>
 	</li>
+	<li>
+		<a href="{{ guidelines_url }}" {% if category == 'covid-19' %}class="active" {% endif %}>
+			{% trans 'COVID-19 Guidelines' context 'COVID-19 Guidelines' %}
+		</a>
+	</li>
+
+
 	<li class="dashboard-item">
 		<a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
 	</li>
