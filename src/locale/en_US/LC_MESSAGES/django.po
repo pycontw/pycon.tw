@@ -2762,66 +2762,82 @@ msgstr "Enquire about sponsorship"
 
 #: templates/pycontw-2018/_includes/staff.html:3
 #: templates/pycontw-2019/_includes/staff.html:3
+#: templates/pycontw-2020/_includes/staff.html:3
 msgctxt "staff"
 msgid "Chairperson"
 msgstr "Chairperson"
 
 #: templates/pycontw-2018/_includes/staff.html:8
 #: templates/pycontw-2019/_includes/staff.html:8
+#: templates/pycontw-2020/_includes/staff.html:8
 msgctxt "staff"
 msgid "Registration"
 msgstr "Registration"
 
 #: templates/pycontw-2018/_includes/staff.html:16
 #: templates/pycontw-2019/_includes/staff.html:25
+#: templates/pycontw-2020/_includes/staff.html:14
 msgctxt "staff"
 msgid "Development"
 msgstr "Development"
 
 #: templates/pycontw-2018/_includes/staff.html:25
 #: templates/pycontw-2019/_includes/staff.html:47
+#: templates/pycontw-2020/_includes/staff.html:41
 msgctxt "staff"
 msgid "Public Relations"
 msgstr "Public Relations"
 
 #: templates/pycontw-2018/_includes/staff.html:34
 #: templates/pycontw-2019/_includes/staff.html:58
+#: templates/pycontw-2020/_includes/staff.html:51
 msgctxt "staff"
 msgid "Design"
 msgstr "Design"
 
 #: templates/pycontw-2018/_includes/staff.html:41
 #: templates/pycontw-2019/_includes/staff.html:72
+#: templates/pycontw-2020/_includes/staff.html:61
 msgctxt "staff"
 msgid "Photography"
 msgstr "Photography"
 
 #: templates/pycontw-2018/_includes/staff.html:54
 #: templates/pycontw-2019/_includes/staff.html:88
+#: templates/pycontw-2020/_includes/staff.html:73
 msgctxt "staff"
 msgid "Program"
 msgstr "Program"
 
 #: templates/pycontw-2018/_includes/staff.html:65
 #: templates/pycontw-2019/_includes/staff.html:104
+#: templates/pycontw-2020/_includes/staff.html:102
 msgctxt "staff"
 msgid "Sponsorship"
 msgstr "Sponsorship"
 
 #: templates/pycontw-2018/_includes/staff.html:80
 #: templates/pycontw-2019/_includes/staff.html:118
+#: templates/pycontw-2020/_includes/staff.html:122
 msgctxt "staff"
 msgid "Financial"
 msgstr "Financial"
 
 #: templates/pycontw-2018/_includes/staff.html:85
 #: templates/pycontw-2019/_includes/staff.html:124
+#: templates/pycontw-2020/_includes/staff.html:130
 msgctxt "staff"
 msgid "Venue"
 msgstr "Venue"
 
-#: templates/pycontw-2018/_includes/staff.html:98
+#: templates/pycontw-2020/_includes/staff.html:167
+msgctxt "staff"
+msgid "Recruitment"
+msgstr "Recruitment"
+
+#: templates/pycontw-2018/_includes/staff.html:107
 #: templates/pycontw-2019/_includes/staff.html:145
+#: templates/pycontw-2020/_includes/staff.html:177
 msgctxt "staff"
 msgid "Review Committee"
 msgstr "Review Committee"
