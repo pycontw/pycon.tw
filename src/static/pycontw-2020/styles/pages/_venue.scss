@@ -4,11 +4,10 @@
 
 	.map-section {
 		height: $map-height-mobile;
-		width: 100%;
+		@include full-width();
 		max-height: 50vh; // Make sure the user has some room to flick.
 
 		@include on-desktop() {
-			@include shove-left();
 			height: $map-height-desktop;
 			max-height: none;
 			width: 100vw;
@@ -28,8 +27,8 @@
 		display: none;
 
 		&:after {
-			background: url('../assets/button-hover-bg.svg');
-			content: '';
+			background: url("../assets/button-hover-bg.svg");
+			content: "";
 			height: 17%;
 			position: absolute;
 			bottom: 0;
@@ -66,7 +65,7 @@
 				line-height: 1;
 				text-align: left;
 
-				>span {
+				> span {
 					display: inline-block;
 					margin-top: 1.2rem;
 
