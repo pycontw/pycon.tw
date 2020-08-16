@@ -1,4 +1,4 @@
-@import 'site';
+@import "site";
 
 body {
 	// Fix the fancy h1 overflowing width (because 100vw includes scrollbar).
@@ -13,10 +13,10 @@ body {
 }
 
 .menu-navbar-desktop {
-	@include menu-navbar-desktop(url('../assets/2019bluelogo.svg'), $jinger-bread, $jinger-bread, $jinger-bread);
+	@include menu-navbar-desktop(url("../assets/2019bluelogo.svg"), $jinger-bread, $jinger-bread, $jinger-bread);
 
 	.menu {
-        height: $menu-desktop-height - 20;
+		height: $menu-desktop-height - 20;
 		margin: 0 auto;
 	}
 
@@ -30,9 +30,10 @@ body {
 	}
 }
 
-// Shove to left edge, ignoring container.
-@mixin shove-left() {
+// Expand to full width, ignoring container.
+@mixin full-width() {
 	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
 }
 
 main {
@@ -45,7 +46,7 @@ main {
 	}
 
 	position: relative;
-    flex: 1 0 auto; // Fix for sticky footer
+	flex: 1 0 auto; // Fix for sticky footer
 
 	// Fancy h1 that merges into the navbar.
 	> h1:first-child {
@@ -57,7 +58,7 @@ main {
 		// @include shove-left();
 		// @include fill-vw(2rem);
 
-        // 2020
+		// 2020
 		// background-color: $white;
 
 		@include on-desktop {
@@ -87,26 +88,26 @@ main {
 	p + p {
 		margin-top: 20px;
 	}
-    h3 {
+	h3 {
 		text-align: left;
 
-		&::before{
+		&::before {
 			// content: url('../assets/snake-icon-dark.svg');
-            content: '';
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background-image: url('../assets/snake-icon-dark.svg');
-            background-repeat: no-repeat;
-            background-size: 110% 110%;
-            background-position: 50% 50%;
+			content: "";
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background-image: url("../assets/snake-icon-dark.svg");
+			background-repeat: no-repeat;
+			background-size: 110% 110%;
+			background-position: 50% 50%;
 			margin-right: 5px;
-            position: relative;
-            top: 8px;
+			position: relative;
+			top: 8px;
 
-            @include on-desktop {
-                background-size: 125% 125%;
-            }
+			@include on-desktop {
+				background-size: 125% 125%;
+			}
 		}
 	}
 	// Custom UL bullets.
@@ -124,7 +125,7 @@ main {
 			}
 
 			&::before {
-				content: '•';
+				content: "•";
 				display: block;
 				float: left;
 				width: $text-indent - $mark-indent;
@@ -135,45 +136,48 @@ main {
 			}
 		}
 
-        // Different styles:
-        &.square {
-            $mark-indent: 0.8rem;
-            $text-indent: 2.125rem;
+		// Different styles:
+		&.square {
+			$mark-indent: 0.8rem;
+			$text-indent: 2.125rem;
 
-            padding-left: $text-indent;
-            text-indent: $mark-indent - $text-indent;
+			padding-left: $text-indent;
+			text-indent: $mark-indent - $text-indent;
 
-            > li {
-                &::before {
-                    content: '▪';
-                    width: $text-indent - $mark-indent;
-                }
-            }
-        }
+			> li {
+				&::before {
+					content: "▪";
+					width: $text-indent - $mark-indent;
+				}
+			}
+		}
 
-        &.white-circle {
-            $mark-indent: 0.6rem;
-            $text-indent: 2.125rem;
+		&.white-circle {
+			$mark-indent: 0.6rem;
+			$text-indent: 2.125rem;
 
-            padding-left: $text-indent;
-            text-indent: $mark-indent - $text-indent;
+			padding-left: $text-indent;
+			text-indent: $mark-indent - $text-indent;
 
-            > li {
-                &::before {
-                    content: '◦';
-                    width: $text-indent - $mark-indent;
-                }
-            }
-        }
+			> li {
+				&::before {
+					content: "◦";
+					width: $text-indent - $mark-indent;
+				}
+			}
+		}
 	}
 
-	> table:not([class]), table.table, .table > table {
+	> table:not([class]),
+	table.table,
+	.table > table {
 		min-width: 100%;
 		text-align: center;
 		border-collapse: collapse;
 
 		tr {
-			> th, > td {
+			> th,
+			> td {
 				height: 3.5rem;
 				padding: 4px 8px;
 				border-bottom: solid thin $indigo;
@@ -193,34 +197,32 @@ main {
 		text-align: right;
 	}
 
-    .no-top-margin {
-        margin-top: 0;
-    }
+	.no-top-margin {
+		margin-top: 0;
+	}
 }
 
-
-
 .decoration {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 
-    // Prevent scrolling on mobile devices
-    overflow: hidden;
+	// Prevent scrolling on mobile devices
+	overflow: hidden;
 
-    @include on-desktop {
-        overflow: visible;
-    }
+	@include on-desktop {
+		overflow: visible;
+	}
 }
 
 [class*=" deco-"],
 [class^="deco-"] {
 	position: absolute;
 	z-index: -1;
-    opacity: 0.4;
+	opacity: 0.4;
 }
 
 .deco-b-1 {
@@ -236,25 +238,25 @@ main {
 .deco-c-1 {
 	top: 15.2%;
 	right: -15%;
-    transform: rotate(42deg);
-    width: 145px;
-    opacity: 0.15;
+	transform: rotate(42deg);
+	width: 145px;
+	opacity: 0.15;
 }
 
 .deco-c-2 {
 	bottom: 18%;
 	left: -31%;
-    transform: rotate(42deg);
-    width: 250px;
-    opacity: 0.05;
+	transform: rotate(42deg);
+	width: 250px;
+	opacity: 0.05;
 }
 
 .deco-c-3 {
 	bottom: 12.2%;
 	left: -32%;
-    transform: rotate(42deg);
-    width: 190px;
-    opacity: 0.1;
+	transform: rotate(42deg);
+	width: 190px;
+	opacity: 0.1;
 }
 
 @include on-desktop {
@@ -269,41 +271,41 @@ main {
 		left: -20%;
 	}
 
-    .deco-c-1 {
-        top: 15.1%;
-        right: -20%;
-    }
+	.deco-c-1 {
+		top: 15.1%;
+		right: -20%;
+	}
 }
 
 @mixin big-button-icon($name) {
 	.icon-#{$name} {
-		mask: url('../assets/icon-#{$name}.svg');
+		mask: url("../assets/icon-#{$name}.svg");
 		mask-size: 100% 100%;
 	}
 }
 
 .pill-title {
-    color: $jinger-bread;
-    background-color: transparentize($imperial, 0.9);
-    border-radius: 65px;
-    height: 113px;
-    line-height: 113px;
-    margin-top: 20px;
-    border: 10px solid transparent;
+	color: $jinger-bread;
+	background-color: transparentize($imperial, 0.9);
+	border-radius: 65px;
+	height: 113px;
+	line-height: 113px;
+	margin-top: 20px;
+	border: 10px solid transparent;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 
-    h1 {
-        margin: 0;
-    }
+	h1 {
+		margin: 0;
+	}
 
-    &.alt {
+	&.alt {
 		position: relative;
-        background-color: transparent;
-        border-color: transparentize($imperial, 0.9);
+		background-color: transparent;
+		border-color: transparentize($imperial, 0.9);
 
 		.icon {
 			width: 35px;
@@ -315,13 +317,13 @@ main {
 
 			top: 50%;
 			transform: translate(0, -50%);
-            display: none;
+			display: none;
 
 			@include on-desktop {
 				left: 33px;
 				width: 50px;
 				height: 50px;
-                display: block;
+				display: block;
 			}
 		}
 
@@ -331,12 +333,12 @@ main {
 		@include big-button-icon(sponsor);
 		@include big-button-icon(volunteering);
 		@include big-button-icon(about);
-    }
+	}
 
-    &.alt-2 {
+	&.alt-2 {
 		// yychen-2020-06-29: Ugly... but... another style
 		position: relative;
-        background-color: transparent;
+		background-color: transparent;
 
 		.icon {
 			width: 35px;
@@ -345,14 +347,14 @@ main {
 			position: relative;
 			background-color: $jinger-bread;
 
-            display: none;
+			display: none;
 
 			@include on-desktop {
-                top: 17px;
+				top: 17px;
 				left: -10px;
 				width: 50px;
 				height: 50px;
-                display: inline-block;
+				display: inline-block;
 			}
 		}
 
@@ -362,50 +364,49 @@ main {
 		@include big-button-icon(sponsor);
 		@include big-button-icon(volunteering);
 		@include big-button-icon(about);
-    }
+	}
 }
 
-
 // customize privacy_policy and guidelines page ol
-ol.custom_ol, ul.custom_ul {
-		margin-top: 20px;
+ol.custom_ol,
+ul.custom_ul {
+	margin-top: 20px;
 
-		> * {
-				line-height: 35px;
-		}
+	> * {
+		line-height: 35px;
+	}
 }
 
 // customize privacy_policy and guidelines page h5 edited_info
 .edited_info {
-		text-align: right;
-		color: darkgray;
+	text-align: right;
+	color: darkgray;
 }
 
 .multi {
-    height: 100%;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
+	height: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-direction: column;
 
-    > div {
-        line-height: 1.2;
-        .icon {
-            position: absolute;
-            left: 0;
-        }
-    }
+	> div {
+		line-height: 1.2;
+		.icon {
+			position: absolute;
+			left: 0;
+		}
+	}
 }
 
-
 // Page-specific styling.
-@import 'pages/about';
-@import 'pages/keynotes';
-@import 'pages/talks';
-@import 'pages/ticket-info';
-@import 'pages/tutorials';
-@import 'pages/venue';
-@import 'pages/schedule';
-@import 'pages/staff';
-@import 'pages/portal';
-@import 'pages/sponsorship-prospectus';
+@import "pages/about";
+@import "pages/keynotes";
+@import "pages/talks";
+@import "pages/ticket-info";
+@import "pages/tutorials";
+@import "pages/venue";
+@import "pages/schedule";
+@import "pages/staff";
+@import "pages/portal";
+@import "pages/sponsorship-prospectus";

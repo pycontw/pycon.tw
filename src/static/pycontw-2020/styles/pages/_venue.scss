@@ -3,14 +3,14 @@
 	$map-height-desktop: 496px;
 
 	.map-section {
-		@include shove-left();
-		width: 100vw;
 		height: $map-height-mobile;
-		max-height: 50vh;		// Make sure the user has some room to flick.
+		@include full-width();
+		max-height: 50vh; // Make sure the user has some room to flick.
 
 		@include on-desktop() {
 			height: $map-height-desktop;
 			max-height: none;
+			width: 100vw;
 		}
 	}
 
@@ -27,8 +27,8 @@
 		display: none;
 
 		&:after {
-			background: url('../assets/button-hover-bg.svg');
-			content: '';
+			background: url("../assets/button-hover-bg.svg");
+			content: "";
 			height: 17%;
 			position: absolute;
 			bottom: 0;
@@ -37,54 +37,55 @@
 		}
 
 		@include on-desktop() {
-            $total-width: 32vw;
-            $padding-left: 4vw;
-            $padding-right: 3vw;
+			$total-width: 32vw;
+			$padding-left: 4vw;
+			$padding-right: 3vw;
 
-            display: block;
-            position: absolute;
-            height: $map-height-desktop;
-            width: $total-width - $padding-left - $padding-right;
-            z-index: 2;
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 0 $padding-right 0 $padding-left;
-            margin-top: 2px;
+			display: block;
+			position: absolute;
+			height: $map-height-desktop;
+			width: $total-width - $padding-left - $padding-right;
+			z-index: 2;
+			background-color: rgba(255, 255, 255, 0.95);
+			padding: 0 $padding-right 0 $padding-left;
+			margin-top: 2px;
 
-            @include breakpoint(1280px) {
-                $total-width: 28vw;
-                $padding-left: 4vw;
-                $padding-right: 3vw;
+			@include breakpoint(1280px) {
+				$total-width: 28vw;
+				$padding-left: 4vw;
+				$padding-right: 3vw;
 
-                height: $map-height-desktop;
-                width: $total-width - $padding-left - $padding-right;
-                padding: 0 $padding-right 0 $padding-left;
-            }
+				height: $map-height-desktop;
+				width: $total-width - $padding-left - $padding-right;
+				padding: 0 $padding-right 0 $padding-left;
+			}
 
 			h2 {
 				font-size: 1.4rem;
-                line-height: 1;
+				line-height: 1;
 				text-align: left;
 
 				> span {
 					display: inline-block;
 					margin-top: 1.2rem;
+
 					&:first-child {
 						margin-top: 0;
 					}
 				}
 			}
 
-            .name-block {
-                h2 {
-                    margin-bottom: 12px;
-                }
+			.name-block {
+				h2 {
+					margin-bottom: 12px;
+				}
 
-                .hint {
-                    color: #333;
-                    font-weight: 300;
-                    font-size: 0.9rem;
-                }
-            }
+				.hint {
+					color: #333;
+					font-weight: 300;
+					font-size: 0.9rem;
+				}
+			}
 
 			p {
 				font-size: 1rem;
@@ -92,44 +93,47 @@
 			}
 		}
 
-        font-size: 0.6rem;
-        h2 {
-            margin-top: 40px;
-        }
+		font-size: 0.6rem;
 
-        @include breakpoint(90px) {
-            h2 {
-                margin-top: 60px;
-            }
-            font-size: 1rem;
-        }
+		h2 {
+			margin-top: 40px;
+		}
 
-        @include breakpoint(1900px) {
-            h2 {
-                margin-top: 72px;
-            }
-            font-size: 1rem;
-        }
+		@include breakpoint(90px) {
+			h2 {
+				margin-top: 60px;
+			}
+
+			font-size: 1rem;
+		}
+
+		@include breakpoint(1900px) {
+			h2 {
+				margin-top: 72px;
+			}
+
+			font-size: 1rem;
+		}
 	}
 
-    .tutorial-block {
-        padding-top: 50px;
+	.tutorial-block {
+		padding-top: 50px;
 
-        h1 {
-            margin: 0;
-        }
+		h1 {
+			margin: 0;
+		}
 
-        .location-block {
-            h2 {
-                margin-top: 50px;
-                color: #333;
-                font-size: 1.6rem;
-                margin-bottom: 10px;
-            }
+		.location-block {
+			h2 {
+				margin-top: 50px;
+				color: #333;
+				font-size: 1.6rem;
+				margin-bottom: 10px;
+			}
 
-            p {
-                text-align: center;
-            }
-        }
-    }
+			p {
+				text-align: center;
+			}
+		}
+	}
 }
