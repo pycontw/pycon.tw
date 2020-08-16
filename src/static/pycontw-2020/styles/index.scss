@@ -35,20 +35,20 @@ body {
 		justify-content: center;
 		align-items: center;
 		border-radius: 4px;
-	  border: solid 2px #224398;
+	  border: solid 2px #6A3F3B;
 		a {
 			display: flex;
 			width: 100%;
 			height: 100%;
 			align-items: center;
 			justify-content: center;
-			color: #224298;
+			/*color: #502526;*/
 			font-size: 16px;
 			font-weight: normal;
 			letter-spacing: -0.08px;
 		}
 		&:hover {
-			border: solid 2px $portica;
+			border: solid 2px #E23728;
 		}
 	}
 }
@@ -240,5 +240,3 @@ body {
         padding-top: 80px;
 	}
 }
-
-
