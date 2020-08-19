@@ -1,10 +1,22 @@
 {% extends 'contents/_base.html' %}
 
-{% load i18n %}
+{% load i18n compress %}
 
 {% block title %}{% trans 'Live broadcast' %}{% endblock %}
 
 {% block body_class %}{{ block.super }} live-page{% endblock body_class %}
+
+{% compress js %}
+{% block scripts %}
+{{ block.super }}
+<script>
+var next = document.querySelector("[name='next']");
+var params = new URLSearchParams();
+params.append('token', '{{ token }}');
+next.value += `?${params.toString()}`;
+</script>
+{% endblock scripts %}
+{% endcompress %}
 
 {% block content %}
 

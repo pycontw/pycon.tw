@@ -34,4 +34,5 @@ def live(request):
     return render(request, 'ext/live.html', {
         'attendee': attendee,
         'rooms': rooms,
+        'token': token,
     })
