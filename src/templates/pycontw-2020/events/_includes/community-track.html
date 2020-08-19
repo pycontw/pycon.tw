@@ -1,0 +1,20 @@
+{% load i18n static %}
+
+
+		{% for venue in object_list %}
+			<form method="post">
+				{% csrf_token %}
+				<input name="venue" value="{{ venue.id }}" style="display: none">
+				<input name="attendee_token" value="{{ token }}" style="display: none">
+
+				<b>{% trans venue.name %}</b>
+				{% if venue_choice %}
+					{% if venue_choice == venue %}
+						<button class="bth track-btn">{% trans '已加入' %}</button>
+					{% endif %}
+				{% else %}
+					<button type="submit" class="bth track-btn">{% trans '我要加入' %}</button>
+				{% endif %}
+			</form>
+			<img src="{{ venue.get_photo_url }}" width="100%">
+		{% endfor %}

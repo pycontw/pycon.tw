@@ -15,7 +15,7 @@ from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
-from .forms import ScheduleCreationForm
+from .forms import ScheduleCreationForm, CommunityTrackForm
 from .models import (
     EVENT_ROOMS, Schedule, Time,
     CustomEvent, KeynoteEvent, SponsoredEvent,
@@ -23,6 +23,11 @@ from .models import (
 )
 from .renderers import render_all
 
+from ccip.models import Venue, Choice
+from core.utils import collect_language_codes
+import datetime
+from django.urls import reverse_lazy
+from django.core.exceptions import ImproperlyConfigured
 
 logger = logging.getLogger(__name__)
 
@@ -31,14 +36,13 @@ class AcceptedProposalMixin:
     def get_queryset(self):
         return (
             super().get_queryset()
-            .filter_accepted()
-            .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
-            .select_related('submitter')
+                .filter_accepted()
+                .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
+                .select_related('submitter')
         )
 
 
 class TalkListView(AcceptedProposalMixin, ListView):
-
     model = TalkProposal
     template_name = 'events/talk_list.html'
     response_class = TemplateExistanceStatusResponse
@@ -47,12 +51,12 @@ class TalkListView(AcceptedProposalMixin, ListView):
         category_map = OrderedDefaultDict(list)
         proposals = (
             self.get_queryset()
-            .prefetch_related(Prefetch(
+                .prefetch_related(Prefetch(
                 'additionalspeaker_set',
                 queryset=(
                     AdditionalSpeaker.objects
-                    .filter(cancelled=False)
-                    .select_related('user')
+                        .filter(cancelled=False)
+                        .select_related('user')
                 ),
                 to_attr='_additional_speakers',
             ))
@@ -64,8 +68,8 @@ class TalkListView(AcceptedProposalMixin, ListView):
     def get_sponsored_talks(self):
         sponsored_events = (
             SponsoredEvent.objects
-            .select_related('host')
-            .order_by('title')
+                .select_related('host')
+                .order_by('title')
         )
         return sponsored_events
 
@@ -78,7 +82,6 @@ class TalkListView(AcceptedProposalMixin, ListView):
 
 
 class TutorialListView(ListView):
-
     model = ProposedTutorialEvent
     template_name = 'events/tutorial_list.html'
     response_class = TemplateExistanceStatusResponse
@@ -86,15 +89,14 @@ class TutorialListView(ListView):
     def get_queryset(self):
         qs = (
             super().get_queryset()
-            .filter(proposal__in=TutorialProposal.objects.filter_accepted())
-            .order_by('begin_time', 'end_time', 'location')
-            .select_related('proposal', 'proposal__submitter')
+                .filter(proposal__in=TutorialProposal.objects.filter_accepted())
+                .order_by('begin_time', 'end_time', 'location')
+                .select_related('proposal', 'proposal__submitter')
         )
         return qs
 
 
 class ScheduleView(TemplateView):
-
     template_name = 'events/schedule.html'
     response_class = TemplateExistanceStatusResponse
 
@@ -120,7 +122,6 @@ class ScheduleView(TemplateView):
 
 
 class ScheduleCreateMixin:
-
     form_class = ScheduleCreationForm
     form_valid_message = _('New talk schedule generated successfully.')
     permission_required = ['events.add_schedule']
@@ -132,8 +133,8 @@ class ScheduleCreateMixin:
 
 
 class ScheduleCreate2016View(
-        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-        CreateView):
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+    CreateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(content=render_all(), **kwargs)
 
@@ -143,24 +144,23 @@ def _room_sort_key(room):
 
 
 class ScheduleCreateView(
-        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-        CreateView):
-
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+    CreateView):
     event_querysets = [
         CustomEvent.objects.all(),
         KeynoteEvent.objects.all(),
         (
             ProposedTalkEvent.objects
-            .select_related('proposal__submitter')
-            .annotate(_additional_speaker_count=Count(
+                .select_related('proposal__submitter')
+                .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
             ))
         ),
         SponsoredEvent.objects.select_related('host'),
         (
             ProposedTutorialEvent.objects
-            .select_related('proposal__submitter')
-            .annotate(_additional_speaker_count=Count(
+                .select_related('proposal__submitter')
+                .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
             ))
         ),
@@ -240,7 +240,6 @@ class EventInfoMixin:
 
 
 class ProposedEventMixin:
-
     event_model = None
 
     def is_event_sponsored(self):
@@ -250,8 +249,8 @@ class ProposedEventMixin:
         try:
             event = (
                 self.event_model.objects
-                .select_related('begin_time', 'end_time')
-                .get(proposal=self.object)
+                    .select_related('begin_time', 'end_time')
+                    .get(proposal=self.object)
             )
         except self.event_model.DoesNotExist:
             return None
@@ -259,8 +258,8 @@ class ProposedEventMixin:
 
 
 class TalkDetailView(
-        AcceptedProposalMixin, ProposedEventMixin,
-        EventInfoMixin, DetailView):
+    AcceptedProposalMixin, ProposedEventMixin,
+    EventInfoMixin, DetailView):
     model = TalkProposal
     event_model = ProposedTalkEvent
     template_name = 'events/talk_detail.html'
@@ -268,7 +267,6 @@ class TalkDetailView(
 
 
 class SponsoredEventDetailView(EventInfoMixin, DetailView):
-
     model = SponsoredEvent
     template_name = 'events/sponsored_event_detail.html'
     response_class = TemplateExistanceStatusResponse
@@ -288,9 +286,54 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
 
 class TutorialDetailView(
-        AcceptedProposalMixin, ProposedEventMixin,
-        EventInfoMixin, DetailView):
+    AcceptedProposalMixin, ProposedEventMixin,
+    EventInfoMixin, DetailView):
     model = TutorialProposal
     event_model = ProposedTutorialEvent
     template_name = 'events/tutorial_detail.html'
     response_class = TemplateExistanceStatusResponse
+
+
+class CommunityTrackView(ListView):
+    model = Venue
+    path = 'events/community-track'
+    success_url = reverse_lazy('community-track')
+
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+
+        data = request.POST.copy()
+        data['selected_time'] = datetime.datetime.now()
+        forms_obj = CommunityTrackForm(data)
+        if forms_obj.is_valid():
+            Choice.objects.create(**forms_obj.cleaned_data)
+            return HttpResponseRedirect(self.get_success_url())
+
+
+
+
+    def get_context_data(self, **kwargs):
+        token = self.request.GET.get('token')
+        venue_choice = Venue.objects.filter(choice__attendee_token=token)
+        kwargs.update({
+            'venue_choice': venue_choice.first() if venue_choice else '',
+            'token': token,
+        })
+        return super().get_context_data(**kwargs)
+
+    def get_template_names(self):
+        template_names = [
+            '/'.join(['contents', code, self.path + '.html'])
+            for code in collect_language_codes(self.request.LANGUAGE_CODE)
+        ]
+        # print(template_names)
+        return template_names
+
+    def get_success_url(self):
+        """Return the URL to redirect to after processing a valid form."""
+        if not self.success_url:
+            raise ImproperlyConfigured("No URL to redirect to. Provide a success_url.")
+        return str(self.success_url)  # success_url may be lazy
+

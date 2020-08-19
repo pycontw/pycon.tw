@@ -3334,3 +3334,22 @@ msgstr "COVID-19 防疫守則"
 #: templates/pycontw-2020/_includes/footer.html:20
 msgid "Privacy Policy"
 msgstr "個人資料保護聲明"
+
+
+msgid "古蹟出張所"
+msgstr "古蹟出張所"
+
+msgid "Tsang Fong Coffee"
+msgstr "藏風藝文空間"
+
+msgid "Masa Loft"
+msgstr "Masa Loft"
+
+msgid "Angry Burger"
+msgstr "Angry Burger"
+
+msgid "Three Doors Brunch"
+msgstr "三道門香見Brunch"
+
+
+

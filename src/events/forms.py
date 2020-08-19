@@ -2,6 +2,8 @@ from django import forms
 
 from .models import CustomEvent, Schedule
 
+from ccip.models import Venue
+
 
 class ScheduleCreationForm(forms.ModelForm):
     class Meta:
@@ -21,3 +23,8 @@ class CustomEventForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['title'].strip = False
+
+class CommunityTrackForm(forms.Form):
+    venue = forms.ModelChoiceField(queryset=Venue.objects.all())
+    attendee_token = forms.CharField()
+    selected_time = forms.DateTimeField()

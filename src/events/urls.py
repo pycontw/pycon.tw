@@ -4,9 +4,12 @@ from django.views.generic import RedirectView
 from . import views
 
 
+from django.http import HttpResponse
+
 urlpatterns = [
     url(r'^schedule/$', views.ScheduleView.as_view(), name='events_schedule'),
     url(r'^schedule/new/$', views.ScheduleCreateView.as_view()),
+
 
     url(r'^talks/$', views.TalkListView.as_view(),
         name='events_talk_list'),
@@ -23,4 +26,10 @@ urlpatterns = [
 
     # Backward compatibility to the static events page.
     url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
+
+
+    url(r'^community-track$', views.CommunityTrackView.as_view(), name='community-track'),
+    url(r'^community-track/$', RedirectView.as_view(pattern_name='community-track')),
+
+
 ]
