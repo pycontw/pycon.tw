@@ -111,6 +111,8 @@ LOCAL_APPS = (
     'sponsors',
     'users',
     'ccip',
+
+    'ext2020',
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
