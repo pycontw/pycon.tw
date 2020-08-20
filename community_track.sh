@@ -2,9 +2,10 @@
 #
 
 function community_track() {
-python src/manage.py shell << EOF
+cd src
+python manage.py shell << EOF
 
-from ccip.models import Venue
+from ext2020.models import Venue
 Venue.objects.all().delete()
 venue_list = [
     {'name':'古蹟出張所','photo':'pycontw-2020/assets/community-track/b16tainan.jpg'},

@@ -2,7 +2,7 @@ from django import forms
 
 from .models import CustomEvent, Schedule
 
-from ccip.models import Venue
+from ext2020.models import Venue
 
 
 class ScheduleCreationForm(forms.ModelForm):

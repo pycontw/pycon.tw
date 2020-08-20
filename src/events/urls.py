@@ -4,8 +4,6 @@ from django.views.generic import RedirectView
 from . import views
 
 
-from django.http import HttpResponse
-
 urlpatterns = [
     url(r'^schedule/$', views.ScheduleView.as_view(), name='events_schedule'),
     url(r'^schedule/new/$', views.ScheduleCreateView.as_view()),

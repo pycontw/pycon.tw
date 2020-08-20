@@ -4,7 +4,7 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import translation
@@ -23,12 +23,11 @@ from .models import (
 )
 from .renderers import render_all
 
-from ccip.models import Venue, Choice
+
 from core.utils import collect_language_codes
 import datetime
-from django.urls import reverse_lazy
 from django.core.exceptions import ImproperlyConfigured
-
+from ext2020.models import Venue, Choice
 logger = logging.getLogger(__name__)
 
 
