@@ -1,0 +1,53 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+{% load sponsors %}
+
+{% block title %}{% trans 'Job Listings' %}{% endblock title %}
+
+{% block body_class %}job-listings-page{% endblock body_class %}
+
+{% block content %}
+
+
+<section class="pill-title">
+	<h1>{% trans 'Job Listings' %}</h1>
+</section>
+
+{% for sponsor in open_role_sponsors %}
+	<article class="media">
+		<header>
+			<figure>
+				{% if sponsor.logo.url %}
+					<img src="{{ sponsor.logo.url }}">
+				{% endif %}
+				<figcaption>{{ sponsor.name }}</figcaption>
+			</figure>
+		</header>
+		<div class="tabbing" data-controller="tabbing">
+			<ul class="tabs">
+				<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+					{% trans 'Open Roles' %}
+				</li>
+			</ul>
+			<div>
+				<article data-target="tabbing.pane">
+					<h3 class="tab-title">{% trans 'Open Roles' %}</h3>
+					{% for open_role in open_roles %}
+						{% if open_role.sponsor.name == sponsor.name %}
+							<ul>
+								{% if open_role.url %}
+									<li><a href="{{ open_role.url }}">{{ open_role.name }}</a>{{ open_role.description|linebreaks}}</li>
+								{% else %}
+									<li>{{ open_role.name }}</a> {{ open_role.description|linebreaks}}</li>
+								{% endif %}
+							</ul>
+						{% endif %}
+					{% endfor %}
+				</article>
+			</div>
+		</div>
+	</article>
+{% endfor %}
+
+{% endblock content %}

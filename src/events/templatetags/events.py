@@ -3,7 +3,7 @@ from django.template import Context, Library
 from django.template.loader import get_template
 from django.utils import translation
 
-from events.models import KeynoteEvent, Location
+from events.models import KeynoteEvent, JobListingsEvent, Location
 from proposals.utils import format_names
 
 
@@ -121,3 +121,9 @@ def event_date_display(event):
 @register.simple_tag
 def get_keynote_events():
     return KeynoteEvent.objects.order_by('begin_time')
+
+
+@register.simple_tag
+def get_job_listings_events():
+    return JobListingsEvent.objects.order_by('begin_time')
+
