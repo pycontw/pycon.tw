@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2020/styles/ccip.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block titletag %}
+<title>PyCon Taiwan 2020</title>
+{% endblock titletag %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+{% language 'en-us' %}
+{% include '_includes/sponsors.html' %}
+{% endlanguage %}
+{% endblock content_full %}
+
+{% block footer %}
+<footer></footer>
+{% endblock footer %}
