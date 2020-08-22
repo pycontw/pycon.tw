@@ -1,0 +1,18 @@
+@import "site";
+
+@import "index-mixins";
+@import "index-hero";
+@import "index-partners";
+
+
+.index-partners {
+	> .container {
+		> .grid-layout {
+			> .partner-container {
+				background-color: #F6B1976e;
+				border: 1px solid #ffffff00;
+			}
+		}
+	}
+}
+
