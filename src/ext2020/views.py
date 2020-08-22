@@ -49,25 +49,19 @@ def live(request):
 class CommunityTrackView(ListView):
     model = Venue
     path = 'events/community-track'
-    success_url = reverse_lazy('community-track')
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
 
-        data = request.POST.copy()
-        data['selected_time'] = datetime.datetime.now()
-        forms_obj = CommunityTrackForm(data)
+        forms_obj = CommunityTrackForm(request.POST)
         if forms_obj.is_valid():
-            Choice.objects.create(**forms_obj.cleaned_data)
-            return HttpResponseRedirect(self.get_success_url())
-
-
-
+            forms_obj.save()
+            return HttpResponseRedirect(self.request.get_full_path())
 
     def get_context_data(self, **kwargs):
-        token = self.request.GET.get('token')
+        token = self.request.GET.get('token','')
         venue_choice = Venue.objects.filter(choice__attendee_token=token)
         kwargs.update({
             'venue_choice': venue_choice.first() if venue_choice else '',
@@ -80,12 +74,6 @@ class CommunityTrackView(ListView):
             '/'.join(['contents', code, self.path + '.html'])
             for code in collect_language_codes(self.request.LANGUAGE_CODE)
         ]
-        # print(template_names)
         return template_names
 
-    def get_success_url(self):
-        """Return the URL to redirect to after processing a valid form."""
-        if not self.success_url:
-            raise ImproperlyConfigured("No URL to redirect to. Provide a success_url.")
-        return str(self.success_url)  # success_url may be lazy
 

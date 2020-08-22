@@ -12,7 +12,7 @@
 					{% if venue_choice == venue %}
 						<button class="bth track-btn">{% trans '已加入' %}</button>
 					{% endif %}
-				{% else %}
+				{% elif token %}
 					<button type="submit" class="bth track-btn">{% trans '我要加入' %}</button>
 				{% endif %}
 			</form>

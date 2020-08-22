@@ -1,11 +1,12 @@
 from django import forms
 
 
-from ext2020.models import Venue
+from ext2020.models import Choice
 
 
 
-class CommunityTrackForm(forms.Form):
-    venue = forms.ModelChoiceField(queryset=Venue.objects.all())
-    attendee_token = forms.CharField()
-    selected_time = forms.DateTimeField()
+class CommunityTrackForm(forms.ModelForm):
+
+    class Meta:
+        model = Choice
+        fields = "__all__"
