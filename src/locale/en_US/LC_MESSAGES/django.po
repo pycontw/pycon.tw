@@ -3430,10 +3430,6 @@ msgstr "COVID-19 Guidelines"
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
-
-msgid "Privacy Policy"
-msgstr "Privacy Policy"
-
 msgid "古蹟出張所"
 msgstr "古蹟出張所"
 
