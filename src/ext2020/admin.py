@@ -1,9 +1,12 @@
 from django.contrib import admin
 
-from import_export.admin import ImportMixin
+from modeltranslation.admin import TranslationAdmin
+
+from import_export.admin import ImportMixin, ImportExportMixin
 
 from .models import Attendee,Venue,Choice
-from .resources import AttendeeResource
+from .resources import AttendeeResource, VenueResource
+
 
 # Register your models here.
 @admin.register(Attendee)
@@ -19,8 +22,8 @@ class AttendeeAdmin(ImportMixin, admin.ModelAdmin):
 
 
 @admin.register(Venue)
-class VenueAdmin(admin.ModelAdmin):
-    list_display = ('name', 'photo')
+class VenueAdmin(ImportExportMixin, TranslationAdmin):
+    list_display = ('name', 'photo', 'address', 'community', 'topic', 'capacity', )
 
 
 

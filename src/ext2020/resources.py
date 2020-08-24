@@ -2,7 +2,7 @@ from django.utils import timezone
 
 from import_export import fields, resources
 
-from .models import Attendee
+from .models import Attendee, Venue
 
 
 class AttendeeResource(resources.ModelResource):
@@ -29,3 +29,11 @@ class AttendeeResource(resources.ModelResource):
         instance.verified = True
         if not instance.verified_at:
             instance.verified_at = timezone.now()
+
+
+class VenueResource(resources.ModelResource):
+    class Meta:
+        model = Venue
+        fields = (
+            'name', 'photo', 'address', 'community', 'topic', 'capacity',
+        )

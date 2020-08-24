@@ -20,7 +20,13 @@ class Attendee(models.Model):
 
 class Venue(models.Model):
     name = models.CharField(verbose_name=_('Venue Name'), max_length=64)
-    photo = models.CharField(verbose_name=_('Venue photo'), max_length=128)
+    photo = models.CharField(verbose_name=_('Venue photo'), max_length=128, blank=True)
+
+    address = models.CharField(_('Venue Address'), max_length=64, blank=True)
+    community = models.CharField(_('Community'), max_length=64, blank=True)
+    topic = models.CharField(_('Topic'), max_length=64, blank=True)
+
+    capacity = models.IntegerField(_('Capacity Limit'), default=0)
 
     def get_photo_url(self):
         return StaticNode.handle_simple(self.photo)
