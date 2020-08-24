@@ -1,0 +1,29 @@
+.discord-page {
+  .entry {
+
+    h4 {
+      text-align:left;
+    }
+
+    h6 {
+      text-align:left;
+    }
+
+    li {
+      text-align:left;
+    }
+
+    img {
+      max-width: 100%;
+	  	height: auto;
+    }
+  }
+
+    main {
+        width: calc(100% - 80px);
+
+        @include on-desktop() {
+            min-width: 720px;
+        }
+    }
+}

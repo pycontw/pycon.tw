@@ -36,3 +36,7 @@ def live(request):
         'rooms': rooms,
         'token': token,
     })
+
+def discord(request):
+    token = request.GET.get('token', '')
+    return render(request, 'ext/discord.html', {'token': token})
