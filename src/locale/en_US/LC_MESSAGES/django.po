@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 16:52+0800\n"
+"POT-Creation-Date: 2020-08-24 17:35+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -2104,6 +2104,7 @@ msgstr "Events"
 #: templates/pycontw-2018/_includes/menu.html:53
 #: templates/pycontw-2019/_includes/menu.html:58
 #: templates/pycontw-2020/_includes/menu.html:74
+#: templates/pycontw-2020/events/community_track.html:38
 msgid "Overview"
 msgstr "Overview"
 
@@ -2146,7 +2147,6 @@ msgstr "Keynotes"
 #: templates/pycontw-2020/contents/en/conference/overview.html:90
 #: templates/pycontw-2020/contents/zh/conference/overview.html:31
 #: templates/pycontw-2020/contents/zh/conference/overview.html:71
-#: templates/pycontw-2020/events/_includes/community-track.html:39
 #: templates/pycontw-2020/events/talk_list.html:6
 #: templates/pycontw-2020/events/talk_list.html:13
 #: templates/pycontw-2020/index.html:53
@@ -3200,15 +3200,17 @@ msgstr ""
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:9
 #: templates/pycontw-2020/events/_includes/community-track.html:10
-#, fuzzy
-#| msgid "Rejected"
 msgid "Selected"
-msgstr "Rejected"
+msgstr "Selected"
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:15
 #: templates/pycontw-2020/events/_includes/community-track.html:16
 msgid "Select this track"
-msgstr ""
+msgstr "Select this track"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:39
+msgid "Community Track Talks"
+msgstr "Talks"
 
 #: templates/pycontw-2020/events/_includes/community-track.html:51
 #: templates/pycontw-2020/events/talk_list.html:43
@@ -3216,6 +3218,81 @@ msgstr ""
 #| msgid "speaker name"
 msgid " by %(speaker_names)s"
 msgstr "speaker name"
+
+#: templates/pycontw-2020/events/community_track.html:5
+#: templates/pycontw-2020/events/community_track.html:16
+msgid "Community Topic Track"
+msgstr "Community Track"
+
+#: templates/pycontw-2020/events/community_track.html:7
+#: templates/pycontw-2020/events/community_track.html:19
+#: templates/pycontw-2020/events/talk_list.html:59
+msgid ""
+"The community track is a new event in PyCon TW. We choose the talks with "
+"specific topics and package them into the same session. We'll leave the "
+"conference rooms and go to characteristic cafes, exhibition spaces, and even "
+"monuments so that the attendees and speakers can interact with each other "
+"more comfortably and closely."
+msgstr ""
+
+#: templates/pycontw-2020/events/community_track.html:25
+msgid "Event Time"
+msgstr "Event Time"
+
+#: templates/pycontw-2020/events/community_track.html:29
+msgid "Event Info"
+msgstr "Event Info"
+
+#: templates/pycontw-2020/events/community_track.html:30
+msgid "Physical Meetup"
+msgstr "Physical Meetup"
+
+#: templates/pycontw-2020/events/community_track.html:33
+msgid "Host"
+msgstr "Host"
+
+#: templates/pycontw-2020/events/community_track.html:34
+msgid "Python Community Leader"
+msgstr "Python Community Leader"
+
+#: templates/pycontw-2020/events/community_track.html:41
+msgid "Topics &amp; Venues"
+msgstr "Topics &amp; Venues"
+
+#: templates/pycontw-2020/events/community_track.html:44
+msgid "Agenda"
+msgstr "Agenda"
+
+#: templates/pycontw-2020/events/community_track.html:48
+msgid "Time"
+msgstr "Time"
+
+#: templates/pycontw-2020/events/community_track.html:49
+msgid "Event"
+msgstr "Event"
+
+#: templates/pycontw-2020/events/community_track.html:55
+msgid "Community Introduction"
+msgstr "Community Introduction"
+
+#: templates/pycontw-2020/events/community_track.html:59
+#: templates/pycontw-2020/events/community_track.html:67
+msgid "Talk"
+msgstr "Talk"
+
+#: templates/pycontw-2020/events/community_track.html:63
+#: templates/pycontw-2020/events/community_track.html:71
+#: templates/pycontw-2020/events/community_track.html:79
+msgid "Break"
+msgstr "Break"
+
+#: templates/pycontw-2020/events/community_track.html:75
+msgid "Talk / Sponsor Introduction"
+msgstr "Talk / Sponsor Introduction"
+
+#: templates/pycontw-2020/events/community_track.html:83
+msgid "Free Sharing"
+msgstr "Free Sharing"
 
 #: templates/pycontw-2020/events/talk_list.html:17
 #, fuzzy
@@ -3243,19 +3320,8 @@ msgstr ""
 "program schedule before the meeting so they don’t end up in the wrong place."
 
 #: templates/pycontw-2020/events/talk_list.html:57
-#, fuzzy
-#| msgid "Community"
 msgid "Community Track"
-msgstr "Community"
-
-#: templates/pycontw-2020/events/talk_list.html:59
-msgid ""
-"The community track is a new event in PyCon TW. We choose the talks with "
-"specific topics and package them into the same session. We'll leave the "
-"conference rooms and go to characteristic cafes, exhibition spaces, and even "
-"monuments so that the attendees and speakers can interact with each other "
-"more comfortably and closely."
-msgstr ""
+msgstr "Community Track"
 
 #: templates/pycontw-2020/events/tutorial_list.html:15
 msgid ""

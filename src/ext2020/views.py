@@ -47,7 +47,7 @@ def live(request):
 
 class CommunityTrackView(ListView):
     model = Venue
-    path = 'events/community-track'
+    template_name = 'events/community_track.html'
 
     def dispatch(self, request, *args, **kwargs):
         self.attendee = None
@@ -101,12 +101,3 @@ class CommunityTrackView(ListView):
             'token': self.token,
         })
         return super().get_context_data(**kwargs)
-
-    def get_template_names(self):
-        template_names = [
-            '/'.join(['contents', code, self.path + '.html'])
-            for code in collect_language_codes(self.request.LANGUAGE_CODE)
-        ]
-        return template_names
-
-
