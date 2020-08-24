@@ -16,3 +16,100 @@
     background-color: #6A3F3B;
     border-radius: 10px;
 }
+
+
+.message {
+    margin: 15px 0 80px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.overview-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .venue-block {
+        text-align: center;
+        flex-basis: 200px;
+
+        // border: 2px solid $jinger-bread;
+        // border-radius: 4px;
+        padding: 0 10px;
+        margin-bottom: 50px;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 10px;
+
+            &::before {
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+        }
+
+        .community {
+            padding-top: 10px;
+            font-family: $text-font-family;
+            font-weight: 400;
+            font-size: 1.1em;
+        }
+
+        .venue-name {
+            padding-top: 8px;
+            font-family: $classic-font-family;
+            font-weight: 300;
+            font-size: 0.95em;
+            color: lighten(#000, 30);
+        }
+
+        .stats {
+            font-family: $header-font-family;
+            padding-top: 0px;
+            font-size: 0.8em;
+        }
+
+        .actions {
+            button {
+                margin: 0;
+                line-height: 1.5;
+                border: 1px solid transparent;
+                border-radius: 0.2rem;
+                padding: 0.25rem 0.5rem;
+                user-select: none;
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                vertical-align: middle;
+
+                font-size: 0.875rem;
+
+                color: $jinger-bread;
+                background-color: transparent;
+                border-color: $jinger-bread;
+
+                transition: color .15s ease-in-out,
+                            background-color .15s ease-in-out,
+                            border-color .15s ease-in-out;
+
+
+                &:hover {
+                    color: white;
+                    background-color: $jinger-bread;
+                    border-color: $jinger-bread;
+                }
+
+                &:not(:disabled):not(.disabled) {
+                    cursor: pointer;
+                }
+
+                &:disabled, .disabled {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}

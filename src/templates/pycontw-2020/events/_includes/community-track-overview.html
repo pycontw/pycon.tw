@@ -1,0 +1,39 @@
+{% load i18n static %}
+<div class="overview-container">
+{% for venue in object_list %}
+    <div class="venue-block">
+        <h3>{{ venue.topic }}</h3>
+        <div class="actions">
+            {% if attendee %}
+            {% if selected_venue == venue %}
+            <button disabled><i class="fa fa-check"></i> {% trans '已選擇' %}</button>
+            {% else %}
+            <form method="post">
+                {% csrf_token %}
+                <input name="venue" value="{{ venue.id }}" type="hidden">
+                <input name="attendee" value="{{ attendee.id }}" type="hidden">
+                <button>{% trans '選擇此軌' %}</button>
+            </form>
+            {% endif %}
+            {% endif %}
+        </div>
+        <div class="community">
+        {{ venue.community }}
+        </div>
+
+        <div class="venue-name">
+        {{ venue.name }}
+
+            <span class="stats">
+                /{{ venue.capacity }}
+            </span>
+        </div>
+
+    </div>
+{% endfor %}
+</div>
+
+{% if message %}
+<p class="message">{{ message }}</p>
+{% endif %}
+

@@ -37,8 +37,8 @@ class Venue(models.Model):
 
 class Choice(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    attendee_token = models.CharField(verbose_name=_('attendee_token'), max_length=64)
+    attendee = models.ForeignKey(Attendee, on_delete=models.CASCADE, null=True, blank=True)
     selected_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "%s %s" % (self.venue, self.attendee_token)
+        return "%s %s" % (self.venue, self.attendee.token if self.attendee else '?')
