@@ -20,7 +20,7 @@ class Attendee(models.Model):
 
 class Venue(models.Model):
     name = models.CharField(verbose_name=_('Venue Name'), max_length=64)
-    photo = models.CharField(verbose_name=_('Venue photo'), max_length=32)
+    photo = models.CharField(verbose_name=_('Venue photo'), max_length=128)
 
     def get_photo_url(self):
         return StaticNode.handle_simple(self.photo)
