@@ -7,6 +7,8 @@ from events.models import KeynoteEvent, JobListingsEvent, Location
 from sponsors.models import Sponsor, OpenRole
 from proposals.utils import format_names
 
+from datetime import datetime, timedelta
+from math import floor
 
 LOCATION_DISPLAY_DICT = {
     Location.R0: 'R0',
@@ -18,6 +20,50 @@ LOCATION_DISPLAY_DICT = {
 }
 
 register = Library()
+
+
+@register.simple_tag
+def calc_grid_row(begin, end, timeline_start='08:30'):
+    d_format = '%H:%M'
+    unit = 5 * 60
+    start_point = datetime.strptime(timeline_start, d_format)
+
+    def get_row(t):
+        diff = datetime.strptime(t, d_format) - start_point
+        return int(diff.seconds / unit)+1
+
+    start_row = get_row(begin)
+    end_row = get_row(end)
+    return {'start_row': start_row, 'end_row': end_row}
+
+
+@register.filter
+def gen_timeline(start, end):
+    unit = 30 * 60
+    timeline = [{'time': start, 'row_start': 1, 'row_end': 6}]
+    d_format = '%H:%M'
+
+    time_start = datetime.strptime(start, d_format)
+    time_end = datetime.strptime(end, d_format)
+    ticks_count = floor((time_end - time_start).seconds / unit)
+
+    time_next = time_start
+    row_start_next = 1
+    row_end_next = 6
+    for i in range(ticks_count):
+        time_next += timedelta(seconds=unit)
+        row_start_next += 6
+        row_end_next += 6
+        t = datetime.strftime(time_next, d_format)
+        c = '--hour' if t.endswith('00') else '--half-an-hour'
+        timeline.append({
+            'time': t,
+            'row_start': row_start_next,
+            'row_end': row_end_next,
+            'class': c
+        })
+
+    return timeline
 
 
 @register.filter

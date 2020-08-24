@@ -1,0 +1,142 @@
+@import 'pycontw-2020/styles/palette.scss';
+
+main {
+	max-width: unset;
+	margin: unset;
+	padding: 24px;
+
+	.py-schedule {
+		&-tabs {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&__tab {
+				margin: 0 24px 24px;
+				padding: 24px 72px;
+				font-family: Philosopher, sans-serif;
+				font-size: 20px;
+				border-radius: 8px;
+				cursor: default;
+
+				&:hover:not(.--active) {
+					color: red;
+					cursor: pointer;
+				}
+
+				&.--active {
+					color: $jinger-bread;
+					background: $salmon;
+				}
+			}
+		}
+
+		&-timetable {
+			&-header {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				display: flex;
+				background: transparentize($brick, 0.3);
+
+				&-column {
+					display: flex;
+					margin: 8px 8px 8px 0;
+					padding: 12px 0;
+					justify-content: center;
+					font-family: Quicksand, sans-serif;
+					font-size: 18px;
+					color: #ffffff;
+					background: $brown;
+					border-radius: 5px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					&.--timeline {
+						flex: 1;
+						background: transparent;
+					}
+
+					&.--room {
+						flex: 2;
+					}
+				}
+
+				&:not(.--active) {
+					display: none;
+				}
+			}
+
+			&-body {
+				display: grid;
+				grid-template-columns:
+						[times] 1fr
+						[room-4-r0-start] 2fr
+					  [room-4-r0-end room-5-r1-start] 2fr
+						[room-5-r1-end room-6-r2-start] 2fr
+					  [room-6-r2-end room-8-r3-start] 2fr
+					  [room-8-r3-end room-7-r4-start] 2fr
+					  [room-7-r4-end];
+				grid-column-gap: 8px;
+				grid-row-gap: 8px;
+
+				&-item {
+					display: flex;
+					font-family: Quicksand, sans-serif;
+					border-radius: 5px;
+				}
+
+				.room-3-r012 {
+					grid-column: room-4-r0-start / room-6-r2-end;
+				}
+
+				.room-4-r0 {
+					grid-column: room-4-r0-start / room-4-r0-end;
+				}
+
+				.room-5-r1 {
+					grid-column: room-5-r1-start / room-5-r1-end;
+				}
+
+				.room-6-r2 {
+					grid-column: room-6-r2-start / room-6-r2-end;
+				}
+
+				.room-7-r4 {
+					grid-column: room-7-r4-start / room-7-r4-end;
+				}
+
+				.room-1-r3 {
+					grid-column: room-8-r3-start / room-8-r3-end;
+				}
+
+				.room-2-all {
+					grid-column: room-4-r0-start / room-8-r3-end;
+				}
+
+				.timeline {
+					grid-column: times;
+					justify-self: center;
+					font-family: Philosopher, sans-serif;
+					font-size: 18px;
+					color: $jinger-bread;
+
+					&.--hour {
+						font-size: 20px;
+						font-weight: 500;
+					}
+
+					&.--half-an-hour {
+						font-size: 18px;
+					}
+				}
+
+				&:not(.--active) {
+					display: none;
+				}
+			}
+		}
+	}
+}
