@@ -36,3 +36,5 @@ class ChoiceAdmin(admin.ModelAdmin):
 class CommunityTrackEvent(ImportExportMixin, admin.ModelAdmin):
     list_display = ('venue', 'talk', 'order', )
     list_filter = ('order', )
+
+    resource_class = CommunityTrackEventResource
