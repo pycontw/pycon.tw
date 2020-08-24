@@ -53,12 +53,12 @@ class CommunityTrackView(ListView):
         self.attendee = None
         self.choice = None
         self.message = None
+        self.token = request.GET.get('token')
 
         # Get attendee
-        token = request.GET.get('token')
-        if token:
+        if self.token:
             try:
-                self.attendee = Attendee.objects.get(token=token)
+                self.attendee = Attendee.objects.get(token=self.token)
             except Attendee.DoesNotExist:
                 # Should we build one here (?)
                 self.message = _("The token within the link is invalid. Please contact the administrator for further help.")
@@ -98,6 +98,7 @@ class CommunityTrackView(ListView):
             'selected_venue': self.choice.venue if self.choice else None,
             'attendee': self.attendee,
             'message': self.message,
+            'token': self.token,
         })
         return super().get_context_data(**kwargs)
 

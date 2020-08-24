@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 14:34+0800\n"
+"POT-Creation-Date: 2020-08-24 16:52+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -89,7 +89,7 @@ msgstr "location"
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:86 ext2020/models.py:26
+#: core/models.py:86 ext2020/models.py:29
 #: templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:15
@@ -248,7 +248,7 @@ msgstr "slide link"
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:178 events/models.py:332 ext2020/models.py:10
+#: core/models.py:178 events/models.py:332 ext2020/models.py:13
 msgid "created at"
 msgstr "created at"
 
@@ -454,52 +454,52 @@ msgstr "EN Slides"
 msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
 
-#: ext2020/models.py:7
+#: ext2020/models.py:10
 msgid "token"
 msgstr ""
 
-#: ext2020/models.py:8 users/models.py:164
+#: ext2020/models.py:11 users/models.py:164
 msgid "verified"
 msgstr "verified"
 
-#: ext2020/models.py:11
+#: ext2020/models.py:14
 #, fuzzy
 #| msgid "verified"
 msgid "verified at"
 msgstr "verified"
 
-#: ext2020/models.py:14
+#: ext2020/models.py:17
 msgid "attendee"
 msgstr ""
 
-#: ext2020/models.py:15
+#: ext2020/models.py:18
 msgid "attendees"
 msgstr ""
 
-#: ext2020/models.py:22
+#: ext2020/models.py:25
 #, fuzzy
 #| msgctxt "conf location"
 #| msgid "Venue"
 msgid "Venue Name"
 msgstr "Venue"
 
-#: ext2020/models.py:23
+#: ext2020/models.py:26
 #, fuzzy
 #| msgid "photo"
 msgid "Venue photo"
 msgstr "photo"
 
-#: ext2020/models.py:25
+#: ext2020/models.py:28
 #, fuzzy
 #| msgid "Email Address"
 msgid "Venue Address"
 msgstr "Email Address"
 
-#: ext2020/models.py:27
+#: ext2020/models.py:30
 msgid "Topic"
 msgstr ""
 
-#: ext2020/models.py:29
+#: ext2020/models.py:32
 msgid "Capacity Limit"
 msgstr ""
 
@@ -2146,6 +2146,7 @@ msgstr "Keynotes"
 #: templates/pycontw-2020/contents/en/conference/overview.html:90
 #: templates/pycontw-2020/contents/zh/conference/overview.html:31
 #: templates/pycontw-2020/contents/zh/conference/overview.html:71
+#: templates/pycontw-2020/events/_includes/community-track.html:39
 #: templates/pycontw-2020/events/talk_list.html:6
 #: templates/pycontw-2020/events/talk_list.html:13
 #: templates/pycontw-2020/index.html:53
@@ -3198,20 +3199,23 @@ msgid "To be announced"
 msgstr ""
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:9
-msgid "已選擇"
-msgstr ""
+#: templates/pycontw-2020/events/_includes/community-track.html:10
+#, fuzzy
+#| msgid "Rejected"
+msgid "Selected"
+msgstr "Rejected"
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:15
-msgid "選擇此軌"
-msgstr ""
-
-#: templates/pycontw-2020/events/_includes/community-track.html:13
-msgid "已加入"
-msgstr ""
-
 #: templates/pycontw-2020/events/_includes/community-track.html:16
-msgid "我要加入"
+msgid "Select this track"
 msgstr ""
+
+#: templates/pycontw-2020/events/_includes/community-track.html:51
+#: templates/pycontw-2020/events/talk_list.html:43
+#, fuzzy, python-format
+#| msgid "speaker name"
+msgid " by %(speaker_names)s"
+msgstr "speaker name"
 
 #: templates/pycontw-2020/events/talk_list.html:17
 #, fuzzy
@@ -3237,12 +3241,6 @@ msgstr ""
 "topics and difficulties. We suggest you to plan beforehand, and choose what "
 "you want to listen based on your interests. Many people take notes on the "
 "program schedule before the meeting so they don’t end up in the wrong place."
-
-#: templates/pycontw-2020/events/talk_list.html:43
-#, fuzzy, python-format
-#| msgid "speaker name"
-msgid " by %(speaker_names)s"
-msgstr "speaker name"
 
 #: templates/pycontw-2020/events/talk_list.html:57
 #, fuzzy
@@ -3272,15 +3270,15 @@ msgstr ""
 "their hands on more Python applications."
 
 #: templates/pycontw-2020/ext/live.html:5
-#: templates/pycontw-2020/ext/live.html:35
+#: templates/pycontw-2020/ext/live.html:12
 msgid "Live broadcast"
 msgstr ""
 
-#: templates/pycontw-2020/ext/live.html:53
+#: templates/pycontw-2020/ext/live.html:30
 msgid "This broadcast is not ready yet."
 msgstr ""
 
-#: templates/pycontw-2020/ext/live.html:62
+#: templates/pycontw-2020/ext/live.html:39
 msgid "The broadcasts are not ready yet, please try again later."
 msgstr ""
 

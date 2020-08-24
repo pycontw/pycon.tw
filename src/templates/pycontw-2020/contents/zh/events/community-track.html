@@ -1,8 +1,6 @@
 {% extends 'contents/_base.html' %}
 
-{% load i18n static %}
-
-{% load static %}
+{% load i18n static compress %}
 
 {% block title %}社群體驗式主題議程{% endblock title %}
 
@@ -37,11 +35,8 @@
     <h2>總覽</h2>
     {% include 'events/_includes/community-track-overview.html' %}
 
-	<article class="media">
-		<h2>場地照片</h2>
-		{% include 'events/_includes/community-track.html' %}
-	</article>
-
+    <h2>各場地主題</h2>
+    {% include 'events/_includes/community-track.html' %}
 
 	<h2>活動議程</h2>
 	<table>
@@ -87,5 +82,14 @@
 		</tbody>
 	</table>
 
-
+<script>
+window.TOKEN = '{{ token|default:'' }}';
+</script>
 {% endblock content %}
+
+
+{% block extra_js %}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2020/scripts/token.js' %}"></script>
+{% endcompress %}
+{% endblock %}

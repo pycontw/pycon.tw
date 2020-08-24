@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 14:34+0800\n"
+"POT-Creation-Date: 2020-08-24 16:52+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -94,7 +94,7 @@ msgstr "應用"
 msgid "Best Practices & Patterns"
 msgstr "最佳實踐與慣例"
 
-#: core/models.py:86 ext2020/models.py:26
+#: core/models.py:86 ext2020/models.py:29
 #: templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:15
@@ -253,7 +253,7 @@ msgstr "投影片連結"
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:178 events/models.py:332 ext2020/models.py:10
+#: core/models.py:178 events/models.py:332 ext2020/models.py:13
 msgid "created at"
 msgstr "建立時間"
 
@@ -459,43 +459,43 @@ msgstr "英文投影片"
 msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
-#: ext2020/models.py:7
+#: ext2020/models.py:10
 msgid "token"
 msgstr "驗證碼"
 
-#: ext2020/models.py:8 users/models.py:164
+#: ext2020/models.py:11 users/models.py:164
 msgid "verified"
 msgstr "已認證"
 
-#: ext2020/models.py:11
+#: ext2020/models.py:14
 msgid "verified at"
 msgstr "驗證時間"
 
-#: ext2020/models.py:14
+#: ext2020/models.py:17
 msgid "attendee"
 msgstr "會眾"
 
-#: ext2020/models.py:15
+#: ext2020/models.py:18
 msgid "attendees"
 msgstr "會眾"
 
-#: ext2020/models.py:22
+#: ext2020/models.py:25
 msgid "Venue Name"
 msgstr "場地名稱"
 
-#: ext2020/models.py:23
+#: ext2020/models.py:26
 msgid "Venue photo"
 msgstr "場地照片網址"
 
-#: ext2020/models.py:25
+#: ext2020/models.py:28
 msgid "Venue Address"
 msgstr "場地地址"
 
-#: ext2020/models.py:27
+#: ext2020/models.py:30
 msgid "Topic"
 msgstr "主題"
 
-#: ext2020/models.py:29
+#: ext2020/models.py:32
 msgid "Capacity Limit"
 msgstr "場地容納限制"
 
@@ -503,8 +503,7 @@ msgstr "場地容納限制"
 msgid ""
 "The token within the link is invalid. Please contact the administrator for "
 "further help."
-msgstr ""
-"連結中附帶的驗證碼錯誤。請聯繫工作人員取得更進一步的協助。"
+msgstr "連結中附帶的驗證碼錯誤。請聯繫工作人員取得更進一步的協助。"
 
 #: ext2020/views.py:69
 msgid ""
@@ -512,8 +511,8 @@ msgid ""
 "preparation letter, or from the OPass app that is already bound with your "
 "KKTIX registration."
 msgstr ""
-"從行前信件的連結或是已登入綁定的 OPass app 進入此頁面，來登記選擇欲前往的"
-"地點。"
+"從行前信件的連結或是已登入綁定的 OPass app 進入此頁面，來登記選擇欲前往的地"
+"點。"
 
 #: proposals/forms/mixins.py:16
 #, python-brace-format
@@ -2075,6 +2074,7 @@ msgstr "基調演講"
 #: templates/pycontw-2020/contents/en/conference/overview.html:90
 #: templates/pycontw-2020/contents/zh/conference/overview.html:31
 #: templates/pycontw-2020/contents/zh/conference/overview.html:71
+#: templates/pycontw-2020/events/_includes/community-track.html:39
 #: templates/pycontw-2020/events/talk_list.html:6
 #: templates/pycontw-2020/events/talk_list.html:13
 #: templates/pycontw-2020/index.html:53
@@ -3115,20 +3115,20 @@ msgid "To be announced"
 msgstr "即將公佈"
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:9
-msgid "已選擇"
-msgstr ""
+#: templates/pycontw-2020/events/_includes/community-track.html:10
+msgid "Selected"
+msgstr "已選擇"
 
 #: templates/pycontw-2020/events/_includes/community-track-overview.html:15
-msgid "選擇此軌"
-msgstr ""
-
-#: templates/pycontw-2020/events/_includes/community-track.html:13
-msgid "已加入"
-msgstr ""
-
 #: templates/pycontw-2020/events/_includes/community-track.html:16
-msgid "我要加入"
-msgstr ""
+msgid "Select this track"
+msgstr "選擇此軌"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:51
+#: templates/pycontw-2020/events/talk_list.html:43
+#, python-format
+msgid " by %(speaker_names)s"
+msgstr " — %(speaker_names)s"
 
 #: templates/pycontw-2020/events/talk_list.html:17
 msgid ""
@@ -3143,11 +3143,6 @@ msgstr ""
 "Python 相關的發現。Talk 有 15 分鐘與 30 分鐘兩種長度，每天都將有三軌議程同步"
 "進行，配合各個演講的難易度與類型，選擇自己有興趣的主題聆聽。許多人都會事先筆"
 "記想聽的議程，才不會跑錯地點。"
-
-#: templates/pycontw-2020/events/talk_list.html:43
-#, python-format
-msgid " by %(speaker_names)s"
-msgstr " — %(speaker_names)s"
 
 #: templates/pycontw-2020/events/talk_list.html:57
 msgid "Community Track"
@@ -3177,15 +3172,15 @@ msgstr ""
 "另外報名，以便我們做現場人數控制；專業課程的時間為 90 分鐘。"
 
 #: templates/pycontw-2020/ext/live.html:5
-#: templates/pycontw-2020/ext/live.html:35
+#: templates/pycontw-2020/ext/live.html:12
 msgid "Live broadcast"
 msgstr "現場直播"
 
-#: templates/pycontw-2020/ext/live.html:53
+#: templates/pycontw-2020/ext/live.html:30
 msgid "This broadcast is not ready yet."
 msgstr "這個直播還沒有準備好。"
 
-#: templates/pycontw-2020/ext/live.html:62
+#: templates/pycontw-2020/ext/live.html:39
 msgid "The broadcasts are not ready yet, please try again later."
 msgstr "直播還沒有準備好，請稍後再試。"
 

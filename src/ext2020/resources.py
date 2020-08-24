@@ -2,7 +2,7 @@ from django.utils import timezone
 
 from import_export import fields, resources
 
-from .models import Attendee, Venue
+from .models import Attendee, Venue, CommunityTrackEvent
 
 
 class AttendeeResource(resources.ModelResource):
@@ -36,4 +36,12 @@ class VenueResource(resources.ModelResource):
         model = Venue
         fields = (
             'name', 'photo', 'address', 'community', 'topic', 'capacity',
+        )
+
+
+class CommunityTrackEventResource(resources.ModelResource):
+    class Meta:
+        model = CommunityTrackEvent
+        fields = (
+            'venue', 'talk',
         )

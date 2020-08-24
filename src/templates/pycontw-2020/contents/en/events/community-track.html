@@ -1,8 +1,6 @@
 {% extends 'contents/_base.html' %}
 
-{% load i18n static %}
-
-{% load static %}
+{% load i18n static compress %}
 
 {% block title %}Community Track{% endblock title %}
 
@@ -37,11 +35,11 @@
 		</li>
 	</ul>
 
-	<article class="media">
-		<h2>Place</h2>
-		{% include 'events/_includes/community-track.html' %}
-	</article>
+    <h2 style="margin-top: 90px;">Overview</h2>
+    {% include 'events/_includes/community-track-overview.html' %}
 
+    <h2>Topics &amp; Venues</h2>
+    {% include 'events/_includes/community-track.html' %}
 
 	<h2>Agenda</h2>
 	<table>
@@ -88,4 +86,14 @@
 	</table>
 
 
+<script>
+window.TOKEN = '{{ token|default:'' }}';
+</script>
 {% endblock content %}
+
+
+{% block extra_js %}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2020/scripts/token.js' %}"></script>
+{% endcompress %}
+{% endblock %}

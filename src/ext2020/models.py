@@ -2,6 +2,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import StaticNode
 
+from core.models import BigForeignKey
+from proposals.models import TalkProposal
+
 # Create your models here.
 class Attendee(models.Model):
     token = models.CharField(_('token'), max_length=64, unique=True)
@@ -42,3 +45,12 @@ class Choice(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.venue, self.attendee.token if self.attendee else '?')
+
+
+class CommunityTrackEvent(models.Model):
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
+    talk = BigForeignKey(TalkProposal, on_delete=models.CASCADE)
+    order = models.IntegerField(default=0)
+
+    def __str__(self):
+        return "%d. %s (%s)" % (self.order, self.talk.title, self.venue.name)
