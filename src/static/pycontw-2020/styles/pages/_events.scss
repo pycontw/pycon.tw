@@ -1,5 +1,15 @@
 @import 'pycontw-2020/styles/palette.scss';
 
+@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
+	width: $width;
+	height: $width;
+	margin-top: $margin-top; // Visual compensation.
+	background: url('../../assets/icon-#{$name}.svg') top $x no-repeat;
+}
+
+$icon-width: 26px;
+$icon-height: 26px;
+
 main {
 	max-width: unset;
 	margin: unset;
@@ -86,6 +96,154 @@ main {
 					display: flex;
 					font-family: Quicksand, sans-serif;
 					border-radius: 5px;
+
+					.context-container {
+						position: sticky;
+						top: 70px;
+						padding: 12px;
+
+						.context {
+							.title {
+								margin-bottom: 8px;
+								font-size: 22px;
+								font-weight: 700;
+							}
+
+							.speaker {
+								margin-bottom: 8px;
+
+								.name {
+									margin-bottom: 8px;
+									font-weight: 600;
+									font-size: 18px;
+									text-decoration: underline;
+								}
+							}
+						}
+					}
+
+					& > .custom-event {
+						display: flex;
+						width: 100%;
+						height: 100%;
+						flex-direction: column;
+						color: $dark-gray;
+						text-align: center;
+						background: rgba($dark-gray, 0.1);
+						border-radius: 5px;
+						cursor: default;
+
+						.context {
+							display: flex;
+							justify-content: center;
+
+							:not(.title) {
+								flex: 1;
+							}
+
+							.title {
+								flex: 3
+							}
+						}
+					}
+
+					& > .keynote-event {
+						display: flex;
+						width: 100%;
+						height: 100%;
+						flex-direction: column;
+						text-align: center;
+						background: $salmon-dark;
+						border-radius: inherit;
+					}
+
+					& > .talk-event {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						height: 100%;
+						background: rgba($salmon-dark, 0.5);
+						border-radius: inherit;
+
+						.title {
+							display: -webkit-box;
+							height: 88px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							box-sizing: border-box;
+							-webkit-line-clamp: 3;
+						}
+
+						.tags {
+							display: flex;
+						}
+
+						.info {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						}
+					}
+
+					.language-enen {
+						@include icon('language-enen', 0, center, 2 * $icon-width);
+					}
+
+					.language-zhen {
+						@include icon('language-zhen', 0, center, 2 * $icon-width);
+					}
+
+					.language-zhzh {
+						@include icon('language-zhzh', 0, center, 2 * $icon-width);
+					}
+
+					.python-level-novice {
+						@include icon('level-1', 2px);
+					}
+
+					.python-level-intermediate {
+						@include icon('level-2', 2px);
+					}
+
+					.python-level-experienced {
+						@include icon('level-3', 2px);
+					}
+
+					.no-recording {
+						@include icon('no-recording', 1px);
+					}
+
+					.room-R0 {
+						@include icon('room-R0', 1px, center);
+					}
+
+					.room-R1 {
+						@include icon('room-R1', 1px, center);
+					}
+
+					.room-R2 {
+						@include icon('room-R2', 1px, center);
+					}
+
+					.room-R3 {
+						@include icon('room-R3', 1px, center);
+					}
+
+					.grass {
+						@include icon('grass-group', 0, center);
+
+						&::before {
+							background-size: contain;
+						}
+					}
+
+					.snake {
+						@include icon('snake', 0, center);
+
+						&::before {
+							background-size: contain;
+						}
+					}
 				}
 
 				.room-3-r012 {
