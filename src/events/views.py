@@ -170,8 +170,10 @@ class ScheduleCreateView(
 
         day_info_dict = collections.OrderedDict(
             (date, {
-                'name': name, 'rooms': set(),
-                'slots': OrderedDefaultDict(dict),
+                'name': name,
+                'rooms': set(),
+                'slots': {},
+                'timeline': {},
             }) for date, name in settings.EVENTS_DAY_NAMES.items()
         )
 
@@ -187,20 +189,25 @@ class ScheduleCreateView(
                 continue
             for event in begin_time_event_dict[begin]:
                 location = event.location
+                day_info['slots'].setdefault(location, [])
+                day_info['timeline'].setdefault('begin', event.begin_time)
+                day_info['timeline'].setdefault('end', event.end_time)
+
+                day_info['slots'][location].append(event)
+                day_info['timeline']['begin'] = min(
+                    day_info['timeline']['begin'],
+                    event.begin_time
+                )
+                day_info['timeline']['end'] = max(
+                    day_info['timeline']['end'],
+                    event.end_time
+                )
                 if location in EVENT_ROOMS:
                     day_info['rooms'].add(location)
-                day_info['slots'][(begin, end)][location] = event
 
         for info in day_info_dict.values():
             # Sort rooms.
             info['rooms'] = sorted(info['rooms'], key=_room_sort_key)
-            # Work around Django template unable to iter through defaultdict.
-            # http://stackoverflow.com/questions/4764110
-            info['slots'] = collections.OrderedDict(
-                (slot_time, sorted(
-                    slot_rooms.items(), key=lambda i: _room_sort_key(i[0])))
-                for slot_time, slot_rooms in info['slots'].items()
-            )
 
         return day_info_dict
 
