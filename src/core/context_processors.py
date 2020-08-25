@@ -5,7 +5,7 @@ from django.conf import settings
 from django.urls import get_script_prefix
 from django.utils.translation import get_language
 
-from sponsors.models import Sponsor, OpenRole
+from sponsors.models import Sponsor
 
 
 def _build_google_form_url(uid):
@@ -51,23 +51,6 @@ def sponsors(request):
     return {
         'sponsors': Sponsor.objects.order_by('level'),
         'sponsor_sections': _iter_sponsor_section(),
-    }
-
-
-def _get_sponsors_with_open_roles():
-    sponsor_set = set()
-    for sponsor in Sponsor.objects.order_by('level'):
-        for open_role in OpenRole.objects.order_by('sponsor'):
-            if open_role.sponsor.name == sponsor.name:
-                sponsor_set.add(sponsor)
-
-    return sponsor_set
-
-
-def open_roles_of_sponsors(request):
-    return {
-        'open_role_sponsors': _get_sponsors_with_open_roles(),
-        'open_roles': OpenRole.objects.order_by('sponsor'),
     }
 
 

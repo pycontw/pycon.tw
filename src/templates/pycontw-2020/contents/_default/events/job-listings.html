@@ -2,6 +2,7 @@
 
 {% load i18n static %}
 {% load sponsors %}
+{% load events %}
 
 {% block title %}{% trans 'Job Listings' %}{% endblock title %}
 
@@ -14,7 +15,11 @@
 	<h1>{% trans 'Job Listings' %}</h1>
 </section>
 
-{% for sponsor in open_role_sponsors %}
+
+{% get_open_roles_of_sponsors as open_roles_of_sponsors %}
+{% get_open_roles as open_roles %}
+
+{% for sponsor in open_roles_of_sponsors %}
 	<article class="media">
 		<header>
 			<figure>
@@ -37,9 +42,9 @@
 						{% if open_role.sponsor.name == sponsor.name %}
 							<ul>
 								{% if open_role.url %}
-									<li><a href="{{ open_role.url }}">{{ open_role.name }}</a>{{ open_role.description|linebreaks}}</li>
+									<li><a href="{{ open_role.url }}">{{ open_role.name }}</a>{{ open_role.description|linebreaks }}</li>
 								{% else %}
-									<li>{{ open_role.name }}</a> {{ open_role.description|linebreaks}}</li>
+									<li>{{ open_role.name }}</a> {{ open_role.description|linebreaks }}</li>
 								{% endif %}
 							</ul>
 						{% endif %}
