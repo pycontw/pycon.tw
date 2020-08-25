@@ -24,6 +24,31 @@ $scheduleTabs.forEach(function setupTab($tab) {
 	});
 });
 
+// Toggle timetable density
+const $densityBtn = document.querySelector('.timetable-density-btn');
+$densityBtn.addEventListener('click', function toggleDensity() {
+	const choices = $densityBtn.getAttribute('data-display-choices').split(',');
+	const currentChoice = $densityBtn.getAttribute('data-display-mode');
+	const newChoice = choices.filter(function getNewChoice(c) {
+		return c !== currentChoice;
+	})[0];
+
+	const $tables = document.querySelectorAll('.py-schedule-timetable-body');
+
+	if (newChoice === 'default') {
+		$tables.forEach(function setDefaultLayout($t) {
+			const gridTemplateRows = $t.getAttribute('data-grid-template-rows');
+			$t.style.gridTemplateRows = 'repeat(' + gridTemplateRows + ', 1fr)';
+		});
+	} else if (newChoice === 'compact') {
+		$tables.forEach(function setCompactLayout($t) {
+			$t.style.gridTemplateRows = null;
+		});
+	}
+
+	$densityBtn.setAttribute('data-display-mode', newChoice);
+});
+
 // Schedule generation.
 const form = document.querySelector('.generation-form')
 if (form) {

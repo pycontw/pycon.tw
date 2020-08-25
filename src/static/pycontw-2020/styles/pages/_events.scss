@@ -46,14 +46,18 @@ main {
 				position: sticky;
 				top: 0;
 				z-index: 1000;
-				display: flex;
+				display: grid;
+				grid-template-columns: 1fr repeat(5, 2fr);
+				grid-column-gap: 8px;
+				grid-row-gap: 8px;
 				background: transparentize($brick, 0.3);
 
 				&-column {
 					display: flex;
-					margin: 8px 8px 8px 0;
+					margin-bottom: 8px;
 					padding: 12px 0;
 					justify-content: center;
+					align-items: center;
 					font-family: $text-font-family;
 					font-size: 18px;
 					color: #ffffff;
@@ -64,9 +68,33 @@ main {
 						margin-right: 0;
 					}
 
-					&.--timeline {
+					&.--display-mode {
+						display: flex;
 						flex: 1;
-						background: transparent;
+						justify-content: center;
+						align-items: center;
+						background: unset;
+
+						& > .timetable-density-btn {
+							display: flex;
+							height: 100%;
+							padding: 8px;
+							justify-content: center;
+							align-items: center;
+							font-size: 10px;
+							color: $brown;
+							word-break: break-word;
+							background: transparent;
+							border: 2px solid $salmon;
+							border-radius: 5px;
+							cursor: pointer;
+							transition: all 0.3s ease;
+							box-sizing: border-box;
+
+							&:hover {
+								background: $salmon;
+							}
+						}
 					}
 
 					&.--room {

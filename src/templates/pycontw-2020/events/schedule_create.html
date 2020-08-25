@@ -33,9 +33,16 @@
 		<div class="py-schedule-timetable">
 			{% for schedule_date, schedule_info in schedule_days.items %}
 				<div class="py-schedule-timetable-header day-{{ forloop.counter }}">
-					<div class="py-schedule-timetable-header-column --timeline"></div>
+					<div class="py-schedule-timetable-header-column --display-mode">
+						<div class="timetable-density-btn"
+						     data-display-mode="default"
+						     data-display-choices="default,compact"
+						>
+							Default / Compact
+						</div>
+					</div>
 					{% for room in schedule_info.rooms %}
-						<div class="py-schedule-timetable-header-column --{{ room|room_display|lower }} --room">
+						<div class="py-schedule-timetable-header-column --{{ room|lower }} --room">
 							{{ room|room_display }}
 						</div>
 					{% endfor %}
@@ -45,7 +52,9 @@
 						{% with timeline=begin|gen_timeline:end %}
 							{% with last_timeline_item=timeline|last %}
 								<div class="py-schedule-timetable-body day-{{ forloop.counter }}"
-								     style="grid-template-rows: repeat({{ last_timeline_item.row_end }}, 1fr)">
+								     style="grid-template-rows: repeat({{ last_timeline_item.row_end }}, 1fr)"
+								     data-grid-template-rows="{{ last_timeline_item.row_end }}"
+								>
 									{% for t in timeline %}
 										<div class="timeline {{ t.class }}"
 										     style="grid-row: {{ t.row_start }} / {{ t.row_end }}"
