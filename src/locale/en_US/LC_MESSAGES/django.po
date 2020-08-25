@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 17:35+0800\n"
+"POT-Creation-Date: 2020-08-26 04:03+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -196,7 +196,6 @@ msgstr "abstract"
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
-#: templates/pycontw-2020/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
@@ -204,13 +203,11 @@ msgstr "Novice"
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
-#: templates/pycontw-2020/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
 #: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
-#: templates/pycontw-2020/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
@@ -316,6 +313,38 @@ msgstr "R3"
 #: events/models.py:127
 msgid "R4"
 msgstr "R4"
+
+#: events/models.py:121 events/templatetags/events.py:19
+msgid "R1, R2, R3"
+msgstr "R1, R2, R3"
+
+# #: events/models.py:122
+# msgid "R0"
+# msgstr "R0"
+#: events/models.py:122 events/templatetags/events.py:14
+msgid "R1"
+msgstr "R1"
+
+#: events/models.py:123 events/templatetags/events.py:15
+msgid "R2"
+msgstr "R2"
+
+#: events/models.py:124 events/templatetags/events.py:16
+msgid "R3"
+msgstr "R3"
+
+# #: events/models.py:125
+# msgid "R4"
+# msgstr "R4"
+#: events/models.py:125 events/templatetags/events.py:17
+msgid "Multifunction room"
+msgstr "Multifunction room"
+
+#: events/models.py:126 events/templatetags/events.py:18
+#, fuzzy
+#| msgid "Goodideas Stuio"
+msgid "Goodideas Studio"
+msgstr "Goodideas Studio"
 
 #: events/models.py:135
 msgid "location"
@@ -446,7 +475,7 @@ msgstr "HTML"
 #: templates/pycontw-2020/_includes/menu.html:76
 #: templates/pycontw-2020/_includes/portal.html:4
 #: templates/pycontw-2020/events/schedule.html:6
-#: templates/pycontw-2020/events/schedule.html:20
+#: templates/pycontw-2020/events/schedule.html:21
 msgid "Schedule"
 msgstr "Schedule"
 
@@ -2296,7 +2325,7 @@ msgstr "Quick Jump"
 #: templates/pycontw-2017/events/schedule_create.html:71
 #: templates/pycontw-2018/events/schedule_create.html:64
 #: templates/pycontw-2019/events/schedule_create.html:60
-#: templates/pycontw-2020/events/schedule_create.html:60
+#: templates/pycontw-2020/events/schedule_create.html:82
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 
@@ -2304,7 +2333,7 @@ msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 #: templates/pycontw-2017/events/schedule_create.html:82
 #: templates/pycontw-2018/events/schedule_create.html:73
 #: templates/pycontw-2019/events/schedule_create.html:69
-#: templates/pycontw-2020/events/schedule_create.html:69
+#: templates/pycontw-2020/events/schedule_create.html:91
 msgid "Generate"
 msgstr "Generate"
 
@@ -2663,7 +2692,7 @@ msgstr "Unconference"
 #: templates/pycontw-2019/events/schedule_create.html:7
 #: templates/pycontw-2019/events/schedule_create.html:15
 #: templates/pycontw-2020/events/schedule_create.html:7
-#: templates/pycontw-2020/events/schedule_create.html:15
+#: templates/pycontw-2020/events/schedule_create.html:16
 msgid "Export New Schedule"
 msgstr "Export New Schedule"
 
@@ -2683,7 +2712,6 @@ msgstr "Invited event"
 #: templates/pycontw-2017/events/talk_detail.html:32
 #: templates/pycontw-2018/events/schedule.html:31
 #: templates/pycontw-2019/events/schedule.html:31
-#: templates/pycontw-2020/events/schedule.html:31
 msgid "No recording"
 msgstr "No recording"
 
@@ -2945,25 +2973,21 @@ msgstr "Review Committee"
 
 #: templates/pycontw-2018/events/schedule.html:24
 #: templates/pycontw-2019/events/schedule.html:24
-#: templates/pycontw-2020/events/schedule.html:24
 msgid "English speech"
 msgstr "English speech"
 
 #: templates/pycontw-2018/events/schedule.html:25
 #: templates/pycontw-2019/events/schedule.html:25
-#: templates/pycontw-2020/events/schedule.html:25
 msgid "Mandarin speech"
 msgstr "Mandarin speech"
 
 #: templates/pycontw-2018/events/schedule.html:26
 #: templates/pycontw-2019/events/schedule.html:26
-#: templates/pycontw-2020/events/schedule.html:26
 msgid "English slides"
 msgstr "English slides"
 
 #: templates/pycontw-2018/events/schedule.html:27
 #: templates/pycontw-2019/events/schedule.html:27
-#: templates/pycontw-2020/events/schedule.html:27
 msgid "Chinese slides"
 msgstr "Chinese slides"
 
@@ -3165,7 +3189,7 @@ msgid "Slido"
 msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
-#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:5
+#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:7
 msgid "Keynote: "
 msgstr "Keynote: "
 
@@ -3383,12 +3407,8 @@ msgstr ""
 msgid "Live broadcast"
 msgstr ""
 
-#: templates/pycontw-2020/ext/live.html:30
+#: templates/pycontw-2020/ext/live.html:53
 msgid "This broadcast is not ready yet."
-msgstr ""
-
-#: templates/pycontw-2020/ext/live.html:39
-msgid "The broadcasts are not ready yet, please try again later."
 msgstr ""
 
 #: templates/pycontw-2020/index.html:63
@@ -3608,6 +3628,11 @@ msgstr ""
 #: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
+
+#, fuzzy
+#~| msgid "Goodideas Stuio"
+#~ msgid "Goodieas Studio"
+#~ msgstr "Goodideas Studio"
 
 #~ msgid "Call for Proposals"
 #~ msgstr "Call for Proposals"

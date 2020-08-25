@@ -2,6 +2,7 @@ from django.conf import settings
 from django.template import Context, Library
 from django.template.loader import get_template
 from django.utils import translation
+from django.utils.translation import gettext_lazy as _
 
 from events.models import KeynoteEvent, JobListingsEvent, Location
 from sponsors.models import Sponsor, OpenRole
@@ -11,12 +12,12 @@ from datetime import datetime, timedelta
 from math import floor
 
 LOCATION_DISPLAY_DICT = {
-    Location.R0: 'R0',
-    Location.R1: 'R1',
-    Location.R2: 'R2',
-    Location.R3: 'R3',
-    Location.R4: 'R4',
-    Location.R012: 'R123',
+    Location.R0: _('R1'),
+    Location.R1: _('R2'),
+    Location.R2: _('R3'),
+    Location.R3: _('Multifunction room'),
+    Location.R4: _('Goodideas Studio'),
+    Location.R012: _('R1, R2, R3'),
 }
 ROW_UNIT = 5 * 60  # in seconds
 MARKER_UNIT = 30 * 60  # in seconds

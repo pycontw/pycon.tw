@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 17:35+0800\n"
+"POT-Creation-Date: 2020-08-26 04:03+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -201,7 +201,6 @@ msgstr "摘要"
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
-#: templates/pycontw-2020/events/schedule.html:28
 msgid "Novice"
 msgstr "入門"
 
@@ -209,13 +208,11 @@ msgstr "入門"
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
-#: templates/pycontw-2020/events/schedule.html:29
 msgid "Intermediate"
 msgstr "中階"
 
 #: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
-#: templates/pycontw-2020/events/schedule.html:30
 msgid "Experienced"
 msgstr "進階"
 
@@ -298,29 +295,35 @@ msgstr "時間"
 msgid "All rooms"
 msgstr "全體會議"
 
-#: events/models.py:122
-msgid "R0, R1, R2"
-msgstr "R0、R1、R2"
+#: events/models.py:121 events/templatetags/events.py:19
+msgid "R1, R2, R3"
+msgstr "R1、R2、R3"
 
-#: events/models.py:123
-msgid "R0"
-msgstr "R0"
-
-#: events/models.py:124
+# #: events/models.py:122
+# msgid "R0"
+# msgstr "R0"
+#: events/models.py:122 events/templatetags/events.py:14
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:125
+#: events/models.py:123 events/templatetags/events.py:15
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:126
+#: events/models.py:124 events/templatetags/events.py:16
 msgid "R3"
 msgstr "R3"
 
-#: events/models.py:127
-msgid "R4"
-msgstr "R4"
+# #: events/models.py:126
+# msgid "R4"
+# msgstr "R4"
+#: events/models.py:125 events/templatetags/events.py:17
+msgid "Multifunction room"
+msgstr "多功能廳"
+
+#: events/models.py:126 events/templatetags/events.py:18
+msgid "Goodideas Studio"
+msgstr "好想工作室"
 
 #: events/models.py:135
 msgid "location"
@@ -451,7 +454,7 @@ msgstr "HTML"
 #: templates/pycontw-2020/_includes/menu.html:76
 #: templates/pycontw-2020/_includes/portal.html:4
 #: templates/pycontw-2020/events/schedule.html:6
-#: templates/pycontw-2020/events/schedule.html:20
+#: templates/pycontw-2020/events/schedule.html:21
 msgid "Schedule"
 msgstr "時間表"
 
@@ -2223,7 +2226,7 @@ msgstr "跳至"
 #: templates/pycontw-2017/events/schedule_create.html:71
 #: templates/pycontw-2018/events/schedule_create.html:64
 #: templates/pycontw-2019/events/schedule_create.html:60
-#: templates/pycontw-2020/events/schedule_create.html:60
+#: templates/pycontw-2020/events/schedule_create.html:82
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 
@@ -2231,7 +2234,7 @@ msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 #: templates/pycontw-2017/events/schedule_create.html:82
 #: templates/pycontw-2018/events/schedule_create.html:73
 #: templates/pycontw-2019/events/schedule_create.html:69
-#: templates/pycontw-2020/events/schedule_create.html:69
+#: templates/pycontw-2020/events/schedule_create.html:91
 msgid "Generate"
 msgstr "產生"
 
@@ -2586,7 +2589,7 @@ msgstr "非正式會議"
 #: templates/pycontw-2019/events/schedule_create.html:7
 #: templates/pycontw-2019/events/schedule_create.html:15
 #: templates/pycontw-2020/events/schedule_create.html:7
-#: templates/pycontw-2020/events/schedule_create.html:15
+#: templates/pycontw-2020/events/schedule_create.html:16
 msgid "Export New Schedule"
 msgstr "輸出新時間表"
 
@@ -2606,7 +2609,6 @@ msgstr "特邀活動"
 #: templates/pycontw-2017/events/talk_detail.html:32
 #: templates/pycontw-2018/events/schedule.html:31
 #: templates/pycontw-2019/events/schedule.html:31
-#: templates/pycontw-2020/events/schedule.html:31
 msgid "No recording"
 msgstr "不錄影"
 
@@ -2860,25 +2862,21 @@ msgstr "審稿委員"
 
 #: templates/pycontw-2018/events/schedule.html:24
 #: templates/pycontw-2019/events/schedule.html:24
-#: templates/pycontw-2020/events/schedule.html:24
 msgid "English speech"
 msgstr "英語演講"
 
 #: templates/pycontw-2018/events/schedule.html:25
 #: templates/pycontw-2019/events/schedule.html:25
-#: templates/pycontw-2020/events/schedule.html:25
 msgid "Mandarin speech"
 msgstr "國語演講"
 
 #: templates/pycontw-2018/events/schedule.html:26
 #: templates/pycontw-2019/events/schedule.html:26
-#: templates/pycontw-2020/events/schedule.html:26
 msgid "English slides"
 msgstr "英文投影片"
 
 #: templates/pycontw-2018/events/schedule.html:27
 #: templates/pycontw-2019/events/schedule.html:27
-#: templates/pycontw-2020/events/schedule.html:27
 msgid "Chinese slides"
 msgstr "中文投影片"
 
@@ -3083,7 +3081,7 @@ msgid "Slido"
 msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
-#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:5
+#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:7
 msgid "Keynote: "
 msgstr "基調演講："
 
@@ -3289,13 +3287,9 @@ msgstr ""
 msgid "Live broadcast"
 msgstr "現場直播"
 
-#: templates/pycontw-2020/ext/live.html:30
+#: templates/pycontw-2020/ext/live.html:53
 msgid "This broadcast is not ready yet."
 msgstr "這個直播還沒有準備好。"
-
-#: templates/pycontw-2020/ext/live.html:39
-msgid "The broadcasts are not ready yet, please try again later."
-msgstr "直播還沒有準備好，請稍後再試。"
 
 #: templates/pycontw-2020/index.html:63
 msgid "Sponsor PyCon TW"
@@ -3503,6 +3497,11 @@ msgstr ""
 #: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
+
+#, fuzzy
+#~| msgid "Goodideas Studio"
+#~ msgid "Goodieas Studio"
+#~ msgstr "好想工作室"
 
 #~ msgid "Call for Proposals"
 #~ msgstr "徵求稿件"
