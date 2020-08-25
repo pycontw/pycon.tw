@@ -229,16 +229,19 @@ main {
 						@include icon('room-R3', 1px, center);
 					}
 
-					.grass {
-						@include icon('grass-group', 0, center);
-
-						&::before {
-							background-size: contain;
-						}
+					.twicon-provintia {
+						position: relative;
+						top: -1px;
+						font-size: 38px;
 					}
 
 					.snake {
-						@include icon('snake', 0, center);
+						width: 32px;
+						height: 32px;
+						background-image: url('../../assets/snake-icon-dark.svg');
+						background-position-x: center;
+						background-position-y: -10px;
+						background-repeat: no-repeat;
 
 						&::before {
 							background-size: contain;
