@@ -23,6 +23,10 @@
     title: 'Copied!',
     duration: 500,
     lastResort: 'top left',
+  },'hide all');
+  $(document).mouseup(function() {
+    console.log('www')
+    $('#copytoken').popup('remove popup');
   });
 </script>
 {% endblock scripts %}
