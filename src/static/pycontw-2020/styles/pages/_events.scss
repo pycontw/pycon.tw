@@ -24,7 +24,7 @@ main {
 			&__tab {
 				margin: 0 24px 24px;
 				padding: 24px 72px;
-				font-family: Philosopher, sans-serif;
+				font-family: $header-font-family;
 				font-size: 20px;
 				border-radius: 8px;
 				cursor: default;
@@ -54,7 +54,7 @@ main {
 					margin: 8px 8px 8px 0;
 					padding: 12px 0;
 					justify-content: center;
-					font-family: Quicksand, sans-serif;
+					font-family: $text-font-family;
 					font-size: 18px;
 					color: #ffffff;
 					background: $brown;
@@ -94,7 +94,7 @@ main {
 
 				&-item {
 					display: flex;
-					font-family: Quicksand, sans-serif;
+					font-family: $text-font-family;
 					border-radius: 5px;
 
 					.context-container {
@@ -105,7 +105,7 @@ main {
 						.context {
 							.title {
 								margin-bottom: 8px;
-								font-size: 22px;
+								font-size: 18px;
 								font-weight: 700;
 							}
 
@@ -115,7 +115,7 @@ main {
 								.name {
 									margin-bottom: 8px;
 									font-weight: 600;
-									font-size: 18px;
+									font-size: 14px;
 									text-decoration: underline;
 								}
 							}
@@ -280,7 +280,7 @@ main {
 				.timeline {
 					grid-column: times;
 					justify-self: center;
-					font-family: Philosopher, sans-serif;
+					font-family: $header-font-family;
 					font-size: 18px;
 					color: $jinger-bread;
 
