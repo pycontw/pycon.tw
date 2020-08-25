@@ -18,6 +18,8 @@ LOCATION_DISPLAY_DICT = {
     Location.R4: 'R4',
     Location.R012: 'R123',
 }
+ROW_UNIT = 5 * 60  # in seconds
+MARKER_UNIT = 30 * 60  # in seconds
 
 register = Library()
 
@@ -25,12 +27,11 @@ register = Library()
 @register.simple_tag
 def calc_grid_row(begin, end, timeline_start='08:30'):
     d_format = '%H:%M'
-    unit = 5 * 60
     start_point = datetime.strptime(timeline_start, d_format)
 
     def get_row(t):
         diff = datetime.strptime(t, d_format) - start_point
-        return int(diff.seconds / unit)+1
+        return int(diff.seconds / ROW_UNIT)+1
 
     start_row = get_row(begin)
     end_row = get_row(end)
@@ -39,21 +40,21 @@ def calc_grid_row(begin, end, timeline_start='08:30'):
 
 @register.filter
 def gen_timeline(start, end):
-    unit = 30 * 60
     timeline = [{'time': start, 'row_start': 1, 'row_end': 6}]
     d_format = '%H:%M'
 
     time_start = datetime.strptime(start, d_format)
     time_end = datetime.strptime(end, d_format)
-    ticks_count = floor((time_end - time_start).seconds / unit)
+    ticks_count = floor((time_end - time_start).seconds / MARKER_UNIT)
 
+    scale_unit_multiplier = int(MARKER_UNIT / ROW_UNIT)  # 6 (magic number)
     time_next = time_start
     row_start_next = 1
     row_end_next = 6
     for i in range(ticks_count):
-        time_next += timedelta(seconds=unit)
-        row_start_next += 6
-        row_end_next += 6
+        time_next += timedelta(seconds=MARKER_UNIT)
+        row_start_next += scale_unit_multiplier
+        row_end_next += scale_unit_multiplier
         t = datetime.strftime(time_next, d_format)
         c = '--hour' if t.endswith('00') else '--half-an-hour'
         timeline.append({
