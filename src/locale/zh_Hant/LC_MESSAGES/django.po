@@ -3169,12 +3169,12 @@ msgid "in this channel to register"
 msgstr "以進行註冊"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Enter <strong>!register {{ token }}</strong> in this channel to register"
-msgstr "輸入 <strong>!register {{ token }}</strong> 以進行註冊"
+msgid "Enter <code>!register {{ token }}</code> in this channel to register"
+msgstr "輸入 <code>!register {{ token }}</code> 以進行註冊"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Enter <strong>!help</strong> if you need command help from RegBot."
-msgstr "輸入 <strong>!help</strong> 以獲得 RegBot 的幫助"
+msgid "Enter <code>!help</code> if you need command help from RegBot."
+msgstr "輸入 <code>!help</code> 以獲得 RegBot 的幫助"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "If you register successfully, you can see several new channels appear in the left."
@@ -3281,8 +3281,8 @@ msgid "#registration-desk"
 msgstr "#registration-desk"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles：`@everyone`"
-msgstr "身分組：`@everyone`"
+msgid "Roles：<code>@everyone</code>"
+msgstr "身分組：<code>@everyone</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "When you just enter Python Taiwan Discord server, use this channel to provide your registration information, so that robot can promote you to the roles you are in."
@@ -3302,8 +3302,8 @@ msgstr "#keynote-track"
 #: templates/pycontw-2020/ext/discord.html:
 #: templates/pycontw-2020/ext/discord.html:
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles：`2020-staff`, `2020-speaker`, `2020-attendee`"
-msgstr "身份組：`2020-staff`, `2020-speaker`, `2020-attendee`"
+msgid "Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>"
+msgstr "身份組：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "Keynote discussion channel"
@@ -3351,8 +3351,8 @@ msgstr "#speakers-announcements"
 
 #: templates/pycontw-2020/ext/discord.html:
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles：`2020-staff`, `2020-speaker`"
-msgstr "身份組：`2020-staff`, `2020-speaker`"
+msgid "Roles：<code>2020-staff</code>, <code>2020-speaker</code>"
+msgstr "身份組：<code>2020-staff</code>, <code>2020-speaker</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "A special announcement channel for speakers, speaker can also have discussion with each other in this channel."
@@ -3363,8 +3363,8 @@ msgid "#staff-announcements"
 msgstr "#staff-announcements"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles：`2020-staff`"
-msgstr "身份組：`2020-staff`"
+msgid "Roles：<code>2020-staff</code>"
+msgstr "身份組：<code>2020-staff</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "A special announcement channel for staff, staff can also contact to others in this channel."
@@ -3395,8 +3395,8 @@ msgid "#session-chairs"
 msgstr "#session-chairs"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles：`2020-session-chair`"
-msgstr "身份組：`2020-session-chair`"
+msgid "Roles：<code>2020-session-chair</code>"
+msgstr "身份組：<code>2020-session-chair</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction."
@@ -3411,8 +3411,8 @@ msgid "🔊remote-guide"
 msgstr "🔊remote-guide"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "Roles： `2020-remote`"
-msgstr "身份組： `2020-remote`"
+msgid "Roles： <code>2020-remote</code>"
+msgstr "身份組： <code>2020-remote</code>"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers."

@@ -7,27 +7,44 @@
 {% block body_class %}{{ block.super }} discord-page{% endblock body_class %}
 
 {% load static %}
-
+{% compress js %}
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/vendors/clipboard.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendors/jquery-3.5.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendors/semantic.min.js' %}"></script>
+<script>
+  token = document.getElementById('copytoken')
+  new ClipboardJS(token);
+  $('#copytoken').popup({
+    target: '#copytoken',
+    on: 'click',
+    closable: false,
+    title: 'Copied!',
+    duration: 500,
+    lastResort: 'top left',
+  });
+</script>
+{% endblock scripts %}
+{% endcompress %}
 {% block content %}
 
 <section class="pill-title">
 	<h1>{% trans 'PyCon TW Discord Guideline' %}</h1>
 </section>
 <div class="entry">
-
-
-
   <h2>{% trans 'discord-tutorials' %}</h2>
   <strong>{% trans "If you have not installed Discord or joined Python Taiwan Discord server, follow <a href='#setup-discord'>Setting up Discord</a> and setup your Discord first." %}</strong>
 
   <h3>{% trans '1. Register yourself' %}</h3>
   <p>{% trans 'Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles.' %}</p>
   {% if token %}
-  <li>{% trans 'Enter' %} <strong>!register {{ token }}</strong> {% trans 'in this channel to register' %}</li>
+
+  <li>{% trans 'Enter' %} <code><a href="javascript:void(0)" id="copytoken" data-clipboard-text="!register {{ token }}">!register {{ token }}</a></code> {% trans 'in this channel to register' %}</li>
   {% else %}
-  <li>{% trans 'Enter <strong>!register {{ token }}</strong> in this channel to register' %}</li>
+  <li>{% trans 'Enter <code>!register {{ token }}</code> in this channel to register' %}</li>
   {% endif %}
-  <li>{% trans 'Enter <strong>!help</strong> if you need command help from RegBot.' %}</li>
+  <li>{% trans 'Enter <code>!help</code> if you need command help from RegBot.' %}</li>
   <p>{% trans 'If you register successfully, you can see several new channels appear in the left.' %}</p>
   <p>{% trans 'If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。' %}</p>
 
@@ -59,55 +76,55 @@
 
   <h3>{% trans 'Registration channel' %}</h3>
   <h4>{% trans '#registration-desk' %}</h4>
-  <h6>{% trans 'Roles：`@everyone`' %}</h6>
+  <h6>{% trans 'Roles：<code>@everyone</code>' %}</h6>
   <p>{% trans 'When you just enter Python Taiwan Discord server, use this channel to provide your registration information, so that robot can promote you to the roles you are in.' %}</p>
 
   <h3>{% trans 'Session channel' %}</h3>
   <h4>{% trans '#keynote-track' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'Keynote discussion channel' %}</p>
 
   <h4>{% trans '#r1-track' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'R1 track discussion channel' %}</p>
 
   <h4>{% trans '#r2-track' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'R2 track discussion channel' %}</p>
 
   <h4>{% trans '#r3-track' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'R3 track (remote track) discussion channel' %}</p>
 
   <h3>{% trans 'Announcements channel' %}</h3>
   <h4>{% trans '#announcements' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'Official announcement channel, any official announcements will be posted here.' %}</p>
 
   <h4>{% trans '#speakers-announcements' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
   <p>{% trans 'A special announcement channel for speakers, speaker can also have discussion with each other in this channel.' %}</p>
 
   <h4>{% trans '#staff-announcements' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>' %}</h6>
   <p>{% trans 'A special announcement channel for staff, staff can also contact to others in this channel.' %}</p>
 
   <h3>{% trans 'Information desk channel' %}</h3>
   <h4>{% trans '#information-desk' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`, `2020-attendee`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
   <p>{% trans 'Official online information desk, speakers or attendees can give questions or suggestions in this channel.' %}</p>
 
   <h4>{% trans '#speakers' %}</h4>
-  <h6>{% trans 'Roles：`2020-staff`, `2020-speaker`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
   <p>{% trans 'Speakers only information desk, speakers can give sessions or speakers related questions here for answers or further instruction.' %}</p>
 
   <h4>{% trans '#session-chairs' %}</h4>
-  <h6>{% trans 'Roles：`2020-session-chair`' %}</h6>
+  <h6>{% trans 'Roles：<code>2020-session-chair</code>' %}</h6>
   <p>{% trans 'A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction.' %}</p>
 
   <h3>{% trans 'Special channel' %}</h3>
   <h4>{% trans '🔊remote-guide' %}</h4>
-  <h6>{% trans 'Roles： `2020-remote`' %}</h6>
+  <h6>{% trans 'Roles： <code>2020-remote</code>' %}</h6>
   <p>{% trans 'A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers.' %}</p>
 
 
