@@ -3173,8 +3173,8 @@ msgid "Enter <code>!register Token</code> in this channel to register"
 msgstr "輸入 <code>!register Token</code> 以進行註冊"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "(If you want to use this command, please click on the link from the letter or use OPass.)"
-msgstr "(如果要使用此指令請點擊行前信中的連結或使用 OPass)"
+msgid "(If you want to get your own Token, please click the link in the letter or use Opass.)"
+msgstr "(如要取得您的專屬 Token 請點擊行前信中的連結或使用OPass)"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "Enter <code>!help</code> if you need command help from RegBot."
