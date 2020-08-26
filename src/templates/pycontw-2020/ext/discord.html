@@ -44,11 +44,12 @@
   <p>{% trans 'Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles.' %}</p>
   {% if token %}
 
-  <li>{% trans 'Enter' %} <code><a href="javascript:void(0)" id="copytoken" data-clipboard-text="!register {{ token }}">!register {{ token }}</a></code> {% trans 'in this channel to register' %}</li>
+  <li class='sec'>{% trans 'Enter' %} <code>!register {{ token }}</code><a href="javascript:void(0)"><i class="fa fa-clipboard" aria-hidden="true" id="copytoken" data-clipboard-text="!register {{ token }}"></i></a> {% trans 'in this channel to register' %}</li>
   {% else %}
-  <li>{% trans 'Enter <code>!register {{ token }}</code> in this channel to register' %}</li>
+  <li>{% trans 'Enter <code>!register Token</code> in this channel to register' %}</li>
+  <p class='small'>{% trans '(If you want to use this command, please click on the link from the letter or use OPass.)' %}</p>
   {% endif %}
-  <li>{% trans 'Enter <code>!help</code> if you need command help from RegBot.' %}</li>
+  <li class='sec'>{% trans 'Enter <code>!help</code> if you need command help from RegBot.' %}</li>
   <p>{% trans 'If you register successfully, you can see several new channels appear in the left.' %}</p>
   <p>{% trans 'If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。' %}</p>
 

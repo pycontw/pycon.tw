@@ -1,5 +1,9 @@
 .discord-page {
   .entry {
+    .small{
+      padding: 0;
+      font-size: small;
+    }
 
     h4 {
       text-align:left;
@@ -11,6 +15,10 @@
 
     li {
       text-align:left;
+    }
+
+    .sec {
+      padding-bottom: 18px;
     }
 
     img {
