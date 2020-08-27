@@ -5,11 +5,12 @@
 {% block title %}活動總覽{% endblock title %}
 {% block content %}
 
-{% url 'page' path='events/sprints' as events_sprint_url %}
-{% url 'page' path='events/tutorials' as events_tutorial_url %}
-{% url 'page' path='events/open-spaces' as events_openspaces_url %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='conference/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
+{% url 'events_tutorial_list' as events_tutorial_url %}
+{% url 'page' path='events/open-spaces' as events_openspaces_url %}
+{% url 'community_track' as community_track_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
 
 <section class="pill-title alt">
 	<h1>活動總覽</h1>
@@ -68,7 +69,7 @@
 <p>簡言之，「社群軌」就是希望可以為所有人：會眾、講者、贊助商、社群建立更強的連結！</p>
 
 <p>活動將在第二天（9 月 6 日）下午進行，時間為 180 個分鐘，包含 90 分鐘的大會安排演講。 更多關於 <em>Community Track</em> 的內容請參考 <a
-		href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a> 頁面。</p>
+		href="{{ community_track_url }}">{% trans 'Community Track' %}</a> 頁面。</p>
 
 
 <h2>衝刺開發（Sprints）</h2>

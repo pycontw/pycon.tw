@@ -1,9 +1,12 @@
 from django.contrib import admin
 
-from import_export.admin import ImportMixin
+from modeltranslation.admin import TranslationAdmin
 
-from .models import Attendee
-from .resources import AttendeeResource
+from import_export.admin import ImportMixin, ImportExportMixin
+
+from .models import Attendee, Venue, Choice, CommunityTrackEvent
+from .resources import AttendeeResource, VenueResource, CommunityTrackEventResource
+
 
 # Register your models here.
 @admin.register(Attendee)
@@ -13,6 +16,25 @@ class AttendeeAdmin(ImportMixin, admin.ModelAdmin):
     ]
 
     list_filter = [
-        'verified', 
+        'verified',
     ]
     resource_class = AttendeeResource
+
+
+@admin.register(Venue)
+class VenueAdmin(ImportExportMixin, TranslationAdmin):
+    list_display = ('name', 'photo', 'address', 'community', 'topic', 'capacity', )
+
+
+@admin.register(Choice)
+class ChoiceAdmin(admin.ModelAdmin):
+    # list_display = ('name', 'photo')
+    pass
+
+
+@admin.register(CommunityTrackEvent)
+class CommunityTrackEvent(ImportExportMixin, admin.ModelAdmin):
+    list_display = ('venue', 'talk', 'order', )
+    list_filter = ('order', )
+
+    resource_class = CommunityTrackEventResource

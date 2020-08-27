@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.translation import override
 from django.utils.text import slugify
 
-from core.models import ConferenceRelated
+from core.models import ConferenceRelated, BigForeignKey
 
 
 def logo_upload_to(instance, filename):
@@ -87,3 +87,32 @@ class Sponsor(ConferenceRelated):
     @property
     def logo(self):
         return self.logo_svg or self.logo_image or None
+
+
+class OpenRole(models.Model):
+
+    sponsor = BigForeignKey(
+        to=Sponsor,
+        verbose_name=_("sponsor"),
+        on_delete=models.CASCADE,
+    )
+
+    name = models.CharField(
+        verbose_name=_('open role name'),
+        max_length=100,
+    )
+
+    description = models.TextField(
+        verbose_name=_('open role descsription'),
+    )
+    url = models.URLField(
+        verbose_name=_('open role URL'),
+        max_length=255, blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('open role')
+        verbose_name_plural = _('open Roles')
+
+    def __str__(self):
+        return self.name
