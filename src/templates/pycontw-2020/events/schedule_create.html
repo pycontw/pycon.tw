@@ -44,8 +44,7 @@
 					{% with begin=timeline_info.begin.value|date:'H:i' end=timeline_info.end.value|date:'H:i' %}
 						{% with timeline=begin|gen_timeline:end %}
 							{% with last_timeline_item=timeline|last %}
-								<div class="py-schedule-timetable-body day-{{ forloop.counter }}"
-								     style="grid-template-rows: repeat({{ last_timeline_item.row_end }}, 1fr)">
+								<div class="py-schedule-timetable-body day-{{ forloop.counter }}">
 									{% for t in timeline %}
 										<div class="timeline {{ t.class }}"
 										     style="grid-row: {{ t.row_start }} / {{ t.row_end }}"
