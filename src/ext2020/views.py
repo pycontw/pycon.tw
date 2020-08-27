@@ -101,3 +101,7 @@ class CommunityTrackView(ListView):
             'token': self.token,
         })
         return super().get_context_data(**kwargs)
+
+def discord(request):
+    token = request.GET.get('token', '')
+    return render(request, 'ext/discord.html', {'token': token})

@@ -1,0 +1,171 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n compress %}
+
+{% block title %}{% trans 'Discord Guideline' %}{% endblock %}
+
+{% block body_class %}{{ block.super }} discord-page{% endblock body_class %}
+{% load static %}
+
+{% compress js %}
+{% block scripts %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/vendors/clipboard.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendors/jquery-3.5.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendors/semantic.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/vendors/transition.min.js' %}"></script>
+<script>
+  token = document.getElementById('copytoken');
+  new ClipboardJS(token);
+  function copied() {
+    alert("copied!");
+  };
+
+/*
+  $('#copytoken').popup({
+    target: '#copytoken',
+    on: 'click',
+    closable: false,
+    title: 'Copied!',
+    duration: 500,
+    lastResort: 'top left',
+  });
+  $(document).mouseup(function() {
+    $('#copytoken').popup('remove popup');
+  });
+*/
+</script>
+{% endblock scripts %}
+{% endcompress %}
+
+{% block content %}
+
+<section class="pill-title">
+	<h1>{% trans 'PyCon TW Discord Guideline' %}</h1>
+</section>
+<div class="entry">
+  <h2>{% trans 'discord-tutorials' %}</h2>
+  <p><strong>{% trans "If you have not installed Discord or joined Python Taiwan Discord server, follow <a href='#setup-discord'>Setting up Discord</a> and setup your Discord first." %}</strong></p>
+
+  <div class="toturial">
+    <h3>{% trans '1. Register yourself' %}</h3>
+    <p>{% trans 'Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles.' %}</p>
+    {% if token %}
+    <li class='sec'>{% trans 'Enter' %} <code>!register {{ token }}</code><a href="javascript:void(0)" onclick="copied()"><i class="fa fa-clipboard" aria-hidden="true" id="copytoken" data-clipboard-text="!register {{ token }}"></i></a> {% trans 'in this channel to register' %}</li>
+    {% else %}
+    <li>{% trans 'Enter <code>!register Token</code> in this channel to register' %}</li>
+    <p class='small'>{% trans '(If you want to get your own Token, please click the link in the letter or use Opass.)' %}</p>
+    {% endif %}
+    <li class='sec'>{% trans 'Enter <code>!help</code> if you need command help from RegBot.' %}</li>
+    <p>{% trans 'If you register successfully, you can see several new channels appear in the left.' %}</p>
+    <p>{% trans 'If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。' %}</p>
+  </div>
+
+  <div class="toturial">
+    <h3>{% trans '2. Take a look at official announcements' %}</h2>
+    <p>{% trans "All official announcements channel names contain the word <strong>'announcements'</strong>." %}</p>
+    <p>{% trans 'You can check for important announcements first after you are in.' %}</p>
+  </div>
+
+  <div class="toturial">
+    <h3>{% trans '3. Join session channel' %}</h3>
+    <p>{% trans "All session channel names contain the word <strong>'track'</strong>." %}</p>
+    <p>{% trans 'You can enter keynote channel when it is time for keynote, or track channel according to which track you are in.' %}</p>
+  </div>
+
+
+  <h2>{% trans 'Roles list' %}</h2>
+  <p>{% trans 'Users can be assigned several different roles, each role would have their own permission to enter some private channel.' %}</p>
+  <div class="roles-list">
+    <h3>{% trans '2020-session-chair' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2020 session chairs and assistant chairs' %}</p>
+  </div>
+  <div class="roles-list">
+    <h3>{% trans '2020-staff' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2020 staff' %}</p>
+  </div>
+  <div class="roles-list">
+    <h3>{% trans '2020-speaker' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2020 speakers' %}</p>
+  </div>
+  <div class="roles-list">
+    <h3>{% trans '2020-remote' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2020 remote session staff and remote speakers.' %}</p>
+  </div>
+  <div class="roles-list">
+    <h3>{% trans '2020-attendee' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2020 attendees' %}</p>
+  </div>
+
+
+  <h2>{% trans 'Channels list' %}</h2>
+  <p>{% trans 'There are two type of channels in Discord, which is Text Channel and Voice Channel. Below we use:' %}</p>
+  <li class='sec'>{% trans '#CHANNEL_NAME to represent a text channel' %}</li>
+  <li class='sec'>{% trans '🔊CHANNEL_NAME to represent a voice channel.' %}</li>
+  <div class="channels-list">
+    <h3>{% trans 'Registration channel' %}</h3>
+    <h4>{% trans '#registration-desk' %}</h4>
+    <h6>{% trans 'Roles：<code>@everyone</code>' %}</h6>
+    <p>{% trans 'When you just enter Python Taiwan Discord server, use this channel to provide your registration information, so that robot can promote you to the roles you are in.' %}</p>
+  </div>
+  <div class="channels-list">
+    <h3>{% trans 'Session channel' %}</h3>
+    <h4>{% trans '#keynote-track' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'Keynote discussion channel' %}</p>
+    <h4>{% trans '#r1-track' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'R1 track discussion channel' %}</p>
+    <h4>{% trans '#r2-track' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'R2 track discussion channel' %}</p>
+    <h4>{% trans '#r3-track' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'R3 track (remote track) discussion channel' %}</p>
+  </div>
+  <div class="channels-list">
+    <h3>{% trans 'Announcements channel' %}</h3>
+    <h4>{% trans '#announcements' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'Official announcement channel, any official announcements will be posted here.' %}</p>
+    <h4>{% trans '#speakers-announcements' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
+    <p>{% trans 'A special announcement channel for speakers, speaker can also have discussion with each other in this channel.' %}</p>
+    <h4>{% trans '#staff-announcements' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>' %}</h6>
+    <p>{% trans 'A special announcement channel for staff, staff can also contact to others in this channel.' %}</p>
+  </div>
+  <div class="channels-list">
+    <h3>{% trans 'Information desk channel' %}</h3>
+    <h4>{% trans '#information-desk' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <p>{% trans 'Official online information desk, speakers or attendees can give questions or suggestions in this channel.' %}</p>
+    <h4>{% trans '#speakers' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
+    <p>{% trans 'Speakers only information desk, speakers can give sessions or speakers related questions here for answers or further instruction.' %}</p>
+    <h4>{% trans '#session-chairs' %}</h4>
+    <h6>{% trans 'Roles：<code>2020-session-chair</code>' %}</h6>
+    <p>{% trans 'A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction.' %}</p>
+  </div>
+  <div class="channels-list">
+    <h3>{% trans 'Special channel' %}</h3>
+    <h4>{% trans '🔊remote-guide' %}</h4>
+    <h6>{% trans 'Roles： <code>2020-remote</code>' %}</h6>
+    <p>{% trans 'A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers.' %}</p>
+  </div>
+
+  <h2>{% trans 'Appendices' %}</h2>
+  <h3 id='setup-discord'>{% trans 'Setting up Discord' %}</h3>
+  <p>{% trans "1.<a href='https://discord.com/download'>Download the Discord client</a> for your platform and install it. If you already have this, please make sure it is the latest available version." %}</p>
+
+  <p>{% trans "2.Register an account on Discord if you don’t have one. Open the Discord client you just installed. Click the 'Register' link below and complete your registration. (You may be asked to verify your account with the verification mail that Discord sends you)" %}</p>
+  <img src="{% static 'pycontw-2020/assets/discord-0.jpg' %}" alt="">
+
+  <p>{% trans "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/94hgCQv</a> <br>In your Discord client App, click the button with plus sign, and then select 'Join a server'." %}</p>
+  <img src="{% static 'pycontw-2020/assets/discord-1.png' %}" alt="">
+
+  <p>{% trans "In this dialog, copy the invite link above and paste it to the inputbox, then click 'Join'." %}</p>
+  <img src="{% static 'pycontw-2020/assets/discord-2.png' %}" alt="">
+
+</div>
+{% endblock content %}
