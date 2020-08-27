@@ -5,11 +5,12 @@
 {% block title %}Events Overview{% endblock title %}
 {% block content %}
 
-{% url 'page' path='events/sprints' as events_sprint_url %}
-{% url 'page' path='events/tutorials' as events_tutorial_url %}
-{% url 'page' path='events/open-spaces' as events_openspaces_url %}
-{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='conference/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
+{% url 'events_tutorial_list' as events_tutorial_url %}
+{% url 'page' path='events/open-spaces' as events_openspaces_url %}
+{% url 'community_track' as community_track_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
 
 <section class="pill-title alt">
 	<h1>Events Overview</h1>
@@ -87,7 +88,7 @@
 	talks arranged by PyCon Taiwan.</p>
 
 <p>More information about <em>Community Track</em> can be found on the <a
-		href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a> page.</p>
+		href="{{ community_track_url }}">{% trans 'Community Track' %}</a> page.</p>
 
 
 <h2>Sprints</h2>
