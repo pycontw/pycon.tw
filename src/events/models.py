@@ -193,7 +193,7 @@ class KeynoteEvent(BaseEvent):
             _("This is used to link to the speaker's introduction on the "
               "Keynote page, e.g. 'liang2' will link to "
               "'{link}#keynote-speaker-liang2'."),
-            link=reverse_lazy('page', kwargs={'path': 'events/keynotes'}),
+            link=reverse_lazy('page', kwargs={'path': 'conference/keynotes'}),
         )
     )
 
@@ -207,7 +207,7 @@ class KeynoteEvent(BaseEvent):
         ))
 
     def get_absolute_url(self):
-        url = reverse('page', kwargs={'path': 'events/keynotes'})
+        url = reverse('page', kwargs={'path': 'conference/keynotes'})
         split = urllib.parse.urlsplit(url)
         frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
