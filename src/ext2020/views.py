@@ -34,9 +34,9 @@ def live(request):
         attendee = Attendee.objects.create(token=token)
 
     rooms = OrderedDict()
-    rooms['R0'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r0', '')
     rooms['R1'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r1', '')
     rooms['R2'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r2', '')
+    rooms['R3'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r3', '')
 
     return render(request, 'ext/live.html', {
         'attendee': attendee,
