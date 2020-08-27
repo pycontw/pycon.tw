@@ -19,7 +19,7 @@ def test_render_keynoteevent(parser, utils, keynote_belt_event):
     assert parser.arrange(rendered) == parser.arrange("""
         <div class="slot-item__content talk">
           <div class="slot-item__title">Keynote</div>
-          <a href="/en-us/events/keynotes/#keynote-speaker-amber-brown"
+          <a href="/en-us/conference/keynotes/#keynote-speaker-amber-brown"
                class="talk__speaker">
             Amber Brown
           </a>
@@ -32,10 +32,10 @@ def test_render_proposedtalkevent(parser, utils, proposed_talk_block_event):
     assert utils.is_safe(rendered)
     assert parser.arrange(rendered) == parser.arrange("""
         <div class="slot-item__content talk">
-          <a href="/en-us/events/talk/42/" class="talk__title">
+          <a href="/en-us/conference/talk/42/" class="talk__title">
             Beyond the Style Guides&lt;br&gt;
           </a>
-          <a href="/en-us/events/talk/42/#speaker-content"
+          <a href="/en-us/conference/talk/42/#speaker-content"
               class="talk__speaker">
             User and Misaki Mei
           </a>
@@ -49,11 +49,11 @@ def test_render_sponsoredevent(parser, utils, sponsored_block_event):
     assert utils.is_safe(rendered)
     assert parser.arrange(rendered) == parser.arrange("""
         <div class="slot-item__content sponsored talk">
-          <a href="/en-us/events/talk/sponsored/camera-engine/"
+          <a href="/en-us/conference/talk/sponsored/camera-engine/"
               class="talk__title">
             Camera engine office woman lights
           </a>
-          <a href="/en-us/events/talk/sponsored/camera-engine/#speaker-content"
+          <a href="/en-us/conference/talk/sponsored/camera-engine/#speaker-content"
               class="talk__speaker">
             User
           </a>
@@ -78,17 +78,17 @@ def test_render_event(parser, utils, events, event_key):
         'keynote_event': """
             <div class="slot-item__content talk">
               <div class="slot-item__title">Keynote</div>
-              <a href="/en-us/events/keynotes/#keynote-speaker-amber-brown"
+              <a href="/en-us/conference/keynotes/#keynote-speaker-amber-brown"
                    class="talk__speaker">
                 Amber Brown
               </a>
             </div>""",
         'proposed_talk_event': """
             <div class="slot-item__content talk">
-              <a href="/en-us/events/talk/42/" class="talk__title">
+              <a href="/en-us/conference/talk/42/" class="talk__title">
                 Beyond the Style Guides&lt;br&gt;
               </a>
-              <a href="/en-us/events/talk/42/#speaker-content"
+              <a href="/en-us/conference/talk/42/#speaker-content"
                   class="talk__speaker">
                 User and Misaki Mei
               </a>
@@ -96,11 +96,11 @@ def test_render_event(parser, utils, events, event_key):
             </div>""",
         'sponsored_event': (
             '<div class="slot-item__content sponsored talk">'
-            '  <a href="/en-us/events/talk/sponsored/camera-engine/"'
+            '  <a href="/en-us/conference/talk/sponsored/camera-engine/"'
             '      class="talk__title">'
             '    Camera engine office woman lights'
             '  </a>'
-            '  <a href="/en-us/events/talk/sponsored/camera-engine/'
+            '  <a href="/en-us/conference/talk/sponsored/camera-engine/'
             '#speaker-content" class="talk__speaker">'
             '    User'
             '  </a>'
