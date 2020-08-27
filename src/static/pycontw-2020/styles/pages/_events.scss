@@ -97,6 +97,10 @@ main {
 					font-family: $text-font-family;
 					border-radius: 5px;
 
+					a {
+						text-decoration: none;
+					}
+
 					.context-container {
 						position: sticky;
 						top: 70px;
@@ -167,11 +171,11 @@ main {
 
 						.title {
 							display: -webkit-box;
-							height: 88px;
+							height: 90px;
 							overflow: hidden;
 							text-overflow: ellipsis;
 							box-sizing: border-box;
-							-webkit-line-clamp: 3;
+							-webkit-line-clamp: 4;
 						}
 
 						.tags {
