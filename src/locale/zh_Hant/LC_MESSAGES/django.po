@@ -3600,8 +3600,8 @@ msgid "2.Register an account on Discord if you don’t have one. Open the Discor
 msgstr "2. 如果您沒有 Discord 帳戶，請註冊一個帳戶。打開剛剛安裝好的 Discord 程式，按下 '註冊'('Register') 並完成你的註冊流程。( Discord 會寄一封驗證信到你的信箱，請到信箱收信並完成驗證)"
 
 #: templates/pycontw-2020/ext/discord.html:
-msgid "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server invite link: <a href='https://discord.gg/94hgCQv'>https://discord.gg/94hgCQv</a> <br>In your Discord client App, click the button with plus sign, and then select 'Join a server'."
-msgstr "3. 加入 Python Taiwan 的 Discord 伺服器. <br>Python Taiwan 伺服器 邀請連結: <a href='https://discord.gg/94hgCQv'>https://discord.gg/94hgCQv</a> <br>在您的Discord程式中，按下左邊的 '+' 號按鈕，並選擇 '加入伺服器'。"
+msgid "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/94hgCQv</a> <br>In your Discord client App, click the button with plus sign, and then select 'Join a server'."
+msgstr "3. 加入 Python Taiwan 的 Discord 伺服器. <br>Python Taiwan 伺服器 邀請連結: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/YYAgUk7</a> <br>在您的Discord程式中，按下左邊的 '+' 號按鈕，並選擇 '加入伺服器'。"
 
 #: templates/pycontw-2020/ext/discord.html:
 msgid "In this dialog, copy the invite link above and paste it to the inputbox, then click 'Join'."
