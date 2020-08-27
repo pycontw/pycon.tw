@@ -18,6 +18,7 @@ from core.models import (
 )
 from core.utils import format_html_lazy
 from proposals.models import TalkProposal, TutorialProposal, PrimarySpeaker
+from sponsors.models import Sponsor
 
 
 MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
@@ -192,7 +193,7 @@ class KeynoteEvent(BaseEvent):
             _("This is used to link to the speaker's introduction on the "
               "Keynote page, e.g. 'liang2' will link to "
               "'{link}#keynote-speaker-liang2'."),
-            link=reverse_lazy('page', kwargs={'path': 'events/keynotes'}),
+            link=reverse_lazy('page', kwargs={'path': 'conference/keynotes'}),
         )
     )
 
@@ -206,7 +207,7 @@ class KeynoteEvent(BaseEvent):
         ))
 
     def get_absolute_url(self):
-        url = reverse('page', kwargs={'path': 'events/keynotes'})
+        url = reverse('page', kwargs={'path': 'conference/keynotes'})
         split = urllib.parse.urlsplit(url)
         frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
@@ -234,6 +235,24 @@ class KeynoteEvent(BaseEvent):
         data = self.get_static_data()
         data = {k: v[code] if isinstance(v, dict) and code in v else v for k, v in data.items()}
         return data
+
+
+class JobListingsEvent(BaseEvent):
+
+    sponsor = BigForeignKey(
+        to=Sponsor,
+        verbose_name=_("sponsor"),
+        on_delete=models.CASCADE,
+    )
+
+    class Meta:
+        verbose_name = _('Job Listings')
+        verbose_name_plural = _('Job Listings')
+
+    def __str__(self):
+        return gettext('Open Role of Sponsor: {sponsor}'.format(
+            sponsor=self.sponsor,
+        ))
 
 
 class SponsoredEvent(EventInfo, BaseEvent):

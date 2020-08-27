@@ -1,33 +1,10 @@
 {% extends 'contents/_base.html' %}
 
-{% load i18n compress %}
+{% load i18n compress static %}
 
 {% block title %}{% trans 'Live broadcast' %}{% endblock %}
 
 {% block body_class %}{{ block.super }} live-page{% endblock body_class %}
-
-{% compress js %}
-{% block scripts %}
-{{ block.super }}
-<script>
-    // Tom 2020-08-22:
-    // This is a hack to inject the token to the next parameter
-    // The current implementation of the language switcher does not
-    // support query parameters, which means all query paremeters
-    // will be lost after switching language.
-
-    // However, the token parameter is required in this page,
-    // So we find the "next" field which is used to redirect
-    // to the destination page after switching language,
-    // and then inject the token parameter inside
-    // so the page won't be broken after language switch
-    var next = document.querySelector("[name='next']");
-    var params = new URLSearchParams();
-    params.append('token', '{{ token }}');
-    next.value += `?${params.toString()}`;
-</script>
-{% endblock scripts %}
-{% endcompress %}
 
 {% block content %}
 
@@ -64,4 +41,14 @@
 
 {% endif %}
 
+<script>
+    window.TOKEN = '{{ token|default:'' }}';
+</script>
 {% endblock content %}
+
+
+{% block extra_js %}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2020/scripts/token.js' %}"></script>
+{% endcompress %}
+{% endblock %}

@@ -7,7 +7,7 @@
 
 {% block content %}
 
-{% url 'page' path='events/community-track' as community_track_url %}
+{% url 'community-track' as community_track_url %}
 
 <section class="pill-title">
 	<h1>{% trans 'Talks' %}</h1>
@@ -51,6 +51,24 @@
 </article>
 
 {% endfor %}
+
+{% if sponsored_events %}
+<article>
+	<h3>{% trans 'Invited Events' %}</h3>
+	<ul class="talk-list">
+		{% for event in sponsored_events %}
+		<li>
+			<p>
+				{% with event_title=event.title host_name=event.host.speaker_name sponsored_event_url=event.get_absolute_url %}
+				<a class="talk-title" href="{{ sponsored_event_url }}">{{ event_title }}</a>
+				{% blocktrans %} by {{ host_name }}{% endblocktrans %}
+				{% endwith %}
+			</p>
+		</li>
+		{% endfor %}
+	</ul>
+</article>
+{% endif %}
 
 <section class="note">
 	<a name="community-track"></a>

@@ -1,8 +1,9 @@
 from django.utils import timezone
 
-from import_export import fields, resources
+from import_export import fields, resources, widgets
 
-from .models import Attendee
+from .models import Attendee, Venue, CommunityTrackEvent
+from proposals.models import TalkProposal
 
 
 class AttendeeResource(resources.ModelResource):
@@ -29,3 +30,25 @@ class AttendeeResource(resources.ModelResource):
         instance.verified = True
         if not instance.verified_at:
             instance.verified_at = timezone.now()
+
+
+class VenueResource(resources.ModelResource):
+    class Meta:
+        model = Venue
+        fields = (
+            'name', 'photo', 'address', 'community', 'topic', 'capacity',
+        )
+
+
+class CommunityTrackEventResource(resources.ModelResource):
+    talk = fields.Field(column_name='talk', attribute='talk', widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
+    venue = fields.Field(column_name='venue', attribute='venue', widget=widgets.ForeignKeyWidget(Venue, 'name'))
+
+    class Meta:
+        model = CommunityTrackEvent
+        fields = (
+            'id', 'venue', 'order', 'talk', 'talk__title',
+        )
+        export_order = (
+            'id', 'venue', 'order', 'talk', 'talk__title',
+        )
