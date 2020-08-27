@@ -1,24 +1,50 @@
 .discord-page {
   .entry {
-    .small{
-      padding: 0;
-      font-size: small;
+    .toturial {
+      margin: 20px 0;
+      .small{
+        padding: 0;
+        font-size: small;
+      }
+
+      p {
+        margin: 14px 0;
+      }
     }
 
-    h4 {
-      text-align:left;
+    .roles-list {
+      margin: 12px 0;
     }
 
-    h6 {
-      text-align:left;
+    .channels-list {
+      margin: 24px 0;
+
+      h4 {
+        text-align:left;
+        margin: 12px 0;
+      }
+
+      h6 {
+        text-align:left;
+        font-size: 12px;
+        margin: 8px 0;
+      }
     }
+
+    h3 {
+      margin-bottom: 6px;
+    }
+
+
+
+
 
     li {
       text-align:left;
     }
 
     .sec {
-      padding-bottom: 18px;
+      margin-bottom: 18px;
     }
 
     img {
@@ -37,3 +63,4 @@
 }
 
 @import "../../css/vendors/semantic.min.css";
+@import "../../css/vendors/transition.min.css";
