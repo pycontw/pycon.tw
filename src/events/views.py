@@ -173,6 +173,7 @@ class ScheduleCreateView(
                 'name': name,
                 'rooms': set(),
                 'slots': {},
+                'slots_mobile': {},
                 'timeline': {},
             }) for date, name in settings.EVENTS_DAY_NAMES.items()
         )
@@ -190,10 +191,12 @@ class ScheduleCreateView(
             for event in begin_time_event_dict[begin]:
                 location = event.location
                 day_info['slots'].setdefault(location, [])
+                day_info['slots_mobile'].setdefault(event.begin_time, [])
                 day_info['timeline'].setdefault('begin', event.begin_time)
                 day_info['timeline'].setdefault('end', event.end_time)
 
                 day_info['slots'][location].append(event)
+                day_info['slots_mobile'][event.begin_time].append(event)
                 day_info['timeline']['begin'] = min(
                     day_info['timeline']['begin'],
                     event.begin_time
