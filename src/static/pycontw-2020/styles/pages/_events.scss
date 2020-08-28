@@ -24,6 +24,15 @@ $icon-height: 26px;
 	}
 }
 
+@mixin roomDisplayStyle() {
+	min-width: 2ch;
+	font-family: $text-font-family;
+	color: #ffffff;
+	text-align: center;
+	background: $brown;
+	border-radius: 5px;
+}
+
 @mixin eventItem() {
 	display: flex;
 	font-family: $text-font-family;
@@ -57,11 +66,16 @@ $icon-height: 26px;
 			}
 		}
 
-		.info {
+		.room {
 			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			margin-bottom: 8px;
 			flex-wrap: wrap;
+
+			& > .room-tag {
+				padding: 4px;
+
+				@include roomDisplayStyle();
+			}
 		}
 	}
 
@@ -88,6 +102,12 @@ $icon-height: 26px;
 				flex: 3
 			}
 		}
+
+		.time {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	& > .keynote-event {
@@ -98,6 +118,12 @@ $icon-height: 26px;
 		text-align: center;
 		background: rgba(255, 255, 255, 0.7);
 		border-radius: inherit;
+
+		.time {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	& > .talk-event {
@@ -183,6 +209,10 @@ $icon-height: 26px;
 	@media (min-width: 901px) {
 		.py-schedule-timetable {
 			display: initial;
+
+			.room-tag {
+				display: none;
+			}
 		}
 
 		.py-schedule-time-list {
@@ -250,11 +280,9 @@ main {
 					padding: 12px 0;
 					justify-content: center;
 					align-items: center;
-					font-family: $text-font-family;
 					font-size: 18px;
-					color: #ffffff;
-					background: $brown;
-					border-radius: 5px;
+
+					@include roomDisplayStyle();
 
 					&:last-child {
 						margin-right: 0;

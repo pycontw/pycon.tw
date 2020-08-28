@@ -3,6 +3,9 @@
 
 <a href="{{ event.get_absolute_url }}" class="talk-info localed-url talk-event">
 	<div class="context-container">
+		<div class="room">
+			<div class="room-tag room-{{ event.location }}"></div>
+		</div>
 		<div class="context">
 			<div class="title"
 			     style="-webkit-box-orient: vertical;"
@@ -19,14 +22,8 @@
 				{% endif %}
 			</div>
 		</div>
-		<div class="info">
-			<div class="time">
-				{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
-			</div>
-			<div class="room">
-				<div class="room-{{ event.location }}">
-				</div>
-			</div>
+		<div class="time">
+			{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
 		</div>
 	</div>
 </a>
