@@ -4,7 +4,7 @@
 	<a href="{% url 'page' path='events/keynotes' %}#{{ event.slug }}" class="keynote-event localed-url">
 		<div class="context-container">
 			<div class="context">
-				<div class="title">{% trans 'Keynote: ' %}{{ data.session.title }}</div>
+				<div class="title">Keynote: {{ data.session.title }}</div>
 				<div class="speaker">by <span class="name">{{ data.speaker.name }}</span></div>
 			</div>
 			<div class="info">
