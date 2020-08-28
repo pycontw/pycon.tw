@@ -35,9 +35,7 @@
 				<div class="py-schedule-timetable-header day-{{ forloop.counter }}">
 					<div class="py-schedule-timetable-header-column --timeline"></div>
 					{% for room in schedule_info.rooms %}
-						<div class="py-schedule-timetable-header-column --{{ room }} --room">
-							{{ room|room_display }}
-						</div>
+						<div class="py-schedule-timetable-header-column room-{{ room }} --room"></div>
 					{% endfor %}
 				</div>
 				{% with timeline_info=schedule_info.timeline %}

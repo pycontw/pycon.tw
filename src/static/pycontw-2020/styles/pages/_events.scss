@@ -19,8 +19,8 @@ $icon-height: 26px;
 @mixin room($content) {
 	&::before {
 		display: inline;
-		height: 100%;
 		content: $content;
+		white-space: pre;
 	}
 }
 
@@ -31,6 +31,36 @@ $icon-height: 26px;
 	text-align: center;
 	background: $brown;
 	border-radius: 5px;
+}
+
+@mixin rooms() {
+	.room-2-all {
+		@include room('All');
+	}
+
+	.room-3-r012 {
+		@include room('R1, R2, R3');
+	}
+
+	.room-4-r0 {
+		@include room('R1');
+	}
+
+	.room-5-r1 {
+		@include room('R2');
+	}
+
+	.room-6-r2 {
+		@include room('R3');
+	}
+
+	.room-1-r3 {
+		@include room('Multifunction room\A多功能廳');
+	}
+
+	.room-7-r4 {
+		@include room('Goodideas Studio\A好想工作室');
+	}
 }
 
 @mixin eventItem() {
@@ -72,9 +102,9 @@ $icon-height: 26px;
 			flex-wrap: wrap;
 
 			& > .room-tag {
-				padding: 4px;
-
 				@include roomDisplayStyle();
+
+				padding: 4px;
 			}
 		}
 	}
@@ -176,33 +206,7 @@ $icon-height: 26px;
 		@include icon('no-recording', 1px);
 	}
 
-	.room-2-all {
-		@include room('All');
-	}
-
-	.room-3-r012 {
-		@include room('R1, R2, R3');
-	}
-
-	.room-4-r0 {
-		@include room('R1');
-	}
-
-	.room-5-r1 {
-		@include room('R2');
-	}
-
-	.room-6-r2 {
-		@include room('R3');
-	}
-
-	.room-1-r3 {
-		@include room('Multifunction room\A多功能廳');
-	}
-
-	.room-7-r4 {
-		@include room('Goodideas Studio\A好想工作室');
-	}
+	@include rooms();
 }
 
 @mixin toggleTimetableOrTimeList() {
@@ -227,6 +231,10 @@ $icon-height: 26px;
 
 		.py-schedule-time-list {
 			display: initial;
+
+			.room-tag::before {
+				white-space: initial;
+			}
 		}
 
 		.py-schedule-tabs__tab {
@@ -275,14 +283,11 @@ main {
 				background: transparentize($brick, 0.3);
 
 				&-column {
-					display: flex;
+					@include roomDisplayStyle();
+
 					margin: 8px 8px 8px 0;
 					padding: 12px 0;
-					justify-content: center;
-					align-items: center;
 					font-size: 18px;
-
-					@include roomDisplayStyle();
 
 					&:last-child {
 						margin-right: 0;
@@ -297,6 +302,8 @@ main {
 						flex: 2;
 					}
 				}
+
+				@include rooms();
 
 				&:not(.--active) {
 					display: none;
@@ -381,6 +388,7 @@ main {
 
 					& > .time {
 						@include time();
+
 						font-size: 22px;
 					}
 				}
