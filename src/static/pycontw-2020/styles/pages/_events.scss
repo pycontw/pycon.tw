@@ -194,8 +194,13 @@ $icon-height: 26px;
 		.py-schedule-timetable {
 			display: none;
 		}
+
 		.py-schedule-time-list {
 			display: initial;
+		}
+
+		.py-schedule-tabs__tab {
+			padding: 24px;
 		}
 	}
 }
