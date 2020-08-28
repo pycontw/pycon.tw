@@ -1,5 +1,7 @@
-function clickOnDay1() {
-	document.querySelector('.py-schedule-tabs__tab[data-target="day-1"]').click();
+function clickOnDefaultDay() {
+	const dayTarget = new Date().getDate() === 6 ? 'day-2' : 'day-1';
+	const selector = '.py-schedule-tabs__tab[data-target="' + dayTarget + '"]';
+	document.querySelector(selector).click();
 }
 
 // Toggle schedule by day
@@ -60,5 +62,5 @@ for (const el of document.querySelectorAll('.localed-url')) {
 }
 
 document.addEventListener('DOMContentLoaded', function onReady() {
-	clickOnDay1();
+	clickOnDefaultDay();
 });
