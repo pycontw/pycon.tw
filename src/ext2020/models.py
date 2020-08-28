@@ -4,6 +4,8 @@ from django.templatetags.static import StaticNode
 
 from core.models import BigForeignKey
 from proposals.models import TalkProposal
+from events.models import SponsoredEvent
+
 
 # Create your models here.
 class Attendee(models.Model):
@@ -34,6 +36,11 @@ class Venue(models.Model):
     def get_photo_url(self):
         return StaticNode.handle_simple(self.photo)
 
+    class Meta:
+        verbose_name = _('community track venue')
+        verbose_name_plural = _('community track venues')
+        ordering = ['topic']
+
     def __str__(self):
         return self.name
 
@@ -43,14 +50,34 @@ class Choice(models.Model):
     attendee = models.ForeignKey(Attendee, on_delete=models.CASCADE, null=True, blank=True)
     selected_time = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name = _('community track choice')
+        verbose_name_plural = _('community track choices')
+
     def __str__(self):
         return "%s %s" % (self.venue, self.attendee.token if self.attendee else '?')
 
 
 class CommunityTrackEvent(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    talk = BigForeignKey(TalkProposal, on_delete=models.CASCADE)
+    talk = BigForeignKey(TalkProposal, on_delete=models.CASCADE, null=True, blank=True)
+    sponsored_event = BigForeignKey(SponsoredEvent, on_delete=models.CASCADE, null=True, blank=True)
     order = models.IntegerField(default=0)
 
+    class Meta:
+        verbose_name = _('community track event')
+        verbose_name_plural = _('community track events')
+        ordering = ['order']
+
     def __str__(self):
-        return "%d. %s (%s)" % (self.order, self.talk.title, self.venue.name)
+        return "%d. %s (%s)" % (self.order, self.get_event(), self.venue.name)
+
+    def clean(self):
+        if self.talk and self.sponsored_event:
+            raise ValidationError(_('You can only put either proposed_talk_event or sponsored_event at once.'))
+
+        if not self.talk and not self.sponsored_event:
+            raise ValidationError(_('You need to put proposed_talk_event or sponsored_event.'))
+
+    def get_event(self):
+        return self.talk or self.sponsored_event

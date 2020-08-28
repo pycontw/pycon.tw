@@ -4,6 +4,7 @@ from import_export import fields, resources, widgets
 
 from .models import Attendee, Venue, CommunityTrackEvent
 from proposals.models import TalkProposal
+from events.models import SponsoredEvent
 
 
 class AttendeeResource(resources.ModelResource):
@@ -42,13 +43,12 @@ class VenueResource(resources.ModelResource):
 
 class CommunityTrackEventResource(resources.ModelResource):
     talk = fields.Field(column_name='talk', attribute='talk', widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
+    sponsored_event = fields.Field(column_name='sponsored_event', attribute='sponsored_event', widget=widgets.ForeignKeyWidget(SponsoredEvent, 'id'))
     venue = fields.Field(column_name='venue', attribute='venue', widget=widgets.ForeignKeyWidget(Venue, 'name'))
 
     class Meta:
         model = CommunityTrackEvent
         fields = (
-            'id', 'venue', 'order', 'talk', 'talk__title',
+            'id', 'venue', 'order', 'talk', 'talk__title', 'sponsored_event', 'sponsored_event__title',
         )
-        export_order = (
-            'id', 'venue', 'order', 'talk', 'talk__title',
-        )
+        export_order = fields

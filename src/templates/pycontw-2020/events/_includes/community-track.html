@@ -42,6 +42,8 @@
         {% for event in venue.communitytrackevent_set.all %}
         <li>
             <p>
+                {% if event.talk %}
+
                 {% url 'events_talk_detail' pk=event.talk.pk as event_talk_detail_url %}
                 {% with proposal_title=event.talk.title speaker_names=event.talk|speaker_names_display %}
                 <a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a>
@@ -50,6 +52,14 @@
                 {% endif %}
                 {% blocktrans %} by {{ speaker_names }}{% endblocktrans %}
                 {% endwith %}
+
+                {% elif event.sponsored_event %}
+                {% with event_title=event.sponsored_event.title host_name=event.sponsored_event.host.speaker_name sponsored_event_url=event.sponsored_event.get_absolute_url %}
+                <a class="talk-title" href="{{ sponsored_event_url }}">{{ event_title }}</a>
+                <span class="talk-label">{% trans 'Invited Event' %}</span>
+                {% blocktrans %} by {{ host_name }}{% endblocktrans %}
+                {% endwith %}
+                {% endif %}
             </p>
         </li>
         {% endfor %}
