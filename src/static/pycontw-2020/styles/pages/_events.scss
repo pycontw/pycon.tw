@@ -1,5 +1,8 @@
 @import 'pycontw-2020/styles/palette.scss';
 
+$icon-width: 26px;
+$icon-height: 26px;
+
 @mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
 	width: $width;
 	height: $width;
@@ -7,8 +10,195 @@
 	background: url('../../assets/icon-#{$name}.svg') top $x no-repeat;
 }
 
-$icon-width: 26px;
-$icon-height: 26px;
+@mixin time() {
+	font-family: $header-font-family;
+	font-size: 18px;
+	color: $jinger-bread;
+}
+
+@mixin room($content) {
+	&::before {
+		display: inline;
+		height: 100%;
+		content: $content;
+	}
+}
+
+@mixin eventItem() {
+	display: flex;
+	font-family: $text-font-family;
+	border-radius: 5px;
+
+	a {
+		text-decoration: none;
+	}
+
+	.context-container {
+		position: sticky;
+		top: 70px;
+		padding: 12px;
+
+		.context {
+			.title {
+				margin-bottom: 8px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+			.speaker {
+				margin-bottom: 8px;
+
+				.name {
+					margin-bottom: 8px;
+					font-weight: 600;
+					font-size: 14px;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+	}
+
+	& > .custom-event {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		color: $dark-gray;
+		text-align: center;
+		background: rgba($dark-gray, 0.1);
+		border-radius: 5px;
+		cursor: default;
+
+		.context {
+			display: flex;
+			justify-content: center;
+
+			:not(.title) {
+				flex: 1;
+			}
+
+			.title {
+				flex: 3
+			}
+		}
+	}
+
+	& > .keynote-event {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: inherit;
+	}
+
+	& > .talk-event {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: inherit;
+
+		.title {
+			display: -webkit-box;
+			height: 90px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			box-sizing: border-box;
+			-webkit-line-clamp: 4;
+		}
+
+		.tags {
+			display: flex;
+		}
+	}
+
+	.language-enen {
+		@include icon('language-enen', 0, center, 2 * $icon-width);
+	}
+
+	.language-zhen {
+		@include icon('language-zhen', 0, center, 2 * $icon-width);
+	}
+
+	.language-zhzh {
+		@include icon('language-zhzh', 0, center, 2 * $icon-width);
+	}
+
+	.python-level-novice {
+		@include icon('level-1', 2px);
+	}
+
+	.python-level-intermediate {
+		@include icon('level-2', 2px);
+	}
+
+	.python-level-experienced {
+		@include icon('level-3', 2px);
+	}
+
+	.no-recording {
+		@include icon('no-recording', 1px);
+	}
+
+	.room-2-all {
+		@include room('All');
+	}
+
+	.room-3-r012 {
+		@include room('R1, R2, R3');
+	}
+
+	.room-4-r0 {
+		@include room('R1');
+	}
+
+	.room-5-r1 {
+		@include room('R2');
+	}
+
+	.room-6-r2 {
+		@include room('R3');
+	}
+
+	.room-1-r3 {
+		@include room('Multifunction room\A多功能廳');
+	}
+
+	.room-7-r4 {
+		@include room('Goodideas Studio\A好想工作室');
+	}
+}
+
+@mixin toggleTimetableOrTimeList() {
+	@media (min-width: 901px) {
+		.py-schedule-timetable {
+			display: initial;
+		}
+
+		.py-schedule-time-list {
+			display: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.py-schedule-timetable {
+			display: none;
+		}
+		.py-schedule-time-list {
+			display: initial;
+		}
+	}
+}
 
 main {
 	max-width: unset;
@@ -54,6 +244,7 @@ main {
 					margin: 8px 8px 8px 0;
 					padding: 12px 0;
 					justify-content: center;
+					align-items: center;
 					font-family: $text-font-family;
 					font-size: 18px;
 					color: #ffffff;
@@ -93,145 +284,7 @@ main {
 				grid-row-gap: 8px;
 
 				&-item {
-					display: flex;
-					font-family: $text-font-family;
-					border-radius: 5px;
-
-					a {
-						text-decoration: none;
-					}
-
-					.context-container {
-						position: sticky;
-						top: 70px;
-						padding: 12px;
-
-						.context {
-							.title {
-								margin-bottom: 8px;
-								font-size: 18px;
-								font-weight: 700;
-							}
-
-							.speaker {
-								margin-bottom: 8px;
-
-								.name {
-									margin-bottom: 8px;
-									font-weight: 600;
-									font-size: 14px;
-									text-decoration: underline;
-								}
-							}
-						}
-					}
-
-					& > .custom-event {
-						display: flex;
-						width: 100%;
-						height: 100%;
-						flex-direction: column;
-						color: $dark-gray;
-						text-align: center;
-						background: rgba($dark-gray, 0.1);
-						border-radius: 5px;
-						cursor: default;
-
-						.context {
-							display: flex;
-							justify-content: center;
-
-							:not(.title) {
-								flex: 1;
-							}
-
-							.title {
-								flex: 3
-							}
-						}
-					}
-
-					& > .keynote-event {
-						display: flex;
-						width: 100%;
-						height: 100%;
-						flex-direction: column;
-						text-align: center;
-						background: rgba(255, 255, 255, 0.7);
-						border-radius: inherit;
-					}
-
-					& > .talk-event {
-						display: flex;
-						flex-direction: column;
-						width: 100%;
-						height: 100%;
-						background: rgba(255, 255, 255, 0.7);
-						border-radius: inherit;
-
-						.title {
-							display: -webkit-box;
-							height: 90px;
-							overflow: hidden;
-							text-overflow: ellipsis;
-							box-sizing: border-box;
-							-webkit-line-clamp: 4;
-						}
-
-						.tags {
-							display: flex;
-						}
-
-						.info {
-							display: flex;
-							justify-content: space-between;
-							align-items: center;
-						}
-					}
-
-					.language-enen {
-						@include icon('language-enen', 0, center, 2 * $icon-width);
-					}
-
-					.language-zhen {
-						@include icon('language-zhen', 0, center, 2 * $icon-width);
-					}
-
-					.language-zhzh {
-						@include icon('language-zhzh', 0, center, 2 * $icon-width);
-					}
-
-					.python-level-novice {
-						@include icon('level-1', 2px);
-					}
-
-					.python-level-intermediate {
-						@include icon('level-2', 2px);
-					}
-
-					.python-level-experienced {
-						@include icon('level-3', 2px);
-					}
-
-					.no-recording {
-						@include icon('no-recording', 1px);
-					}
-
-					.room-R0 {
-						@include icon('room-R0', 1px, center);
-					}
-
-					.room-R1 {
-						@include icon('room-R1', 1px, center);
-					}
-
-					.room-R2 {
-						@include icon('room-R2', 1px, center);
-					}
-
-					.room-R3 {
-						@include icon('room-R3', 1px, center);
-					}
+					@include eventItem();
 				}
 
 				.room-3-r012 {
@@ -265,9 +318,7 @@ main {
 				.timeline {
 					grid-column: times;
 					justify-self: center;
-					font-family: $header-font-family;
-					font-size: 18px;
-					color: $jinger-bread;
+					@include time();
 
 					&.--hour {
 						font-size: 20px;
@@ -284,5 +335,68 @@ main {
 				}
 			}
 		}
+
+		&-time-list {
+			&-section {
+				&-header {
+					position: sticky;
+					position: -webkit-sticky;
+					top: 0;
+					z-index: 1000;
+					padding: 16px 0;
+					background: $brick;
+
+					& > .time {
+						@include time();
+						font-size: 22px;
+					}
+				}
+
+				&-items {
+					display: flex;
+					flex-direction: column;
+					margin: 12px 0;
+
+					&-item {
+						@include eventItem();
+						margin-bottom: 12px;
+					}
+
+					.room-2-all {
+						order: 1;
+					}
+
+					.room-3-r012 {
+						order: 2;
+					}
+
+					.room-4-r0 {
+						order: 3;
+					}
+
+					.room-5-r1 {
+						order: 4;
+					}
+
+					.room-6-r2 {
+						order: 5;
+					}
+
+					.room-1-r3 {
+						order: 6;
+					}
+
+					.room-7-r4 {
+						order: 7;
+					}
+				}
+			}
+
+			&:not(.--active) {
+				display: none;
+			}
+		}
 	}
+
+	@include toggleTimetableOrTimeList();
 }

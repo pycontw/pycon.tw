@@ -71,6 +71,27 @@
 				{% endwith %}
 			{% endfor %}
 		</div>
+
+		{% for schedule_date, schedule_info in schedule_days.items %}
+			<div class="py-schedule-time-list day-{{ forloop.counter }}">
+				{% for begin, slots in schedule_info.slots_mobile.items %}
+					<div class="-py-schedule-time-list-section">
+						<div class="py-schedule-time-list-section-header">
+							<div class="time">
+								{{ begin.value|date:'H:i' }}
+							</div>
+						</div>
+						<div class="py-schedule-time-list-section-items">
+							{% for event in slots %}
+								<div class="py-schedule-time-list-section-items-item room-{{ event.location }}">
+									{{ event|event_display }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
 	</div>
 {% endblock schedule %}
 

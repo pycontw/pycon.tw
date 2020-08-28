@@ -11,6 +11,8 @@ $scheduleTabs.forEach(function setupTab($tab) {
 		const selectedDay = $tab.getAttribute('data-target');
 		const tableClassInCommon = 'py-schedule-timetable';
 		const tableToActivate = `.${selectedDay}.${tableClassInCommon}`;
+		const listClassInCommon = 'py-schedule-time-list';
+		const listToActivate = `.${selectedDay}.${listClassInCommon}`;
 		const activeClass = '--active';
 
 		function inactivateAll($t) {
@@ -21,8 +23,11 @@ $scheduleTabs.forEach(function setupTab($tab) {
 		$tab.classList.add(activeClass);
 		document.querySelectorAll(`.${tableClassInCommon}-header`).forEach(inactivateAll);
 		document.querySelectorAll(`.${tableClassInCommon}-body`).forEach(inactivateAll);
+		document.querySelectorAll(`.${listClassInCommon}`).forEach(inactivateAll);
+
 		document.querySelector(`${tableToActivate}-header`).classList.add(activeClass);
 		document.querySelector(`${tableToActivate}-body`).classList.add(activeClass);
+		document.querySelector(`${listToActivate}`).classList.add(activeClass);
 	});
 });
 
