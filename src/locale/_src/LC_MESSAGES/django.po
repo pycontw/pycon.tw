@@ -276,10 +276,6 @@ msgstr ""
 msgid "R1, R2, R3"
 msgstr ""
 
-# #: events/models.py:122
-# msgid "R0"
-# msgstr ""
-
 #: events/models.py:122
 msgid "R1"
 msgstr ""
@@ -291,10 +287,6 @@ msgstr ""
 #: events/models.py:124
 msgid "R3"
 msgstr ""
-
-# #: events/models.py:126
-# msgid "R4"
-# msgstr ""
 
 #: events/models.py:125
 msgid "Multifunction room"

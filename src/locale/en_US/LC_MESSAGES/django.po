@@ -196,6 +196,7 @@ msgstr "abstract"
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
+#: templates/pycontw-2020/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
@@ -203,11 +204,13 @@ msgstr "Novice"
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
+#: templates/pycontw-2020/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
 #: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
+#: templates/pycontw-2020/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
@@ -289,30 +292,6 @@ msgstr "times"
 #: events/models.py:121
 msgid "All rooms"
 msgstr "All rooms"
-
-#: events/models.py:122
-msgid "R0, R1, R2"
-msgstr "R0, R1, R2"
-
-#: events/models.py:123
-msgid "R0"
-msgstr "R0"
-
-#: events/models.py:124
-msgid "R1"
-msgstr "R1"
-
-#: events/models.py:125
-msgid "R2"
-msgstr "R2"
-
-#: events/models.py:126
-msgid "R3"
-msgstr "R3"
-
-#: events/models.py:127
-msgid "R4"
-msgstr "R4"
 
 #: events/models.py:121 events/templatetags/events.py:19
 msgid "R1, R2, R3"
@@ -475,7 +454,7 @@ msgstr "HTML"
 #: templates/pycontw-2020/_includes/menu.html:76
 #: templates/pycontw-2020/_includes/portal.html:4
 #: templates/pycontw-2020/events/schedule.html:6
-#: templates/pycontw-2020/events/schedule.html:21
+#: templates/pycontw-2020/events/schedule.html:20
 msgid "Schedule"
 msgstr "Schedule"
 
@@ -2692,7 +2671,7 @@ msgstr "Unconference"
 #: templates/pycontw-2019/events/schedule_create.html:7
 #: templates/pycontw-2019/events/schedule_create.html:15
 #: templates/pycontw-2020/events/schedule_create.html:7
-#: templates/pycontw-2020/events/schedule_create.html:16
+#: templates/pycontw-2020/events/schedule_create.html:15
 msgid "Export New Schedule"
 msgstr "Export New Schedule"
 
@@ -2712,6 +2691,7 @@ msgstr "Invited event"
 #: templates/pycontw-2017/events/talk_detail.html:32
 #: templates/pycontw-2018/events/schedule.html:31
 #: templates/pycontw-2019/events/schedule.html:31
+#: templates/pycontw-2020/events/schedule.html:31
 msgid "No recording"
 msgstr "No recording"
 
@@ -2973,21 +2953,25 @@ msgstr "Review Committee"
 
 #: templates/pycontw-2018/events/schedule.html:24
 #: templates/pycontw-2019/events/schedule.html:24
+#: templates/pycontw-2020/events/schedule.html:24
 msgid "English speech"
 msgstr "English speech"
 
 #: templates/pycontw-2018/events/schedule.html:25
 #: templates/pycontw-2019/events/schedule.html:25
+#: templates/pycontw-2020/events/schedule.html:25
 msgid "Mandarin speech"
 msgstr "Mandarin speech"
 
 #: templates/pycontw-2018/events/schedule.html:26
 #: templates/pycontw-2019/events/schedule.html:26
+#: templates/pycontw-2020/events/schedule.html:26
 msgid "English slides"
 msgstr "English slides"
 
 #: templates/pycontw-2018/events/schedule.html:27
 #: templates/pycontw-2019/events/schedule.html:27
+#: templates/pycontw-2020/events/schedule.html:27
 msgid "Chinese slides"
 msgstr "Chinese slides"
 
@@ -3189,7 +3173,7 @@ msgid "Slido"
 msgstr "Slido"
 
 #: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
-#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:7
+#: templates/pycontw-2020/events/_includes/schedule_keynote_event.html:5
 msgid "Keynote: "
 msgstr "Keynote: "
 
@@ -3407,9 +3391,324 @@ msgstr ""
 msgid "Live broadcast"
 msgstr ""
 
-#: templates/pycontw-2020/ext/live.html:53
+#: templates/pycontw-2020/ext/live.html:30
 msgid "This broadcast is not ready yet."
 msgstr ""
+
+#: templates/pycontw-2020/ext/live.html:39
+msgid "The broadcasts are not ready yet, please try again later."
+msgstr ""
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Discord Guideline"
+msgstr "Discord Guideline"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "PyCon TW Discord Guideline"
+msgstr "PyCon TW Discord Guideline"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "discord-tutorials"
+msgstr "Tutorials"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "If you have not installed Discord or joined Python Taiwan Discord server, follow <a href='#setup-discord'>Setting up Discord</a> and setup your Discord first."
+msgstr "If you have not installed Discord or joined Python Taiwan Discord server, follow <a href='#setup-discord'>Setting up Discord</a> and setup your Discord first."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "1. Register yourself"
+msgstr "1. Register yourself"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles."
+msgstr "Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Enter"
+msgstr "Enter"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "in this channel to register"
+msgstr "in this channel to register"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Enter <code>!register Token</code> in this channel to register"
+msgstr "Enter <code>!register Token</code> in this channel to register"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "(If you want to get your own Token, please click the link in the letter or use Opass.)"
+msgstr "(If you want to get your own Token, please click the link in the letter or use Opass.)"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Enter <code>!help</code> if you need command help from RegBot."
+msgstr "Enter <code>!help</code> if you need command help from RegBot."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "If you register successfully, you can see several new channels appear in the left."
+msgstr "If you register successfully, you can see several new channels appear in the left."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。"
+msgstr "If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2. Take a look at official announcements"
+msgstr "2. Take a look at official announcements"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "All official announcements channel names contain the word <strong>'announcements'</strong>."
+msgstr "All official announcements channel names contain the word <strong>'announcements'</strong>."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "You can check for important announcements first after you are in."
+msgstr "You can check for important announcements first after you are in."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "3. Join session channel"
+msgstr "3. Join session channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "All session channel names contain the word <strong>'track'</strong>."
+msgstr "All session channel names contain the word <strong>'track'</strong>."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "You can enter keynote channel when it is time for keynote, or track channel according to which track you are in."
+msgstr "You can enter keynote channel when it is time for keynote, or track channel according to which track you are in."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles list"
+msgstr "Roles list"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Users can be assigned several different roles, each role would have their own permission to enter some private channel."
+msgstr "Users can be assigned several different roles, each role would have their own permission to enter some private channel."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2020-session-chair"
+msgstr "2020-session-chair"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Target: PyCon TW 2020 session chairs and assistant chairs"
+msgstr "Target: PyCon TW 2020 session chairs and assistant chairs"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2020-staff"
+msgstr "2020-staff"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Target: PyCon TW 2020 staff"
+msgstr "Target: PyCon TW 2020 staff"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2020-speaker"
+msgstr "2020-speaker"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Target: PyCon TW 2020 speakers"
+msgstr "Target: PyCon TW 2020 speakers"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2020-remote"
+msgstr "2020-remote"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Target: PyCon TW 2020 remote session staff and remote speakers."
+msgstr "Target: PyCon TW 2020 remote session staff and remote speakers."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2020-attendee"
+msgstr "2020-attendee"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Target: PyCon TW 2020 attendees"
+msgstr "Target: PyCon TW 2020 attendees"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Channels list"
+msgstr "Channels list"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "There are two type of channels in Discord, which is Text Channel and Voice Channel. Below we use:"
+msgstr "There are two type of channels in Discord, which is Text Channel and Voice Channel. Below we use:"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#CHANNEL_NAME to represent a text channel"
+msgstr "#CHANNEL_NAME to represent a text channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "🔊CHANNEL_NAME to represent a voice channel."
+msgstr "🔊CHANNEL_NAME to represent a voice channel."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Registration channel"
+msgstr "Registration channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#registration-desk"
+msgstr "#registration-desk"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles：`@everyone`"
+msgstr "Roles：`@everyone`"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "When you just enter Python Taiwan Discord server, use this channel to provide your registration information, so that robot can promote you to the roles you are in."
+msgstr "When you just enter Python Taiwan Discord server, use this channel to provide your registration information, so that robot can promote you to the roles you are in."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Session channel"
+msgstr "Session channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#keynote-track"
+msgstr "#keynote-track"
+
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>"
+msgstr "Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Keynote discussion channel"
+msgstr "Keynote discussion channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#r1-track"
+msgstr "#r1-track"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "R1 track discussion channel"
+msgstr "R1 track discussion channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#r2-track"
+msgstr "#r2-track"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "R2 track discussion channel"
+msgstr "R2 track discussion channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#r3-track"
+msgstr "#r3-track"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "R3 track (remote track) discussion channel"
+msgstr "R3 track (remote track) discussion channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Announcements channel"
+msgstr "Announcements channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#announcements"
+msgstr "#announcements"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Official announcement channel, any official announcements will be posted here."
+msgstr "Official announcement channel, any official announcements will be posted here."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#speakers-announcements"
+msgstr "#speakers-announcements"
+
+#: templates/pycontw-2020/ext/discord.html:
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles：<code>2020-staff</code>, <code>2020-speaker</code>"
+msgstr "Roles：<code>2020-staff</code>, <code>2020-speaker</code>"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "A special announcement channel for speakers, speaker can also have discussion with each other in this channel."
+msgstr "A special announcement channel for speakers, speaker can also have discussion with each other in this channel."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#staff-announcements"
+msgstr "#staff-announcements"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles：<code>2020-staff</code>"
+msgstr "Roles：<code>2020-staff</code>"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "A special announcement channel for staff, staff can also contact to others in this channel."
+msgstr "A special announcement channel for staff, staff can also contact to others in this channel."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Information desk channel"
+msgstr "Information desk channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#information-desk"
+msgstr "#information-desk"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Official online information desk, speakers or attendees can give questions or suggestions in this channel."
+msgstr "Official online information desk, speakers or attendees can give questions or suggestions in this channel."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#speakers"
+msgstr "#speakers"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Speakers only information desk, speakers can give sessions or speakers related questions here for answers or further instruction."
+msgstr "Speakers only information desk, speakers can give sessions or speakers related questions here for answers or further instruction."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "#session-chairs"
+msgstr "#session-chairs"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles：<code>2020-session-chair</code>"
+msgstr "Roles：<code>2020-session-chair</code>"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction."
+msgstr "A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Special channel"
+msgstr "Special channel"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "🔊remote-guide"
+msgstr "🔊remote-guide"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Roles： <code>2020-remote</code>"
+msgstr "Roles： <code>2020-remote</code>"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers."
+msgstr "A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Appendices"
+msgstr "Appendices"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "Setting up Discord"
+msgstr "Setting up Discord"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "1.<a href='https://discord.com/download'>Download the Discord client</a> for your platform and install it. If you already have this, please make sure it is the latest available version."
+msgstr "1.<a href='https://discord.com/download'>Download the Discord client</a> for your platform and install it. If you already have this, please make sure it is the latest available version."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "2.Register an account on Discord if you don’t have one. Open the Discord client you just installed. Click the 'Register' link below and complete your registration. (You may be asked to verify your account with the verification mail that Discord sends you)"
+msgstr "2.Register an account on Discord if you don’t have one. Open the Discord client you just installed. Click the 'Register' link below and complete your registration. (You may be asked to verify your account with the verification mail that Discord sends you)"
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/YYAgUk7</a> <br>In your Discord client App, click the button with plus sign, and then select 'Join a server'."
+msgstr "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/YYAgUk7</a> <br>In your Discord client App, click the button with plus sign, and then select 'Join a server'."
+
+#: templates/pycontw-2020/ext/discord.html:
+msgid "In this dialog, copy the invite link above and paste it to the inputbox, then click 'Join'."
+msgstr "In this dialog, copy the invite link above and paste it to the inputbox, then click 'Join'."
+
 
 #: templates/pycontw-2020/index.html:63
 msgid "Sponsor PyCon TW"
@@ -3628,11 +3927,6 @@ msgstr ""
 #: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
-
-#, fuzzy
-#~| msgid "Goodideas Stuio"
-#~ msgid "Goodieas Studio"
-#~ msgstr "Goodideas Studio"
 
 #~ msgid "Call for Proposals"
 #~ msgstr "Call for Proposals"
