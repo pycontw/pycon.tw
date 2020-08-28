@@ -1,3 +1,5 @@
+{% load events %}
+
 <div class="custom-event">
 	<div class="context-container">
 		<div class="context">
@@ -6,6 +8,11 @@
 		<div class="info">
 			<div class="time">
 				{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
+			</div>
+			<div class="room">
+				<div class="room-{{ event.location }}">
+					{{ event.location|room_display }}
+				</div>
 			</div>
 		</div>
 	</div>

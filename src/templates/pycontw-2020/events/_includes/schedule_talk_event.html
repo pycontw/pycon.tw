@@ -24,7 +24,9 @@
 				{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
 			</div>
 			<div class="room">
-				<div class="room-{{ event.location|room_display }}"></div>
+				<div class="room-{{ event.location }}">
+					{{ event.location|room_display }}
+				</div>
 			</div>
 		</div>
 	</div>
