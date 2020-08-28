@@ -34,7 +34,8 @@ class ChoiceAdmin(admin.ModelAdmin):
 
 @admin.register(CommunityTrackEvent)
 class CommunityTrackEvent(ImportExportMixin, admin.ModelAdmin):
-    list_display = ('venue', 'talk', 'order', )
+    list_display = ('venue', 'talk', 'sponsored_event', 'order', )
     list_filter = ('order', )
+    raw_id_fields = ('talk', )
 
     resource_class = CommunityTrackEventResource
