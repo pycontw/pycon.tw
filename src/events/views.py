@@ -143,8 +143,8 @@ class ScheduleCreateView(
     ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
     CreateView):
     event_querysets = [
-        CustomEvent.objects.all(),
-        KeynoteEvent.objects.all(),
+        CustomEvent.objects.all().exclude(location=Location.OTHER),
+        KeynoteEvent.objects.all().exclude(location=Location.OTHER),
         (
             ProposedTalkEvent.objects
                 .select_related('proposal__submitter')
