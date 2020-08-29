@@ -18,6 +18,7 @@ LOCATION_DISPLAY_DICT = {
     Location.R3: _('Multifunction room'),
     Location.R4: _('Goodideas Studio'),
     Location.R012: _('R1, R2, R3'),
+    Location.OTHER: _('Other'),
 }
 ROW_UNIT = 5 * 60  # in seconds
 MARKER_UNIT = 30 * 60  # in seconds

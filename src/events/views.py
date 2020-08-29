@@ -17,7 +17,7 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Schedule, Time,
+    EVENT_ROOMS, Schedule, Time, Location,
     CustomEvent, KeynoteEvent, SponsoredEvent,
     ProposedTalkEvent, ProposedTutorialEvent,
 )
@@ -143,22 +143,22 @@ class ScheduleCreateView(
     ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
     CreateView):
     event_querysets = [
-        CustomEvent.objects.all(),
-        KeynoteEvent.objects.all(),
+        CustomEvent.objects.all().exclude(location=Location.OTHER),
+        KeynoteEvent.objects.all().exclude(location=Location.OTHER),
         (
             ProposedTalkEvent.objects
                 .select_related('proposal__submitter')
                 .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
-        SponsoredEvent.objects.select_related('host'),
+        SponsoredEvent.objects.select_related('host').exclude(location=Location.OTHER),
         (
             ProposedTutorialEvent.objects
                 .select_related('proposal__submitter')
                 .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
     ]
 
