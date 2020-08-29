@@ -33,6 +33,12 @@ class Venue(models.Model):
 
     capacity = models.IntegerField(_('Capacity Limit'), default=0)
 
+    def get_choice_count(self):
+        return self.choice_set.all().count()
+
+    def get_soft_limit(self):
+        return self.capacity * 0.8
+
     def get_photo_url(self):
         return StaticNode.handle_simple(self.photo)
 
