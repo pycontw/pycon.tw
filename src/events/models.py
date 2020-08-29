@@ -90,13 +90,14 @@ class Location:
     2. Belt and partial belt events are next, in that order.
     3. Block events in R0-2 are next, in that order.
     """
-    R3   = '1-r3'
-    ALL  = '2-all'
-    R012 = '3-r012'
-    R0   = '4-r0'
-    R1   = '5-r1'
-    R2   = '6-r2'
-    R4   = '7-r4'
+    R3    = '1-r3'
+    ALL   = '2-all'
+    R012  = '3-r012'
+    R0    = '4-r0'
+    R1    = '5-r1'
+    R2    = '6-r2'
+    R4    = '7-r4'
+    OTHER = '8-oth'
 
     @classmethod
     def get_md_width(cls, value):
@@ -108,6 +109,7 @@ class Location:
             '6-r2': 1,
             '1-r3': 1,
             '7-r4': 1,
+            '8-oth': 1,
         }[value]
 
 
@@ -118,13 +120,14 @@ class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
     LOCATION_CHOICES = [
-        (Location.ALL,  _('All rooms')),
-        (Location.R012, _('R1, R2, R3')),
-        (Location.R0,   _('R1')),
-        (Location.R1,   _('R2')),
-        (Location.R2,   _('R3')),
-        (Location.R3,   _('Multifunction room')),
-        (Location.R4,   _('Goodideas Studio')),
+        (Location.ALL,   _('All rooms')),
+        (Location.R012,  _('R1, R2, R3')),
+        (Location.R0,    _('R1')),
+        (Location.R1,    _('R2')),
+        (Location.R2,    _('R3')),
+        (Location.R3,    _('Multifunction room')),
+        (Location.R4,    _('Goodideas Studio')),
+        (Location.OTHER, _('Other')),
     ]
     location = models.CharField(
         max_length=6,

@@ -17,7 +17,7 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Schedule, Time,
+    EVENT_ROOMS, Schedule, Time, Location,
     CustomEvent, KeynoteEvent, SponsoredEvent,
     ProposedTalkEvent, ProposedTutorialEvent,
 )
@@ -150,15 +150,15 @@ class ScheduleCreateView(
                 .select_related('proposal__submitter')
                 .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
-        SponsoredEvent.objects.select_related('host'),
+        SponsoredEvent.objects.select_related('host').exclude(location=Location.OTHER),
         (
             ProposedTutorialEvent.objects
                 .select_related('proposal__submitter')
                 .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
     ]
 
