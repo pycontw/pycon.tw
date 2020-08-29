@@ -25,7 +25,7 @@ def time_map(events):
 # Hack to get all possible location values by introspection.
 POSSIBLE_LOCATIONS = sorted(
     getattr(Location, k)
-    for k in Location.__dict__ if k.isupper()
+    for k in Location.__dict__ if k.isupper() and k != 'OTHER'
 )
 
 
