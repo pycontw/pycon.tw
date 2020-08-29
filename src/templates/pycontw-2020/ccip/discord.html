@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}{{ block.super }} discord-page{% endblock body_class %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2020/styles/ccip-discord.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block title %}{% trans 'Discord Guideline' %}{% endblock %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+<main>
+{% include '_includes/ext/discord.html' %}
+</main>
+{% endblock content_full %}
+
+{% block footer %}
+{% endblock footer %}

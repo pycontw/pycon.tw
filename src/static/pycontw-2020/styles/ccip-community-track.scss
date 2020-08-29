@@ -1,0 +1,19 @@
+@import "page";
+
+.community-track-page {
+    main {
+        $margin: 20px;
+        width: calc(100% - 2*#{$margin});
+        margin: $margin;
+        padding: 0;
+        max-width: none;
+
+        .overview-container {
+            padding-bottom: 0;
+        }
+
+        .topics-block {
+            padding-bottom: 30px;
+        }
+    }
+}
