@@ -15,34 +15,38 @@ import datetime
 from .forms import CommunityTrackForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import DetailView, TemplateView, ListView
 
 token_re = re.compile(r'^[0-9a-f]{32}$')
 
 
-def live(request):
-    token = request.GET.get('token', '')
+class LiveBroadcastView(DetailView):
+    template_name = 'ext/live.html'
+    model = Attendee
 
-    if not token_re.match(token):
-        raise Http404
+    def get(self, request, *args, **kwargs):
+        self.token = request.GET.get('token', '')
 
-    attendee = None
+        return super().get(request, *args, **kwargs)
 
-    try:
-        attendee = Attendee.objects.get(token=token)
-    except Attendee.DoesNotExist:
-        attendee = Attendee.objects.create(token=token)
+    def get_object(self, queryset=None):
+        try:
+            return Attendee.objects.get(token=self.token)
+        except Attendee.DoesNotExist:
+            pass
 
-    rooms = OrderedDict()
-    rooms['R1'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r1', '')
-    rooms['R2'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r2', '')
-    rooms['R3'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r3', '')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    return render(request, 'ext/live.html', {
-        'attendee': attendee,
-        'rooms': rooms,
-        'token': token,
-    })
+        rooms = OrderedDict()
+        rooms['R1'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r1', '')
+        rooms['R2'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r2', '')
+        rooms['R3'] = reg.get(f'{settings.CONFERENCE_DEFAULT_SLUG}.live.r3', '')
+
+        context['rooms'] = rooms
+        context['token'] = self.token
+
+        return context
 
 
 class CommunityTrackView(ListView):
@@ -102,6 +106,17 @@ class CommunityTrackView(ListView):
         })
         return super().get_context_data(**kwargs)
 
-def discord(request):
-    token = request.GET.get('token', '')
-    return render(request, 'ext/discord.html', {'token': token})
+
+class DiscordView(TemplateView):
+    template_name = 'ext/discord.html'
+
+    def get(self, request, *args, **kwargs):
+        self.token = request.GET.get('token', '')
+
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['token'] = self.token
+
+        return context

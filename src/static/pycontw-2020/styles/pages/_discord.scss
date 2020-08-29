@@ -52,14 +52,6 @@
 	  	height: auto;
     }
   }
-
-    main {
-        width: calc(100% - 80px);
-
-        @include on-desktop() {
-            min-width: 720px;
-        }
-    }
 }
 
 @import "../../css/vendors/semantic.min.css";
