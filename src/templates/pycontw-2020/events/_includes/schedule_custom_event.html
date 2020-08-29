@@ -1,7 +1,15 @@
-<ul>
-	<li class="grass"></li>
-	<li class="snake"></li>
-	<li class="info">{{ event.begin_time.value|date:'H:i' }} {{ event.title }}</li>
-	<li class="snake"></li>
-	<li class="grass"></li>
-</ul>
+{% load events %}
+
+<div class="custom-event">
+	<div class="context-container">
+		<div class="room">
+			<div class="room-tag room-{{ event.location }}"></div>
+		</div>
+		<div class="context">
+			<div class="title">{{ event.title }}</div>
+		</div>
+		<div class="time">
+			{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
+		</div>
+	</div>
+</div>

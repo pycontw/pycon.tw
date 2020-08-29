@@ -293,29 +293,37 @@ msgstr "times"
 msgid "All rooms"
 msgstr "All rooms"
 
-#: events/models.py:124
-msgid "R0, R1, R2"
-msgstr "R0, R1, R2"
+#: events/models.py:121 events/templatetags/events.py:19
+msgid "R1, R2, R3"
+msgstr "R1, R2, R3"
 
-#: events/models.py:125
-msgid "R0"
-msgstr "R0"
-
-#: events/models.py:126
+# #: events/models.py:122
+# msgid "R0"
+# msgstr "R0"
+#: events/models.py:122 events/templatetags/events.py:14
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:127
+#: events/models.py:123 events/templatetags/events.py:15
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:128
+#: events/models.py:124 events/templatetags/events.py:16
 msgid "R3"
 msgstr "R3"
 
-#: events/models.py:129
-msgid "R4"
-msgstr "R4"
+# #: events/models.py:125
+# msgid "R4"
+# msgstr "R4"
+#: events/models.py:125 events/templatetags/events.py:17
+msgid "Multifunction room"
+msgstr "Multifunction room"
+
+#: events/models.py:126 events/templatetags/events.py:18
+#, fuzzy
+#| msgid "Goodideas Stuio"
+msgid "Goodideas Studio"
+msgstr "Goodideas Studio"
 
 #: events/models.py:138
 msgid "location"
@@ -2324,7 +2332,7 @@ msgstr "Quick Jump"
 #: templates/pycontw-2017/events/schedule_create.html:71
 #: templates/pycontw-2018/events/schedule_create.html:64
 #: templates/pycontw-2019/events/schedule_create.html:60
-#: templates/pycontw-2020/events/schedule_create.html:60
+#: templates/pycontw-2020/events/schedule_create.html:82
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 
@@ -2332,7 +2340,7 @@ msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
 #: templates/pycontw-2017/events/schedule_create.html:82
 #: templates/pycontw-2018/events/schedule_create.html:73
 #: templates/pycontw-2019/events/schedule_create.html:69
-#: templates/pycontw-2020/events/schedule_create.html:69
+#: templates/pycontw-2020/events/schedule_create.html:91
 msgid "Generate"
 msgstr "Generate"
 
@@ -3856,6 +3864,10 @@ msgstr ""
 msgid "The broadcasts are not ready yet, please try again later."
 msgstr ""
 
+#: templates/pycontw-2020/index.html:63
+msgid "Sponsor PyCon TW"
+msgstr "Sponsor PyCon TW"
+
 #: users/admin.py:18
 msgid "Personal info"
 msgstr "Personal info"
@@ -4072,9 +4084,6 @@ msgstr "Password reset successful. You can now login."
 
 #~ msgid "Roles：`@everyone`"
 #~ msgstr "Roles：`@everyone`"
-
-#~ msgid "Sponsor PyCon TW"
-#~ msgstr "Sponsor PyCon TW"
 
 #~ msgid "Call for Proposals"
 #~ msgstr "Call for Proposals"

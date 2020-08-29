@@ -298,29 +298,35 @@ msgstr "時間"
 msgid "All rooms"
 msgstr "全體會議"
 
-#: events/models.py:124
-msgid "R0, R1, R2"
-msgstr "R0、R1、R2"
+#: events/models.py:121 events/templatetags/events.py:19
+msgid "R1, R2, R3"
+msgstr "R1、R2、R3"
 
-#: events/models.py:125
-msgid "R0"
-msgstr "R0"
-
-#: events/models.py:126
+# #: events/models.py:122
+# msgid "R0"
+# msgstr "R0"
+#: events/models.py:122 events/templatetags/events.py:14
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:127
+#: events/models.py:123 events/templatetags/events.py:15
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:128
+#: events/models.py:124 events/templatetags/events.py:16
 msgid "R3"
 msgstr "R3"
 
-#: events/models.py:129
-msgid "R4"
-msgstr "R4"
+# #: events/models.py:126
+# msgid "R4"
+# msgstr "R4"
+#: events/models.py:125 events/templatetags/events.py:17
+msgid "Multifunction room"
+msgstr "多功能廳"
+
+#: events/models.py:126 events/templatetags/events.py:18
+msgid "Goodideas Studio"
+msgstr "好想工作室"
 
 #: events/models.py:138
 msgid "location"
@@ -451,7 +457,7 @@ msgstr "HTML"
 #: templates/pycontw-2020/_includes/menu.html:80
 #: templates/pycontw-2020/_includes/portal.html:4
 #: templates/pycontw-2020/events/schedule.html:6
-#: templates/pycontw-2020/events/schedule.html:20
+#: templates/pycontw-2020/events/schedule.html:21
 msgid "Schedule"
 msgstr "時間表"
 
@@ -3058,7 +3064,7 @@ msgid ""
 msgstr ""
 "<p>PyCon Taiwan 為一年一度由愛好者舉辦、討論並提倡使用 Python 程式語言的會"
 "議，聚焦在 Python 技術與其多樣的可能應用的交流。我們歡迎所有對 Python 有興趣"
-"的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
+"的朋友一同加入 PyCon Taiwan 來分享所學、交換想法、並且認識更多同好。 </p>"
 
 #: templates/pycontw-2018/index.html:50
 #: templates/pycontw-2019/_includes/sponsors.html:8
@@ -3723,6 +3729,10 @@ msgstr "這個直播還沒有準備好。"
 msgid "The broadcasts are not ready yet, please try again later."
 msgstr "直播還沒有準備好，請稍後再試。"
 
+#: templates/pycontw-2020/index.html:63
+msgid "Sponsor PyCon TW"
+msgstr "贊助方案"
+
 #: users/admin.py:18
 msgid "Personal info"
 msgstr "個人介紹"
@@ -3925,9 +3935,6 @@ msgstr ""
 #: users/views.py:130
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "Sponsor PyCon TW"
-#~ msgstr "贊助方案"
 
 #~ msgid "Call for Proposals"
 #~ msgstr "徵求稿件"

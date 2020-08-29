@@ -273,27 +273,27 @@ msgid "All rooms"
 msgstr ""
 
 #: events/models.py:121
-msgid "R0, R1, R2"
+msgid "R1, R2, R3"
 msgstr ""
 
 #: events/models.py:122
-msgid "R0"
-msgstr ""
-
-#: events/models.py:123
 msgid "R1"
 msgstr ""
 
-#: events/models.py:124
+#: events/models.py:123
 msgid "R2"
 msgstr ""
 
-#: events/models.py:125
+#: events/models.py:124
 msgid "R3"
 msgstr ""
 
+#: events/models.py:125
+msgid "Multifunction room"
+msgstr ""
+
 #: events/models.py:126
-msgid "R4"
+msgid "Goodideas Studio"
 msgstr ""
 
 #: events/models.py:134
