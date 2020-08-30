@@ -7,9 +7,10 @@
 
 
 {% block styles %}
-{{ block.super }}
-<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
-{% endblock styles %}
+	{{ block.super }}
+	<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+	<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2020/styles/pages/_events.scss' %}">
+{% endblock %}
 
 
 {% block body_class %} schedule-page{% endblock body_class %}
@@ -17,55 +18,31 @@
 
 {% block content %}
 
-<h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
+	<h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
 
-<section class="schedule-legend">
-	<ul class="">
-		<li class="speech-en">{% trans 'English speech' %}</li>
-		<li class="speech-zh">{% trans 'Mandarin speech' %}</li>
-		<li class="slides-en">{% trans 'English slides' %}</li>
-		<li class="slides-zh">{% trans 'Chinese slides' %}</li>
-		<li class="python-level-novice">{% trans 'Novice' %}</li>
-		<li class="python-level-intermediate">{% trans 'Intermediate' %}</li>
-		<li class="python-level-experienced">{% trans 'Experienced' %}</li>
-		<li class="no-recording">{% trans 'No recording' %}</li>
-	</ul>
-</section>
-
-<article class="media">
-	<div class="tabbing" data-controller="tabbing">
-		<ul class="tabs">
-			{% for schedule_date, schedule_info in schedule_days.items %}
-				<li data-target="tabbing.tab" data-action="click->tabbing#activate">
-					{{ schedule_info.name }}
-				</li>
-			{% endfor %}
-		</ul>
-		{% block schedule %}
+	{% block schedule %}
 		<div class="schedule-content">
 			{{ schedule_html|safe }}
 		</div>
-		{% endblock schedule %}
-	</div>
-</article>
+	{% endblock schedule %}
 
-<script type="application/json" id="i18n_variables">
-{
-	"LANGUAGE_PREFIXES": [
-		{% for code, _ in LANGUAGES %}
-		"{{ SCRIPT_PREFIX }}{{ code }}"{% if not forloop.last %}, {% endif %}
-		{% endfor %}
-	],
-	"LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
-}
-</script>
+  <script type="application/json" id="i18n_variables">
+  {
+	  "LANGUAGE_PREFIXES": [
+		  {% for code, _ in LANGUAGES %}
+  		  "{{ SCRIPT_PREFIX }}{{ code }}"{% if not forloop.last %}, {% endif %}
+	  	{% endfor %}
+	  ],
+	  "LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
+  }
+  </script>
 
-{% block controls %}{% endblock controls %}
+	{% block controls %}{% endblock controls %}
 
 {% endblock content %}
 
 
 {% block scripts %}
-{{ block.super }}
-<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
+	{{ block.super }}
+	<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
 {% endblock scripts %}

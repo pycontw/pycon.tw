@@ -3,99 +3,201 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		font-family: $text-font-family;
 		@include on-desktop{
 			flex-direction: row;
 			justify-content: space-between;
 		}
 
 		$ticket_box_height: 280px;
-		$ticket_box_width: $ticket_box_height * 0.85;
+		$ticket_box_width: $ticket_box_height * 0.75;
+		$ticket_info_height: 360px;
 		$ticket_box_title_height: 40px;
 		$price_box_height: $ticket_box_height - $ticket_box_title_height;
 
-		.ticket-box{
+		.ticket-info {
+			height: $ticket_info_height;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			margin-bottom: 20px;
+
+			@include on-desktop() {
+				margin-bottom: 0;
+			}
+
+		.ticket-box{
 			height: $ticket_box_height;
 			width: $ticket_box_width;
-			border-radius: 4px;
-			border: solid 2px #224398;
-			margin-bottom: 20px;
+			border-radius: 10px;
+			border: solid 2px #6A3F3B;
+			margin-bottom: 10px;
+
+			@include on-desktop() {
+				margin-bottom: 20px;
+			}
+
+
+
 			.ticket-box-title{
 				height: $ticket_box_title_height;
-				font-family: NotoSansTC;
-				font-size: 20px;
+				font-size: 2rem;
 				font-weight: normal;
 				line-height: normal;
 				letter-spacing: -0.03px;
 				color: #333333;
 				margin: 30px auto 20px auto;
+				text-align: center;
 			}
 			.price-box {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-between;
 				width:100%;
 				height: $price_box_height;
 
-				table {
-					th, td {
-						padding: 4px 1px;
-						text-align: center;
-						font-weight: 300;
-						font-size: 1rem;
-						line-height: normal;
-						letter-spacing: normal;
-
-						@include on-desktop() {
-							max-width: 33%;
-							text-align: left;
-						}
-					}
-					.price {
-						color: $elf-green;
-						font-weight: 300;
-						font-size: 1.75rem;
-
-						@include on-desktop() {
-							text-align: right;
-							padding-right: 1rem;
-						}
-					}
-				}
-				.buy {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					background: center;
+				.price-title {
 					width: 100%;
-					height: 50px;
+					margin: 4px 1px;
+					padding: 4px 1px;
 					text-align: center;
-					border-top: solid 2px $egyptian-blue;
-					color: $egyptian-blue;
-					text-decoration: none;
-					font-family: PingFangTC;
-					font-size: 1rem;
 					font-weight: 300;
+					font-size: 1.25rem;
 					line-height: normal;
 					letter-spacing: normal;
-					&:hover{
-						border-top: solid 2px #f4d35e;
-						background-color: #fad341;
-						background-image: url(/static/pycontw-2019/assets/button-hover-bg.svg);
+
+					.price {
+						color: #6A3F3B;
+						font-weight: 300;
+						font-size: 1.25rem;
+						text-align: center;
+						margin: 0;
 					}
 				}
 			}
 		}
+		.buy {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: center;
+			width: 100%;
+			height: 50px;
+			text-align: center;
+			border: solid 2px #6A3F3B;
+			color: #FBD9CA;
+			text-decoration: none;
+
+			font-size: 1.5rem;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: normal;
+			background-color: #6A3F3B;
+			border-radius: 10px;
+			&:hover{
+				color: #6A3F3B;
+				border: solid 2px #6A3F3B;
+				background-color: #FBD9CA;
+			}
+		}
 	}
 
-	.desc-box{
+	.ticket-info-imperial {
+		height: $ticket_info_height;
 		display: flex;
 		flex-direction: column;
-		border-radius: 4px;
-		background-color: #f8f8f8;
-		padding: 20px 40px;
+		align-items: center;
+		margin-bottom: 20px;
+
+		@include on-desktop() {
+			margin-bottom: 0;
+		}
+
+		.ticket-box-imperial{
+			height: $ticket_box_height;
+			width: $ticket_box_width;
+			border-radius: 10px;
+			border: solid 2px #E23728;
+			margin-bottom: 10px;
+
+			@include on-desktop() {
+				margin-bottom: 20px;
+			}
+
+			.ticket-box-title-imperial{
+				height: $ticket_box_title_height;
+				font-size: 2rem;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: -0.03px;
+				color: #E23728;
+				margin: 30px auto 20px auto;
+				text-align: center;
+			}
+			.price-box-imperial {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width:100%;
+				height: $price_box_height;
+
+				.price-title-imperial {
+					width: 100%;
+					margin: 4px 1px;
+					padding: 4px 1px;
+					text-align: center;
+					font-weight: 300;
+					font-size: 1.25rem;
+					line-height: normal;
+					letter-spacing: normal;
+
+					.price-imperial {
+						color: #E23728;
+						font-weight: 300;
+						font-size: 1.25rem;
+						text-align: center;
+						margin: 0;
+					}
+				}
+			}
+		}
+		.buy-imperial {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: center;
+			width: 100%;
+			height: 50px;
+			text-align: center;
+			border: solid 2px #E23728;
+			color: #FBD9CA;
+			text-decoration: none;
+			font-size: 1.5rem;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: normal;
+			background-color: #E23728;
+			border-radius: 10px;
+			&:hover{
+				color: #E23728;
+				border: solid 2px #E23728;
+				background-color: #FBD9CA;
+			}
+		}
+	}
+}
+
+	.desc-box{
+		background-color: #FBD9CA;
+		padding: 20px 5px;
+		.entry{
+			padding-left: 20px;
+			margin-bottom: 40px;
+			h4 {
+				color: #E23728;
+				text-align: left;
+				margin-bottom: 10px;
+			}
+		}
 	}
 }

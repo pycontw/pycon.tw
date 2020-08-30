@@ -1,0 +1,99 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static compress %}
+
+{% block title %}{% trans 'Community Topic Track' %}{% endblock title %}
+
+{% block meta_description %}{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks with specific topics and
+	package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition
+	spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and
+    closely.{% endblocktrans %}{% endblock meta_description %}
+
+
+{% block content %}
+
+	<section class="pill-title">
+        <h1>{% trans 'Community Topic Track' %}</h1>
+	</section>
+
+    <p>{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks with specific topics and package them into the
+		same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments
+        so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}</p>
+
+	<ul>
+		<li class="event-info">
+            <b>{% trans 'Event Time' %}</b><br/>
+			2020/09/06 13:40
+		</li>
+		<li class="event-info">
+            <b>{% trans 'Event Info' %}</b><br/>
+            {% trans 'Physical Meetup' %}
+		</li>
+		<li class="event-info">
+            <b>{% trans 'Host' %}</b><br/>
+            {% trans 'Python Community Leader' %}
+		</li>
+	</ul>
+
+    <h2 style="margin-top: 90px;">{% trans 'Overview' %}</h2>
+    {% include 'events/_includes/community-track-overview.html' %}
+
+    <h2>{% trans 'Topics &amp; Venues' %}</h2>
+    {% include 'events/_includes/community-track.html' %}
+
+    <h2>{% trans 'Agenda' %}</h2>
+	<table>
+		<thead>
+		<tr>
+            <th>{% trans 'Time' %}</th>
+            <th>{% trans 'Event' %}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>13:40 - 13:50</td>
+            <td>{% trans 'Community Introduction' %}</td>
+		</tr>
+		<tr>
+			<td>13:50 - 14:20</td>
+            <td>{% trans 'Talk' %}</td>
+		</tr>
+		<tr>
+			<td>14:20 - 14:30</td>
+            <td>{% trans 'Break' %}</td>
+		</tr>
+		<tr>
+			<td>14:30 - 15:00</td>
+            <td>{% trans 'Talk' %}</td>
+		</tr>
+		<tr>
+			<td>15:00 - 15:10</td>
+            <td>{% trans 'Break' %}</td>
+		</tr>
+		<tr>
+			<td>15:10 - 15:50</td>
+            <td>{% trans 'Talk / Sponsor Introduction' %}</td>
+		</tr>
+		<tr>
+			<td>15:50 - 16:00</td>
+            <td>{% trans 'Break' %}</td>
+		</tr>
+		<tr>
+			<td>16:00 - 16:40</td>
+            <td>{% trans 'Free Sharing' %}</td>
+		</tr>
+		</tbody>
+	</table>
+
+
+<script>
+window.TOKEN = '{{ token|default:'' }}';
+</script>
+{% endblock content %}
+
+
+{% block extra_js %}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2020/scripts/token.js' %}"></script>
+{% endcompress %}
+{% endblock %}

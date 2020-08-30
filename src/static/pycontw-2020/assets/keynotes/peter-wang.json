@@ -1,0 +1,30 @@
+{
+    "photo": "pycontw-2020/assets/keynotes/peter-wang.png",
+    "speaker": {
+        "en": {
+            "name": "Peter Wang",
+            "bio": "Peter Wang has been developing commercial scientific computing and visualization software for over 15 years. He has extensive experience in software design and development across a broad range of areas, including 3D graphics, geophysics, large data simulation and visualization, financial risk modeling, and medical imaging.\n\nPeter’s interests in the fundamentals of vector computing and interactive visualization led him to co-found Anaconda (formerly Continuum Analytics). Peter leads the open source and community innovation group.\n\nAs a creator of the PyData community and conferences, he devotes time and energy to growing the Python data science community and advocating and teaching Python at conferences around the world. Peter holds a BA in Physics from Cornell University."
+        },
+        "zh": {
+            "name": "Peter Wang",
+            "bio": "Peter Wang 擁有康奈爾大學物理學學士學位，從事商業科學計算和可視化軟件的開發已超過 15 年。在程式設計及開發方面擁有非常豐富的經驗，涉及的領域亦非常廣泛，其中包含 3D 圖形、地球物理、大數據模擬和可視化、財務風險建模和醫學成像等。\n\n因在向量計算和互動式可視化基本原理的興趣，使他成為 Anaconda 共同創辦人（過去稱為 Continuum Analytics），並領導開源及社群創新小組。\n\n作為 PyData 社群和會議的發起者，他投入大量時間和精力發展 Python 資料科學社群，在世界各地的研討會上倡導和傳授 Python。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "Python in the Era of ML",
+            "description": "Peter will talk about why he thinks Python has come to popularity, its strengths and weaknesses for data analysis, and why an open, accessible language is critical for a future world that will be dominated by machine learning and AI."
+        },
+        "zh": {
+            "title": "機器學習時代下的 Python",
+            "description": "Peter 將會談談他認為 Python 變得熱門的原因。包含 Python 在數據分析領域的優缺點，以及為什麼是個自由開放原始碼軟體、無障礙(初學者友善)語言，及 Python 在機器學習和人工智慧趨勢潮流的世界裡，如何有著不可取代的地位。"
+        }
+    },
+    "social": {
+        "link": "https://www.linkedin.com/in/pzwang/",
+        "twitter": "https://twitter.com/pwang",
+        "github": "https://github.com/pzwang"
+    },
+    "slido": ""
+}
+

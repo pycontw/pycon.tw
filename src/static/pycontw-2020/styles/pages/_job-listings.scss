@@ -1,0 +1,12 @@
+.job-listings-page {
+	.media {
+		> header {
+			> figure {
+				img {
+					width: unset;
+					border-radius: unset;
+				}
+			}
+		}
+	}
+}

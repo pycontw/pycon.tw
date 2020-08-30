@@ -11,88 +11,81 @@ late!{% endblock meta_description %}
 
 {% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
 
-<h1>Conference Tickets</h1>
+<section class="pill-title alt">
+	<h1>Conference Tickets</h1>
+</section>
+
 <div class="box-row">
-	<div class="ticket-box">
-		<p class="ticket-box-title">Individual</p>
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>EarlyBird / Discount</th>
-						<td class="price">2,600</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Regular</th>
-						<td class="price">3,500</td>
-						<td>NTD</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
+	<div class="ticket-info">
+		<div class="ticket-box">
+			<p class="ticket-box-title">Individual</p>
+			<div class="price-box">
+				<div class="price-title">
+					<p class="price">EarlyBird / Discount</p>
+					<p class="price">2,600 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Regular</p>
+					<p class="price">3,500 NTD</p>
+				</div>
+			</div>
 		</div>
+		<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
 	</div>
-	<div class="ticket-box">
-		<p class="ticket-box-title">Corporate</p>
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>Regular</th>
-						<td class="price">5,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>GroupBuy</th>
-						<td class="price">Contact</td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy">Buy</a>
+
+	<div class="ticket-info-imperial">
+		<div class="ticket-box-imperial">
+			<p class="ticket-box-title-imperial">Corporate</p>
+			<div class="price-box-imperial">
+				<div class="price-title-imperial">
+					<p class="price-imperial">Regular</p>
+					<p class="price-imperial">5,500 NTD</p>
+				</div>
+				<div class="price-title-imperial">
+					<p class="price-imperial">GroupBuy</p>
+					<p class="price-imperial">Contact</p>
+				</div>
+			</div>
 		</div>
+		<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial">Buy</a>
 	</div>
-	<div class="ticket-box">
-		<p class="ticket-box-title">Reserved</p>
-		<div class="price-box">
-			<table>
-				<tbody>
-					<tr>
-						<th>Speaker</th>
-						<td class="price">1,500</td>
-						<td>NTD</td>
-					</tr>
-					<tr>
-						<th>Contributor</th>
-						<td class="price">1,500</td>
-						<td>NTD</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
+
+<div class="ticket-info">
+		<div class="ticket-box">
+			<p class="ticket-box-title">Reserved</p>
+			<div class="price-box">
+				<div class="price-title">
+					<p class="price">Speaker</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Contributor</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+			</div>
 		</div>
+		<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
 	</div>
 </div>
-<script>
-	document.querySelectorAll(".buy").forEach((link) => {
-		link.addEventListener("mouseover", (e) => {
-			e.target.parentNode.parentNode.style["border"] = "solid 2px #f4d35e";
-		});
-		link.addEventListener("mouseleave", (e) => {
-			e.target.parentNode.parentNode.style["border"] = "solid 2px #224398";
-		})
-	})
-</script>
+
 <div class="desc-box">
-	<p class="desc"><strong>Individual:</strong> Tickets are limited. Be sure to get your ticket before they are sold
-		out. We will send
-		out electronic invoices by email after the conference. If you need reimbursement from your company, you might
-		want a corporate ticket to meet our local tax regulation.</p>
-	<p class="desc"><strong>Corporate:</strong> Provide company name and Unified Business Number, or <em>N/A</em> if
-		re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the
-		conference.</p>
-	<p class="desc"><strong>Reserved:</strong> Please enter your invitation code on checkout.</p>
+	<div class="entry">
+		<h4>Individual:</h4>
+		<p>Tickets are limited. Be sure to get your ticket before they are sold
+			out. We will send
+			out electronic invoices by email after the conference. If you need reimbursement from your company, you might
+			want a corporate ticket to meet our local tax regulation.</p>
+	</div>
+	<div class="entry">
+		<h4>Corporate:</h4>
+		<p>Provide company name and Unified Business Number, or <em>N/A</em> if
+			re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the
+			conference.</p>
+	</div>
+	<div class="entry">
+		<h4>Reserved:</h4>
+		<p>Please enter your invitation code on checkout.</p>
+	</div>
 </div>
 
 <ul>

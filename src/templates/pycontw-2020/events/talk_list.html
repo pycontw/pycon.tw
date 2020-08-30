@@ -7,6 +7,8 @@
 
 {% block content %}
 
+{% url 'community-track' as community_track_url %}
+
 <section class="pill-title">
 	<h1>{% trans 'Talks' %}</h1>
 </section>
@@ -50,9 +52,27 @@
 
 {% endfor %}
 
+{% if sponsored_events %}
+<article>
+	<h3>{% trans 'Invited Events' %}</h3>
+	<ul class="talk-list">
+		{% for event in sponsored_events %}
+		<li>
+			<p>
+				{% with event_title=event.title host_name=event.host.speaker_name sponsored_event_url=event.get_absolute_url %}
+				<a class="talk-title" href="{{ sponsored_event_url }}">{{ event_title }}</a>
+				{% blocktrans %} by {{ host_name }}{% endblocktrans %}
+				{% endwith %}
+			</p>
+		</li>
+		{% endfor %}
+	</ul>
+</article>
+{% endif %}
+
 <section class="note">
 	<a name="community-track"></a>
-	<span class="talk-label">{% trans 'Community Track' %}</span>
+	<span class="talk-label"><a href="{{ community_track_url }}">{% trans 'Community Track' %}</a></span>
 	<p>
 	{% blocktrans %}The community track is a new event in PyCon TW. We choose the talks with specific topics and package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}
 	</p>

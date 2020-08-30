@@ -1,0 +1,73 @@
+{% load i18n static proposals %}
+
+<div class="topics-block">
+	{% for venue in object_list %}
+
+    <h3><a name="{{ venue.topic|slugify }}"></a>{{ venue.topic }}</h3>
+        <div class="community-track-actions">
+            {% if attendee %}
+            {% if selected_venue == venue %}
+            <button disabled><i class="fa fa-check"></i> {% trans 'Selected' %}</button>
+            {% else %}
+            <form method="post">
+                {% csrf_token %}
+                <input name="venue" value="{{ venue.id }}" type="hidden">
+                <input name="attendee" value="{{ attendee.id }}" type="hidden">
+                <button>{% trans 'Select this track' %}</button>
+            </form>
+            {% endif %}
+            {% endif %}
+        </div>
+
+	<div class="community">
+		{{ venue.community }}
+	</div>
+
+
+	<div class="venue-name">
+		{{ venue.name }}
+
+		<span class="stats">
+			/{{ venue.capacity }}
+		</span>
+        <br />
+
+        <a href="https://www.google.com/maps/search/?api=1&query={{ venue.address }}" target="_blank" rel="noopener" />{{ venue.address }}</a>
+	</div>
+    <img src="{{ venue.get_photo_url }}" width="100%">
+
+    <h4>{% trans 'Community Track Talks' %}</h4>
+
+    <ul class="talk-list">
+        {% for event in venue.communitytrackevent_set.all %}
+        <li>
+            <p>
+                {% if event.talk %}
+
+                {% url 'events_talk_detail' pk=event.talk.pk as event_talk_detail_url %}
+                {% with proposal_title=event.talk.title speaker_names=event.talk|speaker_names_display %}
+                <a class="talk-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a>
+                {% if False and event.talk.labels %}
+                <span class="talk-label"><a href="#community-track">{% trans event.talk.labels %}</a></span>
+                {% endif %}
+                {% blocktrans %} by {{ speaker_names }}{% endblocktrans %}
+                {% endwith %}
+
+                {% elif event.sponsored_event %}
+                {% with event_title=event.sponsored_event.title host_name=event.sponsored_event.host.speaker_name sponsored_event_url=event.sponsored_event.get_absolute_url %}
+                <a class="talk-title" href="{{ sponsored_event_url }}">{{ event_title }}</a>
+                <span class="talk-label">{% trans 'Invited Event' %}</span>
+                {% blocktrans %} by {{ host_name }}{% endblocktrans %}
+                {% endwith %}
+                {% endif %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    {% if not forloop.last %}
+    <hr />
+    {% endif %}
+	{% endfor %}
+</div>

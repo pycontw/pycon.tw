@@ -1,0 +1,29 @@
+{
+    "photo": "pycontw-2020/assets/keynotes/mariatta-wijaya.png",
+    "speaker": {
+        "en": {
+            "name": "Mariatta Wijaya",
+            "bio": "Mariatta is a Python Core Developer, a software engineer at Zapier, Vancouver PyLadies co-organizer, and one of the founding members of the PyCascades conference. She moved to Canada almost two decades ago and now lives in Vancouver with her husband and two children. In her free time, she contributes to open source, builds GitHub bots, fixes typos, and likes to tell you about f-strings. Her favorite emoji is 😝."
+        },
+        "zh": {
+            "name": "Mariatta Wijaya",
+            "bio": "Mariatta 是 Python 核心開發人員、Zapier 的軟體工程師、溫哥華 PyLadies 共同創辦人，也是 PyCascades 會議的創始成員之一。她在約二十年前移居加拿大，現在與丈夫和兩個孩子一起住在溫哥華。在業餘時間，她致力於開源專案、打造 GitHub 機器人、修正錯字，並喜歡向你介紹 f-strings。而她最喜歡的表情符號是😝。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "Oops! I became an open source maintainer! 😱",
+            "description": "I consider myself relatively new to the open source world; my first open source contribution was in summer of 2016. Pretty soon I found myself being given commit rights to other people’s open source projects. Being a new open source maintainer brings a set of unique challenges that I was not fully prepared for. In this talk, I will share my journey and the things I’ve learned along the way, and some advice for other aspiring open source maintainers and contributors."
+        },
+        "zh": {
+            "title": "哎呀! 我成為了開源專案的維護者! 😱",
+            "description": "在開源程式碼的世界裡，我自認還相對陌生。我貢獻的第一個開源專案是在2016年的夏天，在參與不久後，我發現我獲得了可以在別人的開源專案裡提交 (commit) 的權限。成為開源專案的維護者帶來一系列我還沒完全準備好的獨特挑戰。在本次演講中，我將分享我的旅程和我在過程中學到的事情，並為其他有抱負的開源維護者和貢獻者提供一些建議。"
+        }
+    },
+    "social": {
+        "link": "https://mariatta.ca/",
+        "twitter": "https://twitter.com/mariatta",
+        "github": "https://github.com/mariatta"
+    },
+    "slido": ""
+}

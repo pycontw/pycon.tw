@@ -18,6 +18,7 @@ from core.models import (
 )
 from core.utils import format_html_lazy
 from proposals.models import TalkProposal, TutorialProposal, PrimarySpeaker
+from sponsors.models import Sponsor
 
 
 MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
@@ -89,13 +90,14 @@ class Location:
     2. Belt and partial belt events are next, in that order.
     3. Block events in R0-2 are next, in that order.
     """
-    R3   = '1-r3'
-    ALL  = '2-all'
-    R012 = '3-r012'
-    R0   = '4-r0'
-    R1   = '5-r1'
-    R2   = '6-r2'
-    R4   = '7-r4'
+    R3    = '1-r3'
+    ALL   = '2-all'
+    R012  = '3-r012'
+    R0    = '4-r0'
+    R1    = '5-r1'
+    R2    = '6-r2'
+    R4    = '7-r4'
+    OTHER = '8-oth'
 
     @classmethod
     def get_md_width(cls, value):
@@ -107,6 +109,7 @@ class Location:
             '6-r2': 1,
             '1-r3': 1,
             '7-r4': 1,
+            '8-oth': 1,
         }[value]
 
 
@@ -117,13 +120,14 @@ class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
     LOCATION_CHOICES = [
-        (Location.ALL,  _('All rooms')),
-        (Location.R012, _('R0, R1, R2')),
-        (Location.R0,   _('R0')),
-        (Location.R1,   _('R1')),
-        (Location.R2,   _('R2')),
-        (Location.R3,   _('R3')),
-        (Location.R4,   _('R4')),
+        (Location.ALL,   _('All rooms')),
+        (Location.R012,  _('R1, R2, R3')),
+        (Location.R0,    _('R1')),
+        (Location.R1,    _('R2')),
+        (Location.R2,    _('R3')),
+        (Location.R3,    _('Multifunction room')),
+        (Location.R4,    _('Goodideas Studio')),
+        (Location.OTHER, _('Other')),
     ]
     location = models.CharField(
         max_length=6,
@@ -192,7 +196,7 @@ class KeynoteEvent(BaseEvent):
             _("This is used to link to the speaker's introduction on the "
               "Keynote page, e.g. 'liang2' will link to "
               "'{link}#keynote-speaker-liang2'."),
-            link=reverse_lazy('page', kwargs={'path': 'events/keynotes'}),
+            link=reverse_lazy('page', kwargs={'path': 'conference/keynotes'}),
         )
     )
 
@@ -206,7 +210,7 @@ class KeynoteEvent(BaseEvent):
         ))
 
     def get_absolute_url(self):
-        url = reverse('page', kwargs={'path': 'events/keynotes'})
+        url = reverse('page', kwargs={'path': 'conference/keynotes'})
         split = urllib.parse.urlsplit(url)
         frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
@@ -234,6 +238,24 @@ class KeynoteEvent(BaseEvent):
         data = self.get_static_data()
         data = {k: v[code] if isinstance(v, dict) and code in v else v for k, v in data.items()}
         return data
+
+
+class JobListingsEvent(BaseEvent):
+
+    sponsor = BigForeignKey(
+        to=Sponsor,
+        verbose_name=_("sponsor"),
+        on_delete=models.CASCADE,
+    )
+
+    class Meta:
+        verbose_name = _('Job Listings')
+        verbose_name_plural = _('Job Listings')
+
+    def __str__(self):
+        return gettext('Open Role of Sponsor: {sponsor}'.format(
+            sponsor=self.sponsor,
+        ))
 
 
 class SponsoredEvent(EventInfo, BaseEvent):

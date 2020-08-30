@@ -1,0 +1,14 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n compress static %}
+
+{% block title %}{% trans 'Discord Guideline' %}{% endblock %}
+
+{% block body_class %}{{ block.super }} discord-page{% endblock body_class %}
+
+{% block content %}
+<section class="pill-title">
+	<h1>{% trans 'PyCon TW Discord Guideline' %}</h1>
+</section>
+{% include '_includes/ext/discord.html' %}
+{% endblock content %}

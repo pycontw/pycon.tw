@@ -4,7 +4,7 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import translation
@@ -17,11 +17,12 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Schedule, Time,
+    EVENT_ROOMS, Schedule, Time, Location,
     CustomEvent, KeynoteEvent, SponsoredEvent,
     ProposedTalkEvent, ProposedTutorialEvent,
 )
 from .renderers import render_all
+
 
 
 logger = logging.getLogger(__name__)
@@ -31,14 +32,13 @@ class AcceptedProposalMixin:
     def get_queryset(self):
         return (
             super().get_queryset()
-            .filter_accepted()
-            .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
-            .select_related('submitter')
+                .filter_accepted()
+                .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
+                .select_related('submitter')
         )
 
 
 class TalkListView(AcceptedProposalMixin, ListView):
-
     model = TalkProposal
     template_name = 'events/talk_list.html'
     response_class = TemplateExistanceStatusResponse
@@ -47,12 +47,12 @@ class TalkListView(AcceptedProposalMixin, ListView):
         category_map = OrderedDefaultDict(list)
         proposals = (
             self.get_queryset()
-            .prefetch_related(Prefetch(
+                .prefetch_related(Prefetch(
                 'additionalspeaker_set',
                 queryset=(
                     AdditionalSpeaker.objects
-                    .filter(cancelled=False)
-                    .select_related('user')
+                        .filter(cancelled=False)
+                        .select_related('user')
                 ),
                 to_attr='_additional_speakers',
             ))
@@ -64,8 +64,8 @@ class TalkListView(AcceptedProposalMixin, ListView):
     def get_sponsored_talks(self):
         sponsored_events = (
             SponsoredEvent.objects
-            .select_related('host')
-            .order_by('title')
+                .select_related('host')
+                .order_by('title')
         )
         return sponsored_events
 
@@ -78,7 +78,6 @@ class TalkListView(AcceptedProposalMixin, ListView):
 
 
 class TutorialListView(ListView):
-
     model = ProposedTutorialEvent
     template_name = 'events/tutorial_list.html'
     response_class = TemplateExistanceStatusResponse
@@ -86,15 +85,14 @@ class TutorialListView(ListView):
     def get_queryset(self):
         qs = (
             super().get_queryset()
-            .filter(proposal__in=TutorialProposal.objects.filter_accepted())
-            .order_by('begin_time', 'end_time', 'location')
-            .select_related('proposal', 'proposal__submitter')
+                .filter(proposal__in=TutorialProposal.objects.filter_accepted())
+                .order_by('begin_time', 'end_time', 'location')
+                .select_related('proposal', 'proposal__submitter')
         )
         return qs
 
 
 class ScheduleView(TemplateView):
-
     template_name = 'events/schedule.html'
     response_class = TemplateExistanceStatusResponse
 
@@ -120,7 +118,6 @@ class ScheduleView(TemplateView):
 
 
 class ScheduleCreateMixin:
-
     form_class = ScheduleCreationForm
     form_valid_message = _('New talk schedule generated successfully.')
     permission_required = ['events.add_schedule']
@@ -132,8 +129,8 @@ class ScheduleCreateMixin:
 
 
 class ScheduleCreate2016View(
-        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-        CreateView):
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+    CreateView):
     def get_context_data(self, **kwargs):
         return super().get_context_data(content=render_all(), **kwargs)
 
@@ -143,26 +140,25 @@ def _room_sort_key(room):
 
 
 class ScheduleCreateView(
-        ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-        CreateView):
-
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
+    CreateView):
     event_querysets = [
-        CustomEvent.objects.all(),
-        KeynoteEvent.objects.all(),
+        CustomEvent.objects.all().exclude(location=Location.OTHER),
+        KeynoteEvent.objects.all().exclude(location=Location.OTHER),
         (
             ProposedTalkEvent.objects
-            .select_related('proposal__submitter')
-            .annotate(_additional_speaker_count=Count(
+                .select_related('proposal__submitter')
+                .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
-        SponsoredEvent.objects.select_related('host'),
+        SponsoredEvent.objects.select_related('host').exclude(location=Location.OTHER),
         (
             ProposedTutorialEvent.objects
-            .select_related('proposal__submitter')
-            .annotate(_additional_speaker_count=Count(
+                .select_related('proposal__submitter')
+                .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
-            ))
+            )).exclude(location=Location.OTHER)
         ),
     ]
 
@@ -174,8 +170,11 @@ class ScheduleCreateView(
 
         day_info_dict = collections.OrderedDict(
             (date, {
-                'name': name, 'rooms': set(),
-                'slots': OrderedDefaultDict(dict),
+                'name': name,
+                'rooms': set(),
+                'slots': {},
+                'slots_mobile': {},
+                'timeline': {},
             }) for date, name in settings.EVENTS_DAY_NAMES.items()
         )
 
@@ -191,20 +190,27 @@ class ScheduleCreateView(
                 continue
             for event in begin_time_event_dict[begin]:
                 location = event.location
+                day_info['slots'].setdefault(location, [])
+                day_info['slots_mobile'].setdefault(event.begin_time, [])
+                day_info['timeline'].setdefault('begin', event.begin_time)
+                day_info['timeline'].setdefault('end', event.end_time)
+
+                day_info['slots'][location].append(event)
+                day_info['slots_mobile'][event.begin_time].append(event)
+                day_info['timeline']['begin'] = min(
+                    day_info['timeline']['begin'],
+                    event.begin_time
+                )
+                day_info['timeline']['end'] = max(
+                    day_info['timeline']['end'],
+                    event.end_time
+                )
                 if location in EVENT_ROOMS:
                     day_info['rooms'].add(location)
-                day_info['slots'][(begin, end)][location] = event
 
         for info in day_info_dict.values():
             # Sort rooms.
             info['rooms'] = sorted(info['rooms'], key=_room_sort_key)
-            # Work around Django template unable to iter through defaultdict.
-            # http://stackoverflow.com/questions/4764110
-            info['slots'] = collections.OrderedDict(
-                (slot_time, sorted(
-                    slot_rooms.items(), key=lambda i: _room_sort_key(i[0])))
-                for slot_time, slot_rooms in info['slots'].items()
-            )
 
         return day_info_dict
 
@@ -240,7 +246,6 @@ class EventInfoMixin:
 
 
 class ProposedEventMixin:
-
     event_model = None
 
     def is_event_sponsored(self):
@@ -250,8 +255,8 @@ class ProposedEventMixin:
         try:
             event = (
                 self.event_model.objects
-                .select_related('begin_time', 'end_time')
-                .get(proposal=self.object)
+                    .select_related('begin_time', 'end_time')
+                    .get(proposal=self.object)
             )
         except self.event_model.DoesNotExist:
             return None
@@ -259,8 +264,8 @@ class ProposedEventMixin:
 
 
 class TalkDetailView(
-        AcceptedProposalMixin, ProposedEventMixin,
-        EventInfoMixin, DetailView):
+    AcceptedProposalMixin, ProposedEventMixin,
+    EventInfoMixin, DetailView):
     model = TalkProposal
     event_model = ProposedTalkEvent
     template_name = 'events/talk_detail.html'
@@ -268,7 +273,6 @@ class TalkDetailView(
 
 
 class SponsoredEventDetailView(EventInfoMixin, DetailView):
-
     model = SponsoredEvent
     template_name = 'events/sponsored_event_detail.html'
     response_class = TemplateExistanceStatusResponse
@@ -288,8 +292,8 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
 
 
 class TutorialDetailView(
-        AcceptedProposalMixin, ProposedEventMixin,
-        EventInfoMixin, DetailView):
+    AcceptedProposalMixin, ProposedEventMixin,
+    EventInfoMixin, DetailView):
     model = TutorialProposal
     event_model = ProposedTutorialEvent
     template_name = 'events/tutorial_detail.html'
