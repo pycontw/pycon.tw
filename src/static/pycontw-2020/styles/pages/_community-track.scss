@@ -97,21 +97,21 @@
             padding-top: 10px;
             font-family: $text-font-family;
             font-weight: 400;
-            font-size: 1.1em;
+            font-size: 1.25em;
         }
 
         .venue-name {
             padding-top: 8px;
             font-family: $classic-font-family;
             font-weight: 300;
-            font-size: 0.95em;
-            color: lighten(#000, 30);
+            font-size: 1.1em;
+            color: lighten(#000, 40);
         }
 
         .stats {
             font-family: $header-font-family;
             padding-top: 0px;
-            font-size: 0.8em;
+            font-size: 1.05em;
         }
     }
 }
@@ -127,21 +127,21 @@
         padding-top: 10px;
         font-family: $text-font-family;
         font-weight: 400;
-        font-size: 1.1em;
+        font-size: 1.25em;
     }
 
     .venue-name {
         padding-top: 8px;
         font-family: $classic-font-family;
         font-weight: 300;
-        font-size: 0.95em;
-        color: lighten(#000, 30);
+        font-size: 1.1em;
+        color: lighten(#000, 40);
     }
 
     .stats {
         font-family: $header-font-family;
         padding-top: 0px;
-        font-size: 0.8em;
+        font-size: 1.05em;
     }
 
     img {
