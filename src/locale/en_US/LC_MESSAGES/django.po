@@ -4112,17 +4112,26 @@ msgstr "Password reset successful. You can now login."
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "Proposing a Tutorial"
 
-#~ msgid "古蹟出張所"
-#~ msgstr "古蹟出張所"
+msgid "Tainan Cultural and Creative Park"
+msgstr "Tainan Cultural and Creative Park"
 
-#~ msgid "Tsang Fong Coffee"
-#~ msgstr "Tsang Fong Coffee"
+msgid "Angry Burger"
+msgstr "Angry Burger"
 
-#~ msgid "Masa Loft"
-#~ msgstr "Masa Loft"
+msgid "Tsang Fong Art Space"
+msgstr "Tsang Fong Art Space"
 
-#~ msgid "Angry Burger"
-#~ msgstr "Angry Burger"
+msgid "Brunch of San Dao Men Siang Jian"
+msgstr "Brunch of San Dao Men Siang Jian"
 
-#~ msgid "Three Doors Brunch"
-#~ msgstr "Three Doors Brunch"
+msgid "Masa Loft"
+msgstr "Masa Loft"
+
+msgid "traffic"
+msgstr "traffic"
+
+msgid "Cheng Kung University"
+msgstr "Cheng Kung University"
+
+msgid "Shuttle bus route"
+msgstr "Shuttle bus route"
