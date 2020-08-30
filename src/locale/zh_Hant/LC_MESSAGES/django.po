@@ -3966,17 +3966,26 @@ msgstr "密碼重設成功。您現在即可登入。"
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "專業課程"
 
-#~ msgid "古蹟出張所"
-#~ msgstr "古蹟出張所"
+msgid "Tainan Cultural and Creative Park"
+msgstr "古蹟出張所"
 
-#~ msgid "Tsang Fong Coffee"
-#~ msgstr "藏風藝文空間"
+msgid "Angry Burger"
+msgstr "Angry Burger"
 
-#~ msgid "Masa Loft"
-#~ msgstr "Masa Loft"
+msgid "Tsang Fong Art Space"
+msgstr "藏風藝文空間"
 
-#~ msgid "Angry Burger"
-#~ msgstr "Angry Burger"
+msgid "Brunch of San Dao Men Siang Jian"
+msgstr "三道門香見"
 
-#~ msgid "Three Doors Brunch"
-#~ msgstr "三道門香見Brunch"
+msgid "Masa Loft"
+msgstr "Masa Loft"
+
+msgid "traffic"
+msgstr "交通"
+
+msgid "Shuttle bus route"
+msgstr "接駁車路線"
+
+msgid "Cheng Kung University"
+msgstr "成大"
