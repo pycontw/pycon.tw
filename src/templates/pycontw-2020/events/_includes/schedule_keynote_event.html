@@ -1,7 +1,7 @@
 {% load events %}
 
 {% with data=event.get_static_data_for_locale %}
-	<a href="{% url 'page' path='events/keynotes' %}#{{ event.slug }}" class="keynote-event localed-url">
+	<a href="{% url 'page' path='conference/keynotes' %}#{{ event.slug }}" class="keynote-event localed-url">
 		<div class="context-container">
 			<div class="room">
 				<div class="room-tag room-{{ event.location }}"></div>
