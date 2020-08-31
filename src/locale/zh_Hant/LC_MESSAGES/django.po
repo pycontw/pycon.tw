@@ -3509,12 +3509,12 @@ msgstr ""
 #: templates/pycontw-2020/_includes/ext/discord.html:123
 msgid ""
 "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
-"invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/"
-"YYAgUk7</a> <br>In your Discord client App, click the button with plus sign, "
+"invite link: <a href='https://discord.gg/94hgCQv'>https://discord.gg/"
+"94hgCQv</a> <br>In your Discord client App, click the button with plus sign, "
 "and then select 'Join a server'."
 msgstr ""
 "3. 加入 Python Taiwan 的 Discord 伺服器. <br>Python Taiwan 伺服器 邀請連結: "
-"<a href='https://discord.gg/YYAgUk7'>https://discord.gg/YYAgUk7</a> <br>在您"
+"<a href='https://discord.gg/94hgCQv'>https://discord.gg/94hgCQv</a> <br>在您"
 "的 Discord 程式中，按下左邊的 '+' 號按鈕，並選擇 '加入伺服器'。"
 
 #: templates/pycontw-2020/_includes/ext/discord.html:126
@@ -3966,17 +3966,26 @@ msgstr "密碼重設成功。您現在即可登入。"
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "專業課程"
 
-#~ msgid "古蹟出張所"
-#~ msgstr "古蹟出張所"
+msgid "Tainan Cultural and Creative Park"
+msgstr "古蹟出張所"
 
-#~ msgid "Tsang Fong Coffee"
-#~ msgstr "藏風藝文空間"
+msgid "Angry Burger"
+msgstr "Angry Burger"
 
-#~ msgid "Masa Loft"
-#~ msgstr "Masa Loft"
+msgid "Tsang Fong Art Space"
+msgstr "藏風藝文空間"
 
-#~ msgid "Angry Burger"
-#~ msgstr "Angry Burger"
+msgid "Brunch of San Dao Men Siang Jian"
+msgstr "三道門香見"
 
-#~ msgid "Three Doors Brunch"
-#~ msgstr "三道門香見Brunch"
+msgid "Masa Loft"
+msgstr "Masa Loft"
+
+msgid "traffic"
+msgstr "交通"
+
+msgid "Shuttle bus route"
+msgstr "接駁車路線"
+
+msgid "Cheng Kung University"
+msgstr "成大"
