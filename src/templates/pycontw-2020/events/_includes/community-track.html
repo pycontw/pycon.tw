@@ -28,7 +28,13 @@
 		{{ venue.name }}
 
 		<span class="stats">
-			/{{ venue.capacity }}
+            <span
+                {% if venue.get_choice_count >= venue.get_soft_limit and venue.get_choice_count <= venue.capacity %}
+                    class="text-yellow"
+                {% elif venue.get_choice_count > venue.capacity %}
+                    class="text-danger"
+                {% endif %}
+                > {{ venue.get_choice_count }} </span> / <span>{{ venue.capacity }}</span>
 		</span>
         <br />
 
