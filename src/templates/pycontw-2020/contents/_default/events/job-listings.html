@@ -4,7 +4,25 @@
 {% load sponsors %}
 {% load events %}
 
-{% block title %}{% trans 'Job Listings' %}{% endblock title %}
+{% block title %}
+【2020年Python工作職缺】Python知名企業職缺一覽表－PyCon Taiwan
+{% endblock title %}
+{% block meta_seo %}
+<meta name="description" content="2020年Python熱門工作職缺、Python工程師職缺一覽表，PyCon Taiwan提供知名企業內部Python工程師職缺，直接查看所有知名品牌Python工作機會！" >
+<meta name="keywords" content="Python職缺" >
+<meta name="author" content="PyCon Taiwan" >
+<meta name="copyright" content="本網頁著作權屬2020 PyCon Taiwan, All Rights Reserved " >
+<meta name="application-name" content="2020年Python工作職缺">
+{% endblock meta_seo %}
+{% block meta_og %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="【2020年Python熱門工作】Python知名企業職缺一覽表－PyCon Taiwan">
+<meta property="og:description" content="2020年知名企業內部Python熱門工作職缺、Python工程師職缺一覽表，提供知名品牌企業內部Python工程師職缺、Python工作機會！">
+<meta property="og:url" content="https://tw.pycon.org/2020/zh-hant/events/job-listings/">
+<meta property="og:site_name" content="PyCon Taiwan">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2020/assets/og-image.png' %}">
+{% endblock meta_og%}
+
 
 {% block body_class %}job-listings-page{% endblock body_class %}
 
