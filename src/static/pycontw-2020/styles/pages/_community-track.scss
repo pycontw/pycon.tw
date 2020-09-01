@@ -165,13 +165,45 @@
 
 	h4 {
 		text-align: left;
-		padding-left: 1.5rem;
+		padding-left: 0rem;
 	}
 
-	ul.talk-list {
-		padding-left: 1.5rem;
-	}
+    dl.talk-list {
+        dt {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        dd {
+            margin-left: 0;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    @include on-desktop() {
+        dl.talk-list {
+            display: grid;
+            grid-template-columns: max-content auto;
+            padding-left: 0rem;
+            row-gap: 5px;
+
+            dt {
+                text-align: center;
+                grid-column-start: 1;
+                font-weight: 300;
+            }
+
+            dd {
+                text-align: left;
+                grid-column-start: 2;
+                margin-left: 1em;
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }
+
 
 .table {
 
