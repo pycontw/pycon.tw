@@ -2506,9 +2506,12 @@ msgstr "Collaborative Notes"
 #: templates/pycontw-2017/contents/_default/portal.html:30
 #: templates/pycontw-2018/contents/_default/portal.html:25
 #: templates/pycontw-2019/_includes/portal.html:12
-#: templates/pycontw-2020/_includes/portal.html:12
 msgid "Chat Room"
 msgstr "Chat Room"
+
+#: templates/pycontw-2020/_includes/portal.html:12
+msgid "Discord Chat Room"
+msgstr "Discord 聊天室"
 
 #: templates/pycontw-2017/contents/_default/portal.html:38
 msgid "Quiz Leaderboard"
