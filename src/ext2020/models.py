@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Q
+from django.db.models import Q, F
 from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import StaticNode
 from django.core.exceptions import ValidationError
@@ -45,7 +45,11 @@ class Venue(models.Model):
         return StaticNode.handle_simple(self.photo)
 
     def get_events(self):
-        return CommunityTrackEvent.objects.filter(Q(venue=self) | Q(venue__isnull=True)).order_by('begin_time__value').distinct('begin_time__value')
+        # Get related events, whether the event is explicit set to the venue,
+        # or with no venue set (lower priority)
+        return CommunityTrackEvent.objects.filter(
+                    Q(venue=self) | Q(venue__isnull=True)
+                ).order_by('begin_time__value', F('venue').desc(nulls_last=True)).distinct('begin_time__value')
 
     class Meta:
         verbose_name = _('community track venue')
