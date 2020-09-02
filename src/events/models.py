@@ -302,6 +302,7 @@ class ProposedTalkEvent(BaseEvent):
         limit_choices_to={'accepted': True},
         verbose_name=_('proposal'),
         on_delete=models.CASCADE,
+        unique=True,
     )
 
     objects = ProposedEventManager()
@@ -323,6 +324,7 @@ class ProposedTutorialEvent(BaseEvent):
         to=TutorialProposal,
         verbose_name=_('proposal'),
         on_delete=models.CASCADE,
+        unique=True,
     )
     registration_link = models.URLField(
         verbose_name=_('registration link'),
