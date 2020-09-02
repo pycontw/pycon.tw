@@ -25,7 +25,7 @@ class CustomEventResource(resources.ModelResource):
     class Meta:
         model = CustomEvent
         fields = [
-            'title', 'break_event', 'location', 'begin_time', 'end_time',
+            'title', 'break_event', 'location', 'begin_time', 'end_time', 'description', 'link_path',
         ]
         export_order = fields
         import_id_fields = ['title', 'begin_time', 'end_time']

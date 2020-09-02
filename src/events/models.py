@@ -175,6 +175,13 @@ class CustomEvent(BaseEvent):
             "as keynotes, talks, etc.",
         )
     )
+    description = models.TextField(
+        verbose_name=_('event description'), blank=True,
+    )
+    link_path = models.CharField(
+        verbose_name=_('link path'),
+        max_length=255, blank=True,
+    )
 
     class Meta:
         verbose_name = _('custom event')
