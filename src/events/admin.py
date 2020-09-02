@@ -113,7 +113,7 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
     search_fields = ['title']
     list_display = [
         'title', 'begin_time', 'end_time', 'location', 'break_event',
-        'get_edit_link',
+        'description', 'link_path', 'get_edit_link',
     ]
     list_filter = [
         BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'break_event',

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-01 22:51+0800\n"
+"POT-Creation-Date: 2020-09-02 17:08+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -251,7 +251,7 @@ msgstr "投影片連結"
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:178 events/models.py:354 ext2020/models.py:17
+#: core/models.py:178 events/models.py:363 ext2020/models.py:17
 msgid "created at"
 msgstr "建立時間"
 
@@ -267,11 +267,11 @@ msgstr "遠端視訊演講"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:98 events/models.py:146 ext2020/models.py:84
+#: events/admin.py:98 events/models.py:146 ext2020/models.py:88
 msgid "begin time"
 msgstr "開始時間"
 
-#: events/admin.py:104 events/models.py:155 ext2020/models.py:93
+#: events/admin.py:104 events/models.py:155 ext2020/models.py:97
 msgid "end time"
 msgstr "結束時間"
 
@@ -343,23 +343,33 @@ msgstr ""
 "此活動是否應該被顯示為休息時間。休息時間的顯示會與「真的」會議時段，例如基調"
 "演講、一般演講不同。"
 
-#: events/models.py:180
+#: events/models.py:179
+#, fuzzy
+#| msgid "open role descsription"
+msgid "event description"
+msgstr "職缺說明"
+
+#: events/models.py:182
+msgid "link path"
+msgstr "連結路徑"
+
+#: events/models.py:187
 msgid "custom event"
 msgstr "自訂活動"
 
-#: events/models.py:181
+#: events/models.py:188
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:190 users/models.py:116
+#: events/models.py:197 users/models.py:116
 msgid "speaker name"
 msgstr "演講者"
 
-#: events/models.py:194 events/models.py:270
+#: events/models.py:201 events/models.py:277
 msgid "slug"
 msgstr "網址文字"
 
-#: events/models.py:196
+#: events/models.py:203
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
@@ -368,76 +378,76 @@ msgstr ""
 "用來連結至基調演講頁面上的講者簡介，如「liang2」可連結至「{link}#keynote-"
 "speaker-liang2」。"
 
-#: events/models.py:204
+#: events/models.py:211
 msgid "keynote event"
 msgstr "基調演講"
 
-#: events/models.py:205
+#: events/models.py:212
 msgid "keynote events"
 msgstr "基調演講"
 
-#: events/models.py:208
+#: events/models.py:215
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
-#: events/models.py:247 sponsors/models.py:80 sponsors/models.py:96
+#: events/models.py:254 sponsors/models.py:80 sponsors/models.py:96
 msgid "sponsor"
 msgstr "贊助"
 
-#: events/models.py:252 events/models.py:253
+#: events/models.py:259 events/models.py:260
 #: templates/pycontw-2020/_includes/menu.html:104
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "徵才資訊"
 
-#: events/models.py:256
+#: events/models.py:263
 #, python-brace-format
 msgid "Open Role of Sponsor: {sponsor}"
 msgstr "徵才中贊助商: {sponsor}"
 
-#: events/models.py:265
+#: events/models.py:272
 msgid "host"
 msgstr "主持人"
 
-#: events/models.py:274
+#: events/models.py:281
 msgid "sponsored event"
 msgstr "贊助演講"
 
-#: events/models.py:275
+#: events/models.py:282
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:303 events/models.py:324 reviews/models.py:76
+#: events/models.py:310 events/models.py:332 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "提案"
 
-#: events/models.py:310
+#: events/models.py:318
 msgid "talk event"
 msgstr "演講"
 
-#: events/models.py:311
+#: events/models.py:319
 msgid "talk events"
 msgstr "演講"
 
-#: events/models.py:328
+#: events/models.py:337
 msgid "registration link"
 msgstr "報名連結"
 
-#: events/models.py:336
+#: events/models.py:345
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:337
+#: events/models.py:346
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:351
+#: events/models.py:360
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:359 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:368 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -458,11 +468,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:360
+#: events/models.py:369
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:365
+#: events/models.py:374
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 
@@ -474,7 +484,7 @@ msgstr "基調演講"
 msgid "EN Slides"
 msgstr "英文投影片"
 
-#: events/views.py:122
+#: events/views.py:123
 msgid "New talk schedule generated successfully."
 msgstr "演講時間表產生成功。"
 
@@ -518,37 +528,37 @@ msgstr "主題"
 msgid "Capacity Limit"
 msgstr "場地容納限制"
 
-#: ext2020/models.py:51
+#: ext2020/models.py:55
 msgid "community track venue"
 msgstr "社群軌場地"
 
-#: ext2020/models.py:52
+#: ext2020/models.py:56
 msgid "community track venues"
 msgstr "社群軌場地"
 
-#: ext2020/models.py:65
+#: ext2020/models.py:69
 msgid "community track choice"
 msgstr "社群軌選擇"
 
-#: ext2020/models.py:66
+#: ext2020/models.py:70
 msgid "community track choices"
 msgstr "社群軌選擇"
 
-#: ext2020/models.py:98
+#: ext2020/models.py:102
 msgid "community track event"
 msgstr "社群軌活動"
 
-#: ext2020/models.py:99
+#: ext2020/models.py:103
 msgid "community track events"
 msgstr "社群軌活動"
 
-#: ext2020/models.py:110
+#: ext2020/models.py:114
 msgid ""
 "You can only put either proposed_talk_event, sponsored_event or custom_event "
 "at once."
 msgstr ""
 
-#: ext2020/models.py:113
+#: ext2020/models.py:117
 msgid "You need to put proposed_talk_event sponsored_event, or custom_event."
 msgstr ""
 
@@ -1443,7 +1453,7 @@ msgstr "修改"
 #: templates/pycontw-2018/events/talk_detail.html:46
 #: templates/pycontw-2019/events/talk_detail.html:48
 #: templates/pycontw-2019/events/tutorial_detail.html:47
-#: templates/pycontw-2020/events/talk_detail.html:50
+#: templates/pycontw-2020/events/talk_detail.html:61
 #: templates/pycontw-2020/events/tutorial_detail.html:47
 msgid "Abstract"
 msgstr "摘要"
@@ -2276,7 +2286,7 @@ msgstr "投影片連結"
 #: templates/pycontw-2018/events/talk_detail.html:53
 #: templates/pycontw-2019/events/talk_detail.html:55
 #: templates/pycontw-2019/events/tutorial_detail.html:54
-#: templates/pycontw-2020/events/talk_detail.html:57
+#: templates/pycontw-2020/events/talk_detail.html:68
 #: templates/pycontw-2020/events/tutorial_detail.html:54
 msgid "Description"
 msgstr "說明"
@@ -2625,6 +2635,7 @@ msgstr "輸出新時間表"
 #: templates/pycontw-2019/events/talk_detail.html:23
 #: templates/pycontw-2019/events/tutorial_detail.html:23
 #: templates/pycontw-2020/events/talk_detail.html:25
+#: templates/pycontw-2020/events/talk_detail.html:35
 #: templates/pycontw-2020/events/tutorial_detail.html:23
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
@@ -2925,7 +2936,7 @@ msgstr "時段："
 #: templates/pycontw-2018/events/talk_detail.html:25
 #: templates/pycontw-2019/events/talk_detail.html:27
 #: templates/pycontw-2019/events/tutorial_detail.html:27
-#: templates/pycontw-2020/events/talk_detail.html:29
+#: templates/pycontw-2020/events/talk_detail.html:40
 #: templates/pycontw-2020/events/tutorial_detail.html:27
 msgid "Category: "
 msgstr "主題分類："
@@ -2933,7 +2944,7 @@ msgstr "主題分類："
 #: templates/pycontw-2018/events/talk_detail.html:29
 #: templates/pycontw-2019/events/talk_detail.html:31
 #: templates/pycontw-2019/events/tutorial_detail.html:31
-#: templates/pycontw-2020/events/talk_detail.html:33
+#: templates/pycontw-2020/events/talk_detail.html:44
 #: templates/pycontw-2020/events/tutorial_detail.html:31
 msgid "Language: "
 msgstr "語言："
@@ -2941,7 +2952,7 @@ msgstr "語言："
 #: templates/pycontw-2018/events/talk_detail.html:33
 #: templates/pycontw-2019/events/talk_detail.html:35
 #: templates/pycontw-2019/events/tutorial_detail.html:35
-#: templates/pycontw-2020/events/talk_detail.html:37
+#: templates/pycontw-2020/events/talk_detail.html:48
 #: templates/pycontw-2020/events/tutorial_detail.html:35
 msgid "Python Level: "
 msgstr "Python 難易度："
@@ -2949,7 +2960,7 @@ msgstr "Python 難易度："
 #: templates/pycontw-2018/events/talk_detail.html:39
 #: templates/pycontw-2019/events/talk_detail.html:41
 #: templates/pycontw-2019/events/tutorial_detail.html:41
-#: templates/pycontw-2020/events/talk_detail.html:43
+#: templates/pycontw-2020/events/talk_detail.html:54
 #: templates/pycontw-2020/events/tutorial_detail.html:41
 msgid "No Recording"
 msgstr "不錄影"
@@ -2957,21 +2968,21 @@ msgstr "不錄影"
 #: templates/pycontw-2018/events/talk_detail.html:60
 #: templates/pycontw-2019/events/talk_detail.html:62
 #: templates/pycontw-2019/events/tutorial_detail.html:61
-#: templates/pycontw-2020/events/talk_detail.html:64
+#: templates/pycontw-2020/events/talk_detail.html:75
 #: templates/pycontw-2020/events/tutorial_detail.html:61
 msgid "Slides"
 msgstr "投影片"
 
 #: templates/pycontw-2018/events/talk_detail.html:69
 #: templates/pycontw-2019/events/talk_detail.html:71
-#: templates/pycontw-2020/events/talk_detail.html:73
+#: templates/pycontw-2020/events/talk_detail.html:84
 msgctxt "speaker info in talk detail"
 msgid "Speakers"
 msgstr "講者"
 
 #: templates/pycontw-2018/events/talk_detail.html:71
 #: templates/pycontw-2019/events/talk_detail.html:73
-#: templates/pycontw-2020/events/talk_detail.html:75
+#: templates/pycontw-2020/events/talk_detail.html:86
 msgctxt "speaker info in talk detail"
 msgid "Speaker"
 msgstr "講者"
