@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:08+0800\n"
+"POT-Creation-Date: 2020-09-04 05:40+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -24,35 +24,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ccip/views.py:192
+#: ccip/views.py:206
 msgctxt "CCIP event type"
 msgid "event"
 msgstr "event"
 
-#: ccip/views.py:200
+#: ccip/views.py:214
 msgctxt "CCIP event type"
 msgid "break"
 msgstr "break"
 
-#: ccip/views.py:208
+#: ccip/views.py:222
 msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "keynote"
 
-#: ccip/views.py:214
+#: ccip/views.py:228
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "sponsored"
 
-#: ccip/views.py:222
+#: ccip/views.py:236
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "tutorial"
 
-#: ccip/views.py:234
+#: ccip/views.py:248
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "talk"
+
+#: ccip/views.py:261
+msgctxt "CCIP event type"
+msgid "community track"
+msgstr "community track"
 
 #: core/admin.py:15
 msgid "Current"
