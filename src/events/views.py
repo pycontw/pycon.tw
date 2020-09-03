@@ -271,7 +271,7 @@ class ProposedEventMixin:
                                 .select_related('begin_time', 'end_time')
                                 .get(talk=self.object)
             )
-        except CommunityTrackEvent.DoesNotExist:
+        except (CommunityTrackEvent.DoesNotExist, ValueError):
             pass
 
         return super().get_context_data(
