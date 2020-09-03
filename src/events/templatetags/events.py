@@ -123,8 +123,7 @@ def get_talk_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    is_remote = event.is_remote
-    return _render_talk_event_template(event, proposal, speaker_names, False, is_remote)
+    return _render_talk_event_template(event, proposal, speaker_names, False, event.is_remote)
 
 
 def get_tutorial_event_display(event):
