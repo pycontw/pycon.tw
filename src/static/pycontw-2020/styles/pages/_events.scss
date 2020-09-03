@@ -171,11 +171,11 @@ $icon-height: 26px;
 
 		.title {
 			display: -webkit-box;
-			height: 90px;
 			overflow: hidden;
+			line-height: 1.2em;
 			text-overflow: ellipsis;
 			box-sizing: border-box;
-			-webkit-line-clamp: 4;
+			-webkit-line-clamp: 3;
 		}
 
 		.tags {
@@ -387,7 +387,7 @@ main {
 					position: sticky;
 					position: -webkit-sticky;
 					top: 0;
-					z-index: 1000;
+					z-index: 10;
 					padding: 16px 0;
 					background: $brick;
 
