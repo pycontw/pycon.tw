@@ -14,6 +14,7 @@ from django.views.generic import CreateView, DetailView, ListView, TemplateView
 from core.mixins import FormValidMessageMixin
 from core.utils import OrderedDefaultDict, TemplateExistanceStatusResponse
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
+from ext2020.models import CommunityTrackEvent
 
 from .forms import ScheduleCreationForm
 from .models import (
@@ -261,6 +262,22 @@ class ProposedEventMixin:
         except self.event_model.DoesNotExist:
             return None
         return event
+
+    def get_context_data(self, **kwargs):
+        community_track_event = None
+        try:
+            community_track_event = (
+                CommunityTrackEvent.objects
+                                .select_related('begin_time', 'end_time')
+                                .get(talk=self.object)
+            )
+        except CommunityTrackEvent.DoesNotExist:
+            pass
+
+        return super().get_context_data(
+            community_track_event=community_track_event,
+            **kwargs,
+        )
 
 
 class TalkDetailView(
