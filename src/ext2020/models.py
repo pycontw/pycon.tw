@@ -84,7 +84,7 @@ class CommunityTrackEvent(models.Model):
         to=Time,
         blank=True,
         null=True,
-        related_name='begined_%(class)s_set',
+        related_name='beginning_%(class)s_set',
         verbose_name=_('begin time'),
         on_delete=models.CASCADE,
     )
@@ -93,7 +93,7 @@ class CommunityTrackEvent(models.Model):
         to=Time,
         blank=True,
         null=True,
-        related_name='ended_%(class)s_set',
+        related_name='ending_%(class)s_set',
         verbose_name=_('end time'),
         on_delete=models.CASCADE,
     )
@@ -108,7 +108,7 @@ class CommunityTrackEvent(models.Model):
 
     def clean(self):
         values = [self.talk, self.sponsored_event, self.custom_event]
-        count = list(map(bool, values)).count(True)
+        count = len(tuple(filter(None, values)))
 
         if count > 1:
             raise ValidationError(_('You can only put either proposed_talk_event, sponsored_event or custom_event at once.'))
