@@ -15,16 +15,7 @@
 
 <section class="content info">
 	<ul>
-		{% if event %}
-		<li>
-			<dfn class="location"></dfn>
-			<span>{{ event.get_location_display|default:event.location }}</span>
-		</li>
-		<li>
-			<dfn class="slot"></dfn>
-			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
-		</li>
-        {% elif community_track_event %}
+        {% if community_track_event %}
         {% with event=community_track_event %}
 		<li>
 			<dfn class="location"></dfn>
@@ -35,6 +26,15 @@
 			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
 		</li>
         {% endwith %}
+		{% elif event %}
+		<li>
+			<dfn class="location"></dfn>
+			<span>{{ event.get_location_display|default:event.location }}</span>
+		</li>
+		<li>
+			<dfn class="slot"></dfn>
+			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
+		</li>
 		{% endif %}
 		<li>
 			<dfn class="category">{% trans 'Category: ' %}</dfn>
