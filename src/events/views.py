@@ -309,6 +309,21 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
     def get_time_slot(self):
         return (self.object.begin_time.value, self.object.end_time.value)
 
+    def get_context_data(self, **kwargs):
+        community_track_event = None
+        try:
+            community_track_event = (
+                CommunityTrackEvent.objects
+                .select_related('begin_time', 'end_time')
+                .get(sponsored_event=self.object)
+            )
+        except CommunityTrackEvent.DoesNotExist:
+            pass
+
+        return super().get_context_data(
+            community_track_event=community_track_event,
+            **kwargs,
+        )
 
 class TutorialDetailView(
     AcceptedProposalMixin, ProposedEventMixin,
