@@ -12,12 +12,14 @@
 			     title="{{ info.title }}"
 			>
 				{{ info.title }}
-				{% if is_remote %}
-				<span class="remote-label">
-					Remote Talk
-				</span>
-				{% endif %}
 			</div>
+            {% if is_remote %}
+            <div class="remote-block">
+                <span class="remote-label">
+                    Remote Talk
+                </span>
+            </div>
+            {% endif %}
 			<div class="speaker">by <span class="name">{{ speakers }}</span></div>
 			<div class="tags">
 				<div class="language-{{ info.language.lower }}"></div>
