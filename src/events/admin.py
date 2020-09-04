@@ -134,11 +134,11 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 class KeynoteEventAdmin(admin.ModelAdmin):
     fields = [
         'conference', 'speaker_name', 'slug',
-        'begin_time', 'end_time', 'location',
+        'begin_time', 'end_time', 'location', 'is_remote'
     ]
     search_fields = ['speaker_name']
-    list_display = ['speaker_name', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_display = ['speaker_name', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
 
 
 @admin.register(JobListingsEvent)
