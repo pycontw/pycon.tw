@@ -8,6 +8,13 @@
 			</div>
 			<div class="context">
 				<div class="title">Keynote: {{ data.session.title }}</div>
+				{% if is_remote %}
+				<div class="remote-block">
+					<span class="remote-label">
+						Remote Talk
+					</span>
+				</div>
+				{% endif %}
 				<div class="speaker">by <span class="name">{{ data.speaker.name }}</span></div>
 			</div>
 			<div class="time">

@@ -61,6 +61,7 @@
 			<p>
 				{% with event_title=event.title host_name=event.host.speaker_name sponsored_event_url=event.get_absolute_url %}
 				<a class="talk-title" href="{{ sponsored_event_url }}">{{ event_title }}</a>
+				<span class="talk-label"><a href="#community-track">{% trans 'Community Track' %}</a></span>
 				{% blocktrans %} by {{ host_name }}{% endblocktrans %}
 				{% endwith %}
 			</p>

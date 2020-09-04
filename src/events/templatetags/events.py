@@ -104,7 +104,7 @@ def get_custom_event_display(event):
 
 def get_keynote_event_display(event):
     template = get_template('events/_includes/schedule_keynote_event.html')
-    return template.render({'event': event})
+    return template.render({'event': event, 'is_remote': event.is_remote})
 
 
 def _render_talk_event_template(event, info, speaker_names, sponsored, is_remote=False):

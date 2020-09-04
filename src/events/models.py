@@ -206,6 +206,10 @@ class KeynoteEvent(BaseEvent):
             link=reverse_lazy('page', kwargs={'path': 'conference/keynotes'}),
         )
     )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
+    )
 
     class Meta:
         verbose_name = _('keynote event')
