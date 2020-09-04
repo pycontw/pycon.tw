@@ -311,6 +311,10 @@ class ProposedTalkEvent(BaseEvent):
         on_delete=models.CASCADE,
         unique=True,
     )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
+    )
 
     objects = ProposedEventManager()
 

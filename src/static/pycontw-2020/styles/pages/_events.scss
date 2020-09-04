@@ -82,6 +82,16 @@ $icon-height: 26px;
 				margin-bottom: 8px;
 				font-size: 18px;
 				font-weight: 700;
+
+				.remote-label {
+					font-size: 0.5rem;
+					color: white;
+					background-color: $jinger-bread;
+				
+					padding: 0.8px 3.5px;
+					border-radius: 3px;
+					position: relative;
+				}
 			}
 
 			.speaker {

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:08+0800\n"
+"POT-Creation-Date: 2020-09-03 20:18+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -251,7 +251,7 @@ msgstr "投影片連結"
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:178 events/models.py:363 ext2020/models.py:17
+#: core/models.py:178 events/models.py:367 ext2020/models.py:17
 msgid "created at"
 msgstr "建立時間"
 
@@ -418,36 +418,40 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:310 events/models.py:332 reviews/models.py:76
+#: events/models.py:310 events/models.py:336 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "提案"
 
-#: events/models.py:318
+#: events/models.py:315
+msgid "is remote"
+msgstr "遠端演講"
+
+#: events/models.py:322
 msgid "talk event"
 msgstr "演講"
 
-#: events/models.py:319
+#: events/models.py:323
 msgid "talk events"
 msgstr "演講"
 
-#: events/models.py:337
+#: events/models.py:341
 msgid "registration link"
 msgstr "報名連結"
 
-#: events/models.py:345
+#: events/models.py:349
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:346
+#: events/models.py:350
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:360
+#: events/models.py:364
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:368 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:372 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -468,11 +472,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:369
+#: events/models.py:373
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:374
+#: events/models.py:378
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 

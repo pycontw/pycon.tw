@@ -10,7 +10,14 @@
 {% block content %}
 
 <section class="pill-title alt-2">
-	<h1><i class="icon icon-about"></i>{{ object.title }}</h1>
+	<h1>
+		<i class="icon icon-about"></i>{{ object.title }} 
+		{% if event.is_remote %}
+		<span class="remote-label">
+			Remote Talk
+		</span>
+		{% endif %}
+	</h1>
 </section>
 
 <section class="content info">

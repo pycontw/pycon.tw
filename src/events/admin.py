@@ -157,9 +157,9 @@ class JobListingEventAdmin(admin.ModelAdmin):
 
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
-    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
-    list_display = ['proposal', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 
