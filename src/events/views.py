@@ -265,14 +265,16 @@ class ProposedEventMixin:
 
     def get_context_data(self, **kwargs):
         community_track_event = None
-        try:
-            community_track_event = (
-                CommunityTrackEvent.objects
-                                .select_related('begin_time', 'end_time')
-                                .get(talk=self.object)
-            )
-        except (CommunityTrackEvent.DoesNotExist, ValueError):
-            pass
+
+        if type(self.object) is TalkProposal:
+            try:
+                community_track_event = (
+                    CommunityTrackEvent.objects
+                                    .select_related('begin_time', 'end_time')
+                                    .get(talk=self.object)
+                )
+            except CommunityTrackEvent.DoesNotExist:
+                pass
 
         return super().get_context_data(
             community_track_event=community_track_event,
