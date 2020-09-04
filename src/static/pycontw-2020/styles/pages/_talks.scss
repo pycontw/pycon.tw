@@ -36,6 +36,16 @@
 	}
 }
 
+.remote-label {
+	font-size: 1.1rem;
+	color: white;
+	background-color: $jinger-bread;
+
+	padding: 1px 4px;
+	border-radius: 5px;
+	position: relative;
+}
+
 section.note {
 	border-top: 1px solid transparentize($dark-gray, 0.9);
 	margin-top: 70px;

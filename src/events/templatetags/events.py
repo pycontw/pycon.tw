@@ -2,21 +2,71 @@ from django.conf import settings
 from django.template import Context, Library
 from django.template.loader import get_template
 from django.utils import translation
+from django.utils.translation import gettext_lazy as _
 
-from events.models import KeynoteEvent, Location
+from events.models import KeynoteEvent, JobListingsEvent, Location
+from sponsors.models import Sponsor, OpenRole
 from proposals.utils import format_names
 
+from datetime import datetime, timedelta
+from math import floor
 
 LOCATION_DISPLAY_DICT = {
-    Location.R0: 'R0',
-    Location.R1: 'R1',
-    Location.R2: 'R2',
-    Location.R3: 'R3',
-    Location.R4: 'R4',
-    Location.R012: 'R123',
+    Location.R0: _('R1'),
+    Location.R1: _('R2'),
+    Location.R2: _('R3'),
+    Location.R3: _('Multifunction room'),
+    Location.R4: _('Goodideas Studio'),
+    Location.R012: _('R1, R2, R3'),
+    Location.OTHER: _('Other'),
 }
+ROW_UNIT = 5 * 60  # in seconds
+MARKER_UNIT = 30 * 60  # in seconds
 
 register = Library()
+
+
+@register.simple_tag
+def calc_grid_row(begin, end, timeline_start='08:30'):
+    d_format = '%H:%M'
+    start_point = datetime.strptime(timeline_start, d_format)
+
+    def get_row(t):
+        diff = datetime.strptime(t, d_format) - start_point
+        return int(diff.seconds / ROW_UNIT)+1
+
+    start_row = get_row(begin)
+    end_row = get_row(end)
+    return {'start_row': start_row, 'end_row': end_row}
+
+
+@register.filter
+def gen_timeline(start, end):
+    timeline = [{'time': start, 'row_start': 1, 'row_end': 6}]
+    d_format = '%H:%M'
+
+    time_start = datetime.strptime(start, d_format)
+    time_end = datetime.strptime(end, d_format)
+    ticks_count = floor((time_end - time_start).seconds / MARKER_UNIT)
+
+    scale_unit_multiplier = int(MARKER_UNIT / ROW_UNIT)  # 6 (magic number)
+    time_next = time_start
+    row_start_next = 1
+    row_end_next = 6
+    for i in range(ticks_count):
+        time_next += timedelta(seconds=MARKER_UNIT)
+        row_start_next += scale_unit_multiplier
+        row_end_next += scale_unit_multiplier
+        t = datetime.strftime(time_next, d_format)
+        c = '--hour' if t.endswith('00') else '--half-an-hour'
+        timeline.append({
+            'time': t,
+            'row_start': row_start_next,
+            'row_end': row_end_next,
+            'class': c
+        })
+
+    return timeline
 
 
 @register.filter
@@ -57,11 +107,11 @@ def get_keynote_event_display(event):
     return template.render({'event': event})
 
 
-def _render_talk_event_template(event, info, speaker_names, sponsored):
+def _render_talk_event_template(event, info, speaker_names, sponsored, is_remote=False):
     template = get_template('events/_includes/schedule_talk_event.html')
     return template.render({
         'event': event, 'info': info, 'sponsored': sponsored,
-        'speakers': format_names(speaker_names),
+        'speakers': format_names(speaker_names), 'is_remote': is_remote,
     })
 
 
@@ -73,7 +123,7 @@ def get_talk_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    return _render_talk_event_template(event, proposal, speaker_names, False)
+    return _render_talk_event_template(event, proposal, speaker_names, False, event.is_remote)
 
 
 def get_tutorial_event_display(event):
@@ -121,3 +171,20 @@ def event_date_display(event):
 @register.simple_tag
 def get_keynote_events():
     return KeynoteEvent.objects.order_by('begin_time')
+
+
+def _get_sponsors_with_open_roles():
+    sponsor_has_open_role = set(OpenRole.objects.values_list('sponsor', flat=True))
+    sponsor_set = Sponsor.objects.filter(id__in=sponsor_has_open_role).order_by('level')
+
+    return sponsor_set
+
+
+@register.simple_tag
+def get_open_roles_of_sponsors():
+    return _get_sponsors_with_open_roles()
+
+
+@register.simple_tag
+def get_open_roles():
+    return OpenRole.objects.order_by('sponsor')

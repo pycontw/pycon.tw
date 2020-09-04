@@ -8,11 +8,15 @@ from django.utils.translation import (
     ugettext, gettext_lazy as _, pgettext_lazy as p,
 )
 
+from import_export.admin import ImportExportMixin
+
 from .forms import CustomEventForm
 from .models import (
     CustomEvent, KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent,
+    JobListingsEvent,
     SponsoredEvent, Time, Schedule,
 )
+from .resources import TimeResource, CustomEventResource
 
 
 class TimeRangeFilter(admin.SimpleListFilter):
@@ -39,7 +43,7 @@ class TimeRangeFilter(admin.SimpleListFilter):
 
 
 @admin.register(Time)
-class TimeAdmin(admin.ModelAdmin):
+class TimeAdmin(ImportExportMixin, admin.ModelAdmin):
 
     list_display = [
         '__str__', 'get_month', 'get_day', 'get_hour', 'get_minute',
@@ -62,6 +66,8 @@ class TimeAdmin(admin.ModelAdmin):
     get_day.short_description = p('datetime component', 'day')
     get_hour.short_description = p('datetime component', 'hour')
     get_minute.short_description = p('datetime component', 'minute')
+
+    resource_class = TimeResource
 
 
 class EventTimeRangeFilter(admin.SimpleListFilter):
@@ -101,13 +107,13 @@ class EndTimeRangeFilter(EventTimeRangeFilter):
 
 
 @admin.register(CustomEvent)
-class CustomEventAdmin(admin.ModelAdmin):
+class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 
     form = CustomEventForm
     search_fields = ['title']
     list_display = [
         'title', 'begin_time', 'end_time', 'location', 'break_event',
-        'get_edit_link',
+        'description', 'link_path', 'get_edit_link',
     ]
     list_filter = [
         BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'break_event',
@@ -121,6 +127,7 @@ class CustomEventAdmin(admin.ModelAdmin):
         )
 
     get_edit_link.short_description = ''
+    resource_class = CustomEventResource
 
 
 @admin.register(KeynoteEvent)
@@ -134,11 +141,25 @@ class KeynoteEventAdmin(admin.ModelAdmin):
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
 
 
+@admin.register(JobListingsEvent)
+class JobListingEventAdmin(admin.ModelAdmin):
+    fields = [
+        'conference',
+        'sponsor',
+        'begin_time', 'end_time', 'location',
+    ]
+    list_display = [
+        'sponsor',
+        'begin_time', 'end_time', 'location']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    raw_id_fields = ['sponsor']
+
+
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
-    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
-    list_display = ['proposal', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 

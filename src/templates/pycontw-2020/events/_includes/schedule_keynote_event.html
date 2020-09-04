@@ -1,8 +1,18 @@
-{% load i18n %}
+{% load events %}
 
 {% with data=event.get_static_data_for_locale %}
-<a href="{% url 'page' path='events/keynotes' %}#{{ event.slug }}" class="localed-url">
-	<div class="talk-title">{% trans 'Keynote: ' %}{{ data.session.title }}</div>
-	<p class="talk-speakers talk-title keynote-speaker">{{ data.speaker.name }}</p>
-</a>
+	<a href="{% url 'page' path='conference/keynotes' %}#keynote-speaker-{{ event.slug }}" class="keynote-event localed-url">
+		<div class="context-container">
+			<div class="room">
+				<div class="room-tag room-{{ event.location }}"></div>
+			</div>
+			<div class="context">
+				<div class="title">Keynote: {{ data.session.title }}</div>
+				<div class="speaker">by <span class="name">{{ data.speaker.name }}</span></div>
+			</div>
+			<div class="time">
+				{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
+			</div>
+		</div>
+	</a>
 {% endwith %}

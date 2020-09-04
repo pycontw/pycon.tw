@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}{{ block.super }} community-track-page{% endblock body_class %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2020/styles/ccip-community-track.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block title %}Community Track - PyCon Taiwan 2020{% endblock %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+<main>
+    <h2 style="margin-top: 30px;">{% trans 'Overview' %}</h2>
+    {% include 'events/_includes/community-track-overview.html' %}
+
+    <h2>{% trans 'Topics &amp; Venues' %}</h2>
+    {% include 'events/_includes/community-track.html' %}
+
+    <h2>{% trans 'Agenda' %}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{% trans 'Time' %}</th>
+            <th>{% trans 'Event' %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>13:40 - 13:50</td>
+            <td>{% trans 'Community Introduction' %}</td>
+        </tr>
+        <tr>
+            <td>13:50 - 14:20</td>
+            <td>{% trans 'Talk' %}</td>
+        </tr>
+        <tr>
+            <td>14:20 - 14:30</td>
+            <td>{% trans 'Break' %}</td>
+        </tr>
+        <tr>
+            <td>14:30 - 15:00</td>
+            <td>{% trans 'Talk' %}</td>
+        </tr>
+        <tr>
+            <td>15:00 - 15:10</td>
+            <td>{% trans 'Break' %}</td>
+        </tr>
+        <tr>
+            <td>15:10 - 15:50</td>
+            <td>{% trans 'Talk / Sponsor Introduction' %}</td>
+        </tr>
+        <tr>
+            <td>15:50 - 16:00</td>
+            <td>{% trans 'Break' %}</td>
+        </tr>
+        <tr>
+            <td>16:00 - 16:40</td>
+            <td>{% trans 'Free Sharing' %}</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+{% endblock content_full %}
+
+{% block footer %}
+{% endblock footer %}

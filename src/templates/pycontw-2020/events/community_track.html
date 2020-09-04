@@ -1,0 +1,109 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static compress %}
+
+{% block title %}{% trans 'Community Topic Track' %}{% endblock title %}
+
+{% block meta_description %}{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks
+	with specific topics and
+	package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition
+	spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and
+	closely.{% endblocktrans %}{% endblock meta_description %}
+
+
+{% block content %}
+
+	<section class="pill-title">
+		<h1>{% trans 'Community Topic Track' %}</h1>
+	</section>
+
+	<p>{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks with specific topics
+		and package them into the
+		same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments
+		so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}</p>
+
+	<ul>
+		<li class="event-info">
+			<b>{% trans 'Event Time' %}</b><br/>
+			2020/09/06 13:40
+		</li>
+		<li class="event-info">
+			<b>{% trans 'Event Info' %}</b><br/>
+			{% trans 'Physical Meetup' %}
+		</li>
+		<li class="event-info">
+			<b>{% trans 'Host' %}</b><br/>
+			{% trans 'Python Community Leader' %}
+		</li>
+	</ul>
+
+	<h2 style="margin-top: 90px;">{% trans 'Overview' %}</h2>
+	{% include 'events/_includes/community-track-overview.html' %}
+
+	<h2>{% trans 'Topics &amp; Venues' %}</h2>
+	{% include 'events/_includes/community-track.html' %}
+
+
+	<h2>{% trans 'traffic' %}</h2>
+
+	<p>‼請注意，9/06下午的社群議程場地會由成大移動到各社群議程場地哦
+		為了大家的方便，今年大會安排了交通接駁車方便大家移動到各場地
+		從外縣市來到台南的朋友們可以不必擔心了～
+	</p>
+
+	<table class="table">
+		<thead>
+		<tr>
+			<th>{% trans 'Time' %}</th>
+			<th style="width: 70%">{% trans 'Shuttle bus route' %}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>12:10</td>
+			<td >
+				<p>[Car 1] {% trans 'Cheng Kung University' %} -> {% trans 'Tainan Cultural and Creative Park' %}</p>
+				<p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Tsang Fong Art Space' %}</p>
+				<p>[Car 3] {% trans 'Cheng Kung University' %} -> {% trans 'Angry Burger' %}</p>
+				<p>[Car 4] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %}</p>
+			</td>
+
+		</tr>
+		<tr>
+			<td>12:30</td>
+
+			<td>
+				<p>[Car 1, 3] {% trans 'Cheng Kung University' %} -> {% trans 'Tainan Cultural and Creative Park' %}</p>
+				<p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Tsang Fong Art Space' %}</p>
+				<p>[Car 4] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>13:00</td>
+
+			<td>
+				<p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+			</td>
+		</tr>
+		<tr>
+			<td>13:30</td>
+			<td>
+				<p>[Car 3] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+			</td>
+		</tr>
+
+		</tbody>
+	</table>
+
+
+	<script>
+		window.TOKEN = '{{ token|default:'' }}';
+	</script>
+{% endblock content %}
+
+
+{% block extra_js %}
+	{% compress js %}
+		<script type="module" src="{% static 'pycontw-2020/scripts/token.js' %}"></script>
+	{% endcompress %}
+{% endblock %}

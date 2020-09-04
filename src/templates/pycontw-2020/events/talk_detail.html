@@ -10,14 +10,30 @@
 {% block content %}
 
 <section class="pill-title alt-2">
-	<h1><i class="icon icon-about"></i>{{ object.title }}</h1>
+	<h1>
+		<i class="icon icon-about"></i>{{ object.title }} 
+		{% if event.is_remote %}
+		<span class="remote-label">
+			Remote Talk
+		</span>
+		{% endif %}
+	</h1>
 </section>
 
 <section class="content info">
 	<ul>
-		{% comment %}
-		<!-- yycnen-2020-06-29: Hide event info for now. Program scheduling in progress -->
-		{% if event %}
+        {% if community_track_event %}
+        {% with event=community_track_event %}
+		<li>
+			<dfn class="location"></dfn>
+            <span><a href="{% url 'community_track' %}#{{ event.venue.topic|slugify }}">{{ event.venue }}</a></span>
+		</li>
+		<li>
+			<dfn class="slot"></dfn>
+			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
+		</li>
+        {% endwith %}
+		{% elif event %}
 		<li>
 			<dfn class="location"></dfn>
 			<span>{{ event.get_location_display|default:event.location }}</span>
@@ -27,7 +43,6 @@
 			<span>{% blocktrans with date_display=event|event_date_display begin_time_display=event.begin_time.value|date:'H:i' end_time_display=event.end_time.value|date:'H:i' %}{{ date_display }}, {{ begin_time_display }}&#8209;{{ end_time_display }}{% endblocktrans %}</span>
 		</li>
 		{% endif %}
-		{% endcomment %}
 		<li>
 			<dfn class="category">{% trans 'Category: ' %}</dfn>
 			<span>{{ object.get_category_display }}</span>

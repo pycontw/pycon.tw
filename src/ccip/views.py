@@ -143,10 +143,24 @@ def _transform_session(request, event, type_key, info_getter):
             ),
         ]
 
-    room = _transform_translatable(
-        event.location,
-        _get_lazy_display(event, 'location'),
-    )
+    room = None
+    try:
+        from ext2020.models import CommunityTrackEvent
+        if isinstance(event, CommunityTrackEvent):
+            room = _transform_translatable(
+                str(event.venue),
+                _get_lazy_display(event, 'venue'),
+            )
+    except ImportError:
+        # Do not need to display for community track
+        pass
+
+    if not room:
+        room = _transform_translatable(
+            event.location,
+            _get_lazy_display(event, 'location'),
+        )
+
     speakers = [
         _transform_event_speaker(request, speaker.user)
         for speaker in event_info.speakers
@@ -233,15 +247,30 @@ class CCIPAPIView(View):
                 'talk',
                 pgettext_lazy('CCIP event type', 'talk'),
                 (
-                    ProposedTalkEvent.objects
-                    .select_related(
-                        'begin_time', 'end_time',
-                        'proposal', 'proposal__submitter',
-                    )
+                    ProposedTalkEvent.objects.select_related(
+                        'begin_time', 'end_time', 'proposal', 'proposal__submitter',)
                 ),
                 operator.attrgetter('proposal'),
             ),
         ]
+
+        try:
+            from ext2020.models import CommunityTrackEvent
+            session_sources.append((
+                'community-track',
+                pgettext_lazy('CCIP event type', 'community track'),
+                CommunityTrackEvent.objects.filter(
+                    order__in=[1, 2, 3, 4],
+                    sponsored_event__isnull=True)
+                .select_related(
+                    'begin_time', 'end_time', 'venue',
+                    'talk', 'talk__submitter'
+                ).all(),
+                operator.attrgetter('talk'),
+            ),)
+        except ImportError:
+            # Do not need to display for community track
+            pass
 
         rooms = {}
         session_types = []
