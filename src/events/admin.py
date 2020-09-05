@@ -176,7 +176,7 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     fields = [
         'conference', 'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
-        'recording_policy', 'slide_link',
+        'recording_policy', 'slide_link', 'slido_embed_link',
         'begin_time', 'end_time', 'location',
     ]
     list_display = ['title', 'begin_time', 'end_time', 'location']
