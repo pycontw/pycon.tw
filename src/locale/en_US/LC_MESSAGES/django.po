@@ -2669,6 +2669,10 @@ msgstr "Quiz Leaderboard"
 msgid "Facebook Fan Page"
 msgstr "Facebook Fan Page"
 
+#: templates/pycontw-2020/_includes/portal.html:20
+msgid "Open space"
+msgstr "Open space"
+
 #: templates/pycontw-2017/contents/_default/portal.html:52
 msgid "Quiz Bots"
 msgstr "Quiz Bots"
