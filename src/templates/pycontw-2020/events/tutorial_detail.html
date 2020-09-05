@@ -9,7 +9,14 @@
 
 {% block content %}
 
-<h1>{% trans 'Tutorial: ' %}{{ object.title }}</h1>
+<h1>
+    {% trans 'Tutorial: ' %}{{ object.title }}
+    {% if event.is_remote %}
+    <span class="remote-label">
+        Remote
+    </span>
+    {% endif %}
+</h1>
 
 <section class="content info">
 	<ul>

@@ -346,6 +346,10 @@ class ProposedTutorialEvent(BaseEvent):
         blank=True,
         default='',
     )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
+    )
 
     objects = ProposedEventManager()
 
