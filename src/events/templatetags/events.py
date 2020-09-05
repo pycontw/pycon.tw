@@ -134,7 +134,7 @@ def get_tutorial_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    return _render_talk_event_template(event, proposal, speaker_names, False)
+    return _render_talk_event_template(event, proposal, speaker_names, False, event.is_remote)
 
 
 def get_sponsored_event_display(event):
