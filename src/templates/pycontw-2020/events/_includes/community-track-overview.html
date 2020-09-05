@@ -12,7 +12,11 @@
 							{% csrf_token %}
 							<input name="venue" value="{{ venue.id }}" type="hidden">
 							<input name="attendee" value="{{ attendee.id }}" type="hidden">
+                            {% if venue.get_choice_count < venue.capacity %}
 							<button>{% trans 'Select this track' %}</button>
+                            {% else %}
+							<button disabled>{% trans 'Full' %}</button>
+                            {% endif %}
 						</form>
 					{% endif %}
 				{% endif %}
