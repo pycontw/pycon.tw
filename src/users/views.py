@@ -208,6 +208,7 @@ def review_change(request):
         date_time_obj = datetime.strptime(
             request.POST['proposals.disable.after'], '%Y-%m-%dT%H:%M:%S')
         loc_dt = timezone(TIME_ZONE).localize(date_time_obj)
+        print(loc_dt)
         messages.info(request, 'Your setting has been changed successfully at '  + str(datetime.now()))
 
         reg[CONFERENCE_DEFAULT_SLUG +
