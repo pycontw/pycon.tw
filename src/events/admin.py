@@ -113,7 +113,7 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
     search_fields = ['title']
     list_display = [
         'title', 'begin_time', 'end_time', 'location', 'break_event',
-        'get_edit_link',
+        'description', 'link_path', 'get_edit_link',
     ]
     list_filter = [
         BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'break_event',
@@ -134,11 +134,11 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 class KeynoteEventAdmin(admin.ModelAdmin):
     fields = [
         'conference', 'speaker_name', 'slug',
-        'begin_time', 'end_time', 'location',
+        'begin_time', 'end_time', 'location', 'is_remote'
     ]
     search_fields = ['speaker_name']
-    list_display = ['speaker_name', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    list_display = ['speaker_name', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
 
 
 @admin.register(JobListingsEvent)
@@ -157,17 +157,17 @@ class JobListingEventAdmin(admin.ModelAdmin):
 
 @admin.register(ProposedTalkEvent)
 class ProposedTalkEventAdmin(admin.ModelAdmin):
-    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
-    list_display = ['proposal', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 
 @admin.register(ProposedTutorialEvent)
 class ProposedTutorialEventAdmin(admin.ModelAdmin):
-    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location']
-    list_display = ['proposal', 'begin_time', 'end_time', 'location']
-    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
+    fields = ['conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 
@@ -176,7 +176,7 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     fields = [
         'conference', 'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
-        'recording_policy', 'slide_link',
+        'recording_policy', 'slide_link', 'slido_embed_link',
         'begin_time', 'end_time', 'location',
     ]
     list_display = ['title', 'begin_time', 'end_time', 'location']

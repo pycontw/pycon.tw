@@ -2,14 +2,23 @@
 
 <div class="custom-event">
 	<div class="context-container">
-		<div class="room">
-			<div class="room-tag room-{{ event.location }}"></div>
-		</div>
-		<div class="context">
-			<div class="title">{{ event.title }}</div>
-		</div>
-		<div class="time">
-			{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
-		</div>
+		{% if event.link_path %}
+		<a href="{% url 'page' event.link_path %}" class="localed-url">
+		{% endif %} 
+			<div class="room">
+				<div class="room-tag room-{{ event.location }}"></div>
+			</div>
+			<div class="context">
+				<div class="title">{{ event.title }}</div>
+			</div>
+			<div class="time">
+				{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
+			</div>
+			{% if event.description %}
+			<div class="description">
+				{{ event.description }}
+			</div>
+			{% endif %}
+		{% if event.link_path %}</a>{% endif %} 
 	</div>
 </div>

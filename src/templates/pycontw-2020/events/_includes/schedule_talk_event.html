@@ -1,4 +1,4 @@
-{% load i18n_plus %}
+{% load i18n i18n_plus %}
 {% load events %}
 
 <a href="{{ event.get_absolute_url }}" class="talk-info localed-url talk-event">
@@ -13,6 +13,13 @@
 			>
 				{{ info.title }}
 			</div>
+            {% if is_remote %}
+            <div class="remote-block">
+                <span class="remote-label">
+                    Remote
+                </span>
+            </div>
+            {% endif %}
 			<div class="speaker">by <span class="name">{{ speakers }}</span></div>
 			<div class="tags">
 				<div class="language-{{ info.language.lower }}"></div>

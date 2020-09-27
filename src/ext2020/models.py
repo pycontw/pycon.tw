@@ -1,10 +1,12 @@
 from django.db import models
+from django.db.models import Q, F
 from django.utils.translation import gettext_lazy as _
 from django.templatetags.static import StaticNode
+from django.core.exceptions import ValidationError
 
 from core.models import BigForeignKey
 from proposals.models import TalkProposal
-from events.models import SponsoredEvent
+from events.models import SponsoredEvent, Time
 
 
 # Create your models here.
@@ -33,8 +35,21 @@ class Venue(models.Model):
 
     capacity = models.IntegerField(_('Capacity Limit'), default=0)
 
+    def get_choice_count(self):
+        return self.choice_set.all().count()
+
+    def get_soft_limit(self):
+        return self.capacity * 0.8
+
     def get_photo_url(self):
         return StaticNode.handle_simple(self.photo)
+
+    def get_events(self):
+        # Get related events, whether the event is explicit set to the venue,
+        # or with no venue set (lower priority)
+        return CommunityTrackEvent.objects.filter(
+                    Q(venue=self) | Q(venue__isnull=True)
+                ).order_by('begin_time__value', F('venue').desc(nulls_last=True)).distinct('begin_time__value')
 
     class Meta:
         verbose_name = _('community track venue')
@@ -59,25 +74,47 @@ class Choice(models.Model):
 
 
 class CommunityTrackEvent(models.Model):
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, null=True, blank=True)
     talk = BigForeignKey(TalkProposal, on_delete=models.CASCADE, null=True, blank=True)
     sponsored_event = BigForeignKey(SponsoredEvent, on_delete=models.CASCADE, null=True, blank=True)
+    custom_event = models.CharField(max_length=140, blank=True)
     order = models.IntegerField(default=0)
+
+    begin_time = models.ForeignKey(
+        to=Time,
+        blank=True,
+        null=True,
+        related_name='beginning_%(class)s_set',
+        verbose_name=_('begin time'),
+        on_delete=models.CASCADE,
+    )
+
+    end_time = models.ForeignKey(
+        to=Time,
+        blank=True,
+        null=True,
+        related_name='ending_%(class)s_set',
+        verbose_name=_('end time'),
+        on_delete=models.CASCADE,
+    )
 
     class Meta:
         verbose_name = _('community track event')
         verbose_name_plural = _('community track events')
-        ordering = ['order']
+        ordering = ['begin_time', 'order']
 
     def __str__(self):
-        return "%d. %s (%s)" % (self.order, self.get_event(), self.venue.name)
+        return "%d. %s" % (self.order, self.get_event())
 
     def clean(self):
-        if self.talk and self.sponsored_event:
-            raise ValidationError(_('You can only put either proposed_talk_event or sponsored_event at once.'))
+        values = [self.talk, self.sponsored_event, self.custom_event]
+        count = len(tuple(filter(None, values)))
 
-        if not self.talk and not self.sponsored_event:
-            raise ValidationError(_('You need to put proposed_talk_event or sponsored_event.'))
+        if count > 1:
+            raise ValidationError(_('You can only put either proposed_talk_event, sponsored_event or custom_event at once.'))
+
+        if count <= 0:
+            raise ValidationError(_('You need to put proposed_talk_event sponsored_event, or custom_event.'))
 
     def get_event(self):
-        return self.talk or self.sponsored_event
+        return self.talk or self.sponsored_event or self.custom_event

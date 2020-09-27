@@ -84,6 +84,21 @@ $icon-height: 26px;
 				font-weight: 700;
 			}
 
+            .remote-block {
+                margin-top: -8px;
+                margin-bottom: 8px;
+
+                .remote-label {
+                    font-size: 0.8rem;
+                    color: white;
+                    background-color: $jinger-bread;
+
+                    padding: 0.8px 3.5px;
+                    border-radius: 3px;
+                    position: relative;
+                }
+            }
+
 			.speaker {
 				margin-bottom: 8px;
 
@@ -106,6 +121,11 @@ $icon-height: 26px;
 
 				padding: 4px;
 			}
+		}
+
+		.description {
+			margin-bottom: 8px;
+			font-style: italic;
 		}
 	}
 
@@ -166,11 +186,11 @@ $icon-height: 26px;
 
 		.title {
 			display: -webkit-box;
-			height: 90px;
 			overflow: hidden;
+			line-height: 1.2em;
 			text-overflow: ellipsis;
 			box-sizing: border-box;
-			-webkit-line-clamp: 4;
+			-webkit-line-clamp: 3;
 		}
 
 		.tags {
@@ -382,7 +402,7 @@ main {
 					position: sticky;
 					position: -webkit-sticky;
 					top: 0;
-					z-index: 1000;
+					z-index: 10;
 					padding: 16px 0;
 					background: $brick;
 

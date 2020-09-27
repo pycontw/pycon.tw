@@ -104,14 +104,14 @@ def get_custom_event_display(event):
 
 def get_keynote_event_display(event):
     template = get_template('events/_includes/schedule_keynote_event.html')
-    return template.render({'event': event})
+    return template.render({'event': event, 'is_remote': event.is_remote})
 
 
-def _render_talk_event_template(event, info, speaker_names, sponsored):
+def _render_talk_event_template(event, info, speaker_names, sponsored, is_remote=False):
     template = get_template('events/_includes/schedule_talk_event.html')
     return template.render({
         'event': event, 'info': info, 'sponsored': sponsored,
-        'speakers': format_names(speaker_names),
+        'speakers': format_names(speaker_names), 'is_remote': is_remote,
     })
 
 
@@ -123,7 +123,7 @@ def get_talk_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    return _render_talk_event_template(event, proposal, speaker_names, False)
+    return _render_talk_event_template(event, proposal, speaker_names, False, event.is_remote)
 
 
 def get_tutorial_event_display(event):
@@ -134,7 +134,7 @@ def get_tutorial_event_display(event):
             proposal.additionalspeaker_set
             .values_list('user__speaker_name', flat=True),
         )
-    return _render_talk_event_template(event, proposal, speaker_names, False)
+    return _render_talk_event_template(event, proposal, speaker_names, False, event.is_remote)
 
 
 def get_sponsored_event_display(event):

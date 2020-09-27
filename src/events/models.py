@@ -175,6 +175,13 @@ class CustomEvent(BaseEvent):
             "as keynotes, talks, etc.",
         )
     )
+    description = models.TextField(
+        verbose_name=_('event description'), blank=True,
+    )
+    link_path = models.CharField(
+        verbose_name=_('link path'),
+        max_length=255, blank=True,
+    )
 
     class Meta:
         verbose_name = _('custom event')
@@ -198,6 +205,10 @@ class KeynoteEvent(BaseEvent):
               "'{link}#keynote-speaker-liang2'."),
             link=reverse_lazy('page', kwargs={'path': 'conference/keynotes'}),
         )
+    )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
     )
 
     class Meta:
@@ -302,6 +313,11 @@ class ProposedTalkEvent(BaseEvent):
         limit_choices_to={'accepted': True},
         verbose_name=_('proposal'),
         on_delete=models.CASCADE,
+        unique=True,
+    )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
     )
 
     objects = ProposedEventManager()
@@ -323,11 +339,16 @@ class ProposedTutorialEvent(BaseEvent):
         to=TutorialProposal,
         verbose_name=_('proposal'),
         on_delete=models.CASCADE,
+        unique=True,
     )
     registration_link = models.URLField(
         verbose_name=_('registration link'),
         blank=True,
         default='',
+    )
+    is_remote = models.BooleanField(
+        verbose_name=_('is remote'),
+        default=False,
     )
 
     objects = ProposedEventManager()

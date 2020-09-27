@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 14:45+0800\n"
+"POT-Creation-Date: 2020-09-06 00:44+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -24,41 +24,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ccip/views.py:192
+#: ccip/views.py:206
 msgctxt "CCIP event type"
 msgid "event"
 msgstr "event"
 
-#: ccip/views.py:200
+#: ccip/views.py:214
 msgctxt "CCIP event type"
 msgid "break"
 msgstr "break"
 
-#: ccip/views.py:208
+#: ccip/views.py:222
 msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "keynote"
 
-#: ccip/views.py:214
+#: ccip/views.py:228
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "sponsored"
 
-#: ccip/views.py:222
+#: ccip/views.py:236
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "tutorial"
 
-#: ccip/views.py:234
+#: ccip/views.py:248
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "talk"
+
+#: ccip/views.py:261
+msgctxt "CCIP event type"
+msgid "community track"
+msgstr "community track"
 
 #: core/admin.py:15
 msgid "Current"
 msgstr ""
 
-#: core/admin.py:16 core/models.py:104
+#: core/admin.py:16 core/models.py:104 events/models.py:130
+#: events/templatetags/events.py:21
 msgid "Other"
 msgstr "Other"
 
@@ -75,7 +81,7 @@ msgstr "{model_name_cap} creation requires a request object."
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:79 events/models.py:163
+#: core/models.py:79 events/models.py:166
 msgid "title"
 msgstr "title"
 
@@ -89,7 +95,7 @@ msgstr "location"
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:86 ext2020/models.py:31
+#: core/models.py:86 ext2020/models.py:33
 #: templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:15
@@ -245,7 +251,7 @@ msgstr "slide link"
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:178 events/models.py:351 ext2020/models.py:15
+#: core/models.py:178 events/models.py:375 ext2020/models.py:17
 msgid "created at"
 msgstr "created at"
 
@@ -261,11 +267,11 @@ msgstr "remote policy"
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:98 events/models.py:143
+#: events/admin.py:98 events/models.py:146 ext2020/models.py:88
 msgid "begin time"
 msgstr "begin time"
 
-#: events/admin.py:104 events/models.py:152
+#: events/admin.py:104 events/models.py:155 ext2020/models.py:97
 msgid "end time"
 msgstr "end time"
 
@@ -286,49 +292,49 @@ msgstr "time"
 msgid "times"
 msgstr "times"
 
-#: events/models.py:121
+#: events/models.py:123
 msgid "All rooms"
 msgstr "All rooms"
 
-#: events/models.py:122 events/templatetags/events.py:20
+#: events/models.py:124 events/templatetags/events.py:20
 msgid "R1, R2, R3"
 msgstr "R1, R2, R3"
 
 # #: events/models.py:122
 # msgid "R0"
 # msgstr "R0"
-#: events/models.py:123 events/templatetags/events.py:15
+#: events/models.py:125 events/templatetags/events.py:15
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:124 events/templatetags/events.py:16
+#: events/models.py:126 events/templatetags/events.py:16
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:125 events/templatetags/events.py:17
+#: events/models.py:127 events/templatetags/events.py:17
 msgid "R3"
 msgstr "R3"
 
 # #: events/models.py:125
 # msgid "R4"
 # msgstr "R4"
-#: events/models.py:126 events/templatetags/events.py:18
+#: events/models.py:128 events/templatetags/events.py:18
 msgid "Multifunction room"
 msgstr "Multifunction room"
 
-#: events/models.py:127 events/templatetags/events.py:19
+#: events/models.py:129 events/templatetags/events.py:19
 msgid "Goodideas Studio"
 msgstr "Goodideas Studio"
 
-#: events/models.py:135
+#: events/models.py:138
 msgid "location"
 msgstr "location"
 
-#: events/models.py:167
+#: events/models.py:170
 msgid "is break event"
 msgstr "is break event"
 
-#: events/models.py:170
+#: events/models.py:173
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
@@ -337,23 +343,31 @@ msgstr ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from “real” conference sessions, such as keynotes, talks, etc."
 
-#: events/models.py:177
+#: events/models.py:179
+msgid "event description"
+msgstr "event description"
+
+#: events/models.py:182
+msgid "link path"
+msgstr "link path"
+
+#: events/models.py:187
 msgid "custom event"
 msgstr "custom event"
 
-#: events/models.py:178
+#: events/models.py:188
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:187 users/models.py:116
+#: events/models.py:197 users/models.py:116
 msgid "speaker name"
 msgstr "speaker name"
 
-#: events/models.py:191 events/models.py:267
+#: events/models.py:201 events/models.py:281
 msgid "slug"
 msgstr "slug"
 
-#: events/models.py:193
+#: events/models.py:203
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
@@ -362,77 +376,80 @@ msgstr ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
 "'liang2' will link to '{link}#keynote-speaker-liang2'."
 
-#: events/models.py:201
+#: events/models.py:210 events/models.py:319 events/models.py:350
+msgid "is remote"
+msgstr "is remote"
+
+#: events/models.py:215
 msgid "keynote event"
 msgstr "keynote event"
 
-#: events/models.py:202
+#: events/models.py:216
 msgid "keynote events"
 msgstr "keynote events"
 
-#: events/models.py:205
+#: events/models.py:219
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:244 sponsors/models.py:80 sponsors/models.py:96
+#: events/models.py:258 sponsors/models.py:80 sponsors/models.py:96
 msgid "sponsor"
 msgstr "sponsor"
 
-#: events/models.py:249 events/models.py:250
+#: events/models.py:263 events/models.py:264
 #: templates/pycontw-2020/_includes/menu.html:104
-#: templates/pycontw-2020/contents/_default/events/job-listings.html:7
-#: templates/pycontw-2020/contents/_default/events/job-listings.html:15
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "Job Listings"
 
-#: events/models.py:253
+#: events/models.py:267
 #, python-brace-format
 msgid "Open Role of Sponsor: {sponsor}"
 msgstr "Open Role of Sponsor: {sponsor}"
 
-#: events/models.py:262
+#: events/models.py:276
 msgid "host"
 msgstr "host"
 
-#: events/models.py:271
+#: events/models.py:285
 msgid "sponsored event"
 msgstr "sponsored event"
 
-#: events/models.py:272
+#: events/models.py:286
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:300 events/models.py:321 reviews/models.py:76
+#: events/models.py:314 events/models.py:340 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "proposal"
 
-#: events/models.py:307
+#: events/models.py:326
 msgid "talk event"
 msgstr "talk event"
 
-#: events/models.py:308
+#: events/models.py:327
 msgid "talk events"
 msgstr "talk events"
 
-#: events/models.py:325
+#: events/models.py:345
 msgid "registration link"
 msgstr "registration link"
 
-#: events/models.py:333
+#: events/models.py:357
 msgid "tutorial event"
 msgstr "tutorial event"
 
-#: events/models.py:334
+#: events/models.py:358
 msgid "tutorial events"
 msgstr "tutorial events"
 
-#: events/models.py:348
+#: events/models.py:372
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:356 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:380 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -453,11 +470,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: events/models.py:357
+#: events/models.py:381
 msgid "Schedules"
 msgstr "Schedules"
 
-#: events/models.py:362
+#: events/models.py:386
 msgid "Schedule created at {}"
 msgstr "Schedule created at {}"
 
@@ -469,80 +486,82 @@ msgstr "Keynote"
 msgid "EN Slides"
 msgstr "EN Slides"
 
-#: events/views.py:122
+#: events/views.py:123
 msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
 
-#: ext2020/models.py:12
+#: ext2020/models.py:14
 msgid "token"
 msgstr ""
 
-#: ext2020/models.py:13 users/models.py:164
+#: ext2020/models.py:15 users/models.py:164
 msgid "verified"
 msgstr "verified"
 
-#: ext2020/models.py:16
+#: ext2020/models.py:18
 msgid "verified at"
 msgstr "verified at"
 
-#: ext2020/models.py:19
+#: ext2020/models.py:21
 msgid "attendee"
 msgstr "attendee"
 
-#: ext2020/models.py:20
+#: ext2020/models.py:22
 msgid "attendees"
 msgstr "attendees"
 
-#: ext2020/models.py:27
+#: ext2020/models.py:29
 msgid "Venue Name"
 msgstr "Venue Name"
 
-#: ext2020/models.py:28
+#: ext2020/models.py:30
 msgid "Venue photo"
 msgstr "Venue photo"
 
-#: ext2020/models.py:30
+#: ext2020/models.py:32
 msgid "Venue Address"
 msgstr "Venue Address"
 
-#: ext2020/models.py:32
+#: ext2020/models.py:34
 msgid "Topic"
 msgstr "Topic"
 
-#: ext2020/models.py:34
+#: ext2020/models.py:36
 msgid "Capacity Limit"
 msgstr "Capacity Limit"
 
-#: ext2020/models.py:40
+#: ext2020/models.py:55
 msgid "community track venue"
 msgstr "community track venue"
 
-#: ext2020/models.py:41
+#: ext2020/models.py:56
 msgid "community track venues"
 msgstr "community track venues"
 
-#: ext2020/models.py:54
+#: ext2020/models.py:69
 msgid "community track choice"
 msgstr "community track choice"
 
-#: ext2020/models.py:55
+#: ext2020/models.py:70
 msgid "community track choices"
 msgstr "community track choices"
 
-#: ext2020/models.py:68
+#: ext2020/models.py:102
 msgid "community track event"
 msgstr "community track event"
 
-#: ext2020/models.py:69
+#: ext2020/models.py:103
 msgid "community track events"
 msgstr "community track events"
 
-#: ext2020/models.py:77
-msgid "You can only put either proposed_talk_event or sponsored_event at once."
+#: ext2020/models.py:114
+msgid ""
+"You can only put either proposed_talk_event, sponsored_event or custom_event "
+"at once."
 msgstr ""
 
-#: ext2020/models.py:80
-msgid "You need to put proposed_talk_event or sponsored_event."
+#: ext2020/models.py:117
+msgid "You need to put proposed_talk_event sponsored_event, or custom_event."
 msgstr ""
 
 #: ext2020/views.py:68
@@ -1489,8 +1508,8 @@ msgstr "Change"
 #: templates/pycontw-2018/events/talk_detail.html:46
 #: templates/pycontw-2019/events/talk_detail.html:48
 #: templates/pycontw-2019/events/tutorial_detail.html:47
-#: templates/pycontw-2020/events/talk_detail.html:54
-#: templates/pycontw-2020/events/tutorial_detail.html:47
+#: templates/pycontw-2020/events/talk_detail.html:68
+#: templates/pycontw-2020/events/tutorial_detail.html:54
 msgid "Abstract"
 msgstr "Abstract"
 
@@ -2163,7 +2182,7 @@ msgstr "Events"
 #: templates/pycontw-2019/_includes/menu.html:58
 #: templates/pycontw-2020/_includes/menu.html:100
 #: templates/pycontw-2020/ccip/community_track.html:21
-#: templates/pycontw-2020/events/community_track.html:38
+#: templates/pycontw-2020/events/community_track.html:40
 msgid "Overview"
 msgstr "Overview"
 
@@ -2338,8 +2357,8 @@ msgstr "Slides Link"
 #: templates/pycontw-2018/events/talk_detail.html:53
 #: templates/pycontw-2019/events/talk_detail.html:55
 #: templates/pycontw-2019/events/tutorial_detail.html:54
-#: templates/pycontw-2020/events/talk_detail.html:61
-#: templates/pycontw-2020/events/tutorial_detail.html:54
+#: templates/pycontw-2020/events/talk_detail.html:75
+#: templates/pycontw-2020/events/tutorial_detail.html:61
 msgid "Description"
 msgstr "Description"
 
@@ -2618,6 +2637,7 @@ msgstr "dashboard"
 #: templates/pycontw-2020/_includes/menu.html:86
 #: templates/pycontw-2020/contents/_default/portal.html:6
 #: templates/pycontw-2020/contents/_default/portal.html:12
+#: templates/pycontw-2020/index.html:30
 msgid "Portal"
 msgstr "Portal"
 
@@ -2631,7 +2651,6 @@ msgstr "Collaborative Notes"
 #: templates/pycontw-2017/contents/_default/portal.html:30
 #: templates/pycontw-2018/contents/_default/portal.html:25
 #: templates/pycontw-2019/_includes/portal.html:12
-#: templates/pycontw-2020/_includes/portal.html:12
 msgid "Chat Room"
 msgstr "Chat Room"
 
@@ -2690,7 +2709,9 @@ msgstr "Export New Schedule"
 #: templates/pycontw-2018/events/talk_detail.html:22
 #: templates/pycontw-2019/events/talk_detail.html:23
 #: templates/pycontw-2019/events/tutorial_detail.html:23
-#: templates/pycontw-2020/events/tutorial_detail.html:23
+#: templates/pycontw-2020/events/talk_detail.html:33
+#: templates/pycontw-2020/events/talk_detail.html:43
+#: templates/pycontw-2020/events/tutorial_detail.html:30
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
@@ -2985,66 +3006,66 @@ msgstr "Chinese slides"
 
 #: templates/pycontw-2018/events/talk_detail.html:17
 #: templates/pycontw-2019/events/tutorial_detail.html:18
-#: templates/pycontw-2020/events/tutorial_detail.html:18
+#: templates/pycontw-2020/events/tutorial_detail.html:25
 msgid "Location: "
 msgstr "Location: "
 
 #: templates/pycontw-2018/events/talk_detail.html:21
 #: templates/pycontw-2019/events/tutorial_detail.html:22
-#: templates/pycontw-2020/events/tutorial_detail.html:22
+#: templates/pycontw-2020/events/tutorial_detail.html:29
 msgid "Slot: "
 msgstr "Slot: "
 
 #: templates/pycontw-2018/events/talk_detail.html:25
 #: templates/pycontw-2019/events/talk_detail.html:27
 #: templates/pycontw-2019/events/tutorial_detail.html:27
-#: templates/pycontw-2020/events/talk_detail.html:33
-#: templates/pycontw-2020/events/tutorial_detail.html:27
+#: templates/pycontw-2020/events/talk_detail.html:47
+#: templates/pycontw-2020/events/tutorial_detail.html:34
 msgid "Category: "
 msgstr "Category: "
 
 #: templates/pycontw-2018/events/talk_detail.html:29
 #: templates/pycontw-2019/events/talk_detail.html:31
 #: templates/pycontw-2019/events/tutorial_detail.html:31
-#: templates/pycontw-2020/events/talk_detail.html:37
-#: templates/pycontw-2020/events/tutorial_detail.html:31
+#: templates/pycontw-2020/events/talk_detail.html:51
+#: templates/pycontw-2020/events/tutorial_detail.html:38
 msgid "Language: "
 msgstr "Language: "
 
 #: templates/pycontw-2018/events/talk_detail.html:33
 #: templates/pycontw-2019/events/talk_detail.html:35
 #: templates/pycontw-2019/events/tutorial_detail.html:35
-#: templates/pycontw-2020/events/talk_detail.html:41
-#: templates/pycontw-2020/events/tutorial_detail.html:35
+#: templates/pycontw-2020/events/talk_detail.html:55
+#: templates/pycontw-2020/events/tutorial_detail.html:42
 msgid "Python Level: "
 msgstr "Python Level: "
 
 #: templates/pycontw-2018/events/talk_detail.html:39
 #: templates/pycontw-2019/events/talk_detail.html:41
 #: templates/pycontw-2019/events/tutorial_detail.html:41
-#: templates/pycontw-2020/events/talk_detail.html:47
-#: templates/pycontw-2020/events/tutorial_detail.html:41
+#: templates/pycontw-2020/events/talk_detail.html:61
+#: templates/pycontw-2020/events/tutorial_detail.html:48
 msgid "No Recording"
 msgstr "No Recording"
 
 #: templates/pycontw-2018/events/talk_detail.html:60
 #: templates/pycontw-2019/events/talk_detail.html:62
 #: templates/pycontw-2019/events/tutorial_detail.html:61
-#: templates/pycontw-2020/events/talk_detail.html:68
-#: templates/pycontw-2020/events/tutorial_detail.html:61
+#: templates/pycontw-2020/events/talk_detail.html:82
+#: templates/pycontw-2020/events/tutorial_detail.html:68
 msgid "Slides"
 msgstr "Slides"
 
 #: templates/pycontw-2018/events/talk_detail.html:69
 #: templates/pycontw-2019/events/talk_detail.html:71
-#: templates/pycontw-2020/events/talk_detail.html:77
+#: templates/pycontw-2020/events/talk_detail.html:91
 msgctxt "speaker info in talk detail"
 msgid "Speakers"
 msgstr "Speakers"
 
 #: templates/pycontw-2018/events/talk_detail.html:71
 #: templates/pycontw-2019/events/talk_detail.html:73
-#: templates/pycontw-2020/events/talk_detail.html:79
+#: templates/pycontw-2020/events/talk_detail.html:93
 msgctxt "speaker info in talk detail"
 msgid "Speaker"
 msgstr "Speaker"
@@ -3095,12 +3116,12 @@ msgstr ""
 "%(proposal_title)s</a> by %(speaker_names)s"
 
 #: templates/pycontw-2018/index.html:32 templates/pycontw-2019/index.html:39
-#: templates/pycontw-2020/index.html:32
+#: templates/pycontw-2020/index.html:42
 msgid "What is PyCon"
 msgstr "What is PyCon"
 
 #: templates/pycontw-2018/index.html:33 templates/pycontw-2019/index.html:40
-#: templates/pycontw-2020/index.html:33
+#: templates/pycontw-2020/index.html:43
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are "
 "many other conferences being run in the PyCon spirit around the world.</p>"
@@ -3109,12 +3130,12 @@ msgstr ""
 "many other conferences being run in the PyCon spirit around the world.</p>"
 
 #: templates/pycontw-2018/index.html:39 templates/pycontw-2019/index.html:46
-#: templates/pycontw-2020/index.html:40
+#: templates/pycontw-2020/index.html:50
 msgid "What is PyCon Taiwan"
 msgstr "What is PyCon Taiwan"
 
 #: templates/pycontw-2018/index.html:40 templates/pycontw-2019/index.html:47
-#: templates/pycontw-2020/index.html:41
+#: templates/pycontw-2020/index.html:51
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -3138,7 +3159,6 @@ msgid "Become a volunteer"
 msgstr "Become a volunteer"
 
 #: templates/pycontw-2019/_includes/portal.html:20
-#: templates/pycontw-2020/_includes/portal.html:20
 msgid "Program Book"
 msgstr "Program Book"
 
@@ -3184,18 +3204,18 @@ msgid "Keynote: "
 msgstr "Keynote: "
 
 #: templates/pycontw-2019/events/tutorial_detail.html:12
-#: templates/pycontw-2020/events/tutorial_detail.html:12
+#: templates/pycontw-2020/events/tutorial_detail.html:13
 msgid "Tutorial: "
 msgstr "Tutorial: "
 
 #: templates/pycontw-2019/events/tutorial_detail.html:70
-#: templates/pycontw-2020/events/tutorial_detail.html:70
+#: templates/pycontw-2020/events/tutorial_detail.html:77
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturers"
 msgstr "Lecturers"
 
 #: templates/pycontw-2019/events/tutorial_detail.html:72
-#: templates/pycontw-2020/events/tutorial_detail.html:72
+#: templates/pycontw-2020/events/tutorial_detail.html:79
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturer"
 msgstr "Lecturer"
@@ -3612,14 +3632,14 @@ msgstr ""
 #: templates/pycontw-2020/_includes/ext/discord.html:123
 msgid ""
 "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
-"invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/"
-"YYAgUk7</a> <br>In your Discord client App, click the button with plus sign, "
-"and then select 'Join a server'."
+"invite link: <a href='https://discord.gg/94hgCQv'>https://discord."
+"gg/94hgCQv</a> <br>In your Discord client App, click the button with plus "
+"sign, and then select 'Join a server'."
 msgstr ""
 "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
-"invite link: <a href='https://discord.gg/YYAgUk7'>https://discord.gg/"
-"YYAgUk7</a> <br>In your Discord client App, click the button with plus sign, "
-"and then select 'Join a server'."
+"invite link: <a href='https://discord.gg/94hgCQv'>https://discord."
+"gg/94hgCQv</a> <br>In your Discord client App, click the button with plus "
+"sign, and then select 'Join a server'."
 
 #: templates/pycontw-2020/_includes/ext/discord.html:126
 msgid ""
@@ -3649,7 +3669,8 @@ msgstr "Privacy Policy"
 #: templates/pycontw-2020/_includes/menu.html:84
 #: templates/pycontw-2020/contents/en/events/overview.html:91
 #: templates/pycontw-2020/contents/zh/events/overview.html:72
-#: templates/pycontw-2020/events/talk_list.html:75
+#: templates/pycontw-2020/events/talk_list.html:64
+#: templates/pycontw-2020/events/talk_list.html:76
 msgid "Community Track"
 msgstr "Community Track"
 
@@ -3662,6 +3683,14 @@ msgctxt "COVID-19 Guidelines"
 msgid "COVID-19 Guidelines"
 msgstr "COVID-19 Guidelines"
 
+#: templates/pycontw-2020/_includes/portal.html:12
+msgid "Discord Chat Room"
+msgstr "Discord 聊天室"
+
+#: templates/pycontw-2020/_includes/portal.html:20
+msgid "Open space"
+msgstr "Open space"
+
 #: templates/pycontw-2020/_includes/sponsors.html:5
 msgid "Sponsor Partners"
 msgstr "Sponsor Partners"
@@ -3672,55 +3701,14 @@ msgid "Recruitment"
 msgstr "Recruitment"
 
 #: templates/pycontw-2020/ccip/community_track.html:24
-#: templates/pycontw-2020/events/community_track.html:41
+#: templates/pycontw-2020/events/community_track.html:43
 msgid "Topics &amp; Venues"
 msgstr "Topics &amp; Venues"
 
 #: templates/pycontw-2020/ccip/community_track.html:27
-#: templates/pycontw-2020/events/community_track.html:44
-msgid "Agenda"
-msgstr "Agenda"
-
-#: templates/pycontw-2020/ccip/community_track.html:31
-#: templates/pycontw-2020/events/community_track.html:48
-msgid "Time"
-msgstr "Time"
-
-#: templates/pycontw-2020/ccip/community_track.html:32
-#: templates/pycontw-2020/events/community_track.html:49
-msgid "Event"
-msgstr "Event"
-
-#: templates/pycontw-2020/ccip/community_track.html:38
-#: templates/pycontw-2020/events/community_track.html:55
-msgid "Community Introduction"
-msgstr "Community Introduction"
-
-#: templates/pycontw-2020/ccip/community_track.html:42
-#: templates/pycontw-2020/ccip/community_track.html:50
-#: templates/pycontw-2020/events/community_track.html:59
-#: templates/pycontw-2020/events/community_track.html:67
-msgid "Talk"
-msgstr "Talk"
-
-#: templates/pycontw-2020/ccip/community_track.html:46
-#: templates/pycontw-2020/ccip/community_track.html:54
-#: templates/pycontw-2020/ccip/community_track.html:62
-#: templates/pycontw-2020/events/community_track.html:63
-#: templates/pycontw-2020/events/community_track.html:71
-#: templates/pycontw-2020/events/community_track.html:79
-msgid "Break"
-msgstr "Break"
-
-#: templates/pycontw-2020/ccip/community_track.html:58
-#: templates/pycontw-2020/events/community_track.html:75
-msgid "Talk / Sponsor Introduction"
-msgstr "Talk / Sponsor Introduction"
-
-#: templates/pycontw-2020/ccip/community_track.html:66
-#: templates/pycontw-2020/events/community_track.html:83
-msgid "Free Sharing"
-msgstr "Free Sharing"
+#: templates/pycontw-2020/events/community_track.html:46
+msgid "traffic"
+msgstr "traffic"
 
 #: templates/pycontw-2020/ccip/discord.html:15
 #: templates/pycontw-2020/ext/discord.html:5
@@ -3731,8 +3719,8 @@ msgstr "Discord Guideline"
 msgid "To be announced"
 msgstr ""
 
-#: templates/pycontw-2020/contents/_default/events/job-listings.html:35
-#: templates/pycontw-2020/contents/_default/events/job-listings.html:40
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:53
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:58
 msgid "Open Roles"
 msgstr "Open Roles"
 
@@ -3741,41 +3729,96 @@ msgstr "Open Roles"
 msgid "Selected"
 msgstr "Selected"
 
-#: templates/pycontw-2020/events/_includes/community-track-overview.html:15
-#: templates/pycontw-2020/events/_includes/community-track.html:16
+#: templates/pycontw-2020/events/_includes/community-track-overview.html:16
+#: templates/pycontw-2020/events/_includes/community-track.html:17
 msgid "Select this track"
 msgstr "Select this track"
 
-#: templates/pycontw-2020/events/_includes/community-track.html:39
-msgid "Community Track Talks"
-msgstr "Talks"
+#: templates/pycontw-2020/events/_includes/community-track-overview.html:18
+#: templates/pycontw-2020/events/_includes/community-track.html:19
+msgid "Full"
+msgstr ""
 
-#: templates/pycontw-2020/events/_includes/community-track.html:53
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:10
+msgid "Time"
+msgstr "Time"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:11
+msgid "Shuttle bus route"
+msgstr "Shuttle bus route"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+msgid "Cheng Kung University"
+msgstr "Cheng Kung University"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+msgid "Tainan Cultural and Creative Park"
+msgstr "Tainan Cultural and Creative Park"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+msgid "Tsang Fong Art Space"
+msgstr "Tsang Fong Art Space"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+msgid "Angry Burger"
+msgstr "Angry Burger"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+msgid "Brunch of San Dao Men Siang Jian"
+msgstr "Brunch of San Dao Men Siang Jian"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:49
+msgid "Agenda"
+msgstr "Agenda"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:66
 #: templates/pycontw-2020/events/talk_list.html:43
 #, fuzzy, python-format
 #| msgid "speaker name"
 msgid " by %(speaker_names)s"
 msgstr "speaker name"
 
-#: templates/pycontw-2020/events/_includes/community-track.html:59
+#: templates/pycontw-2020/events/_includes/community-track.html:72
 msgid "Invited Event"
 msgstr "Invited Event"
 
-#: templates/pycontw-2020/events/_includes/community-track.html:60
-#: templates/pycontw-2020/events/talk_list.html:64
+#: templates/pycontw-2020/events/_includes/community-track.html:73
+#: templates/pycontw-2020/events/talk_list.html:65
 #, fuzzy, python-format
 #| msgid "speaker name"
 msgid " by %(host_name)s"
 msgstr "speaker name"
 
 #: templates/pycontw-2020/events/community_track.html:5
-#: templates/pycontw-2020/events/community_track.html:16
+#: templates/pycontw-2020/events/community_track.html:17
 msgid "Community Topic Track"
 msgstr "Community Track"
 
 #: templates/pycontw-2020/events/community_track.html:7
-#: templates/pycontw-2020/events/community_track.html:19
-#: templates/pycontw-2020/events/talk_list.html:77
+#: templates/pycontw-2020/events/community_track.html:20
+#: templates/pycontw-2020/events/talk_list.html:78
 msgid ""
 "The community track is a new event in PyCon TW. We choose the talks with "
 "specific topics and package them into the same session. We'll leave the "
@@ -3784,23 +3827,23 @@ msgid ""
 "more comfortably and closely."
 msgstr ""
 
-#: templates/pycontw-2020/events/community_track.html:25
+#: templates/pycontw-2020/events/community_track.html:27
 msgid "Event Time"
 msgstr "Event Time"
 
-#: templates/pycontw-2020/events/community_track.html:29
+#: templates/pycontw-2020/events/community_track.html:31
 msgid "Event Info"
 msgstr "Event Info"
 
-#: templates/pycontw-2020/events/community_track.html:30
+#: templates/pycontw-2020/events/community_track.html:32
 msgid "Physical Meetup"
 msgstr "Physical Meetup"
 
-#: templates/pycontw-2020/events/community_track.html:33
+#: templates/pycontw-2020/events/community_track.html:35
 msgid "Host"
 msgstr "Host"
 
-#: templates/pycontw-2020/events/community_track.html:34
+#: templates/pycontw-2020/events/community_track.html:36
 msgid "Python Community Leader"
 msgstr "Python Community Leader"
 
@@ -4064,6 +4107,27 @@ msgstr ""
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
 
+#~ msgid "Event"
+#~ msgstr "Event"
+
+#~ msgid "Community Introduction"
+#~ msgstr "Community Introduction"
+
+#~ msgid "Talk"
+#~ msgstr "Talk"
+
+#~ msgid "Break"
+#~ msgstr "Break"
+
+#~ msgid "Talk / Sponsor Introduction"
+#~ msgstr "Talk / Sponsor Introduction"
+
+#~ msgid "Free Sharing"
+#~ msgstr "Free Sharing"
+
+#~ msgid "Community Track Talks"
+#~ msgstr "Talks"
+
 #~ msgid "Sponsor PyCon TW"
 #~ msgstr "Sponsor PyCon TW"
 
@@ -4097,17 +4161,5 @@ msgstr "Password reset successful. You can now login."
 #~ msgid "Proposing a Tutorial"
 #~ msgstr "Proposing a Tutorial"
 
-#~ msgid "古蹟出張所"
-#~ msgstr "古蹟出張所"
-
-#~ msgid "Tsang Fong Coffee"
-#~ msgstr "Tsang Fong Coffee"
-
 #~ msgid "Masa Loft"
 #~ msgstr "Masa Loft"
-
-#~ msgid "Angry Burger"
-#~ msgstr "Angry Burger"
-
-#~ msgid "Three Doors Brunch"
-#~ msgstr "Three Doors Brunch"

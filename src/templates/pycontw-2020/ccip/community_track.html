@@ -24,49 +24,8 @@
     <h2>{% trans 'Topics &amp; Venues' %}</h2>
     {% include 'events/_includes/community-track.html' %}
 
-    <h2>{% trans 'Agenda' %}</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>{% trans 'Time' %}</th>
-            <th>{% trans 'Event' %}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>13:40 - 13:50</td>
-            <td>{% trans 'Community Introduction' %}</td>
-        </tr>
-        <tr>
-            <td>13:50 - 14:20</td>
-            <td>{% trans 'Talk' %}</td>
-        </tr>
-        <tr>
-            <td>14:20 - 14:30</td>
-            <td>{% trans 'Break' %}</td>
-        </tr>
-        <tr>
-            <td>14:30 - 15:00</td>
-            <td>{% trans 'Talk' %}</td>
-        </tr>
-        <tr>
-            <td>15:00 - 15:10</td>
-            <td>{% trans 'Break' %}</td>
-        </tr>
-        <tr>
-            <td>15:10 - 15:50</td>
-            <td>{% trans 'Talk / Sponsor Introduction' %}</td>
-        </tr>
-        <tr>
-            <td>15:50 - 16:00</td>
-            <td>{% trans 'Break' %}</td>
-        </tr>
-        <tr>
-            <td>16:00 - 16:40</td>
-            <td>{% trans 'Free Sharing' %}</td>
-        </tr>
-        </tbody>
-    </table>
+    <h2>{% trans 'traffic' %}</h2>                                             
+    {% include 'events/_includes/community-track-traffic.html' %}
 </main>
 {% endblock content_full %}
 

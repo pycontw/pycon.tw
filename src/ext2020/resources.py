@@ -4,7 +4,8 @@ from import_export import fields, resources, widgets
 
 from .models import Attendee, Venue, CommunityTrackEvent
 from proposals.models import TalkProposal
-from events.models import SponsoredEvent
+from events.models import SponsoredEvent, Time
+from events.resources import LocalDateTimeWidget
 
 
 class AttendeeResource(resources.ModelResource):
@@ -42,13 +43,35 @@ class VenueResource(resources.ModelResource):
 
 
 class CommunityTrackEventResource(resources.ModelResource):
-    talk = fields.Field(column_name='talk', attribute='talk', widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
-    sponsored_event = fields.Field(column_name='sponsored_event', attribute='sponsored_event', widget=widgets.ForeignKeyWidget(SponsoredEvent, 'id'))
-    venue = fields.Field(column_name='venue', attribute='venue', widget=widgets.ForeignKeyWidget(Venue, 'name'))
+    talk = fields.Field(
+            column_name='talk',
+            attribute='talk',
+            widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
+
+    sponsored_event = fields.Field(
+            column_name='sponsored_event',
+            attribute='sponsored_event',
+            widget=widgets.ForeignKeyWidget(SponsoredEvent, 'id'))
+
+    venue = fields.Field(
+            column_name='venue',
+            attribute='venue',
+            widget=widgets.ForeignKeyWidget(Venue, 'name'))
+
+    begin_time = fields.Field(
+            column_name='begin_time',
+            attribute='begin_time',
+            widget=LocalDateTimeWidget(Time, 'value'))
+
+    end_time = fields.Field(
+            column_name='end_time',
+            attribute='end_time',
+            widget=LocalDateTimeWidget(Time, 'value'))
 
     class Meta:
         model = CommunityTrackEvent
         fields = (
             'id', 'venue', 'order', 'talk', 'talk__title', 'sponsored_event', 'sponsored_event__title',
+            'custom_event_zh_hant', 'custom_event_en_us', 'begin_time', 'end_time',
         )
         export_order = fields

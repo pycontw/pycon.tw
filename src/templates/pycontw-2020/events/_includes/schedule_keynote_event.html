@@ -1,13 +1,20 @@
 {% load events %}
 
 {% with data=event.get_static_data_for_locale %}
-	<a href="{% url 'page' path='events/keynotes' %}#{{ event.slug }}" class="keynote-event localed-url">
+	<a href="{% url 'page' path='conference/keynotes' %}#keynote-speaker-{{ event.slug }}" class="keynote-event localed-url">
 		<div class="context-container">
 			<div class="room">
 				<div class="room-tag room-{{ event.location }}"></div>
 			</div>
 			<div class="context">
 				<div class="title">Keynote: {{ data.session.title }}</div>
+				{% if is_remote %}
+				<div class="remote-block">
+					<span class="remote-label">
+						Remote
+					</span>
+				</div>
+				{% endif %}
 				<div class="speaker">by <span class="name">{{ data.speaker.name }}</span></div>
 			</div>
 			<div class="time">

@@ -13,7 +13,11 @@
                 {% csrf_token %}
                 <input name="venue" value="{{ venue.id }}" type="hidden">
                 <input name="attendee" value="{{ attendee.id }}" type="hidden">
+                {% if venue.get_choice_count < venue.capacity %}
                 <button>{% trans 'Select this track' %}</button>
+                {% else %}
+                <button disabled>{% trans 'Full' %}</button>
+                {% endif %}
             </form>
             {% endif %}
             {% endif %}
@@ -28,7 +32,13 @@
 		{{ venue.name }}
 
 		<span class="stats">
-			/{{ venue.capacity }}
+            <span
+                {% if venue.get_choice_count >= venue.get_soft_limit and venue.get_choice_count <= venue.capacity %}
+                    class="text-yellow"
+                {% elif venue.get_choice_count > venue.capacity %}
+                    class="text-danger"
+                {% endif %}
+                > {{ venue.get_choice_count }} </span> / <span>{{ venue.capacity }}</span>
 		</span>
         <br />
 
@@ -36,11 +46,14 @@
 	</div>
     <img src="{{ venue.get_photo_url }}" width="100%">
 
-    <h4>{% trans 'Community Track Talks' %}</h4>
+    <h4>{% trans 'Agenda' %}</h4>
 
-    <ul class="talk-list">
-        {% for event in venue.communitytrackevent_set.all %}
-        <li>
+    <dl class="talk-list">
+        {% for event in venue.get_events %}
+        <dt>
+        {{ event.begin_time.value|date:'H:i' }} - {{ event.end_time.value|date:'H:i' }}
+        </dt>
+        <dd>
             <p>
                 {% if event.talk %}
 
@@ -59,11 +72,14 @@
                 <span class="talk-label">{% trans 'Invited Event' %}</span>
                 {% blocktrans %} by {{ host_name }}{% endblocktrans %}
                 {% endwith %}
+
+                {% elif event.custom_event %}
+                <span class="talk-title">{{ event.custom_event }}</span>
                 {% endif %}
             </p>
-        </li>
+        </dd>
         {% endfor %}
-    </ul>
+    </dl>
 
 
     {% if not forloop.last %}
