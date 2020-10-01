@@ -5,7 +5,7 @@
 
 This repository serves the website of PyCon TW, Python Conference Taiwan. This project is open source and the license can be found in LICENSE.
 
-## Getting Started
+## Getting Started 
 
 ### Requirements
 
@@ -150,6 +150,7 @@ Run the following inside the top-level directory (the one with `tox.ini`):
 Follow the [GitHub Flow](https://guides.github.com/introduction/flow/), please **DO NOT push the commits into master directly**. Always create branch by the feature you want to update. You are encouraged to submit a pull request for reviewing before merging things into master.
 
 We strongly recommend you configure your editor to match our coding styles. You can do this manually, or use an [EditorConfig plugin](http://editorconfig.org/#download) if your editor supports it. An `.editorconfig` file has already been attached to the repository.
+if there is any problem then please tell so that we can rectify it.
 
 
 ## Deployment
