@@ -7,7 +7,7 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 ## Getting Started
 
-### Requirements
+### Prerequisite
 
 - Git 1.8+
 - Python 3.6.x
@@ -122,7 +122,7 @@ Now you’re all set!
 
     python manage.py runserver
 
-## Run Tests
+## Run Test
 
 Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). You have two options to run tests, either with the local environment, or in an isolated one via [Tox](http://tox.readthedocs.org/en/latest/).
 
