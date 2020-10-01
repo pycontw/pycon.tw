@@ -22,7 +22,7 @@ Write database password in .env:
 
     POSTGRES_PASSWORD=somepassword
 
-Define .env location in docker-compose-dev.yml under the corresponding database service:
+Define .env location in docker-compose-dev.yml under the corresponding database services:
 
     services:
       db:
@@ -46,7 +46,7 @@ And enable it:
 
 #### Python - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
 
-You need to specify your python path when creating the virtual environment:
+You need to specify your python path when you creating the virtual environment:
 
     mkvirtualenv --python=$(which python3) pycontw2016
 
