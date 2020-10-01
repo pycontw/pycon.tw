@@ -98,11 +98,11 @@ After that, just run the migration.
 
 #### DB Connection
 Default is sqlite3, you can change to connect `postgres`.
-Copy `local.sample.env` and change its parameters to your personal setting.
+Copy `local.sample.env` and change its parameters to your personal settings.
 
     cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
 
-The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
+The format of `local.env` will be used by `django-environ` so you may refer to this link https://github.com/joke2k/django-environ for more details.
 
 And migrate the database:
 
