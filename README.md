@@ -1,7 +1,7 @@
 [![codecov.io](https://codecov.io/github/pycontw/pycon.tw/coverage.svg?branch=master)](https://codecov.io/github/pycontw/pycon.tw?branch=master)
 [![travis-ci status](https://api.travis-ci.org/pycontw/pycon.tw.svg?branch-master)](https://travis-ci.org/pycontw/pycon.tw)
 
-# PyCon TW
+# pythonCon TW
 
 This repository serves the website of PyCon TW, Python Conference Taiwan. This project is open source and the license can be found in LICENSE.
 
@@ -14,7 +14,7 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 - Yarn 1.0+
 - Node.js 8.0+
 
-### Set up a Virtual Environment
+### Set up your Virtual Environment
 
 #### Database - Docker (Optional)
 
