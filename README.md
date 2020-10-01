@@ -155,3 +155,5 @@ We strongly recommend you configure your editor to match our coding styles. You 
 ## Deployment
 
 For site administrators, please refer to `contrib/DEPLOY.md`.
+
+Thank You!
