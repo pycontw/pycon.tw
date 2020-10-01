@@ -92,7 +92,7 @@ After that, just run the migration.
 
 ### Get Ready for Development
 
-`cd` into the `src` directory:
+change directory `cd` into the `src` directory:
 
     cd src
 
