@@ -38,9 +38,10 @@ body {
 
 main {
 	@include content-section;
-	@include container;
+	@include container(100%);
 
 	@include on-desktop {
+		@include container;
 		padding-left: 0;
 		padding-right: 0;
 	}

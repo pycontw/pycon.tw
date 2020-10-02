@@ -58,12 +58,12 @@ h2 {
 		> .grid-layout {
 			display: grid;
 			grid-template-columns: repeat(3, 290px);
-			@media (max-width: 760px) {
+			@media (max-width: 770px) {
 				grid-template-columns: repeat(1, 270px);
 			}
-			column-gap: 40px;
-			row-gap: 40px;
-			margin: 40px;
+			column-gap: 2vw;
+			row-gap: 3vh;
+			margin: 4vw;
 			> .partner-container {
 				background-color: #ffffff6e;
 				border: 1px solid #ffffff00;
