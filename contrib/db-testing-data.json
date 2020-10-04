@@ -1,0 +1,2070 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "django_q",
+        "model": "schedule"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "django_q",
+        "model": "task"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "django_q",
+        "model": "failure"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "django_q",
+        "model": "success"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "django_q",
+        "model": "ormq"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "thumbnail",
+        "model": "kvstore"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "registry",
+        "model": "entry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "events",
+        "model": "sponsoredevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "events",
+        "model": "time"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "events",
+        "model": "keynoteevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "events",
+        "model": "proposedtalkevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "events",
+        "model": "customevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "events",
+        "model": "schedule"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "events",
+        "model": "proposedtutorialevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "events",
+        "model": "joblistingsevent"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "proposals",
+        "model": "talkproposal"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "proposals",
+        "model": "tutorialproposal"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+        "app_label": "proposals",
+        "model": "additionalspeaker"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+        "app_label": "reviews",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+        "app_label": "reviews",
+        "model": "talkproposalsnapshot"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 26,
+    "fields": {
+        "app_label": "sponsors",
+        "model": "sponsor"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 27,
+    "fields": {
+        "app_label": "sponsors",
+        "model": "openrole"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 28,
+    "fields": {
+        "app_label": "users",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 29,
+    "fields": {
+        "app_label": "users",
+        "model": "cocrecord"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 30,
+    "fields": {
+        "app_label": "ext2020",
+        "model": "attendee"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 31,
+    "fields": {
+        "app_label": "ext2020",
+        "model": "venue"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 32,
+    "fields": {
+        "app_label": "ext2020",
+        "model": "choice"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 33,
+    "fields": {
+        "app_label": "ext2020",
+        "model": "communitytrackevent"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "03a5sxxif6hbo6wjpnea5as9660nibpz",
+    "fields": {
+        "session_data": "ZGY2ZDIyOWJhY2M4ZThlN2RkMDQwMWQxY2ExNzY1NDQ2NzI1MGYyNjp7Il9hdXRoX3VzZXJfaWQiOiIxMjUzNzc4MjY2NDg1OTQ4NDE3IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5ZDRmMTQ2OWY3YWQ2OTUyMDdmZTdjNzJhNWFmY2E4MDBlZmEzN2MyIn0=",
+        "expire_date": "2020-09-10T17:21:51.599Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "azri12bpyhcf0nfwelv3qq0pdq9endo1",
+    "fields": {
+        "session_data": "OGRiY2ExZDZjZTkzYjdkN2EzZmQzMjBlMjBiYzY4NzkzZTcxMTRiYTp7Il9hdXRoX3VzZXJfaWQiOiIxMjUzNzQ1NzczMTc5MzA1OTg1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiOWJhM2QxZjEwOGI2ZmE5OGUyY2M0MjcxMzc5ZTU4ZTlkOWZhZDNjIn0=",
+        "expire_date": "2020-09-10T15:33:59.707Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "j2tsqp88hy4y8zr9pyi7btsidtxpkzyx",
+    "fields": {
+        "session_data": "NmRjNDQ2MTYyZjI2Yzc0NjZiYzMzYWI5YTdmN2ZlMjM5ZDFlMWMzMjp7Il9hdXRoX3VzZXJfaWQiOiIxMjUzNzU5MjQ0MTM0NTE0Njg5IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI1YTllYTIyOTVjNzNmYjI2NDUyMzc0NzY3NjgxMmVlOGEwZTJmNzEzIn0=",
+        "expire_date": "2020-09-10T16:24:11.340Z"
+    }
+},
+{
+    "model": "sponsors.sponsor",
+    "pk": 1,
+    "fields": {
+        "conference": "pycontw-2020",
+        "name": "Stacy Ltd.",
+        "website_url": "",
+        "intro": "Stacy's is your best friend.",
+        "intro_zh_hant": "\u53f2\u9edb\u897f\u80a1\u4efd\u6709\u9650\u516c\u53f8\uff0c\u5c08\u6cbb\u8dcc\u6253\u640d\u50b7\u3002",
+        "intro_en_us": "Stacy's is your best friend.",
+        "logo_svg": "sponsors/stacy-ltd/logo_py_orange.svg",
+        "logo_image": "",
+        "level": 1
+    }
+},
+{
+    "model": "sponsors.sponsor",
+    "pk": 2,
+    "fields": {
+        "conference": "pycontw-2020",
+        "name": "Fake PyCon TW",
+        "website_url": "",
+        "intro": "Creations is improvising!!",
+        "intro_zh_hant": "\u5c08\u9580\u4e0d\u52d9\u6b63\u696d\uff0c\u5373\u8208\u6240\u6709\u4e8b\u60c5\u3002",
+        "intro_en_us": "Creations is improvising!!",
+        "logo_svg": "sponsors/fake-pycon-tw/logo_three_color_2096x1095-01.png",
+        "logo_image": "",
+        "level": 2
+    }
+},
+{
+    "model": "sponsors.openrole",
+    "pk": 1,
+    "fields": {
+        "sponsor": 1,
+        "name": "Data Scientist",
+        "description": "We are looking for data scientists but not data engineers. Who we are looking for is a expert knowing math. If you have never heard of \"confidence interval\", please do not contact with us.",
+        "description_zh_hant": "Stacy Ltd. \u5fb5\u6c42\u8cc7\u6599\u79d1\u5b78\u5bb6\uff0c\u6ce8\u610f\u4e0d\u662f\u8cc7\u6599\u5de5\u7a0b\u5e2b\uff1b\u6211\u5011\u8981\u7684\u662f\u61c2\u7d71\u8a08\u61c2\u6578\u5b78\u7684\u8cc7\u6599\u79d1\u5b78\u5bb6\uff0c\u800c\u4e0d\u662f\u9023\u4fe1\u5fc3\u5340\u9593\u90fd\u6c92\u807d\u904e\u7684\u670b\u53cb\u5011\u3002\u4e0d\u8981\u6d6a\u8cbb\u5f7c\u6b64\u6642\u9593\u4e86\u8b1d\u8b1d\u3002",
+        "description_en_us": "We are looking for data scientists but not data engineers. Who we are looking for is a expert knowing math. If you have never heard of \"confidence interval\", please do not contact with us.",
+        "url": "https://tai271828.me"
+    }
+},
+{
+    "model": "sponsors.openrole",
+    "pk": 2,
+    "fields": {
+        "sponsor": 2,
+        "name": "\u4f4e\u97f3\u5927\u63d0\u7434\u624b",
+        "description": "We are looking for double-bass improvisation experts!",
+        "description_zh_hant": "\u6211\u5011\u5728\u627e\u5584\u65bc\u7235\u58eb\u5373\u8208\u7684\u4f4e\u97f3\u5927\u63d0\u7434\u624b\u3002",
+        "description_en_us": "We are looking for double-bass improvisation experts!",
+        "url": "http://tai271828.me"
+    }
+},
+{
+    "model": "sponsors.openrole",
+    "pk": 3,
+    "fields": {
+        "sponsor": 1,
+        "name": "\u5c08\u696d\u7db2\u8def\u884c\u92b7",
+        "description": "We are looking for SEO experts. The qualified benchmark will be me, Stacy.",
+        "description_zh_hant": "\u6211\u5011\u5728\u627e SEO \u5c08\u5bb6\uff0c\u81f3\u5c11\u8981\u6bd4 Stacy \u61c2\u3002",
+        "description_en_us": "We are looking for SEO experts. The qualified benchmark will be me, Stacy.",
+        "url": ""
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add Scheduled task",
+        "content_type": [
+            "django_q",
+            "schedule"
+        ],
+        "codename": "add_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change Scheduled task",
+        "content_type": [
+            "django_q",
+            "schedule"
+        ],
+        "codename": "change_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete Scheduled task",
+        "content_type": [
+            "django_q",
+            "schedule"
+        ],
+        "codename": "delete_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view Scheduled task",
+        "content_type": [
+            "django_q",
+            "schedule"
+        ],
+        "codename": "view_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add task",
+        "content_type": [
+            "django_q",
+            "task"
+        ],
+        "codename": "add_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change task",
+        "content_type": [
+            "django_q",
+            "task"
+        ],
+        "codename": "change_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete task",
+        "content_type": [
+            "django_q",
+            "task"
+        ],
+        "codename": "delete_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view task",
+        "content_type": [
+            "django_q",
+            "task"
+        ],
+        "codename": "view_task"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Failed task",
+        "content_type": [
+            "django_q",
+            "failure"
+        ],
+        "codename": "add_failure"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Failed task",
+        "content_type": [
+            "django_q",
+            "failure"
+        ],
+        "codename": "change_failure"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Failed task",
+        "content_type": [
+            "django_q",
+            "failure"
+        ],
+        "codename": "delete_failure"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Failed task",
+        "content_type": [
+            "django_q",
+            "failure"
+        ],
+        "codename": "view_failure"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add Successful task",
+        "content_type": [
+            "django_q",
+            "success"
+        ],
+        "codename": "add_success"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change Successful task",
+        "content_type": [
+            "django_q",
+            "success"
+        ],
+        "codename": "change_success"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete Successful task",
+        "content_type": [
+            "django_q",
+            "success"
+        ],
+        "codename": "delete_success"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view Successful task",
+        "content_type": [
+            "django_q",
+            "success"
+        ],
+        "codename": "view_success"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add Queued task",
+        "content_type": [
+            "django_q",
+            "ormq"
+        ],
+        "codename": "add_ormq"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change Queued task",
+        "content_type": [
+            "django_q",
+            "ormq"
+        ],
+        "codename": "change_ormq"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete Queued task",
+        "content_type": [
+            "django_q",
+            "ormq"
+        ],
+        "codename": "delete_ormq"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view Queued task",
+        "content_type": [
+            "django_q",
+            "ormq"
+        ],
+        "codename": "view_ormq"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ],
+        "codename": "add_kvstore"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ],
+        "codename": "change_kvstore"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ],
+        "codename": "delete_kvstore"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view kv store",
+        "content_type": [
+            "thumbnail",
+            "kvstore"
+        ],
+        "codename": "view_kvstore"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add entry",
+        "content_type": [
+            "registry",
+            "entry"
+        ],
+        "codename": "add_entry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change entry",
+        "content_type": [
+            "registry",
+            "entry"
+        ],
+        "codename": "change_entry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete entry",
+        "content_type": [
+            "registry",
+            "entry"
+        ],
+        "codename": "delete_entry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view entry",
+        "content_type": [
+            "registry",
+            "entry"
+        ],
+        "codename": "view_entry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add sponsored event",
+        "content_type": [
+            "events",
+            "sponsoredevent"
+        ],
+        "codename": "add_sponsoredevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change sponsored event",
+        "content_type": [
+            "events",
+            "sponsoredevent"
+        ],
+        "codename": "change_sponsoredevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete sponsored event",
+        "content_type": [
+            "events",
+            "sponsoredevent"
+        ],
+        "codename": "delete_sponsoredevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view sponsored event",
+        "content_type": [
+            "events",
+            "sponsoredevent"
+        ],
+        "codename": "view_sponsoredevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add time",
+        "content_type": [
+            "events",
+            "time"
+        ],
+        "codename": "add_time"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change time",
+        "content_type": [
+            "events",
+            "time"
+        ],
+        "codename": "change_time"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete time",
+        "content_type": [
+            "events",
+            "time"
+        ],
+        "codename": "delete_time"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view time",
+        "content_type": [
+            "events",
+            "time"
+        ],
+        "codename": "view_time"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add keynote event",
+        "content_type": [
+            "events",
+            "keynoteevent"
+        ],
+        "codename": "add_keynoteevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change keynote event",
+        "content_type": [
+            "events",
+            "keynoteevent"
+        ],
+        "codename": "change_keynoteevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete keynote event",
+        "content_type": [
+            "events",
+            "keynoteevent"
+        ],
+        "codename": "delete_keynoteevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view keynote event",
+        "content_type": [
+            "events",
+            "keynoteevent"
+        ],
+        "codename": "view_keynoteevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add talk event",
+        "content_type": [
+            "events",
+            "proposedtalkevent"
+        ],
+        "codename": "add_proposedtalkevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change talk event",
+        "content_type": [
+            "events",
+            "proposedtalkevent"
+        ],
+        "codename": "change_proposedtalkevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete talk event",
+        "content_type": [
+            "events",
+            "proposedtalkevent"
+        ],
+        "codename": "delete_proposedtalkevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view talk event",
+        "content_type": [
+            "events",
+            "proposedtalkevent"
+        ],
+        "codename": "view_proposedtalkevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add custom event",
+        "content_type": [
+            "events",
+            "customevent"
+        ],
+        "codename": "add_customevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change custom event",
+        "content_type": [
+            "events",
+            "customevent"
+        ],
+        "codename": "change_customevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete custom event",
+        "content_type": [
+            "events",
+            "customevent"
+        ],
+        "codename": "delete_customevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view custom event",
+        "content_type": [
+            "events",
+            "customevent"
+        ],
+        "codename": "view_customevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add Schedule",
+        "content_type": [
+            "events",
+            "schedule"
+        ],
+        "codename": "add_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change Schedule",
+        "content_type": [
+            "events",
+            "schedule"
+        ],
+        "codename": "change_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete Schedule",
+        "content_type": [
+            "events",
+            "schedule"
+        ],
+        "codename": "delete_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view Schedule",
+        "content_type": [
+            "events",
+            "schedule"
+        ],
+        "codename": "view_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add tutorial event",
+        "content_type": [
+            "events",
+            "proposedtutorialevent"
+        ],
+        "codename": "add_proposedtutorialevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change tutorial event",
+        "content_type": [
+            "events",
+            "proposedtutorialevent"
+        ],
+        "codename": "change_proposedtutorialevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete tutorial event",
+        "content_type": [
+            "events",
+            "proposedtutorialevent"
+        ],
+        "codename": "delete_proposedtutorialevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view tutorial event",
+        "content_type": [
+            "events",
+            "proposedtutorialevent"
+        ],
+        "codename": "view_proposedtutorialevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add Job Listings",
+        "content_type": [
+            "events",
+            "joblistingsevent"
+        ],
+        "codename": "add_joblistingsevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change Job Listings",
+        "content_type": [
+            "events",
+            "joblistingsevent"
+        ],
+        "codename": "change_joblistingsevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete Job Listings",
+        "content_type": [
+            "events",
+            "joblistingsevent"
+        ],
+        "codename": "delete_joblistingsevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view Job Listings",
+        "content_type": [
+            "events",
+            "joblistingsevent"
+        ],
+        "codename": "view_joblistingsevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add talk proposal",
+        "content_type": [
+            "proposals",
+            "talkproposal"
+        ],
+        "codename": "add_talkproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change talk proposal",
+        "content_type": [
+            "proposals",
+            "talkproposal"
+        ],
+        "codename": "change_talkproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete talk proposal",
+        "content_type": [
+            "proposals",
+            "talkproposal"
+        ],
+        "codename": "delete_talkproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view talk proposal",
+        "content_type": [
+            "proposals",
+            "talkproposal"
+        ],
+        "codename": "view_talkproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add tutorial proposal",
+        "content_type": [
+            "proposals",
+            "tutorialproposal"
+        ],
+        "codename": "add_tutorialproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change tutorial proposal",
+        "content_type": [
+            "proposals",
+            "tutorialproposal"
+        ],
+        "codename": "change_tutorialproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete tutorial proposal",
+        "content_type": [
+            "proposals",
+            "tutorialproposal"
+        ],
+        "codename": "delete_tutorialproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view tutorial proposal",
+        "content_type": [
+            "proposals",
+            "tutorialproposal"
+        ],
+        "codename": "view_tutorialproposal"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+        "name": "Can add additional speaker",
+        "content_type": [
+            "proposals",
+            "additionalspeaker"
+        ],
+        "codename": "add_additionalspeaker"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+        "name": "Can change additional speaker",
+        "content_type": [
+            "proposals",
+            "additionalspeaker"
+        ],
+        "codename": "change_additionalspeaker"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+        "name": "Can delete additional speaker",
+        "content_type": [
+            "proposals",
+            "additionalspeaker"
+        ],
+        "codename": "delete_additionalspeaker"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+        "name": "Can view additional speaker",
+        "content_type": [
+            "proposals",
+            "additionalspeaker"
+        ],
+        "codename": "view_additionalspeaker"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+        "name": "Can add review",
+        "content_type": [
+            "reviews",
+            "review"
+        ],
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+        "name": "Can change review",
+        "content_type": [
+            "reviews",
+            "review"
+        ],
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+        "name": "Can delete review",
+        "content_type": [
+            "reviews",
+            "review"
+        ],
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+        "name": "Can view review",
+        "content_type": [
+            "reviews",
+            "review"
+        ],
+        "codename": "view_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+        "name": "Can add talk proposal snapshot",
+        "content_type": [
+            "reviews",
+            "talkproposalsnapshot"
+        ],
+        "codename": "add_talkproposalsnapshot"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+        "name": "Can change talk proposal snapshot",
+        "content_type": [
+            "reviews",
+            "talkproposalsnapshot"
+        ],
+        "codename": "change_talkproposalsnapshot"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+        "name": "Can delete talk proposal snapshot",
+        "content_type": [
+            "reviews",
+            "talkproposalsnapshot"
+        ],
+        "codename": "delete_talkproposalsnapshot"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+        "name": "Can view talk proposal snapshot",
+        "content_type": [
+            "reviews",
+            "talkproposalsnapshot"
+        ],
+        "codename": "view_talkproposalsnapshot"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 101,
+    "fields": {
+        "name": "Can add sponsor",
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "codename": "add_sponsor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 102,
+    "fields": {
+        "name": "Can change sponsor",
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "codename": "change_sponsor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 103,
+    "fields": {
+        "name": "Can delete sponsor",
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "codename": "delete_sponsor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 104,
+    "fields": {
+        "name": "Can view sponsor",
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "codename": "view_sponsor"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 105,
+    "fields": {
+        "name": "Can add open role",
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "codename": "add_openrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 106,
+    "fields": {
+        "name": "Can change open role",
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "codename": "change_openrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 107,
+    "fields": {
+        "name": "Can delete open role",
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "codename": "delete_openrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 108,
+    "fields": {
+        "name": "Can view open role",
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "codename": "view_openrole"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 109,
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "users",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 110,
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "users",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 111,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "users",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 112,
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "users",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 113,
+    "fields": {
+        "name": "Can add coc record",
+        "content_type": [
+            "users",
+            "cocrecord"
+        ],
+        "codename": "add_cocrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 114,
+    "fields": {
+        "name": "Can change coc record",
+        "content_type": [
+            "users",
+            "cocrecord"
+        ],
+        "codename": "change_cocrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 115,
+    "fields": {
+        "name": "Can delete coc record",
+        "content_type": [
+            "users",
+            "cocrecord"
+        ],
+        "codename": "delete_cocrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 116,
+    "fields": {
+        "name": "Can view coc record",
+        "content_type": [
+            "users",
+            "cocrecord"
+        ],
+        "codename": "view_cocrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 117,
+    "fields": {
+        "name": "Can add attendee",
+        "content_type": [
+            "ext2020",
+            "attendee"
+        ],
+        "codename": "add_attendee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 118,
+    "fields": {
+        "name": "Can change attendee",
+        "content_type": [
+            "ext2020",
+            "attendee"
+        ],
+        "codename": "change_attendee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 119,
+    "fields": {
+        "name": "Can delete attendee",
+        "content_type": [
+            "ext2020",
+            "attendee"
+        ],
+        "codename": "delete_attendee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 120,
+    "fields": {
+        "name": "Can view attendee",
+        "content_type": [
+            "ext2020",
+            "attendee"
+        ],
+        "codename": "view_attendee"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 121,
+    "fields": {
+        "name": "Can add venue",
+        "content_type": [
+            "ext2020",
+            "venue"
+        ],
+        "codename": "add_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 122,
+    "fields": {
+        "name": "Can change venue",
+        "content_type": [
+            "ext2020",
+            "venue"
+        ],
+        "codename": "change_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 123,
+    "fields": {
+        "name": "Can delete venue",
+        "content_type": [
+            "ext2020",
+            "venue"
+        ],
+        "codename": "delete_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 124,
+    "fields": {
+        "name": "Can view venue",
+        "content_type": [
+            "ext2020",
+            "venue"
+        ],
+        "codename": "view_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 125,
+    "fields": {
+        "name": "Can add choice",
+        "content_type": [
+            "ext2020",
+            "choice"
+        ],
+        "codename": "add_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 126,
+    "fields": {
+        "name": "Can change choice",
+        "content_type": [
+            "ext2020",
+            "choice"
+        ],
+        "codename": "change_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 127,
+    "fields": {
+        "name": "Can delete choice",
+        "content_type": [
+            "ext2020",
+            "choice"
+        ],
+        "codename": "delete_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 128,
+    "fields": {
+        "name": "Can view choice",
+        "content_type": [
+            "ext2020",
+            "choice"
+        ],
+        "codename": "view_choice"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 129,
+    "fields": {
+        "name": "Can add community track event",
+        "content_type": [
+            "ext2020",
+            "communitytrackevent"
+        ],
+        "codename": "add_communitytrackevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 130,
+    "fields": {
+        "name": "Can change community track event",
+        "content_type": [
+            "ext2020",
+            "communitytrackevent"
+        ],
+        "codename": "change_communitytrackevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 131,
+    "fields": {
+        "name": "Can delete community track event",
+        "content_type": [
+            "ext2020",
+            "communitytrackevent"
+        ],
+        "codename": "delete_communitytrackevent"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 132,
+    "fields": {
+        "name": "Can view community track event",
+        "content_type": [
+            "ext2020",
+            "communitytrackevent"
+        ],
+        "codename": "view_communitytrackevent"
+    }
+},
+{
+    "model": "users.user",
+    "pk": 1253778266485948417,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$bAsEgjxSZMeW$YAhC1y72wHon6/Wc2M1DqLU2AoeBqea++Xf0ZOYvRvw=",
+        "last_login": "2020-08-27T17:21:51.593Z",
+        "is_superuser": true,
+        "email": "admin@pycon.tw",
+        "speaker_name": "",
+        "bio": "",
+        "photo": "",
+        "facebook_profile_url": "",
+        "twitter_id": "",
+        "github_id": "",
+        "verified": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-08-27T16:29:28.300Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-08-27T15:34:58.300Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "object_id": "1",
+        "object_repr": "Stacy Ltd.",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-08-27T16:26:13.165Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "object_id": "1",
+        "object_repr": "Data Scientist",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-08-27T16:27:02.205Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "object_id": "1",
+        "object_repr": "Stacy Ltd.",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Logo (SVG)\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-08-27T17:22:34.188Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "sponsor"
+        ],
+        "object_id": "2",
+        "object_repr": "Fake PyCon TW",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-08-27T17:23:16.664Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "object_id": "2",
+        "object_repr": "\u4f4e\u97f3\u5927\u63d0\u7434\u624b",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-08-27T17:23:45.610Z",
+        "user": [
+            "admin@pycon.tw"
+        ],
+        "content_type": [
+            "sponsors",
+            "openrole"
+        ],
+        "object_id": "3",
+        "object_repr": "\u5c08\u696d\u7db2\u8def\u884c\u92b7",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]

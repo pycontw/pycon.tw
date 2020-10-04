@@ -19,6 +19,7 @@ RUN apt-get update
 RUN apt-get install apt-utils -y
 RUN apt-get update
 RUN apt-get install gettext python3-pip -y
+RUN apt-get install postgresql-client -y
 
 # Install Node and Yarn from upstream
 RUN curl -o- $NVM_INSTALLER_URL | bash \
@@ -34,10 +35,13 @@ RUN curl -o- $NVM_INSTALLER_URL | bash \
 COPY ./requirements ./requirements
 RUN pip3 install -r ./requirements/dev.txt
 
-# # Install Javascript dependencies
+# Install Javascript dependencies
 COPY ./package.json ./package.json
 COPY ./yarn.lock ./yarn.lock
 RUN yarn install --dev --frozen-lockfile
+
+# prepare db testing data
+COPY ./contrib/db-testing-data.json /db-testing-data.json
 
 # for entry point
 COPY ./contrib/docker-entrypoint.sh /docker-entrypoint.sh
