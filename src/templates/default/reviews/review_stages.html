@@ -11,7 +11,7 @@
 {% block main-content %}
 
 <h3 class="dashboard-header">
-	<span class="header-title">{% trans 'Change Review' %}</span>
+	<span class="header-title">{% trans 'Review Stages' %}</span>
 </h3>
 
 <div class="dashboard-body">
@@ -38,7 +38,7 @@
 	</div>
 	<!--Review Change Setting-->
 	<div class="col-md-9">
-		<form action="{% url 'review_change' %}" method="post">
+		<form action="{% url 'review_stages' %}" method="post">
 			{% csrf_token %}
 			<div class="panel panel-default">
 				<div class="panel-heading">{% trans 'Change Review' %}</div>
@@ -156,6 +156,6 @@
 <!--{{ block.super }}
 <script src="{% static 'js/vendors/simplemde.min.js' %}"></script>-->
 {% compress js %}
-<script src="{% static 'js/reviews/review_change.js' %}"></script>
+<script src="{% static 'js/reviews/review_stages.js' %}"></script>
 {% endcompress %}
 {% endblock extra_js %}
