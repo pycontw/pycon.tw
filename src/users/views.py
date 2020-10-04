@@ -198,7 +198,7 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         context.update(**reviews_state()._asdict())
         return context
 
-def review_change(request):
+def review_stages(request):
 
     # Get default TimeZone
     tz = pytz.timezone(settings.TIME_ZONE)
@@ -227,7 +227,7 @@ def review_change(request):
         reg[CONFERENCE_DEFAULT_SLUG + '.reviews.stage'] = int(request.POST['reviews.stage'])
         reg[CONFERENCE_DEFAULT_SLUG + '.proposals.disable.after'] = loc_dt
 
-    return render(request, 'reviews/review_change.html',{'default_tz': default_tz})
+    return render(request, 'reviews/review_stages.html',{'default_tz': default_tz})
 
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
