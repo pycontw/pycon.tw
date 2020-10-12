@@ -222,8 +222,6 @@ def review_stages(request):
             else:
                 value = request.POST[tag]
             reg[key] = value
-            print(key)
-            print(value)
             
         messages.info(
             request,
