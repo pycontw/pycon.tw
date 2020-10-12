@@ -200,34 +200,37 @@ class PasswordChangeView(auth_views.PasswordChangeView):
 
 def review_stages(request):
 
-    # Get default TimeZone
-    tz = pytz.timezone(settings.TIME_ZONE)
-    now = datetime.datetime.now(tz=tz).isoformat()
-    default_tz = now[len(now)-6:]
-
     if request.method == 'POST':
 
-        CONFERENCE_DEFAULT_SLUG = settings.CONFERENCE_DEFAULT_SLUG
-
-        print(request.POST['proposals.disable.after'])
         fmt = '%Y-%m-%d %H:%M:%S%z'
+        tz_selectd = pytz.timezone(request.POST['review_timezone'])
         date_time_obj = datetime.datetime.strptime(
             request.POST['proposals.disable.after'], '%Y-%m-%dT%H:%M:%S')
-        loc_dt = datetime.timezone(TIME_ZONE).localize(date_time_obj)
-        messages.info(request, 'Your setting has been changed successfully at '  + str(datetime.now()))
+        loc_dt = tz_selectd.localize(date_time_obj).strftime(fmt)
 
-        reg[CONFERENCE_DEFAULT_SLUG +
-            '.proposals.creatable'] = request.POST['proposals.creatable']
-        reg[CONFERENCE_DEFAULT_SLUG +
-            '.proposals.editable'] = request.POST['proposals.editable']
-        reg[CONFERENCE_DEFAULT_SLUG + '.proposals.withdrawable'] = request.POST[
-            'proposals.withdrawable']
-        reg[CONFERENCE_DEFAULT_SLUG + '.reviews.visible.to.submitters'] = request.POST[
-            'reviews.visible.to.submitters']
-        reg[CONFERENCE_DEFAULT_SLUG + '.reviews.stage'] = int(request.POST['reviews.stage'])
-        reg[CONFERENCE_DEFAULT_SLUG + '.proposals.disable.after'] = loc_dt
+        CONFERENCE_DEFAULT_SLUG = settings.CONFERENCE_DEFAULT_SLUG
+        review_stages_list = [
+            'proposals.creatable', 'proposals.editable',
+            'proposals.withdrawable', 'reviews.visible.to.submitters',
+            'reviews.stage', 'proposals.disable.after'
+        ]
 
-    return render(request, 'reviews/review_stages.html',{'default_tz': default_tz})
+        for tag in review_stages_list:
+            key = CONFERENCE_DEFAULT_SLUG + '.' + tag
+            if(tag == 'proposals.disable.after'):
+                value = loc_dt
+            else:
+                value = request.POST[tag]
+            reg[key] = value
+            print(key)
+            print(value)
+            
+        messages.info(
+            request,
+            'This setting has been changed successfully and the review stage will expire at '
+            + str(loc_dt) + ' (' + request.POST.get('review_timezone') + ')')
+
+    return render(request, 'reviews/review_stages.html',{'timezones': pytz.common_timezones})
 
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)

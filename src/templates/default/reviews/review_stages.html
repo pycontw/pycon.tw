@@ -3,6 +3,8 @@
 {% load i18n static %}
 {% load proposals %}
 {% load compress crispy_forms_tags %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
 
 {% block dashboard_tablist %}
 {% include '_includes/dashboard_tablist.html' with active='admin' %}
@@ -93,7 +95,7 @@
 					<li class="panel-title list-group-item">
 						timezone
 						<div class="input-customized-size pull-right">
-							<select name="DropDownTimezone" id="DropDownTimezone">
+							<!--<select name="DropDownTimezone" id="DropDownTimezone">
 								<option value="-12:00">(GMT -12:00) AoE</option>
 								<option value="-11:00">(GMT -11:00) Midway Island</option>
 								<option value="-10:00">(GMT -10:00) Hawaii</option>
@@ -125,13 +127,19 @@
 								<option value="+10:00">(GMT +10:00) Eastern Australia</option>
 								<option value="+11:00">(GMT +11:00) Magadan</option>
 								<option value="+12:00">(GMT +12:00) Auckland</option>
+							</select>!-->
+							<select name="review_timezone">
+								<!--<option value="0">{{TIME_ZONE}}</option>!-->
+								{% for tz in timezones %}
+								<option value="{{ tz }}" {% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+								{% endfor %}
 							</select>
 						</div>
 					</li>
 					<li class="panel-title list-group-item">
 						timezone comment (non-required)
 						<div class="input-customized-size pull-right">
-							<input name="timezone" type="text" placeholder="AoE timezone: -1200">
+							<input name="timezone_comment" type="text" placeholder="AoE timezone: -1200">
 						</div>
 					</li>
 				</ul>
