@@ -33,7 +33,24 @@
 		</div>
 	</article>
 </section>
+<section class="index-actions">
+	{% comment %}
+	<a class="index-big-button color-jinger-bread" href="{% url 'page' path='events/talks' %}">
+		<i class="icon icon-speaking"></i>
+		<div>{% trans 'Talks' %}</div>
+	</a>
+	{% endcomment %}
 
+	<a class="index-big-button color-imperial" href="{{ VOLUNTEER_FORM_URL }}" target="_blank" rel="noopener">
+		<i class="icon icon-volunteering"></i>
+		<div>{% trans 'Become a volunteer' %}</div>
+	</a>
+
+	<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
+		<i class="icon icon-sponsor"></i>
+		<div>{% trans 'Sponsor PyCon TW' %}</div>
+	</a>
+</section>
 {% include '_includes/sponsors.html' %}
 
 <div class="main-content">
@@ -57,24 +74,7 @@
 		</article>
 	</section>
 
-    {% comment %}
-	<section class="index-actions">
-		<a class="index-big-button color-jinger-bread" href="{% url 'page' path='events/talks' %}">
-			<i class="icon icon-speaking"></i>
-			<div>{% trans 'Talks' %}</div>
-		</a>
 
-		<a class="index-big-button color-imperial" href="{{ VOLUNTEER_FORM_URL }}" target="_blank" rel="noopener">
-			<i class="icon icon-volunteering"></i>
-			<div>{% trans 'Become a volunteer' %}</div>
-		</a>
-
-		<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
-			<i class="icon icon-sponsor"></i>
-			<div>{% trans 'Sponsor PyCon TW' %}</div>
-		</a>
-	</section>
-    {% endcomment %}
 </div>
 
 
