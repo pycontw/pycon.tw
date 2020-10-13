@@ -19,31 +19,21 @@
 <div class="dashboard-body">
 	<!--Hot Key Button-->
 	<div class="col-md-3">
-		<button class="btn btn-natural-noborder hotkey" value="Call for Proposals">
-			Call for Proposals
-		</button>
-		<button class="btn btn-natural-noborder hotkey" value="First Round Review">
-			First Round Review
-		</button>
-		<button class="btn btn-natural-noborder hotkey" value="Modification Stage">
-			Modification Stage
-		</button>
-		<button class="btn btn-natural-noborder hotkey" value="Second Round Review">
-			Second Round Review
-		</button>
-		<button class="btn btn-natural-noborder hotkey" value="Internal Decision">
-			Internal Decision
-		</button>
-		<button class="btn btn-natural-noborder hotkey" value="Announcement of Acceptance">
-			Announcement of Acceptance
-		</button>
+		{% for rs in review_stages_list %}
+		<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
+		{% endfor %}
 	</div>
 	<!--Review Change Setting-->
 	<div class="col-md-9">
 		<form action="{% url 'review_stages' %}" method="post">
 			{% csrf_token %}
 			<div class="panel panel-default">
-				<div class="panel-heading">{% trans 'Change Review' %}</div>
+				<div class="panel-heading">{% trans 'Review Stages' %}
+					<div class="material-switch pull-right">
+						<a href="https://github.com/pycontw/pycon.tw/blob/master/src/reviews/README.md">See Proposal Review System
+							Documentation</a>
+					</div>
+				</div>
 				<ul class="list-group">
 					<li class="panel-title list-group-item">
 						{{ ".proposals.creatable"|configuration_switch }}
@@ -102,12 +92,6 @@
 							</select>
 						</div>
 					</li>
-					<li class="panel-title list-group-item">
-						timezone comment (non-required)
-						<div class="input-customized-size pull-right">
-							<input name="timezone_comment" type="text" placeholder="AoE timezone: -1200">
-						</div>
-					</li>
 				</ul>
 			</div>
 
@@ -121,14 +105,9 @@
 	</div>
 </div>
 
-<script>
-	var default_tz = '{{default_tz}}'
-</script>
 {% endblock main-content %}
 
 {% block extra_js %}
-<!--{{ block.super }}
-<script src="{% static 'js/vendors/simplemde.min.js' %}"></script>-->
 {% compress js %}
 <script src="{% static 'js/reviews/review_stages.js' %}"></script>
 {% endcompress %}

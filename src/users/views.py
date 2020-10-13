@@ -199,6 +199,13 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         return context
 
 def review_stages(request):
+    
+    review_stages_list = [
+        'Call for Proposals', 'First Round Review_1',
+        'First Round Review_2', 'Modification Stage',
+        'Second Round Review', 'Internal Decision',
+        'Announcement of Acceptance'
+    ]
 
     if request.method == 'POST':
 
@@ -209,26 +216,32 @@ def review_stages(request):
         loc_dt = tz_selectd.localize(date_time_obj).strftime(fmt)
 
         CONFERENCE_DEFAULT_SLUG = settings.CONFERENCE_DEFAULT_SLUG
-        review_stages_list = [
+        review_stages_var = [
             'proposals.creatable', 'proposals.editable',
             'proposals.withdrawable', 'reviews.visible.to.submitters',
             'reviews.stage', 'proposals.disable.after'
         ]
 
-        for tag in review_stages_list:
+        for tag in review_stages_var:
             key = CONFERENCE_DEFAULT_SLUG + '.' + tag
             if(tag == 'proposals.disable.after'):
                 value = loc_dt
+            elif(tag == 'reviews.stage'):
+                value = int(request.POST[tag])
             else:
                 value = request.POST[tag]
             reg[key] = value
-            
+
         messages.info(
             request,
             'This setting has been changed successfully and the review stage will expire at '
             + str(loc_dt) + ' (' + request.POST.get('review_timezone') + ')')
 
-    return render(request, 'reviews/review_stages.html',{'timezones': pytz.common_timezones})
+    return render(
+        request, 'reviews/review_stages.html', {
+            'timezones': pytz.common_timezones,
+            'review_stages_list': review_stages_list
+        })
 
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)

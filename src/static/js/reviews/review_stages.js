@@ -9,8 +9,11 @@ $('.hotkey').click(function () {
     if ($(this).val() == "Call for Proposals") {
         Call_for_Proposals();
     }
-    else if ($(this).val() == "First Round Review") {
-        First_Round_Review()
+    else if ($(this).val() == "First Round Review_1") {
+        First_Round_Review_1()
+    }
+    else if ($(this).val() == "First Round Review_2") {
+        First_Round_Review_2()
     }
     else if ($(this).val() == "Modification Stage") {
         Modification_Stage()
@@ -33,14 +36,21 @@ $('.hotkey').click(function () {
         proposals_creatable.checked = true;
         proposals_editable.checked = true;
         proposals_withdrawable.checked = true;
-        reviews_stage.value = "0";
+        reviews_stage.value = 0;
         reviews_visible_to_submitters.checked = false;
     }
-    function First_Round_Review() {
+    function First_Round_Review_1() {
         proposals_creatable.checked = false;
         proposals_editable.checked = false;
         proposals_withdrawable.checked = false;
         reviews_stage.value = "0";
+        reviews_visible_to_submitters.checked = false;
+    }
+    function First_Round_Review_2() {
+        proposals_creatable.checked = false;
+        proposals_editable.checked = false;
+        proposals_withdrawable.checked = false;
+        reviews_stage.value = "1";
         reviews_visible_to_submitters.checked = false;
     }
     function Modification_Stage() {
