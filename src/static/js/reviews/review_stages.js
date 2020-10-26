@@ -12,8 +12,8 @@ $('.hotkey').click(function () {
     else if ($(this).val() == "First Round Review_1") {
         First_Round_Review_1()
     }
-    else if ($(this).val() == "First Round Review_2") {
-        First_Round_Review_2()
+    else if ($(this).val() == "First Round Review") {
+        First_Round_Review()
     }
     else if ($(this).val() == "Modification Stage") {
         Modification_Stage()
@@ -46,7 +46,7 @@ $('.hotkey').click(function () {
         reviews_stage.value = "0";
         reviews_visible_to_submitters.checked = false;
     }
-    function First_Round_Review_2() {
+    function First_Round_Review() {
         proposals_creatable.checked = false;
         proposals_editable.checked = false;
         proposals_withdrawable.checked = false;
