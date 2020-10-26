@@ -199,10 +199,10 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         return context
 
 def review_stages(request):
-    
+
     review_stages_list = [
         'Call for Proposals', 'First Round Review_1',
-        'First Round Review_2', 'Modification Stage',
+        'First Round Review', 'Modification Stage',
         'Second Round Review', 'Internal Decision',
         'Announcement of Acceptance'
     ]
@@ -240,7 +240,8 @@ def review_stages(request):
     return render(
         request, 'reviews/review_stages.html', {
             'timezones': pytz.common_timezones,
-            'review_stages_list': review_stages_list
+            'review_stages_list': review_stages_list,
+            **reviews_state()._asdict()
         })
 
 
