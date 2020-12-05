@@ -50,6 +50,8 @@
 							<li data-target="tabbing.tab" data-action="click->tabbing#activate">
 								{% trans 'Slido' %}
 							</li>
+						{% endif %}
+						{% if data.slides %}
 							<li data-target="tabbing.tab" data-action="click->tabbing#activate">
 								{% trans 'Slides' %}
 							</li>
@@ -77,9 +79,11 @@
 								<iframe class="slido" src="{{ data.slido }}"></iframe>
 							</article>
 						{% endif %}
-						<article data-target="tabbing.pane">
-							<a href="{{ data.slides }}">{{ data.slides }}</a>
-						</article>
+						{% if data.slides %}
+							<article data-target="tabbing.pane">
+								<a href="{{ data.slides }}">{{ data.slides }}</a>
+							</article>
+						{% endif %}
 					</div>
 				</div>
 			</article>
