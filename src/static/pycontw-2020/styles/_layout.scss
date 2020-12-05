@@ -2,7 +2,10 @@ $container-max-width: 720px;
 
 @mixin container($max-width: $container-max-width) {
 	max-width: $max-width;
-	margin: auto;
+	margin: 0;
+	@include on-desktop {
+		margin: auto;
+	}
 }
 
 .container {
