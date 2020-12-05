@@ -1,0 +1,15 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Staff' %}{% endblock title %}
+
+{% block content %}
+
+<section class="pill-title alt">
+	<h1>{% trans 'Staff' %}</h1>
+</section>
+
+{% include '_includes/staff.html' %}
+
+{% endblock content %}

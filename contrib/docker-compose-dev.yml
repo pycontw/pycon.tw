@@ -11,11 +11,11 @@ services:
       - ${COMPOSE_DB_PORT:-5432}:5432
   pycontw:
     build:
-      context: ..
+      context: .
       dockerfile: dev.Dockerfile
     volumes:
-      - ../src:/app/src
-      - ../logs:/app/logs
+      - ./src:/app/src
+      - ./logs:/app/logs
     ports:
       - "8000:8000"
     depends_on:

@@ -1,0 +1,80 @@
+.menu-navbar-mobile {
+	position: fixed;
+	top: $top-navbar-offset;
+	z-index: $overlay-index;
+
+	width: 100vw;
+	height: 0;
+	// background-color: lighten($jinger-bread, 10%);
+	background-color: $jinger-bread;
+	transition: 0.25s ease-in-out;
+	overflow: auto;
+
+	@include on-desktop {
+		display: none;
+	}
+
+    .shadow {
+        position: absolute;
+        left: 99px;
+        top: -62px;
+        margin: 0 !important;
+        font-size: 52px;
+        transform: scaleY(-1) skew(45deg, 0);
+        transform-origin: bottom;
+        color: rgba(0, 0, 0, 0.3);
+        // height: 42px;
+        filter: blur(1px);
+        line-height: 52px;
+        display: none;
+    }
+
+	&.no-script {
+		position: relative;
+		z-index: -1;
+		top: 0 - $top-navbar-offset;
+		height: auto;
+		border-bottom: $top-navbar-border-bottom;
+
+		.menu {
+			padding: $top-navbar-offset + 24px 16px 0 16px;
+		}
+	}
+
+	&.open {
+		height: calc(100vh - #{$top-navbar-offset});
+	}
+
+	> * {
+		margin: 11vh 0;
+
+		&:first-child {
+			margin-top: 11vh;
+		}
+		&:last-child {
+			margin-bottom: 11vh;
+		}
+	}
+
+	.menu {
+		@include menu($brick, $imperial);
+
+		> li {
+			margin: 32px 0;
+		}
+
+		.submenu {
+			background: $brown;
+            border-radius: 0;
+            border: none;
+            padding: 1px;
+            margin-top: 20px;
+
+			text-align: center;
+
+			li {
+				margin: 24px 8px;
+			}
+		}
+	}
+}
