@@ -9,8 +9,8 @@ $('.hotkey').click(function () {
     if ($(this).val() == "Call for Proposals") {
         Call_for_Proposals();
     }
-    else if ($(this).val() == "First Round Review_1") {
-        First_Round_Review_1()
+    else if ($(this).val() == "Locked (proposal editing and reviewing disabled)") {
+        Locked()
     }
     else if ($(this).val() == "First Round Review") {
         First_Round_Review()
@@ -36,10 +36,10 @@ $('.hotkey').click(function () {
         proposals_creatable.checked = true;
         proposals_editable.checked = true;
         proposals_withdrawable.checked = true;
-        reviews_stage.value = 0;
+        reviews_stage.value = "0";
         reviews_visible_to_submitters.checked = false;
     }
-    function First_Round_Review_1() {
+    function Locked() {
         proposals_creatable.checked = false;
         proposals_editable.checked = false;
         proposals_withdrawable.checked = false;

@@ -201,10 +201,10 @@ class PasswordChangeView(auth_views.PasswordChangeView):
 def review_stages(request):
 
     review_stages_list = [
-        'Call for Proposals', 'First Round Review_1',
-        'First Round Review', 'Modification Stage',
-        'Second Round Review', 'Internal Decision',
-        'Announcement of Acceptance'
+        'Call for Proposals',
+        'Locked (proposal editing and reviewing disabled)',
+        'First Round Review', 'Modification Stage', 'Second Round Review',
+        'Internal Decision', 'Announcement of Acceptance'
     ]
 
     if request.method == 'POST':
