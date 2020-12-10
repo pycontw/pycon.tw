@@ -17,14 +17,12 @@
 </h3>
 
 <div class="dashboard-body">
-	<!--Hot Key Button-->
-	<div class="col-md-3">
+	<div class="row">
+		<!--Hot Key Button-->
 		{% for rs in review_stages_list %}
-		<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
+			<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
 		{% endfor %}
-	</div>
-	<!--Review Change Setting-->
-	<div class="col-md-9">
+		<!--Review Change Setting-->
 		<form action="{% url 'review_stages' %}" method="post">
 			{% csrf_token %}
 			<div class="panel panel-default">
@@ -78,8 +76,8 @@
 					<li class="panel-title list-group-item">
 						{{ ".proposals.disable.after"|configuration_switch }}
 						<div class="input-customized-size pull-right">
-							<input name="proposals.disable.after" type="datetime-local" step="1"
-								placeholder="yyyy-mm-dd hh:mm:ss" required="required">
+							<input name="proposals.disable.after" type="datetime-local" step="1" placeholder="yyyy-mm-dd hh:mm:ss"
+								required="required">
 						</div>
 					</li>
 					<li class="panel-title list-group-item">
@@ -112,3 +110,4 @@
 <script src="{% static 'js/reviews/review_stages.js' %}"></script>
 {% endcompress %}
 {% endblock extra_js %}
+
