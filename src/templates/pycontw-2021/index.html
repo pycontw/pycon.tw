@@ -17,8 +17,9 @@
 
 {% block content_full %}
 
-{% include '_includes/hero.html' %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
 
+{% include '_includes/hero.html' %}
 
 <div class="menu-navbar-desktop-outer">
 	<nav class="menu-navbar-desktop">
@@ -49,6 +50,23 @@
 		<div>{% trans 'Become a volunteer' %}</div>
 	</a>
 
+	<a class="index-big-button color-dark-gray" href="{{ speaking_cfp_url }}">
+		<i class="icon icon-speaking"></i>
+		<div>{% trans 'Call for Proposals' %}</div>
+	</a>
+	
+	{% comment %}
+	<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
+		<i class="icon icon-sponsor"></i>
+		<div>{% trans 'Sponsor PyCon TW' %}</div>
+	</a>
+	{% endcomment %}
+	{% comment %}
+	<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
+		<i class="icon icon-sponsor"></i>
+		<div>{% trans 'Sponsor PyCon TW' %}</div>
+	</a>
+	{% endcomment %}
 	{% comment %}
 	<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
 		<i class="icon icon-sponsor"></i>
@@ -78,8 +96,6 @@
 			{% endblocktrans %}
 		</article>
 	</section>
-
-
 </div>
 
 
