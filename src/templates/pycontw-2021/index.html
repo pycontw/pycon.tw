@@ -11,13 +11,14 @@
 {% endblock extra_css %}
 
 {% block titletag %}
-<title>{% trans 'PyCon Taiwan 2020' %}</title>
+<title>{% trans 'PyCon Taiwan 2021' %}</title>
 {% endblock titletag %}
 
 
 {% block content_full %}
 
 {% include '_includes/hero.html' %}
+
 
 <div class="menu-navbar-desktop-outer">
 	<nav class="menu-navbar-desktop">
@@ -48,12 +49,14 @@
 		<div>{% trans 'Become a volunteer' %}</div>
 	</a>
 
+	{% comment %}
 	<a class="index-big-button color-dark-gray" href="{% url 'page' path='sponsor/sponsor' %}">
 		<i class="icon icon-sponsor"></i>
 		<div>{% trans 'Sponsor PyCon TW' %}</div>
 	</a>
+	{% endcomment %}
 </section>
-{% include '_includes/sponsors.html' %}
+{% comment %} {% include '_includes/sponsors.html' %} {% endcomment %}
 
 <div class="main-content">
 	<section class="index-introduction">

@@ -8,7 +8,7 @@
 
   <div class="toturial">
     <h3>{% trans '1. Register yourself' %}</h3>
-    <p>{% trans 'Users can find a #registration-desk channel under <strong>PYCON TW 2020</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles.' %}</p>
+    <p>{% trans 'Users can find a #registration-desk channel under <strong>PYCON TW 2021</strong> category. There is a PyCon TW RegBot in this channel to help you register to your roles.' %}</p>
     {% if token %}
     <li class='sec'>{% trans 'Enter' %} <code>!register {{ token }}</code><a href="javascript:void(0)" onclick="copied()"><i class="fa fa-clipboard" aria-hidden="true" id="copytoken" data-clipboard-text="!register {{ token }}"></i></a> {% trans 'in this channel to register' %}</li>
     {% else %}
@@ -17,7 +17,7 @@
     {% endif %}
     <li class='sec'>{% trans 'Enter <code>!help</code> if you need command help from RegBot.' %}</li>
     <p>{% trans 'If you register successfully, you can see several new channels appear in the left.' %}</p>
-    <p>{% trans 'If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2020-staff</strong>。' %}</p>
+    <p>{% trans 'If you keep failing to register, you can directly raise your question in #registration-desk channel and mention <strong>2021-staff</strong>。' %}</p>
   </div>
 
   <div class="toturial">
@@ -36,24 +36,24 @@
   <h2>{% trans 'Roles list' %}</h2>
   <p>{% trans 'Users can be assigned several different roles, each role would have their own permission to enter some private channel.' %}</p>
   <div class="roles-list">
-    <h3>{% trans '2020-session-chair' %}</h3>
-    <p>{% trans 'Target: PyCon TW 2020 session chairs and assistant chairs' %}</p>
+    <h3>{% trans '2021-session-chair' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2021 session chairs and assistant chairs' %}</p>
   </div>
   <div class="roles-list">
-    <h3>{% trans '2020-staff' %}</h3>
-    <p>{% trans 'Target: PyCon TW 2020 staff' %}</p>
+    <h3>{% trans '2021-staff' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2021 staff' %}</p>
   </div>
   <div class="roles-list">
-    <h3>{% trans '2020-speaker' %}</h3>
-    <p>{% trans 'Target: PyCon TW 2020 speakers' %}</p>
+    <h3>{% trans '2021-speaker' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2021 speakers' %}</p>
   </div>
   <div class="roles-list">
-    <h3>{% trans '2020-remote' %}</h3>
-    <p>{% trans 'Target: PyCon TW 2020 remote session staff and remote speakers.' %}</p>
+    <h3>{% trans '2021-remote' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2021 remote session staff and remote speakers.' %}</p>
   </div>
   <div class="roles-list">
-    <h3>{% trans '2020-attendee' %}</h3>
-    <p>{% trans 'Target: PyCon TW 2020 attendees' %}</p>
+    <h3>{% trans '2021-attendee' %}</h3>
+    <p>{% trans 'Target: PyCon TW 2021 attendees' %}</p>
   </div>
 
 
@@ -70,46 +70,46 @@
   <div class="channels-list">
     <h3>{% trans 'Session channel' %}</h3>
     <h4>{% trans '#keynote-track' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'Keynote discussion channel' %}</p>
     <h4>{% trans '#r1-track' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'R1 track discussion channel' %}</p>
     <h4>{% trans '#r2-track' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'R2 track discussion channel' %}</p>
     <h4>{% trans '#r3-track' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'R3 track (remote track) discussion channel' %}</p>
   </div>
   <div class="channels-list">
     <h3>{% trans 'Announcements channel' %}</h3>
     <h4>{% trans '#announcements' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'Official announcement channel, any official announcements will be posted here.' %}</p>
     <h4>{% trans '#speakers-announcements' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>' %}</h6>
     <p>{% trans 'A special announcement channel for speakers, speaker can also have discussion with each other in this channel.' %}</p>
     <h4>{% trans '#staff-announcements' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>' %}</h6>
     <p>{% trans 'A special announcement channel for staff, staff can also contact to others in this channel.' %}</p>
   </div>
   <div class="channels-list">
     <h3>{% trans 'Information desk channel' %}</h3>
     <h4>{% trans '#information-desk' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-attendee</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-attendee</code>' %}</h6>
     <p>{% trans 'Official online information desk, speakers or attendees can give questions or suggestions in this channel.' %}</p>
     <h4>{% trans '#speakers' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-staff</code>, <code>2020-speaker</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-staff</code>, <code>2021-speaker</code>' %}</h6>
     <p>{% trans 'Speakers only information desk, speakers can give sessions or speakers related questions here for answers or further instruction.' %}</p>
     <h4>{% trans '#session-chairs' %}</h4>
-    <h6>{% trans 'Roles：<code>2020-session-chair</code>' %}</h6>
+    <h6>{% trans 'Roles：<code>2021-session-chair</code>' %}</h6>
     <p>{% trans 'A channel for session chairs and assistant chairs to give any related questions here for answers or further instruction.' %}</p>
   </div>
   <div class="channels-list">
     <h3>{% trans 'Special channel' %}</h3>
     <h4>{% trans '🔊remote-guide' %}</h4>
-    <h6>{% trans 'Roles： <code>2020-remote</code>' %}</h6>
+    <h6>{% trans 'Roles： <code>2021-remote</code>' %}</h6>
     <p>{% trans 'A special channel for remote partners to contact with each other during sessions, mainly for session chairs to give a cue to remote speakers.' %}</p>
   </div>
 
