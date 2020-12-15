@@ -1,4 +1,6 @@
 from django.conf import settings
+from django.conf.global_settings import DATETIME_INPUT_FORMATS
+from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib import auth
 # from django.contrib.auth import get_user_model, login
@@ -199,31 +201,27 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         return context
 
 def review_stages(request):
-
     review_stages_list = [
         'Call for Proposals',
         'Locked (proposal editing and reviewing disabled)',
         'First Round Review', 'Modification Stage', 'Second Round Review',
         'Internal Decision', 'Announcement of Acceptance'
     ]
+    review_stages_var = [
+        'proposals.creatable', 'proposals.editable',
+        'proposals.withdrawable', 'reviews.visible.to.submitters',
+        'reviews.stage', 'proposals.disable.after'
+    ]
 
     if request.method == 'POST':
 
-        fmt = '%Y-%m-%d %H:%M:%S%z'
+        date_time_obj = date_preprocess(
+            DATETIME_INPUT_FORMATS, request.POST['proposals.disable.after'])
         tz_selectd = pytz.timezone(request.POST['review_timezone'])
-        date_time_obj = datetime.datetime.strptime(
-            request.POST['proposals.disable.after'], '%Y-%m-%dT%H:%M:%S')
-        loc_dt = tz_selectd.localize(date_time_obj).strftime(fmt)
-
-        CONFERENCE_DEFAULT_SLUG = settings.CONFERENCE_DEFAULT_SLUG
-        review_stages_var = [
-            'proposals.creatable', 'proposals.editable',
-            'proposals.withdrawable', 'reviews.visible.to.submitters',
-            'reviews.stage', 'proposals.disable.after'
-        ]
+        loc_dt = tz_selectd.localize(date_time_obj).strftime('%Y-%m-%d %H:%M:%S%z')
 
         for tag in review_stages_var:
-            key = CONFERENCE_DEFAULT_SLUG + '.' + tag
+            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
             if(tag == 'proposals.disable.after'):
                 value = loc_dt
             elif(tag == 'reviews.stage'):
@@ -244,6 +242,17 @@ def review_stages(request):
             **reviews_state()._asdict()
         })
 
+def date_preprocess(DATETIME_INPUT_FORMATS, value):
+    # Add defined datetime formatx
+    DATETIME_INPUT_FORMATS += ['%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M']
+    value = value.strip()
+    # Try to strptime against each input format.
+    for format in DATETIME_INPUT_FORMATS:
+        try:
+            return datetime.datetime.strptime(value, format)
+        except (ValueError, TypeError):
+            continue
+    raise ValidationError("Please input valid date format : " + "%Y-%m-%dT%H:%M")
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()
