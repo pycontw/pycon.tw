@@ -13,12 +13,56 @@
 {% block main-content %}
 
 <h3 class="dashboard-header">
-	<span class="header-title">{% trans 'Review Stages' %}</span>
+	<span class="header__title">{% trans 'Review Stages' %}</span>
 </h3>
 
 <div class="dashboard-body">
 	<div class="row">
+		<!--Current Setting-->
+		<div class="panel panel-default">
+			<div class="panel-heading">{% trans 'Current Review Stage Setting' %}</div>
+			<ul class="list-group">
+				<li class="panel-body list-group-item">
+					{{ ".proposals.creatable"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.proposals_creatable }}</p>
+					</div>
+				</li>
+				<li class="panel-body list-group-item">
+					{{ ".proposals.editable"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.proposals_editable }}</p>
+					</div>
+				</li>
+				<li class="panel-body list-group-item">
+					{{ ".proposals.withdrawable"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.proposals_withdrawable }}</p>
+					</div>
+				</li>
+				<li class="panel-body list-group-item">
+					{{ ".proposals.reviews.visible.to.submitters"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.reviews_visible_to_submitters }}</p>
+					</div>
+				</li>
+				<li class="panel-body list-group-item">
+					{{ ".proposals.reviews.stage"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.reviews_stage }}</p>
+					</div>
+				</li>
+				<li class="panel-body list-group-item">
+					{{ ".proposals.proposals.disable.after"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.proposals_disable_after }}</p>
+					</div>
+			</ul>
+		</div>
 		<!--Hot Key Button-->
+		<br>
+		<h4>{% trans 'Set Review Stage' %}</h4>
+		<br>
 		{% for rs in review_stages_list %}
 			<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
 		{% endfor %}
