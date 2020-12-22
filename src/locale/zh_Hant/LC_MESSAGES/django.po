@@ -1449,6 +1449,18 @@ msgstr "審查"
 msgid "Review Stages"
 msgstr "審查階段"
 
+#: templates/default/_includes/dashboard_tablist.html:28
+#: templates/default/reviews/review_stages.html:12
+#: templates/default/reviews/review_stages.html:18
+msgid "Current Review Stage Setting"
+msgstr "目前審查階段設定"
+
+#: templates/default/_includes/dashboard_tablist.html:28
+#: templates/default/reviews/review_stages.html:12
+#: templates/default/reviews/review_stages.html:18
+msgid "Set Review Stage"
+msgstr "設定審查階段"
+
 #: templates/default/_includes/nav/dashboard_nav.html:10
 msgid "Log out"
 msgstr "登出"

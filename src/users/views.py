@@ -201,6 +201,7 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         return context
 
 def review_stages(request):
+    current_review_stages_setting = {}
     review_stages_list = [
         'Call for Proposals',
         'Locked (proposal editing and reviewing disabled)',
@@ -214,7 +215,6 @@ def review_stages(request):
     ]
 
     if request.method == 'POST':
-
         date_time_obj = date_preprocess(
             DATETIME_INPUT_FORMATS, request.POST['proposals.disable.after'])
         tz_selectd = pytz.timezone(request.POST['review_timezone'])
@@ -230,15 +230,21 @@ def review_stages(request):
                 value = request.POST[tag]
             reg[key] = value
 
-        messages.info(
-            request,
-            'This setting has been changed successfully and the review stage will expire at '
-            + str(loc_dt) + ' (' + request.POST.get('review_timezone') + ')')
+        messages.info(request, 'This setting has been changed successfully.')
+    else:
+        for tag in review_stages_var:
+            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
+            value = reg.get(key, '')
+            # Django template language does not support dictionary keys containing "."
+            if "." in tag:
+                tag = tag.replace(".", "_")
+            current_review_stages_setting[tag] = value
 
     return render(
         request, 'reviews/review_stages.html', {
             'timezones': pytz.common_timezones,
             'review_stages_list': review_stages_list,
+            'current_review_stages_setting': current_review_stages_setting,
             **reviews_state()._asdict()
         })
 
