@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.contrib.auth import views as auth
 from django.urls import path
 
 from . import views
@@ -28,5 +29,4 @@ urlpatterns = [
 
     url(r'^agreement/$',
         views.coc_agree, name='coc_agreement'),
-    url(r'^review-stages/$', views.review_stages, name='review_stages'),
 ]
