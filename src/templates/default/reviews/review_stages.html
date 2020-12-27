@@ -152,6 +152,13 @@
 {% block extra_js %}
 {% compress js %}
 <script src="{% static 'js/reviews/review_stages.js' %}"></script>
+<script>
+	proposals_creatable.checked = {{ current_review_stages_setting.proposals_creatable }};
+	proposals_editable.checked = {{ current_review_stages_setting.proposals_editable }};
+	proposals_withdrawable.checked = {{ current_review_stages_setting.proposals_withdrawable }};
+	reviews_visible_to_submitters.checked = {{ current_review_stages_setting.reviews_visible_to_submitters }};
+	reviews_stage.value = {{ current_review_stages_setting.reviews_stage }};
+</script>
 {% endcompress %}
 {% endblock extra_js %}
 
