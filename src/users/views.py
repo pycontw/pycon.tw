@@ -1,6 +1,4 @@
 from django.conf import settings
-from django.conf.global_settings import DATETIME_INPUT_FORMATS
-from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib import auth
 # from django.contrib.auth import get_user_model, login
@@ -22,13 +20,9 @@ from .forms import (
 )
 from .models import CocRecord
 from reviews.context import proposals_state, reviews_state
-from registry.helper import reg
 
 from lxml import etree
 import lxml.html
-
-import pytz
-import datetime
 
 User = auth.get_user_model()
 
@@ -199,66 +193,6 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         context = super().get_context_data(**kwargs)
         context.update(**reviews_state()._asdict())
         return context
-
-def review_stages(request):
-    current_review_stages_setting = {}
-    review_stages_list = [
-        'Call for Proposals',
-        'Locked (proposal editing and reviewing disabled)',
-        'First Round Review', 'Modification Stage', 'Second Round Review',
-        'Internal Decision', 'Announcement of Acceptance'
-    ]
-    review_stages_var = [
-        'proposals.creatable', 'proposals.editable',
-        'proposals.withdrawable', 'reviews.visible.to.submitters',
-        'reviews.stage', 'proposals.disable.after'
-    ]
-
-    if request.method == 'POST':
-        date_time_obj = date_preprocess(
-            DATETIME_INPUT_FORMATS, request.POST['proposals.disable.after'])
-        tz_selectd = pytz.timezone(request.POST['review_timezone'])
-        loc_dt = tz_selectd.localize(date_time_obj).strftime('%Y-%m-%d %H:%M:%S%z')
-
-        for tag in review_stages_var:
-            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
-            if(tag == 'proposals.disable.after'):
-                value = loc_dt
-            elif(tag == 'reviews.stage'):
-                value = int(request.POST[tag])
-            else:
-                value = request.POST[tag]
-            reg[key] = value
-
-        messages.info(request, 'This setting has been changed successfully.')
-    else:
-        for tag in review_stages_var:
-            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
-            value = reg.get(key, '')
-            # Django template language does not support dictionary keys containing "."
-            if "." in tag:
-                tag = tag.replace(".", "_")
-            current_review_stages_setting[tag] = value
-
-    return render(
-        request, 'reviews/review_stages.html', {
-            'timezones': pytz.common_timezones,
-            'review_stages_list': review_stages_list,
-            'current_review_stages_setting': current_review_stages_setting,
-            **reviews_state()._asdict()
-        })
-
-def date_preprocess(DATETIME_INPUT_FORMATS, value):
-    # Add defined datetime formatx
-    DATETIME_INPUT_FORMATS += ['%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M']
-    value = value.strip()
-    # Try to strptime against each input format.
-    for format in DATETIME_INPUT_FORMATS:
-        try:
-            return datetime.datetime.strptime(value, format)
-        except (ValueError, TypeError):
-            continue
-    raise ValidationError("Please input valid date format : " + "%Y-%m-%dT%H:%M")
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()

@@ -32,5 +32,4 @@ urlpatterns = [
         views.password_reset_complete,
         name='password_reset_complete'),
     url(r'^agreement/$', views.coc_agree, name='coc_agreement'),
-    url(r'^review-stages/$', views.review_stages, name='review_stages'),
 ]
