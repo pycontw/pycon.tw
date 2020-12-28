@@ -6,6 +6,7 @@ from django.conf import settings
 from django.conf.global_settings import DATETIME_INPUT_FORMATS
 from django.core.exceptions import ValidationError
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib import messages
 from django.urls import reverse
 from django.db.models import Count
 from django.http import Http404
@@ -326,16 +327,15 @@ def review_stages(request):
             reg[key] = value
 
         messages.info(request, 'This setting has been changed successfully.')
-    else:
-        for tag in review_stages_var:
-            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
-            value = reg.get(key, '')
-            # Django template language does not support dictionary keys containing "."
-            if "." in tag:
-                tag = tag.replace(".", "_")
-            current_review_stages_setting[tag] = value
-            print(tag)
-            print(value)
+
+    # Render current setting to frontend
+    for tag in review_stages_var:
+        key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
+        value = reg.get(key, '')
+        # Django template language does not support dictionary keys containing "."
+        if "." in tag:
+            tag = tag.replace(".", "_")
+        current_review_stages_setting[tag] = value
 
     return render(
         request, 'reviews/review_stages.html', {
