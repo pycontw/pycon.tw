@@ -12,6 +12,9 @@ import sys
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+ALLOWED_HOSTS = ['*']
+
 INTERNAL_IPS = ['127.0.0.1', 'localhost']
 
 # Turn off debug while imported by Celery with a workaround
