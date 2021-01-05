@@ -59,12 +59,13 @@ Use Yarn to install Node dependencies:
 
     yarn install --dev
 
-### Set up Local Environment Variables and Database
+### Set up Local Environment Variables for Database
 
 Settings are stored in environment variables via [django-environ](http://django-environ.readthedocs.org/en/latest/). The quickest way to start is to copy `local.sample.env` into `local.env`:
 
     cp src/pycontw2016/settings/local.sample.env src/pycontw2016/settings/local.env
 
+Default is sqlite3, you can change to connect `postgres`. Copy `local.sample.env` and change its parameters to your personal setting.
 Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/) value. An example:
 
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
@@ -89,15 +90,7 @@ After that, just run the migration.
 
     cd src
 
-#### DB Connection
-Default is sqlite3, you can change to connect `postgres`.
-Copy `local.sample.env` and change its parameters to your personal setting.
-
-    cp pycontw2016/settings/local.sample.env pycontw2016/settings/local.env
-
-The format of `local.env` will be used by `django-environ` so you may refer to https://github.com/joke2k/django-environ for more details.
-
-And migrate the database:
+#### Migrate the database:
 
     python manage.py migrate
 
