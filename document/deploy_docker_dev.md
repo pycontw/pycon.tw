@@ -1,6 +1,6 @@
 # Containerized Development Environment
 
-1. Edit the `DATABASE_URL` in `src/pycontw2016/settings/local.env`. Use the Postgres username, password, database name, and port in `./contrib/docker-compose-dev.yml`.
+1. Edit the `DATABASE_URL` in `src/pycontw2016/settings/local.env`(Copy from `local.sample.env`). Use the Postgres username, password, database name, and port in `./docker-compose-dev.yml`.
 
     ```
     DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
