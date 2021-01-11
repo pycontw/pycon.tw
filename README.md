@@ -16,11 +16,10 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 ### Set up a Development Environment & Run Server
 
-#### Method 1 : `Quick start in 5 minutes`
-* [ deploy with .sh and docker ](/document/deploy_docker_dev.md)
+#### Method 1 : `Quick Start`
+* [ Run with docker-compose & shell scripts ](/document/deploy_docker_dev.md)
 #### Method 2 : `Step by step`
-* [ deploy in local environment ](/document/deploy_local_env_dev.md)
-
+* [ Launch on your local runtime ](/document/deploy_local_env_dev.md)
 
 ## Run Tests
 

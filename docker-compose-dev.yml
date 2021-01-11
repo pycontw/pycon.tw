@@ -2,6 +2,7 @@ version: "3"
 
 services:
   db:
+    container_name: db_dev
     image: postgres:11-alpine
     environment:
       - POSTGRES_DB=pycontw2016
@@ -10,8 +11,9 @@ services:
     ports:
       - ${COMPOSE_DB_PORT:-5432}:5432
   pycontw:
+    container_name: pycontw_dev
     build:
-      context: ..
+      context: .
       dockerfile: dev.Dockerfile
     volumes:
       - ./src:/app/src

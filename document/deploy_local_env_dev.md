@@ -1,12 +1,4 @@
 ## Getting Started
-
-### Requirements
-
-- Git 1.8+
-- Python 3.6.x
-- Yarn 1.0+
-- Node.js 8.0+
-
 ### Set up a Virtual Environment
 
 #### Database - Docker (Optional)
