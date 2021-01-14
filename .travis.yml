@@ -37,4 +37,3 @@ notifications:
 after_success:
 - cd src; codecov
 - cd ..
-- fab travis_push_transifex
