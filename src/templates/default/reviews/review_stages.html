@@ -23,40 +23,11 @@
 			<div class="panel-heading">{% trans 'Current Review Stage Setting' %}</div>
 			<ul class="list-group">
 				<li class="panel-body list-group-item">
-					{{ ".proposals.creatable"|configuration_switch }}
-					<div class="pull-right">
-						<p>{{ current_review_stages_setting.proposals_creatable }}</p>
-					</div>
-				</li>
-				<li class="panel-body list-group-item">
-					{{ ".proposals.editable"|configuration_switch }}
-					<div class="pull-right">
-						<p>{{ current_review_stages_setting.proposals_editable }}</p>
-					</div>
-				</li>
-				<li class="panel-body list-group-item">
-					{{ ".proposals.withdrawable"|configuration_switch }}
-					<div class="pull-right">
-						<p>{{ current_review_stages_setting.proposals_withdrawable }}</p>
-					</div>
-				</li>
-				<li class="panel-body list-group-item">
-					{{ ".proposals.reviews.visible.to.submitters"|configuration_switch }}
-					<div class="pull-right">
-						<p>{{ current_review_stages_setting.reviews_visible_to_submitters }}</p>
-					</div>
-				</li>
-				<li class="panel-body list-group-item">
-					{{ ".proposals.reviews.stage"|configuration_switch }}
-					<div class="pull-right">
-						<p>{{ current_review_stages_setting.reviews_stage }}</p>
-					</div>
-				</li>
-				<li class="panel-body list-group-item">
 					{{ ".proposals.proposals.disable.after"|configuration_switch }}
 					<div class="pull-right">
 						<p>{{ current_review_stages_setting.proposals_disable_after }}</p>
 					</div>
+				</li>
 			</ul>
 		</div>
 		<!--Hot Key Button-->
@@ -121,7 +92,7 @@
 						{{ ".proposals.disable.after"|configuration_switch }}
 						<div class="input-customized-size pull-right">
 							<input name="proposals.disable.after" type="datetime-local" placeholder="YYYY-mm-ddThh:mm"
-								required="required">
+								>
 						</div>
 					</li>
 					<li class="panel-title list-group-item">

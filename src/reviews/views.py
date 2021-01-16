@@ -310,16 +310,31 @@ def review_stages(request):
     ]
 
     if request.method == 'POST':
-        date_time_obj = date_preprocess(
-            DATETIME_INPUT_FORMATS, request.POST['proposals.disable.after'])
-        tz_selectd = pytz.timezone(request.POST['review_timezone'])
-        loc_dt = tz_selectd.localize(date_time_obj).strftime(
-            '%Y-%m-%d %H:%M:%S%z')
 
         for tag in review_stages_var:
             key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
             if (tag == 'proposals.disable.after'):
-                value = loc_dt
+                if(request.POST['proposals.disable.after'] == ""):
+                    continue
+                else:
+                    date_time_obj = date_preprocess(
+                        DATETIME_INPUT_FORMATS,
+                        request.POST['proposals.disable.after'])
+                    if(date_time_obj is None):
+                        messages.error(request,'Please input valid date format : " + "%Y-%m-%dT%H:%M')
+                        return render(
+                            request, 'reviews/review_stages.html', {
+                                'timezones': pytz.common_timezones,
+                                'review_stages_list': review_stages_list,
+                                'current_review_stages_setting': current_review_stages_setting,
+                                **reviews_state()._asdict()
+                            })
+                        continue
+                    else:
+                        tz_selectd = pytz.timezone(request.POST['review_timezone'])
+                        loc_dt = tz_selectd.localize(date_time_obj).strftime(
+                            '%Y-%m-%d %H:%M:%S%z')
+                        value = loc_dt
             elif (tag == 'reviews.stage'):
                 value = int(request.POST[tag])
             else:
@@ -356,4 +371,5 @@ def date_preprocess(DATETIME_INPUT_FORMATS, value):
             return datetime.datetime.strptime(value, format)
         except (ValueError, TypeError):
             continue
-    raise ValidationError("Please input valid date format : " + "%Y-%m-%dT%H:%M")
+    return None
+    # raise ValidationError("Please input valid date format : " + "%Y-%m-%dT%H:%M")
