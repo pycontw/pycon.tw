@@ -81,4 +81,5 @@ $('.hotkey').click(function () {
         reviews_stage.value = "0";
         reviews_visible_to_submitters.checked = true;
     }
+    
 });
