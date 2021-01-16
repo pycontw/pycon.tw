@@ -51,11 +51,7 @@
 								{% trans 'Slido' %}
 							</li>
 						{% endif %}
-						{% if data.slides %}
-							<li data-target="tabbing.tab" data-action="click->tabbing#activate">
-								{% trans 'Slides' %}
-							</li>
-						{% endif %}
+
 					</ul>
 					<div>
 						<article data-target="tabbing.pane">
@@ -73,15 +69,13 @@
 							{% trans "To be announced" as placeholder_description %}
 							<h3 class="tab-title">{% trans 'Speech' %}</h3>
 							{{ data.session.description|default:placeholder_description|linebreaks }}
+							{% if data.slides %}
+								<p>Slides: <a href="{{ data.slides }}" target="_blank" rel="noopener">{{ data.slides }}</a></p>
+							{% endif %}
 						</article>
 						{% if data.slido %}
 							<article data-target="tabbing.pane">
 								<iframe class="slido" src="{{ data.slido }}"></iframe>
-							</article>
-						{% endif %}
-						{% if data.slides %}
-							<article data-target="tabbing.pane">
-								<a href="{{ data.slides }}">{{ data.slides }}</a>
 							</article>
 						{% endif %}
 					</div>
