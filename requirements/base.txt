@@ -68,7 +68,7 @@ ipython==7.12.0
 # The most feature-rich and easy-to-use library for processing XML and HTML in
 # the Python language.
 # https://lxml.de/
-lxml==4.5.0
+lxml==4.6.2
 
 # Python Imaging Library.
 # https://python-pillow.org/
