@@ -4005,8 +4005,8 @@ msgstr "密碼重設成功。您現在即可登入。"
 #~ msgid "Sponsor PyCon TW"
 #~ msgstr "贊助方案"
 
-#~ msgid "Call for Proposals"
-#~ msgstr "徵求稿件"
+msgid "Call for Proposals"
+msgstr "徵求稿件"
 
 #, fuzzy
 #~| msgid ""

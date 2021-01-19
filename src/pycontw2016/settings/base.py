@@ -69,7 +69,7 @@ if os.path.exists(env_file):
 # Raises ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -298,9 +298,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2018', _('PyCon Taiwan 2018')),
     ('pycontw-2019', _('PyCon Taiwan 2019')),
     ('pycontw-2020', _('PyCon Taiwan 2020')),
+    ('pycontw-2021', _('PyCon Taiwan 2021')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2020'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2021'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )

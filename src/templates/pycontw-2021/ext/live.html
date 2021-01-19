@@ -1,0 +1,24 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n compress static %}
+
+{% block title %}{% trans 'Live broadcast' %}{% endblock %}
+
+{% block body_class %}{{ block.super }} live-page{% endblock body_class %}
+
+{% block content %}
+
+<section class="pill-title">
+	<h1>{% trans 'Live broadcast' %}</h1>
+</section>
+
+{% include '_includes/ext/live.html' %}
+
+{% endblock content %}
+
+
+{% block extra_js %}
+{% compress js %}
+<script type="module" src="{% static 'pycontw-2021/scripts/token.js' %}"></script>
+{% endcompress %}
+{% endblock %}

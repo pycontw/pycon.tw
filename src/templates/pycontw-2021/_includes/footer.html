@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% url 'page' path='about/code-of-conduct' as coc_url %}
+{% url 'page' path='about/community' as community_url %}
+{% url 'page' path='about/privacy_policy' as privacy_policy_url %}
+{% url 'page' path='about/staff' as staff_url %}
+
+<footer>
+	<div class="footer-logos">
+		<div class='footer-logo'></div>
+	</div>
+	<ul>
+		<li><a href="{{ coc_url }}">{% trans 'Code of Conduct' %}</a></li>
+		<li><a href="{{ staff_url }}">{% trans 'Staff' %}</a></li>
+		<li><a href="{{ community_url }}">{% trans 'Community' %}</a></li>
+		<li><a href="{{ privacy_policy_url }}">{% trans 'Privacy Policy' %}</a></li>
+	</ul>
+	<p class="copyright">2021 PyCon Taiwan</p>
+</footer>
