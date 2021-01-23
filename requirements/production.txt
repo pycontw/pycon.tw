@@ -23,3 +23,8 @@ redis==2.10.6
 # Sentry client for Python
 # https://raven.readthedocs.org/en/latest/
 raven==6.5.0
+
+
+# A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses.
+# This allows in-browser requests to your Django application from other origins.
+django-cors-headers==3.6.0
