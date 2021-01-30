@@ -20,4 +20,14 @@ class Migration(migrations.Migration):
             name='remoting_policy',
             field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')], default=False, verbose_name='remoting policy'),
         ),
+        migrations.AddField(
+            model_name='talkproposal',
+            name='first_time_speaker',
+            field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')], default=False, verbose_name='first_time_speaker'),
+        ),
+        migrations.AddField(
+            model_name='tutorialproposal',
+            name='first_time_speaker',
+            field=models.BooleanField(choices=[(True, 'Yes'), (False, 'No')], default=False, verbose_name='first_time_speaker'),
+        ),
     ]

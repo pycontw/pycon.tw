@@ -196,6 +196,16 @@ class EventInfo(models.Model):
         choices=REMOTE_POLICY_CHOICES
     )
 
+    FIRST_SPEAKER_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+
+    first_time_speaker = models.BooleanField(
+        verbose_name=_('first time speaker'),
+        default=False,
+        choices=FIRST_SPEAKER_CHOICES)
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
