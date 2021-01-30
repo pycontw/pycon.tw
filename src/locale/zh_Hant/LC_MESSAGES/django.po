@@ -268,6 +268,10 @@ msgstr "最後更新"
 msgid "remoting policy"
 msgstr "遠端視訊演講"
 
+#: core/models.py:205
+msgid "first time speaker"
+msgstr "第一次擔任講者"
+
 #: events/admin.py:24
 msgid "time value"
 msgstr "時間值"
@@ -713,6 +717,11 @@ msgid ""
 "Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
 "is still raging this August?"
 msgstr "因應新型冠狀病毒疫情，若到八月疫情未趨緩，是否同意以遠端方式進行演講？"
+
+#: proposals/forms/mixins.py:133
+msgid ""
+"Is it the first time to be the speaker of pycon?"
+msgstr "此次是您第一次擔任 Pycon 的講者嗎？"
 
 #: proposals/forms/mixins.py:150
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
