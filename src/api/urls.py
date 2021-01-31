@@ -1,8 +1,8 @@
 from django.conf.urls import url
 
-from . import views
+from sponsors.views import SponsorAPIView, JobAPIView
 
 urlpatterns = [
-    url(r'^sponsors/$', views.SponsorAPIView.as_view()),
-    url(r'^jobs/$', views.JobAPIView.as_view()),
+    url(r'^sponsors/$', SponsorAPIView.as_view()),
+    url(r'^jobs/$', JobAPIView.as_view()),
 ]
