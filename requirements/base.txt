@@ -18,6 +18,10 @@ django-compressor==2.4
 # https://github.com/kottenator/django-compressor-toolkit
 django-compressor-toolkit==0.6.0
 
+# A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses.
+# This allows in-browser requests to your Django application from other origins.
+django-cors-headers==3.6.0
+
 # The best way to have DRY Django forms.
 # https://django-crispy-forms.readthedocs.io/en/latest/
 django-crispy-forms==1.8.1
