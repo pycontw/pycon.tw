@@ -23,7 +23,6 @@ class ProposalAdmin(admin.ModelAdmin):
         'language',
         'python_level',
         'remoting_policy',
-        'first_time_speaker',
         'accepted',
     ]
     list_filter = [
@@ -48,7 +47,6 @@ class ProposalAdmin(admin.ModelAdmin):
         'slide_link',
         'referring_policy',
         'remoting_policy',
-        'first_time_speaker',
         'cancelled',
         'accepted',
         'slido_embed_link',
@@ -62,6 +60,29 @@ class ProposalAdmin(admin.ModelAdmin):
 @admin.register(TalkProposal)
 class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     resource_class = TalkProposalResource
+    fields = [
+        'conference',
+        'submitter',
+        'title',
+        'category',
+        'duration',
+        'language',
+        'abstract',
+        'python_level',
+        'objective',
+        'detailed_description',
+        'outline',
+        'supplementary',
+        'recording_policy',
+        'slide_link',
+        'referring_policy',
+        'remoting_policy',
+        'first_time_speaker',
+        'cancelled',
+        'accepted',
+        'slido_embed_link',
+        'labels',
+    ]
 
 
 @admin.register(TutorialProposal)

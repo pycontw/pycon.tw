@@ -63,7 +63,7 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     class Meta(TutorialProposalMixin.Meta):
         fields = [
             'title', 'category', 'duration', 'language', 'python_level',
-            'recording_policy', 'remoting_policy', 'first_time_speaker'
+            'recording_policy', 'remoting_policy'
         ]
 
 
@@ -132,7 +132,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'supplementary',
             'recording_policy',
             'remoting_policy',
-            'first_time_speaker',
             'slide_link',
         ]
 

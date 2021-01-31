@@ -263,6 +263,16 @@ class TalkProposal(AbstractProposal):
         max_length=6,
     )
 
+    FIRST_SPEAKER_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+
+    first_time_speaker = models.BooleanField(
+        verbose_name=_('first time speaker'),
+        default=False,
+        choices=FIRST_SPEAKER_CHOICES)
+
     class Meta(AbstractProposal.Meta):
         verbose_name = _('talk proposal')
         verbose_name_plural = _('talk proposals')
