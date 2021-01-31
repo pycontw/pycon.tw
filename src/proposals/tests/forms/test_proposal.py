@@ -19,6 +19,8 @@ def talk_proposal_data():
         'recording_policy': True,
         'referring_policy': True,
         'remoting_policy': True,
+        'remoting_policy': True,
+        'first_time_speaker': True,
     }
 
 
