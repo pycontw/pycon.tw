@@ -131,7 +131,7 @@ class TalkProposalMixin:
 
             ),
             'first_time_speaker': _(
-                "Is it the first time to be the speaker of pycon?"
+                "Is it your first time to be the speaker of PyCon TW?"
 
             ),
         }
@@ -229,10 +229,6 @@ class TutorialProposalMixin:
             'remoting_policy': _(
                 "Whether you agree to deliver the tutorial remotely if the epidemic "
                 "(coronavirus) is still raging this August?"
-
-            ),
-            'first_time_speaker': _(
-                "Is it the first time to be the speaker of pycon?"
 
             ),
         }
