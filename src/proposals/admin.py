@@ -30,28 +30,6 @@ class ProposalAdmin(admin.ModelAdmin):
         'category', 'duration', 'language', 'python_level',
         'labels',
     ]
-    fields = [
-        'conference',
-        'submitter',
-        'title',
-        'category',
-        'duration',
-        'language',
-        'abstract',
-        'python_level',
-        'objective',
-        'detailed_description',
-        'outline',
-        'supplementary',
-        'recording_policy',
-        'slide_link',
-        'referring_policy',
-        'remoting_policy',
-        'cancelled',
-        'accepted',
-        'slido_embed_link',
-        'labels',
-    ]
     raw_id_fields = ['submitter']
     search_fields = ['title', 'abstract']
     inlines = [AdditionalSpeakerInline]
@@ -60,30 +38,16 @@ class ProposalAdmin(admin.ModelAdmin):
 @admin.register(TalkProposal)
 class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     resource_class = TalkProposalResource
-    fields = [
-        'conference',
-        'submitter',
+    list_display = [
         'title',
         'category',
         'duration',
         'language',
-        'abstract',
         'python_level',
-        'objective',
-        'detailed_description',
-        'outline',
-        'supplementary',
-        'recording_policy',
-        'slide_link',
-        'referring_policy',
         'remoting_policy',
         'first_time_speaker',
-        'cancelled',
         'accepted',
-        'slido_embed_link',
-        'labels',
     ]
-
 
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
