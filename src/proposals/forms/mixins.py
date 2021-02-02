@@ -130,6 +130,10 @@ class TalkProposalMixin:
                 "(coronavirus) is still raging this August?"
 
             ),
+            'first_time_speaker': _(
+                "Is it your first time to be the speaker of PyCon TW?"
+
+            ),
         }
 
 

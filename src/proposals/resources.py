@@ -62,10 +62,12 @@ class TalkProposalResource(resources.ModelResource):
     class Meta:
         model = TalkProposal
         fields = [
-            'id', 'title', 'category', 'python_level', 'duration',
-            'language', 'name', 'email', 'cancelled', 'accepted', 'last_updated_at',
-            'stage_1_plus_1_count', 'stage_1_plus_0_count', 'stage_1_minus_0_count', 'stage_1_minus_1_count',
-            'stage_2_plus_1_count', 'stage_2_plus_0_count', 'stage_2_minus_0_count', 'stage_2_minus_1_count',
-            'remoting_policy', 'referring_policy'
+            'id', 'title', 'category', 'python_level', 'duration', 'language',
+            'name', 'email', 'cancelled', 'accepted', 'last_updated_at',
+            'stage_1_plus_1_count', 'stage_1_plus_0_count',
+            'stage_1_minus_0_count', 'stage_1_minus_1_count',
+            'stage_2_plus_1_count', 'stage_2_plus_0_count',
+            'stage_2_minus_0_count', 'stage_2_minus_1_count',
+            'remoting_policy', 'first_time_speaker', 'referring_policy'
         ]
         export_order = fields

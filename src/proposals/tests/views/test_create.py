@@ -96,6 +96,7 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'recording_policy': True,
         'referring_policy': False,
         'remoting_policy': True,
+        'first_time_speaker': True,
     }, follow=True)
 
     proposal = TalkProposal.objects.get(
