@@ -29,7 +29,8 @@ class SponsorAPIView(View):
 
             level_dict[sponsor.level_en_name].append({
                 "name": sponsor.name,
-                "intro": sponsor.intro,
+                "intro_en_us": sponsor.intro_en_us,
+                "intro_zh_hant": sponsor.intro_zh_hant,
                 "website_url": sponsor.website_url,
                 "logo_url": sponsor.logo.url if sponsor.logo else ''
             })
@@ -58,7 +59,8 @@ class JobAPIView(View):
                 jobs.append({
                     "job_url": open_role.url,
                     "job_name": open_role.name,
-                    "job_description": open_role.description,
+                    "job_description_en_us": open_role.description_en_us,
+                    "job_description_zh_hant": open_role.description_zh_hant,
                 })
             response_data["data"].append({
                 "sponsor_logo_url": sponsor.logo.url if sponsor.logo else '',
