@@ -178,6 +178,7 @@ def test_talk_proposal_edit_post(agreed_user_client, talk_proposal):
         'recording_policy': True,
         'referring_policy': False,
         'remoting_policy': True,
+        'first_time_speaker': True,
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "
