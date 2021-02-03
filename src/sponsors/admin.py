@@ -6,7 +6,7 @@ from .models import Sponsor, OpenRole
 
 
 @admin.register(Sponsor)
-class SponsorAdmin(admin.ModelAdmin):
+class SponsorAdmin(TranslationAdmin):
     fields = [
         'name', 'level', 'website_url', 'intro',
         'logo_svg', 'logo_image',
@@ -16,7 +16,7 @@ class SponsorAdmin(admin.ModelAdmin):
 
 
 @admin.register(OpenRole)
-class OpenRoleAdmin(admin.ModelAdmin):
+class OpenRoleAdmin(TranslationAdmin):
     fields = [
         'sponsor',
         'name',
