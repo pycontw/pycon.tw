@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-02 00:00+0800\n"
+"POT-Creation-Date: 2021-02-05 21:14+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -1141,14 +1141,20 @@ msgstr "PyCon Taiwan 2021"
 
 #: pycontw2016/settings/base.py:318
 #: pycontw2016/settings/production/pycontw2016.py:16
+#: pycontw2016/settings/production/pycontw2021.py:14
+#: pycontw2016/settings/testing/pycontw2021.py:11
 msgid "No preference"
 msgstr "無偏好"
 
 #: pycontw2016/settings/base.py:319
+#: pycontw2016/settings/production/pycontw2021.py:15
+#: pycontw2016/settings/testing/pycontw2021.py:12
 msgid "Prefer 15min"
 msgstr "偏好 15 分鐘"
 
 #: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/production/pycontw2021.py:16
+#: pycontw2016/settings/testing/pycontw2021.py:13
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
@@ -1169,6 +1175,8 @@ msgid "Prefer 25min"
 msgstr "偏好 25 分鐘"
 
 #: pycontw2016/settings/production/pycontw2016.py:18
+#: pycontw2016/settings/production/pycontw2021.py:17
+#: pycontw2016/settings/testing/pycontw2021.py:14
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 

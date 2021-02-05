@@ -9,6 +9,14 @@ STATIC_URL = '/2021/static/'
 MEDIA_URL = '/2021/media/'
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2021'
+
+TALK_PROPOSAL_DURATION_CHOICES = (
+    ('NOPREF', _('No preference')),
+    ('PREF15', _('Prefer 15min')),
+    ('PREF30', _('Prefer 30min')),
+    ('PREF45', _('Prefer 45min')),
+)
+
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
