@@ -318,7 +318,6 @@ TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
     ('PREF15', _('Prefer 15min')),
     ('PREF30', _('Prefer 30min')),
-    ('PREF45', _('Prefer 45min')),
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
