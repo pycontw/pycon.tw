@@ -1,5 +1,6 @@
 import os
 
+from django.utils.translation import gettext_lazy as _
 from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
 from .base import *     # noqa
 
