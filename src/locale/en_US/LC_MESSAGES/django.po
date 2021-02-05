@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-03 22:00+0800\n"
+"POT-Creation-Date: 2021-02-05 21:14+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -727,7 +727,7 @@ msgstr ""
 
 #: proposals/forms/mixins.py:134
 msgid "Is it your first time to be the speaker of PyCon TW?"
-msgstr ""
+msgstr "Is it your first time to be the speaker of PyCon TW?"
 
 #: proposals/forms/mixins.py:154
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
@@ -876,10 +876,8 @@ msgid "labels"
 msgstr ""
 
 #: proposals/models.py:272
-#, fuzzy
-#| msgid "additional speaker"
 msgid "first time speaker"
-msgstr "additional speaker"
+msgstr "first time speaker"
 
 #: proposals/models.py:277
 msgid "talk proposal"
@@ -1180,29 +1178,30 @@ msgstr "PyCon Taiwan 2021"
 
 #: pycontw2016/settings/base.py:318
 #: pycontw2016/settings/production/pycontw2016.py:16
+#: pycontw2016/settings/production/pycontw2021.py:14
+#: pycontw2016/settings/testing/pycontw2021.py:11
 msgid "No preference"
 msgstr "No preference"
 
 #: pycontw2016/settings/base.py:319
+#: pycontw2016/settings/production/pycontw2021.py:15
+#: pycontw2016/settings/testing/pycontw2021.py:12
 msgid "Prefer 15min"
 msgstr "Prefer 15min"
 
 #: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/production/pycontw2021.py:16
+#: pycontw2016/settings/testing/pycontw2021.py:13
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:321
-#: pycontw2016/settings/production/pycontw2016.py:18
-msgid "Prefer 45min"
-msgstr "Prefer 45min"
-
-#: pycontw2016/settings/base.py:325
+#: pycontw2016/settings/base.py:324
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: pycontw2016/settings/base.py:326
+#: pycontw2016/settings/base.py:325
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -1211,6 +1210,12 @@ msgstr "Day 2"
 #: pycontw2016/settings/production/pycontw2016.py:17
 msgid "Prefer 25min"
 msgstr "Prefer 25min"
+
+#: pycontw2016/settings/production/pycontw2016.py:18
+#: pycontw2016/settings/production/pycontw2021.py:17
+#: pycontw2016/settings/testing/pycontw2021.py:14
+msgid "Prefer 45min"
+msgstr "Prefer 45min"
 
 #: pycontw2016/settings/production/pycontw2016.py:24
 #: templates/pycontw-2016/events/schedule.html:48
