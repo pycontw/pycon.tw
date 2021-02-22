@@ -80,6 +80,7 @@ Desktop.ini
 
 # Cache
 CACHE
+.mypy_cache/
 
 # Testing
 .coverage

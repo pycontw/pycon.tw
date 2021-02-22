@@ -4142,6 +4142,10 @@ msgstr "提供的圖片過小（{width}\\u00d7{height} 像素）。"
 msgid "The image you provided is not quadrate."
 msgstr "提供的圖片並非方型。"
 
+#: users/forms.py:
+msgid "Your image size is too big (> 10M)"
+msgstr "提供的圖片檔案過大 (> 10M)"
+
 #: users/forms.py:197
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
