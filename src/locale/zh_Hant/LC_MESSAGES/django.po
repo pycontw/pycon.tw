@@ -4143,8 +4143,8 @@ msgid "The image you provided is not quadrate."
 msgstr "提供的圖片並非方型。"
 
 #: users/forms.py:
-msgid "Your image size is too big (> 10M)"
-msgstr "提供的圖片檔案過大 (> 10M)"
+msgid "Your image size is too big (>10M)"
+msgstr "提供的圖片檔案過大 (>10M)"
 
 #: users/forms.py:197
 msgid ""
