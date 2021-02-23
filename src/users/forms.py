@@ -148,6 +148,7 @@ class UserProfileUpdateForm(forms.ModelForm):
             'Your image is too small ({width}\u00d7{height} pixels).'
         ),
         'photo_bad_dimension': _('The image you provided is not quadrate.'),
+        'photo_size_too_large': _('Your image size is too big (>10M)'),
     }
 
     class Meta:
@@ -177,6 +178,10 @@ class UserProfileUpdateForm(forms.ModelForm):
                 'photo_bad_dimension', width=width, height=height,
             ))
 
+        if photo.size > 10 * 1024 ** 2:
+            raise forms.ValidationError(self.get_error_message(
+                'photo_size_too_large',
+            ))
         return photo
 
     def get_error_message(self, *args, **kwargs):
