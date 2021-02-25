@@ -4191,8 +4191,8 @@ msgstr "自我介紹"
 
 #: users/models.py:123
 msgid ""
-"Describe yourself with 500 characters or less. There will be no formatting."
-msgstr "使用少於 500 個字元介紹您自己。本欄位不含任何格式。"
+"Describe yourself with 1000 characters or less. There will be no formatting."
+msgstr "使用少於 1000 個字元介紹您自己。本欄位不含任何格式。"
 
 #: users/models.py:128
 msgid "photo"
