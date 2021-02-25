@@ -1,0 +1,14 @@
+{% extends '_includes/nav/nav_base.html' %}
+
+{% load i18n %}
+
+{% block nav-content %}
+{% if user.is_authenticated %}
+<form class="navbar-form navbar-right" action="{% url 'logout' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ logout_next|default:request.path }}">
+<button type="submit" class="btn btn-logout">{% trans 'Log out' %}</button>
+</form>
+{% endif %}
+
+{% endblock nav-content %}

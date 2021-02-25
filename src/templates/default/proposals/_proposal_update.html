@@ -1,0 +1,85 @@
+{% extends 'proposals/_proposal_base.html' %}
+
+{% load i18n static crispy_forms_tags %}
+
+
+{% block extra_css %}
+{{ block.super }}
+{{ form.media.css }}
+{% endblock extra_css %}
+
+
+{% block main-content %}
+
+<h3 class="dashboard-header">
+	<span class="header-title">{{ object.title }}</span>
+</h3>
+
+{% block alert_content %}{% endblock alert_content %}
+
+<div>
+
+	{% if reviews_public %}
+	<ul class="nav nav-tabs proposal-tabs" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#proposal" aria-controls="proposal" role="tab" data-toggle="tab">
+				{% trans 'Proposal' %}
+			</a>
+		</li>
+		<li role="presentation">
+			<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
+				{% trans 'Reviews' %}
+			</a>
+		</li>
+	</ul>
+	{% endif %}
+
+	<div class="tab-content">
+
+		<div role="tabpanel" class="proposal-tab-pane tab-pane active" id="proposal">
+			<form method="post" class="proposal-form">
+				<div class="nesting-form-group">
+					{% crispy form %}
+					{% if not readonly %}
+					<button type="submit" class="btn btn-primary">
+						{% trans 'Save' %}
+					</button>
+					{% endif %}
+				</div>
+			</form>
+		</div>
+
+		{% if reviews_public %}
+		<div role="tabpanel" class="proposal-tab-pane tab-pane" id="reviews">
+			{% include 'reviews/_includes/previous_review_table.html' with reviews=reviews show_all_comments=False %}
+		</div>
+		{% endif %}
+
+	</div>
+
+</div>
+
+{% include '_includes/character_counter_template.html' %}
+
+{% endblock main-content %}
+
+
+{% block extra_body %}
+{{ block.super }}
+<div id="proposal-scroll-progress-widget">
+	<div class="top"></div>
+	<div class="text"></div>
+</div>
+{% endblock extra_body %}
+
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'js/vendors/jquery.are-you-sure.js' %}"></script>
+{% endblock scripts %}
+
+{% block extra_js %}
+{{ block.super }}
+{{ form.media.js }}
+<script src="{% static 'js/proposals/proposal_update.js' %}"></script>
+{% endblock extra_js %}

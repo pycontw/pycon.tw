@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+
+{% block meta_og %}
+	<meta property="og:title" content="PyCon Taiwan 2016" />
+	<meta property="og:description" content="{% trans 'PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.' %}" />
+	<meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}" />
+{% endblock %}
+
+{% block titletag %}<title>PyCon Taiwan 2016</title>{% endblock titletag %}
+
+
+{% block body %}
+
+{% include '_includes/nav/front_nav.html' with active=None %}
+
+<div class="section header">
+	<div class="container">
+		<div class="row">
+			<h1 class="logo text-center col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+				<img class="img-responsive" src="{% static 'images/logo.png' %}" alt="PYCON Taiwan 2016">
+			</h1>
+			<div class="slogan col-xs-12">
+				<p>Implement the Future, Together !</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="schedule-wrapper">
+				<div class="row">
+					<div class="h3 schedule__title--lg">{% trans 'Tutorials' %}</div>
+					<div class="h3 schedule__title--lg">{% trans 'Conference' %}</div>
+					<div class="h3 schedule__title--lg">{% trans 'Sprint' %}</div>
+				</div>
+				<div class="row schedule">
+					<div class="schedule-block">
+						<h3 class="schedule__title">{% trans 'Tutorials' %}</h3>
+						<p>{% trans 'June 3, 2016' %}</p>
+					</div>
+					<div class="schedule-block">
+						<h3 class="schedule__title">{% trans 'Conference' %}</h3>
+						<p>{% trans 'June 3–5, 2016' %}</p>
+					</div>
+					<div class="schedule-block">
+						<h3 class="schedule__title">{% trans 'Sprint' %}</h3>
+						<p>{% trans 'Apr 16 &amp; Jun 11, 2016' %}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		{# end .schedule #}
+	</div>
+</div>
+{% if countdown.value > 0 %}
+<div class="latest-news">
+	<div class="latest-news__content">
+		<span class="latest-news__icon"><img src="{% static 'images/icon_ticket@3x.png' %}"></span>
+		<span class="latest-news__title">{% trans 'Tickets Sold Out!' %}</span>
+		<span class="latest-news__text">{% blocktrans trimmed with countdown.value as value and countdown.type as type %}See you in<span> {{ value }} {{ type }}</span> at PyConTW.{% endblocktrans %}</span>
+		<span class="latest-news__link">
+			<a href="{% url 'events_schedule' %}">
+			{% trans 'Check the schedule' %} <i class="fa fa-caret-right fa-2" aria-hidden="true"></i></a>
+		</span>
+	</div>
+</div>
+{% endif %}
+<div class="section intro">
+	<div class="container">
+		<p class="quote">
+			&ldquo;Simple is better than complex. Complex is better than complicated.&rdquo;
+		</p>
+		<div class="row">
+			<section class="intro__pycon col-md-8">
+				{% blocktrans trimmed %}
+				<h2 class="intro__heading">What is PyCon</h2>
+				<div class="intro__body">
+					The original PyCon was formed in North America in 2003, and
+					now there are many other conferences being run in the PyCon
+					spirit around the world.
+				</div>
+				{% endblocktrans %}
+			</section>
+		</div>
+		<div class="row">
+			<section class="intro__pycontw">
+				{% blocktrans trimmed %}
+				<h2 class="intro__heading">And what is PyCon Taiwan</h2>
+				<div class="intro__body">
+						PyCon Taiwan is an annual convention in Taiwan for the
+						discussion and promotion of the Python programming
+						language. It is held by enthusiasts and focuses on Python
+						technology and its versatile applications. We welcome
+						people who are interested in Python to join PyCon Taiwan to
+						share knowledge, exchange ideas, make connections and to
+						help us grow our network.
+				</div>
+				{% endblocktrans %}
+			</section>
+			<section class="intro__volunteer">
+				<div class="volunteer">
+					{% static 'images/call_icon.png' as img_call_icon %}
+					{% blocktrans trimmed %}
+					<h4 class="volunteer__heading h4">
+						Volunteers Needed!
+						<img width="25" height="22" src="{{ img_call_icon }}" class="call__icon">
+					</h4>
+					<div class="volunteer__body">
+						<p>Help us organize and make the conference successful!</p>
+						<p>
+							Please fill out<br>
+							<a href="https://docs.google.com/forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform"
+								 target="_blank" rel="noopener">our volunteer form</a>
+						</p>
+					</div>
+					{% endblocktrans %}
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+{# end .intro #}
+
+{# begin .community #}
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="community">
+					<h2 class="section__heading">
+						<img width="36" height="36" class="python__icon hidden-xs"
+								src="{% static 'images/python_icon.png' %}" >
+						{% trans 'Python Community in Taiwan' %}
+					</h2>
+					<ul class="community-list list row">
+						<li class="list__item">
+							<a href="http://www.meetup.com/Taipei-py/" target="_blank" rel="noopener">
+							Taipei.py <span class="desc">Taipei Python User Group</span>
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/pythonhug/" target="_blank" rel="noopener">
+							PyHUG <span class="desc">Python Hsinchu User Group</span>
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
+							PyLadies Taiwan
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/" target="_blank" rel="noopener">
+							Tainan.py <span class="desc">Python Tainan User Group</span>
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/Kaohsiung-Python-Meetup" target="_blank" rel="noopener">Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span>
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/Taichung-Python-Meetup/" target="_blank" rel="noopener">Taichung.py <span class="desc">Taichung Python User Group</span>
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://djangogirls.org/taipei" target="_blank" rel="noopener">
+							Django Girls Taipei
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="http://www.meetup.com/Hualien-Py/" target="_blank" rel="noopener">
+							Hualien.py<span class="desc">Hualien Python User Group</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{# end .community #}
+
+{# begin .sponsorship #}
+<div class="section sponsorship">
+	<div class="container">
+		<div class="row">
+			<div class="sponsorship__call">
+				{% trans 'Patronage 2016 available!' %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+				{% blocktrans trimmed %}
+				<p>
+					If you wish to support PyCon Taiwan 2016 on your own, welcome to be a patron! There will be a page for the list of all patrons (e.g. links to profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 website.
+				</p>
+				<br>
+				<p>
+					Go to be
+					<a href="http://pycontw.kktix.cc/events/pycontw2016patron" target="_blank" rel="noopener">
+						a patron of PyCon Taiwan 2016
+					</a>
+				</p>
+				{% endblocktrans %}
+			</div>
+		</div>
+	</div>
+</div>
+{# end .sponsorship #}
+
+{# begin .conf #}
+<div class="section conf">
+	<div class="block container">
+		<p class="quote">
+			&ldquo;Beautiful is better than ugly. Explicit is better than implicit.&rdquo;
+		</p>
+		{% comment %}
+		<div class="section keynote">
+			<h2 class="section__heading">Keynote Speakers</h2>
+			<div class="row">
+				<div class="keynote-speaker">
+					<div class="keynote-speaker__photo"></div>
+					<div class="keynote-speaker__name">Jim Huang (jserv)</div>
+					<a class="keynote-speaker__url" href="https://twitter.com/jserv" target="_blank" rel="noopener">https://twitter.com/jserv</a>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<p class="keynote-speaker__body">Jim Huang (黃敬群)，慣用網路暱稱為「jserv」，熱血工讀生。 自1999 年開始參與開放原始碼/自由軟體專案開發，在科技公司打零工之餘，也在成功大學和交通大學兼課，帶領學生更有 GUTS、更有能力面對資訊科技產業的種種挑戰。</p>
+					</div>
+			</div>
+			<div class="row">
+				<div class="keynote-speaker">
+					<div class="keynote-speaker__photo"></div>
+					<div class="keynote-speaker__name">Audrey Tang (au)</div>
+					<a class="keynote-speaker__url" href="https://twitter.com/audreyt" target="_blank" rel="noopener">https://twitter.com/audreyt</a>
+					<h4 class="keynote-speaker__heading h4">Bio</h4>
+					<p class="keynote-speaker__body"></p>
+				</div>
+			</div>
+		</div>
+		{% endcomment %}
+	</div>
+</div>
+{# end .sec-conf #}
+
+{# begin .sponsors #}
+<div class="section sponsors">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2 class="section__heading">{% trans 'Sponsors' %}</h2>
+				<!-- 協辦單位 -->
+        <div class="row">
+          <div class="sponsors__logo col-sm-4">
+						<a href="http://www.gliacloud.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/gliacloud.png' %}" alt="GliaCloud" style="max-height: 60px; margin-top: 50px;"></a>
+					</div>
+          <div class="sponsors__logo col-sm-4">
+						<a href="http://www.iis.sinica.edu.tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/IIS_logo.png' %}" alt="中央研究院資訊科學研究所" style="max-height: 100px; margin-top: 30px;"></a>
+					</div>
+          <div class="sponsors__logo col-sm-4">
+						<a href="http://ocf.tw" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/openculture.png' %}" alt="開放文化基金會" style="max-height: 60px; margin-top: 50px;"></a>
+					</div>
+				</div>
+        <br>
+				<!-- 金級 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-4">
+						<a href="https://www.kkbox.com/play/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/KKBOX_logo_20130820@h300px.png' %}" alt="KKBOX" style="max-height: 120px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="https://www.esunbank.com.tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/esunbank_logo.png' %}" alt="玉山銀行" style="max-height: 95px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://www.trendmicro.tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/TM_logo.png' %}" alt="TrendMicro 趨勢科技" style="max-height: 130px; margin-top: 20px;"></a>
+					</div>
+				</div>
+				<!-- 銀級 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://aktsk.com.tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/akatsuki.png' %}" alt="Akatsuki 曉數碼" style="max-height: 100px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://www.appier.com/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/Appier_logo_blue@h300px.png' %}" alt="Appier" style="max-height: 60px; margin-top: 50px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="https://carousell.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/carouselllogo_2015@h300px.png' %}" alt="Carousell" style="max-height: 40px; margin-top: 60px;"></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sponsors__logo col-sm-4">
+						<a href="https://www.gandi.net" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/gandi.png' %}" alt="Gandi"></a>
+					</div>
+          <div class="sponsors__logo col-sm-4">
+						<a href="https://msdn.microsoft.com/zh-tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/microsoft.png' %}" alt="Microsoft Taiwan" style="max-height: 130px; margin-top: 10px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://www.mysql.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/mysql_logo.png' %}" alt="MYSQL" style="max-height: 90px; margin-top: 20px;"></a>
+					</div>
+				</div>
+				<div class="row">
+          <div class="sponsors__logo col-sm-6">
+						<a href="http://www.ruckuswireless.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/Ruckus_Hrzntl_SBW.png' %}" alt="Ruckus Wireless" style="max-height: 70px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-6">
+						<a href="https://sudo.com.tw/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/sudo_400-160_cs@h300px.png' %}" alt="Sudo 速度資訊" style="max-height: 70px;"></a>
+					</div>
+				</div>
+				<!-- 銅級 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://lileesystems.com/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/Lilee-ColorLogo-v1.png' %}" alt="Lilee System 理立系統" style="max-height: 120px; margin-top: 30px;"></a>
+					</div>
+          <div class="sponsors__logo col-sm-4">
+						<a href="http://www.ibm.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/ibmpos_blurgb.jpg' %}" alt="IBM" style="max-height: 50px; margin-top: 60px;"></a>
+					</div>
+					<div class="sponsors__logo col-sm-4">
+						<a href="http://www.transtep.com/" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/transtep_logo.png' %}" alt="Transtep Technology Inc." style="max-height: 70px;"></a>
+					</div>
+
+				</div>
+				<!-- 特殊贊助 -->
+				<div class="row">
+					<div class="sponsors__logo col-sm-6">
+						<a href="http://www.wolftea.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/WolfTea@h300px.png' %}" alt="琅茶"></a>
+					</div>
+					<div class="sponsors__logo col-sm-6">
+						<a href="http://eldarion.com" target="_blank" rel="noopener"><img class="img-responsive" src="{% static 'images/sponsors/Eldarion_Logo.png' %}" alt="Eldarion, Inc." style="max-height: 90px;"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{# end .sec-sponsors #}
+
+{% include '_includes/footer.html' %}
+
+{% endblock body %}

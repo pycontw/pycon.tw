@@ -1,0 +1,72 @@
+{% load i18n %}
+
+<div class="modal fade" id="proposalFieldExampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <div></div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+{% for level, parts in examples.items %}
+{% for part, content in parts.items %}
+<script id="{{ level }}-{{ part }}-example" type="text/html">
+  <dl>
+    <div>
+      <dt>{{ content.0 }}</dt>
+      <dd><pre>{{ content.1 }}</pre></dd>
+    </div>
+  </dl>
+</script>
+{% endfor %}
+{% endfor %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<script>
+var example_title = {
+	'abstract': "{% trans 'Abstract' %}",
+	'objective': "{% trans 'Objective' %}",
+	'detailed description': "{% trans 'Detailed description' %}",
+	'outline': "{% trans 'Outline' %}",
+};
+</script>
+
+<script id="novice-examples-header" type="text/html">
+  <h4>{% trans 'Novice' %}</h4>
+  <p>{% blocktrans %}If your proposed target is novice topic, the following is an example of an novice proposal that you can use for your reference.{% endblocktrans %}</p>
+  <dl>
+    <dt>{% trans 'Title' %}</dt>
+    <dd>{% trans 'Making Management of Computer Data Easier With Python' %}</dd>
+
+    <dt>{% trans 'Category' %}</dt> <dd>Python Core</dd>
+    <dt>{% trans 'Duration' %}</dt> <dd>25min</dd>
+
+    <dt>{% trans 'Language' %}</dt>
+    <dd>{% if LANGUAGE_CODE == "zh-hant" %}中文{% else %}English{% endif %}</dd>
+  </dl>
+</script>
+
+<script id="intermediate-examples-header" type="text/html">
+  <h4>{% trans 'Intermediate' %}</h4>
+  <p>{% blocktrans %}If your proposed target is intermediate topic, the following is an example of an interimediate proposal that you can use for your reference.{% endblocktrans %}</p>
+  <dl>
+    <dt>{% trans 'Title' %}</dt>
+    <dd>{% trans 'Automated Processing of Blog Photographs' %}</dd>
+
+    <dt>{% trans 'Category' %}</dt>
+    <dd>{% trans 'Graphics' %}</dd>
+
+    <dt>{% trans 'Duration' %}</dt> <dd>25min</dd>
+
+    <dt>{% trans 'Language' %}</dt>
+    <dd>{% if LANGUAGE_CODE == "zh-hant" %}中文{% else %}English{% endif %}</dd>
+  </dl>
+</script>

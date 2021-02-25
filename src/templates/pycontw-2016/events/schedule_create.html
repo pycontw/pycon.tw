@@ -1,0 +1,38 @@
+{% extends 'events/schedule.html' %}
+
+{% load i18n staticfiles %}
+
+{% block schedule %}
+
+<div class="schedule">
+	{{ content|safe }}
+</div>
+
+<div>
+	<noscript>
+		<div class="pycon-list">
+			<div class="pycon-list-item text-theme-highlight">
+				{% blocktrans trimmed %}
+				Schedule table generation requires JavaScript. Please. (´･_･`)
+				{% endblocktrans %}
+			</div>
+		</div>
+	</noscript>
+
+	<form method="post" class="generation-form hide">
+		{% csrf_token %}
+		<input type="hidden" name="html">
+		<button class="btn btn-primary btn-lg" type="submit">
+			{% trans 'Generate' %}
+		</button>
+	</form>
+</div>
+
+{% endblock schedule %}
+
+
+{% block scripts %}
+{# This needs to happen before the DOM is modified. #}
+<script src="{% static 'js/events/schedule_gen.js' %}"></script>
+{{ block.super }}
+{% endblock scripts %}

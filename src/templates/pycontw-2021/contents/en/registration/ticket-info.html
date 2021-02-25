@@ -1,0 +1,150 @@
+{% extends 'contents/_base.html' %}
+
+{% block title %}Conference Tickets{% endblock title %}
+
+{% block meta_description %}Tickets are on sale for PyCon Taiwan 2020. Get yours now before it’s too
+late!{% endblock meta_description %}
+
+{% block body_class %}{{ block.super }} ticket-info-page{% endblock body_class %}
+
+{% block content %}
+
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
+
+<section class="pill-title alt">
+	<h1>Conference Tickets</h1>
+</section>
+
+<div class="box-row">
+	<div class="ticket-info">
+		<div class="ticket-box">
+			<p class="ticket-box-title">Individual</p>
+			<div class="price-box">
+				<div class="price-title">
+					<p class="price">EarlyBird / Discount</p>
+					<p class="price">2,600 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Regular</p>
+					<p class="price">3,500 NTD</p>
+				</div>
+			</div>
+		</div>
+		<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="buy">Buy</a>
+	</div>
+
+	<div class="ticket-info-imperial">
+		<div class="ticket-box-imperial">
+			<p class="ticket-box-title-imperial">Corporate</p>
+			<div class="price-box-imperial">
+				<div class="price-title-imperial">
+					<p class="price-imperial">Regular</p>
+					<p class="price-imperial">5,500 NTD</p>
+				</div>
+				<div class="price-title-imperial">
+					<p class="price-imperial">GroupBuy</p>
+					<p class="price-imperial">Contact</p>
+				</div>
+			</div>
+		</div>
+		<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="buy-imperial">Buy</a>
+	</div>
+
+<div class="ticket-info">
+		<div class="ticket-box">
+			<p class="ticket-box-title">Reserved</p>
+			<div class="price-box">
+				<div class="price-title">
+					<p class="price">Speaker</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+				<div class="price-title">
+					<p class="price">Contributor</p>
+					<p class="price">1,500 NTD</p>
+				</div>
+			</div>
+		</div>
+		<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="buy">Buy</a>
+	</div>
+</div>
+
+<div class="desc-box">
+	<div class="entry">
+		<h4>Individual:</h4>
+		<p>Tickets are limited. Be sure to get your ticket before they are sold
+			out. We will send
+			out electronic invoices by email after the conference. If you need reimbursement from your company, you might
+			want a corporate ticket to meet our local tax regulation.</p>
+	</div>
+	<div class="entry">
+		<h4>Corporate:</h4>
+		<p>Provide company name and Unified Business Number, or <em>N/A</em> if
+			re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the
+			conference.</p>
+	</div>
+	<div class="entry">
+		<h4>Reserved:</h4>
+		<p>Please enter your invitation code on checkout.</p>
+	</div>
+</div>
+
+<ul>
+	<li>
+		<p>Tickets provide access to the main conference from September 5 to September 6. Please refer to their own
+			pages for tutorial.</p>
+	</li>
+	<li>
+		<p>Early bird ticket sales end on July 20, or upon sold out. All ticket sales end on August 21.</p>
+	</li>
+	<li>
+		<p>All price settled in New Taiwan Dollars (NTD). Reference rate: NTD 31.31 = USD 1.00.</p>
+	</li>
+	<li>
+		<p>Company Unified Business Number will be present on receipts for those who require reimbursement. Contact
+			<em>organizers[at]pycon.tw</em> for English receipt requests, or any questions regarding ticket sales.</p>
+	</li>
+</ul>
+
+
+<h2>Notices</h2>
+
+<h3>Everybody Contributes</h3>
+
+<p>PyCon Taiwan is a paid conference. Everybody, including staffs and speakers, contributes or pays for attending (see
+	<a href="http://jessenoller.com/blog/2011/05/25/pycon-everybody-pays" target="_blank" rel="noopener">PyCon:
+		Everybody Pays</a>).</p>
+
+<h3>Ways to Pay for Tickets</h3>
+
+<p>You can pay through credit card, PayPal, or ATM transfer.</p>
+
+<h3>Refund</h3>
+
+<p>You may ask for refund earlier than ten days before the conference, by contacting us, or directly via KKTIX.</p>
+
+<h3>Financial Aids</h3>
+
+<p>You can contact us for a financial aid if you feel any difficulty affording a ticket and/or other expanses attending
+	the conference. Please apply before your purchase. More info about applications can be found <a
+		href="{{ reg_financial_aid_url }}">here</a>.</p>
+
+<h3>Dietary Requirements</h3>
+
+<p>We provide lunch during the conference. Please let us know if you have any specific dietary habit.</p>
+
+<h3>Valid Contact Required</h3>
+
+<p>Please provide valid means of contact (phone number and email) on purchase, so that we will be able to inform you of
+	any important notices.</p>
+
+<h3>Ticketing Consultancy</h3>
+
+<p>Please email to <em>organizers[at]pycon.tw</em> if you have any questions regarding ticket information. We will reply
+	as soon as possible.</p>
+
+<h3>Other Events</h3>
+
+<p>Events like Tutorials or Sprints might need a separate registration. Be sure to check out the related details on the
+	event's page.</p>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}{{ block.super }} community-track-page{% endblock body_class %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2020/styles/ccip-community-track.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block title %}Community Track - PyCon Taiwan 2020{% endblock %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+<main>
+    <h2 style="margin-top: 30px;">{% trans 'Overview' %}</h2>
+    {% include 'events/_includes/community-track-overview.html' %}
+
+    <h2>{% trans 'Topics &amp; Venues' %}</h2>
+    {% include 'events/_includes/community-track.html' %}
+
+    <h2>{% trans 'traffic' %}</h2>                                             
+    {% include 'events/_includes/community-track-traffic.html' %}
+</main>
+{% endblock content_full %}
+
+{% block footer %}
+{% endblock footer %}

@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.cache/
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Packaging files:
+*.egg*
+
+# Sphinx docs:
+build
+
+# SQLite3 database files:
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs:
+*.log
+*.log-*
+
+# Environment variables
+local.env
+/.env
+
+# Django stuff:
+*.pot
+*.log
+venv/
+/src/assets/
+local.db
+*.mo
+
+# NPM
+node_modules/
+
+# Eclipse
+.project
+.pydevproject
+.settings
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+
+# Rope
+.ropeproject
+
+# Mac
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# PyCharm
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Cache
+CACHE
+
+# Testing
+.coverage
+.cache
+.tox
+
+# deploy key for travis
+deploy_key
+deploy_key.pub
+
+# generated on Travis
+/deploy_staging.sh
+/deploy_master.sh
+/secrets.tar
+/src/coverage.xml
+media/
+
+# vscode
+.vscode

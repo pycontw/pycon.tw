@@ -1,0 +1,20 @@
+{% extends 'contents/_base.html' %}
+
+{% block body_class %}{{ block.super }} about-page{% endblock body_class %}
+
+{% block content_full %}
+
+{{ block.super }}
+
+<ul class="year-ribbon">
+	<li><a href="https://tw.pycon.org/2012/" target="_blank" rel="noopener">2012</a></li>
+	<li><a href="https://tw.pycon.org/2013/" target="_blank" rel="noopener">2013</a></li>
+	<li><a href="https://tw.pycon.org/2014apac/" target="_blank" rel="noopener">2014</a></li>
+	<li><a href="https://tw.pycon.org/2015apac/" target="_blank" rel="noopener">2015</a></li>
+	<li><a href="https://tw.pycon.org/2016/" target="_blank" rel="noopener">2016</a></li>
+	<li><a href="https://tw.pycon.org/2017/" target="_blank" rel="noopener">2017</a></li>
+	<li><a href="https://tw.pycon.org/2018/" target="_blank" rel="noopener">2018</a></li>
+	<li><a href="https://tw.pycon.org/2019/" target="_blank" rel="noopener">2019</a></li>
+</ul>
+
+{% endblock content_full %}

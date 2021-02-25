@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load review_tools %}
+
+{% if snapshot and current != snapshot %}
+<div>
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active">
+			<a href="#{{ field }}-view" aria-controls="{{ field }}-view" role="tab" data-toggle="tab">
+				{% trans 'View' %}
+			</a>
+		</li>
+		<li role="presentation">
+			<a href="#{{ field }}-comp" aria-controls="{{ field }}-comp" role="tab" data-toggle="tab">
+				{% trans 'Compare' %}
+			</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane tab-pane-view active" id="{{ field }}-view">
+			<div class="text-field">{{ current|linebreaks }}</div>
+		</div>
+		<div role="tabpanel" class="tab-pane tab-pane-diff" id="{{ field }}-comp">
+			<div class="text-field">{% block_diff current snapshot %}</div>
+		</div>
+	</div>
+</div>
+{% else %}
+<div class="text-field">{{ current|linebreaks }}</div>
+{% endif %}

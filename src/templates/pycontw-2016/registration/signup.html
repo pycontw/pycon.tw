@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags static %}
+
+{% load i18n pycontw_tools %}
+
+{% block title %}{% trans 'Sign Up' %}{% endblock title %}
+
+{% block body-class %}registration-pycontw-2016{% endblock body-class %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			{% include "registration/_includes/registration_header.html" %}
+			<div class="registration-panel-wrapper">
+				{% for message in messages %}
+				    <div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert"><p>{{ message }}</p></div>
+				{% endfor %}
+				<div class="registration-panel">
+					<h2 class="registration-panel__title">{% trans 'Sign Up' %}</h2>
+					{% crispy form %}
+					<p class="text-center">
+						{% url 'login' as login_url %}
+						{% blocktrans trimmed %}
+						<span class="form-tip">Already have an account?</span><a href="{{ login_url }}" class="btn btn-link">Login.</a>
+						{% endblocktrans %}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

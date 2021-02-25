@@ -1,0 +1,95 @@
+{% load i18n %}
+
+{% url 'page' path='about/pycontw' as about_pycontw_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
+{% url 'page' path='about/community' as about_community_url %}
+{% url 'page' path='about/staff' as about_staff_url %}
+{% url 'page' path='events/overview' as events_overview_url %}
+{% url 'events_schedule' as events_schedule_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'events_talk_list' as events_talk_list_url %}
+{% url 'events_tutorial_list' as events_tutorial_list_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/open-spaces' as events_openspaces_url %}
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/tutorials' as events_tutorial_url %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='speaking/recording' as speaking_recording_url %}
+{% url 'sponsor_list' as sponsor_url %}
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
+{% url 'page' path='registration/ticket-info' as reg_ticket_info_url %}
+{% url 'page' path='registration/registration' as reg_registration_url %}
+{% url 'page' path='venue' as venue_url %}
+{% url 'page' path='venue/accommodation' as venue_accommodation_url %}
+{% url 'page' path='portal' as portal_url %}
+{% url 'page' path='sponsor/sponsor' as sponsor_url %}
+
+<ul class="menu" data-controller="menu">
+	<li>
+		<a href="{{ about_pycontw_url }}">{% trans 'About' %}</a>
+	</li>
+	<li>
+		<a href="{{ sponsor_url }}">{% trans 'Sponsor' %}</a>
+	</li>
+	{% comment %}
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-propose" data-target="menu.checker" data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-propose">{% trans 'Speaking' %}</label>
+		<div class="dropdown">
+			<ul class="submenu">
+				<li><a href="{{ speaking_cfp_url }}">{% trans 'Call for Proposal' %}</a></li>
+				<li><a href="{{ speaking_talk_url }}">{% trans 'Proposing a Talk' %}</a></li>
+				<li><a href="{{ speaking_tutorial_url }}">{% trans 'Proposing a Tutorial' %}</a></li>
+				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
+			</ul>
+		</div>
+	</li>
+	{% endcomment %}
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-conference" data-target="menu.checker" data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-conference">{% trans 'Conference' context 'menu' %}</label>
+		<div class="dropdown">
+			<ul class="submenu">
+				<li><a href="{{ events_overview_url }}">{% trans 'Overview' %}</a></li>
+				<li><a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a></li>
+				<li><a href="{{ speaking_recording_url }}">{% trans 'Recording' %}</a></li>
+				<li><a href="{{ portal_url }}">{% trans 'Portal' %}</a></li>
+			</ul>
+		</div>
+	</li>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-events" data-target="menu.checker" data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-events">{% trans 'Events' %}</label>
+		<div class="dropdown">
+			<ul class="submenu">
+				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
+				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
+				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>
+				<li><a href="{{ events_openspaces_url }}">{% trans 'Open Spaces' %}</a></li>
+			</ul>
+		</div>
+	</li>
+	<li {% if type == 'desktop' %}data-target="menu.item" data-action="mouseover->menu#open mouseout->menu#close"{% endif %}>
+		{# Ordering matters here. input must be ahead of label and .submenu for styling to work! See code in .menu-navbar-desktop .menu > li. #}
+		<input type="checkbox" hidden="hidden" id="menu-navbar-{{ type }}-registration" data-target="menu.checker" data-action="change->menu#exclude">
+		<label for="menu-navbar-{{ type }}-registration">{% trans 'Registration' %}</label>
+		<div class="dropdown">
+			<ul class="submenu">
+				<li><a href="{{ reg_ticket_info_url }}">{% trans 'Conference Ticket' %}</a></li>
+				<li><a href="{{ reg_financial_aid_url }}">{% trans 'Financial Aid' %}</a></li>
+				{# <li><a href="{{ reg_registration_url }}">{% trans 'Registration' context 'registration' %}</a></li> #}
+			</ul>
+		</div>
+	</li>
+	<li>
+		<a href="{{ venue_url }}">{% trans 'Venue' context 'conf location' %}</a>
+	</li>
+	<li>
+		<a href="{% url 'user_dashboard' %}">{% trans 'My PyCon' %}</a>
+	</li>
+</ul>

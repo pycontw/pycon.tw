@@ -1,0 +1,9 @@
+.CodeMirror {
+  font-family: monospace;
+}
+.editor-readonly {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    height: 350px;
+}

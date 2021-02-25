@@ -1,0 +1,95 @@
+# Django
+# https://www.djangoproject.com/
+Django==3.0.7
+
+# A simple, easy access key-value registry for Django
+# https://github.com/yychen/dj-registry
+dj-registry==0.2
+
+# Reusable mixins for Django
+# https://django-braces.readthedocs.io/en/latest/index.html
+django-braces==1.14.0
+
+# Compresses linked and inline JavaScript or CSS into a single cached file.
+# https://django-compressor.readthedocs.io/en/latest/
+django-compressor==2.4
+
+# Set of add-ons for django-compressor that simply enables SCSS and ES6.
+# https://github.com/kottenator/django-compressor-toolkit
+django-compressor-toolkit==0.6.0
+
+# A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses.
+# This allows in-browser requests to your Django application from other origins.
+django-cors-headers==3.6.0
+
+# The best way to have DRY Django forms.
+# https://django-crispy-forms.readthedocs.io/en/latest/
+django-crispy-forms==1.8.1
+
+# Django-environ allows you to utilize 12factor inspired environment variables
+# to configure your Django application.
+# https://django-environ.readthedocs.io/en/latest/
+django-environ==0.4.5
+
+# Django application and library for importing and exporting data with
+# included admin integration.
+# https://django-import-export.readthedocs.io
+django-import-export==2.0.1
+
+# A collection of custom extensions for the Django Framework
+# https://django-extensions.readthedocs.io/en/latest/
+django-extensions==2.2.6
+
+# Translates Django models using a registration approach.
+# https://github.com/deschler/django-modeltranslation
+django-modeltranslation==0.14.2
+
+# Native Django task queue, scheduler and worker application using Python
+# multiprocessing.
+# https://django-q.readthedocs.io/
+django-q==1.1.0
+
+# A pickled object field for Django. (Dependency of django-q)
+# https://github.com/gintas/django-picklefield
+django-picklefield==2.1.1
+
+# Certifi, a carefully curated collection of Root Certificates for SSL
+certifi>=2019.11.28
+
+# Faker is a Python package that generates fake data for you.
+# https://faker.readthedocs.io/en/master/
+#
+# Note(yychen): I cannot find where this package is used.
+# It was originally called "fake-factory", and the name has changed
+# to "Faker"
+#
+# fake-factory==0.5.6
+
+# Better python shell.
+# http://ipython.org/
+ipython==7.12.0
+
+# The most feature-rich and easy-to-use library for processing XML and HTML in
+# the Python language.
+# https://lxml.de/
+lxml==4.6.2
+
+# Python Imaging Library.
+# https://python-pillow.org/
+Pillow==7.1.0
+
+# World Timezone Definitions for Python.
+# https://pythonhosted.org/pytz/
+pytz==2019.3
+
+# Thumbnails for Django.
+# https://sorl-thumbnail.readthedocs.io
+sorl-thumbnail==12.6.2
+
+# Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
+# http://www.grantjenks.com/docs/sortedcontainers/
+sortedcontainers==2.1.0
+
+# Tabulate, an utility for pretty-print tabular data
+# https://bitbucket.org/astanin/python-tabulate
+tabulate==0.8.6

@@ -1,0 +1,21 @@
+.keynotes-page {
+	.social {
+		padding-top: 0.5rem;
+
+		a:hover {
+			color: darken($link-dark, 20%);
+		}
+
+		.fa {
+			display: inline-block;
+			margin-right: 0.75rem;
+			font-size: 125%;
+		}
+	}
+	.media {
+		margin-bottom: 120px;
+		&:last-child {
+			margin-bottom: inherit;
+		}
+	}
+}

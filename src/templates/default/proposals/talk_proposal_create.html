@@ -1,0 +1,11 @@
+{% extends 'proposals/_proposal_create.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Submit a New Talk Proposal' %}{% endblock title %}
+
+{% block alert_content %}
+{% include '_includes/talk_proposal_alert.html' %}
+{% endblock alert_content %}
+
+{% block page_header %}{% trans 'Submit a New Talk Proposal' %}{% endblock page_header %}

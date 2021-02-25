@@ -1,0 +1,86 @@
+@import './../../pycontw-2018/styles/_palette.scss';
+
+$static_root: "./../../";
+
+$theme-color: $indigo;
+$theme-focus: $maize;
+
+$quote-color: $theme-focus;
+
+// section
+$section__heading-color: $theme-color;
+
+// schedule
+$schedule-color: #F58454;
+$schedule__title-color: #ADCDFF;
+
+// intro
+$intro__heading-color: $theme-color;
+$intro-color: #686868;
+
+// community
+$community-bg: $theme-focus;
+$community-color: #6B4C00;
+
+// footer
+$footer-bg: #F9FCFF;
+$footer-color: $theme-color;
+
+// keynotes
+$keynotes-bg: $theme-color;
+$keynote-speaker-bg: #fff;
+$keynote-speaker__url-color: #3C3C3C;
+$keynote-speaker__bio-color: #4A4A4A;
+
+// sprints
+$sprints-bg: $theme-color;
+$sprint-event-bg: #fff;
+$sprint-event__url-color: #3C3C3C;
+$sprint-event__info-color: #4A4A4A;
+
+// sponsors
+$sponsor-bg: $theme-color;
+$sponsor-bronze-color: #c37141;
+$sponsor-silver-color: #a1a1a1;
+$sponsor-gold-color: #ffc525;
+$sponsor-platinum-color: #eddcad;
+
+// Buttons
+
+$btn-primary-bg: $ultramarine-blue;
+$btn-primary-hover-bg: lighter($ultramarine-blue);
+
+$btn-focus-color: $white;
+$btn-focus-bg: $light-indigo;
+$btn-focus-border: $light-indigo;
+$btn-focus-hover-bg: lighter($light-indigo);
+
+$btn-negative-color: #fff;
+$btn-negative-bg: #D4D4D4;
+$btn-negative-border: #D4D4D4;
+$btn-negative-hover-bg: #f5bb1b;
+
+$btn-natural-color: $azure;
+$btn-natural-bg: #f8f8f8;
+$btn-natural-border: #eee;
+$btn-natural-hover-bg: #f3f3f3;
+
+$btn-logout-color: #ffffff;
+$btn-logout-bg: transparent;
+$btn-logout-border: transparent;
+$btn-logout-hover-bg: #f3f3f3;
+
+$btn-action-color: #fff;
+$btn-action-bg:#f08e57;
+$btn-action-border: transparent;
+
+$btn-link-color: $theme-color;
+
+$proposals-alert-warning-bg: $maize;
+
+$navbar-em-bg: $btn-primary-bg;
+
+
+// Fonts.
+
+$font-family-sans-serif: $header-font-family !default;

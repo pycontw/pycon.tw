@@ -1,0 +1,111 @@
+{% extends 'contents/_base.html' %}
+{% load static %}
+
+{% block title %}Call for Proposals {% endblock title %}
+
+{% block meta_description %}The Call for Proposals is now open. PyCon Taiwan 2020 is accepting talks and tutorials!{% endblock meta_description %}
+
+{% block content %}
+{% url 'page' path='speaking/recording' as speaking_recording_url %}
+{% url 'page' path='speaking/talk' as speaking_talk_url %}
+{% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
+{% url 'page' path='event/open-space' as event_open-space_url %}
+{% url 'page' path='about/code-of-conduct' as about_coc_url %}
+{% url 'signup' as signup_url %}
+{% url 'user_dashboard' as dashboard_url %}
+
+<section class="pill-title alt">
+    <h1>Call for Proposals</h1>
+    <i class="icon icon-speaking"></i>
+</section>
+
+<p>The Call for Proposals is now open. PyCon 2020 Taiwan is accepting talks and tutorials!</p>
+
+
+<h2>Important Dates</h2>
+
+<ul>
+	<li>Talks &amp; Tutorial CfP begins: 1 Mar </li>
+	<li>Talks &amp; Tutorial CfP ends: 26 Apr 23:59:59 <a href="https://www.timeanddate.com/worldclock/converter.html?iso=20200427T115900&p1=tz_aoe&p2=241&p3=1440">AoE</a></li>
+  <li>Announcement of acceptance: In the middle of June (tentative)</li>
+  <li>Dates of the Conference：5 Sep - 6 Sep</li>
+</ul>
+
+<p>All talks will be recorded, edited then uploaded to <a href="https://pyvideo.org" target="_blank" rel="noopener">pyvideo.org</a> by the PyCon Taiwan committee, unless the speaker requests otherwise. See more info about the <a href="{{ speaking_recording_url }}">recording release</a>.</p>
+
+<p>All speakers are required to buy their own conference tickets (<a href="https://pyfound.blogspot.com/2017/10/psfs-october-board-meeting.html" target="_blank" rel="noopener">Everyone Contributes Policy</a>)</p>
+
+
+<h2>How to Submit Your Proposal</h2>
+
+<p>You need to <a href="{{ signup_url }}">sign up</a> for a new account on tw.pycon.org. With an activated account, you can fill up the speaker profile and create new proposals through the <a href="{{ dashboard_url }}">My PyCon</a> page.</p>
+
+<p>We encourage you to submit the proposal as early as possible. You are welcomed to submit multiple proposals.</p>
+
+<p>Due to the effects of COVID-19, you can choose to give your talk or tutorial remotely. If we make sure the offline speaking will take place as scheduled, you can still decide whether to come to the meeting venue in person.</p>
+
+<h2>Guidelines for Proposal Submission</h2>
+
+<h3>Talks</h3>
+
+<p>We accept a broad range of Python-related proposals from academic research to commercial projects, case studies, or soft topics such as running a community, making good communication, mental health, etc.  So basically, if you are reading this, just submit your proposal!</p>
+
+<p>We encourage speakers to talk about your own Python package or application, your experience of learning Python or hosting a Python community, etc. Talks on advanced topics are highly welcomed as well. For your inspiration, our committee has suggested that they’d love to see talks on the following topics: <em>FinTech, Community, A.I, Data Analytics, IoT, Machine Learning, Testing</em>, etc.</p>
+
+<p>When considering different topics, you may be interested in reviewing selected speeches over the past few years at PyCon Taiwan.</p>
+
+<ul>
+  <li><a href="https://tw.pycon.org/2019/en-us/events/schedule/">PyCon Taiwan 2019</a></li>
+  <li><a href="https://tw.pycon.org/2018/en-us/events/schedule/">PyCon Taiwan 2018</a></li>
+  <li><a href="https://tw.pycon.org/2017/en-us/events/schedule/">PyCon Taiwan 2017</a></li>
+  <li><a href="https://tw.pycon.org/2016/en-us/events/schedule/">PyCon Taiwan 2016</a></li>
+</ul>
+
+<p>Talks will be lasting either <em>30 minutes</em> or <em>15 minutes</em>, depends on you, you'll measure and decide how much time you need.  Note that the length of a talk <em>includes setup and Q&amp;A session</em>.</p>
+
+<p>Talks can be given in either <em>English, Mandarin or Taiwanese Hokkien.</em></p>
+
+<p>If it's your first time to propose a talk at PyCon Taiwan or a conference in general, please have a look at <a href="{{ speaking_talk_url }}">How to Propose a Talk?</a> to learn more about conventions, and it might help you organize your thoughts on your proposal.</p>
+
+<p>This year, we will invite part of the unselected talks to share at the local communities. PyCon Taiwan will partially compensate for your transportation cost.</p>
+
+<h3>Tutorials</h3>
+
+<p>Similar to talks, we don’t pose limitations on tutorial topics.
+  This year, tutorials are free and the length has been changed to 1 hour and 30 minutes.
+  It will be at the same time as the conference.
+  Venue is tentatively set as <a href="https://www.facebook.com/GoodideasStudio/"> Goodideas-Studio</a>.
+  The guideline for tutorial submission is based on the guideline for talks,
+  so make sure you have read <a href="{{ speaking_talk_url }}"> How to Propose a Talk?</a>
+  On top of that, We have some special requirements for tutorial submission,
+  please refer to <a href="{{ speaking_tutorial_url }}">How to Propose a Tutorial?</a>
+  for more information.</p>
+
+<h2>Proposals Review Process</h2>
+
+<p>After the Call for Proposal ends, and before the announcement of acceptance, the PyCon TW 2020 Proposals Review Committee is going to review the proposals and give scores and provide useful feedback. The process consists of three phases:</p>
+<ul>
+  <li>Stage 1 Review: Reviewers are going to score and give feedback. This will last for about 2 ~ 3 weeks</li>
+  <li><em>Modification Step: According to reviewers’ comments, you can modify your proposal through the dashboard.</em> This step lasts for about 1 to 2 weeks</li>
+  <li>Stage 2 Review: Reviewers are going to re-score and re-give feedback to the modified proposals</li>
+</ul>
+
+<h3>Modification Step</h3>
+<p>
+  Between the stage-1 and stage-2 review, you can see the feedback from the reviewer.
+  You may modify your proposal according to reviewers’ comments or feedback. If you want to make your change obvious to the reviewers, you can point out the ID of the comment, and mention about what you’ve modified according to the comment in the <em>"Supplementary"</em> section, e.g. <em>"#4: Updated the time management for xxx phase"</em>
+</p>
+
+<p>If you have any questions, please contact us at <a href="mailto:program@pycon.tw">program@pycon.tw</a>.</p>
+
+<h3>Inappropriate words or images</h3>
+
+<p>Please note that PyCon Taiwan is a conference where the audience comes from different cultural backgrounds. Some jokes may be rude to others. If you want to add some humorous images or words to your speech, please double check if there is any possibility of offense, and refer to our <a href="{{ about_coc_url }}"> Code of Conduct</a>.</p>
+
+<div class="decoration">
+    <img class="deco-c-1" src="{% static 'pycontw-2020/assets/bg-window-1-black.svg' %}" />
+    <img class="deco-c-2" src="{% static 'pycontw-2020/assets/bg-window-1-black.svg' %}" />
+    <img class="deco-c-3" src="{% static 'pycontw-2020/assets/bg-window-2-brick.svg' %}" />
+</div>
+
+{% endblock content %}

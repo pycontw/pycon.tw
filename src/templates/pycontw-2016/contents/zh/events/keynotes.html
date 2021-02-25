@@ -1,0 +1,185 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}主題演講{% endblock %}
+{% block page_title %}<h1>主題演講講者 (Keynote Speakers)</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="主題演講講者 | PyCon Taiwan 2016" />
+  <meta property="og:description" content="享受由 Amber Brown、唐鳳、黃敬群、Paul Hildebrandt 與 Steve Dower 帶來的主題演講。
+" />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
+
+{# Amber #}
+<div id="keynote-speaker-amber-brown" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/amber_brown.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Amber Brown (HawkOwl)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/hawkieowl" target="_blank">@hawkieowl</a><br>
+			<a href="http://atleastfornow.net/" target="_blank">http://atleastfornow.net/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Amber Brown (HawkOwl) 是自由接案的軟體工程師，也是 Twisted 專案的開發管理員。她為人所知的貢獻是更新 Twisted 至 Python 3 的動力源以及 Twisted codebase 的現代化。她演講的經驗豐富，是 DjangoCon AU ’15 及 PyCon CZ ’15 的主題演講講者，同時也在 PyCon Australia 以及 Django Under The Hood 擔任講者。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《Django & Twisted》</h4>
+		<p>
+			Web frameworks like Django are designed around the traditional
+			request-response cycle — a request comes in, a response is generated, and
+			that is delivered to the client. In the day of “single page”
+			applications, where only sections of the page are updated through
+			requests, doing real-time can be clunky. Twisted, and things that build
+			off it, like Django Channels, might be the way forward. What problems
+			does this fix? How does this make the user experience better? What new
+			issues arise when you're doing everything asynchronously? And how will
+			this change in the future? are all topics we'll get in to.
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# au #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/audrey_tang.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">唐鳳<br>(Audrey Tang)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/audreyt" target="_blank">
+				@audreyt
+			</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			唐鳳，現任國發會開放資料諮詢委員、十二年國教課發會委員，為零時政府 (g0v) 萌典、vTaiwan.tw 等多項專案貢獻者，於蘋果電腦、牛津大學出版社、Socialtext 等機構兼任顧問。專業領域為互動空間設計、程式語言學、計算語言學。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《明日之後的世界》</h4>
+		<p>
+			（講題介紹請見<a href="https://hackmd.io/s/ByN_woSz" target="_blank">共筆頁面</a>）
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# jserv #}
+<div id="keynote-speaker-jim-huang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/jim_huang.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">黃敬群<br>(Jim Huang)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/jserv" target="_blank">@jserv</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			黃敬群，網路慣用暱稱為 "jserv"，長期投入 Android Open Source Project、LXDE、新酷音輸入法等自由軟體和開放原始碼專案開發。歷任聯發科、工研院、台達電等單位的技術顧問，協助導入開放原始碼技術，提昇產業競爭力。2012 年回學校任教，近年研究主題偏向即時作業系統和機器人控制，以強化學生的視野和能力為訴求，培養學生得以透過 Linux Foundation
+			和開放原始碼技術社群發表開放原始碼成果。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《Python 導入系統軟體教學》</h4>
+		<p>系統軟體一般指編譯器、作業系統、虛擬機器，動態二進位轉換/編譯器一類所謂「比較硬」的軟體技術，往往需要搭配計算機架構 / 平行計算 / 網路架構 / GPU 等背景知識的熟稔，開發者必須破除典型以計算為主的思維，在系統層面觀察實際資料的流動，佐以軟硬體綜合規劃的方式去分析系統運作，從而改善效能。講者這四年在大學任教，就是帶著學生理解各式系統軟體，不乏「自幹」前述元件作為基礎訓練，過程中透過 Python 縮減系統驗證、自動化設計，以及視覺化的成本，希望藉由本議程分享相關經驗。</p>
+	</div>
+</div><!-- /.keynote-speaker -->
+
+{# Paul #}
+<div id="keynote-speaker-paul-hildebrandt" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static "images/keynotes/paul_hildebrandt.jpg" %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Paul Hildebrandt</h2>
+		<div class="keynote-speaker__url">
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Paul Hildebrandt 從一九九六年起就在華特迪士尼動畫工作室擔任資深工程師，同時負責系統與軟體工程的工作。他現在的頭銜是資深工程師及播放工具的產品負責人，主要任務是與藝術家一起工作，理解他們的需求並且設計出能協助他們的工具。運氣好的時候，他就可以寫程式。
+		</p>
+		<p>
+			Hildebrandt 帶領的團隊負責開發數位資產管理、媒體播放器、行動版介面的每日評鑑系統及其他相關工具。這些工具都可以在不同平台上使用，包括 Linux、Mac、iOS 及 Android。在迪士尼的動畫片中，他參與的作品有《動物方城市》，奧斯卡最佳動畫片得獎作品《大英雄天團》及《冰雪奇緣》，獲奧斯卡提名的賣座動畫片《無敵破壞王》、《魔髮奇緣》、《雷霆戰狗》、《星銀島》及《恐龍》。他是替華特迪士尼動畫工作室到 PyCon 及其他 Python 相關贊助活動宣傳的傳教士。
+		</p>
+		<p>
+			加入迪士尼之前，Hildebrandt 在休斯飛機公司服務了八年，擔任資深工程師的他，負責工作為航空公司的商用客機機艙內的娛樂系統以及隱形轟炸機的訓練。他還曾參加一九九零年的世界太陽能車挑戰賽，那是個跨越整個澳洲的太陽能車競速比賽。他在團隊中負責電力組，他的團隊最終獲得第三名佳績。
+		</p>
+		<p>
+			Hildebrandt 生長於加州的 Anaheim，從波莫納加州州立理工大學取得電機工程學士學位，現在與妻子和三個兒子住在洛杉磯郊區。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《Inside the Hat: Python @ Walt Disney Animation Studios》</h4>
+		<p>
+			Paul will take you through the process of making of a Disney movie. He
+			will use examples from Zootopia to explain and illustrate the steps in
+			making a movie and explain where technology, specifically Python, is
+			involved.
+		</p>
+		<p>
+			The Walt Disney Animation Studios has a long history of creating
+			acclaimed animated films and continues to be an industry leader with
+			regards to artistic achievements, storytelling excellence, and
+			cutting-edge innovations. Since the 1923 release of Snow White they’ve
+			been pushing forward technology in the art of movie making. This push
+			continues in the modern day with classics such as Oscar winning box
+			office hits "Big Hero 6" and “Frozen” and Oscar nominated hits “Wreck-It
+			Ralph”, “Tangled”, “Bolt”, “Treasure Planet”, and “Dinosaur”.
+		</a>
+		<p>
+			One of the most common questions we get when attending PyCon is “Why are
+			you here?”  People seem confused that technology, especially Python is
+			used in the making of animated films.
+		</p>
+		<p>
+			（更多講題介紹請見<a href="https://hackmd.io/s/rkClsoHz" target="_blank">共筆頁面</a>）
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Steve #}
+<div id="keynote-speaker-steve-dower" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static "images/keynotes/steve_dower.jpg" %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Steve Dower</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/zooba" target="_blank">@zooba</a><br>
+			<a href="http://stevedower.id.au/" target="_blank">http://stevedower.id.au/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">簡歷</h4>
+		<p>
+			Steve 總是在向別人介紹 Python，替他們找使用 Python 的理由並且提供好工具協助他們使用。他負責開發 Python Tools for Visual Studio (PTVS)，撰寫許多微軟的 Python libraries，也是 CPython 的核心貢獻者及 Windows 專家。
+		</p>
+		<p>
+			他現在是微軟的軟體工程師。
+		</p>
+		<h4 class="keynote-speaker__bio__header">《Intentional Communication》</h4>
+		<p>
+			Do you know how to talk? Do you know how to write? Good! Those are how
+			you tell people about your ideas, whether online, at conferences, in
+			printed media, or in code. But when you talk or write, are you thinking
+			about why? Are you intentional about your message, your medium, and your
+			meaning? In this session, Steve will explore some of the things to think
+			about whenever you sit down to write, stand up to speak, or open your
+			laptop to code. Not everyone will be a better speaker or writer by the
+			end, but you will be able to be a more intentional communicator.
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+html[lang^="zh-"] {
+
+    cite {
+
+        font-style: normal;
+
+        &::before {
+            content: "《";
+        }
+        &::after {
+            content: "》";
+        }
+    }
+
+    em {
+        font-style: normal;
+        font-weight: 500;
+    }
+
+    .content-page-content {
+        line-height: 28px;
+    }
+
+    .staff-list .staff-person::after {
+        font-style: normal;
+    }
+}

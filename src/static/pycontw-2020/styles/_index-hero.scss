@@ -1,0 +1,195 @@
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+$hero-desktop-margin: 40px;
+
+.index-hero-outer {
+    @include on-desktop {
+        margin: 0 $hero-desktop-margin 0px;
+    }
+}
+
+.index-hero {
+    margin: 40px auto 10px;
+    max-width: 1160px;
+    font-size: 100%;
+
+    .welcome-text {
+        font-size: 1.5rem;
+        font-family: $text-font-family;
+        color: $jinger-bread;
+        margin-bottom: 10px;
+        margin-left: 12px;
+
+        @include on-desktop {
+            margin-left: 0;
+        }
+    }
+
+    .banner {
+        // 2020-hero-bg.svg, 799x333
+        @include aspect-ratio(799, 333);
+        background: url('../assets/2020-hero-bg.svg');
+        background-color: black;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-bottom: 60px;
+
+        @include on-desktop {
+            box-shadow: 7px 7px 5px rgba(26, 19, 17, 0.5);
+            margin-bottom: 0;
+        }
+
+        position: relative;
+
+        .logo {
+            position: absolute;
+            left: 49.9%;
+            transform: translate(-50%, -50%);
+
+            width: calc(100% * 600/799);
+            top: 50%;
+
+            @include on-desktop {
+                // 2020-logo.svg, 391x55
+                width: calc(100% * 391/799);
+                top: 51%;
+            }
+        }
+
+        .time-location {
+            width: calc(100% * 450/799);
+            position: absolute;
+            left: 50%;
+            top: 80%;
+            transform: translate(-50%, -50%);
+            text {
+                font-size: 22px;
+                fill: white;
+                font-family: $text-font-family;
+            }
+
+
+            @include on-desktop {
+                width: calc(100% * 220/799);
+                top: 69%;
+            }
+        }
+
+        .icon {
+            width: calc(100% * 70/799);
+
+            position: absolute;
+            left: 49.9%;
+            top: 105%;
+            transform: translate(-50%, 0);
+
+            &.desktop {
+                display: none;
+            }
+
+            @include on-desktop {
+                // snake-icon.svg, 50x50
+                width: calc(100% * 50/799);
+                top: auto;
+                bottom: 6.5%;
+
+                &.desktop {
+                    display: block;
+                }
+
+                &.mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.index-hero-old {
+	$padding-top-mobile: calc(12.5vh + #{$top-navbar-offset * 7 / 8});
+	$padding-top-desktop: 100px;
+	$heading-aspect: 528 / 95;
+	$heading-width-mobile: 70vw;
+	$heading-height-mobile: $heading-width-mobile / $heading-aspect;
+	$heading-width-desktop: 20vw;
+	$heading-margin-left-desktop: 100vw - $heading-width-desktop;
+	max-width:100%;
+	height:100vh;
+	margin: 0 40px;
+
+	@mixin hero-text($font-size) {
+		color: $white;
+		font-family: $header-font-family;
+		font-size: $font-size;
+		font-style: italic;
+		font-weight: 100;
+	}
+
+	display: flex;
+	flex-direction: column;
+	margin-top: 0;
+	// padding-top: $padding-top-mobile;
+	height: calc(100vh - #{$padding-top-mobile});
+	max-height: 130vw;
+
+	background: url('../assets/landingpage-mobile.png');
+	background-repeat: no-repeat;
+	background-size: 100vw;
+	@include on-desktop {
+		background: url('../assets/2020-hero-bg.svg');
+		background-repeat: no-repeat;
+		background-size: 100vw;
+		background-position-y: -30px;
+
+		$menu-overlap: $menu-desktop-height / 2;
+		height: calc(60vw - #{$padding-top-desktop + $menu-overlap});
+		max-height: auto;
+
+	}
+	.hero-logo{
+		width: 100vw;
+		max-width:100%;
+		margin-top: 0-$padding-top-desktop;
+		@include on-desktop{
+		}
+	}
+	header {
+		height:100%;
+		flex: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		background-position: center;
+
+	}
+
+	blockquote {
+		@include hero-text(1rem);
+		margin: 0 12px 12px 0;
+		border: none;
+		text-align: right;
+		font-size: 1.2rem;
+
+		@include on-desktop {
+			margin-right: $menu-desktop-margin-x + $menu-desktop-border-radius;
+			margin-bottom: 20px;
+			font-size: 1.25rem;
+		}
+	}
+}

@@ -1,0 +1,239 @@
+{% extends 'contents/_base/keynotes.html' %}
+
+{% load static %}
+
+{% block title %}Keynotes{% endblock %}
+{% block page_title %}<h1>Keynote Speakers</h1>{% endblock %}
+
+
+{% block meta_og %}
+  <meta property="og:title" content="Keynote Speakers | PyCon Taiwan 2016" />
+  <meta property="og:description" content="Enjoy keynote speeches from Amber Brown, Andrey Tang, Jim Huang, Paul Hildebrandt and Steve Dower." />
+  <meta property="og:image" content="http://{{ request.get_host }}{% static 'images/og_keynote.png' %}" />
+{% endblock %}
+
+{% block content %}
+{# Kyenote speakers ordered by their first name #}
+{# 'Amber Brown', 'Audrey Tang', 'Jim Huang', 'Paul Hildebrandt', 'Steve Dower' #}
+{# Amber #}
+<div id="keynote-speaker-amber-brown" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/amber_brown.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Amber Brown (HawkOwl)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/hawkieowl" target="_blank">@hawkieowl</a><br>
+			<a href="http://atleastfornow.net/" target="_blank">http://atleastfornow.net/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Amber Brown (HawkOwl) is a freelance software developer and the
+			release manager of the Twisted project. She’s known for her Python 3
+			porting drives and modernisation of the Twisted codebase. She is a
+			frequent speaker, keynoting DjangoCon AU ’15, PyCon CZ ’15, and
+			speaking at PyCon Australia and Django Under The Hood.
+		</p>
+		<h4 class="keynote-speaker__bio__header">Talk: “Django & Twisted”</h4>
+		<p>
+			Web frameworks like Django are designed around the traditional
+			request-response cycle — a request comes in, a response is generated, and
+			that is delivered to the client. In the day of “single page”
+			applications, where only sections of the page are updated through
+			requests, doing real-time can be clunky. Twisted, and things that build
+			off it, like Django Channels, might be the way forward. What problems
+			does this fix? How does this make the user experience better? What new
+			issues arise when you're doing everything asynchronously? And how will
+			this change in the future? are all topics we'll get in to.
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# au #}
+<div id="keynote-speaker-audrey-tang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/audrey_tang.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Audrey Tang<br>(au)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/audreyt" target="_blank">
+				@audreyt
+			</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Audrey Tang, a civic hacker who grew up among Tiananmen exiles, is
+			known for revitalizing the computer languages Perl and Haskell, as
+			well as building the online spreadsheet system EtherCalc in
+			collaboration with Dan Bricklin.
+		</p>
+		<p>
+			In the public sector, Audrey serves on Taiwan national development
+			council’s open data committee and K-12 curriculum committee; and
+			led the country’s first e-Rulemaking project.
+		</p>
+		<p>
+			In the private sector, Audrey works as a consultant with Apple on
+			computational linguistics, with Oxford University Press on crowd
+			lexicography, and with Socialtext on social interaction design.
+		</p>
+		<p>
+			In the third sector, Audrey actively contributes to Taiwan’s g0v
+			(“gov-zero”), a vibrant community focusing on creating tools for
+			the civil society, with the call to “fork the government”.
+		</p>
+		<h4 class="keynote-speaker__bio__header">Talk: “The world after tomorrow”</h4>
+		<p>
+			(Talk description can be found on
+			<a href="https://hackmd.io/s/ByN_woSz" target="_blank">the collaboration note</a>)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# jserv #}
+<div id="keynote-speaker-jim-huang" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static 'images/keynotes/jim_huang.jpg' %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Jim Huang<br>(jserv)</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/jserv" target="_blank">@jserv</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Jim Huang, CTO of South Star Xelerator, is now building open source
+			based commercial solutions for information infrastructure and
+			robotics. After involved in Android Open Source Project, Jim
+			specialises in real-time and computation optimizations to construct
+			Linux based robots fitting for the industrial requirements. In
+			addition, Jim teaches system software programming in National Cheng
+			Kung University, Taiwan.
+		</p>
+		<h4 class="keynote-speaker__bio__header">Talk: “Python 導入系統軟體教學”</h4>
+		<p>系統軟體一般指編譯器、作業系統、虛擬機器，動態二進位轉換/編譯器一類所謂「比較硬」的軟體技術，往往需要搭配計算機架構 / 平行計算 / 網路架構 / GPU 等背景知識的熟稔，開發者必須破除典型以計算為主的思維，在系統層面觀察實際資料的流動，佐以軟硬體綜合規劃的方式去分析系統運作，從而改善效能。講者這四年在大學任教，就是帶著學生理解各式系統軟體，不乏「自幹」前述元件作為基礎訓練，過程中透過 Python 縮減系統驗證、自動化設計，以及視覺化的成本，希望藉由本議程分享相關經驗。</p>
+	</div>
+</div><!-- /.keynote-speaker -->
+
+{# Paul #}
+<div id="keynote-speaker-paul-hildebrandt" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static "images/keynotes/paul_hildebrandt.jpg" %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Paul Hildebrandt</h2>
+		<div class="keynote-speaker__url">
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Paul Hildebrandt has been a Senior Engineer with Walt Disney
+			Animation Studios (WDAS) since 1996, and has worked in both Systems
+			and Software engineering. His current title is Senior Software
+			Engineer and Product Owner for the Playback tools among his primary
+			duties is spending time working with the artists, understanding
+			their needs, and designing tools to assist them. If he is lucky, he
+			gets to write code.
+		</p>
+		<p>
+			Hildebrandt leads a team that is responsible for developing the
+			digital asset manager, media player, dailies review system with a
+			mobile interface, and other related tools. These tools are available
+			on a variety of platforms including Linux, Mac, iOS, and Android.
+			Among the Disney animated films that he has contributed are
+			<cite>Zootopia</cite>, the Oscar® winning hits
+			<cite>Big Hero 6</cite>, <cite>Frozen</cite> and Oscar®-nominated
+			box office hits, <cite>Wreck-It Ralph</cite>, <cite>Tangled</cite>,
+			<cite>Bolt</cite>, <cite>Treasure Planet</cite>, and
+			<cite>Dinosaur</cite>. He is WDAS’ evangelist for PyCon and other
+			Python sponsorships.
+		</p>
+		<p>
+			Prior to joining Disney, Hildebrandt spent eight years with Hughes
+			Aircraft as a Senior Engineer working on commercial in-flight
+			entertainment for airlines and the Stealth Bomber trainers. He also
+			served as the electrical lead for a team that raced a solar car
+			across Australia in the 1990 World Solar Challenge. The team
+			finished in the top third.
+		</p>
+		<p>
+			Hildebrandt was born and raised in Anaheim, California. He received
+			his BSEE with a focus on Computing from California Polytechnic
+			University Pomona. He resides outside of Los Angeles with his wife
+			and three boys.
+		</p>
+		<h4 class="keynote-speaker__bio__header">Talk: “Inside the Hat: Python @ Walt Disney Animation Studios”</h4>
+		<p>
+			Paul will take you through the process of making of a Disney movie. He
+			will use examples from Zootopia to explain and illustrate the steps in
+			making a movie and explain where technology, specifically Python, is
+			involved.
+		</p>
+		<p>
+			The Walt Disney Animation Studios has a long history of creating
+			acclaimed animated films and continues to be an industry leader with
+			regards to artistic achievements, storytelling excellence, and
+			cutting-edge innovations. Since the 1923 release of Snow White they’ve
+			been pushing forward technology in the art of movie making. This push
+			continues in the modern day with classics such as Oscar winning box
+			office hits "Big Hero 6" and “Frozen” and Oscar nominated hits “Wreck-It
+			Ralph”, “Tangled”, “Bolt”, “Treasure Planet”, and “Dinosaur”.
+		</a>
+		<p>
+			One of the most common questions we get when attending PyCon is “Why are
+			you here?”  People seem confused that technology, especially Python is
+			used in the making of animated films.
+		</p>
+		<p>
+			(More talk description can be found at
+			<a href="https://hackmd.io/s/rkClsoHz" target="_blank">here</a>)
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+
+{# Steve #}
+<div id="keynote-speaker-steve-dower" class="keynote-speaker">
+	<div class="keynote-speaker__profile">
+		<img class="keynote-speaker__photo"
+		src="{% static "images/keynotes/steve_dower.jpg" %}"
+		alt="Keynote profile photo">
+		<h2 class="keynote-speaker__name">Steve Dower</h2>
+		<div class="keynote-speaker__url">
+			<a href="https://twitter.com/zooba" target="_blank">@zooba</a><br>
+			<a href="http://stevedower.id.au/" target="_blank">http://stevedower.id.au/</a>
+		</div>
+	</div><!-- /.keynote-speaker__profile -->
+	<div class="keynote-speaker__bio">
+		<h4 class="keynote-speaker__bio__header">Bio</h4>
+		<p>
+			Steve is an engineer who tells people about Python and then gives
+			them excuses to use it and great tools to use it with. He works on
+			Python Tools for Visual Studio, contributes to many of Microsoft’s
+			Python libraries, and is a core contributor and Windows expert for
+			CPython.
+		</p>
+		<p>
+			He now works as a software engineer at Microsoft.
+		</p>
+		<h4 class="keynote-speaker__bio__header">Talk: “Intentional Communication”</h4>
+		<p>
+			Do you know how to talk? Do you know how to write? Good! Those are how
+			you tell people about your ideas, whether online, at conferences, in
+			printed media, or in code. But when you talk or write, are you thinking
+			about why? Are you intentional about your message, your medium, and your
+			meaning? In this session, Steve will explore some of the things to think
+			about whenever you sit down to write, stand up to speak, or open your
+			laptop to code. Not everyone will be a better speaker or writer by the
+			end, but you will be able to be a more intentional communicator.
+		</p>
+	</div><!-- /.keynote-speaker__bio -->
+</div><!-- /.keynote-speaker -->
+{% endblock content %}

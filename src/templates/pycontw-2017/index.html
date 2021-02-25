@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+
+{% block titletag %}
+<title>{% trans 'PyCon Taiwan 2017' %}</title>
+{% endblock titletag %}
+
+
+{% block content_full %}
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/tutorial' as events_tutorial_url %}
+
+<div class="wrapper">
+	<main class="conference-info">
+
+		<h1 class="logo">
+			<img src="{% static 'pycontw-2017/images/icon-logo.svg' %}">
+		</h1>
+
+		<div class="date-panel">
+			<time>{% trans '9–11 June' %}</time>
+			<code class="def-future">def future():</code>
+		</div>
+
+		<nav class="index-session-links">
+			<a href="{{ events_tutorial_url }}"><span class="event-label">{% trans 'tutorials: '%}</span><time>{% trans '21, 28 May & 3 June' %}</time></a>
+			<a href="{{ events_sprint_url}}"><span class="event-label">{% trans 'sprints: '%}</span><time>{% trans '12 March, 12 June' %}</time></a>
+		</nav>
+
+		<nav class="ticket">
+			<a href="{{ KKTIX_URL }}" target="_blank" rel="noopener">
+				{% trans 'Get Tickets' %}
+			</a>
+		</nav>
+
+		<section class="volunteers-needed">
+			<h4>{% trans 'Volunteers Needed' %}</h4>
+			<p>{% blocktrans %}Help us organize and make the conference successful! Please fill out <a href="{{ VOLUNTEER_FORM_URL }}">our volunteer form.</a>{% endblocktrans %}</p>
+		</section>
+
+		<section class="index-intro">
+			<article class="what-is-pycon">
+				{% blocktrans trimmed %}
+				<h2>what is pycon</h2>
+				<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
+				{% endblocktrans %}
+			</article>
+			<article class="what-is-pycon-taiwan align-right">
+				{% blocktrans trimmed %}
+				<h2>what is pycon taiwan</h2>
+				<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
+				{% endblocktrans %}
+			</article>
+		</section>
+	</main>
+</div>
+
+<section class="communities-wrapper">
+	<div class="communities">
+		<h2>{% trans 'Python Communities in Taiwan' %}</h2>
+		<nav class="community-refs">
+			<a href="http://www.meetup.com/PyLadiesTW/" target="_blank" rel="noopener">
+				PyLadies Taiwan
+			</a>
+			<a href="http://djangogirls.org/taipei" target="_blank" rel="noopener">
+				Django Girls Taipei
+			</a>
+			<a href="http://www.meetup.com/Taipei-py/" target="_blank" rel="noopener">
+				Taipei.py <span class="desc">Taipei Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Tainan-py-Python-Tainan-User-Group/" target="_blank" rel="noopener">
+				Tainan.py <span class="desc">Tainan Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/pythonhug/" target="_blank" rel="noopener">
+				PyHUG <span class="desc">Python Hsinchu User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Taichung-Python-Meetup/" target="_blank" rel="noopener">
+				Taichung.py <span class="desc">Taichung Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Kaohsiung-Python-Meetup" target="_blank" rel="noopener">
+				Kaohsiung.py <span class="desc">Kaohsiung Python User Group</span>
+			</a>
+			<a href="http://www.meetup.com/Hualien-Py/" target="_blank" rel="noopener">
+				Hualien.py <span class="desc">Hualien Python User Group</span>
+			</a>
+		</nav>
+	</div>
+</section>
+
+{% regroup sponsors by level as sponsor_groups %}
+<section class="sponsors">
+	{% for sponsor_group in sponsor_groups %}
+	<div class="sponsors-wrapper">
+		{% for sponsor in sponsor_group.list %}
+		{% if sponsor.website_url %}
+		<a href="{{ sponsor.website_url }}" target="_blank" rel="noopener">
+			{% if sponsor.logo %}
+			<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+			{% else %}
+			{{ sponsor.name }}
+			{% endif %}
+		</a>
+		{% else %}
+		<span>
+			{% if sponsor.logo %}
+			<img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+			{% else %}
+			{{ sponsor.name }}
+			{% endif %}
+		</span>
+		{% endif %}
+		{% endfor %}
+	</div>
+	{% endfor %}
+</section>
+
+{% endblock content_full %}
+
+{% block extrabody %}
+<i class="deco polygons"></i>
+<i class="deco taiwan"></i>
+<i class="deco circle left"></i>
+<i class="deco circle right"></i>
+<i class="deco meteor top"></i>
+<i class="deco meteor left"></i>
+<i class="deco meteor right"></i>
+{% endblock extrabody %}

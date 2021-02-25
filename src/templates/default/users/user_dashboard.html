@@ -1,0 +1,75 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n %}
+
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='dashboard' %}
+{% endblock dashboard_tablist %}
+
+
+{% block main-content %}
+
+{% if user.is_valid_speaker %}
+
+	{% url 'talk_proposal_create' as talk_proposal_create_url %}
+	{% url 'tutorial_proposal_create' as tutorial_proposal_create_url %}
+
+	<div class="talk-proposals proposals">
+    <h3 class="dashboard-header">
+        <span class="header__title">{% trans 'Talk Proposals' %}</span>
+        	{% if proposals_creatable %}
+          <a href="{% url 'talk_proposal_create' %}" class="btn btn-primary hidden-xs" role="button">
+            <i class="fa fa-plus"></i>&nbsp;{% trans 'New Talk Porposal' %}</a>
+          <a href="{{ talk_proposal_create_url }}" class="btn btn-primary visible-xs-inline" role="button">
+            <i class="fa fa-plus"></i></a>
+          {% endif %}
+    </h3>
+
+    {% if user.talkproposal_set.exists %}
+      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.talkproposal_set.all %}
+    {% else %}
+    	{% if proposals_creatable %}
+      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ talk_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      {% else %}
+      <p>{% blocktrans %}You haven't submitted any talk proposals.{% endblocktrans %}</p>
+      {% endif %}
+    {% endif %}
+	</div>
+
+  <div class="tutorial-proposals proposals">
+    <h3 class="dashboard-header">
+        <span class="header__title">{% trans 'Tutorial Proposals' %}</span>
+        {% if proposals_creatable %}
+        <a href="{% url 'tutorial_proposal_create' %}"
+           class="btn btn-focus hidden-xs" role="button">
+          <i class="fa fa-plus"></i>&nbsp;{% trans 'New Tutorial Porposal' %}
+        </a>
+        <a href="{{ tutorial_proposal_create_url }}"
+           class="btn btn-focus visible-xs-inline" role="button">
+           <i class="fa fa-plus"></i>
+        </a>
+        {% endif %}
+    </h3>
+    {% if user.tutorialproposal_set.exists %}
+      {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all %}
+    {% else %}
+    	{% if proposals_creatable %}
+      <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      {% else %}
+      <p>{% blocktrans %}You haven't submitted any tutorial proposals.{% endblocktrans %}</p>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% if user.cospeaking_info_set.exists %}
+  <div class="cospeaking-proposals">
+    <h3 class="dashboard-header"><span class="header-title">{% trans 'Co-Speaking Proposals' %}</span></h3>
+    {# include with ... only will block csrf_token #}
+    {% include 'users/_includes/dashboard_cospeaking_proposal_table.html' with speaker_infos=user.cospeaking_info_set.all %}
+  </div>
+  {% endif %}
+
+{% endif %}
+
+{% endblock main-content %}

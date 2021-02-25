@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load i18n static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2019/styles/index.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block titletag %}
+<title>{% trans 'PyCon Taiwan 2019' %}</title>
+{% endblock titletag %}
+
+
+{% block content_full %}
+
+{% url 'page' path='speaking/cfp' as speaking_cfp_url %}
+
+{% include '_includes/hero.html' %}
+
+<nav class="menu-navbar-desktop">
+	{% include '_includes/menu.html' with type='desktop' %}
+</nav>
+
+<section class="portal">
+	<article class="container">
+		<h2>{% trans 'Portal' %}</h2>
+		<div class="portal-container">
+			{% include '_includes/portal.html' %}
+		</div>
+	</article>
+</section>
+
+<section class="index-introduction">
+	<article class="container">
+		<h2>{% trans 'What is PyCon' %}</h2>
+		{% blocktrans trimmed %}
+		<p>The original PyCon was formed in North America in 2003, and now there are many other conferences being run in the PyCon spirit around the world.</p>
+		{% endblocktrans %}
+	</article>
+
+	<article class="container">
+		<h2>{% trans 'What is PyCon Taiwan' %}</h2>
+		{% blocktrans trimmed %}
+		<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and promotion of the Python programming language. It is held by enthusiasts and focuses on Python technology and its versatile applications. We welcome people who are interested in Python to join PyCon Taiwan to share knowledge, exchange ideas, make connections and to help us grow our network.</p>
+		{% endblocktrans %}
+	</article>
+
+</section>
+
+<section class="index-volunteer-container">
+	<section class="index-volunteer">
+		<article class="container">
+			<h2>{% trans 'Volunteers Needed' %}</h2>
+			{% comment %} {% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %} {% endcomment %}
+			<a href="{{ VOLUNTEER_FORM_URL }}" class="center button-round volunteer" target="_blank" rel="noopener">{% trans 'Become a volunteer' %}</a>
+		</article>
+	</section>
+	{% comment %}
+	<section class="index-cfp">
+		<article class="container">
+			<h2>{% trans 'Call for Proposals' %}</h2>
+			{% blocktrans trimmed %}<p>Help us organize and make the conference successful!</p>{% endblocktrans %}
+			<a href="{{ speaking_cfp_url }}" class="center button-round volunteer" target="_blank" rel="noopener">Apply</a>
+		</article>
+	</section>
+	{% endcomment %}
+</section>
+{% include '_includes/sponsors.html' %}
+
+{% endblock content_full %}

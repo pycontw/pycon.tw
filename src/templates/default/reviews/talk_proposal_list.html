@@ -1,0 +1,92 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n static %}
+{% load compress crispy_forms_tags %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='review' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
+
+<div class="review-stage">
+	<h3 class="dashboard-header">
+		<span class="header__title">{% blocktrans %}Current Review Stage: {{ review_stage }}{% endblocktrans %}</span>
+	</h3>
+	<div class="stage-desc">
+		{% include review_stage_desc_tpl %}
+		<p>{% blocktrans trimmed %}Note that at anytime, the identity of the reviewer, e.g. you, is hidden to other reviewers and speakers. For more information about the whole review process, please refer to the GitBook <a href="https://pycontw.github.io/reviewer-guidebook" target="_blank" rel="noopener">Review Guideline</a>.{% endblocktrans %}</p>
+	</div>
+</div>
+
+<div class="review-statistics row">
+	<h4>{% trans 'Personal Review Stats' %}</h4>
+	<div class="col-lg-3 col-md-6 panel-box">
+		<div class="panel panel-default">
+		  <div class="panel-heading text-center">{% trans 'Strong Accept (+1)' %}</div>
+		  <div class="panel-body text-center">{{ vote.strong_accept }}</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 panel-box">
+		<div class="panel panel-default">
+		  <div class="panel-heading text-center">{% trans 'Weak Accept (+0)' %}</div>
+		  <div class="panel-body text-center">{{ vote.weak_accept }}</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 panel-box">
+		<div class="panel panel-default">
+		  <div class="panel-heading text-center">{% trans 'Weak Reject (-0)' %}</div>
+		  <div class="panel-body text-center">{{ vote.weak_reject }}</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 panel-box">
+		<div class="panel panel-default">
+		  <div class="panel-heading text-center">{% trans 'Strong Reject (-1)' %}</div>
+		  <div class="panel-body text-center">{{ vote.strong_reject }}</div>
+		</div>
+	</div>
+</div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs reviews-tabs js-hash-tabs" role="tablist">
+	<li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
+	<li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
+	{% if review_stage == 2 and proposals_with_verdict %}
+		<li role="presentation"><a href="#verdicted" aria-controls="verdicted" role="tab" data-toggle="tab">{% trans 'Talk Proposals With Decision' %} ({{ proposals_with_verdict|length }})</a></li>
+	{% endif %}
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="unreviewed">
+		<div class="talk-proposals proposals">
+		{% if object_list %}
+		  {% include 'reviews/_includes/proposal_table.html' with proposals=object_list verdict=False %}
+		{% else %}
+		  <p>{% blocktrans %}You have reviewed all talk proposals.{% endblocktrans %}</p>
+		{% endif %}
+		</div>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="reviewed">
+		<div class="talk-proposals proposals">
+		{% if reviews %}
+		  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews show_all_comments=True %}
+		{% else %}
+		  <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
+		{% endif %}
+		</div>
+	</div>
+	{% if review_stage == 2 and proposals_with_verdict %}
+	<div role="tabpanel" class="tab-pane" id="verdicted">
+		<div class="talk-proposals proposals">
+		  {% include 'reviews/_includes/proposal_table.html' with proposals=proposals_with_verdict verdict=True %}
+		</div>
+	</div>
+	{% endif %}
+</div>
+
+{% endblock main-content %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/reviews/talk_proposal_list.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}

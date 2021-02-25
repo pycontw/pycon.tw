@@ -1,0 +1,197 @@
+{% extends 'contents/_base/registration.html' %}
+
+{% block title %}Ticket Info{% endblock title %}
+{% block page_title %}<h1>Conference Ticket</h1>{% endblock page_title %}
+
+
+{% block content %}
+
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/sprints' as events_sprints_url %}
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url%}
+
+<div class="pycon-list">
+	<div class="pycon-list-item text-theme-highlight">
+		Ticket sale begins at
+		<span class="text-emphasize">April 18 18:03 CST</span>.
+	</div>
+		<div class="pycon-list-item text-theme-highlight">
+		Early bird tickets are limited; sale ends at <span class="text-emphasize text-theme-highlight">May 1 18:04 CST</span>.
+        Early bird student tickets are sold out. Fifty extra student tickets will be released at the same time.
+	</div>
+		<div class="pycon-list-item text-theme-highlight">
+		Sale of all tickets ends at <span class="text-emphasize text-theme-highlight">May 13 18:05 CST</span>.
+	</div>
+</div>
+
+<h2>Ticket Info</h2>
+
+<p>The following tickets provide access to the main conference during June 3 and 5. Please refer to their own pages for tutorial and sprint registrations.</p>
+
+<div class="table-responsive">
+	<table class="table table-pycon">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Early bird rate</th>
+				<th>Regular rate</th>
+				<th>Link</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td class="text-emphasize">Regular</td>
+			<td class="text-emphasize text-theme-highlight">4,490</td>
+			<td>4,990</td>
+			<td>
+				<a class="btn btn-action text-emphasize" href="http://pycontw.kktix.cc/events/pycontw2016-regular" target="_blank" rel="noopener">
+					Buy
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				<p>
+					You will receive an <a href="https://drive.google.com/file/d/0B3KccB4PeNEOcmk5WktscGJpRG8/view">electronic receipt</a> for this ticket when you check in at PyCon.
+				</p>
+				<p>
+					Please provide your company’s name and Unified Business Number, or <em>N/A</em> if reimbursement is not required.
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text-emphasize">Discount</td>
+			<td class="text-theme-highlight text-emphasize">2,190</td>
+			<td>2,690</td>
+			<td>
+				<a class="btn btn-action text-emphasize" href="http://pycontw.kktix.cc/events/pycontw2016-ocf" target="_blank" rel="noopener">
+					Buy
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				Your invoice will be donated directly to the <a href="http://ocf.tw/">Open Culture Foundation</a>. A discount is thus offered to appreciate you donation.
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text-emphasize">Students</td>
+			<td class="text-emphasize text-theme-highlight">1,390</td>
+			<td>1,790</td>
+			<td>
+				<a class="btn btn-action text-emphasize" href="http://pycontw.kktix.cc/events/pycontw2016-student" target="_blank" rel="noopener">
+					Buy
+				</a>
+			</td>
+			<td class="table-pycon__description">
+				<p>Your invoice will be donated directly to the <a href="http://ocf.tw/">Open Culture Foundation</a>. A discount is thus offered to appreciate you donation.</p>
+
+				<p>This discount is for students only. You are required to provide identification of eligibility (student ID card) when checking in at the conference.</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="text-emphasize">Speakers</td>
+			<td class="text-emphasize text-theme-highlight" colspan="2">2,190</td>
+			<td>
+				<a class="btn btn-action text-emphasize" href="http://pycontw.kktix.cc/events/pycontw2016-speaker" target="_blank" rel="noopener">
+					Buy
+				</a>
+
+			</td>
+			<td class="table-pycon__description">
+				For speakers. Please enter your invitation code when purchasing the ticket.
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>
+
+<ul>
+	<li>All price settled in New Taiwan Dollars (NTD); NTD 32.41 = USD 1.00 (Apr. 14, 2016).</li>
+	<li>Company Unified Business Number will be present on receipts for those who require reimbursement.</li>
+	<li>If you require English receipts, or have any questions regarding ticket sales, please email to <em>organizers[at]pycon.tw</em>.</li>
+</ul>
+
+<h2>Notices</h2>
+<h4>1. T-shirt Size</h4>
+
+<p>Every registered participant will receive a souvenir T-shirt. Please check your size according to the following table.</p>
+
+<div class="table-responsive">
+	<table class="table table-pycon">
+		<thead>
+			<tr>
+				<th class="text-emphasize">Size</th>
+				<th>XS</th>
+				<th>S</th>
+				<th>M</th>
+				<th>L</th>
+				<th>XL</th>
+				<th>2XL</th>
+				<th>3XL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-emphasize">Height (cm)</td>
+				<td>Under 150</td>
+				<td>150–160</td>
+				<td>160–170</td>
+				<td>170–180</td>
+				<td colspan="3">Above 180</td>
+			</tr>
+			<tr>
+				<td class="text-emphasize">Chest Width</td>
+				<td>44.5</td>
+				<td>47</td>
+				<td>49.5</td>
+				<td>52</td>
+				<td>54.5</td>
+				<td>57</td>
+				<td>59.5</td>
+			</tr>
+			<tr>
+				<td class="text-emphasize">Back Length from HPS</td>
+				<td>62</td>
+				<td>63.5</td>
+				<td>66</td>
+				<td>68.5</td>
+				<td>71</td>
+				<td>73.5</td>
+				<td>73.5</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>2. Everybody Pays</h4>
+<p>PyCon Taiwan 2016 is a paid conference. Everybody, including staffs and speakers, pays for attending (see <a href="http://jessenoller.com/blog/2011/05/25/pycon-everybody-pays" target="_blank" rel="noopener">PyCon: Everybody Pays</a>).</p>
+
+<h4>3. Ways To Pay for Tickets</h4>
+<p>You can pay through credit card, PayPal, or ATM transfer.</p>
+
+<h4>4. No Refund</h4>
+<p>There will be no refund once registration is confirmed.</p>
+
+<h4>5. Financial Aid Plan</h4>
+<p>You can contact us for a financial aid if you feel any difficulty affording a ticket and/or other expanses attending the conference. You will need to purchase the ticket before applying. More info about applications can be found <a href="{{ reg_financial_aid_url }}">here</a>.</p>
+
+<h4>6. Dietary Requirements</h4>
+<p>We provide lunch during the conference. Please let us know if you have any specific dietary requirements.</p>
+
+<h4>7. Contact Information Accuracy</h4>
+<p>Please provide valid means of contact (phone number and email) on purchase, so that we will be able to inform you of any important notices.</p>
+
+<h4>8. Ticketing Consultancy</h4>
+<p>Please kindly email to <em>organizers[at]pycon.tw</em> if you have any questions regarding ticket information. We will reply you as soon as possible!
+</p>
+
+<h4>9. Tutorials and PyDay</h4>
+<p>You will be able to verify information about tutorials (annoucement pending), <a href="{{ events_sprints_url }}">sprints</a>, and <a href="{{ events_pyday_url }}">PyDay</a>.</p>
+
+<hr>
+
+<p>We look forward to your participation at PyCon Taiwan 2016!</p>
+
+{% endblock %}

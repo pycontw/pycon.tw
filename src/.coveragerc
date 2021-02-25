@@ -1,0 +1,19 @@
+[report]
+omit =
+    conftest.py
+    manage.py
+    pycontw2016/settings/*
+    pycontw2016/wsgi.py
+    pycontw2016/logger.py
+    */tests.py
+    */tests/*
+    */migrations/*
+
+exclude_lines =
+    def __repr__
+    def __str__
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+
+show_missing = true

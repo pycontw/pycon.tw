@@ -1,0 +1,115 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n static %}
+{% load compress crispy_forms_tags %}
+{% load review_tools %}
+
+
+{% block title %}{% blocktrans with proposal_title=proposal.title %}{{ proposal_title }} | Reviews{% endblocktrans %}
+{% endblock title %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/vendors/simplemde.min.css' %}">
+{% endblock extra_css %}
+
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='review' %}
+{% endblock dashboard_tablist %}
+
+
+{% block main-content %}
+
+
+{# Current proposal. #}
+
+<h3 class="dashboard-header"><span class="header-title">{{ proposal.title }}</span></h3>
+
+<div class="dashboard-body reviewed-proposal-view">
+	{% if review_stage == 2 %}
+	<h4>{% trans 'Submitter' %}</h4>
+	<div class="simple-field">{{ proposal.submitter.speaker_name }}</div>
+	{% endif %}
+
+	<h4>{% trans 'Category' %}</h4>
+	<div class="simple-field">
+		{% line_diff proposal.get_category_display snapshot.get_category_display %}
+	</div>
+
+	<h4>{% trans 'Duration' %}</h4>
+	<div class="simple-field">
+		{% line_diff proposal.get_duration_display snapshot.get_duration_display %}
+	</div>
+
+	<h4>{% trans 'Language' %}</h4>
+	<div class="simple-field">
+		{% line_diff proposal.get_language_display snapshot.get_language_display %}
+	</div>
+
+	<h4>{% trans 'Abstract' %}</h4>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.abstract snapshot=snapshot.abstract field="abstract" only %}
+
+	<h4>{% trans 'Python level' %}</h4>
+	<div class="simple-field">
+		{% line_diff proposal.get_python_level_display snapshot.get_python_level_display %}
+	</div>
+
+	<h4>{% trans 'Objective' %}</h4>
+	{% include 'reviews/_includes/review_proposal_text_field.html' with current=proposal.objective snapshot=snapshot.objective field="objective" only %}
+
+	{% if proposal.detailed_description %}
+	<h4>{% trans 'Detailed description' %}</h4>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.detailed_description snapshot=snapshot.detailed_description field='detailed_description' only %}
+	{% endif %}
+
+	{% if proposal.outline %}
+	<h4>{% trans 'Outline' %}</h4>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.outline snapshot=snapshot.outline field='outline' only %}
+	{% endif %}
+
+	{% if review_stage == 2 and proposal.supplementary %}
+	<h4>{% trans 'Supplementary' %}</h4>
+	{% include 'reviews/_includes/review_proposal_markdown_field.html' with current=proposal.supplementary snapshot=snapshot.supplementary field='supplementary' only %}
+	{% endif %}
+</div>
+
+
+{# Review table. #}
+
+{% if review_stage == 2 and other_reviews %}
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Previous Reviews by Other Reviewers' %}</span></h3>
+<div class="dashboard-body">
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=other_reviews show_all_comments=True %}
+</div>
+{% endif %}
+
+{% if review_stage == 2 and my_reviews %}
+<h3 class="dashboard-header"><span class="header-title">{% trans 'My Previous Reviews' %}</span></h3>
+<div class="dashboard-body">
+	{% include 'reviews/_includes/previous_review_table.html' with reviews=my_reviews show_all_comments=True %}
+</div>
+{% endif %}
+
+{% if proposal.accepted == None %}
+
+<h3 class="dashboard-header"><span class="header-title">{% trans 'Review Proposal' %}</span></h3>
+<form method="POST">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-primary btn-lg">
+		{% trans 'Submit' %}
+	</button>
+</form>
+{% endif %}
+
+{% endblock main-content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/vendors/simplemde.min.js' %}"></script>
+{% compress js %}
+<script src="{% static 'js/reviews/review_form.js' %}"></script>
+{% endcompress %}
+{% endblock extra_js %}

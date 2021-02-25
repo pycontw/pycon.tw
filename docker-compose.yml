@@ -1,0 +1,44 @@
+version: "3"
+services:
+  web:
+    build: .
+    container_name: pycontw-2021
+    hostname: pycontw-2021
+    entrypoint: ""
+    command:
+      # Hacky script for quick demonstration purpose
+      - bash
+      - -c
+      - |
+        set -o errexit -o nounset -o pipefail
+        python3 manage.py compilemessages
+        python3 manage.py migrate
+        python3 manage.py collectstatic --no-input
+
+        exec uwsgi --http-socket :8000 \
+          --master \
+          --hook-master-start "unix_signal:15 gracefully_kill_them_all" \
+          --static-map /static=assets \
+          --static-map /media=media \
+          --mount /2021=pycontw2016/wsgi.py \
+          --manage-script-name \
+          --offload-threads 2
+    restart: always
+    environment:
+      # Save us from having to type `--setting=pycontw2016.settings.production`
+      DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2021
+      SCRIPT_NAME: /2021
+      SECRET_KEY: ${SECRET_KEY}
+      DATABASE_URL: ${DATABASE_URL}
+      EMAIL_URL: ${EMAIL_URL}
+      DSN_URL: ${DSN_URL}
+      GTM_TRACK_ID: ${GTM_TRACK_ID}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
+
+    volumes:
+      - ${MEDIA_ROOT}:/usr/local/app/src/media
+
+networks:
+  default:
+    external:
+      name: pycontw-net

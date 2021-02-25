@@ -1,0 +1,46 @@
+@mixin button($angle, $color1, $color2) {
+	@include gradient-hover($angle, $color1, $color2);
+	@include link($white, $white);
+	@include no-underline;
+	font-weight: 500;
+	margin: auto;
+
+	@include on-desktop {
+		max-width: 336px;
+	}
+}
+
+@mixin outline-button($color) {
+	@include button(0, $color, $color);
+	border: 2px solid $color;
+	background: transparent;
+	color: $color;
+}
+
+@mixin bgimg-hover-button($color, $image, $text-color:$white){
+	@include link($text-color, $text-color);
+	@include no-underline;
+	margin: auto;
+	font-weight: 300;
+	background-color: $color;
+	&:hover{
+		background-image: $image;
+	}
+	@include on-desktop {
+		max-width: 480px;
+	}
+}
+
+.button-round {
+	@include text($text-font-size);
+	@include text-light;
+	@include no-underline;
+	
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+}

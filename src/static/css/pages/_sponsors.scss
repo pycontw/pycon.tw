@@ -1,0 +1,164 @@
+$sponsor-img-height: 75px;
+
+@mixin sponsor-decoration($color, $size: 20px) {
+    border:5px solid $color;
+    &:before {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        content: "";
+        width: $size;
+        height: $size;
+        background-color: $color;
+        border-radius: 100%;
+    }
+}
+
+.sponsor-page {
+    background-color: $sponsor-bg;
+
+    .content-container {
+        max-width: none;
+    }
+}
+
+.sponsor-section {
+    @include make-row();
+    margin-bottom: 20px;
+    &__title {
+        @include make-md-column(12);
+        color: #fff;
+    }
+}
+
+
+.sponsor-wrapper {
+    &--partner, &--platinum, &--gold {
+        @include make-xs-column(12);
+    }
+    &--silver {
+        //@include make-xs-column(12);
+        @include make-md-column(6);
+    }
+
+    &--special, &--bronze {
+        @include make-md-column(4);
+    }
+}
+
+.sponsor {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+
+    &__logo-wrapper {
+        @include make-xs-column(12);
+        height: $sponsor-img-height;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        a {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+
+    &__logo {
+        max-height: $sponsor-img-height;
+
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 20px;
+        color: $theme-color;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        line-height: 22px;
+        overflow: auto;
+    }
+
+    &.sponsor--platinum, &.sponsor--partner{
+        @include sponsor-decoration($sponsor-platinum-color, 30px);
+        background: white;
+        background:
+            linear-gradient(135deg, $sponsor-platinum-color 0px, white 0) top left,
+            linear-gradient(225deg, $sponsor-platinum-color 30px, white 0) top right,
+            linear-gradient(-45deg, $sponsor-platinum-color 30px, white 0) bottom right,
+            linear-gradient(45deg, $sponsor-platinum-color 30px, white 0) bottom left;
+        background-size: 51% 51%;
+        background-repeat: no-repeat;
+    }
+
+    &.sponsor--gold {
+        @include sponsor-decoration($sponsor-gold-color);
+    }
+
+    &.sponsor--silver {
+        @include sponsor-decoration($sponsor-silver-color);
+        max-height: 500px;
+    }
+
+    &.sponsor--bronze {
+        @include sponsor-decoration($sponsor-bronze-color);
+    }
+
+    // intro height
+    &.sponsor--partner &__intro {
+        height: 150px;
+    }
+
+    &.sponsor--platinum &__intro {
+        height: 200px;
+    }
+
+    &.sponsor--silver &__intro {
+        height: 200px;
+    }
+
+    &.sponsor--bronze &__intro {
+        height: 250px;
+    }
+
+    &.sponsor--special &__intro {
+        height: 235px;
+    }
+}
+
+.sponsor.sponsor--gold,
+.sponsor.sponsor--platinum,
+.sponsor.sponsor--partner{
+    @include clearfix();
+    .sponsor {
+        &__logo-wrapper {
+            @include make-md-column(4);
+        }
+
+        &__title, &__intro {
+            @include make-md-column(8);
+        }
+    }
+}
+
+
+@media (min-width: $screen-md-min) {
+    .sponsor.sponsor--gold,
+    .sponsor.sponsor--platinum,
+    .sponsor.sponsor--partner{
+        .sponsor__logo-wrapper {
+            height: 200px;
+        }
+
+        .sponsor__title {
+            text-align: left;
+        }
+    }
+}
+
+

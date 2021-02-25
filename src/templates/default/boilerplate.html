@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+{% load compress static %}
+<!--[if lt IE 7]>      <html lang="{{ LANGUAGE_CODE }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="{{ LANGUAGE_CODE }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="{{ LANGUAGE_CODE }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ LANGUAGE_CODE }}" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-32x32.png' %}">
+	{% block meta_og %}
+		<meta property="og:description" content="" />
+		<meta property="og:image" content="http://{{ request.get_host }}{% static 'images/PyConTW2016_facebook_shareImage.png' %}" />
+	{% endblock %}
+	{% compress css %}
+	<link rel="stylesheet" type="text/x-scss" href="{% static 'css/main.scss' %}">
+	{% endcompress %}
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/earlyaccess/notosanstc.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	{% block extra_css %}{% endblock %}
+	<!--[if lt IE 9]>
+	<script src="{% static 'js/html5shiv.min.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+	<![endif]-->
+	<!-- justfont webfont -->
+	<!-- <script src="{% static 'js/vendors/justfont.js' %}"></script> -->
+	{% block titletag %}<title>{% block title %}{% endblock %} | PyCon Taiwan</title>{% endblock %}
+</head>
+
+
+<body class="{% block body-class %}{% endblock %}">
+
+	{% block body %}
+		{% block nav %}{% include '_includes/nav/front_nav.html' %}{% endblock %}
+		<div class="container">{% block content %}It works!{% endblock %}</div>
+		{% block extra_body %}{% endblock extra_body %}
+	{% endblock %}
+
+	{% compress js %}
+	<script src="{% static 'js/vendors/jquery.js' %}"></script>
+	<script src="{% static 'js/vendors/bootstrap.js' %}"></script>
+	<script src="{% static 'js/base/csrf_token.js' %}"></script>
+	<script src="{% static 'js/base/base.js' %}"></script>
+	{% block scripts %}{% endblock %}
+	{% endcompress %}
+	{% block extra_js %}{% endblock %}
+
+</body>
+</html>

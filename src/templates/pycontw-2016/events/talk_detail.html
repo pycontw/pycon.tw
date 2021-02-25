@@ -1,0 +1,87 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n staticfiles %}
+
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block page_title %}<h1>{{ object.title }}</h1>{% endblock page_title %}
+
+
+{% block content_page_class %}{{ block.super }} talk-detail-content{% endblock content_page_class %}
+
+
+{% block content %}
+
+<div class="proposal-content">
+	<h3>{% trans 'Language' %}</h3>
+	<div>{{ object.get_language_display }}</div>
+
+	<h3>{% trans 'Category' %}</h3>
+	<div>{{ object.get_category_display }}</div>
+
+	<h3>{% trans 'Python Level' %}</h3>
+	<div>{{ object.get_python_level_display }}</div>
+
+	{% if object.slide_link %}
+	<h3>{% trans 'Slides Link' %}</h3>
+	<div><a href="{{ object.slide_link }}">{{ object.slide_link }}</a></div>
+	{% endif %}
+
+	<h2>{% trans 'Abstract' %}</h2>
+	<div>{{ object.abstract|linebreaks }}</div>
+
+    {% if object.detailed_description %}
+	    <h2>{% trans 'Description' %}</h2>
+	    <div class="editor-readonly">
+	    	<div class="editor-preview">{{ object.detailed_description }}</div>
+	    </div>
+    {% endif %}
+
+</div>
+
+<div id="speaker-content" class="speaker-content">
+	{% for info in object.speakers %}
+	{% with user=info.user %}
+	<h3>
+		{{ user.speaker_name }}
+		<span class="speaker-social">
+			{% if user.github_id %}
+			<a href="{{ user.github_profile_url }}" target="_blank">
+				<span class="fa fa-github" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+			{% if user.twitter_id %}
+			<a href="{{ user.twitter_profile_url }}" target="_blank">
+				<span class="fa fa-twitter" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+			{% if user.facebook_profile_url %}
+			<a href="{{ user.facebook_profile_url }}" target="_blank">
+				<span class="fa fa-facebook" aria-hidden="true"></span>
+			</a>
+			{% endif %}
+		</span>
+	</h3>
+	<div class="row">
+		{% if user.photo %}
+		<div class="col-sm-4 col-sm-push-8 speaker-photo-contain">
+			<img class="speaker-photo" src="{{ user.photo.url }}">
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">{{ user.bio|linebreaks }}</div>
+		{% else %}
+		<div class="col-xs-12">{{ user.bio|linebreaks }}</div>
+		{% endif %}
+	</div>
+	{% endwith %}
+	{% endfor %}
+</div>
+
+{% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script src="{% static 'js/vendors/simplemde.min.js' %}"></script>
+<script src="{% static 'js/tools/simplemde-setup.js' %}"></script>
+{% endblock extra_js %}

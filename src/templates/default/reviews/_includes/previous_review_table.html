@@ -1,0 +1,37 @@
+{% load i18n %}
+
+<table class="table existing-review-table">
+	<thead>
+		<tr>
+			<th>{% trans 'Stage' %}</th>
+			<th>{% trans 'Reviewer ID' %}</th>
+			<th>{% trans 'Vote' %}</th>
+			<th class="comment-display">{% trans 'Comments' %}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for review in reviews %}
+		<tr>
+			<td width="1">{{ review.stage }}</td>
+			<td width="1">{{ review.reviewer.as_hash }}</td>
+			<td width="1" class="vote-display">{{ review.get_vote_display }}</td>
+			<td class="comment-display">
+				{% if show_all_comments or review.is_comment_visible_to_submitter %}
+				{{ review.comment|linebreaks }}
+				{% elif review.comment %}
+				<span class="text-muted">{% trans '(Comment redacted by the reviewer or organizers.)' %}</span>
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	{% if not reviews %}
+	<tfoot>
+		<tr>
+			<td colspan="3" class="text-danger">
+				<em>{% trans 'No reviews yet.' %}</em>
+			</td>
+		</tr>
+	</tfoot>
+	{% endif %}
+</table>

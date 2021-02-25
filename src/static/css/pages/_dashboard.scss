@@ -1,0 +1,62 @@
+.dashboard{
+    .navbar-site{
+      background-color: #502526; //2020
+      .navbar-brand{
+          padding-right: 5px;
+      }
+    }
+}
+
+.dashboard-header {
+    padding: 20px 33px;
+    min-height: 65px;
+    margin: 0;
+    border-bottom: 1px solid #f8f8f8;
+    font-size:21px;
+    font-weight: 500;
+    color:#4A4A4A;
+    line-height:24px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    > .header__title {
+        margin-right: 24px;
+        color: #502526;
+    }
+
+    .btn {
+        font-size: 13px;
+        margin-top: -3px;
+        padding: 8px 12px 6px;
+    }
+}
+
+.dashboard-alert {
+  padding: 10px 33px 0px 33px;
+}
+
+.agreement-form {
+    font-size: 16px;
+
+    blockquote {
+        margin: 40px 0;
+
+        p {
+            line-height: 1.5;
+            margin: 20px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        h2 {
+            margin-top: 35px;
+        }
+    }
+}

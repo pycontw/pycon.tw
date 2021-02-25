@@ -1,0 +1,134 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load static %}
+
+{% block title %}Events Overview{% endblock %}
+{% block page_title %}<h1>Events Overview</h1>{% endblock %}
+
+{% block content %}
+{% url 'page' path='events/tutorials' as events_tutorials_url %}
+{% url 'page' path='events/sprints' as events_sprint_url %}
+{% url 'page' path='events/pyday' as events_pyday_url %}
+{% url 'page' path='events/keynotes' as events_keynote_url %}
+{% url 'page' path='events/talks' as events_talk_url %}
+{% url 'page' path='events/bof' as events_bof_url %}
+<p>
+	Events at PyCon Taiwan 2016 can be divided into two: Those during the
+	conference (June 3–5), and those out of it (tutorials, sprints, and PyDay).
+</p>
+
+<h2>Out of the Conference</h2>
+<h3>Tutorials</h3>
+<p>
+	Tutorials are paid events that will be held 1 to 3 weeks before PyCon TW.
+	They are held to help participants better understand talks during the
+	conference, or get their hands on more Python applications. A tutorial can be
+	either full-day (6 hours) or half-day (3 hours), with content selected by
+	public proposal-calling.
+</p>
+<p>
+	We offer both tutorials for Python newcomers who have never tried Python
+	before, and also for specific topics such as controlling Raspberry Pi, data
+	analysis, etc. Tickets for tutorials are sold separately from the conference.
+	Make sure you complete registration for both events.
+</p>
+<p>
+	More information about tutorials can be found on the
+	<a href="{{ events_tutorials_url }}">Tutorial</a> page.
+</p>
+
+<h3>Sprints</h3>
+<p>
+	Two sprints will be held out of the conference. Open source project managers
+	will bring their projects, and explain their issues and unresolved problems.
+	After the introduction of all projects, you can pick the topics you are
+	interested in, and join their work. It is a good chance to dig deep into
+	projects or fields you care.
+</p>
+<p>
+	Attendees are welcomed to bring their own project and find like-minded
+	partners. It is also a great opportunity to join open source projects if you
+	doesn’t have you own project idea, or are just too shy to shout out on the
+	mailing list and public chat channels.
+</p>
+<p>
+	There is also a separate schedule of workshops in April for attendees who
+	want to learn more about specific topics.
+</p>
+<p>
+	More information about sprints can be found on the
+	<a href="{{ events_sprint_url }}">Sprint</a> page.
+</p>
+
+<h3>PyDay</h3>
+<p>
+	PyDay is an activity for newcomers held by PyCon TW and top univerisities in
+	Taiwan. We invite keynote speakers from the conference to share their
+	experience throughout sessions in this event. Book a PyDay ticket if you
+	want to talk with keynote speakers after PyCon TW.
+</p>
+<p>
+	More information about the PyDay can be found on the
+	<a href="{{ events_pyday_url }}">PyDay</a> page.
+</p>
+
+<h2>During the Conference (June 3–5)</h2>
+<h3>Keynotes</h3>
+<p>
+	There will be 5 speakers giving keynote speeches during the three-day
+	conference, and we also offer live broadcast. Speakers of keynotes are
+	globally outstanding people from their domains. They will share their
+	experiences and imagination of the future.
+</p>
+<p>
+	More information about keynotes can be found on the
+	<a href="{{ events_keynote_url }}">Keynote</a> page.
+</p>
+
+<h3>Talks</h3>
+<p>
+	The three conference days are packed with talks about Python by speakers
+	from Taiwan and around the world. The talks will be either 25- or 45-minute
+	long. Three tracks of talks will be delivered simultaneously, all with
+	different topics and difficulties. We suggest you to make a schedule
+	beforehand, and choose what you want ot listen based on your interests. Many
+	people take notes on the program schedule before the meeting so they don’t
+	run to wrong places.
+</p>
+<p>
+	The program schedule will be announced by the end of April. List of accepted
+	talks can be found on the <a href="{{ events_talk_url }}">Talks</a> page.
+</p>
+
+<h3>Lightning Talks</h3>
+<p>
+	Lightning talks are full of excitement. Every speaker has to finish the
+	presentation within 5 minutes—no exceptions! The stage is cruel, but is a
+	great source of stimulation; inspiring and interesting presentations are
+	given every year. Topics are widely accepted. This year, onsite registration
+	is available. Bring your creativeness and share with us!
+</p>
+
+<h3>Job Fair</h3>
+<p>
+	This is the job fair specifically for Python engineer. There will be no
+	session for the job fair, but the stage is opened for all companies to
+	present. Feel free to interact with the exhibitors.
+</p>
+
+<h3>BoF (Birds of a Feather)</h3>
+<p>
+	BoF is derived from the proverb “Birds of a feather flock together.” A BoF
+	session means an informal meeting at conferences, where the attendees group
+	together based on a shared interest and carry out discussions without any
+	pre-planned agenda. You are welcome to raise any subject you like. Let us
+	build up the PyCon TW night as bustling as night markets in Taiwan! There
+	will also be many eye-popping stage performances at the same time. (You are
+	welcomed to perform on the stage as well!)
+</p>
+<p>
+	More information about the BoF can be found on the
+	<a href="{{ events_bof_url }}">BoF</a> page.
+</p>
+
+{% endblock content %}

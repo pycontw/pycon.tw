@@ -1,0 +1,59 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static compress %}
+
+{% block title %}{% trans 'Community Topic Track' %}{% endblock title %}
+
+{% block meta_description %}{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks
+	with specific topics and
+	package them into the same session. We'll leave the conference rooms and go to characteristic cafes, exhibition
+	spaces, and even monuments so that the attendees and speakers can interact with each other more comfortably and
+	closely.{% endblocktrans %}{% endblock meta_description %}
+
+
+{% block content %}
+
+	<section class="pill-title">
+		<h1>{% trans 'Community Topic Track' %}</h1>
+	</section>
+
+	<p>{% blocktrans trimmed %}The community track is a new event in PyCon TW. We choose the talks with specific topics
+		and package them into the
+		same session. We'll leave the conference rooms and go to characteristic cafes, exhibition spaces, and even monuments
+		so that the attendees and speakers can interact with each other more comfortably and closely.{% endblocktrans %}</p>
+
+	<ul>
+		<li class="event-info">
+			<b>{% trans 'Event Time' %}</b><br/>
+			2020/09/06 13:40
+		</li>
+		<li class="event-info">
+			<b>{% trans 'Event Info' %}</b><br/>
+			{% trans 'Physical Meetup' %}
+		</li>
+		<li class="event-info">
+			<b>{% trans 'Host' %}</b><br/>
+			{% trans 'Python Community Leader' %}
+		</li>
+	</ul>
+
+	<h2 style="margin-top: 90px;">{% trans 'Overview' %}</h2>
+	{% include 'events/_includes/community-track-overview.html' %}
+
+	<h2>{% trans 'Topics &amp; Venues' %}</h2>
+	{% include 'events/_includes/community-track.html' %}
+
+	<h2>{% trans 'traffic' %}</h2>
+	{% include 'events/_includes/community-track-traffic.html' %}
+
+	<script>
+		window.TOKEN = '{{ token|default:'' }}';
+	</script>
+{% endblock content %}
+
+
+{% block extra_js %}
+	{% compress js %}
+		<script type="module" src="{% static 'pycontw-2021/scripts/token.js' %}"></script>
+	{% endcompress %}
+{% endblock %}

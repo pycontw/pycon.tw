@@ -1,0 +1,159 @@
+.content-container {
+    @include roboto-normal();
+    max-width: 944px;
+}
+.content-page-title {
+
+    margin-top: -20px;
+    margin-bottom: 38px;
+    background-color: $theme-color;
+    color: white;
+
+    h1 {
+        padding: 52px 0 22px;
+        font-size: 40px;
+    }
+}
+
+.content-page-content {
+
+    max-width: 944px;
+    min-height: 600px;
+    margin-bottom: 50px;
+
+    font-size: 16px;
+
+    line-height: 24px;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #000;
+        margin: 20px 0 12px 0;
+    }
+
+    h2 {
+        margin-top: 53px;
+        color: $theme-color;
+    }
+
+    p {
+        margin: 0 0 12px;
+    }
+
+    > ul {
+        margin: 0 0 20px;
+        padding-left: 5px;
+        list-style: none;
+
+        > li {
+
+            display: table-row;
+
+            &::before {
+                content: "・";
+                display: table-cell;
+                padding-right: 15px;
+            }
+
+            > p {
+
+                display: table-cell;
+                margin-left: 34px;
+                clear: both;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.staff-list {
+
+    font-weight: 400;
+
+    .staff-person {
+
+        &[data-title]::before {
+            content: attr(data-title) ": ";
+            font-weight: 300;
+        }
+
+        &::after {
+            content: attr(data-tags);
+            margin-left: 1ex;
+            font-size: 90%;
+            font-style: italic;
+            font-weight: 300;
+        }
+    }
+}
+
+.content-page-footer {
+
+    display: table;
+    height: 116px;
+    width: 100%;
+    margin-top: 74px;
+
+    background-color: #F9FCFF;
+    background-image: url(static('images/Logo_pycontw16_blue_footer.png'));
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .content-page-footer-content {
+
+        display: table-cell;
+        vertical-align: middle;
+
+        .copyright {
+            margin-left: 67px;
+            font-size: 16px;
+            color: $theme-color;
+        }
+        .social {
+            margin-right: 67px;
+        }
+    }
+}
+
+.talk-detail-content {
+
+    .proposal-content {
+        margin-bottom: 5em;
+    }
+
+    .speaker-content {
+
+        border-top: 1px solid $gray-lighterish;
+
+        .speaker-social {
+
+            margin-left: 1em;
+            font-size: 80%;
+
+            > a {
+                margin-left: 5px;
+                color: $gray;
+
+                &:hover, &:focus {
+                    color: $gray-light;
+                }
+            }
+        }
+
+        .speaker-photo-contain {
+
+            text-align: center;
+
+            .speaker-photo {
+                width: 100%;
+                max-width: 260px;
+
+                @media (max-width: $screen-xs-max) {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+    }
+}

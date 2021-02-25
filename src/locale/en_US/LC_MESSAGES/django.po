@@ -1,0 +1,4430 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Dorian Gray <t_true@mail.ru>, 2017
+# Jason <chairco@gmail.com>, 2017
+# james_lin <james0910238727@gmail.com>, 2018
+# Michelle <flywindy2002@gmail.com>, 2016
+# Tom Chen <ctchen@gmail.com>, 2020
+# Tzu-ping Chung <uranusjr@gmail.com>, 2015-2019
+msgid ""
+msgstr ""
+"Project-Id-Version: PyCon TW\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-05 21:14+0800\n"
+"PO-Revision-Date: 2020-03-17 11:46+0000\n"
+"Last-Translator: Tom Chen <ctchen@gmail.com>\n"
+"Language-Team: English (United States) (http://www.transifex.com/pycon-"
+"taiwan/pycon-tw/language/en_US/)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ccip/views.py:206
+msgctxt "CCIP event type"
+msgid "event"
+msgstr "event"
+
+#: ccip/views.py:214
+msgctxt "CCIP event type"
+msgid "break"
+msgstr "break"
+
+#: ccip/views.py:222
+msgctxt "CCIP event type"
+msgid "keynote"
+msgstr "keynote"
+
+#: ccip/views.py:228
+msgctxt "CCIP event type"
+msgid "sponsored"
+msgstr "sponsored"
+
+#: ccip/views.py:236
+msgctxt "CCIP event type"
+msgid "tutorial"
+msgstr "tutorial"
+
+#: ccip/views.py:248
+msgctxt "CCIP event type"
+msgid "talk"
+msgstr "talk"
+
+#: ccip/views.py:261
+msgctxt "CCIP event type"
+msgid "community track"
+msgstr "community track"
+
+#: core/admin.py:15
+msgid "Current"
+msgstr ""
+
+#: core/admin.py:16 core/models.py:104 events/models.py:130
+#: events/templatetags/events.py:21
+msgid "Other"
+msgstr "Other"
+
+#: core/admin.py:17
+msgid "All"
+msgstr ""
+
+#: core/forms.py:10
+#, python-brace-format
+msgid "{model_name_cap} creation requires a request object."
+msgstr "{model_name_cap} creation requires a request object."
+
+#: core/models.py:66
+msgid "conference"
+msgstr "conference"
+
+#: core/models.py:79 events/models.py:166
+msgid "title"
+msgstr "title"
+
+#: core/models.py:84
+msgid "Application"
+msgstr "Application"
+
+#: core/models.py:85
+msgid "Best Practices & Patterns"
+msgstr "Best Practices & Patterns"
+
+#: core/models.py:86 ext2020/models.py:33
+#: templates/pycontw-2018/_includes/footer.html:12
+#: templates/pycontw-2019/_includes/footer.html:14
+#: templates/pycontw-2020/_includes/footer.html:15
+#: templates/pycontw-2021/_includes/footer.html:15
+msgid "Community"
+msgstr "Community"
+
+#: core/models.py:87
+msgid "Databases"
+msgstr "Databases"
+
+#: core/models.py:88
+msgid "Data Analysis"
+msgstr "Data Analysis"
+
+#: core/models.py:89
+msgid "Education"
+msgstr "Education"
+
+#: core/models.py:90
+msgid "Embedded Systems"
+msgstr "Embedded Systems"
+
+#: core/models.py:91
+msgid "FinTech"
+msgstr "FinTech"
+
+#: core/models.py:92
+msgid "Internet of Things"
+msgstr "Internet of Things"
+
+#: core/models.py:93
+msgid "Gaming"
+msgstr "Gaming"
+
+#: core/models.py:94 templates/default/_includes/proposal_example_modal.html:65
+msgid "Graphics"
+msgstr "Graphics"
+
+#: core/models.py:95
+msgid "Machine Learning"
+msgstr "Machine Learning"
+
+#: core/models.py:96
+msgid "Natural Language Processing"
+msgstr "Natural Language Processing"
+
+#: core/models.py:97
+msgid "Python Core (language, stdlib, etc.)"
+msgstr "Python Core (language, stdlib, etc.)"
+
+#: core/models.py:98
+msgid "Project Tooling"
+msgstr "Project Tooling"
+
+#: core/models.py:99
+msgid "Science"
+msgstr "Science"
+
+#: core/models.py:100
+msgid "Security"
+msgstr "Security"
+
+#: core/models.py:101
+msgid "Systems Administration"
+msgstr "Systems Administration"
+
+#: core/models.py:102
+msgid "Testing"
+msgstr "Testing"
+
+#: core/models.py:103
+msgid "Web Frameworks"
+msgstr "Web Frameworks"
+
+#: core/models.py:107
+msgid "category"
+msgstr "category"
+
+#: core/models.py:113
+msgid "English talk"
+msgstr "English talk"
+
+#: core/models.py:114
+msgid "Chinese talk w. English slides"
+msgstr "Chinese talk w. English slides"
+
+#: core/models.py:115
+msgid "Chinese talk w. Chinese slides"
+msgstr "Chinese talk w. Chinese slides"
+
+#: core/models.py:116
+msgid "Taiwanese Hokkien"
+msgstr "Taiwanese Hokkien"
+
+#: core/models.py:119
+msgid "language"
+msgstr "language"
+
+#: core/models.py:125
+msgid "abstract"
+msgstr "abstract"
+
+#: core/models.py:130
+#: templates/default/_includes/proposal_example_modal.html:43
+#: templates/pycontw-2018/events/schedule.html:28
+#: templates/pycontw-2019/events/schedule.html:28
+msgid "Novice"
+msgstr "Novice"
+
+#: core/models.py:131
+#: templates/default/_includes/proposal_example_modal.html:58
+#: templates/pycontw-2018/events/schedule.html:29
+#: templates/pycontw-2019/events/schedule.html:29
+msgid "Intermediate"
+msgstr "Intermediate"
+
+#: core/models.py:132 templates/pycontw-2018/events/schedule.html:30
+#: templates/pycontw-2019/events/schedule.html:30
+msgid "Experienced"
+msgstr "Experienced"
+
+#: core/models.py:135 templates/default/reviews/review_form.html:53
+msgid "Python level"
+msgstr "Python level"
+
+#: core/models.py:141
+msgid "detailed description"
+msgstr "detailed description"
+
+#: core/models.py:146 core/models.py:156 core/models.py:189
+#: proposals/models.py:267 reviews/models.py:122 reviews/models.py:137
+msgid "Yes"
+msgstr "Yes"
+
+#: core/models.py:147 core/models.py:157 core/models.py:190
+#: proposals/models.py:268 reviews/models.py:123 reviews/models.py:138
+msgid "No"
+msgstr "No"
+
+#: core/models.py:150
+msgid "recording policy"
+msgstr "recording policy"
+
+#: core/models.py:160
+msgid "referring policy"
+msgstr "referring policy"
+
+#: core/models.py:166
+msgid "slide link"
+msgstr "slide link"
+
+#: core/models.py:172
+msgid "slido embed link"
+msgstr "Slido embed link"
+
+#: core/models.py:178 events/models.py:375 ext2020/models.py:17
+msgid "created at"
+msgstr "created at"
+
+#: core/models.py:184
+msgid "last updated at"
+msgstr "last updated at"
+
+#: core/models.py:194
+msgid "remoting policy"
+msgstr "remote policy"
+
+#: events/admin.py:24
+msgid "time value"
+msgstr "time value"
+
+#: events/admin.py:98 events/models.py:146 ext2020/models.py:88
+msgid "begin time"
+msgstr "begin time"
+
+#: events/admin.py:104 events/models.py:155 ext2020/models.py:97
+msgid "end time"
+msgstr "end time"
+
+#: events/admin.py:126
+#: templates/default/users/_includes/dashboard_proposal_table.html:32
+msgid "Edit"
+msgstr "Edit"
+
+#: events/models.py:58
+msgid "value"
+msgstr "value"
+
+#: events/models.py:65
+msgid "time"
+msgstr "time"
+
+#: events/models.py:66
+msgid "times"
+msgstr "times"
+
+#: events/models.py:123
+msgid "All rooms"
+msgstr "All rooms"
+
+#: events/models.py:124 events/templatetags/events.py:20
+msgid "R1, R2, R3"
+msgstr "R1, R2, R3"
+
+# #: events/models.py:122
+# msgid "R0"
+# msgstr "R0"
+#: events/models.py:125 events/templatetags/events.py:15
+msgid "R1"
+msgstr "R1"
+
+#: events/models.py:126 events/templatetags/events.py:16
+msgid "R2"
+msgstr "R2"
+
+#: events/models.py:127 events/templatetags/events.py:17
+msgid "R3"
+msgstr "R3"
+
+# #: events/models.py:125
+# msgid "R4"
+# msgstr "R4"
+#: events/models.py:128 events/templatetags/events.py:18
+msgid "Multifunction room"
+msgstr "Multifunction room"
+
+#: events/models.py:129 events/templatetags/events.py:19
+msgid "Goodideas Studio"
+msgstr "Goodideas Studio"
+
+#: events/models.py:138
+msgid "location"
+msgstr "location"
+
+#: events/models.py:170
+msgid "is break event"
+msgstr "is break event"
+
+#: events/models.py:173
+msgid ""
+"Whether this event is displays as a break. A break can be visually "
+"distinguished from \"real\" conference sessions, such as keynotes, talks, "
+"etc."
+msgstr ""
+"Whether this event is displays as a break. A break can be visually "
+"distinguished from “real” conference sessions, such as keynotes, talks, etc."
+
+#: events/models.py:179
+msgid "event description"
+msgstr "event description"
+
+#: events/models.py:182
+msgid "link path"
+msgstr "link path"
+
+#: events/models.py:187
+msgid "custom event"
+msgstr "custom event"
+
+#: events/models.py:188
+msgid "custom events"
+msgstr "custom events"
+
+#: events/models.py:197 users/models.py:116
+msgid "speaker name"
+msgstr "speaker name"
+
+#: events/models.py:201 events/models.py:281
+msgid "slug"
+msgstr "slug"
+
+#: events/models.py:203
+#, python-brace-format
+msgid ""
+"This is used to link to the speaker's introduction on the Keynote page, e.g. "
+"'liang2' will link to '{link}#keynote-speaker-liang2'."
+msgstr ""
+"This is used to link to the speaker's introduction on the Keynote page, e.g. "
+"'liang2' will link to '{link}#keynote-speaker-liang2'."
+
+#: events/models.py:210 events/models.py:319 events/models.py:350
+msgid "is remote"
+msgstr "is remote"
+
+#: events/models.py:215
+msgid "keynote event"
+msgstr "keynote event"
+
+#: events/models.py:216
+msgid "keynote events"
+msgstr "keynote events"
+
+#: events/models.py:219
+#, python-brace-format
+msgid "Keynote: {speaker}"
+msgstr "Keynote: {speaker}"
+
+#: events/models.py:258 sponsors/models.py:80 sponsors/models.py:96
+msgid "sponsor"
+msgstr "sponsor"
+
+#: events/models.py:263 events/models.py:264
+#: templates/pycontw-2020/_includes/menu.html:104
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:33
+#: templates/pycontw-2021/contents/_default/events/job-listings.html:33
+msgid "Job Listings"
+msgstr "Job Listings"
+
+#: events/models.py:267
+#, python-brace-format
+msgid "Open Role of Sponsor: {sponsor}"
+msgstr "Open Role of Sponsor: {sponsor}"
+
+#: events/models.py:276
+msgid "host"
+msgstr "host"
+
+#: events/models.py:285
+msgid "sponsored event"
+msgstr "sponsored event"
+
+#: events/models.py:286
+msgid "sponsored events"
+msgstr "sponsored events"
+
+#: events/models.py:314 events/models.py:340 reviews/models.py:76
+#: reviews/models.py:197
+msgid "proposal"
+msgstr "proposal"
+
+#: events/models.py:326
+msgid "talk event"
+msgstr "talk event"
+
+#: events/models.py:327
+msgid "talk events"
+msgstr "talk events"
+
+#: events/models.py:345
+msgid "registration link"
+msgstr "registration link"
+
+#: events/models.py:357
+msgid "tutorial event"
+msgstr "tutorial event"
+
+#: events/models.py:358
+msgid "tutorial events"
+msgstr "tutorial events"
+
+#: events/models.py:372
+msgid "HTML"
+msgstr "HTML"
+
+#: events/models.py:380 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: templates/pycontw-2016/events/schedule.html:6
+#: templates/pycontw-2016/events/schedule.html:8
+#: templates/pycontw-2017/contents/_default/portal.html:16
+#: templates/pycontw-2017/events/schedule.html:6
+#: templates/pycontw-2017/events/schedule.html:17
+#: templates/pycontw-2018/_includes/menu.html:54
+#: templates/pycontw-2018/contents/_default/portal.html:17
+#: templates/pycontw-2018/events/schedule.html:6
+#: templates/pycontw-2018/events/schedule.html:20
+#: templates/pycontw-2019/_includes/menu.html:59
+#: templates/pycontw-2019/_includes/portal.html:4
+#: templates/pycontw-2019/events/schedule.html:6
+#: templates/pycontw-2019/events/schedule.html:20
+#: templates/pycontw-2020/_includes/menu.html:80
+#: templates/pycontw-2020/_includes/portal.html:4
+#: templates/pycontw-2020/events/schedule.html:6
+#: templates/pycontw-2020/events/schedule.html:21
+#: templates/pycontw-2021/_includes/portal.html:4
+#: templates/pycontw-2021/events/schedule.html:6
+#: templates/pycontw-2021/events/schedule.html:21
+msgid "Schedule"
+msgstr "Schedule"
+
+#: events/models.py:381
+msgid "Schedules"
+msgstr "Schedules"
+
+#: events/models.py:386
+msgid "Schedule created at {}"
+msgstr "Schedule created at {}"
+
+#: events/renderers.py:34
+msgid "Keynote"
+msgstr "Keynote"
+
+#: events/renderers.py:43
+msgid "EN Slides"
+msgstr "EN Slides"
+
+#: events/views.py:123
+msgid "New talk schedule generated successfully."
+msgstr "New talk schedule generated successfully."
+
+#: ext2020/models.py:14
+msgid "token"
+msgstr ""
+
+#: ext2020/models.py:15 users/models.py:164
+msgid "verified"
+msgstr "verified"
+
+#: ext2020/models.py:18
+msgid "verified at"
+msgstr "verified at"
+
+#: ext2020/models.py:21
+msgid "attendee"
+msgstr "attendee"
+
+#: ext2020/models.py:22
+msgid "attendees"
+msgstr "attendees"
+
+#: ext2020/models.py:29
+msgid "Venue Name"
+msgstr "Venue Name"
+
+#: ext2020/models.py:30
+msgid "Venue photo"
+msgstr "Venue photo"
+
+#: ext2020/models.py:32
+msgid "Venue Address"
+msgstr "Venue Address"
+
+#: ext2020/models.py:34
+msgid "Topic"
+msgstr "Topic"
+
+#: ext2020/models.py:36
+msgid "Capacity Limit"
+msgstr "Capacity Limit"
+
+#: ext2020/models.py:55
+msgid "community track venue"
+msgstr "community track venue"
+
+#: ext2020/models.py:56
+msgid "community track venues"
+msgstr "community track venues"
+
+#: ext2020/models.py:69
+msgid "community track choice"
+msgstr "community track choice"
+
+#: ext2020/models.py:70
+msgid "community track choices"
+msgstr "community track choices"
+
+#: ext2020/models.py:102
+msgid "community track event"
+msgstr "community track event"
+
+#: ext2020/models.py:103
+msgid "community track events"
+msgstr "community track events"
+
+#: ext2020/models.py:114
+msgid ""
+"You can only put either proposed_talk_event, sponsored_event or custom_event "
+"at once."
+msgstr ""
+
+#: ext2020/models.py:117
+msgid "You need to put proposed_talk_event sponsored_event, or custom_event."
+msgstr ""
+
+#: ext2020/views.py:68
+msgid ""
+"The token within the link is invalid. Please contact the administrator for "
+"further help."
+msgstr ""
+
+#: ext2020/views.py:73
+msgid ""
+"You can choose the track you'd like to go if you access this page from the "
+"preparation letter, or from the OPass app that is already bound with your "
+"KKTIX registration."
+msgstr ""
+
+#: proposals/forms/mixins.py:16
+#, python-brace-format
+msgid ""
+"Only authenticated user with complete speaker profile may create a "
+"{model_name}."
+msgstr ""
+"Only authenticated user with complete speaker profile may create a "
+"{model_name}."
+
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:157
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
+"the talk is about. If the talk assume some domain knowledge please state it "
+"here. If your talk is accepted, this will be displayed on both the website "
+"and the handbook. Should be one paragraph.</p>"
+msgstr ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
+"the talk is about. If the talk assume some domain knowledge please state it "
+"here. If your talk is accepted, this will be displayed on both the website "
+"and the handbook. Should be one paragraph.</p>"
+
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:166
+#, python-brace-format
+msgid ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href='{speaking_talk_url}' "
+"target='_blank'>How to Propose a Talk</a> page. Note that a proposal won't "
+"be more likely to be accepted because of being 'Novice' level. We may "
+"contact you to change the talk level when we find the content is too-hard or "
+"too-easy for the target audience."
+msgstr ""
+"The choice of talk level matters during the review process. More definition "
+"of talk level can be found at the <a href='{speaking_talk_url}' "
+"target='_blank'>How to Propose a Talk</a> page. Note that a proposal won't "
+"be more likely to be accepted because of being 'Novice' level. We may "
+"contact you to change the talk level when we find the content is too-hard or "
+"too-easy for the target audience."
+
+#: proposals/forms/mixins.py:66 proposals/forms/mixins.py:179
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
+"too lengthy to scare away reviewers or potential audience. A comfortable "
+"length is less than 2000 characters (or about 1200 Chinese characters). "
+"Since most reviewers may not understand the topic as deep as you do, "
+"including related links to the talk topic will help reviewers understand the "
+"proposal. Edit using <a href='http://daringfireball.net/projects/markdown/"
+"basics' target='_blank' rel='noopener'>Markdown</a>."
+msgstr ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
+"too lengthy to scare away reviewers or potential audience. A comfortable "
+"length is less than 2000 characters (or about 1200 Chinese characters). "
+"Since most reviewers may not understand the topic as deep as you do, "
+"including related links to the talk topic will help reviewers understand the "
+"proposal. Edit using <a href='http://daringfireball.net/projects/markdown/"
+"basics' target='_blank' rel='noopener'>Markdown</a>."
+
+#: proposals/forms/mixins.py:80 proposals/forms/mixins.py:193
+#, python-brace-format
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
+"release audio and video of your presentation. More information can be found "
+"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
+"page."
+msgstr ""
+"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
+"release audio and video of your presentation. More information can be found "
+"at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
+"page."
+
+#: proposals/forms/mixins.py:90 proposals/forms/mixins.py:203
+msgid ""
+"You can add your slide link near or after the conference day. Not required "
+"for review."
+msgstr ""
+"You can add your slide link near or after the conference day. Not required "
+"for review."
+
+#: proposals/forms/mixins.py:94
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to refer your talk "
+"proposal to local communities if your proposal did not get accepted."
+msgstr ""
+"Whether you agree to give permission to PyCon Taiwan to refer your talk "
+"proposal to local communities if your proposal did not get accepted."
+
+#: proposals/forms/mixins.py:99
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
+"audience for your talk? (Be specific, \"Python users\" is not a good "
+"answer). And what will the attendees get out of your talk? When they leave "
+"the room, what will they learn that they didn't know before? This is NOT "
+"made public and for REVIEW ONLY.</p>"
+msgstr ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
+"audience for your talk? (Be specific, \"Python users\" is not a good "
+"answer). And what will the attendees get out of your talk? When they leave "
+"the room, what will they learn that they didn't know before? This is NOT "
+"made public and for REVIEW ONLY.</p>"
+
+#: proposals/forms/mixins.py:109 proposals/forms/mixins.py:214
+msgid ""
+"Anything else you'd like the program committee to know when making their "
+"selection: your past speaking experience, community experience, etc. This is "
+"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
+"daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>."
+msgstr ""
+"Anything else you’d like the program committee to know when making their "
+"selection: your past speaking experience, community experience, etc. This is "
+"NOT made public and for REVIEW ONLY. Edit using <a href='http://"
+"daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>."
+
+#: proposals/forms/mixins.py:117
+msgid ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
+"arranged. It is highly recommended to attach the estimated time length for "
+"each sections in the talk. Talks in favor of 45min should have a fallback "
+"plan about how to shrink the content into a 30min one. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
+msgstr ""
+"<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
+"data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
+"arranged. It is highly recommended to attach the estimated time length for "
+"each sections in the talk. Talks in favor of 45min should have a fallback "
+"plan about how to shrink the content into a 30min one. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
+
+#: proposals/forms/mixins.py:129
+msgid ""
+"Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
+"is still raging this August?"
+msgstr ""
+"Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
+"is still raging this August?"
+
+#: proposals/forms/mixins.py:134
+msgid "Is it your first time to be the speaker of PyCon TW?"
+msgstr "Is it your first time to be the speaker of PyCon TW?"
+
+#: proposals/forms/mixins.py:154
+msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
+msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
+
+#: proposals/forms/mixins.py:207
+msgid ""
+"Who is the intended audience for your talk? (Be specific, \"Python users\" "
+"is not a good answer). And what will the attendees get out of your talk? "
+"When they leave the room, what will they learn that they didn't know before? "
+"This is NOT made public and for REVIEW ONLY."
+msgstr ""
+"Who is the intended audience for your talk? (Be specific, “Python users” is "
+"not a good answer). And what will the attendees get out of your talk? When "
+"they leave the room, what will they learn that they didn't know before? This "
+"is NOT made public and for REVIEW ONLY."
+
+#: proposals/forms/mixins.py:222
+msgid ""
+"How the tutorial will be arranged. You should enumerate over each section in "
+"your talk and attach each section with the estimated time length. Edit using "
+"<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
+msgstr ""
+"How the tutorial will be arranged. You should enumerate over each section in "
+"your talk and attach each section with the estimated time length. Edit using "
+"<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
+"rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
+
+#: proposals/forms/mixins.py:230
+msgid ""
+"Whether you agree to deliver the tutorial remotely if the epidemic "
+"(coronavirus) is still raging this August?"
+msgstr ""
+"Whether you agree to deliver the tutorial remotely if the epidemic "
+"(coronavirus) is still raging this August?"
+
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:87
+#: proposals/models.py:262 proposals/models.py:316
+msgid "duration"
+msgstr "duration"
+
+#: proposals/forms/speakers.py:19
+msgid "speaker email"
+msgstr "speaker email"
+
+#: proposals/forms/speakers.py:21
+msgid ""
+"The speaker should have a registered account, and have completed both email "
+"validation and the speaker profile."
+msgstr ""
+"The speaker should have a registered account, and have completed both email "
+"validation and the speaker profile."
+
+#: proposals/forms/speakers.py:29
+#, python-brace-format
+msgid ""
+"Only authenticated user with complete speaker profile may create an "
+"{model_name}."
+msgstr ""
+"Only authenticated user with complete speaker profile may create an "
+"{model_name}."
+
+#: proposals/forms/speakers.py:33
+msgid "Additional speaker creation requires a proposal instance."
+msgstr "Additional speaker creation requires a proposal instance."
+
+#: proposals/forms/speakers.py:36
+msgid "User can only add additional speakers to owned proposals."
+msgstr "User can only add additional speakers to owned proposals."
+
+#: proposals/forms/speakers.py:39
+msgid "This user is already a speaker for the proposal."
+msgstr "This user is already a speaker for the proposal."
+
+#: proposals/forms/speakers.py:41
+msgid "No valid speaker found with your selection."
+msgstr "No valid speaker found with your selection."
+
+#: proposals/models.py:54
+msgid "Proposal author"
+msgstr "Proposal author"
+
+#: proposals/models.py:61 users/models.py:196 users/models.py:307
+msgid "user"
+msgstr "user"
+
+#: proposals/models.py:67
+msgid "proposal model type"
+msgstr "proposal model type"
+
+#: proposals/models.py:71
+msgid "proposal ID"
+msgstr "proposal ID"
+
+#: proposals/models.py:79
+msgid "Pending"
+msgstr "Pending"
+
+#: proposals/models.py:80 proposals/models.py:159
+msgid "Accepted"
+msgstr "Accepted"
+
+#: proposals/models.py:81
+msgid "Declined"
+msgstr "Declined"
+
+#: proposals/models.py:90 proposals/models.py:152
+msgid "cancelled"
+msgstr "cancelled"
+
+#: proposals/models.py:98
+msgid "additional speaker"
+msgstr "additional speaker"
+
+#: proposals/models.py:99
+msgid "additional speakers"
+msgstr "additional speakers"
+
+#: proposals/models.py:131
+msgid "submitter"
+msgstr "submitter"
+
+#: proposals/models.py:136
+msgid "outline"
+msgstr "outline"
+
+#: proposals/models.py:141
+msgid "objective"
+msgstr "objective"
+
+#: proposals/models.py:146
+msgid "supplementary"
+msgstr "supplementary"
+
+#: proposals/models.py:160
+msgid "Rejected"
+msgstr "Rejected"
+
+#: proposals/models.py:163
+msgid "accepted"
+msgstr "accepted"
+
+#: proposals/models.py:177
+msgid "labels"
+msgstr ""
+
+#: proposals/models.py:272
+msgid "first time speaker"
+msgstr "first time speaker"
+
+#: proposals/models.py:277
+msgid "talk proposal"
+msgstr "talk proposal"
+
+#: proposals/models.py:278
+msgid "talk proposals"
+msgstr "talk proposals"
+
+#: proposals/models.py:312
+msgid "1.5hr"
+msgstr "1.5hr"
+
+#: proposals/models.py:323
+msgid "tutorial proposal"
+msgstr "tutorial proposal"
+
+#: proposals/models.py:324
+msgid "tutorial proposals"
+msgstr "tutorial proposals"
+
+#: proposals/utils.py:4
+msgctxt "speaker name default separator"
+msgid ", "
+msgstr ", "
+
+#: proposals/utils.py:5
+msgctxt "speaker name last separator"
+msgid " and "
+msgstr " and "
+
+#: proposals/views/cancel.py:36
+#, python-brace-format
+msgid "Talk proposal <strong>{title}</strong> withdrawn."
+msgstr "Talk proposal <strong>{title}</strong> withdrawn."
+
+#: proposals/views/cancel.py:40
+#, python-brace-format
+msgid "Talk proposal <strong>{title}</strong> reactivated."
+msgstr "Talk proposal <strong>{title}</strong> reactivated."
+
+#: proposals/views/cancel.py:58
+#, python-brace-format
+msgid "Tutorial proposal <strong>{title}</strong> withdrawn."
+msgstr "Tutorial proposal <strong>{title}</strong> withdrawn."
+
+#: proposals/views/cancel.py:62
+#, python-brace-format
+msgid "Tutorial proposal <strong>{title}</strong> reactivated."
+msgstr "Tutorial proposal <strong>{title}</strong> reactivated."
+
+#: proposals/views/create.py:42
+#, python-brace-format
+msgid "Talk proposal <strong>{title}</strong> created."
+msgstr "Talk proposal <strong>{title}</strong> created."
+
+#: proposals/views/create.py:52
+#, python-brace-format
+msgid "Tutorial proposal <strong>{title}</strong> created."
+msgstr "Tutorial proposal <strong>{title}</strong> created."
+
+#: proposals/views/mixins.py:52 proposals/views/mixins.py:108
+msgid "Abstract Example"
+msgstr "Abstract Example"
+
+#: proposals/views/mixins.py:53
+msgid ""
+"For modern human beings, the data in computers are essentially an external "
+"place for storing our memories. No matter they're photographs of your daily "
+"life, music, videos, or even some data produced for work, school, research, "
+"they're all being stored in computers. As the time goes by, the folders in "
+"computers fall into a state of chaos. Or in another scenario, you're managed "
+"to manipulate a series of files, but ended up with changing them one by one "
+"using File Explorer. Well, is there any better methodology? This talk is "
+"going to introduce how you can \"programmatically\" manipulate directories "
+"and files, using Python and it's built-in module, pathlib. We'll look at "
+"examples from simple ones to complicated ones, and eventually combine "
+"looping and sorting techniques in Python, to conquer a complicated file re-"
+"categorize problem."
+msgstr ""
+"For modern human beings, the data in computers are essentially an external "
+"place for storing our memories. No matter they’re photographs of your daily "
+"life, music, videos, or even some data produced for work, school, research, "
+"they're all being stored in computers. As the time goes by, the folders in "
+"computers fall into a state of chaos. Or in another scenario, you’ve managed "
+"to manipulate a series of files, but ended up with changing them one by one "
+"using File Explorer. Well, is there any better methodology? This talk is "
+"going to introduce how you can “programmatically” manipulate directories and "
+"files, using Python and its built-in module, pathlib. We'll look at examples "
+"from simple ones to complicated ones, and eventually combine looping and "
+"sorting techniques in Python, to conquer a complicated file re-categorize "
+"problem."
+
+#: proposals/views/mixins.py:71 proposals/views/mixins.py:124
+msgid "Objective Example"
+msgstr "Objective Example"
+
+#: proposals/views/mixins.py:72
+msgid ""
+"Targeted at Python beginners trying to solve some daily life problems with "
+"programming. When I started to learn programming, I didn't know where I "
+"could use it. It sounded weird at first, but since I had only limited "
+"ability at the beginning, things like web development or data analysis were "
+"too hard for me to step into.\n"
+"\n"
+"But I found that managing data inside a computer is a very practical "
+"starting point; its results are easy to see, but it stillallows you to solve "
+"some problems that are rather difficult to do by hand. This kind of step-by-"
+"step learning process should be pretty helpful for beginners."
+msgstr ""
+"Targeted at Python beginners trying to solve some daily life problems with "
+"programming. When I started to learn programming, I didn’t know where I "
+"could use it. It sounded weird at first, but since I had only limited "
+"ability at the beginning, things like web development or data analysis were "
+"too hard for me to step into.\n"
+"\n"
+"But I found that managing data inside a computer is a very practical "
+"starting point; its results are easy to see, but it stillallows you to solve "
+"some problems that are rather difficult to do by hand. This kind of step-by-"
+"step learning process should be pretty helpful for beginners."
+
+#: proposals/views/mixins.py:86 proposals/views/mixins.py:138
+msgid "Description Example"
+msgstr "Description Example"
+
+#: proposals/views/mixins.py:87
+msgid ""
+"In the final example sharing, we'll try to move a series of images marked "
+"with date and file name, into \"YEAR/MONTH\" patterned directories that "
+"already have data in it, and also rename each image according to the "
+"chronological order."
+msgstr ""
+"In the final example sharing, we’ll try to move a series of images marked "
+"with date and file name, into “YEAR/MONTH” patterned directories that "
+"already have data in it, and also rename each image according to the "
+"chronological order."
+
+#: proposals/views/mixins.py:93 proposals/views/mixins.py:148
+msgid "Outline Example"
+msgstr "Outline Example"
+
+#: proposals/views/mixins.py:94
+msgid ""
+"1. Common situations in data clean-up  [5 min]\n"
+"2. Introduction to pathlib's design  [10 min]\n"
+"  - Using Path objects\n"
+"  - Exploring directory structure: Path.iterdir(), .glob()\n"
+"  - Using Path for changing paths\n"
+"3. Integrate for-loop and sorting  [5 min]\n"
+"  - sorted(key=) usage\n"
+"  - Integrate enumerated, zip to simultaneously process multiple related "
+"files\n"
+"4. Example sharing  [5 min]\n"
+msgstr ""
+"1. Common situations in data clean-up  [5 min]\n"
+"2. Introduction to pathlib's design  [10 min]\n"
+"  - Using Path objects\n"
+"  - Exploring directory structure: Path.iterdir(), .glob()\n"
+"  - Using Path for changing paths\n"
+"3. Integrate for-loop and sorting  [5 min]\n"
+"  - sorted(key=) usage\n"
+"  - Integrate enumerated, zip to simultaneously process multiple related "
+"files\n"
+"4. Example sharing  [5 min]\n"
+
+#: proposals/views/mixins.py:109
+msgid ""
+"Nowadays, photographs always contain the information about the state where "
+"the photo was taken, they're called EXIF. Sometimes when building a blog "
+"about travel notes or nature photography, you'll have to put information of "
+"some EXIF fields under the pictures of the article, such as camera model, "
+"focal, aperture, shutter, GPS, etc. Sometimes even show information as a "
+"watermark on the image. In this talk, we're going to build a workflow on "
+"automated EXIF processing. First introduce the usage of exiftool, and "
+"integrate Pillow to reach the effect of watermark. Finally, we'll take a "
+"blog framework, Pelican, as an example, to build a Pelican plugin that "
+"automatically processes all the photographs in the article."
+msgstr ""
+"Nowadays, photographs always contain the information about the state where "
+"the photo was taken, they’re called EXIF. Sometimes when building a blog "
+"about travel notes or nature photography, you'll have to put information of "
+"some EXIF fields under the pictures of the article, such as camera model, "
+"focal, aperture, shutter, GPS, etc. Sometimes even show information as a "
+"watermark on the image. In this talk, we’re going to build a workflow on "
+"automated EXIF processing. First introduce the usage of exiftool, and "
+"integrate Pillow to reach the effect of watermark. Finally, we'll take a "
+"blog framework, Pelican, as an example, to build a Pelican plugin that "
+"automatically processes all the photographs in the article."
+
+#: proposals/views/mixins.py:125
+msgid ""
+"Targeted at people who'd like to process a batch of images, and do external "
+"processings using their EXIFs. And use Pelican blog framework to concretely "
+"demonstrate the integration scenario.\n"
+"\n"
+"While I was writing blog posts, I found out that manipulations involving "
+"processing images can take a huge amount of time. Thus hope the audiences "
+"will get an idea of how they can build a automated photograph processing "
+"workflow, and focus more on the article itself. Hope that the audiences will "
+"understand how to process EXIF and additional processing with Python, and "
+"also the framework of Pelican plugins."
+msgstr ""
+"Targeted at people who’d like to process a batch of images, and do external "
+"processings using their EXIFs. And use Pelican blog framework to concretely "
+"demonstrate the integration scenario.\n"
+"\n"
+"While I was writing blog posts, I found out that manipulations involving "
+"processing images can take a huge amount of time. Thus hope the audiences "
+"will get an idea of how they can build a automated photograph processing "
+"workflow, and focus more on the article itself. Hope that the audiences will "
+"understand how to process EXIF and additional processing with Python, and "
+"also the framework of Pelican plugins."
+
+#: proposals/views/mixins.py:139
+msgid ""
+"### Third-party libraries used:\n"
+"  - [exiftool] A Perl tool for analyzing EXIF of images\n"
+"  - [Pillow] A Python tool for image processing, formerly known as PIL "
+"(Python Image Library)\n"
+"  - [Pelican] A static site generator in Python\n"
+"\n"
+"[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n"
+"[Pillow]: http://python-pillow.github.io/\n"
+"[Pelican]: http://blog.getpelican.com/\n"
+msgstr ""
+"### Third-party libraries used:\n"
+"\n"
+"  - [exiftool] A Perl tool for analyzing EXIF of images\n"
+"  - [Pillow] A Python tool for image processing, formerly known as PIL "
+"(Python Image Library)\n"
+"  - [Pelican] A static site generator in Python\n"
+"\n"
+"[exiftool]: http://www.sno.phy.queensu.ca/~phil/exiftool/\n"
+"[Pillow]: http://python-pillow.github.io/\n"
+"[Pelican]: http://blog.getpelican.com/\n"
+
+#: proposals/views/mixins.py:149
+msgid ""
+"1. Intro to EXIF and exiftool [5min]\n"
+"2. Usage of Pillow, use it to add watermark [5min]\n"
+"  - Selection of fonts\n"
+"  - Consistency of layout\n"
+"3. Automation [5min]\n"
+"  - Using stdlib to make a batch processing workflow\n"
+"  - Integrating joblib or multiprocessing to parallelize\n"
+"4. Example (using Pelican) [5min]\n"
+"  - Intro to Pelican's plugin system (integration between template tags and "
+"signals)\n"
+"  - Final resulting work\n"
+"5. Q&A [5min]\n"
+msgstr ""
+"1. Intro to EXIF and exiftool [5min]\n"
+"2. Usage of Pillow, use it to add watermark [5min]\n"
+"  - Selection of fonts\n"
+"  - Consistency of layout\n"
+"3. Automation [5min]\n"
+"  - Using stdlib to make a batch processing workflow\n"
+"  - Integrating joblib or multiprocessing to parallelize\n"
+"4. Example (using Pelican) [5min]\n"
+"  - Intro to Pelican’s plugin system (integration between template tags and "
+"signals)\n"
+"  - Final resulting work\n"
+"5. Q&A [5min]\n"
+
+#: proposals/views/update.py:61
+#, python-brace-format
+msgid "Talk proposal <strong>{title}</strong> updated."
+msgstr "Talk proposal <strong>{title}</strong> updated."
+
+#: proposals/views/update.py:70
+#, python-brace-format
+msgid "Tutorial proposal <strong>{title}</strong> updated."
+msgstr "Tutorial proposal <strong>{title}</strong> updated."
+
+#: pycontw2016/settings/base.py:300
+msgid "PyCon Taiwan 2016"
+msgstr "PyCon Taiwan 2016"
+
+#: pycontw2016/settings/base.py:301 templates/pycontw-2017/index.html:6
+msgid "PyCon Taiwan 2017"
+msgstr "PyCon Taiwan 2017"
+
+#: pycontw2016/settings/base.py:302 templates/pycontw-2018/index.html:14
+msgid "PyCon Taiwan 2018"
+msgstr "PyCon Taiwan 2018"
+
+#: pycontw2016/settings/base.py:303 templates/pycontw-2019/index.html:14
+msgid "PyCon Taiwan 2019"
+msgstr "PyCon Taiwan 2019"
+
+#: pycontw2016/settings/base.py:304 templates/pycontw-2020/index.html:14
+msgid "PyCon Taiwan 2020"
+msgstr "PyCon Taiwan 2020"
+
+#: pycontw2016/settings/base.py:305 templates/pycontw-2021/index.html:14
+msgid "PyCon Taiwan 2021"
+msgstr "PyCon Taiwan 2021"
+
+#: pycontw2016/settings/base.py:318
+#: pycontw2016/settings/production/pycontw2016.py:16
+#: pycontw2016/settings/production/pycontw2021.py:14
+#: pycontw2016/settings/testing/pycontw2021.py:11
+msgid "No preference"
+msgstr "No preference"
+
+#: pycontw2016/settings/base.py:319
+#: pycontw2016/settings/production/pycontw2021.py:15
+#: pycontw2016/settings/testing/pycontw2021.py:12
+msgid "Prefer 15min"
+msgstr "Prefer 15min"
+
+#: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/production/pycontw2021.py:16
+#: pycontw2016/settings/testing/pycontw2021.py:13
+msgid "Prefer 30min"
+msgstr "Prefer 30min"
+
+#: pycontw2016/settings/base.py:324
+#: pycontw2016/settings/production/pycontw2016.py:22
+#: templates/pycontw-2016/events/schedule.html:42
+msgid "Day 1"
+msgstr "Day 1"
+
+#: pycontw2016/settings/base.py:325
+#: pycontw2016/settings/production/pycontw2016.py:23
+#: templates/pycontw-2016/events/schedule.html:45
+msgid "Day 2"
+msgstr "Day 2"
+
+#: pycontw2016/settings/production/pycontw2016.py:17
+msgid "Prefer 25min"
+msgstr "Prefer 25min"
+
+#: pycontw2016/settings/production/pycontw2016.py:18
+#: pycontw2016/settings/production/pycontw2021.py:17
+#: pycontw2016/settings/testing/pycontw2021.py:14
+msgid "Prefer 45min"
+msgstr "Prefer 45min"
+
+#: pycontw2016/settings/production/pycontw2016.py:24
+#: templates/pycontw-2016/events/schedule.html:48
+msgid "Day 3"
+msgstr "Day 3"
+
+#: reviews/admin.py:51
+msgid "Key"
+msgstr "Key"
+
+#: reviews/admin.py:53
+msgid "Value"
+msgstr "Value"
+
+#: reviews/admin.py:68
+msgid "dumped data"
+msgstr "dumped data"
+
+#: reviews/forms.py:14
+#, python-brace-format
+msgid "The current user is invalid to create a {model_name}."
+msgstr "The current user is invalid to create a {model_name}."
+
+#: reviews/forms.py:17
+#, python-brace-format
+msgid "{model_name_cap} creation requires a proposal object."
+msgstr "{model_name_cap} creation requires a proposal object."
+
+#: reviews/forms.py:49
+#, python-brace-format
+msgid "Could not review proposal {proposal}."
+msgstr "Could not review proposal {proposal}."
+
+#: reviews/models.py:66
+msgid "reviewer"
+msgstr "reviewer"
+
+#: reviews/models.py:71 reviews/models.py:202
+msgid "stage"
+msgstr "stage"
+
+#: reviews/models.py:90
+msgid "+1 (strong accept)"
+msgstr "+1 (strong accept)"
+
+#: reviews/models.py:91
+msgid "+0 (weak accept)"
+msgstr "+0 (weak accept)"
+
+#: reviews/models.py:92
+msgid "-0 (weak reject)"
+msgstr "–0 (weak reject)"
+
+#: reviews/models.py:93
+msgid "-1 (strong reject)"
+msgstr "–1 (strong reject)"
+
+#: reviews/models.py:102
+msgid "vote"
+msgstr "vote"
+
+#: reviews/models.py:104
+msgid ""
+"Your vote to accept or reject this talk. More information about the scoring "
+"and acceptance criteria can be found at the GitBook <a href=\"https://"
+"pycontw.github.io/reviewer-guidebook\" target=\"_blank\">Review Guideline</"
+"a>."
+msgstr ""
+"Your vote to accept or reject this talk. More information about the scoring "
+"and acceptance criteria can be found at the GitBook <a href=\"https://"
+"pycontw.github.io/reviewer-guidebook\" target=\"_blank\">Review Guideline</"
+"a>."
+
+#: reviews/models.py:113
+msgid "comment"
+msgstr "comment"
+
+#: reviews/models.py:115
+msgid ""
+"Comments to this proposal. This may be available for other reviewers in "
+"later review stages, and you can choose whether or not to disclose it to the "
+"proposal's submitter."
+msgstr ""
+"Comments to this proposal. This may be available for other reviewers in "
+"later review stages, and you can choose whether or not to disclose it to the "
+"proposal's submitter."
+
+#: reviews/models.py:128
+msgid "discloses comment to proposal submitter"
+msgstr "discloses comment to proposal submitter"
+
+#: reviews/models.py:130
+msgid ""
+"Whether the proposal submitter can read you comments. We will include your "
+"comments in the proposal acceptance/rejection notice sent to the submitter "
+"if you allow us to."
+msgstr ""
+"Whether the proposal submitter can read you comments. We will include your "
+"comments in the proposal acceptance/rejection notice sent to the submitter "
+"if you allow us to."
+
+#: reviews/models.py:143
+msgid "is appropriate"
+msgstr "is appropriate"
+
+#: reviews/models.py:145
+msgid ""
+"Administrators can use this field to hide a review from submitters, even if "
+"the reviewer enables disclosure. The review may be shown to the submitter "
+"only if this is set to True."
+msgstr ""
+"Administrators can use this field to hide a review from submitters, even if "
+"the reviewer enables disclosure. The review may be shown to the submitter "
+"only if this is set to True."
+
+#: reviews/models.py:153
+msgid "note"
+msgstr "note"
+
+#: reviews/models.py:155
+msgid ""
+"Personal notes about this proposal. You can use this field to record "
+"anything you like during the review process. We promise to never disclose "
+"them to anyone."
+msgstr ""
+"Personal notes about this proposal. You can use this field to record "
+"anything you like during the review process. We promise to never disclose "
+"them to anyone."
+
+#: reviews/models.py:163
+msgid "updated"
+msgstr "updated"
+
+#: reviews/models.py:168
+msgid "review"
+msgstr "review"
+
+#: reviews/models.py:169
+msgid "reviews"
+msgstr "reviews"
+
+#: reviews/models.py:174
+#, python-brace-format
+msgid "Review {proposal} by {reviewer}: {vote}"
+msgstr "Review {proposal} by {reviewer}: {vote}"
+
+#: reviews/models.py:206
+msgid "dumped JSON"
+msgstr "dumped JSON"
+
+#: reviews/models.py:210
+msgid "dumped at"
+msgstr "dumped at"
+
+#: reviews/models.py:215
+msgid "talk proposal snapshot"
+msgstr "talk proposal snapshot"
+
+#: reviews/models.py:216
+msgid "talk proposal snapshots"
+msgstr "talk proposal snapshots"
+
+#: reviews/models.py:220
+#, python-brace-format
+msgid "Stage {stage} dump for {proposal}"
+msgstr "Stage {stage} dump for {proposal}"
+
+#: sponsors/models.py:19
+msgid "name"
+msgstr "name"
+
+#: sponsors/models.py:23
+msgid "website URL"
+msgstr "website URL"
+
+#: sponsors/models.py:27
+msgid "introduction"
+msgstr "introduction"
+
+#: sponsors/models.py:30
+msgid "logo (SVG)"
+msgstr "logo (SVG)"
+
+#: sponsors/models.py:33
+msgid ""
+"Vector format of the logo, in SVG. This takes precedence to the raster "
+"format, if available."
+msgstr ""
+"Vector format of the logo, in SVG. This takes precedence to the raster "
+"format, if available."
+
+#: sponsors/models.py:38
+msgid "logo (image)"
+msgstr "logo (image)"
+
+#: sponsors/models.py:42
+msgid ""
+"Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
+"SVG file is not available."
+msgstr ""
+"Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
+"SVG file is not available."
+
+#: sponsors/models.py:60
+msgid "platinum"
+msgstr "platinum"
+
+#: sponsors/models.py:61
+msgid "gold"
+msgstr "gold"
+
+#: sponsors/models.py:62
+msgid "silver"
+msgstr "silver"
+
+#: sponsors/models.py:63
+msgid "bronze"
+msgstr "bronze"
+
+#: sponsors/models.py:64
+msgid "special"
+msgstr "special"
+
+#: sponsors/models.py:65
+msgid "organizer"
+msgstr "organizer"
+
+#: sponsors/models.py:66
+msgid "co-organizer"
+msgstr "co-organizer"
+
+#: sponsors/models.py:75
+msgid "level"
+msgstr "level"
+
+#: sponsors/models.py:81
+msgid "sponsors"
+msgstr "sponsors"
+
+#: sponsors/models.py:101
+msgid "open role name"
+msgstr "open role name"
+
+#: sponsors/models.py:106
+msgid "open role descsription"
+msgstr "open role description"
+
+#: sponsors/models.py:109
+msgid "open role URL"
+msgstr "open role URL"
+
+#: sponsors/models.py:114
+msgid "open role"
+msgstr "open role"
+
+#: sponsors/models.py:115
+msgid "open Roles"
+msgstr "open Roles"
+
+#: templates/default/_includes/character_counter_template.html:4
+msgid "Text unit count: "
+msgstr "Text unit count: "
+
+#: templates/default/_includes/character_counter_template.html:4
+msgid "(Not available without JavaScript)"
+msgstr "(Not available without JavaScript)"
+
+#: templates/default/_includes/character_counter_template.html:5
+msgid ""
+"This value is used to estimate the size of text in our materials. It counts "
+"East Asian wide characters (e.g. Chinese) as two units because they take "
+"more space."
+msgstr ""
+"This value is used to estimate the size of text in our materials. It counts "
+"East Asian wide characters (e.g. Chinese) as two units because they take "
+"more space."
+
+#: templates/default/_includes/dashboard_tablist.html:6
+msgid "Proposals"
+msgstr "Proposals"
+
+#: templates/default/_includes/dashboard_tablist.html:10
+#: templates/default/users/user_profile_update.html:14
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+#: templates/default/_includes/dashboard_tablist.html:13
+msgid "Change Password"
+msgstr "Change Password"
+
+#: templates/default/_includes/dashboard_tablist.html:19
+#: templates/default/_includes/dashboard_tablist.html:21
+#: templates/default/proposals/_proposal_update.html:31
+msgid "Reviews"
+msgstr "Reviews"
+
+#: templates/default/_includes/nav/dashboard_nav.html:10
+msgid "Log out"
+msgstr "Log out"
+
+#: templates/default/_includes/nav/nav_base.html:8
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: templates/default/_includes/nav/nav_base.html:71
+msgid "Change"
+msgstr "Change"
+
+#: templates/default/_includes/proposal_example_modal.html:35
+#: templates/default/reviews/review_form.html:50
+#: templates/pycontw-2016/events/sponsored_event_detail.html:31
+#: templates/pycontw-2016/events/talk_detail.html:31
+#: templates/pycontw-2018/events/talk_detail.html:46
+#: templates/pycontw-2019/events/talk_detail.html:48
+#: templates/pycontw-2019/events/tutorial_detail.html:47
+#: templates/pycontw-2020/events/talk_detail.html:68
+#: templates/pycontw-2020/events/tutorial_detail.html:54
+#: templates/pycontw-2021/events/talk_detail.html:68
+#: templates/pycontw-2021/events/tutorial_detail.html:54
+msgid "Abstract"
+msgstr "Abstract"
+
+#: templates/default/_includes/proposal_example_modal.html:36
+#: templates/default/reviews/review_form.html:58
+msgid "Objective"
+msgstr "Objective"
+
+#: templates/default/_includes/proposal_example_modal.html:37
+#: templates/default/reviews/review_form.html:62
+msgid "Detailed description"
+msgstr "Detailed description"
+
+#: templates/default/_includes/proposal_example_modal.html:38
+#: templates/default/reviews/review_form.html:67
+msgid "Outline"
+msgstr "Outline"
+
+#: templates/default/_includes/proposal_example_modal.html:44
+msgid ""
+"If your proposed target is novice topic, the following is an example of an "
+"novice proposal that you can use for your reference."
+msgstr ""
+"If your proposed target is novice topic, the following is an example of an "
+"novice proposal that you can use for your reference."
+
+#: templates/default/_includes/proposal_example_modal.html:46
+#: templates/default/_includes/proposal_example_modal.html:61
+#: templates/default/reviews/_includes/proposal_table.html:20
+#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
+#: templates/default/users/_includes/dashboard_proposal_table.html:6
+msgid "Title"
+msgstr "Title"
+
+#: templates/default/_includes/proposal_example_modal.html:47
+msgid "Making Management of Computer Data Easier With Python"
+msgstr "Making Management of Computer Data Easier With Python"
+
+#: templates/default/_includes/proposal_example_modal.html:49
+#: templates/default/_includes/proposal_example_modal.html:64
+#: templates/default/reviews/review_form.html:35
+#: templates/pycontw-2016/events/sponsored_event_detail.html:20
+#: templates/pycontw-2016/events/talk_detail.html:20
+msgid "Category"
+msgstr "Category"
+
+#: templates/default/_includes/proposal_example_modal.html:50
+#: templates/default/_includes/proposal_example_modal.html:67
+#: templates/default/reviews/review_form.html:40
+msgid "Duration"
+msgstr "Duration"
+
+#: templates/default/_includes/proposal_example_modal.html:52
+#: templates/default/_includes/proposal_example_modal.html:69
+#: templates/default/reviews/review_form.html:45
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:7
+#: templates/default/users/_includes/dashboard_proposal_table.html:8
+#: templates/pycontw-2016/events/sponsored_event_detail.html:17
+#: templates/pycontw-2016/events/talk_detail.html:17
+msgid "Language"
+msgstr "Language"
+
+#: templates/default/_includes/proposal_example_modal.html:59
+msgid ""
+"If your proposed target is intermediate topic, the following is an example "
+"of an interimediate proposal that you can use for your reference."
+msgstr ""
+"If your proposed target is intermediate topic, the following is an example "
+"of an interimediate proposal that you can use for your reference."
+
+#: templates/default/_includes/proposal_example_modal.html:62
+msgid "Automated Processing of Blog Photographs"
+msgstr "Automated Processing of Blog Photographs"
+
+#: templates/default/_includes/talk_proposal_alert.html:6
+#, python-format
+msgid ""
+"Please review the <a href=\"%(howto_link)s\" target=\"_blank\">How to "
+"Propose a Talk</a> page."
+msgstr ""
+"Please review the <a href=\"%(howto_link)s\" target=\"_blank\">How to "
+"Propose a Talk</a> page."
+
+#: templates/default/dashboard_base.html:6
+#: templates/pycontw-2016/_includes/nav/front_nav.html:82
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: templates/default/dashboard_base.html:15
+#, python-format
+msgid "Hi %(name)s, welcome!"
+msgstr "Hi %(name)s, welcome!"
+
+#: templates/default/dashboard_base.html:22
+msgid ""
+"Please verify your account by clicking the link in the mail we sent to your "
+"email inbox."
+msgstr ""
+"Please verify your account by clicking the link in the mail we sent to your "
+"email inbox."
+
+#: templates/default/dashboard_base.html:25
+msgid "Did not get the verification mail?"
+msgstr "Did not get the verification mail?"
+
+#: templates/default/dashboard_base.html:26
+msgid "Request a new one."
+msgstr "Request a new one."
+
+#: templates/default/dashboard_base.html:31
+msgid ""
+"You need to complete your speaker profile first before submitting a proposal."
+msgstr ""
+"You need to complete your speaker profile first before submitting a proposal."
+
+#: templates/default/proposals/_proposal_create.html:14
+msgid "Create Proposal"
+msgstr "Create Proposal"
+
+#: templates/default/proposals/_proposal_update.html:26
+msgid "Proposal"
+msgstr "Proposal"
+
+#: templates/default/proposals/_proposal_update.html:45
+#: templates/default/users/user_profile_update.html:98
+msgid "Save"
+msgstr "Save"
+
+#: templates/default/proposals/manage_speakers.html:5
+#, python-format
+msgid "Manage Speakers for %(proposal_title)s"
+msgstr "Manage Speakers for %(proposal_title)s"
+
+#: templates/default/proposals/manage_speakers.html:13
+#, python-format
+msgid "Manage Speakers for <em>%(title)s</em>"
+msgstr "Manage Speakers for <em>%(title)s</em>"
+
+#: templates/default/proposals/manage_speakers.html:19
+msgid "Speaker"
+msgstr "Speaker"
+
+#: templates/default/proposals/manage_speakers.html:20
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:9
+msgid "Status"
+msgstr "Status"
+
+#: templates/default/proposals/manage_speakers.html:33
+msgid "Remove"
+msgstr "Remove"
+
+#: templates/default/proposals/manage_speakers.html:46
+msgid "Add Speaker"
+msgstr "Add Speaker"
+
+#: templates/default/proposals/talk_proposal_create.html:5
+#: templates/default/proposals/talk_proposal_create.html:11
+msgid "Submit a New Talk Proposal"
+msgstr "Submit a New Talk Proposal"
+
+#: templates/default/proposals/talk_proposal_peek.html:5
+#, python-format
+msgid "Talk Proposal %(proposal_title)s"
+msgstr "Talk Proposal %(proposal_title)s"
+
+#: templates/default/proposals/talk_proposal_update.html:5
+#, python-format
+msgid "Edit Talk Proposal %(proposal_title)s"
+msgstr "Edit Talk Proposal %(proposal_title)s"
+
+#: templates/default/proposals/tutorial_proposal_create.html:5
+#: templates/default/proposals/tutorial_proposal_create.html:7
+msgid "Submit a New Tutorial Proposal"
+msgstr "Submit a New Tutorial Proposal"
+
+#: templates/default/proposals/tutorial_proposal_peek.html:5
+#, python-format
+msgid "Tutorial Proposal %(proposal_title)s"
+msgstr "Tutorial Proposal %(proposal_title)s"
+
+#: templates/default/proposals/tutorial_proposal_update.html:5
+#, python-format
+msgid "Edit Tutorial Proposal %(proposal_title)s"
+msgstr "Edit Tutorial Proposal %(proposal_title)s"
+
+#: templates/default/registration/login.html:5
+#: templates/default/registration/login.html:7
+#: templates/pycontw-2016/registration/login.html:7
+#: templates/pycontw-2016/registration/login.html:21 users/forms.py:252
+msgid "Log In"
+msgstr "Log In"
+
+#: templates/default/registration/login.html:13
+#: templates/default/registration/password_reset.html:13
+#: templates/pycontw-2016/registration/login.html:25
+#: templates/pycontw-2016/registration/password_reset.html:22
+#, python-format
+msgid ""
+"<span class=\"form-tip\">Don't have an account?</span> <a class=\"btn btn-"
+"link\" href=\"%(signup_url)s\">Sign up now!</a>"
+msgstr ""
+"<span class=\"form-tip\">Don’t have an account?</span> <a class=\"btn btn-"
+"link\" href=\"%(signup_url)s\">Sign up now!</a>"
+
+#: templates/default/registration/password_change_form.html:14
+msgid "Change Log In Password"
+msgstr "Change Log In Password"
+
+#: templates/default/registration/password_change_form.html:22
+#: templates/default/reviews/review_form.html:101
+msgid "Submit"
+msgstr "Submit"
+
+#: templates/default/registration/password_reset.html:5
+#: templates/default/registration/password_reset.html:7
+#: templates/pycontw-2016/registration/password_reset.html:7
+#: templates/pycontw-2016/registration/password_reset.html:18
+msgid "Reset Your Password"
+msgstr "Reset Your Password"
+
+#: templates/default/registration/password_reset_confirm.html:13
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. You can:"
+msgstr ""
+"The password reset link was invalid, possibly because it has already been "
+"used. You can:"
+
+#: templates/default/registration/password_reset_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"You receive this email because someone has requested to reset the password "
+"for your user account %(user_email)s at %(site_name)s.\n"
+"\n"
+"To reset your password, go to\n"
+"    %(protocol)s://%(domain)s%(password_reset_confirm_url)s\n"
+"\n"
+"You can ignore this message if you did not request a password reset.\n"
+msgstr ""
+"\n"
+"You receive this email because someone has requested to reset the password "
+"for your user account %(user_email)s at %(site_name)s.\n"
+"\n"
+"To reset your password, go to\n"
+"    %(protocol)s://%(domain)s%(password_reset_confirm_url)s\n"
+"\n"
+"You can ignore this message if you did not request a password reset.\n"
+
+#: templates/default/registration/signup.html:5
+#: templates/default/registration/signup.html:7
+#: templates/pycontw-2016/registration/signup.html:7
+#: templates/pycontw-2016/registration/signup.html:21
+msgid "Sign Up"
+msgstr "Sign Up"
+
+#: templates/default/registration/signup.html:13
+#, python-format
+msgid ""
+"<span class=\"form-tip\">Already have an account?</span> <a href="
+"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+msgstr ""
+"<span class=\"form-tip\">Already have an account?</span> <a href="
+"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+
+#: templates/default/registration/verification_email.txt:6
+#, python-format
+msgid ""
+"\n"
+"An account has been created on %(host)s with this email address "
+"(%(user_email)s).\n"
+"\n"
+"To activate this account and confirm this email address, go to\n"
+"%(verification_url)s\n"
+"\n"
+"You can ignore this message if you did not sign up for this site.\n"
+msgstr ""
+"\n"
+"An account has been created on %(host)s with this email address "
+"(%(user_email)s).\n"
+"\n"
+"To activate this account and confirm this email address, go to\n"
+"%(verification_url)s\n"
+"\n"
+"You can ignore this message if you did not sign up for this site.\n"
+
+#: templates/default/reviews/_includes/previous_review_table.html:6
+#: templates/default/reviews/_includes/review_table.html:6
+msgid "Stage"
+msgstr "Stage"
+
+#: templates/default/reviews/_includes/previous_review_table.html:7
+#: users/models.py:221
+msgid "Reviewer ID"
+msgstr "Reviewer ID"
+
+#: templates/default/reviews/_includes/previous_review_table.html:8
+#: templates/default/reviews/_includes/review_table.html:7
+msgid "Vote"
+msgstr "Vote"
+
+#: templates/default/reviews/_includes/previous_review_table.html:9
+msgid "Comments"
+msgstr "Comments"
+
+#: templates/default/reviews/_includes/previous_review_table.html:22
+msgid "(Comment redacted by the reviewer or organizers.)"
+msgstr "(Comment redacted by the reviewer or organizers.)"
+
+#: templates/default/reviews/_includes/previous_review_table.html:32
+msgid "No reviews yet."
+msgstr "No reviews yet."
+
+#: templates/default/reviews/_includes/proposal_table.html:10
+msgid "Reviewed"
+msgstr "Reviewed"
+
+#: templates/default/reviews/_includes/proposal_table.html:30
+msgid "Lang"
+msgstr "Lang"
+
+#: templates/default/reviews/_includes/proposal_table.html:37
+msgid "Decision"
+msgstr "Decision"
+
+#: templates/default/reviews/_includes/proposal_table.html:58
+msgid "Review"
+msgstr "Review"
+
+#: templates/default/reviews/_includes/proposal_table.html:61
+msgid "Read"
+msgstr "Read"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:9
+#: templates/default/reviews/_includes/review_proposal_text_field.html:9
+#: templates/default/users/_includes/dashboard_proposal_table.html:45
+msgid "View"
+msgstr "View"
+
+#: templates/default/reviews/_includes/review_proposal_markdown_field.html:14
+#: templates/default/reviews/_includes/review_proposal_text_field.html:14
+msgid "Compare"
+msgstr "Compare"
+
+#: templates/default/reviews/_includes/review_stage_1_desc.html:3
+msgid ""
+"In review stage 1, you <strong>will not</strong> see score and comment made "
+"by other reviewers, nor the name and background of the speaker. In short, "
+"you review based on the talk content itself."
+msgstr ""
+"In review stage 1, you <strong>will not</strong> see score and comment made "
+"by other reviewers, nor the name and background of the speaker. In short, "
+"you review based on the talk content itself."
+
+#: templates/default/reviews/_includes/review_stage_2_desc.html:3
+msgid ""
+"After review stage 1, some of the proposals have been accepted or rejected. "
+"These proposals and their reviews (read-only) are shown in the separate tab."
+msgstr ""
+"After review stage 1, some of the proposals have been accepted or rejected. "
+"These proposals and their reviews (read-only) are shown in the separate tab."
+
+#: templates/default/reviews/_includes/review_stage_2_desc.html:8
+msgid ""
+"In review stage 2, you will see score and comment made by other reviewers "
+"anonymously, including the name and background of the speaker. With more "
+"information provided, you may want to update your review. Updating or adding "
+"review in stage 2 follows the same way as stage 1. Only the last review you "
+"made will be disclosed to the speaker (if you choose to)."
+msgstr ""
+"In review stage 2, you will see score and comment made by other reviewers "
+"anonymously, including the name and background of the speaker. With more "
+"information provided, you may want to update your review. Updating or adding "
+"review in stage 2 follows the same way as stage 1. Only the last review you "
+"made will be disclosed to the speaker (if you choose to)."
+
+#: templates/default/reviews/_includes/review_table.html:9
+msgid "Comment"
+msgstr "Comment"
+
+#: templates/default/reviews/_includes/review_table.html:25
+msgid "Update"
+msgstr "Update"
+
+#: templates/default/reviews/review_form.html:8
+#, python-format
+msgid "%(proposal_title)s | Reviews"
+msgstr "%(proposal_title)s | Reviews"
+
+#: templates/default/reviews/review_form.html:31
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:8
+msgid "Submitter"
+msgstr "Submitter"
+
+#: templates/default/reviews/review_form.html:72
+msgid "Supplementary"
+msgstr "Supplementary"
+
+#: templates/default/reviews/review_form.html:81
+msgid "Previous Reviews by Other Reviewers"
+msgstr "Previous Reviews by Other Reviewers"
+
+#: templates/default/reviews/review_form.html:88
+msgid "My Previous Reviews"
+msgstr "My Previous Reviews"
+
+#: templates/default/reviews/review_form.html:96
+msgid "Review Proposal"
+msgstr "Review Proposal"
+
+#: templates/default/reviews/talk_proposal_list.html:14
+#, python-format
+msgid "Current Review Stage: %(review_stage)s"
+msgstr "Current Review Stage: %(review_stage)s"
+
+#: templates/default/reviews/talk_proposal_list.html:18
+msgid ""
+"Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
+"other reviewers and speakers. For more information about the whole review "
+"process, please refer to the GitBook <a href=\"https://pycontw.github.io/"
+"reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
+msgstr ""
+"Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
+"other reviewers and speakers. For more information about the whole review "
+"process, please refer to the GitBook <a href=\"https://pycontw.github.io/"
+"reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
+
+#: templates/default/reviews/talk_proposal_list.html:23
+msgid "Personal Review Stats"
+msgstr "Personal Review Stats"
+
+#: templates/default/reviews/talk_proposal_list.html:26
+msgid "Strong Accept (+1)"
+msgstr "Strong Accept (+1)"
+
+#: templates/default/reviews/talk_proposal_list.html:32
+msgid "Weak Accept (+0)"
+msgstr "Weak Accept (+0)"
+
+#: templates/default/reviews/talk_proposal_list.html:38
+msgid "Weak Reject (-0)"
+msgstr "Weak Reject (–0)"
+
+#: templates/default/reviews/talk_proposal_list.html:44
+msgid "Strong Reject (-1)"
+msgstr "Strong Reject (–1)"
+
+#: templates/default/reviews/talk_proposal_list.html:51
+msgid "Unreviewed Talk Proposals"
+msgstr "Unreviewed Talk Proposals"
+
+#: templates/default/reviews/talk_proposal_list.html:52
+msgid "Reviewed Talk Proposals"
+msgstr "Reviewed Talk Proposals"
+
+#: templates/default/reviews/talk_proposal_list.html:54
+msgid "Talk Proposals With Decision"
+msgstr "Talk Proposals With Decision"
+
+#: templates/default/reviews/talk_proposal_list.html:64
+msgid "You have reviewed all talk proposals."
+msgstr "You have reviewed all talk proposals."
+
+#: templates/default/reviews/talk_proposal_list.html:73
+msgid "You haven't reviewed any talk proposals."
+msgstr "You haven’t reviewed any talk proposals."
+
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:43
+msgid "Accept"
+msgstr "Accept"
+
+#: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:49
+msgid "Decline"
+msgstr "Decline"
+
+#: templates/default/users/_includes/dashboard_proposal_table.html:7
+#: templates/pycontw-2016/events/sponsored_event_detail.html:23
+#: templates/pycontw-2016/events/talk_detail.html:23
+msgid "Python Level"
+msgstr "Python Level"
+
+#: templates/default/users/_includes/dashboard_proposal_table.html:30
+msgid "Reactivate"
+msgstr "Reactivate"
+
+#: templates/default/users/_includes/dashboard_proposal_table.html:41
+msgid "Withdraw"
+msgstr "Withdraw"
+
+#: templates/default/users/_includes/dashboard_proposal_table.html:58
+#, python-format
+msgid "Last field to go!"
+msgid_plural "%(counter)s fields to go!"
+msgstr[0] "Last field to go!"
+msgstr[1] "%(counter)s fields to go!"
+
+#: templates/default/users/coc_agreement.html:14
+#: templates/pycontw-2017/_includes/header.html:52
+msgid "code of conduct"
+msgstr "code of conduct"
+
+#: templates/default/users/coc_agreement.html:20
+msgid "Before we move on, please agree to the code of conudct first."
+msgstr "Before we move on, please agree to the code of conudct first."
+
+#: templates/default/users/coc_agreement.html:26
+msgid "Confirm and continue"
+msgstr "Confirm and continue"
+
+#: templates/default/users/user_dashboard.html:20
+msgid "Talk Proposals"
+msgstr "Talk Proposals"
+
+#: templates/default/users/user_dashboard.html:23
+msgid "New Talk Porposal"
+msgstr "New Talk Porposal"
+
+#: templates/default/users/user_dashboard.html:33
+#, python-format
+msgid ""
+"You haven't submitted any talk proposals. Why not <a href="
+"\"%(talk_proposal_create_url)s\">submit one now</a>?"
+msgstr ""
+"You haven‘t submitted any talk proposals. Why not <a href="
+"\"%(talk_proposal_create_url)s\">submit one now</a>?"
+
+#: templates/default/users/user_dashboard.html:35
+msgid "You haven't submitted any talk proposals."
+msgstr "You haven’t submitted any talk proposals."
+
+#: templates/default/users/user_dashboard.html:42
+msgid "Tutorial Proposals"
+msgstr "Tutorial Proposals"
+
+#: templates/default/users/user_dashboard.html:46
+msgid "New Tutorial Porposal"
+msgstr "New Tutorial Porposal"
+
+#: templates/default/users/user_dashboard.html:58
+#, python-format
+msgid ""
+"You haven't submitted any tutorial proposals. Why not <a href="
+"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+msgstr ""
+"You haven’t submitted any tutorial proposals. Why not <a href="
+"\"%(tutorial_proposal_create_url)s\">submit one now</a>?"
+
+#: templates/default/users/user_dashboard.html:60
+msgid "You haven't submitted any tutorial proposals."
+msgstr "You haven’t submitted any tutorial proposals."
+
+#: templates/default/users/user_dashboard.html:67
+msgid "Co-Speaking Proposals"
+msgstr "Co-Speaking Proposals"
+
+#: templates/default/users/user_profile_update.html:6
+msgid "Update Speaker Profile"
+msgstr "Update Speaker Profile"
+
+#: templates/default/users/user_profile_update.html:22
+msgid "Profile Picture"
+msgstr "Profile Picture"
+
+#: templates/default/users/user_profile_update.html:28
+msgid "Upload"
+msgstr "Upload"
+
+#: templates/default/users/user_profile_update.html:36
+msgid ""
+"Provide a square photo at least 800&times;800 pixels in size for best "
+"results in our printed conference booklet."
+msgstr ""
+"Provide a square photo at least 800&times;800 pixels in size for best "
+"results in our printed conference booklet."
+
+#: templates/default/users/user_profile_update.html:41
+msgid "Your Name"
+msgstr "Your Name"
+
+#: templates/default/users/user_profile_update.html:51
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:40
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:53
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:44
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:58
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:44
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:57
+msgid "Biography"
+msgstr "Biography"
+
+#: templates/default/users/user_profile_update.html:63
+msgid "Facebook Profile Page"
+msgstr "Facebook Profile Page"
+
+#: templates/default/users/user_profile_update.html:73
+msgid "Twitter Handle"
+msgstr "Twitter Handle"
+
+#: templates/default/users/user_profile_update.html:86
+msgid "GitHub Username"
+msgstr "GitHub Username"
+
+#: templates/pycontw-2016/404.html:8 templates/pycontw-2018/404.html:12
+#: templates/pycontw-2019/404.html:12 templates/pycontw-2020/404.html:12
+#: templates/pycontw-2021/404.html:12
+msgid "Page Not Found"
+msgstr "Page Not Found"
+
+#: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:29
+#: templates/pycontw-2019/404.html:29 templates/pycontw-2020/404.html:29
+#: templates/pycontw-2021/404.html:29
+msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
+msgstr "Ooops! It’s a <span class=\"error-code\">404</span> problem."
+
+#: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:30
+#: templates/pycontw-2019/404.html:30 templates/pycontw-2020/404.html:30
+#: templates/pycontw-2021/404.html:30
+msgid "We cannot find what you’re looking for."
+msgstr "We cannot find what you’re looking for."
+
+#: templates/pycontw-2016/500.html:8 templates/pycontw-2018/500.html:12
+#: templates/pycontw-2019/500.html:12 templates/pycontw-2020/500.html:12
+#: templates/pycontw-2021/500.html:12
+msgid "Server Error"
+msgstr "Server Error"
+
+#: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:29
+#: templates/pycontw-2019/500.html:29 templates/pycontw-2020/500.html:29
+#: templates/pycontw-2021/500.html:29
+msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
+msgstr "Ooops! It’s a <span class=\"error-code\">500</span> problem."
+
+#: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:30
+#: templates/pycontw-2019/500.html:30 templates/pycontw-2020/500.html:30
+#: templates/pycontw-2021/500.html:30
+msgid "We screwed up. It’s not your fault."
+msgstr "We screwed up. It’s not your fault."
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:29
+#: templates/pycontw-2018/_includes/menu.html:29
+#: templates/pycontw-2019/_includes/menu.html:31
+#: templates/pycontw-2020/_includes/menu.html:42
+#: templates/pycontw-2021/_includes/menu.html:42
+msgid "About"
+msgstr "About"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:32
+#: templates/pycontw-2018/_includes/footer.html:10
+#: templates/pycontw-2019/_includes/footer.html:12
+#: templates/pycontw-2020/_includes/footer.html:13
+#: templates/pycontw-2021/_includes/footer.html:13
+msgid "Code of Conduct"
+msgstr "Code of Conduct"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:33
+#: templates/pycontw-2016/contents/_default/about/staff.html:6
+#: templates/pycontw-2016/contents/_default/about/staff.html:7
+#: templates/pycontw-2018/_includes/footer.html:11
+#: templates/pycontw-2018/contents/_staff.html:5
+#: templates/pycontw-2018/contents/_staff.html:9
+#: templates/pycontw-2019/_includes/footer.html:13
+#: templates/pycontw-2019/contents/_staff.html:5
+#: templates/pycontw-2019/contents/_staff.html:9
+#: templates/pycontw-2020/_includes/footer.html:14
+#: templates/pycontw-2020/contents/_staff.html:5
+#: templates/pycontw-2020/contents/_staff.html:10
+#: templates/pycontw-2021/_includes/footer.html:14
+#: templates/pycontw-2021/contents/_staff.html:5
+#: templates/pycontw-2021/contents/_staff.html:10
+msgid "Staff"
+msgstr "Staff"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:37
+#: templates/pycontw-2019/_includes/menu.html:68
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:16
+#: templates/pycontw-2020/_includes/menu.html:96
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:17
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:17
+msgid "Events"
+msgstr "Events"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:39
+#: templates/pycontw-2018/_includes/menu.html:53
+#: templates/pycontw-2019/_includes/menu.html:58
+#: templates/pycontw-2020/_includes/menu.html:100
+#: templates/pycontw-2020/ccip/community_track.html:21
+#: templates/pycontw-2020/events/community_track.html:40
+#: templates/pycontw-2021/ccip/community_track.html:21
+#: templates/pycontw-2021/events/community_track.html:40
+msgid "Overview"
+msgstr "Overview"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:41
+#: templates/pycontw-2018/_includes/menu.html:55
+#: templates/pycontw-2018/contents/en/events/overview.html:38
+#: templates/pycontw-2018/contents/zh/events/overview.html:38
+#: templates/pycontw-2019/_includes/menu.html:71
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:6
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:17
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:21
+#: templates/pycontw-2019/contents/en/events/overview.html:20
+#: templates/pycontw-2019/contents/zh/events/overview.html:21
+#: templates/pycontw-2020/_includes/menu.html:81
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:6
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:18
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:24
+#: templates/pycontw-2020/contents/en/events/overview.html:28
+#: templates/pycontw-2020/contents/zh/events/overview.html:24
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:6
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:18
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:24
+#: templates/pycontw-2021/contents/en/events/overview.html:28
+#: templates/pycontw-2021/contents/zh/events/overview.html:24
+msgid "Keynotes"
+msgstr "Keynotes"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:42
+#: templates/pycontw-2016/events/talk_list.html:5
+#: templates/pycontw-2016/events/talk_list.html:7
+#: templates/pycontw-2017/events/talk_list.html:6
+#: templates/pycontw-2017/events/talk_list.html:7
+#: templates/pycontw-2018/_includes/menu.html:56
+#: templates/pycontw-2018/contents/en/events/overview.html:44
+#: templates/pycontw-2018/contents/zh/events/overview.html:44
+#: templates/pycontw-2018/events/talk_list.html:6
+#: templates/pycontw-2018/events/talk_list.html:10
+#: templates/pycontw-2019/_includes/menu.html:72
+#: templates/pycontw-2019/contents/en/events/overview.html:27
+#: templates/pycontw-2019/contents/zh/events/overview.html:28
+#: templates/pycontw-2019/events/talk_list.html:6
+#: templates/pycontw-2019/events/talk_list.html:10
+#: templates/pycontw-2020/_includes/menu.html:82
+#: templates/pycontw-2020/contents/en/events/overview.html:39
+#: templates/pycontw-2020/contents/zh/events/overview.html:32
+#: templates/pycontw-2020/events/talk_list.html:6
+#: templates/pycontw-2020/events/talk_list.html:13
+#: templates/pycontw-2021/contents/en/events/overview.html:39
+#: templates/pycontw-2021/contents/zh/events/overview.html:32
+#: templates/pycontw-2021/events/talk_list.html:6
+#: templates/pycontw-2021/events/talk_list.html:13
+msgid "Talks"
+msgstr "Talks"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:43
+#: templates/pycontw-2018/_includes/menu.html:68
+#: templates/pycontw-2018/contents/en/events/overview.html:30
+#: templates/pycontw-2018/contents/zh/events/overview.html:30
+#: templates/pycontw-2020/_includes/menu.html:103
+#: templates/pycontw-2020/contents/en/events/overview.html:107
+#: templates/pycontw-2020/contents/zh/events/overview.html:84
+#: templates/pycontw-2021/contents/en/events/overview.html:107
+#: templates/pycontw-2021/contents/zh/events/overview.html:84
+msgid "Sprints"
+msgstr "Sprints"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:44
+msgid "BoF"
+msgstr "BoF"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:45
+msgid "PyDay"
+msgstr "PyDay"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:46
+msgid "Tutorial"
+msgstr "Tutorial"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:50
+#: templates/pycontw-2016/_includes/nav/front_nav.html:52
+#: templates/pycontw-2018/_includes/menu.html:86
+#: templates/pycontw-2019/_includes/menu.html:91
+#: templates/pycontw-2020/_includes/menu.html:127
+msgctxt "conf location"
+msgid "Venue"
+msgstr "Venue"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:53
+msgid "Accommodation"
+msgstr "Accommodation"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:68
+#: templates/pycontw-2019/_includes/menu.html:34
+msgid "Sponsor"
+msgstr "Sponsor"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:70
+#: templates/pycontw-2016/sponsors/sponsor_list.html:5
+msgid "Our Sponsors"
+msgstr "Our Sponsors"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:71
+msgid "Patrons"
+msgstr "Patrons"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:75
+msgctxt "navbar"
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:77
+#: templates/pycontw-2017/_includes/header.html:111
+msgid "Ticket Info"
+msgstr "Ticket Info"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:78
+#: templates/pycontw-2018/_includes/menu.html:80
+#: templates/pycontw-2019/_includes/menu.html:85
+#: templates/pycontw-2020/_includes/menu.html:119
+msgid "Financial Aid"
+msgstr "Financial Aid"
+
+#: templates/pycontw-2016/_includes/nav/front_nav.html:81
+#: templates/pycontw-2018/_includes/social.html:4
+#: templates/pycontw-2019/_includes/social.html:4
+#: templates/pycontw-2020/_includes/social.html:4
+#: templates/pycontw-2021/_includes/social.html:4
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/pycontw-2016/events/schedule.html:22
+#, python-format
+msgid ""
+"This is the full schedule of talks for PyCon Taiwan 2016. See also: <ul> "
+"<li><a href=\"%(overview_url)s\">Overview of conference schedule</a></li> "
+"<li><a href=\"%(keynote_url)s\">Our keynote speeches</a></li> <li><a href="
+"\"%(talk_list_url)s\">An alphabetically-sorted list of all talks</a></li> </"
+"ul>"
+msgstr ""
+"This is the full schedule of talks for PyCon Taiwan 2016. See also: <ul> "
+"<li><a href=\"%(overview_url)s\">Overview of conference schedule</a></li> "
+"<li><a href=\"%(keynote_url)s\">Our keynote speeches</a></li> <li><a href="
+"\"%(talk_list_url)s\">An alphabetically-sorted list of all talks</a></li> </"
+"ul>"
+
+#: templates/pycontw-2016/events/schedule.html:32
+#: templates/pycontw-2016/events/talk_list.html:20
+msgid ""
+"Program schedule are <span class=\"text-emphasize\">subject to change</"
+"span>. Please check this page frequently to get the latest version."
+msgstr ""
+"Program schedule are <span class=\"text-emphasize\">subject to change</"
+"span>. Please check this page frequently to get the latest version."
+
+#: templates/pycontw-2016/events/schedule.html:39
+#: templates/pycontw-2017/events/schedule.html:21
+msgid "Quick Jump"
+msgstr "Quick Jump"
+
+#: templates/pycontw-2016/events/schedule_create.html:15
+#: templates/pycontw-2017/events/schedule_create.html:71
+#: templates/pycontw-2018/events/schedule_create.html:64
+#: templates/pycontw-2019/events/schedule_create.html:60
+#: templates/pycontw-2020/events/schedule_create.html:100
+#: templates/pycontw-2021/events/schedule_create.html:100
+msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
+msgstr "Schedule table generation requires JavaScript. Please. (´･_･`)"
+
+#: templates/pycontw-2016/events/schedule_create.html:26
+#: templates/pycontw-2017/events/schedule_create.html:82
+#: templates/pycontw-2018/events/schedule_create.html:73
+#: templates/pycontw-2019/events/schedule_create.html:69
+#: templates/pycontw-2020/events/schedule_create.html:109
+#: templates/pycontw-2021/events/schedule_create.html:109
+msgid "Generate"
+msgstr "Generate"
+
+#: templates/pycontw-2016/events/sponsored_event_detail.html:27
+#: templates/pycontw-2016/events/talk_detail.html:27
+#: templates/pycontw-2017/events/talk_detail.html:49
+msgid "Slides Link"
+msgstr "Slides Link"
+
+#: templates/pycontw-2016/events/sponsored_event_detail.html:35
+#: templates/pycontw-2016/events/talk_detail.html:35
+#: templates/pycontw-2018/events/talk_detail.html:53
+#: templates/pycontw-2019/events/talk_detail.html:55
+#: templates/pycontw-2019/events/tutorial_detail.html:54
+#: templates/pycontw-2020/events/talk_detail.html:75
+#: templates/pycontw-2020/events/tutorial_detail.html:61
+#: templates/pycontw-2021/events/talk_detail.html:75
+#: templates/pycontw-2021/events/tutorial_detail.html:61
+msgid "Description"
+msgstr "Description"
+
+#: templates/pycontw-2016/events/talk_list.html:14
+#, python-format
+msgid ""
+"You can check out the program schedule <a class=\"text-emphasize\" href="
+"\"%(schedule_url)s\">here</a>."
+msgstr ""
+"You can check out the program schedule <a class=\"text-emphasize\" href="
+"\"%(schedule_url)s\">here</a>."
+
+#: templates/pycontw-2016/events/talk_list.html:28
+#: templates/pycontw-2017/events/talk_list.html:33
+msgid "Proposed Talks"
+msgstr "Proposed Talks"
+
+#: templates/pycontw-2016/events/talk_list.html:32
+#: templates/pycontw-2017/events/talk_list.html:41
+#, python-format
+msgid ""
+"<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\">"
+"%(proposal_title)s</a> by %(speaker_names)s"
+msgstr ""
+"<a class=\"proposal-title\" href=\"%(event_talk_detail_url)s\">"
+"%(proposal_title)s</a> by %(speaker_names)s"
+
+#: templates/pycontw-2016/events/talk_list.html:38
+msgid "Sponsored Events"
+msgstr "Sponsored Events"
+
+#: templates/pycontw-2016/events/talk_list.html:41
+#: templates/pycontw-2017/events/talk_list.html:53
+#, python-format
+msgid ""
+"<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">"
+"%(event_title)s</a> by %(host_name)s"
+msgstr ""
+"<a class=\"proposal-title\" href=\"%(sponsored_event_url)s\">"
+"%(event_title)s</a> by %(host_name)s"
+
+#: templates/pycontw-2016/index.html:7
+msgid ""
+"PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge, "
+"exchange ideas, make connections and to help us grow our network."
+msgstr ""
+"PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge, "
+"exchange ideas, make connections and to help us grow our network."
+
+#: templates/pycontw-2016/index.html:31 templates/pycontw-2016/index.html:37
+#: templates/pycontw-2019/_includes/menu.html:73
+#: templates/pycontw-2019/contents/en/events/overview.html:34
+#: templates/pycontw-2019/contents/zh/events/overview.html:35
+#: templates/pycontw-2019/events/tutorial_list.html:6
+#: templates/pycontw-2019/events/tutorial_list.html:10
+#: templates/pycontw-2020/_includes/menu.html:83
+#: templates/pycontw-2020/contents/en/events/overview.html:50
+#: templates/pycontw-2020/contents/zh/events/overview.html:39
+#: templates/pycontw-2020/events/tutorial_list.html:6
+#: templates/pycontw-2020/events/tutorial_list.html:11
+#: templates/pycontw-2021/contents/en/events/overview.html:50
+#: templates/pycontw-2021/contents/zh/events/overview.html:39
+#: templates/pycontw-2021/events/tutorial_list.html:6
+#: templates/pycontw-2021/events/tutorial_list.html:11
+msgid "Tutorials"
+msgstr "Tutorials"
+
+#: templates/pycontw-2016/index.html:32 templates/pycontw-2016/index.html:41
+msgid "Conference"
+msgstr "Conference"
+
+#: templates/pycontw-2016/index.html:33 templates/pycontw-2016/index.html:45
+msgid "Sprint"
+msgstr "Sprint"
+
+#: templates/pycontw-2016/index.html:38
+msgid "June 3, 2016"
+msgstr "June 3, 2016"
+
+#: templates/pycontw-2016/index.html:42
+msgid "June 3–5, 2016"
+msgstr "June 3–5, 2016"
+
+#: templates/pycontw-2016/index.html:46
+msgid "Apr 16 &amp; Jun 11, 2016"
+msgstr "Apr 16 &amp; Jun 11, 2016"
+
+#: templates/pycontw-2016/index.html:58
+msgid "Tickets Sold Out!"
+msgstr "Tickets Sold Out!"
+
+#: templates/pycontw-2016/index.html:59
+#, python-format
+msgid "See you in<span> %(value)s %(type)s</span> at PyConTW."
+msgstr "See you in<span> %(value)s %(type)s</span> at PyConTW."
+
+#: templates/pycontw-2016/index.html:62
+msgid "Check the schedule"
+msgstr "Check the schedule"
+
+#: templates/pycontw-2016/index.html:74
+msgid ""
+"<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
+"The original PyCon was formed in North America in 2003, and now there are "
+"many other conferences being run in the PyCon spirit around the world. </div>"
+msgstr ""
+"<h2 class=\"intro__heading\">What is PyCon</h2> <div class=\"intro__body\"> "
+"The original PyCon was formed in North America in 2003, and now there are "
+"many other conferences being run in the PyCon spirit around the world. </div>"
+
+#: templates/pycontw-2016/index.html:86
+msgid ""
+"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div class="
+"\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for the "
+"discussion and promotion of the Python programming language. It is held by "
+"enthusiasts and focuses on Python technology and its versatile applications. "
+"We welcome people who are interested in Python to join PyCon Taiwan to share "
+"knowledge, exchange ideas, make connections and to help us grow our network. "
+"</div>"
+msgstr ""
+"<h2 class=\"intro__heading\">And what is PyCon Taiwan</h2> <div class="
+"\"intro__body\"> PyCon Taiwan is an annual convention in Taiwan for the "
+"discussion and promotion of the Python programming language. It is held by "
+"enthusiasts and focuses on Python technology and its versatile applications. "
+"We welcome people who are interested in Python to join PyCon Taiwan to share "
+"knowledge, exchange ideas, make connections and to help us grow our network. "
+"</div>"
+
+#: templates/pycontw-2016/index.html:102
+#, python-format
+msgid ""
+"<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
+"height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div "
+"class=\"volunteer__body\"> <p>Help us organize and make the conference "
+"successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
+"forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\" target="
+"\"_blank\" rel=\"noopener\">our volunteer form</a> </p> </div>"
+msgstr ""
+"<h4 class=\"volunteer__heading h4\"> Volunteers Needed! <img width=\"25\" "
+"height=\"22\" src=\"%(img_call_icon)s\" class=\"call__icon\"> </h4> <div "
+"class=\"volunteer__body\"> <p>Help us organize and make the conference "
+"successful!</p> <p> Please fill out<br> <a href=\"https://docs.google.com/"
+"forms/d/1zwc4khAW18myt6dJ_s_YtJOfQEobgz8KhcySKL0HXl4/viewform\" target="
+"\"_blank\" rel=\"noopener\">our volunteer form</a> </p> </div>"
+
+#: templates/pycontw-2016/index.html:132
+msgid "Python Community in Taiwan"
+msgstr "Python Community in Taiwan"
+
+#: templates/pycontw-2016/index.html:186
+msgid "Patronage 2016 available!"
+msgstr "Patronage 2016 available!"
+
+#: templates/pycontw-2016/index.html:191
+msgid ""
+"<p> If you wish to support PyCon Taiwan 2016 on your own, welcome to be a "
+"patron! There will be a page for the list of all patrons (e.g. links to "
+"profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 "
+"website. </p> <br> <p> Go to be <a href=\"http://pycontw.kktix.cc/events/"
+"pycontw2016patron\" target=\"_blank\" rel=\"noopener\"> a patron of PyCon "
+"Taiwan 2016 </a> </p>"
+msgstr ""
+"<p> If you wish to support PyCon Taiwan 2016 on your own, welcome to be a "
+"patron! There will be a page for the list of all patrons (e.g. links to "
+"profile pages of Facebook, GitHub, Twitter) on the PyCon Taiwan 2016 "
+"website. </p> <br> <p> Go to be <a href=\"http://pycontw.kktix.cc/events/"
+"pycontw2016patron\" target=\"_blank\" rel=\"noopener\"> a patron of PyCon "
+"Taiwan 2016 </a> </p>"
+
+#: templates/pycontw-2016/index.html:248
+msgid "Sponsors"
+msgstr "Sponsors"
+
+#: templates/pycontw-2016/registration/password_reset_confirm.html:25
+#, python-format
+msgid ""
+"<p>The password reset link was invalid, possibly because it has already been "
+"used. You can either</p> <ul> <li><a href=\"%(password_reset_url)s\">Request "
+"a new password reset</a>, or</li> <li><a href=\"%(index_url)s\">Return to "
+"homepage.</a></li> </ul>"
+msgstr ""
+"<p>The password reset link was invalid, possibly because it has already been "
+"used. You can either</p> <ul> <li><a href=\"%(password_reset_url)s\">Request "
+"a new password reset</a>, or</li> <li><a href=\"%(index_url)s\">Return to "
+"homepage.</a></li> </ul>"
+
+#: templates/pycontw-2016/registration/signup.html:25
+#, python-format
+msgid ""
+"<span class=\"form-tip\">Already have an account?</span><a href="
+"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+msgstr ""
+"<span class=\"form-tip\">Already have an account?</span><a href="
+"\"%(login_url)s\" class=\"btn btn-link\">Login.</a>"
+
+#: templates/pycontw-2017/_includes/header.html:48
+msgid "about"
+msgstr "about"
+
+#: templates/pycontw-2017/_includes/header.html:51
+msgid "pycon taiwan"
+msgstr "pycon taiwan"
+
+#: templates/pycontw-2017/_includes/header.html:57
+msgid "events"
+msgstr "events"
+
+#: templates/pycontw-2017/_includes/header.html:60
+msgid "schedule"
+msgstr "schedule"
+
+#: templates/pycontw-2017/_includes/header.html:61
+msgid "overview"
+msgstr "overview"
+
+#: templates/pycontw-2017/_includes/header.html:62
+msgid "keynotes"
+msgstr "keynotes"
+
+#: templates/pycontw-2017/_includes/header.html:64
+msgid "tutorials"
+msgstr "tutorials"
+
+#: templates/pycontw-2017/_includes/header.html:65
+msgid "unconference"
+msgstr "unconference"
+
+#: templates/pycontw-2017/_includes/header.html:66
+msgid "sprints"
+msgstr "sprints"
+
+#: templates/pycontw-2017/_includes/header.html:67
+msgid "pynight"
+msgstr "PyNight"
+
+#: templates/pycontw-2017/_includes/header.html:88
+msgctxt "conference location"
+msgid "venue"
+msgstr "venue"
+
+#: templates/pycontw-2017/_includes/header.html:104
+msgid "partners"
+msgstr "partners"
+
+#: templates/pycontw-2017/_includes/header.html:108
+msgid "registration"
+msgstr "registration"
+
+#: templates/pycontw-2017/_includes/header.html:112
+msgid "financial aid"
+msgstr "financial aid"
+
+#: templates/pycontw-2017/_includes/header.html:116
+msgid "blog"
+msgstr "blog"
+
+#: templates/pycontw-2017/_includes/header.html:122
+msgid "Back to Menu"
+msgstr "Back to Menu"
+
+#: templates/pycontw-2017/_includes/header.html:135
+msgid "dashboard"
+msgstr "dashboard"
+
+#: templates/pycontw-2017/contents/_default/portal.html:5
+#: templates/pycontw-2017/contents/_default/portal.html:10
+#: templates/pycontw-2018/_includes/menu.html:58
+#: templates/pycontw-2018/contents/_default/portal.html:6
+#: templates/pycontw-2018/contents/_default/portal.html:12
+#: templates/pycontw-2019/_includes/menu.html:61
+#: templates/pycontw-2019/contents/_default/portal.html:6
+#: templates/pycontw-2019/contents/_default/portal.html:12
+#: templates/pycontw-2019/index.html:30
+#: templates/pycontw-2020/_includes/menu.html:86
+#: templates/pycontw-2020/contents/_default/portal.html:6
+#: templates/pycontw-2020/contents/_default/portal.html:12
+#: templates/pycontw-2020/index.html:30
+#: templates/pycontw-2021/contents/_default/portal.html:6
+#: templates/pycontw-2021/contents/_default/portal.html:12
+msgid "Portal"
+msgstr "Portal"
+
+#: templates/pycontw-2017/contents/_default/portal.html:23
+#: templates/pycontw-2018/contents/_default/portal.html:21
+#: templates/pycontw-2019/_includes/portal.html:8
+#: templates/pycontw-2020/_includes/portal.html:8
+#: templates/pycontw-2021/_includes/portal.html:8
+msgid "Collaborative Notes"
+msgstr "Collaborative Notes"
+
+#: templates/pycontw-2017/contents/_default/portal.html:30
+#: templates/pycontw-2018/contents/_default/portal.html:25
+#: templates/pycontw-2019/_includes/portal.html:12
+msgid "Chat Room"
+msgstr "Chat Room"
+
+#: templates/pycontw-2017/contents/_default/portal.html:38
+msgid "Quiz Leaderboard"
+msgstr "Quiz Leaderboard"
+
+#: templates/pycontw-2017/contents/_default/portal.html:45
+#: templates/pycontw-2017/contents/_default/portal.html:65
+#: templates/pycontw-2018/contents/_default/portal.html:29
+#: templates/pycontw-2019/_includes/portal.html:16
+#: templates/pycontw-2020/_includes/portal.html:16
+#: templates/pycontw-2021/_includes/portal.html:16
+msgid "Facebook Fan Page"
+msgstr "Facebook Fan Page"
+
+#: templates/pycontw-2017/contents/_default/portal.html:52
+msgid "Quiz Bots"
+msgstr "Quiz Bots"
+
+#: templates/pycontw-2017/contents/_default/portal.html:58
+msgid "Chat on LINE"
+msgstr "Chat on LINE"
+
+#: templates/pycontw-2017/contents/_default/portal.html:72
+msgid "Chat on Facebook Messenger"
+msgstr "Chat on Facebook Messenger"
+
+#: templates/pycontw-2017/contents/_default/portal.html:78
+msgid "Mobile Apps"
+msgstr "Mobile Apps"
+
+#: templates/pycontw-2017/contents/_default/portal.html:82
+msgid "Download on the App Store"
+msgstr "Download on the App Store"
+
+#: templates/pycontw-2017/contents/_default/portal.html:85
+msgid "Get it on Google Play"
+msgstr "Get it on Google Play"
+
+#: templates/pycontw-2017/contents/en/events/unconference.html:5
+msgid "Unconference"
+msgstr "Unconference"
+
+#: templates/pycontw-2017/events/schedule_create.html:7
+#: templates/pycontw-2017/events/schedule_create.html:16
+#: templates/pycontw-2018/events/schedule_create.html:7
+#: templates/pycontw-2018/events/schedule_create.html:15
+#: templates/pycontw-2019/events/schedule_create.html:7
+#: templates/pycontw-2019/events/schedule_create.html:15
+#: templates/pycontw-2020/events/schedule_create.html:7
+#: templates/pycontw-2020/events/schedule_create.html:16
+#: templates/pycontw-2021/events/schedule_create.html:7
+#: templates/pycontw-2021/events/schedule_create.html:16
+msgid "Export New Schedule"
+msgstr "Export New Schedule"
+
+#: templates/pycontw-2017/events/talk_detail.html:18
+#: templates/pycontw-2018/events/talk_detail.html:22
+#: templates/pycontw-2019/events/talk_detail.html:23
+#: templates/pycontw-2019/events/tutorial_detail.html:23
+#: templates/pycontw-2020/events/talk_detail.html:33
+#: templates/pycontw-2020/events/talk_detail.html:43
+#: templates/pycontw-2020/events/tutorial_detail.html:30
+#: templates/pycontw-2021/events/talk_detail.html:33
+#: templates/pycontw-2021/events/talk_detail.html:43
+#: templates/pycontw-2021/events/tutorial_detail.html:30
+#, python-format
+msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
+msgstr "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
+
+#: templates/pycontw-2017/events/talk_detail.html:28
+msgid "Invited event"
+msgstr "Invited event"
+
+#: templates/pycontw-2017/events/talk_detail.html:32
+#: templates/pycontw-2018/events/schedule.html:31
+#: templates/pycontw-2019/events/schedule.html:31
+msgid "No recording"
+msgstr "No recording"
+
+#: templates/pycontw-2017/events/talk_detail.html:42
+msgid "Talk Detail"
+msgstr "Talk Detail"
+
+#: templates/pycontw-2017/events/talk_detail.html:54
+msgid "Speaker Information"
+msgstr "Speaker Information"
+
+#: templates/pycontw-2017/events/talk_list.html:14
+msgid ""
+"The three conference days are packed with talks about Python by speakers "
+"from Taiwan and around the world. The talks will be either 30- or 45-minute "
+"long. Three tracks of talks will be delivered simultaneously, all with "
+"different topics and difficulties. We suggest you to make a schedule "
+"beforehand, and choose what you want ot listen based on your interests. Many "
+"people take notes on the program schedule before the meeting so they don't "
+"end up in some place wrong."
+msgstr ""
+"The three conference days are packed with talks about Python by speakers "
+"from Taiwan and around the world. The talks will be either 30- or 45-minute "
+"long. Three tracks of talks will be delivered simultaneously, all with "
+"different topics and difficulties. We suggest you to make a schedule "
+"beforehand, and choose what you want ot listen based on your interests. Many "
+"people take notes on the program schedule before the meeting so they don't "
+"end up in some place wrong."
+
+#: templates/pycontw-2017/events/talk_list.html:25
+msgid ""
+"<em>Program schedule are subject to change.</em> Please check this page "
+"frequently to get the latest version."
+msgstr ""
+"<em>Program schedule are subject to change.</em> Please check this page "
+"frequently to get the latest version."
+
+#: templates/pycontw-2017/events/talk_list.html:49
+#: templates/pycontw-2020/events/talk_list.html:57
+#: templates/pycontw-2021/events/talk_list.html:57
+msgid "Invited Events"
+msgstr "Invited Events"
+
+#: templates/pycontw-2017/index.html:23
+msgid "9–11 June"
+msgstr "9–11 June"
+
+#: templates/pycontw-2017/index.html:28
+msgid "tutorials: "
+msgstr "tutorials: "
+
+#: templates/pycontw-2017/index.html:28
+msgid "21, 28 May & 3 June"
+msgstr "21, 28 May & 3 June"
+
+#: templates/pycontw-2017/index.html:29
+msgid "sprints: "
+msgstr "sprints: "
+
+#: templates/pycontw-2017/index.html:29
+msgid "12 March, 12 June"
+msgstr "12 March, 12 June"
+
+#: templates/pycontw-2017/index.html:34
+msgid "Get Tickets"
+msgstr "Get Tickets"
+
+#: templates/pycontw-2017/index.html:39 templates/pycontw-2018/index.html:49
+#: templates/pycontw-2019/index.html:57
+msgid "Volunteers Needed"
+msgstr "Volunteers Needed"
+
+#: templates/pycontw-2017/index.html:40
+#, python-format
+msgid ""
+"Help us organize and make the conference successful! Please fill out <a href="
+"\"%(VOLUNTEER_FORM_URL)s\">our volunteer form.</a>"
+msgstr ""
+"Help us organize and make the conference successful! Please fill out <a href="
+"\"%(VOLUNTEER_FORM_URL)s\">our volunteer form.</a>"
+
+#: templates/pycontw-2017/index.html:45
+msgid ""
+"<h2>what is pycon</h2> <p>The original PyCon was formed in North America in "
+"2003, and now there are many other conferences being run in the PyCon spirit "
+"around the world.</p>"
+msgstr ""
+"<h2>what is pycon</h2> <p>The original PyCon was formed in North America in "
+"2003, and now there are many other conferences being run in the PyCon spirit "
+"around the world.</p>"
+
+#: templates/pycontw-2017/index.html:51
+msgid ""
+"<h2>what is pycon taiwan</h2> <p>PyCon Taiwan is an annual convention in "
+"Taiwan for the discussion and promotion of the Python programming language. "
+"It is held by enthusiasts and focuses on Python technology and its versatile "
+"applications. We welcome people who are interested in Python to join PyCon "
+"Taiwan to share knowledge, exchange ideas, make connections and to help us "
+"grow our network.</p>"
+msgstr ""
+"<h2>what is pycon taiwan</h2> <p>PyCon Taiwan is an annual convention in "
+"Taiwan for the discussion and promotion of the Python programming language. "
+"It is held by enthusiasts and focuses on Python technology and its versatile "
+"applications. We welcome people who are interested in Python to join PyCon "
+"Taiwan to share knowledge, exchange ideas, make connections and to help us "
+"grow our network.</p>"
+
+#: templates/pycontw-2017/index.html:62
+msgid "Python Communities in Taiwan"
+msgstr "Python Communities in Taiwan"
+
+#: templates/pycontw-2017/sponsors/sponsor_list.html:7
+#: templates/pycontw-2017/sponsors/sponsor_list.html:17
+msgid "Our Partners"
+msgstr "Our Partners"
+
+#: templates/pycontw-2018/_includes/menu.html:50
+#: templates/pycontw-2019/_includes/menu.html:55
+#: templates/pycontw-2020/_includes/menu.html:76
+msgctxt "menu"
+msgid "Conference"
+msgstr "Conference"
+
+#: templates/pycontw-2018/_includes/menu.html:57
+#: templates/pycontw-2019/_includes/menu.html:60
+#: templates/pycontw-2020/_includes/menu.html:85
+msgid "Recording"
+msgstr "Recording"
+
+#: templates/pycontw-2018/_includes/menu.html:64
+msgid "Exchange"
+msgstr "Exchange"
+
+#: templates/pycontw-2018/_includes/menu.html:67
+#: templates/pycontw-2018/contents/en/events/overview.html:22
+#: templates/pycontw-2018/contents/zh/events/overview.html:22
+msgctxt "menu"
+msgid "Learning"
+msgstr "Learning"
+
+#: templates/pycontw-2018/_includes/menu.html:69
+#: templates/pycontw-2018/contents/en/events/overview.html:58
+#: templates/pycontw-2018/contents/zh/events/overview.html:60
+#: templates/pycontw-2019/_includes/menu.html:74
+#: templates/pycontw-2019/contents/en/events/overview.html:46
+#: templates/pycontw-2019/contents/zh/events/overview.html:49
+#: templates/pycontw-2020/_includes/menu.html:102
+#: templates/pycontw-2020/contents/en/events/overview.html:68
+#: templates/pycontw-2020/contents/zh/events/overview.html:55
+#: templates/pycontw-2021/contents/en/events/overview.html:68
+#: templates/pycontw-2021/contents/zh/events/overview.html:55
+msgid "Open Spaces"
+msgstr "Open Spaces"
+
+#: templates/pycontw-2018/_includes/menu.html:76
+#: templates/pycontw-2019/_includes/menu.html:81
+#: templates/pycontw-2020/_includes/menu.html:114
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/menu.html:79
+#: templates/pycontw-2019/_includes/menu.html:84
+#: templates/pycontw-2020/_includes/menu.html:118
+msgid "Conference Ticket"
+msgstr "Conference Ticket"
+
+#: templates/pycontw-2018/_includes/menu.html:81
+msgctxt "registration"
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/menu.html:89
+#: templates/pycontw-2019/_includes/menu.html:94
+#: templates/pycontw-2020/_includes/menu.html:138
+#: templates/pycontw-2021/_includes/menu.html:152
+msgid "My PyCon"
+msgstr "My PyCon"
+
+#: templates/pycontw-2018/_includes/sponsors.html:7
+#: templates/pycontw-2019/_includes/sponsors.html:7
+msgid "Partners"
+msgstr "Partners"
+
+#: templates/pycontw-2018/_includes/sponsors.html:70
+#: templates/pycontw-2019/_includes/sponsors.html:75
+msgid "Enquire about sponsorship"
+msgstr "Enquire about sponsorship"
+
+#: templates/pycontw-2018/_includes/staff.html:3
+#: templates/pycontw-2019/_includes/staff.html:3
+#: templates/pycontw-2020/_includes/staff.html:3
+msgctxt "staff"
+msgid "Chairperson"
+msgstr "Chairperson"
+
+#: templates/pycontw-2018/_includes/staff.html:8
+#: templates/pycontw-2019/_includes/staff.html:8
+#: templates/pycontw-2020/_includes/staff.html:8
+msgctxt "staff"
+msgid "Registration"
+msgstr "Registration"
+
+#: templates/pycontw-2018/_includes/staff.html:16
+#: templates/pycontw-2019/_includes/staff.html:25
+#: templates/pycontw-2020/_includes/staff.html:18
+msgctxt "staff"
+msgid "Development"
+msgstr "Development"
+
+#: templates/pycontw-2018/_includes/staff.html:25
+#: templates/pycontw-2019/_includes/staff.html:47
+#: templates/pycontw-2020/_includes/staff.html:45
+msgctxt "staff"
+msgid "Public Relations"
+msgstr "Public Relations"
+
+#: templates/pycontw-2018/_includes/staff.html:34
+#: templates/pycontw-2019/_includes/staff.html:58
+#: templates/pycontw-2020/_includes/staff.html:55
+msgctxt "staff"
+msgid "Design"
+msgstr "Design"
+
+#: templates/pycontw-2018/_includes/staff.html:41
+#: templates/pycontw-2019/_includes/staff.html:72
+#: templates/pycontw-2020/_includes/staff.html:65
+msgctxt "staff"
+msgid "Photography"
+msgstr "Photography"
+
+#: templates/pycontw-2018/_includes/staff.html:54
+#: templates/pycontw-2019/_includes/staff.html:88
+#: templates/pycontw-2020/_includes/staff.html:77
+msgctxt "staff"
+msgid "Program"
+msgstr "Program"
+
+#: templates/pycontw-2018/_includes/staff.html:65
+#: templates/pycontw-2019/_includes/staff.html:104
+#: templates/pycontw-2020/_includes/staff.html:106
+msgctxt "staff"
+msgid "Sponsorship"
+msgstr "Sponsorship"
+
+#: templates/pycontw-2018/_includes/staff.html:80
+#: templates/pycontw-2019/_includes/staff.html:118
+#: templates/pycontw-2020/_includes/staff.html:126
+msgctxt "staff"
+msgid "Financial"
+msgstr "Financial"
+
+#: templates/pycontw-2018/_includes/staff.html:85
+#: templates/pycontw-2019/_includes/staff.html:124
+#: templates/pycontw-2020/_includes/staff.html:134
+msgctxt "staff"
+msgid "Venue"
+msgstr "Venue"
+
+#: templates/pycontw-2018/_includes/staff.html:98
+#: templates/pycontw-2019/_includes/staff.html:145
+#: templates/pycontw-2020/_includes/staff.html:181
+msgctxt "staff"
+msgid "Review Committee"
+msgstr "Review Committee"
+
+#: templates/pycontw-2018/events/schedule.html:24
+#: templates/pycontw-2019/events/schedule.html:24
+msgid "English speech"
+msgstr "English speech"
+
+#: templates/pycontw-2018/events/schedule.html:25
+#: templates/pycontw-2019/events/schedule.html:25
+msgid "Mandarin speech"
+msgstr "Mandarin speech"
+
+#: templates/pycontw-2018/events/schedule.html:26
+#: templates/pycontw-2019/events/schedule.html:26
+msgid "English slides"
+msgstr "English slides"
+
+#: templates/pycontw-2018/events/schedule.html:27
+#: templates/pycontw-2019/events/schedule.html:27
+msgid "Chinese slides"
+msgstr "Chinese slides"
+
+#: templates/pycontw-2018/events/talk_detail.html:17
+#: templates/pycontw-2019/events/tutorial_detail.html:18
+#: templates/pycontw-2020/events/tutorial_detail.html:25
+#: templates/pycontw-2021/events/tutorial_detail.html:25
+msgid "Location: "
+msgstr "Location: "
+
+#: templates/pycontw-2018/events/talk_detail.html:21
+#: templates/pycontw-2019/events/tutorial_detail.html:22
+#: templates/pycontw-2020/events/tutorial_detail.html:29
+#: templates/pycontw-2021/events/tutorial_detail.html:29
+msgid "Slot: "
+msgstr "Slot: "
+
+#: templates/pycontw-2018/events/talk_detail.html:25
+#: templates/pycontw-2019/events/talk_detail.html:27
+#: templates/pycontw-2019/events/tutorial_detail.html:27
+#: templates/pycontw-2020/events/talk_detail.html:47
+#: templates/pycontw-2020/events/tutorial_detail.html:34
+#: templates/pycontw-2021/events/talk_detail.html:47
+#: templates/pycontw-2021/events/tutorial_detail.html:34
+msgid "Category: "
+msgstr "Category: "
+
+#: templates/pycontw-2018/events/talk_detail.html:29
+#: templates/pycontw-2019/events/talk_detail.html:31
+#: templates/pycontw-2019/events/tutorial_detail.html:31
+#: templates/pycontw-2020/events/talk_detail.html:51
+#: templates/pycontw-2020/events/tutorial_detail.html:38
+#: templates/pycontw-2021/events/talk_detail.html:51
+#: templates/pycontw-2021/events/tutorial_detail.html:38
+msgid "Language: "
+msgstr "Language: "
+
+#: templates/pycontw-2018/events/talk_detail.html:33
+#: templates/pycontw-2019/events/talk_detail.html:35
+#: templates/pycontw-2019/events/tutorial_detail.html:35
+#: templates/pycontw-2020/events/talk_detail.html:55
+#: templates/pycontw-2020/events/tutorial_detail.html:42
+#: templates/pycontw-2021/events/talk_detail.html:55
+#: templates/pycontw-2021/events/tutorial_detail.html:42
+msgid "Python Level: "
+msgstr "Python Level: "
+
+#: templates/pycontw-2018/events/talk_detail.html:39
+#: templates/pycontw-2019/events/talk_detail.html:41
+#: templates/pycontw-2019/events/tutorial_detail.html:41
+#: templates/pycontw-2020/events/talk_detail.html:61
+#: templates/pycontw-2020/events/tutorial_detail.html:48
+#: templates/pycontw-2021/events/talk_detail.html:61
+#: templates/pycontw-2021/events/tutorial_detail.html:48
+msgid "No Recording"
+msgstr "No Recording"
+
+#: templates/pycontw-2018/events/talk_detail.html:60
+#: templates/pycontw-2019/events/talk_detail.html:62
+#: templates/pycontw-2019/events/tutorial_detail.html:61
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:73
+#: templates/pycontw-2020/events/talk_detail.html:82
+#: templates/pycontw-2020/events/tutorial_detail.html:68
+#: templates/pycontw-2021/events/talk_detail.html:82
+#: templates/pycontw-2021/events/tutorial_detail.html:68
+msgid "Slides"
+msgstr "Slides"
+
+#: templates/pycontw-2018/events/talk_detail.html:69
+#: templates/pycontw-2019/events/talk_detail.html:71
+#: templates/pycontw-2020/events/talk_detail.html:91
+#: templates/pycontw-2021/events/talk_detail.html:91
+msgctxt "speaker info in talk detail"
+msgid "Speakers"
+msgstr "Speakers"
+
+#: templates/pycontw-2018/events/talk_detail.html:71
+#: templates/pycontw-2019/events/talk_detail.html:73
+#: templates/pycontw-2020/events/talk_detail.html:93
+#: templates/pycontw-2021/events/talk_detail.html:93
+msgctxt "speaker info in talk detail"
+msgid "Speaker"
+msgstr "Speaker"
+
+#: templates/pycontw-2018/events/talk_list.html:13
+#: templates/pycontw-2019/events/talk_list.html:13
+msgid ""
+"The two conference days are packed with talks about Python by speakers from "
+"Taiwan and around the world. The talks will be either 30- or 45-minute long. "
+"Three tracks of talks will be delivered simultaneously, all with different "
+"topics and difficulties. We suggest you to plan beforehand, and choose what "
+"you want to listen based on your interests. Many people take notes on the "
+"program schedule before the meeting so they don't end up in the wrong place."
+msgstr ""
+"The two conference days are packed with talks about Python by speakers from "
+"Taiwan and around the world. The talks will be either 30- or 45-minute long. "
+"Three tracks of talks will be delivered simultaneously, all with different "
+"topics and difficulties. We suggest you to plan beforehand, and choose what "
+"you want to listen based on your interests. Many people take notes on the "
+"program schedule before the meeting so they don’t end up in the wrong place."
+
+#: templates/pycontw-2018/events/talk_list.html:14
+#: templates/pycontw-2019/events/talk_list.html:14
+#: templates/pycontw-2019/events/tutorial_list.html:14
+#: templates/pycontw-2020/events/talk_list.html:18
+#: templates/pycontw-2020/events/tutorial_list.html:16
+#: templates/pycontw-2021/events/talk_list.html:18
+#: templates/pycontw-2021/events/tutorial_list.html:16
+msgid ""
+"<em>Program schedule is subject to change.</em> Please check this page "
+"frequently to get the latest version."
+msgstr ""
+"<em>Program schedule is subject to change.</em> Please check this page "
+"frequently to get the latest version."
+
+#: templates/pycontw-2018/events/talk_list.html:17
+#: templates/pycontw-2019/events/talk_list.html:17
+#: templates/pycontw-2020/events/talk_list.html:21
+#: templates/pycontw-2021/events/talk_list.html:21
+msgid "Categories"
+msgstr "Categories"
+
+#: templates/pycontw-2018/events/talk_list.html:34
+#: templates/pycontw-2019/events/talk_list.html:34
+#, python-format
+msgid ""
+"<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+"%(proposal_title)s</a> by %(speaker_names)s"
+msgstr ""
+"<a class=\"talk-title\" href=\"%(event_talk_detail_url)s\">"
+"%(proposal_title)s</a> by %(speaker_names)s"
+
+#: templates/pycontw-2018/index.html:32 templates/pycontw-2019/index.html:39
+#: templates/pycontw-2020/index.html:60 templates/pycontw-2021/index.html:87
+msgid "What is PyCon"
+msgstr "What is PyCon"
+
+#: templates/pycontw-2018/index.html:33 templates/pycontw-2019/index.html:40
+#: templates/pycontw-2020/index.html:61 templates/pycontw-2021/index.html:88
+msgid ""
+"<p>The original PyCon was formed in North America in 2003, and now there are "
+"many other conferences being run in the PyCon spirit around the world.</p>"
+msgstr ""
+"<p>The original PyCon was formed in North America in 2003, and now there are "
+"many other conferences being run in the PyCon spirit around the world.</p>"
+
+#: templates/pycontw-2018/index.html:39 templates/pycontw-2019/index.html:46
+#: templates/pycontw-2020/index.html:68 templates/pycontw-2021/index.html:95
+msgid "What is PyCon Taiwan"
+msgstr "What is PyCon Taiwan"
+
+#: templates/pycontw-2018/index.html:40 templates/pycontw-2019/index.html:47
+#: templates/pycontw-2020/index.html:69 templates/pycontw-2021/index.html:96
+msgid ""
+"<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge, "
+"exchange ideas, make connections and to help us grow our network.</p>"
+msgstr ""
+"<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
+"promotion of the Python programming language. It is held by enthusiasts and "
+"focuses on Python technology and its versatile applications. We welcome "
+"people who are interested in Python to join PyCon Taiwan to share knowledge, "
+"exchange ideas, make connections and to help us grow our network.</p>"
+
+#: templates/pycontw-2018/index.html:50
+#: templates/pycontw-2019/_includes/sponsors.html:8
+msgid "<p>Help us organize and make the conference successful!</p>"
+msgstr "<p>Help us organize and make the conference successful!</p>"
+
+#: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:60
+#: templates/pycontw-2020/index.html:47 templates/pycontw-2021/index.html:51
+msgid "Become a volunteer"
+msgstr "Become a volunteer"
+
+#: templates/pycontw-2019/_includes/portal.html:20
+msgid "Program Book"
+msgstr "Program Book"
+
+#: templates/pycontw-2019/_includes/sponsors.html:53
+#: templates/pycontw-2020/_includes/sponsors.html:57
+#: templates/pycontw-2021/_includes/sponsors.html:57
+msgid "Redirect to official website"
+msgstr "Redirect to official website"
+
+#: templates/pycontw-2019/_includes/sponsors.html:73
+msgid "Sponsors Needed"
+msgstr "Sponsors Needed"
+
+#: templates/pycontw-2019/_includes/staff.html:38
+#: templates/pycontw-2020/_includes/staff.html:38
+msgctxt "staff"
+msgid "OPass Development"
+msgstr "OPass Development"
+
+#: templates/pycontw-2019/_includes/staff.html:138
+msgctxt "staff"
+msgid "Maneuvering"
+msgstr "Maneuvering"
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:15
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:16
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:16
+msgid "Home"
+msgstr "Home"
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:43
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:62
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:47
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:70
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:47
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:69
+msgid "Speech"
+msgstr "Speech"
+
+#: templates/pycontw-2019/contents/_default/events/keynotes.html:47
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:51
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:51
+msgid "Slido"
+msgstr "Slido"
+
+#: templates/pycontw-2019/events/_includes/schedule_keynote_event.html:5
+msgid "Keynote: "
+msgstr "Keynote: "
+
+#: templates/pycontw-2019/events/tutorial_detail.html:12
+#: templates/pycontw-2020/events/tutorial_detail.html:13
+#: templates/pycontw-2021/events/tutorial_detail.html:13
+msgid "Tutorial: "
+msgstr "Tutorial: "
+
+#: templates/pycontw-2019/events/tutorial_detail.html:70
+#: templates/pycontw-2020/events/tutorial_detail.html:77
+#: templates/pycontw-2021/events/tutorial_detail.html:77
+msgctxt "speaker info in tutorial detail"
+msgid "Lecturers"
+msgstr "Lecturers"
+
+#: templates/pycontw-2019/events/tutorial_detail.html:72
+#: templates/pycontw-2020/events/tutorial_detail.html:79
+#: templates/pycontw-2021/events/tutorial_detail.html:79
+msgctxt "speaker info in tutorial detail"
+msgid "Lecturer"
+msgstr "Lecturer"
+
+#: templates/pycontw-2019/events/tutorial_list.html:13
+msgid ""
+"Tutorial are events held as part of the main conference, but attendees need "
+"to register separately in order to join. They are either half- or one-day "
+"(three or six hours) events held to help participants better understand "
+"talks during the conference, or get their hands on more Python applications."
+msgstr ""
+"Tutorial are events held as part of the main conference, but attendees need "
+"to register separately in order to join. They are either half- or one-day "
+"(three or six hours) events held to help participants better understand "
+"talks during the conference, or get their hands on more Python applications."
+
+#: templates/pycontw-2019/events/tutorial_list.html:27
+#: templates/pycontw-2020/events/tutorial_list.html:29
+#: templates/pycontw-2021/events/tutorial_list.html:29
+msgid "Show Details"
+msgstr "Show Details"
+
+#: templates/pycontw-2019/events/tutorial_list.html:31
+#: templates/pycontw-2020/events/tutorial_list.html:33
+#: templates/pycontw-2021/events/tutorial_list.html:33
+msgid "Register"
+msgstr "Register"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:6
+#: templates/pycontw-2021/_includes/ext/discord.html:6
+msgid "discord-tutorials"
+msgstr "Tutorials"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:7
+#: templates/pycontw-2021/_includes/ext/discord.html:7
+msgid ""
+"If you have not installed Discord or joined Python Taiwan Discord server, "
+"follow <a href='#setup-discord'>Setting up Discord</a> and setup your "
+"Discord first."
+msgstr ""
+"If you have not installed Discord or joined Python Taiwan Discord server, "
+"follow <a href='#setup-discord'>Setting up Discord</a> and setup your "
+"Discord first."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:10
+#: templates/pycontw-2021/_includes/ext/discord.html:10
+msgid "1. Register yourself"
+msgstr "1. Register yourself"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:11
+msgid ""
+"Users can find a #registration-desk channel under <strong>PYCON TW 2020</"
+"strong> category. There is a PyCon TW RegBot in this channel to help you "
+"register to your roles."
+msgstr ""
+"Users can find a #registration-desk channel under <strong>PYCON TW 2020</"
+"strong> category. There is a PyCon TW RegBot in this channel to help you "
+"register to your roles."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:13
+#: templates/pycontw-2021/_includes/ext/discord.html:13
+msgid "Enter"
+msgstr "Enter"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:13
+#: templates/pycontw-2021/_includes/ext/discord.html:13
+msgid "in this channel to register"
+msgstr "in this channel to register"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:15
+#: templates/pycontw-2021/_includes/ext/discord.html:15
+msgid "Enter <code>!register <i>[TOKEN]</i></code> in this channel to register"
+msgstr ""
+"Enter <code>!register <i>[TOKEN]</i></code> in this channel to register"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:16
+#: templates/pycontw-2021/_includes/ext/discord.html:16
+msgid ""
+"(If you want to get your own Token, please click the link in the letter or "
+"use Opass.)"
+msgstr ""
+"(If you want to get your own Token, please click the link in the letter or "
+"use Opass.)"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:18
+#: templates/pycontw-2021/_includes/ext/discord.html:18
+msgid "Enter <code>!help</code> if you need command help from RegBot."
+msgstr "Enter <code>!help</code> if you need command help from RegBot."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:19
+#: templates/pycontw-2021/_includes/ext/discord.html:19
+msgid ""
+"If you register successfully, you can see several new channels appear in the "
+"left."
+msgstr ""
+"If you register successfully, you can see several new channels appear in the "
+"left."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:20
+msgid ""
+"If you keep failing to register, you can directly raise your question in "
+"#registration-desk channel and mention <strong>2020-staff</strong>。"
+msgstr ""
+"If you keep failing to register, you can directly raise your question in "
+"#registration-desk channel and mention <strong>2020-staff</strong>。"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:24
+#: templates/pycontw-2021/_includes/ext/discord.html:24
+msgid "2. Take a look at official announcements"
+msgstr "2. Take a look at official announcements"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:25
+#: templates/pycontw-2021/_includes/ext/discord.html:25
+msgid ""
+"All official announcements channel names contain the word "
+"<strong>'announcements'</strong>."
+msgstr ""
+"All official announcements channel names contain the word "
+"<strong>'announcements'</strong>."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:26
+#: templates/pycontw-2021/_includes/ext/discord.html:26
+msgid "You can check for important announcements first after you are in."
+msgstr "You can check for important announcements first after you are in."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:30
+#: templates/pycontw-2021/_includes/ext/discord.html:30
+msgid "3. Join session channel"
+msgstr "3. Join session channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:31
+#: templates/pycontw-2021/_includes/ext/discord.html:31
+msgid "All session channel names contain the word <strong>'track'</strong>."
+msgstr "All session channel names contain the word <strong>'track'</strong>."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:32
+#: templates/pycontw-2021/_includes/ext/discord.html:32
+msgid ""
+"You can enter keynote channel when it is time for keynote, or track channel "
+"according to which track you are in."
+msgstr ""
+"You can enter keynote channel when it is time for keynote, or track channel "
+"according to which track you are in."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:36
+#: templates/pycontw-2021/_includes/ext/discord.html:36
+msgid "Roles list"
+msgstr "Roles list"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:37
+#: templates/pycontw-2021/_includes/ext/discord.html:37
+msgid ""
+"Users can be assigned several different roles, each role would have their "
+"own permission to enter some private channel."
+msgstr ""
+"Users can be assigned several different roles, each role would have their "
+"own permission to enter some private channel."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:39
+msgid "2020-session-chair"
+msgstr "2020-session-chair"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:40
+msgid "Target: PyCon TW 2020 session chairs and assistant chairs"
+msgstr "Target: PyCon TW 2020 session chairs and assistant chairs"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:43
+msgid "2020-staff"
+msgstr "2020-staff"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:44
+msgid "Target: PyCon TW 2020 staff"
+msgstr "Target: PyCon TW 2020 staff"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:47
+msgid "2020-speaker"
+msgstr "2020-speaker"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:48
+msgid "Target: PyCon TW 2020 speakers"
+msgstr "Target: PyCon TW 2020 speakers"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:51
+msgid "2020-remote"
+msgstr "2020-remote"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:52
+msgid "Target: PyCon TW 2020 remote session staff and remote speakers."
+msgstr "Target: PyCon TW 2020 remote session staff and remote speakers."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:55
+msgid "2020-attendee"
+msgstr "2020-attendee"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:56
+msgid "Target: PyCon TW 2020 attendees"
+msgstr "Target: PyCon TW 2020 attendees"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:60
+#: templates/pycontw-2021/_includes/ext/discord.html:60
+msgid "Channels list"
+msgstr "Channels list"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:61
+#: templates/pycontw-2021/_includes/ext/discord.html:61
+msgid ""
+"There are two type of channels in Discord, which is Text Channel and Voice "
+"Channel. Below we use:"
+msgstr ""
+"There are two type of channels in Discord, which is Text Channel and Voice "
+"Channel. Below we use:"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:62
+#: templates/pycontw-2021/_includes/ext/discord.html:62
+msgid "#CHANNEL_NAME to represent a text channel"
+msgstr "#CHANNEL_NAME to represent a text channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:63
+#: templates/pycontw-2021/_includes/ext/discord.html:63
+msgid "🔊CHANNEL_NAME to represent a voice channel."
+msgstr "🔊CHANNEL_NAME to represent a voice channel."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:65
+#: templates/pycontw-2021/_includes/ext/discord.html:65
+msgid "Registration channel"
+msgstr "Registration channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:66
+#: templates/pycontw-2021/_includes/ext/discord.html:66
+msgid "#registration-desk"
+msgstr "#registration-desk"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:67
+#: templates/pycontw-2021/_includes/ext/discord.html:67
+msgid "Roles：<code>@everyone</code>"
+msgstr "Roles： <code>@everyonte</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:68
+#: templates/pycontw-2021/_includes/ext/discord.html:68
+msgid ""
+"When you just enter Python Taiwan Discord server, use this channel to "
+"provide your registration information, so that robot can promote you to the "
+"roles you are in."
+msgstr ""
+"When you just enter Python Taiwan Discord server, use this channel to "
+"provide your registration information, so that robot can promote you to the "
+"roles you are in."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:71
+#: templates/pycontw-2021/_includes/ext/discord.html:71
+msgid "Session channel"
+msgstr "Session channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:72
+#: templates/pycontw-2021/_includes/ext/discord.html:72
+msgid "#keynote-track"
+msgstr "#keynote-track"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:73
+#: templates/pycontw-2020/_includes/ext/discord.html:76
+#: templates/pycontw-2020/_includes/ext/discord.html:79
+#: templates/pycontw-2020/_includes/ext/discord.html:82
+#: templates/pycontw-2020/_includes/ext/discord.html:88
+#: templates/pycontw-2020/_includes/ext/discord.html:100
+msgid ""
+"Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-"
+"attendee</code>"
+msgstr ""
+"Roles：<code>2020-staff</code>, <code>2020-speaker</code>, <code>2020-"
+"attendee</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:74
+#: templates/pycontw-2021/_includes/ext/discord.html:74
+msgid "Keynote discussion channel"
+msgstr "Keynote discussion channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:75
+#: templates/pycontw-2021/_includes/ext/discord.html:75
+msgid "#r1-track"
+msgstr "#r1-track"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:77
+#: templates/pycontw-2021/_includes/ext/discord.html:77
+msgid "R1 track discussion channel"
+msgstr "R1 track discussion channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:78
+#: templates/pycontw-2021/_includes/ext/discord.html:78
+msgid "#r2-track"
+msgstr "#r2-track"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:80
+#: templates/pycontw-2021/_includes/ext/discord.html:80
+msgid "R2 track discussion channel"
+msgstr "R2 track discussion channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:81
+#: templates/pycontw-2021/_includes/ext/discord.html:81
+msgid "#r3-track"
+msgstr "#r3-track"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:83
+#: templates/pycontw-2021/_includes/ext/discord.html:83
+msgid "R3 track (remote track) discussion channel"
+msgstr "R3 track (remote track) discussion channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:86
+#: templates/pycontw-2021/_includes/ext/discord.html:86
+msgid "Announcements channel"
+msgstr "Announcements channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:87
+#: templates/pycontw-2021/_includes/ext/discord.html:87
+msgid "#announcements"
+msgstr "#announcements"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:89
+#: templates/pycontw-2021/_includes/ext/discord.html:89
+msgid ""
+"Official announcement channel, any official announcements will be posted "
+"here."
+msgstr ""
+"Official announcement channel, any official announcements will be posted "
+"here."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:90
+#: templates/pycontw-2021/_includes/ext/discord.html:90
+msgid "#speakers-announcements"
+msgstr "#speakers-announcements"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:91
+#: templates/pycontw-2020/_includes/ext/discord.html:103
+msgid "Roles：<code>2020-staff</code>, <code>2020-speaker</code>"
+msgstr "Roles：<code>2020-staff</code>, <code>2020-speaker</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:92
+#: templates/pycontw-2021/_includes/ext/discord.html:92
+msgid ""
+"A special announcement channel for speakers, speaker can also have "
+"discussion with each other in this channel."
+msgstr ""
+"A special announcement channel for speakers, speaker can also have "
+"discussion with each other in this channel."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:93
+#: templates/pycontw-2021/_includes/ext/discord.html:93
+msgid "#staff-announcements"
+msgstr "#staff-announcements"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:94
+msgid "Roles：<code>2020-staff</code>"
+msgstr "Roles：<code>2020-staff</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:95
+#: templates/pycontw-2021/_includes/ext/discord.html:95
+msgid ""
+"A special announcement channel for staff, staff can also contact to others "
+"in this channel."
+msgstr ""
+"A special announcement channel for staff, staff can also contact to others "
+"in this channel."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:98
+#: templates/pycontw-2021/_includes/ext/discord.html:98
+msgid "Information desk channel"
+msgstr "Information desk channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:99
+#: templates/pycontw-2021/_includes/ext/discord.html:99
+msgid "#information-desk"
+msgstr "#information-desk"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:101
+#: templates/pycontw-2021/_includes/ext/discord.html:101
+msgid ""
+"Official online information desk, speakers or attendees can give questions "
+"or suggestions in this channel."
+msgstr ""
+"Official online information desk, speakers or attendees can give questions "
+"or suggestions in this channel."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:102
+#: templates/pycontw-2021/_includes/ext/discord.html:102
+msgid "#speakers"
+msgstr "#speakers"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:104
+#: templates/pycontw-2021/_includes/ext/discord.html:104
+msgid ""
+"Speakers only information desk, speakers can give sessions or speakers "
+"related questions here for answers or further instruction."
+msgstr ""
+"Speakers only information desk, speakers can give sessions or speakers "
+"related questions here for answers or further instruction."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:105
+#: templates/pycontw-2021/_includes/ext/discord.html:105
+msgid "#session-chairs"
+msgstr "#session-chairs"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:106
+msgid "Roles：<code>2020-session-chair</code>"
+msgstr "Roles：<code>2020-session-chair</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:107
+#: templates/pycontw-2021/_includes/ext/discord.html:107
+msgid ""
+"A channel for session chairs and assistant chairs to give any related "
+"questions here for answers or further instruction."
+msgstr ""
+"A channel for session chairs and assistant chairs to give any related "
+"questions here for answers or further instruction."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:110
+#: templates/pycontw-2021/_includes/ext/discord.html:110
+msgid "Special channel"
+msgstr "Special channel"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:111
+#: templates/pycontw-2021/_includes/ext/discord.html:111
+msgid "🔊remote-guide"
+msgstr "🔊remote-guide"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:112
+msgid "Roles： <code>2020-remote</code>"
+msgstr "Roles： <code>2020-remote</code>"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:113
+#: templates/pycontw-2021/_includes/ext/discord.html:113
+msgid ""
+"A special channel for remote partners to contact with each other during "
+"sessions, mainly for session chairs to give a cue to remote speakers."
+msgstr ""
+"A special channel for remote partners to contact with each other during "
+"sessions, mainly for session chairs to give a cue to remote speakers."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:116
+#: templates/pycontw-2021/_includes/ext/discord.html:116
+msgid "Appendices"
+msgstr "Appendices"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:117
+#: templates/pycontw-2021/_includes/ext/discord.html:117
+msgid "Setting up Discord"
+msgstr "Setting up Discord"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:118
+#: templates/pycontw-2021/_includes/ext/discord.html:118
+msgid ""
+"1.<a href='https://discord.com/download'>Download the Discord client</a> for "
+"your platform and install it. If you already have this, please make sure it "
+"is the latest available version."
+msgstr ""
+"1.<a href='https://discord.com/download'>Download the Discord client</a> for "
+"your platform and install it. If you already have this, please make sure it "
+"is the latest available version."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:120
+#: templates/pycontw-2021/_includes/ext/discord.html:120
+msgid ""
+"2.Register an account on Discord if you don’t have one. Open the Discord "
+"client you just installed. Click the 'Register' link below and complete your "
+"registration. (You may be asked to verify your account with the verification "
+"mail that Discord sends you)"
+msgstr ""
+"2.Register an account on Discord if you don’t have one. Open the Discord "
+"client you just installed. Click the 'Register' link below and complete your "
+"registration. (You may be asked to verify your account with the verification "
+"mail that Discord sends you)"
+
+#: templates/pycontw-2020/_includes/ext/discord.html:123
+#: templates/pycontw-2021/_includes/ext/discord.html:123
+msgid ""
+"3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
+"invite link: <a href='https://discord.gg/94hgCQv'>https://discord."
+"gg/94hgCQv</a> <br>In your Discord client App, click the button with plus "
+"sign, and then select 'Join a server'."
+msgstr ""
+"3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
+"invite link: <a href='https://discord.gg/94hgCQv'>https://discord."
+"gg/94hgCQv</a> <br>In your Discord client App, click the button with plus "
+"sign, and then select 'Join a server'."
+
+#: templates/pycontw-2020/_includes/ext/discord.html:126
+#: templates/pycontw-2021/_includes/ext/discord.html:126
+msgid ""
+"In this dialog, copy the invite link above and paste it to the inputbox, "
+"then click 'Join'."
+msgstr ""
+"In this dialog, copy the invite link above and paste it to the inputbox, "
+"then click 'Join'."
+
+#: templates/pycontw-2020/_includes/ext/live.html:17
+#: templates/pycontw-2021/_includes/ext/live.html:17
+msgid "This broadcast is not ready yet."
+msgstr "This broadcast is not ready yet."
+
+#: templates/pycontw-2020/_includes/ext/live.html:26
+#: templates/pycontw-2021/_includes/ext/live.html:26
+msgid "The broadcasts are not ready yet, please try again later."
+msgstr "The broadcasts are not ready yet, please try again later."
+
+#: templates/pycontw-2020/_includes/ext/live.html:32
+#: templates/pycontw-2021/_includes/ext/live.html:32
+msgid ""
+"The token within the link is invalid. Please contact staff for further help."
+msgstr ""
+
+#: templates/pycontw-2020/_includes/footer.html:16
+#: templates/pycontw-2021/_includes/footer.html:16
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+#: templates/pycontw-2020/_includes/menu.html:84
+#: templates/pycontw-2020/contents/en/events/overview.html:91
+#: templates/pycontw-2020/contents/zh/events/overview.html:72
+#: templates/pycontw-2020/events/talk_list.html:64
+#: templates/pycontw-2020/events/talk_list.html:76
+#: templates/pycontw-2021/contents/en/events/overview.html:91
+#: templates/pycontw-2021/contents/zh/events/overview.html:72
+#: templates/pycontw-2021/events/talk_list.html:64
+#: templates/pycontw-2021/events/talk_list.html:76
+msgid "Community Track"
+msgstr "Community Track"
+
+#: templates/pycontw-2020/_includes/menu.html:101
+msgid "Warm-Up Session"
+msgstr "Warm-Up Session"
+
+#: templates/pycontw-2020/_includes/menu.html:132
+#: templates/pycontw-2021/_includes/menu.html:146
+msgctxt "COVID-19 Guidelines"
+msgid "COVID-19 Guidelines"
+msgstr "COVID-19 Guidelines"
+
+#: templates/pycontw-2020/_includes/portal.html:12
+#: templates/pycontw-2021/_includes/portal.html:12
+msgid "Discord Chat Room"
+msgstr "Discord 聊天室"
+
+#: templates/pycontw-2020/_includes/portal.html:20
+#: templates/pycontw-2021/_includes/portal.html:20
+msgid "Open space"
+msgstr "Open space"
+
+#: templates/pycontw-2020/_includes/sponsors.html:5
+#: templates/pycontw-2021/_includes/sponsors.html:5
+msgid "Sponsor Partners"
+msgstr "Sponsor Partners"
+
+#: templates/pycontw-2020/_includes/staff.html:171
+msgctxt "staff"
+msgid "Recruitment"
+msgstr "Recruitment"
+
+#: templates/pycontw-2020/ccip/community_track.html:24
+#: templates/pycontw-2020/events/community_track.html:43
+#: templates/pycontw-2021/ccip/community_track.html:24
+#: templates/pycontw-2021/events/community_track.html:43
+msgid "Topics &amp; Venues"
+msgstr "Topics &amp; Venues"
+
+#: templates/pycontw-2020/ccip/community_track.html:27
+#: templates/pycontw-2020/events/community_track.html:46
+#: templates/pycontw-2021/ccip/community_track.html:27
+#: templates/pycontw-2021/events/community_track.html:46
+msgid "traffic"
+msgstr "traffic"
+
+#: templates/pycontw-2020/ccip/discord.html:15
+#: templates/pycontw-2020/ext/discord.html:5
+#: templates/pycontw-2021/ccip/discord.html:15
+#: templates/pycontw-2021/ext/discord.html:5
+msgid "Discord Guideline"
+msgstr "Discord Guideline"
+
+#: templates/pycontw-2020/contents/_default/conference/keynotes.html:69
+#: templates/pycontw-2021/contents/_default/conference/keynotes.html:68
+msgid "To be announced"
+msgstr ""
+
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:53
+#: templates/pycontw-2020/contents/_default/events/job-listings.html:58
+#: templates/pycontw-2021/contents/_default/events/job-listings.html:53
+#: templates/pycontw-2021/contents/_default/events/job-listings.html:58
+msgid "Open Roles"
+msgstr "Open Roles"
+
+#: templates/pycontw-2020/events/_includes/community-track-overview.html:9
+#: templates/pycontw-2020/events/_includes/community-track.html:10
+#: templates/pycontw-2021/events/_includes/community-track-overview.html:9
+#: templates/pycontw-2021/events/_includes/community-track.html:10
+msgid "Selected"
+msgstr "Selected"
+
+#: templates/pycontw-2020/events/_includes/community-track-overview.html:16
+#: templates/pycontw-2020/events/_includes/community-track.html:17
+#: templates/pycontw-2021/events/_includes/community-track-overview.html:16
+#: templates/pycontw-2021/events/_includes/community-track.html:17
+msgid "Select this track"
+msgstr "Select this track"
+
+#: templates/pycontw-2020/events/_includes/community-track-overview.html:18
+#: templates/pycontw-2020/events/_includes/community-track.html:19
+#: templates/pycontw-2021/events/_includes/community-track-overview.html:18
+#: templates/pycontw-2021/events/_includes/community-track.html:19
+msgid "Full"
+msgstr ""
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:10
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:10
+msgid "Time"
+msgstr "Time"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:11
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:11
+msgid "Shuttle bus route"
+msgstr "Shuttle bus route"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:44
+msgid "Cheng Kung University"
+msgstr "Cheng Kung University"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:44
+msgid "Tainan Cultural and Creative Park"
+msgstr "Tainan Cultural and Creative Park"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:44
+msgid "Tsang Fong Art Space"
+msgstr "Tsang Fong Art Space"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:44
+msgid "Angry Burger"
+msgstr "Angry Burger"
+
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2020/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2021/events/_includes/community-track-traffic.html:44
+msgid "Brunch of San Dao Men Siang Jian"
+msgstr "Brunch of San Dao Men Siang Jian"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:49
+#: templates/pycontw-2021/events/_includes/community-track.html:49
+msgid "Agenda"
+msgstr "Agenda"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:66
+#: templates/pycontw-2020/events/talk_list.html:43
+#: templates/pycontw-2021/events/_includes/community-track.html:66
+#: templates/pycontw-2021/events/talk_list.html:43
+#, python-format
+msgid " by %(speaker_names)s"
+msgstr " - %(speaker_names)s"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:72
+#: templates/pycontw-2021/events/_includes/community-track.html:72
+msgid "Invited Event"
+msgstr "Invited Event"
+
+#: templates/pycontw-2020/events/_includes/community-track.html:73
+#: templates/pycontw-2020/events/talk_list.html:65
+#: templates/pycontw-2021/events/_includes/community-track.html:73
+#: templates/pycontw-2021/events/talk_list.html:65
+#, fuzzy, python-format
+msgid " by %(host_name)s"
+msgstr " - %(host_name)s"
+
+#: templates/pycontw-2020/events/community_track.html:5
+#: templates/pycontw-2020/events/community_track.html:17
+#: templates/pycontw-2021/events/community_track.html:5
+#: templates/pycontw-2021/events/community_track.html:17
+msgid "Community Topic Track"
+msgstr "Community Track"
+
+#: templates/pycontw-2020/events/community_track.html:7
+#: templates/pycontw-2020/events/community_track.html:20
+#: templates/pycontw-2020/events/talk_list.html:78
+#: templates/pycontw-2021/events/community_track.html:7
+#: templates/pycontw-2021/events/community_track.html:20
+#: templates/pycontw-2021/events/talk_list.html:78
+msgid ""
+"The community track is a new event in PyCon TW. We choose the talks with "
+"specific topics and package them into the same session. We'll leave the "
+"conference rooms and go to characteristic cafes, exhibition spaces, and even "
+"monuments so that the attendees and speakers can interact with each other "
+"more comfortably and closely."
+msgstr ""
+
+#: templates/pycontw-2020/events/community_track.html:27
+#: templates/pycontw-2021/events/community_track.html:27
+msgid "Event Time"
+msgstr "Event Time"
+
+#: templates/pycontw-2020/events/community_track.html:31
+#: templates/pycontw-2021/events/community_track.html:31
+msgid "Event Info"
+msgstr "Event Info"
+
+#: templates/pycontw-2020/events/community_track.html:32
+#: templates/pycontw-2021/events/community_track.html:32
+msgid "Physical Meetup"
+msgstr "Physical Meetup"
+
+#: templates/pycontw-2020/events/community_track.html:35
+#: templates/pycontw-2021/events/community_track.html:35
+msgid "Host"
+msgstr "Host"
+
+#: templates/pycontw-2020/events/community_track.html:36
+#: templates/pycontw-2021/events/community_track.html:36
+msgid "Python Community Leader"
+msgstr "Python Community Leader"
+
+#: templates/pycontw-2020/events/talk_list.html:17
+#: templates/pycontw-2021/events/talk_list.html:17
+msgid ""
+"The two conference days are packed with talks about Python by speakers from "
+"Taiwan and around the world. The talks will be either 15- or 30-minute long. "
+"Three tracks of talks will be delivered simultaneously, all with different "
+"topics and difficulties. We suggest you to plan beforehand, and choose what "
+"you want to listen based on your interests. Many people take notes on the "
+"program schedule before the meeting so they don't end up in the wrong place."
+msgstr ""
+"The two conference days are packed with talks about Python by speakers from "
+"Taiwan and around the world. The talks will be either 15- or 30-minute long. "
+"Three tracks of talks will be delivered simultaneously, all with different "
+"topics and difficulties. We suggest you to plan beforehand, and choose what "
+"you want to listen based on your interests. Many people take notes on the "
+"program schedule before the meeting so they don't end up in the wrong place."
+
+#: templates/pycontw-2020/events/tutorial_list.html:15
+#: templates/pycontw-2021/events/tutorial_list.html:15
+msgid ""
+"Tutorial are events held as part of the main conference, but attendees need "
+"to register separately in order to join. They are 90-minute events held to "
+"help participants better understand talks during the conference, or get "
+"their hands on more Python applications."
+msgstr ""
+"Tutorial are events held as part of the main conference, but attendees need "
+"to register separately in order to join. They are 90-minute events held to "
+"help participants better understand talks during the conference, or get "
+"their hands on more Python applications."
+
+#: templates/pycontw-2020/ext/discord.html:11
+#: templates/pycontw-2021/ext/discord.html:11
+msgid "PyCon TW Discord Guideline"
+msgstr "PyCon TW Discord Guideline"
+
+#: templates/pycontw-2020/ext/live.html:5
+#: templates/pycontw-2020/ext/live.html:12
+#: templates/pycontw-2021/ext/live.html:5
+#: templates/pycontw-2021/ext/live.html:12
+msgid "Live broadcast"
+msgstr ""
+
+#: templates/pycontw-2020/index.html:52
+msgid "Sponsor PyCon TW"
+msgstr "Sponsor PyCon TW"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:11
+msgid ""
+"Users can find a #registration-desk channel under <strong>PYCON TW 2021</"
+"strong> category. There is a PyCon TW RegBot in this channel to help you "
+"register to your roles."
+msgstr ""
+"Users can find a #registration-desk channel under <strong>PYCON TW 2021</"
+"strong> category. There is a PyCon TW RegBot in this channel to help you "
+"register to your roles."
+
+#: templates/pycontw-2021/_includes/ext/discord.html:20
+msgid ""
+"If you keep failing to register, you can directly raise your question in "
+"#registration-desk channel and mention <strong>2021-staff</strong>。"
+msgstr ""
+"If you keep failing to register, you can directly raise your question in "
+"#registration-desk channel and mention <strong>2021-staff</strong>。"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:39
+msgid "2021-session-chair"
+msgstr "2021-session-chair"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:40
+msgid "Target: PyCon TW 2021 session chairs and assistant chairs"
+msgstr "Target: PyCon TW 2021 session chairs and assistant chairs"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:43
+msgid "2021-staff"
+msgstr "2021-staff"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:44
+msgid "Target: PyCon TW 2021 staff"
+msgstr "Target: PyCon TW 2021 staff"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:47
+msgid "2021-speaker"
+msgstr "2021-speaker"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:48
+msgid "Target: PyCon TW 2021 speakers"
+msgstr "Target: PyCon TW 2021 speakers"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:51
+msgid "2021-remote"
+msgstr "2021-remote"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:52
+msgid "Target: PyCon TW 2021 remote session staff and remote speakers."
+msgstr "Target: PyCon TW 2021 remote session staff and remote speakers."
+
+#: templates/pycontw-2021/_includes/ext/discord.html:55
+msgid "2021-attendee"
+msgstr "2021-attendee"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:56
+msgid "Target: PyCon TW 2021 attendees"
+msgstr "Target: PyCon TW 2021 attendees"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:73
+#: templates/pycontw-2021/_includes/ext/discord.html:76
+#: templates/pycontw-2021/_includes/ext/discord.html:79
+#: templates/pycontw-2021/_includes/ext/discord.html:82
+#: templates/pycontw-2021/_includes/ext/discord.html:88
+#: templates/pycontw-2021/_includes/ext/discord.html:100
+msgid ""
+"Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-"
+"attendee</code>"
+msgstr ""
+"Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-"
+"attendee</code>"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:91
+#: templates/pycontw-2021/_includes/ext/discord.html:103
+msgid "Roles：<code>2021-staff</code>, <code>2021-speaker</code>"
+msgstr "Roles：<code>2021-staff</code>, <code>2021-speaker</code>"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:94
+msgid "Roles：<code>2021-staff</code>"
+msgstr "Roles：<code>2021-staff</code>"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:106
+msgid "Roles：<code>2021-session-chair</code>"
+msgstr "Roles：<code>2021-session-chair</code>"
+
+#: templates/pycontw-2021/_includes/ext/discord.html:112
+msgid "Roles： <code>2021-remote</code>"
+msgstr "Roles： <code>2021-remote</code>"
+
+#: templates/pycontw-2021/index.html:56
+msgid "Call for Proposals"
+msgstr "Call for Proposals"
+
+#: users/admin.py:18
+msgid "Personal info"
+msgstr "Personal info"
+
+#: users/admin.py:27
+msgid "Permissions"
+msgstr "Permissions"
+
+#: users/admin.py:36
+msgid "Important dates"
+msgstr "Important dates"
+
+#: users/forms.py:28
+msgid "A user with that email already exists."
+msgstr "A user with that email already exists."
+
+#: users/forms.py:29
+msgid "The two password fields didn't match."
+msgstr "The two password fields didn’t match."
+
+#: users/forms.py:32 users/forms.py:196
+msgid "Password"
+msgstr "Password"
+
+#: users/forms.py:36
+msgid "Password confirmation"
+msgstr "Password confirmation"
+
+#: users/forms.py:117
+msgid "Create Account"
+msgstr "Create Account"
+
+#: users/forms.py:148
+#, python-brace-format
+msgid "Your image is too small ({width}\\u00d7{height} pixels)."
+msgstr "Your image is too small ({width}\\u00d7{height} pixels)."
+
+#: users/forms.py:150
+msgid "The image you provided is not quadrate."
+msgstr "The image you provided is not quadrate."
+
+#: users/forms.py:197
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+msgstr ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"password/\">this "
+"form</a>."
+
+#: users/forms.py:246
+#, python-brace-format
+msgid ""
+"<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
+msgstr ""
+"<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password?</a>"
+
+#: users/forms.py:263
+msgid "Email Address"
+msgstr "Email Address"
+
+#: users/forms.py:282
+msgid "Request Password Reset"
+msgstr "Request Password Reset"
+
+#: users/forms.py:318
+msgid "Set Password"
+msgstr "Set Password"
+
+#: users/forms.py:330
+msgid "I agree to the code of conduct."
+msgstr "I agree to the code of conduct."
+
+#: users/forms.py:335
+msgid "You must agree to continue."
+msgstr "You must agree to continue."
+
+#: users/models.py:112
+msgid "email address"
+msgstr "email address"
+
+#: users/models.py:120
+msgid "biography"
+msgstr "biography"
+
+#: users/models.py:123
+msgid ""
+"Describe yourself with 500 characters or less. There will be no formatting."
+msgstr ""
+"Describe yourself with 500 characters or less. There will be no formatting."
+
+#: users/models.py:128
+msgid "photo"
+msgstr "photo"
+
+#: users/models.py:132
+msgid "Facebook"
+msgstr "Facebook"
+
+#: users/models.py:135
+msgid ""
+"Link to your Facebook profile page. This will be shown when we display your "
+"public information. If you do not know what your profile page link is, click "
+"on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and "
+"copy-paste the URL of the page opened. Remember to log in to Facebook first!"
+msgstr ""
+"Link to your Facebook profile page. This will be shown when we display your "
+"public information. If you do not know what your profile page link is, click "
+"on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and "
+"copy-paste the URL of the page opened. Remember to log in to Facebook first!"
+
+#: users/models.py:144
+msgid "Twitter"
+msgstr "Twitter"
+
+#: users/models.py:149
+msgid ""
+"Your Twitter handle, without the \"@\" sign. This will be shown when we "
+"display your public information."
+msgstr ""
+"Your Twitter handle, without the “@” sign. This will be shown when we "
+"display your public information."
+
+#: users/models.py:154
+msgid "GitHub"
+msgstr "GitHub"
+
+#: users/models.py:159
+msgid ""
+"Your GitHub account, without the \"@\" sign. This will be shown when we "
+"display your public information."
+msgstr ""
+"Your GitHub account, without the “@” sign. This will be shown when we "
+"display your public information."
+
+#: users/models.py:167
+msgid "Designates whether the user has verified email ownership."
+msgstr "Designates whether the user has verified email ownership."
+
+#: users/models.py:171
+msgid "staff status"
+msgstr "staff status"
+
+#: users/models.py:174
+msgid "Designates whether the user can log into this admin site."
+msgstr "Designates whether the user can log into this admin site."
+
+#: users/models.py:178
+msgid "active"
+msgstr "active"
+
+#: users/models.py:181
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+
+#: users/models.py:186
+msgid "date joined"
+msgstr "date joined"
+
+#: users/models.py:197
+msgid "users"
+msgstr "users"
+
+#: users/models.py:293
+#, python-brace-format
+msgid "Verify your email address on {host}"
+msgstr "Verify your email address on {host}"
+
+#: users/models.py:311
+msgid "latest agreed CoC version"
+msgstr "latest agreed CoC version"
+
+#: users/models.py:315
+msgid "agreed at"
+msgstr "agreed at"
+
+#: users/views.py:43
+msgid "Sign up successful. You are now logged in."
+msgstr "Sign up successful. You are now logged in."
+
+#: users/views.py:60
+msgid "Email verification successful."
+msgstr "Email verification successful."
+
+#: users/views.py:72
+#, python-brace-format
+msgid "A verification email has been sent to {email}"
+msgstr "A verification email has been sent to {email}"
+
+#: users/views.py:102
+msgid "Your profile has been updated successfully."
+msgstr "Your profile has been updated successfully."
+
+#: users/views.py:115
+msgid "Your new password has been applied successfully."
+msgstr "Your new password has been applied successfully."
+
+#: users/views.py:122
+msgid ""
+"An email is sent to your email account. Please check your inbox for furthur "
+"instructions to reset your password."
+msgstr ""
+"An email is sent to your email account. Please check your inbox for furthur "
+"instructions to reset your password."
+
+#: users/views.py:130
+msgid "Password reset successful. You can now login."
+msgstr "Password reset successful. You can now login."

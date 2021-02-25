@@ -1,0 +1,113 @@
+{% extends 'events/schedule.html' %}
+
+{% load i18n static %}
+{% load events %}
+
+
+{% block title %}{% trans 'Export New Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2021/styles/pages/_events.scss' %}">
+{% endblock %}
+
+
+{% block pagetitle %}{% trans 'Export New Schedule' %}{% endblock pagetitle %}
+
+
+{% block schedule %}
+	<div class="py-schedule-content schedule-content">
+		<div class="py-schedule-tabs">
+			<div class="py-schedule-tabs__tab"
+			     data-target="day-1"
+			>
+				Day 1 (9/5)
+			</div>
+			<div class="py-schedule-tabs__tab"
+			     data-target="day-2"
+			>
+				Day 2 (9/6)
+			</div>
+		</div>
+		<div class="py-schedule-timetable">
+			{% for schedule_date, schedule_info in schedule_days.items %}
+				<div class="py-schedule-timetable-header day-{{ forloop.counter }}">
+					<div class="py-schedule-timetable-header-column --timeline"></div>
+					{% for room in schedule_info.rooms %}
+						<div class="py-schedule-timetable-header-column room-{{ room }} --room"></div>
+					{% endfor %}
+				</div>
+				{% with timeline_info=schedule_info.timeline %}
+					{% with begin=timeline_info.begin.value|date:'H:i' end=timeline_info.end.value|date:'H:i' %}
+						{% with timeline=begin|gen_timeline:end %}
+							{% with last_timeline_item=timeline|last %}
+								<div class="py-schedule-timetable-body day-{{ forloop.counter }}">
+									{% for t in timeline %}
+										<div class="timeline {{ t.class }}"
+										     style="grid-row: {{ t.row_start }} / {{ t.row_end }}"
+										>
+											{{ t.time }}
+										</div>
+									{% endfor %}
+									{% for room, slots in schedule_info.slots.items %}
+										{% for event in slots %}
+											{% with begin=event.begin_time.value|date:'H:i' end=event.end_time.value|date:'H:i' %}
+												{% calc_grid_row begin end timeline_info.begin.value|date:'H:i' as grid_row %}
+												<div class="py-schedule-timetable-body-item room-{{ room }}"
+												     style="grid-row: {{ grid_row.start_row }} / {{ grid_row.end_row }}"
+												>
+													{{ event|event_display }}
+												</div>
+											{% endwith %}
+										{% endfor %}
+									{% endfor %}
+								</div>
+							{% endwith %}
+						{% endwith %}
+					{% endwith %}
+				{% endwith %}
+			{% endfor %}
+		</div>
+
+		{% for schedule_date, schedule_info in schedule_days.items %}
+			<div class="py-schedule-time-list day-{{ forloop.counter }}">
+				{% for begin, slots in schedule_info.slots_mobile.items %}
+					<div class="-py-schedule-time-list-section">
+						<div class="py-schedule-time-list-section-header">
+							<div class="time">
+								{{ begin.value|date:'H:i' }}
+							</div>
+						</div>
+						<div class="py-schedule-time-list-section-items">
+							{% for event in slots %}
+								<div class="py-schedule-time-list-section-items-item room-{{ event.location }}">
+									{{ event|event_display }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock schedule %}
+
+
+{% block controls %}
+	<div>
+		<noscript>
+			{% blocktrans trimmed %}
+				Schedule table generation requires JavaScript. Please. (´･_･`)
+			{% endblocktrans %}
+		</noscript>
+
+		<form method="post" class="generation-form" style="display: none;">
+			{% csrf_token %}
+			<input type="hidden" name="html">
+			<button type="submit" class="button-round">
+				{% trans 'Generate' %}
+			</button>
+		</form>
+	</div>
+{% endblock controls %}

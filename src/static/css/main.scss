@@ -1,0 +1,425 @@
+
+@import "base/variables";
+
+@import "bootstrap-variables";
+@import "vendors/bootstrap";
+
+
+@import "base/utilities";
+@import "base/navigation";
+
+// Mixins
+@import "mixins/font";
+@import "mixins/language";
+@import "mixins/static";
+@import "mixins/retina";
+
+// Components
+@import "components/form";
+@import "components/buttons";
+@import "components/tables";
+@import "components/texts";
+@import "components/lists";
+
+// Pages
+@import "pages/proposals";
+@import "pages/front";
+@import "pages/registration";
+@import "pages/dashboard";
+@import "pages/keynotes";
+@import "pages/reviews";
+@import "pages/sprints";
+@import "pages/sponsors";
+@import "pages/talks";
+@import "pages/venue";
+@import "pages/schedule";
+
+
+body {
+    @include roboto-light;
+    // text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.navbar {
+    border: none;
+}
+
+.text-middle {
+    vertical-align: middle;
+}
+
+
+
+.header {
+    background-color: $theme-color;
+    color: white;
+    .logo {
+        margin-bottom: 2em;
+    }
+}
+.slogan {
+    font-size: 36px;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+// schedule
+
+.schedule-wrapper {
+    @include make-xs-column(10);
+    @include make-xs-column-offset(1);
+    @include make-sm-column(12);
+    @include make-sm-column-offset(0);
+    @include make-md-column(10);
+    @include make-md-column-offset(1);
+}
+.schedule {
+    background-color: #fff;
+    padding-top: .6em;
+    border-radius: 4px;
+}
+
+.schedule-block {
+    @include make-sm-column(4);
+    text-align: center;
+    color: $schedule-color;
+    font-size:24px;
+}
+
+// visible in viewport > xs
+.schedule__title--lg {
+    @include make-sm-column(4);
+    @extend .hidden-xs;
+    text-align: center;
+    color: $schedule__title-color;
+}
+
+// visible when viewport < xs
+.schedule__title {
+    @extend .visible-xs-block;
+    padding-top: .5em;
+}
+
+// latest-news
+
+.latest-news{
+    background: #f9f9f9;
+    border:1px solid #e7e7e7;
+    text-align: center;
+
+    &__content{
+        font-size:24px;
+        color:#555555;
+        line-height: 28px;
+        padding: 23px 0;
+    }
+
+    &__icon{
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__title{
+        font-weight: 500;
+        margin: 0 10px;
+    }
+    &__text{
+        font-weight: 300;
+        margin-right: 20px;
+        span{
+            color: #f58454;
+        }
+    }
+    &__link a{
+        font-weight: 500;
+        color:#4163f5;
+        text-decoration:none;
+        i{
+            margin: 0 5px;
+        }
+    }
+}
+
+
+.quote {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    font-size: 20px;
+    color: $quote-color;
+    text-align: center;
+}
+
+// intro
+
+%intro-block {
+    font-family: $font-family-sans-serif;
+    margin-bottom: 4.2em;
+}
+
+.intro {
+    background: url(static('images/bg_section-intro.svg')) no-repeat;
+    background-size: 50% auto;
+    background-position: left 0 top -5vw;
+    color: $intro-color;
+    &__heading {
+        @include roboto-medium;
+        font-size: 36px;
+        padding-top: 1.2em;
+        padding-bottom: .8em;
+        color: $intro__heading-color;
+    }
+
+    &__body {
+        @include roboto-light;
+        font-size: 18px;
+    }
+}
+
+
+.intro__pycon {
+    @extend %intro-block;
+}
+
+.intro__pycontw {
+    @include make-md-column(8);
+    @include make-md-column-push(4);
+    text-align: right;
+}
+
+.intro__volunteer {
+    @include make-md-column(4);
+    @include make-md-column-pull(8)
+}
+
+
+// volunteer block
+.volunteer {
+    border-radius:4px;
+    color: white;
+    background-color: #F08E57;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.35);
+    font-size: 18px;
+
+    .call__icon{
+        float: right;
+    }
+
+    &__heading {
+        font-size: 24px;
+        padding: 1em 1.2em .8em;
+        background-color: white;
+        color: #F08E57;
+    }
+
+    &__body {
+        padding: 2em 1.2em;
+        a{
+            color: #fff;
+            text-decoration: underline;
+        }
+        > p {
+            margin-bottom: 1.2em;
+        }
+    }
+}
+
+
+.community {
+    border-radius: 5px;
+    padding: 1.2em 5% 2em;
+    color: $community-color;
+    background-color: $community-bg;
+
+    .section__heading {
+        text-align: left;
+        padding-bottom: 0;
+        color: $community-color;
+    }
+
+    .python__icon{
+        margin-right: 17px;
+    }
+}
+
+
+// community-list
+.community-list {
+    padding-left: 0;
+    list-style: none;
+
+}
+
+.community-list > .list__item {
+    @include make-md-column(6);
+    > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        color: $community-color;
+
+        &::before {
+            content: "\25CF";
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+    }
+
+    &::before {
+        content: "";
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    // show dash between name and full name
+    .desc {
+      &::before {
+        content: " - ";
+      }
+    }
+}
+
+@media(max-width: $screen-xs-min)  {
+    .community-list {
+
+        // hide dash between name and full name
+        .desc {
+            display: block;
+            font-size: 14px;
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.section.sponsorship {
+    margin-top: 6em;
+    margin-bottom: 2em;
+}
+
+.sponsorship {
+    background-color: $theme-color;
+    background-repeat: no-repeat;
+    background-image: url(static('images/bg_section-sponsorship.svg'));
+    background-size: contain;
+    background-position: center;
+    background-origin: content-box;
+    padding-left: 4em;
+    padding-right: 4em;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+    > .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: $screen-md) {
+    .sponsorship {
+        background-image: none;
+    }
+}
+
+.sponsorship__call {
+    @include make-sm-column(10);
+    @include make-sm-column-offset(1);
+    @include make-md-column(8);
+    @include make-md-column-offset(2);
+    @include make-lg-column(6);
+    @include make-lg-column-offset(3);
+    padding: .3em 1em;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+    border-radius: 400px; // large number for capsule shape
+    font-size: 36px;
+    color: $theme-color;
+    background-color: white;
+}
+
+@media (max-width: $screen-sm){
+    .schedule{
+        padding-top: 0;
+    }
+    .schedule__title{
+        padding-top: 0;
+    }
+}
+
+@media (max-width: $screen-xs) {
+    .sponsorship__call{
+        font-size: 28px;
+    }
+    .sponsorship {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .intro__pycontw {
+        margin-top: -4em;
+        margin-bottom: 4em;
+    }
+    .intro__volunteer{
+        margin-bottom: -4em;
+    }
+    .community{
+        margin-bottom: -4em;
+    }
+    .slogan {
+        font-size: 30px;
+    }
+}
+
+.section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    font-size: 18px;
+
+    &__heading {
+        @include roboto-medium();
+        margin-bottom: 1em;
+        text-align: center;
+        color: $section__heading-color;
+    }
+}
+
+
+
+.conf {
+    background: url(static('images/bg_section-conf.svg')) no-repeat;
+    background-size: 50% auto;
+    background-position: right 0 bottom 20vw;
+}
+
+
+
+.footer {
+    background-color: $footer-bg;
+    color: $footer-color;
+    font-size: 16px;
+    padding: 1.8em 2em;
+    line-height: 40px;
+}
+
+.sponsors__logo {
+    > a img{
+        margin: 2em auto 4em;
+        max-height: 80px;
+    }
+}
+
+.social-btn {
+    color: $theme-color;
+    display: inline-block;
+    padding: .2em 1em;
+}

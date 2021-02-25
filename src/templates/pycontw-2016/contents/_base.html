@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% block nav %}
+    {% include '_includes/nav/front_nav.html' %}
+{% endblock nav %}
+
+<div class="content-page-title">
+	<div class="content-container container">
+		{% block page_title %}{% endblock page_title %}
+	</div>
+</div>
+
+<div class="content-container container {% block content_page_class %}content-page-content{% endblock content_page_class %}">
+	{% block content %}{% endblock content %}
+</div>
+
+{% include '_includes/footer.html' %}
+
+{% endblock body %}

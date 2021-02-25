@@ -1,0 +1,74 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{% trans 'Server Error' %} | PyCon TW 2016</title>
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,500,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/earlyaccess/cwtexhei.css' rel='stylesheet' type='text/css'>
+
+
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+body {
+	background-color: #3E6DF5;
+	color: #FFF;
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	display: table;
+	text-align: center;
+}
+body > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+h1 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 51.42px;
+}
+p {
+	margin: 4px;
+	margin-top: 20px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 20px;
+}
+.error-description {
+	margin-bottom: 112px;
+}
+.error-code {
+	font-weight: 800;
+}
+.link-to-index {
+	display: block;
+	width: 170px;
+	height: 31px;
+	margin: 0 auto;
+	background-image: url('data:image/png;base64,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');
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div>
+	<div class="error-description">
+		<h1>{% blocktrans %}Ooops! It’s a <span class="error-code">500</span> problem.{% endblocktrans %}</h1>
+		<p>{% trans 'We screwed up. It’s not your fault.' %}</p>
+	</div>
+	<a href="{% url 'index' %}" class="link-to-index"></a>
+</div>
+
+</body>
+
+</html>

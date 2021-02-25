@@ -1,0 +1,36 @@
+{% load i18n i18n_plus %}
+{% load events %}
+
+<a href="{{ event.get_absolute_url }}" class="talk-info localed-url talk-event">
+	<div class="context-container">
+		<div class="room">
+			<div class="room-tag room-{{ event.location }}"></div>
+		</div>
+		<div class="context">
+			<div class="title"
+			     style="-webkit-box-orient: vertical;"
+			     title="{{ info.title }}"
+			>
+				{{ info.title }}
+			</div>
+            {% if is_remote %}
+            <div class="remote-block">
+                <span class="remote-label">
+                    Remote
+                </span>
+            </div>
+            {% endif %}
+			<div class="speaker">by <span class="name">{{ speakers }}</span></div>
+			<div class="tags">
+				<div class="language-{{ info.language.lower }}"></div>
+				<div class="python-level-{{ info.python_level.lower }}"></div>
+				{% if not info.recording_policy %}
+					<div class="no-recording"></div>
+				{% endif %}
+			</div>
+		</div>
+		<div class="time">
+			{{ event.begin_time.value|date:'H:i' }} ~ {{ event.end_time.value|date:'H:i' }}
+		</div>
+	</div>
+</a>

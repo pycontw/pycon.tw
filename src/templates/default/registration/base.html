@@ -1,0 +1,28 @@
+{% extends 'dashboard_base.html' %}
+
+{% load crispy_forms_tags %}
+{% load pycontw_tools %}
+
+{% block nav %}{% include '_includes/nav/nav_base.html' %}{% endblock nav %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="registration-panel-wrapper">
+			{% for message in messages %}
+	    <div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert">
+	    	<p>{{ message }}</p>
+	    </div>
+			{% endfor %}
+			<div class="registration-panel">
+				<h2 class="registration-panel__title">
+					{% block form_title %}{% endblock form_title %}
+				</h2>
+				{% block form %}
+				{% crispy form %}
+				{% endblock form %}
+			</div>
+	  </div>
+	</div>
+</div>
+{% endblock content %}

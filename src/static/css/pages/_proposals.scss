@@ -1,0 +1,381 @@
+body.dashboard{
+    font-weight: 400;
+    background: #FBD9CA;
+
+    p.welcome{
+        font-size: 21px;
+        color: #4A4A4A;
+        line-height: 24px;
+        margin: 35px 0 20px 5px;
+    }
+    .sidebar{
+        padding: 0;
+
+        .nav-sidebar{
+            li{
+                a{
+                    padding: 24px 0 0 28px;
+                    height: 65px;
+                    font-size:16px;
+                    color: #BBBBBB;
+                    line-height:19px;
+                    border-left: 4px solid #FFFFFF;
+                    border-bottom: 1px solid #EEEEEE;
+
+                    &:hover{
+                        color: #502526; //2020
+                        //color:#BBBBBB; ~2019
+                        background-color: #F8F8F8;
+                        border-left: 4px solid #F8F8F8;
+                    }
+
+                    &.disabled {
+                        color: #DEDEDE;
+                        border: none;
+
+                        &:hover {
+                            cursor: not-allowed;
+                            color: #DEDEDE;
+                            background: none;
+                        }
+                    }
+                }
+                &.active a{
+                    color: #502526; //2020
+                    //color:#3E6DF5; ~2019
+                    border-left: 4px solid #502526; //2020
+                    //border-left: 4px solid #3E6DF5; ~2019
+                    // &:hover{
+                    //     color:#BBBBBB;
+                    //     background-color: transparent;
+                    // }
+                }
+            }
+        }
+    }
+
+    .alert-warning{
+        background: $proposals-alert-warning-bg;
+        border: 1px solid #F1DFB1;
+        border-radius:4px;
+        padding: 15px 20px;
+        font-size:13px;
+        color:#4A4A4A;
+        line-height:20px;
+        .btn{
+            margin: 0;
+            padding: 0;
+            color:#3E6DF5;
+        }
+    }
+    .main-container{
+        background:#FFFFFF;
+        border: 1px solid #EEEEEE;
+        border-radius:4px;
+        margin-bottom: 20px;
+
+        .main {
+            min-height: 712px;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-left-color: #EEEEEE;
+            padding: 0;
+
+            .table-panel {
+                padding: 33px 33px 0px 33px;
+            }
+
+            .proposal-tabs {
+                padding: 24px 0 0 33px;
+            }
+
+            .proposal-tab-pane {
+                padding: 33px;
+                margin-bottom: 41px;
+            }
+
+            > form, .dashboard-body {
+                padding: 33px;
+            }
+
+            > .reviewed-proposal-view {
+                > h4 {
+                    margin-top: 2em;
+                }
+                > h4:first-child {
+                    margin-top: 0;
+                }
+                .simple-field, .text-field, .markdown-field {
+                    line-height: 150%;
+                }
+                .simple-field, .text-field {
+                    del, ins {
+                        display: inline-block;
+                        text-decoration: none;
+                        padding: 0 0.5em;
+                        color: $text-color;
+                    }
+                    del {
+                        background-color: lighten($brand-danger, 33.5%);
+                    }
+                    ins {
+                        background-color: lighten($brand-success, 33.5%);
+                    }
+                    // Put a little margin between del and ins blocks.
+                    del + br + ins {
+                        margin-top: 0.2em;
+                    }
+                    // Larger margin between ins and the next del.
+                    ins + br + del {
+                        margin-top: 0.5em;
+                    }
+                }
+                .text-field {
+                    del > del {
+                        padding: 0;
+                        background-color: lighten($brand-danger, 20%);
+                    }
+                    ins > ins {
+                        padding: 0;
+                        background-color: lighten($brand-success, 20%);
+                    }
+                }
+                .markdown-field {
+                    background-color: transparent;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                    position: relative;
+                    padding: 1em;
+                    height: auto;
+                }
+                .tab-pane > .text-field {
+                    padding: 1em;
+                    border: 1px solid #ddd;
+                    border-top: none;
+                    border-radius: 0 0 4px 4px;
+                }
+                .tab-pane-view > .markdown-field {
+                    border-top: none;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+                .tab-pane-diff > .text-field {
+                    font-family: monospace;
+                }
+            }
+
+            .existing-review-table {
+
+                th, td {
+                    text-align: center;
+                }
+                .vote-display {
+                    white-space: nowrap;
+                }
+                .comment-display {
+                    text-align: left;
+                }
+                .text-muted {
+                    color: #aaa;
+                }
+            }
+        }
+    }
+
+		.grayed-out {
+				color: darkgray;
+		}
+}
+
+.cancel-form {
+    position: relative;
+}
+
+/* Must include .table to override Bootstrap styles. */
+.table.proposals-table {
+    thead{
+        background:#F8F8F8;
+    }
+    th, td {
+        font-weight: 400;
+        font-size: 13px;
+        white-space: nowrap;
+
+        &.proposal-title {
+            white-space: normal;
+
+            > div {
+                max-width: calc(100vw - 160px);
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+    th {
+        color:#9B9B9B;
+        line-height:22px;
+        border-bottom: 1px solid #EEEEEE;
+        height: 40px;
+        padding-left: 34px;
+    }
+    td {
+        color:#4A4A4A;
+        line-height: 25px;
+        padding: 32px 34px;
+
+        &.proposal-title {
+            font-size: 18px;
+            &.unread {
+                font-weight: bold;
+            }
+        }
+
+        form{
+            padding: 0;
+            margin-top: -4px;
+        }
+    }
+    .proposal-info-row > td {
+        padding-bottom: 16px;
+    }
+    .progress-row > td {
+        border: 0;
+        padding: 0 32px;
+    }
+}
+
+.profile_pic_panel {
+    margin: 20px 0 40px 0;
+    > div{
+        display: inline-block;;
+        margin-right: 20px;
+    }
+    .pic {
+        width: 60px;
+        height: 60px;
+    }
+    .upload-btn {
+        position: relative;
+        display: inline-block;
+
+        > span {
+            font-size: 13px;
+            color: #3E6DF5;
+            line-height: 15px;
+            cursor: pointer;
+            display: hidden;
+        }
+
+        > .upload-btn-shadowed {
+            -webkit-appearance: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.field {
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    border-radius: 3px;
+}
+
+.field_title {
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 19px;
+    font-weight: normal;
+}
+
+.name_field {
+    width: 308px;
+    height: 44px;
+}
+
+.sms_identity_field {
+    margin-top: 0;
+}
+
+textarea.form-control {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    font-family: $font-family-monospace;
+}
+
+#user_profile_update_form {
+    textarea.form-control {
+        width: 100%;
+        @media screen and (min-width: $screen-md-min) {
+            max-width: 75%;
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            max-width: 600px;
+        }
+    }
+}
+
+.proposals{
+    p{
+        padding: 20px 33px;
+    }
+}
+
+#proposal-scroll-progress-widget {
+    $box-size: 56px;
+
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 9999;
+
+    width: $box-size;
+    height: $box-size;
+    border-radius: $box-size / 2;
+
+    background-color: $gray;
+    color: $gray-lighter;
+    overflow: hidden;
+
+    letter-spacing: -2px;
+    line-height: $box-size;
+    text-align: center;
+    vertical-align: middle;
+
+    .top {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $gray-light;
+    }
+
+    .text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .current {
+            font-weight: bold;
+            font-size: 150%;
+            letter-spacing: 0;
+        }
+    }
+}
+
+pre {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}

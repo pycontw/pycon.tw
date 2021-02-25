@@ -1,0 +1,17 @@
+{% extends 'proposals/_proposal_base.html' %}
+
+{% load i18n crispy_forms_tags %}
+
+{% block main-content %}
+<h3 class="dashboard-header">
+  <span class="header-title">{% block page_header %}{% endblock page_header %}</span>
+</h3>
+{% block alert_content %}{% endblock alert_content %}
+<form method="post" class="proposal-form">
+  {% csrf_token %}
+  <div class="nesting-form-group">
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">{% trans 'Create Proposal' %}</button>
+  </div>
+</form>
+{% endblock main-content %}

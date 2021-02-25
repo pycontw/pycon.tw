@@ -1,0 +1,29 @@
+{
+    "photo": "pycontw-2019/assets/keynotes/tracy-osborn.jpg",
+    "speaker": {
+        "en": {
+            "name": "Tracy Osborn",
+            "bio": "Tracy Osborn is a programmer, designer, author, and entrepreneur. In 2010, she taught herself Python to launch her first startup, which lead to writing Hello Web App, a book teaching introductory Django web app development. She’s also the Program Manager at TinySeed, an accelerator program for bootstrapped businesses."
+        },
+        "zh": {
+            "name": "Tracy Osborn",
+            "bio": "Tracy Osborn 是一位程序員、設計師、作家、也是創業者。她於 2010 自學 Python 以建立她的第一個公司，最終讓她寫了 Hello Web App，一本介紹 Django 網路程式開發的書。她同時於創業加速器公司 TinySeed 擔任專案經理。"
+        }
+    },
+    "session": {
+        "en": {
+            "title": "The Different Paths We Take As Programmers",
+            "description": "Not everyone who learns Python is using it to become a back-end programmer. In this keynote, Tracy will cover her process on how she learned how to program and how she uses Python and programming in her current work, as well as why programming education can (and should) change considering all the ways we can use Python and programming in 2019."
+        },
+        "zh": {
+            "title": "程序員們選擇的不同道路",
+            "description": "不是每個人都是為了成為後端工程師而學 Python。Tracy 將在本演講中描述她學寫程式、使用 Python、以及在她現在的工作中使用程式的歷程，並根據我們在 2019 年使用 Python 與程式的方法，探討程式設計教育能夠（且必須）如何改變。"
+        }
+    },
+    "social": {
+        "twitter": "https://twitter.com/tracymakes",
+        "github": "https://github.com/tracymakes",
+        "instagram": "https://instagram.com/tracymakes"
+    },
+    "slido": "https://app.sli.do/event/f3efdao1"
+}

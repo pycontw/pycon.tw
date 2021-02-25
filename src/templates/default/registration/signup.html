@@ -1,0 +1,18 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Sign Up' %}{% endblock title %}
+
+{% block form_title %}{% trans 'Sign Up' %}{% endblock form_title %}
+
+{% block form %}
+{{ block.super }}
+<p class="text-center">
+	{% url 'login' as login_url %}
+	{% blocktrans trimmed %}
+	<span class="form-tip">Already have an account?</span>
+	<a href="{{ login_url }}" class="btn btn-link">Login.</a>
+	{% endblocktrans %}
+</p>
+{% endblock form %}

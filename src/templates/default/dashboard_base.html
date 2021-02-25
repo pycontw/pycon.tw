@@ -1,0 +1,50 @@
+{% extends 'boilerplate.html' %}
+
+{% load i18n %}
+{% load pycontw_tools %}
+
+{% block title %}{% trans 'Dashboard' %}{% endblock title %}
+
+{% block body-class %}dashboard{% endblock %}
+
+{% block nav %}{% include '_includes/nav/dashboard_nav.html' %}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <p class="welcome">{% blocktrans with name=user.get_short_name|default:user.get_username %}Hi {{ name }}, welcome!{% endblocktrans %}</p>
+</div>
+
+<div class="row alert-container">
+
+	{% if not user.verified %}
+	<div class="alert alert-warning clearfix" role="alert">
+	  <p>{% trans 'Please verify your account by clicking the link in the mail we sent to your email inbox.' %}</p>
+	  <form method="post" action="{% url 'request_verification' %}" class="form form-inline">
+	    {% csrf_token %}
+	    <p><span class="text-middle">{% trans 'Did not get the verification mail?' %}</span>
+	    <button type="submit" class="btn btn-link">{% trans 'Request a new one.' %}</button></p>
+	  </form>
+	</div>
+	{% elif not user.is_valid_speaker %}
+	<div class="alert alert-warning clearfix" role="alert">
+	  <p>{% trans 'You need to complete your speaker profile first before submitting a proposal.' %}</p>
+	</div>
+	{% endif %}
+
+	{% for message in messages %}
+	<div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert"><p>{{ message }}</p></div>
+	{% endfor %}
+
+</div>
+
+<div class="row main-container">
+	<div class="col-md-2 sidebar">
+		{% block dashboard_tablist %}{% endblock dashboard_tablist %}
+	</div>
+	<div class="col-md-10 main">
+    {% block main-content %}{% endblock %}
+  </div>
+</div>
+
+{% endblock content %}

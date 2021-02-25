@@ -1,0 +1,198 @@
+{% extends 'contents/_base.html' %}
+
+{% block title %}Conference Tickets{% endblock title %}
+
+{% block meta_description %}Tickets are on sale for PyCon Taiwan 2018. Get yours now before it’s too late!{% endblock meta_description %}
+
+{% block body_class %}{{ block.super }} ticket-info-page{% endblock body_class %}
+
+{% block content %}
+
+{% url 'page' path='registration/financial-aid' as reg_financial_aid_url %}
+
+<h1>Conference Tickets</h1>
+
+<div class="box">
+	<h3 class="box-title">Individual</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Early Bird</th>
+						<td class="price">2,500</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>General</th>
+						<td class="price">3,500</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.INDI }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+			<p>Tickets are limited. Please purchase as soon as possible. We will send out electronic invoices by email after the conference. Unified Business Numbers are not accepted.</p>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">Corporate</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Price</th>
+						<td class="price">5,000</td>
+						<td>NTD</td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.CORP }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+				<p>Provide company name and Unified Business Number, or <em>N/A</em> if re&shy;im&shy;burse&shy;ment is not required. We will send out electronic invoices by email after the conference.</p>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<h3 class="box-title">Reserved</h3>
+	<div class="box-content">
+		<div class="price-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>Speaker</th>
+						<td class="price">1,800</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>Contributor</th>
+						<td class="price">1,800</td>
+						<td>NTD</td>
+					</tr>
+					<tr>
+						<th>Sponsor</th>
+						<td class="price">Free</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<a href="{{ KKTIX_URL.RSVD }}" target="_blank" rel="noopener" class="button-round buy">Buy</a>
+		</div>
+		<div class="desc">
+			<p>Please enter your invitation code on checkout.</p>
+		</div>
+	</div>
+</div>
+
+<ul>
+	<li><p>Tickets provide access to the main conference during 1 and 2 June. Please refer to their own pages for tutorial and sprint registrations.</p></li>
+	<li><p>Early bird ticket sales end on 30 April, or upon sold out. All ticket sales end on 19 May.</p></li>
+	<li><p>All price settled in New Taiwan Dollars (NTD). Reference rate: NTD 29.31 = USD 1.00.</p></li>
+	<li><p>Company Unified Business Number will be present on receipts for those who require reimbursement. Contact <em>organizers[at]pycon.tw</em> for English receipt requests, or any questions regarding ticket sales.</p></li>
+</ul>
+
+
+<h2>Notices</h2>
+
+<h3>T-shirt Size</h3>
+
+<p>Every registered participant will receive a souvenir T-shirt. Please check your size according to the following table: (unit in centimeters)</p>
+
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<th>Size</th>
+				<th>XS</th>
+				<th>S</th>
+				<th>M</th>
+				<th>L</th>
+				<th>XL</th>
+				<th>2XL</th>
+				<th>3XL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Shoulder</th>
+				<td>40</td>
+				<td>42</td>
+				<td>44</td>
+				<td>46</td>
+				<td>48</td>
+				<td>50</td>
+				<td>52</td>
+			</tr>
+			<tr>
+				<th>Chest</th>
+				<td>46</td>
+				<td>48</td>
+				<td>50</td>
+				<td>53</td>
+				<td>56</td>
+				<td>58</td>
+				<td>60</td>
+			</tr>
+			<tr>
+				<th>Back</th>
+				<td>66</td>
+				<td>68</td>
+				<td>71</td>
+				<td>73</td>
+				<td>75</td>
+				<td>78</td>
+				<td>80</td>
+			</tr>
+			<tr>
+				<th>Sleeve</th>
+				<td>18</td>
+				<td>19</td>
+				<td>21</td>
+				<td>23</td>
+				<td>25</td>
+				<td>27</td>
+				<td>29</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h3>Everybody Pays</h3>
+
+<p>PyCon Taiwan is a paid conference. Everybody, including staffs and speakers, pays for attending (see <a href="http://jessenoller.com/blog/2011/05/25/pycon-everybody-pays" target="_blank" rel="noopener">PyCon: Everybody Pays</a>).</p>
+
+<h3>Ways to Pay for Tickets</h3>
+
+<p>You can pay through credit card, PayPal, or ATM transfer.</p>
+
+<h3>Refund</h3>
+
+<p>You may ask for refund earlier than ten days before the conference, by contacting us, or directly via KKTIX.</p>
+
+<h3>Financial Aids</h3>
+
+<p>You can contact us for a financial aid if you feel any difficulty affording a ticket and/or other expanses attending the conference. Please apply before your purchase. More info about applications can be found <a href="{{ reg_financial_aid_url }}">here</a>.</p>
+
+<h3>Dietary Requirements</h3>
+
+<p>We provide lunch during the conference. Please let us know if you have any specific dietary requirements.</p>
+
+<h3>Contact Information Accuracy</h3>
+
+<p>Please provide valid means of contact (phone number and email) on purchase, so that we will be able to inform you of any important notices.</p>
+
+<h3>Ticketing Consultancy</h3>
+
+<p>Please email to <em>organizers[at]pycon.tw</em> if you have any questions regarding ticket information. We will reply as soon as possible.</p>
+
+<h3>Other Events</h3>
+
+<p>You will be able to verify information about tutorials (announcement pending) and <a href="{{ events_sprints_url }}">sprints</a> through the website’s navigation menu.</p>
+
+{% endblock content %}

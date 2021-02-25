@@ -1,0 +1,69 @@
+$menu-desktop-border-radius: 8px;
+
+@mixin index-section {
+	@include content-section;
+
+	h2 {
+		@include h1();
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	h3 {
+		@include h2();
+	}
+	article {
+		margin-bottom: 64px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	p {
+		text-align: center;
+	}
+}
+
+// Apply this to any section to get a logo background after it.
+@mixin logo-background-section {
+	padding-bottom: calc(50vw + 35px);
+	background: url('../assets/logo-py-indigo.svg') center 103% no-repeat;
+	background-size: auto 50vw;
+
+	@include on-desktop {
+		padding-bottom: 264px;
+		background-size: 42%;
+		background-position: -10% 110%;
+	}
+}
+
+// Apply this to any section to get a grey background with circle decoration.
+@mixin circle-background-section {
+	padding: 42px 28px 42px 28px;
+	background: $white;
+
+	> article {
+		padding: 32px 12px 54px 12px;
+	}
+
+	@include on-desktop {
+		position: relative;
+		overflow: hidden;
+		padding: 80px 0 80px 0;
+
+		> * {
+			$padding-x: (976px - $container-max-width) / 2;
+			padding: 16px $padding-x 48px $padding-x;
+			position: relative;
+		}
+	}
+}
+
+@mixin grass-python-logo($url, $size: 200px) {
+	content: '';
+	display: block;
+	background-image: url($url);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: $size;
+	height: $size;
+}

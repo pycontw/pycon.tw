@@ -1,0 +1,91 @@
+$container-max-width: 720px;
+
+@mixin container($max-width: $container-max-width) {
+	max-width: $max-width;
+	margin: 0;
+	@include on-desktop {
+		margin: auto;
+	}
+}
+
+.container {
+	@include container;
+}
+
+$content-section-padding: 20px 40px 80px 40px;
+
+@mixin content-section {
+	padding: $content-section-padding;
+}
+
+footer {
+	@include text-light;
+
+	padding: 80px 0 10px;
+	background-color: $jinger-bread;
+    flex-shrink: 0; // Fix for sticky footer
+
+	.footer-logos{
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+    justify-content: center;
+		.footer-logo {
+            width: 59px;
+            height: 38px;
+            background: url('../assets/2020-py-logo.svg') center no-repeat;
+		}
+	}
+
+	a, p, ul {
+		@include no-underline;
+		text-align: center;
+	}
+	ul {
+		@include menu-items;
+		padding-left: 0;
+		line-height: 48px;
+		a:hover {
+			color: $imperial;
+		}
+	}
+
+	.copyright {
+		border-top: 1px solid $brick;
+		padding-top: 8px;
+        max-width: 1160px;
+        margin: 20px auto;
+        color: $brick;
+        font-family: "Quicksand";
+	}
+}
+
+// Applied when a fullscreen popup is open to disable <body> scrolling.
+body.overlay-open {
+	max-width: 100vw;
+	max-height: 100vh;
+	overflow: hidden;
+
+	@include on-desktop {
+		max-width: none;
+		max-height: none;
+	}
+}
+
+$background-deco-index: 0;
+$overlay-index: 99;
+
+
+// Fix for sticky footer
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body.scroll-x {
+    overflow-x: scroll;
+}

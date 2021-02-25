@@ -1,0 +1,104 @@
+// Page style for events/keynotes
+
+// ks stands for keynote-speaker
+$ks-padding-vertical: 50px;
+$ks-padding-horizontal: 28px;
+$ks-profile-line-height: 24px;
+$ks-photo-size: 124px;
+$ks-photo-border: 5px;
+$ks-group-margin: 32px;  // margin between information group
+$ks-margin: 47px; // margin between keynote speakers
+
+.keynotes {
+    background-color: $keynotes-bg;
+
+    .content-container {
+        max-width: none;
+    }
+}
+
+.keynote-speaker {
+    @include make-md-column(12);
+    background-color: $keynote-speaker-bg;
+    border-radius: 3px;
+    padding-top: $ks-padding-vertical;
+    padding-bottom: $ks-padding-vertical;
+    margin-bottom: $ks-margin;
+
+    &:last-of-type {
+        margin-bottom: ($ks-margin * 4);
+    }
+
+    &__profile {
+        @include make-md-column(3);
+        text-align: center;
+    }
+
+    &__photo {
+        border: $ks-photo-border solid $theme-color;
+        border-radius: 100%;
+        width: $ks-photo-size;
+        margin-bottom: ($ks-group-margin - $ks-photo-border);
+    }
+
+    &__name {
+        @include roboto-medium;
+        color: $theme-color;
+        font-size: $ks-profile-line-height;
+        margin-top: 0px;
+        margin-bottom: $ks-group-margin;
+    }
+
+    &__url {
+        @include roboto-regular;
+        display: block;
+        font-size: 14px;
+        line-height: $ks-profile-line-height;
+        color: $keynote-speaker__url-color;
+
+        a {
+            color: $keynote-speaker__url-color;
+        }
+    }
+
+    &__bio {
+        @include make-md-column(9);
+        padding-right: 40px;
+
+        &__header {
+            font-size: 20px;
+            line-height: $ks-profile-line-height;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+
+        &__header:not(:first-of-type) {
+            // extra top margin for second and later sections
+            margin-top: 40px;
+        }
+
+        p {
+            @include roboto-light;
+            font-size: 16px;
+            line-height: $ks-profile-line-height;
+            color: $keynote-speaker__bio-color;
+        }
+    }
+}
+
+// When keynote speakers collapsed to one-column,
+// adjust the margins of main blocks.
+@media screen and (max-width: $screen-sm-max) {
+    .keynote-speaker {
+        &__profile,
+        &__bio {
+            padding-left: $ks-padding-horizontal;
+            padding-right: $ks-padding-horizontal;
+
+            &__header {
+                margin-top: $ks-group-margin;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,46 @@
+{% extends 'contents/_base/events.html' %}
+
+{% load i18n proposals %}
+
+{% block title %}{% trans 'Talks' %}{% endblock title %}
+
+{% block page_title %}<h1>{% trans 'Talks' %}</h1>{% endblock page_title %}
+
+{% block content %}
+
+<div class="pycon-list">
+	<div class="pycon-list-item text-theme-highlight">
+		{% url 'events_schedule' as schedule_url %}
+		{% blocktrans trimmed %}
+		You can check out the program schedule
+		<a class="text-emphasize" href="{{ schedule_url }}">here</a>.
+		{% endblocktrans %}
+	</div>
+	<div class="pycon-list-item text-theme-highlight">
+		{% blocktrans trimmed %}
+		Program schedule are <span class="text-emphasize">subject to change</span>.
+		Please check this page frequently to get the latest version.
+		{% endblocktrans %}
+	</div>
+</div>
+
+{% if object_list %}
+<h2>{% trans 'Proposed Talks' %}</h2>
+<ul class="talk-list">
+	{% for proposal in object_list %}
+	{% url 'events_talk_detail' pk=proposal.pk as event_talk_detail_url %}
+	<li><p>{% blocktrans with proposal_title=proposal.title speaker_names=proposal|speaker_names_display %}<a class="proposal-title" href="{{ event_talk_detail_url }}">{{ proposal_title }}</a> by {{ speaker_names }}{% endblocktrans %}</p></li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+{% if sponsored_events %}
+<h2>{% trans 'Sponsored Events' %}</h2>
+<ul class="talk-list">
+	{% for event in sponsored_events %}
+	<li><p>{% blocktrans with event_title=event.title host_name=event.host.speaker_name sponsored_event_url=event.get_absolute_url %}<a class="proposal-title" href="{{ sponsored_event_url }}">{{ event_title }}</a> by {{ host_name }}{% endblocktrans %}</p></li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}

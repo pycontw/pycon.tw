@@ -1,0 +1,53 @@
+-r base.txt
+
+# A configurable set of panels that display various debug information about
+# the current request/response.
+# https://django-debug-toolbar.readthedocs.io/en/latest/
+django-debug-toolbar==2.2
+
+# The Python WSGI Utility Library
+# https://palletsprojects.com/p/werkzeug/
+Werkzeug==0.16.1
+
+# Your Tool For Style Guide Enforcement.
+# https://flake8.readthedocs.io/en/latest/
+flake8==3.7.9
+
+# A mature full-featured Python testing tool.
+# https://docs.pytest.org/en/latest/
+pytest==5.3.5
+
+# A plugin for py.test that provides a set of useful tools for testing Django
+# applications and projects.
+# https://pytest-django.readthedocs.io/
+pytest-django==3.8.0
+
+# Code coverage measurement for Python
+# https://coverage.readthedocs.io/en/coverage-5.0.3/
+coverage==5.0.3
+
+# Pytest plugin for measuring coverage.
+# https://pypi.python.org/pypi/pytest-cov
+pytest-cov==2.8.1
+
+# Thin-wrapper around the mock package for easier use with py.test
+# https://github.com/pytest-dev/pytest-mock/
+pytest-mock==2.0.0
+
+# xdist: pytest distributed testing plugin
+# Use this plugin to speed up the test speed
+# http://pytest.org/latest/xdist.html
+#
+# Note(keitheis): After version by version test, 1.13.1 is currently the last
+# usable version for pycontw2016.
+#
+# Note(yychen): Since we have upgraded, I think the latest should work
+#
+pytest-xdist==1.31.0
+
+# Parses CSS3 Selectors and translate them to XPath 1.0 expressions.
+# https://cssselect.readthedocs.io/en/latest/
+cssselect==1.1.0
+
+# PostgreSQL database adapter for the Python
+psycopg2-binary==2.8.5

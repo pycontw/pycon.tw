@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2021/styles/page.scss' %}">
+{% endblock %}
+
+
+{% block content_full %}
+
+<header class="page-hero">
+	<nav class="menu-navbar-desktop">
+		{% include '_includes/menu.html' with type='desktop' %}
+	</nav>
+</header>
+
+<main>{% block content %}{% endblock content %}</main>
+
+{% endblock content_full %}

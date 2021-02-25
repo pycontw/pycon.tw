@@ -1,0 +1,78 @@
+{% load i18n static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{% block description %}{% endblock description %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block titletag %}
+<title>{% block title %}{% endblock title %} | PyCon Taiwan 2020</title>
+{% endblock titletag %}
+{% block meta_seo %}{% endblock meta_seo %}
+
+
+<link rel="shortcut icon" href="{% static 'pycontw-2020/assets/favicon/favicon.ico' %}">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-16x16.png' %}" sizes="16x16">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-32x32.png' %}" sizes="32x32">
+<link rel="icon" type="image/png" href="{% static 'pycontw-2020/assets/favicon/favicon-192x192.png' %}" sizes="192x192">
+
+{% block meta_og %}
+<meta property="og:description" content="{% block meta_description %}{% endblock meta_description %}">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2020/assets/og-image.png' %}">
+{% endblock meta_og %}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,600,700|Raleway:300,400|Philosopher|Quicksand&display=swap">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+
+{% compress css %}
+<link rel="stylesheet" href="{% static 'pycontw-2020/assets/twicon/twicon.css' %}">
+{% block styles %}{% endblock styles %}
+{% endcompress %}
+
+{% block extra_css %}{% endblock extra_css %}
+
+{# Google Tag Manager. #}
+{% if GTM_TRACK_ID %}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ GTM_TRACK_ID }}');</script>
+{% endif %}
+
+</head>
+
+<body class="{% block body_class %}{% endblock body_class %}">
+
+{# Google Tag Manager noscript fallback. #}
+{% if GTM_TRACK_ID %}
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ GTM_TRACK_ID }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+{% endif %}
+
+{% block nav %}
+{% include '_includes/top_nav.html' %}
+{% endblock nav %}
+
+{% block content_full %}{% endblock content_full %}
+
+{% block footer %}
+{% include '_includes/footer.html' %}
+{% endblock footer %}
+
+{% compress js %}
+{% block scripts %}
+<script type="module" src="{% static 'pycontw-2020/scripts/app.js' %}"></script>
+{% endblock scripts %}
+{% endcompress %}
+{% block extra_js %}{% endblock extra_js %}
+
+</body>
+
+</html>

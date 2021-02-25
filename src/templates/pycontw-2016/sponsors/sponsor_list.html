@@ -1,0 +1,31 @@
+{% extends 'contents/_base/sponsor.html' %}
+{% load static i18n %}
+
+{% block title %}Our Sponsors{% endblock title %}
+{% block page_title %}<h1>{% trans 'Our Sponsors' %}</h1>{% endblock page_title %}
+
+{% block content %}
+    {% regroup object_list by get_level_display as sponsor_level_list %}
+
+    {% for sponsor_level in sponsor_level_list %}
+    <section class="sponsor-section">
+        <h3 class="sponsor-section__title">{{ sponsor_level.grouper|upper }}</h3>
+        {% for sponsor in sponsor_level.list %}
+            <div class="sponsor-wrapper--{{ sponsor.level_en_name }}">
+                <div class="sponsor sponsor--{{ sponsor.level_en_name }}">
+                    <div class="sponsor__logo-wrapper">
+                        <a href="{{ sponsor.website_url }}" target="_blank">
+                            <img class="img-responsive sponsor__logo" src="{{ sponsor.logo.url }}" alt="logo of {{ sponsor.name }}">
+                        </a>
+                    </div>
+                    <h3 class="sponsor__title">{{ sponsor.name }}</h3>
+                    <div class="sponsor__intro">
+                        {{ sponsor.intro }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    {% endfor %}
+
+{% endblock content %}
