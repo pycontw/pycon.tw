@@ -1,7 +1,7 @@
 {% extends 'proposals/_proposal_base.html' %}
 
 {% load i18n static crispy_forms_tags %}
-
+{% load pycontw_tools %}
 
 {% block extra_css %}
 {{ block.super }}
@@ -26,11 +26,14 @@
 				{% trans 'Proposal' %}
 			</a>
 		</li>
-		<li role="presentation">
-			<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
-				{% trans 'Reviews' %}
-			</a>
-		</li>
+		{% get_model_verbose_name_raw object as obj_verbose_name %}
+		{% if obj_verbose_name != 'tutorial proposal' %}
+			<li role="presentation">
+				<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">
+					{% trans 'Reviews' %}
+				</a>
+			</li>
+		{% endif %}
 	</ul>
 	{% endif %}
 
