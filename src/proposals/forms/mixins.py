@@ -1,12 +1,12 @@
 from django import forms
+from django.conf import settings
 from django.urls import reverse_lazy
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import get_language, gettext_lazy as _
 
 from core.forms import RequestUserValidationMixin
 from core.utils import format_html_lazy
 from core.widgets import CharacterCountedTextarea, SimpleMDEWidget
 from proposals.models import TalkProposal, TutorialProposal
-
 
 class RequestUserSpeakerValidationMixin(RequestUserValidationMixin):
     """Mixin providing ``self._request`` and auth validation on cleaning.
@@ -58,9 +58,7 @@ class TalkProposalMixin:
                   "level. We may contact you to change the talk level when "
                   "we find the content is too-hard or too-easy for the "
                   "target audience."),
-                speaking_talk_url=reverse_lazy(
-                    'page', kwargs={'path': 'speaking/talk'},
-                ),
+                speaking_talk_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/talk",
             ),
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -82,9 +80,7 @@ class TalkProposalMixin:
                   "presentation. More information can be found at "
                   "<a href='{recording_policy_url}' target='_blank'>"
                   "Recording Release</a> page."),
-                recording_policy_url=reverse_lazy(
-                    'page', kwargs={'path': 'speaking/recording'},
-                )
+                recording_policy_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/recording"
             ),
             'slide_link': _(
                 "You can add your slide link near or after the conference "
@@ -171,9 +167,7 @@ class TutorialProposalMixin:
                   "level. We may contact you to change the talk level when "
                   "we find the content is too-hard or too-easy for the "
                   "target audience."),
-                speaking_talk_url=reverse_lazy(
-                    'page', kwargs={'path': 'speaking/talk'},
-                ),
+                speaking_talk_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/talk",
             ),
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -195,9 +189,7 @@ class TutorialProposalMixin:
                   "presentation. More information can be found at "
                   "<a href='{recording_policy_url}' target='_blank'>"
                   "Recording Release</a> page."),
-                recording_policy_url=reverse_lazy(
-                    'page', kwargs={'path': 'speaking/recording'},
-                )
+                recording_policy_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/recording"
             ),
             'slide_link': _(
                 "You can add your slide link near or after the conference "
