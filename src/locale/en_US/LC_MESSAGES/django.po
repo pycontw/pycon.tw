@@ -4307,9 +4307,9 @@ msgstr "biography"
 
 #: users/models.py:123
 msgid ""
-"Describe yourself with 500 characters or less. There will be no formatting."
+"Describe yourself with 1000 characters or less. There will be no formatting."
 msgstr ""
-"Describe yourself with 500 characters or less. There will be no formatting."
+"Describe yourself with 1000 characters or less. There will be no formatting."
 
 #: users/models.py:128
 msgid "photo"

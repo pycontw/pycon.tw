@@ -120,7 +120,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_('biography'),
         max_length=1000,
         help_text=_(
-            "Describe yourself with 500 characters or less. "
+            "Describe yourself with 1000 characters or less. "
             "There will be no formatting."
         ),
     )

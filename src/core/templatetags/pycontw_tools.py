@@ -18,3 +18,7 @@ def get_path_category(url):
     if not result:
         return 'unmatched'
     return result.groupdict().get('category', 'uncategorized')
+
+@register.simple_tag
+def get_model_verbose_name_raw(obj):
+    return obj._meta.verbose_name_raw
