@@ -47,6 +47,7 @@ TEMPLATES = [
                 'core.context_processors.pycontw',
                 'core.context_processors.events',
                 'core.context_processors.sponsors',
+                'core.context_processors.frontend_host',
             ],
             'debug': True,
         },

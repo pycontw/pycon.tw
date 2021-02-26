@@ -1240,8 +1240,8 @@ msgstr ""
 #: templates/default/_includes/talk_proposal_alert.html:6
 #, python-format
 msgid ""
-"Please review the <a href=\"%(howto_link)s\" target=\"_blank\">How to "
-"Propose a Talk</a> page."
+"Please review the <a href=\"%(FRONTEND_HOST)s/%(LANGUAGE_CODE)s/speaking/talk"
+"\" target=\"_blank\">How to Propose a Talk</a> page."
 msgstr ""
 
 #: templates/default/dashboard_base.html:6

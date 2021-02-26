@@ -1,8 +1,8 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 <div class="dashboard-alert">
   <div class="alert alert-warning" role="alert">
-  	{% url 'page' path='speaking/talk' as howto_link %}
-    {% blocktrans %}Please review the <a href="{{ howto_link }}" target="_blank">How to Propose a Talk</a> page.{% endblocktrans %}
+    {% blocktrans %}Please review the <a href="{{ FRONTEND_HOST }}/{{ LANGUAGE_CODE }}/speaking/talk" target="_blank">How to Propose a Talk</a> page.{% endblocktrans %}
   </div>
 </div>
