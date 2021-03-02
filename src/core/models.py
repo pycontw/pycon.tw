@@ -152,6 +152,16 @@ class EventInfo(models.Model):
         choices=RECORDING_POLICY_CHOICES,
     )
 
+    LIVE_STREAM_POLICY_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+    live_stream_policy = models.BooleanField(
+        verbose_name=_('live stream policy'),
+        default=True,
+        choices=LIVE_STREAM_POLICY_CHOICES,
+    )
+
     REFERRING_POLICY_CHOICES = (
         (True, _('Yes')),
         (False, _('No'))
