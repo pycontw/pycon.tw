@@ -1,6 +1,6 @@
 {% extends 'proposals/_proposal_base.html' %}
 
-{% load i18n crispy_forms_tags %}
+{% load i18n crispy_forms_tags static %}
 
 {% block main-content %}
 <h3 class="dashboard-header">
@@ -15,3 +15,7 @@
   </div>
 </form>
 {% endblock main-content %}
+
+{% block extra_js %}
+<script src="{% static 'js/proposals/proposal_form.js' %}"></script>
+{% endblock %}

@@ -17,6 +17,7 @@ def talk_proposal_data():
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'live_stream_policy': True,
         'referring_policy': True,
         'remoting_policy': True,
         'first_time_speaker': True,
@@ -26,8 +27,8 @@ def talk_proposal_data():
 def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'remoting_policy', 'first_time_speaker', 'referring_policy',
+        'title', 'category', 'duration', 'language', 'python_level', 'recording_policy',
+        'live_stream_policy', 'remoting_policy', 'first_time_speaker', 'referring_policy',
     ]
 
 
@@ -67,6 +68,7 @@ def tutorial_proposal_data():
         'language': 'ZHZH',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
+        'live_stream_policy': True,
         'remoting_policy': True,
     }
 
@@ -75,7 +77,7 @@ def test_tutorial_proposal_create_form():
     form = TutorialProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'remoting_policy',
+        'python_level', 'recording_policy', 'live_stream_policy', 'remoting_policy',
     ]
 
 
@@ -114,18 +116,19 @@ def test_tutorial_proposal_create_form_valid(
 def test_talk_proposal_update_form():
     form = TalkProposalUpdateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy', 'remoting_policy', 'first_time_speaker', 'slide_link', 'referring_policy',
+        'title', 'category', 'duration', 'language', 'abstract', 'python_level',
+        'objective', 'detailed_description', 'outline', 'supplementary',
+        'recording_policy', 'live_stream_policy', 'remoting_policy', 'first_time_speaker',
+        'slide_link', 'referring_policy',
     ]
 
 
 def test_tutorial_proposal_update_form():
     form = TutorialProposalUpdateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy', 'remoting_policy', 'slide_link',
+        'title', 'category', 'duration', 'language', 'abstract', 'python_level',
+        'objective', 'detailed_description', 'outline', 'supplementary',
+        'recording_policy', 'live_stream_policy', 'remoting_policy', 'slide_link',
     ]
 
 

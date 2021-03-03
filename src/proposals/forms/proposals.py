@@ -44,6 +44,7 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'language',
             'python_level',
             'recording_policy',
+            'live_stream_policy',
             'remoting_policy',
             'first_time_speaker',
             'referring_policy',
@@ -62,8 +63,14 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
-            'title', 'category', 'duration', 'language', 'python_level',
-            'recording_policy', 'remoting_policy'
+            'title',
+            'category',
+            'duration',
+            'language',
+            'python_level',
+            'recording_policy',
+            'live_stream_policy',
+            'remoting_policy'
         ]
 
 
@@ -101,6 +108,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'outline',
             'supplementary',
             'recording_policy',
+            'live_stream_policy',
             'remoting_policy',
             'first_time_speaker',
             'slide_link',
@@ -131,6 +139,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'outline',
             'supplementary',
             'recording_policy',
+            'live_stream_policy',
             'remoting_policy',
             'slide_link',
         ]

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 22:34+0800\n"
+"POT-Creation-Date: 2021-03-02 22:47+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -224,12 +224,12 @@ msgstr "Python level"
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:146 core/models.py:156 core/models.py:189
+#: core/models.py:146 core/models.py:156 core/models.py:166 core/models.py:199
 #: proposals/models.py:267 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:147 core/models.py:157 core/models.py:190
+#: core/models.py:147 core/models.py:157 core/models.py:167 core/models.py:200
 #: proposals/models.py:268 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "No"
@@ -239,26 +239,30 @@ msgid "recording policy"
 msgstr "recording policy"
 
 #: core/models.py:160
+msgid "live stream policy"
+msgstr "live stream policy"
+
+#: core/models.py:170
 msgid "referring policy"
 msgstr "referring policy"
 
-#: core/models.py:166
+#: core/models.py:176
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:172
+#: core/models.py:182
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:178 events/models.py:375 ext2020/models.py:17
+#: core/models.py:188 events/models.py:375 ext2020/models.py:17
 msgid "created at"
 msgstr "created at"
 
-#: core/models.py:184
+#: core/models.py:194
 msgid "last updated at"
 msgstr "last updated at"
 
-#: core/models.py:194
+#: core/models.py:204
 msgid "remoting policy"
 msgstr "remote policy"
 
@@ -589,7 +593,7 @@ msgstr ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:153
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:158
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -603,7 +607,7 @@ msgstr ""
 "here. If your talk is accepted, this will be displayed on both the website "
 "and the handbook. Should be one paragraph.</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:162
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:167
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -620,7 +624,7 @@ msgstr ""
 "contact you to change the talk level when we find the content is too-hard or "
 "too-easy for the target audience."
 
-#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:173
+#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:178
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -640,7 +644,7 @@ msgstr ""
 "proposal. Edit using <a href='http://daringfireball.net/projects/markdown/"
 "basics' target='_blank' rel='noopener'>Markdown</a>."
 
-#: proposals/forms/mixins.py:78 proposals/forms/mixins.py:187
+#: proposals/forms/mixins.py:78 proposals/forms/mixins.py:192
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -653,7 +657,7 @@ msgstr ""
 "at <a href='{recording_policy_url}' target='_blank'>Recording Release</a> "
 "page."
 
-#: proposals/forms/mixins.py:86 proposals/forms/mixins.py:195
+#: proposals/forms/mixins.py:86 proposals/forms/mixins.py:200
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -685,7 +689,7 @@ msgstr ""
 "the room, what will they learn that they didn't know before? This is NOT "
 "made public and for REVIEW ONLY.</p>"
 
-#: proposals/forms/mixins.py:105 proposals/forms/mixins.py:206
+#: proposals/forms/mixins.py:105 proposals/forms/mixins.py:211
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -725,15 +729,27 @@ msgstr ""
 "Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
 "is still raging this August?"
 
-#: proposals/forms/mixins.py:130
+#: proposals/forms/mixins.py:129 proposals/forms/mixins.py:232
+msgid ""
+"If you disagree to authorize PyCon Taiwan to record video, whether you agree "
+"to let PyCon Taiwan live stream your presentation only for the remote "
+"attendees to watch ? (we will not release audio and video of your "
+"presentation)"
+msgstr ""
+"If you disagree to authorize PyCon Taiwan to record video, whether you agree "
+"to let PyCon Taiwan live stream your presentation only for the remote "
+"attendees to watch ? (we will not release audio and video of your "
+"presentation)"
+
+#: proposals/forms/mixins.py:135
 msgid "Is it your first time to be the speaker of PyCon TW?"
 msgstr "Is it your first time to be the speaker of PyCon TW?"
 
-#: proposals/forms/mixins.py:150
+#: proposals/forms/mixins.py:155
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 
-#: proposals/forms/mixins.py:199
+#: proposals/forms/mixins.py:204
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -745,7 +761,7 @@ msgstr ""
 "they leave the room, what will they learn that they didn't know before? This "
 "is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/mixins.py:214
+#: proposals/forms/mixins.py:219
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -757,7 +773,7 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/mixins.py:222
+#: proposals/forms/mixins.py:227
 msgid ""
 "Whether you agree to deliver the tutorial remotely if the epidemic "
 "(coronavirus) is still raging this August?"
@@ -765,7 +781,7 @@ msgstr ""
 "Whether you agree to deliver the tutorial remotely if the epidemic "
 "(coronavirus) is still raging this August?"
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:87
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:94
 #: proposals/models.py:262 proposals/models.py:316
 msgid "duration"
 msgstr "duration"
