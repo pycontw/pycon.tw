@@ -100,3 +100,6 @@ media/
 
 # vscode
 .vscode
+
+# cloud storage key
+google-cloud-storage.json
