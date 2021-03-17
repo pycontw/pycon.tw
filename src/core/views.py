@@ -3,6 +3,8 @@ import functools
 from django.http import Http404
 from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
+from django.shortcuts import redirect
+from django.urls import reverse
 
 from .data import EXTRA_DATA
 from .utils import (
@@ -21,6 +23,9 @@ class ExtraDataMixin:
 class IndexView(ExtraDataMixin, TemplateView):
     template_name = 'index.html'
     path = ''
+
+    def dispatch(self, request, *args, **kwargs):
+        return redirect(reverse('user_dashboard'))
 
 
 class FlatPageView(ExtraDataMixin, TemplateView):
