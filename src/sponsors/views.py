@@ -29,6 +29,8 @@ class SponsorAPIView(View):
 
             level_dict[sponsor.level_en_name].append({
                 "name": sponsor.name,
+                "subtitle_en_us": sponsor.subtitle_en_us,
+                "subtitle_zh_hant": sponsor.subtitle_zh_hant,
                 "intro_en_us": sponsor.intro_en_us,
                 "intro_zh_hant": sponsor.intro_zh_hant,
                 "website_url": sponsor.website_url,
