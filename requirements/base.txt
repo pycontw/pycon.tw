@@ -76,7 +76,7 @@ lxml==4.6.2
 
 # Python Imaging Library.
 # https://python-pillow.org/
-Pillow==7.1.0
+Pillow==8.1.1
 
 # World Timezone Definitions for Python.
 # https://pythonhosted.org/pytz/
