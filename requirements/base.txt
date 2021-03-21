@@ -93,3 +93,5 @@ sortedcontainers==2.1.0
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.8.6
+
+urllib3==1.25.10
