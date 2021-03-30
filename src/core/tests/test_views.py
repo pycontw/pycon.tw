@@ -11,7 +11,7 @@ from pytest_django.asserts import assertRedirects
 
 @pytest.mark.django_db
 def test_index_page(client):
-    response = client.get('/en-us/')
+    response = client.get('/en-us/', follow=True)
     assert response.status_code == 200
     assert 'PyCon' in response.content.decode('utf-8')
 
