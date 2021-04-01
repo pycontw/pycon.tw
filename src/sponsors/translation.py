@@ -4,7 +4,7 @@ from .models import Sponsor, OpenRole
 
 
 class SponsorTranslationOptions(TranslationOptions):
-    fields = ('intro',)
+    fields = ('intro', 'subtitle',)
 
 
 class OpenRoleTranslationOptions(TranslationOptions):
