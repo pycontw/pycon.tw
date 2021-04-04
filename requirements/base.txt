@@ -1,6 +1,6 @@
 # Django
 # https://www.djangoproject.com/
-Django==3.0.7
+Django==3.1.7
 
 # A simple, easy access key-value registry for Django
 # https://github.com/yychen/dj-registry
@@ -42,7 +42,7 @@ django-extensions==2.2.6
 
 # Translates Django models using a registration approach.
 # https://github.com/deschler/django-modeltranslation
-django-modeltranslation==0.14.2
+django-modeltranslation==0.16.2
 
 # Native Django task queue, scheduler and worker application using Python
 # multiprocessing.
