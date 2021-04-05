@@ -52,13 +52,13 @@ class TalkProposalMixin:
             'python_level': format_html_lazy(
                 _("The choice of talk level matters during the review "
                   "process. More definition of talk level can be found at the "
-                  "<a href='{speaking_talk_url}' target='_blank'>"
+                  "<a href='{frontend_host}/en-us/speaking/talk' target='_blank'>"
                   "How to Propose a Talk</a> page. Note that a proposal won't "
                   "be more likely to be accepted because of being 'Novice' "
                   "level. We may contact you to change the talk level when "
                   "we find the content is too-hard or too-easy for the "
                   "target audience."),
-                speaking_talk_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/talk",
+                frontend_host=f"{settings.FRONTEND_HOST}",
             ),
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -78,9 +78,9 @@ class TalkProposalMixin:
                 _("Whether you agree to give permission to PyCon Taiwan to "
                   "record, edit, and release audio and video of your "
                   "presentation. More information can be found at "
-                  "<a href='{recording_policy_url}' target='_blank'>"
+                  "<a href='{frontend_host}/en-us/speaking/recording' target='_blank'>"
                   "Recording Release</a> page."),
-                recording_policy_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/recording"
+                frontend_host=f"{settings.FRONTEND_HOST}"
             ),
             'slide_link': _(
                 "You can add your slide link near or after the conference "
@@ -166,13 +166,13 @@ class TutorialProposalMixin:
             'python_level': format_html_lazy(
                 _("The choice of talk level matters during the review "
                   "process. More definition of talk level can be found at the "
-                  "<a href='{speaking_talk_url}' target='_blank'>"
+                  "<a href='{frontend_host}/en-us/speaking/talk' target='_blank'>"
                   "How to Propose a Talk</a> page. Note that a proposal won't "
                   "be more likely to be accepted because of being 'Novice' "
                   "level. We may contact you to change the talk level when "
                   "we find the content is too-hard or too-easy for the "
                   "target audience."),
-                speaking_talk_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/talk",
+                frontend_host=f"{settings.FRONTEND_HOST}",
             ),
             'detailed_description': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -192,9 +192,9 @@ class TutorialProposalMixin:
                 _("Whether you agree to give permission to PyCon Taiwan to "
                   "record, edit, and release audio and video of your "
                   "presentation. More information can be found at "
-                  "<a href='{recording_policy_url}' target='_blank'>"
+                  "<a href='{frontend_host}/en-us/speaking/recording' target='_blank'>"
                   "Recording Release</a> page."),
-                recording_policy_url=f"{settings.FRONTEND_HOST}/{get_language()}/speaking/recording"
+                frontend_host=f"{settings.FRONTEND_HOST}"
             ),
             'slide_link': _(
                 "You can add your slide link near or after the conference "
