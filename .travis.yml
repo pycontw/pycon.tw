@@ -17,8 +17,6 @@ cache:
   - "$HOME/.cache/pip"
   python:
   - '3.6'
-before_install:
-- source secret_sauce.bash
 install:
 - pip install -U pip
 - pip install wheel
@@ -28,12 +26,6 @@ install:
 script:
 - python src/manage.py migrate --verbosity 1 --noinput
 - cd src; pytest -n 2 --cov=.
-notifications:
-  slack:
-    rooms:
-      - pycontw:Z1FrdUPAMxhG0MjnY8awlRm0#web
-    on_success: change
-    on_failure: always
 after_success:
 - cd src; codecov
 - cd ..
