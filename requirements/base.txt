@@ -95,3 +95,7 @@ sortedcontainers==2.1.0
 tabulate==0.8.6
 
 urllib3==1.25.10
+
+# For upload to Google cloud storage
+google-cloud-storage==1.36.1
+django-storages==1.11.1;
