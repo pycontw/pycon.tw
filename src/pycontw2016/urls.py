@@ -32,6 +32,7 @@ urlpatterns = i18n_patterns(
 # These should not be prefixed with language.
 urlpatterns += [
     url(r'^ccip/', include('ccip.urls')),
+    url(r'^api/sponsors/', include('sponsors.api.urls')),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
 ]
