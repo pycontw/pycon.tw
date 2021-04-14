@@ -150,7 +150,11 @@ def coc_agree(request):
                 agreement = CocRecord(user=request.user, coc_version=settings.COC_VERSION)
 
             agreement.save()
-            return redirect(request.GET.get('next'))
+
+            # The query param indicating redirect target (setup by CocAgreementMixin) can be removed after set_language.
+            # Redirect to dashboard intead if this situation happened.
+            redirect_to = request.GET.get('next', reverse('user_dashboard'))
+            return redirect(redirect_to)
     else:
         form = CocAgreementForm()
 
