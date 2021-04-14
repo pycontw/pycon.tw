@@ -24,7 +24,6 @@ from reviews.context import proposals_state, reviews_state
 from lxml import etree
 import lxml.html
 
-
 User = auth.get_user_model()
 
 
@@ -198,7 +197,6 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         context = super().get_context_data(**kwargs)
         context.update(**reviews_state()._asdict())
         return context
-
 
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()

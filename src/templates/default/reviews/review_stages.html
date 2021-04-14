@@ -1,0 +1,135 @@
+{% extends 'dashboard_base.html' %}
+
+{% load i18n static %}
+{% load proposals %}
+{% load compress crispy_forms_tags %}
+{% load tz %}
+{% get_current_timezone as TIME_ZONE %}
+
+{% block dashboard_tablist %}
+{% include '_includes/dashboard_tablist.html' with active='admin' %}
+{% endblock dashboard_tablist %}
+
+{% block main-content %}
+
+<h3 class="dashboard-header">
+	<span class="header__title">{% trans 'Review Stages' %}</span>
+</h3>
+
+<div class="dashboard-body">
+	<div class="row">
+		<!--Current Setting-->
+		<div class="panel panel-default">
+			<div class="panel-heading">{% trans 'Current Review Stage Setting' %}</div>
+			<ul class="list-group">
+				<li class="panel-body list-group-item">
+					{{ ".proposals.proposals.disable.after"|configuration_switch }}
+					<div class="pull-right">
+						<p>{{ current_review_stages_setting.proposals_disable_after }}</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--Hot Key Button-->
+		<br>
+		<h4>{% trans 'Set Review Stage' %}</h4>
+		<br>
+		{% for rs in review_stages_list %}
+			<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
+		{% endfor %}
+		<!--Review Change Setting-->
+		<form action="{% url 'review_stages' %}" method="post">
+			{% csrf_token %}
+			<div class="panel panel-default">
+				<div class="panel-heading">{% trans 'Review Stages' %}
+					<div class="material-switch pull-right">
+						<a href="https://github.com/pycontw/pycon.tw/blob/master/src/reviews/README.md">See Proposal Review System
+							Documentation</a>
+					</div>
+				</div>
+				<ul class="list-group">
+					<li class="panel-title list-group-item">
+						{{ ".proposals.creatable"|configuration_switch }}
+						<div class="material-switch pull-right">
+							<input name="proposals.creatable" type='hidden' value="false" />
+							<input id="proposals.creatable" name="proposals.creatable" type="checkbox" value="true"/>
+							<label for="proposals.creatable" class="label-info"></label>
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						{{ ".proposals.editable"|configuration_switch }}
+						<div class="material-switch pull-right">
+							<input name="proposals.editable" type='hidden' value="false" />
+							<input id="proposals.editable" name="proposals.editable" type="checkbox" value="true"/>
+							<label for="proposals.editable" class="label-info"></label>
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						{{ ".proposals.withdrawable"|configuration_switch }}
+						<div class="material-switch pull-right">
+							<input name="proposals.withdrawable" type='hidden' value="false" />
+							<input id="proposals.withdrawable" name="proposals.withdrawable" type="checkbox" value="true"/>
+							<label for="proposals.withdrawable" class="label-info"></label>
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						{{ ".reviews.visible.to.submitters"|configuration_switch }}
+						<div class="material-switch pull-right">
+							<input name="reviews.visible.to.submitters" type='hidden' value="false" />
+							<input id="reviews.visible.to.submitters" name="reviews.visible.to.submitters"
+								type="checkbox" value="true"/>
+							<label for="reviews.visible.to.submitters" class="label-info"></label>
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						{{ ".reviews.stage"|configuration_switch }}
+						<div class="input-customized-size pull-right">
+							<input id="reviews.stage" name="reviews.stage" type="number" min="0" max="2"
+								placeholder="Int" required="required">
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						{{ ".proposals.disable.after"|configuration_switch }}
+						<div class="input-customized-size pull-right">
+							<input name="proposals.disable.after" type="datetime-local" placeholder="YYYY-mm-ddThh:mm"
+								>
+						</div>
+					</li>
+					<li class="panel-title list-group-item">
+						timezone
+						<div class="input-customized-size pull-right">
+							<select name="review_timezone">
+								{% for tz in timezones %}
+								<option value="{{ tz }}" {% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="nesting-form-group">
+				{{ form|crispy }}
+				<button type="submit" class="btn btn-info pull-right">
+					{% trans 'Submit' %}
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock main-content %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static 'js/reviews/review_stages.js' %}"></script>
+<script>
+	proposals_creatable.checked = {{ current_review_stages_setting.proposals_creatable }};
+	proposals_editable.checked = {{ current_review_stages_setting.proposals_editable }};
+	proposals_withdrawable.checked = {{ current_review_stages_setting.proposals_withdrawable }};
+	reviews_visible_to_submitters.checked = {{ current_review_stages_setting.reviews_visible_to_submitters }};
+	reviews_stage.value = {{ current_review_stages_setting.reviews_stage }};
+</script>
+{% endcompress %}
+{% endblock extra_js %}
+
