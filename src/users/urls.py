@@ -1,4 +1,5 @@
 from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
@@ -23,8 +24,7 @@ urlpatterns = [
     url(r'^password-reset/$', views.password_reset, name='password_reset'),
     url(r'^password-reset/done/$',
         views.password_reset_done, name='password_reset_done'),
-    url(r'^password-reset/(?P<uidb64>[0-9A-Za-z_\-]+)/'
-        r'(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    path('password-reset/<uidb64>/<token>/',
         views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^password-reset/complete/$',
         views.password_reset_complete, name='password_reset_complete'),
