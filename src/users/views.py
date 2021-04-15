@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib import auth
-# from django.contrib.auth import get_user_model, login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -11,7 +10,7 @@ from django.utils.translation import gettext, get_language
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
-from django.template.loader import get_template, render_to_string
+from django.template.loader import render_to_string
 
 from .decorators import login_forbidden
 from .forms import (
