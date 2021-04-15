@@ -132,13 +132,6 @@ def password_reset_complete(request):
     return redirect('login')
 
 
-def password_reset_confirm(request, uidb64, token):
-    return base_password_reset_confirm(
-        request, uidb64=uidb64, token=token,
-        set_password_form=SetPasswordForm
-    )
-
-
 @login_required
 def coc_agree(request):
     if request.method == 'POST':
