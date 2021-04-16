@@ -164,7 +164,7 @@ def coc_agree(request):
         target = h1
         parent = h1.getparent()
 
-        while parent != main and parent != None:
+        while parent != main and parent is not None:
             target = parent
             parent = parent.getparent()
 
@@ -196,8 +196,8 @@ login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()
 password_change = PasswordChangeView.as_view()
 password_reset = auth_views.PasswordResetView.as_view(form_class=PasswordResetForm,
-        template_name='registration/password_reset.html',
-        email_template_name='registration/password_reset_email.txt')
+                                                      template_name='registration/password_reset.html',
+                                                      email_template_name='registration/password_reset_email.txt')
 password_reset_confirm = auth_views.PasswordResetConfirmView.as_view(
-        form_class=SetPasswordForm
+    form_class=SetPasswordForm
 )

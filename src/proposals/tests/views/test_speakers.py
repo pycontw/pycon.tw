@@ -1,8 +1,4 @@
-from unittest.mock import MagicMock
 from core.utils import set_registry
-
-
-#def test_proposals_state()
 
 
 def test_talk_proposal_manage_speakers_login(client):

@@ -1,5 +1,4 @@
 from django.contrib import messages
-from django.test import override_settings
 
 from proposals.models import TalkProposal, TutorialProposal
 from core.utils import set_registry

@@ -8,12 +8,12 @@ from django.core.validators import MaxLengthValidator
 # http://d.hatena.ne.jp/takenspc/20111126#1322252878
 _EAW_LEN_MAP = {
     'Na': 1,    # Narrow    - 1
-    'H':  1,    # Halfwidth - 1
-    'W':  2,    # Wide      - 2
-    'F':  2,    # Fullwidth - 2
+    'H': 1,    # Halfwidth - 1
+    'W': 2,    # Wide      - 2
+    'F': 2,    # Fullwidth - 2
 
-    'N':  1,    # Neutral   - 1
-    'A':  2,    # Ambiguous - 2
+    'N': 1,    # Neutral   - 1
+    'A': 2,    # Ambiguous - 2
 }
 
 

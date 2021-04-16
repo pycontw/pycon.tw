@@ -21,6 +21,7 @@ class PrimarySpeaker:
     This class is meant to be compatible with ``AdditionalSpeaker``, and used
     along side with instances of that class.
     """
+
     def __init__(self, *, proposal=None, user=None):
         if proposal is None and user is None:
             raise ValueError('must specify either proposal or user')
@@ -76,7 +77,7 @@ class AdditionalSpeaker(ConferenceRelated):
     SPEAKING_STATUS_ACCEPTED = 'accepted'
     SPEAKING_STATUS_DECLINED = 'declined'
     SPEAKING_STATUS = (
-        (SPEAKING_STATUS_PENDING,  _('Pending')),
+        (SPEAKING_STATUS_PENDING, _('Pending')),
         (SPEAKING_STATUS_ACCEPTED, _('Accepted')),
         (SPEAKING_STATUS_DECLINED, _('Declined')),
     )
@@ -155,8 +156,8 @@ class AbstractProposal(ConferenceRelated, EventInfo):
     )
 
     ACCEPTED_CHOICES = (
-        (None,  '----------'),
-        (True,  _('Accepted')),
+        (None, '----------'),
+        (True, _('Accepted')),
         (False, _('Rejected')),
     )
     accepted = models.NullBooleanField(

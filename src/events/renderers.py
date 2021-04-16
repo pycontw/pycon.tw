@@ -41,7 +41,7 @@ LANG_DISPLAY_MAP = {
     'ENEN': 'EN',
     'ZHZH': 'ZH',
     'ZHEN': _('EN Slides'),
-    'TAI':  'TAI',
+    'TAI': 'TAI',
 }
 
 

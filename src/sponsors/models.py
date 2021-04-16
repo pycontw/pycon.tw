@@ -13,6 +13,7 @@ from core.models import ConferenceRelated, BigForeignKey
 def select_storage():
     return default_storage if settings.DEBUG else GoogleCloudStorage()
 
+
 def logo_upload_to(instance, filename):
     return 'sponsors/{name}/{filename}'.format(
         name=slugify(instance.name, allow_unicode=True),

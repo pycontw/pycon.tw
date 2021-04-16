@@ -3,7 +3,6 @@ from django import forms
 from .models import CustomEvent, Schedule
 
 
-
 class ScheduleCreationForm(forms.ModelForm):
     class Meta:
         model = Schedule
