@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib import auth
-# from django.contrib.auth import get_user_model, login
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -11,7 +10,7 @@ from django.utils.translation import gettext, get_language
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
-from django.template.loader import get_template, render_to_string
+from django.template.loader import render_to_string
 
 from .decorators import login_forbidden
 from .forms import (
@@ -132,13 +131,6 @@ def password_reset_complete(request):
     return redirect('login')
 
 
-def password_reset_confirm(request, uidb64, token):
-    return base_password_reset_confirm(
-        request, uidb64=uidb64, token=token,
-        set_password_form=SetPasswordForm
-    )
-
-
 @login_required
 def coc_agree(request):
     if request.method == 'POST':
@@ -150,7 +142,11 @@ def coc_agree(request):
                 agreement = CocRecord(user=request.user, coc_version=settings.COC_VERSION)
 
             agreement.save()
-            return redirect(request.GET.get('next'))
+
+            # The query param indicating redirect target (setup by CocAgreementMixin) can be removed after set_language.
+            # Redirect to dashboard intead if this situation happened.
+            redirect_to = request.GET.get('next', reverse('user_dashboard'))
+            return redirect(redirect_to)
     else:
         form = CocAgreementForm()
 
