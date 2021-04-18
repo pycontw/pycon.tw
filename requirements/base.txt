@@ -99,3 +99,7 @@ urllib3==1.25.10
 # For upload to Google cloud storage
 google-cloud-storage==1.36.1
 django-storages==1.11.1;
+
+# Django REST framework: a powerful and flexible toolkit for building Web APIs.
+# https://www.django-rest-framework.org/
+djangorestframework==3.12.2

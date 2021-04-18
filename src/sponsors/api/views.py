@@ -1,24 +1,9 @@
-from django.db.models import F
-from django.http import JsonResponse
-from django.views.generic.base import View
-from django.views.generic import ListView
+from rest_framework import views
+from rest_framework.response import Response
 
-from core.utils import TemplateExistanceStatusResponse
+from sponsors.models import Sponsor, OpenRole
 
-from .models import Sponsor, OpenRole
-
-
-class SponsorListView(ListView):
-
-    model = Sponsor
-    response_class = TemplateExistanceStatusResponse
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
-
-class SponsorAPIView(View):
+class SponsorAPIView(views.APIView):
     def get(self, request):
         sponsor_data = Sponsor.objects.order_by('level')
 
@@ -44,10 +29,10 @@ class SponsorAPIView(View):
                 "sponsors": sponsors
             })
 
-        return JsonResponse(response_data)
+        return Response(response_data)
 
 
-class JobAPIView(View):
+class JobAPIView(views.APIView):
     def get(self, request):
         sponsor_has_open_role = set(OpenRole.objects.values_list('sponsor', flat=True))
         sponsor_set = Sponsor.objects.filter(id__in=sponsor_has_open_role).order_by('level')
@@ -70,4 +55,4 @@ class JobAPIView(View):
                 "jobs": jobs
             })
 
-        return JsonResponse(response_data)
+        return Response(response_data)
