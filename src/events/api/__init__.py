@@ -1,1 +1,1 @@
-from .talkproposal import TalkProposalViewSet
+from .talkproposal import TalkDetailAPIView

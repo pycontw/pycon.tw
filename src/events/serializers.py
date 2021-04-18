@@ -14,7 +14,7 @@ class PrimarySpeakerSerializer(serializers.Serializer):
     facebook_profile_url = serializers.CharField()
 
 
-class TalkProposalListSerializer(serializers.ModelSerializer):
+class TalkDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
 
     def get_speakers(self, obj):

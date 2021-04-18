@@ -1,9 +1,10 @@
-from rest_framework import viewsets
-from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.generics import RetrieveAPIView
 
 from events import models
 from events import serializers
 
-class TalkProposalViewSet(viewsets.ModelViewSet):
+
+class TalkDetailAPIView(RetrieveAPIView):
+
     queryset = models.TalkProposal.objects.all()
-    serializer_class = serializers.TalkProposalListSerializer
+    serializer_class = serializers.TalkDetailSerializer
