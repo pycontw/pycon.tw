@@ -102,7 +102,8 @@ THIRD_PARTY_APPS = (
     'import_export',
     'sorl.thumbnail',
     'registry',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework'
 )
 
 LOCAL_APPS = (
