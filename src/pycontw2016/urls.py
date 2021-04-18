@@ -18,7 +18,6 @@ urlpatterns = i18n_patterns(
     #url(r'^conference/', include('events.urls')),
     url(r'^proposals/', include('proposals.urls')),
     url(r'^reviews/', include('reviews.urls')),
-    #url(r'^sponsors/', include('sponsors.urls')),
     #url(r'^ext/', include('ext2020.urls')),
 
     # Match everything except admin, media, static, and error pages.
@@ -33,7 +32,7 @@ urlpatterns = i18n_patterns(
 # These should not be prefixed with language.
 urlpatterns += [
     url(r'^ccip/', include('ccip.urls')),
-    url(r'^api/', include('api.urls')),
+    url(r'^api/sponsors/', include('sponsors.api.urls')),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
 ]
