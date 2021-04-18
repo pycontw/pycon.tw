@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from django.views.generic import RedirectView
 
-from . import views
+from events import views
 from ext2020 import views as ext2020_views
 
 urlpatterns = [
