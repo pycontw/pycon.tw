@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveAPIView
 
 from events import models
-from events import serializers
+from . import serializers
 
 
 class TalkDetailAPIView(RetrieveAPIView):

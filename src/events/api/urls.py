@@ -1,9 +1,9 @@
 from django.urls import path
 
-from events import api
+from . import views
 
 app_name = 'app'
 
 urlpatterns = [
-    path('talkproposal/<int:pk>', api.TalkDetailAPIView.as_view()),
+    path('talk/<int:pk>', views.TalkDetailAPIView.as_view()),
 ]
