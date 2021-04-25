@@ -1,4 +1,3 @@
-from django.utils.translation import gettext_lazy as _, pgettext_lazy as p
 
 
 def get_sponsors():

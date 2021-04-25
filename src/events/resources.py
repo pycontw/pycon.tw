@@ -19,8 +19,16 @@ class LocalDateTimeWidget(widgets.ForeignKeyWidget):
 
 
 class CustomEventResource(resources.ModelResource):
-    begin_time = fields.Field(column_name='begin_time', attribute='begin_time', widget=LocalDateTimeWidget(Time, 'value'))
-    end_time = fields.Field(column_name='end_time', attribute='end_time', widget=LocalDateTimeWidget(Time, 'value'))
+    begin_time = fields.Field(
+        column_name='begin_time',
+        attribute='begin_time',
+        widget=LocalDateTimeWidget(Time, 'value')
+    )
+    end_time = fields.Field(
+        column_name='end_time',
+        attribute='end_time',
+        widget=LocalDateTimeWidget(Time, 'value')
+    )
 
     class Meta:
         model = CustomEvent

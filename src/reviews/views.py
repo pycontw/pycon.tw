@@ -2,7 +2,6 @@ import collections
 import json
 import random
 
-from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse
 from django.db.models import Count

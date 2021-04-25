@@ -24,6 +24,7 @@ install:
 - pip install -r requirements/travis.txt
 - yarn install --dev
 script:
+- flake8 src
 - python src/manage.py migrate --verbosity 1 --noinput
 - cd src; pytest -n 2 --cov=.
 after_success:

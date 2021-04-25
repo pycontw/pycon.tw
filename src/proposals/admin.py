@@ -49,6 +49,7 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
         'accepted',
     ]
 
+
 @admin.register(TutorialProposal)
 class TutorialProposalAdmin(ProposalAdmin):
     pass

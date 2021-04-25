@@ -1,7 +1,6 @@
 from import_export import fields, resources
 
 from .models import TalkProposal
-from reviews.models import Review
 
 
 class TalkProposalResource(resources.ModelResource):

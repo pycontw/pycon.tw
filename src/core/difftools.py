@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 from core.utils import html_join
 
 
-def dump_replace(a, b, alo, blo, ahi, bhi):
+def dump_replace(a, b, alo, blo, ahi, bhi):  # noqa
     # Based on `difflib.Differ._fancy_replace`.
     # When replacing one block of lines with another, search the blocks
     # for *similar* lines; the best-matching pair (if any) is used as a

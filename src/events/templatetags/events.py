@@ -1,10 +1,10 @@
 from django.conf import settings
-from django.template import Context, Library
+from django.template import Library
 from django.template.loader import get_template
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 
-from events.models import KeynoteEvent, JobListingsEvent, Location
+from events.models import KeynoteEvent, Location
 from sponsors.models import Sponsor, OpenRole
 from proposals.utils import format_names
 
@@ -33,7 +33,7 @@ def calc_grid_row(begin, end, timeline_start='08:30'):
 
     def get_row(t):
         diff = datetime.strptime(t, d_format) - start_point
-        return int(diff.seconds / ROW_UNIT)+1
+        return int(diff.seconds / ROW_UNIT) + 1
 
     start_row = get_row(begin)
     end_row = get_row(end)

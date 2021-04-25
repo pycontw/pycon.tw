@@ -3,6 +3,7 @@ from rest_framework.response import Response
 
 from sponsors.models import Sponsor, OpenRole
 
+
 class SponsorAPIView(views.APIView):
     def get(self, request):
         sponsor_data = Sponsor.objects.order_by('level')

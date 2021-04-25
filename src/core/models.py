@@ -29,6 +29,7 @@ class EAWTextField(models.TextField):
     This adds an extra validator that counts EAW wide characters as two
     instead of one.
     """
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.max_length is not None:
@@ -81,26 +82,26 @@ class EventInfo(models.Model):
     )
 
     CATEGORY_CHOICES = (
-        ('APPL',  _('Application')),
-        ('PRAC',  _('Best Practices & Patterns')),
-        ('COM',   _('Community')),
-        ('DB',    _('Databases')),
-        ('DATA',  _('Data Analysis')),
-        ('EDU',   _('Education')),
+        ('APPL', _('Application')),
+        ('PRAC', _('Best Practices & Patterns')),
+        ('COM', _('Community')),
+        ('DB', _('Databases')),
+        ('DATA', _('Data Analysis')),
+        ('EDU', _('Education')),
         ('EMBED', _('Embedded Systems')),
-        ('FIN',   _('FinTech')),
-        ('IOT',   _('Internet of Things')),
-        ('GAME',  _('Gaming')),
+        ('FIN', _('FinTech')),
+        ('IOT', _('Internet of Things')),
+        ('GAME', _('Gaming')),
         ('GRAPH', _('Graphics')),
-        ('ML',    _('Machine Learning')),
-        ('NLP',   _('Natural Language Processing')),
-        ('CORE',  _('Python Core (language, stdlib, etc.)')),
-        ('TOOL',  _('Project Tooling')),
-        ('SCI',   _('Science')),
-        ('SEC',   _('Security')),
+        ('ML', _('Machine Learning')),
+        ('NLP', _('Natural Language Processing')),
+        ('CORE', _('Python Core (language, stdlib, etc.)')),
+        ('TOOL', _('Project Tooling')),
+        ('SCI', _('Science')),
+        ('SEC', _('Security')),
         ('ADMIN', _('Systems Administration')),
-        ('TEST',  _('Testing')),
-        ('WEB',   _('Web Frameworks')),
+        ('TEST', _('Testing')),
+        ('WEB', _('Web Frameworks')),
         ('OTHER', _('Other')),
     )
     category = models.CharField(
@@ -113,7 +114,7 @@ class EventInfo(models.Model):
         ('ENEN', _('English talk')),
         ('ZHEN', _('Chinese talk w. English slides')),
         ('ZHZH', _('Chinese talk w. Chinese slides')),
-        ('TAI',  _('Taiwanese Hokkien')),
+        ('TAI', _('Taiwanese Hokkien')),
     )
     language = models.CharField(
         verbose_name=_('language'),
@@ -218,7 +219,7 @@ class EventInfo(models.Model):
             'ENEN': 'E',
             'ZHEN': 'ZE',
             'ZHZH': 'Z',
-            'TAI':  'T',
+            'TAI': 'T',
         }[self.language]
 
     def get_python_level_tag(self):

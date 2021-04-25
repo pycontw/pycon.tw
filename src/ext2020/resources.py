@@ -44,29 +44,29 @@ class VenueResource(resources.ModelResource):
 
 class CommunityTrackEventResource(resources.ModelResource):
     talk = fields.Field(
-            column_name='talk',
-            attribute='talk',
-            widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
+        column_name='talk',
+        attribute='talk',
+        widget=widgets.ForeignKeyWidget(TalkProposal, 'id'))
 
     sponsored_event = fields.Field(
-            column_name='sponsored_event',
-            attribute='sponsored_event',
-            widget=widgets.ForeignKeyWidget(SponsoredEvent, 'id'))
+        column_name='sponsored_event',
+        attribute='sponsored_event',
+        widget=widgets.ForeignKeyWidget(SponsoredEvent, 'id'))
 
     venue = fields.Field(
-            column_name='venue',
-            attribute='venue',
-            widget=widgets.ForeignKeyWidget(Venue, 'name'))
+        column_name='venue',
+        attribute='venue',
+        widget=widgets.ForeignKeyWidget(Venue, 'name'))
 
     begin_time = fields.Field(
-            column_name='begin_time',
-            attribute='begin_time',
-            widget=LocalDateTimeWidget(Time, 'value'))
+        column_name='begin_time',
+        attribute='begin_time',
+        widget=LocalDateTimeWidget(Time, 'value'))
 
     end_time = fields.Field(
-            column_name='end_time',
-            attribute='end_time',
-            widget=LocalDateTimeWidget(Time, 'value'))
+        column_name='end_time',
+        attribute='end_time',
+        widget=LocalDateTimeWidget(Time, 'value'))
 
     class Meta:
         model = CommunityTrackEvent

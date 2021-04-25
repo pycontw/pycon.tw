@@ -8,7 +8,6 @@ from django.urls import reverse
 
 from registry.helper import reg
 
-from users.models import CocRecord
 from reviews.context import reviews_state
 
 
