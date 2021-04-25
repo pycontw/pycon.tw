@@ -101,7 +101,7 @@ class Sponsor(ConferenceRelated):
         return self.logo_svg or self.logo_image or None
 
 
-class OpenRole(models.Model):
+class OpenRole(ConferenceRelated):
 
     sponsor = BigForeignKey(
         to=Sponsor,
@@ -117,6 +117,12 @@ class OpenRole(models.Model):
     description = models.TextField(
         verbose_name=_('open role descsription'),
     )
+
+    requirements = models.TextField(
+        verbose_name=_('open role requirements'),
+        null=True,
+    )
+
     url = models.URLField(
         verbose_name=_('open role URL'),
         max_length=255, blank=True,
