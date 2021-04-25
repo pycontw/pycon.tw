@@ -21,7 +21,7 @@ urlpatterns = i18n_patterns(
     #url(r'^ext/', include('ext2020.urls')),
 
     # Match everything except admin, media, static, and error pages.
-    url(r'^(?!admin|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
+    url(r'^(?!admin|api|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
         media=settings.MEDIA_URL.strip('/'),
         static=settings.STATIC_URL.strip('/')),
         flat_page, name='page'),
