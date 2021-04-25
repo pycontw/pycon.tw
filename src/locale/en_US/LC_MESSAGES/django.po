@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 02:40+0800\n"
+"POT-Creation-Date: 2021-04-26 02:45+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -1483,15 +1483,19 @@ msgstr "open role name"
 msgid "open role descsription"
 msgstr "open role description"
 
-#: sponsors/models.py:121
+#: sponsors/models.py:122
+msgid "open role requirements"
+msgstr "open role requirements"
+
+#: sponsors/models.py:127
 msgid "open role URL"
 msgstr "open role URL"
 
-#: sponsors/models.py:126
+#: sponsors/models.py:132
 msgid "open role"
 msgstr "open role"
 
-#: sponsors/models.py:127
+#: sponsors/models.py:133
 msgid "open Roles"
 msgstr "open Roles"
 
