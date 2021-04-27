@@ -4,8 +4,8 @@
 	<tr>
 		{% if not verdict %}
 			<th width="1%">
-				<a {% if ordering == 'review_count' %}class="active asc" href="?order=-count"
-					 {% elif ordering == '-review_count' %}class="active desc" href="?order=count"
+				<a {% if ordering == 'review__count' %}class="active asc" href="?order=-count"
+					 {% elif ordering == '-review__count' %}class="active desc" href="?order=count"
 					 {% else %}href="?order=count"{% endif %}>
 					{% trans 'Reviewed' %}
 					<i class="fa fa-sort fa-lg"></i>
@@ -43,10 +43,10 @@
 	{% for proposal in proposals %}
 		<tr>
 			{% if proposal.accepted == None %}
-				<td>{{ proposal.review_count }}</td>
+				<td>{{ proposal.review__count }}</td>
 			{% endif %}
 			<td class="proposal-title">
-				<div  {% if proposal.review_count > reviews_enough %} class="grayed-out" {% endif %} >{{ proposal.title }}</div>
+				<div  {% if proposal.review__count > reviews_enough %} class="grayed-out" {% endif %} >{{ proposal.title }}</div>
 			</td>
 			<td class="hidden-md hidden-sm hidden-xs">{{ proposal.get_language_display }}</td>
 			{% if proposal.accepted != None %}
