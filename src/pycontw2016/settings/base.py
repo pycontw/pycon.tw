@@ -156,7 +156,7 @@ LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
     ('zh-hant', 'Traditional Chinese'),
-    ('en-us',   'English (US)'),
+    ('en-us', 'English (US)'),
 ]
 
 FALLBACK_LANGUAGE_PREFIXES = {
@@ -334,4 +334,4 @@ COC_VERSION = '2021.0'
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config
 # provides the url hosting the frontend.
-FRONTEND_HOST='https://staging.pycon.tw'
+FRONTEND_HOST = 'https://staging.pycon.tw'

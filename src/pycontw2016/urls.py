@@ -15,13 +15,13 @@ urlpatterns = i18n_patterns(
     url(r'^$', index, name='index'),
     url(r'^dashboard/$', user_dashboard, name='user_dashboard'),
     url(r'^accounts/', include('users.urls')),
-    #url(r'^conference/', include('events.urls')),
+    # url(r'^conference/', include('events.urls')),
     url(r'^proposals/', include('proposals.urls')),
     url(r'^reviews/', include('reviews.urls')),
-    #url(r'^ext/', include('ext2020.urls')),
+    # url(r'^ext/', include('ext2020.urls')),
 
     # Match everything except admin, media, static, and error pages.
-    url(r'^(?!admin|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
+    url(r'^(?!admin|api|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
         media=settings.MEDIA_URL.strip('/'),
         static=settings.STATIC_URL.strip('/')),
         flat_page, name='page'),
@@ -33,6 +33,7 @@ urlpatterns = i18n_patterns(
 urlpatterns += [
     url(r'^ccip/', include('ccip.urls')),
     url(r'^api/sponsors/', include('sponsors.api.urls')),
+    url(r'^api/events/', include('events.api.urls', namespace="events")),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
 ]

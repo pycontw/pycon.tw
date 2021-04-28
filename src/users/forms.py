@@ -13,7 +13,7 @@ from django.utils.translation import gettext_lazy as _
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
-from crispy_forms.bootstrap import FormActions, InlineCheckboxes
+from crispy_forms.bootstrap import FormActions
 
 
 User = get_user_model()

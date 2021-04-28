@@ -1,12 +1,12 @@
 from django import forms
 from django.conf import settings
-from django.urls import reverse_lazy
-from django.utils.translation import get_language, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from core.forms import RequestUserValidationMixin
 from core.utils import format_html_lazy
 from core.widgets import CharacterCountedTextarea, SimpleMDEWidget
 from proposals.models import TalkProposal, TutorialProposal
+
 
 class RequestUserSpeakerValidationMixin(RequestUserValidationMixin):
     """Mixin providing ``self._request`` and auth validation on cleaning.

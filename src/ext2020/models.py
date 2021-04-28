@@ -48,8 +48,8 @@ class Venue(models.Model):
         # Get related events, whether the event is explicit set to the venue,
         # or with no venue set (lower priority)
         return CommunityTrackEvent.objects.filter(
-                    Q(venue=self) | Q(venue__isnull=True)
-                ).order_by('begin_time__value', F('venue').desc(nulls_last=True)).distinct('begin_time__value')
+            Q(venue=self) | Q(venue__isnull=True)
+        ).order_by('begin_time__value', F('venue').desc(nulls_last=True)).distinct('begin_time__value')
 
     class Meta:
         verbose_name = _('community track venue')
@@ -111,7 +111,8 @@ class CommunityTrackEvent(models.Model):
         count = len(tuple(filter(None, values)))
 
         if count > 1:
-            raise ValidationError(_('You can only put either proposed_talk_event, sponsored_event or custom_event at once.'))
+            raise ValidationError(
+                _('You can only put either proposed_talk_event, sponsored_event or custom_event at once.'))
 
         if count <= 0:
             raise ValidationError(_('You need to put proposed_talk_event sponsored_event, or custom_event.'))

@@ -12,7 +12,6 @@ def _build_google_form_url(uid):
     return 'https://docs.google.com/forms/d/e/{uid}/viewform'.format(uid=uid)
 
 
-
 def script_prefix(request):
     return {
         'SCRIPT_PREFIX': get_script_prefix(),
@@ -57,6 +56,7 @@ def sponsors(request):
 
 def events(request):
     return {'schedule_redirect_url': settings.SCHEDULE_REDIRECT_URL}
+
 
 def frontend_host(request):
     return {'FRONTEND_HOST': settings.FRONTEND_HOST}

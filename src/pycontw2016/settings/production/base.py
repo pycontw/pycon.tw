@@ -3,11 +3,15 @@
     DJANGO_SETTINGS_MODULE=my_proj.settings.production
 """
 
+import logging.config
+import os
+
+# Google Cloud storage
+from google.oauth2 import service_account
+
 from ..base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, TEMPLATES, env
 from ..base import *            # noqa
 
-import logging.config
-import os
 
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False
@@ -131,8 +135,6 @@ GTM_TRACK_ID = env('GTM_TRACK_ID', default=None)
 DJANGO_Q_DEBUG = False
 
 # Google Cloud storage
-from google.oauth2 import service_account
-
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, "google-cloud-storage.json")
 )

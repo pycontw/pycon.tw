@@ -1,7 +1,6 @@
 import json
 import pytz
 
-from datetime import datetime
 from django.utils import timezone
 from proposals.models import TalkProposal, TutorialProposal
 from django.core.management.base import BaseCommand
@@ -9,6 +8,7 @@ from django.core.management.base import BaseCommand
 PROPOSAL_TYPE_MAPPING = {
     'talk': TalkProposal, 'tutorial': TutorialProposal
 }
+
 
 class Command(BaseCommand):
     help = "export proposal's create time(default UTC+8) as JSON"
@@ -24,7 +24,7 @@ class Command(BaseCommand):
                 # ^you can edit 'Asia/Taipei to other area.'
                 time = timezone.localtime(p.created_at).strftime('%Y-%m-%d %H:%M:%S')
                 joint_proposals.append({
-                    'proposal_type(id)': ptype+'({})'.format(p.id),
+                    'proposal_type(id)': ptype + '({})'.format(p.id),
                     'title': p.title,
                     'speaker_name': p.submitter.speaker_name,
                     'email': p.submitter.email,
@@ -32,4 +32,3 @@ class Command(BaseCommand):
                 })
         json_str = json.dumps(joint_proposals, sort_keys = False, indent=4, ensure_ascii=False)
         self.stdout.write(json_str)
-    

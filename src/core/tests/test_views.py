@@ -9,6 +9,7 @@ from django.utils.translation import activate
 from events.models import Schedule
 from pytest_django.asserts import assertRedirects
 
+
 @pytest.mark.django_db
 def test_index_page(client):
     response = client.get('/en-us/', follow=True)
@@ -17,7 +18,7 @@ def test_index_page(client):
 
 
 @pytest.mark.parametrize('path,expected', [
-    ('/en-us/speaking/cfp/',  200),
+    ('/en-us/speaking/cfp/', 200),
     ('/en-us/speaking/talk/', 200),
 ])
 def test_speaking_pages(client, path, expected):
@@ -25,7 +26,7 @@ def test_speaking_pages(client, path, expected):
 
 
 @pytest.mark.parametrize('path,expected', [
-    ('/en-us/speaking/base/',  404),
+    ('/en-us/speaking/base/', 404),
     ('/en-us/speaking/_base/', 404),
 ])
 def test_speaking_bases(client, path, expected):
@@ -117,7 +118,7 @@ def test_content_pages_links(client, parser, schedule, content_page_full_path):
     for tag in link_tags:
         link = tag.get('href')
         if "/events/schedule/" in link \
-            and settings.SCHEDULE_REDIRECT_URL:
+                and settings.SCHEDULE_REDIRECT_URL:
             assertRedirects(
                 client.get(link),
                 settings.SCHEDULE_REDIRECT_URL,

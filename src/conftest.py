@@ -64,6 +64,7 @@ def parser():
 class DjangoUtils:
     """Test utilities for testing Django things.
     """
+
     def to_list(self, qs, transform=repr):
         """Convert a queryset to list.
 
@@ -126,7 +127,7 @@ def user_client(user, bare_user_client):
 
 @pytest.fixture
 def agreed_user(user):
-    coc = CocRecord.objects.create(user=user, coc_version=settings.COC_VERSION)
+    CocRecord.objects.create(user=user, coc_version=settings.COC_VERSION)
     return user
 
 
@@ -156,7 +157,7 @@ def another_user(another_bare_user):
 
 @pytest.fixture
 def another_agreed_user(another_user):
-    coc = CocRecord.objects.create(user=another_user, coc_version=settings.COC_VERSION)
+    CocRecord.objects.create(user=another_user, coc_version=settings.COC_VERSION)
     return another_user
 
 

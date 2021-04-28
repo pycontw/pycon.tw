@@ -8,8 +8,8 @@ from users.forms import (
 
 
 @pytest.mark.parametrize('form_class,kwarg_keys', [
-    (PasswordResetForm,      []),
-    (SetPasswordForm,        ['user']),
+    (PasswordResetForm, []),
+    (SetPasswordForm, ['user']),
     (PublicUserCreationForm, []),
 ])
 def test_form_helper(user, form_class, kwarg_keys):

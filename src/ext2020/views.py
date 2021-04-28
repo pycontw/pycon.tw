@@ -1,5 +1,3 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import Http404
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
@@ -8,13 +6,9 @@ import re
 
 from registry.helper import reg
 
-from core.utils import collect_language_codes
-from django.core.exceptions import ImproperlyConfigured
-from .models import Attendee,Venue, Choice
-import datetime
+from .models import Attendee, Venue, Choice
 from .forms import CommunityTrackForm
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
 from django.views.generic import DetailView, TemplateView, ListView
 
 token_re = re.compile(r'^[0-9a-f]{32}$')
@@ -65,13 +59,14 @@ class CommunityTrackView(ListView):
                 self.attendee = Attendee.objects.get(token=self.token)
             except Attendee.DoesNotExist:
                 # Should we build one here (?)
-                self.message = _("The token within the link is invalid. Please contact the administrator for further help.")
+                self.message = _(
+                    "The token within the link is invalid. Please contact the administrator for further help.")
             except Attendee.MultipleObjectsReturned:
                 # Should never happen
                 pass
         else:
-            self.message = _("You can choose the track you'd like to go if you access this page from the preparation letter, " \
-                             "or from the OPass app that is already bound with your KKTIX registration.")
+            self.message = _("You can choose the track you'd like to go if you access this page from the preparation "
+                             "letter, or from the OPass app that is already bound with your KKTIX registration.")
 
         if self.attendee:
             # Get the choice

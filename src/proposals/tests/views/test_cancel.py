@@ -1,6 +1,5 @@
 import pytest
 
-from django.conf import settings
 from django.contrib import messages
 
 from proposals.models import TalkProposal, TutorialProposal

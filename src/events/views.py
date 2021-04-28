@@ -4,7 +4,7 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse,reverse_lazy
+from django.urls import reverse
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.utils import translation
@@ -25,7 +25,6 @@ from .models import (
 from .renderers import render_all
 
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -33,9 +32,9 @@ class AcceptedProposalMixin:
     def get_queryset(self):
         return (
             super().get_queryset()
-                .filter_accepted()
-                .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
-                .select_related('submitter')
+            .filter_accepted()
+            .annotate(_additional_speaker_count=Count('additionalspeaker_set'))
+            .select_related('submitter')
         )
 
 
@@ -49,14 +48,14 @@ class TalkListView(AcceptedProposalMixin, ListView):
         proposals = (
             self.get_queryset()
                 .prefetch_related(Prefetch(
-                'additionalspeaker_set',
-                queryset=(
-                    AdditionalSpeaker.objects
+                    'additionalspeaker_set',
+                    queryset=(
+                        AdditionalSpeaker.objects
                         .filter(cancelled=False)
                         .select_related('user')
-                ),
-                to_attr='_additional_speakers',
-            ))
+                    ),
+                    to_attr='_additional_speakers',
+                ))
         )
         for proposal in proposals:
             category_map[proposal.get_category_display()].append(proposal)
@@ -65,8 +64,8 @@ class TalkListView(AcceptedProposalMixin, ListView):
     def get_sponsored_talks(self):
         sponsored_events = (
             SponsoredEvent.objects
-                .select_related('host')
-                .order_by('title')
+            .select_related('host')
+            .order_by('title')
         )
         return sponsored_events
 
@@ -86,9 +85,9 @@ class TutorialListView(ListView):
     def get_queryset(self):
         qs = (
             super().get_queryset()
-                .filter(proposal__in=TutorialProposal.objects.filter_accepted())
-                .order_by('begin_time', 'end_time', 'location')
-                .select_related('proposal', 'proposal__submitter')
+            .filter(proposal__in=TutorialProposal.objects.filter_accepted())
+            .order_by('begin_time', 'end_time', 'location')
+            .select_related('proposal', 'proposal__submitter')
         )
         return qs
 
@@ -130,8 +129,8 @@ class ScheduleCreateMixin:
 
 
 class ScheduleCreate2016View(
-    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-    CreateView):
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin, CreateView
+):
     def get_context_data(self, **kwargs):
         return super().get_context_data(content=render_all(), **kwargs)
 
@@ -141,23 +140,23 @@ def _room_sort_key(room):
 
 
 class ScheduleCreateView(
-    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin,
-    CreateView):
+    ScheduleCreateMixin, FormValidMessageMixin, PermissionRequiredMixin, CreateView
+):
     event_querysets = [
         CustomEvent.objects.all().exclude(location=Location.OTHER),
         KeynoteEvent.objects.all().exclude(location=Location.OTHER),
         (
             ProposedTalkEvent.objects
-                .select_related('proposal__submitter')
-                .annotate(_additional_speaker_count=Count(
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
             )).exclude(location=Location.OTHER)
         ),
         SponsoredEvent.objects.select_related('host').exclude(location=Location.OTHER),
         (
             ProposedTutorialEvent.objects
-                .select_related('proposal__submitter')
-                .annotate(_additional_speaker_count=Count(
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
                 'proposal__additionalspeaker_set',
             )).exclude(location=Location.OTHER)
         ),
@@ -256,8 +255,8 @@ class ProposedEventMixin:
         try:
             event = (
                 self.event_model.objects
-                    .select_related('begin_time', 'end_time')
-                    .get(proposal=self.object)
+                .select_related('begin_time', 'end_time')
+                .get(proposal=self.object)
             )
         except self.event_model.DoesNotExist:
             return None
@@ -270,8 +269,8 @@ class ProposedEventMixin:
             try:
                 community_track_event = (
                     CommunityTrackEvent.objects
-                                    .select_related('begin_time', 'end_time')
-                                    .get(talk=self.object)
+                    .select_related('begin_time', 'end_time')
+                    .get(talk=self.object)
                 )
             except CommunityTrackEvent.DoesNotExist:
                 pass
@@ -283,8 +282,8 @@ class ProposedEventMixin:
 
 
 class TalkDetailView(
-    AcceptedProposalMixin, ProposedEventMixin,
-    EventInfoMixin, DetailView):
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
     model = TalkProposal
     event_model = ProposedTalkEvent
     template_name = 'events/talk_detail.html'
@@ -325,9 +324,10 @@ class SponsoredEventDetailView(EventInfoMixin, DetailView):
             **kwargs,
         )
 
+
 class TutorialDetailView(
-    AcceptedProposalMixin, ProposedEventMixin,
-    EventInfoMixin, DetailView):
+        AcceptedProposalMixin, ProposedEventMixin,
+        EventInfoMixin, DetailView):
     model = TutorialProposal
     event_model = ProposedTutorialEvent
     template_name = 'events/tutorial_detail.html'

@@ -25,4 +25,4 @@ STATICFILES_DIRS[1] = os.path.join(
     BASE_DIR, 'static', CONFERENCE_DEFAULT_SLUG, '_includes',
 )
 
-FRONTEND_HOST='https://tw.pycon.org/2021'
+FRONTEND_HOST = 'https://tw.pycon.org/2021'

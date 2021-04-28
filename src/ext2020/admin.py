@@ -5,7 +5,7 @@ from modeltranslation.admin import TranslationAdmin
 from import_export.admin import ImportMixin, ImportExportMixin
 
 from .models import Attendee, Venue, Choice, CommunityTrackEvent
-from .resources import AttendeeResource, VenueResource, CommunityTrackEventResource
+from .resources import AttendeeResource, CommunityTrackEventResource
 
 
 # Register your models here.

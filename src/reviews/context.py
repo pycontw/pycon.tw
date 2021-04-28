@@ -16,6 +16,7 @@ ProposalsState = namedtuple('ProposalsState', ['proposals_creatable',
                                                'proposals_editable',
                                                'proposals_withdrawable'])
 
+
 def proposals_state():
     slug = settings.CONFERENCE_DEFAULT_SLUG
 
@@ -48,6 +49,7 @@ def proposals_state():
 ReviewsState = namedtuple('ReviewsState', ['reviews_stage',
                                            'reviews_public',
                                            'reviews_enough'])
+
 
 def reviews_state():
     slug = settings.CONFERENCE_DEFAULT_SLUG
