@@ -37,6 +37,7 @@ class Sponsor(ConferenceRelated):
     subtitle = models.TextField(
         verbose_name=_('subtitle'),
         null=True,
+        blank=True,
     )
     logo_svg = models.FileField(
         verbose_name=_('logo (SVG)'),
