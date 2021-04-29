@@ -43,3 +43,37 @@ class TalkDetailSerializer(serializers.ModelSerializer):
             "speakers"
 
         ]
+
+class TutorialDetailSerializer(serializers.ModelSerializer):
+    speakers = serializers.SerializerMethodField()
+    date = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    begin_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    end_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    
+    def get_speakers(self, obj):
+        return [
+            ReturnDict(PrimarySpeakerSerializer(
+                data={'thumbnail_url': i.user.get_thumbnail_url(),
+                      'name': i.user.speaker_name,
+                      'github_profile_url': i.user.github_profile_url,
+                      'twitter_profile_url': i.user.twitter_profile_url,
+                      'facebook_profile_url': i.user.facebook_profile_url}).get_initial(),
+                serializer=PrimarySpeakerSerializer) for i in obj.speakers]
+
+    class Meta:
+        model = models.TutorialProposal
+        fields = [
+            "title",
+            "location",
+            "date",
+            "begin_time",
+            "end_time",
+            "category",
+            "language",
+            "python_level",
+            "abstract",
+            "detailed_description",
+            "slide_link",
+            "slido_embed_link",
+            "speakers"
+        ]
