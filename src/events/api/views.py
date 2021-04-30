@@ -26,4 +26,3 @@ class TutorialListAPIView(views.APIView):
             })
 
         return Response(response_data)
-        
