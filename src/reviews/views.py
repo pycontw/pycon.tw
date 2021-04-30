@@ -38,12 +38,12 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
     }
     order_keys = {
         'title': 'title',
-        'count': 'review_count',
+        'count': 'review__count',
         'category': 'category',
         'level': 'python_level',
         'lang': 'language',
         '-title': '-title',
-        '-count': '-review_count',
+        '-count': '-review__count',
         '-category': '-category',
         '-level': '-python_level',
         '-lang': '-language',
@@ -62,7 +62,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .filter_reviewable(user)
             .exclude(accepted__isnull=False)
             .exclude(review__reviewer=user)
-            .annotate(review_count=Count('review'))
+            .annotate(Count('review'))
         )
         # params = self.request.GET
         # category = params.get('category', '').upper()
@@ -93,7 +93,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             TalkProposal.objects
             .filter_reviewable(self.request.user)
             .filter(accepted__isnull=False)
-            .annotate(review_count=Count('review'))
+            .annotate(Count('review'))
         )
 
         vote_count_pairs = (

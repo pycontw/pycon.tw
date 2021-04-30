@@ -25,7 +25,7 @@ class TalkDetailSerializer(serializers.ModelSerializer):
                       'github_profile_url': i.user.github_profile_url,
                       'twitter_profile_url': i.user.twitter_profile_url,
                       'facebook_profile_url': i.user.facebook_profile_url}).get_initial(),
-                       serializer=PrimarySpeakerSerializer) for i in obj.speakers]
+                serializer=PrimarySpeakerSerializer) for i in obj.speakers]
 
     class Meta:
         model = models.TalkProposal
