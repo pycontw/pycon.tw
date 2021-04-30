@@ -11,6 +11,7 @@ class TalkDetailAPIView(RetrieveAPIView):
     queryset = models.TalkProposal.objects.all()
     serializer_class = serializers.TalkDetailSerializer
 
+
 class TutorialListAPIView(views.APIView):
     def get(self, request):
         tutorial_data = TutorialProposal.objects.all()
@@ -25,3 +26,4 @@ class TutorialListAPIView(views.APIView):
             })
 
         return Response(response_data)
+        
