@@ -21,8 +21,7 @@ class TutorialListAPIView(views.APIView):
             response_data["tutorials"].append({
                 "title": tutorial.title,
                 "abstract": tutorial.abstract,
-                "slide_url": tutorial.slide_link,
-                "registration_link": "no registration link yet"
+                "tutorial_id": tutorial.id
             })
 
         return Response(response_data)
