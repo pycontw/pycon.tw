@@ -1,5 +1,3 @@
-import collections
-
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.response import Response
 
@@ -16,7 +14,6 @@ class TalkDetailAPIView(RetrieveAPIView):
 
 
 class ScheduleAPIView(RetrieveAPIView):
-    
     def get(self, request):
         queryset = models.Schedule.objects.all()
 
@@ -26,4 +23,3 @@ class ScheduleAPIView(RetrieveAPIView):
         response_data["schedule_day"] = settings.EVENTS_DAY_NAMES.items()
 
         return Response(response_data)
-
