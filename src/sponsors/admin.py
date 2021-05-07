@@ -21,6 +21,7 @@ class OpenRoleAdmin(TranslationAdmin):
         'sponsor',
         'name',
         'description',
+        'requirements',
         'url',
     ]
     list_display = [
