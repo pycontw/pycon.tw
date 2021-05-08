@@ -14,7 +14,7 @@ class TalkDetailAPIView(RetrieveAPIView):
 
 class TutorialListAPIView(views.APIView):
     def get(self, request):
-        tutorial_data = TutorialProposal.objects.all()
+        tutorial_data = TutorialProposal.objects.filter_accepted()
 
         response_data = {"tutorials": []}
         for tutorial in tutorial_data:
