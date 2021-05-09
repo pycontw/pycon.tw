@@ -18,8 +18,8 @@ class ScheduleAPIView(RetrieveAPIView):
         queryset = models.Schedule.objects.all()
 
         response_data = {"schedule_html": [], "schedule_day": []}
-        if (len(queryset) > 0):
-            response_data["schedule_html"] = queryset[0].html
+        if queryset.exists():
+            response_data["schedule_html"] = queryset.latest().html
         response_data["schedule_day"] = settings.EVENTS_DAY_NAMES.items()
 
         return Response(response_data)
