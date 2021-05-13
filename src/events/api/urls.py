@@ -7,4 +7,5 @@ app_name = 'app'
 urlpatterns = [
     path('talk/<int:pk>', views.TalkDetailAPIView.as_view()),
     path('tutorials/', views.TutorialListAPIView.as_view()),
+    path('schedule/', views.ScheduleAPIView.as_view()),
 ]
