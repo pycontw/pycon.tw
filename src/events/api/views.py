@@ -28,7 +28,7 @@ class TutorialListAPIView(views.APIView):
                 "tutorial_id": tutorial.id
             })
 
-         return Response(response_data)
+        return Response(response_data)
 
 
 class ScheduleAPIView(RetrieveAPIView):
