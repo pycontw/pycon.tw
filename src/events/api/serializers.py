@@ -66,3 +66,16 @@ class TalkListSerializer(serializers.ModelSerializer):
             "labels",
             "speakers",
         ]
+
+
+class SponsoredEventSerializer(serializers.ModelSerializer):
+
+    host_name = serializers.CharField(source="host.speaker_name", required=False)
+
+    class Meta:
+        model = SponsoredEvent
+        fields = [
+            "slug",
+            "title",
+            "host_name"
+        ]
