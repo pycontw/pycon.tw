@@ -1,5 +1,11 @@
 from rest_framework.generics import RetrieveAPIView, ListAPIView
+from rest_framework import views
 from rest_framework.response import Response
+
+from proposals.models import TutorialProposal
+from events import models
+
+from . import serializers
 
 from django.conf import settings
 
@@ -25,6 +31,21 @@ class SponsoredEventListAPIView(ListAPIView):
 
     queryset = SponsoredEvent.objects.all()
     serializer_class = serializers.SponsoredEventSerializer
+
+
+class TutorialListAPIView(views.APIView):
+    def get(self, request):
+        tutorial_data = TutorialProposal.objects.filter_accepted()
+
+        response_data = {"tutorials": []}
+        for tutorial in tutorial_data:
+            response_data["tutorials"].append({
+                "title": tutorial.title,
+                "abstract": tutorial.abstract,
+                "tutorial_id": tutorial.id
+            })
+
+        return Response(response_data)
 
 
 class ScheduleAPIView(RetrieveAPIView):
