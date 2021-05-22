@@ -47,9 +47,9 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
-    date = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
     begin_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
     end_time = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
+    date = begin_time
 
     def get_speakers(self, obj):
         return [
@@ -62,7 +62,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
                 serializer=PrimarySpeakerSerializer) for i in obj.speakers]
 
     class Meta:
-        model = models.TutorialProposal
+        model = models.ProposedTutorialEvent
         fields = [
             "title",
             "location",
