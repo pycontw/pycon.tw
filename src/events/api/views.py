@@ -16,9 +16,9 @@ class TalkDetailAPIView(RetrieveAPIView):
     serializer_class = serializers.TalkDetailSerializer
 
 
-class TutorialDetailSerializer(RetrieveAPIView):
+class TutorialDetailAPIView(RetrieveAPIView):
 
-    queryset = models.TutorialProposal.objects.all()
+    queryset = models.ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialDetailSerializer
 
 
