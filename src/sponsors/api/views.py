@@ -46,9 +46,12 @@ class JobAPIView(views.APIView):
             for open_role in open_roles:
                 jobs.append({
                     "job_url": open_role.url,
-                    "job_name": open_role.name,
+                    "job_name_en_us": open_role.name_en_us,
+                    "job_name_zh_hant": open_role.name_zh_hant,
                     "job_description_en_us": open_role.description_en_us,
                     "job_description_zh_hant": open_role.description_zh_hant,
+                    "job_requirements_en_us": open_role.requirements_en_us,
+                    "job_requirements_zh_hant": open_role.requirements_zh_hant,
                 })
             response_data["data"].append({
                 "sponsor_logo_url": sponsor.logo.url if sponsor.logo else '',

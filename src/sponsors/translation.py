@@ -8,7 +8,7 @@ class SponsorTranslationOptions(TranslationOptions):
 
 
 class OpenRoleTranslationOptions(TranslationOptions):
-    fields = ('description',)
+    fields = ('name', 'description', 'requirements',)
 
 
 translator.register(Sponsor, SponsorTranslationOptions)
