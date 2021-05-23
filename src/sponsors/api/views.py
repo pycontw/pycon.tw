@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from rest_framework import views
 from rest_framework.response import Response
 
@@ -37,7 +39,7 @@ class JobAPIView(views.APIView):
     def get(self, request):
         open_roles = OpenRole.objects.all().order_by('sponsor__level')
 
-        data = {}
+        data = OrderedDict()
         for open_role in open_roles:
             sponsor_id = open_role.sponsor.id
             if sponsor_id not in data:
@@ -57,5 +59,5 @@ class JobAPIView(views.APIView):
                 "job_requirements_zh_hant": open_role.requirements_zh_hant,
             })
 
-        response_data = {"data": data.values()}
+        response_data = {"data": list(data.values())}
         return Response(response_data)
