@@ -2,15 +2,10 @@ from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework import views
 from rest_framework.response import Response
 
-from proposals.models import TutorialProposal
-from events import models
-
-from . import serializers
-
 from django.conf import settings
 
 from events.models import SponsoredEvent, Schedule
-from proposals.models import TalkProposal
+from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
 
