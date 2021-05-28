@@ -46,51 +46,18 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
-    title = serializers.SerializerMethodField()
-    date = serializers.SerializerMethodField()
-    begin_time = serializers.SerializerMethodField()
-    end_time = serializers.SerializerMethodField()
-    category = serializers.SerializerMethodField()
-    language = serializers.SerializerMethodField()
-    python_level = serializers.SerializerMethodField()
-    abstract = serializers.SerializerMethodField()
-    detailed_description = serializers.SerializerMethodField()
-    slide_link = serializers.SerializerMethodField()
-    slido_embed_link = serializers.SerializerMethodField()
+    title = serializers.CharField(source='proposal.title')
+    date = serializers.DateTimeField(format='%Y-%m-%d', source='begin_time.value')
+    begin_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', source='begin_time.value')
+    end_time = serializers.DateTimeField(format='%Y-%m-%d %H:%M:%S', source='end_time.value')
+    category = serializers.CharField(source='proposal.category')
+    language = serializers.CharField(source='proposal.language')
+    python_level = serializers.CharField(source='proposal.python_level')
+    abstract = serializers.CharField(source='proposal.abstract')
+    detailed_description = serializers.CharField(source='proposal.detailed_description')
+    slide_link = serializers.CharField(source='proposal.slide_link')
+    slido_embed_link = serializers.CharField(source='proposal.slido_embed_link')
     speakers = serializers.SerializerMethodField()
-
-    def get_title(self, obj):
-        return obj.proposal.title
-
-    def get_date(self, obj):
-        return obj.begin_time.value.strftime("%Y-%m-%d")
-
-    def get_begin_time(self, obj):
-        return obj.begin_time.value.strftime("%Y-%m-%d %H:%M:%S")
-
-    def get_end_time(self, obj):
-        return obj.end_time.value.strftime("%Y-%m-%d %H:%M:%S")
-
-    def get_category(self, obj):
-        return obj.proposal.category
-
-    def get_language(self, obj):
-        return obj.proposal.language
-
-    def get_python_level(self, obj):
-        return obj.proposal.python_level
-
-    def get_abstract(self, obj):
-        return obj.proposal.abstract
-
-    def get_detailed_description(self, obj):
-        return obj.proposal.detailed_description
-
-    def get_slide_link(self, obj):
-        return obj.proposal.slide_link
-
-    def get_slido_embed_link(self, obj):
-        return obj.proposal.slido_embed_link
 
     def get_speakers(self, obj):
         return [
