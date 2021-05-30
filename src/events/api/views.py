@@ -1,24 +1,36 @@
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework import views
 from rest_framework.response import Response
 
-from proposals.models import TutorialProposal
-from events import models
+from django.conf import settings
+
+from events.models import ProposedTutorialEvent, SponsoredEvent, Schedule
+from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
-
-from django.conf import settings
 
 
 class TalkDetailAPIView(RetrieveAPIView):
 
-    queryset = models.TalkProposal.objects.all()
+    queryset = TalkProposal.objects.all()
     serializer_class = serializers.TalkDetailSerializer
+
+
+class TalkListAPIView(ListAPIView):
+
+    queryset = TalkProposal.objects.filter_accepted()
+    serializer_class = serializers.TalkListSerializer
+
+
+class SponsoredEventListAPIView(ListAPIView):
+
+    queryset = SponsoredEvent.objects.all()
+    serializer_class = serializers.SponsoredEventSerializer
 
 
 class TutorialDetailAPIView(RetrieveAPIView):
 
-    queryset = models.ProposedTutorialEvent.objects.all()
+    queryset = ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialDetailSerializer
 
 
@@ -39,7 +51,7 @@ class TutorialListAPIView(views.APIView):
 
 class ScheduleAPIView(RetrieveAPIView):
     def get(self, request):
-        queryset = models.Schedule.objects.all()
+        queryset = Schedule.objects.all()
 
         response_data = {"schedule_html": [], "schedule_day": []}
         if queryset.exists():
