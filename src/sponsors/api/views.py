@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from rest_framework import views
 from rest_framework.response import Response
 
@@ -35,28 +37,27 @@ class SponsorAPIView(views.APIView):
 
 class JobAPIView(views.APIView):
     def get(self, request):
-        sponsor_has_open_role = set(OpenRole.objects.values_list('sponsor', flat=True))
-        sponsor_set = Sponsor.objects.filter(id__in=sponsor_has_open_role).order_by('level')
+        open_roles = OpenRole.objects.all().order_by('sponsor__level')
 
-        open_roles = OpenRole.objects.filter(sponsor__in=sponsor_has_open_role).order_by('sponsor__level')
-
-        response_data = {"data": []}
-        for sponsor in sponsor_set:
-            jobs = []
-            for open_role in open_roles:
-                jobs.append({
-                    "job_url": open_role.url,
-                    "job_name_en_us": open_role.name_en_us,
-                    "job_name_zh_hant": open_role.name_zh_hant,
-                    "job_description_en_us": open_role.description_en_us,
-                    "job_description_zh_hant": open_role.description_zh_hant,
-                    "job_requirements_en_us": open_role.requirements_en_us,
-                    "job_requirements_zh_hant": open_role.requirements_zh_hant,
-                })
-            response_data["data"].append({
-                "sponsor_logo_url": sponsor.logo.url if sponsor.logo else '',
-                "sponsor_name": sponsor.name,
-                "jobs": jobs
+        data = OrderedDict()
+        for open_role in open_roles:
+            sponsor_id = open_role.sponsor.id
+            if sponsor_id not in data:
+                logo = open_role.sponsor.logo
+                data[sponsor_id] = {
+                    "sponsor_logo_url": logo.url if logo else '',
+                    "sponsor_name": open_role.sponsor.name,
+                    "jobs": [],
+                }
+            data[sponsor_id]["jobs"].append({
+                "job_url": open_role.url,
+                "job_name_en_us": open_role.name_en_us,
+                "job_name_zh_hant": open_role.name_zh_hant,
+                "job_description_en_us": open_role.description_en_us,
+                "job_description_zh_hant": open_role.description_zh_hant,
+                "job_requirements_en_us": open_role.requirements_en_us,
+                "job_requirements_zh_hant": open_role.requirements_zh_hant,
             })
 
+        response_data = {"data": list(data.values())}
         return Response(response_data)

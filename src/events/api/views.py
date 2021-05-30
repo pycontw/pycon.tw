@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from django.conf import settings
 
-from events.models import SponsoredEvent, Schedule
+from events.models import ProposedTutorialEvent, SponsoredEvent, Schedule
 from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
@@ -26,6 +26,12 @@ class SponsoredEventListAPIView(ListAPIView):
 
     queryset = SponsoredEvent.objects.all()
     serializer_class = serializers.SponsoredEventSerializer
+
+
+class TutorialDetailAPIView(RetrieveAPIView):
+
+    queryset = ProposedTutorialEvent.objects.all()
+    serializer_class = serializers.TutorialDetailSerializer
 
 
 class TutorialListAPIView(views.APIView):

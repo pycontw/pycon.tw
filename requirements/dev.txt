@@ -3,7 +3,7 @@
 # A configurable set of panels that display various debug information about
 # the current request/response.
 # https://django-debug-toolbar.readthedocs.io/en/latest/
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 
 # The Python WSGI Utility Library
 # https://palletsprojects.com/p/werkzeug/
