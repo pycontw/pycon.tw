@@ -94,7 +94,7 @@ sortedcontainers==2.1.0
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.8.6
 
-urllib3==1.25.10
+urllib3==1.26.5
 
 # For upload to Google cloud storage
 google-cloud-storage==1.36.1
