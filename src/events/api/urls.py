@@ -12,4 +12,5 @@ urlpatterns = [
     path('tutorial/<int:pk>', views.TutorialDetailAPIView.as_view()),
     path('tutorials/', views.TutorialListAPIView.as_view()),
     path('schedule/', views.ScheduleAPIView.as_view()),
+    path('keynotes/', views.KeynoteEventListAPIView.as_view()),
 ]
