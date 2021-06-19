@@ -5,12 +5,16 @@ import urllib.parse
 
 import pytz
 
+from storages.backends.gcloud import GoogleCloudStorage
+
 from django.conf import settings
+from django.core.files.storage import default_storage
 from django.contrib.staticfiles import finders
 from django.urls import reverse, reverse_lazy
 from django.db import models
 from django.utils.timezone import make_naive
 from django.utils.translation import get_language, gettext, gettext_lazy as _
+from django.utils.text import slugify
 
 from core.models import (
     BigForeignKey, EventInfo,
@@ -34,6 +38,15 @@ EVENT_DATETIME_START_END = (
     ),
 )
 
+def select_storage():
+    return default_storage if settings.DEBUG else GoogleCloudStorage()
+
+
+def photo_upload_to(instance, filename):
+    return 'speaker/{speakername}/{filename}'.format(
+        speakername=slugify(instance.speaker_name, allow_unicode=True),
+        filename=filename,
+    )
 
 class TimeManager(models.Manager):
     def get(self, value):
@@ -196,6 +209,43 @@ class KeynoteEvent(BaseEvent):
     speaker_name = models.CharField(
         verbose_name=_('speaker name'),
         max_length=100,
+    )
+    speaker_bio = models.TextField(
+        verbose_name=_('speaker bio'),
+    )
+    speaker_photo = models.ImageField(
+        verbose_name=_('speaker photo'),
+        upload_to=photo_upload_to, storage=select_storage,
+        help_text=_(
+            "Raster format of the speaker's photo, e.g. PNG, JPEG."
+        ),
+    )
+    session_title = models.CharField(
+        verbose_name=_('keynote session title'),
+        max_length=140,
+    )
+    session_description = models.TextField(
+        verbose_name=_('keynote session description'),
+    )
+    session_slides = models.URLField(
+        verbose_name=_('session slides'),
+        blank=True
+    )
+    slido = models.URLField(
+        verbose_name=_('slido'),
+        blank=True
+    )
+    social_linkedin = models.URLField(
+        verbose_name=_('social linkedin'),
+        blank=True
+    )
+    social_twitter = models.URLField(
+        verbose_name=_('social twitter'),
+        blank=True
+    )
+    social_github = models.URLField(
+        verbose_name=_('social github'),
+        blank=True
     )
     slug = models.SlugField(
         verbose_name=_('slug'),
