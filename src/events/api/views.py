@@ -65,5 +65,28 @@ class KeynoteEventListAPIView(views.APIView):
     def get(self, request):
         keynote_data = KeynoteEvent.objects.all()
 
-        # response_data = {"data": []}
-        return Response(keynote_data)
+        response_data = {"data": []}
+        for keynote in keynote_data:
+            response_data["data"].append({
+                "speaker": {
+                    "name_zh_hant":keynote.speaker_name_zh_hant,
+                    "name_en_us": keynote.speaker_name_en_us,
+                    "bio_zh_hant": keynote.speaker_bio_zh_hant,
+                    "bio_en_us": keynote.speaker_bio_en_us,
+                    # "photo": keynote.speaker_photo
+                },
+                "session":{
+                    "title_zh_hant": keynote.session_title_zh_hant,
+                    "title_en_us": keynote.session_title_en_us,
+                    "description_zh_hant": keynote.session_description_zh_hant,
+                    "description_en_us": keynote.session_description_en_us,
+                    "slides": keynote.session_slides,
+                },
+                "slido": keynote.slido,
+                "social_item": {
+                    "linkedin": keynote.social_linkedin,
+                    "twitter": keynote.social_twitter,
+                    "github": keynote.social_github,
+                }
+            })
+        return Response(response_data)
