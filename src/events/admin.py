@@ -8,6 +8,8 @@ from django.utils.translation import (
     ugettext, gettext_lazy as _, pgettext_lazy as p,
 )
 
+from modeltranslation.admin import TranslationAdmin
+
 from import_export.admin import ImportExportMixin
 
 from .forms import CustomEventForm
@@ -131,9 +133,9 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 
 
 @admin.register(KeynoteEvent)
-class KeynoteEventAdmin(admin.ModelAdmin):
+class KeynoteEventAdmin(TranslationAdmin):
     fields = [
-        'conference', 'speaker_name', 'slug',
+        'conference', 'speaker_name', 'speaker_bio', 'speaker_photo', 'session_title', 'session_description', 'session_slides', 'slido', 'social_linkedin', 'social_twitter', 'social_github', 'slug',
         'begin_time', 'end_time', 'location', 'is_remote'
     ]
     search_fields = ['speaker_name']
