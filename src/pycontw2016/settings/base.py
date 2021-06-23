@@ -114,7 +114,7 @@ LOCAL_APPS = (
     'sponsors',
     'users',
     'ccip',
-
+    'attendee',
     'ext2020',
 )
 

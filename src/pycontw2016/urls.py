@@ -36,6 +36,7 @@ urlpatterns += [
     url(r'^api/events/', include('events.api.urls', namespace="events")),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
+    url(r'^api/attendee/', include('attendee.api.urls'))
 ]
 
 # User-uploaded files like profile pics need to be served in development.
