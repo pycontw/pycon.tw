@@ -1,9 +1,9 @@
 from django.conf import settings
 from rest_framework import views, status
 from rest_framework.response import Response
-
 from registry.helper import reg
-from ext2020.models import Attendee
+
+from attendee.models import Attendee
 
 
 class AttendeeAPIView(views.APIView):
@@ -14,11 +14,13 @@ class AttendeeAPIView(views.APIView):
         try:
             Attendee.objects.get(token=self.token)
             slug = settings.CONFERENCE_DEFAULT_SLUG
-            key_filter = f"{slug}.live"
-            num_rooms = [key for key in reg if key_filter in str(key)]
+            key_prefix = f"{slug}.live"
+            reg_room_keys = [
+                key for key in reg if str(key).startswith(key_prefix)
+            ]
 
             response_data = {"youtube_infos": []}
-            for idx, room in enumerate(num_rooms):
+            for idx, room in enumerate(reg_room_keys):
                 response_data["youtube_infos"].append({
                     "room": f"R{idx+1}",
                     "video_id": reg.get(f'{room}', '')
