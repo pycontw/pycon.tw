@@ -1,6 +1,6 @@
 from django.urls import path
 
-from ext2020.api.views import AttendeeAPIView
+from attendee.api.views import AttendeeAPIView
 
 
 urlpatterns = [
