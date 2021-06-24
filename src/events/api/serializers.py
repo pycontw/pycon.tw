@@ -131,28 +131,29 @@ class KeynoteEventSerializer(serializers.ModelSerializer):
 
     def get_speaker(self, obj):
         return {
-            "name_zh_hant":obj.speaker_name_zh_hant,
-            "name_en_us":obj.speaker_name_en_us,
-            "bio_zh_hant":obj.speaker_bio_zh_hant,
-            "bio_en_us":obj.speaker_bio_en_us,
-            "photo":obj.speaker_photo.url,
+            "name_zh_hant": obj.speaker_name_zh_hant,
+            "name_en_us": obj.speaker_name_en_us,
+            "bio_zh_hant": obj.speaker_bio_zh_hant,
+            "bio_en_us": obj.speaker_bio_en_us,
+            "photo": obj.speaker_photo.url,
         }
 
     def get_session(self, obj):
         return {
-            "title_zh_hant":obj.session_title_zh_hant,
-            "title_en_us":obj.session_title_en_us,
-            "description_zh_hant":obj.session_description_zh_hant,
-            "description_en_us":obj.session_description_en_us,
-            "slides":obj.session_slides,
+            "title_zh_hant": obj.session_title_zh_hant,
+            "title_en_us": obj.session_title_en_us,
+            "description_zh_hant": obj.session_description_zh_hant,
+            "description_en_us": obj.session_description_en_us,
+            "slides": obj.session_slides,
         }
 
     def get_social_item(self, obj):
         return {
-            "linkedin":obj.social_linkedin,
-            "twitter":obj.social_twitter,
-            "github":obj.social_github,
+            "linkedin": obj.social_linkedin,
+            "twitter": obj.social_twitter,
+            "github": obj.social_github,
         }
+
     class Meta:
         model = KeynoteEvent
         fields = [

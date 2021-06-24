@@ -38,6 +38,7 @@ EVENT_DATETIME_START_END = (
     ),
 )
 
+
 def select_storage():
     return default_storage if settings.DEBUG else GoogleCloudStorage()
 
@@ -47,6 +48,7 @@ def photo_upload_to(instance, filename):
         speakername=slugify(instance.speaker_name, allow_unicode=True),
         filename=filename,
     )
+
 
 class TimeManager(models.Manager):
     def get(self, value):

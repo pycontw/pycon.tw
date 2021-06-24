@@ -94,7 +94,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='keynoteevent',
             name='speaker_photo',
-            field=models.ImageField(help_text="Raster format of the speaker's photo, e.g. PNG, JPEG.", upload_to=events.models.photo_upload_to, verbose_name='speaker photo'),
+            field=models.ImageField(help_text="Raster format of the speaker's photo, e.g. PNG, JPEG.",
+                                    upload_to=events.models.photo_upload_to, verbose_name='speaker photo'),
         ),
         migrations.AlterField(
             model_name='keynoteevent',
