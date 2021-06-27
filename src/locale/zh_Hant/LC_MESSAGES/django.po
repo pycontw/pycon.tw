@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-20 18:22+0800\n"
+"POT-Creation-Date: 2021-06-27 23:30+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -70,7 +70,7 @@ msgstr "社群軌"
 msgid "Current"
 msgstr ""
 
-#: core/admin.py:16 core/models.py:105 events/models.py:143
+#: core/admin.py:16 core/models.py:105 events/models.py:145
 #: events/templatetags/events.py:21
 msgid "Other"
 msgstr "其他"
@@ -88,7 +88,7 @@ msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 msgid "conference"
 msgstr "會議"
 
-#: core/models.py:80 events/models.py:179
+#: core/models.py:80 events/models.py:181
 msgid "title"
 msgstr "題目"
 
@@ -261,7 +261,7 @@ msgstr "投影片連結"
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:189 events/models.py:425 ext2020/models.py:17
+#: core/models.py:189 events/models.py:437 ext2020/models.py:17
 msgid "created at"
 msgstr "建立時間"
 
@@ -277,11 +277,11 @@ msgstr "遠端視訊演講"
 msgid "time value"
 msgstr "時間值"
 
-#: events/admin.py:100 events/models.py:159 ext2020/models.py:88
+#: events/admin.py:100 events/models.py:161 ext2020/models.py:88
 msgid "begin time"
 msgstr "開始時間"
 
-#: events/admin.py:106 events/models.py:168 ext2020/models.py:97
+#: events/admin.py:106 events/models.py:170 ext2020/models.py:97
 msgid "end time"
 msgstr "結束時間"
 
@@ -290,61 +290,61 @@ msgstr "結束時間"
 msgid "Edit"
 msgstr "編輯"
 
-#: events/models.py:71
+#: events/models.py:73
 msgid "value"
 msgstr "值"
 
-#: events/models.py:78
+#: events/models.py:80
 msgid "time"
 msgstr "時間"
 
-#: events/models.py:79
+#: events/models.py:81
 msgid "times"
 msgstr "時間"
 
-#: events/models.py:136
+#: events/models.py:138
 msgid "All rooms"
 msgstr "全體會議"
 
-#: events/models.py:137 events/templatetags/events.py:20
+#: events/models.py:139 events/templatetags/events.py:20
 msgid "R1, R2, R3"
 msgstr "R1、R2、R3"
 
 # #: events/models.py:122
 # msgid "R0"
 # msgstr "R0"
-#: events/models.py:138 events/templatetags/events.py:15
+#: events/models.py:140 events/templatetags/events.py:15
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:139 events/templatetags/events.py:16
+#: events/models.py:141 events/templatetags/events.py:16
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:140 events/templatetags/events.py:17
+#: events/models.py:142 events/templatetags/events.py:17
 msgid "R3"
 msgstr "R3"
 
 # #: events/models.py:126
 # msgid "R4"
 # msgstr "R4"
-#: events/models.py:141 events/templatetags/events.py:18
+#: events/models.py:143 events/templatetags/events.py:18
 msgid "Multifunction room"
 msgstr "多功能廳"
 
-#: events/models.py:142 events/templatetags/events.py:19
+#: events/models.py:144 events/templatetags/events.py:19
 msgid "Goodideas Studio"
 msgstr "好想工作室"
 
-#: events/models.py:151
+#: events/models.py:153
 msgid "location"
 msgstr "地點"
 
-#: events/models.py:183
+#: events/models.py:185
 msgid "is break event"
 msgstr "休息"
 
-#: events/models.py:186
+#: events/models.py:188
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
@@ -353,71 +353,71 @@ msgstr ""
 "此活動是否應該被顯示為休息時間。休息時間的顯示會與「真的」會議時段，例如基調"
 "演講、一般演講不同。"
 
-#: events/models.py:192
+#: events/models.py:194
 msgid "event description"
 msgstr "活動說明"
 
-#: events/models.py:195
+#: events/models.py:197
 msgid "link path"
 msgstr "連結路徑"
 
-#: events/models.py:200
+#: events/models.py:202
 msgid "custom event"
 msgstr "自訂活動"
 
-#: events/models.py:201
+#: events/models.py:203
 msgid "custom events"
 msgstr "自訂活動"
 
-#: events/models.py:210 users/models.py:116
+#: events/models.py:212 users/models.py:116
 msgid "speaker name"
 msgstr "演講者"
 
-#: events/models.py:214
+#: events/models.py:217
 msgid "speaker bio"
 msgstr "演講者介紹"
 
-#: events/models.py:217
+#: events/models.py:221
 msgid "speaker photo"
 msgstr "演講者照片"
 
-#: events/models.py:220
+#: events/models.py:225
 msgid "Raster format of the speaker's photo, e.g. PNG, JPEG."
 msgstr "演講者照片使用點陣格式，例如PNG, JPEG"
 
-#: events/models.py:224
+#: events/models.py:229
 msgid "keynote session title"
 msgstr "演講標題"
 
-#: events/models.py:228
+#: events/models.py:234
 msgid "keynote session description"
 msgstr "演講介紹"
 
-#: events/models.py:231
+#: events/models.py:238
 msgid "session slides"
 msgstr "演講投影片"
 
-#: events/models.py:235
+#: events/models.py:242
 msgid "slido"
 msgstr "Slido"
 
-#: events/models.py:239
+#: events/models.py:246
 msgid "social linkedin"
 msgstr "Linkedin"
 
-#: events/models.py:243
+#: events/models.py:250
 msgid "social twitter"
 msgstr "Twitter"
 
-#: events/models.py:247
+#: events/models.py:254
 msgid "social github"
 msgstr "Github"
 
-#: events/models.py:251 events/models.py:331
+#: events/models.py:258 events/models.py:343
 msgid "slug"
 msgstr "網址文字"
 
-#: events/models.py:253
+#: events/models.py:260
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
@@ -426,81 +426,85 @@ msgstr ""
 "用來連結至基調演講頁面上的講者簡介，如「liang2」可連結至「{link}#keynote-"
 "speaker-liang2」。"
 
-#: events/models.py:260 events/models.py:369 events/models.py:400
+#: events/models.py:267 events/models.py:381 events/models.py:412
 msgid "is remote"
 msgstr "遠端演講"
 
-#: events/models.py:265
+#: events/models.py:271
+msgid "youtube id"
+msgstr "youtube id"
+
+#: events/models.py:277
 msgid "keynote event"
 msgstr "基調演講"
 
-#: events/models.py:266
+#: events/models.py:278
 msgid "keynote events"
 msgstr "基調演講"
 
-#: events/models.py:269
+#: events/models.py:281
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
-#: events/models.py:308 sponsors/models.py:93 sponsors/models.py:109
+#: events/models.py:320 sponsors/models.py:93 sponsors/models.py:109
 msgid "sponsor"
 msgstr "贊助"
 
-#: events/models.py:313 events/models.py:314
+#: events/models.py:325 events/models.py:326
 #: templates/pycontw-2020/_includes/menu.html:104
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:33
 #: templates/pycontw-2021/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "徵才資訊"
 
-#: events/models.py:317
+#: events/models.py:329
 #, python-brace-format
 msgid "Open Role of Sponsor: {sponsor}"
 msgstr "徵才中贊助商: {sponsor}"
 
-#: events/models.py:326
+#: events/models.py:338
 msgid "host"
 msgstr "主持人"
 
-#: events/models.py:335
+#: events/models.py:347
 msgid "sponsored event"
 msgstr "贊助演講"
 
-#: events/models.py:336
+#: events/models.py:348
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:364 events/models.py:390 reviews/models.py:76
+#: events/models.py:376 events/models.py:402 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "提案"
 
-#: events/models.py:376
+#: events/models.py:388
 msgid "talk event"
 msgstr "演講"
 
-#: events/models.py:377
+#: events/models.py:389
 msgid "talk events"
 msgstr "演講"
 
-#: events/models.py:395
+#: events/models.py:407
 msgid "registration link"
 msgstr "報名連結"
 
-#: events/models.py:407
+#: events/models.py:419
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:408
+#: events/models.py:420
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:422
+#: events/models.py:434
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:430 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:442 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -524,11 +528,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:431
+#: events/models.py:443
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:436
+#: events/models.py:448
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 

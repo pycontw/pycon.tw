@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 02:45+0800\n"
+"POT-Creation-Date: 2021-06-27 23:24+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -63,7 +63,7 @@ msgstr "community track"
 msgid "Current"
 msgstr ""
 
-#: core/admin.py:16 core/models.py:105 events/models.py:130
+#: core/admin.py:16 core/models.py:105 events/models.py:145
 #: events/templatetags/events.py:21
 msgid "Other"
 msgstr "Other"
@@ -81,7 +81,7 @@ msgstr "{model_name_cap} creation requires a request object."
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:80 events/models.py:166
+#: core/models.py:80 events/models.py:181
 msgid "title"
 msgstr "title"
 
@@ -254,7 +254,7 @@ msgstr "slide link"
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:189 events/models.py:375 ext2020/models.py:17
+#: core/models.py:189 events/models.py:437 ext2020/models.py:17
 msgid "created at"
 msgstr "created at"
 
@@ -266,78 +266,78 @@ msgstr "last updated at"
 msgid "remoting policy"
 msgstr "remote policy"
 
-#: events/admin.py:24
+#: events/admin.py:26
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:98 events/models.py:146 ext2020/models.py:88
+#: events/admin.py:100 events/models.py:161 ext2020/models.py:88
 msgid "begin time"
 msgstr "begin time"
 
-#: events/admin.py:104 events/models.py:155 ext2020/models.py:97
+#: events/admin.py:106 events/models.py:170 ext2020/models.py:97
 msgid "end time"
 msgstr "end time"
 
-#: events/admin.py:126
+#: events/admin.py:128
 #: templates/default/users/_includes/dashboard_proposal_table.html:32
 msgid "Edit"
 msgstr "Edit"
 
-#: events/models.py:58
+#: events/models.py:73
 msgid "value"
 msgstr "value"
 
-#: events/models.py:65
+#: events/models.py:80
 msgid "time"
 msgstr "time"
 
-#: events/models.py:66
+#: events/models.py:81
 msgid "times"
 msgstr "times"
 
-#: events/models.py:123
+#: events/models.py:138
 msgid "All rooms"
 msgstr "All rooms"
 
-#: events/models.py:124 events/templatetags/events.py:20
+#: events/models.py:139 events/templatetags/events.py:20
 msgid "R1, R2, R3"
 msgstr "R1, R2, R3"
 
 # #: events/models.py:122
 # msgid "R0"
 # msgstr "R0"
-#: events/models.py:125 events/templatetags/events.py:15
+#: events/models.py:140 events/templatetags/events.py:15
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:126 events/templatetags/events.py:16
+#: events/models.py:141 events/templatetags/events.py:16
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:127 events/templatetags/events.py:17
+#: events/models.py:142 events/templatetags/events.py:17
 msgid "R3"
 msgstr "R3"
 
 # #: events/models.py:125
 # msgid "R4"
 # msgstr "R4"
-#: events/models.py:128 events/templatetags/events.py:18
+#: events/models.py:143 events/templatetags/events.py:18
 msgid "Multifunction room"
 msgstr "Multifunction room"
 
-#: events/models.py:129 events/templatetags/events.py:19
+#: events/models.py:144 events/templatetags/events.py:19
 msgid "Goodideas Studio"
 msgstr "Goodideas Studio"
 
-#: events/models.py:138
+#: events/models.py:153
 msgid "location"
 msgstr "location"
 
-#: events/models.py:170
+#: events/models.py:185
 msgid "is break event"
 msgstr "is break event"
 
-#: events/models.py:173
+#: events/models.py:188
 msgid ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from \"real\" conference sessions, such as keynotes, talks, "
@@ -346,31 +346,71 @@ msgstr ""
 "Whether this event is displays as a break. A break can be visually "
 "distinguished from “real” conference sessions, such as keynotes, talks, etc."
 
-#: events/models.py:179
+#: events/models.py:194
 msgid "event description"
 msgstr "event description"
 
-#: events/models.py:182
+#: events/models.py:197
 msgid "link path"
 msgstr "link path"
 
-#: events/models.py:187
+#: events/models.py:202
 msgid "custom event"
 msgstr "custom event"
 
-#: events/models.py:188
+#: events/models.py:203
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:197 users/models.py:116
+#: events/models.py:212 users/models.py:116
 msgid "speaker name"
 msgstr "speaker name"
 
-#: events/models.py:201 events/models.py:281
+#: events/models.py:217
+msgid "speaker bio"
+msgstr "speaker bio"
+
+#: events/models.py:221
+msgid "speaker photo"
+msgstr "speaker photo"
+
+#: events/models.py:225
+msgid "Raster format of the speaker's photo, e.g. PNG, JPEG."
+msgstr "Raster format of the speaker's photo, e.g. PNG, JPEG."
+
+#: events/models.py:229
+msgid "keynote session title"
+msgstr "keynote session title"
+
+#: events/models.py:234
+msgid "keynote session description"
+msgstr "keynote session description"
+
+#: events/models.py:238
+msgid "session slides"
+msgstr "session slides"
+
+#: events/models.py:242
+msgid "slido"
+msgstr "Slido"
+
+#: events/models.py:246
+msgid "social linkedin"
+msgstr "Linkedin"
+
+#: events/models.py:250
+msgid "social twitter"
+msgstr "Twitter"
+
+#: events/models.py:254
+msgid "social github"
+msgstr "Github"
+
+#: events/models.py:258 events/models.py:343
 msgid "slug"
 msgstr "slug"
 
-#: events/models.py:203
+#: events/models.py:260
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
@@ -379,81 +419,85 @@ msgstr ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
 "'liang2' will link to '{link}#keynote-speaker-liang2'."
 
-#: events/models.py:210 events/models.py:319 events/models.py:350
+#: events/models.py:267 events/models.py:381 events/models.py:412
 msgid "is remote"
 msgstr "is remote"
 
-#: events/models.py:215
+#: events/models.py:271
+msgid "youtube id"
+msgstr "youtube id"
+
+#: events/models.py:277
 msgid "keynote event"
 msgstr "keynote event"
 
-#: events/models.py:216
+#: events/models.py:278
 msgid "keynote events"
 msgstr "keynote events"
 
-#: events/models.py:219
+#: events/models.py:281
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:258 sponsors/models.py:92 sponsors/models.py:108
+#: events/models.py:320 sponsors/models.py:93 sponsors/models.py:109
 msgid "sponsor"
 msgstr "sponsor"
 
-#: events/models.py:263 events/models.py:264
+#: events/models.py:325 events/models.py:326
 #: templates/pycontw-2020/_includes/menu.html:104
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:33
 #: templates/pycontw-2021/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "Job Listings"
 
-#: events/models.py:267
+#: events/models.py:329
 #, python-brace-format
 msgid "Open Role of Sponsor: {sponsor}"
 msgstr "Open Role of Sponsor: {sponsor}"
 
-#: events/models.py:276
+#: events/models.py:338
 msgid "host"
 msgstr "host"
 
-#: events/models.py:285
+#: events/models.py:347
 msgid "sponsored event"
 msgstr "sponsored event"
 
-#: events/models.py:286
+#: events/models.py:348
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:314 events/models.py:340 reviews/models.py:76
+#: events/models.py:376 events/models.py:402 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "proposal"
 
-#: events/models.py:326
+#: events/models.py:388
 msgid "talk event"
 msgstr "talk event"
 
-#: events/models.py:327
+#: events/models.py:389
 msgid "talk events"
 msgstr "talk events"
 
-#: events/models.py:345
+#: events/models.py:407
 msgid "registration link"
 msgstr "registration link"
 
-#: events/models.py:357
+#: events/models.py:419
 msgid "tutorial event"
 msgstr "tutorial event"
 
-#: events/models.py:358
+#: events/models.py:420
 msgid "tutorial events"
 msgstr "tutorial events"
 
-#: events/models.py:372
+#: events/models.py:434
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:380 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:442 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -477,11 +521,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: events/models.py:381
+#: events/models.py:443
 msgid "Schedules"
 msgstr "Schedules"
 
-#: events/models.py:386
+#: events/models.py:448
 msgid "Schedule created at {}"
 msgstr "Schedule created at {}"
 
@@ -1415,11 +1459,11 @@ msgstr "introduction"
 msgid "subtitle"
 msgstr "subtitle"
 
-#: sponsors/models.py:42
+#: sponsors/models.py:43
 msgid "logo (SVG)"
 msgstr "logo (SVG)"
 
-#: sponsors/models.py:45
+#: sponsors/models.py:46
 msgid ""
 "Vector format of the logo, in SVG. This takes precedence to the raster "
 "format, if available."
@@ -1427,11 +1471,11 @@ msgstr ""
 "Vector format of the logo, in SVG. This takes precedence to the raster "
 "format, if available."
 
-#: sponsors/models.py:50
+#: sponsors/models.py:51
 msgid "logo (image)"
 msgstr "logo (image)"
 
-#: sponsors/models.py:54
+#: sponsors/models.py:55
 msgid ""
 "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
 "SVG file is not available."
@@ -1439,63 +1483,63 @@ msgstr ""
 "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
 "SVG file is not available."
 
-#: sponsors/models.py:72
+#: sponsors/models.py:73
 msgid "platinum"
 msgstr "platinum"
 
-#: sponsors/models.py:73
+#: sponsors/models.py:74
 msgid "gold"
 msgstr "gold"
 
-#: sponsors/models.py:74
+#: sponsors/models.py:75
 msgid "silver"
 msgstr "silver"
 
-#: sponsors/models.py:75
+#: sponsors/models.py:76
 msgid "bronze"
 msgstr "bronze"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:77
 msgid "special"
 msgstr "special"
 
-#: sponsors/models.py:77
+#: sponsors/models.py:78
 msgid "organizer"
 msgstr "organizer"
 
-#: sponsors/models.py:78
+#: sponsors/models.py:79
 msgid "co-organizer"
 msgstr "co-organizer"
 
-#: sponsors/models.py:87
+#: sponsors/models.py:88
 msgid "level"
 msgstr "level"
 
-#: sponsors/models.py:93
+#: sponsors/models.py:94
 msgid "sponsors"
 msgstr "sponsors"
 
-#: sponsors/models.py:113
+#: sponsors/models.py:114
 msgid "open role name"
 msgstr "open role name"
 
-#: sponsors/models.py:118
+#: sponsors/models.py:119
 msgid "open role descsription"
 msgstr "open role description"
 
-#: sponsors/models.py:122
+#: sponsors/models.py:123
 msgid "open role requirements"
 msgstr "open role requirements"
 
-#: sponsors/models.py:127
+#: sponsors/models.py:128
 msgid "open role URL"
 msgstr "open role URL"
 
-#: sponsors/models.py:132
+#: sponsors/models.py:133
 msgid "open role"
 msgstr "open role"
 
-#: sponsors/models.py:133
+#: sponsors/models.py:134
 msgid "open Roles"
 msgstr "open Roles"
 
