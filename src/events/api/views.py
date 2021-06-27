@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from django.conf import settings
 
-from events.models import ProposedTutorialEvent, SponsoredEvent, Schedule
+from events.models import ProposedTutorialEvent, SponsoredEvent, Schedule, KeynoteEvent
 from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
@@ -59,3 +59,9 @@ class ScheduleAPIView(RetrieveAPIView):
         response_data["schedule_day"] = settings.EVENTS_DAY_NAMES.items()
 
         return Response(response_data)
+
+
+class KeynoteEventListAPIView(ListAPIView):
+
+    queryset = KeynoteEvent.objects.all()
+    serializer_class = serializers.KeynoteEventSerializer
