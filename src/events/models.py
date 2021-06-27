@@ -267,6 +267,11 @@ class KeynoteEvent(BaseEvent):
         verbose_name=_('is remote'),
         default=False,
     )
+    youtube_id = models.CharField(
+        verbose_name=_('youtube id'),
+        max_length=20,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _('keynote event')

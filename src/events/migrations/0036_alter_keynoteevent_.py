@@ -101,4 +101,9 @@ class Migration(migrations.Migration):
             name='speaker_name',
             field=models.CharField(default='', max_length=100, verbose_name='speaker name'),
         ),
+        migrations.AddField(
+            model_name='keynoteevent',
+            name='youtube_id',
+            field=models.CharField(blank=True, max_length=20, verbose_name='youtube id'),
+        ),
     ]

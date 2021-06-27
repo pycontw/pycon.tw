@@ -160,5 +160,6 @@ class KeynoteEventSerializer(serializers.ModelSerializer):
             "speaker",
             "session",
             "slido",
+            "youtube_id",
             "social_item"
         ]
