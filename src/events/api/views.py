@@ -62,7 +62,6 @@ class ScheduleAPIView(RetrieveAPIView):
 
 
 class KeynoteEventListAPIView(ListAPIView):
-    def get(self, request):
-        queryset = KeynoteEvent.objects.all()
-        serializer_class = serializers.KeynoteEventSerializer(queryset, many=True)
-        return Response(serializer_class.data)
+
+    queryset = KeynoteEvent.objects.all()
+    serializer_class = serializers.KeynoteEventSerializer
