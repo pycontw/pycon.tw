@@ -211,12 +211,15 @@ class KeynoteEvent(BaseEvent):
     speaker_name = models.CharField(
         verbose_name=_('speaker name'),
         max_length=100,
+        default='',
     )
     speaker_bio = models.TextField(
         verbose_name=_('speaker bio'),
+        default='',
     )
     speaker_photo = models.ImageField(
         verbose_name=_('speaker photo'),
+        default='',
         upload_to=photo_upload_to, storage=select_storage,
         help_text=_(
             "Raster format of the speaker's photo, e.g. PNG, JPEG."
@@ -225,9 +228,11 @@ class KeynoteEvent(BaseEvent):
     session_title = models.CharField(
         verbose_name=_('keynote session title'),
         max_length=140,
+        default='',
     )
     session_description = models.TextField(
         verbose_name=_('keynote session description'),
+        default='',
     )
     session_slides = models.URLField(
         verbose_name=_('session slides'),
