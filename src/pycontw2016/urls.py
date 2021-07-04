@@ -4,6 +4,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.i18n import set_language
+from core import views
 
 from core.views import error_page, flat_page, index
 from users.views import user_dashboard
@@ -36,6 +37,7 @@ urlpatterns += [
     url(r'^api/events/', include('events.api.urls', namespace="events")),
     url(r'^set-language/$', set_language, name='set_language'),
     url(r'^admin/', admin.site.urls),
+    url(r'^api-token-auth/', views.ObtainAuthToken.as_view()),
     url(r'^api/attendee/', include('attendee.api.urls'))
 ]
 

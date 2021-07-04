@@ -38,6 +38,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Log everything to the logs directory at the top
 LOGFILE_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'logs')
 
+# DjangoRestFramework API Authentication
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
+
 # Reset logging
 # http://www.caktusgroup.com/blog/2015/01/27/
 # Django-Logging-Configuration-logging_config-default-settings-logger/
