@@ -2,11 +2,16 @@ from collections import OrderedDict
 
 from rest_framework import views
 from rest_framework.response import Response
+from core.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from sponsors.models import Sponsor, OpenRole
 
 
 class SponsorAPIView(views.APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         sponsor_data = Sponsor.objects.order_by('level')
 
