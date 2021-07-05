@@ -7,10 +7,10 @@ from django.shortcuts import redirect
 from django.urls import reverse
 
 from rest_framework.authtoken import views
-from .models import Token
 from rest_framework.response import Response
 
 from .data import EXTRA_DATA
+from .models import Token
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
