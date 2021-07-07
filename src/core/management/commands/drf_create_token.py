@@ -7,6 +7,9 @@ UserModel = get_user_model()
 
 
 class Command(Command):
+    """
+    Customize command from rest_framework/authtoken/management/commands/drf_create_token.py
+    """
     def create_user_token(self, username, reset_token):
         user = UserModel._default_manager.get_by_natural_key(username)
 
