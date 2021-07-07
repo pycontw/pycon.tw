@@ -6,11 +6,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.urls import reverse
 
-from rest_framework.authtoken import views
-from rest_framework.response import Response
-
 from .data import EXTRA_DATA
-from .models import Token
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
@@ -88,15 +84,3 @@ def error_page(request, code):
     except KeyError:
         raise Http404
     return view_func(request)
-
-
-class ObtainAuthToken(views.ObtainAuthToken):
-    """
-    Custom ObtainAuthToken inherited from rest_framework/authtoken/views.py
-    """
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        token, created = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key})
