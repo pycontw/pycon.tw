@@ -41,6 +41,9 @@ class SponsorAPIView(views.APIView):
 
 
 class JobAPIView(views.APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         open_roles = OpenRole.objects.all().order_by('sponsor__level')
 
