@@ -2,11 +2,16 @@ from django.conf import settings
 from rest_framework import views, status
 from rest_framework.response import Response
 from registry.helper import reg
+from rest_framework.permissions import IsAuthenticated
 
+from core.authentication import TokenAuthentication
 from attendee.models import Attendee
 
 
 class AttendeeAPIView(views.APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     model = Attendee
 
     def post(self, request):
