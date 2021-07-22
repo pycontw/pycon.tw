@@ -21,7 +21,8 @@ class SponsorAPIView(views.APIView):
                 level_dict[sponsor.level_en_name] = []
 
             level_dict[sponsor.level_en_name].append({
-                "name": sponsor.name,
+                "name_en_us": sponsor.name_en_us,
+                "name_zh_hant": sponsor.name_zh_hant,
                 "subtitle_en_us": sponsor.subtitle_en_us,
                 "subtitle_zh_hant": sponsor.subtitle_zh_hant,
                 "intro_en_us": sponsor.intro_en_us,
