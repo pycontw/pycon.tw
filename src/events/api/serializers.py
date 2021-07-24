@@ -17,9 +17,10 @@ class TalkDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
 
     def get_speakers(self, obj):
+        request = self.context.get('request')
         return [
             ReturnDict(PrimarySpeakerSerializer(
-                data={'thumbnail_url': i.user.get_thumbnail_url(),
+                data={'thumbnail_url': request.build_absolute_uri(i.user.get_thumbnail_url()),
                       'name': i.user.speaker_name,
                       'github_profile_url': i.user.github_profile_url,
                       'twitter_profile_url': i.user.twitter_profile_url,
@@ -40,7 +41,6 @@ class TalkDetailSerializer(serializers.ModelSerializer):
             "slido_embed_link",
             # "sponsored"
             "speakers"
-
         ]
 
 
@@ -48,9 +48,10 @@ class TalkListSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
 
     def get_speakers(self, obj):
+        request = self.context.get('request')
         return [
             ReturnDict(PrimarySpeakerSerializer(
-                data={'thumbnail_url': i.user.get_thumbnail_url(),
+                data={'thumbnail_url': request.build_absolute_uri(i.user.get_thumbnail_url()),
                       'name': i.user.speaker_name,
                       'github_profile_url': i.user.github_profile_url,
                       'twitter_profile_url': i.user.twitter_profile_url,
@@ -59,13 +60,7 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TalkProposal
-        fields = [
-            "id",
-            "title",
-            "category",
-            "labels",
-            "speakers",
-        ]
+        fields = ["id", "title", "category", "speakers"]
 
 
 class SponsoredEventSerializer(serializers.ModelSerializer):
