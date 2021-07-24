@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from django.conf import settings
 from django.db.models import Count
+from django.shortcuts import get_object_or_404
 
 from core.authentication import TokenAuthentication
 from events.models import (
@@ -22,8 +23,13 @@ class TalkDetailAPIView(RetrieveAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    queryset = TalkProposal.objects.all()
+    queryset = ProposedTalkEvent.objects.all()
     serializer_class = serializers.TalkDetailSerializer
+
+    def get_object(self):
+        pk = self.kwargs["pk"]
+        queryset = self.get_queryset()
+        return get_object_or_404(queryset, proposal_id=pk)
 
 
 class TalkListAPIView(ListAPIView):

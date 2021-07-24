@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.utils.serializer_helpers import ReturnDict
 
-from events.models import ProposedTutorialEvent, SponsoredEvent, KeynoteEvent
+from events.models import ProposedTalkEvent, ProposedTutorialEvent, SponsoredEvent, KeynoteEvent
 from proposals.models import TalkProposal
 
 
@@ -29,7 +29,7 @@ def format_speakers_data(request, speakers):
     return formatted
 
 
-class TalkDetailSerializer(serializers.ModelSerializer):
+class TalkProposalSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
 
     def get_speakers(self, obj):
@@ -51,6 +51,14 @@ class TalkDetailSerializer(serializers.ModelSerializer):
             # "sponsored"
             "speakers"
         ]
+
+
+class TalkDetailSerializer(serializers.ModelSerializer):
+    proposal = TalkProposalSerializer()
+
+    class Meta:
+        model = ProposedTalkEvent
+        fields = ['proposal', 'begin_time', 'end_time', 'is_remote', 'location']
 
 
 class TalkListSerializer(serializers.ModelSerializer):
