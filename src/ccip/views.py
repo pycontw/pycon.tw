@@ -143,16 +143,6 @@ def _transform_session(request, event, type_key, info_getter):
         ]
 
     room = None
-    try:
-        from ext2020.models import CommunityTrackEvent
-        if isinstance(event, CommunityTrackEvent):
-            room = _transform_translatable(
-                str(event.venue),
-                _get_lazy_display(event, 'venue'),
-            )
-    except ImportError:
-        # Do not need to display for community track
-        pass
 
     if not room:
         room = _transform_translatable(
@@ -252,24 +242,6 @@ class CCIPAPIView(View):
                 operator.attrgetter('proposal'),
             ),
         ]
-
-        try:
-            from ext2020.models import CommunityTrackEvent
-            session_sources.append((
-                'community-track',
-                pgettext_lazy('CCIP event type', 'community track'),
-                CommunityTrackEvent.objects.filter(
-                    order__in=[1, 2, 3, 4],
-                    sponsored_event__isnull=True)
-                .select_related(
-                    'begin_time', 'end_time', 'venue',
-                    'talk', 'talk__submitter'
-                ).all(),
-                operator.attrgetter('talk'),
-            ),)
-        except ImportError:
-            # Do not need to display for community track
-            pass
 
         rooms = {}
         session_types = []
