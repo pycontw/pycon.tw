@@ -1,12 +1,18 @@
+import collections
+
 from rest_framework.generics import RetrieveAPIView, ListAPIView
-from rest_framework import views
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 from django.conf import settings
+from django.db.models import Count
 
 from core.authentication import TokenAuthentication
-from events.models import ProposedTutorialEvent, SponsoredEvent, Schedule, KeynoteEvent
+from events.models import (
+    CustomEvent, Location, ProposedTalkEvent,
+    ProposedTutorialEvent, SponsoredEvent, Time, KeynoteEvent
+)
 from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
@@ -44,7 +50,7 @@ class TutorialDetailAPIView(RetrieveAPIView):
     serializer_class = serializers.TutorialDetailSerializer
 
 
-class TutorialListAPIView(views.APIView):
+class TutorialListAPIView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
@@ -61,6 +67,9 @@ class TutorialListAPIView(views.APIView):
 
         return Response(response_data)
 
+
+def _room_sort_key(room):
+    return room.split('-', 1)[0]
 
 
 class EventWrapper:
@@ -166,16 +175,85 @@ class EventWrapper:
         }
 
 
+class ScheduleAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    event_querysets = [
+        CustomEvent.objects.all().exclude(location=Location.OTHER),
+        KeynoteEvent.objects.all().exclude(location=Location.OTHER),
+        (
+            ProposedTalkEvent.objects
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
+                'proposal__additionalspeaker_set',
+            )).exclude(location=Location.OTHER)
+        ),
+        SponsoredEvent.objects.select_related('host').exclude(location=Location.OTHER),
+        (
+            ProposedTutorialEvent.objects
+            .select_related('proposal__submitter')
+            .annotate(_additional_speaker_count=Count(
+                'proposal__additionalspeaker_set',
+            )).exclude(location=Location.OTHER)
+        ),
+    ]
 
     def get(self, request):
-        queryset = Schedule.objects.all()
+        begin_time_event_dict = collections.defaultdict(set)
+        for qs in self.event_querysets:
+            for event in qs.select_related('begin_time', 'end_time'):
+                begin_time_event_dict[event.begin_time].add(event)
 
-        response_data = {"schedule_html": [], "schedule_day": []}
-        if queryset.exists():
-            response_data["schedule_html"] = queryset.latest().html
-        response_data["schedule_day"] = settings.EVENTS_DAY_NAMES.items()
+        day_info_dict = collections.OrderedDict(
+            (str(date), {
+                'date': date,
+                'name': name,
+                'rooms': set(),
+                'slots': {},
+                'timeline': {},
+            }) for date, name in settings.EVENTS_DAY_NAMES.items()
+        )
 
-        return Response(response_data)
+        times = list(Time.objects.order_by('value'))
+
+        for begin in times:
+            try:
+                day_info = day_info_dict[str(begin.value.date())]
+            except KeyError:
+                continue
+
+            for event in begin_time_event_dict[begin]:
+                location = event.location
+                day_info['slots'].setdefault(location, [])
+                day_info['timeline'].setdefault('begin', event.begin_time)
+                day_info['timeline'].setdefault('end', event.end_time)
+
+                event_obj = EventWrapper(event)
+
+                day_info['slots'][location].append(event_obj.display())
+                day_info['timeline']['begin'] = min(
+                    day_info['timeline']['begin'],
+                    event.begin_time
+                )
+                day_info['timeline']['end'] = max(
+                    day_info['timeline']['end'],
+                    event.end_time
+                )
+
+                day_info['rooms'].add(location)
+
+        for info in day_info_dict.values():
+            # Sort rooms.
+            info['rooms'] = sorted(info['rooms'], key=_room_sort_key)
+
+        result = []
+        for day_info in day_info_dict.values():
+            day_info['timeline']['begin'] = day_info['timeline']['begin'].value.strftime('%Y-%m-%d %H:%M:%S')
+            day_info['timeline']['end'] = day_info['timeline']['end'].value.strftime('%Y-%m-%d %H:%M:%S')
+            result.append(day_info)
+
+        return Response(result)
 
 
 class KeynoteEventListAPIView(ListAPIView):
