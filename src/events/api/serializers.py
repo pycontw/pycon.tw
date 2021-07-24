@@ -17,16 +17,17 @@ class PrimarySpeakerSerializer(serializers.Serializer):
 def format_speakers_data(request, speakers, show_details=False):
     formatted = []
     for speaker in speakers:
-        thumbnail_absolute_uri = request.build_absolute_uri(speaker.user.get_thumbnail_url())
+        u = speaker.user
+        thumbnail_absolute_uri = request.build_absolute_uri(u.get_thumbnail_url())
         data = {
             'thumbnail_url': thumbnail_absolute_uri,
-            'name': speaker.user.speaker_name,
-            'github_profile_url': speaker.user.github_profile_url,
-            'twitter_profile_url': speaker.user.twitter_profile_url,
-            'facebook_profile_url': speaker.user.facebook_profile_url
+            'name': u.speaker_name,
+            'github_profile_url': u.github_profile_url,
+            'twitter_profile_url': u.twitter_profile_url,
+            'facebook_profile_url': u.facebook_profile_url
         }
         if show_details:
-            data = {**data, 'bio': speaker.user.bio}
+            data = {**data, 'bio': u.bio}
         serialized = PrimarySpeakerSerializer(data=data).get_initial()
         formatted.append(ReturnDict(serialized, serializer=PrimarySpeakerSerializer))
     return formatted
@@ -42,17 +43,10 @@ class TalkProposalSerializer(serializers.ModelSerializer):
     class Meta:
         model = TalkProposal
         fields = [
-            "title",
-            "category",
-            "language",
-            "python_level",
-            "recording_policy",
-            "abstract",
-            "detailed_description",
-            "slide_link",
-            "slido_embed_link",
+            "title", "category", "language", "python_level",
+            "recording_policy", "abstract", "detailed_description",
+            "slide_link", "slido_embed_link", "speakers",
             # "sponsored"
-            "speakers"
         ]
 
 
@@ -82,11 +76,7 @@ class SponsoredEventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = [
-            "slug",
-            "title",
-            "host_name"
-        ]
+        fields = ["slug", "title", "host_name"]
 
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
@@ -116,19 +106,10 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProposedTutorialEvent
         fields = [
-            "title",
-            "location",
-            "date",
-            "begin_time",
-            "end_time",
-            "category",
-            "language",
-            "python_level",
-            "abstract",
-            "detailed_description",
-            "slide_link",
-            "slido_embed_link",
-            "speakers"
+            "title", "location", "date", "begin_time", "end_time",
+            "category", "language", "python_level", "abstract",
+            "detailed_description", "slide_link",
+            "slido_embed_link", "speakers",
         ]
 
 
