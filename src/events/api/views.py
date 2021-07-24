@@ -253,7 +253,7 @@ class ScheduleAPIView(APIView):
             day_info['timeline']['end'] = day_info['timeline']['end'].value.strftime('%Y-%m-%d %H:%M:%S')
             result.append(day_info)
 
-        return Response(result)
+        return Response({'data': result})
 
 
 class KeynoteEventListAPIView(ListAPIView):
