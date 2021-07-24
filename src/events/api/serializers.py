@@ -11,9 +11,10 @@ class PrimarySpeakerSerializer(serializers.Serializer):
     github_profile_url = serializers.CharField()
     twitter_profile_url = serializers.CharField()
     facebook_profile_url = serializers.CharField()
+    bio = serializers.CharField()
 
 
-def format_speakers_data(request, speakers):
+def format_speakers_data(request, speakers, show_details=False):
     formatted = []
     for speaker in speakers:
         thumbnail_absolute_uri = request.build_absolute_uri(speaker.user.get_thumbnail_url())
@@ -24,6 +25,8 @@ def format_speakers_data(request, speakers):
             'twitter_profile_url': speaker.user.twitter_profile_url,
             'facebook_profile_url': speaker.user.facebook_profile_url
         }
+        if show_details:
+            data = {**data, 'bio': speaker.user.bio}
         serialized = PrimarySpeakerSerializer(data=data).get_initial()
         formatted.append(ReturnDict(serialized, serializer=PrimarySpeakerSerializer))
     return formatted
@@ -34,7 +37,7 @@ class TalkProposalSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, obj.speakers)
+        return format_speakers_data(request, obj.speakers, show_details=True)
 
     class Meta:
         model = TalkProposal
