@@ -13,19 +13,28 @@ class PrimarySpeakerSerializer(serializers.Serializer):
     facebook_profile_url = serializers.CharField()
 
 
+def format_speakers_data(request, speakers):
+    formatted = []
+    for speaker in speakers:
+        thumbnail_absolute_uri = request.build_absolute_uri(speaker.user.get_thumbnail_url())
+        data = {
+            'thumbnail_url': thumbnail_absolute_uri,
+            'name': speaker.user.speaker_name,
+            'github_profile_url': speaker.user.github_profile_url,
+            'twitter_profile_url': speaker.user.twitter_profile_url,
+            'facebook_profile_url': speaker.user.facebook_profile_url
+        }
+        serialized = PrimarySpeakerSerializer(data=data).get_initial()
+        formatted.append(ReturnDict(serialized, serializer=PrimarySpeakerSerializer))
+    return formatted
+
+
 class TalkDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return [
-            ReturnDict(PrimarySpeakerSerializer(
-                data={'thumbnail_url': request.build_absolute_uri(i.user.get_thumbnail_url()),
-                      'name': i.user.speaker_name,
-                      'github_profile_url': i.user.github_profile_url,
-                      'twitter_profile_url': i.user.twitter_profile_url,
-                      'facebook_profile_url': i.user.facebook_profile_url}).get_initial(),
-                serializer=PrimarySpeakerSerializer) for i in obj.speakers]
+        return format_speakers_data(request, obj.speakers)
 
     class Meta:
         model = TalkProposal
@@ -49,14 +58,7 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return [
-            ReturnDict(PrimarySpeakerSerializer(
-                data={'thumbnail_url': request.build_absolute_uri(i.user.get_thumbnail_url()),
-                      'name': i.user.speaker_name,
-                      'github_profile_url': i.user.github_profile_url,
-                      'twitter_profile_url': i.user.twitter_profile_url,
-                      'facebook_profile_url': i.user.facebook_profile_url}).get_initial(),
-                serializer=PrimarySpeakerSerializer) for i in obj.speakers]
+        return format_speakers_data(request, obj.speakers)
 
     class Meta:
         model = TalkProposal
