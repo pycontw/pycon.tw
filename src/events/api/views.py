@@ -102,9 +102,9 @@ class EventWrapper:
             return self.obj.title
 
     @property
-    def speakers(self) -> str:
+    def speakers(self) -> list:
         if isinstance(self.obj, KeynoteEvent):
-            return self.obj.speaker_name
+            return [self.obj.speaker_name]
         elif isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             speaker_names = [self.obj.proposal.submitter.speaker_name]
             if getattr(self.obj, '_additional_speaker_count', 1):
@@ -112,9 +112,9 @@ class EventWrapper:
                     self.obj.proposal.additionalspeaker_set
                     .values_list('user__speaker_name', flat=True),
                 )
-            return ', '.join(speaker_names)
+            return speaker_names
         else:
-            return ''
+            return []
 
     @property
     def begin_time(self) -> str:
@@ -149,6 +149,8 @@ class EventWrapper:
     def language(self) -> str:
         if isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             return self.obj.proposal.language
+        elif isinstance(self.obj, SponsoredEvent):
+            return self.obj.language
         else:
             return ''
 
@@ -156,6 +158,8 @@ class EventWrapper:
     def python_level(self) -> str:
         if isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             return self.obj.proposal.python_level
+        elif isinstance(self.obj, SponsoredEvent):
+            return self.obj.python_level
         else:
             return ''
 
