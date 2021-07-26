@@ -22,12 +22,15 @@ def format_speakers_data(request, speakers, show_details=False):
         data = {
             'thumbnail_url': thumbnail_absolute_uri,
             'name': u.speaker_name,
-            'github_profile_url': u.github_profile_url,
-            'twitter_profile_url': u.twitter_profile_url,
-            'facebook_profile_url': u.facebook_profile_url
         }
         if show_details:
-            data = {**data, 'bio': u.bio}
+            data = {
+                **data,
+                'bio': u.bio,
+                'github_profile_url': u.github_profile_url,
+                'twitter_profile_url': u.twitter_profile_url,
+                'facebook_profile_url': u.facebook_profile_url,
+            }
         serialized = PrimarySpeakerSerializer(data=data).get_initial()
         formatted.append(ReturnDict(serialized, serializer=PrimarySpeakerSerializer))
     return formatted
