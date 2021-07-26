@@ -16,20 +16,19 @@ class PrimarySpeakerSerializer(serializers.Serializer):
 
 def format_speakers_data(request, speakers, show_details=False):
     formatted = []
-    for speaker in speakers:
-        u = speaker.user
-        thumbnail_absolute_uri = request.build_absolute_uri(u.get_thumbnail_url())
+    for s in speakers:
+        thumbnail_absolute_uri = request.build_absolute_uri(s.get_thumbnail_url())
         data = {
             'thumbnail_url': thumbnail_absolute_uri,
-            'name': u.speaker_name,
+            'name': s.speaker_name,
         }
         if show_details:
             data = {
                 **data,
-                'bio': u.bio,
-                'github_profile_url': u.github_profile_url,
-                'twitter_profile_url': u.twitter_profile_url,
-                'facebook_profile_url': u.facebook_profile_url,
+                'bio': s.bio,
+                'github_profile_url': s.github_profile_url,
+                'twitter_profile_url': s.twitter_profile_url,
+                'facebook_profile_url': s.facebook_profile_url,
             }
         serialized = PrimarySpeakerSerializer(data=data).get_initial()
         formatted.append(ReturnDict(serialized, serializer=PrimarySpeakerSerializer))
@@ -41,7 +40,8 @@ class TalkProposalSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, obj.speakers, show_details=True)
+        users = [s.user for s in obj.speakers]
+        return format_speakers_data(request, users, show_details=True)
 
     class Meta:
         model = TalkProposal
@@ -66,7 +66,8 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, obj.speakers)
+        users = [s.user for s in obj.speakers]
+        return format_speakers_data(request, users)
 
     class Meta:
         model = TalkProposal
@@ -74,12 +75,15 @@ class TalkListSerializer(serializers.ModelSerializer):
 
 
 class SponsoredEventSerializer(serializers.ModelSerializer):
+    speakers = serializers.SerializerMethodField()
 
-    host_name = serializers.CharField(source="host.speaker_name", required=False)
+    def get_speakers(self, obj):
+        request = self.context.get('request')
+        return format_speakers_data(request, [obj.host])
 
     class Meta:
         model = SponsoredEvent
-        fields = ["slug", "title", "host_name"]
+        fields = ["id", "title", "category", "speakers"]
 
 
 class TutorialProposalSerializer(serializers.ModelSerializer):
@@ -87,7 +91,8 @@ class TutorialProposalSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, obj.speakers, show_details=True)
+        users = [s.user for s in obj.speakers]
+        return format_speakers_data(request, users, show_details=True)
 
     class Meta:
         model = TutorialProposal
@@ -111,7 +116,8 @@ class TutorialListSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, obj.speakers)
+        users = [s.user for s in obj.speakers]
+        return format_speakers_data(request, users)
 
     class Meta:
         model = TutorialProposal
