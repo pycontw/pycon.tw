@@ -55,23 +55,18 @@ class TutorialDetailAPIView(RetrieveAPIView):
     queryset = ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialDetailSerializer
 
+    def get_object(self):
+        pk = self.kwargs["pk"]
+        queryset = self.get_queryset()
+        return get_object_or_404(queryset, proposal_id=pk)
 
-class TutorialListAPIView(APIView):
+
+class TutorialListAPIView(ListAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
-        tutorial_data = TutorialProposal.objects.filter_accepted()
-
-        response_data = {"tutorials": []}
-        for tutorial in tutorial_data:
-            response_data["tutorials"].append({
-                "title": tutorial.title,
-                "abstract": tutorial.abstract,
-                "tutorial_id": tutorial.id
-            })
-
-        return Response(response_data)
+    queryset = TutorialProposal.objects.filter_accepted()
+    serializer_class = serializers.TutorialListSerializer
 
 
 def _room_sort_key(room):
