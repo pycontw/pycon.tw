@@ -154,6 +154,8 @@ class EventWrapper:
     def recording_policy(self) -> bool:
         if isinstance(self.obj, (KeynoteEvent, CustomEvent)):
             return True
+        elif isinstance(self.obj, SponsoredEvent):
+            return self.obj.recording_policy
         else:
             return self.obj.proposal.recording_policy
 
