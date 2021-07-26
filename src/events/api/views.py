@@ -23,29 +23,47 @@ class TalkDetailAPIView(RetrieveAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    queryset = ProposedTalkEvent.objects.all()
-    serializer_class = serializers.TalkDetailSerializer
+    def get_serializer_class(self):
+        is_sponsored = self.request.GET.get('isSponsored')
+        if is_sponsored is not None:
+            return serializers.SponsoredEventDetailSerializer
+        return serializers.TalkDetailSerializer
+
+    def get_queryset(self):
+        is_sponsored = self.request.GET.get('isSponsored')
+        if is_sponsored is not None:
+            return SponsoredEvent.objects.all()
+        return ProposedTalkEvent.objects.all()
 
     def get_object(self):
+        is_sponsored = self.request.GET.get('isSponsored')
         pk = self.kwargs["pk"]
         queryset = self.get_queryset()
+        if is_sponsored is not None:
+            return get_object_or_404(queryset, id=pk)
         return get_object_or_404(queryset, proposal_id=pk)
 
 
-class TalkListAPIView(ListAPIView):
+class TalkListAPIView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    queryset = TalkProposal.objects.filter_accepted()
-    serializer_class = serializers.TalkListSerializer
+    speech_querysets = [
+        TalkProposal.objects.filter_accepted(),
+        SponsoredEvent.objects.all()
+    ]
 
+    def get(self, request, **kwargs):
+        talks, sponsored_events = self.speech_querysets
 
-class SponsoredEventListAPIView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+        context = {"request": request}
+        talk_serializer = serializers.TalkListSerializer(
+            talks, many=True, context=context)
+        sponsored_events_serializer = serializers.SponsoredEventListSerializer(
+            sponsored_events, many=True, context=context)
 
-    queryset = SponsoredEvent.objects.all()
-    serializer_class = serializers.SponsoredEventSerializer
+        response = talk_serializer.data + sponsored_events_serializer.data
+        return Response(response)
 
 
 class TutorialDetailAPIView(RetrieveAPIView):

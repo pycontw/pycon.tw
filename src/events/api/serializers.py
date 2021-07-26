@@ -35,8 +35,21 @@ def format_speakers_data(request, speakers, show_details=False):
     return formatted
 
 
+def flatten_proposal_field(representation):
+    """
+    The helper function that used in `to_representation()` for
+    flattening the `proposal` object from serialized
+    `ProposedTalkEvent` or `ProposedTutorialEvent`.
+    """
+    proposal_repr = representation.pop('proposal')
+    for key in proposal_repr:
+        representation[key] = proposal_repr[key]
+    return representation
+
+
 class TalkProposalSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
+    is_sponsored = serializers.ReadOnlyField(default=False)
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -49,12 +62,16 @@ class TalkProposalSerializer(serializers.ModelSerializer):
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
             "slide_link", "slido_embed_link", "speakers",
-            # "sponsored"
+            "is_sponsored",
         ]
 
 
 class TalkDetailSerializer(serializers.ModelSerializer):
     proposal = TalkProposalSerializer()
+
+    def to_representation(self, obj):
+        representation = super().to_representation(obj)
+        return flatten_proposal_field(representation)
 
     class Meta:
         model = ProposedTalkEvent
@@ -63,6 +80,7 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
 class TalkListSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
+    is_sponsored = serializers.ReadOnlyField(default=False)
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -71,11 +89,40 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TalkProposal
-        fields = ["id", "title", "category", "speakers"]
+        fields = ["id", "title", "category", "speakers", "is_sponsored"]
 
 
-class SponsoredEventSerializer(serializers.ModelSerializer):
+class SponsoredEventDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
+    is_sponsored = serializers.ReadOnlyField(default=True)
+
+    def get_speakers(self, obj):
+        request = self.context.get('request')
+        return format_speakers_data(request, [obj.host], show_details=True)
+
+    def to_representation(self, obj):
+        """
+        Assign the value of `is_remote` as `SponsoredEvent.remoting_policy`
+        """
+        representation = super().to_representation(obj)
+        is_remote = representation.pop('remoting_policy')
+        representation['is_remote'] = is_remote
+        return representation
+
+    class Meta:
+        model = SponsoredEvent
+        fields = [
+            "title", "category", "language", "python_level",
+            "recording_policy", "abstract", "detailed_description",
+            "slide_link", "slido_embed_link", "speakers", "location",
+            "begin_time", "end_time", "remoting_policy",
+            "is_sponsored",
+        ]
+
+
+class SponsoredEventListSerializer(serializers.ModelSerializer):
+    speakers = serializers.SerializerMethodField()
+    is_sponsored = serializers.ReadOnlyField(default=True)
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -83,7 +130,7 @@ class SponsoredEventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = ["id", "title", "category", "speakers"]
+        fields = ["id", "title", "category", "speakers", "is_sponsored"]
 
 
 class TutorialProposalSerializer(serializers.ModelSerializer):
@@ -105,6 +152,10 @@ class TutorialProposalSerializer(serializers.ModelSerializer):
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
     proposal = TutorialProposalSerializer()
+
+    def to_representation(self, obj):
+        representation = super().to_representation(obj)
+        return flatten_proposal_field(representation)
 
     class Meta:
         model = ProposedTutorialEvent
