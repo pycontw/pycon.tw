@@ -26,6 +26,7 @@ from core.models import EAWTextField, BigForeignKey
 class UserQueryset(models.QuerySet):
     """Custom queryset for User.
     """
+
     def get_valid_speakers(self):
         """Filter only valid speakers from the queryset.
 
@@ -39,6 +40,7 @@ class UserQueryset(models.QuerySet):
 class UserManager(BaseUserManager.from_queryset(UserQueryset)):
     """Custom manager for User.
     """
+
     def _create_user(self, email, password, **extra_fields):
         """Create and save an EmailUser with the given email and password.
 
@@ -255,10 +257,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def twitter_profile_url(self):
+        if not self.twitter_id:
+            return ""
         return 'https://twitter.com/{}'.format(self.twitter_id)
 
     @property
     def github_profile_url(self):
+        if not self.github_id:
+            return ""
         return 'https://github.com/{}'.format(self.github_id)
 
     def get_verification_key(self):
