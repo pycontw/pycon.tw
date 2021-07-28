@@ -25,13 +25,13 @@ class TalkDetailAPIView(RetrieveAPIView):
 
     def get_serializer_class(self):
         is_sponsored = self.request.GET.get('isSponsored')
-        if is_sponsored is not None:
+        if is_sponsored:
             return serializers.SponsoredEventDetailSerializer
         return serializers.TalkDetailSerializer
 
     def get_queryset(self):
         is_sponsored = self.request.GET.get('isSponsored')
-        if is_sponsored is not None:
+        if is_sponsored:
             return SponsoredEvent.objects.all()
         return ProposedTalkEvent.objects.all()
 
@@ -39,7 +39,7 @@ class TalkDetailAPIView(RetrieveAPIView):
         is_sponsored = self.request.GET.get('isSponsored')
         pk = self.kwargs["pk"]
         queryset = self.get_queryset()
-        if is_sponsored is not None:
+        if is_sponsored:
             return get_object_or_404(queryset, id=pk)
         return get_object_or_404(queryset, proposal_id=pk)
 

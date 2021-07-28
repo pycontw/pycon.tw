@@ -53,8 +53,8 @@ class TalkProposalSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        users = [s.user for s in obj.speakers]
-        return format_speakers_data(request, users, show_details=True)
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers, show_details=True)
 
     class Meta:
         model = TalkProposal
@@ -84,8 +84,8 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        users = [s.user for s in obj.speakers]
-        return format_speakers_data(request, users)
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers)
 
     class Meta:
         model = TalkProposal
@@ -138,8 +138,8 @@ class TutorialProposalSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        users = [s.user for s in obj.speakers]
-        return format_speakers_data(request, users, show_details=True)
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers, show_details=True)
 
     class Meta:
         model = TutorialProposal
@@ -167,8 +167,8 @@ class TutorialListSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        users = [s.user for s in obj.speakers]
-        return format_speakers_data(request, users)
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers)
 
     class Meta:
         model = TutorialProposal
