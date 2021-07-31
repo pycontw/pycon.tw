@@ -84,7 +84,7 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTalkEvent
-        fields = ['proposal', 'begin_time', 'end_time', 'is_remote', 'location']
+        fields = ['id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location']
 
 
 class TalkListSerializer(serializers.ModelSerializer):
@@ -110,7 +110,7 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         """
-        Assign the value of `is_remote` as `SponsoredEvent.remoting_policy`
+        Assign the value of `SponsoredEvent.remoting_policy` as `is_remote`
         """
         representation = super().to_representation(obj)
         is_remote = representation.pop('remoting_policy')
@@ -120,7 +120,7 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = SponsoredEvent
         fields = [
-            "title", "category", "language", "python_level",
+            "id", "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
             "slide_link", "slido_embed_link", "speakers", "location",
             "begin_time", "end_time", "remoting_policy", "event_type",
@@ -137,7 +137,7 @@ class SponsoredEventListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = ["id", "title", "category", "speakers", "event_type"]
+        fields = ["id", "title", "category", "speakers", "event_type", ]
 
 
 class TutorialDetailSerializer(serializers.ModelSerializer):
@@ -149,7 +149,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTutorialEvent
-        fields = ['proposal', 'begin_time', 'end_time', 'is_remote', 'location']
+        fields = ['id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location']
 
 
 class TutorialListSerializer(serializers.ModelSerializer):
@@ -198,6 +198,7 @@ class KeynoteEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = KeynoteEvent
         fields = [
+            "id",
             "speaker",
             "session",
             "slido",
