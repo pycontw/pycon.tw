@@ -7,8 +7,6 @@ app_name = 'app'
 urlpatterns = [
     path('schedule/', views.ScheduleAPIView.as_view()),
     path('keynotes/', views.KeynoteEventListAPIView.as_view()),
-    path('talks/', views.TalkListAPIView.as_view()),
-    path('tutorials/', views.TutorialListAPIView.as_view()),
-    path('talk/<int:pk>/', views.TalkDetailAPIView.as_view()),
-    path('tutorial/<int:pk>/', views.TutorialDetailAPIView.as_view()),
+    path('speeches/', views.SpeechListAPIView.as_view()),
+    path('speeches/<str:event_type>/<int:pk>/', views.SpeechDetailAPIView.as_view()),
 ]
