@@ -132,6 +132,8 @@ class EventWrapper:
     def speakers(self) -> list:
         if isinstance(self.obj, KeynoteEvent):
             return [self.obj.speaker_name]
+        if isinstance(self.obj, SponsoredEvent):
+            return [self.obj.host.speaker_name]
         elif isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             speaker_names = [self.obj.proposal.submitter.speaker_name]
             if getattr(self.obj, '_additional_speaker_count', 1):
