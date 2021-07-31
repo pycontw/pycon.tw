@@ -40,13 +40,15 @@ class SpeechListAPIView(APIView):
     def get(self, request, *args, **kwargs):
         event_type_string = request.GET.get("event_types")
         event_types = event_type_string.split(',') if event_type_string else []
+        api_view_dict = {
+            'talk': TalkListAPIView,
+            'sponsored': SponsoredEventListAPIView,
+            'tutorial': TutorialListAPIView,
+        }
+
         data = []
-        for event_type, api_view in [
-            ('talk', TalkListAPIView),
-            ('sponsored', SponsoredEventListAPIView),
-            ('tutorial', TutorialListAPIView),
-        ]:
-            if event_type not in event_types or not event_types:
+        for event_type, api_view in api_view_dict.items():
+            if event_types and event_type not in event_types:
                 continue
             view = api_view.as_view()
             event_data = view(request._request, *args, **kwargs).data
@@ -80,19 +82,19 @@ class SpeechDetailAPIView(APIView):
     def get(self, request, *args, **kwargs):
         event_id = self.kwargs.get('pk')
         event_type = self.kwargs.get('event_type')
-        if not event_id or not event_type:
+        api_view_dict = {
+            'talk': TalkDetailAPIView,
+            'sponsored': SponsoredEventDetailAPIView,
+            'tutorial': TutorialDetailAPIView,
+        }
+
+        if not event_id or not event_type or \
+                event_type not in api_view_dict:
             raise Http404
 
-        for _type, api_view in [
-            ('talk', TalkDetailAPIView),
-            ('sponsored', SponsoredEventDetailAPIView),
-            ('tutorial', TutorialDetailAPIView),
-        ]:
-            if _type == event_type:
-                view = api_view.as_view()
-                return view(request._request, *args, **kwargs)
-
-        raise Http404
+        api_view = api_view_dict[event_type]
+        view = api_view.as_view()
+        return view(request._request, *args, **kwargs)
 
 
 def _room_sort_key(room):
