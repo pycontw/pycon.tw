@@ -342,6 +342,11 @@ class SponsoredEvent(EventInfo, BaseEvent):
         allow_unicode=True,
         verbose_name=_('slug'),
     )
+    youtube_id = models.CharField(
+        verbose_name=_('youtube id'),
+        max_length=20,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _('sponsored event')
@@ -380,6 +385,11 @@ class ProposedTalkEvent(BaseEvent):
     is_remote = models.BooleanField(
         verbose_name=_('is remote'),
         default=False,
+    )
+    youtube_id = models.CharField(
+        verbose_name=_('youtube id'),
+        max_length=20,
+        blank=True,
     )
 
     objects = ProposedEventManager()

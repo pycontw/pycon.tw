@@ -7,84 +7,94 @@ from rest_framework.permissions import IsAuthenticated
 
 from django.conf import settings
 from django.db.models import Count
-from django.shortcuts import get_object_or_404
+from django.http import Http404
 
 from core.authentication import TokenAuthentication
 from events.models import (
     CustomEvent, Location, ProposedTalkEvent,
     ProposedTutorialEvent, SponsoredEvent, Time, KeynoteEvent
 )
-from proposals.models import TalkProposal, TutorialProposal
 
 from . import serializers
 
 
-class TalkDetailAPIView(RetrieveAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
-
-    def get_serializer_class(self):
-        is_sponsored = self.request.GET.get('isSponsored')
-        if is_sponsored:
-            return serializers.SponsoredEventDetailSerializer
-        return serializers.TalkDetailSerializer
-
-    def get_queryset(self):
-        is_sponsored = self.request.GET.get('isSponsored')
-        if is_sponsored:
-            return SponsoredEvent.objects.all()
-        return ProposedTalkEvent.objects.all()
-
-    def get_object(self):
-        is_sponsored = self.request.GET.get('isSponsored')
-        pk = self.kwargs["pk"]
-        queryset = self.get_queryset()
-        if is_sponsored:
-            return get_object_or_404(queryset, id=pk)
-        return get_object_or_404(queryset, proposal_id=pk)
+class TalkListAPIView(ListAPIView):
+    queryset = ProposedTalkEvent.objects.all()
+    serializer_class = serializers.TalkListSerializer
 
 
-class TalkListAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
-
-    speech_querysets = [
-        TalkProposal.objects.filter_accepted(),
-        SponsoredEvent.objects.all()
-    ]
-
-    def get(self, request, **kwargs):
-        talks, sponsored_events = self.speech_querysets
-
-        context = {"request": request}
-        talk_serializer = serializers.TalkListSerializer(
-            talks, many=True, context=context)
-        sponsored_events_serializer = serializers.SponsoredEventListSerializer(
-            sponsored_events, many=True, context=context)
-
-        response = talk_serializer.data + sponsored_events_serializer.data
-        return Response(response)
-
-
-class TutorialDetailAPIView(RetrieveAPIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
-
-    queryset = ProposedTutorialEvent.objects.all()
-    serializer_class = serializers.TutorialDetailSerializer
-
-    def get_object(self):
-        pk = self.kwargs["pk"]
-        queryset = self.get_queryset()
-        return get_object_or_404(queryset, proposal_id=pk)
+class SponsoredEventListAPIView(ListAPIView):
+    queryset = SponsoredEvent.objects.all()
+    serializer_class = serializers.SponsoredEventListSerializer
 
 
 class TutorialListAPIView(ListAPIView):
+    queryset = ProposedTutorialEvent.objects.all()
+    serializer_class = serializers.TutorialListSerializer
+
+
+class SpeechListAPIView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    queryset = TutorialProposal.objects.filter_accepted()
-    serializer_class = serializers.TutorialListSerializer
+    def get(self, request, *args, **kwargs):
+        event_type_string = request.GET.get("event_types")
+        event_types = event_type_string.split(',') if event_type_string else []
+        api_view_dict = {
+            'talk': TalkListAPIView,
+            'sponsored': SponsoredEventListAPIView,
+            'tutorial': TutorialListAPIView,
+        }
+
+        data = []
+        for event_type, api_view in api_view_dict.items():
+            if event_types and event_type not in event_types:
+                continue
+            view = api_view.as_view()
+            event_data = view(request._request, *args, **kwargs).data
+            data.extend(event_data)
+
+        if data:
+            return Response(data)
+        else:
+            raise Http404
+
+
+class TalkDetailAPIView(RetrieveAPIView):
+    queryset = ProposedTalkEvent.objects.all()
+    serializer_class = serializers.TalkDetailSerializer
+
+
+class SponsoredEventDetailAPIView(RetrieveAPIView):
+    queryset = SponsoredEvent.objects.all()
+    serializer_class = serializers.SponsoredEventDetailSerializer
+
+
+class TutorialDetailAPIView(RetrieveAPIView):
+    queryset = ProposedTutorialEvent.objects.all()
+    serializer_class = serializers.TutorialDetailSerializer
+
+
+class SpeechDetailAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        event_id = self.kwargs.get('pk')
+        event_type = self.kwargs.get('event_type')
+        api_view_dict = {
+            'talk': TalkDetailAPIView,
+            'sponsored': SponsoredEventDetailAPIView,
+            'tutorial': TutorialDetailAPIView,
+        }
+
+        if not event_id or not event_type or \
+                event_type not in api_view_dict:
+            raise Http404
+
+        api_view = api_view_dict[event_type]
+        view = api_view.as_view()
+        return view(request._request, *args, **kwargs)
 
 
 def _room_sort_key(room):
@@ -124,6 +134,8 @@ class EventWrapper:
     def speakers(self) -> list:
         if isinstance(self.obj, KeynoteEvent):
             return [self.obj.speaker_name]
+        if isinstance(self.obj, SponsoredEvent):
+            return [self.obj.host.speaker_name]
         elif isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             speaker_names = [self.obj.proposal.submitter.speaker_name]
             if getattr(self.obj, '_additional_speaker_count', 1):
