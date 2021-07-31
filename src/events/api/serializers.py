@@ -35,7 +35,7 @@ def format_speakers_data(request, speakers, show_details=False):
     return formatted
 
 
-def flatten_proposal_field(representation):
+def flatten_proposal_field(representation, allow_fields=[]):
     """
     The helper function that used in `to_representation()` for
     flattening the `proposal` object from serialized
@@ -43,7 +43,8 @@ def flatten_proposal_field(representation):
     """
     proposal_repr = representation.pop('proposal')
     for key in proposal_repr:
-        representation[key] = proposal_repr[key]
+        if key in allow_fields or not allow_fields:
+            representation[key] = proposal_repr[key]
     return representation
 
 
