@@ -14,7 +14,7 @@ class PrimarySpeakerSerializer(serializers.Serializer):
     bio = serializers.CharField()
 
 
-def format_speakers_data(request, speakers, show_details=False):
+def format_speakers_data(request, speakers, show_details=True):
     formatted = []
     for s in speakers:
         thumbnail_absolute_uri = request.build_absolute_uri(s.get_thumbnail_url())
@@ -48,35 +48,26 @@ def flatten_proposal_field(representation, allow_fields=[]):
     return representation
 
 
-def get_proposal_serializer_class(event_type, show_speaker_details=False):
-    if event_type == 'talk':
+class TalkProposalSerializer(serializers.ModelSerializer):
+    speakers = serializers.SerializerMethodField()
+    event_type = serializers.ReadOnlyField(default='talk')
+
+    def get_speakers(self, obj):
+        request = self.context.get('request')
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers)
+
+    class Meta:
         model = TalkProposal
-    elif event_type == 'tutorial':
-        model = TutorialProposal
-    else:
-        raise ValueError(f"Invalid event type is given: {event_type}")
-
-    class ProposalSerializer(serializers.ModelSerializer):
-        speakers = serializers.SerializerMethodField()
-        event_type = serializers.ReadOnlyField(default=lambda: event_type)
-
-        def get_speakers(self, obj):
-            request = self.context.get('request')
-            speakers = [s.user for s in obj.speakers]
-            return format_speakers_data(request, speakers, show_details=show_speaker_details)
-
-        class Meta:
-            model = (lambda: model)()
-            fields = [
-                "title", "category", "language", "python_level",
-                "recording_policy", "abstract", "detailed_description",
-                "slide_link", "slido_embed_link", "speakers", "event_type",
-            ]
-    return ProposalSerializer
+        fields = [
+            "title", "category", "language", "python_level",
+            "recording_policy", "abstract", "detailed_description",
+            "slide_link", "slido_embed_link", "speakers", "event_type",
+        ]
 
 
 class TalkDetailSerializer(serializers.ModelSerializer):
-    proposal = get_proposal_serializer_class('talk', show_speaker_details=True)()
+    proposal = TalkProposalSerializer()
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
@@ -91,7 +82,7 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
 
 class TalkListSerializer(serializers.ModelSerializer):
-    proposal = get_proposal_serializer_class('talk')()
+    proposal = TalkProposalSerializer()
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
@@ -109,7 +100,7 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
 
     def get_speakers(self, obj):
         request = self.context.get('request')
-        return format_speakers_data(request, [obj.host], show_details=True)
+        return format_speakers_data(request, [obj.host])
 
     def to_representation(self, obj):
         """
@@ -144,8 +135,26 @@ class SponsoredEventListSerializer(serializers.ModelSerializer):
         fields = ["id", "title", "category", "speakers", "event_type", ]
 
 
+class TutorialProposalSerializer(serializers.ModelSerializer):
+    speakers = serializers.SerializerMethodField()
+    event_type = serializers.ReadOnlyField(default='tutorial')
+
+    def get_speakers(self, obj):
+        request = self.context.get('request')
+        speakers = [s.user for s in obj.speakers]
+        return format_speakers_data(request, speakers)
+
+    class Meta:
+        model = TutorialProposal
+        fields = [
+            "title", "category", "language", "python_level",
+            "recording_policy", "abstract", "detailed_description",
+            "slide_link", "slido_embed_link", "speakers", "event_type",
+        ]
+
+
 class TutorialDetailSerializer(serializers.ModelSerializer):
-    proposal = get_proposal_serializer_class('tutorial', show_speaker_details=True)()
+    proposal = TutorialProposalSerializer()
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
@@ -160,7 +169,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
 
 
 class TutorialListSerializer(serializers.ModelSerializer):
-    proposal = get_proposal_serializer_class('tutorial')()
+    proposal = TutorialProposalSerializer()
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
