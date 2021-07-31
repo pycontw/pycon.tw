@@ -50,7 +50,7 @@ def flatten_proposal_field(representation, allow_fields=[]):
 
 class TalkProposalSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
-    is_sponsored = serializers.ReadOnlyField(default=False)
+    event_type = serializers.ReadOnlyField(default='talk')
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -62,8 +62,7 @@ class TalkProposalSerializer(serializers.ModelSerializer):
         fields = [
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
-            "slide_link", "slido_embed_link", "speakers",
-            "is_sponsored",
+            "slide_link", "slido_embed_link", "speakers", "event_type",
         ]
 
 
@@ -94,7 +93,7 @@ class TalkListSerializer(serializers.ModelSerializer):
 
 class SponsoredEventDetailSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
-    is_sponsored = serializers.ReadOnlyField(default=True)
+    event_type = serializers.ReadOnlyField(default='sponsored')
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -115,14 +114,13 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
             "slide_link", "slido_embed_link", "speakers", "location",
-            "begin_time", "end_time", "remoting_policy",
-            "is_sponsored",
+            "begin_time", "end_time", "remoting_policy", "event_type",
         ]
 
 
 class SponsoredEventListSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
-    is_sponsored = serializers.ReadOnlyField(default=True)
+    event_type = serializers.ReadOnlyField(default='sponsored')
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -130,11 +128,12 @@ class SponsoredEventListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = ["id", "title", "category", "speakers", "is_sponsored"]
+        fields = ["id", "title", "category", "speakers", "event_type"]
 
 
 class TutorialProposalSerializer(serializers.ModelSerializer):
     speakers = serializers.SerializerMethodField()
+    event_type = serializers.ReadOnlyField(default='tutorial')
 
     def get_speakers(self, obj):
         request = self.context.get('request')
@@ -146,7 +145,7 @@ class TutorialProposalSerializer(serializers.ModelSerializer):
         fields = [
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
-            "slide_link", "slido_embed_link", "speakers",
+            "slide_link", "slido_embed_link", "speakers", "event_type",
         ]
 
 
