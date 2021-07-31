@@ -84,7 +84,10 @@ class TalkDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTalkEvent
-        fields = ['id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location']
+        fields = [
+            'id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location',
+            'youtube_id',
+        ]
 
 
 class TalkListSerializer(serializers.ModelSerializer):
@@ -124,6 +127,7 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
             "recording_policy", "abstract", "detailed_description",
             "slide_link", "slido_embed_link", "speakers", "location",
             "begin_time", "end_time", "remoting_policy", "event_type",
+            'youtube_id',
         ]
 
 
