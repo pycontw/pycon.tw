@@ -41,7 +41,7 @@ class TalkDetailAPIView(RetrieveAPIView):
         queryset = self.get_queryset()
         if is_sponsored:
             return get_object_or_404(queryset, id=pk)
-        return get_object_or_404(queryset, proposal_id=pk)
+        return get_object_or_404(queryset, id=pk)
 
 
 class TalkListAPIView(APIView):
@@ -49,7 +49,7 @@ class TalkListAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     speech_querysets = [
-        TalkProposal.objects.filter_accepted(),
+        ProposedTalkEvent.objects.all(),
         SponsoredEvent.objects.all()
     ]
 
@@ -83,7 +83,7 @@ class TutorialListAPIView(ListAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
-    queryset = TutorialProposal.objects.filter_accepted()
+    queryset = ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialListSerializer
 
 
