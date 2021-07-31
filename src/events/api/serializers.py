@@ -149,7 +149,10 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTutorialEvent
-        fields = ['id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location']
+        fields = [
+            'id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location',
+            'registration_link',
+        ]
 
 
 class TutorialListSerializer(serializers.ModelSerializer):
