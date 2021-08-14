@@ -51,3 +51,11 @@ cssselect==1.1.0
 
 # PostgreSQL database adapter for the Python
 psycopg2-binary==2.8.5
+
+# JSON Web Token implementation in Python
+# https://pyjwt.readthedocs.io/en/stable/
+PyJWT==1.7.1
+
+# A JSON Web Token authentication plugin for the Django REST Framework.
+# https://django-rest-framework-simplejwt.readthedocs.io/en/stable/
+djangorestframework-simplejwt==4.4.0
