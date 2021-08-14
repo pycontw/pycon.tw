@@ -3,13 +3,13 @@ from collections import OrderedDict
 from rest_framework import views
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
-from core.authentication import TokenAuthentication
 from sponsors.models import Sponsor, OpenRole
 
 
 class SponsorAPIView(views.APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
@@ -42,7 +42,7 @@ class SponsorAPIView(views.APIView):
 
 
 class JobAPIView(views.APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):

@@ -4,12 +4,12 @@ from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from django.conf import settings
 from django.db.models import Count
 from django.http import Http404
 
-from core.authentication import TokenAuthentication
 from events.models import (
     CustomEvent, Location, ProposedTalkEvent,
     ProposedTutorialEvent, SponsoredEvent, Time, KeynoteEvent
@@ -34,7 +34,7 @@ class TutorialListAPIView(ListAPIView):
 
 
 class SpeechListAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -76,7 +76,7 @@ class TutorialDetailAPIView(RetrieveAPIView):
 
 
 class SpeechDetailAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -213,7 +213,7 @@ class EventWrapper:
 
 
 class ScheduleAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     event_querysets = [
@@ -294,7 +294,7 @@ class ScheduleAPIView(APIView):
 
 
 class KeynoteEventListAPIView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     queryset = KeynoteEvent.objects.all()
