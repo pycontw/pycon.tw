@@ -28,7 +28,7 @@ After creating the attendee entry, you can see the live braodcast page at `/ext/
 ## Attendee Token
 
 We can import valid tokens by using the import / export tool in admin.
-Go to `/admin/ext2020/attendee/` and click the import button on the top-right corner.
+Go to `/admin/attendee/attendee` and click the import button on the top-right corner.
 
 Use whatever format you like, the imported format should be a table that includes a header row and rows that contain the token.
 Something like the following:
