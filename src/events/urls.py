@@ -2,7 +2,6 @@ from django.conf.urls import url
 from django.views.generic import RedirectView
 
 from events import views
-from ext2020 import views as ext2020_views
 
 urlpatterns = [
     url(r'^schedule/$', views.ScheduleView.as_view(), name='events_schedule'),
@@ -24,8 +23,4 @@ urlpatterns = [
 
     # Backward compatibility to the static events page.
     url(r'^talk/$', RedirectView.as_view(pattern_name='events_talk_list')),
-
-    url(r'^community-track/$', ext2020_views.CommunityTrackView.as_view(), name='community_track'),
-
-
 ]

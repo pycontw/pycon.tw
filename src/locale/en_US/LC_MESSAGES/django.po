@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-27 23:24+0800\n"
+"POT-Creation-Date: 2021-08-08 10:12+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -24,46 +24,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ccip/views.py:205
+#: attendee/models.py:6
+msgid "token"
+msgstr "token"
+
+#: attendee/models.py:7 users/models.py:164
+msgid "verified"
+msgstr "verified"
+
+#: attendee/models.py:9 core/models.py:192 events/models.py:437
+msgid "created at"
+msgstr "created at"
+
+#: attendee/models.py:10
+msgid "verified at"
+msgstr "verified at"
+
+#: attendee/models.py:13
+msgid "attendee"
+msgstr "attendee"
+
+#: attendee/models.py:14
+msgid "attendees"
+msgstr "attendees"
+
+#: ccip/views.py:195
 msgctxt "CCIP event type"
 msgid "event"
 msgstr "event"
 
-#: ccip/views.py:213
+#: ccip/views.py:203
 msgctxt "CCIP event type"
 msgid "break"
 msgstr "break"
 
-#: ccip/views.py:221
+#: ccip/views.py:211
 msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "keynote"
 
-#: ccip/views.py:227
+#: ccip/views.py:217
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "sponsored"
 
-#: ccip/views.py:235
+#: ccip/views.py:225
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "tutorial"
 
-#: ccip/views.py:247
+#: ccip/views.py:237
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "talk"
-
-#: ccip/views.py:260
-msgctxt "CCIP event type"
-msgid "community track"
-msgstr "community track"
 
 #: core/admin.py:15
 msgid "Current"
 msgstr ""
 
-#: core/admin.py:16 core/models.py:105 events/models.py:145
+#: core/admin.py:16 core/models.py:108 events/models.py:145
 #: events/templatetags/events.py:21
 msgid "Other"
 msgstr "Other"
@@ -77,204 +96,222 @@ msgstr ""
 msgid "{model_name_cap} creation requires a request object."
 msgstr "{model_name_cap} creation requires a request object."
 
-#: core/models.py:67
+#: core/models.py:70
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:80 events/models.py:181
+#: core/models.py:83 events/models.py:181
 msgid "title"
 msgstr "title"
 
-#: core/models.py:85
+#: core/models.py:88
 msgid "Application"
 msgstr "Application"
 
-#: core/models.py:86
+#: core/models.py:89
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:87 ext2020/models.py:33
-#: templates/pycontw-2018/_includes/footer.html:12
+#: core/models.py:90 templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:15
 #: templates/pycontw-2021/_includes/footer.html:15
 msgid "Community"
 msgstr "Community"
 
-#: core/models.py:88
+#: core/models.py:91
 msgid "Databases"
 msgstr "Databases"
 
-#: core/models.py:89
+#: core/models.py:92
 msgid "Data Analysis"
 msgstr "Data Analysis"
 
-#: core/models.py:90
+#: core/models.py:93
 msgid "Education"
 msgstr "Education"
 
-#: core/models.py:91
+#: core/models.py:94
 msgid "Embedded Systems"
 msgstr "Embedded Systems"
 
-#: core/models.py:92
+#: core/models.py:95
 msgid "FinTech"
 msgstr "FinTech"
 
-#: core/models.py:93
+#: core/models.py:96
 msgid "Internet of Things"
 msgstr "Internet of Things"
 
-#: core/models.py:94
+#: core/models.py:97
 msgid "Gaming"
 msgstr "Gaming"
 
-#: core/models.py:95 templates/default/_includes/proposal_example_modal.html:65
+#: core/models.py:98 templates/default/_includes/proposal_example_modal.html:65
 msgid "Graphics"
 msgstr "Graphics"
 
-#: core/models.py:96
+#: core/models.py:99
 msgid "Machine Learning"
 msgstr "Machine Learning"
 
-#: core/models.py:97
+#: core/models.py:100
 msgid "Natural Language Processing"
 msgstr "Natural Language Processing"
 
-#: core/models.py:98
+#: core/models.py:101
 msgid "Python Core (language, stdlib, etc.)"
 msgstr "Python Core (language, stdlib, etc.)"
 
-#: core/models.py:99
+#: core/models.py:102
 msgid "Project Tooling"
 msgstr "Project Tooling"
 
-#: core/models.py:100
+#: core/models.py:103
 msgid "Science"
 msgstr "Science"
 
-#: core/models.py:101
+#: core/models.py:104
 msgid "Security"
 msgstr "Security"
 
-#: core/models.py:102
+#: core/models.py:105
 msgid "Systems Administration"
 msgstr "Systems Administration"
 
-#: core/models.py:103
+#: core/models.py:106
 msgid "Testing"
 msgstr "Testing"
 
-#: core/models.py:104
+#: core/models.py:107
 msgid "Web Frameworks"
 msgstr "Web Frameworks"
 
-#: core/models.py:108
+#: core/models.py:111
 msgid "category"
 msgstr "category"
 
-#: core/models.py:114
+#: core/models.py:117
 msgid "English talk"
 msgstr "English talk"
 
-#: core/models.py:115
+#: core/models.py:118
 msgid "Chinese talk w. English slides"
 msgstr "Chinese talk w. English slides"
 
-#: core/models.py:116
+#: core/models.py:119
 msgid "Chinese talk w. Chinese slides"
 msgstr "Chinese talk w. Chinese slides"
 
-#: core/models.py:117
+#: core/models.py:120
 msgid "Taiwanese Hokkien"
 msgstr "Taiwanese Hokkien"
 
-#: core/models.py:120
+#: core/models.py:123
 msgid "language"
 msgstr "language"
 
-#: core/models.py:126
+#: core/models.py:129
 msgid "abstract"
 msgstr "abstract"
 
-#: core/models.py:131
+#: core/models.py:134
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
-#: core/models.py:132
+#: core/models.py:135
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
-#: core/models.py:133 templates/pycontw-2018/events/schedule.html:30
+#: core/models.py:136 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
-#: core/models.py:136 templates/default/reviews/review_form.html:53
+#: core/models.py:139 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python level"
 
-#: core/models.py:142
+#: core/models.py:145
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:147 core/models.py:157 core/models.py:167 core/models.py:200
+#: core/models.py:150 core/models.py:160 core/models.py:170 core/models.py:203
 #: proposals/models.py:268 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:148 core/models.py:158 core/models.py:168 core/models.py:201
+#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:204
 #: proposals/models.py:269 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "No"
 
-#: core/models.py:151
+#: core/models.py:154
 msgid "recording policy"
 msgstr "recording policy"
 
-#: core/models.py:161
+#: core/models.py:164
 msgid "live stream policy"
 msgstr "live stream policy"
 
-#: core/models.py:171
+#: core/models.py:174
 msgid "referring policy"
 msgstr "referring policy"
 
-#: core/models.py:177
+#: core/models.py:180
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:183
+#: core/models.py:186
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:189 events/models.py:437 ext2020/models.py:17
-msgid "created at"
-msgstr "created at"
-
-#: core/models.py:195
+#: core/models.py:198
 msgid "last updated at"
 msgstr "last updated at"
 
-#: core/models.py:205
+#: core/models.py:208
 msgid "remoting policy"
 msgstr "remote policy"
+
+#: core/models.py:240 reviews/admin.py:51
+msgid "Key"
+msgstr "Key"
+
+#: core/models.py:244 proposals/models.py:62 users/models.py:196
+#: users/models.py:307
+msgid "user"
+msgstr "user"
+
+#: core/models.py:247
+#, fuzzy
+#| msgid "created at"
+msgid "Created"
+msgstr "created at"
+
+#: core/models.py:250
+msgid "Token"
+msgstr ""
+
+#: core/models.py:251
+msgid "Tokens"
+msgstr ""
 
 #: events/admin.py:26
 msgid "time value"
 msgstr "time value"
 
-#: events/admin.py:100 events/models.py:161 ext2020/models.py:88
+#: events/admin.py:100 events/models.py:161
 msgid "begin time"
 msgstr "begin time"
 
-#: events/admin.py:106 events/models.py:170 ext2020/models.py:97
+#: events/admin.py:106 events/models.py:170
 msgid "end time"
 msgstr "end time"
 
@@ -299,35 +336,36 @@ msgstr "times"
 msgid "All rooms"
 msgstr "All rooms"
 
-#: events/models.py:139 events/templatetags/events.py:20
-msgid "R1, R2, R3"
+#: events/models.py:139
+#, fuzzy
+#| msgid "R1, R2, R3"
+msgid "R0, R1, R2"
 msgstr "R1, R2, R3"
+
+#: events/models.py:140
+msgid "R0"
+msgstr ""
 
 # #: events/models.py:122
 # msgid "R0"
 # msgstr "R0"
-#: events/models.py:140 events/templatetags/events.py:15
+#: events/models.py:141 events/templatetags/events.py:15
 msgid "R1"
 msgstr "R1"
 
-#: events/models.py:141 events/templatetags/events.py:16
+#: events/models.py:142 events/templatetags/events.py:16
 msgid "R2"
 msgstr "R2"
 
-#: events/models.py:142 events/templatetags/events.py:17
+#: events/models.py:143 events/templatetags/events.py:17
 msgid "R3"
 msgstr "R3"
 
-# #: events/models.py:125
-# msgid "R4"
-# msgstr "R4"
-#: events/models.py:143 events/templatetags/events.py:18
-msgid "Multifunction room"
-msgstr "Multifunction room"
-
-#: events/models.py:144 events/templatetags/events.py:19
-msgid "Goodideas Studio"
-msgstr "Goodideas Studio"
+#: events/models.py:144
+#, fuzzy
+#| msgid "Open Spaces"
+msgid "Open Space"
+msgstr "Open Spaces"
 
 #: events/models.py:153
 msgid "location"
@@ -537,96 +575,24 @@ msgstr "Keynote"
 msgid "EN Slides"
 msgstr "EN Slides"
 
-#: events/views.py:122
+# #: events/models.py:125
+# msgid "R4"
+# msgstr "R4"
+#: events/templatetags/events.py:18
+msgid "Multifunction room"
+msgstr "Multifunction room"
+
+#: events/templatetags/events.py:19
+msgid "Goodideas Studio"
+msgstr "Goodideas Studio"
+
+#: events/templatetags/events.py:20
+msgid "R1, R2, R3"
+msgstr "R1, R2, R3"
+
+#: events/views.py:121
 msgid "New talk schedule generated successfully."
 msgstr "New talk schedule generated successfully."
-
-#: ext2020/models.py:14
-msgid "token"
-msgstr ""
-
-#: ext2020/models.py:15 users/models.py:164
-msgid "verified"
-msgstr "verified"
-
-#: ext2020/models.py:18
-msgid "verified at"
-msgstr "verified at"
-
-#: ext2020/models.py:21
-msgid "attendee"
-msgstr "attendee"
-
-#: ext2020/models.py:22
-msgid "attendees"
-msgstr "attendees"
-
-#: ext2020/models.py:29
-msgid "Venue Name"
-msgstr "Venue Name"
-
-#: ext2020/models.py:30
-msgid "Venue photo"
-msgstr "Venue photo"
-
-#: ext2020/models.py:32
-msgid "Venue Address"
-msgstr "Venue Address"
-
-#: ext2020/models.py:34
-msgid "Topic"
-msgstr "Topic"
-
-#: ext2020/models.py:36
-msgid "Capacity Limit"
-msgstr "Capacity Limit"
-
-#: ext2020/models.py:55
-msgid "community track venue"
-msgstr "community track venue"
-
-#: ext2020/models.py:56
-msgid "community track venues"
-msgstr "community track venues"
-
-#: ext2020/models.py:69
-msgid "community track choice"
-msgstr "community track choice"
-
-#: ext2020/models.py:70
-msgid "community track choices"
-msgstr "community track choices"
-
-#: ext2020/models.py:102
-msgid "community track event"
-msgstr "community track event"
-
-#: ext2020/models.py:103
-msgid "community track events"
-msgstr "community track events"
-
-#: ext2020/models.py:115
-msgid ""
-"You can only put either proposed_talk_event, sponsored_event or custom_event "
-"at once."
-msgstr ""
-
-#: ext2020/models.py:118
-msgid "You need to put proposed_talk_event sponsored_event, or custom_event."
-msgstr ""
-
-#: ext2020/views.py:63
-msgid ""
-"The token within the link is invalid. Please contact the administrator for "
-"further help."
-msgstr ""
-
-#: ext2020/views.py:68
-msgid ""
-"You can choose the track you'd like to go if you access this page from the "
-"preparation letter, or from the OPass app that is already bound with your "
-"KKTIX registration."
-msgstr ""
 
 #: proposals/forms/mixins.py:16
 #, python-brace-format
@@ -870,10 +836,6 @@ msgstr "No valid speaker found with your selection."
 #: proposals/models.py:55
 msgid "Proposal author"
 msgstr "Proposal author"
-
-#: proposals/models.py:62 users/models.py:196 users/models.py:307
-msgid "user"
-msgstr "user"
 
 #: proposals/models.py:68
 msgid "proposal model type"
@@ -1212,56 +1174,56 @@ msgstr "Talk proposal <strong>{title}</strong> updated."
 msgid "Tutorial proposal <strong>{title}</strong> updated."
 msgstr "Tutorial proposal <strong>{title}</strong> updated."
 
-#: pycontw2016/settings/base.py:302
+#: pycontw2016/settings/base.py:301
 msgid "PyCon Taiwan 2016"
 msgstr "PyCon Taiwan 2016"
 
-#: pycontw2016/settings/base.py:303 templates/pycontw-2017/index.html:6
+#: pycontw2016/settings/base.py:302 templates/pycontw-2017/index.html:6
 msgid "PyCon Taiwan 2017"
 msgstr "PyCon Taiwan 2017"
 
-#: pycontw2016/settings/base.py:304 templates/pycontw-2018/index.html:14
+#: pycontw2016/settings/base.py:303 templates/pycontw-2018/index.html:14
 msgid "PyCon Taiwan 2018"
 msgstr "PyCon Taiwan 2018"
 
-#: pycontw2016/settings/base.py:305 templates/pycontw-2019/index.html:14
+#: pycontw2016/settings/base.py:304 templates/pycontw-2019/index.html:14
 msgid "PyCon Taiwan 2019"
 msgstr "PyCon Taiwan 2019"
 
-#: pycontw2016/settings/base.py:306 templates/pycontw-2020/index.html:14
+#: pycontw2016/settings/base.py:305 templates/pycontw-2020/index.html:14
 msgid "PyCon Taiwan 2020"
 msgstr "PyCon Taiwan 2020"
 
-#: pycontw2016/settings/base.py:307 templates/pycontw-2021/index.html:14
+#: pycontw2016/settings/base.py:306 templates/pycontw-2021/index.html:14
 msgid "PyCon Taiwan 2021"
 msgstr "PyCon Taiwan 2021"
 
-#: pycontw2016/settings/base.py:320
+#: pycontw2016/settings/base.py:319
 #: pycontw2016/settings/production/pycontw2016.py:16
 #: pycontw2016/settings/production/pycontw2021.py:15
 #: pycontw2016/settings/testing/pycontw2021.py:11
 msgid "No preference"
 msgstr "No preference"
 
-#: pycontw2016/settings/base.py:321
+#: pycontw2016/settings/base.py:320
 #: pycontw2016/settings/production/pycontw2021.py:16
 #: pycontw2016/settings/testing/pycontw2021.py:12
 msgid "Prefer 15min"
 msgstr "Prefer 15min"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:321
 #: pycontw2016/settings/production/pycontw2021.py:17
 #: pycontw2016/settings/testing/pycontw2021.py:13
 msgid "Prefer 30min"
 msgstr "Prefer 30min"
 
-#: pycontw2016/settings/base.py:326
+#: pycontw2016/settings/base.py:325
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "Day 1"
 
-#: pycontw2016/settings/base.py:327
+#: pycontw2016/settings/base.py:326
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -1281,10 +1243,6 @@ msgstr "Prefer 45min"
 #: templates/pycontw-2016/events/schedule.html:48
 msgid "Day 3"
 msgstr "Day 3"
-
-#: reviews/admin.py:51
-msgid "Key"
-msgstr "Key"
 
 #: reviews/admin.py:53
 msgid "Value"

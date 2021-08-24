@@ -18,7 +18,6 @@ urlpatterns = i18n_patterns(
     # url(r'^conference/', include('events.urls')),
     url(r'^proposals/', include('proposals.urls')),
     url(r'^reviews/', include('reviews.urls')),
-    # url(r'^ext/', include('ext2020.urls')),
 
     # Match everything except admin, media, static, and error pages.
     url(r'^(?!admin|api|{media}|{static}|404|500/)(?P<path>.*)/$'.format(
