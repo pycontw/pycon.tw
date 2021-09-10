@@ -55,7 +55,7 @@ class JobAPIView(views.APIView):
                 logo = open_role.sponsor.logo
                 data[sponsor_id] = {
                     "sponsor_logo_url": logo.url if logo else '',
-                    "sponsor_name": open_role.sponsor.name,
+                    "sponsor_name": open_role.sponsor.name_en_us,
                     "jobs": [],
                 }
             data[sponsor_id]["jobs"].append({
