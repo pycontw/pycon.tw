@@ -1,7 +1,7 @@
 from django.conf import settings
+from registry.helper import reg
 from rest_framework import views, status
 from rest_framework.response import Response
-from registry.helper import reg
 from rest_framework.permissions import IsAuthenticated
 
 from core.authentication import TokenAuthentication
@@ -15,21 +15,21 @@ class AttendeeAPIView(views.APIView):
     model = Attendee
 
     def post(self, request):
-        self.token = request.data['token']
+        self.token = request.data.get('token')
         try:
             Attendee.objects.get(token=self.token)
-            slug = settings.CONFERENCE_DEFAULT_SLUG
-            key_prefix = f"{slug}.live"
-            reg_room_keys = [
-                key for key in reg if str(key).startswith(key_prefix)
-            ]
-
-            response_data = {"youtube_infos": []}
-            for idx, room in enumerate(reg_room_keys):
-                response_data["youtube_infos"].append({
-                    "room": f"R{idx+1}",
-                    "video_id": reg.get(f'{room}', '')
+            key_prefix = f"{settings.CONFERENCE_DEFAULT_SLUG}.live."
+            reg_live_infos = []
+            for key in reg:
+                if not str(key).startswith(key_prefix):
+                    continue
+                room_name = str(key)[len(key_prefix):]
+                video_id = reg.get(key, '')
+                reg_live_infos.append({
+                    "room": room_name,
+                    "video_id": video_id,
                 })
+            response_data = {"youtube_infos": sorted(reg_live_infos, key=lambda x: x.get("room"))}
             return Response(response_data, status=status.HTTP_200_OK)
         except Attendee.DoesNotExist:
             response_data = {"status": "Attendee Dose Not Exist"}
