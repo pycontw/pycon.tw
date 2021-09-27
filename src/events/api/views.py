@@ -1,4 +1,5 @@
 import collections
+from typing import List, Union
 
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.views import APIView
@@ -122,18 +123,26 @@ class EventWrapper:
         return TYPE_MAP[type(self.obj)]
 
     @property
-    def title(self) -> str:
+    def title(self) -> Union[str, dict]:
         if isinstance(self.obj, KeynoteEvent):
-            return self.obj.session_title
+            return {
+                'zh_hant': self.obj.session_title_zh_hant,
+                'en_us': self.obj.session_title_en_us,
+            }
         elif isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
             return self.obj.proposal.title
         else:
             return self.obj.title
 
     @property
-    def speakers(self) -> list:
+    def speakers(self) -> Union[List[str], List[dict]]:
         if isinstance(self.obj, KeynoteEvent):
-            return [self.obj.speaker_name]
+            return [
+                {
+                    'zh_hant': self.obj.speaker_name_zh_hant,
+                    'en_us': self.obj.speaker_name_en_us,
+                }
+            ]
         if isinstance(self.obj, SponsoredEvent):
             return [self.obj.host.speaker_name]
         elif isinstance(self.obj, (ProposedTalkEvent, ProposedTutorialEvent)):
