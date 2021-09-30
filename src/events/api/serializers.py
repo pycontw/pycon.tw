@@ -62,7 +62,8 @@ class TalkProposalSerializer(serializers.ModelSerializer):
         fields = [
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
-            "slide_link", "slido_embed_link", "speakers", "event_type",
+            "slide_link", "slido_embed_link", "hackmd_embed_link",
+            "speakers", "event_type",
         ]
 
 
@@ -116,9 +117,9 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
         fields = [
             "id", "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
-            "slide_link", "slido_embed_link", "speakers", "location",
-            "begin_time", "end_time", "remoting_policy", "event_type",
-            'youtube_id',
+            "slide_link", "slido_embed_link", "hackmd_embed_link",
+            "speakers", "location", "begin_time", "end_time",
+            "remoting_policy", "event_type", 'youtube_id',
         ]
 
 
@@ -149,7 +150,8 @@ class TutorialProposalSerializer(serializers.ModelSerializer):
         fields = [
             "title", "category", "language", "python_level",
             "recording_policy", "abstract", "detailed_description",
-            "slide_link", "slido_embed_link", "speakers", "event_type",
+            "slide_link", "slido_embed_link", "hackmd_embed_link",
+            "speakers", "event_type",
         ]
 
 
@@ -218,6 +220,7 @@ class KeynoteEventSerializer(serializers.ModelSerializer):
             "speaker",
             "session",
             "slido",
+            "hackmd_embed_link",
             "youtube_id",
             "social_item"
         ]
