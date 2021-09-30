@@ -221,3 +221,11 @@ class KeynoteEventSerializer(serializers.ModelSerializer):
             "youtube_id",
             "social_item"
         ]
+
+
+class PyCastAPISerializer(serializers.Serializer):
+    id = serializers.CharField()
+    title = serializers.CharField()
+    duration = serializers.IntegerField()
+    description = serializers.CharField()
+    release_date = serializers.CharField()

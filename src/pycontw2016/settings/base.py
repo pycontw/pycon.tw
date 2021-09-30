@@ -334,3 +334,7 @@ COC_VERSION = '2021.0'
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config
 # provides the url hosting the frontend.
 FRONTEND_HOST = 'https://staging.pycon.tw'
+
+# For calling spotify web API using spotipy
+SPOTIPY_CLIENT_ID = env('SPOTIPY_CLIENT_ID', default='dummy')
+SPOTIPY_CLIENT_SECRET = env('SPOTIPY_CLIENT_SECRET', default='dummy')

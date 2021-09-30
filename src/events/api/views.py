@@ -1,10 +1,13 @@
 import collections
 from typing import List, Union
+import time
 
 from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 from django.conf import settings
 from django.db.models import Count
@@ -308,3 +311,44 @@ class KeynoteEventListAPIView(ListAPIView):
 
     queryset = KeynoteEvent.objects.all()
     serializer_class = serializers.KeynoteEventSerializer
+
+
+class PyCastAPIView(APIView):
+    sp_client = None
+    show = {}
+    updated_at = time.time()
+    pycast_show_id = '63C4CNtJywIKizNFHRrIGv'
+
+    def get_sp_client(self):
+        if self.sp_client:
+            return self.sp_client
+        try:
+            auth_manager = SpotifyClientCredentials()
+            self.sp_client = spotipy.Spotify(auth_manager=auth_manager)
+        except spotipy.oauth2.SpotifyOauthError:
+            raise Http404
+        return self.sp_client
+
+    def get(self, request):
+        sp_client = self.get_sp_client()
+
+        now = time.time()
+        if not self.show or (now - self.updated_at) > 6 * 60 * 60:
+            self.show = sp_client.show(self.pycast_show_id, market="TW")
+            self.updated_at = now
+
+        if not self.show.get('episodes') or \
+                not self.show['episodes'].get('items'):
+            raise Http404
+
+        episodes = []
+        for episode in self.show['episodes']['items']:
+            episodes.append({
+                'id': episode['id'],
+                'title': episode['name'],
+                'description': episode['html_description'],
+                'duration': episode['duration_ms'],
+                'release_date': episode['release_date'],
+            })
+        results = serializers.PyCastAPISerializer(episodes, many=True).data
+        return Response(results)

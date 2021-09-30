@@ -90,6 +90,8 @@ sorl-thumbnail==12.6.2
 # http://www.grantjenks.com/docs/sortedcontainers/
 sortedcontainers==2.1.0
 
+spotipy
+
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.8.6

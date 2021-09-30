@@ -9,4 +9,5 @@ urlpatterns = [
     path('keynotes/', views.KeynoteEventListAPIView.as_view()),
     path('speeches/', views.SpeechListAPIView.as_view()),
     path('speeches/<str:event_type>/<int:pk>/', views.SpeechDetailAPIView.as_view()),
+    path('pycast/', views.PyCastAPIView.as_view()),
 ]
