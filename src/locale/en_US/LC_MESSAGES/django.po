@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-08 10:12+0800\n"
+"POT-Creation-Date: 2021-09-30 21:57+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -28,11 +28,11 @@ msgstr ""
 msgid "token"
 msgstr "token"
 
-#: attendee/models.py:7 users/models.py:164
+#: attendee/models.py:7 users/models.py:166
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:192 events/models.py:437
+#: attendee/models.py:9 core/models.py:198 events/models.py:452
 msgid "created at"
 msgstr "created at"
 
@@ -242,12 +242,12 @@ msgstr "Python level"
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:150 core/models.py:160 core/models.py:170 core/models.py:203
+#: core/models.py:150 core/models.py:160 core/models.py:170 core/models.py:209
 #: proposals/models.py:268 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:204
+#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:210
 #: proposals/models.py:269 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "No"
@@ -272,34 +272,38 @@ msgstr "slide link"
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:198
+#: core/models.py:192 events/models.py:246
+msgid "HackMD embed link"
+msgstr "HackMD embed link"
+
+#: core/models.py:204
 msgid "last updated at"
 msgstr "last updated at"
 
-#: core/models.py:208
+#: core/models.py:214
 msgid "remoting policy"
 msgstr "remote policy"
 
-#: core/models.py:240 reviews/admin.py:51
+#: core/models.py:246 reviews/admin.py:51
 msgid "Key"
 msgstr "Key"
 
-#: core/models.py:244 proposals/models.py:62 users/models.py:196
-#: users/models.py:307
+#: core/models.py:250 proposals/models.py:62 users/models.py:198
+#: users/models.py:313
 msgid "user"
 msgstr "user"
 
-#: core/models.py:247
+#: core/models.py:253
 #, fuzzy
 #| msgid "created at"
 msgid "Created"
 msgstr "created at"
 
-#: core/models.py:250
+#: core/models.py:256
 msgid "Token"
 msgstr ""
 
-#: core/models.py:251
+#: core/models.py:257
 msgid "Tokens"
 msgstr ""
 
@@ -400,7 +404,7 @@ msgstr "custom event"
 msgid "custom events"
 msgstr "custom events"
 
-#: events/models.py:212 users/models.py:116
+#: events/models.py:212 users/models.py:118
 msgid "speaker name"
 msgstr "speaker name"
 
@@ -432,23 +436,23 @@ msgstr "session slides"
 msgid "slido"
 msgstr "Slido"
 
-#: events/models.py:246
+#: events/models.py:251
 msgid "social linkedin"
 msgstr "Linkedin"
 
-#: events/models.py:250
+#: events/models.py:255
 msgid "social twitter"
 msgstr "Twitter"
 
-#: events/models.py:254
+#: events/models.py:259
 msgid "social github"
 msgstr "Github"
 
-#: events/models.py:258 events/models.py:343
+#: events/models.py:263 events/models.py:348
 msgid "slug"
 msgstr "slug"
 
-#: events/models.py:260
+#: events/models.py:265
 #, python-brace-format
 msgid ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
@@ -457,85 +461,85 @@ msgstr ""
 "This is used to link to the speaker's introduction on the Keynote page, e.g. "
 "'liang2' will link to '{link}#keynote-speaker-liang2'."
 
-#: events/models.py:267 events/models.py:381 events/models.py:412
+#: events/models.py:272 events/models.py:391 events/models.py:427
 msgid "is remote"
 msgstr "is remote"
 
-#: events/models.py:271
+#: events/models.py:276 events/models.py:351 events/models.py:395
 msgid "youtube id"
 msgstr "youtube id"
 
-#: events/models.py:277
+#: events/models.py:282
 msgid "keynote event"
 msgstr "keynote event"
 
-#: events/models.py:278
+#: events/models.py:283
 msgid "keynote events"
 msgstr "keynote events"
 
-#: events/models.py:281
+#: events/models.py:286
 #, python-brace-format
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:320 sponsors/models.py:93 sponsors/models.py:109
+#: events/models.py:325 sponsors/models.py:93 sponsors/models.py:109
 msgid "sponsor"
 msgstr "sponsor"
 
-#: events/models.py:325 events/models.py:326
+#: events/models.py:330 events/models.py:331
 #: templates/pycontw-2020/_includes/menu.html:104
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:33
 #: templates/pycontw-2021/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "Job Listings"
 
-#: events/models.py:329
+#: events/models.py:334
 #, python-brace-format
 msgid "Open Role of Sponsor: {sponsor}"
 msgstr "Open Role of Sponsor: {sponsor}"
 
-#: events/models.py:338
+#: events/models.py:343
 msgid "host"
 msgstr "host"
 
-#: events/models.py:347
+#: events/models.py:357
 msgid "sponsored event"
 msgstr "sponsored event"
 
-#: events/models.py:348
+#: events/models.py:358
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:376 events/models.py:402 reviews/models.py:76
+#: events/models.py:386 events/models.py:417 reviews/models.py:76
 #: reviews/models.py:197
 msgid "proposal"
 msgstr "proposal"
 
-#: events/models.py:388
+#: events/models.py:403
 msgid "talk event"
 msgstr "talk event"
 
-#: events/models.py:389
+#: events/models.py:404
 msgid "talk events"
 msgstr "talk events"
 
-#: events/models.py:407
+#: events/models.py:422
 msgid "registration link"
 msgstr "registration link"
 
-#: events/models.py:419
+#: events/models.py:434
 msgid "tutorial event"
 msgstr "tutorial event"
 
-#: events/models.py:420
+#: events/models.py:435
 msgid "tutorial events"
 msgstr "tutorial events"
 
-#: events/models.py:434
+#: events/models.py:449
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:442 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:457 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -559,11 +563,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "Schedule"
 
-#: events/models.py:443
+#: events/models.py:458
 msgid "Schedules"
 msgstr "Schedules"
 
-#: events/models.py:448
+#: events/models.py:463
 msgid "Schedule created at {}"
 msgstr "Schedule created at {}"
 
@@ -1854,7 +1858,7 @@ msgid "Stage"
 msgstr "Stage"
 
 #: templates/default/reviews/_includes/previous_review_table.html:7
-#: users/models.py:221
+#: users/models.py:223
 msgid "Reviewer ID"
 msgstr "Reviewer ID"
 
@@ -4323,29 +4327,29 @@ msgstr "I agree to the code of conduct."
 msgid "You must agree to continue."
 msgstr "You must agree to continue."
 
-#: users/models.py:112
+#: users/models.py:114
 msgid "email address"
 msgstr "email address"
 
-#: users/models.py:120
+#: users/models.py:122
 msgid "biography"
 msgstr "biography"
 
-#: users/models.py:123
+#: users/models.py:125
 msgid ""
 "Describe yourself with 1000 characters or less. There will be no formatting."
 msgstr ""
 "Describe yourself with 1000 characters or less. There will be no formatting."
 
-#: users/models.py:128
+#: users/models.py:130
 msgid "photo"
 msgstr "photo"
 
-#: users/models.py:132
+#: users/models.py:134
 msgid "Facebook"
 msgstr "Facebook"
 
-#: users/models.py:135
+#: users/models.py:137
 msgid ""
 "Link to your Facebook profile page. This will be shown when we display your "
 "public information. If you do not know what your profile page link is, click "
@@ -4357,11 +4361,11 @@ msgstr ""
 "on <a href='https://www.facebook.com/me' target='_blank'>this link</a>, and "
 "copy-paste the URL of the page opened. Remember to log in to Facebook first!"
 
-#: users/models.py:144
+#: users/models.py:146
 msgid "Twitter"
 msgstr "Twitter"
 
-#: users/models.py:149
+#: users/models.py:151
 msgid ""
 "Your Twitter handle, without the \"@\" sign. This will be shown when we "
 "display your public information."
@@ -4369,11 +4373,11 @@ msgstr ""
 "Your Twitter handle, without the “@” sign. This will be shown when we "
 "display your public information."
 
-#: users/models.py:154
+#: users/models.py:156
 msgid "GitHub"
 msgstr "GitHub"
 
-#: users/models.py:159
+#: users/models.py:161
 msgid ""
 "Your GitHub account, without the \"@\" sign. This will be shown when we "
 "display your public information."
@@ -4381,23 +4385,23 @@ msgstr ""
 "Your GitHub account, without the “@” sign. This will be shown when we "
 "display your public information."
 
-#: users/models.py:167
+#: users/models.py:169
 msgid "Designates whether the user has verified email ownership."
 msgstr "Designates whether the user has verified email ownership."
 
-#: users/models.py:171
+#: users/models.py:173
 msgid "staff status"
 msgstr "staff status"
 
-#: users/models.py:174
+#: users/models.py:176
 msgid "Designates whether the user can log into this admin site."
 msgstr "Designates whether the user can log into this admin site."
 
-#: users/models.py:178
+#: users/models.py:180
 msgid "active"
 msgstr "active"
 
-#: users/models.py:181
+#: users/models.py:183
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
@@ -4405,24 +4409,24 @@ msgstr ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 
-#: users/models.py:186
+#: users/models.py:188
 msgid "date joined"
 msgstr "date joined"
 
-#: users/models.py:197
+#: users/models.py:199
 msgid "users"
 msgstr "users"
 
-#: users/models.py:293
+#: users/models.py:299
 #, python-brace-format
 msgid "Verify your email address on {host}"
 msgstr "Verify your email address on {host}"
 
-#: users/models.py:311
+#: users/models.py:317
 msgid "latest agreed CoC version"
 msgstr "latest agreed CoC version"
 
-#: users/models.py:315
+#: users/models.py:321
 msgid "agreed at"
 msgstr "agreed at"
 
