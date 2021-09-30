@@ -188,6 +188,12 @@ class EventInfo(models.Model):
         default='',
     )
 
+    hackmd_embed_link = models.URLField(
+        verbose_name=_('HackMD embed link'),
+        blank=True,
+        default='',
+    )
+
     created_at = models.DateTimeField(
         verbose_name=_('created at'),
         auto_now_add=True,

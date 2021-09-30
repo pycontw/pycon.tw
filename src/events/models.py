@@ -242,6 +242,11 @@ class KeynoteEvent(BaseEvent):
         verbose_name=_('slido'),
         blank=True
     )
+    hackmd_embed_link = models.URLField(
+        verbose_name=_('HackMD embed link'),
+        blank=True,
+        default='',
+    )
     social_linkedin = models.URLField(
         verbose_name=_('social linkedin'),
         blank=True

@@ -136,9 +136,10 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 class KeynoteEventAdmin(TranslationAdmin):
     fields = [
         'conference', 'speaker_name', 'speaker_bio', 'speaker_photo',
-        'session_title', 'session_description', 'session_slides', 'slido',
-        'social_linkedin', 'social_twitter', 'social_github', 'slug',
-        'begin_time', 'end_time', 'location', 'is_remote', 'youtube_id'
+        'session_title', 'session_description', 'session_slides',
+        'slido', 'hackmd_embed_link', 'youtube_id', 'social_linkedin',
+        'social_twitter', 'social_github', 'slug', 'begin_time', 'end_time',
+        'location', 'is_remote',
     ]
     search_fields = ['speaker_name']
     list_display = ['speaker_name', 'begin_time', 'end_time', 'location', 'is_remote']
@@ -180,7 +181,8 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     fields = [
         'conference', 'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
-        'recording_policy', 'slide_link', 'slido_embed_link',
+        'recording_policy', 'slide_link',
+        'slido_embed_link', 'hackmd_embed_link', 'youtube_id',
         'begin_time', 'end_time', 'location',
     ]
     list_display = ['title', 'begin_time', 'end_time', 'location']
