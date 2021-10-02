@@ -87,7 +87,7 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
-        allow_fields = ['title', 'category', 'speakers', 'event_type']
+        allow_fields = ['title', 'category', 'speakers', 'event_type', 'language', 'python_level']
         return flatten_proposal_field(representation, allow_fields=allow_fields)
 
     class Meta:
@@ -133,7 +133,7 @@ class SponsoredEventListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = ["id", "title", "category", "speakers", "event_type", ]
+        fields = ["id", "title", "category", "speakers", "event_type", "language", "python_level"]
 
 
 class TutorialProposalSerializer(serializers.ModelSerializer):
@@ -175,7 +175,7 @@ class TutorialListSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         representation = super().to_representation(obj)
-        allow_fields = ['title', 'category', 'speakers', 'event_type']
+        allow_fields = ['title', 'category', 'speakers', 'event_type', 'language', 'python_level']
         return flatten_proposal_field(representation, allow_fields=allow_fields)
 
     class Meta:
