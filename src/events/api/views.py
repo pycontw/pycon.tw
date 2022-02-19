@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from django.conf import settings
 from django.db.models import Count
 from django.http import Http404
+from django.utils.timezone import make_naive
 
 from core.authentication import TokenAuthentication
 from events.models import (
@@ -158,11 +159,11 @@ class EventWrapper:
 
     @property
     def begin_time(self) -> str:
-        return self.obj.begin_time.value.strftime('%Y-%m-%d %H:%M:%S')
+        return make_naive(self.obj.begin_time.value).strftime('%Y-%m-%d %H:%M:%S')
 
     @property
     def end_time(self) -> str:
-        return self.obj.end_time.value.strftime('%Y-%m-%d %H:%M:%S')
+        return make_naive(self.obj.end_time.value).strftime('%Y-%m-%d %H:%M:%S')
 
     @property
     def is_remote(self) -> bool:
@@ -295,8 +296,12 @@ class ScheduleAPIView(APIView):
 
         result = []
         for day_info in day_info_dict.values():
-            day_info['timeline']['begin'] = day_info['timeline']['begin'].value.strftime('%Y-%m-%d %H:%M:%S')
-            day_info['timeline']['end'] = day_info['timeline']['end'].value.strftime('%Y-%m-%d %H:%M:%S')
+            day_info['timeline']['begin'] = make_naive(
+                day_info['timeline']['begin'].value
+            ).strftime('%Y-%m-%d %H:%M:%S')
+            day_info['timeline']['end'] = make_naive(
+                day_info['timeline']['end'].value
+            ).strftime('%Y-%m-%d %H:%M:%S')
             result.append(day_info)
 
         return Response({'data': result})
