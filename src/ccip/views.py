@@ -102,18 +102,29 @@ class _KeynoteUser:
 
 
 def _get_keynote_event_info(event):
-    data = event.get_static_data()
 
     user = _KeynoteUser(
         pk=event.slug,
-        speaker_name={k: v['name'] for k, v in data['speaker'].items()},
-        bio={k: v['bio'] for k, v in data['speaker'].items()},
-        photo=data['photo'],
+        speaker_name={
+            'zh': event.speaker_name_zh_hant,
+            'en': event.speaker_name_en_us,
+        },
+        bio={
+            'zh': event.speaker_bio_zh_hant,
+            'en': event.speaker_bio_en_us,
+        },
+        photo=event.speaker_photo,
     )
     event_info = _FakeEventInfo(
         pk=event.slug,
-        title={k: v['title'] for k, v in data['session'].items()},
-        abstract={k: v['description'] for k, v in data['session'].items()},
+        title={
+            'zh': event.session_title_zh_hant,
+            'en': event.session_title_en_us,
+        },
+        abstract={
+            'zh': event.session_description_zh_hant,
+            'en': event.session_description_en_us,
+        },
         slide_link=None,
         speakers=[PrimarySpeaker(user=user)],
     )
