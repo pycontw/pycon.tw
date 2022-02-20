@@ -117,7 +117,6 @@ class EventInfo(models.Model):
         ('ENEN', _('English talk')),
         ('ZHEN', _('Chinese talk w. English slides')),
         ('ZHZH', _('Chinese talk w. Chinese slides')),
-        ('TAI', _('Taiwanese Hokkien')),
     )
     language = models.CharField(
         verbose_name=_('language'),
@@ -216,6 +215,38 @@ class EventInfo(models.Model):
         choices=REMOTE_POLICY_CHOICES
     )
 
+    PERFER_TIME_CHOICES = (
+        ('DAY_ONE_MORNING', _('Day 1 morning')),
+        ('DAY_ONE_AFTERNOON', _('Day 1 afternoon')),
+        ('DAY_TWO_MORNING', _('Day 2 morning')),
+        ('DAY_TWO_AFTERNOON', _('Day 2 afternoon')),
+    )
+    prefer_time = models.CharField(
+        verbose_name=_('prefer event time'),
+        max_length=32,
+        choices=PERFER_TIME_CHOICES,
+    )
+
+    LIVING_IN_TAIWAN_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+    living_in_taiwan = models.BooleanField(
+        verbose_name=_('living in taiwan'),
+        default=False,
+        choices=REFERRING_POLICY_CHOICES,
+    )
+
+    PRE_RECORDED_POLICY_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+    pre_recorded_policy = models.BooleanField(
+        verbose_name=_('agree pre-recorded proposal'),
+        default=False,
+        choices=REFERRING_POLICY_CHOICES,
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
@@ -228,7 +259,6 @@ class EventInfo(models.Model):
             'ENEN': 'E',
             'ZHEN': 'ZE',
             'ZHZH': 'Z',
-            'TAI': 'T',
         }[self.language]
 
     def get_python_level_tag(self):
