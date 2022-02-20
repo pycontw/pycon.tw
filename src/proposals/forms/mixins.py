@@ -135,6 +135,16 @@ class TalkProposalMixin:
                 "Is it your first time to be the speaker of PyCon TW?"
 
             ),
+            'pre_recorded_policy': _(
+                "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will "
+                "be held fully remote. All online talks will be pre-recorded "
+                "</strong> since we can broadcast your presentation to the audience "
+                "without the network troubles and the time zone differences.<br>"
+                "Please record your presentation and send us your presentation video "
+                "once your proposal got accepted. Also, if you live in Taiwan, we will "
+                "provide you with a video studio in Taipei to help you with recording "
+                "your presentation video."
+            )
         }
 
 

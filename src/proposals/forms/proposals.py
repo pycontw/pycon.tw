@@ -48,6 +48,9 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'remoting_policy',
             'first_time_speaker',
             'referring_policy',
+            'prefer_time',
+            'living_in_taiwan',
+            'pre_recorded_policy',
         ]
 
 
@@ -70,7 +73,10 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'python_level',
             'recording_policy',
             'live_stream_policy',
-            'remoting_policy'
+            'remoting_policy',
+            'prefer_time',
+            'living_in_taiwan',
+            'pre_recorded_policy',
         ]
 
 
@@ -113,6 +119,8 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'first_time_speaker',
             'slide_link',
             'referring_policy',
+            'prefer_time',
+            'living_in_taiwan',
         ]
 
 
@@ -142,6 +150,8 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'live_stream_policy',
             'remoting_policy',
             'slide_link',
+            'prefer_time',
+            'living_in_taiwan',
         ]
 
 
