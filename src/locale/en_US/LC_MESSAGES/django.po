@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-30 21:57+0800\n"
+"POT-Creation-Date: 2022-02-20 19:36+0800\n"
 "PO-Revision-Date: 2020-03-17 11:46+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -32,7 +32,7 @@ msgstr "token"
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:198 events/models.py:452
+#: attendee/models.py:9 core/models.py:197 events/models.py:452
 msgid "created at"
 msgstr "created at"
 
@@ -203,107 +203,131 @@ msgstr "Chinese talk w. English slides"
 msgid "Chinese talk w. Chinese slides"
 msgstr "Chinese talk w. Chinese slides"
 
-#: core/models.py:120
-msgid "Taiwanese Hokkien"
-msgstr "Taiwanese Hokkien"
-
-#: core/models.py:123
+#: core/models.py:122
 msgid "language"
 msgstr "language"
 
-#: core/models.py:129
+#: core/models.py:128
 msgid "abstract"
 msgstr "abstract"
 
-#: core/models.py:134
+#: core/models.py:133
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
-#: core/models.py:135
+#: core/models.py:134
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
-#: core/models.py:136 templates/pycontw-2018/events/schedule.html:30
+#: core/models.py:135 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
-#: core/models.py:139 templates/default/reviews/review_form.html:53
+#: core/models.py:138 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python level"
 
-#: core/models.py:145
+#: core/models.py:144
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:150 core/models.py:160 core/models.py:170 core/models.py:209
-#: proposals/models.py:268 reviews/models.py:122 reviews/models.py:137
+#: core/models.py:149 core/models.py:159 core/models.py:169 core/models.py:208
+#: core/models.py:231 core/models.py:241 proposals/models.py:268
+#: reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "Yes"
 
-#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:210
-#: proposals/models.py:269 reviews/models.py:123 reviews/models.py:138
+#: core/models.py:150 core/models.py:160 core/models.py:170 core/models.py:209
+#: core/models.py:232 core/models.py:242 proposals/models.py:269
+#: reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "No"
 
-#: core/models.py:154
+#: core/models.py:153
 msgid "recording policy"
 msgstr "recording policy"
 
-#: core/models.py:164
+#: core/models.py:163
 msgid "live stream policy"
 msgstr "live stream policy"
 
-#: core/models.py:174
+#: core/models.py:173
 msgid "referring policy"
 msgstr "referring policy"
 
-#: core/models.py:180
+#: core/models.py:179
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:186
+#: core/models.py:185
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:192 events/models.py:246
+#: core/models.py:191 events/models.py:246
 msgid "HackMD embed link"
 msgstr "HackMD embed link"
 
-#: core/models.py:204
+#: core/models.py:203
 msgid "last updated at"
 msgstr "last updated at"
 
-#: core/models.py:214
+#: core/models.py:213
 msgid "remoting policy"
 msgstr "remote policy"
 
-#: core/models.py:246 reviews/admin.py:51
+#: core/models.py:219
+msgid "Day 1 morning"
+msgstr "Day 1 morning"
+
+#: core/models.py:220
+msgid "Day 1 afternoon"
+msgstr "Day 1 afternoon"
+
+#: core/models.py:221
+msgid "Day 2 morning"
+msgstr "Day 2 morning"
+
+#: core/models.py:222
+msgid "Day 2 afternoon"
+msgstr "Day 2 afternoon"
+
+#: core/models.py:225
+msgid "prefer event time"
+msgstr "prefer event time"
+
+#: core/models.py:235
+msgid "living in taiwan"
+msgstr "living in taiwan"
+
+#: core/models.py:245
+msgid "agree pre-recorded proposal"
+msgstr "agree pre-recorded proposal"
+
+#: core/models.py:276 reviews/admin.py:51
 msgid "Key"
 msgstr "Key"
 
-#: core/models.py:250 proposals/models.py:62 users/models.py:198
+#: core/models.py:280 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "user"
 
-#: core/models.py:253
-#, fuzzy
-#| msgid "created at"
+#: core/models.py:283
 msgid "Created"
 msgstr "created at"
 
-#: core/models.py:256
+#: core/models.py:286
 msgid "Token"
 msgstr ""
 
-#: core/models.py:257
+#: core/models.py:287
 msgid "Tokens"
 msgstr ""
 
@@ -607,7 +631,7 @@ msgstr ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:158
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:168
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -621,7 +645,7 @@ msgstr ""
 "here. If your talk is accepted, this will be displayed on both the website "
 "and the handbook. Should be one paragraph.</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:167
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:177
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -638,7 +662,7 @@ msgstr ""
 "contact you to change the talk level when we find the content is too-hard or "
 "too-easy for the target audience."
 
-#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:178
+#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:188
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -658,7 +682,7 @@ msgstr ""
 "proposal. Edit using <a href='http://daringfireball.net/projects/markdown/"
 "basics' target='_blank' rel='noopener'>Markdown</a>."
 
-#: proposals/forms/mixins.py:78 proposals/forms/mixins.py:192
+#: proposals/forms/mixins.py:78 proposals/forms/mixins.py:202
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -671,7 +695,7 @@ msgstr ""
 "at <a href='{frontend_host}/en-us/speaking/recording' "
 "target='_blank'>Recording Release</a> page."
 
-#: proposals/forms/mixins.py:86 proposals/forms/mixins.py:200
+#: proposals/forms/mixins.py:86 proposals/forms/mixins.py:210
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -703,7 +727,7 @@ msgstr ""
 "the room, what will they learn that they didn't know before? This is NOT "
 "made public and for REVIEW ONLY.</p>"
 
-#: proposals/forms/mixins.py:105 proposals/forms/mixins.py:211
+#: proposals/forms/mixins.py:105 proposals/forms/mixins.py:221
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -743,7 +767,7 @@ msgstr ""
 "Whether you agree to deliver the talk remotely if the epidemic (coronavirus) "
 "is still raging this August?"
 
-#: proposals/forms/mixins.py:129 proposals/forms/mixins.py:232
+#: proposals/forms/mixins.py:129 proposals/forms/mixins.py:242
 msgid ""
 "If you disagree to authorize PyCon Taiwan to record video, whether you agree "
 "to let PyCon Taiwan live stream your presentation only for the remote "
@@ -759,11 +783,29 @@ msgstr ""
 msgid "Is it your first time to be the speaker of PyCon TW?"
 msgstr "Is it your first time to be the speaker of PyCon TW?"
 
-#: proposals/forms/mixins.py:155
+#: proposals/forms/mixins.py:139
+msgid ""
+"Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will be held "
+"fully remote. All online talks will be pre-recorded </strong> since we can "
+"broadcast your presentation to the audience without the network troubles and "
+"the time zone differences.<br>Please record your presentation and send us "
+"your presentation video once your proposal got accepted. Also, if you live "
+"in Taiwan, we will provide you with a video studio in Taipei to help you "
+"with recording your presentation video."
+msgstr ""
+"Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will be held "
+"fully remote. All online talks will be pre-recorded </strong> since we can "
+"broadcast your presentation to the audience without the network troubles and "
+"the time zone differences.<br>Please record your presentation and send us "
+"your presentation video once your proposal got accepted. Also, if you live "
+"in Taiwan, we will provide you with a video studio in Taipei to help you "
+"with recording your presentation video."
+
+#: proposals/forms/mixins.py:165
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 
-#: proposals/forms/mixins.py:204
+#: proposals/forms/mixins.py:214
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -775,7 +817,7 @@ msgstr ""
 "they leave the room, what will they learn that they didn't know before? This "
 "is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/mixins.py:219
+#: proposals/forms/mixins.py:229
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -787,7 +829,7 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/mixins.py:227
+#: proposals/forms/mixins.py:237
 msgid ""
 "Whether you agree to deliver the tutorial remotely if the epidemic "
 "(coronavirus) is still raging this August?"
@@ -795,7 +837,7 @@ msgstr ""
 "Whether you agree to deliver the tutorial remotely if the epidemic "
 "(coronavirus) is still raging this August?"
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:94
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:100
 #: proposals/models.py:263 proposals/models.py:317
 msgid "duration"
 msgstr "duration"
@@ -4462,3 +4504,6 @@ msgstr ""
 #: users/views.py:129
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
+
+#~ msgid "Taiwanese Hokkien"
+#~ msgstr "Taiwanese Hokkien"
