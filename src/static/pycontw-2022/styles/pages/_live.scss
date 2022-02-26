@@ -1,0 +1,32 @@
+.live-page {
+    .entry {
+        p {
+            margin-top: 0;
+        }
+    }
+
+    main {
+        width: calc(100% - 80px);
+
+        @include on-desktop() {
+            min-width: 720px;
+        }
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        margin-top: 0;
+
+        & > iframe {
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

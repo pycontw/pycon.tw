@@ -1,0 +1,47 @@
+{% load i18n static %}
+<div class="overview-container">
+	{% for venue in object_list %}
+		<div class="venue-block">
+			<h3><a href="#{{ venue.topic|slugify }}">{{ venue.topic }}</a></h3>
+			<div class="community-track-actions">
+				{% if attendee %}
+					{% if selected_venue == venue %}
+						<button disabled><i class="fa fa-check"></i> {% trans 'Selected' %}</button>
+					{% else %}
+						<form method="post">
+							{% csrf_token %}
+							<input name="venue" value="{{ venue.id }}" type="hidden">
+							<input name="attendee" value="{{ attendee.id }}" type="hidden">
+                            {% if venue.get_choice_count < venue.capacity %}
+							<button>{% trans 'Select this track' %}</button>
+                            {% else %}
+							<button disabled>{% trans 'Full' %}</button>
+                            {% endif %}
+						</form>
+					{% endif %}
+				{% endif %}
+			</div>
+			<div class="community">
+				{{ venue.community }}
+			</div>
+
+			<div class="venue-name">
+				{{ venue.name }}
+				<span class="stats">
+					<span
+						{% if venue.get_choice_count >= venue.get_soft_limit and venue.get_choice_count <= venue.capacity %}
+							class="text-yellow"
+						{% elif venue.get_choice_count > venue.capacity %}
+							class="text-danger"
+						{% endif %}
+						> {{ venue.get_choice_count }} </span> / <span>{{ venue.capacity }}</span>
+				</span>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+{% if message %}
+	<p class="message">{{ message }}</p>
+{% endif %}
+
