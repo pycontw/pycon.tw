@@ -204,17 +204,6 @@ class EventInfo(models.Model):
         auto_now=True,
     )
 
-    REMOTE_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
-
-    remoting_policy = models.BooleanField(
-        verbose_name=_('remoting policy'),
-        default=False,
-        choices=REMOTE_POLICY_CHOICES
-    )
-
     PERFER_TIME_CHOICES = (
         ('DAY_ONE_MORNING', _('Day 1 morning')),
         ('DAY_ONE_AFTERNOON', _('Day 1 afternoon')),

@@ -19,7 +19,6 @@ def talk_proposal_data():
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': True,
-        'remoting_policy': True,
         'first_time_speaker': True,
     }
 
@@ -28,7 +27,7 @@ def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'python_level', 'recording_policy',
-        'live_stream_policy', 'remoting_policy', 'first_time_speaker', 'referring_policy',
+        'live_stream_policy', 'first_time_speaker', 'referring_policy',
     ]
 
 
@@ -69,7 +68,6 @@ def tutorial_proposal_data():
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
-        'remoting_policy': True,
     }
 
 
@@ -77,7 +75,7 @@ def test_tutorial_proposal_create_form():
     form = TutorialProposalCreateForm()
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'live_stream_policy', 'remoting_policy',
+        'python_level', 'recording_policy', 'live_stream_policy',
     ]
 
 
@@ -118,7 +116,7 @@ def test_talk_proposal_update_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'abstract', 'python_level',
         'objective', 'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'live_stream_policy', 'remoting_policy', 'first_time_speaker',
+        'recording_policy', 'live_stream_policy', 'first_time_speaker',
         'slide_link', 'referring_policy',
     ]
 
@@ -128,7 +126,7 @@ def test_tutorial_proposal_update_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'abstract', 'python_level',
         'objective', 'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'live_stream_policy', 'remoting_policy', 'slide_link',
+        'recording_policy', 'live_stream_policy', 'slide_link',
     ]
 
 

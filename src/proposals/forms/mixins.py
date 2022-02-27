@@ -121,10 +121,6 @@ class TalkProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>. "
                 "This is NOT made public and for REVIEW ONLY.</p>"
             ),
-            'remoting_policy': _(
-                "Whether you agree to deliver the talk remotely if the epidemic "
-                "(coronavirus) is still raging this August?"
-            ),
             'live_stream_policy': _(
                 "If you disagree to authorize PyCon Taiwan to record video, "
                 "whether you agree to let PyCon Taiwan live stream your presentation "
@@ -232,11 +228,6 @@ class TutorialProposalMixin:
                 "<a href='http://daringfireball.net/projects/markdown/basics' "
                 "target='_blank' rel='noopener'>Markdown</a>. "
                 "This is NOT made public and for REVIEW ONLY."
-            ),
-            'remoting_policy': _(
-                "Whether you agree to deliver the tutorial remotely if the epidemic "
-                "(coronavirus) is still raging this August?"
-
             ),
             'live_stream_policy': _(
                 "If you disagree to authorize PyCon Taiwan to record video, "

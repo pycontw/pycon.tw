@@ -67,6 +67,6 @@ class TalkProposalResource(resources.ModelResource):
             'stage_1_minus_0_count', 'stage_1_minus_1_count',
             'stage_2_plus_1_count', 'stage_2_plus_0_count',
             'stage_2_minus_0_count', 'stage_2_minus_1_count',
-            'remoting_policy', 'first_time_speaker', 'referring_policy'
+            'first_time_speaker', 'referring_policy'
         ]
         export_order = fields

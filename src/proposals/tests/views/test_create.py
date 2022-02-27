@@ -95,7 +95,6 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': False,
-        'remoting_policy': True,
         'first_time_speaker': True,
     }, follow=True)
 
@@ -125,7 +124,6 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
-        'remoting_policy': True,
     }, follow=True)
 
     proposal = TutorialProposal.objects.get(

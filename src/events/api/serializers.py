@@ -103,15 +103,6 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         return format_speakers_data(request, [obj.host])
 
-    def to_representation(self, obj):
-        """
-        Assign the value of `SponsoredEvent.remoting_policy` as `is_remote`
-        """
-        representation = super().to_representation(obj)
-        is_remote = representation.pop('remoting_policy')
-        representation['is_remote'] = is_remote
-        return representation
-
     class Meta:
         model = SponsoredEvent
         fields = [
@@ -119,7 +110,7 @@ class SponsoredEventDetailSerializer(serializers.ModelSerializer):
             "recording_policy", "abstract", "detailed_description",
             "slide_link", "slido_embed_link", "hackmd_embed_link",
             "speakers", "location", "begin_time", "end_time",
-            "remoting_policy", "event_type", 'youtube_id',
+            "event_type", 'youtube_id',
         ]
 
 
