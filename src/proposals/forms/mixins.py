@@ -87,9 +87,9 @@ class TalkProposalMixin:
                 "day. Not required for review."
             ),
             'referring_policy': _(
-                "Whether you agree to give permission to PyCon Taiwan to "
-                "refer your talk proposal to local communities if your "
-                "proposal did not get accepted."
+                "Whether you agree to give permission to PyCon Taiwan to refer your "
+                "talk proposal to your local PyCon community if your proposal did not "
+                "get accepted(APAC only)."
             ),
             'objective': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -128,18 +128,21 @@ class TalkProposalMixin:
                 "audio and video of your presentation)"
             ),
             'first_time_speaker': _(
-                "Is it your first time to be the speaker of PyCon TW?"
+                "Have you ever been a speaker at PyCon Taiwan in the past?"
 
             ),
             'pre_recorded_policy': _(
                 "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will "
-                "be held fully remote. All online talks will be pre-recorded "
-                "</strong> since we can broadcast your presentation to the audience "
+                "be held fully remote. All online talks this year will be pre-recorded "
+                "</strong> so we can broadcast your presentation to the audience "
                 "without the network troubles and the time zone differences.<br>"
-                "Please record your presentation and send us your presentation video "
-                "once your proposal got accepted. Also, if you live in Taiwan, we will "
-                "provide you with a video studio in Taipei to help you with recording "
-                "your presentation video."
+                "After your proposal is accepted, a pre-recording of the presentation "
+                "will be provided to the PyCon APAC 2022 organizing team prior to the "
+                "conference.<br>"
+                "<strong>Bonus for living in Taiwan</strong>"
+                "For speakers who reside in Taiwan, we will offer a slot and assist you "
+                "to record the presentation in a professional video studio in Taipei "
+                "(travel expenses covered)."
             )
         }
 

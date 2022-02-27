@@ -115,12 +115,11 @@ class EventInfo(models.Model):
 
     LANGUAGE_CHOICES = (
         ('ENEN', _('English talk')),
-        ('ZHEN', _('Chinese talk w. English slides')),
-        ('ZHZH', _('Chinese talk w. Chinese slides')),
+        ('NONEN', _('non-English talk w. English slides')),
     )
     language = models.CharField(
         verbose_name=_('language'),
-        max_length=4,
+        max_length=5,
         choices=LANGUAGE_CHOICES,
     )
 
@@ -210,10 +209,10 @@ class EventInfo(models.Model):
     )
 
     PERFER_TIME_CHOICES = (
-        ('DAY_ONE_MORNING', _('Day 1 morning')),
-        ('DAY_ONE_AFTERNOON', _('Day 1 afternoon')),
-        ('DAY_TWO_MORNING', _('Day 2 morning')),
-        ('DAY_TWO_AFTERNOON', _('Day 2 afternoon')),
+        ('DAY_ONE_MORNING', _('Day 1, September 3rd, 2022 Morning')),
+        ('DAY_ONE_AFTERNOON', _('Day 1, September 3rd, 2022 Afternoon')),
+        ('DAY_TWO_MORNING', _('Day 2, September 4th, 2022 Morning')),
+        ('DAY_TWO_AFTERNOON', _('Day 2, September 4th, 2022 Afternoon')),
     )
     prefer_time = models.CharField(
         verbose_name=_('prefer event time'),
@@ -226,7 +225,7 @@ class EventInfo(models.Model):
         (False, _('No'))
     )
     living_in_taiwan = models.BooleanField(
-        verbose_name=_('living in taiwan'),
+        verbose_name=_('living in Taiwan'),
         default=False,
         choices=REFERRING_POLICY_CHOICES,
     )

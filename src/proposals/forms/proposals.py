@@ -49,8 +49,8 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'first_time_speaker',
             'referring_policy',
             'prefer_time',
-            'living_in_taiwan',
             'pre_recorded_policy',
+            'living_in_taiwan',
         ]
 
 
