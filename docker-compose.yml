@@ -2,8 +2,8 @@ version: "3"
 services:
   web:
     build: .
-    container_name: pycontw-2021
-    hostname: pycontw-2021
+    container_name: pycontw-2022
+    hostname: pycontw-2022
     entrypoint: ""
     command:
       # Hacky script for quick demonstration purpose
