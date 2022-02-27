@@ -260,7 +260,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
 class TalkProposal(AbstractProposal):
 
     duration = models.CharField(
-        verbose_name=_('duration'),
+        verbose_name=_('Duration'),
         max_length=6,
     )
 
@@ -314,7 +314,7 @@ class TutorialProposal(AbstractProposal):
     )
 
     duration = models.CharField(
-        verbose_name=_('duration'),
+        verbose_name=_('Duration'),
         max_length=7,
         choices=DURATION_CHOICES,
         default='1.5hr',
