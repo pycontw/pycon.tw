@@ -8,11 +8,4 @@
 
 {% block form %}
 {{ block.super }}
-<p class="text-center">
-	{% url 'signup' as signup_url %}
-	{% blocktrans trimmed %}
-	<span class="form-tip">Don't have an account?</span>
-	<a class="btn btn-link" href="{{ signup_url }}">Sign up now!</a>
-	{% endblocktrans %}
-</p>
 {% endblock form %}

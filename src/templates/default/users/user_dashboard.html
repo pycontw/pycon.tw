@@ -30,7 +30,7 @@
       {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.talkproposal_set.all %}
     {% else %}
     	{% if proposals_creatable %}
-      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ talk_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any talk proposals. Why not <a href="{{ talk_proposal_create_url }}" class="dashboard-link">submit one now</a>?{% endblocktrans %}</p>
       {% else %}
       <p>{% blocktrans %}You haven't submitted any talk proposals.{% endblocktrans %}</p>
       {% endif %}
@@ -55,7 +55,7 @@
       {% include 'users/_includes/dashboard_proposal_table.html' with user=user proposals=user.tutorialproposal_set.all %}
     {% else %}
     	{% if proposals_creatable %}
-      <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}">submit one now</a>?{% endblocktrans %}</p>
+      <p>{% blocktrans %}You haven't submitted any tutorial proposals. Why not <a href="{{ tutorial_proposal_create_url }}" class="dashboard-link">submit one now</a>?{% endblocktrans %}</p>
       {% else %}
       <p>{% blocktrans %}You haven't submitted any tutorial proposals.{% endblocktrans %}</p>
       {% endif %}
