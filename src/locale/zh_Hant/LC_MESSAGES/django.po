@@ -784,7 +784,7 @@ msgstr ""
 "大會。"
 "<strong>台灣講者的福利</strong><br>"
 "對於居住在台灣的講者，我們額外準備了一個位在台北的中央攝影棚，我們誠摯的邀請您前來。"
-"我們將協助您錄製專業的演講影片，並且我們將會補助您往返的交通費。
+"我們將協助您錄製專業的演講影片，並且我們將會補助您往返的交通費。"
 
 #: proposals/forms/mixins.py:164
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
