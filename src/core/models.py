@@ -124,6 +124,11 @@ class EventInfo(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
+    talk_language = models.CharField(
+        verbose_name=_('Talk language'),
+        max_length=32,
+    )
+
     abstract = EAWTextField(
         verbose_name=_('abstract'),
         max_length=1000,
