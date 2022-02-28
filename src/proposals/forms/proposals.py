@@ -50,8 +50,8 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'first_time_speaker',
             'referring_policy',
             'prefer_time',
-            'pre_recorded_policy',
             'living_in_taiwan',
+            'pre_recorded_policy',
         ]
 
 
@@ -79,8 +79,8 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'recording_policy',
             'live_stream_policy',
             'prefer_time',
-            'living_in_taiwan',
             'pre_recorded_policy',
+            'living_in_taiwan',
         ]
 
 

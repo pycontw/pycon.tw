@@ -38,6 +38,7 @@ class TalkProposalMixin:
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),
+            'pre_recorded_policy': forms.CheckboxInput(),
         }
         help_texts = {
             'abstract': _(
@@ -75,9 +76,11 @@ class TalkProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>."
             ),
             'recording_policy': format_html_lazy(
-                _("Whether you agree to give permission to PyCon Taiwan to "
-                  "record, edit, and release audio and video of your "
-                  "presentation. More information can be found at "
+                _("PyCon Taiwan will do post-processing to all the presentation "
+                  "videos, including but not limited to applying video template, "
+                  "banners of sponsors’ logos. Do you agree to give permission to "
+                  "PyCon Taiwan to release audio and video of your presentation "
+                  "after the conference? More information can be found at "
                   "<a href='{frontend_host}/en-us/speaking/recording' target='_blank'>"
                   "Recording Release</a> page."),
                 frontend_host=f"{settings.FRONTEND_HOST}"
@@ -139,11 +142,14 @@ class TalkProposalMixin:
                 "After your proposal is accepted, a pre-recording of the presentation "
                 "will be provided to the PyCon APAC 2022 organizing team prior to the "
                 "conference.<br>"
-                "<strong>Bonus for living in Taiwan</strong>"
+                "<strong>Bonus for living in Taiwan</strong><br>"
                 "For speakers who reside in Taiwan, we will offer a slot and assist you "
                 "to record the presentation in a professional video studio in Taipei "
                 "(travel expenses covered)."
-            )
+            ),
+            'talk_language': _(
+                "If your previous option is not English, please enter your speaking language"
+            ),
         }
 
 
@@ -158,6 +164,7 @@ class TutorialProposalMixin:
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),
+            'pre_recorded_policy': forms.CheckboxInput(),
         }
         help_texts = {
             'duration': _(
@@ -237,5 +244,21 @@ class TutorialProposalMixin:
                 "whether you agree to let PyCon Taiwan live stream your presentation "
                 "only for the remote attendees to watch ? (we will not release "
                 "audio and video of your presentation)"
+            ),
+            'pre_recorded_policy': _(
+                "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will "
+                "be held fully remote. All online talks this year will be pre-recorded "
+                "</strong> so we can broadcast your presentation to the audience "
+                "without the network troubles and the time zone differences.<br>"
+                "After your proposal is accepted, a pre-recording of the presentation "
+                "will be provided to the PyCon APAC 2022 organizing team prior to the "
+                "conference.<br>"
+                "<strong>Bonus for living in Taiwan</strong><br>"
+                "For speakers who reside in Taiwan, we will offer a slot and assist you "
+                "to record the presentation in a professional video studio in Taipei "
+                "(travel expenses covered)."
+            ),
+            'talk_language': _(
+                "If your previous option is not English, please enter your speaking language"
             ),
         }
