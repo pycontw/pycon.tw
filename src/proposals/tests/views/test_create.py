@@ -91,11 +91,14 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'category': 'PRAC',
         'duration': 'PREF15',
         'language': 'ZHZH',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': False,
         'first_time_speaker': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
     }, follow=True)
 
     proposal = TalkProposal.objects.get(
@@ -121,9 +124,12 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'category': 'PRAC',
         'duration': 'FULLDAY',
         'language': 'ZHZH',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
     }, follow=True)
 
     proposal = TutorialProposal.objects.get(

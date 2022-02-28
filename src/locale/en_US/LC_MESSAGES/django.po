@@ -261,7 +261,7 @@ msgstr "live stream policy"
 
 #: core/models.py:177
 msgid "referring policy"
-msgstr "referring policy"
+msgstr "referral policy"
 
 #: core/models.py:183
 msgid "slide link"
