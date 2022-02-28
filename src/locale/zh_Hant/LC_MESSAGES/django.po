@@ -4487,7 +4487,7 @@ msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼</a>
 
 #: users/forms.py:255
 msgid "<a class=\"btn btn-link\" href=\"{signup_url}\">Sign up now</a>"
-msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">註冊帳號</a>"
+msgstr "<a class=\"btn btn-link\" href=\"{signup_url}\">註冊帳號</a>"
 
 #: users/forms.py:272
 msgid "Email Address"
