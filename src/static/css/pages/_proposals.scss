@@ -197,7 +197,7 @@ body.dashboard{
 /* Must include .table to override Bootstrap styles. */
 .table.proposals-table {
     thead{
-        background:#F8F8F8;
+        background:#46467A;
     }
     th, td {
         font-weight: 400;
@@ -215,14 +215,14 @@ body.dashboard{
         }
     }
     th {
-        color:#9B9B9B;
+        color:#AFAEE6;
         line-height:22px;
-        border-bottom: 1px solid #EEEEEE;
+        border-bottom: 1px solid #323166;
         height: 40px;
         padding-left: 34px;
     }
     td {
-        color:#4A4A4A;
+        color:#AFAEE6;
         line-height: 25px;
         padding: 32px 34px;
 
