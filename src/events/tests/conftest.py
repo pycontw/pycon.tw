@@ -29,7 +29,7 @@ def sponsored_block_event(user, get_time):
         title='Camera engine office woman lights',
         slug='camera-engine',
         host=user,
-        language='ZHZH',
+        language='ENEN',
         begin_time=get_time('2016-06-04 11:00'),
         end_time=get_time('2016-06-04 11:25'),
         location=Location.R2,
