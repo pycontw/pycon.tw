@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-27 11:41+0800\n"
+"POT-Creation-Date: 2022-02-28 22:16+0800\n"
 "PO-Revision-Date: 2020-03-19 11:22+0000\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -260,7 +260,7 @@ msgstr "否"
 
 #: core/models.py:157
 msgid "recording policy"
-msgstr "議程錄影"
+msgstr "議程錄影釋出"
 
 #: core/models.py:167
 msgid "live stream policy"
@@ -633,7 +633,7 @@ msgid ""
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:167
+#: proposals/forms/mixins.py:45 proposals/forms/mixins.py:173
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -646,7 +646,7 @@ msgstr ""
 "要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會"
 "公佈在網站與大會手冊中。應為單一段落。</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:176
+#: proposals/forms/mixins.py:54 proposals/forms/mixins.py:182
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -661,7 +661,7 @@ msgstr ""
 "如何投稿</a>一文。注意：投稿不會因為級別是「入門」就比較容易上。若我們認為這"
 "講題對聽眾來說過於簡單或困難時，可能會和你討論是否需要修改。"
 
-#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:187
+#: proposals/forms/mixins.py:65 proposals/forms/mixins.py:193
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -679,34 +679,36 @@ msgstr ""
 "章連結加至此欄位。使用 <a href='http://daringfireball.net/projects/markdown/"
 "basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。"
 
-#: proposals/forms/mixins.py:78 proposals/forms/mixins.py:201
-#, python-brace-format
+#: proposals/forms/mixins.py:79
 msgid ""
-"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
-"release audio and video of your presentation. More information can be found "
-"at <a href='{frontend_host}/en-us/speaking/recording' "
+"PyCon Taiwan will do post-processing to all the presentation videos, "
+"including but not limited to applying video template, banners of sponsors’ "
+"logos. Do you agree to give permission to PyCon Taiwan to release audio and "
+"video of your presentation after the conference? More information can be "
+"found at <a href='{frontend_host}/en-us/speaking/recording' "
 "target='_blank'>Recording Release</a> page."
 msgstr ""
-"是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a "
-"href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
+"議程影片皆會經過 PyCon Taiwan 的後製，包括但不限於：套用大會模板、贊助商 logo 輪播。"
+"您是否同意授權讓 PyCon Taiwan 在會後釋出您的演講影片？更多資訊請見"
+"<a href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
 "a>一頁。"
 
-#: proposals/forms/mixins.py:86 proposals/forms/mixins.py:209
+#: proposals/forms/mixins.py:89 proposals/forms/mixins.py:215
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
 msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿階段時填入。"
 
-#: proposals/forms/mixins.py:90
+#: proposals/forms/mixins.py:93
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to refer your talk "
 "proposal to your local PyCon community if your proposal did not get "
 "accepted(APAC only)."
 msgstr ""
-"若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至您所在地的 PyCon 社群"
-"(只限 APAC 地區)。"
+"若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至您所在地的 PyCon 社"
+"群(只限 APAC 地區)。"
 
-#: proposals/forms/mixins.py:95
+#: proposals/forms/mixins.py:98
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='objective'>Proposal Examples</a>.</p><p>Who is the intended "
@@ -721,7 +723,7 @@ msgstr ""
 "從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位"
 "不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:105 proposals/forms/mixins.py:220
+#: proposals/forms/mixins.py:108 proposals/forms/mixins.py:226
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -734,7 +736,7 @@ msgstr ""
 "target='_blank' rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使"
 "用。"
 
-#: proposals/forms/mixins.py:113
+#: proposals/forms/mixins.py:116
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='outline'>Proposal Examples</a>.</p><p>How the talk will be "
@@ -751,7 +753,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:125 proposals/forms/mixins.py:236
+#: proposals/forms/mixins.py:128 proposals/forms/mixins.py:242
 msgid ""
 "If you disagree to authorize PyCon Taiwan to record video, whether you agree "
 "to let PyCon Taiwan live stream your presentation only for the remote "
@@ -761,11 +763,11 @@ msgstr ""
 "若您不同意授權讓 PyCon Taiwan 錄影，是否同意讓 PyCon Taiwan 直播您的演講僅供"
 "遠端參與者觀看? (我們將不會釋出您演講的影音)"
 
-#: proposals/forms/mixins.py:131
+#: proposals/forms/mixins.py:134
 msgid "Have you ever been a speaker at PyCon Taiwan in the past?"
 msgstr "您過去是否擔任過 PyCon Taiwan 的講者"
 
-#: proposals/forms/mixins.py:135
+#: proposals/forms/mixins.py:138 proposals/forms/mixins.py:248
 msgid ""
 "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will be held "
 "fully remote. All online talks this year will be pre-recorded </strong> so "
@@ -773,24 +775,40 @@ msgid ""
 "troubles and the time zone differences.<br>After your proposal is accepted, "
 "a pre-recording of the presentation will be provided to the PyCon APAC 2022 "
 "organizing team prior to the conference.<br><strong>Bonus for living in "
-"Taiwan</strong>For speakers who reside in Taiwan, we will offer a slot and "
-"assist you to record the presentation in a professional video studio in "
+"Taiwan</strong><br>For speakers who reside in Taiwan, we will offer a slot "
+"and assist you to record the presentation in a professional video studio in "
 "Taipei (travel expenses covered)."
 msgstr ""
-"由於持續性的全球傳染性疾病，<strong>PyCon APAC 2022 將會透過全遠端的形式舉行會議。"
-"</strong>所有的演講都會需要進行預錄影片，讓我們能以更好的品質將您的演講播放給觀眾，"
-"避免因時差或網路連線造成的相關問題。<br>"
-"當您的演講提案被委員會接受後，您需要在會議前提供您預先錄製的影片予 PyCon APAC 2022 "
-"大會。"
-"<strong>台灣講者的福利</strong><br>"
-"對於居住在台灣的講者，我們額外準備了一個位在台北的中央攝影棚，我們誠摯的邀請您前來。"
-"我們將協助您錄製專業的演講影片，並且我們將會補助您往返的交通費。"
+"由於持續性的全球傳染性疾病，<strong>PyCon APAC 2022 將會透過全遠端的形式舉行"
+"會議。</strong>所有的演講都會需要進行預錄影片，讓我們能以更好的品質將您的演講"
+"播放給觀眾，避免因時差或網路連線造成的相關問題。<br>當您的演講提案被委員會接"
+"受後，您需要在會議前提供您預先錄製的影片予 PyCon APAC 2022 大會。<strong>台灣"
+"講者的福利</strong><br>對於居住在台灣的講者，我們額外準備了一個位在台北的中央"
+"攝影棚，我們誠摯的邀請您前來。我們將協助您錄製專業的演講影片，並且我們將會補"
+"助您往返的交通費。"
 
-#: proposals/forms/mixins.py:164
+#: proposals/forms/mixins.py:151 proposals/forms/mixins.py:261
+msgid ""
+"If your previous option is not English, please enter your speaking language"
+msgstr ""
+
+#: proposals/forms/mixins.py:170
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>今年 Tutorial 時間長度僅開放 1.5 小時。</p>"
 
-#: proposals/forms/mixins.py:213
+#: proposals/forms/mixins.py:207
+#, python-brace-format
+msgid ""
+"Whether you agree to give permission to PyCon Taiwan to record, edit, and "
+"release audio and video of your presentation. More information can be found "
+"at <a href='{frontend_host}/en-us/speaking/recording' "
+"target='_blank'>Recording Release</a> page."
+msgstr ""
+"是否同意授權讓 PyCon Taiwan 錄影、剪輯、釋出你演講的影音。更多資訊請見<a "
+"href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
+"a>一頁。"
+
+#: proposals/forms/mixins.py:219
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -801,7 +819,7 @@ msgstr ""
 "講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開"
 "僅供審查使用。"
 
-#: proposals/forms/mixins.py:228
+#: proposals/forms/mixins.py:234
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -812,7 +830,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:100
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:104
 msgid "duration"
 msgstr "時間長度"
 
@@ -1551,7 +1569,7 @@ msgstr "登出"
 msgid "Toggle navigation"
 msgstr "展開導覽列"
 
-#: templates/default/_includes/nav/nav_base.html:72
+#: templates/default/_includes/nav/nav_base.html:74
 msgid "Change"
 msgstr "修改"
 
@@ -1774,8 +1792,8 @@ msgid ""
 "<span class=\"form-tip\">Don't have an account?</span> <a class=\"btn btn-"
 "link\" href=\"%(signup_url)s\">Sign up now!</a>"
 msgstr ""
-"<span class=\"form-tip\">沒有帳號?</span> <a class=\"btn btn-"
-"link\" href=\"%(signup_url)s\">馬上註冊一個！</a>"
+"<span class=\"form-tip\">沒有帳號?</span> <a class=\"btn btn-link\" href="
+"\"%(signup_url)s\">馬上註冊一個！</a>"
 
 #: templates/default/registration/password_reset_confirm.html:13
 msgid ""
@@ -2067,12 +2085,13 @@ msgid "New Talk Porposal"
 msgstr "投稿新演講"
 
 #: templates/default/users/user_dashboard.html:33
+#, python-format
 msgid ""
 "You haven't submitted any talk proposals. Why not <a href="
 "\"%(talk_proposal_create_url)s\" class=\"dashboard-link\">submit one now</a>?"
 msgstr ""
-"您尚未投稿演講，何不馬上<a href="
-"\"%(talk_proposal_create_url)s\" class=\"dashboard-link\">建立一個</a>？"
+"您尚未投稿演講，何不馬上<a href=\"%(talk_proposal_create_url)s\" class="
+"\"dashboard-link\">建立一個</a>？"
 
 #: templates/default/users/user_dashboard.html:35
 msgid "You haven't submitted any talk proposals."
@@ -2087,6 +2106,7 @@ msgid "New Tutorial Porposal"
 msgstr "投稿新專業課程"
 
 #: templates/default/users/user_dashboard.html:58
+#, python-format
 msgid ""
 "You haven't submitted any tutorial proposals. Why not <a href="
 "\"%(tutorial_proposal_create_url)s\" class=\"dashboard-link\">submit one "
@@ -4460,6 +4480,7 @@ msgstr ""
 "以透過<a href=\"password/\">本表單</a>更改密碼。"
 
 #: users/forms.py:251
+#, python-brace-format
 msgid ""
 "<a class=\"btn btn-link\" href=\"{password_reset_url}\">Forgot Password</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼</a>"
