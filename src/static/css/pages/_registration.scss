@@ -6,13 +6,13 @@
 .registration-panel {
     padding: 40px 10%;
     //background-color: #fff; ~2019
-    background-color: #F4AF9E; //2020
+    background-color: #46467A; //2022
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
     border-radius: 4px;
 
     &__title {
         //color: $theme-color; ~2019
-        color: #502526; //2020
+        color: #FFFFFF; //2022
         text-align: center;
         margin-top: 0;
         margin-bottom: 30px;
@@ -23,9 +23,9 @@
 }
 
 .registration-panel .btn-primary {
-  background-color: #502526; //2020
-  border-color: #502526; //2020
-  color: #FBD9CA; //2020
+  background-color: #8280DC; //2022
+  border-color: #8280DC; //2022
+  color: #FFFFFF; //2020
   &:active,
   &:focus,
   &:hover {
@@ -36,11 +36,11 @@
 }
 
 .registration-panel .form-group .controls .form-control{
-  border-color: #502526; //2020
+  border-color: #323166; //2022
 }
 
 .registration-panel .btn-link{
-  color: #502526; //2020
+  color: #8690E5; //2022
 }
 
 // Styles specific to PyCon TW 2016.

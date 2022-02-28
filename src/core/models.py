@@ -115,14 +115,17 @@ class EventInfo(models.Model):
 
     LANGUAGE_CHOICES = (
         ('ENEN', _('English talk')),
-        ('ZHEN', _('Chinese talk w. English slides')),
-        ('ZHZH', _('Chinese talk w. Chinese slides')),
-        ('TAI', _('Taiwanese Hokkien')),
+        ('NONEN', _('non-English talk w. English slides')),
     )
     language = models.CharField(
         verbose_name=_('language'),
-        max_length=4,
+        max_length=5,
         choices=LANGUAGE_CHOICES,
+    )
+
+    talk_language = models.CharField(
+        verbose_name=_('Talk language'),
+        max_length=32,
     )
 
     abstract = EAWTextField(
@@ -205,15 +208,36 @@ class EventInfo(models.Model):
         auto_now=True,
     )
 
-    REMOTE_POLICY_CHOICES = (
+    PERFER_TIME_CHOICES = (
+        ('DAY_ONE_MORNING', _('Day 1, September 3rd, 2022 Morning')),
+        ('DAY_ONE_AFTERNOON', _('Day 1, September 3rd, 2022 Afternoon')),
+        ('DAY_TWO_MORNING', _('Day 2, September 4th, 2022 Morning')),
+        ('DAY_TWO_AFTERNOON', _('Day 2, September 4th, 2022 Afternoon')),
+    )
+    prefer_time = models.CharField(
+        verbose_name=_('prefer event time'),
+        max_length=32,
+        choices=PERFER_TIME_CHOICES,
+    )
+
+    LIVING_IN_TAIWAN_CHOICES = (
         (True, _('Yes')),
         (False, _('No'))
     )
-
-    remoting_policy = models.BooleanField(
-        verbose_name=_('remoting policy'),
+    living_in_taiwan = models.BooleanField(
+        verbose_name=_('living in Taiwan'),
         default=False,
-        choices=REMOTE_POLICY_CHOICES
+        choices=REFERRING_POLICY_CHOICES,
+    )
+
+    PRE_RECORDED_POLICY_CHOICES = (
+        (True, _('Yes')),
+        (False, _('No'))
+    )
+    pre_recorded_policy = models.BooleanField(
+        verbose_name=_('agree pre-recorded proposal'),
+        default=False,
+        choices=REFERRING_POLICY_CHOICES,
     )
 
     class Meta:
@@ -228,7 +252,6 @@ class EventInfo(models.Model):
             'ENEN': 'E',
             'ZHEN': 'ZE',
             'ZHZH': 'Z',
-            'TAI': 'T',
         }[self.language]
 
     def get_python_level_tag(self):

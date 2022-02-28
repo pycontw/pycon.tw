@@ -1,10 +1,11 @@
 body.dashboard{
     font-weight: 400;
-    background: #FBD9CA;
+    background: #1A1A30;
+    background-image: url(/prs/static/pycontw-2022/assets/bg-dashboard.svg);
 
     p.welcome{
         font-size: 21px;
-        color: #4A4A4A;
+        color: #AFAEE6;
         line-height: 24px;
         margin: 35px 0 20px 5px;
     }
@@ -17,13 +18,13 @@ body.dashboard{
                     padding: 24px 0 0 28px;
                     height: 65px;
                     font-size:16px;
-                    color: #BBBBBB;
+                    color: #AFAEE6;
                     line-height:19px;
-                    border-left: 4px solid #FFFFFF;
-                    border-bottom: 1px solid #EEEEEE;
+                    border-left: 4px solid #323166;
+                    border-bottom: 1px solid #323166;
 
                     &:hover{
-                        color: #502526; //2020
+                        color: #323166; //2022
                         //color:#BBBBBB; ~2019
                         background-color: #F8F8F8;
                         border-left: 4px solid #F8F8F8;
@@ -41,9 +42,9 @@ body.dashboard{
                     }
                 }
                 &.active a{
-                    color: #502526; //2020
+                    color: #C386AE; //2022
                     //color:#3E6DF5; ~2019
-                    border-left: 4px solid #502526; //2020
+                    border-left: 4px solid #C386AE; //2022
                     //border-left: 4px solid #3E6DF5; ~2019
                     // &:hover{
                     //     color:#BBBBBB;
@@ -69,8 +70,8 @@ body.dashboard{
         }
     }
     .main-container{
-        background:#FFFFFF;
-        border: 1px solid #EEEEEE;
+        background:#46467A;
+        border: 1px solid #323166;
         border-radius:4px;
         margin-bottom: 20px;
 
@@ -78,7 +79,7 @@ body.dashboard{
             min-height: 712px;
             border-left-style: solid;
             border-left-width: 1px;
-            border-left-color: #EEEEEE;
+            border-left-color: #323166;
             padding: 0;
 
             .table-panel {
@@ -143,7 +144,7 @@ body.dashboard{
                 }
                 .markdown-field {
                     background-color: transparent;
-                    border: 1px solid #ddd;
+                    border: 1px solid #323166;
                     border-radius: 4px;
                     position: relative;
                     padding: 1em;
@@ -196,7 +197,7 @@ body.dashboard{
 /* Must include .table to override Bootstrap styles. */
 .table.proposals-table {
     thead{
-        background:#F8F8F8;
+        background:#46467A;
     }
     th, td {
         font-weight: 400;
@@ -214,14 +215,14 @@ body.dashboard{
         }
     }
     th {
-        color:#9B9B9B;
+        color:#AFAEE6;
         line-height:22px;
-        border-bottom: 1px solid #EEEEEE;
+        border-bottom: 1px solid #323166;
         height: 40px;
         padding-left: 34px;
     }
     td {
-        color:#4A4A4A;
+        color:#AFAEE6;
         line-height: 25px;
         padding: 32px 34px;
 
@@ -293,7 +294,7 @@ body.dashboard{
 
 .field_title {
     font-size: 16px;
-    color: #4A4A4A;
+    color: #FFFFFF;
     line-height: 19px;
     font-weight: normal;
 }

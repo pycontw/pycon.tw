@@ -249,12 +249,16 @@ class AuthenticationForm(BaseAuthenticationForm):
                 Div(
                     HTML(_(
                         '<a class="btn btn-link" href="{password_reset_url}">'
-                        'Forgot Password?</a>'
+                        'Forgot Password</a>'
                     ).format(password_reset_url=reverse('password_reset'))),
-                    css_class='col-xs-6 m-t-2',
+                    HTML(_(
+                        '<a class="btn btn-link" href="{signup_url}">'
+                        'Sign up now</a>'
+                    ).format(signup_url=reverse('signup'))),
+                    css_class='col-xs-6',
                 ),
                 Div(
-                    Submit('save', _('Log In'), css_class='btn-lg btn-block'),
+                    Submit('save', _('Log In'), css_class='btn-sm btn-block m-t-5'),
                     css_class='col-xs-6',
                 ),
                 css_class='row',

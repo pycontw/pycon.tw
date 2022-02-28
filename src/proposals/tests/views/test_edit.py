@@ -172,12 +172,11 @@ def test_talk_proposal_edit_post(agreed_user_client, talk_proposal):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF15',
-        'language': 'ZHZH',
+        'language': 'ENEN',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': False,
-        'remoting_policy': True,
         'first_time_speaker': True,
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
@@ -219,11 +218,10 @@ def test_tutorial_proposal_edit_post(agreed_user_client, tutorial_proposal):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
-        'language': 'ZHZH',
+        'language': 'ENEN',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
-        'remoting_policy': True,
         'abstract': (
             "In the modern world, programmer’s time is more expensive than "
             "computer’s time. Better maintainability saves more. To improve "

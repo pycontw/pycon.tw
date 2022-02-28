@@ -90,13 +90,16 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'PREF15',
-        'language': 'ZHZH',
+        'language': 'ENEN',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': False,
-        'remoting_policy': True,
         'first_time_speaker': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
+        'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 
     proposal = TalkProposal.objects.get(
@@ -121,11 +124,14 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'title': 'Beyond the Style Guides<br>',
         'category': 'PRAC',
         'duration': 'FULLDAY',
-        'language': 'ZHZH',
+        'language': 'ENEN',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
-        'remoting_policy': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
+        'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 
     proposal = TutorialProposal.objects.get(

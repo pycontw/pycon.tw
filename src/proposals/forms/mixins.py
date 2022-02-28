@@ -38,6 +38,7 @@ class TalkProposalMixin:
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),
+            'pre_recorded_policy': forms.CheckboxInput(),
         }
         help_texts = {
             'abstract': _(
@@ -75,9 +76,11 @@ class TalkProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>."
             ),
             'recording_policy': format_html_lazy(
-                _("Whether you agree to give permission to PyCon Taiwan to "
-                  "record, edit, and release audio and video of your "
-                  "presentation. More information can be found at "
+                _("PyCon Taiwan will do post-processing to all the presentation "
+                  "videos, including but not limited to applying video template, "
+                  "banners of sponsors’ logos. Do you agree to give permission to "
+                  "PyCon Taiwan to release audio and video of your presentation "
+                  "after the conference? More information can be found at "
                   "<a href='{frontend_host}/en-us/speaking/recording' target='_blank'>"
                   "Recording Release</a> page."),
                 frontend_host=f"{settings.FRONTEND_HOST}"
@@ -87,9 +90,9 @@ class TalkProposalMixin:
                 "day. Not required for review."
             ),
             'referring_policy': _(
-                "Whether you agree to give permission to PyCon Taiwan to "
-                "refer your talk proposal to local communities if your "
-                "proposal did not get accepted."
+                "Whether you agree to give permission to PyCon Taiwan to refer your "
+                "talk proposal to your local PyCon community if your proposal did not "
+                "get accepted(APAC only)."
             ),
             'objective': _(
                 "<p><a href='#' data-toggle='modal' "
@@ -121,10 +124,6 @@ class TalkProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>. "
                 "This is NOT made public and for REVIEW ONLY.</p>"
             ),
-            'remoting_policy': _(
-                "Whether you agree to deliver the talk remotely if the epidemic "
-                "(coronavirus) is still raging this August?"
-            ),
             'live_stream_policy': _(
                 "If you disagree to authorize PyCon Taiwan to record video, "
                 "whether you agree to let PyCon Taiwan live stream your presentation "
@@ -132,8 +131,24 @@ class TalkProposalMixin:
                 "audio and video of your presentation)"
             ),
             'first_time_speaker': _(
-                "Is it your first time to be the speaker of PyCon TW?"
+                "Have you ever been a speaker at PyCon Taiwan in the past?"
 
+            ),
+            'pre_recorded_policy': _(
+                "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will "
+                "be held fully remote. All online talks this year will be pre-recorded "
+                "</strong> so we can broadcast your presentation to the audience "
+                "without the network troubles and the time zone differences.<br>"
+                "After your proposal is accepted, a pre-recording of the presentation "
+                "will be provided to the PyCon APAC 2022 organizing team prior to the "
+                "conference.<br>"
+                "<strong>Bonus for living in Taiwan</strong><br>"
+                "For speakers who reside in Taiwan, we will offer a slot and assist you "
+                "to record the presentation in a professional video studio in Taipei "
+                "(travel expenses covered)."
+            ),
+            'talk_language': _(
+                "If your previous option is not English, please enter your speaking language"
             ),
         }
 
@@ -149,6 +164,7 @@ class TutorialProposalMixin:
             'detailed_description': SimpleMDEWidget(),
             'outline': SimpleMDEWidget(),
             'supplementary': SimpleMDEWidget(),
+            'pre_recorded_policy': forms.CheckboxInput(),
         }
         help_texts = {
             'duration': _(
@@ -223,15 +239,26 @@ class TutorialProposalMixin:
                 "target='_blank' rel='noopener'>Markdown</a>. "
                 "This is NOT made public and for REVIEW ONLY."
             ),
-            'remoting_policy': _(
-                "Whether you agree to deliver the tutorial remotely if the epidemic "
-                "(coronavirus) is still raging this August?"
-
-            ),
             'live_stream_policy': _(
                 "If you disagree to authorize PyCon Taiwan to record video, "
                 "whether you agree to let PyCon Taiwan live stream your presentation "
                 "only for the remote attendees to watch ? (we will not release "
                 "audio and video of your presentation)"
+            ),
+            'pre_recorded_policy': _(
+                "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will "
+                "be held fully remote. All online talks this year will be pre-recorded "
+                "</strong> so we can broadcast your presentation to the audience "
+                "without the network troubles and the time zone differences.<br>"
+                "After your proposal is accepted, a pre-recording of the presentation "
+                "will be provided to the PyCon APAC 2022 organizing team prior to the "
+                "conference.<br>"
+                "<strong>Bonus for living in Taiwan</strong><br>"
+                "For speakers who reside in Taiwan, we will offer a slot and assist you "
+                "to record the presentation in a professional video studio in Taipei "
+                "(travel expenses covered)."
+            ),
+            'talk_language': _(
+                "If your previous option is not English, please enter your speaking language"
             ),
         }

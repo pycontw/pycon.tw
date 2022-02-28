@@ -35,6 +35,7 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
+    talk_language = forms.CharField(required=False)
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -42,12 +43,15 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'category',
             'duration',
             'language',
+            'talk_language',
             'python_level',
             'recording_policy',
             'live_stream_policy',
-            'remoting_policy',
             'first_time_speaker',
             'referring_policy',
+            'prefer_time',
+            'living_in_taiwan',
+            'pre_recorded_policy',
         ]
 
 
@@ -57,6 +61,9 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
+
+    talk_language = forms.CharField(required=False)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
@@ -67,10 +74,13 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'category',
             'duration',
             'language',
+            'talk_language',
             'python_level',
             'recording_policy',
             'live_stream_policy',
-            'remoting_policy'
+            'prefer_time',
+            'living_in_taiwan',
+            'pre_recorded_policy',
         ]
 
 
@@ -94,6 +104,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
+    talk_language = forms.CharField(required=False)
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -101,6 +112,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'category',
             'duration',
             'language',
+            'talk_language',
             'abstract',
             'python_level',
             'objective',
@@ -109,10 +121,8 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'supplementary',
             'recording_policy',
             'live_stream_policy',
-            'remoting_policy',
             'first_time_speaker',
             'slide_link',
-            'referring_policy',
         ]
 
 
@@ -122,6 +132,9 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
+
+    talk_language = forms.CharField(required=False)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
@@ -132,6 +145,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'category',
             'duration',
             'language',
+            'talk_language',
             'abstract',
             'python_level',
             'objective',
@@ -140,7 +154,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'supplementary',
             'recording_policy',
             'live_stream_policy',
-            'remoting_policy',
             'slide_link',
         ]
 

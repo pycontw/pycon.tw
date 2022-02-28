@@ -14,21 +14,25 @@ def talk_proposal_data():
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
         'duration': 'PREF15',
-        'language': 'ZHZH',
+        'language': 'ENEN',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
         'referring_policy': True,
-        'remoting_policy': True,
         'first_time_speaker': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
+        'prefer_time': 'DAY_ONE_MORNING',
     }
 
 
 def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'python_level', 'recording_policy',
-        'live_stream_policy', 'remoting_policy', 'first_time_speaker', 'referring_policy',
+        'title', 'category', 'duration', 'language', 'talk_language', 'python_level',
+        'recording_policy', 'live_stream_policy', 'first_time_speaker', 'referring_policy',
+        'prefer_time', 'living_in_taiwan', 'pre_recorded_policy',
     ]
 
 
@@ -65,19 +69,23 @@ def tutorial_proposal_data():
         'title': 'Beyond the Style Guides',
         'category': 'PRAC',
         'duration': 'HALFDAY',
-        'language': 'ZHZH',
+        'language': 'ENEN',
+        'talk_language': 'en',
         'python_level': 'INTERMEDIATE',
         'recording_policy': True,
         'live_stream_policy': True,
-        'remoting_policy': True,
+        'living_in_taiwan': True,
+        'pre_recorded_policy': True,
+        'prefer_time': 'DAY_ONE_MORNING',
     }
 
 
 def test_tutorial_proposal_create_form():
     form = TutorialProposalCreateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'live_stream_policy', 'remoting_policy',
+        'title', 'category', 'duration', 'language', 'talk_language',
+        'python_level', 'recording_policy', 'live_stream_policy',
+        'prefer_time', 'living_in_taiwan', 'pre_recorded_policy',
     ]
 
 
@@ -116,19 +124,20 @@ def test_tutorial_proposal_create_form_valid(
 def test_talk_proposal_update_form():
     form = TalkProposalUpdateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'abstract', 'python_level',
-        'objective', 'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'live_stream_policy', 'remoting_policy', 'first_time_speaker',
-        'slide_link', 'referring_policy',
+        'title', 'category', 'duration', 'language', 'talk_language',
+        'abstract', 'python_level', 'objective', 'detailed_description',
+        'outline', 'supplementary', 'recording_policy',
+        'live_stream_policy', 'first_time_speaker', 'slide_link',
     ]
 
 
 def test_tutorial_proposal_update_form():
     form = TutorialProposalUpdateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'abstract', 'python_level',
-        'objective', 'detailed_description', 'outline', 'supplementary',
-        'recording_policy', 'live_stream_policy', 'remoting_policy', 'slide_link',
+        'title', 'category', 'duration', 'language', 'talk_language',
+        'abstract', 'python_level', 'objective', 'detailed_description',
+        'outline', 'supplementary', 'recording_policy',
+        'live_stream_policy', 'slide_link',
     ]
 
 

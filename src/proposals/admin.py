@@ -22,7 +22,6 @@ class ProposalAdmin(admin.ModelAdmin):
         'duration',
         'language',
         'python_level',
-        'remoting_policy',
         'accepted',
     ]
     list_filter = [
@@ -44,7 +43,6 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
         'duration',
         'language',
         'python_level',
-        'remoting_policy',
         'first_time_speaker',
         'accepted',
     ]
