@@ -35,6 +35,7 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
+    talk_language = forms.CharField(required=False)
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -60,6 +61,9 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     Fields in this form is intentionally reduced to allow people to submit
     a proposal very quickly, and fill in the details later.
     """
+
+    talk_language = forms.CharField(required=False)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
@@ -100,6 +104,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
+    talk_language = forms.CharField(required=False)
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -130,6 +135,9 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
+
+    talk_language = forms.CharField(required=False)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
