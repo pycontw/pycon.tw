@@ -157,7 +157,7 @@ class TutorialDetailSerializer(serializers.ModelSerializer):
         model = ProposedTutorialEvent
         fields = [
             'id', 'proposal', 'begin_time', 'end_time', 'is_remote', 'location',
-            'registration_link',
+            'registration_link', 'youtube_id'
         ]
 
 
