@@ -128,6 +128,7 @@ def test_talk_proposal_update_form():
         'abstract', 'python_level', 'objective', 'detailed_description',
         'outline', 'supplementary', 'recording_policy',
         'live_stream_policy', 'first_time_speaker', 'slide_link',
+        'pre_recorded_policy',
     ]
 
 
@@ -137,7 +138,7 @@ def test_tutorial_proposal_update_form():
         'title', 'category', 'duration', 'language', 'talk_language',
         'abstract', 'python_level', 'objective', 'detailed_description',
         'outline', 'supplementary', 'recording_policy',
-        'live_stream_policy', 'slide_link',
+        'live_stream_policy', 'slide_link', 'pre_recorded_policy',
     ]
 
 
