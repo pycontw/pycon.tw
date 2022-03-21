@@ -106,6 +106,10 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
     )
     talk_language = forms.CharField(required=False)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['pre_recorded_policy'].disabled = True
+
     class Meta(TalkProposalMixin.Meta):
         fields = [
             'title',
@@ -123,6 +127,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'live_stream_policy',
             'first_time_speaker',
             'slide_link',
+            'pre_recorded_policy',
         ]
 
 
@@ -138,6 +143,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
+        self.fields['pre_recorded_policy'].disabled = True
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
@@ -155,6 +161,7 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'recording_policy',
             'live_stream_policy',
             'slide_link',
+            'pre_recorded_policy',
         ]
 
 
