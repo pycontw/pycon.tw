@@ -54,7 +54,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         params = self.request.GET
         order_key = self.order_keys.get(params.get('order', '').lower())
         return order_key or '?'
-    
+
     def get_category(self):
         params = self.request.GET
         category_key = params.get('category', '').upper()
