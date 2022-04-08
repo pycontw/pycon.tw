@@ -61,7 +61,7 @@ ul.nav-tabs.reviews-tabs{
         i{
             margin-left: 10px;
 
-            &.fa-sort-asc, &.fa-sort-desc{
+            &.fa-sort-asc, &.fa-sort-desc, &.fa-check{
                 display: none;
             }
         }
@@ -80,6 +80,11 @@ ul.nav-tabs.reviews-tabs{
         }
         &.desc{
             i.fa-sort-desc{
+                display: inline;
+            }
+        }
+        &.check {
+            i.fa-check{
                 display: inline;
             }
         }

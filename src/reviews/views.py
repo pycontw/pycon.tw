@@ -54,6 +54,13 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         params = self.request.GET
         order_key = self.order_keys.get(params.get('order', '').lower())
         return order_key or '?'
+    
+    def get_category(self):
+        params = self.request.GET
+        category_key = params.get('category', '').upper()
+        if category_key:
+            return category_key
+        return ''
 
     def get_queryset(self):
         user = self.request.user
@@ -64,10 +71,11 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .exclude(review__reviewer=user)
             .annotate(Count('review'))
         )
-        # params = self.request.GET
-        # category = params.get('category', '').upper()
-        # if category:
-        #     proposals = proposals.filter(category=category)
+
+        self.category = self.get_category()
+        if self.category:
+            qs = qs.filter(category=self.category)
+
         ordering = self.get_ordering()
         if ordering == '?':
             # We don't use order_by('?') because it is crazy slow, and instead
@@ -84,6 +92,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             ordering = '?'
         else:
             qs = qs.order_by(ordering)
+
         self.ordering = ordering
         return qs
 
@@ -123,6 +132,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             ),
             'vote': vote_mapping,
             'ordering': self.ordering,
+            'category': self.category,
             'query_string': self.request.GET.urlencode(),
             **self.reviews_state._asdict(),
         })
