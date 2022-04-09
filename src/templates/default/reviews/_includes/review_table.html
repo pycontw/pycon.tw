@@ -1,30 +1,25 @@
 {% load i18n %}
 
+<h3>{% trans 'Stage1' %}</h3>
 <table class="proposals-table table table-responsive">
-	<thead>
-		<tr>
-			<th width="1%">{% trans 'Stage' %}</th>
-			<th width="1%">{% trans 'Vote' %}</th>
-			<th class="proposal-title">{% trans 'Title' %}</th>
-			<th width="1%" class="hidden-xs">{% trans 'Comment' %}</th>
-			<th width="1%"></th>
-		</tr>
-	</thead>
+	{% include 'reviews/_includes/review_table_thead.html' %}
 	<tbody>
 		{% for review in reviews %}
-			<tr class="{% if review.is_outdated %}info{% endif %}">
-				<td>{{ review.stage }}</td>
-				<td style="padding-right: 0px;">{{ review.get_vote_display }}</td>
-				<td class="proposal-title {% if review.is_outdated %}unread{% endif %}" style="padding-right: 0px;">
-                    <div>
-                        {{ review.proposal.title }}
-                    </div>
-				</td>
-				<td class="hidden-xs">{{ review.comment|truncatechars:20 }}</td>
-				<td>
-					<a href="{% url 'review_edit' proposal_pk=review.proposal.pk %}{% if query_string %}?{{ query_string }}{% endif %}" class="btn btn-natural btn-reactivate">{% trans 'Update' %}</a>
-				</td>
-			</tr>
+			{% if review.stage == 1 %}
+				{% include 'reviews/_includes/review_table_tbody.html' with user=user reviews=reviews show_all_comments=True %}
+			{% endif %}
+		{% endfor %}
+	</tbody>
+</table>
+
+<h3>{% trans 'Stage2' %}</h3>
+<table class="proposals-table table table-responsive">
+	{% include 'reviews/_includes/review_table_thead.html' %}
+	<tbody>
+		{% for review in reviews %}
+			{% if review.stage == 2 %}
+				{% include 'reviews/_includes/review_table_tbody.html' with user=user reviews=reviews show_all_comments=True %}
+			{% endif %}
 		{% endfor %}
 	</tbody>
 </table>
