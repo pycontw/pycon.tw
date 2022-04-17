@@ -127,6 +127,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             'proposals_with_verdict': verdicted_proposals,
             'stage_1_reviews': self.get_stage_1_reviews(),
             'stage_2_reviews': self.get_stage_2_reviews(),
+            'total_reviewed_amount': len(self.get_stage_1_reviews()) + len(self.get_stage_2_reviews()),
             'review_stage': review_stage,
             'review_stage_desc_tpl': (
                 'reviews/_includes/review_stage_%s_desc.html'
@@ -171,7 +172,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
     def get_stage_2_reviews(self):
         review_stage = self.reviews_state.reviews_stage
         if review_stage == 1:
-            return None
+            return Review.objects.none()
         elif review_stage == 2:
             stage_2_reviews = (
                 Review.objects
