@@ -96,8 +96,8 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .annotate(Count('review'))
         )
 
-        vote_count_pairs = (
-            self.get_reviews()
+        stage_1_vote_count_pairs = (
+            self.get_stage_1_reviews()
             # This transform is needed to clear the default ordering in
             # the model. The default ordering contributes to GROUP BY, and
             # breaks the COUNT aggregation.
@@ -105,6 +105,16 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .values_list('vote')
             .annotate(count=Count('vote'))
         )
+        stage_2_vote_count_pairs = (
+            self.get_stage_2_reviews()
+            # This transform is needed to clear the default ordering in
+            # the model. The default ordering contributes to GROUP BY, and
+            # breaks the COUNT aggregation.
+            .order_by()
+            .values_list('vote')
+            .annotate(count=Count('vote'))
+        )
+        vote_count_pairs = stage_1_vote_count_pairs.union(stage_2_vote_count_pairs)
         vote_mapping = collections.defaultdict(
             (lambda: 0),
             ((self.vote_keys[k], v)
@@ -115,7 +125,9 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context.update({
             'proposals_with_verdict': verdicted_proposals,
-            'reviews': self.get_reviews(),
+            'stage_1_reviews': self.get_stage_1_reviews(),
+            'stage_2_reviews': self.get_stage_2_reviews(),
+            'total_reviewed_amount': len(self.get_stage_1_reviews()) + len(self.get_stage_2_reviews()),
             'review_stage': review_stage,
             'review_stage_desc_tpl': (
                 'reviews/_includes/review_stage_%s_desc.html'
@@ -128,10 +140,10 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         })
         return context
 
-    def get_reviews(self):
+    def get_stage_1_reviews(self):
         review_stage = self.reviews_state.reviews_stage
         if review_stage == 1:
-            reviews = (
+            stage_1_reviews = (
                 Review.objects
                 .select_related('proposal')
                 .filter_reviewable(self.request.user)
@@ -147,14 +159,29 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
                     review__reviewer=self.request.user
                 )
             )
-            reviews = (
+            stage_1_reviews = (
                 Review.objects
                 .select_related('proposal')
                 .filter_reviewable(self.request.user)
                 .filter(proposal__accepted__isnull=True)
                 .exclude(proposal__in=proposals, stage=1)
+                .exclude(stage=2)
             )
-        return reviews
+        return stage_1_reviews
+
+    def get_stage_2_reviews(self):
+        review_stage = self.reviews_state.reviews_stage
+        if review_stage == 1:
+            return Review.objects.none()
+        elif review_stage == 2:
+            stage_2_reviews = (
+                Review.objects
+                .select_related('proposal')
+                .filter_reviewable(self.request.user)
+                .filter(proposal__accepted__isnull=True)
+                .exclude(stage=1)
+            )
+        return stage_2_reviews
 
 
 class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):

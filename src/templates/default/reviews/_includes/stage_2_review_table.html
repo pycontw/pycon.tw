@@ -1,0 +1,13 @@
+{% load i18n %}
+
+{% if review_stage == 2 %}
+    <h3>{% trans 'Stage2' %}</h3>
+    <table class="proposals-table table table-responsive">
+        {% include 'reviews/_includes/review_table_thead.html' %}
+        <tbody>
+            {% for review in stage_2_reviews %}
+            {% include 'reviews/_includes/review_table_tbody.html' with user=user review=review show_all_comments=True %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

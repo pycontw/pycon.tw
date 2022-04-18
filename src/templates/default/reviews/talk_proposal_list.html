@@ -49,7 +49,7 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs reviews-tabs js-hash-tabs" role="tablist">
 	<li role="presentation" class="active"><a href="#unreviewed" aria-controls="unreviewed" role="tab" data-toggle="tab">{% trans 'Unreviewed Talk Proposals' %} ({{ object_list|length }})</a></li>
-	<li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ reviews|length }})</a></li>
+	<li role="presentation"><a href="#reviewed" aria-controls="reviewed" role="tab" data-toggle="tab">{% trans 'Reviewed Talk Proposals' %} ({{ total_reviewed_amount }})</a></li>
 	{% if review_stage == 2 and proposals_with_verdict %}
 		<li role="presentation"><a href="#verdicted" aria-controls="verdicted" role="tab" data-toggle="tab">{% trans 'Talk Proposals With Decision' %} ({{ proposals_with_verdict|length }})</a></li>
 	{% endif %}
@@ -67,8 +67,9 @@
 	</div>
 	<div role="tabpanel" class="tab-pane" id="reviewed">
 		<div class="talk-proposals proposals">
-		{% if reviews %}
-		  {% include 'reviews/_includes/review_table.html' with user=user reviews=reviews show_all_comments=True %}
+		{% if stage_1_reviews or stage_2_reviews %}
+		  {% include 'reviews/_includes/stage_1_review_table.html' with user=user stage_1_reviews=stage_1_reviews show_all_comments=True %}
+		  {% include 'reviews/_includes/stage_2_review_table.html' with user=user stage_2_reviews=stage_2_reviews show_all_comments=True %}
 		{% else %}
 		  <p>{% blocktrans %}You haven't reviewed any talk proposals.{% endblocktrans %}</p>
 		{% endif %}

@@ -1917,6 +1917,14 @@ msgstr ""
 "\n"
 "You can ignore this message if you did not sign up for this site.\n"
 
+#: templates/default/reviews/_includes/review_table.html:3
+msgid "Stage1"
+msgstr "Stage 1"
+
+#: templates/default/reviews/_includes/review_table.html:15
+msgid "Stage2"
+msgstr "Stage 2"
+
 #: templates/default/reviews/_includes/previous_review_table.html:6
 #: templates/default/reviews/_includes/review_table.html:6
 msgid "Stage"

@@ -1858,6 +1858,14 @@ msgstr ""
 "\n"
 "若您沒有在本站註冊過，則可以忽略本訊息。\n"
 
+#: templates/default/reviews/_includes/review_table.html:3
+msgid "Stage1"
+msgstr "第一階段"
+
+#: templates/default/reviews/_includes/review_table.html:15
+msgid "Stage2"
+msgstr "第二階段"
+
 #: templates/default/reviews/_includes/previous_review_table.html:6
 #: templates/default/reviews/_includes/review_table.html:6
 msgid "Stage"
