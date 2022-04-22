@@ -1565,6 +1565,20 @@ msgstr "審查"
 msgid "Log out"
 msgstr "登出"
 
+#: templates/default/_includes/nav/nav_base.html:33
+#: templates/default/_includes/nav/nav_base.html:34
+#: templates/default/_includes/nav/nav_base.html:42
+#: templates/default/_includes/nav/nav_base.html:43
+msgid "EN"
+msgstr "英文"
+
+#: templates/default/_includes/nav/nav_base.html:33
+#: templates/default/_includes/nav/nav_base.html:34
+#: templates/default/_includes/nav/nav_base.html:42
+#: templates/default/_includes/nav/nav_base.html:43
+msgid "ZH"
+msgstr "中文"
+
 #: templates/default/_includes/nav/nav_base.html:8
 msgid "Toggle navigation"
 msgstr "展開導覽列"
