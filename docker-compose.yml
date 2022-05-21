@@ -1,4 +1,4 @@
-version: "3"
+version: "3.5"
 services:
   web:
     build: .
@@ -37,8 +37,10 @@ services:
 
     volumes:
       - ${MEDIA_ROOT}:/usr/local/app/src/media
+    networks:
+      - network
 
 networks:
-  default:
-    external:
-      name: pycontw-net
+  network:
+    external: true
+    name: network-2022
