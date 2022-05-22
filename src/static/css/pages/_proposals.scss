@@ -107,6 +107,7 @@ body.dashboard{
                     margin-top: 0;
                 }
                 .simple-field, .text-field, .markdown-field {
+                    color: #ddd;
                     line-height: 150%;
                     overflow-wrap: anywhere;
                 }
@@ -144,7 +145,7 @@ body.dashboard{
                 }
                 .markdown-field {
                     background-color: transparent;
-                    border: 1px solid #323166;
+                    border: 1px solid #ddd;
                     border-radius: 4px;
                     position: relative;
                     padding: 1em;

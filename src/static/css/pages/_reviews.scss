@@ -43,13 +43,13 @@ ul.nav-tabs.reviews-tabs{
         a{
             font-size: 16px;
             font-weight: 400;
-            color: #9b9b9b;
-            padding: 15px 1px;
-            border: none;
+            padding: 15px 10px;
+            border-color: #fff;
+            border-bottom: 4px solid;
             outline: 0;
             &:hover{
-                background-color: transparent;
-                color: #4A4A4A;
+                background-color: #fff;
+                color: #3e6df5;
             }
         }
     }
