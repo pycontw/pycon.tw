@@ -16,7 +16,7 @@
 
 .btn-logout {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   @include button-variant($btn-logout-color, $btn-logout-bg, $btn-logout-border);
 }
 

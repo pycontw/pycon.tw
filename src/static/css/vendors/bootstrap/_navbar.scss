@@ -399,10 +399,10 @@
   border-color: $navbar-default-border;
 
   .navbar-brand {
-    color: #C386AE;
+    color: $navbar-default-brand-color;
     &:hover,
     &:focus {
-      color: #C386AE;
+      color: $navbar-default-brand-color;
       background-color: $navbar-default-brand-hover-bg;
     }
   }

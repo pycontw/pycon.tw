@@ -1616,6 +1616,20 @@ msgstr "Reviews"
 msgid "Log out"
 msgstr "Log out"
 
+#: templates/default/_includes/nav/nav_base.html:33
+#: templates/default/_includes/nav/nav_base.html:34
+#: templates/default/_includes/nav/nav_base.html:42
+#: templates/default/_includes/nav/nav_base.html:43
+msgid "EN"
+msgstr "EN"
+
+#: templates/default/_includes/nav/nav_base.html:33
+#: templates/default/_includes/nav/nav_base.html:34
+#: templates/default/_includes/nav/nav_base.html:42
+#: templates/default/_includes/nav/nav_base.html:43
+msgid "ZH"
+msgstr "ZH"
+
 #: templates/default/_includes/nav/nav_base.html:8
 msgid "Toggle navigation"
 msgstr "Toggle navigation"
