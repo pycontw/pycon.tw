@@ -27,6 +27,7 @@ def html_join(sep, sequence):
 class TemplateExistanceStatusResponse(TemplateResponse):
     """Extended response that raises Http404 when a template cannot be found.
     """
+
     def resolve_template(self, template):
         try:
             return super().resolve_template(template)
@@ -109,6 +110,7 @@ class SequenceQuerySet:
 class OrderedDefaultDict(collections.OrderedDict):
     """Add defaultdict behavior to OrderedDict.
     """
+
     def __init__(self, default_factory=None, *args, **kwargs):
         if default_factory is not None and not callable(default_factory):
             raise TypeError('first argument must be callable')
