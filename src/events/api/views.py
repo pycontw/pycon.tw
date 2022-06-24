@@ -21,18 +21,36 @@ from . import serializers
 
 
 class TalkListAPIView(ListAPIView):
-    queryset = ProposedTalkEvent.objects.all()
     serializer_class = serializers.TalkListSerializer
+
+    def get_queryset(self):
+        queryset = ProposedTalkEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(proposal__category=category)
+        return queryset
 
 
 class SponsoredEventListAPIView(ListAPIView):
-    queryset = SponsoredEvent.objects.all()
     serializer_class = serializers.SponsoredEventListSerializer
+
+    def get_queryset(self):
+        queryset = SponsoredEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(category=category)
+        return queryset
 
 
 class TutorialListAPIView(ListAPIView):
-    queryset = ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialListSerializer
+
+    def get_queryset(self):
+        queryset = ProposedTutorialEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(proposal__category=category)
+        return queryset
 
 
 class SpeechListAPIView(APIView):
@@ -60,6 +78,20 @@ class SpeechListAPIView(APIView):
             return Response(data)
         else:
             raise Http404
+
+
+class SpeechListByCategoryAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        data = []
+        for api_view in (SponsoredEventListAPIView, TalkListAPIView, TutorialListAPIView):
+            view = api_view.as_view()
+            event_data = view(request._request, *args, **kwargs).data
+            data.extend(event_data)
+
+        return Response(data)
 
 
 class TalkDetailAPIView(RetrieveAPIView):
