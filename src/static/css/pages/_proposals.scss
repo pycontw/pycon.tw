@@ -1,7 +1,7 @@
 body.dashboard{
     font-weight: 400;
     background: #1A1A30;
-    background-image: url(/prs/static/pycontw-2022/assets/bg-dashboard.svg);
+    background-image: url(static('../assets/bg-dashboard.svg'));
 
     p.welcome{
         font-size: 21px;
