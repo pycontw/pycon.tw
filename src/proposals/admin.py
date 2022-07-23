@@ -4,7 +4,7 @@ from django.contrib.contenttypes.admin import GenericTabularInline
 from import_export.admin import ExportMixin
 
 from .models import AdditionalSpeaker, TalkProposal, TutorialProposal
-from .resources import TalkProposalResource
+from .resources import TalkProposalResource, TutorialProposalResource
 
 
 class AdditionalSpeakerInline(GenericTabularInline):
@@ -49,5 +49,5 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
 
 
 @admin.register(TutorialProposal)
-class TutorialProposalAdmin(ProposalAdmin):
-    pass
+class TutorialProposalAdmin(ExportMixin, ProposalAdmin):
+    resource_class = TutorialProposalResource

@@ -1,6 +1,6 @@
 from import_export import fields, resources
 
-from .models import TalkProposal
+from .models import TalkProposal, TutorialProposal
 
 
 class TalkProposalResource(resources.ModelResource):
@@ -68,5 +68,18 @@ class TalkProposalResource(resources.ModelResource):
             'stage_2_plus_1_count', 'stage_2_plus_0_count',
             'stage_2_minus_0_count', 'stage_2_minus_1_count',
             'first_time_speaker', 'referring_policy'
+        ]
+        export_order = fields
+
+
+class TutorialProposalResource(resources.ModelResource):
+    name = fields.Field(attribute='submitter__speaker_name')
+    email = fields.Field(attribute='submitter__email')
+
+    class Meta:
+        model = TutorialProposal
+        fields = [
+            'id', 'title', 'category', 'python_level', 'duration', 'language',
+            'name', 'email', 'cancelled', 'accepted', 'last_updated_at', 'referring_policy'
         ]
         export_order = fields
