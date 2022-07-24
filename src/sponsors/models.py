@@ -56,6 +56,12 @@ class Sponsor(ConferenceRelated):
             "fallback when the SVG file is not available."
         ),
     )
+    order = models.PositiveIntegerField(
+        verbose_name=_('order'),
+        null=True,
+        blank=True,
+        help_text='Enter a positive number to represent your orders, or it will be a null.'
+    )
 
     class Level:
         PLATINUM = 1
