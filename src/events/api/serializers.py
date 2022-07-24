@@ -92,7 +92,7 @@ class TalkListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTalkEvent
-        fields = ["id", "proposal"]
+        fields = ["id", "proposal", "location", "begin_time"]
 
 
 class SponsoredEventDetailSerializer(serializers.ModelSerializer):
@@ -171,7 +171,7 @@ class TutorialListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProposedTutorialEvent
-        fields = ["id", "proposal"]
+        fields = ["id", "proposal", "location", "begin_time"]
 
 
 class KeynoteEventSerializer(serializers.ModelSerializer):
