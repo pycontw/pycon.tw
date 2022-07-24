@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-11 02:21+0800\n"
+"POT-Creation-Date: 2022-07-24 23:16+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -516,7 +516,7 @@ msgstr "基調演講"
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
-#: events/models.py:325 sponsors/models.py:93 sponsors/models.py:109
+#: events/models.py:325 sponsors/models.py:99 sponsors/models.py:115
 msgid "sponsor"
 msgstr "贊助"
 
@@ -1236,7 +1236,7 @@ msgstr "PyCon Taiwan 2022"
 #: pycontw2016/settings/base.py:320
 #: pycontw2016/settings/production/pycontw2016.py:16
 #: pycontw2016/settings/production/pycontw2021.py:15
-#: pycontw2016/settings/production/pycontw2022.py:15
+#: pycontw2016/settings/production/pycontw2022.py:14
 #: pycontw2016/settings/testing/pycontw2021.py:11
 #: pycontw2016/settings/testing/pycontw2022.py:11
 msgid "No preference"
@@ -1244,7 +1244,7 @@ msgstr "無偏好"
 
 #: pycontw2016/settings/base.py:321
 #: pycontw2016/settings/production/pycontw2021.py:16
-#: pycontw2016/settings/production/pycontw2022.py:16
+#: pycontw2016/settings/production/pycontw2022.py:15
 #: pycontw2016/settings/testing/pycontw2021.py:12
 #: pycontw2016/settings/testing/pycontw2022.py:12
 msgid "Prefer 15min"
@@ -1252,7 +1252,7 @@ msgstr "偏好 15 分鐘"
 
 #: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2021.py:17
-#: pycontw2016/settings/production/pycontw2022.py:17
+#: pycontw2016/settings/production/pycontw2022.py:16
 #: pycontw2016/settings/testing/pycontw2021.py:13
 #: pycontw2016/settings/testing/pycontw2022.py:13
 msgid "Prefer 30min"
@@ -1276,7 +1276,7 @@ msgstr "偏好 25 分鐘"
 
 #: pycontw2016/settings/production/pycontw2016.py:18
 #: pycontw2016/settings/production/pycontw2021.py:18
-#: pycontw2016/settings/production/pycontw2022.py:18
+#: pycontw2016/settings/production/pycontw2022.py:17
 #: pycontw2016/settings/testing/pycontw2021.py:14
 #: pycontw2016/settings/testing/pycontw2022.py:14
 msgid "Prefer 45min"
@@ -1476,63 +1476,67 @@ msgid ""
 msgstr ""
 "當SVG格式的檔案不存在時，會回過頭來使用點陣式格式的圖標，例如PNG、JPEG。"
 
-#: sponsors/models.py:73
+#: sponsors/models.py:60
+msgid "order"
+msgstr "排序"
+
+#: sponsors/models.py:79
 msgid "platinum"
 msgstr "白金級"
 
-#: sponsors/models.py:74
+#: sponsors/models.py:80
 msgid "gold"
 msgstr "金級"
 
-#: sponsors/models.py:75
+#: sponsors/models.py:81
 msgid "silver"
 msgstr "銀級"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:82
 msgid "bronze"
 msgstr "銅級"
 
-#: sponsors/models.py:77
+#: sponsors/models.py:83
 msgid "special"
 msgstr "特別贊助"
 
-#: sponsors/models.py:78
+#: sponsors/models.py:84
 msgid "organizer"
 msgstr "主辦單位"
 
-#: sponsors/models.py:79
+#: sponsors/models.py:85
 msgid "co-organizer"
 msgstr "協辦單位"
 
-#: sponsors/models.py:88
+#: sponsors/models.py:94
 msgid "level"
 msgstr "等級"
 
-#: sponsors/models.py:94
+#: sponsors/models.py:100
 msgid "sponsors"
 msgstr "贊助"
 
-#: sponsors/models.py:114
+#: sponsors/models.py:120
 msgid "open role name"
 msgstr "職缺名稱"
 
-#: sponsors/models.py:119
+#: sponsors/models.py:125
 msgid "open role descsription"
 msgstr "職缺說明"
 
-#: sponsors/models.py:123
+#: sponsors/models.py:129
 msgid "open role requirements"
 msgstr "職缺需求"
 
-#: sponsors/models.py:128
+#: sponsors/models.py:134
 msgid "open role URL"
 msgstr "職缺 URL"
 
-#: sponsors/models.py:133
+#: sponsors/models.py:139
 msgid "open role"
 msgstr "職缺"
 
-#: sponsors/models.py:134
+#: sponsors/models.py:140
 msgid "open Roles"
 msgstr "職缺"
 

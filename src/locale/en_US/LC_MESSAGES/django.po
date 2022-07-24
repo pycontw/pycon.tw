@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-11 02:20+0800\n"
+"POT-Creation-Date: 2022-07-24 23:14+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -509,7 +509,7 @@ msgstr "keynote events"
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:325 sponsors/models.py:93 sponsors/models.py:109
+#: events/models.py:325 sponsors/models.py:99 sponsors/models.py:115
 msgid "sponsor"
 msgstr "sponsor"
 
@@ -1278,7 +1278,7 @@ msgstr "PyCon Taiwan 2022"
 #: pycontw2016/settings/base.py:320
 #: pycontw2016/settings/production/pycontw2016.py:16
 #: pycontw2016/settings/production/pycontw2021.py:15
-#: pycontw2016/settings/production/pycontw2022.py:15
+#: pycontw2016/settings/production/pycontw2022.py:14
 #: pycontw2016/settings/testing/pycontw2021.py:11
 #: pycontw2016/settings/testing/pycontw2022.py:11
 msgid "No preference"
@@ -1286,7 +1286,7 @@ msgstr "No preference"
 
 #: pycontw2016/settings/base.py:321
 #: pycontw2016/settings/production/pycontw2021.py:16
-#: pycontw2016/settings/production/pycontw2022.py:16
+#: pycontw2016/settings/production/pycontw2022.py:15
 #: pycontw2016/settings/testing/pycontw2021.py:12
 #: pycontw2016/settings/testing/pycontw2022.py:12
 msgid "Prefer 15min"
@@ -1294,7 +1294,7 @@ msgstr "Prefer 15min"
 
 #: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2021.py:17
-#: pycontw2016/settings/production/pycontw2022.py:17
+#: pycontw2016/settings/production/pycontw2022.py:16
 #: pycontw2016/settings/testing/pycontw2021.py:13
 #: pycontw2016/settings/testing/pycontw2022.py:13
 msgid "Prefer 30min"
@@ -1318,7 +1318,7 @@ msgstr "Prefer 25min"
 
 #: pycontw2016/settings/production/pycontw2016.py:18
 #: pycontw2016/settings/production/pycontw2021.py:18
-#: pycontw2016/settings/production/pycontw2022.py:18
+#: pycontw2016/settings/production/pycontw2022.py:17
 #: pycontw2016/settings/testing/pycontw2021.py:14
 #: pycontw2016/settings/testing/pycontw2022.py:14
 msgid "Prefer 45min"
@@ -1526,63 +1526,67 @@ msgstr ""
 "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
 "SVG file is not available."
 
-#: sponsors/models.py:73
+#: sponsors/models.py:60
+msgid "order"
+msgstr "order"
+
+#: sponsors/models.py:79
 msgid "platinum"
 msgstr "platinum"
 
-#: sponsors/models.py:74
+#: sponsors/models.py:80
 msgid "gold"
 msgstr "gold"
 
-#: sponsors/models.py:75
+#: sponsors/models.py:81
 msgid "silver"
 msgstr "silver"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:82
 msgid "bronze"
 msgstr "bronze"
 
-#: sponsors/models.py:77
+#: sponsors/models.py:83
 msgid "special"
 msgstr "special"
 
-#: sponsors/models.py:78
+#: sponsors/models.py:84
 msgid "organizer"
 msgstr "organizer"
 
-#: sponsors/models.py:79
+#: sponsors/models.py:85
 msgid "co-organizer"
 msgstr "co-organizer"
 
-#: sponsors/models.py:88
+#: sponsors/models.py:94
 msgid "level"
 msgstr "level"
 
-#: sponsors/models.py:94
+#: sponsors/models.py:100
 msgid "sponsors"
 msgstr "sponsors"
 
-#: sponsors/models.py:114
+#: sponsors/models.py:120
 msgid "open role name"
 msgstr "open role name"
 
-#: sponsors/models.py:119
+#: sponsors/models.py:125
 msgid "open role descsription"
 msgstr "open role description"
 
-#: sponsors/models.py:123
+#: sponsors/models.py:129
 msgid "open role requirements"
 msgstr "open role requirements"
 
-#: sponsors/models.py:128
+#: sponsors/models.py:134
 msgid "open role URL"
 msgstr "open role URL"
 
-#: sponsors/models.py:133
+#: sponsors/models.py:139
 msgid "open role"
 msgstr "open role"
 
-#: sponsors/models.py:134
+#: sponsors/models.py:140
 msgid "open Roles"
 msgstr "open Roles"
 
