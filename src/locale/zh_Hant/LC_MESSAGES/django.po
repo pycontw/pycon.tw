@@ -20,16 +20,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 22:16+0800\n"
-"PO-Revision-Date: 2020-03-19 11:22+0000\n"
+"POT-Creation-Date: 2022-07-11 02:21+0800\n"
+"PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
 "pycon-tw/language/zh-Hant/)\n"
-"Language: zh-Hant\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1\n"
 
 #: attendee/models.py:6
 msgid "token"
@@ -39,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:201 events/models.py:452
+#: attendee/models.py:9 core/models.py:203 events/models.py:457
 msgid "created at"
 msgstr "建立時間"
 
@@ -55,32 +56,32 @@ msgstr "會眾"
 msgid "attendees"
 msgstr "會眾"
 
-#: ccip/views.py:195
+#: ccip/views.py:206
 msgctxt "CCIP event type"
 msgid "event"
 msgstr "活動"
 
-#: ccip/views.py:203
+#: ccip/views.py:214
 msgctxt "CCIP event type"
 msgid "break"
 msgstr "休息"
 
-#: ccip/views.py:211
+#: ccip/views.py:222
 msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "基調演講"
 
-#: ccip/views.py:217
+#: ccip/views.py:228
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "贊助"
 
-#: ccip/views.py:225
+#: ccip/views.py:236
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "專業課程"
 
-#: ccip/views.py:237
+#: ccip/views.py:248
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "演講"
@@ -204,134 +205,142 @@ msgid "English talk"
 msgstr "英文演講"
 
 #: core/models.py:118
+msgid "Chinese talk w. English slides"
+msgstr "中文演講/英文投影片"
+
+#: core/models.py:119
+msgid "Japanese talk w. English slides"
+msgstr "日文演講/英文投影片"
+
+#: core/models.py:120
 msgid "non-English talk w. English slides"
 msgstr "非英文演講/英文投影片"
 
-#: core/models.py:121
+#: core/models.py:123
 msgid "language"
 msgstr "語言"
 
-#: core/models.py:127
+#: core/models.py:129
 msgid "Talk language"
 msgstr "演講語言"
 
-#: core/models.py:132
+#: core/models.py:134
 msgid "abstract"
 msgstr "摘要"
 
-#: core/models.py:137
+#: core/models.py:139
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr "入門"
 
-#: core/models.py:138
+#: core/models.py:140
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr "中階"
 
-#: core/models.py:139 templates/pycontw-2018/events/schedule.html:30
+#: core/models.py:141 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr "進階"
 
-#: core/models.py:142 templates/default/reviews/review_form.html:53
+#: core/models.py:144 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python 難易度"
 
-#: core/models.py:148
+#: core/models.py:150
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:153 core/models.py:163 core/models.py:173 core/models.py:224
-#: core/models.py:234 proposals/models.py:268 reviews/models.py:122
+#: core/models.py:155 core/models.py:165 core/models.py:175 core/models.py:226
+#: core/models.py:236 proposals/models.py:268 reviews/models.py:122
 #: reviews/models.py:137
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:154 core/models.py:164 core/models.py:174 core/models.py:225
-#: core/models.py:235 proposals/models.py:269 reviews/models.py:123
+#: core/models.py:156 core/models.py:166 core/models.py:176 core/models.py:227
+#: core/models.py:237 proposals/models.py:269 reviews/models.py:123
 #: reviews/models.py:138
 msgid "No"
 msgstr "否"
 
-#: core/models.py:157
+#: core/models.py:159
 msgid "recording policy"
 msgstr "議程錄影釋出"
 
-#: core/models.py:167
+#: core/models.py:169
 msgid "live stream policy"
 msgstr "議程直播"
 
-#: core/models.py:177
+#: core/models.py:179
 msgid "referring policy"
 msgstr "轉介至地方社群"
 
-#: core/models.py:183
+#: core/models.py:185
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:189
+#: core/models.py:191
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:195 events/models.py:246
+#: core/models.py:197 events/models.py:246
 msgid "HackMD embed link"
 msgstr "HackMD 嵌入連結"
 
-#: core/models.py:207
+#: core/models.py:209
 msgid "last updated at"
 msgstr "最後更新"
 
-#: core/models.py:212
+#: core/models.py:214
 msgid "Day 1, September 3rd, 2022 Morning"
 msgstr "第一天(2022/09/03)早上"
 
-#: core/models.py:213
+#: core/models.py:215
 msgid "Day 1, September 3rd, 2022 Afternoon"
 msgstr "第一天(2022/09/03)下午"
 
-#: core/models.py:214
+#: core/models.py:216
 msgid "Day 2, September 4th, 2022 Morning"
 msgstr "第二天(2022/09/04)早上"
 
-#: core/models.py:215
+#: core/models.py:217
 msgid "Day 2, September 4th, 2022 Afternoon"
 msgstr "第二天(2022/09/04)下午"
 
-#: core/models.py:218
+#: core/models.py:220
 msgid "prefer event time"
 msgstr "偏好議程時間"
 
-#: core/models.py:228
+#: core/models.py:230
 msgid "living in Taiwan"
 msgstr "是否住在台灣"
 
-#: core/models.py:238
+#: core/models.py:240
 msgid "agree pre-recorded proposal"
 msgstr "同意預錄議程"
 
-#: core/models.py:269 reviews/admin.py:51
+#: core/models.py:271 reviews/admin.py:51
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:273 proposals/models.py:62 users/models.py:198
+#: core/models.py:275 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "使用者"
 
-#: core/models.py:276
+#: core/models.py:278
 msgid "Created"
 msgstr "建立時間"
 
-#: core/models.py:279
+#: core/models.py:281
 msgid "Token"
 msgstr "驗證碼"
 
-#: core/models.py:280
+#: core/models.py:282
 msgid "Tokens"
 msgstr "驗證碼"
 
@@ -490,6 +499,7 @@ msgid "is remote"
 msgstr "遠端演講"
 
 #: events/models.py:276 events/models.py:351 events/models.py:395
+#: events/models.py:431
 msgid "youtube id"
 msgstr "youtube id"
 
@@ -552,19 +562,19 @@ msgstr "演講"
 msgid "registration link"
 msgstr "報名連結"
 
-#: events/models.py:434
+#: events/models.py:439
 msgid "tutorial event"
 msgstr "專業課程"
 
-#: events/models.py:435
+#: events/models.py:440
 msgid "tutorial events"
 msgstr "專業課程"
 
-#: events/models.py:449
+#: events/models.py:454
 msgid "HTML"
 msgstr "HTML"
 
-#: events/models.py:457 templates/pycontw-2016/_includes/nav/front_nav.html:40
+#: events/models.py:462 templates/pycontw-2016/_includes/nav/front_nav.html:40
 #: templates/pycontw-2016/events/schedule.html:6
 #: templates/pycontw-2016/events/schedule.html:8
 #: templates/pycontw-2017/contents/_default/portal.html:16
@@ -591,11 +601,11 @@ msgstr "HTML"
 msgid "Schedule"
 msgstr "時間表"
 
-#: events/models.py:458
+#: events/models.py:463
 msgid "Schedules"
 msgstr "時間表"
 
-#: events/models.py:463
+#: events/models.py:468
 msgid "Schedule created at {}"
 msgstr "時間表建立於 {}"
 
@@ -633,7 +643,7 @@ msgid ""
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/mixins.py:45 proposals/forms/mixins.py:173
+#: proposals/forms/mixins.py:45 proposals/forms/mixins.py:174
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -646,7 +656,7 @@ msgstr ""
 "要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會"
 "公佈在網站與大會手冊中。應為單一段落。</p>"
 
-#: proposals/forms/mixins.py:54 proposals/forms/mixins.py:182
+#: proposals/forms/mixins.py:54 proposals/forms/mixins.py:183
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -661,7 +671,7 @@ msgstr ""
 "如何投稿</a>一文。注意：投稿不會因為級別是「入門」就比較容易上。若我們認為這"
 "講題對聽眾來說過於簡單或困難時，可能會和你討論是否需要修改。"
 
-#: proposals/forms/mixins.py:65 proposals/forms/mixins.py:193
+#: proposals/forms/mixins.py:65 proposals/forms/mixins.py:194
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -680,6 +690,7 @@ msgstr ""
 "basics' target='_blank' rel='noopener'>Markdown</a> 格式編輯。"
 
 #: proposals/forms/mixins.py:79
+#, python-brace-format
 msgid ""
 "PyCon Taiwan will do post-processing to all the presentation videos, "
 "including but not limited to applying video template, banners of sponsors’ "
@@ -688,12 +699,12 @@ msgid ""
 "found at <a href='{frontend_host}/en-us/speaking/recording' "
 "target='_blank'>Recording Release</a> page."
 msgstr ""
-"議程影片皆會經過 PyCon Taiwan 的後製，包括但不限於：套用大會模板、贊助商 logo 輪播。"
-"您是否同意授權讓 PyCon Taiwan 在會後釋出您的演講影片？更多資訊請見"
-"<a href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
-"a>一頁。"
+"議程影片皆會經過 PyCon Taiwan 的後製，包括但不限於：套用大會模板、贊助商 "
+"logo 輪播。您是否同意授權讓 PyCon Taiwan 在會後釋出您的演講影片？更多資訊請見"
+"<a href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出"
+"</a>一頁。"
 
-#: proposals/forms/mixins.py:89 proposals/forms/mixins.py:215
+#: proposals/forms/mixins.py:89 proposals/forms/mixins.py:216
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -723,7 +734,7 @@ msgstr ""
 "從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位"
 "不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:108 proposals/forms/mixins.py:226
+#: proposals/forms/mixins.py:108 proposals/forms/mixins.py:227
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -753,7 +764,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:128 proposals/forms/mixins.py:242
+#: proposals/forms/mixins.py:128 proposals/forms/mixins.py:243
 msgid ""
 "If you disagree to authorize PyCon Taiwan to record video, whether you agree "
 "to let PyCon Taiwan live stream your presentation only for the remote "
@@ -767,7 +778,7 @@ msgstr ""
 msgid "Have you ever been a speaker at PyCon Taiwan in the past?"
 msgstr "您過去是否擔任過 PyCon Taiwan 的講者"
 
-#: proposals/forms/mixins.py:138 proposals/forms/mixins.py:248
+#: proposals/forms/mixins.py:138 proposals/forms/mixins.py:249
 msgid ""
 "Due to the ongoing global pandemic, <strong>PyCon APAC 2022 will be held "
 "fully remote. All online talks this year will be pre-recorded </strong> so "
@@ -782,21 +793,21 @@ msgstr ""
 "由於持續性的全球傳染性疾病，<strong>PyCon APAC 2022 將會透過全遠端的形式舉行"
 "會議。</strong>所有的演講都會需要進行預錄影片，讓我們能以更好的品質將您的演講"
 "播放給觀眾，避免因時差或網路連線造成的相關問題。<br>當您的演講提案被委員會接"
-"受後，您需要在會議前提供您預先錄製的影片予 PyCon APAC 2022 大會。<br><strong>台灣"
-"講者的福利</strong><br>對於居住在台灣的講者，我們額外準備了一個位在台北的中央"
-"攝影棚，我們誠摯的邀請您前來。我們將協助您錄製專業的演講影片，並且我們將會補"
-"助您往返的交通費。"
+"受後，您需要在會議前提供您預先錄製的影片予 PyCon APAC 2022 大會。<br><strong>"
+"台灣講者的福利</strong><br>對於居住在台灣的講者，我們額外準備了一個位在台北的"
+"中央攝影棚，我們誠摯的邀請您前來。我們將協助您錄製專業的演講影片，並且我們將"
+"會補助您往返的交通費。"
 
-#: proposals/forms/mixins.py:151 proposals/forms/mixins.py:261
+#: proposals/forms/mixins.py:151 proposals/forms/mixins.py:262
 msgid ""
 "If your previous option is not English, please enter your speaking language"
 msgstr ""
 
-#: proposals/forms/mixins.py:170
+#: proposals/forms/mixins.py:171
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>今年 Tutorial 時間長度僅開放 1.5 小時。</p>"
 
-#: proposals/forms/mixins.py:207
+#: proposals/forms/mixins.py:208
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -808,7 +819,7 @@ msgstr ""
 "href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
 "a>一頁。"
 
-#: proposals/forms/mixins.py:219
+#: proposals/forms/mixins.py:220
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -819,7 +830,7 @@ msgstr ""
 "講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開"
 "僅供審查使用。"
 
-#: proposals/forms/mixins.py:234
+#: proposals/forms/mixins.py:235
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -1566,24 +1577,16 @@ msgid "Log out"
 msgstr "登出"
 
 #: templates/default/_includes/nav/nav_base.html:33
-#: templates/default/_includes/nav/nav_base.html:34
 #: templates/default/_includes/nav/nav_base.html:42
+msgid "ZH"
+msgstr "中文"
+
+#: templates/default/_includes/nav/nav_base.html:34
 #: templates/default/_includes/nav/nav_base.html:43
 msgid "EN"
 msgstr "英文"
 
-#: templates/default/_includes/nav/nav_base.html:33
-#: templates/default/_includes/nav/nav_base.html:34
-#: templates/default/_includes/nav/nav_base.html:42
-#: templates/default/_includes/nav/nav_base.html:43
-msgid "ZH"
-msgstr "中文"
-
-#: templates/default/_includes/nav/nav_base.html:8
-msgid "Toggle navigation"
-msgstr "展開導覽列"
-
-#: templates/default/_includes/nav/nav_base.html:74
+#: templates/default/_includes/nav/nav_base.html:73
 msgid "Change"
 msgstr "修改"
 
@@ -1628,7 +1631,7 @@ msgstr ""
 #: templates/default/_includes/proposal_example_modal.html:46
 #: templates/default/_includes/proposal_example_modal.html:61
 #: templates/default/reviews/_includes/proposal_table.html:20
-#: templates/default/reviews/_includes/review_table.html:8
+#: templates/default/reviews/_includes/review_table_thead.html:7
 #: templates/default/users/_includes/dashboard_cospeaking_proposal_table.html:6
 #: templates/default/users/_includes/dashboard_proposal_table.html:6
 msgid "Title"
@@ -1872,16 +1875,8 @@ msgstr ""
 "\n"
 "若您沒有在本站註冊過，則可以忽略本訊息。\n"
 
-#: templates/default/reviews/_includes/review_table.html:3
-msgid "Stage1"
-msgstr "第一階段"
-
-#: templates/default/reviews/_includes/review_table.html:15
-msgid "Stage2"
-msgstr "第二階段"
-
 #: templates/default/reviews/_includes/previous_review_table.html:6
-#: templates/default/reviews/_includes/review_table.html:6
+#: templates/default/reviews/_includes/review_table_thead.html:5
 msgid "Stage"
 msgstr "階段"
 
@@ -1891,7 +1886,7 @@ msgid "Reviewer ID"
 msgstr "審稿人代號"
 
 #: templates/default/reviews/_includes/previous_review_table.html:8
-#: templates/default/reviews/_includes/review_table.html:7
+#: templates/default/reviews/_includes/review_table_thead.html:6
 msgid "Vote"
 msgstr "投票"
 
@@ -1967,13 +1962,21 @@ msgstr ""
 "背景。你可以根據這些額外資訊更新自己的評審內容。第 2 階段審稿的方式與第 1 階"
 "段相同，但投稿人只會看到你對稿件的最終評語 (若你願意)。"
 
-#: templates/default/reviews/_includes/review_table.html:9
+#: templates/default/reviews/_includes/review_table_tbody.html:14
+msgid "Update"
+msgstr "更新"
+
+#: templates/default/reviews/_includes/review_table_thead.html:8
 msgid "Comment"
 msgstr "評論"
 
-#: templates/default/reviews/_includes/review_table.html:25
-msgid "Update"
-msgstr "更新"
+#: templates/default/reviews/_includes/stage_1_review_table.html:3
+msgid "Stage1"
+msgstr "第一階段"
+
+#: templates/default/reviews/_includes/stage_2_review_table.html:4
+msgid "Stage2"
+msgstr "第二階段"
 
 #: templates/default/reviews/review_form.html:8
 #, python-format
@@ -2053,7 +2056,7 @@ msgstr "已決策之演講提案"
 msgid "You have reviewed all talk proposals."
 msgstr "您已經審查了所有的演講提案。"
 
-#: templates/default/reviews/talk_proposal_list.html:73
+#: templates/default/reviews/talk_proposal_list.html:74
 msgid "You haven't reviewed any talk proposals."
 msgstr "您尚未審查任何演講提案。"
 
@@ -4508,6 +4511,7 @@ msgid ""
 msgstr "<a class=\"btn btn-link\" href=\"{password_reset_url}\">忘記密碼</a>"
 
 #: users/forms.py:255
+#, python-brace-format
 msgid "<a class=\"btn btn-link\" href=\"{signup_url}\">Sign up now</a>"
 msgstr "<a class=\"btn btn-link\" href=\"{signup_url}\">註冊帳號</a>"
 
@@ -4657,39 +4661,3 @@ msgstr ""
 #: users/views.py:129
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "Chinese talk w. Chinese slides"
-#~ msgstr "中文演講/中文投影片"
-
-#~ msgid "remoting policy"
-#~ msgstr "遠端視訊演講"
-
-#~ msgid "Day 1 morning"
-#~ msgstr "第一天早上"
-
-#~ msgid "Day 1 afternoon"
-#~ msgstr "第一天下午"
-
-#~ msgid "Day 2 morning"
-#~ msgstr "第二天早上"
-
-#~ msgid "Day 2 afternoon"
-#~ msgstr "第一天下午"
-
-#~ msgid ""
-#~ "Whether you agree to deliver the talk remotely if the epidemic "
-#~ "(coronavirus) is still raging this August?"
-#~ msgstr ""
-#~ "因應新型冠狀病毒疫情，若到八月疫情未趨緩，是否同意以遠端方式進行演講？"
-
-#~ msgid "Is it your first time to be the speaker of PyCon TW?"
-#~ msgstr "此次是您第一次擔任 PyCon TW 的講者嗎？"
-
-#~ msgid ""
-#~ "Whether you agree to deliver the tutorial remotely if the epidemic "
-#~ "(coronavirus) is still raging this August?"
-#~ msgstr ""
-#~ "因應新型冠狀病毒疫情，若到八月疫情未趨緩，是否同意以遠端方式進行專業課程？"
-
-#~ msgid "Taiwanese Hokkien"
-#~ msgstr "臺灣閩南語"
