@@ -69,8 +69,9 @@ class Sponsor(ConferenceRelated):
         SILVER = 3
         BRONZE = 4
         SPECIAL = 5
-        ORGANIZER = 6
-        COORGANIZER = 7
+        SPECIAL_THANKS = 6
+        ORGANIZER = 7
+        COORGANIZER = 8
 
         # Backward compatibility.
         PARTNER = COORGANIZER
@@ -81,6 +82,7 @@ class Sponsor(ConferenceRelated):
         (Level.SILVER, _('silver')),
         (Level.BRONZE, _('bronze')),
         (Level.SPECIAL, _('special')),
+        (Level.SPECIAL_THANKS, _('special-thanks')),
         (Level.ORGANIZER, _('organizer')),
         (Level.COORGANIZER, _('co-organizer')),
     )
