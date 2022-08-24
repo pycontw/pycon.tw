@@ -99,7 +99,7 @@ def render_block_location(location):
             Location.R2: 'R2',
             Location.R3: 'R3',
             Location.R4: 'R4',
-        }[location],
+        }.get(location),
     )
 
 
