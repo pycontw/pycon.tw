@@ -198,6 +198,14 @@ class EventWrapper:
         return make_naive(self.obj.end_time.value).strftime('%Y-%m-%d %H:%M:%S')
 
     @property
+    def begin_time_utc(self) -> str:
+        return self.obj.begin_time.value
+
+    @property
+    def end_time_utc(self) -> str:
+        return self.obj.end_time.value
+
+    @property
     def is_remote(self) -> bool:
         if isinstance(self.obj, (KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent)):
             return self.obj.is_remote
@@ -244,8 +252,8 @@ class EventWrapper:
             'event_type': self.event_type,
             'title': self.title,
             'speakers': self.speakers,
-            'begin_time': self.begin_time,
-            'end_time': self.end_time,
+            'begin_time': self.begin_time_utc,
+            'end_time': self.end_time_utc,
             'is_remote': self.is_remote,
             'recording_policy': self.recording_policy,
             'language': self.language,
@@ -328,12 +336,8 @@ class ScheduleAPIView(APIView):
 
         result = []
         for day_info in day_info_dict.values():
-            day_info['timeline']['begin'] = make_naive(
-                day_info['timeline']['begin'].value
-            ).strftime('%Y-%m-%d %H:%M:%S')
-            day_info['timeline']['end'] = make_naive(
-                day_info['timeline']['end'].value
-            ).strftime('%Y-%m-%d %H:%M:%S')
+            day_info['timeline']['begin'] = day_info['timeline']['begin'].value
+            day_info['timeline']['end'] = day_info['timeline']['end'].value
             result.append(day_info)
 
         return Response({'data': result})
