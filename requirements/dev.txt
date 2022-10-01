@@ -51,3 +51,6 @@ cssselect==1.1.0
 
 # PostgreSQL database adapter for the Python
 psycopg2-binary==2.8.5
+
+# Automated generation of real Swagger/OpenAPI 2.0 schemas from Django REST Framework code.
+drf-yasg==1.20.0
