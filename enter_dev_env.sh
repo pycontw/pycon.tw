@@ -9,6 +9,10 @@ HASH=`docker ps -q -f name=$CONTAINER`
 # test if the container is stopped
 HASH_STOPPED=`docker ps -qa -f name=$CONTAINER`
 
+if [[ $(uname -m) == 'arm64' ]]; then
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
+fi
+
 if [ -n "$HASH" ];then
     echo "found existing running container $CONTAINER, proceeding to exec another shell"
     docker-compose -f $COMPOSE_FILE restart
