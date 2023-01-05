@@ -1,0 +1,48 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+
+
+{% block title %}{% trans 'Schedule' %}{% endblock title %}
+
+
+{% block styles %}
+	{{ block.super }}
+	<link rel="stylesheet" href="{% static 'css/vendors/balloon.css' %}">
+	<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2021/styles/pages/_events.scss' %}">
+{% endblock %}
+
+
+{% block body_class %} schedule-page{% endblock body_class %}
+
+
+{% block content %}
+
+	<h1>{% block pagetitle %}{% trans 'Schedule' %}{% endblock pagetitle %}</h1>
+
+	{% block schedule %}
+		<div class="schedule-content">
+			{{ schedule_html|safe }}
+		</div>
+	{% endblock schedule %}
+
+  <script type="application/json" id="i18n_variables">
+  {
+	  "LANGUAGE_PREFIXES": [
+		  {% for code, _ in LANGUAGES %}
+  		  "{{ SCRIPT_PREFIX }}{{ code }}"{% if not forloop.last %}, {% endif %}
+	  	{% endfor %}
+	  ],
+	  "LANGUAGE_PREFIX": "{{ SCRIPT_PREFIX }}{{ LANGUAGE_CODE }}"
+  }
+  </script>
+
+	{% block controls %}{% endblock controls %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+	{{ block.super }}
+	<script type="module" src="{% static 'pycontw-2018/scripts/schedule.js' %}"></script>
+{% endblock scripts %}

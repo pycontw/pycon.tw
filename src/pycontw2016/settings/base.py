@@ -305,9 +305,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2020', _('PyCon Taiwan 2020')),
     ('pycontw-2021', _('PyCon Taiwan 2021')),
     ('pycontw-2022', _('PyCon Taiwan 2022')),
+    ('pycontw-2023', _('PyCon Taiwan 2023')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2022'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2023'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )

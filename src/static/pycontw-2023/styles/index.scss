@@ -1,0 +1,252 @@
+@import 'site';
+@import 'index-mixins';
+@import 'index-hero';
+@import 'index-partners';
+@import 'pycontw-year-ribbon';
+
+body {
+		background-color: $top-navbar-background-color;
+		background: rgb(242, 236, 236);
+}
+
+footer {
+	background: #4e4b4b;
+}
+
+.top-navbar {
+	background: rgb(242, 236, 236);
+}
+
+
+.portal {
+	@include index-section;
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
+	}
+
+	.portal-container {
+		display: flex;
+		flex-flow: wrap;
+		align-items: center;
+		justify-content: space-around;
+		height: 260px;
+		@include on-desktop {
+			flex-flow: wrap;
+			height: 100px;
+		}
+	}
+
+	.card {
+		display: flex;
+		margin-bottom: 15px;
+		width: 156px;
+		height: 50px;
+		justify-content: center;
+		align-items: center;
+    border-radius: 4px;
+    border: solid 2px white;
+		a {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+			/*color: #502526;*/
+			font-size: 16px;
+			font-weight: normal;
+			letter-spacing: -0.08px;
+		}
+		&:hover {
+			border: solid 2px #E23728;
+		}
+	}
+}
+
+.top-navbar {
+    .navbar-brand {
+        // Tom: Don't display "PyCon TW20" at navbar in index
+        // It collides with the hero image
+        display: none;
+    }
+}
+
+.menu-navbar-desktop-outer {
+    @include on-desktop {
+        margin: 0 $hero-desktop-margin;
+    }
+}
+
+.menu-navbar-desktop {
+	@include menu-navbar-desktop(
+		url('../assets/logo-strong-violet.svg'), $jinger-bread, $jinger-bread,  $jinger-bread);
+
+    @include on-desktop {
+        // Align with hero-image-bg
+        margin: 0 auto 50px;
+        max-width: 1160px;
+        padding: 0;
+    }
+}
+
+@mixin big-button-color($color-name, $color) {
+    &.color-#{$color-name} {
+        background-color: $color;
+        border: 2px solid $color;
+
+        &:hover {
+            color: $color;
+            background-color: transparentize($brick, 0.3);
+            text-decoration: none;
+            .icon {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+@mixin big-button-icon($name) {
+    .icon-#{$name} {
+        mask: url('../assets/icon-#{$name}.svg');
+        mask-size: 100% 100%;
+    }
+}
+
+.index-big-button {
+    width: 100%;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 1.6rem;
+    margin: 30px auto;
+    max-width: 100%;
+
+	@include on-desktop {
+        width: 510px;
+        height: 113px;
+        border-radius: 57px;
+        font-size: 1.875rem;
+        margin: 50px auto;
+	}
+
+    text-decoration: none;
+    color: $brick;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: background 150ms linear, border 150ms linear;
+
+    @include big-button-color(jinger-bread, $jinger-bread);
+    @include big-button-color(imperial, $imperial);
+    @include big-button-color(dark-gray, $dark-gray);
+
+    .icon {
+        width: 35px;
+        height: 35px;
+        margin-left: 5.493%;
+        background-repeat: no-repeat;
+        background-color: $brick;
+
+        @include on-desktop {
+            width: 50px;
+            height: 50px;
+            margin-left: 5.493%;
+        }
+    }
+
+    > div {
+        flex-grow: 1;
+        margin-right: 9.805%;
+    }
+
+    @include big-button-icon(speaking);
+    @include big-button-icon(volunteering);
+    @include big-button-icon(sponsor);
+}
+
+.index-introduction {
+	@include index-section;
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
+	}
+
+	.my-pycon {
+		@include button(276deg, $dark-peach, $maize);
+		margin-top: 40px;
+	}
+}
+
+.index-actions {
+	@include index-section;
+
+    padding: 0 40px 80px;
+    font-family: 'Noto Sans TC';
+
+	@include on-desktop {
+		margin-top: 0 - $menu-desktop-height / 2;
+	}
+}
+
+.index-volunteer-container {
+	@include container(960px);
+	display: flex;
+	flex-flow: row wrap;
+	background: rgba(253, 246, 223, 0.6);;
+	border-radius: 12px;
+	justify-content: center;
+	align-items:flex-end;
+	margin-bottom: 60px;
+
+	.index-volunteer, .index-cfp {
+		flex: 1 1 0;
+	}
+
+	.index-volunteer {
+		@include index-section;
+		margin-top: 40px;
+
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $egyptian-blue;
+		}
+
+		.volunteer {
+			@include bgimg-hover-button($portica, url('../assets/button-hover-bg.svg'), $egyptian-blue);
+			margin-top: 40px;
+			font-size: 1.75rem;
+		}
+	}
+
+	.index-cfp {
+		@include index-section;
+		padding: 120px;
+		background-color: $egyptian-blue;
+
+		article:first-of-type {
+			margin-top: 0;
+		}
+		h2, p {
+			color: $white;
+		}
+
+		.volunteer {
+			@include outline-button($portica);
+			margin-top: 40px;
+		}
+	}
+}
+
+.main-content {
+    flex: 1 0 auto; // Fix for sticky footer
+    position: relative;
+    overflow: hidden;
+    background: white;
+
+	@include on-desktop {
+        margin: 0;
+        padding-top: 80px;
+	}
+}

@@ -2,8 +2,8 @@ version: "3.5"
 services:
   web:
     build: .
-    container_name: pycontw-2022
-    hostname: pycontw-2022
+    container_name: pycontw-2023
+    hostname: pycontw-2023
     entrypoint: ""
     command:
       # Hacky script for quick demonstration purpose
@@ -26,7 +26,7 @@ services:
     restart: always
     environment:
       # Save us from having to type `--setting=pycontw2016.settings.production`
-      DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2022
+      DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2023
       SCRIPT_NAME: /prs
       SECRET_KEY: ${SECRET_KEY}
       DATABASE_URL: ${DATABASE_URL}
@@ -43,4 +43,4 @@ services:
 networks:
   network:
     external: true
-    name: network-2022
+    name: network-2023
