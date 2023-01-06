@@ -1,0 +1,463 @@
+@import 'pycontw-2020/styles/palette.scss';
+
+$icon-width: 26px;
+$icon-height: 26px;
+
+@mixin icon($name, $margin-top: 0, $x: left, $width: $icon-width) {
+	width: $width;
+	height: $width;
+	margin-top: $margin-top; // Visual compensation.
+	background: url('../../assets/icon-#{$name}.svg') top $x no-repeat;
+}
+
+@mixin time() {
+	font-family: $header-font-family;
+	font-size: 18px;
+	color: $jinger-bread;
+}
+
+@mixin room($content) {
+	&::before {
+		display: inline;
+		content: $content;
+		white-space: pre;
+	}
+}
+
+@mixin roomDisplayStyle() {
+	min-width: 2ch;
+	font-family: $text-font-family;
+	color: #ffffff;
+	text-align: center;
+	background: $brown;
+	border-radius: 5px;
+}
+
+@mixin rooms() {
+	.room-2-all {
+		@include room('All');
+	}
+
+	.room-3-r012 {
+		@include room('R1, R2, R3');
+	}
+
+	.room-4-r0 {
+		@include room('R1');
+	}
+
+	.room-5-r1 {
+		@include room('R2');
+	}
+
+	.room-6-r2 {
+		@include room('R3');
+	}
+
+	.room-1-r3 {
+		@include room('Multifunction room\A多功能廳');
+	}
+
+	.room-7-r4 {
+		@include room('Goodideas Studio\A好想工作室');
+	}
+}
+
+@mixin eventItem() {
+	display: flex;
+	font-family: $text-font-family;
+	border-radius: 5px;
+
+	a {
+		text-decoration: none;
+	}
+
+	.context-container {
+		position: sticky;
+		top: 70px;
+		padding: 12px;
+
+		.context {
+			.title {
+				margin-bottom: 8px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+
+            .remote-block {
+                margin-top: -8px;
+                margin-bottom: 8px;
+
+                .remote-label {
+                    font-size: 0.8rem;
+                    color: white;
+                    background-color: $jinger-bread;
+
+                    padding: 0.8px 3.5px;
+                    border-radius: 3px;
+                    position: relative;
+                }
+            }
+
+			.speaker {
+				margin-bottom: 8px;
+
+				.name {
+					margin-bottom: 8px;
+					font-weight: 600;
+					font-size: 14px;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.room {
+			display: flex;
+			margin-bottom: 8px;
+			flex-wrap: wrap;
+
+			& > .room-tag {
+				@include roomDisplayStyle();
+
+				padding: 4px;
+			}
+		}
+
+		.description {
+			margin-bottom: 8px;
+			font-style: italic;
+		}
+	}
+
+	& > .custom-event {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		color: $dark-gray;
+		text-align: center;
+		background: rgba($dark-gray, 0.1);
+		border-radius: 5px;
+		cursor: default;
+
+		.context {
+			display: flex;
+			justify-content: center;
+
+			:not(.title) {
+				flex: 1;
+			}
+
+			.title {
+				flex: 3
+			}
+		}
+
+		.time {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	& > .keynote-event {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: inherit;
+
+		.time {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	& > .talk-event {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.7);
+		border-radius: inherit;
+
+		.title {
+			display: -webkit-box;
+			overflow: hidden;
+			line-height: 1.2em;
+			text-overflow: ellipsis;
+			box-sizing: border-box;
+			-webkit-line-clamp: 3;
+		}
+
+		.tags {
+			display: flex;
+		}
+	}
+
+	.language-enen {
+		@include icon('language-enen', 0, center, 2 * $icon-width);
+	}
+
+	.language-zhen {
+		@include icon('language-zhen', 0, center, 2 * $icon-width);
+	}
+
+	.language-zhzh {
+		@include icon('language-zhzh', 0, center, 2 * $icon-width);
+	}
+
+	.python-level-novice {
+		@include icon('level-1', 2px);
+	}
+
+	.python-level-intermediate {
+		@include icon('level-2', 2px);
+	}
+
+	.python-level-experienced {
+		@include icon('level-3', 2px);
+	}
+
+	.no-recording {
+		@include icon('no-recording', 1px);
+	}
+
+	@include rooms();
+}
+
+@mixin toggleTimetableOrTimeList() {
+	@media (min-width: 901px) {
+		.py-schedule-timetable {
+			display: initial;
+
+			.room-tag {
+				display: none;
+			}
+		}
+
+		.py-schedule-time-list {
+			display: none;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.py-schedule-timetable {
+			display: none;
+		}
+
+		.py-schedule-time-list {
+			display: initial;
+
+			.room-tag::before {
+				white-space: initial;
+			}
+		}
+
+		.py-schedule-tabs__tab {
+			padding: 24px;
+		}
+	}
+}
+
+main {
+	max-width: unset;
+	margin: unset;
+	padding: 24px;
+
+	.py-schedule {
+		&-tabs {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&__tab {
+				margin: 0 24px 24px;
+				padding: 24px 72px;
+				font-family: $header-font-family;
+				font-size: 20px;
+				border-radius: 8px;
+				cursor: default;
+
+				&:hover:not(.--active) {
+					color: red;
+					cursor: pointer;
+				}
+
+				&.--active {
+					color: $jinger-bread;
+					background: $salmon;
+				}
+			}
+		}
+
+		&-timetable {
+			&-header {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				display: flex;
+				background: transparentize($brick, 0.3);
+
+				&-column {
+					@include roomDisplayStyle();
+
+					margin: 8px 8px 8px 0;
+					padding: 12px 0;
+					font-size: 18px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					&.--timeline {
+						flex: 1;
+						background: transparent;
+					}
+
+					&.--room {
+						flex: 2;
+					}
+				}
+
+				@include rooms();
+
+				&:not(.--active) {
+					display: none;
+				}
+			}
+
+			&-body {
+				display: grid;
+				grid-template-columns:
+						[times] 1fr
+						[room-4-r0-start] 2fr
+					  [room-4-r0-end room-5-r1-start] 2fr
+						[room-5-r1-end room-6-r2-start] 2fr
+					  [room-6-r2-end room-8-r3-start] 2fr
+					  [room-8-r3-end room-7-r4-start] 2fr
+					  [room-7-r4-end];
+				grid-column-gap: 8px;
+				grid-row-gap: 8px;
+
+				&-item {
+					@include eventItem();
+				}
+
+				.room-3-r012 {
+					grid-column: room-4-r0-start / room-6-r2-end;
+				}
+
+				.room-4-r0 {
+					grid-column: room-4-r0-start / room-4-r0-end;
+				}
+
+				.room-5-r1 {
+					grid-column: room-5-r1-start / room-5-r1-end;
+				}
+
+				.room-6-r2 {
+					grid-column: room-6-r2-start / room-6-r2-end;
+				}
+
+				.room-7-r4 {
+					grid-column: room-7-r4-start / room-7-r4-end;
+				}
+
+				.room-1-r3 {
+					grid-column: room-8-r3-start / room-8-r3-end;
+				}
+
+				.room-2-all {
+					grid-column: room-4-r0-start / room-8-r3-end;
+				}
+
+				.timeline {
+					grid-column: times;
+					justify-self: center;
+					@include time();
+
+					&.--hour {
+						font-size: 20px;
+						font-weight: 500;
+					}
+
+					&.--half-an-hour {
+						font-size: 18px;
+					}
+				}
+
+				&:not(.--active) {
+					display: none;
+				}
+			}
+		}
+
+		&-time-list {
+			&-section {
+				&-header {
+					position: sticky;
+					position: -webkit-sticky;
+					top: 0;
+					z-index: 10;
+					padding: 16px 0;
+					background: $brick;
+
+					& > .time {
+						@include time();
+
+						font-size: 22px;
+					}
+				}
+
+				&-items {
+					display: flex;
+					flex-direction: column;
+					margin: 12px 0;
+
+					&-item {
+						@include eventItem();
+						margin-bottom: 12px;
+					}
+
+					.room-2-all {
+						order: 1;
+					}
+
+					.room-3-r012 {
+						order: 2;
+					}
+
+					.room-4-r0 {
+						order: 3;
+					}
+
+					.room-5-r1 {
+						order: 4;
+					}
+
+					.room-6-r2 {
+						order: 5;
+					}
+
+					.room-1-r3 {
+						order: 6;
+					}
+
+					.room-7-r4 {
+						order: 7;
+					}
+				}
+			}
+
+			&:not(.--active) {
+				display: none;
+			}
+		}
+	}
+
+	@include toggleTimetableOrTimeList();
+}

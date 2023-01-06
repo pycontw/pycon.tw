@@ -1,0 +1,43 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n proposals %}
+
+
+{% block title %}{% trans 'Tutorials' %}{% endblock %}
+
+{% block content %}
+
+<section class="pill-title">
+	<h1>{% trans 'Tutorials' %}</h1>
+</section>
+
+<article>
+	<p>{% blocktrans trimmed %}Tutorial are events held as part of the main conference, but attendees need to register separately in order to join. They are 90-minute events held to help participants better understand talks during the conference, or get their hands on more Python applications.{% endblocktrans %}</p>
+	<p>{% blocktrans trimmed %}<em>Program schedule is subject to change.</em> Please check this page frequently to get the latest version.{% endblocktrans %}</p>
+</article>
+
+
+{% for object in object_list %}
+
+{% with event=object proposal=object.proposal %}
+
+<article class="box">
+	<h2 class="box-title">{{ proposal.title }}</h2>
+	<div class="box-content"><p>{{ proposal.abstract }}</p></div>
+	<div class="box-control">
+		<a href="{{ event.get_absolute_url }}">
+			{% trans 'Show Details' %}
+		</a>
+		{% if event.registration_link %}
+		<a href="{{ event.registration_link }}" target="_blank" rel="noopener">
+			{% trans 'Register' %}
+		</a>
+		{% endif %}
+	</div>
+</article>
+
+{% endwith %}
+
+{% endfor %}
+
+{% endblock content %}

@@ -305,9 +305,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2020', _('PyCon Taiwan 2020')),
     ('pycontw-2021', _('PyCon Taiwan 2021')),
     ('pycontw-2022', _('PyCon Taiwan 2022')),
+    ('pycontw-2023', _('PyCon Taiwan 2023')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2022'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2023'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -323,13 +324,13 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2022, 9, 3), _('Day 1')),
-    (datetime.date(2022, 9, 4), _('Day 2')),
+    (datetime.date(2022, 9, 2), _('Day 1')),
+    (datetime.date(2022, 9, 3), _('Day 2')),
 ])
 
 SCHEDULE_REDIRECT_URL = None
 
-COC_VERSION = '2022.0'
+COC_VERSION = '2023.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config

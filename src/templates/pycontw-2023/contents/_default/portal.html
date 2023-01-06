@@ -1,0 +1,19 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Portal' %}{% endblock title %}
+
+{% block body_class %}portal-page{% endblock body_class %}
+
+{% block content %}
+
+<h1>{% trans 'Portal' %}</h1>
+
+<section class="portal-element portal-cards">
+		{% include '_includes/portal.html' %}
+</section>
+
+{% endblock content %}
+

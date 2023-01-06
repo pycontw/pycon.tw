@@ -1,0 +1,39 @@
+{% load i18n %}
+{% if attendee.verified %}
+{% for room, live in rooms.items %}
+<div class="entry">
+    <h3>{{ room }}</h3>
+    {% if live %}
+        <div class="video-container">
+            <iframe width="560" height="315"
+                    class="video"
+                    src="https://www.youtube.com/embed/{{ live }}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    {% else %}
+    <p>
+        {% trans 'This broadcast is not ready yet.' %}
+    </p>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% elif attendee %}
+
+<p>
+{% trans 'The broadcasts are not ready yet, please try again later.' %}
+</p>
+
+{% else %}
+
+<p>
+{% trans 'The token within the link is invalid. Please contact staff for further help.' %}
+</p>
+
+{% endif %}
+
+<script>
+    window.TOKEN = '{{ token|default:'' }}';
+</script>

@@ -116,8 +116,6 @@ class EventInfo(models.Model):
     LANGUAGE_CHOICES = (
         ('ENEN', _('English talk')),
         ('ZHEN', _('Chinese talk w. English slides')),
-        ('JPEN', _('Japanese talk w. English slides')),  # added for PyCon APAC 2022
-        ('NONEN', _('non-English talk w. English slides')),  # for backward compatibility, can be deleted after 2022
     )
     language = models.CharField(
         verbose_name=_('language'),
