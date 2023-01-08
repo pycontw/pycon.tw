@@ -209,10 +209,10 @@ class EventInfo(models.Model):
     )
 
     PERFER_TIME_CHOICES = (
-        ('DAY_ONE_MORNING', _('Day 1, September 3rd, 2022 Morning')),
-        ('DAY_ONE_AFTERNOON', _('Day 1, September 3rd, 2022 Afternoon')),
-        ('DAY_TWO_MORNING', _('Day 2, September 4th, 2022 Morning')),
-        ('DAY_TWO_AFTERNOON', _('Day 2, September 4th, 2022 Afternoon')),
+        ('DAY_ONE_MORNING', _('Day 1, September 2nd, 2023 Morning')),
+        ('DAY_ONE_AFTERNOON', _('Day 1, September 2nd, 2023 Afternoon')),
+        ('DAY_TWO_MORNING', _('Day 2, September 3rd, 2023 Morning')),
+        ('DAY_TWO_AFTERNOON', _('Day 2, September 3rd, 2023 Afternoon')),
     )
     prefer_time = models.CharField(
         verbose_name=_('prefer event time'),
@@ -226,16 +226,6 @@ class EventInfo(models.Model):
     )
     living_in_taiwan = models.BooleanField(
         verbose_name=_('living in Taiwan'),
-        default=False,
-        choices=REFERRING_POLICY_CHOICES,
-    )
-
-    PRE_RECORDED_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
-    pre_recorded_policy = models.BooleanField(
-        verbose_name=_('agree pre-recorded proposal'),
         default=False,
         choices=REFERRING_POLICY_CHOICES,
     )

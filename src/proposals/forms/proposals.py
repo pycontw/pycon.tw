@@ -51,7 +51,6 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'referring_policy',
             'prefer_time',
             'living_in_taiwan',
-            'pre_recorded_policy',
         ]
 
 
@@ -80,7 +79,6 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'live_stream_policy',
             'prefer_time',
             'living_in_taiwan',
-            'pre_recorded_policy',
         ]
 
 
@@ -108,7 +106,6 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['pre_recorded_policy'].disabled = True
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -127,7 +124,6 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'live_stream_policy',
             'first_time_speaker',
             'slide_link',
-            'pre_recorded_policy',
         ]
 
 
@@ -143,7 +139,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
-        self.fields['pre_recorded_policy'].disabled = True
 
     class Meta(TutorialProposalMixin.Meta):
         fields = [
@@ -161,7 +156,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'recording_policy',
             'live_stream_policy',
             'slide_link',
-            'pre_recorded_policy',
         ]
 
 

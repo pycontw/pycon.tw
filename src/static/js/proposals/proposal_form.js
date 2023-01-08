@@ -15,16 +15,4 @@
         }
     });
 
-    if (!$('#id_pre_recorded_policy').is(':checked')) {
-        $('button.btn-primary:submit').prop('disabled', true);
-    }
-
-    $('#id_pre_recorded_policy').change(function() {
-        if (this.checked) {
-            $('button.btn-primary:submit').prop('disabled', false);
-        } else {
-            $('button.btn-primary:submit').prop('disabled', true);
-        }
-    });
-
 })(jQuery);
