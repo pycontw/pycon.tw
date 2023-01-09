@@ -98,7 +98,6 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'referring_policy': False,
         'first_time_speaker': True,
         'living_in_taiwan': True,
-        'pre_recorded_policy': True,
         'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 
@@ -130,7 +129,6 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'recording_policy': True,
         'live_stream_policy': True,
         'living_in_taiwan': True,
-        'pre_recorded_policy': True,
         'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 

@@ -22,7 +22,6 @@ def talk_proposal_data():
         'referring_policy': True,
         'first_time_speaker': True,
         'living_in_taiwan': True,
-        'pre_recorded_policy': True,
         'prefer_time': 'DAY_ONE_MORNING',
     }
 
@@ -32,7 +31,7 @@ def test_talk_proposal_create_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'talk_language', 'python_level',
         'recording_policy', 'live_stream_policy', 'first_time_speaker', 'referring_policy',
-        'prefer_time', 'living_in_taiwan', 'pre_recorded_policy',
+        'prefer_time', 'living_in_taiwan',
     ]
 
 
@@ -75,7 +74,6 @@ def tutorial_proposal_data():
         'recording_policy': True,
         'live_stream_policy': True,
         'living_in_taiwan': True,
-        'pre_recorded_policy': True,
         'prefer_time': 'DAY_ONE_MORNING',
     }
 
@@ -85,7 +83,7 @@ def test_tutorial_proposal_create_form():
     assert list(form.fields) == [
         'title', 'category', 'duration', 'language', 'talk_language',
         'python_level', 'recording_policy', 'live_stream_policy',
-        'prefer_time', 'living_in_taiwan', 'pre_recorded_policy',
+        'prefer_time', 'living_in_taiwan',
     ]
 
 
@@ -128,7 +126,6 @@ def test_talk_proposal_update_form():
         'abstract', 'python_level', 'objective', 'detailed_description',
         'outline', 'supplementary', 'recording_policy',
         'live_stream_policy', 'first_time_speaker', 'slide_link',
-        'pre_recorded_policy',
     ]
 
 
@@ -138,7 +135,7 @@ def test_tutorial_proposal_update_form():
         'title', 'category', 'duration', 'language', 'talk_language',
         'abstract', 'python_level', 'objective', 'detailed_description',
         'outline', 'supplementary', 'recording_policy',
-        'live_stream_policy', 'slide_link', 'pre_recorded_policy',
+        'live_stream_policy', 'slide_link',
     ]
 
 
