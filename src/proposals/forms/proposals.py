@@ -122,6 +122,7 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'supplementary',
             'recording_policy',
             'live_stream_policy',
+            'referring_policy',
             'first_time_speaker',
             'slide_link',
         ]
