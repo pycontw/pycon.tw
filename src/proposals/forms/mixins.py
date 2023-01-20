@@ -91,7 +91,7 @@ class TalkProposalMixin:
             'referring_policy': _(
                 "Whether you agree to give permission to PyCon Taiwan to refer your "
                 "talk proposal to your local PyCon community if your proposal did not "
-                "get accepted(APAC only)."
+                "get accepted."
             ),
             'objective': _(
                 "<p><a href='#' data-toggle='modal' "

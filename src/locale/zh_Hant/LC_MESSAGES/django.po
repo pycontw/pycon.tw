@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-08 22:15+0800\n"
+"POT-Creation-Date: 2023-01-19 22:59+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -249,14 +249,12 @@ msgid "detailed description"
 msgstr "詳細說明"
 
 #: core/models.py:153 core/models.py:163 core/models.py:173 core/models.py:224
-#: core/models.py:234 proposals/models.py:268 reviews/models.py:122
-#: reviews/models.py:137
+#: proposals/models.py:268 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "是"
 
 #: core/models.py:154 core/models.py:164 core/models.py:174 core/models.py:225
-#: core/models.py:235 proposals/models.py:269 reviews/models.py:123
-#: reviews/models.py:138
+#: proposals/models.py:269 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "否"
 
@@ -312,24 +310,24 @@ msgstr "偏好議程時間"
 msgid "living in Taiwan"
 msgstr "是否住在台灣"
 
-#: core/models.py:264 reviews/admin.py:51
+#: core/models.py:259 reviews/admin.py:51
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:268 proposals/models.py:62 users/models.py:198
+#: core/models.py:263 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "使用者"
 
-#: core/models.py:271
+#: core/models.py:266
 msgid "Created"
 msgstr "建立時間"
 
-#: core/models.py:274
+#: core/models.py:269
 msgid "Token"
 msgstr "驗證碼"
 
-#: core/models.py:275
+#: core/models.py:270
 msgid "Tokens"
 msgstr "驗證碼"
 
@@ -730,11 +728,10 @@ msgstr "可以在接近或大會之後補上投影片連結，不需要在投稿
 #: proposals/forms/mixins.py:92
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to refer your talk "
-"proposal to your local PyCon community if your proposal did not get "
-"accepted(APAC only)."
+"proposal to your local PyCon community if your proposal did not get accepted."
 msgstr ""
 "若投稿沒有入選，是否有意願讓 PyCon Taiwan 將該篇稿件轉介至您所在地的 PyCon 社"
-"群(只限 APAC 地區)。"
+"群。"
 
 #: proposals/forms/mixins.py:97
 msgid ""
