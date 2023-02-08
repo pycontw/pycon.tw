@@ -133,9 +133,6 @@ class TalkProposalMixin:
                 "Have you ever been a speaker at PyCon Taiwan in the past?"
 
             ),
-            'talk_language': _(
-                "If your previous option is not English, please enter your speaking language"
-            ),
         }
 
 
@@ -229,8 +226,5 @@ class TutorialProposalMixin:
                 "whether you agree to let PyCon Taiwan live stream your presentation "
                 "only for the remote attendees to watch ? (we will not release "
                 "audio and video of your presentation)"
-            ),
-            'talk_language': _(
-                "If your previous option is not English, please enter your speaking language"
             ),
         }

@@ -35,7 +35,6 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
-    talk_language = forms.CharField(required=False)
 
     class Meta(TalkProposalMixin.Meta):
         fields = [
@@ -43,7 +42,6 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'category',
             'duration',
             'language',
-            'talk_language',
             'python_level',
             'recording_policy',
             'live_stream_policy',
@@ -61,7 +59,6 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     a proposal very quickly, and fill in the details later.
     """
 
-    talk_language = forms.CharField(required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -73,7 +70,6 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'category',
             'duration',
             'language',
-            'talk_language',
             'python_level',
             'recording_policy',
             'live_stream_policy',
@@ -102,7 +98,6 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
         label=_('duration'),
         choices=settings.TALK_PROPOSAL_DURATION_CHOICES,
     )
-    talk_language = forms.CharField(required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -113,7 +108,6 @@ class TalkProposalUpdateForm(TalkProposalMixin, ProposalUpdateForm):
             'category',
             'duration',
             'language',
-            'talk_language',
             'abstract',
             'python_level',
             'objective',
@@ -135,7 +129,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     user-editable fields.
     """
 
-    talk_language = forms.CharField(required=False)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -147,7 +140,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
             'category',
             'duration',
             'language',
-            'talk_language',
             'abstract',
             'python_level',
             'objective',

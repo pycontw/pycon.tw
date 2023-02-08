@@ -116,6 +116,8 @@ class EventInfo(models.Model):
     LANGUAGE_CHOICES = (
         ('ENEN', _('English talk')),
         ('ZHEN', _('Chinese talk w. English slides')),
+        ('ZHZH', _('Chinese talk w. Chinese slides')),
+        ('TAI', _('Taiwanese Hokkien')),
     )
     language = models.CharField(
         verbose_name=_('language'),
@@ -123,10 +125,6 @@ class EventInfo(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
-    talk_language = models.CharField(
-        verbose_name=_('Talk language'),
-        max_length=32,
-    )
 
     abstract = EAWTextField(
         verbose_name=_('abstract'),
@@ -242,6 +240,7 @@ class EventInfo(models.Model):
             'ENEN': 'E',
             'ZHEN': 'ZE',
             'ZHZH': 'Z',
+            'TAI': 'T',
         }[self.language]
 
     def get_python_level_tag(self):
