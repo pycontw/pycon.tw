@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-19 22:59+0800\n"
+"POT-Creation-Date: 2023-02-08 17:53+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -40,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:201 events/models.py:469
+#: attendee/models.py:9 core/models.py:199 events/models.py:469
 msgid "created at"
 msgstr "建立時間"
 
@@ -209,125 +209,129 @@ msgstr "英文演講"
 msgid "Chinese talk w. English slides"
 msgstr "中文演講/英文投影片"
 
-#: core/models.py:121
+#: core/models.py:119
+msgid "Chinese talk w. Chinese slides"
+msgstr "中文演講/中文投影片"
+
+#: core/models.py:120
+msgid "Taiwanese Hokkien"
+msgstr "臺灣閩南語"
+
+#: core/models.py:123
 msgid "language"
 msgstr "語言"
 
-#: core/models.py:127
-msgid "Talk language"
-msgstr "演講語言"
-
-#: core/models.py:132
+#: core/models.py:130
 msgid "abstract"
 msgstr "摘要"
 
-#: core/models.py:137
+#: core/models.py:135
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr "入門"
 
-#: core/models.py:138
+#: core/models.py:136
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr "中階"
 
-#: core/models.py:139 templates/pycontw-2018/events/schedule.html:30
+#: core/models.py:137 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr "進階"
 
-#: core/models.py:142 templates/default/reviews/review_form.html:53
+#: core/models.py:140 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python 難易度"
 
-#: core/models.py:148
+#: core/models.py:146
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:153 core/models.py:163 core/models.py:173 core/models.py:224
+#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:222
 #: proposals/models.py:268 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "是"
 
-#: core/models.py:154 core/models.py:164 core/models.py:174 core/models.py:225
+#: core/models.py:152 core/models.py:162 core/models.py:172 core/models.py:223
 #: proposals/models.py:269 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "否"
 
-#: core/models.py:157
+#: core/models.py:155
 msgid "recording policy"
 msgstr "議程錄影釋出"
 
-#: core/models.py:167
+#: core/models.py:165
 msgid "live stream policy"
 msgstr "議程直播"
 
-#: core/models.py:177
+#: core/models.py:175
 msgid "referring policy"
 msgstr "轉介至地方社群"
 
-#: core/models.py:183
+#: core/models.py:181
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:189
+#: core/models.py:187
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:195 events/models.py:258
+#: core/models.py:193 events/models.py:258
 msgid "HackMD embed link"
 msgstr "HackMD 嵌入連結"
 
-#: core/models.py:207
+#: core/models.py:205
 msgid "last updated at"
 msgstr "最後更新"
 
-#: core/models.py:212
+#: core/models.py:210
 msgid "Day 1, September 2nd, 2023 Morning"
 msgstr "第一天(2023/09/02)早上"
 
-#: core/models.py:213
+#: core/models.py:211
 msgid "Day 1, September 2nd, 2023 Afternoon"
 msgstr "第一天(2023/09/02)下午"
 
-#: core/models.py:214
+#: core/models.py:212
 msgid "Day 2, September 3rd, 2023 Morning"
 msgstr "第二天(2023/09/03)早上"
 
-#: core/models.py:215
+#: core/models.py:213
 msgid "Day 2, September 3rd, 2023 Afternoon"
 msgstr "第二天(2023/09/03)下午"
 
-#: core/models.py:218
+#: core/models.py:216
 msgid "prefer event time"
 msgstr "偏好議程時間"
 
-#: core/models.py:228
+#: core/models.py:226
 msgid "living in Taiwan"
 msgstr "是否住在台灣"
 
-#: core/models.py:259 reviews/admin.py:51
+#: core/models.py:258 reviews/admin.py:51
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:263 proposals/models.py:62 users/models.py:198
+#: core/models.py:262 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "使用者"
 
-#: core/models.py:266
+#: core/models.py:265
 msgid "Created"
 msgstr "建立時間"
 
-#: core/models.py:269
+#: core/models.py:268
 msgid "Token"
 msgstr "驗證碼"
 
-#: core/models.py:270
+#: core/models.py:269
 msgid "Tokens"
 msgstr "驗證碼"
 
