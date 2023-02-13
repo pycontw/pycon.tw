@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-08 17:53+0800\n"
+"POT-Creation-Date: 2023-02-13 22:44+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -657,7 +657,7 @@ msgstr ""
 "Only authenticated user with complete speaker profile may create a "
 "{model_name}."
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:159
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:156
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -671,7 +671,7 @@ msgstr ""
 "here. If your talk is accepted, this will be displayed on both the website "
 "and the handbook. Should be one paragraph.</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:168
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:165
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -688,7 +688,7 @@ msgstr ""
 "contact you to change the talk level when we find the content is too-hard or "
 "too-easy for the target audience."
 
-#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:179
+#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:176
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -725,7 +725,7 @@ msgstr ""
 "found at <a href='{frontend_host}/en-us/speaking/recording' "
 "target='_blank'>Recording Release</a> page."
 
-#: proposals/forms/mixins.py:88 proposals/forms/mixins.py:201
+#: proposals/forms/mixins.py:88 proposals/forms/mixins.py:198
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -757,7 +757,7 @@ msgstr ""
 "the room, what will they learn that they didn't know before? This is NOT "
 "made public and for REVIEW ONLY.</p>"
 
-#: proposals/forms/mixins.py:107 proposals/forms/mixins.py:212
+#: proposals/forms/mixins.py:107 proposals/forms/mixins.py:209
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -789,7 +789,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY.</p>"
 
-#: proposals/forms/mixins.py:127 proposals/forms/mixins.py:228
+#: proposals/forms/mixins.py:127 proposals/forms/mixins.py:225
 msgid ""
 "If you disagree to authorize PyCon Taiwan to record video, whether you agree "
 "to let PyCon Taiwan live stream your presentation only for the remote "
@@ -805,17 +805,11 @@ msgstr ""
 msgid "Have you ever been a speaker at PyCon Taiwan in the past?"
 msgstr "Have you ever been a speaker at PyCon Taiwan in the past?"
 
-#: proposals/forms/mixins.py:137 proposals/forms/mixins.py:234
-msgid ""
-"If your previous option is not English, please enter your speaking language"
-msgstr ""
-"If your previous option is not English, please enter your speaking language"
-
-#: proposals/forms/mixins.py:156
+#: proposals/forms/mixins.py:153
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 
-#: proposals/forms/mixins.py:193
+#: proposals/forms/mixins.py:190
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -828,7 +822,7 @@ msgstr ""
 "at <a href='{frontend_host}/en-us/speaking/recording' "
 "target='_blank'>Recording Release</a> page."
 
-#: proposals/forms/mixins.py:205
+#: proposals/forms/mixins.py:202
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -840,7 +834,7 @@ msgstr ""
 "they leave the room, what will they learn that they didn't know before? This "
 "is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/mixins.py:220
+#: proposals/forms/mixins.py:217
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -852,7 +846,7 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:102
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:98
 msgid "duration"
 msgstr "Duration"
 
@@ -2021,25 +2015,25 @@ msgstr ""
 
 #: templates/default/reviews/_includes/review_stage_2_desc.html:3
 msgid ""
-"After review stage 1, some of the proposals have been accepted or rejected. "
-"These proposals and their reviews (read-only) are shown in the separate tab."
+"After the stage 1 review, some proposals that have been accepted or rejected "
+"will show in a separate tab along with their reviews (read-only)."
 msgstr ""
-"After review stage 1, some of the proposals have been accepted or rejected. "
-"These proposals and their reviews (read-only) are shown in the separate tab."
+"After the stage 1 review, some proposals that have been accepted or rejected "
+"will show in a separate tab along with their reviews (read-only)."
 
 #: templates/default/reviews/_includes/review_stage_2_desc.html:8
 msgid ""
-"In review stage 2, you will see score and comment made by other reviewers "
-"anonymously, including the name and background of the speaker. With more "
+"In review stage 2, you will see scores and comments made by other reviewers "
+"anonymously, including the name and background of the submitter. With more "
 "information provided, you may want to update your review. Updating or adding "
-"review in stage 2 follows the same way as stage 1. Only the last review you "
-"made will be disclosed to the speaker (if you choose to)."
+"review in stage 2 follows the same way as stage 1, but only the last review "
+"you made will be disclosed to the submitter (if you choose to do so)."
 msgstr ""
-"In review stage 2, you will see score and comment made by other reviewers "
-"anonymously, including the name and background of the speaker. With more "
+"In review stage 2, you will see scores and comments made by other reviewers "
+"anonymously, including the name and background of the submitter. With more "
 "information provided, you may want to update your review. Updating or adding "
-"review in stage 2 follows the same way as stage 1. Only the last review you "
-"made will be disclosed to the speaker (if you choose to)."
+"review in stage 2 follows the same way as stage 1, but only the last review "
+"you made will be disclosed to the submitter (if you choose to do so)."
 
 #: templates/default/reviews/_includes/review_table_tbody.html:14
 msgid "Update"
@@ -2090,13 +2084,13 @@ msgstr "Current Review Stage: %(review_stage)s"
 
 #: templates/default/reviews/talk_proposal_list.html:18
 msgid ""
-"Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
-"other reviewers and speakers. For more information about the whole review "
+"Please note that the identities of all reviewers are always invisible to "
+"other reviewers and submitters. For more information about the whole review "
 "process, please refer to the GitBook <a href=\"https://pycontw.github.io/"
 "reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
 msgstr ""
-"Note that at anytime, the identity of the reviewer, e.g. you, is hidden to "
-"other reviewers and speakers. For more information about the whole review "
+"Please note that the identities of all reviewers are always invisible to "
+"other reviewers and submitters. For more information about the whole review "
 "process, please refer to the GitBook <a href=\"https://pycontw.github.io/"
 "reviewer-guidebook\" target=\"_blank\" rel=\"noopener\">Review Guideline</a>."
 
