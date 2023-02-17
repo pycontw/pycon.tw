@@ -228,6 +228,17 @@ class EventInfo(models.Model):
         choices=REFERRING_POLICY_CHOICES,
     )
 
+    WILLING_TO_ATTEND_IN_PERSON = (
+        (True, _('Yes')),
+        (False, _('No')),
+    )
+
+    willing_to_attend_in_person = models.BooleanField(
+        verbose_name=_("attending PyCon TW in person"),
+        default=True,
+        choices=WILLING_TO_ATTEND_IN_PERSON,
+    )
+
     class Meta:
         abstract = True
         ordering = ['-created_at']
