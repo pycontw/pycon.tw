@@ -265,8 +265,8 @@ class TalkProposal(AbstractProposal):
     )
 
     FIRST_SPEAKER_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
+        (True, _('Yes, it is my first time speaking at PyCon Taiwan.')),
+        (False, _('No, I have given talks at PyCon Taiwan in the past.'))
     )
 
     first_time_speaker = models.BooleanField(

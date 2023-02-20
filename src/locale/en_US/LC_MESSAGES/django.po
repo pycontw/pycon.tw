@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-18 00:15+0800\n"
+"POT-Creation-Date: 2023-02-20 22:26+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -246,14 +246,12 @@ msgid "detailed description"
 msgstr "detailed description"
 
 #: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:222
-#: core/models.py:232 proposals/models.py:268 reviews/models.py:122
-#: reviews/models.py:137
+#: core/models.py:232 reviews/models.py:122 reviews/models.py:137
 msgid "Yes"
 msgstr "Yes"
 
 #: core/models.py:152 core/models.py:162 core/models.py:172 core/models.py:223
-#: core/models.py:233 proposals/models.py:269 reviews/models.py:123
-#: reviews/models.py:138
+#: core/models.py:233 reviews/models.py:123 reviews/models.py:138
 msgid "No"
 msgstr "No"
 
@@ -807,10 +805,6 @@ msgstr ""
 "attendees to watch ? (we will not release audio and video of your "
 "presentation)"
 
-#: proposals/forms/mixins.py:133
-msgid "Have you ever been a speaker at PyCon Taiwan in the past?"
-msgstr "Have you ever been a speaker at PyCon Taiwan in the past?"
-
 #: proposals/forms/mixins.py:153
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
@@ -963,6 +957,14 @@ msgstr ""
 #: templates/default/reviews/review_form.html:40
 msgid "Duration"
 msgstr "Duration"
+
+#: proposals/models.py:268
+msgid "Yes, it is my first time speaking at PyCon Taiwan."
+msgstr "Yes, it is my first time speaking at PyCon Taiwan."
+
+#: proposals/models.py:269
+msgid "No, I have given talks at PyCon Taiwan in the past."
+msgstr "No, I have given talks at PyCon Taiwan in the past."
 
 #: proposals/models.py:273
 msgid "first time speaker"

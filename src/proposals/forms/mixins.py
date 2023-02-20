@@ -130,7 +130,7 @@ class TalkProposalMixin:
                 "audio and video of your presentation)"
             ),
             'first_time_speaker': _(
-                "Have you ever been a speaker at PyCon Taiwan in the past?"
+                ""
 
             ),
         }
