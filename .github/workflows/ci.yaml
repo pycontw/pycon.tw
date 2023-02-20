@@ -30,18 +30,20 @@ jobs:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
 
-    - name: Set up dependencies
+    - name: Set up Python dependencies
       run: |
         pip install -U pip
         # pip install wheel
         # pip wheel -q -r requirements/travis.txt
         pip install -r requirements/travis.txt
 
-    - name: Run install
-      uses: borales/actions-yarn@v4
+    - uses: actions/setup-node@v3
       with:
-        cmd: install --dev
-        # yarn install --dev
+        node-version: 16
+
+    - name: Setup JS dependencies
+      run: |
+        npm install
 
     - name: lint source
       run: flake8 source
