@@ -1,0 +1,15 @@
+---
+- name: Check services
+  hosts: staging
+
+  tasks:
+    - name: Ensure that sshd is started
+      community.general.python_requirements_info:
+        dependencies:
+          - docker
+
+    - name: Get info on docker host and list images
+      community.docker.docker_host_info:
+        images: true
+      become: true
+      register: result

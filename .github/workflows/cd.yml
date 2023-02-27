@@ -1,0 +1,29 @@
+name: CD
+
+on: [workflow_dispatch, pull_request, push]
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Decode private key file
+      run: |
+        echo "${{secrets.SSH_PRIVATE_KEY}}" | base64 --decode > "private.pem"
+        chmod 400 private.pem
+
+    - name: Run playbook
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook: deploy.yml
+        inventory: |
+          pycontw:
+            hosts:
+              staging:
+                ansible_host: staging.pycon.tw
+                ansible_user: changchaishi
+                ansible_ssh_private_key_file: private.pem
+                ansible_python_interpreter: /usr/bin/python3
+
