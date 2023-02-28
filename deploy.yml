@@ -20,9 +20,10 @@
         state: directory
 
     - name: Copy entire project files to remote server
-      ansible.builtin.copy:
-        src: .
+      ansible.posix.synchronize:
+        src: ./
         dest: "{{ project_dir }}"
+        delete: true
 
     - name: Ensure docker network network-2023 exists
       community.docker.docker_network:
@@ -30,8 +31,7 @@
 
     - name: Build and start service
       community.docker.docker_compose:
-        project_src: web-projects/pycontw-2023-ansible
+        project_src: "{{ project_dir }}"
         build: true
         # try to build first, without up the service
-        state: present
-
+        state: absent
