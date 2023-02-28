@@ -11,10 +11,11 @@ jobs:
 
     - name: Decode private key file
       run: |
+        echo "${{secrets.PRODUCTION_DOT_ENV_FILE}}" > .env
         echo "${{secrets.SSH_PRIVATE_KEY}}" | base64 --decode > "private.pem"
         chmod 400 private.pem
 
-    - name: Run playbook
+    - name: Run CD playbook
       uses: dawidd6/action-ansible-playbook@v2
       with:
         playbook: deploy.yml
@@ -26,4 +27,3 @@ jobs:
                 ansible_user: changchaishi
                 ansible_ssh_private_key_file: private.pem
                 ansible_python_interpreter: /usr/bin/python3
-

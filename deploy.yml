@@ -1,15 +1,37 @@
 ---
 - name: Check services
   hosts: staging
+  # need to use become since I'm connecting using personal private key
+  become: true
+  # switch user as dev
+  become_user: dev
+  vars:
+    project_dir: /home/dev/web-projects/pycontw-2023-ansible
 
   tasks:
-    - name: Ensure that sshd is started
+    - name: Ensure that Docker for python is present (docker in pip)
       community.general.python_requirements_info:
         dependencies:
           - docker
 
-    - name: Get info on docker host and list images
-      community.docker.docker_host_info:
-        images: true
-      become: true
-      register: result
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ project_dir }}"
+        state: directory
+
+    - name: Copy entire project files to remote server
+      ansible.builtin.copy:
+        src: .
+        dest: "{{ project_dir }}"
+
+    - name: Ensure docker network network-2023 exists
+      community.docker.docker_network:
+        name: network-2023
+
+    - name: Build and start service
+      community.docker.docker_compose:
+        project_src: web-projects/pycontw-2023-ansible
+        build: true
+        # try to build first, without up the service
+        state: present
+

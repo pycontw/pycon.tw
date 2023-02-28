@@ -2,7 +2,8 @@ version: "3.5"
 services:
   web:
     build: .
-    container_name: pycontw-2023
+    container_name: pycontw-2023-ansible
+    image: pycontw-2023_web-ansible
     hostname: pycontw-2023
     entrypoint: ""
     command:
