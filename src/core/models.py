@@ -125,7 +125,6 @@ class EventInfo(models.Model):
         choices=LANGUAGE_CHOICES,
     )
 
-
     abstract = EAWTextField(
         verbose_name=_('abstract'),
         max_length=1000,

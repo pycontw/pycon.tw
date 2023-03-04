@@ -60,7 +60,6 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
     a proposal very quickly, and fill in the details later.
     """
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['duration'].disabled = True
@@ -130,7 +129,6 @@ class TutorialProposalUpdateForm(ProposalUpdateForm):
     This is the complete editing form for proposal. It should contain all
     user-editable fields.
     """
-
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
