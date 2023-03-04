@@ -29,9 +29,18 @@ def talk_proposal_data():
 def test_talk_proposal_create_form():
     form = TalkProposalCreateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language', 'python_level',
-        'recording_policy', 'live_stream_policy', 'first_time_speaker', 'referring_policy',
-        'prefer_time', 'living_in_taiwan', 'willing_to_attend_in_person',
+        'title',
+        'category',
+        'duration',
+        'language',
+        'python_level',
+        'recording_policy',
+        'live_stream_policy',
+        'first_time_speaker',
+        'referring_policy',
+        'prefer_time',
+        'living_in_taiwan',
+        'willing_to_attend_in_person',
     ]
 
 
@@ -81,9 +90,16 @@ def tutorial_proposal_data():
 def test_tutorial_proposal_create_form():
     form = TutorialProposalCreateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'python_level', 'recording_policy', 'live_stream_policy',
-        'prefer_time', 'living_in_taiwan', 'willing_to_attend_in_person',
+        'title',
+        'category',
+        'duration',
+        'language',
+        'python_level',
+        'recording_policy',
+        'live_stream_policy',
+        'prefer_time',
+        'living_in_taiwan',
+        'willing_to_attend_in_person',
     ]
 
 
@@ -122,10 +138,21 @@ def test_tutorial_proposal_create_form_valid(
 def test_talk_proposal_update_form():
     form = TalkProposalUpdateForm()
     assert list(form.fields) == [
-        'title', 'category', 'duration', 'language',
-        'abstract', 'python_level', 'objective', 'detailed_description',
-        'outline', 'supplementary', 'recording_policy',
-        'live_stream_policy', 'first_time_speaker', 'slide_link',
+        'title',
+        'category',
+        'duration',
+        'language',
+        'abstract',
+        'python_level',
+        'objective',
+        'detailed_description',
+        'outline',
+        'supplementary',
+        'recording_policy',
+        'live_stream_policy',
+        'referring_policy',
+        'first_time_speaker',
+        'slide_link',
     ]
 
 
