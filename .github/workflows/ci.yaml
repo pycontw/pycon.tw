@@ -8,12 +8,7 @@ env:
 
 jobs:
   ci:
-    strategy:
-      matrix:
-        python-version: ["3.6"]
-        platform: [ubuntu-20.04]
-
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-20.04
 
     services:
       postgres:
@@ -34,22 +29,20 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.6'
         cache: 'pip'
 
     - name: Set up Python dependencies
       run: |
         pip install -U pip
-        # pip install wheel
-        # pip wheel -q -r requirements/travis.txt
-        pip install -r requirements/travis.txt
+        pip install -r requirements/ci.txt
 
     - uses: actions/setup-node@v3
       with:
-        node-version: 12
+        node-version: 8
 
     - name: Setup Yarn install
       uses: borales/actions-yarn@v4
