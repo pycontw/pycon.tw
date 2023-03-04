@@ -62,3 +62,7 @@ jobs:
         cd src
         pytest -n 2 --cov=.
         codecov
+
+    # TODO: Use Official Codecov from Github Actions
+    # - name: Run Codecov action
+    #   uses: codecov/codecov-action@v3
