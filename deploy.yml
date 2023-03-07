@@ -1,25 +1,26 @@
 ---
-- name: Check services
+- name: Deploy project to staging machine
   hosts: staging
-  # need to use become since I'm connecting using personal private key
+  # escalate privilege
   become: true
-  # switch user as dev
   become_user: dev
   vars:
     project_dir: /home/dev/web-projects/pycontw-2023-ansible
 
   tasks:
-    - name: Ensure that Docker for python is present (docker in pip)
+    - name: Dependencies check dor docker and docker-compose in remote server
       community.general.python_requirements_info:
         dependencies:
           - docker
+          - docker-compose
 
-    - name: Create a directory if it does not exist
+    - name: Create project directory (if not exist)
       ansible.builtin.file:
         path: "{{ project_dir }}"
         state: directory
 
-    - name: Copy entire project files to remote server
+    # Copy project files to remote server (.env is included)
+    - name: Copy project files to remote server
       ansible.posix.synchronize:
         src: ./
         dest: "{{ project_dir }}"
@@ -33,5 +34,4 @@
       community.docker.docker_compose:
         project_src: "{{ project_dir }}"
         build: true
-        # try to build first, without up the service
-        state: absent
+        state: present
