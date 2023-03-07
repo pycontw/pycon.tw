@@ -54,3 +54,6 @@ We strongly recommend you configure your editor to match our coding styles. You 
 ## Deployment
 
 For site administrators, please refer to [document/deploy_docker_prod.md](/document/deploy_docker_prod.md).
+
+### Continuous Deployment
+Currently this is only for continuous deployment on staging server, please refer to [document/continuous_deployment.md](/document/continuous_deployment.md).
