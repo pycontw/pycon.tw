@@ -1,6 +1,6 @@
 from django.urls import path
-from proposals.api.views import ProposalAPIView
+from proposals.api.views import ProposalSummaryAPIView
 
 urlpatterns = [
-    path("summary/", ProposalAPIView.as_view()),
+    path("summary/", ProposalSummaryAPIView.as_view()),
 ]
