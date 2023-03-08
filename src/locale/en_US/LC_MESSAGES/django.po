@@ -9,11 +9,12 @@
 # Michelle <flywindy2002@gmail.com>, 2016
 # Tom Chen <ctchen@gmail.com>, 2020
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2019
+#: proposals/forms/mixins.py:133
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 22:26+0800\n"
+"POT-Creation-Date: 2023-03-08 22:50+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -33,7 +34,7 @@ msgstr "token"
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:199 events/models.py:469
+#: attendee/models.py:9 core/models.py:153 events/models.py:469
 msgid "created at"
 msgstr "created at"
 
@@ -83,7 +84,7 @@ msgstr "talk"
 msgid "Current"
 msgstr ""
 
-#: core/admin.py:16 core/models.py:108 events/models.py:157
+#: core/admin.py:16 core/choices.py:24 events/models.py:157
 #: events/templatetags/events.py:21
 msgid "Other"
 msgstr "Other"
@@ -92,28 +93,15 @@ msgstr "Other"
 msgid "All"
 msgstr ""
 
-#: core/forms.py:10
-#, python-brace-format
-msgid "{model_name_cap} creation requires a request object."
-msgstr "{model_name_cap} creation requires a request object."
-
-#: core/models.py:70
-msgid "conference"
-msgstr "conference"
-
-#: core/models.py:83 events/models.py:193
-msgid "title"
-msgstr "title"
-
-#: core/models.py:88
+#: core/choices.py:4
 msgid "Application"
 msgstr "Application"
 
-#: core/models.py:89
+#: core/choices.py:5
 msgid "Best Practices & Patterns"
 msgstr "Best Practices & Patterns"
 
-#: core/models.py:90 templates/pycontw-2018/_includes/footer.html:12
+#: core/choices.py:6 templates/pycontw-2018/_includes/footer.html:12
 #: templates/pycontw-2019/_includes/footer.html:14
 #: templates/pycontw-2020/_includes/footer.html:15
 #: templates/pycontw-2021/_includes/footer.html:15
@@ -122,213 +110,227 @@ msgstr "Best Practices & Patterns"
 msgid "Community"
 msgstr "Community"
 
-#: core/models.py:91
+#: core/choices.py:7
 msgid "Databases"
 msgstr "Databases"
 
-#: core/models.py:92
+#: core/choices.py:8
 msgid "Data Analysis"
 msgstr "Data Analysis"
 
-#: core/models.py:93
+#: core/choices.py:9
 msgid "Education"
 msgstr "Education"
 
-#: core/models.py:94
+#: core/choices.py:10
 msgid "Embedded Systems"
 msgstr "Embedded Systems"
 
-#: core/models.py:95
+#: core/choices.py:11
 msgid "FinTech"
 msgstr "FinTech"
 
-#: core/models.py:96
+#: core/choices.py:12
 msgid "Internet of Things"
 msgstr "Internet of Things"
 
-#: core/models.py:97
+#: core/choices.py:13
 msgid "Gaming"
 msgstr "Gaming"
 
-#: core/models.py:98 templates/default/_includes/proposal_example_modal.html:65
+#: core/choices.py:14
+#: templates/default/_includes/proposal_example_modal.html:65
 msgid "Graphics"
 msgstr "Graphics"
 
-#: core/models.py:99
+#: core/choices.py:15
 msgid "Machine Learning"
 msgstr "Machine Learning"
 
-#: core/models.py:100
+#: core/choices.py:16
 msgid "Natural Language Processing"
 msgstr "Natural Language Processing"
 
-#: core/models.py:101
+#: core/choices.py:17
 msgid "Python Core (language, stdlib, etc.)"
 msgstr "Python Core (language, stdlib, etc.)"
 
-#: core/models.py:102
+#: core/choices.py:18
 msgid "Project Tooling"
 msgstr "Project Tooling"
 
-#: core/models.py:103
+#: core/choices.py:19
 msgid "Science"
 msgstr "Science"
 
-#: core/models.py:104
+#: core/choices.py:20
 msgid "Security"
 msgstr "Security"
 
-#: core/models.py:105
+#: core/choices.py:21
 msgid "Systems Administration"
 msgstr "Systems Administration"
 
-#: core/models.py:106
+#: core/choices.py:22
 msgid "Testing"
 msgstr "Testing"
 
-#: core/models.py:107
+#: core/choices.py:23
 msgid "Web Frameworks"
 msgstr "Web Frameworks"
 
-#: core/models.py:111
-msgid "category"
-msgstr "category"
-
-#: core/models.py:117
+#: core/choices.py:28
 msgid "English talk"
 msgstr "English talk"
 
-#: core/models.py:118
+#: core/choices.py:29
 msgid "Chinese talk w. English slides"
 msgstr "Chinese talk w. English slides"
 
-#: core/models.py:119
+#: core/choices.py:30
 msgid "Chinese talk w. Chinese slides"
 msgstr "Chinese talk w. Chinese slides"
 
-#: core/models.py:120
+#: core/choices.py:31
 msgid "Taiwanese Hokkien"
 msgstr "Taiwanese Hokkien"
 
-#: core/models.py:123
-msgid "language"
-msgstr "language"
-
-#: core/models.py:130
-msgid "abstract"
-msgstr "abstract"
-
-#: core/models.py:135
+#: core/choices.py:35
 #: templates/default/_includes/proposal_example_modal.html:43
 #: templates/pycontw-2018/events/schedule.html:28
 #: templates/pycontw-2019/events/schedule.html:28
 msgid "Novice"
 msgstr "Novice"
 
-#: core/models.py:136
+#: core/choices.py:36
 #: templates/default/_includes/proposal_example_modal.html:58
 #: templates/pycontw-2018/events/schedule.html:29
 #: templates/pycontw-2019/events/schedule.html:29
 msgid "Intermediate"
 msgstr "Intermediate"
 
-#: core/models.py:137 templates/pycontw-2018/events/schedule.html:30
+#: core/choices.py:37 templates/pycontw-2018/events/schedule.html:30
 #: templates/pycontw-2019/events/schedule.html:30
 msgid "Experienced"
 msgstr "Experienced"
 
-#: core/models.py:140 templates/default/reviews/review_form.html:53
-msgid "Python level"
-msgstr "Python level"
-
-#: core/models.py:146
-msgid "detailed description"
-msgstr "detailed description"
-
-#: core/models.py:151 core/models.py:161 core/models.py:171 core/models.py:222
-#: core/models.py:232 reviews/models.py:122 reviews/models.py:137
-msgid "Yes"
-msgstr "Yes"
-
-#: core/models.py:152 core/models.py:162 core/models.py:172 core/models.py:223
-#: core/models.py:233 reviews/models.py:123 reviews/models.py:138
-msgid "No"
-msgstr "No"
-
-#: core/models.py:155
-msgid "recording policy"
-msgstr "recording release"
-
-#: core/models.py:165
-msgid "live stream policy"
-msgstr "live stream policy"
-
-#: core/models.py:175
-msgid "referring policy"
-msgstr "referral policy"
-
-#: core/models.py:181
-msgid "slide link"
-msgstr "slide link"
-
-#: core/models.py:187
-msgid "slido embed link"
-msgstr "Slido embed link"
-
-#: core/models.py:193 events/models.py:258
-msgid "HackMD embed link"
-msgstr "HackMD embed link"
-
-#: core/models.py:205
-msgid "last updated at"
-msgstr "last updated at"
-
-#: core/models.py:210
+#: core/choices.py:41
 msgid "Day 1, September 2nd, 2023 Morning"
 msgstr "Day 1, September 2nd, 2023 Morning with Taiwan Standard Time(UTC+8)"
 
-#: core/models.py:211
+#: core/choices.py:42
 msgid "Day 1, September 2nd, 2023 Afternoon"
 msgstr "Day 1, September 2nd, 2023 Afternoon with Taiwan Standard Time(UTC+8)"
 
-#: core/models.py:212
+#: core/choices.py:43
 msgid "Day 2, September 3rd, 2023 Morning"
 msgstr "Day 2, September 3rd, 2023 Morning with Taiwan Standard Time(UTC+8)"
 
-#: core/models.py:213
+#: core/choices.py:44
 msgid "Day 2, September 3rd, 2023 Afternoon"
 msgstr "Day 2, September 3rd, 2023 Afternoon with Taiwan Standard Time(UTC+8)"
 
-#: core/models.py:216
+#: core/choices.py:48 core/choices.py:53 core/choices.py:58 core/choices.py:63
+#: core/choices.py:68 reviews/models.py:122 reviews/models.py:137
+msgid "Yes"
+msgstr "Yes"
+
+#: core/choices.py:49 core/choices.py:54 core/choices.py:59 core/choices.py:64
+#: core/choices.py:69 reviews/models.py:123 reviews/models.py:138
+msgid "No"
+msgstr "No"
+
+#: core/forms.py:10
+#, python-brace-format
+msgid "{model_name_cap} creation requires a request object."
+msgstr "{model_name_cap} creation requires a request object."
+
+#: core/models.py:71
+msgid "conference"
+msgstr "conference"
+
+#: core/models.py:84 events/models.py:193
+msgid "title"
+msgstr "title"
+
+#: core/models.py:89
+msgid "category"
+msgstr "category"
+
+#: core/models.py:95
+msgid "language"
+msgstr "language"
+
+#: core/models.py:101
+msgid "abstract"
+msgstr "abstract"
+
+#: core/models.py:106 templates/default/reviews/review_form.html:53
+msgid "Python level"
+msgstr "Python level"
+
+#: core/models.py:112
+msgid "detailed description"
+msgstr "detailed description"
+
+#: core/models.py:117
+msgid "recording policy"
+msgstr "recording release"
+
+#: core/models.py:123
+msgid "live stream policy"
+msgstr "live stream policy"
+
+#: core/models.py:129
+msgid "referring policy"
+msgstr "referral policy"
+
+#: core/models.py:135
+msgid "slide link"
+msgstr "slide link"
+
+#: core/models.py:141
+msgid "slido embed link"
+msgstr "Slido embed link"
+
+#: core/models.py:147 events/models.py:258
+msgid "HackMD embed link"
+msgstr "HackMD embed link"
+
+#: core/models.py:159
+msgid "last updated at"
+msgstr "last updated at"
+
+#: core/models.py:164
 msgid "prefer event time"
 msgstr "prefer event time"
 
-#: core/models.py:226
+#: core/models.py:170
 msgid "living in Taiwan"
 msgstr "living in Taiwan"
 
-#: core/models.py:237
+#: core/models.py:176
 msgid "attending PyCon TW in person"
 msgstr "attending PyCon TW in person"
 
-#: core/models.py:269 reviews/admin.py:51
+#: core/models.py:208 reviews/admin.py:51
 msgid "Key"
 msgstr "Key"
 
-#: core/models.py:273 proposals/models.py:62 users/models.py:198
+#: core/models.py:212 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "user"
 
-#: core/models.py:276
+#: core/models.py:215
 msgid "Created"
 msgstr "created at"
 
-#: core/models.py:279
+#: core/models.py:218
 msgid "Token"
 msgstr ""
 
-#: core/models.py:280
+#: core/models.py:219
 msgid "Tokens"
 msgstr ""
 
@@ -846,7 +848,7 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:100
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:99
 msgid "duration"
 msgstr "Duration"
 
