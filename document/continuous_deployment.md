@@ -19,13 +19,18 @@ The staging server should have the following installed:
     - For CD workflow authorization
 
 ## Settings for Github Actions Workflow
-After aboves steps, we have to add collected information to github actions setting.
-Please configure as the following in project's setting:
+After aboves steps, we have to add collected information to Github actions setting.
+
+Under the hood, we github action and [Ansible](https://www.ansible.com/overview/how-ansible-works) for continuous deployment. Github action will hold necessary variables and secrets that allows Ansible to access the staging VM on your behalf.
+
+So kindly configure project's action setting as the following:
 
 | Level  | Type   | Name   | Value (example) | Remarks |
 |-----------|------------|---------------|----------|------------|
 | Repository | secrets | PRODUCTION_DOT_ENV_FILE | `DATABASE_URL=...`   |   multiline support      |
-| Repository | secrets | GCE_USERNAME | cd_user  | user name for ssh {user_name}@staging.pycon.tw  |
+| Repository | secrets | VM_USERNAME | cd_user  | user name for ssh {user_name}@{vm_domain}  |
+| Repository | secrets | VM_DOMAIN_IP | staging.pycon.tw  | IP address or Domain that points to the staging server  |
+| Repository | secrets | VM_PYTHON_INTERPRETER | `/home/dev/.pyenv/shims/python`  | path to your python environment that has docker/docker-compose packages installed |
 | Repository | secrets | SSH_PRIVATE_KEY | `21xa312....`     |  base64 encoded of key-pair (`.pem` file) |
 | Repository | variables | PROJECT_ADMINS | `["github_user_1", "github_user_2"]` | For example `["josix"]` |
 

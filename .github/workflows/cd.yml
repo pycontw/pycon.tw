@@ -32,8 +32,8 @@ jobs:
           pycontw:
             hosts:
               staging:
-                ansible_host: staging.pycon.tw
-                ansible_user: "${{secrets.GCE_USERNAME}}"
+                ansible_host: "${{secrets.VM_DOMAIN_IP}}"
+                ansible_user: "${{secrets.VM_USERNAME}}"
                 # secret file generated from previous step
                 ansible_ssh_private_key_file: private.pem
-                ansible_python_interpreter: /home/dev/.pyenv/shims/python
+                ansible_python_interpreter: "${{secrets.VM_PYTHON_INTERPRETER}}"
