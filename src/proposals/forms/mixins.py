@@ -129,10 +129,7 @@ class TalkProposalMixin:
                 "only for the remote attendees to watch ? (we will not release "
                 "audio and video of your presentation)"
             ),
-            'first_time_speaker': _(
-                ""
-
-            ),
+            'first_time_speaker': "",
         }
 
 

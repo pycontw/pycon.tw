@@ -16,7 +16,6 @@
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2019
 # Yuan CHAO <yuanchao@gmail.com>, 2017
 # 豆豆 (Tommy Lin) <gnat_lin@hotmail.com>, 2017
-#: proposals/forms/mixins.py:133
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"

@@ -9,7 +9,6 @@
 # Michelle <flywindy2002@gmail.com>, 2016
 # Tom Chen <ctchen@gmail.com>, 2020
 # Tzu-ping Chung <uranusjr@gmail.com>, 2015-2019
-#: proposals/forms/mixins.py:133
 msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
