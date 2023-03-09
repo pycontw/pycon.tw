@@ -37,7 +37,7 @@ PYTHON_LVL_CHOICES = (
     ('EXPERIENCED', _('Experienced')),
 )
 
-PERFER_TIME_CHOICES = (
+PREFER_TIME_CHOICES = (
     ('DAY_ONE_MORNING', _('Day 1, September 2nd, 2023 Morning')),
     ('DAY_ONE_AFTERNOON', _('Day 1, September 2nd, 2023 Afternoon')),
     ('DAY_TWO_MORNING', _('Day 2, September 3rd, 2023 Morning')),

@@ -10,7 +10,7 @@ from .choices import (
     CATEGORY_CHOICES,
     LANGUAGE_CHOICES,
     PYTHON_LVL_CHOICES,
-    PERFER_TIME_CHOICES,
+    PREFER_TIME_CHOICES,
     RECORDING_POLICY_CHOICES,
     LIVING_IN_TAIWAN_CHOICES,
     LIVE_STREAM_POLICY_CHOICES,
@@ -173,7 +173,7 @@ class EventInfo(models.Model):
     prefer_time = models.CharField(
         verbose_name=_('prefer event time'),
         max_length=32,
-        choices=PERFER_TIME_CHOICES,
+        choices=PREFER_TIME_CHOICES,
     )
 
     living_in_taiwan = models.BooleanField(
