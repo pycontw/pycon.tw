@@ -6,7 +6,17 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .choices import CATEGORY_CHOICES, LANGUAGE_CHOICES, PYTHON_LVL_CHOICES, PERFER_TIME_CHOICES, RECORDING_POLICY_CHOICES, LIVING_IN_TAIWAN_CHOICES, LIVE_STREAM_POLICY_CHOICES, REFERRING_POLICY_CHOICES, ATTEND_IN_PERSON
+from .choices import (
+    CATEGORY_CHOICES,
+    LANGUAGE_CHOICES,
+    PYTHON_LVL_CHOICES,
+    PERFER_TIME_CHOICES,
+    RECORDING_POLICY_CHOICES,
+    LIVING_IN_TAIWAN_CHOICES,
+    LIVE_STREAM_POLICY_CHOICES,
+    REFERRING_POLICY_CHOICES,
+    ATTEND_IN_PERSON,
+)
 from .validators import EAWMaxLengthValidator
 
 
