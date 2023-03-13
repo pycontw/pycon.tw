@@ -49,7 +49,7 @@ class TalkProposalCreateForm(TalkProposalMixin, ProposalCreateForm):
             'referring_policy',
             'prefer_time',
             'living_in_taiwan',
-            'willing_to_attend_in_person',
+            'attend_in_person',
         ]
 
 
@@ -75,7 +75,7 @@ class TutorialProposalCreateForm(TutorialProposalMixin, ProposalCreateForm):
             'live_stream_policy',
             'prefer_time',
             'living_in_taiwan',
-            'willing_to_attend_in_person',
+            'attend_in_person',
         ]
 
 
