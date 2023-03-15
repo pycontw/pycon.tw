@@ -45,7 +45,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'core.context_processors.script_prefix',
                 'core.context_processors.pycontw',
-                'core.context_processors.events',
                 'core.context_processors.sponsors',
                 'core.context_processors.frontend_host',
             ],
@@ -327,8 +326,6 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2023, 9, 2), _('Day 1')),
     (datetime.date(2023, 9, 3), _('Day 2')),
 ])
-
-SCHEDULE_REDIRECT_URL = None
 
 COC_VERSION = '2023.0'
 
