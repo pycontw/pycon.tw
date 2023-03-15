@@ -14,9 +14,13 @@ from import_export.admin import ImportExportMixin
 
 from .forms import CustomEventForm
 from .models import (
-    CustomEvent, KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent,
+    CustomEvent,
     JobListingsEvent,
-    SponsoredEvent, Time, Schedule,
+    KeynoteEvent,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
+    SponsoredEvent,
+    Time,
 )
 from .resources import TimeResource, CustomEventResource
 
@@ -199,10 +203,3 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     search_fields = ['title', 'abstract']
     prepopulated_fields = {'slug': ['title']}
     raw_id_fields = ['host']
-
-
-@admin.register(Schedule)
-class ScheduleAdmin(admin.ModelAdmin):
-    fields = ['html', 'created_at']
-    readonly_fields = ['created_at']
-    list_display = ['created_at']

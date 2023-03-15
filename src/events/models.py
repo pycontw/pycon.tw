@@ -458,23 +458,3 @@ class ProposedTutorialEvent(BaseEvent):
         return reverse('events_tutorial_detail', kwargs={
             'pk': self.proposal.pk,
         })
-
-
-class Schedule(ConferenceRelated):
-
-    html = models.TextField(
-        verbose_name=_('HTML'),
-    )
-    created_at = models.DateTimeField(
-        verbose_name=_('created at'),
-        auto_now_add=True,
-    )
-
-    class Meta:
-        verbose_name = _('Schedule')
-        verbose_name_plural = _('Schedules')
-        ordering = ['-created_at']
-        get_latest_by = 'created_at'
-
-    def __str__(self):
-        return gettext('Schedule created at {}').format(self.created_at)
