@@ -86,10 +86,6 @@ pytz==2019.3
 # https://sorl-thumbnail.readthedocs.io
 sorl-thumbnail==12.6.2
 
-# Python Sorted Container Types: SortedList, SortedDict, and SortedSet.
-# http://www.grantjenks.com/docs/sortedcontainers/
-sortedcontainers==2.1.0
-
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.8.6
