@@ -134,9 +134,6 @@ class Location:
         }[value]
 
 
-EVENT_ROOMS = {Location.R0, Location.R1, Location.R2, Location.R3, Location.R4}
-
-
 class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
