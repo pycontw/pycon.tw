@@ -120,7 +120,7 @@ class OpenRole(ConferenceRelated):
     )
 
     description = models.TextField(
-        verbose_name=_('open role descsription'),
+        verbose_name=_('open role description'),
     )
 
     requirements = models.TextField(
@@ -135,7 +135,7 @@ class OpenRole(ConferenceRelated):
 
     class Meta:
         verbose_name = _('open role')
-        verbose_name_plural = _('open Roles')
+        verbose_name_plural = _('open roles')
 
     def __str__(self):
         return self.name
