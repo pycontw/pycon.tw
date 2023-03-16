@@ -117,19 +117,6 @@ class Location:
     R4 = '7-r4'
     OTHER = '8-oth'
 
-    @classmethod
-    def get_md_width(cls, value):
-        return {
-            '2-all': 4,
-            '3-r012': 3,
-            '4-r0': 1,
-            '5-r1': 1,
-            '6-r2': 1,
-            '1-r3': 1,
-            '7-r4': 1,
-            '8-oth': 1,
-        }[value]
-
 
 class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
