@@ -7,11 +7,11 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.utils.dateparse import parse_time
 
-from events.models import Location, Time
-from events.renderers import EVENT_CLASSES
+from events.models import CustomEvent, KeynoteEvent, Location, ProposedTalkEvent, SponsoredEvent, Time
 
 cst = pytz.timezone('Asia/Taipei')
 
+EVENT_CLASSES = (CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent)
 DAYS = list(settings.EVENTS_DAY_NAMES.keys())
 
 
