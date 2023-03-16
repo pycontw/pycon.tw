@@ -8,7 +8,6 @@ from django.utils.translation import pgettext_lazy
 from django.views.generic import View, TemplateView
 
 from core.utils import TemplateExistanceStatusResponse
-from core.views import IndexView
 from events.models import (
     CustomEvent, KeynoteEvent,
     ProposedTalkEvent, ProposedTutorialEvent,
@@ -279,11 +278,6 @@ class CCIPAPIView(View):
             'speakers': list(speakers.values()),
             'tags': list(tags.values()),
         }, safe=False)
-
-
-class CCIPSponsorsView(IndexView):
-    template_name = 'ccip/sponsors.html'
-    response_class = TemplateExistanceStatusResponse
 
 
 class CCIPStaffView(TemplateView):

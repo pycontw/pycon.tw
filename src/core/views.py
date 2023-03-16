@@ -6,21 +6,13 @@ from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.urls import reverse
 
-from .data import EXTRA_DATA
 from .utils import (
     TemplateExistanceStatusResponse,
     collect_language_codes,
 )
 
 
-class ExtraDataMixin:
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-        data.update(EXTRA_DATA.get(self.path, {}))
-        return data
-
-
-class IndexView(ExtraDataMixin, TemplateView):
+class IndexView(TemplateView):
     template_name = 'index.html'
     path = ''
 
@@ -28,7 +20,7 @@ class IndexView(ExtraDataMixin, TemplateView):
         return redirect(reverse('user_dashboard'))
 
 
-class FlatPageView(ExtraDataMixin, TemplateView):
+class FlatPageView(TemplateView):
 
     response_class = TemplateExistanceStatusResponse
 
