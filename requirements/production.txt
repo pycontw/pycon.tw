@@ -18,7 +18,7 @@ huey==0.4.9
 
 # Redis client for Python
 # https://redis-py.readthedocs.org/en/latest/
-redis==2.10.6
+redis==4.3.6
 
 # Sentry client for Python
 # https://raven.readthedocs.org/en/latest/
