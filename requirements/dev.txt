@@ -1,4 +1,5 @@
 -r base.txt
+tox
 
 # A configurable set of panels that display various debug information about
 # the current request/response.

@@ -45,7 +45,7 @@ Switch to version specified in `.nvmrc`:
 
 Use pip to install Python depedencies:
 
-    pip install -r requirements.txt
+    pip install -r requirements/dev.txt
 
 Use Yarn to install Node dependencies:
 
