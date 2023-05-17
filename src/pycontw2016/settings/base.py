@@ -104,6 +104,7 @@ THIRD_PARTY_APPS = (
     'registry',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'drf_yasg',
 )
 
@@ -117,6 +118,38 @@ LOCAL_APPS = (
     'ccip',
     'attendee'
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'core.authentication.BearerAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES':{
+        'rest_framework.permissions.IsAuthenticated'
+
+    }
+
+}
+
+SWAGGER_SETTINGS = {
+    'SHOW_REQUEST_HEADERS': True,
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+        },
+    },
+    'USE_SESSION_AUTH': True,
+    'JSON_EDITOR': True,
+    'SUPPORTED_SUBMIT_METHODS': [
+        'get',
+        'post',
+        'put',
+        'delete',
+        'patch'
+    ],
+}
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

@@ -11,7 +11,7 @@ from django.db.models import Count
 from django.http import Http404
 from django.utils.timezone import make_naive
 
-from core.authentication import TokenAuthentication
+from core.authentication import BearerAuthentication
 from events.models import (
     CustomEvent, Location, ProposedTalkEvent,
     ProposedTutorialEvent, SponsoredEvent, Time, KeynoteEvent
@@ -54,7 +54,7 @@ class TutorialListAPIView(ListAPIView):
 
 
 class SpeechListAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -81,7 +81,7 @@ class SpeechListAPIView(APIView):
 
 
 class SpeechListByCategoryAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -110,7 +110,7 @@ class TutorialDetailAPIView(RetrieveAPIView):
 
 
 class SpeechDetailAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
@@ -263,7 +263,7 @@ class EventWrapper:
 
 
 class ScheduleAPIView(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     event_querysets = [
@@ -344,7 +344,7 @@ class ScheduleAPIView(APIView):
 
 
 class KeynoteEventListAPIView(ListAPIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     queryset = KeynoteEvent.objects.all()
