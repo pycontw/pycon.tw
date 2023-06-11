@@ -124,7 +124,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'core.authentication.BearerAuthentication',
     ],
-    'DEFAULT_PERMISSION_CLASSES':{
+    'DEFAULT_PERMISSION_CLASSES': {
         'rest_framework.permissions.IsAuthenticated'
 
     }

@@ -270,7 +270,7 @@ class Token(models.Model):
     """
     key = models.CharField(_("Key"), max_length=40, primary_key=True)
     user = BigForeignKey(
-        to=settings.AUTH_USER_MODEL, 
+        to=settings.AUTH_USER_MODEL,
         related_name='%(app_label)s_auth_token',
         verbose_name=_('user'),
         on_delete=models.CASCADE,
