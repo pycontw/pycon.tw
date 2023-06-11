@@ -7,7 +7,7 @@ from .models import Token
 class BearerAuthentication(TokenAuthentication):
     keyword = 'Bearer'
     model = Token
-    
+
     def get_model(self):
         if self.model is not None:
             return self.model
