@@ -38,7 +38,7 @@ from events.models import ProposedTalkEvent, ProposedTutorialEvent, SponsoredEve
 def test_list_speeches_by_category(category, bare_user, drf_api_client):
     url = reverse("events:speeches-category", kwargs={"category": category})
     token = Token.objects.get_or_create(user=bare_user)
-    drf_api_client.credentials(HTTP_AUTHORIZATION="Token " + str(token[0]))
+    drf_api_client.credentials(HTTP_AUTHORIZATION=str(token[0]))
     response = drf_api_client.get(url)
 
     for event in response.json():
