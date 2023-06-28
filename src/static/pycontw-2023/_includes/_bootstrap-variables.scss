@@ -32,6 +32,10 @@ $brand-primary:         #e8a4e9 !default;
 // //** Global text color on `<body>`.
 $text-color:            #f0ebf5 !default;
 
+// //** Color setting for review edit view.
+$diff-text-color:       #3c0970 !default;
+$diff-text-bg-color:    #eba292 !default;
+
 // //** Global textual link color.
 // $link-color:            $brand-primary !default;
 // //** Link hover color set via `darken()` function.
