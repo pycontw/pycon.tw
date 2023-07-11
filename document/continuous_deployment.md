@@ -28,6 +28,7 @@ So kindly configure project's action setting as the following:
 | Level  | Type   | Name   | Value (example) | Remarks |
 |-----------|------------|---------------|----------|------------|
 | Repository | secrets | PRODUCTION_DOT_ENV_FILE | `DATABASE_URL=...`   |   multiline support      |
+| Repository | secrets | PRODUCTION_GOOGLE_CLOUD_STORAGE_JSON | `{ ...`   |   multiline support      |
 | Repository | secrets | VM_USERNAME | cd_user  | user name for ssh {user_name}@{vm_domain}  |
 | Repository | secrets | VM_DOMAIN_IP | staging.pycon.tw  | IP address or Domain that points to the staging server  |
 | Repository | secrets | VM_PYTHON_INTERPRETER | `/home/dev/.pyenv/shims/python`  | path to your python environment that has docker/docker-compose packages installed |

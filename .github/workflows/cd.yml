@@ -20,6 +20,9 @@ jobs:
     - name: Generate .env for staging vm from github secrets
       run: |
         echo "${{secrets.PRODUCTION_DOT_ENV_FILE}}" > .env
+    - name: Generate google-cloud-storage.json to src from secrets
+      run: |
+        echo "${{secrets.PRODUCTION_GOOGLE_CLOUD_STORAGE_JSON}}" > src/google-cloud-storage.json
     - name: Decode private key file for OpenSSH access over Ansible
       run: |
         echo "${{secrets.SSH_PRIVATE_KEY}}" | base64 --decode > "private.pem"
