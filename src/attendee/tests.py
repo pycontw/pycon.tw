@@ -16,13 +16,12 @@ def test_attendee(drf_api_client, bare_user, attendee_token, status, num_channel
     token = Token.objects.get_or_create(user=bare_user)
     drf_api_client.credentials(HTTP_AUTHORIZATION="Token " + str(token[0]))
     attendee = Attendee(token="1234")
-    attendee.save() # insert to database
+    attendee.save()  # insert to database
     # add slug
     key_prefix = f"{settings.CONFERENCE_DEFAULT_SLUG}.live."
     reg["pycontw-1999.live.r1"] = "video_old_id"  # unrelated
     for i in range(num_channel):
         reg[f"{key_prefix}r{i}"] = f"video_id_{i}"
-        print(f"{key_prefix}r{i}")
 
     # test
     response = drf_api_client.post('/api/attendee/verify/', data={"token": attendee_token})
