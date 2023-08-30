@@ -1,4 +1,5 @@
 import operator
+from datetime import timezone, timedelta
 
 from django.http import JsonResponse
 from django.templatetags.static import static
@@ -166,11 +167,15 @@ def _transform_session(request, event, type_key, info_getter):
         for speaker in event_info.speakers
     ]
 
+    LOCAL_TIMEZONE = timezone(offset=timedelta(hours=8))
+    # Explicitly show the local timezone used by OPass(CCIP)
+    # to avoid iOS device showing UTC+0 time without changing it to local time
+    # https://github.com/CCIP-App/CCIP-iOS/issues/54
     session = {
         'id': f'{type_key}-{event_info.pk}',
         'type': type_key,
-        'start': event.begin_time.value.isoformat() if event.begin_time else None,
-        'end': event.end_time.value.isoformat() if event.end_time else None,
+        'start': event.begin_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.begin_time else None,
+        'end': event.end_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.end_time else None,
         'slide': event_info.slide_link,
         'speakers': [speaker['id'] for speaker in speakers],
         'tags': [tag['id'] for tag in tags],
