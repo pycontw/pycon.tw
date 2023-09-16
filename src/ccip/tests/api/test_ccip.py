@@ -22,3 +22,22 @@ def test_data_structure(client):
     assert_data_structure(data, 'session_types')
     assert_data_structure(data, 'tags')
     assert_data_structure(data, 'rooms')
+
+@pytest.mark.django_db
+def test_session(client):
+    response = client.get(endpoint, follow=True)
+    data = response.json()
+    assert 'sessions' in data
+    sessions = data.get('sessions', [])
+    # 檢查每個 session 是否包含所需的字段
+    required_fields = [
+        "id", "type", "start", "end", "slide", "speakers", "tags",
+        "en", "zh", "room", "broadcast", "qa", "live", "record"
+    ]
+    for session in sessions:
+        for field in required_fields:
+            assert field in session
+        assert 'title' in session['en']
+        assert 'description' in session['en']
+        assert 'title' in session['zh']
+        assert 'description' in session['zh']
