@@ -4,6 +4,7 @@ from django.conf import settings
 endpoint = "/ccip/"
 
 def assert_data_structure(data, key):
+    assert key in data
     items = data.get(key, [])
     for item in items:
         assert 'id' in item
