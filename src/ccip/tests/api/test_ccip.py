@@ -12,6 +12,10 @@ def assert_data_structure(data, key):
         assert 'en' in item
         assert 'name' in item['zh']
         assert 'name' in item['en']
+        if key == "speakers":
+            assert 'avatar' in item
+            assert 'bio' in item['zh']
+            assert 'bio' in item['en']
 
 @pytest.mark.django_db
 def test_data_structure(client):
@@ -22,6 +26,7 @@ def test_data_structure(client):
     assert_data_structure(data, 'session_types')
     assert_data_structure(data, 'tags')
     assert_data_structure(data, 'rooms')
+    assert_data_structure(data, 'speakers')
 
 @pytest.mark.django_db
 def test_session(client):
