@@ -2,6 +2,7 @@ import pytest
 
 endpoint = "/ccip/"
 
+
 def assert_data_structure(data, key):
     assert key in data
     items = data.get(key, [])
@@ -16,6 +17,7 @@ def assert_data_structure(data, key):
             assert 'bio' in item['zh']
             assert 'bio' in item['en']
 
+
 @pytest.mark.django_db
 def test_data_structure(client):
     response = client.get(endpoint, follow=True)
@@ -26,6 +28,7 @@ def test_data_structure(client):
     assert_data_structure(data, 'tags')
     assert_data_structure(data, 'rooms')
     assert_data_structure(data, 'speakers')
+
 
 @pytest.mark.django_db
 def test_session(client):
