@@ -4,6 +4,9 @@ FROM node:8.16.0-buster-slim as node_stage
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
+RUN apt-get update
+RUN apt-get install python-pip -y
+
 RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile
 
@@ -18,13 +21,15 @@ COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 
-# make node accessible and executable globally
-ENV PATH /usr/local/bin:$PATH
-
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get install gettext gcc -y
+RUN apt-get install -y \
+    libpq-dev \
+    gcc \
+    zlib1g-dev \
+    libjpeg62-turbo-dev \
+    gettext
 
 # Only copy and install requirements to improve caching between builds
 # Install Python dependencies
