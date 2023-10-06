@@ -17,23 +17,7 @@ def assert_data_structure(data, key):
             assert 'bio' in item['zh']
             assert 'bio' in item['en']
 
-
-@pytest.mark.django_db
-def test_data_structure(client):
-    response = client.get(endpoint, follow=True)
-    assert response.status_code == 200
-    data = response.json()
-
-    assert_data_structure(data, 'session_types')
-    assert_data_structure(data, 'tags')
-    assert_data_structure(data, 'rooms')
-    assert_data_structure(data, 'speakers')
-
-
-@pytest.mark.django_db
-def test_session(client):
-    response = client.get(endpoint, follow=True)
-    data = response.json()
+def assert_data_structure_session(data):
     assert 'sessions' in data
     sessions = data.get('sessions', [])
     # 檢查每個 session 是否包含所需的字段
@@ -48,3 +32,15 @@ def test_session(client):
         assert 'description' in session['en']
         assert 'title' in session['zh']
         assert 'description' in session['zh']
+
+@pytest.mark.django_db
+def test_data_structure(client):
+    response = client.get(endpoint, follow=True)
+    assert response.status_code == 200
+    data = response.json()
+
+    assert_data_structure(data, 'session_types')
+    assert_data_structure(data, 'tags')
+    assert_data_structure(data, 'rooms')
+    assert_data_structure(data, 'speakers')
+    assert_data_structure_session(data)
