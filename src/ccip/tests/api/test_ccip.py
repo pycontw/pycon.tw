@@ -17,6 +17,7 @@ def assert_data_structure(data, key):
             assert 'bio' in item['zh']
             assert 'bio' in item['en']
 
+
 def assert_data_structure_session(data):
     assert 'sessions' in data
     sessions = data.get('sessions', [])
@@ -32,6 +33,7 @@ def assert_data_structure_session(data):
         assert 'description' in session['en']
         assert 'title' in session['zh']
         assert 'description' in session['zh']
+
 
 @pytest.mark.django_db
 def test_data_structure(client):
