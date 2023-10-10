@@ -1,0 +1,222 @@
+.talk-list {
+	.talk-title {
+		color: #262727;
+		font-weight: 400;
+	}
+
+	p {
+		text-align: left;
+		letter-spacing: 0;
+		color: $imperial;
+		font-weight: 500;
+	}
+
+}
+
+.talk-label {
+	font-size: 0.8rem;
+	color: white;
+	background-color: $jinger-bread;
+
+	// color: $jinger-bread;
+	// background-color: $salmon;
+
+	padding: 1px 4px;
+	border-radius: 3px;
+	position: relative;
+	top: -2px;
+
+	a {
+		color: #EEE;
+
+		&:hover {
+			color: white;
+			text-decoration: none;
+		}
+	}
+}
+
+.remote-label {
+	font-size: 1.1rem;
+	color: white;
+	background-color: $jinger-bread;
+
+	padding: 1px 4px;
+	border-radius: 5px;
+	position: relative;
+}
+
+section.note {
+	border-top: 1px solid transparentize($dark-gray, 0.9);
+	margin-top: 70px;
+	padding-top: 70px;
+
+	font-family: $text-font-family;
+
+	.talk-label {
+		font-size: 1rem;
+	}
+}
+
+// Styling for Markdown-rendered fields
+.talk-detail, .tutorial-detail {
+	.editor-preview {
+		* {
+			max-width: 100%;
+		}
+		h1, h2, h3 {
+			@include h3();
+		}
+		h4 {
+			@include h4();
+		}
+		h5 {
+			@include h5();
+		}
+		h6 {
+			@include h6();
+		}
+		h1, h2, h3, h4, h5, h6 {
+			+ hr {
+				margin-top: -8px;
+			}
+		}
+		hr {
+			height: 1px;
+			margin: 0;
+		}
+		a {	// https://css-tricks.com/handling-long-unexpected-content-css/
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			word-break: break-word;
+		}
+		li > ol {
+			text-indent: 0rem;
+		}
+	}
+
+	.content {
+		p, ul, li {
+			text-align: left;
+			letter-spacing: 0;
+			font-weight: normal;
+		}
+
+		padding: 32px 16px;
+		background: transparentize($imperial, 0.9);
+		word-wrap: break-word;
+
+		@include on-desktop() {
+			padding: 32px;
+		}
+
+		.social {
+			padding-top: 0.5rem;
+
+			a:hover {
+				color: darken($link-dark, 20%);
+			}
+
+			.fa {
+				display: inline-block;
+				margin-right: 0.75rem;
+				font-size: 125%;
+			}
+		}
+	}
+
+	.info {
+		$icon-width: 60px;
+		$spacing: 0.75rem;
+		padding-left: 0;
+		padding-top:10px;
+		padding-bottom: 10px;
+		border-radius: 2px;
+		ul {
+			@include list-reset();
+			// @include on-desktop() {
+			// 	columns: 2;
+			// 	-webkit-columns: 2;
+			// 	-moz-columns: 2;
+			// }
+			display: flex;
+			margin-left:0px;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: flex-end;
+			@include on-desktop(){
+				max-height: 180px;
+				margin-left: -4px;
+			}
+			text-align: left;
+			letter-spacing: 0;
+			li {
+    			flex-grow: 1;
+				flex-basis: 30px;
+				margin-top: 10px;
+				margin-bottom:10px;
+				display: flex;
+				align-content: flex-start;
+				align-items: flex-start;
+				.info--content{
+					max-width: 180px;
+					font-size: 16px;
+					font-weight: 300;
+					line-height: 1.75;
+					text-indent: 0;
+					margin-left: 0;
+
+				}
+				dfn {
+					min-height: 24px;
+					min-width: 60px;
+					margin-right: 1.5rem;
+					margin-left: 1.5rem;
+					font-size: 0;
+					@mixin icon($name, $margin-top: 0) {
+						background: url('../assets/icon-#{$name}.svg') top right no-repeat;
+						margin-top: $margin-top;	// Visual compensation.
+					}
+
+
+					&.location {
+						@include icon('location');
+					}
+					&.slot {
+						@include icon('clock');
+					}
+					&.category {
+						@include icon('tag', -2px);
+					}
+					&.language {
+						&.enen {
+							@include icon('language-enen');
+						}
+						&.zhen {
+							@include icon('language-zhen');
+						}
+						&.zhzh {
+							@include icon('language-zhzh');
+						}
+					}
+					&.python-level {
+						&.novice {
+							@include icon('level-1');
+						}
+						&.intermediate {
+							@include icon('level-2');
+						}
+						&.experienced {
+							@include icon('level-3');
+						}
+					}
+					&.recording-no {
+						@include icon('no-recording');
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -13,7 +13,7 @@ class SponsorAPIView(views.APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        sponsor_data = Sponsor.objects.order_by('level')
+        sponsor_data = Sponsor.objects.order_by('level', 'order')
 
         level_dict = {}
         for sponsor in sponsor_data:
@@ -28,7 +28,7 @@ class SponsorAPIView(views.APIView):
                 "intro_en_us": sponsor.intro_en_us,
                 "intro_zh_hant": sponsor.intro_zh_hant,
                 "website_url": sponsor.website_url,
-                "logo_url": sponsor.logo.url if sponsor.logo else ''
+                "logo_url": sponsor.logo.url if sponsor.logo else '',
             })
 
         response_data = {"data": []}

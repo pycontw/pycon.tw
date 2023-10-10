@@ -139,3 +139,5 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, "google-cloud-storage.json")
 )
 GS_BUCKET_NAME = "pycontw-static"
+# make files return as public, non-expiring url since we use static site that will fetch the files directly
+GS_DEFAULT_ACL = "publicRead"

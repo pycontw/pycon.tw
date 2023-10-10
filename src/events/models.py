@@ -109,8 +109,14 @@ class Location:
     ALL = '2-all'
     R012 = '3-r012'
     R0 = '4-r0'
+    R0_1 = '4-r0-1'
+    R0_2 = '4-r0-2'
     R1 = '5-r1'
+    R1_1 = '5-r1-1'
+    R1_2 = '5-r1-2'
     R2 = '6-r2'
+    R2_1 = '6-r2-1'
+    R2_2 = '6-r2-2'
     R4 = '7-r4'
     OTHER = '8-oth'
 
@@ -138,8 +144,14 @@ class BaseEvent(ConferenceRelated):
         (Location.ALL, _('All rooms')),
         (Location.R012, _('R0, R1, R2')),
         (Location.R0, _('R0')),
+        (Location.R0_1, _('R0_1')),
+        (Location.R0_2, _('R0_2')),
         (Location.R1, _('R1')),
+        (Location.R1_1, _('R1_1')),
+        (Location.R1_2, _('R1_2')),
         (Location.R2, _('R2')),
+        (Location.R2_1, _('R2_1')),
+        (Location.R2_2, _('R2_2')),
         (Location.R3, _('R3')),
         (Location.R4, _('Open Space')),
         (Location.OTHER, _('Other')),

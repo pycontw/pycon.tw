@@ -21,18 +21,36 @@ from . import serializers
 
 
 class TalkListAPIView(ListAPIView):
-    queryset = ProposedTalkEvent.objects.all()
     serializer_class = serializers.TalkListSerializer
+
+    def get_queryset(self):
+        queryset = ProposedTalkEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(proposal__category=category)
+        return queryset
 
 
 class SponsoredEventListAPIView(ListAPIView):
-    queryset = SponsoredEvent.objects.all()
     serializer_class = serializers.SponsoredEventListSerializer
+
+    def get_queryset(self):
+        queryset = SponsoredEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(category=category)
+        return queryset
 
 
 class TutorialListAPIView(ListAPIView):
-    queryset = ProposedTutorialEvent.objects.all()
     serializer_class = serializers.TutorialListSerializer
+
+    def get_queryset(self):
+        queryset = ProposedTutorialEvent.objects.all()
+        category = self.kwargs.get('category')
+        if category is not None:
+            queryset = queryset.filter(proposal__category=category)
+        return queryset
 
 
 class SpeechListAPIView(APIView):
@@ -60,6 +78,20 @@ class SpeechListAPIView(APIView):
             return Response(data)
         else:
             raise Http404
+
+
+class SpeechListByCategoryAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        data = []
+        for api_view in (SponsoredEventListAPIView, TalkListAPIView, TutorialListAPIView):
+            view = api_view.as_view()
+            event_data = view(request._request, *args, **kwargs).data
+            data.extend(event_data)
+
+        return Response(data)
 
 
 class TalkDetailAPIView(RetrieveAPIView):
@@ -166,6 +198,14 @@ class EventWrapper:
         return make_naive(self.obj.end_time.value).strftime('%Y-%m-%d %H:%M:%S')
 
     @property
+    def begin_time_utc(self) -> str:
+        return self.obj.begin_time.value
+
+    @property
+    def end_time_utc(self) -> str:
+        return self.obj.end_time.value
+
+    @property
     def is_remote(self) -> bool:
         if isinstance(self.obj, (KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent)):
             return self.obj.is_remote
@@ -212,8 +252,8 @@ class EventWrapper:
             'event_type': self.event_type,
             'title': self.title,
             'speakers': self.speakers,
-            'begin_time': self.begin_time,
-            'end_time': self.end_time,
+            'begin_time': self.begin_time_utc,
+            'end_time': self.end_time_utc,
             'is_remote': self.is_remote,
             'recording_policy': self.recording_policy,
             'language': self.language,
@@ -296,12 +336,8 @@ class ScheduleAPIView(APIView):
 
         result = []
         for day_info in day_info_dict.values():
-            day_info['timeline']['begin'] = make_naive(
-                day_info['timeline']['begin'].value
-            ).strftime('%Y-%m-%d %H:%M:%S')
-            day_info['timeline']['end'] = make_naive(
-                day_info['timeline']['end'].value
-            ).strftime('%Y-%m-%d %H:%M:%S')
+            day_info['timeline']['begin'] = day_info['timeline']['begin'].value
+            day_info['timeline']['end'] = day_info['timeline']['end'].value
             result.append(day_info)
 
         return Response({'data': result})

@@ -4,27 +4,21 @@
 <nav class="navbar navbar-default navbar-fe navbar-site">
   <div class="clearfix container-fluid">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">{% trans 'Toggle navigation' %}</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
 
         <a class="navbar-brand" href="{% url 'user_dashboard' %}">
           <div style="display: inline;">
-            <img height="30" src="{% static 'pycontw-2022/assets/2022-py-logo.svg' %}"
-                 class="logo hidden-xs" alt="logo">
-            <img height="30" src="{% static 'pycontw-2022/assets/2022-py-logo.svg' %}"
-                class="logo visible-xs-inline" alt="logo">
-            <span>PyCon APAC 2022</span>
+            <img height="20" src="{% static 'pycontw-2022/assets/2022-py-logo.svg' %}"
+                 class="logo hidden-xs navbar-brand-img" alt="logo">
+            <img height="20" src="{% static 'pycontw-2022/assets/2022-py-logo.svg' %}"
+                class="logo visible-xs-inline navbar-brand-img" alt="logo">
+            <span>PyCon TW 2023</span>
           </div>
         </a>
     </div>
 
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="lang_and_sign" id="navbar">
 
       {% block nav-content %}{% endblock nav-content %}
 
@@ -35,14 +29,19 @@
         <ul class="nav navbar-nav navbar-lang navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button"
-               aria-haspopup="true" aria-expanded="false"> {{ current_language.name_local }}
-               <span class="caret"></span>
+              aria-haspopup="true" aria-expanded="false">
+                {% if current_language.name_local == "繁體中文" %}{% trans "ZH" %}
+                {% else %}{% trans "EN" %}
+                {% endif %}
+              <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               {% for language in languages %}
               <li {% if language.code == LANGUAGE_CODE %}class="active"{% endif %}>
                 <a href="#" data-lang="{{ language.code}}">
-                  {{ language.name_local }}
+                  {% if language.name_local == "繁體中文" %}{% trans "ZH" %}
+                  {% else %}{% trans "EN" %}
+                  {% endif %}
                 </a>
               </li>
               {% endfor %}

@@ -6,6 +6,17 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from .choices import (
+    CATEGORY_CHOICES,
+    LANGUAGE_CHOICES,
+    PYTHON_LVL_CHOICES,
+    PREFER_TIME_CHOICES,
+    RECORDING_POLICY_CHOICES,
+    LIVING_IN_TAIWAN_CHOICES,
+    LIVE_STREAM_POLICY_CHOICES,
+    REFERRING_POLICY_CHOICES,
+    ATTEND_IN_PERSON,
+)
 from .validators import EAWMaxLengthValidator
 
 
@@ -84,48 +95,16 @@ class EventInfo(models.Model):
         max_length=140,
     )
 
-    CATEGORY_CHOICES = (
-        ('APPL', _('Application')),
-        ('PRAC', _('Best Practices & Patterns')),
-        ('COM', _('Community')),
-        ('DB', _('Databases')),
-        ('DATA', _('Data Analysis')),
-        ('EDU', _('Education')),
-        ('EMBED', _('Embedded Systems')),
-        ('FIN', _('FinTech')),
-        ('IOT', _('Internet of Things')),
-        ('GAME', _('Gaming')),
-        ('GRAPH', _('Graphics')),
-        ('ML', _('Machine Learning')),
-        ('NLP', _('Natural Language Processing')),
-        ('CORE', _('Python Core (language, stdlib, etc.)')),
-        ('TOOL', _('Project Tooling')),
-        ('SCI', _('Science')),
-        ('SEC', _('Security')),
-        ('ADMIN', _('Systems Administration')),
-        ('TEST', _('Testing')),
-        ('WEB', _('Web Frameworks')),
-        ('OTHER', _('Other')),
-    )
     category = models.CharField(
         verbose_name=_('category'),
         max_length=5,
         choices=CATEGORY_CHOICES,
     )
 
-    LANGUAGE_CHOICES = (
-        ('ENEN', _('English talk')),
-        ('NONEN', _('non-English talk w. English slides')),
-    )
     language = models.CharField(
         verbose_name=_('language'),
         max_length=5,
         choices=LANGUAGE_CHOICES,
-    )
-
-    talk_language = models.CharField(
-        verbose_name=_('Talk language'),
-        max_length=32,
     )
 
     abstract = EAWTextField(
@@ -133,11 +112,6 @@ class EventInfo(models.Model):
         max_length=1000,
     )
 
-    PYTHON_LVL_CHOICES = (
-        ('NOVICE', _('Novice')),
-        ('INTERMEDIATE', _('Intermediate')),
-        ('EXPERIENCED', _('Experienced')),
-    )
     python_level = models.CharField(
         verbose_name=_('Python level'),
         max_length=12,
@@ -149,30 +123,18 @@ class EventInfo(models.Model):
         blank=True,
     )
 
-    RECORDING_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
     recording_policy = models.BooleanField(
         verbose_name=_('recording policy'),
         default=True,
         choices=RECORDING_POLICY_CHOICES,
     )
 
-    LIVE_STREAM_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
     live_stream_policy = models.BooleanField(
         verbose_name=_('live stream policy'),
         default=True,
         choices=LIVE_STREAM_POLICY_CHOICES,
     )
 
-    REFERRING_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
     referring_policy = models.BooleanField(
         verbose_name=_('referring policy'),
         default=False,
@@ -208,36 +170,22 @@ class EventInfo(models.Model):
         auto_now=True,
     )
 
-    PERFER_TIME_CHOICES = (
-        ('DAY_ONE_MORNING', _('Day 1, September 3rd, 2022 Morning')),
-        ('DAY_ONE_AFTERNOON', _('Day 1, September 3rd, 2022 Afternoon')),
-        ('DAY_TWO_MORNING', _('Day 2, September 4th, 2022 Morning')),
-        ('DAY_TWO_AFTERNOON', _('Day 2, September 4th, 2022 Afternoon')),
-    )
     prefer_time = models.CharField(
         verbose_name=_('prefer event time'),
         max_length=32,
-        choices=PERFER_TIME_CHOICES,
+        choices=PREFER_TIME_CHOICES,
     )
 
-    LIVING_IN_TAIWAN_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
     living_in_taiwan = models.BooleanField(
         verbose_name=_('living in Taiwan'),
         default=False,
-        choices=REFERRING_POLICY_CHOICES,
+        choices=LIVING_IN_TAIWAN_CHOICES,
     )
 
-    PRE_RECORDED_POLICY_CHOICES = (
-        (True, _('Yes')),
-        (False, _('No'))
-    )
-    pre_recorded_policy = models.BooleanField(
-        verbose_name=_('agree pre-recorded proposal'),
-        default=False,
-        choices=REFERRING_POLICY_CHOICES,
+    attend_in_person = models.BooleanField(
+        verbose_name=_("attending PyCon TW in person"),
+        default=True,
+        choices=ATTEND_IN_PERSON,
     )
 
     class Meta:
@@ -252,6 +200,7 @@ class EventInfo(models.Model):
             'ENEN': 'E',
             'ZHEN': 'ZE',
             'ZHZH': 'Z',
+            'TAI': 'T',
         }[self.language]
 
     def get_python_level_tag(self):

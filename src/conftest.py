@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
 from django.conf import settings
+from rest_framework.test import APIClient
 
 from proposals.models import TalkProposal
 from users.models import CocRecord
@@ -203,3 +204,8 @@ def accepted_talk_proposal(talk_proposal):
     talk_proposal.accepted = True
     talk_proposal.save()
     return talk_proposal
+
+
+@pytest.fixture
+def drf_api_client():
+    return APIClient()

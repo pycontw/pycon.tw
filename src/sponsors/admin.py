@@ -9,9 +9,9 @@ from .models import Sponsor, OpenRole
 class SponsorAdmin(TranslationAdmin):
     fields = [
         'name', 'level', 'website_url', 'intro', 'subtitle',
-        'logo_svg', 'logo_image',
+        'logo_svg', 'logo_image', 'order'
     ]
-    list_display = ['name', 'level']
+    list_display = ['name', 'level', 'order']
     list_filter = ['level']
 
 

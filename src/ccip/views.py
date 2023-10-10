@@ -1,4 +1,5 @@
 import operator
+from datetime import timezone, timedelta
 
 from django.http import JsonResponse
 from django.templatetags.static import static
@@ -166,12 +167,15 @@ def _transform_session(request, event, type_key, info_getter):
         for speaker in event_info.speakers
     ]
 
+    LOCAL_TIMEZONE = timezone(offset=timedelta(hours=8))
+    # Explicitly show the local timezone used by OPass(CCIP)
+    # to avoid iOS device showing UTC+0 time without changing it to local time
+    # https://github.com/CCIP-App/CCIP-iOS/issues/54
     session = {
         'id': f'{type_key}-{event_info.pk}',
         'type': type_key,
-
-        'start': event.begin_time.value.isoformat(),
-        'end': event.end_time.value.isoformat(),
+        'start': event.begin_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.begin_time else None,
+        'end': event.end_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.end_time else None,
         'slide': event_info.slide_link,
         'speakers': [speaker['id'] for speaker in speakers],
         'tags': [tag['id'] for tag in tags],
@@ -194,7 +198,6 @@ def _transform_session(request, event, type_key, info_getter):
             ('description', event_info.abstract)]:
         for code, tran in _iter_translations(value):
             session[code][key] = tran
-
     return session, speakers, tags, room
 
 
@@ -266,14 +269,14 @@ class CCIPAPIView(View):
                     request=request, event=event,
                     type_key=type_key, info_getter=info_getter,
                 )
-                rooms[room['id']] = room
-                speakers.update({s['id']: s for s in sess_speakers})
-                tags.update({t['id']: t for t in sess_tags})
-                sessions.append(session)
+                if room['id'] is not None:
+                    rooms[room['id']] = room
+                    speakers.update({s['id']: s for s in sess_speakers})
+                    tags.update({t['id']: t for t in sess_tags})
+                    sessions.append(session)
 
         def _room_sort_key(v):
             return v['id'].split('-', 1)[-1]
-
         return JsonResponse({
             'rooms': sorted(rooms.values(), key=_room_sort_key),
             'sessions': sessions,

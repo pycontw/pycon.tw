@@ -1,0 +1,66 @@
+name: CI
+
+on: [workflow_dispatch, pull_request]
+
+env:
+  SECRET_KEY: thisisasecret
+  DATABASE_URL: postgresql://postgres:password@localhost:5432/postgres
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+
+    services:
+      postgres:
+        image: postgres:11-alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.6'
+        cache: 'pip'
+
+    - name: Set up Python dependencies
+      run: |
+        pip install -U pip
+        pip install -r requirements/dev.txt
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 8
+
+    - name: Setup Yarn install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install
+
+    - name: Run Flake8 on src
+      run: |
+        flake8 src
+
+    - name: Run DB migration for test
+      run: |
+        python src/manage.py migrate --verbosity 1 --noinput
+
+    - name: Run Test
+      run: |
+        cd src
+        pytest -n 2 --cov=. --cov-report=term-missing --cov-report=xml
+
+    - name: Run Codecov action
+      uses: codecov/codecov-action@v3
