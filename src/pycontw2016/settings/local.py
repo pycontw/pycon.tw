@@ -3,6 +3,7 @@ from .base import (
     env,
 )
 from .base import *             # NOQA
+from datetime import timedelta
 
 import logging.config
 import os
@@ -99,3 +100,8 @@ logging.config.dictConfig(LOGGING)
 
 
 DJANGO_Q_DEBUG = True
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
+    'AUTH_HEADER_TYPES': ('Token',),
+}
