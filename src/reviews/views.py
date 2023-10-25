@@ -153,7 +153,6 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             **self.reviews_state._asdict(),
             **self.get_category_metrics(context),
         })
-        print(context)
         return context
 
     def get_stage_1_reviews(self):

@@ -4,9 +4,9 @@
 	<tr>
 		{% if not verdict %}
 			<th width="1%">
-				<a {% if ordering == 'review__count' %}class="active asc" href="?order=-count"
-					 {% elif ordering == '-review__count' %}class="active desc" href="?order=count"
-					 {% else %}href="?order=count"{% endif %}>
+				<a {% if ordering == 'review__count' %}class="active asc" href="?order=-count&category={{ category }}"
+					 {% elif ordering == '-review__count' %}class="active desc" href="?order=count&category={{ category }}"
+					 {% else %}href="?order=count&category={{ category }}"{% endif %}>
 					{% trans 'Reviewed' %}
 					<i class="fa fa-sort fa-lg"></i>
 					<i class="fa fa-sort-asc fa-lg"></i>
@@ -15,8 +15,8 @@
 			</th>
 		{% endif %}
 		<th class="proposal-title">
-			<a {% if ordering == 'title' %}class="active asc" href="?order=-title"
-				 {% elif ordering == '-title' %}class="active desc" href="?order=title"{% else %}href="?order=title"{% endif %}>
+			<a {% if ordering == 'title' %}class="active asc" href="?order=-title&category={{ category }}"
+				 {% elif ordering == '-title' %}class="active desc" href="?order=title&category={{ category }}"{% else %}href="?order=title&category={{ category }}"{% endif %}>
 				{% trans 'Title' %}
 				<i class="fa fa-sort fa-lg"></i>
 				<i class="fa fa-sort-asc fa-lg"></i>
@@ -24,9 +24,9 @@
 			</a>
 		</th>
 		<th width="1%" class="hidden-md hidden-sm hidden-xs">
-			<a {% if ordering == 'language' %}class="active asc" href="?order=-lang"
-				 {% elif ordering == '-language' %}class="active desc" href="?order=lang"
-				 {% else %}href="?order=lang"{% endif %}>
+			<a {% if ordering == 'language' %}class="active asc" href="?order=-lang&category={{ category }}"
+				 {% elif ordering == '-language' %}class="active desc" href="?order=lang&category={{ category }}"
+				 {% else %}href="?order=lang&category={{ category }}"{% endif %}>
 				{% trans 'Lang' %}
 				<i class="fa fa-sort fa-lg"></i>
 				<i class="fa fa-sort-asc fa-lg"></i>
@@ -34,16 +34,16 @@
 			</a>
 		</th>
 		<th width="1%" class="hidden-md hidden-sm hidden-xs">
-			<select onchange="javascript:location.href = this.value;">
+			<select onchange="javascript:location.href = `?order=${new URLSearchParams(location.search).get('order')}${this.value}`;">
 				{% if not category %}
-				<option value="?order=count">ALL</option>
+				<option value="">ALL</option>
 				{% else %}
-				<option value="?order=count&category={{ category }}">{{ category }}</option>
-				<option value="?order=count">ALL</option>
+				<option value="&category={{ category }}">{{ category }}</option>
+				<option value="">ALL</option>
 				{% endif %}
 				{% for category_option in category_options %}
 				{% if category != category_option %}
-				<option value="?order=count&category={{ category_option }}">{{ category_option }}</option>
+				<option value="&category={{ category_option }}">{{ category_option }}</option>
 				{% endif %}
 				{% endfor %}
 			</select>
