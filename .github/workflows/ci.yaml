@@ -38,7 +38,7 @@ jobs:
     - name: Set up Python dependencies
       run: |
         pip install -U pip
-        pip install -r requirements/ci.txt
+        pip install -r requirements/dev.txt
 
     - uses: actions/setup-node@v3
       with:
@@ -57,12 +57,10 @@ jobs:
       run: |
         python src/manage.py migrate --verbosity 1 --noinput
 
-    - name: Run Test and Codecov
+    - name: Run Test
       run: |
         cd src
-        pytest -n 2 --cov=.
-        codecov
+        pytest -n 2 --cov=. --cov-report=term-missing --cov-report=xml
 
-    # TODO: Use Official Codecov from Github Actions
-    # - name: Run Codecov action
-    #   uses: codecov/codecov-action@v3
+    - name: Run Codecov action
+      uses: codecov/codecov-action@v3

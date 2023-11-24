@@ -5,6 +5,7 @@ from .models import Sponsor, OpenRole
 
 class SponsorTranslationOptions(TranslationOptions):
     fields = ('name', 'intro', 'subtitle',)
+    required_languages = {'default': ('name',)}
 
 
 class OpenRoleTranslationOptions(TranslationOptions):
