@@ -5,7 +5,7 @@ from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
 from .base import *     # noqa
 
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2023'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2024'
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
