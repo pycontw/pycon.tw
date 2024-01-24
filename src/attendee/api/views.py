@@ -4,12 +4,12 @@ from rest_framework import views, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from core.authentication import TokenAuthentication
+from core.authentication import BearerAuthentication
 from attendee.models import Attendee
 
 
 class AttendeeAPIView(views.APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [BearerAuthentication]
     permission_classes = [IsAuthenticated]
 
     model = Attendee
