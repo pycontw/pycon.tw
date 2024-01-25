@@ -4,10 +4,6 @@ from django.views.generic import RedirectView
 from events import views
 
 urlpatterns = [
-    url(r'^schedule/$', views.ScheduleView.as_view(), name='events_schedule'),
-    url(r'^schedule/new/$', views.ScheduleCreateView.as_view()),
-
-
     url(r'^talks/$', views.TalkListView.as_view(),
         name='events_talk_list'),
     url(r'^tutorials/$', views.TutorialListView.as_view(),

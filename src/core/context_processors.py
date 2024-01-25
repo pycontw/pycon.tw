@@ -54,9 +54,5 @@ def sponsors(request):
     }
 
 
-def events(request):
-    return {'schedule_redirect_url': settings.SCHEDULE_REDIRECT_URL}
-
-
 def frontend_host(request):
     return {'FRONTEND_HOST': settings.FRONTEND_HOST}
