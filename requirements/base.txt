@@ -67,7 +67,7 @@ certifi>=2019.11.28
 
 # Better python shell.
 # http://ipython.org/
-ipython==7.12.0
+ipython==7.16.3
 
 # The most feature-rich and easy-to-use library for processing XML and HTML in
 # the Python language.

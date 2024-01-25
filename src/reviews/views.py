@@ -55,6 +55,10 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         order_key = self.order_keys.get(params.get('order', '').lower())
         return order_key or '?'
 
+    def get_category(self):
+        params = self.request.GET
+        return params.get('category')
+
     def get_queryset(self):
         user = self.request.user
         qs = (
@@ -64,10 +68,7 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             .exclude(review__reviewer=user)
             .annotate(Count('review'))
         )
-        # params = self.request.GET
-        # category = params.get('category', '').upper()
-        # if category:
-        #     proposals = proposals.filter(category=category)
+
         ordering = self.get_ordering()
         if ordering == '?':
             # We don't use order_by('?') because it is crazy slow, and instead
@@ -85,7 +86,22 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
         else:
             qs = qs.order_by(ordering)
         self.ordering = ordering
+        self.category = self.get_category()
+
         return qs
+
+    def get_category_metrics(self, context):
+        count = 0
+        categories = set()
+        for proposal in context["object_list"]:
+            if proposal.category == self.category:
+                count += 1
+            if proposal.category not in categories:
+                categories.add(proposal.category)
+        return {
+            "category_options": categories,
+            "filtered_count": count if count else len(context["object_list"])
+        }
 
     def get_context_data(self, **kwargs):
         review_stage = self.reviews_state.reviews_stage
@@ -132,8 +148,10 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
             ),
             'vote': vote_mapping,
             'ordering': self.ordering,
+            'category': self.category,
             'query_string': self.request.GET.urlencode(),
             **self.reviews_state._asdict(),
+            **self.get_category_metrics(context),
         })
         return context
 
