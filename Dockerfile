@@ -12,15 +12,15 @@ RUN yarn install --dev --frozen-lockfile  \
 # [Python Stage for Django web server]
 FROM python:3.6-slim-buster as python_stage
 
-COPY --from=node_stage /node_modules /usr/local/lib/node_modules
-COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
-
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
 
+COPY --from=node_stage /node_modules $APP_DIR/node_modules
+COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
+
 # make nodejs accessible and executable globally
-ENV NODE_PATH /usr/local/lib/node_modules/
+ENV NODE_PATH $APP_DIR/node_modules/
 ENV PATH /usr/local/bin:$PATH
 
 # Add bin directory used by `pip install --user`
