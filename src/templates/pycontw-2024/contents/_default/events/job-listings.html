@@ -1,0 +1,76 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+{% load sponsors %}
+{% load events %}
+
+{% block titletag %}
+<title>【2020年Python工作職缺】Python知名企業職缺一覽表</title>
+{% endblock titletag %}
+{% block meta_seo %}
+<meta name="description" content="2020年Python熱門工作職缺、Python工程師職缺一覽表，PyCon Taiwan提供知名企業內部Python工程師職缺，直接查看所有知名品牌Python工作機會！" >
+<meta name="keywords" content="Python職缺" >
+<meta name="author" content="PyCon Taiwan" >
+<meta name="copyright" content="本網頁著作權屬2020 PyCon Taiwan, All Rights Reserved " >
+<meta name="application-name" content="2020年Python工作職缺">
+{% endblock meta_seo %}
+{% block meta_og %}
+<meta property="og:type" content="website">
+<meta property="og:title" content="【2020年Python熱門工作】Python知名企業職缺一覽表－PyCon Taiwan">
+<meta property="og:description" content="2020年知名企業內部Python熱門工作職缺、Python工程師職缺一覽表，提供知名品牌企業內部Python工程師職缺、Python工作機會！">
+<meta property="og:url" content="https://tw.pycon.org/2020/zh-hant/events/job-listings/">
+<meta property="og:site_name" content="PyCon Taiwan">
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'pycontw-2021/assets/og-image.png' %}">
+{% endblock meta_og%}
+
+
+{% block body_class %}job-listings-page{% endblock body_class %}
+
+{% block content %}
+
+
+<section class="pill-title">
+	<h1>{% trans 'Job Listings' %}</h1>
+</section>
+
+
+{% get_open_roles_of_sponsors as open_roles_of_sponsors %}
+{% get_open_roles as open_roles %}
+
+{% for sponsor in open_roles_of_sponsors %}
+	<article class="media">
+		<header>
+			<figure>
+				{% if sponsor.logo.url %}
+					<img src="{{ sponsor.logo.url }}">
+				{% endif %}
+				<figcaption>{{ sponsor.name }}</figcaption>
+			</figure>
+		</header>
+		<div class="tabbing" data-controller="tabbing">
+			<ul class="tabs">
+				<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+					{% trans 'Open Roles' %}
+				</li>
+			</ul>
+			<div>
+				<article data-target="tabbing.pane">
+					<h3 class="tab-title">{% trans 'Open Roles' %}</h3>
+					{% for open_role in open_roles %}
+						{% if open_role.sponsor.name == sponsor.name %}
+							<ul>
+								{% if open_role.url %}
+									<li><a href="{{ open_role.url }}">{{ open_role.name }}</a>{{ open_role.description|linebreaks }}</li>
+								{% else %}
+									<li>{{ open_role.name }}</a> {{ open_role.description|linebreaks }}</li>
+								{% endif %}
+							</ul>
+						{% endif %}
+					{% endfor %}
+				</article>
+			</div>
+		</div>
+	</article>
+{% endfor %}
+
+{% endblock content %}

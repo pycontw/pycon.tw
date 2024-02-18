@@ -1,0 +1,50 @@
+$box-content-padding-x: 32px;
+$box-content-padding-y: 16px;
+
+.box {
+	$box-border: solid 1px $brown;
+
+	border: $box-border;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.box-title {
+		margin: 0;
+		padding: (2rem / 3) 1rem;
+		background-color: $brown;
+		color: $white;
+		line-height: 150%;
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+
+	.box-content {
+		padding: $box-content-padding-y $box-content-padding-x;
+	}
+
+	.box-control {
+		color:$jinger-bread;
+		display: flex;
+		overflow: hidden;
+
+		> * {
+			@include header(1.25rem);
+			@include no-underline();
+
+			flex: 1;
+			border-top: solid 1px $jinger-bread;
+			line-height: 48px;
+			text-align: center;
+			font-family: "Philosopher", "Noto Sans TC", "sans-serif";
+		}
+
+		> * + * {
+			border-left: $box-border;
+		}
+
+		> a:hover {
+			background: $brown;
+			color: $white;
+		}
+	}
+}

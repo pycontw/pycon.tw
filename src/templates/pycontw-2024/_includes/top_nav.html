@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load i18n_plus %}
+
+<div data-controller="topNav">
+
+	<nav class="top-navbar">
+
+        <div class="navbar-left">
+            <form class="navbar-lang-switch" method="post" action="{% url 'set_language' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request|language_free_path }}">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info for LANGUAGE_CODE as current_language %}
+                {% for language in languages %}
+                <button type="submit" name="language" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}disabled="disabled"{% endif %}>
+                    {{ language.code.upper|slice:'0:2' }}
+                </button>
+                {% endfor %}
+            </form>
+            {% comment %} <a href="{% url 'index' %}"><i class="twicon-provintia navbar-provintia"></i></a> {% endcomment %}
+			<a href="{% url 'index' %}" class="navbar-brand">PyCon TW21</a>
+        </div>
+
+		<button class="navbar-toggler no-script" type="button" aria-expanded="false" aria-label="Toggle navigation" data-target="topNav.toggler" data-action="topNav#toggle">
+			<div><span></span><span></span><span></span></div>
+		</button>
+
+		{% include '_includes/social.html' with type='desktop' %}
+
+	</nav>
+
+	<nav class="menu-navbar-mobile no-script" data-target="topNav.menu">
+        {% include '_includes/menu.html' with type='mobile' %}
+		{% include '_includes/social.html' with type='mobile' %}
+        <div class="shadow">
+            <i class="twicon-provintia"></i>
+        </div>
+	</nav>
+
+</div>
