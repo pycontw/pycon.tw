@@ -1,0 +1,50 @@
+.about-page .year-ribbon {
+    flex: 1 0 auto; // Fix for sticky footer
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 125px;
+	margin: 0 0 30px;
+	padding: 0 2rem;
+
+    @mixin arrow($arrow) {
+        color: $jinger-bread;
+        content: $arrow;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        position: relative;
+        top: 2px;
+    }
+
+    &::before {
+        @include arrow("◀");
+        padding-right: 1rem;
+    }
+
+    &::after {
+        @include arrow("▶");
+        padding-left: 1rem;
+    }
+
+	li {
+		@include menu-items();
+		@include h3(0);
+		margin: 0;
+		line-height: 2rem;
+
+		&:not(:first-of-type) {
+			margin-left: 0.7rem;
+		}
+		&:not(:last-of-type)::after {
+			content: '.';
+			margin-left: 0.7rem;
+		}
+		color: $black;
+		a {
+            font-family: "Quicksand";
+			color: $jinger-bread;
+		}
+	}
+}
