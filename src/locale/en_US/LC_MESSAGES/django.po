@@ -214,20 +214,20 @@ msgid "Experienced"
 msgstr "Experienced"
 
 #: core/choices.py:41
-msgid "Day 1, September 2nd, 2023 Morning"
-msgstr "Day 1, September 2nd, 2023 Morning with Taiwan Standard Time(UTC+8)"
+msgid "Day 1, September 21th, 2024 Morning"
+msgstr "Day 1, September 21th, 2024 Morning with Taiwan Standard Time(UTC+8)"
 
 #: core/choices.py:42
-msgid "Day 1, September 2nd, 2023 Afternoon"
-msgstr "Day 1, September 2nd, 2023 Afternoon with Taiwan Standard Time(UTC+8)"
+msgid "Day 1, September 21th, 2024 Afternoon"
+msgstr "Day 1, September 21th, 2024 Afternoon with Taiwan Standard Time(UTC+8)"
 
 #: core/choices.py:43
-msgid "Day 2, September 3rd, 2023 Morning"
-msgstr "Day 2, September 3rd, 2023 Morning with Taiwan Standard Time(UTC+8)"
+msgid "Day 2, September 22th, 2024 Morning"
+msgstr "Day 2, September 22th, 2024 Morning with Taiwan Standard Time(UTC+8)"
 
 #: core/choices.py:44
-msgid "Day 2, September 3rd, 2023 Afternoon"
-msgstr "Day 2, September 3rd, 2023 Afternoon with Taiwan Standard Time(UTC+8)"
+msgid "Day 2, September 22th, 2024 Afternoon"
+msgstr "Day 2, September 22th, 2024 Afternoon with Taiwan Standard Time(UTC+8)"
 
 #: core/choices.py:48 core/choices.py:53 core/choices.py:58 core/choices.py:63
 #: core/choices.py:68 reviews/models.py:122 reviews/models.py:137
