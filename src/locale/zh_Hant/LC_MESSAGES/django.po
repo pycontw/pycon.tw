@@ -221,20 +221,20 @@ msgid "Experienced"
 msgstr "進階"
 
 #: core/choices.py:41
-msgid "Day 1, September 2nd, 2023 Morning"
-msgstr "第一天(2023/09/02)早上"
+msgid "Day 1, September 21st, 2024 Morning"
+msgstr "第一天(2024/09/21)早上"
 
 #: core/choices.py:42
-msgid "Day 1, September 2nd, 2023 Afternoon"
-msgstr "第一天(2023/09/02)下午"
+msgid "Day 1, September 21st, 2024 Afternoon"
+msgstr "第一天(2024/09/21)下午"
 
 #: core/choices.py:43
-msgid "Day 2, September 3rd, 2023 Morning"
-msgstr "第二天(2023/09/03)早上"
+msgid "Day 2, September 22nd, 2024 Morning"
+msgstr "第二天(2024/09/22)早上"
 
 #: core/choices.py:44
-msgid "Day 2, September 3rd, 2023 Afternoon"
-msgstr "第二天(2023/09/03)下午"
+msgid "Day 2, September 22nd, 2024 Afternoon"
+msgstr "第二天(2024/09/22)下午"
 
 #: core/choices.py:48 core/choices.py:53 core/choices.py:58 core/choices.py:63
 #: core/choices.py:68 reviews/models.py:122 reviews/models.py:137
