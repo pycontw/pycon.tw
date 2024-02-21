@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-08 22:50+0800\n"
+"POT-Creation-Date: 2024-02-21 15:14+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -40,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:153 events/models.py:469
+#: attendee/models.py:9 core/models.py:163 events/models.py:469
 msgid "created at"
 msgstr "建立時間"
 
@@ -56,32 +56,32 @@ msgstr "會眾"
 msgid "attendees"
 msgstr "會眾"
 
-#: ccip/views.py:204
+#: ccip/views.py:209
 msgctxt "CCIP event type"
 msgid "event"
 msgstr "活動"
 
-#: ccip/views.py:212
+#: ccip/views.py:217
 msgctxt "CCIP event type"
 msgid "break"
 msgstr "休息"
 
-#: ccip/views.py:220
+#: ccip/views.py:225
 msgctxt "CCIP event type"
 msgid "keynote"
 msgstr "基調演講"
 
-#: ccip/views.py:226
+#: ccip/views.py:231
 msgctxt "CCIP event type"
 msgid "sponsored"
 msgstr "贊助"
 
-#: ccip/views.py:234
+#: ccip/views.py:239
 msgctxt "CCIP event type"
 msgid "tutorial"
 msgstr "專業課程"
 
-#: ccip/views.py:246
+#: ccip/views.py:251
 msgctxt "CCIP event type"
 msgid "talk"
 msgstr "演講"
@@ -113,6 +113,7 @@ msgstr "最佳實踐與慣例"
 #: templates/pycontw-2021/_includes/footer.html:15
 #: templates/pycontw-2022/_includes/footer.html:15
 #: templates/pycontw-2023/_includes/footer.html:15
+#: templates/pycontw-2024/_includes/footer.html:15
 msgid "Community"
 msgstr "社群"
 
@@ -251,92 +252,92 @@ msgstr "否"
 msgid "{model_name_cap} creation requires a request object."
 msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 
-#: core/models.py:71
+#: core/models.py:81
 msgid "conference"
 msgstr "會議"
 
-#: core/models.py:84 events/models.py:193
+#: core/models.py:94 events/models.py:193
 msgid "title"
 msgstr "題目"
 
-#: core/models.py:89
+#: core/models.py:99
 msgid "category"
 msgstr "分類"
 
-#: core/models.py:95
+#: core/models.py:105
 msgid "language"
 msgstr "語言"
 
-#: core/models.py:101
+#: core/models.py:111
 msgid "abstract"
 msgstr "摘要"
 
-#: core/models.py:106 templates/default/reviews/review_form.html:53
+#: core/models.py:116 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python 難易度"
 
-#: core/models.py:112
+#: core/models.py:122
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:117
+#: core/models.py:127
 msgid "recording policy"
 msgstr "議程錄影釋出"
 
-#: core/models.py:123
+#: core/models.py:133
 msgid "live stream policy"
 msgstr "議程直播"
 
-#: core/models.py:129
+#: core/models.py:139
 msgid "referring policy"
 msgstr "轉介至地方社群"
 
-#: core/models.py:135
+#: core/models.py:145
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:141
+#: core/models.py:151
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:147 events/models.py:258
+#: core/models.py:157 events/models.py:258
 msgid "HackMD embed link"
 msgstr "HackMD 嵌入連結"
 
-#: core/models.py:159
+#: core/models.py:169
 msgid "last updated at"
 msgstr "最後更新"
 
-#: core/models.py:164
+#: core/models.py:174
 msgid "prefer event time"
 msgstr "偏好議程時間"
 
-#: core/models.py:170
+#: core/models.py:180
 msgid "living in Taiwan"
 msgstr "是否住在台灣"
 
-#: core/models.py:176
+#: core/models.py:186
 msgid "attending PyCon TW in person"
 msgstr "是否願意以實體方式與會"
 
-#: core/models.py:208 reviews/admin.py:51
+#: core/models.py:218 reviews/admin.py:51
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:212 proposals/models.py:62 users/models.py:198
+#: core/models.py:222 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "使用者"
 
-#: core/models.py:215
+#: core/models.py:225
 msgid "Created"
 msgstr "建立時間"
 
-#: core/models.py:218
+#: core/models.py:228
 msgid "Token"
 msgstr "驗證碼"
 
-#: core/models.py:219
+#: core/models.py:229
 msgid "Tokens"
 msgstr "驗證碼"
 
@@ -546,6 +547,7 @@ msgstr "贊助"
 #: templates/pycontw-2021/contents/_default/events/job-listings.html:33
 #: templates/pycontw-2022/contents/_default/events/job-listings.html:33
 #: templates/pycontw-2023/contents/_default/events/job-listings.html:33
+#: templates/pycontw-2024/contents/_default/events/job-listings.html:33
 msgid "Job Listings"
 msgstr "徵才資訊"
 
@@ -622,6 +624,9 @@ msgstr "HTML"
 #: templates/pycontw-2023/_includes/portal.html:4
 #: templates/pycontw-2023/events/schedule.html:6
 #: templates/pycontw-2023/events/schedule.html:21
+#: templates/pycontw-2024/_includes/portal.html:4
+#: templates/pycontw-2024/events/schedule.html:6
+#: templates/pycontw-2024/events/schedule.html:21
 msgid "Schedule"
 msgstr "時間表"
 
@@ -667,7 +672,7 @@ msgid ""
 "{model_name}."
 msgstr "只有完成認證並填寫講者資訊的人才能建立 {model_name}。"
 
-#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:156
+#: proposals/forms/mixins.py:44 proposals/forms/mixins.py:153
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='abstract'>Proposal Examples</a>.</p><p>The overview of what "
@@ -680,7 +685,7 @@ msgstr ""
 "要特別的背景知識（domain knowledge），應註記在此。若您的演講入選，這段文字會"
 "公佈在網站與大會手冊中。應為單一段落。</p>"
 
-#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:165
+#: proposals/forms/mixins.py:53 proposals/forms/mixins.py:162
 #, python-brace-format
 msgid ""
 "The choice of talk level matters during the review process. More definition "
@@ -695,7 +700,7 @@ msgstr ""
 "如何投稿</a>一文。注意：投稿不會因為級別是「入門」就比較容易上。若我們認為這"
 "講題對聽眾來說過於簡單或困難時，可能會和你討論是否需要修改。"
 
-#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:176
+#: proposals/forms/mixins.py:64 proposals/forms/mixins.py:173
 msgid ""
 "<p><a href='#' data-toggle='modal' data-target='#proposalFieldExampleModal' "
 "data-content='detailed description'>Proposal Examples</a>.</p><p>Try not be "
@@ -728,7 +733,7 @@ msgstr ""
 "<a href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出"
 "</a>一頁。"
 
-#: proposals/forms/mixins.py:88 proposals/forms/mixins.py:198
+#: proposals/forms/mixins.py:88 proposals/forms/mixins.py:195
 msgid ""
 "You can add your slide link near or after the conference day. Not required "
 "for review."
@@ -757,7 +762,7 @@ msgstr ""
 "從這演講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位"
 "不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:107 proposals/forms/mixins.py:209
+#: proposals/forms/mixins.py:107 proposals/forms/mixins.py:206
 msgid ""
 "Anything else you'd like the program committee to know when making their "
 "selection: your past speaking experience, community experience, etc. This is "
@@ -787,7 +792,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。</p>"
 
-#: proposals/forms/mixins.py:127 proposals/forms/mixins.py:225
+#: proposals/forms/mixins.py:127 proposals/forms/mixins.py:222
 msgid ""
 "If you disagree to authorize PyCon Taiwan to record video, whether you agree "
 "to let PyCon Taiwan live stream your presentation only for the remote "
@@ -797,11 +802,11 @@ msgstr ""
 "若您不同意授權讓 PyCon Taiwan 錄影，是否同意讓 PyCon Taiwan 直播您的演講僅供"
 "遠端參與者觀看? (我們將不會釋出您演講的影音)"
 
-#: proposals/forms/mixins.py:153
+#: proposals/forms/mixins.py:150
 msgid "<p>Tutorials are limited to 1.5 hours in length this year.</p>"
 msgstr "<p>今年 Tutorial 時間長度僅開放 1.5 小時。</p>"
 
-#: proposals/forms/mixins.py:190
+#: proposals/forms/mixins.py:187
 #, python-brace-format
 msgid ""
 "Whether you agree to give permission to PyCon Taiwan to record, edit, and "
@@ -813,7 +818,7 @@ msgstr ""
 "href='{frontend_host}/zh-hant/speaking/recording' target='_blank'>錄影釋出</"
 "a>一頁。"
 
-#: proposals/forms/mixins.py:202
+#: proposals/forms/mixins.py:199
 msgid ""
 "Who is the intended audience for your talk? (Be specific, \"Python users\" "
 "is not a good answer). And what will the attendees get out of your talk? "
@@ -824,7 +829,7 @@ msgstr ""
 "講中得到什麼？當他們離開了演講廳後，有沒有學到什麼以前不知道的？本欄位不公開"
 "僅供審查使用。"
 
-#: proposals/forms/mixins.py:217
+#: proposals/forms/mixins.py:214
 msgid ""
 "How the tutorial will be arranged. You should enumerate over each section in "
 "your talk and attach each section with the estimated time length. Edit using "
@@ -1228,6 +1233,7 @@ msgstr "PyCon Taiwan 2020"
 
 #: pycontw2016/settings/base.py:306 templates/pycontw-2021/index.html:14
 #: templates/pycontw-2022/index.html:14 templates/pycontw-2023/index.html:14
+#: templates/pycontw-2024/index.html:14
 msgid "PyCon Taiwan 2021"
 msgstr "PyCon Taiwan 2021"
 
@@ -1239,44 +1245,56 @@ msgstr "PyCon Taiwan 2022"
 msgid "PyCon Taiwan 2023"
 msgstr "PyCon Taiwan 2023"
 
-#: pycontw2016/settings/base.py:321
+#: pycontw2016/settings/base.py:309
+#, fuzzy
+#| msgid "PyCon Taiwan 2020"
+msgid "PyCon Taiwan 2024"
+msgstr "PyCon Taiwan 2020"
+
+#: pycontw2016/settings/base.py:322
 #: pycontw2016/settings/production/pycontw2016.py:16
 #: pycontw2016/settings/production/pycontw2021.py:15
 #: pycontw2016/settings/production/pycontw2022.py:14
 #: pycontw2016/settings/production/pycontw2023.py:14
+#: pycontw2016/settings/production/pycontw2024.py:14
 #: pycontw2016/settings/testing/pycontw2021.py:11
 #: pycontw2016/settings/testing/pycontw2022.py:11
 #: pycontw2016/settings/testing/pycontw2023.py:11
+#: pycontw2016/settings/testing/pycontw2024.py:11
 msgid "No preference"
 msgstr "無偏好"
 
-#: pycontw2016/settings/base.py:322
+#: pycontw2016/settings/base.py:323
 #: pycontw2016/settings/production/pycontw2021.py:16
 #: pycontw2016/settings/production/pycontw2022.py:15
 #: pycontw2016/settings/production/pycontw2023.py:15
+#: pycontw2016/settings/production/pycontw2024.py:15
 #: pycontw2016/settings/testing/pycontw2021.py:12
 #: pycontw2016/settings/testing/pycontw2022.py:12
 #: pycontw2016/settings/testing/pycontw2023.py:12
+#: pycontw2016/settings/testing/pycontw2024.py:12
 msgid "Prefer 15min"
 msgstr "偏好 15 分鐘"
 
-#: pycontw2016/settings/base.py:323
+#: pycontw2016/settings/base.py:324
 #: pycontw2016/settings/production/pycontw2021.py:17
 #: pycontw2016/settings/production/pycontw2022.py:16
 #: pycontw2016/settings/production/pycontw2023.py:16
+#: pycontw2016/settings/production/pycontw2024.py:16
 #: pycontw2016/settings/testing/pycontw2021.py:13
 #: pycontw2016/settings/testing/pycontw2022.py:13
 #: pycontw2016/settings/testing/pycontw2023.py:13
+#: pycontw2016/settings/testing/pycontw2024.py:13
 msgid "Prefer 30min"
 msgstr "偏好 30 分鐘"
 
-#: pycontw2016/settings/base.py:327
+#: pycontw2016/settings/base.py:328
 #: pycontw2016/settings/production/pycontw2016.py:22
 #: templates/pycontw-2016/events/schedule.html:42
 msgid "Day 1"
 msgstr "第 1 天"
 
-#: pycontw2016/settings/base.py:328
+#: pycontw2016/settings/base.py:329
 #: pycontw2016/settings/production/pycontw2016.py:23
 #: templates/pycontw-2016/events/schedule.html:45
 msgid "Day 2"
@@ -1290,9 +1308,11 @@ msgstr "偏好 25 分鐘"
 #: pycontw2016/settings/production/pycontw2021.py:18
 #: pycontw2016/settings/production/pycontw2022.py:17
 #: pycontw2016/settings/production/pycontw2023.py:17
+#: pycontw2016/settings/production/pycontw2024.py:17
 #: pycontw2016/settings/testing/pycontw2021.py:14
 #: pycontw2016/settings/testing/pycontw2022.py:14
 #: pycontw2016/settings/testing/pycontw2023.py:14
+#: pycontw2016/settings/testing/pycontw2024.py:14
 msgid "Prefer 45min"
 msgstr "偏好 45 分鐘"
 
@@ -1627,6 +1647,8 @@ msgstr "修改"
 #: templates/pycontw-2022/events/tutorial_detail.html:54
 #: templates/pycontw-2023/events/talk_detail.html:68
 #: templates/pycontw-2023/events/tutorial_detail.html:54
+#: templates/pycontw-2024/events/talk_detail.html:68
+#: templates/pycontw-2024/events/tutorial_detail.html:54
 msgid "Abstract"
 msgstr "摘要"
 
@@ -1934,15 +1956,15 @@ msgstr "已審查"
 msgid "Lang"
 msgstr "語言"
 
-#: templates/default/reviews/_includes/proposal_table.html:37
+#: templates/default/reviews/_includes/proposal_table.html:52
 msgid "Decision"
 msgstr "結果"
 
-#: templates/default/reviews/_includes/proposal_table.html:58
+#: templates/default/reviews/_includes/proposal_table.html:75
 msgid "Review"
 msgstr "審查"
 
-#: templates/default/reviews/_includes/proposal_table.html:61
+#: templates/default/reviews/_includes/proposal_table.html:78
 msgid "Read"
 msgstr "閱讀"
 
@@ -2206,6 +2228,8 @@ msgstr "您的大名"
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:57
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:44
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:57
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:44
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:57
 msgid "Biography"
 msgstr "自我介紹"
 
@@ -2224,42 +2248,42 @@ msgstr "GitHub 帳號"
 #: templates/pycontw-2016/404.html:8 templates/pycontw-2018/404.html:12
 #: templates/pycontw-2019/404.html:12 templates/pycontw-2020/404.html:12
 #: templates/pycontw-2021/404.html:12 templates/pycontw-2022/404.html:12
-#: templates/pycontw-2023/404.html:12
+#: templates/pycontw-2023/404.html:12 templates/pycontw-2024/404.html:12
 msgid "Page Not Found"
 msgstr "頁面不存在"
 
 #: templates/pycontw-2016/404.html:65 templates/pycontw-2018/404.html:29
 #: templates/pycontw-2019/404.html:29 templates/pycontw-2020/404.html:29
 #: templates/pycontw-2021/404.html:29 templates/pycontw-2022/404.html:29
-#: templates/pycontw-2023/404.html:29
+#: templates/pycontw-2023/404.html:29 templates/pycontw-2024/404.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">404</span> problem."
 msgstr "糟惹！這是個 <span class=\"error-code\">404</span> 錯誤。"
 
 #: templates/pycontw-2016/404.html:66 templates/pycontw-2018/404.html:30
 #: templates/pycontw-2019/404.html:30 templates/pycontw-2020/404.html:30
 #: templates/pycontw-2021/404.html:30 templates/pycontw-2022/404.html:30
-#: templates/pycontw-2023/404.html:30
+#: templates/pycontw-2023/404.html:30 templates/pycontw-2024/404.html:30
 msgid "We cannot find what you’re looking for."
 msgstr "我們找不到你想去的頁面。"
 
 #: templates/pycontw-2016/500.html:8 templates/pycontw-2018/500.html:12
 #: templates/pycontw-2019/500.html:12 templates/pycontw-2020/500.html:12
 #: templates/pycontw-2021/500.html:12 templates/pycontw-2022/500.html:12
-#: templates/pycontw-2023/500.html:12
+#: templates/pycontw-2023/500.html:12 templates/pycontw-2024/500.html:12
 msgid "Server Error"
 msgstr "伺服器錯誤"
 
 #: templates/pycontw-2016/500.html:66 templates/pycontw-2018/500.html:29
 #: templates/pycontw-2019/500.html:29 templates/pycontw-2020/500.html:29
 #: templates/pycontw-2021/500.html:29 templates/pycontw-2022/500.html:29
-#: templates/pycontw-2023/500.html:29
+#: templates/pycontw-2023/500.html:29 templates/pycontw-2024/500.html:29
 msgid "Ooops! It’s a <span class=\"error-code\">500</span> problem."
 msgstr "糟惹！這是個 <span class=\"error-code\">500</span> 錯誤。"
 
 #: templates/pycontw-2016/500.html:67 templates/pycontw-2018/500.html:30
 #: templates/pycontw-2019/500.html:30 templates/pycontw-2020/500.html:30
 #: templates/pycontw-2021/500.html:30 templates/pycontw-2022/500.html:30
-#: templates/pycontw-2023/500.html:30
+#: templates/pycontw-2023/500.html:30 templates/pycontw-2024/500.html:30
 msgid "We screwed up. It’s not your fault."
 msgstr "我們搞砸了，這不是你的問題。"
 
@@ -2270,6 +2294,7 @@ msgstr "我們搞砸了，這不是你的問題。"
 #: templates/pycontw-2021/_includes/menu.html:42
 #: templates/pycontw-2022/_includes/menu.html:42
 #: templates/pycontw-2023/_includes/menu.html:42
+#: templates/pycontw-2024/_includes/menu.html:42
 msgid "About"
 msgstr "關於"
 
@@ -2280,6 +2305,7 @@ msgstr "關於"
 #: templates/pycontw-2021/_includes/footer.html:13
 #: templates/pycontw-2022/_includes/footer.html:13
 #: templates/pycontw-2023/_includes/footer.html:13
+#: templates/pycontw-2024/_includes/footer.html:13
 msgid "Code of Conduct"
 msgstr "行為準則"
 
@@ -2304,6 +2330,9 @@ msgstr "行為準則"
 #: templates/pycontw-2023/_includes/footer.html:14
 #: templates/pycontw-2023/contents/_staff.html:5
 #: templates/pycontw-2023/contents/_staff.html:10
+#: templates/pycontw-2024/_includes/footer.html:14
+#: templates/pycontw-2024/contents/_staff.html:5
+#: templates/pycontw-2024/contents/_staff.html:10
 msgid "Staff"
 msgstr "工作人員"
 
@@ -2315,6 +2344,7 @@ msgstr "工作人員"
 #: templates/pycontw-2021/contents/_default/conference/keynotes.html:17
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:17
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:17
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:17
 msgid "Events"
 msgstr "活動"
 
@@ -2362,6 +2392,11 @@ msgstr "總覽"
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:24
 #: templates/pycontw-2023/contents/en/events/overview.html:28
 #: templates/pycontw-2023/contents/zh/events/overview.html:24
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:6
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:18
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:24
+#: templates/pycontw-2024/contents/en/events/overview.html:28
+#: templates/pycontw-2024/contents/zh/events/overview.html:24
 msgid "Keynotes"
 msgstr "基調演講"
 
@@ -2397,6 +2432,10 @@ msgstr "基調演講"
 #: templates/pycontw-2023/contents/zh/events/overview.html:32
 #: templates/pycontw-2023/events/talk_list.html:6
 #: templates/pycontw-2023/events/talk_list.html:13
+#: templates/pycontw-2024/contents/en/events/overview.html:39
+#: templates/pycontw-2024/contents/zh/events/overview.html:32
+#: templates/pycontw-2024/events/talk_list.html:6
+#: templates/pycontw-2024/events/talk_list.html:13
 msgid "Talks"
 msgstr "一般演講"
 
@@ -2413,6 +2452,8 @@ msgstr "一般演講"
 #: templates/pycontw-2022/contents/zh/events/overview.html:84
 #: templates/pycontw-2023/contents/en/events/overview.html:107
 #: templates/pycontw-2023/contents/zh/events/overview.html:84
+#: templates/pycontw-2024/contents/en/events/overview.html:107
+#: templates/pycontw-2024/contents/zh/events/overview.html:84
 msgid "Sprints"
 msgstr "衝刺開發"
 
@@ -2479,6 +2520,7 @@ msgstr "財務補助"
 #: templates/pycontw-2021/_includes/social.html:4
 #: templates/pycontw-2022/_includes/social.html:4
 #: templates/pycontw-2023/_includes/social.html:4
+#: templates/pycontw-2024/_includes/social.html:4
 msgid "Blog"
 msgstr "部落格"
 
@@ -2518,6 +2560,7 @@ msgstr "跳至"
 #: templates/pycontw-2021/events/schedule_create.html:100
 #: templates/pycontw-2022/events/schedule_create.html:100
 #: templates/pycontw-2023/events/schedule_create.html:100
+#: templates/pycontw-2024/events/schedule_create.html:100
 msgid "Schedule table generation requires JavaScript. Please. (´･_･`)"
 msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 
@@ -2529,6 +2572,7 @@ msgstr "需要 JavaScript 才能產生時間表。求求你～ (´･_･`)"
 #: templates/pycontw-2021/events/schedule_create.html:109
 #: templates/pycontw-2022/events/schedule_create.html:109
 #: templates/pycontw-2023/events/schedule_create.html:109
+#: templates/pycontw-2024/events/schedule_create.html:109
 msgid "Generate"
 msgstr "產生"
 
@@ -2551,6 +2595,8 @@ msgstr "投影片連結"
 #: templates/pycontw-2022/events/tutorial_detail.html:61
 #: templates/pycontw-2023/events/talk_detail.html:75
 #: templates/pycontw-2023/events/tutorial_detail.html:61
+#: templates/pycontw-2024/events/talk_detail.html:75
+#: templates/pycontw-2024/events/tutorial_detail.html:61
 msgid "Description"
 msgstr "說明"
 
@@ -2627,6 +2673,10 @@ msgstr ""
 #: templates/pycontw-2023/contents/zh/events/overview.html:39
 #: templates/pycontw-2023/events/tutorial_list.html:6
 #: templates/pycontw-2023/events/tutorial_list.html:11
+#: templates/pycontw-2024/contents/en/events/overview.html:50
+#: templates/pycontw-2024/contents/zh/events/overview.html:39
+#: templates/pycontw-2024/events/tutorial_list.html:6
+#: templates/pycontw-2024/events/tutorial_list.html:11
 msgid "Tutorials"
 msgstr "專業課程"
 
@@ -2844,6 +2894,8 @@ msgstr "控制面板"
 #: templates/pycontw-2022/contents/_default/portal.html:12
 #: templates/pycontw-2023/contents/_default/portal.html:6
 #: templates/pycontw-2023/contents/_default/portal.html:12
+#: templates/pycontw-2024/contents/_default/portal.html:6
+#: templates/pycontw-2024/contents/_default/portal.html:12
 msgid "Portal"
 msgstr "傳送門"
 
@@ -2854,6 +2906,7 @@ msgstr "傳送門"
 #: templates/pycontw-2021/_includes/portal.html:8
 #: templates/pycontw-2022/_includes/portal.html:8
 #: templates/pycontw-2023/_includes/portal.html:8
+#: templates/pycontw-2024/_includes/portal.html:8
 msgid "Collaborative Notes"
 msgstr "共筆"
 
@@ -2875,6 +2928,7 @@ msgstr "猜謎排行榜"
 #: templates/pycontw-2021/_includes/portal.html:16
 #: templates/pycontw-2022/_includes/portal.html:16
 #: templates/pycontw-2023/_includes/portal.html:16
+#: templates/pycontw-2024/_includes/portal.html:16
 msgid "Facebook Fan Page"
 msgstr "Facebook 粉絲頁"
 
@@ -2920,6 +2974,8 @@ msgstr "非正式會議"
 #: templates/pycontw-2022/events/schedule_create.html:16
 #: templates/pycontw-2023/events/schedule_create.html:7
 #: templates/pycontw-2023/events/schedule_create.html:16
+#: templates/pycontw-2024/events/schedule_create.html:7
+#: templates/pycontw-2024/events/schedule_create.html:16
 msgid "Export New Schedule"
 msgstr "輸出新時間表"
 
@@ -2939,6 +2995,9 @@ msgstr "輸出新時間表"
 #: templates/pycontw-2023/events/talk_detail.html:33
 #: templates/pycontw-2023/events/talk_detail.html:43
 #: templates/pycontw-2023/events/tutorial_detail.html:30
+#: templates/pycontw-2024/events/talk_detail.html:33
+#: templates/pycontw-2024/events/talk_detail.html:43
+#: templates/pycontw-2024/events/tutorial_detail.html:30
 #, python-format
 msgid "%(date_display)s, %(begin_time_display)s&#8209;%(end_time_display)s"
 msgstr "%(date_display)s，%(begin_time_display)s&#8209;%(end_time_display)s"
@@ -2987,6 +3046,7 @@ msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲
 #: templates/pycontw-2021/events/talk_list.html:57
 #: templates/pycontw-2022/events/talk_list.html:57
 #: templates/pycontw-2023/events/talk_list.html:57
+#: templates/pycontw-2024/events/talk_list.html:57
 msgid "Invited Events"
 msgstr "特邀活動"
 
@@ -3099,6 +3159,8 @@ msgstr "學習"
 #: templates/pycontw-2022/contents/zh/events/overview.html:55
 #: templates/pycontw-2023/contents/en/events/overview.html:68
 #: templates/pycontw-2023/contents/zh/events/overview.html:55
+#: templates/pycontw-2024/contents/en/events/overview.html:68
+#: templates/pycontw-2024/contents/zh/events/overview.html:55
 msgid "Open Spaces"
 msgstr "開放空間"
 
@@ -3125,6 +3187,7 @@ msgstr "報到"
 #: templates/pycontw-2021/_includes/menu.html:152
 #: templates/pycontw-2022/_includes/menu.html:152
 #: templates/pycontw-2023/_includes/menu.html:152
+#: templates/pycontw-2024/_includes/menu.html:152
 msgid "My PyCon"
 msgstr "My PyCon"
 
@@ -3241,6 +3304,7 @@ msgstr "中文投影片"
 #: templates/pycontw-2021/events/tutorial_detail.html:25
 #: templates/pycontw-2022/events/tutorial_detail.html:25
 #: templates/pycontw-2023/events/tutorial_detail.html:25
+#: templates/pycontw-2024/events/tutorial_detail.html:25
 msgid "Location: "
 msgstr "地點："
 
@@ -3250,6 +3314,7 @@ msgstr "地點："
 #: templates/pycontw-2021/events/tutorial_detail.html:29
 #: templates/pycontw-2022/events/tutorial_detail.html:29
 #: templates/pycontw-2023/events/tutorial_detail.html:29
+#: templates/pycontw-2024/events/tutorial_detail.html:29
 msgid "Slot: "
 msgstr "時段："
 
@@ -3264,6 +3329,8 @@ msgstr "時段："
 #: templates/pycontw-2022/events/tutorial_detail.html:34
 #: templates/pycontw-2023/events/talk_detail.html:47
 #: templates/pycontw-2023/events/tutorial_detail.html:34
+#: templates/pycontw-2024/events/talk_detail.html:47
+#: templates/pycontw-2024/events/tutorial_detail.html:34
 msgid "Category: "
 msgstr "主題分類："
 
@@ -3278,6 +3345,8 @@ msgstr "主題分類："
 #: templates/pycontw-2022/events/tutorial_detail.html:38
 #: templates/pycontw-2023/events/talk_detail.html:51
 #: templates/pycontw-2023/events/tutorial_detail.html:38
+#: templates/pycontw-2024/events/talk_detail.html:51
+#: templates/pycontw-2024/events/tutorial_detail.html:38
 msgid "Language: "
 msgstr "語言："
 
@@ -3292,6 +3361,8 @@ msgstr "語言："
 #: templates/pycontw-2022/events/tutorial_detail.html:42
 #: templates/pycontw-2023/events/talk_detail.html:55
 #: templates/pycontw-2023/events/tutorial_detail.html:42
+#: templates/pycontw-2024/events/talk_detail.html:55
+#: templates/pycontw-2024/events/tutorial_detail.html:42
 msgid "Python Level: "
 msgstr "Python 難易度："
 
@@ -3306,6 +3377,8 @@ msgstr "Python 難易度："
 #: templates/pycontw-2022/events/tutorial_detail.html:48
 #: templates/pycontw-2023/events/talk_detail.html:61
 #: templates/pycontw-2023/events/tutorial_detail.html:48
+#: templates/pycontw-2024/events/talk_detail.html:61
+#: templates/pycontw-2024/events/tutorial_detail.html:48
 msgid "No Recording"
 msgstr "不錄影"
 
@@ -3321,6 +3394,8 @@ msgstr "不錄影"
 #: templates/pycontw-2022/events/tutorial_detail.html:68
 #: templates/pycontw-2023/events/talk_detail.html:82
 #: templates/pycontw-2023/events/tutorial_detail.html:68
+#: templates/pycontw-2024/events/talk_detail.html:82
+#: templates/pycontw-2024/events/tutorial_detail.html:68
 msgid "Slides"
 msgstr "投影片"
 
@@ -3330,6 +3405,7 @@ msgstr "投影片"
 #: templates/pycontw-2021/events/talk_detail.html:91
 #: templates/pycontw-2022/events/talk_detail.html:91
 #: templates/pycontw-2023/events/talk_detail.html:91
+#: templates/pycontw-2024/events/talk_detail.html:91
 msgctxt "speaker info in talk detail"
 msgid "Speakers"
 msgstr "講者"
@@ -3340,6 +3416,7 @@ msgstr "講者"
 #: templates/pycontw-2021/events/talk_detail.html:93
 #: templates/pycontw-2022/events/talk_detail.html:93
 #: templates/pycontw-2023/events/talk_detail.html:93
+#: templates/pycontw-2024/events/talk_detail.html:93
 msgctxt "speaker info in talk detail"
 msgid "Speaker"
 msgstr "講者"
@@ -3370,6 +3447,8 @@ msgstr ""
 #: templates/pycontw-2022/events/tutorial_list.html:16
 #: templates/pycontw-2023/events/talk_list.html:18
 #: templates/pycontw-2023/events/tutorial_list.html:16
+#: templates/pycontw-2024/events/talk_list.html:18
+#: templates/pycontw-2024/events/tutorial_list.html:16
 msgid ""
 "<em>Program schedule is subject to change.</em> Please check this page "
 "frequently to get the latest version."
@@ -3381,6 +3460,7 @@ msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲
 #: templates/pycontw-2021/events/talk_list.html:21
 #: templates/pycontw-2022/events/talk_list.html:21
 #: templates/pycontw-2023/events/talk_list.html:21
+#: templates/pycontw-2024/events/talk_list.html:21
 msgid "Categories"
 msgstr "主題分類"
 
@@ -3397,12 +3477,14 @@ msgstr ""
 #: templates/pycontw-2018/index.html:32 templates/pycontw-2019/index.html:39
 #: templates/pycontw-2020/index.html:60 templates/pycontw-2021/index.html:87
 #: templates/pycontw-2022/index.html:87 templates/pycontw-2023/index.html:87
+#: templates/pycontw-2024/index.html:87
 msgid "What is PyCon"
 msgstr "何謂 PyCon"
 
 #: templates/pycontw-2018/index.html:33 templates/pycontw-2019/index.html:40
 #: templates/pycontw-2020/index.html:61 templates/pycontw-2021/index.html:88
 #: templates/pycontw-2022/index.html:88 templates/pycontw-2023/index.html:88
+#: templates/pycontw-2024/index.html:88
 msgid ""
 "<p>The original PyCon was formed in North America in 2003, and now there are "
 "many other conferences being run in the PyCon spirit around the world.</p>"
@@ -3413,12 +3495,14 @@ msgstr ""
 #: templates/pycontw-2018/index.html:39 templates/pycontw-2019/index.html:46
 #: templates/pycontw-2020/index.html:68 templates/pycontw-2021/index.html:95
 #: templates/pycontw-2022/index.html:95 templates/pycontw-2023/index.html:95
+#: templates/pycontw-2024/index.html:95
 msgid "What is PyCon Taiwan"
 msgstr "何謂 PyCon Taiwan"
 
 #: templates/pycontw-2018/index.html:40 templates/pycontw-2019/index.html:47
 #: templates/pycontw-2020/index.html:69 templates/pycontw-2021/index.html:96
 #: templates/pycontw-2022/index.html:96 templates/pycontw-2023/index.html:96
+#: templates/pycontw-2024/index.html:96
 msgid ""
 "<p>PyCon Taiwan is an annual convention in Taiwan for the discussion and "
 "promotion of the Python programming language. It is held by enthusiasts and "
@@ -3438,6 +3522,7 @@ msgstr "<p>協助我們舉辦，讓年會變得更好！</p>"
 #: templates/pycontw-2018/index.html:51 templates/pycontw-2019/index.html:60
 #: templates/pycontw-2020/index.html:47 templates/pycontw-2021/index.html:51
 #: templates/pycontw-2022/index.html:51 templates/pycontw-2023/index.html:51
+#: templates/pycontw-2024/index.html:51
 msgid "Become a volunteer"
 msgstr "成為志工"
 
@@ -3450,6 +3535,7 @@ msgstr "大會手冊"
 #: templates/pycontw-2021/_includes/sponsors.html:57
 #: templates/pycontw-2022/_includes/sponsors.html:57
 #: templates/pycontw-2023/_includes/sponsors.html:57
+#: templates/pycontw-2024/_includes/sponsors.html:57
 msgid "Redirect to official website"
 msgstr "導回官方網站"
 
@@ -3473,6 +3559,7 @@ msgstr "機動"
 #: templates/pycontw-2021/contents/_default/conference/keynotes.html:16
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:16
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:16
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:16
 msgid "Home"
 msgstr "首頁"
 
@@ -3486,6 +3573,8 @@ msgstr "首頁"
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:69
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:47
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:69
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:47
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:69
 msgid "Speech"
 msgstr "演講"
 
@@ -3494,6 +3583,7 @@ msgstr "演講"
 #: templates/pycontw-2021/contents/_default/conference/keynotes.html:51
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:51
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:51
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:51
 msgid "Slido"
 msgstr "Slido"
 
@@ -3506,6 +3596,7 @@ msgstr "基調演講："
 #: templates/pycontw-2021/events/tutorial_detail.html:13
 #: templates/pycontw-2022/events/tutorial_detail.html:13
 #: templates/pycontw-2023/events/tutorial_detail.html:13
+#: templates/pycontw-2024/events/tutorial_detail.html:13
 msgid "Tutorial: "
 msgstr "專業課程："
 
@@ -3514,6 +3605,7 @@ msgstr "專業課程："
 #: templates/pycontw-2021/events/tutorial_detail.html:77
 #: templates/pycontw-2022/events/tutorial_detail.html:77
 #: templates/pycontw-2023/events/tutorial_detail.html:77
+#: templates/pycontw-2024/events/tutorial_detail.html:77
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturers"
 msgstr "講師"
@@ -3523,6 +3615,7 @@ msgstr "講師"
 #: templates/pycontw-2021/events/tutorial_detail.html:79
 #: templates/pycontw-2022/events/tutorial_detail.html:79
 #: templates/pycontw-2023/events/tutorial_detail.html:79
+#: templates/pycontw-2024/events/tutorial_detail.html:79
 msgctxt "speaker info in tutorial detail"
 msgid "Lecturer"
 msgstr "講師"
@@ -3542,6 +3635,7 @@ msgstr ""
 #: templates/pycontw-2021/events/tutorial_list.html:29
 #: templates/pycontw-2022/events/tutorial_list.html:29
 #: templates/pycontw-2023/events/tutorial_list.html:29
+#: templates/pycontw-2024/events/tutorial_list.html:29
 msgid "Show Details"
 msgstr "顯示詳細內容"
 
@@ -3550,6 +3644,7 @@ msgstr "顯示詳細內容"
 #: templates/pycontw-2021/events/tutorial_list.html:33
 #: templates/pycontw-2022/events/tutorial_list.html:33
 #: templates/pycontw-2023/events/tutorial_list.html:33
+#: templates/pycontw-2024/events/tutorial_list.html:33
 msgid "Register"
 msgstr "報名"
 
@@ -3557,6 +3652,7 @@ msgstr "報名"
 #: templates/pycontw-2021/_includes/ext/discord.html:6
 #: templates/pycontw-2022/_includes/ext/discord.html:6
 #: templates/pycontw-2023/_includes/ext/discord.html:6
+#: templates/pycontw-2024/_includes/ext/discord.html:6
 msgid "discord-tutorials"
 msgstr "使用流程"
 
@@ -3564,6 +3660,7 @@ msgstr "使用流程"
 #: templates/pycontw-2021/_includes/ext/discord.html:7
 #: templates/pycontw-2022/_includes/ext/discord.html:7
 #: templates/pycontw-2023/_includes/ext/discord.html:7
+#: templates/pycontw-2024/_includes/ext/discord.html:7
 msgid ""
 "If you have not installed Discord or joined Python Taiwan Discord server, "
 "follow <a href='#setup-discord'>Setting up Discord</a> and setup your "
@@ -3576,6 +3673,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:10
 #: templates/pycontw-2022/_includes/ext/discord.html:10
 #: templates/pycontw-2023/_includes/ext/discord.html:10
+#: templates/pycontw-2024/_includes/ext/discord.html:10
 msgid "1. Register yourself"
 msgstr "1. 註冊"
 
@@ -3592,6 +3690,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:13
 #: templates/pycontw-2022/_includes/ext/discord.html:13
 #: templates/pycontw-2023/_includes/ext/discord.html:13
+#: templates/pycontw-2024/_includes/ext/discord.html:13
 msgid "Enter"
 msgstr "輸入"
 
@@ -3599,6 +3698,7 @@ msgstr "輸入"
 #: templates/pycontw-2021/_includes/ext/discord.html:13
 #: templates/pycontw-2022/_includes/ext/discord.html:13
 #: templates/pycontw-2023/_includes/ext/discord.html:13
+#: templates/pycontw-2024/_includes/ext/discord.html:13
 msgid "in this channel to register"
 msgstr "以進行註冊"
 
@@ -3606,6 +3706,7 @@ msgstr "以進行註冊"
 #: templates/pycontw-2021/_includes/ext/discord.html:15
 #: templates/pycontw-2022/_includes/ext/discord.html:15
 #: templates/pycontw-2023/_includes/ext/discord.html:15
+#: templates/pycontw-2024/_includes/ext/discord.html:15
 msgid "Enter <code>!register <i>[TOKEN]</i></code> in this channel to register"
 msgstr "輸入 <code>!register <i>[TOKEN]</i></code> 以進行註冊"
 
@@ -3613,6 +3714,7 @@ msgstr "輸入 <code>!register <i>[TOKEN]</i></code> 以進行註冊"
 #: templates/pycontw-2021/_includes/ext/discord.html:16
 #: templates/pycontw-2022/_includes/ext/discord.html:16
 #: templates/pycontw-2023/_includes/ext/discord.html:16
+#: templates/pycontw-2024/_includes/ext/discord.html:16
 msgid ""
 "(If you want to get your own Token, please click the link in the letter or "
 "use Opass.)"
@@ -3622,6 +3724,7 @@ msgstr "(如要取得您的專屬 Token 請點擊行前信中的連結或使用O
 #: templates/pycontw-2021/_includes/ext/discord.html:18
 #: templates/pycontw-2022/_includes/ext/discord.html:18
 #: templates/pycontw-2023/_includes/ext/discord.html:18
+#: templates/pycontw-2024/_includes/ext/discord.html:18
 msgid "Enter <code>!help</code> if you need command help from RegBot."
 msgstr "輸入 <code>!help</code> 以獲得 RegBot 的幫助"
 
@@ -3629,6 +3732,7 @@ msgstr "輸入 <code>!help</code> 以獲得 RegBot 的幫助"
 #: templates/pycontw-2021/_includes/ext/discord.html:19
 #: templates/pycontw-2022/_includes/ext/discord.html:19
 #: templates/pycontw-2023/_includes/ext/discord.html:19
+#: templates/pycontw-2024/_includes/ext/discord.html:19
 msgid ""
 "If you register successfully, you can see several new channels appear in the "
 "left."
@@ -3646,6 +3750,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:24
 #: templates/pycontw-2022/_includes/ext/discord.html:24
 #: templates/pycontw-2023/_includes/ext/discord.html:24
+#: templates/pycontw-2024/_includes/ext/discord.html:24
 msgid "2. Take a look at official announcements"
 msgstr "2. 查看大會公告"
 
@@ -3653,6 +3758,7 @@ msgstr "2. 查看大會公告"
 #: templates/pycontw-2021/_includes/ext/discord.html:25
 #: templates/pycontw-2022/_includes/ext/discord.html:25
 #: templates/pycontw-2023/_includes/ext/discord.html:25
+#: templates/pycontw-2024/_includes/ext/discord.html:25
 msgid ""
 "All official announcements channel names contain the word "
 "<strong>'announcements'</strong>."
@@ -3662,6 +3768,7 @@ msgstr "大會公告頻道的頻道名稱都會有 <strong>'announcements'</stro
 #: templates/pycontw-2021/_includes/ext/discord.html:26
 #: templates/pycontw-2022/_includes/ext/discord.html:26
 #: templates/pycontw-2023/_includes/ext/discord.html:26
+#: templates/pycontw-2024/_includes/ext/discord.html:26
 msgid "You can check for important announcements first after you are in."
 msgstr "成功進入後您可以先查看各公告頻道確認有沒有重要消息。"
 
@@ -3669,6 +3776,7 @@ msgstr "成功進入後您可以先查看各公告頻道確認有沒有重要消
 #: templates/pycontw-2021/_includes/ext/discord.html:30
 #: templates/pycontw-2022/_includes/ext/discord.html:30
 #: templates/pycontw-2023/_includes/ext/discord.html:30
+#: templates/pycontw-2024/_includes/ext/discord.html:30
 msgid "3. Join session channel"
 msgstr "3. 加入議程討論頻道"
 
@@ -3676,6 +3784,7 @@ msgstr "3. 加入議程討論頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:31
 #: templates/pycontw-2022/_includes/ext/discord.html:31
 #: templates/pycontw-2023/_includes/ext/discord.html:31
+#: templates/pycontw-2024/_includes/ext/discord.html:31
 msgid "All session channel names contain the word <strong>'track'</strong>."
 msgstr "議程討論頻道的頻道名稱都會有 <strong>'track'</strong> 單字。"
 
@@ -3683,6 +3792,7 @@ msgstr "議程討論頻道的頻道名稱都會有 <strong>'track'</strong> 單�
 #: templates/pycontw-2021/_includes/ext/discord.html:32
 #: templates/pycontw-2022/_includes/ext/discord.html:32
 #: templates/pycontw-2023/_includes/ext/discord.html:32
+#: templates/pycontw-2024/_includes/ext/discord.html:32
 msgid ""
 "You can enter keynote channel when it is time for keynote, or track channel "
 "according to which track you are in."
@@ -3694,6 +3804,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:36
 #: templates/pycontw-2022/_includes/ext/discord.html:36
 #: templates/pycontw-2023/_includes/ext/discord.html:36
+#: templates/pycontw-2024/_includes/ext/discord.html:36
 msgid "Roles list"
 msgstr "身份組清單"
 
@@ -3701,6 +3812,7 @@ msgstr "身份組清單"
 #: templates/pycontw-2021/_includes/ext/discord.html:37
 #: templates/pycontw-2022/_includes/ext/discord.html:37
 #: templates/pycontw-2023/_includes/ext/discord.html:37
+#: templates/pycontw-2024/_includes/ext/discord.html:37
 msgid ""
 "Users can be assigned several different roles, each role would have their "
 "own permission to enter some private channel."
@@ -3750,6 +3862,7 @@ msgstr "對象：PyCon TW 2020 的所有會眾"
 #: templates/pycontw-2021/_includes/ext/discord.html:60
 #: templates/pycontw-2022/_includes/ext/discord.html:60
 #: templates/pycontw-2023/_includes/ext/discord.html:60
+#: templates/pycontw-2024/_includes/ext/discord.html:60
 msgid "Channels list"
 msgstr "頻道清單"
 
@@ -3757,6 +3870,7 @@ msgstr "頻道清單"
 #: templates/pycontw-2021/_includes/ext/discord.html:61
 #: templates/pycontw-2022/_includes/ext/discord.html:61
 #: templates/pycontw-2023/_includes/ext/discord.html:61
+#: templates/pycontw-2024/_includes/ext/discord.html:61
 msgid ""
 "There are two type of channels in Discord, which is Text Channel and Voice "
 "Channel. Below we use:"
@@ -3766,6 +3880,7 @@ msgstr "Discord 有兩種頻道：文字頻道與語音頻道。下面會以兩�
 #: templates/pycontw-2021/_includes/ext/discord.html:62
 #: templates/pycontw-2022/_includes/ext/discord.html:62
 #: templates/pycontw-2023/_includes/ext/discord.html:62
+#: templates/pycontw-2024/_includes/ext/discord.html:62
 msgid "#CHANNEL_NAME to represent a text channel"
 msgstr "#CHANNEL_NAME 代表文字頻道"
 
@@ -3773,6 +3888,7 @@ msgstr "#CHANNEL_NAME 代表文字頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:63
 #: templates/pycontw-2022/_includes/ext/discord.html:63
 #: templates/pycontw-2023/_includes/ext/discord.html:63
+#: templates/pycontw-2024/_includes/ext/discord.html:63
 msgid "🔊CHANNEL_NAME to represent a voice channel."
 msgstr "🔊CHANNEL_NAME 代表語音頻道"
 
@@ -3780,6 +3896,7 @@ msgstr "🔊CHANNEL_NAME 代表語音頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:65
 #: templates/pycontw-2022/_includes/ext/discord.html:65
 #: templates/pycontw-2023/_includes/ext/discord.html:65
+#: templates/pycontw-2024/_includes/ext/discord.html:65
 msgid "Registration channel"
 msgstr "註冊用頻道"
 
@@ -3787,6 +3904,7 @@ msgstr "註冊用頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:66
 #: templates/pycontw-2022/_includes/ext/discord.html:66
 #: templates/pycontw-2023/_includes/ext/discord.html:66
+#: templates/pycontw-2024/_includes/ext/discord.html:66
 msgid "#registration-desk"
 msgstr "#registration-desk"
 
@@ -3794,6 +3912,7 @@ msgstr "#registration-desk"
 #: templates/pycontw-2021/_includes/ext/discord.html:67
 #: templates/pycontw-2022/_includes/ext/discord.html:67
 #: templates/pycontw-2023/_includes/ext/discord.html:67
+#: templates/pycontw-2024/_includes/ext/discord.html:67
 msgid "Roles：<code>@everyone</code>"
 msgstr "身分組：<code>@everyone</code>"
 
@@ -3801,6 +3920,7 @@ msgstr "身分組：<code>@everyone</code>"
 #: templates/pycontw-2021/_includes/ext/discord.html:68
 #: templates/pycontw-2022/_includes/ext/discord.html:68
 #: templates/pycontw-2023/_includes/ext/discord.html:68
+#: templates/pycontw-2024/_includes/ext/discord.html:68
 msgid ""
 "When you just enter Python Taiwan Discord server, use this channel to "
 "provide your registration information, so that robot can promote you to the "
@@ -3813,6 +3933,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:71
 #: templates/pycontw-2022/_includes/ext/discord.html:71
 #: templates/pycontw-2023/_includes/ext/discord.html:71
+#: templates/pycontw-2024/_includes/ext/discord.html:71
 msgid "Session channel"
 msgstr "議程相關頻道"
 
@@ -3820,6 +3941,7 @@ msgstr "議程相關頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:72
 #: templates/pycontw-2022/_includes/ext/discord.html:72
 #: templates/pycontw-2023/_includes/ext/discord.html:72
+#: templates/pycontw-2024/_includes/ext/discord.html:72
 msgid "#keynote-track"
 msgstr "#keynote-track"
 
@@ -3840,6 +3962,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:74
 #: templates/pycontw-2022/_includes/ext/discord.html:74
 #: templates/pycontw-2023/_includes/ext/discord.html:74
+#: templates/pycontw-2024/_includes/ext/discord.html:74
 msgid "Keynote discussion channel"
 msgstr "Keynote 的討論頻道。"
 
@@ -3847,6 +3970,7 @@ msgstr "Keynote 的討論頻道。"
 #: templates/pycontw-2021/_includes/ext/discord.html:75
 #: templates/pycontw-2022/_includes/ext/discord.html:75
 #: templates/pycontw-2023/_includes/ext/discord.html:75
+#: templates/pycontw-2024/_includes/ext/discord.html:75
 msgid "#r1-track"
 msgstr "#r1-track"
 
@@ -3854,6 +3978,7 @@ msgstr "#r1-track"
 #: templates/pycontw-2021/_includes/ext/discord.html:77
 #: templates/pycontw-2022/_includes/ext/discord.html:77
 #: templates/pycontw-2023/_includes/ext/discord.html:77
+#: templates/pycontw-2024/_includes/ext/discord.html:77
 msgid "R1 track discussion channel"
 msgstr "R1 軌所有議程的會眾討論頻道。"
 
@@ -3861,6 +3986,7 @@ msgstr "R1 軌所有議程的會眾討論頻道。"
 #: templates/pycontw-2021/_includes/ext/discord.html:78
 #: templates/pycontw-2022/_includes/ext/discord.html:78
 #: templates/pycontw-2023/_includes/ext/discord.html:78
+#: templates/pycontw-2024/_includes/ext/discord.html:78
 msgid "#r2-track"
 msgstr "#r2-track"
 
@@ -3868,6 +3994,7 @@ msgstr "#r2-track"
 #: templates/pycontw-2021/_includes/ext/discord.html:80
 #: templates/pycontw-2022/_includes/ext/discord.html:80
 #: templates/pycontw-2023/_includes/ext/discord.html:80
+#: templates/pycontw-2024/_includes/ext/discord.html:80
 msgid "R2 track discussion channel"
 msgstr "R2 軌所有議程的會眾討論頻道。"
 
@@ -3875,6 +4002,7 @@ msgstr "R2 軌所有議程的會眾討論頻道。"
 #: templates/pycontw-2021/_includes/ext/discord.html:81
 #: templates/pycontw-2022/_includes/ext/discord.html:81
 #: templates/pycontw-2023/_includes/ext/discord.html:81
+#: templates/pycontw-2024/_includes/ext/discord.html:81
 msgid "#r3-track"
 msgstr "#r3-track"
 
@@ -3882,6 +4010,7 @@ msgstr "#r3-track"
 #: templates/pycontw-2021/_includes/ext/discord.html:83
 #: templates/pycontw-2022/_includes/ext/discord.html:83
 #: templates/pycontw-2023/_includes/ext/discord.html:83
+#: templates/pycontw-2024/_includes/ext/discord.html:83
 msgid "R3 track (remote track) discussion channel"
 msgstr "R3 軌(遠端議程)所有議程的會眾討論頻道。"
 
@@ -3889,6 +4018,7 @@ msgstr "R3 軌(遠端議程)所有議程的會眾討論頻道。"
 #: templates/pycontw-2021/_includes/ext/discord.html:86
 #: templates/pycontw-2022/_includes/ext/discord.html:86
 #: templates/pycontw-2023/_includes/ext/discord.html:86
+#: templates/pycontw-2024/_includes/ext/discord.html:86
 msgid "Announcements channel"
 msgstr "公告頻道"
 
@@ -3896,6 +4026,7 @@ msgstr "公告頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:87
 #: templates/pycontw-2022/_includes/ext/discord.html:87
 #: templates/pycontw-2023/_includes/ext/discord.html:87
+#: templates/pycontw-2024/_includes/ext/discord.html:87
 msgid "#announcements"
 msgstr "#announcements"
 
@@ -3903,6 +4034,7 @@ msgstr "#announcements"
 #: templates/pycontw-2021/_includes/ext/discord.html:89
 #: templates/pycontw-2022/_includes/ext/discord.html:89
 #: templates/pycontw-2023/_includes/ext/discord.html:89
+#: templates/pycontw-2024/_includes/ext/discord.html:89
 msgid ""
 "Official announcement channel, any official announcements will be posted "
 "here."
@@ -3912,6 +4044,7 @@ msgstr "大會公告頻道，若大會有全面性的公告事項都會發在此
 #: templates/pycontw-2021/_includes/ext/discord.html:90
 #: templates/pycontw-2022/_includes/ext/discord.html:90
 #: templates/pycontw-2023/_includes/ext/discord.html:90
+#: templates/pycontw-2024/_includes/ext/discord.html:90
 msgid "#speakers-announcements"
 msgstr "#speakers-announcements"
 
@@ -3924,6 +4057,7 @@ msgstr "身份組：<code>2020-staff</code>, <code>2020-speaker</code>"
 #: templates/pycontw-2021/_includes/ext/discord.html:92
 #: templates/pycontw-2022/_includes/ext/discord.html:92
 #: templates/pycontw-2023/_includes/ext/discord.html:92
+#: templates/pycontw-2024/_includes/ext/discord.html:92
 msgid ""
 "A special announcement channel for speakers, speaker can also have "
 "discussion with each other in this channel."
@@ -3933,6 +4067,7 @@ msgstr "一個大會專門公告給講者的頻道，講者之間亦可在此頻
 #: templates/pycontw-2021/_includes/ext/discord.html:93
 #: templates/pycontw-2022/_includes/ext/discord.html:93
 #: templates/pycontw-2023/_includes/ext/discord.html:93
+#: templates/pycontw-2024/_includes/ext/discord.html:93
 msgid "#staff-announcements"
 msgstr "#staff-announcements"
 
@@ -3944,6 +4079,7 @@ msgstr "身份組：<code>2020-staff</code>"
 #: templates/pycontw-2021/_includes/ext/discord.html:95
 #: templates/pycontw-2022/_includes/ext/discord.html:95
 #: templates/pycontw-2023/_includes/ext/discord.html:95
+#: templates/pycontw-2024/_includes/ext/discord.html:95
 msgid ""
 "A special announcement channel for staff, staff can also contact to others "
 "in this channel."
@@ -3953,6 +4089,7 @@ msgstr "一個大會專門公告給志工的頻道，志工之間亦可在此頻
 #: templates/pycontw-2021/_includes/ext/discord.html:98
 #: templates/pycontw-2022/_includes/ext/discord.html:98
 #: templates/pycontw-2023/_includes/ext/discord.html:98
+#: templates/pycontw-2024/_includes/ext/discord.html:98
 msgid "Information desk channel"
 msgstr "服務台頻道"
 
@@ -3960,6 +4097,7 @@ msgstr "服務台頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:99
 #: templates/pycontw-2022/_includes/ext/discord.html:99
 #: templates/pycontw-2023/_includes/ext/discord.html:99
+#: templates/pycontw-2024/_includes/ext/discord.html:99
 msgid "#information-desk"
 msgstr "#information-desk"
 
@@ -3967,6 +4105,7 @@ msgstr "#information-desk"
 #: templates/pycontw-2021/_includes/ext/discord.html:101
 #: templates/pycontw-2022/_includes/ext/discord.html:101
 #: templates/pycontw-2023/_includes/ext/discord.html:101
+#: templates/pycontw-2024/_includes/ext/discord.html:101
 msgid ""
 "Official online information desk, speakers or attendees can give questions "
 "or suggestions in this channel."
@@ -3976,6 +4115,7 @@ msgstr "大會的服務台，會眾或講者有任何公開詢問的問題可以
 #: templates/pycontw-2021/_includes/ext/discord.html:102
 #: templates/pycontw-2022/_includes/ext/discord.html:102
 #: templates/pycontw-2023/_includes/ext/discord.html:102
+#: templates/pycontw-2024/_includes/ext/discord.html:102
 msgid "#speakers"
 msgstr "#speakers"
 
@@ -3983,6 +4123,7 @@ msgstr "#speakers"
 #: templates/pycontw-2021/_includes/ext/discord.html:104
 #: templates/pycontw-2022/_includes/ext/discord.html:104
 #: templates/pycontw-2023/_includes/ext/discord.html:104
+#: templates/pycontw-2024/_includes/ext/discord.html:104
 msgid ""
 "Speakers only information desk, speakers can give sessions or speakers "
 "related questions here for answers or further instruction."
@@ -3992,6 +4133,7 @@ msgstr "講者專屬的服務台，有議程或講者相關的問題可以在此
 #: templates/pycontw-2021/_includes/ext/discord.html:105
 #: templates/pycontw-2022/_includes/ext/discord.html:105
 #: templates/pycontw-2023/_includes/ext/discord.html:105
+#: templates/pycontw-2024/_includes/ext/discord.html:105
 msgid "#session-chairs"
 msgstr "#session-chairs"
 
@@ -4003,6 +4145,7 @@ msgstr "身份組：<code>2020-session-chair</code>"
 #: templates/pycontw-2021/_includes/ext/discord.html:107
 #: templates/pycontw-2022/_includes/ext/discord.html:107
 #: templates/pycontw-2023/_includes/ext/discord.html:107
+#: templates/pycontw-2024/_includes/ext/discord.html:107
 msgid ""
 "A channel for session chairs and assistant chairs to give any related "
 "questions here for answers or further instruction."
@@ -4012,6 +4155,7 @@ msgstr "主持人與助理主持人的討論頻道，有任何相關的問題可
 #: templates/pycontw-2021/_includes/ext/discord.html:110
 #: templates/pycontw-2022/_includes/ext/discord.html:110
 #: templates/pycontw-2023/_includes/ext/discord.html:110
+#: templates/pycontw-2024/_includes/ext/discord.html:110
 msgid "Special channel"
 msgstr "特殊頻道"
 
@@ -4019,6 +4163,7 @@ msgstr "特殊頻道"
 #: templates/pycontw-2021/_includes/ext/discord.html:111
 #: templates/pycontw-2022/_includes/ext/discord.html:111
 #: templates/pycontw-2023/_includes/ext/discord.html:111
+#: templates/pycontw-2024/_includes/ext/discord.html:111
 msgid "🔊remote-guide"
 msgstr "🔊remote-guide"
 
@@ -4030,6 +4175,7 @@ msgstr "身份組： <code>2020-remote</code>"
 #: templates/pycontw-2021/_includes/ext/discord.html:113
 #: templates/pycontw-2022/_includes/ext/discord.html:113
 #: templates/pycontw-2023/_includes/ext/discord.html:113
+#: templates/pycontw-2024/_includes/ext/discord.html:113
 msgid ""
 "A special channel for remote partners to contact with each other during "
 "sessions, mainly for session chairs to give a cue to remote speakers."
@@ -4041,6 +4187,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:116
 #: templates/pycontw-2022/_includes/ext/discord.html:116
 #: templates/pycontw-2023/_includes/ext/discord.html:116
+#: templates/pycontw-2024/_includes/ext/discord.html:116
 msgid "Appendices"
 msgstr "附錄"
 
@@ -4048,6 +4195,7 @@ msgstr "附錄"
 #: templates/pycontw-2021/_includes/ext/discord.html:117
 #: templates/pycontw-2022/_includes/ext/discord.html:117
 #: templates/pycontw-2023/_includes/ext/discord.html:117
+#: templates/pycontw-2024/_includes/ext/discord.html:117
 msgid "Setting up Discord"
 msgstr "設定 Discord 與加入 Python Taiwan 伺服器"
 
@@ -4055,6 +4203,7 @@ msgstr "設定 Discord 與加入 Python Taiwan 伺服器"
 #: templates/pycontw-2021/_includes/ext/discord.html:118
 #: templates/pycontw-2022/_includes/ext/discord.html:118
 #: templates/pycontw-2023/_includes/ext/discord.html:118
+#: templates/pycontw-2024/_includes/ext/discord.html:118
 msgid ""
 "1.<a href='https://discord.com/download'>Download the Discord client</a> for "
 "your platform and install it. If you already have this, please make sure it "
@@ -4067,6 +4216,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:120
 #: templates/pycontw-2022/_includes/ext/discord.html:120
 #: templates/pycontw-2023/_includes/ext/discord.html:120
+#: templates/pycontw-2024/_includes/ext/discord.html:120
 msgid ""
 "2.Register an account on Discord if you don’t have one. Open the Discord "
 "client you just installed. Click the 'Register' link below and complete your "
@@ -4081,6 +4231,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:123
 #: templates/pycontw-2022/_includes/ext/discord.html:123
 #: templates/pycontw-2023/_includes/ext/discord.html:123
+#: templates/pycontw-2024/_includes/ext/discord.html:123
 msgid ""
 "3.Join the Python Taiwan Discord server. <br>Python Taiwan Discord server "
 "invite link: <a href='https://discord.gg/94hgCQv'>https://discord."
@@ -4095,6 +4246,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:126
 #: templates/pycontw-2022/_includes/ext/discord.html:126
 #: templates/pycontw-2023/_includes/ext/discord.html:126
+#: templates/pycontw-2024/_includes/ext/discord.html:126
 msgid ""
 "In this dialog, copy the invite link above and paste it to the inputbox, "
 "then click 'Join'."
@@ -4104,6 +4256,7 @@ msgstr "複製上面的邀請連結，並把它貼到對話方塊中，接著按
 #: templates/pycontw-2021/_includes/ext/live.html:17
 #: templates/pycontw-2022/_includes/ext/live.html:17
 #: templates/pycontw-2023/_includes/ext/live.html:17
+#: templates/pycontw-2024/_includes/ext/live.html:17
 msgid "This broadcast is not ready yet."
 msgstr "這個直播還沒有準備好。"
 
@@ -4111,6 +4264,7 @@ msgstr "這個直播還沒有準備好。"
 #: templates/pycontw-2021/_includes/ext/live.html:26
 #: templates/pycontw-2022/_includes/ext/live.html:26
 #: templates/pycontw-2023/_includes/ext/live.html:26
+#: templates/pycontw-2024/_includes/ext/live.html:26
 msgid "The broadcasts are not ready yet, please try again later."
 msgstr "直播還沒有準備好，請稍後再試。"
 
@@ -4118,6 +4272,7 @@ msgstr "直播還沒有準備好，請稍後再試。"
 #: templates/pycontw-2021/_includes/ext/live.html:32
 #: templates/pycontw-2022/_includes/ext/live.html:32
 #: templates/pycontw-2023/_includes/ext/live.html:32
+#: templates/pycontw-2024/_includes/ext/live.html:32
 msgid ""
 "The token within the link is invalid. Please contact staff for further help."
 msgstr "連結中附帶的驗證碼錯誤。請聯繫工作人員取得更進一步的協助。"
@@ -4126,6 +4281,7 @@ msgstr "連結中附帶的驗證碼錯誤。請聯繫工作人員取得更進一
 #: templates/pycontw-2021/_includes/footer.html:16
 #: templates/pycontw-2022/_includes/footer.html:16
 #: templates/pycontw-2023/_includes/footer.html:16
+#: templates/pycontw-2024/_includes/footer.html:16
 msgid "Privacy Policy"
 msgstr "個人資料保護聲明"
 
@@ -4146,6 +4302,10 @@ msgstr "個人資料保護聲明"
 #: templates/pycontw-2023/contents/zh/events/overview.html:72
 #: templates/pycontw-2023/events/talk_list.html:64
 #: templates/pycontw-2023/events/talk_list.html:76
+#: templates/pycontw-2024/contents/en/events/overview.html:91
+#: templates/pycontw-2024/contents/zh/events/overview.html:72
+#: templates/pycontw-2024/events/talk_list.html:64
+#: templates/pycontw-2024/events/talk_list.html:76
 msgid "Community Track"
 msgstr "社群軌"
 
@@ -4157,6 +4317,7 @@ msgstr "暖身活動"
 #: templates/pycontw-2021/_includes/menu.html:146
 #: templates/pycontw-2022/_includes/menu.html:146
 #: templates/pycontw-2023/_includes/menu.html:146
+#: templates/pycontw-2024/_includes/menu.html:146
 msgctxt "COVID-19 Guidelines"
 msgid "COVID-19 Guidelines"
 msgstr "COVID-19 防疫守則"
@@ -4165,6 +4326,7 @@ msgstr "COVID-19 防疫守則"
 #: templates/pycontw-2021/_includes/portal.html:12
 #: templates/pycontw-2022/_includes/portal.html:12
 #: templates/pycontw-2023/_includes/portal.html:12
+#: templates/pycontw-2024/_includes/portal.html:12
 msgid "Discord Chat Room"
 msgstr "Discord 聊天室"
 
@@ -4172,6 +4334,7 @@ msgstr "Discord 聊天室"
 #: templates/pycontw-2021/_includes/portal.html:20
 #: templates/pycontw-2022/_includes/portal.html:20
 #: templates/pycontw-2023/_includes/portal.html:20
+#: templates/pycontw-2024/_includes/portal.html:20
 msgid "Open space"
 msgstr "Open space 揪團"
 
@@ -4179,6 +4342,7 @@ msgstr "Open space 揪團"
 #: templates/pycontw-2021/_includes/sponsors.html:5
 #: templates/pycontw-2022/_includes/sponsors.html:5
 #: templates/pycontw-2023/_includes/sponsors.html:5
+#: templates/pycontw-2024/_includes/sponsors.html:5
 msgid "Sponsor Partners"
 msgstr "贊助夥伴"
 
@@ -4213,6 +4377,8 @@ msgstr "交通"
 #: templates/pycontw-2022/ext/discord.html:5
 #: templates/pycontw-2023/ccip/discord.html:15
 #: templates/pycontw-2023/ext/discord.html:5
+#: templates/pycontw-2024/ccip/discord.html:15
+#: templates/pycontw-2024/ext/discord.html:5
 msgid "Discord Guideline"
 msgstr "Discord 指南"
 
@@ -4220,6 +4386,7 @@ msgstr "Discord 指南"
 #: templates/pycontw-2021/contents/_default/conference/keynotes.html:68
 #: templates/pycontw-2022/contents/_default/conference/keynotes.html:68
 #: templates/pycontw-2023/contents/_default/conference/keynotes.html:68
+#: templates/pycontw-2024/contents/_default/conference/keynotes.html:68
 msgid "To be announced"
 msgstr "即將公佈"
 
@@ -4231,6 +4398,8 @@ msgstr "即將公佈"
 #: templates/pycontw-2022/contents/_default/events/job-listings.html:58
 #: templates/pycontw-2023/contents/_default/events/job-listings.html:53
 #: templates/pycontw-2023/contents/_default/events/job-listings.html:58
+#: templates/pycontw-2024/contents/_default/events/job-listings.html:53
+#: templates/pycontw-2024/contents/_default/events/job-listings.html:58
 msgid "Open Roles"
 msgstr "職缺"
 
@@ -4265,6 +4434,7 @@ msgstr "已滿"
 #: templates/pycontw-2021/events/_includes/community-track-traffic.html:10
 #: templates/pycontw-2022/events/_includes/community-track-traffic.html:10
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:10
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:10
 msgid "Time"
 msgstr "時間"
 
@@ -4272,6 +4442,7 @@ msgstr "時間"
 #: templates/pycontw-2021/events/_includes/community-track-traffic.html:11
 #: templates/pycontw-2022/events/_includes/community-track-traffic.html:11
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:11
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:11
 msgid "Shuttle bus route"
 msgstr "接駁車路線"
 
@@ -4311,6 +4482,15 @@ msgstr "接駁車路線"
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:31
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:38
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:44
 msgid "Cheng Kung University"
 msgstr "成大"
 
@@ -4334,6 +4514,11 @@ msgstr "成大"
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:31
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:38
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:18
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:29
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:44
 msgid "Tainan Cultural and Creative Park"
 msgstr "古蹟出張所"
 
@@ -4357,6 +4542,11 @@ msgstr "古蹟出張所"
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:31
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:38
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:19
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:30
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:44
 msgid "Tsang Fong Art Space"
 msgstr "藏風藝文空間"
 
@@ -4376,6 +4566,10 @@ msgstr "藏風藝文空間"
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:31
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:38
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:20
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:44
 msgid "Angry Burger"
 msgstr "Angry Burger"
 
@@ -4395,6 +4589,10 @@ msgstr "Angry Burger"
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:31
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:38
 #: templates/pycontw-2023/events/_includes/community-track-traffic.html:44
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:21
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:31
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:38
+#: templates/pycontw-2024/events/_includes/community-track-traffic.html:44
 msgid "Brunch of San Dao Men Siang Jian"
 msgstr "三道門香見"
 
@@ -4411,6 +4609,7 @@ msgstr "活動議程"
 #: templates/pycontw-2022/events/_includes/community-track.html:66
 #: templates/pycontw-2022/events/talk_list.html:43
 #: templates/pycontw-2023/events/talk_list.html:43
+#: templates/pycontw-2024/events/talk_list.html:43
 #, python-format
 msgid " by %(speaker_names)s"
 msgstr " — %(speaker_names)s"
@@ -4428,6 +4627,7 @@ msgstr "特邀活動"
 #: templates/pycontw-2022/events/_includes/community-track.html:73
 #: templates/pycontw-2022/events/talk_list.html:65
 #: templates/pycontw-2023/events/talk_list.html:65
+#: templates/pycontw-2024/events/talk_list.html:65
 #, python-format
 msgid " by %(host_name)s"
 msgstr " — %(host_name)s"
@@ -4451,6 +4651,7 @@ msgstr "社群體驗式主題議程"
 #: templates/pycontw-2022/events/community_track.html:20
 #: templates/pycontw-2022/events/talk_list.html:78
 #: templates/pycontw-2023/events/talk_list.html:78
+#: templates/pycontw-2024/events/talk_list.html:78
 msgid ""
 "The community track is a new event in PyCon TW. We choose the talks with "
 "specific topics and package them into the same session. We'll leave the "
@@ -4497,6 +4698,7 @@ msgstr "各地 Python 社群負責人"
 #: templates/pycontw-2021/events/talk_list.html:17
 #: templates/pycontw-2022/events/talk_list.html:17
 #: templates/pycontw-2023/events/talk_list.html:17
+#: templates/pycontw-2024/events/talk_list.html:17
 msgid ""
 "The two conference days are packed with talks about Python by speakers from "
 "Taiwan and around the world. The talks will be either 15- or 30-minute long. "
@@ -4514,6 +4716,7 @@ msgstr ""
 #: templates/pycontw-2021/events/tutorial_list.html:15
 #: templates/pycontw-2022/events/tutorial_list.html:15
 #: templates/pycontw-2023/events/tutorial_list.html:15
+#: templates/pycontw-2024/events/tutorial_list.html:15
 msgid ""
 "Tutorial are events held as part of the main conference, but attendees need "
 "to register separately in order to join. They are 90-minute events held to "
@@ -4527,6 +4730,7 @@ msgstr ""
 #: templates/pycontw-2021/ext/discord.html:11
 #: templates/pycontw-2022/ext/discord.html:11
 #: templates/pycontw-2023/ext/discord.html:11
+#: templates/pycontw-2024/ext/discord.html:11
 msgid "PyCon TW Discord Guideline"
 msgstr "PyCon TW Discord 指南"
 
@@ -4538,6 +4742,8 @@ msgstr "PyCon TW Discord 指南"
 #: templates/pycontw-2022/ext/live.html:12
 #: templates/pycontw-2023/ext/live.html:5
 #: templates/pycontw-2023/ext/live.html:12
+#: templates/pycontw-2024/ext/live.html:5
+#: templates/pycontw-2024/ext/live.html:12
 msgid "Live broadcast"
 msgstr "現場直播"
 
@@ -4548,6 +4754,7 @@ msgstr "贊助方案"
 #: templates/pycontw-2021/_includes/ext/discord.html:11
 #: templates/pycontw-2022/_includes/ext/discord.html:11
 #: templates/pycontw-2023/_includes/ext/discord.html:11
+#: templates/pycontw-2024/_includes/ext/discord.html:11
 msgid ""
 "Users can find a #registration-desk channel under <strong>PYCON TW 2021</"
 "strong> category. There is a PyCon TW RegBot in this channel to help you "
@@ -4559,6 +4766,7 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:20
 #: templates/pycontw-2022/_includes/ext/discord.html:20
 #: templates/pycontw-2023/_includes/ext/discord.html:20
+#: templates/pycontw-2024/_includes/ext/discord.html:20
 msgid ""
 "If you keep failing to register, you can directly raise your question in "
 "#registration-desk channel and mention <strong>2021-staff</strong>。"
@@ -4569,60 +4777,70 @@ msgstr ""
 #: templates/pycontw-2021/_includes/ext/discord.html:39
 #: templates/pycontw-2022/_includes/ext/discord.html:39
 #: templates/pycontw-2023/_includes/ext/discord.html:39
+#: templates/pycontw-2024/_includes/ext/discord.html:39
 msgid "2021-session-chair"
 msgstr "2021-session-chair"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:40
 #: templates/pycontw-2022/_includes/ext/discord.html:40
 #: templates/pycontw-2023/_includes/ext/discord.html:40
+#: templates/pycontw-2024/_includes/ext/discord.html:40
 msgid "Target: PyCon TW 2021 session chairs and assistant chairs"
 msgstr "對象：PyCon TW 2021 的所有議程主持人與助理主持人"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:43
 #: templates/pycontw-2022/_includes/ext/discord.html:43
 #: templates/pycontw-2023/_includes/ext/discord.html:43
+#: templates/pycontw-2024/_includes/ext/discord.html:43
 msgid "2021-staff"
 msgstr "2021-staff"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:44
 #: templates/pycontw-2022/_includes/ext/discord.html:44
 #: templates/pycontw-2023/_includes/ext/discord.html:44
+#: templates/pycontw-2024/_includes/ext/discord.html:44
 msgid "Target: PyCon TW 2021 staff"
 msgstr "對象：PyCon TW 2021 的所有志工"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:47
 #: templates/pycontw-2022/_includes/ext/discord.html:47
 #: templates/pycontw-2023/_includes/ext/discord.html:47
+#: templates/pycontw-2024/_includes/ext/discord.html:47
 msgid "2021-speaker"
 msgstr "2021-speaker"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:48
 #: templates/pycontw-2022/_includes/ext/discord.html:48
 #: templates/pycontw-2023/_includes/ext/discord.html:48
+#: templates/pycontw-2024/_includes/ext/discord.html:48
 msgid "Target: PyCon TW 2021 speakers"
 msgstr "對象：PyCon TW 2021 的所有講者"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:51
 #: templates/pycontw-2022/_includes/ext/discord.html:51
 #: templates/pycontw-2023/_includes/ext/discord.html:51
+#: templates/pycontw-2024/_includes/ext/discord.html:51
 msgid "2021-remote"
 msgstr "2021-remote"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:52
 #: templates/pycontw-2022/_includes/ext/discord.html:52
 #: templates/pycontw-2023/_includes/ext/discord.html:52
+#: templates/pycontw-2024/_includes/ext/discord.html:52
 msgid "Target: PyCon TW 2021 remote session staff and remote speakers."
 msgstr "對象：PyCon TW 2021 的遠端議程相關工作人員"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:55
 #: templates/pycontw-2022/_includes/ext/discord.html:55
 #: templates/pycontw-2023/_includes/ext/discord.html:55
+#: templates/pycontw-2024/_includes/ext/discord.html:55
 msgid "2021-attendee"
 msgstr "2021-attendee"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:56
 #: templates/pycontw-2022/_includes/ext/discord.html:56
 #: templates/pycontw-2023/_includes/ext/discord.html:56
+#: templates/pycontw-2024/_includes/ext/discord.html:56
 msgid "Target: PyCon TW 2021 attendees"
 msgstr "對象：PyCon TW 2021 的所有會眾"
 
@@ -4644,6 +4862,12 @@ msgstr "對象：PyCon TW 2021 的所有會眾"
 #: templates/pycontw-2023/_includes/ext/discord.html:82
 #: templates/pycontw-2023/_includes/ext/discord.html:88
 #: templates/pycontw-2023/_includes/ext/discord.html:100
+#: templates/pycontw-2024/_includes/ext/discord.html:73
+#: templates/pycontw-2024/_includes/ext/discord.html:76
+#: templates/pycontw-2024/_includes/ext/discord.html:79
+#: templates/pycontw-2024/_includes/ext/discord.html:82
+#: templates/pycontw-2024/_includes/ext/discord.html:88
+#: templates/pycontw-2024/_includes/ext/discord.html:100
 msgid ""
 "Roles：<code>2021-staff</code>, <code>2021-speaker</code>, <code>2021-"
 "attendee</code>"
@@ -4657,29 +4881,34 @@ msgstr ""
 #: templates/pycontw-2022/_includes/ext/discord.html:103
 #: templates/pycontw-2023/_includes/ext/discord.html:91
 #: templates/pycontw-2023/_includes/ext/discord.html:103
+#: templates/pycontw-2024/_includes/ext/discord.html:91
+#: templates/pycontw-2024/_includes/ext/discord.html:103
 msgid "Roles：<code>2021-staff</code>, <code>2021-speaker</code>"
 msgstr "身份組：<code>2020-staff</code>, <code>2021-speaker</code>"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:94
 #: templates/pycontw-2022/_includes/ext/discord.html:94
 #: templates/pycontw-2023/_includes/ext/discord.html:94
+#: templates/pycontw-2024/_includes/ext/discord.html:94
 msgid "Roles：<code>2021-staff</code>"
 msgstr "身份組：<code>2021-staff</code>"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:106
 #: templates/pycontw-2022/_includes/ext/discord.html:106
 #: templates/pycontw-2023/_includes/ext/discord.html:106
+#: templates/pycontw-2024/_includes/ext/discord.html:106
 msgid "Roles：<code>2021-session-chair</code>"
 msgstr "身份組：<code>2021-session-chair</code>"
 
 #: templates/pycontw-2021/_includes/ext/discord.html:112
 #: templates/pycontw-2022/_includes/ext/discord.html:112
 #: templates/pycontw-2023/_includes/ext/discord.html:112
+#: templates/pycontw-2024/_includes/ext/discord.html:112
 msgid "Roles： <code>2021-remote</code>"
 msgstr "身份組： <code>2021-remote</code>"
 
 #: templates/pycontw-2021/index.html:56 templates/pycontw-2022/index.html:56
-#: templates/pycontw-2023/index.html:56
+#: templates/pycontw-2023/index.html:56 templates/pycontw-2024/index.html:56
 msgid "Call for Proposals"
 msgstr "徵求稿件"
 
