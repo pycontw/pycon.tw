@@ -29,7 +29,7 @@ ENV PATH /home/docker/.local/bin:$PATH
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get install gettext libpq-dev gcc -y
+RUN apt-get install gettext libpq-dev gcc mime-support -y
 
 # APP directory setup
 RUN adduser --system --disabled-login docker \
