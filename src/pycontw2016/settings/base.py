@@ -325,8 +325,8 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2024, 9, 2), _('Day 1')),
-    (datetime.date(2024, 9, 3), _('Day 2')),
+    (datetime.date(2024, 9, 21), _('Day 1')),
+    (datetime.date(2024, 9, 22), _('Day 2')),
 ])
 
 SCHEDULE_REDIRECT_URL = None
