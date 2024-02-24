@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-21 15:14+0800\n"
+"POT-Creation-Date: 2024-02-24 10:21+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -33,7 +33,7 @@ msgstr "token"
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:163 events/models.py:469
+#: attendee/models.py:9 core/models.py:162 events/models.py:469
 msgid "created at"
 msgstr "created at"
 
@@ -245,92 +245,88 @@ msgstr "No"
 msgid "{model_name_cap} creation requires a request object."
 msgstr "{model_name_cap} creation requires a request object."
 
-#: core/models.py:81
+#: core/models.py:80
 msgid "conference"
 msgstr "conference"
 
-#: core/models.py:94 events/models.py:193
+#: core/models.py:93 events/models.py:193
 msgid "title"
 msgstr "title"
 
-#: core/models.py:99
+#: core/models.py:98
 msgid "category"
 msgstr "category"
 
-#: core/models.py:105
+#: core/models.py:104
 msgid "language"
 msgstr "language"
 
-#: core/models.py:111
+#: core/models.py:110
 msgid "abstract"
 msgstr "abstract"
 
-#: core/models.py:116 templates/default/reviews/review_form.html:53
+#: core/models.py:115 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python level"
 
-#: core/models.py:122
+#: core/models.py:121
 msgid "detailed description"
 msgstr "detailed description"
 
-#: core/models.py:127
+#: core/models.py:126
 msgid "recording policy"
 msgstr "recording release"
 
-#: core/models.py:133
+#: core/models.py:132
 msgid "live stream policy"
 msgstr "live stream policy"
 
-#: core/models.py:139
+#: core/models.py:138
 msgid "referring policy"
 msgstr "referral policy"
 
-#: core/models.py:145
+#: core/models.py:144
 msgid "slide link"
 msgstr "slide link"
 
-#: core/models.py:151
+#: core/models.py:150
 msgid "slido embed link"
 msgstr "Slido embed link"
 
-#: core/models.py:157 events/models.py:258
+#: core/models.py:156 events/models.py:258
 msgid "HackMD embed link"
 msgstr "HackMD embed link"
 
-#: core/models.py:169
+#: core/models.py:168
 msgid "last updated at"
 msgstr "last updated at"
 
-#: core/models.py:174
-msgid "prefer event time"
-msgstr "prefer event time"
-
-#: core/models.py:180
+#: core/models.py:173
 msgid "living in Taiwan"
 msgstr "living in Taiwan"
 
-#: core/models.py:186
+#: core/models.py:179
 msgid "attending PyCon TW in person"
 msgstr "attending PyCon TW in person"
 
-#: core/models.py:218 reviews/admin.py:51
+#: core/models.py:211 reviews/admin.py:51
 msgid "Key"
 msgstr "Key"
 
-#: core/models.py:222 proposals/models.py:62 users/models.py:198
+#: core/models.py:215 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "user"
 
-#: core/models.py:225
+#: core/models.py:218
 msgid "Created"
 msgstr "created at"
 
-#: core/models.py:228
+#: core/models.py:221
 msgid "Token"
 msgstr ""
 
-#: core/models.py:229
+#: core/models.py:222
 msgid "Tokens"
 msgstr ""
 
@@ -852,7 +848,7 @@ msgstr ""
 "<a href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a>. This is NOT made public and for REVIEW ONLY."
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:99
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:97
 msgid "duration"
 msgstr "Duration"
 
@@ -5249,3 +5245,6 @@ msgstr ""
 #: users/views.py:129
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
+
+#~ msgid "prefer event time"
+#~ msgstr "prefer event time"
