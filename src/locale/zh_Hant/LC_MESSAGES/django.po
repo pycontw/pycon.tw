@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-21 15:14+0800\n"
+"POT-Creation-Date: 2024-02-24 10:21+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -40,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:163 events/models.py:469
+#: attendee/models.py:9 core/models.py:162 events/models.py:469
 msgid "created at"
 msgstr "建立時間"
 
@@ -252,92 +252,88 @@ msgstr "否"
 msgid "{model_name_cap} creation requires a request object."
 msgstr "建立 {model_name_cap} 需要一個 request 物件。"
 
-#: core/models.py:81
+#: core/models.py:80
 msgid "conference"
 msgstr "會議"
 
-#: core/models.py:94 events/models.py:193
+#: core/models.py:93 events/models.py:193
 msgid "title"
 msgstr "題目"
 
-#: core/models.py:99
+#: core/models.py:98
 msgid "category"
 msgstr "分類"
 
-#: core/models.py:105
+#: core/models.py:104
 msgid "language"
 msgstr "語言"
 
-#: core/models.py:111
+#: core/models.py:110
 msgid "abstract"
 msgstr "摘要"
 
-#: core/models.py:116 templates/default/reviews/review_form.html:53
+#: core/models.py:115 templates/default/reviews/review_form.html:53
 msgid "Python level"
 msgstr "Python 難易度"
 
-#: core/models.py:122
+#: core/models.py:121
 msgid "detailed description"
 msgstr "詳細說明"
 
-#: core/models.py:127
+#: core/models.py:126
 msgid "recording policy"
 msgstr "議程錄影釋出"
 
-#: core/models.py:133
+#: core/models.py:132
 msgid "live stream policy"
 msgstr "議程直播"
 
-#: core/models.py:139
+#: core/models.py:138
 msgid "referring policy"
 msgstr "轉介至地方社群"
 
-#: core/models.py:145
+#: core/models.py:144
 msgid "slide link"
 msgstr "投影片連結"
 
-#: core/models.py:151
+#: core/models.py:150
 msgid "slido embed link"
 msgstr "Slido 嵌入連結"
 
-#: core/models.py:157 events/models.py:258
+#: core/models.py:156 events/models.py:258
 msgid "HackMD embed link"
 msgstr "HackMD 嵌入連結"
 
-#: core/models.py:169
+#: core/models.py:168
 msgid "last updated at"
 msgstr "最後更新"
 
-#: core/models.py:174
-msgid "prefer event time"
-msgstr "偏好議程時間"
-
-#: core/models.py:180
+#: core/models.py:173
 msgid "living in Taiwan"
 msgstr "是否住在台灣"
 
-#: core/models.py:186
+#: core/models.py:179
 msgid "attending PyCon TW in person"
 msgstr "是否願意以實體方式與會"
 
-#: core/models.py:218 reviews/admin.py:51
+#: core/models.py:211 reviews/admin.py:51
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:222 proposals/models.py:62 users/models.py:198
+#: core/models.py:215 proposals/models.py:62 users/models.py:198
 #: users/models.py:313
 msgid "user"
 msgstr "使用者"
 
-#: core/models.py:225
+#: core/models.py:218
 msgid "Created"
 msgstr "建立時間"
 
-#: core/models.py:228
+#: core/models.py:221
 msgid "Token"
 msgstr "驗證碼"
 
-#: core/models.py:229
+#: core/models.py:222
 msgid "Tokens"
 msgstr "驗證碼"
 
@@ -840,7 +836,7 @@ msgstr ""
 "href='http://daringfireball.net/projects/markdown/basics' target='_blank' "
 "rel='noopener'>Markdown</a> 格式編輯。本欄位不公開僅供審查使用。"
 
-#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:99
+#: proposals/forms/proposals.py:35 proposals/forms/proposals.py:97
 msgid "duration"
 msgstr "時間長度"
 
