@@ -5245,6 +5245,3 @@ msgstr ""
 #: users/views.py:129
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
-
-#~ msgid "prefer event time"
-#~ msgstr "prefer event time"

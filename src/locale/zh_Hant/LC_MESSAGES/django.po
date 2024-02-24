@@ -5119,6 +5119,3 @@ msgstr ""
 #: users/views.py:129
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "prefer event time"
-#~ msgstr "偏好議程時間"
