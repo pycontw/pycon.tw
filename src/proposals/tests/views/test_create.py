@@ -98,7 +98,6 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         'first_time_speaker': True,
         'living_in_taiwan': True,
         'attend_in_person': True,
-        'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 
     proposal = TalkProposal.objects.get(
@@ -129,7 +128,6 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         'live_stream_policy': True,
         'living_in_taiwan': True,
         'attend_in_person': True,
-        'prefer_time': 'DAY_ONE_MORNING',
     }, follow=True)
 
     proposal = TutorialProposal.objects.get(
