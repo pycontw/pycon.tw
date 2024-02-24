@@ -21,10 +21,11 @@ There are four configurations that must be set when running the container.
  * `DATABASE_URL` specifies how to connect to the database (in the URL form
    e.g. `postgres://username:password@host_or_ip:5432/database_name`)
  * `EMAIL_URL` specifies how to connect to the mail server
-   (e.g. `smtp+tls://username:password@host_or_ip:25`)
+   (e.g. `smtp+tls://username:password@host_or_ip:25`, `smtp://host_or_ip:587` for local smtp server)
  * `DSN_URL` specify how to connect to Sentry error reporting service
    (e.g. `https://key@sentry.io/project`), please refer to
    [Sentry's documentation on how to obtain Data Source Name](https://docs.sentry.io/error-reporting/quickstart/?platform=python)
+ * (optional) `ALLOWED_SENDER_DOMAINS` - Could be `python.tw` if we [route outgoing SMTP relay messages through Google](https://support.google.com/a/answer/2956491?hl=en)
  * (optional) `GTM_TRACK_ID`
  * (optional) `SLACK_WEBHOOK_URL`
 

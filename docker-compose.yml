@@ -1,5 +1,13 @@
 version: "3.5"
 services:
+  mailserver:
+    container_name: relay-smtp-mail-server
+    image: boky/postfix
+    environment:
+      ALLOWED_SENDER_DOMAINS: ${ALLOWED_SENDER_DOMAINS}
+      RELAYHOST: "smtp-relay.gmail.com:25"
+    networks:
+      - network
   web:
     build: .
     container_name: pycontw-2024
