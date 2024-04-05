@@ -4,6 +4,9 @@ FROM node:8.16.0-buster-slim as node_stage
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
+RUN apt-get update
+RUN apt-get install python-pip -y
+
 RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile  \
  && rm -rf $HOME/.cache/yarn/*
