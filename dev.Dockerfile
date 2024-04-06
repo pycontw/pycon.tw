@@ -25,7 +25,10 @@ RUN apt-get install -y \
     gcc \
     zlib1g-dev \
     libjpeg62-turbo-dev \
-    gettext
+    mime-support \
+    gettext \
+    libxml2-dev \
+    libxslt-dev
 
 # Only copy and install requirements to improve caching between builds
 # Install Python dependencies
