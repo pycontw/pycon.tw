@@ -13,7 +13,7 @@ RUN yarn install --dev --frozen-lockfile  \
 
 
 # [Python Stage for Django web server]
-FROM python:3.6-slim-buster as python_stage
+FROM python:3.10.14-slim-bullseye as python_stage
 
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
