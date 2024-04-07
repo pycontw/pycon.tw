@@ -251,9 +251,16 @@ COMPRESS_BROWSERIFY_BIN = node_bin('browserify')
 COMPRESS_ES6_COMPILER_CMD = (
     'export NODE_PATH="{paths}" && '
     '{browserify_bin} "{infile}" -o "{outfile}" '
-    '-t [ "{node_modules}/babelify" '
-    '--presets="{node_modules}/babel-preset-env,'
-    '{node_modules}/babel-preset-stage-2" ]'
+    '-t [ '
+    '"{node_modules}/babelify" '
+    '--presets [ "@babel/preset-env" ] '
+    '--plugins [ '
+    '@babel/plugin-proposal-function-sent '
+    '@babel/plugin-proposal-throw-expressions '
+    '@babel/plugin-syntax-dynamic-import '
+    '@babel/plugin-syntax-import-meta '
+    '@babel/plugin-transform-class-properties ] '
+    ']'
 )
 
 COMPRESS_NODE_SASS_BIN = node_bin('node-sass')
