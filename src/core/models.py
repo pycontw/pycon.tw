@@ -10,7 +10,6 @@ from .choices import (
     CATEGORY_CHOICES,
     LANGUAGE_CHOICES,
     PYTHON_LVL_CHOICES,
-    PREFER_TIME_CHOICES,
     RECORDING_POLICY_CHOICES,
     LIVING_IN_TAIWAN_CHOICES,
     LIVE_STREAM_POLICY_CHOICES,
@@ -168,12 +167,6 @@ class EventInfo(models.Model):
     last_updated_at = models.DateTimeField(
         verbose_name=_('last updated at'),
         auto_now=True,
-    )
-
-    prefer_time = models.CharField(
-        verbose_name=_('prefer event time'),
-        max_length=32,
-        choices=PREFER_TIME_CHOICES,
     )
 
     living_in_taiwan = models.BooleanField(

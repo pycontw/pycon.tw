@@ -250,9 +250,16 @@ COMPRESS_BROWSERIFY_BIN = node_bin('browserify')
 COMPRESS_ES6_COMPILER_CMD = (
     'export NODE_PATH="{paths}" && '
     '{browserify_bin} "{infile}" -o "{outfile}" '
-    '-t [ "{node_modules}/babelify" '
-    '--presets="{node_modules}/babel-preset-env,'
-    '{node_modules}/babel-preset-stage-2" ]'
+    '-t [ '
+    '"{node_modules}/babelify" '
+    '--presets [ "@babel/preset-env" ] '
+    '--plugins [ '
+    '@babel/plugin-proposal-function-sent '
+    '@babel/plugin-proposal-throw-expressions '
+    '@babel/plugin-syntax-dynamic-import '
+    '@babel/plugin-syntax-import-meta '
+    '@babel/plugin-transform-class-properties ] '
+    ']'
 )
 
 COMPRESS_NODE_SASS_BIN = node_bin('node-sass')
@@ -305,9 +312,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2021', _('PyCon Taiwan 2021')),
     ('pycontw-2022', _('PyCon Taiwan 2022')),
     ('pycontw-2023', _('PyCon Taiwan 2023')),
+    ('pycontw-2024', _('PyCon Taiwan 2024')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2023'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2024'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -323,11 +331,11 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2023, 9, 2), _('Day 1')),
-    (datetime.date(2023, 9, 3), _('Day 2')),
+    (datetime.date(2024, 9, 21), _('Day 1')),
+    (datetime.date(2024, 9, 22), _('Day 2')),
 ])
 
-COC_VERSION = '2023.0'
+COC_VERSION = '2024.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config

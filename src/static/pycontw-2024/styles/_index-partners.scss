@@ -1,0 +1,128 @@
+@import 'index-mixins';
+
+h2 {
+	margin: auto auto;
+}
+
+.index-partners {
+	@include index-section();
+	margin: 0 auto;
+	max-width: 1160px;
+	padding: 0;
+	margin-bottom: 100px;
+	position: relative;
+
+	> .container {
+
+		[class*=" deco-"],
+		[class^="deco-"] {
+					position: absolute;
+					z-index: -1;
+			}
+
+		.deco-a-1 {
+			top: 2%;
+			right: 2%;
+		}
+
+		.deco-a-2 {
+			top: 50%;
+			left: -6%;
+		}
+
+		.deco-a-3 {
+			bottom: -1%;
+			right: 3%;
+		}
+
+		@include on-desktop {
+			.deco-a-1 {
+				top: 0%;
+				right: 15%;
+			}
+
+			.deco-a-2 {
+				top: 50%;
+				left: -6%;
+			}
+
+			.deco-a-3 {
+				bottom: -1%;
+				right: 20%;
+			}
+		}
+		@include container(904px);
+		max-width: max-content;
+		margin: 0 auto;
+		padding-bottom: 8px;
+		> .grid-layout {
+			display: grid;
+			grid-template-columns: repeat(3, 290px);
+			@media (max-width: 770px) {
+				grid-template-columns: repeat(1, 270px);
+			}
+			column-gap: 2vw;
+			row-gap: 3vh;
+			margin: 4vw;
+			> .partner-container {
+				background-color: #ffffff6e;
+				border: 1px solid #ffffff00;
+				display: flex;
+				height: 268px;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				padding: 5px;
+				position: relative;
+				overflow: hidden;
+				> span {
+					position: absolute;
+					top: 0.7em;
+					left: 0.7em;
+					text-shadow: 1px 1px 1px #ffffff;
+					font-weight: bolder;
+				}
+				> span.platinum {
+					color: black;
+				}
+				> span.gold {
+					color: $imperial;
+				}
+				> span.silver {
+					color: #262727;
+				}
+				> span.bronze {
+					color: #502526;
+				}
+				> span.special {
+					color: #502526;
+				}
+				> a {
+					text-align: center;
+					.logo {
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
+						z-index: $background-deco-index + 1;
+						width: 240px;
+						height: 185px;
+					}
+					> span {
+						margin: 40px 0px;
+						position: relative;
+						z-index: $background-deco-index + 1;
+						max-width: 180px;
+						max-height: 125px;
+						line-height: 64px;
+						vertical-align: middle;
+						font-size: 175%;
+	
+						@include on-desktop() {
+							max-width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

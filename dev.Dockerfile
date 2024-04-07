@@ -15,11 +15,7 @@ FROM python:3.6-slim-buster as python_stage
 
 WORKDIR /app
 
-COPY --from=node_stage /node_modules ./node_modules
-COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
-
 ENV PYTHONUNBUFFERED 1
-ENV BASE_DIR /usr/local
 
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
@@ -35,6 +31,9 @@ RUN apt-get install -y \
 # Install Python dependencies
 COPY ./requirements ./requirements
 RUN pip3 install -r ./requirements/dev.txt
+
+COPY --from=node_stage /node_modules ./node_modules
+COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
 
 # for entry point
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh

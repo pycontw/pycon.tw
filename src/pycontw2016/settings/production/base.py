@@ -17,7 +17,7 @@ from ..base import *            # noqa
 DEBUG = False
 
 # Must mention ALLOWED_HOSTS in production!
-ALLOWED_HOSTS = ['tw.pycon.org']
+ALLOWED_HOSTS = ["tw.pycon.org", "staging.pycon.tw"]
 
 # Cache the templates in memory for speed-up
 TEMPLATES[0]['OPTIONS'].update({"loaders": [

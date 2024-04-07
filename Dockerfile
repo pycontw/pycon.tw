@@ -4,6 +4,9 @@ FROM node:8.16.0-buster-slim as node_stage
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
+RUN apt-get update
+RUN apt-get install python-pip -y
+
 RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile  \
  && rm -rf $HOME/.cache/yarn/*
@@ -12,15 +15,15 @@ RUN yarn install --dev --frozen-lockfile  \
 # [Python Stage for Django web server]
 FROM python:3.6-slim-buster as python_stage
 
-COPY --from=node_stage /node_modules /usr/local/lib/node_modules
-COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
-
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
 
+COPY --from=node_stage /node_modules $APP_DIR/node_modules
+COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
+
 # make nodejs accessible and executable globally
-ENV NODE_PATH /usr/local/lib/node_modules/
+ENV NODE_PATH $APP_DIR/node_modules/
 ENV PATH /usr/local/bin:$PATH
 
 # Add bin directory used by `pip install --user`
@@ -29,7 +32,7 @@ ENV PATH /home/docker/.local/bin:$PATH
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get install gettext libpq-dev gcc -y
+RUN apt-get install gettext libpq-dev gcc mime-support -y
 
 # APP directory setup
 RUN adduser --system --disabled-login docker \
@@ -53,5 +56,5 @@ EXPOSE 8000
 CMD ["uwsgi", "--http-socket", ":8000", "--master", \
      "--hook-master-start", "unix_signal:15 gracefully_kill_them_all", \
      "--static-map", "/static=assets", "--static-map", "/media=media", \
-     "--mount", "/2021=pycontw2016/wsgi.py", "--manage-script-name", \
+     "--mount", "/2024=pycontw2016/wsgi.py", "--manage-script-name", \
      "--offload-threads", "2"]

@@ -22,7 +22,6 @@ def talk_proposal_data():
         'first_time_speaker': True,
         'living_in_taiwan': True,
         'attend_in_person': True,
-        'prefer_time': 'DAY_ONE_MORNING',
     }
 
 
@@ -38,7 +37,6 @@ def test_talk_proposal_create_form():
         'live_stream_policy',
         'first_time_speaker',
         'referring_policy',
-        'prefer_time',
         'living_in_taiwan',
         'attend_in_person',
     ]
@@ -83,7 +81,6 @@ def tutorial_proposal_data():
         'live_stream_policy': True,
         'living_in_taiwan': True,
         'attend_in_person': True,
-        'prefer_time': 'DAY_ONE_MORNING',
     }
 
 
@@ -97,7 +94,6 @@ def test_tutorial_proposal_create_form():
         'python_level',
         'recording_policy',
         'live_stream_policy',
-        'prefer_time',
         'living_in_taiwan',
         'attend_in_person',
     ]
