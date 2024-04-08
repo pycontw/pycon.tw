@@ -29,7 +29,7 @@ django-crispy-forms==1.8.1
 # Django-environ allows you to utilize 12factor inspired environment variables
 # to configure your Django application.
 # https://django-environ.readthedocs.io/en/latest/
-django-environ==0.4.5
+django-environ==0.11.2
 
 # Django application and library for importing and exporting data with
 # included admin integration.
@@ -92,7 +92,7 @@ sortedcontainers==2.1.0
 
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
-tabulate==0.8.6
+tabulate==0.9.0
 
 urllib3==1.26.5
 

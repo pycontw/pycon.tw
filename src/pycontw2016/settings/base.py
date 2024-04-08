@@ -76,9 +76,7 @@ ALLOWED_HOSTS = ['0.0.0.0']
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    # Raises ImproperlyConfigured exception if DATABASE_URL not in
-    # os.environ
-    'default': env.db(),
+    'default': env.db_url(var='DATABASE_URL', default='postgres://postgres:secretpostgres@127.0.0.1:5432/pycontw2016'),
 }
 
 # Application definition

@@ -3,7 +3,7 @@
 # A configurable set of panels that display various debug information about
 # the current request/response.
 # https://django-debug-toolbar.readthedocs.io/en/latest/
-django-debug-toolbar==2.2.1
+django-debug-toolbar==3.2.3
 
 # The Python WSGI Utility Library
 # https://palletsprojects.com/p/werkzeug/
@@ -15,7 +15,7 @@ flake8==3.7.9
 
 # A mature full-featured Python testing tool.
 # https://docs.pytest.org/en/latest/
-pytest==5.3.5
+pytest==6.2.5
 
 # A plugin for py.test that provides a set of useful tools for testing Django
 # applications and projects.

@@ -6,7 +6,7 @@ psycopg2==2.8.4
 
 # uWSGI aims at developing a full stack for building hosting services
 # https://uwsgi-docs.readthedocs.io/
-uWSGI==2.0.18
+uWSGI==2.0.24
 
 # django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.
 # http://niwinz.github.io/django-redis/latest/
