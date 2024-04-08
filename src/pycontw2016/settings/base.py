@@ -96,7 +96,6 @@ THIRD_PARTY_APPS = (
     'compressor_toolkit',
     'crispy_forms',
     'django_extensions',
-    'django_q',
     'import_export',
     'sorl.thumbnail',
     'registry',

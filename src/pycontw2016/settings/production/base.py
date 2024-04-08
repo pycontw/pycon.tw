@@ -114,8 +114,6 @@ X_FRAME_OPTIONS = 'DENY'
 
 GTM_TRACK_ID = env('GTM_TRACK_ID', default=None)
 
-DJANGO_Q_DEBUG = False
-
 # Google Cloud storage
 GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
     os.path.join(BASE_DIR, "google-cloud-storage.json")

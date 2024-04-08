@@ -44,15 +44,6 @@ django-extensions==2.2.6
 # https://github.com/deschler/django-modeltranslation
 django-modeltranslation==0.16.2
 
-# Native Django task queue, scheduler and worker application using Python
-# multiprocessing.
-# https://django-q.readthedocs.io/
-django-q==1.1.0
-
-# A pickled object field for Django. (Dependency of django-q)
-# https://github.com/gintas/django-picklefield
-django-picklefield==2.1.1
-
 # Certifi, a carefully curated collection of Root Certificates for SSL
 certifi>=2019.11.28
 
