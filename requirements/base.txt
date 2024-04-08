@@ -44,9 +44,6 @@ django-extensions==2.2.6
 # https://github.com/deschler/django-modeltranslation
 django-modeltranslation==0.16.2
 
-# Certifi, a carefully curated collection of Root Certificates for SSL
-certifi>=2019.11.28
-
 # Faker is a Python package that generates fake data for you.
 # https://faker.readthedocs.io/en/master/
 #
@@ -85,7 +82,9 @@ sortedcontainers==2.1.0
 # https://bitbucket.org/astanin/python-tabulate
 tabulate==0.9.0
 
-urllib3==1.26.5
+# HTTP library
+# https://github.com/psf/requests
+requests==2.31.0
 
 # For upload to Google cloud storage
 google-cloud-storage==1.36.1
