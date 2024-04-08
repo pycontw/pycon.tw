@@ -15,7 +15,14 @@ RUN yarn install --dev --frozen-lockfile  \
 # [Python Stage for Django web server]
 FROM python:3.10.14-slim-bullseye as python_stage
 
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PIP_DEFAULT_TIMEOUT=100 \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_NO_INTERACTION=1
+
 ENV BASE_DIR /usr/local
 ENV APP_DIR $BASE_DIR/app
 
@@ -47,16 +54,22 @@ RUN adduser --system --disabled-login docker \
  && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" \
  && chown -R docker:nogroup "$BASE_DIR" "$APP_DIR"
 
-USER docker
+# Install Poetry
+RUN pip install --no-cache-dir pip==23.3.2 && \
+    pip install --no-cache-dir poetry==1.8.2
 
-# Only copy and install requirements to improve caching between builds
-# Install Python dependencies
-COPY --chown=docker:nogroup ./requirements $APP_DIR/requirements
-RUN pip3 install --user -r "$APP_DIR/requirements/production.txt" \
- && rm -rf $HOME/.cache/pip/*
+# Install Python dependencies (only main dependencies)
+COPY --chown=docker:nogroup pyproject.toml poetry.lock ./
+RUN poetry install --no-root && \
+    yes | poetry cache clear --all pypi
+
+# Add poetry bin directory to PATH
+ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
 # Finally, copy all the project files along with source files
 COPY --chown=docker:nogroup ./ $APP_DIR
+
+USER docker
 
 WORKDIR $APP_DIR/src
 VOLUME $APP_DIR/src/media
