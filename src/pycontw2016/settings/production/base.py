@@ -9,7 +9,7 @@ import os
 # Google Cloud storage
 from google.oauth2 import service_account
 
-from ..base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE, TEMPLATES, env
+from ..base import BASE_DIR, TEMPLATES, env
 from ..base import *            # noqa
 
 
@@ -90,11 +90,6 @@ LOGGING = {
 
 logging.config.dictConfig(LOGGING)
 
-MIDDLEWARE += (
-    'raven.contrib.django.raven_compat.middleware.'
-    'SentryResponseErrorIdMiddleware',
-)
-
 EMAIL_BACKEND = env.email_url()['EMAIL_BACKEND']
 EMAIL_HOST = env.email_url()['EMAIL_HOST']
 EMAIL_HOST_PASSWORD = env.email_url()['EMAIL_HOST_PASSWORD']
@@ -116,19 +111,6 @@ CSRF_COOKIE_HTTPONLY = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 X_FRAME_OPTIONS = 'DENY'
 
-
-# Setting for sentry
-
-INSTALLED_APPS += (
-    'raven.contrib.django.raven_compat',
-)
-
-import raven    # noqa
-
-RAVEN_CONFIG = {
-    'dsn': env('DSN_URL'),
-    'release': raven.fetch_git_sha(os.path.dirname(BASE_DIR)),
-}
 
 GTM_TRACK_ID = env('GTM_TRACK_ID', default=None)
 
