@@ -6,10 +6,6 @@ Django==3.1.7
 # https://github.com/yychen/dj-registry
 dj-registry==0.2
 
-# Reusable mixins for Django
-# https://django-braces.readthedocs.io/en/latest/index.html
-django-braces==1.14.0
-
 # Compresses linked and inline JavaScript or CSS into a single cached file.
 # https://django-compressor.readthedocs.io/en/latest/
 django-compressor==2.4
