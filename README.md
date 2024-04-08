@@ -23,26 +23,15 @@ This repository serves the website of PyCon TW, Python Conference Taiwan. This p
 
 ## Run Tests
 
-Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). You have two options to run tests, either with the local environment, or in an isolated one via [Tox](http://tox.readthedocs.org/en/latest/).
+Tests are managed with [pytest-django](http://pytest-django.readthedocs.org/en/latest/tutorial.html). You can run tests in your local environment:
 
+- Run the following command inside `src`:
 
-### Testing in the Local Environment
+        pytest
 
-Run the following command inside `src`:
+- To run tests with coverage report:
 
-    pytest
-
-To run tests with coverage report:
-
-    pytest --cov=.
-
-
-### Testing with Tox
-
-Run the following inside the top-level directory (the one with `tox.ini`):
-
-    tox
-
+        pytest --cov=.
 
 ## How to Contribute
 
