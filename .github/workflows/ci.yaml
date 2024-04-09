@@ -63,4 +63,10 @@ jobs:
         pytest -n 2 --cov=. --cov-report=term-missing --cov-report=xml
 
     - name: Run Codecov action
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
+      with:
+        fail_ci_if_error: false
+        files: ./src/coverage.xml
+        verbose: true
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
