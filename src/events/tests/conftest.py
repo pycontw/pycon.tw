@@ -1,11 +1,9 @@
 import pytest
 import pytz
-
 from django.utils.dateparse import parse_datetime
 from django.utils.timezone import is_naive
 
 from events.models import Location, SponsoredEvent, Time
-
 
 cst = pytz.timezone('Asia/Taipei')
 

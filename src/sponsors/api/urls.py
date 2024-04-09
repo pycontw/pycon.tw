@@ -1,5 +1,6 @@
 from django.urls import path
-from sponsors.api.views import SponsorAPIView, JobAPIView
+
+from sponsors.api.views import JobAPIView, SponsorAPIView
 
 urlpatterns = [
     path("", SponsorAPIView.as_view()),

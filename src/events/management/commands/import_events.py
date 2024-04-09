@@ -2,7 +2,6 @@ import datetime
 import json
 
 import pytz
-
 from django.apps import apps
 from django.conf import settings
 from django.core.management.base import BaseCommand
@@ -10,7 +9,6 @@ from django.utils.dateparse import parse_time
 
 from events.models import Location, Time
 from events.renderers import EVENT_CLASSES
-
 
 cst = pytz.timezone('Asia/Taipei')
 

@@ -1,18 +1,20 @@
 import operator
-from datetime import timezone, timedelta
+from datetime import timedelta, timezone
 
 from django.http import JsonResponse
 from django.templatetags.static import static
 from django.utils import translation
 from django.utils.encoding import force_str
 from django.utils.translation import pgettext_lazy
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView, View
 
 from core.utils import TemplateExistanceStatusResponse
 from core.views import IndexView
 from events.models import (
-    CustomEvent, KeynoteEvent,
-    ProposedTalkEvent, ProposedTutorialEvent,
+    CustomEvent,
+    KeynoteEvent,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
     SponsoredEvent,
 )
 from proposals.models import PrimarySpeaker

@@ -1,9 +1,8 @@
 import re
 
 from django.conf import settings
-from django.urls import get_script_prefix
 from django.http import HttpResponseRedirect
-
+from django.urls import get_script_prefix
 
 # Matches things like
 #   /en

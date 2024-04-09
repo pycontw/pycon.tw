@@ -1,5 +1,4 @@
 import pytest
-
 from django.contrib import messages
 
 from core.utils import set_registry

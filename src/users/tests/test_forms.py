@@ -1,9 +1,10 @@
 import pytest
-
 from crispy_forms.helper import FormHelper
 
 from users.forms import (
-    PasswordResetForm, PublicUserCreationForm, SetPasswordForm,
+    PasswordResetForm,
+    PublicUserCreationForm,
+    SetPasswordForm,
 )
 
 

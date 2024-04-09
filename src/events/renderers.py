@@ -1,19 +1,22 @@
 import itertools
 
 import sortedcontainers
-
 from django.conf import settings
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
 from django.utils.timezone import make_naive
-from django.utils.translation import gettext, gettext_lazy as _
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 
 from core.utils import html_join
-from proposals.utils import format_names
-
 from events.models import (
-    Location, CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
+    CustomEvent,
+    KeynoteEvent,
+    Location,
+    ProposedTalkEvent,
+    SponsoredEvent,
 )
+from proposals.utils import format_names
 
 
 def render_customevent(e):

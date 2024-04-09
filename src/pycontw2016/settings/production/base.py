@@ -9,9 +9,8 @@ import os
 # Google Cloud storage
 from google.oauth2 import service_account
 
+from ..base import *  # noqa
 from ..base import BASE_DIR, TEMPLATES, env
-from ..base import *            # noqa
-
 
 # For security and performance reasons, DEBUG is turned off
 DEBUG = False

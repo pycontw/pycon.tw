@@ -1,10 +1,10 @@
 import functools
 
 from django.http import Http404
-from django.views.defaults import page_not_found, server_error
-from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.views.defaults import page_not_found, server_error
+from django.views.generic import TemplateView
 
 from .data import EXTRA_DATA
 from .utils import (

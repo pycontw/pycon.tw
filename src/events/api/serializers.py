@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.utils.serializer_helpers import ReturnDict
 
-from events.models import ProposedTalkEvent, ProposedTutorialEvent, SponsoredEvent, KeynoteEvent
+from events.models import KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent, SponsoredEvent
 from proposals.models import TalkProposal, TutorialProposal
 
 

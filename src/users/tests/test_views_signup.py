@@ -1,11 +1,9 @@
 import pytest
-
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core import mail
-from django.urls import reverse
 from django.test import override_settings
-
+from django.urls import reverse
 
 User = get_user_model()
 

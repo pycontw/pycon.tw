@@ -2,12 +2,11 @@ import itertools
 import os
 
 import pytest
-
 from django.conf import settings
 from django.utils.translation import activate
+from pytest_django.asserts import assertRedirects
 
 from events.models import Schedule
-from pytest_django.asserts import assertRedirects
 
 
 @pytest.mark.django_db

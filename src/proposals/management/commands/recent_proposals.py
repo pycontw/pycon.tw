@@ -1,15 +1,16 @@
 from datetime import datetime, timedelta
 from io import StringIO
 
-from tabulate import tabulate
 import pytz
+from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 from django.core.management.base import BaseCommand, CommandError
-from django.conf import settings
 from django.db.models import Q
+from tabulate import tabulate
 
 from proposals.models import TalkProposal, TutorialProposal
+
 from .slack import Slack
 
 utc_tz = pytz.UTC

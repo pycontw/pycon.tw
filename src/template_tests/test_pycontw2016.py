@@ -1,12 +1,10 @@
 import re
 
 import pytest
-
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core import mail, signing
 from django.test import override_settings
-
 
 pytestmark = pytest.mark.skipif(
     settings.CONFERENCE_DEFAULT_SLUG != 'pycontw-2016',

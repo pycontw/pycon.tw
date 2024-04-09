@@ -10,8 +10,11 @@ from proposals.models import TalkProposal, TutorialProposal
 from reviews.models import Review
 
 from .mixins import (
-    ProposalEditMixin, ProposalExamplesMixin, UserProfileRequiredMixin,
-    CocAgreementMixin, ReviewsStateMixin,
+    CocAgreementMixin,
+    ProposalEditMixin,
+    ProposalExamplesMixin,
+    ReviewsStateMixin,
+    UserProfileRequiredMixin,
 )
 
 

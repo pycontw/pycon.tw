@@ -4,12 +4,10 @@ from django.conf import settings
 from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
 from django.template.response import TemplateResponse
+from django.test import override_settings
 from django.utils.functional import lazy
 from django.utils.html import conditional_escape, format_html, mark_safe
-from django.test import override_settings
-
 from registry.helper import reg
-
 
 format_html_lazy = lazy(format_html, str)
 

@@ -1,7 +1,8 @@
 import pytest
 
 from proposals.forms import (
-    AdditionalSpeakerCancelForm, AdditionalSpeakerCreateForm,
+    AdditionalSpeakerCancelForm,
+    AdditionalSpeakerCreateForm,
     AdditionalSpeakerSetStatusForm,
 )
 from proposals.models import AdditionalSpeaker

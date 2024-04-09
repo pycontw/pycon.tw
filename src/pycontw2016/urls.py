@@ -8,7 +8,6 @@ from django.views.i18n import set_language
 from core.views import error_page, flat_page, index
 from users.views import user_dashboard
 
-
 urlpatterns = i18n_patterns(
 
     # Add top-level URL patterns here.

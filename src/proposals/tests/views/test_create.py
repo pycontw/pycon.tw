@@ -1,7 +1,7 @@
 from django.contrib import messages
 
-from proposals.models import TalkProposal, TutorialProposal
 from core.utils import set_registry
+from proposals.models import TalkProposal, TutorialProposal
 
 
 @set_registry(**{'proposals.creatable': False})

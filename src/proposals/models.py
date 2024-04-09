@@ -2,16 +2,21 @@ import contextlib
 
 from django.conf import settings
 from django.contrib.contenttypes.fields import (
-    GenericForeignKey, GenericRelation,
+    GenericForeignKey,
+    GenericRelation,
 )
-from django.urls import reverse
 from django.db import models
 from django.db.models import Q
-from django.utils.translation import gettext, gettext_lazy as _
+from django.urls import reverse
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 
 from core.models import (
-    ConferenceRelated, DefaultConferenceManager,
-    BigForeignKey, EAWTextField, EventInfo,
+    BigForeignKey,
+    ConferenceRelated,
+    DefaultConferenceManager,
+    EAWTextField,
+    EventInfo,
 )
 
 

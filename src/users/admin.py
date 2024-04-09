@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from .models import User, CocRecord
 from .forms import AdminUserChangeForm, UserCreationForm
+from .models import CocRecord, User
 
 
 @admin.register(User)

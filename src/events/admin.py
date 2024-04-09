@@ -1,24 +1,33 @@
 from django.conf import settings
 from django.contrib import admin
-from django.urls import reverse
 from django.db.models import Q
+from django.urls import reverse
 from django.utils.html import format_html
 from django.utils.timezone import make_naive
 from django.utils.translation import (
-    ugettext, gettext_lazy as _, pgettext_lazy as p,
+    gettext_lazy as _,
 )
-
-from modeltranslation.admin import TranslationAdmin
-
+from django.utils.translation import (
+    pgettext_lazy as p,
+)
+from django.utils.translation import (
+    ugettext,
+)
 from import_export.admin import ImportExportMixin
+from modeltranslation.admin import TranslationAdmin
 
 from .forms import CustomEventForm
 from .models import (
-    CustomEvent, KeynoteEvent, ProposedTalkEvent, ProposedTutorialEvent,
+    CustomEvent,
     JobListingsEvent,
-    SponsoredEvent, Time, Schedule,
+    KeynoteEvent,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
+    Schedule,
+    SponsoredEvent,
+    Time,
 )
-from .resources import TimeResource, CustomEventResource
+from .resources import CustomEventResource, TimeResource
 
 
 class TimeRangeFilter(admin.SimpleListFilter):

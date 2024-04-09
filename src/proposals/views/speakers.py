@@ -1,16 +1,17 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse
 from django.http import Http404
+from django.urls import reverse
 from django.views.generic import CreateView, UpdateView
 
 from core.mixins import FormValidMessageMixin
 from proposals.forms import (
-    AdditionalSpeakerCancelForm, AdditionalSpeakerCreateForm,
+    AdditionalSpeakerCancelForm,
+    AdditionalSpeakerCreateForm,
     AdditionalSpeakerSetStatusForm,
 )
 from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
-from .mixins import ProposalEditMixin, UserProfileRequiredMixin, ReviewsStateMixin
+from .mixins import ProposalEditMixin, ReviewsStateMixin, UserProfileRequiredMixin
 
 
 class ProposalManageSpeakersView(

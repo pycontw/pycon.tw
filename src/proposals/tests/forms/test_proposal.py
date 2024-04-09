@@ -1,9 +1,12 @@
 import pytest
 
 from proposals.forms import (
-    TalkProposalCancelForm, TutorialProposalCancelForm,
-    TalkProposalCreateForm, TutorialProposalCreateForm,
-    TalkProposalUpdateForm, TutorialProposalUpdateForm,
+    TalkProposalCancelForm,
+    TalkProposalCreateForm,
+    TalkProposalUpdateForm,
+    TutorialProposalCancelForm,
+    TutorialProposalCreateForm,
+    TutorialProposalUpdateForm,
 )
 from proposals.models import TalkProposal, TutorialProposal
 

@@ -4,11 +4,13 @@ import pytest
 import pytz
 
 from events.models import (
-    Location, Time,
-    CustomEvent, KeynoteEvent, ProposedTalkEvent,
+    CustomEvent,
+    KeynoteEvent,
+    Location,
+    ProposedTalkEvent,
+    Time,
 )
 from proposals.models import AdditionalSpeaker
-
 
 cst = pytz.timezone('Asia/Taipei')
 

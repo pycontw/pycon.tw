@@ -7,7 +7,6 @@ from proposals.models import AdditionalSpeaker
 
 from .mixins import RequestUserSpeakerValidationMixin
 
-
 User = get_user_model()
 
 

@@ -3,17 +3,17 @@ import json
 import random
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse
 from django.db.models import Count
 from django.http import Http404
+from django.urls import reverse
 from django.views.generic import ListView, UpdateView
 
 from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
 
+from .context import reviews_state
 from .forms import ReviewForm
 from .models import REVIEW_REQUIRED_PERMISSIONS, Review, TalkProposalSnapshot
-from .context import reviews_state
 
 
 class ReviewableMixin:

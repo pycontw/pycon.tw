@@ -1,11 +1,9 @@
-from datetime import datetime
 from collections import namedtuple
+from datetime import datetime
 
 from django.conf import settings
 from django.utils import timezone
-
 from registry.helper import reg
-
 
 # This code is located here, but not in context_processor
 # because this is not intended to be processed at every page

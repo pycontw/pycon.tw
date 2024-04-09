@@ -7,7 +7,6 @@ from django.utils.html import linebreaks
 
 from sponsors.models import Sponsor
 
-
 register = Library()
 
 

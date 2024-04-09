@@ -1,13 +1,12 @@
-from storages.backends.gcloud import GoogleCloudStorage
-
 from django.conf import settings
 from django.core.files.storage import default_storage
 from django.db import models
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import override
-from django.utils.text import slugify
+from storages.backends.gcloud import GoogleCloudStorage
 
-from core.models import ConferenceRelated, BigForeignKey
+from core.models import BigForeignKey, ConferenceRelated
 
 
 def select_storage():

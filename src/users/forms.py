@@ -1,20 +1,24 @@
+from crispy_forms.bootstrap import FormActions
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import HTML, Div, Field, Fieldset, Layout, Submit
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import (
     AuthenticationForm as BaseAuthenticationForm,
+)
+from django.contrib.auth.forms import (
     PasswordResetForm as BasePasswordResetForm,
-    SetPasswordForm as BaseSetPasswordForm,
+)
+from django.contrib.auth.forms import (
     ReadOnlyPasswordHashField,
+)
+from django.contrib.auth.forms import (
+    SetPasswordForm as BaseSetPasswordForm,
 )
 from django.core.files.images import get_image_dimensions
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
-
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Field, Fieldset, Layout, Submit, HTML, Div
-from crispy_forms.bootstrap import FormActions
-
 
 User = get_user_model()
 
