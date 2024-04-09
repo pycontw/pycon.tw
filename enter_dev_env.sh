@@ -1,7 +1,6 @@
 #!/bin/bash -xe
 CONTAINER="${USER}_pycontw_vm"
 COMPOSE_FILE="./docker-compose-dev.yml"
-START_SHELL="sh"
 
 # test if the container is running
 HASH=`docker ps -q -f name=$CONTAINER`
