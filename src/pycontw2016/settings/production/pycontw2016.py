@@ -3,7 +3,7 @@ import datetime
 
 from django.utils.translation import gettext_lazy as _
 
-from .base import *     # noqa
+from .base import *  # noqa
 
 # Override static and media URL for prefix in WSGI server.
 # https://code.djangoproject.com/ticket/25598

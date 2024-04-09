@@ -6,17 +6,15 @@ import unittest.mock
 
 import pytest
 import pytz
-
-from django.utils.timezone import now
 from django.conf import settings
 from django.core import mail
 from django.core.exceptions import ImproperlyConfigured
 from django.core.management import call_command
 from django.core.management.base import CommandError
 from django.test import override_settings
+from django.utils.timezone import now
 
 from proposals.models import TalkProposal
-
 
 taiwan_tz = pytz.timezone('Asia/Taipei')
 FakeHTTPResponse = collections.namedtuple('FakeHTTPResponse', 'status data')

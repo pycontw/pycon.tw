@@ -1,6 +1,5 @@
 from django.utils.translation import pgettext_lazy
 
-
 SEP_DEFAULT = pgettext_lazy('speaker name default separator', ', ')
 SEP_LAST = pgettext_lazy('speaker name last separator', ' and ')
 

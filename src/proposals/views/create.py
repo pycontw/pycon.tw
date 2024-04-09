@@ -4,13 +4,12 @@ from django.http import Http404
 from django.utils.html import format_html
 from django.utils.translation import gettext
 from django.views.generic import CreateView
-
 from registry.helper import reg
 
 from core.mixins import FormValidMessageMixin
 from proposals.forms import TalkProposalCreateForm, TutorialProposalCreateForm
 
-from .mixins import UserProfileRequiredMixin, CocAgreementMixin, ReviewsStateMixin
+from .mixins import CocAgreementMixin, ReviewsStateMixin, UserProfileRequiredMixin
 
 
 class ProposalCreateView(

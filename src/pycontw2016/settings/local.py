@@ -1,13 +1,14 @@
-from .base import (
-    BASE_DIR, INSTALLED_APPS, MIDDLEWARE,
-    env,
-)
-from .base import *             # NOQA
-
 import logging.config
 import os
 import sys
 
+from .base import *  # NOQA
+from .base import (
+    BASE_DIR,
+    INSTALLED_APPS,
+    MIDDLEWARE,
+    env,
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

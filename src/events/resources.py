@@ -1,8 +1,7 @@
 from django.utils import timezone
-
 from import_export import fields, resources, widgets
 
-from .models import Time, CustomEvent
+from .models import CustomEvent, Time
 
 
 class TimeResource(resources.ModelResource):

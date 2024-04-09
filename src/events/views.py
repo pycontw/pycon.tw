@@ -4,9 +4,9 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DetailView, ListView, TemplateView
@@ -17,12 +17,17 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Schedule, Time, Location,
-    CustomEvent, KeynoteEvent, SponsoredEvent,
-    ProposedTalkEvent, ProposedTutorialEvent,
+    EVENT_ROOMS,
+    CustomEvent,
+    KeynoteEvent,
+    Location,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
+    Schedule,
+    SponsoredEvent,
+    Time,
 )
 from .renderers import render_all
-
 
 logger = logging.getLogger(__name__)
 

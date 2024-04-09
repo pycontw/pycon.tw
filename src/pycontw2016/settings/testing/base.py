@@ -1,7 +1,7 @@
 import os
 
+from ..local import *  # noqa
 from ..local import BASE_DIR, STATICFILES_DIRS, TEMPLATES
-from ..local import *   # noqa
 
 DEBUG = False
 

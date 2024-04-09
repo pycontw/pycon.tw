@@ -3,15 +3,13 @@ import pathlib
 
 from django.conf import settings
 from django.core import serializers
-from django.core.serializers.json import DjangoJSONEncoder
 from django.core.management.base import BaseCommand, CommandError
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import transaction
-
 from registry.helper import reg
 
 from proposals.models import TalkProposal
 from reviews.models import TalkProposalSnapshot
-
 
 PythonSerializer = serializers.get_serializer('python')
 

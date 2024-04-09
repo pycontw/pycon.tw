@@ -1,9 +1,10 @@
 import json
-import pytz
 
-from django.utils import timezone
-from proposals.models import TalkProposal, TutorialProposal
+import pytz
 from django.core.management.base import BaseCommand
+from django.utils import timezone
+
+from proposals.models import TalkProposal, TutorialProposal
 
 PROPOSAL_TYPE_MAPPING = {
     'talk': TalkProposal, 'tutorial': TutorialProposal

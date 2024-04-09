@@ -63,6 +63,21 @@ select = [
     "E",  # pycodestyle error
     "W",  # pycodestyle warning
     "F",  # Pyflakes
+    "I001", # isort
+]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "attendee",
+    "ccip",
+    "core",
+    "events",
+    "postgres",
+    "proposals",
+    "pycontw2016",
+    "reviews",
+    "sponsors",
+    "users"
 ]
 
 

@@ -2,10 +2,9 @@ from django.conf import settings
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
-from django.utils.translation import gettext_lazy as _
 from django.shortcuts import redirect
 from django.urls import reverse
-
+from django.utils.translation import gettext_lazy as _
 from registry.helper import reg
 
 from reviews.context import reviews_state

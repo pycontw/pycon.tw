@@ -1,26 +1,28 @@
-import datetime
 import base64
+import datetime
 import hashlib
 import os
 
 from django.conf import settings
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin,
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
 )
 from django.core import signing
 from django.core.mail import send_mail
-from django.urls import reverse
 from django.core.validators import RegexValidator
 from django.db import models
 from django.template.loader import render_to_string
 from django.templatetags.static import static
+from django.urls import reverse
 from django.utils import timezone
-from django.utils.translation import gettext, gettext_lazy as _
-
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 from sorl.thumbnail import get_thumbnail
 
+from core.models import BigForeignKey, EAWTextField
 from core.utils import format_html_lazy
-from core.models import EAWTextField, BigForeignKey
 
 
 class UserQueryset(models.QuerySet):

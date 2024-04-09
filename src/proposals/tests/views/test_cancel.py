@@ -1,9 +1,8 @@
 import pytest
-
 from django.contrib import messages
 
-from proposals.models import TalkProposal, TutorialProposal
 from core.utils import set_registry
+from proposals.models import TalkProposal, TutorialProposal
 
 
 def test_talk_proposal_cancel_login(client):

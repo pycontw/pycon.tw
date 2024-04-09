@@ -1,6 +1,6 @@
-from modeltranslation.translator import translator, TranslationOptions
+from modeltranslation.translator import TranslationOptions, translator
 
-from .models import Sponsor, OpenRole
+from .models import OpenRole, Sponsor
 
 
 class SponsorTranslationOptions(TranslationOptions):

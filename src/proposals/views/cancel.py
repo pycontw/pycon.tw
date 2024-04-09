@@ -2,7 +2,6 @@ from django.conf import settings
 from django.contrib import messages
 from django.utils.html import format_html
 from django.utils.translation import ugettext
-
 from registry.helper import reg
 
 from proposals.forms import TalkProposalCancelForm, TutorialProposalCancelForm

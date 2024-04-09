@@ -1,7 +1,7 @@
 import itertools
 
-import sortedcontainers
 import pytest
+import sortedcontainers
 
 from events import renderers
 from events.renderers import make_group

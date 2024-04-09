@@ -3,7 +3,6 @@ import json
 import unittest.mock
 
 import pytest
-
 from django.core.management import call_command
 
 from events.models import KeynoteEvent
