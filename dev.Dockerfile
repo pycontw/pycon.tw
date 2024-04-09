@@ -50,7 +50,3 @@ ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
 COPY --from=node_stage /node_modules ./node_modules
 COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
-
-# for entry point
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh

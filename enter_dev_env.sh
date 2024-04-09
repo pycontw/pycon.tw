@@ -16,7 +16,7 @@ fi
 if [ -n "$HASH" ];then
     echo "found existing running container $CONTAINER, proceeding to exec another shell"
     docker-compose -f $COMPOSE_FILE restart
-    docker exec -it $HASH $START_SHELL
+    docker exec -w /app/src -it $HASH bash -c "SHELL=bash poetry shell"
 elif [ -n "$HASH_STOPPED" ];then
     echo "found existing stopped container $CONTAINER, starting"
     docker-compose -f $COMPOSE_FILE restart
@@ -24,6 +24,6 @@ elif [ -n "$HASH_STOPPED" ];then
 else
     echo "existing container not found, creating a new one, named $CONTAINER"
     docker-compose -f $COMPOSE_FILE pull
-    docker-compose -f $COMPOSE_FILE run -p 8000:8000 --name=$CONTAINER pycontw
+    docker-compose -f $COMPOSE_FILE run -p 8000:8000 --name=$CONTAINER pycontw bash -c "SHELL=bash poetry shell"
 fi
 echo "see you, use 'docker rm $CONTAINER' to kill the dev container or 'docker-compose -f $COMPOSE_FILE down' to kill both the postgres and the dev container if you want a fresh env next time"
