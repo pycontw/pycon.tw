@@ -51,9 +51,9 @@ jobs:
       with:
         cmd: install
 
-    - name: Run Flake8 on src
+    - name: Run ruff on src
       run: |
-        poetry run flake8 --config src/.flake8 src 
+        poetry run ruff check src
 
     - name: Run DB migration for test
       run: |
