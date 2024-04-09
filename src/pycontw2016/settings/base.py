@@ -95,6 +95,7 @@ THIRD_PARTY_APPS = (
     'compressor',
     'compressor_toolkit',
     'crispy_forms',
+    'crispy_bootstrap3',
     'django_extensions',
     'import_export',
     'sorl.thumbnail',
@@ -277,6 +278,8 @@ COMPRESS_PRECOMPILERS = (
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap3"
 
 WERKZEUG_DEBUG = env.bool('WERKZEUG_DEBUG', default=True)
 
