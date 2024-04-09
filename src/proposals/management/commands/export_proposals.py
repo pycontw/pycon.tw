@@ -15,14 +15,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         joint_proposals = {}
-        for ptype, Proposal in PROPOSAL_TYPE_MAPPING.items():
-            joint_proposals[ptype] = self.export_proposals(Proposal)
+        for ptype, proposal_class in PROPOSAL_TYPE_MAPPING.items():
+            joint_proposals[ptype] = self.export_proposals(proposal_class)
 
         json_str = json.dumps(joint_proposals, cls=DjangoJSONEncoder)
         self.stdout.write(json_str)
 
-    def export_proposals(self, Proposal):
-        proposals = Proposal.objects.filter(
+    def export_proposals(self, proposal_class):
+        proposals = proposal_class.objects.filter(
             cancelled=False
         ).select_related(
             'submitter__email',

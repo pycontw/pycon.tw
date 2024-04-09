@@ -47,8 +47,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, filename, truncate=False, **options):
         if truncate:
-            for Cls in EVENT_CLASSES:
-                Cls.objects.all().delete()
+            for kls in EVENT_CLASSES:
+                kls.objects.all().delete()
         with open(filename) as f:
             data = json.load(f)
         for model_name, datasets in data.items():

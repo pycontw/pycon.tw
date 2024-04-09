@@ -347,9 +347,9 @@ def collect_event_groups(events):
 EVENT_CLASSES = (CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent)
 
 
-def _filter_events(Cls, day):
+def _filter_events(kls, day):
     return (
-        Cls.objects
+        kls.objects
         .filter(begin_time__value__date=day, end_time__value__date=day)
         .select_related('begin_time', 'end_time')
     )

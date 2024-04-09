@@ -150,14 +150,14 @@ class EventWrapper:
 
     @property
     def event_type(self) -> str:
-        TYPE_MAP = {
+        type_map = {
             CustomEvent: 'custom',
             KeynoteEvent: 'keynote',
             ProposedTalkEvent: 'talk',
             SponsoredEvent: 'sponsored',
             ProposedTutorialEvent: 'tutorial',
         }
-        return TYPE_MAP[type(self.obj)]
+        return type_map[type(self.obj)]
 
     @property
     def title(self) -> Union[str, dict]:
