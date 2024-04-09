@@ -186,7 +186,7 @@ class ScheduleCreateView(
         end_time_iter = iter(times)
         next(end_time_iter, None)
 
-        for begin, end in zip(times, end_time_iter):
+        for begin, __ in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
             except KeyError:

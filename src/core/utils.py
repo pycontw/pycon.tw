@@ -29,10 +29,10 @@ class TemplateExistanceStatusResponse(TemplateResponse):
     def resolve_template(self, template):
         try:
             return super().resolve_template(template)
-        except (UnicodeEncodeError, TemplateDoesNotExist):
+        except (UnicodeEncodeError, TemplateDoesNotExist) as err:
             if settings.DEBUG:
                 raise
-            raise Http404
+            raise Http404 from err
 
 
 def collect_language_codes(user_code):
@@ -128,5 +128,5 @@ class set_registry(override_settings):  # noqa: N801
             reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}'] = value
 
     def disable(self):
-        for key, value in self.options.items():
+        for key in self.options.keys():
             del reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}']

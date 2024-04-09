@@ -82,10 +82,10 @@ def render_event(e):
     func_name = 'render_{cls}'.format(cls=type(e).__name__.lower())
     try:
         func = globals()[func_name]
-    except KeyError:
+    except KeyError as err:
         raise ValueError(
             'No suitable renderer for {!r} of {!r}'.format(e, type(e)),
-        )
+        ) from err
     return func(e)
 
 

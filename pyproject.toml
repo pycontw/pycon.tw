@@ -65,6 +65,7 @@ select = [
     "F",  # Pyflakes
     "I001", # isort
     "N", # pep8-naming
+    "B",  # bugbear
 ]
 
 [tool.ruff.lint.isort]

@@ -54,8 +54,8 @@ def user_signup(request):
 def user_verify(request, verification_key):
     try:
         user = User.objects.get_with_verification_key(verification_key)
-    except User.DoesNotExist:
-        raise Http404
+    except User.DoesNotExist as err:
+        raise Http404 from err
     user.verified = True
     user.save()
     messages.success(request, gettext('Email verification successful.'))

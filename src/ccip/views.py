@@ -45,8 +45,8 @@ def _iter_translations(value):
 
 def _transform_translatable(key, value):
     data = {'id': key}
-    for code, value in _iter_translations(value):
-        data[code] = {'name': value}
+    for code, val in _iter_translations(value):
+        data[code] = {'name': val}
     return data
 
 
