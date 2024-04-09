@@ -77,8 +77,7 @@ class _FakeEventInfo:
 
     @property
     def speakers(self):
-        for s in self._speakers:
-            yield s
+        yield from self._speakers
 
 
 def _get_empty_event_info(event):

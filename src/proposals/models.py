@@ -35,7 +35,7 @@ class PrimarySpeaker:
         self._user = user or proposal.submitter
 
     def __repr__(self):
-        return '<PrimarySpeaker: {name}>'.format(name=self.user.speaker_name)
+        return f'<PrimarySpeaker: {self.user.speaker_name}>'
 
     def __eq__(self, other):
         return (
@@ -105,10 +105,7 @@ class AdditionalSpeaker(ConferenceRelated):
         verbose_name_plural = _('additional speakers')
 
     def __str__(self):
-        return '{name} ({status})'.format(
-            name=self.user.speaker_name,
-            status=self.get_status_display(),
-        )
+        return f'{self.user.speaker_name} ({self.get_status_display()})'
 
 
 class ProposalQuerySet(models.QuerySet):
@@ -231,8 +228,7 @@ class AbstractProposal(ConferenceRelated, EventInfo):
                 .select_related('user')
             )
 
-        for speaker in additionals:
-            yield speaker
+        yield from additionals
 
     @property
     def speaker_count(self):

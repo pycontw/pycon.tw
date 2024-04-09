@@ -190,7 +190,7 @@ class ScheduleCreateView(
             try:
                 day_info = day_info_dict[begin.value.date()]
             except KeyError:
-                logger.warn('Invalid time sot dropped: {}'.format(begin))
+                logger.warn(f'Invalid time sot dropped: {begin}')
                 continue
             for event in begin_time_event_dict[begin]:
                 location = event.location

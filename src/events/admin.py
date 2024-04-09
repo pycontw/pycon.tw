@@ -35,13 +35,13 @@ class TimeRangeFilter(admin.SimpleListFilter):
     title = _('time value')
     parameter_name = 'time-range'
     day_queries = {
-        'day{}'.format(i): Q(value__date=date)
+        f'day{i}': Q(value__date=date)
         for i, date in enumerate(settings.EVENTS_DAY_NAMES, 1)
     }
 
     def lookups(self, request, model_admin):
         return [
-            ('day{}'.format(i), name)
+            (f'day{i}', name)
             for i, name in enumerate(settings.EVENTS_DAY_NAMES.values(), 1)
         ]
 
@@ -84,13 +84,13 @@ class TimeAdmin(ImportExportMixin, admin.ModelAdmin):
 class EventTimeRangeFilter(admin.SimpleListFilter):
 
     filter_kwargs_dict = {
-        'day{}'.format(i): day
+        f'day{i}': day
         for i, day in enumerate(settings.EVENTS_DAY_NAMES, 1)
     }
 
     def lookups(self, request, model_admin):
         return [
-            ('day{}'.format(i), name)
+            (f'day{i}', name)
             for i, name in enumerate(settings.EVENTS_DAY_NAMES.values(), 1)
         ]
 

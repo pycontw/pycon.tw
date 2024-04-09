@@ -224,7 +224,7 @@ class Token(models.Model):
     def save(self, *args, **kwargs):
         if not self.key:
             self.key = self.generate_key()
-        return super(Token, self).save(*args, **kwargs)
+        return super().save(*args, **kwargs)
 
     @classmethod
     def generate_key(cls):

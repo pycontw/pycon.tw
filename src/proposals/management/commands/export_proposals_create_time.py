@@ -25,7 +25,7 @@ class Command(BaseCommand):
                 # ^you can edit 'Asia/Taipei to other area.'
                 time = timezone.localtime(p.created_at).strftime('%Y-%m-%d %H:%M:%S')
                 joint_proposals.append({
-                    'proposal_type(id)': ptype + '({})'.format(p.id),
+                    'proposal_type(id)': ptype + f'({p.id})',
                     'title': p.title,
                     'speaker_name': p.submitter.speaker_name,
                     'email': p.submitter.email,

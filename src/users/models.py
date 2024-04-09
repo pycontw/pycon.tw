@@ -103,11 +103,7 @@ class UserManager(BaseUserManager.from_queryset(UserQueryset)):
 
 
 def photo_upload_to(instance, filename):
-    return 'avatars/{pk}/{date}-{filename}'.format(
-        pk=instance.pk,
-        date=str(datetime.date.today()),
-        filename=filename,
-    )
+    return f'avatars/{instance.pk}/{str(datetime.date.today())}-{filename}'
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -261,13 +257,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     def twitter_profile_url(self):
         if not self.twitter_id:
             return ""
-        return 'https://twitter.com/{}'.format(self.twitter_id)
+        return f'https://twitter.com/{self.twitter_id}'
 
     @property
     def github_profile_url(self):
         if not self.github_id:
             return ""
-        return 'https://github.com/{}'.format(self.github_id)
+        return f'https://github.com/{self.github_id}'
 
     def get_verification_key(self):
         key = signing.dumps(

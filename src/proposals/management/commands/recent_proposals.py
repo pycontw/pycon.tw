@@ -99,15 +99,11 @@ class Command(BaseCommand):
         else:
             self.summary(recent_talks, recent_tutorials)
         self.msg.write(
-            '\n\nGot total {:d} new proposals.\n'.format(
-                recent_talks.count() + recent_tutorials.count()
-            ))
+            f'\n\nGot total {recent_talks.count() + recent_tutorials.count():d} new proposals.\n')
+        talk_count = TalkProposal.objects.filter(cancelled=False).count()
+        tutorial_count = TutorialProposal.objects.filter(cancelled=False).count()
         self.msg.write(
-            'So far {:d} talk and {:d} tutorial proposals have been submitted.'
-            .format(
-                TalkProposal.objects.filter(cancelled=False).count(),
-                TutorialProposal.objects.filter(cancelled=False).count()
-            )
+            f'So far {talk_count:d} talk and {tutorial_count:d} tutorial proposals have been submitted.'
         )
         self.report(start_dt, end_dt, options['mailto'], options['slack'])
         self.msg.close()  # close the StringIO
@@ -126,8 +122,7 @@ class Command(BaseCommand):
         """Report to either the stdout or mailing to some address"""
         self.stdout.write(self.msg.getvalue())
         title = (
-            'Proposal submission summary from {:%m/%d} to {:%m/%d}'
-            .format(start_dt, end_dt)
+            f'Proposal submission summary from {start_dt:%m/%d} to {end_dt:%m/%d}'
         )
         if mailto:
             subject = '[PyConTW2016][Program] %s' % title
@@ -145,7 +140,7 @@ class Command(BaseCommand):
             # Create the Slack client and send message
             slack = Slack(url=settings.SLACK_WEBHOOK_URL)
             status, msg = slack.notify(
-                text='*%s*\n```\n%s\n```' % (title, self.msg.getvalue())
+                text=f'*{title}*\n```\n{self.msg.getvalue()}\n```'
             )
             if status != 200:
                 self.stderr.write(self.style.ERROR(
@@ -175,15 +170,13 @@ class Command(BaseCommand):
             ) from e
         if today_dt > today_utc_dt:
             raise CommandError(
-                "Today's datetime {:%Y-%m-%d %H:%M} ({!s}) is yet present"
-                .format(today_dt, taiwan_tz)
+                f"Today's datetime {today_dt:%Y-%m-%d %H:%M} ({taiwan_tz!s}) is yet present"
             )
         earliest_dt = today_dt - timedelta(days=recent_days)
         self.msg.write(
-            'Proposals submitted during the recent {:d} days\n'
-            'From {:%Y-%m-%d %H:%M} to {:%Y-%m-%d %H:%M}\n'
-            '(Timezone: {!s})\n\n'
-            .format(recent_days, earliest_dt, today_dt, taiwan_tz)
+            f'Proposals submitted during the recent {recent_days:d} days\n'
+            f'From {earliest_dt:%Y-%m-%d %H:%M} to {today_dt:%Y-%m-%d %H:%M}\n'
+            f'(Timezone: {taiwan_tz!s})\n\n'
         )
         recent_lookup = Q(
             created_at__gte=earliest_dt,

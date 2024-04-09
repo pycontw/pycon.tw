@@ -255,7 +255,7 @@ def test_default_hour_option(capsys):
     call_command('recent_proposals')
     out, err = capsys.readouterr()
     assert re.search(
-        r'to {:%Y-%m-%d %H}:00$'.format(now_dt),
+        rf'to {now_dt:%Y-%m-%d %H}:00$',
         out, re.MULTILINE
     )
 
