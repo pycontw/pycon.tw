@@ -122,7 +122,7 @@ class OrderedDefaultDict(collections.OrderedDict):
         return self[key]
 
 
-class set_registry(override_settings):
+class set_registry(override_settings):  # noqa: N801
     def enable(self):
         for key, value in self.options.items():
             reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}'] = value

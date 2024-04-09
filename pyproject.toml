@@ -64,6 +64,7 @@ select = [
     "W",  # pycodestyle warning
     "F",  # Pyflakes
     "I001", # isort
+    "N", # pep8-naming
 ]
 
 [tool.ruff.lint.isort]
