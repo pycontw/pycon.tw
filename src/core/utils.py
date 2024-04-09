@@ -81,7 +81,7 @@ class SequenceQuerySet:
         self._seq = seq
 
     def __repr__(self):
-        return '<SequenceQuerySet: {seq!r}>'.format(seq=self._seq)
+        return f'<SequenceQuerySet: {self._seq!r}>'
 
     def __len__(self):
         return len(self._seq)

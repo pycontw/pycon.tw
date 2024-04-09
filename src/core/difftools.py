@@ -91,12 +91,12 @@ def dump_equal(a, b, loa, lob, hia, hib):
 
 def dump_delete(a, b, loa, lob, hia, hib):
     for line in a[loa:hia]:
-        yield mark_safe('<del>{}</del>'.format(conditional_escape(line)))
+        yield mark_safe(f'<del>{conditional_escape(line)}</del>')
 
 
 def dump_insert(a, b, loa, lob, hia, hib):
     for line in b[lob:hib]:
-        yield mark_safe('<ins>{}</ins>'.format(conditional_escape(line)))
+        yield mark_safe(f'<ins>{conditional_escape(line)}</ins>')
 
 
 BLOCK_HANDLERS = {

@@ -66,6 +66,7 @@ select = [
     "I001", # isort
     "N", # pep8-naming
     "B",  # bugbear
+    "UP",  # pyupgrade
 ]
 
 [tool.ruff.lint.isort]

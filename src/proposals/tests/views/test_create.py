@@ -105,7 +105,7 @@ def test_talk_proposal_create_post(agreed_user, agreed_user_client):
         title='Beyond the Style Guides<br>',
     )
     assert response.redirect_chain == [
-        ('/en-us/proposals/talk/{pk}/edit/'.format(pk=proposal.pk), 302),
+        (f'/en-us/proposals/talk/{proposal.pk}/edit/', 302),
     ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]
@@ -135,7 +135,7 @@ def test_tutorial_proposal_create_post(agreed_user, agreed_user_client):
         title='Beyond the Style Guides<br>',
     )
     assert response.redirect_chain == [
-        ('/en-us/proposals/tutorial/{pk}/edit/'.format(pk=proposal.pk), 302),
+        (f'/en-us/proposals/tutorial/{proposal.pk}/edit/', 302),
     ], response.context['form'].errors
 
     msgs = [(m.level, m.message) for m in response.context['messages']]

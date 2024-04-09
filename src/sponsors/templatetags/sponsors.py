@@ -14,7 +14,7 @@ register = Library()
 def sponsor_jsonize(sponsors):
     sponsor_lists = {level: [] for level, _ in Sponsor.LEVEL_CHOICES}
     sponsor_info_dict = collections.OrderedDict(
-        ('level-{}'.format(level), {
+        (f'level-{level}', {
             'name': name,
             'sponsors': sponsor_lists[level],
         })

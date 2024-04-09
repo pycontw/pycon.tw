@@ -8,4 +8,4 @@ def format_names(names, sep_default=SEP_DEFAULT, sep_last=SEP_LAST):
     assert names
     if len(names) == 1:
         return names[0]
-    return '{}{}{}'.format(sep_default.join(names[:-1]), sep_last, names[-1])
+    return f'{sep_default.join(names[:-1])}{sep_last}{names[-1]}'

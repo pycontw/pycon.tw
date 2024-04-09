@@ -44,10 +44,7 @@ def select_storage():
 
 
 def photo_upload_to(instance, filename):
-    return 'speaker/{speakername}/{filename}'.format(
-        speakername=slugify(instance.speaker_name, allow_unicode=True),
-        filename=filename,
-    )
+    return f'speaker/{slugify(instance.speaker_name, allow_unicode=True)}/{filename}'
 
 
 class TimeManager(models.Manager):
@@ -302,7 +299,7 @@ class KeynoteEvent(BaseEvent):
     def get_absolute_url(self):
         url = reverse('page', kwargs={'path': 'conference/keynotes'})
         split = urllib.parse.urlsplit(url)
-        frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
+        frag = f'keynote-speaker-{self.slug}'
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
 
     def get_static_data(self):

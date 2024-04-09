@@ -160,7 +160,7 @@ def test_remove_speaker_post(user_client, proposal_type, additional_speaker):
         follow=True,
     )
     assert response.redirect_chain == [
-        ('/en-us/proposals/{}/42/manage-speakers/'.format(proposal_type), 302),
+        (f'/en-us/proposals/{proposal_type}/42/manage-speakers/', 302),
     ]
 
 

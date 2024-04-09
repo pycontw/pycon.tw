@@ -14,10 +14,7 @@ def select_storage():
 
 
 def logo_upload_to(instance, filename):
-    return 'sponsors/{name}/{filename}'.format(
-        name=slugify(instance.name, allow_unicode=True),
-        filename=filename,
-    )
+    return f'sponsors/{slugify(instance.name, allow_unicode=True)}/{filename}'
 
 
 class Sponsor(ConferenceRelated):

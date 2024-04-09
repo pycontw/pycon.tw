@@ -32,7 +32,8 @@ class ProposalEditMixin:
 class CocAgreementMixin:
     def dispatch(self, request, *args, **kwargs):
         if not self.request.user.has_agreed_coc:
-            return redirect('%s?next=%s' % (reverse('coc_agreement'), request.path))
+            url = reverse('coc_agreement')
+            return redirect(f'{url}?next={request.path}')
 
         return super().dispatch(request, *args, **kwargs)
 
