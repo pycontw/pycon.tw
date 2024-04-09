@@ -97,8 +97,8 @@ class UserManager(BaseUserManager.from_queryset(UserQueryset)):
                 verification_key,
                 salt=settings.SECRET_KEY,
             )
-        except signing.BadSignature:
-            raise self.model.DoesNotExist
+        except signing.BadSignature as err:
+            raise self.model.DoesNotExist from err
         return self.get(**{self.model.USERNAME_FIELD: username})
 
 

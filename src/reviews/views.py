@@ -214,8 +214,8 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
                 .filter_reviewable(self.request.user)
                 .get(pk=self.kwargs['proposal_pk'])
             )
-        except self.proposal_model.DoesNotExist:
-            raise Http404
+        except self.proposal_model.DoesNotExist as err:
+            raise Http404 from err
         return proposal
 
     def get_snapshot(self, proposal):

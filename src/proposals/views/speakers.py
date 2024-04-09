@@ -33,8 +33,8 @@ class ProposalManageSpeakersView(
                     cancelled=False,
                 )
             )
-        except self.proposal_model.DoesNotExist:
-            raise Http404
+        except self.proposal_model.DoesNotExist as err:
+            raise Http404 from err
         return proposal
 
     def get(self, request, *args, **kwargs):

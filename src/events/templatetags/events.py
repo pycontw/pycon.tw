@@ -53,7 +53,7 @@ def gen_timeline(start, end):
     time_next = time_start
     row_start_next = 1
     row_end_next = 6
-    for i in range(ticks_count):
+    for __ in range(ticks_count):
         time_next += timedelta(seconds=MARKER_UNIT)
         row_start_next += scale_unit_multiplier
         row_end_next += scale_unit_multiplier
@@ -86,7 +86,7 @@ def event_cell_class(event):
 
 @register.filter
 def event_tr_class(slot_info):
-    for room, event in slot_info:
+    for __, event in slot_info:
         if event._meta.label_lower == 'events.customevent':
             return 'custom'
     return ''

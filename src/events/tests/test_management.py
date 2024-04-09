@@ -24,7 +24,7 @@ def keynote_event_json():
 
 class MockFile(unittest.mock.MagicMock):
     def __init__(self, *args, **kwargs):
-        super().__init__(spec=io.FileIO, *args, **kwargs)
+        super().__init__(*args, spec=io.FileIO, **kwargs)
 
 
 class MockOpen(unittest.mock.Mock):
