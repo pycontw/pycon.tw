@@ -27,3 +27,4 @@ services:
       - DJANGO_SUPERUSER_PASSWORD=1234
       - DJANGO_SUPERUSER_EMAIL=admin@pycon.tw
     working_dir: /app/src
+    command: tail -f /dev/null
