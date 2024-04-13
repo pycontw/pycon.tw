@@ -7,7 +7,7 @@ django-debug-toolbar==3.2.3
 
 # The Python WSGI Utility Library
 # https://palletsprojects.com/p/werkzeug/
-Werkzeug==0.16.1
+Werkzeug==2.3.8
 
 # Your Tool For Style Guide Enforcement.
 # https://flake8.readthedocs.io/en/latest/
