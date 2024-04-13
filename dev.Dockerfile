@@ -15,7 +15,13 @@ FROM python:3.10.14-slim-bullseye as python_stage
 
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PIP_DEFAULT_TIMEOUT=100 \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_NO_INTERACTION=1
 
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
@@ -30,14 +36,17 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev
 
-# Only copy and install requirements to improve caching between builds
+# Install Poetry
+RUN pip install --no-cache-dir pip==23.3.2 && \
+    pip install --no-cache-dir poetry==1.8.2
+
 # Install Python dependencies
-COPY ./requirements ./requirements
-RUN pip3 install -r ./requirements/dev.txt
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --no-root && \
+    yes | poetry cache clear --all pypi
+
+# Add poetry bin directory to PATH
+ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
 COPY --from=node_stage /node_modules ./node_modules
 COPY --from=node_stage /usr/local/bin/node /usr/local/bin/node
-
-# for entry point
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh

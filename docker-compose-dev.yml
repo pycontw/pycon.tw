@@ -26,5 +26,5 @@ services:
       - DJANGO_SUPERUSER_USERNAME=admin
       - DJANGO_SUPERUSER_PASSWORD=1234
       - DJANGO_SUPERUSER_EMAIL=admin@pycon.tw
-    entrypoint: /docker-entrypoint.sh
-    command: python /app/src/manage.py runserver 0.0.0.0:8000
+    working_dir: /app/src
+    command: tail -f /dev/null

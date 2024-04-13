@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "pycontw-backend"
+version = "0.1.0"
+description = "The API backend and proposal system of PyCon TW website."
+authors = ["PyCon TW Web Team <dev@python.tw>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "~3.10.0"
+
+Django = "3.1.7"
+dj-registry = "0.2.2"
+django-cors-headers = "3.6.0"
+django-compressor = "2.4"
+django-compressor-toolkit = "0.6.0"
+django-crispy-forms = "1.8.1"
+django-environ = "0.11.2"
+django-extensions = "2.2.6"
+django-import-export = "2.0.1"
+django-modeltranslation = "0.16.2"
+django-storages = "1.11.1"
+djangorestframework = "3.12.2"
+google-cloud-storage = "1.36.1"
+ipython = "7.16.3"
+lxml = "4.6.3"
+psycopg2 = "2.8.5"
+pytz = "2019.3"
+requests = "2.31.0"
+sorl-thumbnail = "12.6.2"
+sortedcontainers = "2.1.0"
+tabulate = "0.9.0"
+uwsgi = "2.0.24"
+Pillow = "7.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+cssselect = "1.1.0"
+django-debug-toolbar = "3.2.3"
+flake8 = "3.7.9"
+pytest = "6.2.5"
+pytest-cov = "2.8.1"
+pytest-django = "3.8.0"
+pytest-mock = "2.0.0"
+pytest-xdist = "1.31.0"
+Werkzeug = "0.16.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

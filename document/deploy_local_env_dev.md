@@ -19,21 +19,15 @@ Create and start the database for development:
 
     docker-compose -f docker-compose-db.yml up
 
-#### Python - Built-in `venv`
+#### Python - Poetry
 
 Create your virtual environment:
 
-    python3 -m venv venv
+    poetry env use 3.10 
 
 And enable it:
 
-    . venv/bin/activate
-
-#### Python - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.org)
-
-You need to specify your python path when creating the virtual environment:
-
-    mkvirtualenv --python=$(which python3) pycontw2016
+    poetry shell 
 
 #### Node.js - [nvm](https://github.com/creationix/nvm)
 
@@ -45,7 +39,7 @@ Switch to version specified in `.nvmrc`:
 
 Use pip to install Python depedencies:
 
-    pip install -r requirements.txt
+    poetry install
 
 Use Yarn to install Node dependencies:
 

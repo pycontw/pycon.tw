@@ -1,9 +1,0 @@
--r base.txt
-# Psycopg is the most popular PostgreSQL database adapter for the Python
-# programming language.
-# https://www.psycopg.org/
-psycopg2==2.8.4
-
-# uWSGI aims at developing a full stack for building hosting services
-# https://uwsgi-docs.readthedocs.io/
-uWSGI==2.0.24
