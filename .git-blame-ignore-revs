@@ -1,0 +1,11 @@
+#################
+# Linting
+#################
+# isort
+0dcb6dd5973796cf12be34fdfd9fa761a6ba22d9
+# pep-naming
+ef09dbe9a03ebf4f649fd8830224a6c93ab422e7
+# bugbear
+e1dad3a0ca41d3f312f5be423711f577fd804f2f
+# pyupgrade
+399a7d64ddc2c2c857670c69890c24de8ba98610
