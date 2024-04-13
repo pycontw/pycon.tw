@@ -11,7 +11,7 @@ RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile
 
 # [Python Stage for Django web server]
-FROM python:3.6-slim-buster as python_stage
+FROM python:3.10.14-slim-bullseye as python_stage
 
 WORKDIR /app
 
@@ -25,7 +25,10 @@ RUN apt-get install -y \
     gcc \
     zlib1g-dev \
     libjpeg62-turbo-dev \
-    gettext
+    mime-support \
+    gettext \
+    libxml2-dev \
+    libxslt-dev
 
 # Only copy and install requirements to improve caching between builds
 # Install Python dependencies

@@ -6,10 +6,6 @@ Django==3.1.7
 # https://github.com/yychen/dj-registry
 dj-registry==0.2
 
-# Reusable mixins for Django
-# https://django-braces.readthedocs.io/en/latest/index.html
-django-braces==1.14.0
-
 # Compresses linked and inline JavaScript or CSS into a single cached file.
 # https://django-compressor.readthedocs.io/en/latest/
 django-compressor==2.4
@@ -29,7 +25,7 @@ django-crispy-forms==1.8.1
 # Django-environ allows you to utilize 12factor inspired environment variables
 # to configure your Django application.
 # https://django-environ.readthedocs.io/en/latest/
-django-environ==0.4.5
+django-environ==0.11.2
 
 # Django application and library for importing and exporting data with
 # included admin integration.
@@ -43,18 +39,6 @@ django-extensions==2.2.6
 # Translates Django models using a registration approach.
 # https://github.com/deschler/django-modeltranslation
 django-modeltranslation==0.16.2
-
-# Native Django task queue, scheduler and worker application using Python
-# multiprocessing.
-# https://django-q.readthedocs.io/
-django-q==1.1.0
-
-# A pickled object field for Django. (Dependency of django-q)
-# https://github.com/gintas/django-picklefield
-django-picklefield==2.1.1
-
-# Certifi, a carefully curated collection of Root Certificates for SSL
-certifi>=2019.11.28
 
 # Faker is a Python package that generates fake data for you.
 # https://faker.readthedocs.io/en/master/
@@ -92,13 +76,15 @@ sortedcontainers==2.1.0
 
 # Tabulate, an utility for pretty-print tabular data
 # https://bitbucket.org/astanin/python-tabulate
-tabulate==0.8.6
+tabulate==0.9.0
 
-urllib3==1.26.5
+# HTTP library
+# https://github.com/psf/requests
+requests==2.31.0
 
 # For upload to Google cloud storage
 google-cloud-storage==1.36.1
-django-storages==1.11.1;
+django-storages==1.11.1
 
 # Django REST framework: a powerful and flexible toolkit for building Web APIs.
 # https://www.django-rest-framework.org/

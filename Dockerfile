@@ -13,7 +13,7 @@ RUN yarn install --dev --frozen-lockfile  \
 
 
 # [Python Stage for Django web server]
-FROM python:3.6-slim-buster as python_stage
+FROM python:3.10.14-slim-bullseye as python_stage
 
 ENV PYTHONUNBUFFERED 1
 ENV BASE_DIR /usr/local
@@ -32,7 +32,15 @@ ENV PATH /home/docker/.local/bin:$PATH
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get install gettext libpq-dev gcc mime-support -y
+RUN apt-get install -y \
+    libpq-dev \
+    gcc \
+    zlib1g-dev \
+    libjpeg62-turbo-dev \
+    mime-support \
+    gettext \
+    libxml2-dev \
+    libxslt-dev
 
 # APP directory setup
 RUN adduser --system --disabled-login docker \

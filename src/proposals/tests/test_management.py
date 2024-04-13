@@ -177,15 +177,13 @@ def test_slack_connect():
     from proposals.management.commands.slack import Slack
     webhook_url = settings.SLACK_WEBHOOK_URL
     slack = Slack(url=webhook_url)
-    slack.pool.urlopen = unittest.mock.MagicMock(
+    slack.session.post = unittest.mock.MagicMock(
         return_value=FakeHTTPResponse(200, b'ok')
     )
     slack.notify(text='Test')
-    slack.pool.urlopen.assert_called_once_with(
-        "POST",
+    slack.session.post.assert_called_once_with(
         webhook_url,
-        headers={'Content-Type': "application/json"},
-        body=json.dumps({"text": "Test"})
+        data=json.dumps({"text": "Test"})
     )
 
 

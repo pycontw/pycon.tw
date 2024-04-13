@@ -96,6 +96,3 @@ LOGGING = {
 }
 
 logging.config.dictConfig(LOGGING)
-
-
-DJANGO_Q_DEBUG = True
