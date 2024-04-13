@@ -43,7 +43,7 @@ pytest-cov = "2.8.1"
 pytest-django = "3.8.0"
 pytest-mock = "2.0.0"
 pytest-xdist = "1.31.0"
-Werkzeug = "0.16.1"
+Werkzeug = "2.3.8"
 
 
 [build-system]
