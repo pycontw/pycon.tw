@@ -1,7 +1,7 @@
 import pytest
 
 from events import renderers
-from events.models import Location, CustomEvent
+from events.models import CustomEvent, Location
 
 
 @pytest.fixture
@@ -9,7 +9,7 @@ def simple_component_renderer(mocker):
     mocker.patch.multiple(
         'events.renderers',
         render_event=str,
-        render_block_location=lambda v: '{} '.format(v),
+        render_block_location=lambda v: f'{v} ',
     )
 
 
@@ -108,9 +108,7 @@ def test_render_attached_period(utils, events, event_key, begin, end):
     rendered = renderers.render_attached_period(e.begin_time, e.end_time)
     assert utils.is_safe(rendered)
     assert rendered == (
-        '<div class="attached time-table__time">{} &ndash; {}</div>'.format(
-            begin, end,
-        )
+        f'<div class="attached time-table__time">{begin} &ndash; {end}</div>'
     )
 
 

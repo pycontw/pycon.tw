@@ -2,12 +2,11 @@ import itertools
 import os
 
 import pytest
-
 from django.conf import settings
 from django.utils.translation import activate
+from pytest_django.asserts import assertRedirects
 
 from events.models import Schedule
-from pytest_django.asserts import assertRedirects
 
 
 @pytest.mark.django_db
@@ -90,7 +89,7 @@ def language(request, settings):
 
 @pytest.fixture
 def content_page_full_path(language, content_page_path):
-    return '/{}{}'.format(language, content_page_path)
+    return f'/{language}{content_page_path}'
 
 
 def test_content_pages(client, parser, content_page_full_path):
@@ -163,7 +162,7 @@ def test_content_pages_noopener(client, parser, content_page_full_path):
 
     def get_error_message():
         errors = [
-            '    {0!r}'.format(*p)
+            f'    {p[0]!r}'
             for p in link_noopener_pairs
             if p[1] is not True
         ]

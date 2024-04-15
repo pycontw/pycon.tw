@@ -4,13 +4,12 @@ import operator
 from django.conf import settings
 from django.db import models
 from django.db.models import Q
-from django.utils.translation import ugettext, gettext_lazy as _
-
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext
 from registry.helper import reg
 
 from core.models import BigForeignKey, DefaultConferenceManager
 from proposals.models import TalkProposal
-
 
 REVIEW_REQUIRED_PERMISSIONS = ['reviews.add_review']
 

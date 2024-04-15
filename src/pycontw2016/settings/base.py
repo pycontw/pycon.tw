@@ -13,7 +13,6 @@ import datetime
 import os
 
 import environ
-
 from django.conf import locale
 from django.contrib.messages import constants as messages
 from django.urls import reverse_lazy

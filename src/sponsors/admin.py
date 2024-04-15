@@ -1,8 +1,7 @@
 from django.contrib import admin
-
 from modeltranslation.admin import TranslationAdmin
 
-from .models import Sponsor, OpenRole
+from .models import OpenRole, Sponsor
 
 
 @admin.register(Sponsor)

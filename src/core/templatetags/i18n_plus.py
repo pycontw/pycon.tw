@@ -1,6 +1,5 @@
-from django.urls import get_script_prefix
 from django.template import Library
-
+from django.urls import get_script_prefix
 
 register = Library()
 

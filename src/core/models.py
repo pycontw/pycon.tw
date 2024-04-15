@@ -7,14 +7,14 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from .choices import (
+    ATTEND_IN_PERSON,
     CATEGORY_CHOICES,
     LANGUAGE_CHOICES,
+    LIVE_STREAM_POLICY_CHOICES,
+    LIVING_IN_TAIWAN_CHOICES,
     PYTHON_LVL_CHOICES,
     RECORDING_POLICY_CHOICES,
-    LIVING_IN_TAIWAN_CHOICES,
-    LIVE_STREAM_POLICY_CHOICES,
     REFERRING_POLICY_CHOICES,
-    ATTEND_IN_PERSON,
 )
 from .validators import EAWMaxLengthValidator
 
@@ -224,7 +224,7 @@ class Token(models.Model):
     def save(self, *args, **kwargs):
         if not self.key:
             self.key = self.generate_key()
-        return super(Token, self).save(*args, **kwargs)
+        return super().save(*args, **kwargs)
 
     @classmethod
     def generate_key(cls):

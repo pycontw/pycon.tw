@@ -1,11 +1,9 @@
 import pytest
-
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.core import mail
-from django.urls import reverse
 from django.test import override_settings
-
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -72,7 +70,7 @@ def test_verify(bare_user, bare_user_client):
     message, and redirected to dashboard.
     """
     key = bare_user.get_verification_key()
-    link = '/en-us/accounts/verify/{key}/'.format(key=key)
+    link = f'/en-us/accounts/verify/{key}/'
 
     response = bare_user_client.get(link, follow=True)
     assert response.redirect_chain[0] == ('/en-us/dashboard/', 302)

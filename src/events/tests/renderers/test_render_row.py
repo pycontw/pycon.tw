@@ -1,5 +1,4 @@
 import pytest
-
 from django.utils.timezone import make_naive
 
 from events import renderers

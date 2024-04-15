@@ -1,9 +1,8 @@
-from django.contrib import admin
 from django.conf import settings
+from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
-
-from registry.models import Entry
 from registry.admin import EntryAdmin
+from registry.models import Entry
 
 
 class CurrentConferenceFilter(admin.filters.SimpleListFilter):

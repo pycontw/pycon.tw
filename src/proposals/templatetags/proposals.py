@@ -2,7 +2,6 @@ from django.template import Library
 
 from proposals.utils import SEP_DEFAULT, SEP_LAST, format_names
 
-
 register = Library()
 
 

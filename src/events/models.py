@@ -4,26 +4,26 @@ import json
 import urllib.parse
 
 import pytz
-
+from django.conf import settings
+from django.contrib.staticfiles import finders
+from django.core.files.storage import default_storage
+from django.db import models
+from django.urls import reverse, reverse_lazy
+from django.utils.text import slugify
+from django.utils.timezone import make_naive
+from django.utils.translation import get_language, gettext
+from django.utils.translation import gettext_lazy as _
 from storages.backends.gcloud import GoogleCloudStorage
 
-from django.conf import settings
-from django.core.files.storage import default_storage
-from django.contrib.staticfiles import finders
-from django.urls import reverse, reverse_lazy
-from django.db import models
-from django.utils.timezone import make_naive
-from django.utils.translation import get_language, gettext, gettext_lazy as _
-from django.utils.text import slugify
-
 from core.models import (
-    BigForeignKey, EventInfo,
-    ConferenceRelated, DefaultConferenceManagerMixin,
+    BigForeignKey,
+    ConferenceRelated,
+    DefaultConferenceManagerMixin,
+    EventInfo,
 )
 from core.utils import format_html_lazy
-from proposals.models import TalkProposal, TutorialProposal, PrimarySpeaker
+from proposals.models import PrimarySpeaker, TalkProposal, TutorialProposal
 from sponsors.models import Sponsor
-
 
 MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
 
@@ -44,10 +44,7 @@ def select_storage():
 
 
 def photo_upload_to(instance, filename):
-    return 'speaker/{speakername}/{filename}'.format(
-        speakername=slugify(instance.speaker_name, allow_unicode=True),
-        filename=filename,
-    )
+    return f'speaker/{slugify(instance.speaker_name, allow_unicode=True)}/{filename}'
 
 
 class TimeManager(models.Manager):
@@ -302,7 +299,7 @@ class KeynoteEvent(BaseEvent):
     def get_absolute_url(self):
         url = reverse('page', kwargs={'path': 'conference/keynotes'})
         split = urllib.parse.urlsplit(url)
-        frag = 'keynote-speaker-{slug}'.format(slug=self.slug)
+        frag = f'keynote-speaker-{self.slug}'
         return urllib.parse.urlunsplit(split._replace(fragment=frag))
 
     def get_static_data(self):

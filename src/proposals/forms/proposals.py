@@ -1,16 +1,16 @@
+from crispy_forms.helper import FormHelper
 from django import forms
 from django.conf import settings
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
-
-from crispy_forms.helper import FormHelper
 
 from core.utils import form_has_instance
 from proposals.models import TalkProposal, TutorialProposal
 
 from .mixins import (
     RequestUserSpeakerValidationMixin,
-    TalkProposalMixin, TutorialProposalMixin,
+    TalkProposalMixin,
+    TutorialProposalMixin,
 )
 
 

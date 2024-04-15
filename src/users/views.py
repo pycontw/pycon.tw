@@ -1,28 +1,30 @@
+import lxml.html
 from django.conf import settings
-from django.contrib import messages
-from django.contrib import auth
+from django.contrib import auth, messages
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
 from django.http import Http404
 from django.shortcuts import redirect, render
-from django.utils.translation import gettext, get_language
+from django.template.loader import render_to_string
+from django.urls import reverse
+from django.utils.translation import get_language, gettext
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
-from django.template.loader import render_to_string
+from lxml import etree
+
+from reviews.context import proposals_state, reviews_state
 
 from .decorators import login_forbidden
 from .forms import (
-    AuthenticationForm, PublicUserCreationForm, UserProfileUpdateForm,
-    PasswordResetForm, SetPasswordForm, CocAgreementForm,
+    AuthenticationForm,
+    CocAgreementForm,
+    PasswordResetForm,
+    PublicUserCreationForm,
+    SetPasswordForm,
+    UserProfileUpdateForm,
 )
 from .models import CocRecord
-from reviews.context import proposals_state, reviews_state
-
-from lxml import etree
-import lxml.html
-
 
 User = auth.get_user_model()
 
@@ -52,8 +54,8 @@ def user_signup(request):
 def user_verify(request, verification_key):
     try:
         user = User.objects.get_with_verification_key(verification_key)
-    except User.DoesNotExist:
-        raise Http404
+    except User.DoesNotExist as err:
+        raise Http404 from err
     user.verified = True
     user.save()
     messages.success(request, gettext('Email verification successful.'))

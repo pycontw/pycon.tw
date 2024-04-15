@@ -1,0 +1,10 @@
+# When making commits that are strictly formatting/style changes, add the
+# commit hash here, so git blame can ignore the change.
+#
+# For more details, see:
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-blameignoreRevsFile
+
+0dcb6dd5973796cf12be34fdfd9fa761a6ba22d9  # isort
+ef09dbe9a03ebf4f649fd8830224a6c93ab422e7  # pep-naming
+e1dad3a0ca41d3f312f5be423711f577fd804f2f  # bugbear
+399a7d64ddc2c2c857670c69890c24de8ba98610  # pyupgrade

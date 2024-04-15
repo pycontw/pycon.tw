@@ -38,13 +38,50 @@ Pillow = "10.3.0"
 [tool.poetry.group.dev.dependencies]
 cssselect = "1.2.0"
 django-debug-toolbar = "4.3.0"
-flake8 = "7.0.0"
 pytest = "8.1.1"
 pytest-cov = "5.0.0"
 pytest-django = "4.8.0"
 pytest-mock = "3.14.0"
 pytest-xdist = "3.5.0"
+ruff = "0.3.5"
 Werkzeug = "3.0.2"
+
+
+[tool.ruff]
+exclude = [
+    ".git",
+    "__pycache__",
+    "migrations"
+]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = [
+    "E251",
+]
+select = [
+    "E",  # pycodestyle error
+    "W",  # pycodestyle warning
+    "F",  # Pyflakes
+    "I001", # isort
+    "N", # pep8-naming
+    "B",  # bugbear
+    "UP",  # pyupgrade
+]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "attendee",
+    "ccip",
+    "core",
+    "events",
+    "postgres",
+    "proposals",
+    "pycontw2016",
+    "reviews",
+    "sponsors",
+    "users"
+]
 
 
 [build-system]

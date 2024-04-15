@@ -1,26 +1,28 @@
-import datetime
 import base64
+import datetime
 import hashlib
 import os
 
 from django.conf import settings
 from django.contrib.auth.models import (
-    AbstractBaseUser, BaseUserManager, PermissionsMixin,
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
 )
 from django.core import signing
 from django.core.mail import send_mail
-from django.urls import reverse
 from django.core.validators import RegexValidator
 from django.db import models
 from django.template.loader import render_to_string
 from django.templatetags.static import static
+from django.urls import reverse
 from django.utils import timezone
-from django.utils.translation import gettext, gettext_lazy as _
-
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 from sorl.thumbnail import get_thumbnail
 
+from core.models import BigForeignKey, EAWTextField
 from core.utils import format_html_lazy
-from core.models import EAWTextField, BigForeignKey
 
 
 class UserQueryset(models.QuerySet):
@@ -95,17 +97,13 @@ class UserManager(BaseUserManager.from_queryset(UserQueryset)):
                 verification_key,
                 salt=settings.SECRET_KEY,
             )
-        except signing.BadSignature:
-            raise self.model.DoesNotExist
+        except signing.BadSignature as err:
+            raise self.model.DoesNotExist from err
         return self.get(**{self.model.USERNAME_FIELD: username})
 
 
 def photo_upload_to(instance, filename):
-    return 'avatars/{pk}/{date}-{filename}'.format(
-        pk=instance.pk,
-        date=str(datetime.date.today()),
-        filename=filename,
-    )
+    return f'avatars/{instance.pk}/{str(datetime.date.today())}-{filename}'
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -259,13 +257,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     def twitter_profile_url(self):
         if not self.twitter_id:
             return ""
-        return 'https://twitter.com/{}'.format(self.twitter_id)
+        return f'https://twitter.com/{self.twitter_id}'
 
     @property
     def github_profile_url(self):
         if not self.github_id:
             return ""
-        return 'https://github.com/{}'.format(self.github_id)
+        return f'https://github.com/{self.github_id}'
 
     def get_verification_key(self):
         key = signing.dumps(

@@ -1,10 +1,10 @@
 import functools
 
 from django.http import Http404
-from django.views.defaults import page_not_found, server_error
-from django.views.generic import TemplateView
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.views.defaults import page_not_found, server_error
+from django.views.generic import TemplateView
 
 from .data import EXTRA_DATA
 from .utils import (
@@ -81,6 +81,6 @@ def error_page(request, code):
             '404': functools.partial(page_not_found, exception=Http404()),
             '500': server_error,
         }[code]
-    except KeyError:
-        raise Http404
+    except KeyError as err:
+        raise Http404 from err
     return view_func(request)

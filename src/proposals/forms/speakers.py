@@ -7,7 +7,6 @@ from proposals.models import AdditionalSpeaker
 
 from .mixins import RequestUserSpeakerValidationMixin
 
-
 User = get_user_model()
 
 
@@ -45,8 +44,8 @@ class AdditionalSpeakerCreateForm(
         model = AdditionalSpeaker
         fields = []
 
-    def __init__(self, proposal=None, request=None, *args, **kwargs):
-        super().__init__(request=request, *args, **kwargs)
+    def __init__(self, *args, proposal=None, request=None, **kwargs):
+        super().__init__(*args, request=request, **kwargs)
         if form_has_instance(self):
             raise ValueError(
                 'Additional speaker creation form cannot be used '
@@ -70,8 +69,8 @@ class AdditionalSpeakerCreateForm(
         email = self.cleaned_data['email']
         try:
             user = User.objects.get_valid_speakers().get(email=email)
-        except User.DoesNotExist:
-            raise forms.ValidationError(self.get_error_message('invalid_user'))
+        except User.DoesNotExist as err:
+            raise forms.ValidationError(self.get_error_message('invalid_user')) from err
 
         # The rest of the validation is ordered this way to minimize queries
         # on valid data.

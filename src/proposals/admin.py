@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
-
 from import_export.admin import ExportMixin
 
 from .models import AdditionalSpeaker, TalkProposal, TutorialProposal

@@ -3,7 +3,6 @@ from django.urls import path
 
 from . import views
 
-
 urlpatterns = [
 
     url(r'^login/$', views.login, name='login'),

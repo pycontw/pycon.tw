@@ -1,11 +1,11 @@
 from django.conf import settings
 from registry.helper import reg
-from rest_framework import views, status
-from rest_framework.response import Response
+from rest_framework import status, views
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
-from core.authentication import TokenAuthentication
 from attendee.models import Attendee
+from core.authentication import TokenAuthentication
 
 
 class AttendeeAPIView(views.APIView):

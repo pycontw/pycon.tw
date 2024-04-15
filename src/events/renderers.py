@@ -1,19 +1,22 @@
 import itertools
 
 import sortedcontainers
-
 from django.conf import settings
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
 from django.utils.timezone import make_naive
-from django.utils.translation import gettext, gettext_lazy as _
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 
 from core.utils import html_join
-from proposals.utils import format_names
-
 from events.models import (
-    Location, CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent,
+    CustomEvent,
+    KeynoteEvent,
+    Location,
+    ProposedTalkEvent,
+    SponsoredEvent,
 )
+from proposals.utils import format_names
 
 
 def render_customevent(e):
@@ -76,13 +79,13 @@ def render_sponsoredevent(e):
 
 
 def render_event(e):
-    func_name = 'render_{cls}'.format(cls=type(e).__name__.lower())
+    func_name = f'render_{type(e).__name__.lower()}'
     try:
         func = globals()[func_name]
-    except KeyError:
+    except KeyError as err:
         raise ValueError(
-            'No suitable renderer for {!r} of {!r}'.format(e, type(e)),
-        )
+            f'No suitable renderer for {e!r} of {type(e)!r}',
+        ) from err
     return func(e)
 
 
@@ -344,9 +347,9 @@ def collect_event_groups(events):
 EVENT_CLASSES = (CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent)
 
 
-def _filter_events(Cls, day):
+def _filter_events(kls, day):
     return (
-        Cls.objects
+        kls.objects
         .filter(begin_time__value__date=day, end_time__value__date=day)
         .select_related('begin_time', 'end_time')
     )

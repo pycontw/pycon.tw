@@ -2,7 +2,6 @@ from unicodedata import east_asian_width as eaw
 
 from django.core.validators import MaxLengthValidator
 
-
 # We duplicate the mapping used in the JavaScript library for consistency.
 # N(eutral) class is counted as 1, and A(mbiguous) as 2.
 # http://d.hatena.ne.jp/takenspc/20111126#1322252878

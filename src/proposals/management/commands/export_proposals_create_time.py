@@ -1,9 +1,10 @@
 import json
-import pytz
 
-from django.utils import timezone
-from proposals.models import TalkProposal, TutorialProposal
+import pytz
 from django.core.management.base import BaseCommand
+from django.utils import timezone
+
+from proposals.models import TalkProposal, TutorialProposal
 
 PROPOSAL_TYPE_MAPPING = {
     'talk': TalkProposal, 'tutorial': TutorialProposal
@@ -18,13 +19,13 @@ class Command(BaseCommand):
 
     def export_proposals_create_time(self):
         joint_proposals = []
-        for ptype, Proposal in PROPOSAL_TYPE_MAPPING.items():
-            for p in Proposal.objects.filter(cancelled=False):
+        for ptype, proposal_class in PROPOSAL_TYPE_MAPPING.items():
+            for p in proposal_class.objects.filter(cancelled=False):
                 timezone.activate(pytz.timezone('Asia/Taipei'))
                 # ^you can edit 'Asia/Taipei to other area.'
                 time = timezone.localtime(p.created_at).strftime('%Y-%m-%d %H:%M:%S')
                 joint_proposals.append({
-                    'proposal_type(id)': ptype + '({})'.format(p.id),
+                    'proposal_type(id)': ptype + f'({p.id})',
                     'title': p.title,
                     'speaker_name': p.submitter.speaker_name,
                     'email': p.submitter.email,

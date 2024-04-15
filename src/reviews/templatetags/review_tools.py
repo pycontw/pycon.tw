@@ -7,7 +7,6 @@ from django.utils.safestring import mark_safe
 from core import difftools
 from core.utils import html_join
 
-
 register = Library()
 
 

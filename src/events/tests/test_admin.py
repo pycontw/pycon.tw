@@ -1,16 +1,22 @@
 import pytest
-
 from django.contrib.admin import site
 from django.contrib.admin.views.main import ChangeList
 from django.contrib.auth.models import AnonymousUser
 from django.utils.encoding import force_str
 
 from events.admin import (
-    CustomEventAdmin, KeynoteEventAdmin, ProposedTalkEventAdmin,
-    SponsoredEventAdmin, TimeAdmin,
+    CustomEventAdmin,
+    KeynoteEventAdmin,
+    ProposedTalkEventAdmin,
+    SponsoredEventAdmin,
+    TimeAdmin,
 )
 from events.models import (
-    CustomEvent, KeynoteEvent, ProposedTalkEvent, SponsoredEvent, Time,
+    CustomEvent,
+    KeynoteEvent,
+    ProposedTalkEvent,
+    SponsoredEvent,
+    Time,
 )
 
 

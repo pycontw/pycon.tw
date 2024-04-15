@@ -4,9 +4,9 @@ import logging
 
 from django.conf import settings
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse
 from django.db.models import Count, Prefetch
 from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 from django.utils import translation
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DetailView, ListView, TemplateView
@@ -17,12 +17,17 @@ from proposals.models import AdditionalSpeaker, TalkProposal, TutorialProposal
 
 from .forms import ScheduleCreationForm
 from .models import (
-    EVENT_ROOMS, Schedule, Time, Location,
-    CustomEvent, KeynoteEvent, SponsoredEvent,
-    ProposedTalkEvent, ProposedTutorialEvent,
+    EVENT_ROOMS,
+    CustomEvent,
+    KeynoteEvent,
+    Location,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
+    Schedule,
+    SponsoredEvent,
+    Time,
 )
 from .renderers import render_all
-
 
 logger = logging.getLogger(__name__)
 
@@ -181,11 +186,11 @@ class ScheduleCreateView(
         end_time_iter = iter(times)
         next(end_time_iter, None)
 
-        for begin, end in zip(times, end_time_iter):
+        for begin, __ in zip(times, end_time_iter):
             try:
                 day_info = day_info_dict[begin.value.date()]
             except KeyError:
-                logger.warn('Invalid time sot dropped: {}'.format(begin))
+                logger.warn(f'Invalid time sot dropped: {begin}')
                 continue
             for event in begin_time_event_dict[begin]:
                 location = event.location

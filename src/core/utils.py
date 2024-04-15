@@ -4,12 +4,10 @@ from django.conf import settings
 from django.http import Http404
 from django.template.loader import TemplateDoesNotExist
 from django.template.response import TemplateResponse
+from django.test import override_settings
 from django.utils.functional import lazy
 from django.utils.html import conditional_escape, format_html, mark_safe
-from django.test import override_settings
-
 from registry.helper import reg
-
 
 format_html_lazy = lazy(format_html, str)
 
@@ -31,10 +29,10 @@ class TemplateExistanceStatusResponse(TemplateResponse):
     def resolve_template(self, template):
         try:
             return super().resolve_template(template)
-        except (UnicodeEncodeError, TemplateDoesNotExist):
+        except (UnicodeEncodeError, TemplateDoesNotExist) as err:
             if settings.DEBUG:
                 raise
-            raise Http404
+            raise Http404 from err
 
 
 def collect_language_codes(user_code):
@@ -83,7 +81,7 @@ class SequenceQuerySet:
         self._seq = seq
 
     def __repr__(self):
-        return '<SequenceQuerySet: {seq!r}>'.format(seq=self._seq)
+        return f'<SequenceQuerySet: {self._seq!r}>'
 
     def __len__(self):
         return len(self._seq)
@@ -124,11 +122,11 @@ class OrderedDefaultDict(collections.OrderedDict):
         return self[key]
 
 
-class set_registry(override_settings):
+class set_registry(override_settings):  # noqa: N801
     def enable(self):
         for key, value in self.options.items():
             reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}'] = value
 
     def disable(self):
-        for key, value in self.options.items():
+        for key in self.options.keys():
             del reg[f'{settings.CONFERENCE_DEFAULT_SLUG}.{key}']

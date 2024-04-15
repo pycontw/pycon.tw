@@ -6,17 +6,15 @@ import unittest.mock
 
 import pytest
 import pytz
-
-from django.utils.timezone import now
 from django.conf import settings
 from django.core import mail
 from django.core.exceptions import ImproperlyConfigured
 from django.core.management import call_command
 from django.core.management.base import CommandError
 from django.test import override_settings
+from django.utils.timezone import now
 
 from proposals.models import TalkProposal
-
 
 taiwan_tz = pytz.timezone('Asia/Taipei')
 FakeHTTPResponse = collections.namedtuple('FakeHTTPResponse', 'status data')
@@ -257,7 +255,7 @@ def test_default_hour_option(capsys):
     call_command('recent_proposals')
     out, err = capsys.readouterr()
     assert re.search(
-        r'to {:%Y-%m-%d %H}:00$'.format(now_dt),
+        rf'to {now_dt:%Y-%m-%d %H}:00$',
         out, re.MULTILINE
     )
 

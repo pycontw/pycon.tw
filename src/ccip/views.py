@@ -1,18 +1,20 @@
 import operator
-from datetime import timezone, timedelta
+from datetime import timedelta, timezone
 
 from django.http import JsonResponse
 from django.templatetags.static import static
 from django.utils import translation
 from django.utils.encoding import force_str
 from django.utils.translation import pgettext_lazy
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView, View
 
 from core.utils import TemplateExistanceStatusResponse
 from core.views import IndexView
 from events.models import (
-    CustomEvent, KeynoteEvent,
-    ProposedTalkEvent, ProposedTutorialEvent,
+    CustomEvent,
+    KeynoteEvent,
+    ProposedTalkEvent,
+    ProposedTutorialEvent,
     SponsoredEvent,
 )
 from proposals.models import PrimarySpeaker
@@ -43,8 +45,8 @@ def _iter_translations(value):
 
 def _transform_translatable(key, value):
     data = {'id': key}
-    for code, value in _iter_translations(value):
-        data[code] = {'name': value}
+    for code, val in _iter_translations(value):
+        data[code] = {'name': val}
     return data
 
 
@@ -75,8 +77,7 @@ class _FakeEventInfo:
 
     @property
     def speakers(self):
-        for s in self._speakers:
-            yield s
+        yield from self._speakers
 
 
 def _get_empty_event_info(event):
@@ -167,15 +168,15 @@ def _transform_session(request, event, type_key, info_getter):
         for speaker in event_info.speakers
     ]
 
-    LOCAL_TIMEZONE = timezone(offset=timedelta(hours=8))
+    local_timezone = timezone(offset=timedelta(hours=8))
     # Explicitly show the local timezone used by OPass(CCIP)
     # to avoid iOS device showing UTC+0 time without changing it to local time
     # https://github.com/CCIP-App/CCIP-iOS/issues/54
     session = {
         'id': f'{type_key}-{event_info.pk}',
         'type': type_key,
-        'start': event.begin_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.begin_time else None,
-        'end': event.end_time.value.astimezone(LOCAL_TIMEZONE).isoformat() if event.end_time else None,
+        'start': event.begin_time.value.astimezone(local_timezone).isoformat() if event.begin_time else None,
+        'end': event.end_time.value.astimezone(local_timezone).isoformat() if event.end_time else None,
         'slide': event_info.slide_link,
         'speakers': [speaker['id'] for speaker in speakers],
         'tags': [tag['id'] for tag in tags],

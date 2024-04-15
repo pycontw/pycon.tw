@@ -2,7 +2,6 @@ import datetime
 import json
 
 import pytz
-
 from django.apps import apps
 from django.conf import settings
 from django.core.management.base import BaseCommand
@@ -10,7 +9,6 @@ from django.utils.dateparse import parse_time
 
 from events.models import Location, Time
 from events.renderers import EVENT_CLASSES
-
 
 cst = pytz.timezone('Asia/Taipei')
 
@@ -49,8 +47,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, filename, truncate=False, **options):
         if truncate:
-            for Cls in EVENT_CLASSES:
-                Cls.objects.all().delete()
+            for kls in EVENT_CLASSES:
+                kls.objects.all().delete()
         with open(filename) as f:
             data = json.load(f)
         for model_name, datasets in data.items():

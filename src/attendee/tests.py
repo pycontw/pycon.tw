@@ -1,6 +1,7 @@
 import pytest
 from django.conf import settings
 from registry.helper import reg
+
 from attendee.models import Attendee
 from core.models import Token
 

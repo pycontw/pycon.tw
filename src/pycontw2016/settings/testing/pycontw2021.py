@@ -1,9 +1,9 @@
 import os
 
 from django.utils.translation import gettext_lazy as _
-from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
-from .base import *     # noqa
 
+from .base import *  # noqa
+from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2021'
 
