@@ -53,7 +53,7 @@ jobs:
 
     - name: Run Flake8 on src
       run: |
-        poetry run flake8 src
+        poetry run flake8 --config src/.flake8 src 
 
     - name: Run DB migration for test
       run: |
