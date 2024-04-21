@@ -4,9 +4,9 @@
 	<tr>
 		{% if not verdict %}
 			<th width="1%">
-				<a {% if ordering == 'review__count' %}class="active asc" href="?order=-count&category={{ category }}"
-					 {% elif ordering == '-review__count' %}class="active desc" href="?order=count&category={{ category }}"
-					 {% else %}href="?order=count&category={{ category }}"{% endif %}>
+				<a {% if ordering == 'review__count' %}class="active asc" href="?order=-count&category={{ category|default:'' }}"
+					 {% elif ordering == '-review__count' %}class="active desc" href="?order=count&category={{ category|default:'' }}"
+					 {% else %}href="?order=count&category={{ category|default:'' }}"{% endif %}>
 					{% trans 'Reviewed' %}
 					<i class="fa fa-sort fa-lg"></i>
 					<i class="fa fa-sort-asc fa-lg"></i>
@@ -15,8 +15,8 @@
 			</th>
 		{% endif %}
 		<th class="proposal-title">
-			<a {% if ordering == 'title' %}class="active asc" href="?order=-title&category={{ category }}"
-				 {% elif ordering == '-title' %}class="active desc" href="?order=title&category={{ category }}"{% else %}href="?order=title&category={{ category }}"{% endif %}>
+			<a {% if ordering == 'title' %}class="active asc" href="?order=-title&category={{ category|default:'' }}"
+				 {% elif ordering == '-title' %}class="active desc" href="?order=title&category={{ category|default:'' }}"{% else %}href="?order=title&category={{ category|default:'' }}"{% endif %}>
 				{% trans 'Title' %}
 				<i class="fa fa-sort fa-lg"></i>
 				<i class="fa fa-sort-asc fa-lg"></i>
@@ -24,9 +24,9 @@
 			</a>
 		</th>
 		<th width="1%" class="hidden-md hidden-sm hidden-xs">
-			<a {% if ordering == 'language' %}class="active asc" href="?order=-lang&category={{ category }}"
-				 {% elif ordering == '-language' %}class="active desc" href="?order=lang&category={{ category }}"
-				 {% else %}href="?order=lang&category={{ category }}"{% endif %}>
+			<a {% if ordering == 'language' %}class="active asc" href="?order=-lang&category={{ category|default:'' }}"
+				 {% elif ordering == '-language' %}class="active desc" href="?order=lang&category={{ category|default:'' }}"
+				 {% else %}href="?order=lang&category={{ category|default:'' }}"{% endif %}>
 				{% trans 'Lang' %}
 				<i class="fa fa-sort fa-lg"></i>
 				<i class="fa fa-sort-asc fa-lg"></i>
