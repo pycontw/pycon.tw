@@ -2,11 +2,7 @@ import itertools
 import os
 
 import pytest
-from django.conf import settings
 from django.utils.translation import activate
-from pytest_django.asserts import assertRedirects
-
-from events.models import Schedule
 
 
 @pytest.mark.django_db
@@ -97,14 +93,8 @@ def test_content_pages(client, parser, content_page_full_path):
     assert response.status_code == 200, content_page_full_path
 
 
-@pytest.fixture
-def schedule(db):
-    """Generate a schedule to prevent the schedule page from returning 404.
-    """
-    return Schedule.objects.create(html='<div></div>')
-
-
-def test_content_pages_links(client, parser, schedule, content_page_full_path):
+@pytest.mark.django_db
+def test_content_pages_links(client, parser, content_page_full_path):
     """Test to make sure all in-site links in a content page work.
     """
     if '/surveys/conference/' in content_page_full_path:
@@ -116,14 +106,6 @@ def test_content_pages_links(client, parser, schedule, content_page_full_path):
     link_status_codes = []
     for tag in link_tags:
         link = tag.get('href')
-        if "/events/schedule/" in link \
-                and settings.SCHEDULE_REDIRECT_URL:
-            assertRedirects(
-                client.get(link),
-                settings.SCHEDULE_REDIRECT_URL,
-                fetch_redirect_response=False
-            )
-            continue
         try:
             status = client.get(link, follow=True).status_code
         except Exception:   # Catch internal server error for better reporting.

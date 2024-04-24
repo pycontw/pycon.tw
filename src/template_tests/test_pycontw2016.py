@@ -15,17 +15,6 @@ pytestmark = pytest.mark.skipif(
 User = get_user_model()
 
 
-def test_schedule(client, parser, schedule):
-    r = client.get('/en-us/events/schedule/')
-    body = parser.parse(r)
-
-    # Make sure every cross-page intra-site link is good.
-    link_tags = body.cssselect('a[href^="/"]')
-    assert len(link_tags) != 0
-    for tag in link_tags:
-        assert client.get(tag.get('href'), follow=True).status_code == 200
-
-
 @pytest.mark.django_db
 @override_settings(     # Make sure we don't really send an email.
     SECRET_KEY='Footage order-flow long-chain hydrocarbons hacker',

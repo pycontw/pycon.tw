@@ -13,7 +13,6 @@
 {% url 'page' path='speaking/tutorial' as speaking_tutorial_url %}
 {% url 'page' path='speaking/recording' as speaking_recording_url %}
 
-{% url 'events_schedule' as events_schedule_url %}
 {% url 'page' path='conference/keynotes' as events_keynote_url %}
 {% url 'events_talk_list' as events_talk_list_url %}
 {% url 'events_tutorial_list' as events_tutorial_list_url %}
@@ -78,7 +77,6 @@
 		</label>
 		<div class="dropdown">
 			<ul class="submenu">
-				<li><a href="{{ events_schedule_url }}">{% trans 'Schedule' %}</a></li>
 				<li><a href="{{ events_keynote_url }}">{% trans 'Keynotes' %}</a></li>
 				<li><a href="{{ events_talk_list_url }}">{% trans 'Talks' %}</a></li>
 				<li><a href="{{ events_tutorial_list_url }}">{% trans 'Tutorials' %}</a></li>

@@ -23,7 +23,6 @@ from .models import (
     KeynoteEvent,
     ProposedTalkEvent,
     ProposedTutorialEvent,
-    Schedule,
     SponsoredEvent,
     Time,
 )
@@ -208,10 +207,3 @@ class SponsoredEventAdmin(admin.ModelAdmin):
     search_fields = ['title', 'abstract']
     prepopulated_fields = {'slug': ['title']}
     raw_id_fields = ['host']
-
-
-@admin.register(Schedule)
-class ScheduleAdmin(admin.ModelAdmin):
-    fields = ['html', 'created_at']
-    readonly_fields = ['created_at']
-    list_display = ['created_at']

@@ -117,22 +117,6 @@ class Location:
     R4 = '7-r4'
     OTHER = '8-oth'
 
-    @classmethod
-    def get_md_width(cls, value):
-        return {
-            '2-all': 4,
-            '3-r012': 3,
-            '4-r0': 1,
-            '5-r1': 1,
-            '6-r2': 1,
-            '1-r3': 1,
-            '7-r4': 1,
-            '8-oth': 1,
-        }[value]
-
-
-EVENT_ROOMS = {Location.R0, Location.R1, Location.R2, Location.R3, Location.R4}
-
 
 class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
@@ -455,23 +439,3 @@ class ProposedTutorialEvent(BaseEvent):
         return reverse('events_tutorial_detail', kwargs={
             'pk': self.proposal.pk,
         })
-
-
-class Schedule(ConferenceRelated):
-
-    html = models.TextField(
-        verbose_name=_('HTML'),
-    )
-    created_at = models.DateTimeField(
-        verbose_name=_('created at'),
-        auto_now_add=True,
-    )
-
-    class Meta:
-        verbose_name = _('Schedule')
-        verbose_name_plural = _('Schedules')
-        ordering = ['-created_at']
-        get_latest_by = 'created_at'
-
-    def __str__(self):
-        return gettext('Schedule created at {}').format(self.created_at)
