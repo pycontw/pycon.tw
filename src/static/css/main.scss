@@ -29,7 +29,6 @@
 @import "pages/keynotes";
 @import "pages/reviews";
 @import "pages/sprints";
-@import "pages/sponsors";
 @import "pages/talks";
 @import "pages/venue";
 
@@ -263,63 +262,7 @@ body {
 }
 
 
-.section.sponsorship {
-    margin-top: 6em;
-    margin-bottom: 2em;
-}
-
-.sponsorship {
-    background-color: $theme-color;
-    background-repeat: no-repeat;
-    background-image: url(static('images/bg_section-sponsorship.svg'));
-    background-size: contain;
-    background-position: center;
-    background-origin: content-box;
-    padding-left: 4em;
-    padding-right: 4em;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    a {
-        color: white;
-        text-decoration: underline;
-    }
-    > .container {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: $screen-md) {
-    .sponsorship {
-        background-image: none;
-    }
-}
-
-.sponsorship__call {
-    @include make-sm-column(10);
-    @include make-sm-column-offset(1);
-    @include make-md-column(8);
-    @include make-md-column-offset(2);
-    @include make-lg-column(6);
-    @include make-lg-column-offset(3);
-    padding: .3em 1em;
-    margin-top: .5em;
-    margin-bottom: 1.5em;
-    border-radius: 400px; // large number for capsule shape
-    font-size: 36px;
-    color: $theme-color;
-    background-color: white;
-}
-
-
 @media (max-width: $screen-xs) {
-    .sponsorship__call{
-        font-size: 28px;
-    }
-    .sponsorship {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
     .intro__pycontw {
         margin-top: -4em;
         margin-bottom: 4em;
@@ -348,14 +291,11 @@ body {
     }
 }
 
-
-
 .conf {
     background: url(static('images/bg_section-conf.svg')) no-repeat;
     background-size: 50% auto;
     background-position: right 0 bottom 20vw;
 }
-
 
 
 .footer {
@@ -366,12 +306,6 @@ body {
     line-height: 40px;
 }
 
-.sponsors__logo {
-    > a img{
-        margin: 2em auto 4em;
-        max-height: 80px;
-    }
-}
 
 .social-btn {
     color: $theme-color;

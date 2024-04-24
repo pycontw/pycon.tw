@@ -1,19 +1,19 @@
+from rest_framework.test import APIClient
+
 endpoint = "/api/proposals/summary/"
 
 
 def test_proposals_summary(
-    user,
-    drf_api_client,
+    api_client,  # authorized
     talk_proposal,
     tutorial_proposal,
     stage_1_review,
     stage_2_review,
 ):
-    response = drf_api_client.get(endpoint)
+    response = APIClient().get(endpoint)
     assert response.status_code == 401
 
-    drf_api_client.force_authenticate(user=user)
-    response = drf_api_client.get(endpoint)
+    response = api_client.get(endpoint)
     data = response.data
 
     assert data["num_proposed_talk"] == 1

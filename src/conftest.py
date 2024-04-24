@@ -8,8 +8,9 @@ from django.contrib.auth.models import AnonymousUser
 from django.test.html import parse_html
 from rest_framework.test import APIClient
 
+from core.models import Token
 from proposals.models import TalkProposal
-from users.models import CocRecord
+from users.models import CocRecord, User
 
 
 class HTMLParser:
@@ -206,5 +207,8 @@ def accepted_talk_proposal(talk_proposal):
 
 
 @pytest.fixture
-def drf_api_client():
-    return APIClient()
+def api_client(bare_user: User) -> APIClient:
+    api_client = APIClient()
+    token, _ = Token.objects.get_or_create(user=bare_user)
+    api_client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
+    yield api_client
