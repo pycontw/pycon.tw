@@ -34,7 +34,7 @@
       <td>{{ speaker_info.get_status_display }}</td>
       <td>
         <form method="post"
-            action="{% url 'additional_speaker_set_status' pk=speaker_info.pk %}" hidden>
+            action="{% url 'additional_speaker_set_status' pk=speaker_info.pk %}">
           {% csrf_token %}
           {% if speaker_info.status != 'accepted' %}
           <button type="submit" name="status" value="accepted"
