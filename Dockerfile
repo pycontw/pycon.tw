@@ -11,24 +11,28 @@ RUN apt-get update
 RUN apt-get install python-pip -y
 
 RUN npm install -g yarn
-RUN yarn install --dev --frozen-lockfile
+RUN yarn install --dev --frozen-lockfile  
+#  && rm -rf $HOME/.cache/yarn/*
 
-FROM python_base as python_dependencies
-
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=on \
+FROM python:3.10.14 as python_dependencies
+ENV PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
     POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1
 
-ENV BASE_DIR /usr/local
-ENV APP_DIR $BASE_DIR/app
+# Install Poetry
+RUN pip install --no-cache-dir pip==23.3.2 && \
+    pip install --no-cache-dir poetry==1.8.2
+# Install Python dependencies
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --no-root && \
+    yes | poetry cache clear --all pypi
 
+FROM python_base as runner
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 
 
-# Infrastructure tools
-# gettext is used for django to compile .po to .mo files.
 RUN apt-get update
 RUN apt-get install -y \
     libpq-dev \
@@ -40,28 +44,23 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev
 
-# Install Poetry
-RUN pip install --no-cache-dir pip==23.3.2 && \
-    pip install --no-cache-dir poetry==1.8.2
-
-# Install Python dependencies
-COPY pyproject.toml poetry.lock ./
-RUN poetry install --no-root && \
-    yes | poetry cache clear --all pypi
-
+COPY --from=python_dependencies ${WORKDIR}/.venv ${WORKDIR}/.venv
+COPY --from=python_dependencies ${WORKDIR}/lib ${WORKDIR}/lib
 # Add poetry bin directory to PATH
 ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
+ENV BASE_DIR /usr/local
+ENV APP_DIR $BASE_DIR/app
+
 COPY --from=node_dependencies /node_modules $APP_DIR/node_modules
 COPY --from=node_dependencies /usr/local/bin/node /usr/local/bin/node
-
 # Make nodejs accessible and executable globally
 ENV NODE_PATH $APP_DIR/node_modules/
 
-FROM python_dependencies as dev
+FROM runner as dev
 
 
-FROM python_dependencies as prod
+FROM runner as prod
 # APP directory setup
 RUN adduser --system --disabled-login docker \
  && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" \
@@ -70,7 +69,7 @@ RUN adduser --system --disabled-login docker \
 # Finally, copy all the project files along with source files
 COPY --chown=docker:nogroup ./ $APP_DIR
 
-USER docker
+# USER docker
 
 WORKDIR $APP_DIR/src
 VOLUME $APP_DIR/src/media
