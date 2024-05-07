@@ -11,12 +11,11 @@ RUN apt-get update
 RUN apt-get install python-pip -y
 
 RUN npm install -g yarn
-RUN yarn install --dev --frozen-lockfile
+RUN yarn install --dev --frozen-lockfile && yarn cache clean
 
 FROM python_base as python_dependencies
 
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
     POETRY_HOME="/opt/poetry" \
@@ -30,6 +29,7 @@ ENV APP_DIR $BASE_DIR/app
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
+RUN apt-get upgrade -y 
 RUN apt-get install -y \
     libpq-dev \
     gcc \
@@ -46,7 +46,7 @@ RUN pip install --no-cache-dir pip==23.3.2 && \
 
 # Install Python dependencies
 COPY pyproject.toml poetry.lock ./
-RUN poetry install --no-root && \
+RUN poetry install --no-root --only main && \
     yes | poetry cache clear --all pypi
 
 # Add poetry bin directory to PATH
@@ -59,6 +59,7 @@ COPY --from=node_dependencies /usr/local/bin/node /usr/local/bin/node
 ENV NODE_PATH $APP_DIR/node_modules/
 
 FROM python_dependencies as dev
+RUN poetry install --no-root --only dev
 
 
 FROM python_dependencies as prod
