@@ -11,8 +11,7 @@ RUN apt-get update
 RUN apt-get install python-pip -y
 
 RUN npm install -g yarn
-RUN yarn install --dev --frozen-lockfile  
-#  && rm -rf $HOME/.cache/yarn/*
+RUN yarn install --dev --frozen-lockfile && yarn cache clean
 
 FROM python:3.10.14 as python_dependencies
 ENV PIP_DISABLE_PIP_VERSION_CHECK=on \
@@ -20,18 +19,6 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK=on \
     POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1
-
-# Install Poetry
-RUN pip install --no-cache-dir pip==23.3.2 && \
-    pip install --no-cache-dir poetry==1.8.2
-# Install Python dependencies
-COPY pyproject.toml poetry.lock ./
-RUN poetry install --no-root && \
-    yes | poetry cache clear --all pypi
-
-FROM python_base as runner
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 
 
 RUN apt-get update
 RUN apt-get install -y \
@@ -44,8 +31,22 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev
 
+# Install Poetry
+RUN pip install --no-cache-dir pip==23.3.2 && \
+    pip install --no-cache-dir poetry==1.8.2
+# Install Python dependencies
+COPY pyproject.toml poetry.lock ./
+RUN poetry install --no-root && \
+    yes | poetry cache clear --all pypi
+
+FROM python_base as runner
+ENV PYTHONUNBUFFERED=1 
+
 COPY --from=python_dependencies ${WORKDIR}/.venv ${WORKDIR}/.venv
-COPY --from=python_dependencies ${WORKDIR}/lib ${WORKDIR}/lib
+
+# Uncomment this line to solve the loading shared libraries error
+# COPY --from=python_dependencies ${WORKDIR}/lib ${WORKDIR}/lib
+
 # Add poetry bin directory to PATH
 ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
