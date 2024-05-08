@@ -14,13 +14,6 @@ RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile && yarn cache clean
 
 FROM python_base as python_deps
-ENV PYTHONUNBUFFERED=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=on \
-    PIP_DEFAULT_TIMEOUT=100 \
-    POETRY_HOME="/opt/poetry" \
-    POETRY_VIRTUALENVS_IN_PROJECT=true \
-    POETRY_NO_INTERACTION=1
-
 ENV APP_DIR /usr/local/app
 
 # Infrastructure tools
@@ -36,6 +29,10 @@ RUN apt-get install -y \
     gettext \
     libxml2-dev \
     libxslt-dev
+
+ENV PIP_DISABLE_PIP_VERSION_CHECK=on \
+PIP_DEFAULT_TIMEOUT=100 \
+POETRY_VIRTUALENVS_IN_PROJECT=true
 
 # Install Poetry
 RUN pip install --no-cache-dir pip==23.3.2 && \
