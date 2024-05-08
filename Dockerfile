@@ -3,7 +3,7 @@ FROM node:8.16.0-buster-slim as node_base
 # [Python Stage for Django web server]
 FROM python:3.10.14-slim-bullseye as python_base
 
-FROM node_base as node_dependencies
+FROM node_base as node_deps
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
@@ -13,8 +13,7 @@ RUN apt-get install python-pip -y
 RUN npm install -g yarn
 RUN yarn install --dev --frozen-lockfile && yarn cache clean
 
-FROM python_base as python_dependencies
-
+FROM python_base as python_deps
 ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
     PIP_DEFAULT_TIMEOUT=100 \
@@ -22,9 +21,7 @@ ENV PYTHONUNBUFFERED=1 \
     POETRY_VIRTUALENVS_IN_PROJECT=true \
     POETRY_NO_INTERACTION=1
 
-ENV BASE_DIR /usr/local
-ENV APP_DIR $BASE_DIR/app
-
+ENV APP_DIR /usr/local/app
 
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
@@ -52,23 +49,25 @@ RUN poetry install --no-root --only main && \
 # Add poetry bin directory to PATH
 ENV PATH="${WORKDIR}/.venv/bin:$PATH"
 
-COPY --from=node_dependencies /node_modules $APP_DIR/node_modules
-COPY --from=node_dependencies /usr/local/bin/node /usr/local/bin/node
-
 # Make nodejs accessible and executable globally
 ENV NODE_PATH $APP_DIR/node_modules/
 
-FROM python_dependencies as dev
+FROM python_deps as dev
 RUN poetry install --no-root --only dev
 
+COPY --from=node_deps /node_modules $APP_DIR/node_modules
+COPY --from=node_deps /usr/local/bin/node /usr/local/bin/node
 
-FROM python_dependencies as prod
+FROM python_deps as build
+RUN mkdir -p "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media"
+
+FROM python_deps as prod
 # APP directory setup
-RUN adduser --system --disabled-login docker \
- && mkdir -p "$BASE_DIR" "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media" \
- && chown -R docker:nogroup "$BASE_DIR" "$APP_DIR"
-
+RUN adduser --system --disabled-login docker
 # Finally, copy all the project files along with source files
+COPY --chown=docker:nogroup --from=build $APP_DIR $APP_DIR
+COPY --chown=docker:nogroup --from=node_deps /node_modules $APP_DIR/node_modules
+COPY --chown=docker:nogroup --from=node_deps /usr/local/bin/node /usr/local/bin/node
 COPY --chown=docker:nogroup ./ $APP_DIR
 
 USER docker
