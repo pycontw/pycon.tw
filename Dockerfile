@@ -64,7 +64,8 @@ RUN mkdir -p "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media"
 FROM python_deps as prod
 # APP directory setup
 RUN adduser --system --disabled-login docker
-# Finally, copy all the project files along with source files
+# Use COPY --chown instead of RUN chown -R directly to avoid increasing image size
+# https://github.com/pycontw/pycon.tw/pull/1194
 COPY --chown=docker:nogroup --from=build $APP_DIR $APP_DIR
 COPY --chown=docker:nogroup --from=node_deps /node_modules $APP_DIR/node_modules
 COPY --chown=docker:nogroup --from=node_deps /usr/local/bin/node /usr/local/bin/node
