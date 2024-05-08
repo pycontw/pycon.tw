@@ -1673,6 +1673,14 @@ msgstr ""
 msgid "Co-Speaking Proposals"
 msgstr ""
 
+#: templates/default/users/user_dashboard.html:76
+#, python-format
+msgid ""
+"The editable time is over. If you have any questions, please contact us "
+"at <a href=\"mailto:program@python.tw\" class=\"dashboard-link"
+"\">program@python.tw</a>"
+msgstr ""
+
 #: templates/default/users/user_profile_update.html:6
 msgid "Update Speaker Profile"
 msgstr ""

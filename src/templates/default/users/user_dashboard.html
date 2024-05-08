@@ -73,6 +73,8 @@
       <div class="cospeaking-proposals">
         <h3 class="dashboard-header"><span class="header-title">{% trans 'Co-Speaking Proposals' %}</span></h3>
         {# include with ... only will block csrf_token #}
+        <p class="dashboard-alert">{% blocktrans %}The editable time is over. If you have any questions, please contact us at <a href="mailto:program@python.tw" class="dashboard-link">program@python.tw</a>{% endblocktrans %}</p>
+        {% include 'users/_includes/dashboard_cospeaking_proposal_table_uneditable.html' with speaker_infos=user.cospeaking_info_set.all %}
       </div>
     {% endif %}
   {% endif %}
