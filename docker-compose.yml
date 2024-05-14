@@ -1,7 +1,10 @@
 version: "3.5"
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
     container_name: pycontw-2024
     hostname: pycontw-2024
     entrypoint: ""
@@ -37,9 +40,9 @@ services:
     volumes:
       - ${MEDIA_ROOT}:/usr/local/app/src/media
     networks:
-      - network
+      - network-2024
 
 networks:
-  network:
+  network-2024:
     external: true
     name: network-2024

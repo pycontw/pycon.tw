@@ -14,10 +14,11 @@ services:
     container_name: pycontw_dev
     build:
       context: .
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
+      target: dev
     volumes:
-      - ./src:/app/src
-      - ./logs:/app/logs
+      - ./src:/usr/local/app/src
+      - ./logs:/usr/local/app/logs
     ports:
       - "8000:8000"
     depends_on:
@@ -26,5 +27,5 @@ services:
       - DJANGO_SUPERUSER_USERNAME=admin
       - DJANGO_SUPERUSER_PASSWORD=1234
       - DJANGO_SUPERUSER_EMAIL=admin@pycon.tw
-    working_dir: /app/src
+    working_dir: /usr/local/app/src
     command: tail -f /dev/null
