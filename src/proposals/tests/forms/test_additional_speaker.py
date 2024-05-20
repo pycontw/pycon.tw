@@ -154,7 +154,13 @@ def test_additional_speaker_update_form_no_instance(form_class):
         'Additional speaker update form must be initialized with an instance.'
     )
 
-
+def test_additional_speaker_update_form_uneditable(additional_speaker):
+    form = AdditionalSpeakerSetStatusForm(additional_speaker)
+    """ 
+    Have to add something determine whether this form is editable
+    """
+    assert not form.is_valid()
+    
 def test_additional_speaker_cancel_form(additional_speaker):
     form = AdditionalSpeakerCancelForm(instance=additional_speaker)
     assert list(form.fields) == ['cancelled']
