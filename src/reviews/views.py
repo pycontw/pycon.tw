@@ -313,14 +313,12 @@ def review_stages(request):
 
         for tag in review_stages_var:
             key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
-            if (tag == 'proposals.disable.after'):
-                if(request.POST['proposals.disable.after'] == ""):
+            if tag == 'proposals.disable.after':
+                if request.POST[tag] == "":
                     continue
                 else:
-                    date_time_obj = date_preprocess(
-                        DATETIME_INPUT_FORMATS,
-                        request.POST['proposals.disable.after'])
-                    if(date_time_obj is None):
+                    date_time_obj = date_preprocess(DATETIME_INPUT_FORMATS, request.POST[tag])
+                    if date_time_obj is None:
                         messages.error(request,'Please input valid date format : " + "%Y-%m-%dT%H:%M')
                         return render(
                             request, 'reviews/review_stages.html', {
@@ -335,7 +333,7 @@ def review_stages(request):
                         loc_dt = tz_selectd.localize(date_time_obj).strftime(
                             '%Y-%m-%d %H:%M:%S%z')
                         value = loc_dt
-            elif (tag == 'reviews.stage'):
+            elif tag == 'reviews.stage':
                 value = int(request.POST[tag])
             else:
                 value = request.POST[tag]
