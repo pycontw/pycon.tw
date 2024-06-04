@@ -12,11 +12,12 @@
     "@babel/plugin-syntax-import-meta": "^7.10.4",
     "@babel/plugin-transform-class-properties": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^10.4.19",
     "babelify": "^10.0.0",
-    "browserify": "^16.1.0",
-    "node-sass": "^4.9.0",
-    "postcss-cli": "^5.0.0"
+    "browserify": "^17.0.0",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0"
   },
   "dependencies": {
     "blueimp-gallery": "^2.44.0",

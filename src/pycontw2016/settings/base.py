@@ -265,7 +265,7 @@ COMPRESS_POSTCSS_BIN = node_bin('postcss')
 COMPRESS_SCSS_COMPILER_CMD = (
     '{node_sass_bin} --include --output-style expanded {paths} '
     '--include-path="{node_modules}" "{infile}" "{outfile}" && '
-    '{postcss_bin} --use "{node_modules}/autoprefixer" '
+    '{postcss_bin} --use "{node_modules}/autoprefixer/lib/autoprefixer.js" '
     '--autoprefixer.browsers "{autoprefixer_browsers}" -r "{outfile}"'
 )
 
