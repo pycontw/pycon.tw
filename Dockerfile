@@ -13,13 +13,6 @@ RUN yarn install --immutable
 FROM python_base as python_deps
 ENV APP_DIR /usr/local/app
 
-# make nodejs accessible and executable globally
-ENV NODE_PATH $APP_DIR/node_modules/
-ENV PATH /usr/local/bin:$PATH
-
-# Add bin directory used by `pip install --user`
-ENV PATH /home/docker/.local/bin:$PATH
-
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
