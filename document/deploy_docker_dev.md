@@ -4,19 +4,20 @@
 
 # Containerized Development Environment
 
-1. Edit the `DATABASE_URL` in `src/pycontw2016/settings/local.env`(Copy from [`local.sample.env`](../src/pycontw2016/settings/local.sample.env)). Use the Postgres username, password, database name, and port configured in [`./docker-compose-dev.yml`](../docker-compose-dev.yml).
-
+1. Simply run the following command to start containerized services, this will run both the database and django service for you:
     ```
-    DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
-    ```
-
-2. Simply run the following command to install all dependencies, activate a containerized Postgres server, and enter into a poetry shell inside the application container (<code>ctrl+c</code> to quit).
-
-    ```
-    ./enter_dev_env.sh
+    docker compose -f docker-compose-dev.yml up -d
     ```
 
-3. In the shell, you can run any commands as if you are in a local development environment. Here are some common Django commands:
+2. If the services are up and running in the first time, you may need to run the following in `pycontw` service in docker shell.
+
+To get into the docker shell for `pycontw`
+
+    ```
+    docker compose -f docker-compose-dev.yml exec -it pycontw /bin/sh
+    ```
+
+In the shell, you can run any commands as if you are in a local development environment. Here are some common Django commands:
 
     ```sh
     # make migrations
@@ -33,7 +34,4 @@
 
     # compile translations
     python manage.py compilemessages
-
-    # run the dev server (you can access the site at http://localhost:8000/)
-    python manage.py runserver 0.0.0.0:8000
     ```

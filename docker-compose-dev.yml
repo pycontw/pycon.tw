@@ -20,12 +20,18 @@ services:
       - ./src:/usr/local/app/src
       - ./logs:/usr/local/app/logs
     ports:
-      - "8000:8000"
+      - "${COMPOSE_APP_PORT:-8000}:8000"
     depends_on:
       - db
     environment:
-      - DJANGO_SUPERUSER_USERNAME=admin
-      - DJANGO_SUPERUSER_PASSWORD=1234
-      - DJANGO_SUPERUSER_EMAIL=admin@pycon.tw
+      - DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
+    command:
+      - bash
+      - -c
+      - |
+        until pg_isready -h db; do
+          echo 'Waiting for PostgreSQL to be available...'
+          sleep 1
+        done
+        python3 manage.py runserver 0.0.0.0:8000
     working_dir: /usr/local/app/src
-    command: tail -f /dev/null

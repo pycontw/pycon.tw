@@ -2,48 +2,27 @@
 ### Set up a Virtual Environment
 
 #### Database - Docker (Optional)
-
-Write database password in .env:
-
-    POSTGRES_PASSWORD=somepassword
-
-Define .env location in docker-compose-db.yml under the corresponding database service:
-
-    services:
-      db:
-        image: postgres:11-alpine
-        env_file:
-          - .env
-
 Create and start the database for development:
 
-    docker-compose -f docker-compose-db.yml up
+    docker-compose -f docker-compose-dev.yml db up -d
 
-#### Python - Poetry
+This will create a postgres database with the following existed:
+```
+database_name=pycontw2016
+username=postgres
+password=secretpostgres
+port=5432
+```
+And the database connection url will be `postgres://postgres:secretpostgres@localhost:5432/pycontw2016`
 
-Create your virtual environment:
+#### Install environment using Makefile (Python and Node Modules)
+Init environment, including installing dependencies
 
-    poetry env use 3.10 
+    make init
 
-And enable it:
+Activate the python environment in your terminal
 
-    poetry shell 
-
-#### Node.js - [nvm](https://github.com/creationix/nvm)
-
-Switch to version specified in `.nvmrc`:
-
-    nvm use
-
-### Install Dependencies
-
-Use pip to install Python depedencies:
-
-    poetry install
-
-Use Yarn to install Node dependencies:
-
-    yarn install --dev
+    poetry shell
 
 ### Set up Local Environment Variables for Database
 
@@ -55,20 +34,6 @@ Default is sqlite3, you can change to connect `postgres`. Copy `local.sample.env
 Then edit the `SECRET_KEY` line in `local.env`, replacing `{{ secret_key }}` into any [Django Secret Key](http://www.miniwebtool.com/django-secret-key-generator/) value. An example:
 
     SECRET_KEY=twvg)o_=u&@6^*cbi9nfswwh=(&hd$bhxh9iq&h-kn-pff0&&3
-
-If you’re using a database for the first time, create a database named `pycontw2016` owned by the database user specified in the env file:
-
-> Enter pycontw_db_1 container
-```cmd
-docker exec -it pycontw_db_1 psql -U postgres
-```
-
-```sql
-# Replace "postgres" with your specified role.
-CREATE DATABASE pycontw2016 with owner = postgres;
-```
-
-After that, just run the migration.
 
 ### Get Ready for Development
 

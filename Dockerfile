@@ -19,7 +19,7 @@ ENV APP_DIR /usr/local/app
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get upgrade -y 
+RUN apt-get upgrade -y
 RUN apt-get install -y \
     libpq-dev \
     gcc \
@@ -30,7 +30,7 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev
 
-ENV PYTHONUNBUFFERED=1 \ 
+ENV PYTHONUNBUFFERED=1 \
 PIP_DISABLE_PIP_VERSION_CHECK=on \
 PIP_DEFAULT_TIMEOUT=100 \
 POETRY_VIRTUALENVS_IN_PROJECT=true
@@ -55,6 +55,7 @@ RUN poetry install --no-root --only dev
 
 COPY --from=node_deps /node_modules $APP_DIR/node_modules
 COPY --from=node_deps /usr/local/bin/node /usr/local/bin/node
+RUN apt-get install -y postgresql-client
 
 FROM python_deps as build
 RUN mkdir -p "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media"
