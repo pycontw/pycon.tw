@@ -1,12 +1,12 @@
 ### Requirements
 - Docker Engine 1.13.1+
-- Docker Compose 1.10.0+
+- Docker Compose v2
 
 # Containerized Development Environment
 
 1. Simply run the following command to start containerized services, this will run both the database and django service for you:
     ```
-    docker compose -f docker-compose-dev.yml up -d
+    make run_dev
     ```
 
 2. If the services are up and running in the first time, you may need to run the following in `pycontw` service in docker shell.
@@ -14,7 +14,7 @@
 To get into the docker shell for `pycontw`
 
     ```
-    docker compose -f docker-compose-dev.yml exec -it pycontw /bin/sh
+    make shell_dev
     ```
 
 In the shell, you can run any commands as if you are in a local development environment. Here are some common Django commands:
