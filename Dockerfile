@@ -55,7 +55,6 @@ RUN poetry install --no-root --only dev
 
 COPY --from=node_deps /node_modules $APP_DIR/node_modules
 COPY --from=node_deps /usr/local/bin/node /usr/local/bin/node
-RUN apt-get install -y postgresql-client
 
 FROM python_deps as build
 RUN mkdir -p "$APP_DIR" "$APP_DIR/src/assets" "$APP_DIR/src/media"

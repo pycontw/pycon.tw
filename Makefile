@@ -14,8 +14,8 @@ run_local: init run_db
 	poetry run python src/manage.py runserver 0.0.0.0:8000
 
 run_dev:
-	docker compose -f docker-compose-dev.yml up -d
-	bash -c "trap '' INT; docker compose -f docker-compose-dev.yml logs -f pycontw"
+	docker compose -f docker-compose-dev.yml up -d --build
+	docker compose -f docker-compose-dev.yml logs -f pycontw
 
 stop_dev:
 	docker compose -f docker-compose-dev.yml stop

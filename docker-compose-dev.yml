@@ -10,6 +10,11 @@ services:
       - POSTGRES_PASSWORD=secretpostgres
     ports:
       - ${COMPOSE_DB_PORT:-5432}:5432
+    healthcheck:
+      test: "pg_isready"
+      start_period: 5s
+      interval: 5s
+      retries: 10
   pycontw:
     container_name: pycontw_dev
     build:
@@ -22,16 +27,9 @@ services:
     ports:
       - "${COMPOSE_APP_PORT:-8000}:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
-    command:
-      - bash
-      - -c
-      - |
-        until pg_isready -h db; do
-          echo 'Waiting for PostgreSQL to be available...'
-          sleep 1
-        done
-        python3 manage.py runserver 0.0.0.0:8000
+    command: "python3 manage.py runserver 0.0.0.0:8000"
     working_dir: /usr/local/app/src
