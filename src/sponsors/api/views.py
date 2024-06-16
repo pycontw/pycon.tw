@@ -20,6 +20,9 @@ class SponsorAPIView(views.APIView):
             if sponsor.level_en_name not in level_dict:
                 level_dict[sponsor.level_en_name] = []
 
+            if sponsor.is_shown is False:
+                continue
+
             level_dict[sponsor.level_en_name].append({
                 "name_en_us": sponsor.name_en_us,
                 "name_zh_hant": sponsor.name_zh_hant,
