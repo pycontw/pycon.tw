@@ -12,7 +12,7 @@ def test_data():
     sponsor_2 = Sponsor.objects.create(name='2', level=2, order=2, is_shown=True)
     sponsor_3 = Sponsor.objects.create(name='3', level=2, order=None, is_shown=True)  # noqa
     sponsor_4 = Sponsor.objects.create(name='4', level=2, order=1, is_shown=True)  # noqa
-    sponsor_5 = Sponsor.objects.create(name='5', level=2, order=3, is_shown=False)  # Not shown sponsor
+    sponsor_5 = Sponsor.objects.create(name='5', level=2, order=3, is_shown=False)  # noqa
 
     # roles
     OpenRole.objects.create(sponsor=sponsor_1, name='11', description='...')
@@ -44,6 +44,7 @@ class TestSponsorAPIView:
         # small-order > large-order > null-order
         gold_sponsor_names = [s['name_en_us'] for s in gold_sponsors]
         assert gold_sponsor_names == ['4', '2', '3']
+        assert '5' not in gold_sponsor_names
 
     def test_should_get_role_data(self, api_client):
         # arrange: test_data fixture
