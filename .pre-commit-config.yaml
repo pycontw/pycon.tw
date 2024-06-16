@@ -1,0 +1,63 @@
+# https://github.com/pre-commit/pre-commit-hooks/blob/master/.pre-commit-config.yaml
+# https://rednafi.github.io/digressions/python/2020/04/06/python-precommit.html
+# manually run : poetry run pre-commit run --all-files
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        alias: Trim
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-yaml
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    - id: isort
+      args:
+        - '--line-length=120'
+        - '--multi-line=3'
+        - '--trailing-comma'
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+    - id: pyupgrade
+      args: [--py38-plus]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8
+      args:
+        - '--select=B,C,E,F,W,T4,B9'
+        - '--max-line-length=120'
+        - '--ignore=E203,E265,E266,E402,E501,W391,W503'
+        - '--exclude=.git,.venv,__pycache__,build,dist,__init__.py'
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.1.1
+    hooks:
+    - id: mypy
+      name: mypy
+      entry: mypy
+      args:
+        - '--explicit-package-bases'
+        - '--ignore-missing-imports'
+        - '--scripts-are-modules'
+        - '--no-site-packages'
+        - '--implicit-optional'
+        - '--exclude="(tmp|.venv)/$"'
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+    - id: black
+      name: black - code formatter
+      entry: black .
+      verbose: True
+      args:
+        - '--line-length=120'
+        - '--skip-string-normalization'
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.9
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
