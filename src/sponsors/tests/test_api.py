@@ -44,7 +44,6 @@ class TestSponsorAPIView:
         # small-order > large-order > null-order
         gold_sponsor_names = [s['name_en_us'] for s in gold_sponsors]
         assert gold_sponsor_names == ['4', '2', '3']
-        assert '5' not in gold_sponsor_names
 
     def test_should_get_role_data(self, api_client):
         # arrange: test_data fixture

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-15 17:45+0800\n"
+"POT-Creation-Date: 2024-06-21 07:48+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -513,7 +513,7 @@ msgstr "基調演講"
 msgid "Keynote: {speaker}"
 msgstr "基調演講：{speaker}"
 
-#: events/models.py:318 sponsors/models.py:97 sponsors/models.py:113
+#: events/models.py:318 sponsors/models.py:103 sponsors/models.py:119
 msgid "sponsor"
 msgstr "贊助"
 
@@ -1375,104 +1375,108 @@ msgstr "第 {stage} 階段封存《{proposal}》"
 msgid "name"
 msgstr "名稱"
 
-#: sponsors/models.py:27
+#: sponsors/models.py:28
+msgid "is shown"
+msgstr "同步顯示於 prod"
+
+#: sponsors/models.py:33
 msgid "website URL"
 msgstr "網站 URL"
 
-#: sponsors/models.py:31
+#: sponsors/models.py:37
 msgid "introduction"
 msgstr "簡介"
 
-#: sponsors/models.py:34
+#: sponsors/models.py:40
 msgid "subtitle"
 msgstr "副標題"
 
-#: sponsors/models.py:39
+#: sponsors/models.py:45
 msgid "logo (SVG)"
 msgstr "logo (SVG)"
 
-#: sponsors/models.py:42
+#: sponsors/models.py:48
 msgid ""
 "Vector format of the logo, in SVG. This takes precedence to the raster "
 "format, if available."
 msgstr "即使有點陣式圖形格式的圖標，還是會優先採用向量式SVG格式的圖標。"
 
-#: sponsors/models.py:47
+#: sponsors/models.py:53
 msgid "logo (image)"
 msgstr "logo (圖片)"
 
-#: sponsors/models.py:51
+#: sponsors/models.py:57
 msgid ""
 "Raster format of the logo, e.g. PNG, JPEG. This is used as fallback when the "
 "SVG file is not available."
 msgstr ""
 "當SVG格式的檔案不存在時，會回過頭來使用點陣式格式的圖標，例如PNG、JPEG。"
 
-#: sponsors/models.py:56
+#: sponsors/models.py:62
 msgid "order"
 msgstr "排序"
 
-#: sponsors/models.py:76
+#: sponsors/models.py:82
 msgid "platinum"
 msgstr "白金級"
 
-#: sponsors/models.py:77
+#: sponsors/models.py:83
 msgid "gold"
 msgstr "金級"
 
-#: sponsors/models.py:78
+#: sponsors/models.py:84
 msgid "silver"
 msgstr "銀級"
 
-#: sponsors/models.py:79
+#: sponsors/models.py:85
 msgid "bronze"
 msgstr "銅級"
 
-#: sponsors/models.py:80
+#: sponsors/models.py:86
 msgid "special"
 msgstr "特別贊助"
 
-#: sponsors/models.py:81
+#: sponsors/models.py:87
 msgid "special-thanks"
 msgstr "特別感謝"
 
-#: sponsors/models.py:82
+#: sponsors/models.py:88
 msgid "organizer"
 msgstr "主辦單位"
 
-#: sponsors/models.py:83
+#: sponsors/models.py:89
 msgid "co-organizer"
 msgstr "協辦單位"
 
-#: sponsors/models.py:92
+#: sponsors/models.py:98
 msgid "level"
 msgstr "等級"
 
-#: sponsors/models.py:98
+#: sponsors/models.py:104
 msgid "sponsors"
 msgstr "贊助"
 
-#: sponsors/models.py:118
+#: sponsors/models.py:124
 msgid "open role name"
 msgstr "職缺名稱"
 
-#: sponsors/models.py:123
+#: sponsors/models.py:129
 msgid "open role description"
 msgstr "職缺說明"
 
-#: sponsors/models.py:127
+#: sponsors/models.py:133
 msgid "open role requirements"
 msgstr "職缺需求"
 
-#: sponsors/models.py:132
+#: sponsors/models.py:138
 msgid "open role URL"
 msgstr "職缺 URL"
 
-#: sponsors/models.py:137
+#: sponsors/models.py:143
 msgid "open role"
 msgstr "職缺"
 
-#: sponsors/models.py:138
+#: sponsors/models.py:144
 msgid "open roles"
 msgstr "職缺"
 
