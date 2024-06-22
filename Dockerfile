@@ -1,5 +1,5 @@
 # [Node Stage to get node_modolues and node dependencies]
-FROM node:8.16.0-buster-slim as node_base
+FROM node:20.11.0-bullseye-slim as node_base
 # [Python Stage for Django web server]
 FROM python:3.10.14-slim-bullseye as python_base
 
@@ -7,11 +7,8 @@ FROM node_base as node_deps
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
-RUN apt-get update
-RUN apt-get install python-pip -y
-
-RUN npm install -g yarn
-RUN yarn install --dev --frozen-lockfile && yarn cache clean
+RUN corepack enable
+RUN yarn install --immutable
 
 FROM python_base as python_deps
 ENV APP_DIR /usr/local/app
