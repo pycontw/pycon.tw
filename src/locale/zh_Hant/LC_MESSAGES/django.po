@@ -1377,7 +1377,7 @@ msgstr "名稱"
 
 #: sponsors/models.py:28
 msgid "is shown"
-msgstr "同步顯示於 prod"
+msgstr "顯示於官網"
 
 #: sponsors/models.py:33
 msgid "website URL"
