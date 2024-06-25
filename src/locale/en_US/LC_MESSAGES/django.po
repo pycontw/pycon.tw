@@ -1420,7 +1420,7 @@ msgstr "name"
 
 #: sponsors/models.py:28
 msgid "is shown"
-msgstr "is_shown"
+msgstr "whether to show on the website"
 
 #: sponsors/models.py:33
 msgid "website URL"
