@@ -47,25 +47,19 @@ Werkzeug = "3.0.3"
 
 
 [tool.ruff]
-exclude = [
-    ".git",
-    "__pycache__",
-    "migrations"
-]
+exclude = [".git", "__pycache__", "migrations"]
 line-length = 120
 
 [tool.ruff.lint]
-ignore = [
-    "E251",
-]
+ignore = ["E251"]
 select = [
-    "E",  # pycodestyle error
-    "W",  # pycodestyle warning
-    "F",  # Pyflakes
+    "E",    # pycodestyle error
+    "W",    # pycodestyle warning
+    "F",    # Pyflakes
     "I001", # isort
-    "N", # pep8-naming
-    "B",  # bugbear
-    "UP",  # pyupgrade
+    "N",    # pep8-naming
+    "B",    # bugbear
+    "UP",   # pyupgrade
 ]
 
 [tool.ruff.lint.isort]
@@ -79,7 +73,7 @@ known-first-party = [
     "pycontw2016",
     "reviews",
     "sponsors",
-    "users"
+    "users",
 ]
 
 
