@@ -7,7 +7,7 @@ from .models import OpenRole, Sponsor
 @admin.register(Sponsor)
 class SponsorAdmin(TranslationAdmin):
     fields = [
-        'name', 'level', 'website_url', 'intro', 'subtitle',
+        'name', 'level', 'is_shown', 'website_url', 'intro', 'subtitle',
         'logo_svg', 'logo_image', 'order'
     ]
     list_display = ['name', 'level', 'order']

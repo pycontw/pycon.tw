@@ -6,12 +6,13 @@ from sponsors.models import OpenRole, Sponsor
 @pytest.fixture(autouse=True, scope='function')
 def test_data():
     # sponsors
-    # platinum
-    sponsor_1 = Sponsor.objects.create(name='1', level=1)
-    # gold
-    sponsor_2 = Sponsor.objects.create(name='2', level=2, order=2)
-    sponsor_3 = Sponsor.objects.create(name='3', level=2, order=None)  # noqa
-    sponsor_4 = Sponsor.objects.create(name='4', level=2, order=1)  # noqa
+    # # platinum
+    sponsor_1 = Sponsor.objects.create(name='1', level=1, is_shown=True)
+    # # gold
+    sponsor_2 = Sponsor.objects.create(name='2', level=2, order=2, is_shown=True)
+    sponsor_3 = Sponsor.objects.create(name='3', level=2, order=None, is_shown=True)  # noqa
+    sponsor_4 = Sponsor.objects.create(name='4', level=2, order=1, is_shown=True)  # noqa
+    sponsor_5 = Sponsor.objects.create(name='5', level=2, order=3, is_shown=False)  # noqa
 
     # roles
     OpenRole.objects.create(sponsor=sponsor_1, name='11', description='...')

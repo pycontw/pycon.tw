@@ -23,6 +23,12 @@ class Sponsor(ConferenceRelated):
         verbose_name=_('name'),
         max_length=100,
     )
+
+    is_shown = models.BooleanField(
+        verbose_name=_('is shown'),
+        default=False,
+    )
+
     website_url = models.URLField(
         verbose_name=_('website URL'),
         max_length=255, blank=True,
