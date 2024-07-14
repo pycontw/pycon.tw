@@ -74,6 +74,7 @@ class Sponsor(ConferenceRelated):
         SPECIAL_THANKS = 6
         ORGANIZER = 7
         COORGANIZER = 8
+        SPRING_COORGANIZER = 9
 
         # Backward compatibility.
         PARTNER = COORGANIZER
@@ -87,6 +88,7 @@ class Sponsor(ConferenceRelated):
         (Level.SPECIAL_THANKS, _('special-thanks')),
         (Level.ORGANIZER, _('organizer')),
         (Level.COORGANIZER, _('co-organizer')),
+        (Level.SPRING_COORGANIZER, _('sprint-co-organizer')),
     )
 
     @property
