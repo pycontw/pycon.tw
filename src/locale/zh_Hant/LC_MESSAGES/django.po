@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-21 07:48+0800\n"
+"POT-Creation-Date: 2024-07-20 15:33+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -1517,22 +1517,10 @@ msgid "Reviews"
 msgstr "審查"
 
 #: templates/default/_includes/dashboard_tablist.html:28
-#: templates/default/reviews/review_stages.html:12
-#: templates/default/reviews/review_stages.html:18
+#: templates/default/reviews/review_stages.html:16
+#: templates/default/reviews/review_stages.html:44
 msgid "Review Stages"
 msgstr "審查階段"
-
-#: templates/default/_includes/dashboard_tablist.html:28
-#: templates/default/reviews/review_stages.html:12
-#: templates/default/reviews/review_stages.html:18
-msgid "Current Review Stage Setting"
-msgstr "目前審查階段設定"
-
-#: templates/default/_includes/dashboard_tablist.html:28
-#: templates/default/reviews/review_stages.html:12
-#: templates/default/reviews/review_stages.html:18
-msgid "Set Review Stage"
-msgstr "設定審查階段"
 
 #: templates/default/_includes/nav/dashboard_nav.html:10
 msgid "Log out"
@@ -1757,6 +1745,7 @@ msgstr "更改密碼"
 
 #: templates/default/registration/password_change_form.html:22
 #: templates/default/reviews/review_form.html:101
+#: templates/default/reviews/review_stages.html:114
 msgid "Submit"
 msgstr "送出"
 
@@ -1969,6 +1958,14 @@ msgstr "我之前的審查意見"
 #: templates/default/reviews/review_form.html:96
 msgid "Review Proposal"
 msgstr "審查提案"
+
+#: templates/default/reviews/review_stages.html:23
+msgid "Current Review Stage Setting"
+msgstr "目前審查階段設定"
+
+#: templates/default/reviews/review_stages.html:35
+msgid "Set Review Stage"
+msgstr "設定審查階段"
 
 #: templates/default/reviews/talk_proposal_list.html:14
 #, python-format
@@ -5001,35 +4998,35 @@ msgstr "最後同意的 CoC 版本"
 msgid "agreed at"
 msgstr "同意於"
 
-#: users/views.py:44
+#: users/views.py:48
 msgid "Sign up successful. You are now logged in."
 msgstr "註冊成功。您現在已被登入。"
 
-#: users/views.py:61
+#: users/views.py:65
 msgid "Email verification successful."
 msgstr "Email 認證成功。"
 
-#: users/views.py:73
+#: users/views.py:77
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "一封認證用的 email 已經寄送至 {email}"
 
-#: users/views.py:103
+#: users/views.py:107
 msgid "Your profile has been updated successfully."
 msgstr "您的講者資訊已成功地更新。"
 
-#: users/views.py:116
+#: users/views.py:120
 msgid "Your new password has been applied successfully."
 msgstr "已成功地使用您的新密碼。"
 
-#: users/views.py:123
+#: users/views.py:127
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
 msgstr ""
 "一封電子郵件已經發送至您的信箱。請檢查您的收件匣並參照信中指示重設密碼。"
 
-#: users/views.py:131
+#: users/views.py:135
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
 
