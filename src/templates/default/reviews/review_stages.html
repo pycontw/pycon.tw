@@ -35,7 +35,7 @@
 		<h4>{% trans 'Set Review Stage' %}</h4>
 		<br>
 		{% for rs in review_stages_list %}
-			<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
+		<button class="btn btn-natural-noborder hotkey" value="{{ rs }}">{{ rs }}</button>
 		{% endfor %}
 		<!--Review Change Setting-->
 		<form action="{% url 'review_stages' %}" method="post">
@@ -51,7 +51,7 @@
 					<li class="panel-title list-group-item">
 						{{ ".proposals.creatable"|configuration_switch }}
 						<div class="material-switch pull-right">
-							<input name="proposals.creatable" type='hidden' value="false" />
+							<input name="proposals.creatable" type='hidden' value="false"/>
 							<input id="proposals.creatable" name="proposals.creatable" type="checkbox" value="true"/>
 							<label for="proposals.creatable" class="label-info"></label>
 						</div>
@@ -59,7 +59,7 @@
 					<li class="panel-title list-group-item">
 						{{ ".proposals.editable"|configuration_switch }}
 						<div class="material-switch pull-right">
-							<input name="proposals.editable" type='hidden' value="false" />
+							<input name="proposals.editable" type='hidden' value="false"/>
 							<input id="proposals.editable" name="proposals.editable" type="checkbox" value="true"/>
 							<label for="proposals.editable" class="label-info"></label>
 						</div>
@@ -67,7 +67,7 @@
 					<li class="panel-title list-group-item">
 						{{ ".proposals.withdrawable"|configuration_switch }}
 						<div class="material-switch pull-right">
-							<input name="proposals.withdrawable" type='hidden' value="false" />
+							<input name="proposals.withdrawable" type='hidden' value="false"/>
 							<input id="proposals.withdrawable" name="proposals.withdrawable" type="checkbox" value="true"/>
 							<label for="proposals.withdrawable" class="label-info"></label>
 						</div>
@@ -75,9 +75,9 @@
 					<li class="panel-title list-group-item">
 						{{ ".reviews.visible.to.submitters"|configuration_switch }}
 						<div class="material-switch pull-right">
-							<input name="reviews.visible.to.submitters" type='hidden' value="false" />
+							<input name="reviews.visible.to.submitters" type='hidden' value="false"/>
 							<input id="reviews.visible.to.submitters" name="reviews.visible.to.submitters"
-								type="checkbox" value="true"/>
+										 type="checkbox" value="true"/>
 							<label for="reviews.visible.to.submitters" class="label-info"></label>
 						</div>
 					</li>
@@ -85,14 +85,14 @@
 						{{ ".reviews.stage"|configuration_switch }}
 						<div class="input-customized-size pull-right">
 							<input id="reviews.stage" name="reviews.stage" type="number" min="0" max="2"
-								placeholder="Int" required="required">
+										 placeholder="Int" required="required">
 						</div>
 					</li>
 					<li class="panel-title list-group-item">
 						{{ ".proposals.disable.after"|configuration_switch }}
 						<div class="input-customized-size pull-right">
-							<input name="proposals.disable.after" type="datetime-local" placeholder="YYYY-mm-ddThh:mm"
-								>
+							<input id="proposals_disable_after" name="proposals.disable.after" type="datetime-local"
+										 placeholder="YYYY-mm-ddThh:mm">
 						</div>
 					</li>
 					<li class="panel-title list-group-item">
@@ -100,7 +100,7 @@
 						<div class="input-customized-size pull-right">
 							<select name="review_timezone">
 								{% for tz in timezones %}
-								<option value="{{ tz }}" {% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+								<option value="{{ tz }}" {% if tz == TIME_ZONE %} selected {% endif %}>{{ tz }}</option>
 								{% endfor %}
 							</select>
 						</div>
@@ -124,11 +124,17 @@
 {% compress js %}
 <script src="{% static 'js/reviews/review_stages.js' %}"></script>
 <script>
-	proposals_creatable.checked = {{ current_review_stages_setting.proposals_creatable }};
-	proposals_editable.checked = {{ current_review_stages_setting.proposals_editable }};
-	proposals_withdrawable.checked = {{ current_review_stages_setting.proposals_withdrawable }};
-	reviews_visible_to_submitters.checked = {{ current_review_stages_setting.reviews_visible_to_submitters }};
-	reviews_stage.value = {{ current_review_stages_setting.reviews_stage }};
+	proposals_creatable.checked = {{ current_review_stages_setting.proposals_creatable }}
+	proposals_editable.checked = {{ current_review_stages_setting.proposals_editable }}
+	proposals_withdrawable.checked = {{ current_review_stages_setting.proposals_withdrawable }}
+	reviews_visible_to_submitters.checked = {{ current_review_stages_setting.reviews_visible_to_submitters }}
+	reviews_stage.value = {{ current_review_stages_setting.reviews_stage }}
+
+	// Convert proposals.disable.after to the appropriate datetime-local format
+	var proposalsDisableAfterValue = "{{ current_review_stages_setting.proposals_disable_after }}";
+	if (proposalsDisableAfterValue) {
+		proposals_disable_after.value = proposalsDisableAfterValue.split('+')[0].replace(' ', 'T');
+	}
 </script>
 {% endcompress %}
 {% endblock extra_js %}
