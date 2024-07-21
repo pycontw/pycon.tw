@@ -4,11 +4,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^profile/$', views.user_profile_update, name='user_profile_update'),
-
     url(r'^password-change/$', views.password_change, name='password_change'),
     url(r'^password-change/done/$',
         views.password_change_done, name='password_change_done'),
@@ -30,5 +28,4 @@ urlpatterns = [
 
     url(r'^agreement/$',
         views.coc_agree, name='coc_agreement'),
-
 ]
