@@ -25,10 +25,6 @@ from .forms import (
     UserProfileUpdateForm,
 )
 from .models import CocRecord
-from reviews.context import proposals_state, reviews_state
-
-from lxml import etree
-import lxml.html
 
 User = auth.get_user_model()
 

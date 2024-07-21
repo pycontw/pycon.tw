@@ -4,7 +4,6 @@ import json
 import random
 
 import pytz
-from core.utils import SequenceQuerySet
 from django.conf import settings
 from django.conf.global_settings import DATETIME_INPUT_FORMATS
 from django.contrib import messages
@@ -14,8 +13,10 @@ from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import ListView, UpdateView
-from proposals.models import TalkProposal
 from registry.helper import reg
+
+from core.utils import SequenceQuerySet
+from proposals.models import TalkProposal
 
 from .context import reviews_state
 from .forms import ReviewForm
@@ -394,12 +395,12 @@ def update_current_review_stages_setting(tag, value, current_review_stages_setti
     current_review_stages_setting[tag] = value
 
 
-def date_preprocess(DATETIME_INPUT_FORMATS, value):
+def date_preprocess(datetime_input_format, value):
     # Add defined datetime formatx
-    DATETIME_INPUT_FORMATS += ['%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M']
+    datetime_input_format += ['%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M']
     value = value.strip()
     # Try to strptime against each input format.
-    for format in DATETIME_INPUT_FORMATS:
+    for format in datetime_input_format:
         try:
             return datetime.datetime.strptime(value, format)
         except (ValueError, TypeError):
