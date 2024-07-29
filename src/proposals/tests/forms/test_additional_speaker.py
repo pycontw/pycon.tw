@@ -154,12 +154,29 @@ def test_additional_speaker_update_form_no_instance(form_class):
         'Additional speaker update form must be initialized with an instance.'
     )
 
-def test_additional_speaker_update_form_uneditable(additional_speaker):
-    form = AdditionalSpeakerSetStatusForm(additional_speaker)
-    """ 
-    Have to add something determine whether this form is editable
-    """
-    assert not form.is_valid()
+def test_additional_speaker_update_form_editable(rf, additional_speaker):
+    request = rf.get('/fake-path')
+    request.user = additional_speaker
+    
+    context = {
+        'user': additional_speaker,
+        'proposals_editable': True,
+    }
+
+    rendered = render_to_string('user_dashboard.html', context, request=request)
+    assert 'dashboard_cospeaking_proposal_table.html' in rendered
+
+def test_additional_speaker_update_form_uneditable(rf, additional_speaker):
+    request = rf.get('/fake-path')
+    request.user = additional_speaker
+    
+    context = {
+        'user': additional_speaker,
+        'proposals_editable': False,
+    }
+
+    rendered = render_to_string('user_dashboard.html', context, request=request)
+    assert 'dashboard_cospeaking_proposal_table_uneditable.html' in rendered
     
 def test_additional_speaker_cancel_form(additional_speaker):
     form = AdditionalSpeakerCancelForm(instance=additional_speaker)
