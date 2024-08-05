@@ -10,6 +10,11 @@ services:
       - POSTGRES_PASSWORD=secretpostgres
     ports:
       - ${COMPOSE_DB_PORT:-5432}:5432
+    healthcheck:
+      test: "pg_isready"
+      start_period: 5s
+      interval: 5s
+      retries: 10
   pycontw:
     container_name: pycontw_dev
     build:
@@ -20,12 +25,11 @@ services:
       - ./src:/usr/local/app/src
       - ./logs:/usr/local/app/logs
     ports:
-      - "8000:8000"
+      - "${COMPOSE_APP_PORT:-8000}:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
-      - DJANGO_SUPERUSER_USERNAME=admin
-      - DJANGO_SUPERUSER_PASSWORD=1234
-      - DJANGO_SUPERUSER_EMAIL=admin@pycon.tw
+      - DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
+    command: "python3 manage.py runserver 0.0.0.0:8000"
     working_dir: /usr/local/app/src
-    command: tail -f /dev/null
