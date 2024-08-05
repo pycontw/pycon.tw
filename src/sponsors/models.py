@@ -66,6 +66,7 @@ class Sponsor(ConferenceRelated):
     )
 
     class Level:
+        DIAMOND = 0
         PLATINUM = 1
         GOLD = 2
         SILVER = 3
@@ -80,6 +81,7 @@ class Sponsor(ConferenceRelated):
         PARTNER = COORGANIZER
 
     LEVEL_CHOICES = (
+        (Level.DIAMOND, _('diamond')),
         (Level.PLATINUM, _('platinum')),
         (Level.GOLD, _('gold')),
         (Level.SILVER, _('silver')),
