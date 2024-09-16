@@ -53,3 +53,34 @@ def test_speaker_names_display(talk_proposals, parser):
         </ul>
     """)
     assert actual == expected
+
+@pytest.fixture
+def review_stage_keys():
+    review_stage_keys = [
+        '.proposals.creatable', '.proposals.editable', '.proposals.withdrawable',
+        '.reviews.visible.to.submitters', '.reviews.stage',
+        '.proposals.disable.after'
+    ]
+    return review_stage_keys
+
+def test_configuration_switch(review_stage_keys, parser):
+    result = render_template(
+        '{% load proposals %}'
+        '<ul>'
+        '{% for review_stage_key in proposals %}'
+        '<li>{{ review_stage_key|configuration_switch }}</li>'
+        '{% endfor %}'
+        '</ul>', {'proposals': review_stage_keys},
+    )
+    actual = parser.arrange(parser.parse(text=result, create_parent=False))
+    expected = parser.arrange("""
+        <ul>
+          <li>pycontw-2021.proposals.creatable</li>
+          <li>pycontw-2021.proposals.editable</li>
+          <li>pycontw-2021.proposals.withdrawable</li>
+          <li>pycontw-2021.reviews.visible.to.submitters</li>
+          <li>pycontw-2021.reviews.stage</li>
+          <li>pycontw-2021.proposals.disable.after</li>
+        </ul>
+    """)
+    assert actual == expected
