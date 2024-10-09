@@ -9,7 +9,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "~3.10.0"
 
-Django = "3.2.25"
+Django = "4.2.16"
 crispy-bootstrap3 = "2024.1"
 dj-registry = "0.2.2"
 django-cors-headers = "4.3.1"
