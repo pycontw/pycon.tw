@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-20 15:33+0800\n"
+"POT-Creation-Date: 2024-07-30 14:26+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -506,7 +506,7 @@ msgstr "keynote events"
 msgid "Keynote: {speaker}"
 msgstr "Keynote: {speaker}"
 
-#: events/models.py:318 sponsors/models.py:103 sponsors/models.py:119
+#: events/models.py:318 sponsors/models.py:107 sponsors/models.py:123
 msgid "sponsor"
 msgstr "sponsor"
 
@@ -1462,67 +1462,75 @@ msgstr ""
 msgid "order"
 msgstr "order"
 
-#: sponsors/models.py:82
+#: sponsors/models.py:84
+msgid "diamond"
+msgstr "diamond"
+
+#: sponsors/models.py:85
 msgid "platinum"
 msgstr "platinum"
 
-#: sponsors/models.py:83
+#: sponsors/models.py:86
 msgid "gold"
 msgstr "gold"
 
-#: sponsors/models.py:84
+#: sponsors/models.py:87
 msgid "silver"
 msgstr "silver"
 
-#: sponsors/models.py:85
+#: sponsors/models.py:88
 msgid "bronze"
 msgstr "bronze"
 
-#: sponsors/models.py:86
+#: sponsors/models.py:89
 msgid "special"
 msgstr "special"
 
-#: sponsors/models.py:87
+#: sponsors/models.py:90
 msgid "special-thanks"
 msgstr "special-thanks"
 
-#: sponsors/models.py:88
+#: sponsors/models.py:91
 msgid "organizer"
 msgstr "organizer"
 
-#: sponsors/models.py:89
+#: sponsors/models.py:92
 msgid "co-organizer"
 msgstr "co-organizer"
 
-#: sponsors/models.py:98
+#: sponsors/models.py:93
+msgid "sprint-co-organizer"
+msgstr "sprint-coorganizer"
+
+#: sponsors/models.py:102
 msgid "level"
 msgstr "level"
 
-#: sponsors/models.py:104
+#: sponsors/models.py:108
 msgid "sponsors"
 msgstr "sponsors"
 
-#: sponsors/models.py:124
+#: sponsors/models.py:128
 msgid "open role name"
 msgstr "open role name"
 
-#: sponsors/models.py:129
+#: sponsors/models.py:133
 msgid "open role description"
 msgstr "open role description"
 
-#: sponsors/models.py:133
+#: sponsors/models.py:137
 msgid "open role requirements"
 msgstr "open role requirements"
 
-#: sponsors/models.py:138
+#: sponsors/models.py:142
 msgid "open role URL"
 msgstr "open role URL"
 
-#: sponsors/models.py:143
+#: sponsors/models.py:147
 msgid "open role"
 msgstr "open role"
 
-#: sponsors/models.py:144
+#: sponsors/models.py:148
 msgid "open roles"
 msgstr "open roles"
 

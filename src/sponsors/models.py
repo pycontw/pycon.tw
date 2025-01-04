@@ -66,6 +66,7 @@ class Sponsor(ConferenceRelated):
     )
 
     class Level:
+        DIAMOND = 0
         PLATINUM = 1
         GOLD = 2
         SILVER = 3
@@ -74,11 +75,13 @@ class Sponsor(ConferenceRelated):
         SPECIAL_THANKS = 6
         ORGANIZER = 7
         COORGANIZER = 8
+        SPRINT_COORGANIZER = 9
 
         # Backward compatibility.
         PARTNER = COORGANIZER
 
     LEVEL_CHOICES = (
+        (Level.DIAMOND, _('diamond')),
         (Level.PLATINUM, _('platinum')),
         (Level.GOLD, _('gold')),
         (Level.SILVER, _('silver')),
@@ -87,6 +90,7 @@ class Sponsor(ConferenceRelated):
         (Level.SPECIAL_THANKS, _('special-thanks')),
         (Level.ORGANIZER, _('organizer')),
         (Level.COORGANIZER, _('co-organizer')),
+        (Level.SPRINT_COORGANIZER, _('sprint-co-organizer')),
     )
 
     @property
