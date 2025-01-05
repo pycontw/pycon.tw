@@ -16,7 +16,7 @@ ENV APP_DIR /usr/local/app
 # Infrastructure tools
 # gettext is used for django to compile .po to .mo files.
 RUN apt-get update
-RUN apt-get upgrade -y 
+RUN apt-get upgrade -y
 RUN apt-get install -y \
     libpq-dev \
     gcc \
@@ -27,7 +27,7 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev
 
-ENV PYTHONUNBUFFERED=1 \ 
+ENV PYTHONUNBUFFERED=1 \
 PIP_DISABLE_PIP_VERSION_CHECK=on \
 PIP_DEFAULT_TIMEOUT=100 \
 POETRY_VIRTUALENVS_IN_PROJECT=true
