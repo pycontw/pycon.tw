@@ -74,5 +74,5 @@ EXPOSE 8000
 CMD ["uwsgi", "--http-socket", ":8000", "--master", \
      "--hook-master-start", "unix_signal:15 gracefully_kill_them_all", \
      "--static-map", "/static=assets", "--static-map", "/media=media", \
-     "--mount", "/2024=pycontw2016/wsgi.py", "--manage-script-name", \
+     "--mount", "/2025=pycontw2016/wsgi.py", "--manage-script-name", \
      "--offload-threads", "2"]
