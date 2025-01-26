@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: prod
-    container_name: pycontw-2024
-    hostname: pycontw-2024
+    container_name: pycontw-2025
+    hostname: pycontw-2025
     entrypoint: ""
     command:
       # Hacky script for quick demonstration purpose
@@ -29,7 +29,7 @@ services:
     restart: always
     environment:
       # Save us from having to type `--setting=pycontw2016.settings.production`
-      DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2024
+      DJANGO_SETTINGS_MODULE: pycontw2016.settings.production.pycontw2025
       SCRIPT_NAME: /prs
       SECRET_KEY: ${SECRET_KEY}
       DATABASE_URL: ${DATABASE_URL}
@@ -40,9 +40,9 @@ services:
     volumes:
       - ${MEDIA_ROOT}:/usr/local/app/src/media
     networks:
-      - network-2024
+      - network-2025
 
 networks:
-  network-2024:
+  network-2025:
     external: true
-    name: network-2024
+    name: network-2025
