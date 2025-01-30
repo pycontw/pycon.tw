@@ -193,7 +193,6 @@ class PasswordChangeView(auth_views.PasswordChangeView):
         context.update(**reviews_state()._asdict())
         return context
 
-
 login = auth_views.LoginView.as_view(authentication_form=AuthenticationForm)
 logout = auth_views.LogoutView.as_view()
 password_change = PasswordChangeView.as_view()

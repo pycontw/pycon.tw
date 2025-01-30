@@ -10,6 +10,10 @@
   @include button-variant($btn-natural-color, $btn-natural-bg, $btn-natural-border);
 }
 
+.btn-natural-noborder {
+  @include button-variant($btn-natural-color, $btn-natural-bg, $btn-natural-border);
+}
+
 .btn-action{
     @include button-variant($btn-action-color, $btn-action-bg, $btn-action-border);
 }
@@ -38,6 +42,19 @@
   &:hover {
     background-color: $btn-natural-hover-bg;
   }
+}
+
+.btn-natural-noborder {
+  &:hover {
+    background-color: $btn-natural-hover-bg;
+  }
+  &,
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: transparent;
+  }
+  margin-bottom: 20px;
 }
 
 .btn-natural.btn-withdraw {
