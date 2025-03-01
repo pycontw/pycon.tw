@@ -2107,11 +2107,11 @@ msgstr[1] "%(counter)s fields to go!"
 #: templates/default/users/coc_agreement.html:14
 #: templates/pycontw-2017/_includes/header.html:52
 msgid "code of conduct"
-msgstr "code of conduct"
+msgstr "Code of Conduct and Financial Aid Information"
 
 #: templates/default/users/coc_agreement.html:20
-msgid "Before we move on, please agree to the code of conudct first."
-msgstr "Before we move on, please agree to the code of conudct first."
+msgid "The following is the code of conduct."
+msgstr "The following is the code of conduct."
 
 #: templates/default/users/coc_agreement.html:26
 msgid "Confirm and continue"

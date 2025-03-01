@@ -1624,8 +1624,8 @@ msgid "code of conduct"
 msgstr ""
 
 #: templates/default/users/coc_agreement.html:20
-msgid "Before we move on, please agree to the code of conudct first."
-msgstr ""
+msgid "Before we move on, please agree to the code of conduct first."
+msgstr "rr"
 
 #: templates/default/users/coc_agreement.html:26
 msgid "Confirm and continue"

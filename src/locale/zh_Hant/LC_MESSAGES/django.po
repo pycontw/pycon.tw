@@ -2047,11 +2047,11 @@ msgstr[0] "還差 %(counter)s 欄！"
 #: templates/default/users/coc_agreement.html:14
 #: templates/pycontw-2017/_includes/header.html:52
 msgid "code of conduct"
-msgstr "行為準則"
+msgstr "行為準則與財務補助規定"
 
 #: templates/default/users/coc_agreement.html:20
-msgid "Before we move on, please agree to the code of conudct first."
-msgstr "在我們繼續之前，請先同意行為準則。"
+msgid "The following is the code of conduct."
+msgstr "以下為行為準則。"
 
 #: templates/default/users/coc_agreement.html:26
 msgid "Confirm and continue"
@@ -2216,8 +2216,8 @@ msgstr "關於"
 #: templates/pycontw-2022/_includes/footer.html:13
 #: templates/pycontw-2023/_includes/footer.html:13
 #: templates/pycontw-2024/_includes/footer.html:13
-msgid "Code of Conduct"
-msgstr "行為準則"
+msgid "Code of Conduct and Financial Aid Information"
+msgstr "行為準則與財務補助"
 
 #: templates/pycontw-2016/_includes/nav/front_nav.html:33
 #: templates/pycontw-2016/contents/_default/about/staff.html:6
