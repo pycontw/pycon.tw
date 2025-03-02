@@ -174,7 +174,6 @@ def coc_agree(request):
             main.remove(target)
 
     coc = etree.tostring(main, encoding='utf-8').decode('utf-8')
-    print(coc)
 
     return render(request, 'users/coc_agreement.html', {
         'form': form,

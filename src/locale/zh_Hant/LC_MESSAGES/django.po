@@ -2047,7 +2047,7 @@ msgstr[0] "還差 %(counter)s 欄！"
 #: templates/default/users/coc_agreement.html:14
 #: templates/pycontw-2017/_includes/header.html:52
 msgid "code of conduct"
-msgstr "行為準則與財務補助規定"
+msgstr "行為準則"
 
 #: templates/default/users/coc_agreement.html:20
 msgid "The following is the code of conduct."
