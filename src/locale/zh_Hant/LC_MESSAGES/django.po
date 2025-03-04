@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-04 01:31+0800\n"
+"POT-Creation-Date: 2025-03-04 21:35+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -1151,10 +1151,8 @@ msgid "PyCon Taiwan 2024"
 msgstr "PyCon Taiwan 2024"
 
 #: pycontw2016/settings/base.py:314
-#, fuzzy
-#| msgid "PyCon Taiwan 2020"
 msgid "PyCon Taiwan 2025"
-msgstr "PyCon Taiwan 2020"
+msgstr "PyCon Taiwan 2025"
 
 #: pycontw2016/settings/base.py:327
 #: pycontw2016/settings/production/pycontw2016.py:16
@@ -2242,8 +2240,6 @@ msgstr "關於"
 #: templates/pycontw-2023/_includes/footer.html:13
 #: templates/pycontw-2024/_includes/footer.html:13
 #: templates/pycontw-2025/_includes/footer.html:13
-#, fuzzy
-#| msgid "code of conduct"
 msgid "Code of Conduct"
 msgstr "行為準則"
 
