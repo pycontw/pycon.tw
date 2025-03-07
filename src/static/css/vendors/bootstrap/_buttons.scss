@@ -110,6 +110,7 @@ a.btn {
   &:hover,
   &:focus,
   &:active {
+    outline: none;
     border-color: transparent;
   }
   &:hover,
@@ -127,7 +128,6 @@ a.btn {
     }
   }
 }
-
 
 // Button Sizes
 // --------------------------------------------------
@@ -166,3 +166,4 @@ input[type="button"] {
     width: 100%;
   }
 }
+
