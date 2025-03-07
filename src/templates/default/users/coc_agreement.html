@@ -11,13 +11,13 @@
 {% block main-content %}
 
 <h3 class="dashboard-header">
-    <span class="header__title">{% trans 'code of conduct' %}</span>
+    <span class="header__title">{% trans 'Code of Conduct and Financial Aid Information' %}</span>
 </h3>
 
 
 <form action="" method="post" class="agreement-form">
     {% csrf_token %}
-    <p>{% blocktrans %}Before we move on, please agree to the code of conudct first.{% endblocktrans %}</p>
+    <p>{% blocktrans %}The following is the code of conduct.{% endblocktrans %}</p>
     <blockquote>
     {{ coc|safe }}
     </blockquote>
