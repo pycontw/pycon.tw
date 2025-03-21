@@ -22,4 +22,10 @@
 		{% endif %}
 	</li>
 	{% endif %}
+
+	{% if user.is_superuser %}
+	<li class="{% if active == 'admin' %}active{% endif %}">
+		<a href="{% url 'review_stages' %}">{% trans 'Review Stages' %}</a>
+	</li>
+	{% endif %}
 </ul>

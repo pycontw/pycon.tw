@@ -1,12 +1,19 @@
 import collections
+import datetime
 import json
 import random
 
+import pytz
+from django.conf import settings
+from django.conf.global_settings import DATETIME_INPUT_FORMATS
+from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Count
 from django.http import Http404
+from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import ListView, UpdateView
+from registry.helper import reg
 
 from core.utils import SequenceQuerySet
 from proposals.models import TalkProposal
@@ -26,7 +33,6 @@ class ReviewableMixin:
 
 
 class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
-
     model = TalkProposal
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/talk_proposal_list.html'
@@ -170,9 +176,9 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
                     review__stage=1,
                     review__reviewer=self.request.user
                 ) & TalkProposal.objects.filter(
-                    review__stage=2,
-                    review__reviewer=self.request.user
-                )
+                review__stage=2,
+                review__reviewer=self.request.user
+            )
             )
             stage_1_reviews = (
                 Review.objects
@@ -200,7 +206,6 @@ class TalkProposalListView(ReviewableMixin, PermissionRequiredMixin, ListView):
 
 
 class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
-
     form_class = ReviewForm
     permission_required = REVIEW_REQUIRED_PERMISSIONS
     template_name = 'reviews/review_form.html'
@@ -327,3 +332,77 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
         if query_string:
             return url + '?' + query_string
         return url
+
+
+def review_stages(request):
+    current_review_stages_setting = {}
+    review_stages_list = [
+        'Call for Proposals',
+        'Locked (proposal editing and reviewing disabled)',
+        'First Round Review', 'Modification Stage', 'Second Round Review',
+        'Internal Decision', 'Announcement of Acceptance'
+    ]
+    review_stages_var = [
+        'proposals.creatable', 'proposals.editable', 'proposals.withdrawable',
+        'reviews.visible.to.submitters', 'reviews.stage',
+        'proposals.disable.after'
+    ]
+
+    # Initialize current setting with existing value
+    for tag in review_stages_var:
+        key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
+        value = reg.get(key, '')
+        update_current_review_stages_setting(tag, value, current_review_stages_setting)
+
+    if request.method == 'POST':
+        for tag in review_stages_var:
+            key = settings.CONFERENCE_DEFAULT_SLUG + '.' + tag
+            if tag == 'proposals.disable.after':
+                if request.POST[tag] == "":
+                    continue
+                else:
+                    date_time_obj = date_preprocess(DATETIME_INPUT_FORMATS, request.POST[tag])
+                    if date_time_obj is None:
+                        messages.error(request, 'Please input valid date format : " + "%Y-%m-%dT%H:%M')
+                        value = None
+                    else:
+                        tz_selectd = pytz.timezone(request.POST['review_timezone'])
+                        loc_dt = tz_selectd.localize(date_time_obj).strftime(
+                            '%Y-%m-%d %H:%M:%S%z')
+                        value = loc_dt
+            elif tag == 'reviews.stage':
+                value = int(request.POST[tag])
+            else:
+                value = request.POST[tag]
+            reg[key] = value
+            update_current_review_stages_setting(tag, value, current_review_stages_setting)
+
+        messages.info(request, 'This setting has been changed successfully.')
+
+    return render(
+        request, 'reviews/review_stages.html', {
+            'timezones': pytz.common_timezones,
+            'review_stages_list': review_stages_list,
+            'current_review_stages_setting': current_review_stages_setting,
+            **reviews_state()._asdict()
+        })
+
+
+def update_current_review_stages_setting(tag, value, current_review_stages_setting):
+    # Django template language does not support dictionary keys containing "."
+    if "." in tag:
+        tag = tag.replace(".", "_")
+    current_review_stages_setting[tag] = value
+
+
+def date_preprocess(datetime_input_format, value):
+    # Add defined datetime formatx
+    datetime_input_format += ['%Y-%m-%dT%H:%M:%S', '%Y-%m-%dT%H:%M']
+    value = value.strip()
+    # Try to strptime against each input format.
+    for format in datetime_input_format:
+        try:
+            return datetime.datetime.strptime(value, format)
+        except (ValueError, TypeError):
+            continue
+    return None
