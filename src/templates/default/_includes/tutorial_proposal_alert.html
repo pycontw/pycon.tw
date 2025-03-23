@@ -1,0 +1,8 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<div class="dashboard-alert">
+  <div class="alert alert-warning" role="alert">
+    {% blocktrans %}Note that each field plays a crucial role in determining whether your proposal is accepted. It is recommended that you provide as much detail as possible in each field, which will greatly increase the chances of acceptance.<br/>Conversely, if the information in the field is insufficient or empty, it will greatly reduce the chances of acceptance and may even prevent your proposal from being reviewed.<br/><br/>Please review the <a href="{{ FRONTEND_HOST }}/{{ LANGUAGE_CODE }}/speaking/tutorial" target="_blank">How to Propose a Tutorial</a> page.{% endblocktrans %}
+  </div>
+</div>
