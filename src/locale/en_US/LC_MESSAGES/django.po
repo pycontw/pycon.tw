@@ -1584,6 +1584,14 @@ msgstr "Change Password"
 msgid "Reviews"
 msgstr "Reviews"
 
+#: templates/default/_includes/dashboard_tablist.html:28
+#: templates/default/reviews/review_stages.html:16
+#: templates/default/reviews/review_stages.html:44
+#, fuzzy
+#| msgid "Reviews"
+msgid "Review Stages"
+msgstr "Reviews"
+
 #: templates/default/_includes/nav/dashboard_nav.html:10
 msgid "Log out"
 msgstr "Log out"
@@ -1847,6 +1855,7 @@ msgstr "Change Log In Password"
 
 #: templates/default/registration/password_change_form.html:22
 #: templates/default/reviews/review_form.html:101
+#: templates/default/reviews/review_stages.html:114
 msgid "Submit"
 msgstr "Submit"
 
@@ -2065,6 +2074,18 @@ msgstr "My Previous Reviews"
 #: templates/default/reviews/review_form.html:96
 msgid "Review Proposal"
 msgstr "Review Proposal"
+
+#: templates/default/reviews/review_stages.html:23
+#, fuzzy
+#| msgid "Current Review Stage: %(review_stage)s"
+msgid "Current Review Stage Setting"
+msgstr "Current Review Stage: %(review_stage)s"
+
+#: templates/default/reviews/review_stages.html:35
+#, fuzzy
+#| msgid "Personal Review Stats"
+msgid "Set Review Stage"
+msgstr "Personal Review Stats"
 
 #: templates/default/reviews/talk_proposal_list.html:14
 #, python-format
@@ -5368,28 +5389,28 @@ msgstr "latest agreed CoC version"
 msgid "agreed at"
 msgstr "agreed at"
 
-#: users/views.py:44
+#: users/views.py:48
 msgid "Sign up successful. You are now logged in."
 msgstr "Sign up successful. You are now logged in."
 
-#: users/views.py:61
+#: users/views.py:65
 msgid "Email verification successful."
 msgstr "Email verification successful."
 
-#: users/views.py:73
+#: users/views.py:77
 #, python-brace-format
 msgid "A verification email has been sent to {email}"
 msgstr "A verification email has been sent to {email}"
 
-#: users/views.py:103
+#: users/views.py:107
 msgid "Your profile has been updated successfully."
 msgstr "Your profile has been updated successfully."
 
-#: users/views.py:116
+#: users/views.py:120
 msgid "Your new password has been applied successfully."
 msgstr "Your new password has been applied successfully."
 
-#: users/views.py:123
+#: users/views.py:127
 msgid ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
@@ -5397,7 +5418,7 @@ msgstr ""
 "An email is sent to your email account. Please check your inbox for furthur "
 "instructions to reset your password."
 
-#: users/views.py:131
+#: users/views.py:135
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
 
