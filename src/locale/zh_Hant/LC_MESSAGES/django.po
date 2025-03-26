@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 20:45+0800\n"
+"POT-Creation-Date: 2025-03-27 05:38+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -40,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:162
+#: attendee/models.py:9 core/models.py:162 proposals/models.py:388
 msgid "created at"
 msgstr "建立時間"
 
@@ -541,8 +541,8 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:379 events/models.py:410 reviews/models.py:75
-#: reviews/models.py:196
+#: events/models.py:379 events/models.py:410 proposals/models.py:353
+#: reviews/models.py:75 reviews/models.py:196
 msgid "proposal"
 msgstr "提案"
 
@@ -880,6 +880,50 @@ msgstr "專業課程提案"
 #: proposals/models.py:326
 msgid "tutorial proposals"
 msgstr "專業課程提案"
+
+#: proposals/models.py:359
+msgid "AI-generated summary"
+msgstr "AI 生成的摘要"
+
+#: proposals/models.py:363
+msgid "AI-generated comment"
+msgstr "AI 生成的評論"
+
+#: proposals/models.py:367
+msgid "translated summary"
+msgstr "翻譯後的摘要"
+
+#: proposals/models.py:371
+msgid "translated comment"
+msgstr "翻譯後的評論"
+
+#: proposals/models.py:375 reviews/models.py:92
+msgid "-1 (strong reject)"
+msgstr "–1（高度肯定地拒絕）"
+
+#: proposals/models.py:376 reviews/models.py:91
+msgid "-0 (weak reject)"
+msgstr "−0（輕微反對）"
+
+#: proposals/models.py:377 reviews/models.py:90
+msgid "+0 (weak accept)"
+msgstr "+0（輕微贊成）"
+
+#: proposals/models.py:378 reviews/models.py:89
+msgid "+1 (strong accept)"
+msgstr "+1（高度肯定地接受）"
+
+#: proposals/models.py:382
+msgid "AI vote"
+msgstr "AI 投票"
+
+#: proposals/models.py:393
+msgid "LLM review"
+msgstr "AI 審稿"
+
+#: proposals/models.py:394
+msgid "LLM reviews"
+msgstr "AI 審稿"
 
 #: proposals/utils.py:3
 msgctxt "speaker name default separator"
@@ -1262,22 +1306,6 @@ msgstr "審查者"
 #: reviews/models.py:70 reviews/models.py:201
 msgid "stage"
 msgstr "階段"
-
-#: reviews/models.py:89
-msgid "+1 (strong accept)"
-msgstr "+1（高度肯定地接受）"
-
-#: reviews/models.py:90
-msgid "+0 (weak accept)"
-msgstr "+0（輕微贊成）"
-
-#: reviews/models.py:91
-msgid "-0 (weak reject)"
-msgstr "−0（輕微反對）"
-
-#: reviews/models.py:92
-msgid "-1 (strong reject)"
-msgstr "–1（高度肯定地拒絕）"
 
 #: reviews/models.py:101
 msgid "vote"
