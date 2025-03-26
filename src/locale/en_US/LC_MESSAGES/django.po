@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-23 20:45+0800\n"
+"POT-Creation-Date: 2025-03-27 05:38+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -33,7 +33,7 @@ msgstr "token"
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:162
+#: attendee/models.py:9 core/models.py:162 proposals/models.py:388
 msgid "created at"
 msgstr "created at"
 
@@ -534,8 +534,8 @@ msgstr "sponsored event"
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:379 events/models.py:410 reviews/models.py:75
-#: reviews/models.py:196
+#: events/models.py:379 events/models.py:410 proposals/models.py:353
+#: reviews/models.py:75 reviews/models.py:196
 msgid "proposal"
 msgstr "proposal"
 
@@ -896,6 +896,56 @@ msgstr "tutorial proposal"
 #: proposals/models.py:326
 msgid "tutorial proposals"
 msgstr "tutorial proposals"
+
+#: proposals/models.py:359
+msgid "AI-generated summary"
+msgstr ""
+
+#: proposals/models.py:363
+msgid "AI-generated comment"
+msgstr ""
+
+#: proposals/models.py:367
+msgid "translated summary"
+msgstr ""
+
+#: proposals/models.py:371
+msgid "translated comment"
+msgstr ""
+
+#: proposals/models.py:375 reviews/models.py:92
+msgid "-1 (strong reject)"
+msgstr "–1 (strong reject)"
+
+#: proposals/models.py:376 reviews/models.py:91
+msgid "-0 (weak reject)"
+msgstr "–0 (weak reject)"
+
+#: proposals/models.py:377 reviews/models.py:90
+msgid "+0 (weak accept)"
+msgstr "+0 (weak accept)"
+
+#: proposals/models.py:378 reviews/models.py:89
+msgid "+1 (strong accept)"
+msgstr "+1 (strong accept)"
+
+#: proposals/models.py:382
+#, fuzzy
+#| msgid "vote"
+msgid "AI vote"
+msgstr "vote"
+
+#: proposals/models.py:393
+#, fuzzy
+#| msgid "review"
+msgid "LLM review"
+msgstr "review"
+
+#: proposals/models.py:394
+#, fuzzy
+#| msgid "reviews"
+msgid "LLM reviews"
+msgstr "reviews"
 
 #: proposals/utils.py:3
 msgctxt "speaker name default separator"
@@ -1300,22 +1350,6 @@ msgstr "reviewer"
 #: reviews/models.py:70 reviews/models.py:201
 msgid "stage"
 msgstr "stage"
-
-#: reviews/models.py:89
-msgid "+1 (strong accept)"
-msgstr "+1 (strong accept)"
-
-#: reviews/models.py:90
-msgid "+0 (weak accept)"
-msgstr "+0 (weak accept)"
-
-#: reviews/models.py:91
-msgid "-0 (weak reject)"
-msgstr "–0 (weak reject)"
-
-#: reviews/models.py:92
-msgid "-1 (strong reject)"
-msgstr "–1 (strong reject)"
 
 #: reviews/models.py:101
 msgid "vote"
