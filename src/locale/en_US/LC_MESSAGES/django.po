@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-27 05:38+0800\n"
+"POT-Creation-Date: 2025-03-31 23:09+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -899,19 +899,19 @@ msgstr "tutorial proposals"
 
 #: proposals/models.py:359
 msgid "AI-generated summary"
-msgstr ""
+msgstr "AI-generated summary"
 
 #: proposals/models.py:363
 msgid "AI-generated comment"
-msgstr ""
+msgstr "AI-generated comment"
 
 #: proposals/models.py:367
 msgid "translated summary"
-msgstr ""
+msgstr "translated summary"
 
 #: proposals/models.py:371
 msgid "translated comment"
-msgstr ""
+msgstr "translated comment"
 
 #: proposals/models.py:375 reviews/models.py:92
 msgid "-1 (strong reject)"
@@ -930,22 +930,16 @@ msgid "+1 (strong accept)"
 msgstr "+1 (strong accept)"
 
 #: proposals/models.py:382
-#, fuzzy
-#| msgid "vote"
 msgid "AI vote"
-msgstr "vote"
+msgstr "AI vote"
 
 #: proposals/models.py:393
-#, fuzzy
-#| msgid "review"
 msgid "LLM review"
-msgstr "review"
+msgstr "LLM review"
 
 #: proposals/models.py:394
-#, fuzzy
-#| msgid "reviews"
 msgid "LLM reviews"
-msgstr "reviews"
+msgstr "LLM reviews"
 
 #: proposals/utils.py:3
 msgctxt "speaker name default separator"
