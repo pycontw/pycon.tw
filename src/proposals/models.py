@@ -343,3 +343,56 @@ class TutorialProposal(AbstractProposal):
         return reverse('tutorial_proposal_remove_speaker', kwargs={
             'pk': self.pk, 'email': speaker.user.email,
         })
+
+
+class LLMReview(ConferenceRelated):
+    """Model for storing AI-generated reviews of proposals."""
+
+    proposal = models.OneToOneField(
+        to='TalkProposal',
+        verbose_name=_('proposal'),
+        on_delete=models.CASCADE,
+        related_name='llm_review',
+    )
+
+    summary = models.TextField(
+        verbose_name=_('AI-generated summary'),
+    )
+
+    comment = models.TextField(
+        verbose_name=_('AI-generated comment'),
+    )
+
+    translated_summary = models.TextField(
+        verbose_name=_('translated summary'),
+    )
+
+    translated_comment = models.TextField(
+        verbose_name=_('translated comment'),
+    )
+
+    VOTE_CHOICES = (
+        ('-1', _('-1 (strong reject)')),
+        ('-0', _('-0 (weak reject)')),
+        ('+0', _('+0 (weak accept)')),
+        ('+1', _('+1 (strong accept)')),
+    )
+
+    vote = models.CharField(
+        verbose_name=_('AI vote'),
+        max_length=2,
+        choices=VOTE_CHOICES,
+    )
+
+    created_at = models.DateTimeField(
+        verbose_name=_('created at'),
+        auto_now_add=True,
+    )
+
+    class Meta:
+        verbose_name = _('LLM review')
+        verbose_name_plural = _('LLM reviews')
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'AI Review for {self.proposal.title}'
