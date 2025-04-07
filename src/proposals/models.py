@@ -348,11 +348,12 @@ class TutorialProposal(AbstractProposal):
 class LLMReview(ConferenceRelated):
     """Model for storing AI-generated reviews of proposals."""
 
-    proposal = models.OneToOneField(
-        to='TalkProposal',
-        verbose_name=_('proposal'),
+    proposal = BigForeignKey(
         on_delete=models.CASCADE,
         related_name='llm_review',
+        to='proposals.TalkProposal',
+        verbose_name=_('proposal'),
+        unique=True,
     )
 
     summary = models.TextField(
