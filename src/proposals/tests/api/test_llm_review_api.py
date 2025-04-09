@@ -11,6 +11,7 @@ def llm_review(talk_proposal):
     """Create a test LLM review fixture."""
     return LLMReview.objects.create(
         proposal=talk_proposal,
+        category="PRAC",
         summary="Test summary",
         comment="Test comment",
         translated_summary="Translated summary",
@@ -37,6 +38,7 @@ def test_create_llm_review(api_client, talk_proposal):
     """Test creating a new LLM review."""
     data = {
         "proposal_id": talk_proposal.id,
+        "category": "PRAC",
         "summary": "New summary",
         "comment": "New comment",
         "translated_summary": "New translated summary",
@@ -64,6 +66,7 @@ def test_create_llm_review(api_client, talk_proposal):
     created_review = LLMReview.objects.get(proposal=talk_proposal)
     assert created_review.summary == "New summary"
     assert created_review.vote == "+0"
+    assert created_review.category == "PRAC"
 
 
 def test_retrieve_llm_review(api_client, llm_review):
@@ -83,6 +86,7 @@ def test_update_llm_review(api_client, llm_review):
     """Test updating an existing LLM review."""
     data = {
         "proposal_id": llm_review.proposal.id,
+        "category": "CORE",
         "summary": "Updated summary",
         "comment": "Updated comment",
         "translated_summary": "Updated translated summary",
@@ -110,6 +114,7 @@ def test_update_llm_review(api_client, llm_review):
     updated_review = LLMReview.objects.get(id=llm_review.id)
     assert updated_review.summary == "Updated summary"
     assert updated_review.vote == "-0"
+    assert updated_review.category == "CORE"
 
 
 def test_delete_llm_review(api_client, llm_review):

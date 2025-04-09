@@ -20,7 +20,7 @@ class LLMReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = LLMReview
         fields = [
-            'id', 'proposal', 'proposal_id', 'summary', 'comment',
+            'id', 'proposal', 'proposal_id', 'category', 'summary', 'comment',
             'translated_summary', 'translated_comment', 'vote', 'created_at',
         ]
         read_only_fields = ['id', 'created_at']

@@ -12,6 +12,7 @@ from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
 
 from core.models import (
+    CATEGORY_CHOICES,
     BigForeignKey,
     ConferenceRelated,
     DefaultConferenceManager,
@@ -354,6 +355,12 @@ class LLMReview(ConferenceRelated):
         to='proposals.TalkProposal',
         verbose_name=_('proposal'),
         unique=True,
+    )
+
+    category = models.CharField(
+        verbose_name=_('category'),
+        max_length=5,
+        choices=CATEGORY_CHOICES,
     )
 
     summary = models.TextField(

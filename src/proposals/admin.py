@@ -35,7 +35,7 @@ class ProposalAdmin(admin.ModelAdmin):
 
 class LLMReviewInline(admin.StackedInline):
     model = LLMReview
-    fields = ['summary', 'comment', 'translated_summary', 'translated_comment', 'vote', 'created_at']
+    fields = ['summary', 'comment', 'translated_summary', 'translated_comment', 'category', 'vote', 'created_at']
     readonly_fields = ['created_at']
     can_delete = False
     max_num = 1
