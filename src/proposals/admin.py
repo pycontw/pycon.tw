@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
 from import_export.admin import ExportMixin
 
-from .models import AdditionalSpeaker, TalkProposal, TutorialProposal
+from .models import AdditionalSpeaker, LLMReview, TalkProposal, TutorialProposal
 from .resources import TalkProposalResource, TutorialProposalResource
 
 
@@ -33,6 +33,15 @@ class ProposalAdmin(admin.ModelAdmin):
     inlines = [AdditionalSpeakerInline]
 
 
+class LLMReviewInline(admin.StackedInline):
+    model = LLMReview
+    fields = ['summary', 'comment', 'translated_summary', 'translated_comment', 'category', 'vote', 'created_at']
+    readonly_fields = ['created_at']
+    can_delete = False
+    max_num = 1
+    min_num = 0
+
+
 @admin.register(TalkProposal)
 class TalkProposalAdmin(ExportMixin, ProposalAdmin):
     resource_class = TalkProposalResource
@@ -45,6 +54,7 @@ class TalkProposalAdmin(ExportMixin, ProposalAdmin):
         'first_time_speaker',
         'accepted',
     ]
+    inlines = [AdditionalSpeakerInline, LLMReviewInline]
 
 
 @admin.register(TutorialProposal)
