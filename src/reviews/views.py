@@ -8,8 +8,9 @@ from django.http import Http404
 from django.urls import reverse
 from django.views.generic import ListView, UpdateView
 
+
 from core.utils import SequenceQuerySet
-from proposals.models import TalkProposal
+from proposals.models import TalkProposal, LLMReview 
 
 from .context import reviews_state
 from .forms import ReviewForm
@@ -327,3 +328,34 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
         if query_string:
             return url + '?' + query_string
         return url
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        # 獲取提案對象
+        proposal = self.proposal
+        
+        # 嘗試獲取 LLMReview
+        summary_text = ""
+        comment_text = ""
+        translated_summary = ""
+        translated_comment = ""
+        category = ""
+        try:
+            llm_review = LLMReview.objects.get(proposal=proposal)
+            summary_text = llm_review.summary
+            comment_text = llm_review.comment
+            translated_summary = llm_review.translated_summary
+            translated_comment = llm_review.translated_comment
+            category = llm_review.category
+        except LLMReview.DoesNotExist:
+            summary_text = "No AI summary available for this proposal."
+            comment_text = "No AI comments available for this proposal."
+        
+        # 添加到上下文
+        context['summary_text'] = summary_text
+        context['comment_text'] = comment_text
+        context['translated_summary'] = translated_summary  
+        context['translated_comment'] = translated_comment
+        context['category'] = category
+        return context

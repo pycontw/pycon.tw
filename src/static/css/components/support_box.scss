@@ -1,0 +1,143 @@
+.support-box-container {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+    font-family: inherit;
+
+    .support-box-trigger {
+        background-color: #3a5c6a;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .support-box-panel {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 320px;
+        height: 70vh;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        display: none;
+        transform: scale(0.9);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+
+        &.open {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .support-box-header {
+            padding: 16px;
+            background-color: #3a5c6a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .support-box-title {
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .support-box-close {
+                width: 24px;
+                height: 24px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                padding: 0;
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: white;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+
+                    &:first-child {
+                        transform: rotate(45deg);
+                    }
+
+                    &:last-child {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+
+        .support-box-content {
+            padding: 16px;
+            color: #333;
+
+            .nav-pills {
+                >li {
+                    >a {
+                        color: #3a5c6a;
+
+                        &:hover,
+                        &:focus {
+                            background-color: #3a5c6a;
+                            color: white;
+                        }
+                    }
+
+                    &.active>a {
+                        background-color: #3a5c6a;
+                        color: white;
+
+                        &:hover,
+                        &:focus {
+                            background-color: #3a5c6a;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .support-box-input {
+                margin-top: 16px;
+                display: flex;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                overflow: hidden;
+
+                input {
+                    flex: 1;
+                    padding: 8px 12px;
+                    border: none;
+                    font-size: 14px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .send-button {
+                    background-color: #46c1ea;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #3a5c6a;
+                    }
+                }
+            }
+        }
+    }
+}
