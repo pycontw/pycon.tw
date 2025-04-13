@@ -8,9 +8,8 @@ from django.http import Http404
 from django.urls import reverse
 from django.views.generic import ListView, UpdateView
 
-
 from core.utils import SequenceQuerySet
-from proposals.models import TalkProposal, LLMReview 
+from proposals.models import LLMReview, TalkProposal
 
 from .context import reviews_state
 from .forms import ReviewForm
@@ -312,29 +311,9 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             # it does not show up twice (once in the table, once in form).
             my_reviews = my_reviews.exclude(pk=self.object.pk)
 
-        kwargs.update({
-            'proposal': self.proposal,
-            'snapshot': self.get_snapshot(self.proposal),
-            'other_reviews': other_reviews,
-            'my_reviews': my_reviews,
-            'review_stage': review_stage,
-            **self.reviews_state._asdict(),
-        })
-        return super().get_context_data(**kwargs)
-
-    def get_success_url(self):
-        query_string = self.request.GET.urlencode()
-        url = reverse('review_proposal_list')
-        if query_string:
-            return url + '?' + query_string
-        return url
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        
         # 獲取提案對象
         proposal = self.proposal
-        
+
         # 嘗試獲取 LLMReview
         summary_text = ""
         comment_text = ""
@@ -351,11 +330,25 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
         except LLMReview.DoesNotExist:
             summary_text = "No AI summary available for this proposal."
             comment_text = "No AI comments available for this proposal."
-        
-        # 添加到上下文
-        context['summary_text'] = summary_text
-        context['comment_text'] = comment_text
-        context['translated_summary'] = translated_summary  
-        context['translated_comment'] = translated_comment
-        context['category'] = category
-        return context
+
+        kwargs.update({
+            'proposal': self.proposal,
+            'snapshot': self.get_snapshot(self.proposal),
+            'other_reviews': other_reviews,
+            'my_reviews': my_reviews,
+            'review_stage': review_stage,
+            'summary_text': summary_text,
+            'comment_text': comment_text,
+            'translated_summary': translated_summary,
+            'translated_comment': translated_comment,
+            'category': category,
+            **self.reviews_state._asdict(),
+        })
+        return super().get_context_data(**kwargs)
+
+    def get_success_url(self):
+        query_string = self.request.GET.urlencode()
+        url = reverse('review_proposal_list')
+        if query_string:
+            return url + '?' + query_string
+        return url
