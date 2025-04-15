@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.views.generic import ListView, UpdateView
 
 from core.utils import SequenceQuerySet
-from proposals.models import TalkProposal
+from proposals.models import LLMReview, TalkProposal
 
 from .context import reviews_state
 from .forms import ReviewForm
@@ -311,12 +311,37 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             # it does not show up twice (once in the table, once in form).
             my_reviews = my_reviews.exclude(pk=self.object.pk)
 
+        # 獲取提案對象
+        proposal = self.proposal
+
+        # 嘗試獲取 LLMReview
+        summary_text = ""
+        comment_text = ""
+        translated_summary = ""
+        translated_comment = ""
+        category = ""
+        try:
+            llm_review = LLMReview.objects.get(proposal=proposal)
+            summary_text = llm_review.summary
+            comment_text = llm_review.comment
+            translated_summary = llm_review.translated_summary
+            translated_comment = llm_review.translated_comment
+            category = llm_review.category
+        except LLMReview.DoesNotExist:
+            summary_text = "No AI summary available for this proposal."
+            comment_text = "No AI comments available for this proposal."
+
         kwargs.update({
             'proposal': self.proposal,
             'snapshot': self.get_snapshot(self.proposal),
             'other_reviews': other_reviews,
             'my_reviews': my_reviews,
             'review_stage': review_stage,
+            'summary_text': summary_text,
+            'comment_text': comment_text,
+            'translated_summary': translated_summary,
+            'translated_comment': translated_comment,
+            'category': category,
             **self.reviews_state._asdict(),
         })
         return super().get_context_data(**kwargs)
