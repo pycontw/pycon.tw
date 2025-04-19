@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-10 02:11+0800\n"
+"POT-Creation-Date: 2025-04-19 20:30+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -1705,15 +1705,15 @@ msgstr ""
 "\"%(FRONTEND_HOST)s/%(LANGUAGE_CODE)s/speaking/tutorial\" target=\"_blank\">"
 "如何投稿專業課程</a>頁面。"
 
-#: templates/default/dashboard_base.html:6
+#: templates/default/dashboard_base.html:7
 #: templates/pycontw-2016/_includes/nav/front_nav.html:82
 msgid "Dashboard"
 msgstr "控制面板"
 
-#: templates/default/dashboard_base.html:15
-#, python-format
+#: templates/default/dashboard_base.html:16
+#| msgid "Hi %(name)s, welcome!"
 msgid "Hi %(name)s, welcome!"
-msgstr "%(name)s，歡迎！"
+msgstr "嗨 %(name)s，歡迎！"
 
 #: templates/default/dashboard_base.html:22
 msgid ""
@@ -1729,10 +1729,49 @@ msgstr "沒有收到認證信嗎？"
 msgid "Request a new one."
 msgstr "重新寄送一封。"
 
-#: templates/default/dashboard_base.html:31
+#: templates/default/dashboard_base.html:32
 msgid ""
 "You need to complete your speaker profile first before submitting a proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
+
+#: templates/default/dashboard_base.html:57
+#| msgid "View AI Summary and Comments"
+msgid "View AI Summary and Comments "
+msgstr "檢視 AI 摘要評論"
+
+#: templates/default/dashboard_base.html:63
+#| msgid "AI Summary and Comments"
+msgid " AI Summary and Comments "
+msgstr " AI 摘要評論"
+
+#: templates/default/dashboard_base.html:72
+msgid "AI Recommendation Category"
+msgstr "AI 建議分類"
+
+#: templates/default/dashboard_base.html:81
+msgid "Summary"
+msgstr ""
+
+#: templates/default/dashboard_base.html:82
+#: templates/default/reviews/_includes/previous_review_table.html:9
+msgid "Comments"
+msgstr "評論"
+
+#: templates/default/dashboard_base.html:90
+msgid "AI-Generated Summary"
+msgstr "AI 生成的摘要"
+
+#: templates/default/dashboard_base.html:95
+msgid "Translated Summary"
+msgstr "翻譯後的摘要"
+
+#: templates/default/dashboard_base.html:105
+msgid "AI-Generated Comments"
+msgstr "AI 生成的評論"
+
+#: templates/default/dashboard_base.html:110
+msgid "Translated Comments"
+msgstr "翻譯後的評論"
 
 #: templates/default/proposals/_proposal_create.html:14
 msgid "Create Proposal"
@@ -1915,10 +1954,6 @@ msgstr "審稿人代號"
 #: templates/default/reviews/_includes/review_table_thead.html:6
 msgid "Vote"
 msgstr "投票"
-
-#: templates/default/reviews/_includes/previous_review_table.html:9
-msgid "Comments"
-msgstr "評論"
 
 #: templates/default/reviews/_includes/previous_review_table.html:22
 msgid "(Comment redacted by the reviewer or organizers.)"
