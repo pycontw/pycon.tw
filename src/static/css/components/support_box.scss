@@ -82,7 +82,12 @@
         .support-box-content {
             padding: 16px;
             color: #333;
-
+            max-height: calc(70vh - 60px); // 根據 header 高度調整
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            // white-space: pre-wrap;
+            // word-break: break-word;
+          
             .nav-pills {
                 >li {
                     >a {
