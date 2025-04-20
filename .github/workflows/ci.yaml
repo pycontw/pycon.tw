@@ -8,7 +8,7 @@ env:
 
 jobs:
   ci:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     services:
       postgres:
@@ -42,10 +42,14 @@ jobs:
       run: |
         poetry install
 
+    - name: Ensure setuptools is installed in virtualenv
+      run: |
+        poetry run pip install setuptools
+
     - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
-        
+
     - name: install via yarn2
       run: |
        yarn install --immutable
