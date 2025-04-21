@@ -16,6 +16,15 @@ class TalkProposalResource(resources.ModelResource):
     stage_2_minus_1_count = fields.Field()
 
     def dehydrate_stage_1_plus_1_count(self, obj):
+
+
+
+
+
+
+
+
+
         return self.data[obj.id]['stage_1']['+1']
 
     def dehydrate_stage_1_plus_0_count(self, obj):
