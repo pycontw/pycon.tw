@@ -259,11 +259,12 @@ class AuthenticationForm(BaseAuthenticationForm):
                         '<a class="btn btn-link" href="{signup_url}">'
                         'Sign up now</a>'
                     ).format(signup_url=reverse('signup'))),
-                    css_class='col-xs-6',
+                    css_class='col-xs-12 col-sm-6',
                 ),
                 Div(
-                    Submit('save', _('Log In'), css_class='btn-sm btn-block m-t-5'),
-                    css_class='col-xs-6',
+                    Submit('save', _('Log In'), css_class='btn-sm m-t-5'),
+                    css_class='col-xs-12 col-sm-6',
+                    id='login-btn-container'
                 ),
                 css_class='row',
             ))
