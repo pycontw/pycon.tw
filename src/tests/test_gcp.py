@@ -1,6 +1,10 @@
 import os
 
 import pytest
+
+if not os.path.exists('google-cloud-storage.json'):
+    pytest.skip("Missing google-cloud-storage.json, skipping GCP tests", allow_module_level=True)
+
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import override_settings
