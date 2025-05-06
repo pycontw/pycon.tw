@@ -8,7 +8,7 @@ env:
 
 jobs:
   ci:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     services:
       postgres:
@@ -45,7 +45,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: '20.x'
-        
+
     - name: install via yarn2
       run: |
        yarn install --immutable
