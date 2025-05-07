@@ -7,6 +7,10 @@ FROM node_base as node_deps
 COPY ./yarn.lock yarn.lock
 COPY ./package.json package.json
 
+# ARM-based macOS requires python to rebuild node-sass binary
+RUN apt-get update
+RUN apt-get install -y python3-pip
+
 RUN corepack enable
 RUN yarn install --immutable
 
