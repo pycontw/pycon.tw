@@ -5,6 +5,7 @@ from django.contrib.contenttypes.fields import (
     GenericForeignKey,
     GenericRelation,
 )
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import Q
 from django.urls import reverse
@@ -349,18 +350,34 @@ class TutorialProposal(AbstractProposal):
 class LLMReview(ConferenceRelated):
     """Model for storing AI-generated reviews of proposals."""
 
-    proposal = BigForeignKey(
-        on_delete=models.CASCADE,
-        related_name='llm_review',
-        to='proposals.TalkProposal',
-        verbose_name=_('proposal'),
-        unique=True,
+    STAGE_1 = 'S1'
+    STAGE_2 = 'S2'
+    REVIEW_STAGE_CHOICES = (
+        (STAGE_1, _('Stage 1')),
+        (STAGE_2, _('Stage 2')),
     )
 
-    category = models.CharField(
-        verbose_name=_('category'),
-        max_length=5,
-        choices=CATEGORY_CHOICES,
+    proposal = BigForeignKey(
+        on_delete=models.CASCADE,
+        related_name='llm_reviews',
+        to='proposals.TalkProposal',
+        verbose_name=_('proposal')
+    )
+
+    stage = models.CharField(
+        verbose_name=_('review stage'),
+        max_length=2,
+        choices=REVIEW_STAGE_CHOICES,
+        default=STAGE_1,
+        db_index=True,
+    )
+
+    categories = ArrayField(
+        models.CharField(max_length=5, choices=CATEGORY_CHOICES),
+        size=3,
+        verbose_name=_('Categories'),
+        default=list,
+        blank=True
     )
 
     summary = models.TextField(
@@ -397,10 +414,23 @@ class LLMReview(ConferenceRelated):
         auto_now_add=True,
     )
 
+    stage_diff = models.TextField(
+        verbose_name=_('stage difference'),
+        blank=True,
+        default=''
+    )
+
+    translated_stage_diff = models.TextField(
+        verbose_name=_('translated stage difference'),
+        blank=True,
+        default=''
+    )
+
     class Meta:
         verbose_name = _('LLM review')
         verbose_name_plural = _('LLM reviews')
-        ordering = ['-created_at']
+        unique_together = (('proposal', 'stage'),)
+        ordering = ['proposal__title', 'stage', '-created_at']
 
     def __str__(self):
-        return f'AI Review for {self.proposal.title}'
+        return f'AI Review for {self.proposal.title} ({self.get_stage_display()})'
