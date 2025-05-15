@@ -283,67 +283,93 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         review_stage = self.reviews_state.reviews_stage
-        # Query all reviews made by others, including all stages
+
+        # 1. 其他人的 review
         other_review_iter = (
             Review.objects
-            .filter_current_reviews(
-                proposal=self.proposal,
-                exclude_user=self.request.user,
-            )
-            .iter_reviewer_latest_reviews()
+                  .filter_current_reviews(
+                      proposal=self.proposal,
+                      exclude_user=self.request.user
+                  )
+                  .iter_reviewer_latest_reviews()
         )
-        # Sort other_reviews by vote.
         other_reviews = sorted(
             other_review_iter,
-            key=lambda r: Review.VOTE_ORDER[r.vote],
+            key=lambda r: Review.VOTE_ORDER[r.vote]
         )
+
+        # 2. 我自己的 review
         my_reviews = (
             Review.objects
-            .filter_current_reviews(
-                proposal=self.proposal,
-                filter_user=self.request.user,
-            )
-            .order_by('stage')
+                  .filter_current_reviews(
+                      proposal=self.proposal,
+                      filter_user=self.request.user
+                  )
+                  .order_by('stage')
         )
         if self.proposal.accepted is None and self.object:
-            # If this proposal does not have verdict, this page will have a
-            # review form. Exclude the current user's current review so that
-            # it does not show up twice (once in the table, once in form).
             my_reviews = my_reviews.exclude(pk=self.object.pk)
 
-        # 獲取提案對象
-        proposal = self.proposal
-
-        # 嘗試獲取 LLMReview
-        summary_text = ""
-        comment_text = ""
-        translated_summary = ""
-        translated_comment = ""
-        category = ""
-        try:
-            llm_review = LLMReview.objects.get(proposal=proposal)
-            summary_text = llm_review.summary
-            comment_text = llm_review.comment
-            translated_summary = llm_review.translated_summary
-            translated_comment = llm_review.translated_comment
-            category = llm_review.category
-        except LLMReview.DoesNotExist:
+        # 3. LLMReview 階段 1
+        summary_text = comment_text = translated_summary = translated_comment = ""
+        categories = []
+        llm1 = (
+            LLMReview.objects
+                     .filter(proposal=self.proposal, stage=LLMReview.STAGE_1)
+                     .first()
+        )
+        if llm1:
+            summary_text = llm1.summary
+            comment_text = llm1.comment
+            translated_summary = llm1.translated_summary
+            translated_comment = llm1.translated_comment
+            categories = llm1.categories
+        else:
             summary_text = "No AI summary available for this proposal."
             comment_text = "No AI comments available for this proposal."
 
+        # 4. LLMReview 階段 2（包含翻譯欄位）
+        llm2 = (
+            LLMReview.objects
+                     .filter(proposal=self.proposal, stage=LLMReview.STAGE_2)
+                     .first()
+        )
+        if llm2:
+            kwargs.update({
+                'stage_2_summary':               llm2.summary,
+                'stage_2_translated_summary':    llm2.translated_summary,
+                'stage_2_comment':               llm2.comment,
+                'stage_2_translated_comment':    llm2.translated_comment,
+                'stage_2_categories':            llm2.categories,
+                'stage_2_stage_diff':            llm2.stage_diff,
+                'stage_2_translated_stage_diff': llm2.translated_stage_diff,
+            })
+        else:
+            kwargs.update({
+                'stage_2_summary':               '',
+                'stage_2_translated_summary':    '',
+                'stage_2_comment':               '',
+                'stage_2_translated_comment':    '',
+                'stage_2_categories':            [],
+                'stage_2_stage_diff':            '',
+                'stage_2_translated_stage_diff': '',
+            })
+
+        # 5. 最後把共用的 context 都放進去
         kwargs.update({
-            'proposal': self.proposal,
-            'snapshot': self.get_snapshot(self.proposal),
-            'other_reviews': other_reviews,
-            'my_reviews': my_reviews,
-            'review_stage': review_stage,
-            'summary_text': summary_text,
-            'comment_text': comment_text,
+            'proposal':           self.proposal,
+            'snapshot':           self.get_snapshot(self.proposal),
+            'other_reviews':      other_reviews,
+            'my_reviews':         my_reviews,
+            'review_stage':       review_stage,
+            'summary_text':       summary_text,
+            'comment_text':       comment_text,
             'translated_summary': translated_summary,
             'translated_comment': translated_comment,
-            'category': category,
+            'categories':         categories,
             **self.reviews_state._asdict(),
         })
+
         return super().get_context_data(**kwargs)
 
     def get_success_url(self):

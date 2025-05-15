@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:59+0800\n"
+"POT-Creation-Date: 2025-05-15 21:24+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -1741,66 +1741,55 @@ msgstr ""
 msgid "Dashboard"
 msgstr "控制面板"
 
-#: templates/default/dashboard_base.html:16
+#: templates/default/dashboard_base.html:14
 #, python-format
 msgid "Hi %(name)s, welcome!"
 msgstr "嗨 %(name)s，歡迎！"
 
-#: templates/default/dashboard_base.html:22
+#: templates/default/dashboard_base.html:20
 msgid ""
 "Please verify your account by clicking the link in the mail we sent to your "
 "email inbox."
 msgstr "我們已寄帳號認證信至您的信箱，請點擊信中的連結完成認證。"
 
-#: templates/default/dashboard_base.html:25
+#: templates/default/dashboard_base.html:23
 msgid "Did not get the verification mail?"
 msgstr "沒有收到認證信嗎？"
 
-#: templates/default/dashboard_base.html:26
+#: templates/default/dashboard_base.html:24
 msgid "Request a new one."
 msgstr "重新寄送一封。"
 
-#: templates/default/dashboard_base.html:32
+#: templates/default/dashboard_base.html:30
 msgid ""
 "You need to complete your speaker profile first before submitting a proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
 
-#: templates/default/dashboard_base.html:57
+#: templates/default/dashboard_base.html:53
 msgid "View AI Summary and Comments "
 msgstr "檢視 AI 摘要評論"
 
-#: templates/default/dashboard_base.html:63
-msgid " AI Summary and Comments "
-msgstr " AI 摘要評論"
+#: templates/default/dashboard_base.html:57
+msgid "View AI Summary and Comments"
+msgstr "AI 摘要評論"
 
-#: templates/default/dashboard_base.html:72
+#: templates/default/dashboard_base.html:64
+#: templates/default/dashboard_base.html:71
 msgid "AI Recommendation Category"
 msgstr "AI 建議分類"
 
-#: templates/default/dashboard_base.html:81
-msgid "Summary"
-msgstr ""
-
 #: templates/default/dashboard_base.html:82
+msgid "Summary"
+msgstr "摘要"
+
+#: templates/default/dashboard_base.html:85
 #: templates/default/reviews/_includes/previous_review_table.html:9
 msgid "Comments"
 msgstr "評論"
 
-#: templates/default/dashboard_base.html:90
-msgid "AI-Generated Summary"
-msgstr "AI 生成的摘要"
-
-#: templates/default/dashboard_base.html:95
-msgid "Translated Summary"
-msgstr "翻譯後的摘要"
-
-#: templates/default/dashboard_base.html:105
-msgid "AI-Generated Comments"
-msgstr "AI 生成的評論"
-
-#: templates/default/dashboard_base.html:110
-msgid "Translated Comments"
-msgstr "翻譯後的評論"
+#: templates/default/dashboard_base.html:89
+msgid "Difference"
+msgstr "差異"
 
 #: templates/default/proposals/_proposal_create.html:14
 msgid "Create Proposal"
@@ -5349,6 +5338,24 @@ msgstr ""
 #: users/views.py:131
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
+
+#~ msgid "AI Review"
+#~ msgstr "審查"
+
+#~ msgid " AI Summary and Comments "
+#~ msgstr " AI 摘要評論"
+
+#~ msgid "AI-Generated Summary"
+#~ msgstr "AI 生成的摘要"
+
+#~ msgid "Translated Summary"
+#~ msgstr "翻譯後的摘要"
+
+#~ msgid "AI-Generated Comments"
+#~ msgstr "AI 生成的評論"
+
+#~ msgid "Translated Comments"
+#~ msgstr "翻譯後的評論"
 
 #~ msgid "HTML"
 #~ msgstr "HTML"

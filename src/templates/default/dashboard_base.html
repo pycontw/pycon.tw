@@ -4,10 +4,8 @@
 {% load pycontw_tools %}
 {% load static %}
 
-{% block title %}{% trans 'Dashboard' %}{% endblock title %}
-
+{% block title %}{% trans 'Dashboard' %}{% endblock %}
 {% block body-class %}dashboard{% endblock %}
-
 {% block nav %}{% include '_includes/nav/dashboard_nav.html' %}{% endblock %}
 
 {% block content %}
@@ -32,7 +30,6 @@
       <p>{% trans 'You need to complete your speaker profile first before submitting a proposal.' %}</p>
     </div>
   {% endif %}
-
   {% for message in messages %}
     <div class="alert {{ message|message_bootstrap_class_str }} clearfix" role="alert">
       <p>{{ message }}</p>
@@ -42,77 +39,103 @@
 
 <div class="row main-container">
   <div class="col-md-2 sidebar">
-    {% block dashboard_tablist %}{% endblock dashboard_tablist %}
+    {% block dashboard_tablist %}{% endblock %}
   </div>
   <div class="col-md-10 main">
     {% block main-content %}{% endblock %}
   </div>
 </div>
 
-<!-- Summary display box (right-bottom corner) -->
-{% if summary_text or comment_text %}
+{# AI Review Panel #}
+{% if review_stage == 1 or review_stage == 2 %}
   <div class="support-box-container">
-    <!-- 小長方形觸發按鈕 -->
     <div class="support-box-trigger" id="supportBoxTrigger">
-      <span>{% trans "View AI Summary and Comments " %}</span>
+      <span>{% trans 'View AI Summary and Comments ' %}</span>
     </div>
-
-    <!-- 展開後的摘要面板 -->
     <div class="support-box-panel" id="supportBoxPanel">
       <div class="support-box-header">
-        <div class="support-box-title">{% trans " AI Summary and Comments " %}</div>
-        <button class="support-box-close" id="supportBoxClose">
-          <span></span>
-          <span></span>
-        </button>
+        <div class="support-box-title">{% trans 'View AI Summary and Comments' %}</div>
+        <button class="support-box-close" id="supportBoxClose"><span></span><span></span></button>
       </div>
       <div class="support-box-content">
-        {% if category %}
-          <div class="category-display" style="margin-bottom: 12px;">
-            <strong>{% trans "AI Recommendation Category" %}:</strong> {{ category }}
+        {# Recommendation Categories #}
+        {% if review_stage == 1 and categories %}
+          <div class="category-display mb-3">
+            <strong>{% trans 'AI Recommendation Category' %}:</strong>
+            <ul>
+              {% for cat in categories %}<li>{{ cat }}</li>{% endfor %}
+            </ul>
           </div>
-          <hr style="margin-bottom: 12px;">
+        {% elif review_stage == 2 and stage_2_categories %}
+          <div class="category-display mb-3">
+            <strong>{% trans 'AI Recommendation Category' %}:</strong>
+            <ul>
+              {% for cat in stage_2_categories %}<li>{{ cat }}</li>{% endfor %}
+            </ul>
+          </div>
         {% endif %}
 
         {% get_current_language as LANGUAGE_CODE %}
-
-        <!-- 使用標籤頁來區分摘要和評論 -->
+        {# Tabs for Summary, Comments, (Difference) #}
         <ul class="nav nav-pills mb-3" role="tablist">
-          <li class="active"><a href="#summary-tab" role="tab" data-toggle="tab">{% trans "Summary" %}</a></li>
-          <li><a href="#comment-tab" role="tab" data-toggle="tab">{% trans "Comments" %}</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#summary" role="tab">{% trans 'Summary' %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#comments" role="tab">{% trans 'Comments' %}</a>
+          </li>
+          {% if review_stage == 2 %}
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#diff" role="tab">{% trans 'Difference' %}</a>
+            </li>
+          {% endif %}
         </ul>
 
         <div class="tab-content">
-          <!-- 摘要標籤頁 -->
-          <div class="tab-pane active" id="summary-tab">
-            {% if LANGUAGE_CODE == "zh-hant" or LANGUAGE_CODE == "zh-tw" %}
-              {% if summary_text %}
-                <!-- <h4>{% trans "AI-Generated Summary" %}</h4> -->
-                <p >{{ summary_text|linebreaksbr }}</p>
+          {# Summary Pane #}
+          <div class="tab-pane active" id="summary" role="tabpanel">
+            {% if LANGUAGE_CODE == 'zh-hant' or LANGUAGE_CODE == 'zh-tw' %}
+              {% if review_stage == 1 %}
+                <p>{{ summary_text  |linebreaksbr }}</p>
+              {% else %}
+                <p>{{  stage_2_summary|linebreaksbr }}</p>
               {% endif %}
             {% else %}
-              {% if translated_summary %}
-                <!-- <h4>{% trans "Translated Summary" %}</h4> -->
-                <p >{{ translated_summary|linebreaksbr }}</p>
+              {% if review_stage == 1 %}
+                <p>{{ translated_summary|linebreaksbr }}</p>
+              {% else %}
+                <p>{{ stage_2_translated_summary|linebreaksbr }}</p>
               {% endif %}
             {% endif %}
           </div>
-
-          <!-- 評論標籤頁 -->
-          <div class="tab-pane" id="comment-tab">
-            {% if LANGUAGE_CODE == "zh-hant" or LANGUAGE_CODE == "zh-tw" %}
-              {% if comment_text %}
-                <!-- <h4>{% trans "AI-Generated Comments" %}</h4> -->
-                <p >{{ comment_text|linebreaksbr }}</p>
+          {# Comments Pane #}
+          <div class="tab-pane fade" id="comments" role="tabpanel">
+            {% if LANGUAGE_CODE == 'zh-hant' or LANGUAGE_CODE == 'zh-tw' %}
+              {% if review_stage == 1 %}
+                <p>{{ comment_text |linebreaksbr }}</p>
+              {% else %}
+                <p>{{ stage_2_comment |linebreaksbr }}</p>
               {% endif %}
             {% else %}
-              {% if translated_comment %}
-                <!-- <h4>{% trans "Translated Comments" %}</h4> -->
-                <p >{{ translated_comment|linebreaksbr }}</p>
+              {% if review_stage == 1 %}
+                <p>{{ translated_comment |linebreaksbr }}</p>
+              {% else %}
+                <p>{{  stage_2_translated_comment |linebreaksbr }}</p>
               {% endif %}
             {% endif %}
           </div>
+          {# Difference Pane (only Stage 2) #}
+          {% if review_stage == 2 %}
+            <div class="tab-pane fade" id="diff" role="tabpanel">
+              {% if LANGUAGE_CODE == 'zh-hant' or LANGUAGE_CODE == 'zh-tw' %}
+                <p>{{ stage_2_stage_diff  }}</p>
+              {% else %}
+                <p>{{ stage_2_translated_stage_diff }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
         </div>
+
       </div>
     </div>
   </div>
