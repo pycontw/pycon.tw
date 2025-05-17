@@ -1829,7 +1829,7 @@ msgstr "View AI Summary and Comments"
 
 #: templates/default/dashboard_base.html:57
 msgid "View AI Summary and Comments"
-msgstr "AI Summary and Comments"
+msgstr "View AI Summary and Comments"
 
 #: templates/default/dashboard_base.html:64
 #: templates/default/dashboard_base.html:71
@@ -1847,7 +1847,7 @@ msgstr "Comments"
 
 #: templates/default/dashboard_base.html:89
 msgid "Difference"
-msgstr "Diff"
+msgstr "Difference"
 
 #: templates/default/proposals/_proposal_create.html:14
 msgid "Create Proposal"
@@ -5470,33 +5470,3 @@ msgstr ""
 #: users/views.py:131
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
-
-#~ msgid "AI Review"
-#~ msgstr "Review"
-
-#~ msgid "View AI Review"
-#~ msgstr "View AI Review"
-
-#~ msgid "AI-Generated Summary"
-#~ msgstr "AI-generated summary"
-
-#~ msgid "Translated Summary"
-#~ msgstr "translated summary"
-
-#~ msgid "AI-Generated Comments"
-#~ msgstr "AI-generated comment"
-
-#~ msgid "Translated Comments"
-#~ msgstr "translated comment"
-
-#~ msgid "HTML"
-#~ msgstr "HTML"
-
-#~ msgid "Keynote"
-#~ msgstr "Keynote"
-
-#~ msgid "EN Slides"
-#~ msgstr "EN Slides"
-
-#~ msgid "R1, R2, R3"
-#~ msgstr "R1, R2, R3"

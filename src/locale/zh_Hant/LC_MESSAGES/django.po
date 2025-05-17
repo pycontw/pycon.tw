@@ -1771,7 +1771,7 @@ msgstr "檢視 AI 摘要評論"
 
 #: templates/default/dashboard_base.html:57
 msgid "View AI Summary and Comments"
-msgstr "AI 摘要評論"
+msgstr "查看 AI 摘要評論"
 
 #: templates/default/dashboard_base.html:64
 #: templates/default/dashboard_base.html:71
@@ -5338,33 +5338,3 @@ msgstr ""
 #: users/views.py:131
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "AI Review"
-#~ msgstr "審查"
-
-#~ msgid " AI Summary and Comments "
-#~ msgstr " AI 摘要評論"
-
-#~ msgid "AI-Generated Summary"
-#~ msgstr "AI 生成的摘要"
-
-#~ msgid "Translated Summary"
-#~ msgstr "翻譯後的摘要"
-
-#~ msgid "AI-Generated Comments"
-#~ msgstr "AI 生成的評論"
-
-#~ msgid "Translated Comments"
-#~ msgstr "翻譯後的評論"
-
-#~ msgid "HTML"
-#~ msgstr "HTML"
-
-#~ msgid "Keynote"
-#~ msgstr "基調演講"
-
-#~ msgid "EN Slides"
-#~ msgstr "英文投影片"
-
-#~ msgid "R1, R2, R3"
-#~ msgstr "R1、R2、R3"
