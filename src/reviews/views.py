@@ -273,6 +273,9 @@ class ReviewEditView(ReviewableMixin, PermissionRequiredMixin, UpdateView):
             proposal=self.proposal, filter_user=self.request.user
         ).order_by("stage")
         if self.proposal.accepted is None and self.object:
+            # If this proposal does not have verdict, this page will have a
+            # review form. Exclude the current user's current review so that
+            # it does not show up twice (once in the table, once in form).
             my_reviews = my_reviews.exclude(pk=self.object.pk)
 
         # 3. LLMReview 階段 1
