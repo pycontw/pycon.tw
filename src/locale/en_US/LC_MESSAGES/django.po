@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-19 20:30+0800\n"
+"POT-Creation-Date: 2025-05-15 21:24+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -33,7 +33,7 @@ msgstr "token"
 msgid "verified"
 msgstr "verified"
 
-#: attendee/models.py:9 core/models.py:162 proposals/models.py:396
+#: attendee/models.py:9 core/models.py:162 proposals/models.py:413
 msgid "created at"
 msgstr "created at"
 
@@ -237,7 +237,7 @@ msgstr "conference"
 msgid "title"
 msgstr "title"
 
-#: core/models.py:98 proposals/models.py:361
+#: core/models.py:98
 msgid "category"
 msgstr "category"
 
@@ -297,7 +297,7 @@ msgstr "attending PyCon TW in person"
 msgid "Key"
 msgstr "Key"
 
-#: core/models.py:215 proposals/models.py:68 users/models.py:196
+#: core/models.py:215 proposals/models.py:69 users/models.py:196
 #: users/models.py:311
 msgid "user"
 msgstr "user"
@@ -534,7 +534,7 @@ msgstr "sponsored event"
 msgid "sponsored events"
 msgstr "sponsored events"
 
-#: events/models.py:379 events/models.py:410 proposals/models.py:356
+#: events/models.py:379 events/models.py:410 proposals/models.py:364
 #: reviews/models.py:75 reviews/models.py:196
 msgid "proposal"
 msgstr "proposal"
@@ -794,150 +794,181 @@ msgstr "This user is already a speaker for the proposal."
 msgid "No valid speaker found with your selection."
 msgstr "No valid speaker found with your selection."
 
-#: proposals/models.py:61
+#: proposals/models.py:62
 msgid "Proposal author"
 msgstr "Proposal author"
 
-#: proposals/models.py:74
+#: proposals/models.py:75
 msgid "proposal model type"
 msgstr "proposal model type"
 
-#: proposals/models.py:78
+#: proposals/models.py:79
 msgid "proposal ID"
 msgstr "proposal ID"
 
-#: proposals/models.py:86
+#: proposals/models.py:87
 msgid "Pending"
 msgstr "Pending"
 
-#: proposals/models.py:87 proposals/models.py:163
+#: proposals/models.py:88 proposals/models.py:164
 msgid "Accepted"
 msgstr "Accepted"
 
-#: proposals/models.py:88
+#: proposals/models.py:89
 msgid "Declined"
 msgstr "Declined"
 
-#: proposals/models.py:97 proposals/models.py:156
+#: proposals/models.py:98 proposals/models.py:157
 msgid "cancelled"
 msgstr "cancelled"
 
-#: proposals/models.py:105
+#: proposals/models.py:106
 msgid "additional speaker"
 msgstr "additional speaker"
 
-#: proposals/models.py:106
+#: proposals/models.py:107
 msgid "additional speakers"
 msgstr "additional speakers"
 
-#: proposals/models.py:135
+#: proposals/models.py:136
 msgid "submitter"
 msgstr "submitter"
 
-#: proposals/models.py:140
+#: proposals/models.py:141
 msgid "outline"
 msgstr "outline"
 
-#: proposals/models.py:145
+#: proposals/models.py:146
 msgid "objective"
 msgstr "objective"
 
-#: proposals/models.py:150
+#: proposals/models.py:151
 msgid "supplementary"
 msgstr "supplementary"
 
-#: proposals/models.py:164
+#: proposals/models.py:165
 msgid "Rejected"
 msgstr "Rejected"
 
-#: proposals/models.py:167
+#: proposals/models.py:168
 msgid "accepted"
 msgstr "accepted"
 
-#: proposals/models.py:181
+#: proposals/models.py:182
 msgid "labels"
 msgstr ""
 
-#: proposals/models.py:265 proposals/models.py:319
+#: proposals/models.py:266 proposals/models.py:320
 #: templates/default/_includes/proposal_example_modal.html:50
 #: templates/default/_includes/proposal_example_modal.html:67
 #: templates/default/reviews/review_form.html:40
 msgid "Duration"
 msgstr "Duration"
 
-#: proposals/models.py:270
+#: proposals/models.py:271
 msgid "Yes, it is my first time speaking at PyCon Taiwan."
 msgstr "Yes, it is my first time speaking at PyCon Taiwan."
 
-#: proposals/models.py:271
+#: proposals/models.py:272
 msgid "No, I have given talks at PyCon Taiwan in the past."
 msgstr "No, I have given talks at PyCon Taiwan in the past."
 
-#: proposals/models.py:275
+#: proposals/models.py:276
 msgid "first time speaker"
 msgstr "first time speaker"
 
-#: proposals/models.py:280
+#: proposals/models.py:281
 msgid "talk proposal"
 msgstr "talk proposal"
 
-#: proposals/models.py:281
+#: proposals/models.py:282
 msgid "talk proposals"
 msgstr "talk proposals"
 
-#: proposals/models.py:315
+#: proposals/models.py:316
 msgid "1.5hr"
 msgstr "1.5hr"
 
-#: proposals/models.py:326
+#: proposals/models.py:327
 msgid "tutorial proposal"
 msgstr "tutorial proposal"
 
-#: proposals/models.py:327
+#: proposals/models.py:328
 msgid "tutorial proposals"
 msgstr "tutorial proposals"
 
-#: proposals/models.py:367
+#: proposals/models.py:356
+msgid "Stage 1"
+msgstr "Stage 1"
+
+#: proposals/models.py:357
+msgid "Stage 2"
+msgstr "Stage 2"
+
+#: proposals/models.py:368
+msgid "review stage"
+msgstr "review stage"
+
+#: proposals/models.py:378 templates/pycontw-2018/events/talk_list.html:17
+#: templates/pycontw-2019/events/talk_list.html:17
+#: templates/pycontw-2020/events/talk_list.html:21
+#: templates/pycontw-2021/events/talk_list.html:21
+#: templates/pycontw-2022/events/talk_list.html:21
+#: templates/pycontw-2023/events/talk_list.html:21
+#: templates/pycontw-2024/events/talk_list.html:21
+#: templates/pycontw-2025/events/talk_list.html:21
+msgid "Categories"
+msgstr "Categories"
+
+#: proposals/models.py:384
 msgid "AI-generated summary"
 msgstr "AI-generated summary"
 
-#: proposals/models.py:371
+#: proposals/models.py:388
 msgid "AI-generated comment"
 msgstr "AI-generated comment"
 
-#: proposals/models.py:375
+#: proposals/models.py:392
 msgid "translated summary"
 msgstr "translated summary"
 
-#: proposals/models.py:379
+#: proposals/models.py:396
 msgid "translated comment"
 msgstr "translated comment"
 
-#: proposals/models.py:383 reviews/models.py:92
+#: proposals/models.py:400 reviews/models.py:92
 msgid "-1 (strong reject)"
 msgstr "–1 (strong reject)"
 
-#: proposals/models.py:384 reviews/models.py:91
+#: proposals/models.py:401 reviews/models.py:91
 msgid "-0 (weak reject)"
 msgstr "–0 (weak reject)"
 
-#: proposals/models.py:385 reviews/models.py:90
+#: proposals/models.py:402 reviews/models.py:90
 msgid "+0 (weak accept)"
 msgstr "+0 (weak accept)"
 
-#: proposals/models.py:386 reviews/models.py:89
+#: proposals/models.py:403 reviews/models.py:89
 msgid "+1 (strong accept)"
 msgstr "+1 (strong accept)"
 
-#: proposals/models.py:390
+#: proposals/models.py:407
 msgid "AI vote"
 msgstr "AI vote"
 
-#: proposals/models.py:401
+#: proposals/models.py:418
+msgid "stage difference"
+msgstr "stage difference"
+
+#: proposals/models.py:424
+msgid "translated stage difference"
+msgstr "translated stage difference"
+
+#: proposals/models.py:430
 msgid "LLM review"
 msgstr "LLM review"
 
-#: proposals/models.py:402
+#: proposals/models.py:431
 msgid "LLM reviews"
 msgstr "LLM reviews"
 
@@ -1765,12 +1796,12 @@ msgstr ""
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: templates/default/dashboard_base.html:16
+#: templates/default/dashboard_base.html:14
 #, python-format
 msgid "Hi %(name)s, welcome!"
 msgstr "Hi %(name)s, welcome!"
 
-#: templates/default/dashboard_base.html:22
+#: templates/default/dashboard_base.html:20
 msgid ""
 "Please verify your account by clicking the link in the mail we sent to your "
 "email inbox."
@@ -1778,60 +1809,45 @@ msgstr ""
 "Please verify your account by clicking the link in the mail we sent to your "
 "email inbox."
 
-#: templates/default/dashboard_base.html:25
+#: templates/default/dashboard_base.html:23
 msgid "Did not get the verification mail?"
 msgstr "Did not get the verification mail?"
 
-#: templates/default/dashboard_base.html:26
+#: templates/default/dashboard_base.html:24
 msgid "Request a new one."
 msgstr "Request a new one."
 
-#: templates/default/dashboard_base.html:32
+#: templates/default/dashboard_base.html:30
 msgid ""
 "You need to complete your speaker profile first before submitting a proposal."
 msgstr ""
 "You need to complete your speaker profile first before submitting a proposal."
 
-#: templates/default/dashboard_base.html:57
+#: templates/default/dashboard_base.html:53
 msgid "View AI Summary and Comments "
-msgstr ""
+msgstr "View AI Summary and Comments"
 
-#: templates/default/dashboard_base.html:63
-msgid " AI Summary and Comments "
-msgstr ""
+#: templates/default/dashboard_base.html:57
+msgid "View AI Summary and Comments"
+msgstr "View AI Summary and Comments"
 
-#: templates/default/dashboard_base.html:72
+#: templates/default/dashboard_base.html:64
+#: templates/default/dashboard_base.html:71
 msgid "AI Recommendation Category"
-msgstr ""
-
-#: templates/default/dashboard_base.html:81
-msgid "Summary"
-msgstr ""
+msgstr "AI Recommendation Category"
 
 #: templates/default/dashboard_base.html:82
+msgid "Summary"
+msgstr "Summary"
+
+#: templates/default/dashboard_base.html:85
 #: templates/default/reviews/_includes/previous_review_table.html:9
 msgid "Comments"
 msgstr "Comments"
 
-#: templates/default/dashboard_base.html:90
-#| msgid "AI-generated summary"
-msgid "AI-Generated Summary"
-msgstr "AI-generated summary"
-
-#: templates/default/dashboard_base.html:95
-#| msgid "translated summary"
-msgid "Translated Summary"
-msgstr "translated summary"
-
-#: templates/default/dashboard_base.html:105
-#| msgid "AI-generated comment"
-msgid "AI-Generated Comments"
-msgstr "AI-generated comment"
-
-#: templates/default/dashboard_base.html:110
-#| msgid "translated comment"
-msgid "Translated Comments"
-msgstr "translated comment"
+#: templates/default/dashboard_base.html:89
+msgid "Difference"
+msgstr "Difference"
 
 #: templates/default/proposals/_proposal_create.html:14
 msgid "Create Proposal"
@@ -3622,17 +3638,6 @@ msgid ""
 msgstr ""
 "<em>Program schedule is subject to change.</em> Please check this page "
 "frequently to get the latest version."
-
-#: templates/pycontw-2018/events/talk_list.html:17
-#: templates/pycontw-2019/events/talk_list.html:17
-#: templates/pycontw-2020/events/talk_list.html:21
-#: templates/pycontw-2021/events/talk_list.html:21
-#: templates/pycontw-2022/events/talk_list.html:21
-#: templates/pycontw-2023/events/talk_list.html:21
-#: templates/pycontw-2024/events/talk_list.html:21
-#: templates/pycontw-2025/events/talk_list.html:21
-msgid "Categories"
-msgstr "Categories"
 
 #: templates/pycontw-2018/events/talk_list.html:34
 #: templates/pycontw-2019/events/talk_list.html:34
@@ -5465,15 +5470,3 @@ msgstr ""
 #: users/views.py:131
 msgid "Password reset successful. You can now login."
 msgstr "Password reset successful. You can now login."
-
-#~ msgid "HTML"
-#~ msgstr "HTML"
-
-#~ msgid "Keynote"
-#~ msgstr "Keynote"
-
-#~ msgid "EN Slides"
-#~ msgstr "EN Slides"
-
-#~ msgid "R1, R2, R3"
-#~ msgstr "R1, R2, R3"

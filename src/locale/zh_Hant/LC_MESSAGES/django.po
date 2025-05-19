@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-19 20:30+0800\n"
+"POT-Creation-Date: 2025-05-15 21:24+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -40,7 +40,7 @@ msgstr "驗證碼"
 msgid "verified"
 msgstr "已認證"
 
-#: attendee/models.py:9 core/models.py:162 proposals/models.py:396
+#: attendee/models.py:9 core/models.py:162 proposals/models.py:413
 msgid "created at"
 msgstr "建立時間"
 
@@ -244,7 +244,7 @@ msgstr "會議"
 msgid "title"
 msgstr "題目"
 
-#: core/models.py:98 proposals/models.py:361
+#: core/models.py:98
 msgid "category"
 msgstr "分類"
 
@@ -304,7 +304,7 @@ msgstr "是否願意以實體方式與會"
 msgid "Key"
 msgstr "鍵"
 
-#: core/models.py:215 proposals/models.py:68 users/models.py:196
+#: core/models.py:215 proposals/models.py:69 users/models.py:196
 #: users/models.py:311
 msgid "user"
 msgstr "使用者"
@@ -541,7 +541,7 @@ msgstr "贊助演講"
 msgid "sponsored events"
 msgstr "贊助演講"
 
-#: events/models.py:379 events/models.py:410 proposals/models.py:356
+#: events/models.py:379 events/models.py:410 proposals/models.py:364
 #: reviews/models.py:75 reviews/models.py:196
 msgid "proposal"
 msgstr "提案"
@@ -778,150 +778,181 @@ msgstr "本使用者已經是此提案的講者。"
 msgid "No valid speaker found with your selection."
 msgstr "您的選擇找不到對應講者。"
 
-#: proposals/models.py:61
+#: proposals/models.py:62
 msgid "Proposal author"
 msgstr "提案人"
 
-#: proposals/models.py:74
+#: proposals/models.py:75
 msgid "proposal model type"
 msgstr "提案 model 類型"
 
-#: proposals/models.py:78
+#: proposals/models.py:79
 msgid "proposal ID"
 msgstr "提案 ID"
 
-#: proposals/models.py:86
+#: proposals/models.py:87
 msgid "Pending"
 msgstr "待回覆"
 
-#: proposals/models.py:87 proposals/models.py:163
+#: proposals/models.py:88 proposals/models.py:164
 msgid "Accepted"
 msgstr "已接受"
 
-#: proposals/models.py:88
+#: proposals/models.py:89
 msgid "Declined"
 msgstr "被拒絕"
 
-#: proposals/models.py:97 proposals/models.py:156
+#: proposals/models.py:98 proposals/models.py:157
 msgid "cancelled"
 msgstr "已取消"
 
-#: proposals/models.py:105
+#: proposals/models.py:106
 msgid "additional speaker"
 msgstr "額外講者"
 
-#: proposals/models.py:106
+#: proposals/models.py:107
 msgid "additional speakers"
 msgstr "額外講者"
 
-#: proposals/models.py:135
+#: proposals/models.py:136
 msgid "submitter"
 msgstr "提案人"
 
-#: proposals/models.py:140
+#: proposals/models.py:141
 msgid "outline"
 msgstr "大綱"
 
-#: proposals/models.py:145
+#: proposals/models.py:146
 msgid "objective"
 msgstr "演講目標"
 
-#: proposals/models.py:150
+#: proposals/models.py:151
 msgid "supplementary"
 msgstr "補充資訊"
 
-#: proposals/models.py:164
+#: proposals/models.py:165
 msgid "Rejected"
 msgstr "已拒絕"
 
-#: proposals/models.py:167
+#: proposals/models.py:168
 msgid "accepted"
 msgstr "已接受"
 
-#: proposals/models.py:181
+#: proposals/models.py:182
 msgid "labels"
 msgstr ""
 
-#: proposals/models.py:265 proposals/models.py:319
+#: proposals/models.py:266 proposals/models.py:320
 #: templates/default/_includes/proposal_example_modal.html:50
 #: templates/default/_includes/proposal_example_modal.html:67
 #: templates/default/reviews/review_form.html:40
 msgid "Duration"
 msgstr "時間長度"
 
-#: proposals/models.py:270
+#: proposals/models.py:271
 msgid "Yes, it is my first time speaking at PyCon Taiwan."
 msgstr "是，我第一次擔任 PyCon Taiwan 講者"
 
-#: proposals/models.py:271
+#: proposals/models.py:272
 msgid "No, I have given talks at PyCon Taiwan in the past."
 msgstr "否，我過去曾擔任過 PyCon Taiwan 講者"
 
-#: proposals/models.py:275
+#: proposals/models.py:276
 msgid "first time speaker"
 msgstr "第一次擔任講者"
 
-#: proposals/models.py:280
+#: proposals/models.py:281
 msgid "talk proposal"
 msgstr "演講提案"
 
-#: proposals/models.py:281
+#: proposals/models.py:282
 msgid "talk proposals"
 msgstr "演講提案"
 
-#: proposals/models.py:315
+#: proposals/models.py:316
 msgid "1.5hr"
 msgstr "1.5 小時"
 
-#: proposals/models.py:326
+#: proposals/models.py:327
 msgid "tutorial proposal"
 msgstr "專業課程提案"
 
-#: proposals/models.py:327
+#: proposals/models.py:328
 msgid "tutorial proposals"
 msgstr "專業課程提案"
 
-#: proposals/models.py:367
+#: proposals/models.py:356
+msgid "Stage 1"
+msgstr "第一階段"
+
+#: proposals/models.py:357
+msgid "Stage 2"
+msgstr "第二階段"
+
+#: proposals/models.py:368
+msgid "review stage"
+msgstr "審查階段"
+
+#: proposals/models.py:378 templates/pycontw-2018/events/talk_list.html:17
+#: templates/pycontw-2019/events/talk_list.html:17
+#: templates/pycontw-2020/events/talk_list.html:21
+#: templates/pycontw-2021/events/talk_list.html:21
+#: templates/pycontw-2022/events/talk_list.html:21
+#: templates/pycontw-2023/events/talk_list.html:21
+#: templates/pycontw-2024/events/talk_list.html:21
+#: templates/pycontw-2025/events/talk_list.html:21
+msgid "Categories"
+msgstr "主題分類"
+
+#: proposals/models.py:384
 msgid "AI-generated summary"
 msgstr "AI 生成的摘要"
 
-#: proposals/models.py:371
+#: proposals/models.py:388
 msgid "AI-generated comment"
 msgstr "AI 生成的評論"
 
-#: proposals/models.py:375
+#: proposals/models.py:392
 msgid "translated summary"
 msgstr "翻譯後的摘要"
 
-#: proposals/models.py:379
+#: proposals/models.py:396
 msgid "translated comment"
 msgstr "翻譯後的評論"
 
-#: proposals/models.py:383 reviews/models.py:92
+#: proposals/models.py:400 reviews/models.py:92
 msgid "-1 (strong reject)"
 msgstr "–1（高度肯定地拒絕）"
 
-#: proposals/models.py:384 reviews/models.py:91
+#: proposals/models.py:401 reviews/models.py:91
 msgid "-0 (weak reject)"
 msgstr "−0（輕微反對）"
 
-#: proposals/models.py:385 reviews/models.py:90
+#: proposals/models.py:402 reviews/models.py:90
 msgid "+0 (weak accept)"
 msgstr "+0（輕微贊成）"
 
-#: proposals/models.py:386 reviews/models.py:89
+#: proposals/models.py:403 reviews/models.py:89
 msgid "+1 (strong accept)"
 msgstr "+1（高度肯定地接受）"
 
-#: proposals/models.py:390
+#: proposals/models.py:407
 msgid "AI vote"
 msgstr "AI 投票"
 
-#: proposals/models.py:401
+#: proposals/models.py:418
+msgid "stage difference"
+msgstr "階段差異"
+
+#: proposals/models.py:424
+msgid "translated stage difference"
+msgstr "翻譯後的階段差異"
+
+#: proposals/models.py:430
 msgid "LLM review"
 msgstr "AI 審稿"
 
-#: proposals/models.py:402
+#: proposals/models.py:431
 msgid "LLM reviews"
 msgstr "AI 審稿"
 
@@ -1710,68 +1741,55 @@ msgstr ""
 msgid "Dashboard"
 msgstr "控制面板"
 
-#: templates/default/dashboard_base.html:16
-#| msgid "Hi %(name)s, welcome!"
+#: templates/default/dashboard_base.html:14
+#, python-format
 msgid "Hi %(name)s, welcome!"
 msgstr "嗨 %(name)s，歡迎！"
 
-#: templates/default/dashboard_base.html:22
+#: templates/default/dashboard_base.html:20
 msgid ""
 "Please verify your account by clicking the link in the mail we sent to your "
 "email inbox."
 msgstr "我們已寄帳號認證信至您的信箱，請點擊信中的連結完成認證。"
 
-#: templates/default/dashboard_base.html:25
+#: templates/default/dashboard_base.html:23
 msgid "Did not get the verification mail?"
 msgstr "沒有收到認證信嗎？"
 
-#: templates/default/dashboard_base.html:26
+#: templates/default/dashboard_base.html:24
 msgid "Request a new one."
 msgstr "重新寄送一封。"
 
-#: templates/default/dashboard_base.html:32
+#: templates/default/dashboard_base.html:30
 msgid ""
 "You need to complete your speaker profile first before submitting a proposal."
 msgstr "在投稿前，您必須先完成填寫講者資訊。"
 
-#: templates/default/dashboard_base.html:57
-#| msgid "View AI Summary and Comments"
+#: templates/default/dashboard_base.html:53
 msgid "View AI Summary and Comments "
 msgstr "檢視 AI 摘要評論"
 
-#: templates/default/dashboard_base.html:63
-#| msgid "AI Summary and Comments"
-msgid " AI Summary and Comments "
-msgstr " AI 摘要評論"
+#: templates/default/dashboard_base.html:57
+msgid "View AI Summary and Comments"
+msgstr "查看 AI 摘要評論"
 
-#: templates/default/dashboard_base.html:72
+#: templates/default/dashboard_base.html:64
+#: templates/default/dashboard_base.html:71
 msgid "AI Recommendation Category"
 msgstr "AI 建議分類"
 
-#: templates/default/dashboard_base.html:81
-msgid "Summary"
-msgstr ""
-
 #: templates/default/dashboard_base.html:82
+msgid "Summary"
+msgstr "摘要"
+
+#: templates/default/dashboard_base.html:85
 #: templates/default/reviews/_includes/previous_review_table.html:9
 msgid "Comments"
 msgstr "評論"
 
-#: templates/default/dashboard_base.html:90
-msgid "AI-Generated Summary"
-msgstr "AI 生成的摘要"
-
-#: templates/default/dashboard_base.html:95
-msgid "Translated Summary"
-msgstr "翻譯後的摘要"
-
-#: templates/default/dashboard_base.html:105
-msgid "AI-Generated Comments"
-msgstr "AI 生成的評論"
-
-#: templates/default/dashboard_base.html:110
-msgid "Translated Comments"
-msgstr "翻譯後的評論"
+#: templates/default/dashboard_base.html:89
+msgid "Difference"
+msgstr "差異"
 
 #: templates/default/proposals/_proposal_create.html:14
 msgid "Create Proposal"
@@ -3535,17 +3553,6 @@ msgid ""
 "<em>Program schedule is subject to change.</em> Please check this page "
 "frequently to get the latest version."
 msgstr "<em>議程可能隨時更改。</em>請頻繁確認本頁資訊，以獲得最新訊息。"
-
-#: templates/pycontw-2018/events/talk_list.html:17
-#: templates/pycontw-2019/events/talk_list.html:17
-#: templates/pycontw-2020/events/talk_list.html:21
-#: templates/pycontw-2021/events/talk_list.html:21
-#: templates/pycontw-2022/events/talk_list.html:21
-#: templates/pycontw-2023/events/talk_list.html:21
-#: templates/pycontw-2024/events/talk_list.html:21
-#: templates/pycontw-2025/events/talk_list.html:21
-msgid "Categories"
-msgstr "主題分類"
 
 #: templates/pycontw-2018/events/talk_list.html:34
 #: templates/pycontw-2019/events/talk_list.html:34
@@ -5331,15 +5338,3 @@ msgstr ""
 #: users/views.py:131
 msgid "Password reset successful. You can now login."
 msgstr "密碼重設成功。您現在即可登入。"
-
-#~ msgid "HTML"
-#~ msgstr "HTML"
-
-#~ msgid "Keynote"
-#~ msgstr "基調演講"
-
-#~ msgid "EN Slides"
-#~ msgstr "英文投影片"
-
-#~ msgid "R1, R2, R3"
-#~ msgstr "R1、R2、R3"

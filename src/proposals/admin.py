@@ -35,11 +35,16 @@ class ProposalAdmin(admin.ModelAdmin):
 
 class LLMReviewInline(admin.StackedInline):
     model = LLMReview
-    fields = ['summary', 'comment', 'translated_summary', 'translated_comment', 'category', 'vote', 'created_at']
+    fields = [
+        'stage', 'summary', 'comment', 'translated_summary',
+        'translated_comment', 'categories', 'vote', 'stage_diff',
+        'translated_stage_diff', 'created_at',
+    ]
     readonly_fields = ['created_at']
-    can_delete = False
-    max_num = 1
+    can_delete = True
+    max_num = 2
     min_num = 0
+    extra = 1
 
 
 @admin.register(TalkProposal)
