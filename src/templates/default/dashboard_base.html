@@ -129,9 +129,9 @@
           {% if review_stage == 2 %}
             <div class="tab-pane fade" id="diff" role="tabpanel">
               {% if LANGUAGE_CODE == 'zh-hant' or LANGUAGE_CODE == 'zh-tw' %}
-                <p>{{ stage_2_stage_diff  }}</p>
+                <p>{{ stage_2_stage_diff  | linebreaksbr  }}</p>
               {% else %}
-                <p>{{ stage_2_translated_stage_diff }}</p>
+                <p>{{ stage_2_translated_stage_diff | linebreaksbr }}</p>
               {% endif %}
             </div>
           {% endif %}
