@@ -1,0 +1,42 @@
+name: CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  cd:
+    if: |
+      github.event_name == 'push' || (
+        github.event_name == 'workflow_dispatch' &&
+        contains(fromJSON(vars.PROJECT_ADMINS), github.actor)
+      )
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Generate .env for staging vm from github secrets
+      run: |
+        echo "${{secrets.PRODUCTION_DOT_ENV_FILE}}" > .env
+    - name: Generate google-cloud-storage.json to src from secrets
+      run: |
+        echo "${{secrets.PRODUCTION_GOOGLE_CLOUD_STORAGE_JSON}}" > src/google-cloud-storage.json
+    - name: Decode private key file for OpenSSH access over Ansible
+      run: |
+        echo "${{secrets.SSH_PRIVATE_KEY}}" | base64 --decode > "private.pem"
+        chmod 400 private.pem
+    - name: Run playbook for deployment
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook: deploy.yml
+        inventory: |
+          pycontw:
+            hosts:
+              staging:
+                ansible_host: "${{secrets.VM_DOMAIN_IP}}"
+                ansible_user: "${{secrets.VM_USERNAME}}"
+                # secret file generated from previous step
+                ansible_ssh_private_key_file: private.pem
+                ansible_python_interpreter: "${{secrets.VM_PYTHON_INTERPRETER}}"
