@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'^agreement/$',
         views.coc_agree, name='coc_agreement'),
 
+    path('api/reviewers/', views.reviewer_list, name='reviewer-list'),
+
 ]

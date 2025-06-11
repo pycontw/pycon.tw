@@ -3,14 +3,14 @@ from django.conf import settings
 from django.contrib import auth, messages
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.translation import get_language, gettext
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
-from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET, require_POST
 from lxml import etree
 
 from reviews.context import proposals_state, reviews_state
@@ -181,6 +181,14 @@ def coc_agree(request):
         **reviews_state()._asdict(),
     })
 
+@login_required
+@require_GET
+def reviewer_list(request):
+    reviewers = User.objects.filter(groups__name='Reviewer').values(
+        'email', 'speaker_name', 'bio', 'photo', 'facebook_profile_url',
+        'twitter_id', 'github_id', 'is_staff', 'is_active', 'date_joined'
+    )
+    return JsonResponse(list(reviewers), safe=False)
 
 class PasswordChangeView(auth_views.PasswordChangeView):
     # cannot merely pass extra_context=reviews_state()._asdict() to
