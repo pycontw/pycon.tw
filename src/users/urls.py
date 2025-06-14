@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'^agreement/$',
         views.coc_agree, name='coc_agreement'),
 
+    path('api/users/', views.user_list, name='user_list'),
+
 ]
