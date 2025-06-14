@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib import auth, messages
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
 from django.http import Http404, JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
@@ -183,12 +184,29 @@ def coc_agree(request):
 
 @login_required
 @require_GET
-def reviewer_list(request):
-    reviewers = User.objects.filter(groups__name='Reviewer').values(
-        'email', 'speaker_name', 'bio', 'photo', 'facebook_profile_url',
-        'twitter_id', 'github_id', 'is_staff', 'is_active', 'date_joined'
-    )
-    return JsonResponse(list(reviewers), safe=False)
+def user_list(request):
+    role = request.GET.get('role')
+    qs = User.objects.all()
+    if role:
+        if not Group.objects.filter(name__iexact=role).exists():
+            raise Http404(f"Group '{role}' does not exist.")
+        qs = qs.filter(groups__name__iexact=role)
+    users = []
+    for user in qs:
+        users.append({
+            'email': user.email,
+            'full_name': user.get_full_name(),
+            'bio': user.bio,
+            'photo_url': user.get_thumbnail_url() if hasattr(user, 'get_thumbnail_url') else '',
+            'facebook_profile_url': user.facebook_profile_url,
+            'twitter_profile_url': getattr(user, 'twitter_profile_url', ''),
+            'github_profile_url': getattr(user, 'github_profile_url', ''),
+            'verified': getattr(user, 'verified', False),
+            'is_staff': user.is_staff,
+            'is_active': user.is_active,
+            'date_joined': user.date_joined,
+        })
+    return JsonResponse(list(users), safe=False)
 
 class PasswordChangeView(auth_views.PasswordChangeView):
     # cannot merely pass extra_context=reviews_state()._asdict() to
