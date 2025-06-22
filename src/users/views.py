@@ -182,7 +182,6 @@ def coc_agree(request):
         **reviews_state()._asdict(),
     })
 
-@login_required
 @require_GET
 def user_list(request):
     role = request.GET.get('role')
