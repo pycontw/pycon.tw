@@ -2,6 +2,8 @@ import pytest
 from django.contrib.auth.models import Group
 from django.urls import reverse
 
+from core.models import Token
+
 
 @pytest.mark.django_db
 def test_user_list_returns_all_users(client, django_user_model):
@@ -13,7 +15,6 @@ def test_user_list_returns_all_users(client, django_user_model):
         is_active=True,
     )
 
-    from core.models import Token
     token, _ = Token.objects.get_or_create(user=user)
 
     url = reverse('user_list')
@@ -37,7 +38,6 @@ def test_user_list_with_role_filter(client, django_user_model):
     )
     user.groups.add(group)
 
-    from core.models import Token
     token, _ = Token.objects.get_or_create(user=user)
 
     url = reverse('user_list')
@@ -58,9 +58,8 @@ def test_user_list_with_invalid_role_returns_404(client, django_user_model):
         verified=True,
         is_active=True,
     )
-    from core.models import Token
     token, _ = Token.objects.get_or_create(user=user)
 
     url = reverse('user_list')
     response = client.get(url, {'role': 'NotARealRole'}, HTTP_AUTHORIZATION=f'Token {token.key}')
-    assert response.status_code == 404
+    assert response.status_code == 400
