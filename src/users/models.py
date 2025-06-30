@@ -233,6 +233,15 @@ class User(AbstractBaseUser, PermissionsMixin):
             return get_thumbnail(self.photo, '800x800').url
         return static('images/default_head.png')
 
+    def get_public_photo_url(self):
+        """
+        Return user's thumbnail photo URL, or empty string if using default.
+        Suitable for public API exposure.
+        """
+        if self.photo and os.path.exists(self.photo.path):
+            return get_thumbnail(self.photo, '800x800').url
+        return ''
+
     def is_valid_speaker(self):
         """Whether the user is a valid speaker.
 
