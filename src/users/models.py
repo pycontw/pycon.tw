@@ -24,6 +24,7 @@ from sorl.thumbnail import get_thumbnail
 from core.models import BigForeignKey, EAWTextField
 from core.utils import format_html_lazy
 
+DEFAULT_PHOTO_URL=static('images/default_head.png')
 
 class UserQueryset(models.QuerySet):
     """Custom queryset for User.
@@ -226,12 +227,14 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         return self.speaker_name
 
-    def get_thumbnail_url(self):
-        """Return URL to compressed profile photo if set, or a default image.
-        """
-        if self.photo and os.path.exists(self.photo.path):
+    @property
+    def has_photo(self) -> bool:
+        return self.photo and os.path.exists(self.photo.path)
+
+    def get_thumbnail_url(self, default_value: str | None = DEFAULT_PHOTO_URL):
+        if self.has_photo:
             return get_thumbnail(self.photo, '800x800').url
-        return static('images/default_head.png')
+        return default_value
 
     def is_valid_speaker(self):
         """Whether the user is a valid speaker.
