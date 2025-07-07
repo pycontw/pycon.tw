@@ -330,11 +330,11 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2024, 9, 21), _('Day 1')),
-    (datetime.date(2024, 9, 22), _('Day 2')),
+    (datetime.date(2025, 9, 6), _('Day 1')),
+    (datetime.date(2025, 9, 7), _('Day 2')),
 ])
 
-COC_VERSION = '2024.0'
+COC_VERSION = '2025.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config
