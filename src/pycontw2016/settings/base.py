@@ -334,7 +334,7 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2025, 9, 7), _('Day 2')),
 ])
 
-COC_VERSION = '2025.0'
+COC_VERSION = '2024.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
 # (see the repo at https://github.com/pycontw/pycontw-2021) and this config
