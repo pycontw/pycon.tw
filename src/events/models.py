@@ -116,29 +116,34 @@ class Location:
     R2_2 = '6-r2-2'
     R4 = '7-r4'
     OTHER = '8-oth'
+    SPT_OS = '81-spt-os'  # sprint / open space
+    TUTORIAL = '82-tutorial'  # tutorial
+    YI_PS = '83-yi-ps'  # young inspire / poster session
 
 
 class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
     LOCATION_CHOICES = [
-        (Location.ALL, _('All rooms')),
-        (Location.R012, _('R0, R1, R2')),
+        # (Location.ALL, _('All rooms')),
+        # (Location.R012, _('R0, R1, R2')),
         (Location.R0, _('R0')),
-        (Location.R0_1, _('R0_1')),
-        (Location.R0_2, _('R0_2')),
+        # (Location.R0_1, _('R0_1')),
+        # (Location.R0_2, _('R0_2')),
         (Location.R1, _('R1')),
-        (Location.R1_1, _('R1_1')),
-        (Location.R1_2, _('R1_2')),
+        # (Location.R1_1, _('R1_1')),
+        # (Location.R1_2, _('R1_2')),
         (Location.R2, _('R2')),
-        (Location.R2_1, _('R2_1')),
-        (Location.R2_2, _('R2_2')),
+        # (Location.R2_1, _('R2_1')),
+        # (Location.R2_2, _('R2_2')),
         (Location.R3, _('R3')),
-        (Location.R4, _('Open Space')),
-        (Location.OTHER, _('Other')),
+        (Location.R4, _('R4')),
+        (Location.SPT_OS , _('Sprint / Open Space')),
+        (Location.TUTORIAL, _('Tutorial')),
+        (Location.YI_PS, _('Young Inspire / Poster Session')),
     ]
     location = models.CharField(
-        max_length=6,
+        max_length=12,
         choices=LOCATION_CHOICES,
         blank=True,
         null=True,

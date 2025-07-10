@@ -250,6 +250,20 @@ class EventWrapper:
         else:
             return ''
 
+    @property
+    def custom_event(self) -> bool:
+        if isinstance(self.obj, CustomEvent):
+            return not self.obj.break_event
+        else:
+            return False
+
+    @property
+    def custom_event_path(self) -> str:
+        if self.custom_event:
+            return self.obj.link_path
+        else:
+            return ''
+
     def display(self):
         return {
             'event_id': self.event_id,
@@ -263,6 +277,8 @@ class EventWrapper:
             'language': self.language,
             'python_level': self.python_level,
             'break_event': self.break_event,
+            'custom_event': self.custom_event,
+            'custom_event_path': self.custom_event_path,
         }
 
 
