@@ -15,7 +15,7 @@ def user_list(request):
     role = request.GET.get('role')
     if not role or role != "Reviewer":
         return JsonResponse({'detail': 'role is not given or invalid.'}, status=400)
-    qs = User.objects.filter(is_active=True,verified=True, groups__name= "Reviewer")
+    qs = User.objects.get_valid_users_by_role(role).order_by('speaker_name')
     users = []
     for user in qs:
         users.append({
