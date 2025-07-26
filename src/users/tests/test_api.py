@@ -3,19 +3,30 @@ from django.contrib.auth.models import Group
 from django.urls import reverse
 
 
+@pytest.fixture
+def auth_user(django_user_model):
+    """創建一個用於認證的用戶，不影響測試邏輯"""
+    return django_user_model.objects.create(
+        email="test_auth@example.com",
+        speaker_name="Auth User",
+        verified=True,
+        is_active=True,
+    )
+
+
 @pytest.mark.django_db
-def test_user_list_with_role_filter_exact_match(api_client, django_user_model):
+def test_user_list_with_role_filter_exact_match(api_client, django_user_model, auth_user):
     group = Group.objects.create(name='Reviewer')
-    user = django_user_model.objects.create(
+    reviewer = django_user_model.objects.create(
         email="reviewer@example.com",
         speaker_name="Reviewer Name",
         bio="Some bio",
         verified=True,
         is_active=True,
     )
-    user.groups.add(group)
+    reviewer.groups.add(group)
 
-    api_client.force_authenticate(user=user)
+    api_client.force_authenticate(user=auth_user)
 
     url = reverse('user_list')
     response = api_client.get(url, {'role': 'Reviewer'})
@@ -24,12 +35,12 @@ def test_user_list_with_role_filter_exact_match(api_client, django_user_model):
     data = response.json()
     assert data == [
         {
-            'full_name': user.get_full_name(),
-            'bio': user.bio,
+            'full_name': reviewer.get_full_name(),
+            'bio': reviewer.bio,
             'photo_url': None,
-            'facebook_profile_url': user.facebook_profile_url,
-            'twitter_profile_url': user.twitter_profile_url,
-            'github_profile_url': user.github_profile_url,
+            'facebook_profile_url': reviewer.facebook_profile_url,
+            'twitter_profile_url': reviewer.twitter_profile_url,
+            'github_profile_url': reviewer.github_profile_url,
         }
     ]
 
