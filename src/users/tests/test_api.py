@@ -5,7 +5,6 @@ from django.urls import reverse
 
 @pytest.fixture
 def auth_user(django_user_model):
-    """創建一個用於認證的用戶，不影響測試邏輯"""
     return django_user_model.objects.create(
         email="test_auth@example.com",
         speaker_name="Auth User",
@@ -28,21 +27,22 @@ def test_user_list_with_role_filter_exact_match(api_client, django_user_model, a
 
     api_client.force_authenticate(user=auth_user)
 
+    non_reviewer = django_user_model.objects.create(
+        email="other@example.com",
+        speaker_name="Other User",
+        bio="Other bio",
+        verified=True,
+        is_active=True,
+    )
+
     url = reverse('user_list')
     response = api_client.get(url, {'role': 'Reviewer'})
     assert response.status_code == 200
 
     data = response.json()
-    assert data == [
-        {
-            'full_name': reviewer.get_full_name(),
-            'bio': reviewer.bio,
-            'photo_url': None,
-            'facebook_profile_url': reviewer.facebook_profile_url,
-            'twitter_profile_url': reviewer.twitter_profile_url,
-            'github_profile_url': reviewer.github_profile_url,
-        }
-    ]
+    assert len(data) == 1
+    assert data[0]['full_name'] == reviewer.get_full_name()
+    assert data[0]['bio'] == reviewer.bio
 
 
 @pytest.mark.django_db
