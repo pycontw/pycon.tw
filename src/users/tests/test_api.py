@@ -27,7 +27,7 @@ def test_user_list_with_role_filter_exact_match(api_client, django_user_model, a
 
     api_client.force_authenticate(user=auth_user)
 
-    non_reviewer = django_user_model.objects.create(
+    _ = django_user_model.objects.create(
         email="other@example.com",
         speaker_name="Other User",
         bio="Other bio",
