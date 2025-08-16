@@ -125,7 +125,7 @@ class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
     LOCATION_CHOICES = [
-        # (Location.ALL, _('All rooms')),
+        (Location.ALL, _('All rooms')),
         # (Location.R012, _('R0, R1, R2')),
         (Location.R0, _('R0')),
         # (Location.R0_1, _('R0_1')),
