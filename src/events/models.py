@@ -104,7 +104,7 @@ class Location:
     """
     R3 = '1-r3'
     ALL = '2-all'
-    R012 = '3-r012'
+    R0_ALL = '3-r0-all'
     R0 = '4-r0'
     R0_1 = '4-r0-1'
     R0_2 = '4-r0-2'
@@ -125,8 +125,8 @@ class BaseEvent(ConferenceRelated):
     """Base interface for all events in the schedule.
     """
     LOCATION_CHOICES = [
-        # (Location.ALL, _('All rooms')),
-        # (Location.R012, _('R0, R1, R2')),
+        (Location.ALL, _('All rooms')),
+        (Location.R0_ALL, _('R0 (Simulcast)')),
         (Location.R0, _('R0')),
         # (Location.R0_1, _('R0_1')),
         # (Location.R0_2, _('R0_2')),
