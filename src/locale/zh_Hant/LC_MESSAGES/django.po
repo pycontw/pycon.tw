@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-19 02:15+0800\n"
+"POT-Creation-Date: 2025-08-20 14:48+0800\n"
 "PO-Revision-Date: 2022-07-11 02:25+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: Chinese Traditional (http://www.transifex.com/pycon-taiwan/"
@@ -88,7 +88,7 @@ msgstr "演講"
 
 #: core/admin.py:14
 msgid "Current"
-msgstr ""
+msgstr "目前"
 
 #: core/admin.py:15 core/choices.py:24
 msgid "Other"
@@ -96,7 +96,7 @@ msgstr "其他"
 
 #: core/admin.py:16
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: core/choices.py:4
 msgid "Application"
@@ -352,15 +352,15 @@ msgstr "時間"
 
 #: events/models.py:128
 msgid "All rooms"
-msgstr ""
+msgstr "所有會議室"
 
 #: events/models.py:129
 msgid "R0 (Simulcast)"
-msgstr ""
+msgstr "R0 (聯播)"
 
 #: events/models.py:130
 msgid "R0"
-msgstr ""
+msgstr "R0"
 
 #: events/models.py:133
 msgid "R1"
@@ -376,7 +376,7 @@ msgstr "R3"
 
 #: events/models.py:140
 msgid "R4"
-msgstr ""
+msgstr "R4"
 
 #: events/models.py:141
 msgid "Sprint / Open Space"
@@ -828,7 +828,7 @@ msgstr "已接受"
 
 #: proposals/models.py:182
 msgid "labels"
-msgstr ""
+msgstr "標籤"
 
 #: proposals/models.py:266 proposals/models.py:320
 #: templates/default/_includes/proposal_example_modal.html:50

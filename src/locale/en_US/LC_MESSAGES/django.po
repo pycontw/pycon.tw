@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyCon TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-19 02:15+0800\n"
+"POT-Creation-Date: 2025-08-20 14:48+0800\n"
 "PO-Revision-Date: 2022-07-11 02:23+0800\n"
 "Last-Translator: Tom Chen <ctchen@gmail.com>\n"
 "Language-Team: English (United States) (http://www.transifex.com/pycon-"
@@ -81,7 +81,7 @@ msgstr "talk"
 
 #: core/admin.py:14
 msgid "Current"
-msgstr ""
+msgstr "Current"
 
 #: core/admin.py:15 core/choices.py:24
 msgid "Other"
@@ -89,7 +89,7 @@ msgstr "Other"
 
 #: core/admin.py:16
 msgid "All"
-msgstr ""
+msgstr "All"
 
 #: core/choices.py:4
 msgid "Application"
@@ -308,11 +308,11 @@ msgstr "created at"
 
 #: core/models.py:221
 msgid "Token"
-msgstr ""
+msgstr "Token"
 
 #: core/models.py:222
 msgid "Tokens"
-msgstr ""
+msgstr "Tokens"
 
 #: events/admin.py:34
 msgid "time value"
@@ -345,11 +345,11 @@ msgstr "times"
 
 #: events/models.py:128
 msgid "All rooms"
-msgstr ""
+msgstr "All rooms"
 
 #: events/models.py:129
 msgid "R0 (Simulcast)"
-msgstr ""
+msgstr "R0 (Simulcast)"
 
 #: events/models.py:130
 msgid "R0"
@@ -369,7 +369,7 @@ msgstr "R3"
 
 #: events/models.py:140
 msgid "R4"
-msgstr ""
+msgstr "R4"
 
 #: events/models.py:141
 msgid "Sprint / Open Space"
@@ -844,7 +844,7 @@ msgstr "accepted"
 
 #: proposals/models.py:182
 msgid "labels"
-msgstr ""
+msgstr "labels"
 
 #: proposals/models.py:266 proposals/models.py:320
 #: templates/default/_includes/proposal_example_modal.html:50
@@ -4654,7 +4654,7 @@ msgstr "Discord Guideline"
 #: templates/pycontw-2024/contents/_default/conference/keynotes.html:68
 #: templates/pycontw-2025/contents/_default/conference/keynotes.html:68
 msgid "To be announced"
-msgstr ""
+msgstr "To be announced"
 
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:53
 #: templates/pycontw-2020/contents/_default/events/job-listings.html:58
@@ -4686,7 +4686,7 @@ msgstr "Select this track"
 #: templates/pycontw-2022/events/_includes/community-track-overview.html:18
 #: templates/pycontw-2022/events/_includes/community-track.html:19
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 #: templates/pycontw-2020/events/_includes/community-track-traffic.html:10
 #: templates/pycontw-2021/events/_includes/community-track-traffic.html:10
@@ -5040,7 +5040,7 @@ msgstr "PyCon TW Discord Guideline"
 #: templates/pycontw-2025/ext/live.html:5
 #: templates/pycontw-2025/ext/live.html:12
 msgid "Live broadcast"
-msgstr ""
+msgstr "Live broadcast"
 
 #: templates/pycontw-2020/index.html:52
 msgid "Sponsor PyCon TW"
