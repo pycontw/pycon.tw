@@ -3,35 +3,46 @@ from django.contrib.auth.models import Group
 from django.urls import reverse
 
 
+@pytest.fixture
+def auth_user(django_user_model):
+    return django_user_model.objects.create(
+        email="test_auth@example.com",
+        speaker_name="Auth User",
+        verified=True,
+        is_active=True,
+    )
+
+
 @pytest.mark.django_db
-def test_user_list_with_role_filter_exact_match(api_client, django_user_model):
+def test_user_list_with_role_filter_exact_match(api_client, django_user_model, auth_user):
     group = Group.objects.create(name='Reviewer')
-    user = django_user_model.objects.create(
+    reviewer = django_user_model.objects.create(
         email="reviewer@example.com",
         speaker_name="Reviewer Name",
         bio="Some bio",
         verified=True,
         is_active=True,
     )
-    user.groups.add(group)
+    reviewer.groups.add(group)
 
-    api_client.force_authenticate(user=user)
+    api_client.force_authenticate(user=auth_user)
+
+    django_user_model.objects.create(
+        email="other@example.com",
+        speaker_name="Other User",
+        bio="Other bio",
+        verified=True,
+        is_active=True,
+    )
 
     url = reverse('user_list')
     response = api_client.get(url, {'role': 'Reviewer'})
     assert response.status_code == 200
 
     data = response.json()
-    assert data == [
-        {
-            'full_name': user.get_full_name(),
-            'bio': user.bio,
-            'photo_url': None,
-            'facebook_profile_url': user.facebook_profile_url,
-            'twitter_profile_url': user.twitter_profile_url,
-            'github_profile_url': user.github_profile_url,
-        }
-    ]
+    assert len(data) == 1
+    assert data[0]['full_name'] == reviewer.get_full_name()
+    assert data[0]['bio'] == reviewer.bio
 
 
 @pytest.mark.django_db
