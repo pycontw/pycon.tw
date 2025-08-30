@@ -4,7 +4,7 @@ from django.urls import reverse
 
 
 @pytest.mark.django_db
-def test_user_list_with_role_filter_exact_match(verified_api_client, django_user_model):
+def test_user_list_with_role_filter_exact_match(api_client, django_user_model):
     group = Group.objects.create(name="Reviewer")
 
     reviewer = django_user_model.objects.create(
@@ -25,7 +25,7 @@ def test_user_list_with_role_filter_exact_match(verified_api_client, django_user
     )
 
     url = reverse("user_list")
-    response = verified_api_client.get(url, {"role": "Reviewer"})
+    response = api_client.get(url, {"role": "Reviewer"})
     assert response.status_code == 200
 
     data = response.json()
@@ -35,7 +35,7 @@ def test_user_list_with_role_filter_exact_match(verified_api_client, django_user
 
 
 @pytest.mark.django_db
-def test_user_list_excludes_unverified_users(verified_api_client, django_user_model):
+def test_user_list_excludes_unverified_users(api_client, django_user_model):
     group = Group.objects.create(name="Reviewer")
 
     unverified_user = django_user_model.objects.create(
@@ -48,13 +48,13 @@ def test_user_list_excludes_unverified_users(verified_api_client, django_user_mo
     unverified_user.groups.add(group)
 
     url = reverse("user_list")
-    response = verified_api_client.get(url, {"role": "Reviewer"})
+    response = api_client.get(url, {"role": "Reviewer"})
     assert response.status_code == 200
     assert response.json() == []
 
 
 @pytest.mark.django_db
-def test_user_list_with_invalid_role_returns_400(verified_api_client, django_user_model):
+def test_user_list_with_invalid_role_returns_400(api_client, django_user_model):
     django_user_model.objects.create(
         email="someuser@example.com",
         speaker_name="Some User",
@@ -64,12 +64,12 @@ def test_user_list_with_invalid_role_returns_400(verified_api_client, django_use
     )
 
     url = reverse("user_list")
-    response = verified_api_client.get(url, {"role": "NotARealRole"})
+    response = api_client.get(url, {"role": "NotARealRole"})
     assert response.status_code == 400
 
 
 @pytest.mark.django_db
-def test_user_list_without_role_returns_400(verified_api_client, django_user_model):
+def test_user_list_without_role_returns_400(api_client, django_user_model):
     django_user_model.objects.create(
         email="someuser@example.com",
         speaker_name="Some User",
@@ -79,5 +79,5 @@ def test_user_list_without_role_returns_400(verified_api_client, django_user_mod
     )
 
     url = reverse("user_list")
-    response = verified_api_client.get(url)
+    response = api_client.get(url)
     assert response.status_code == 400
