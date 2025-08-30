@@ -212,3 +212,12 @@ def api_client(bare_user: User) -> APIClient:
     token, _ = Token.objects.get_or_create(user=bare_user)
     api_client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
     yield api_client
+
+
+@pytest.fixture
+def verified_api_client(user: User) -> APIClient:
+    """API client authenticated with a verified user's token."""
+    api_client = APIClient()
+    token, _ = Token.objects.get_or_create(user=user)
+    api_client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
+    yield api_client
