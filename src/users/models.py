@@ -39,6 +39,14 @@ class UserQueryset(models.QuerySet):
         users = users.exclude(speaker_name='').exclude(bio='')
         return users
 
+    def get_valid_users_by_role(self, role):
+        """Get active and verified users with specific role"""
+        return self.filter(
+            is_active=True,
+            verified=True,
+            groups__name=role
+        )
+
 
 class UserManager(BaseUserManager.from_queryset(UserQueryset)):
     """Custom manager for User.

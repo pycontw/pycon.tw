@@ -207,8 +207,9 @@ def accepted_talk_proposal(talk_proposal):
 
 
 @pytest.fixture
-def api_client(bare_user: User) -> APIClient:
+def api_client(user: User) -> APIClient:
+    """API client authenticated with a verified user's token."""
     api_client = APIClient()
-    token, _ = Token.objects.get_or_create(user=bare_user)
+    token, _ = Token.objects.get_or_create(user=user)
     api_client.credentials(HTTP_AUTHORIZATION=f"Token {token.key}")
     yield api_client
