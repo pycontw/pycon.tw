@@ -11,13 +11,13 @@
 
 2. If the services are up and running in the first time, you may need to run the following in `pycontw` service in docker shell.
 
-To get into the docker shell for `pycontw`
+    To get into the docker shell for `pycontw`
 
     ```
     make shell_dev
     ```
 
-In the shell, you can run any commands as if you are in a local development environment. Here are some common Django commands:
+    In the shell, you can run any commands as if you are in a local development environment. Here are some common Django commands:
 
     ```sh
     # make migrations
