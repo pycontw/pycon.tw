@@ -1,0 +1,40 @@
+---
+- name: Deploy project to staging machine
+  hosts: staging
+  # escalate privilege
+  become: true
+  become_user: dev
+  vars:
+    project_dir: /home/dev/web-projects/pycontw-2023-ansible
+
+  tasks:
+    - name: Dependencies check dor docker and docker-compose in remote server
+      community.general.python_requirements_info:
+        dependencies:
+          - docker
+          - docker-compose
+
+    - name: Create project directory (if not exist)
+      ansible.builtin.file:
+        path: "{{ project_dir }}"
+        state: directory
+
+    # Copy project files to remote server (.env is included)
+    - name: Copy project files to remote server
+      ansible.posix.synchronize:
+        src: ./
+        dest: "{{ project_dir }}"
+        delete: true
+
+    - name: Ensure docker network network-2023 exists
+      community.docker.docker_network:
+        name: network-2023
+
+    - name: Build and start service
+      community.docker.docker_compose:
+        project_src: "{{ project_dir }}"
+        files:
+          # use ansible-specific compose file
+          - docker-compose-ansible.yml
+        build: true
+        state: present
