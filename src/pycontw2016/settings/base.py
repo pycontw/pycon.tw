@@ -334,6 +334,9 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2025, 9, 7), _('Day 2')),
 ])
 
+# see: https://github.com/pycontw/pycon.tw/pull/1252#discussion_r2190736001
+# Changing this value will require all submission system users to agree to the COC content again.
+# This is usually only necessary when the COC content has been modified.
 COC_VERSION = '2024.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
