@@ -1,0 +1,63 @@
+@import 'site';
+
+.my-gallery {
+	width: 100%;
+	float: left;
+}
+.my-gallery img {
+	width: 100%;
+	height: auto;
+}
+.my-gallery figure {
+	display: block;
+	float: left;
+	margin: 0 5px 5px 0;
+	width: 150px;
+}
+.my-gallery figcaption {
+	display: none;
+
+}
+.links{
+	margin-left: -0.5em;
+	text-align:center;
+	display:flex;
+	flex-wrap: wrap;
+	> .frame-square{
+        flex:0 0 calc(50% - 14px - 0.5em);
+		margin-left: 0.5em;
+		
+        @include on-desktop {
+            flex:0 0 calc(25% - 14px - 0.5em);
+        }
+    }
+}
+.frame-square {
+	background: rgba(0,0,0, 0.1);
+	border: 2px solid #000;
+	vertical-align: top;
+	padding: 5px;
+	width: 130px;
+	height: 130px;
+	margin-bottom: .5em;
+	.crop{
+		height: 100%;
+		  overflow: hidden;
+		  position: relative;
+		  img {
+			display: block;
+			min-width: 100%;
+			min-height: 100%;
+			margin: auto;
+			position: absolute;
+			top: -100%;
+			right: -100%;
+			bottom: -100%;
+			left: -100%;
+		}
+	}
+}
+main > .gallery{
+	margin-top: 0;
+	margin-bottom: 0;
+}

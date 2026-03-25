@@ -1,0 +1,85 @@
+{% extends 'contents/_base.html' %}
+
+{% load i18n static %}
+{% load events %}
+
+{% block title %}{% trans 'Keynotes' %}{% endblock title %}
+
+{% block body_class %}keynotes-page{% endblock body_class %}
+
+
+{% block content %}
+
+<!--
+<div class="breadcrumbs">
+  <ol>
+	<li><a href="{% url 'index' %}">{% trans 'Home' %}</a></li>
+	<li>{% trans 'Events' %}</li>
+	<li>{% trans 'Keynotes' %}</li>
+  </ol>
+</div>
+-->
+
+<section class="pill-title">
+	<h1>{% trans 'Keynotes' %}</h1>
+</section>
+
+{% get_keynote_events as keynote_events %}
+
+{% for event in keynote_events %}
+
+{% with data=event.get_static_data_for_locale %}
+
+<article class="media" id="keynote-speaker-{{ event.slug }}">
+	<header>
+		<figure>
+			<img src="{% static data.photo %}">
+			<figcaption>{{ data.speaker.name }}</figcaption>
+		</figure>
+		<h2 class="title">{{ data.session.title }}</h2>
+	</header>
+	<div class="tabbing" data-controller="tabbing">
+		<ul class="tabs">
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				{% trans 'Biography' %}
+			</li>
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				{% trans 'Speech' %}
+			</li>
+			{% if data.slido %}
+			<li data-target="tabbing.tab" data-action="click->tabbing#activate">
+				{% trans 'Slido' %}
+			</li>
+			{% endif %}
+		</ul>
+		<div>
+			<article data-target="tabbing.pane">
+				<h3 class="tab-title">{% trans 'Biography' %}</h3>
+					{{ data.speaker.bio|linebreaks }}
+				<div class="social">
+					{% for key, url in data.social.items %}
+					{% if url %}
+					<a href="{{ url }}" target="_blank" rel="noopener"><span class="fa fa-{{ key }}"></span></a>
+					{% endif %}
+					{% endfor %}
+				</div>
+			</article>
+			<article data-target="tabbing.pane">
+				{% trans "To be announced" as placeholder_description %}
+				<h3 class="tab-title">{% trans 'Speech' %}</h3>
+				{{ data.session.description|default:placeholder_description|linebreaks }}
+			</article>
+			{% if data.slido %}
+			<article data-target="tabbing.pane">
+				<iframe class="slido" src="{{ data.slido }}"></iframe>
+			</article>
+			{% endif %}
+		</div>
+	</div>
+</article>
+
+{% endwith %}
+
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,248 @@
+$top-navbar-background-color: $brick;
+$top-navbar-height: 48px;
+$top-navbar-margin-y: 10px;
+$top-navbar-logo-height: 24px;
+$top-navbar-border-bottom: solid 2px $jinger-bread;
+
+.top-navbar {
+	background-color: $top-navbar-background-color;
+	position: relative;
+	z-index: $background-deco-index + 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: $top-navbar-height;
+	border-bottom: $top-navbar-border-bottom;
+	overflow: hidden;
+    margin: $top-navbar-margin-y 0;
+
+    @include on-desktop {
+        margin: $top-navbar-margin-y 40px 0;
+    }
+	
+
+	.navbar-logo {
+		margin-top: ($top-navbar-height - $top-navbar-logo-height) / 2;
+
+		@include on-desktop {
+			display: none;
+		}
+	}
+}
+
+$top-navbar-offset: $top-navbar-height + $top-navbar-margin-y;
+
+.navbar-centerbox {
+	position: absolute;
+	left: 50%;
+	width: 160px;
+	margin-left: -80px;
+	height: $top-navbar-height;
+	overflow: hidden;
+}
+
+.navbar-logo {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('../assets/2019whitelogo.svg') no-repeat 50% top / 80%;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: -2px;
+    margin-left: 12px;
+}
+
+.navbar-provintia {
+    font-size: 52px;
+    position: relative;
+    bottom: -5px;
+    color: $jinger-bread;
+    left: 0px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-family: $classic-font-family;
+    padding-left: 7px;
+    color: $jinger-bread;
+
+	@include no-underline;
+    &:hover {
+        color: $imperial;
+    }
+}
+
+.navbar-lang-switch {
+	@include no-underline;
+	margin: 0 0px;
+
+	> button {
+		$size: 36px;
+
+        font-family: $classic-font-family;
+		width: $size;
+		height: $size;
+		// margin: #{($top-navbar-height - $size) / 2} 2px;
+		padding: 0;
+		border: none;
+		background: none;
+		color: $jinger-bread;
+		font-weight: 500;
+		font-size: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&:disabled {
+			border-radius: 8px;
+			background: $salmon;
+			color: $jinger-bread;
+			cursor: default;
+		}
+		&:not(:disabled):hover {
+			color: $imperial;
+		}
+	}
+}
+
+.navbar-toggler {
+	$size: $top-navbar-height;
+
+	display: flex;
+	justify-content: center;
+	margin-left: auto;
+	width: $size;
+    // Fix firefox style problem
+    // if you set height here, the hamberger would be misplaced
+	// height: $size;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+
+	$icon-width: 28px;
+	$icon-height: 20px;
+	$bar-thickness: 3px;
+
+	&.no-script {
+		display: none;
+	}
+
+	> div {
+		position: relative;
+		z-index: $background-deco-index;
+		width: $icon-width;
+		height: $icon-height;
+		transform: rotate(0deg);
+		cursor: pointer;
+
+		> span {
+			display: block;
+			position: absolute;
+			height: $bar-thickness;
+			width: 100%;
+			background: $jinger-bread;
+			border-radius: 8px;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transform-origin: left center;
+			transition: 0.25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: ($icon-height - $bar-thickness) / 2;
+			}
+			&:nth-child(3) {
+				top: $icon-height - $bar-thickness;
+			}
+		}
+	}
+
+	&[aria-expanded="true"] > div {
+		// Cross the bars correctly.
+		$offset: $icon-width * (2 - $sqrt-2) / 4;
+
+		// Move the cross to the center of the button.
+		$fix-x: (2 - $sqrt-2) * $icon-width / 8;
+		$fix-y: $fix-x + ($icon-width - $icon-height) / 2;
+
+		> span:nth-child(1) {
+			transform: rotate(45deg);
+			top: $offset - $fix-y;
+			left: $offset + $fix-x;
+		}
+		> span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+		}
+		> span:nth-child(3) {
+			transform: rotate(-45deg);
+			top: $icon-width - $offset - $fix-y;
+			left: $offset + $fix-x;
+		}
+	}
+
+	@include on-desktop {
+		display: none;
+	}
+}
+
+@mixin navbar-social-icon($font-size, $base-color, $hover-color) {
+	@include no-underline;
+	color: $base-color;
+	font-size: $font-size;
+
+	// Visually compensate for icon size.
+	&.fa-book {
+		font-size: $font-size * 1.075;
+		padding-right: $font-size * 0.175;
+	}
+	&.fa-twitter {
+		font-size: $font-size * 1.1;
+	}
+	&.fa-envelope {
+		font-size: $font-size * 0.9;
+	}
+
+	&:hover {
+		color: $hover-color;
+		// text-shadow: 0 2px 4px rgba(135, 135, 135, 0.5);
+		text-shadow: 0 2px 4px transparentize($imperial, 0.5);
+	}
+}
+
+.navbar-social-desktop {
+	display: none;
+
+	@include on-desktop {
+		display: flex;
+		align-content: center;
+		margin-right: 8px;
+
+		.fa {
+			@include navbar-social-icon(1.375rem, $jinger-bread, $imperial);
+			margin: 0 16px 0 12px;
+			line-height: $top-navbar-height;
+		}
+	}
+}
+
+.navbar-social-mobile {
+	display: flex;
+	justify-content: center;
+
+	.fa {
+		@include navbar-social-icon(1.5rem, $brick, $imperial);
+		margin: 0 20px;
+	}
+
+	@include on-desktop {
+		display: none;
+	}
+}

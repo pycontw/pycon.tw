@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_class %}{{ block.super }} live-page{% endblock body_class %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'pycontw-2021/styles/ccip-live.scss' %}">
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100i">
+{% endblock extra_css %}
+
+{% block title %}Live Broadcast - PyCon Taiwan 2020{% endblock %}
+
+{% block nav %}{% endblock nav %}
+
+{% block content_full %}
+<main>
+{% include '_includes/ext/live.html' %}
+</main>
+{% endblock content_full %}
+
+{% block footer %}
+{% endblock footer %}

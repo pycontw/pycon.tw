@@ -1,0 +1,49 @@
+{% load i18n static %}
+<p>‼請注意，9/06下午的社群議程場地會由成大移動到各社群議程場地哦
+    為了大家的方便，今年大會安排了交通接駁車方便大家移動到各場地
+    從外縣市來到台南的朋友們可以不必擔心了～
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>{% trans 'Time' %}</th>
+        <th style="width: 70%">{% trans 'Shuttle bus route' %}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>12:20</td>
+        <td >
+            <p>[Car 1] {% trans 'Cheng Kung University' %} -> {% trans 'Tainan Cultural and Creative Park' %}</p>
+            <p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Tsang Fong Art Space' %}</p>
+            <p>[Car 3] {% trans 'Cheng Kung University' %} -> {% trans 'Angry Burger' %}</p>
+            <p>[Car 4] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %}</p>
+        </td>
+
+    </tr>
+    <tr>
+        <td>12:40</td>
+
+        <td>
+            <p>[Car 1, 3] {% trans 'Cheng Kung University' %} -> {% trans 'Tainan Cultural and Creative Park' %}</p>
+            <p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Tsang Fong Art Space' %}</p>
+            <p>[Car 4] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>13:00</td>
+
+        <td>
+            <p>[Car 2] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>13:30</td>
+        <td>
+            <p>[Car 3] {% trans 'Cheng Kung University' %} -> {% trans 'Brunch of San Dao Men Siang Jian' %} -> {% trans 'Tainan Cultural and Creative Park' %} -> {% trans 'Tsang Fong Art Space' %} -> {% trans 'Angry Burger' %}</p>
+        </td>
+    </tr>
+
+    </tbody>
+</table>

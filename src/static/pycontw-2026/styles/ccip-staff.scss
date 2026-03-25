@@ -1,0 +1,10 @@
+@import "site";
+@import "pages/staff";
+
+body {
+    background-color: $brick;
+}
+
+.staff-list {
+    margin: auto auto 10px auto;
+}

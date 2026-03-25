@@ -1,0 +1,17 @@
+@import "page";
+
+.live-page {
+    main {
+        $margin: 20px;
+        width: calc(100% - 2*#{$margin});
+        margin: $margin;
+        padding: 0;
+        max-width: none;
+
+        .entry {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
