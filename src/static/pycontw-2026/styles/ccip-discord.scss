@@ -1,0 +1,19 @@
+@import "page";
+
+.discord-page {
+    main {
+        p {
+            text-align: left;
+        }
+
+        $margin: 20px;
+        width: calc(100% - 2*#{$margin});
+        margin: $margin;
+        padding: 0;
+        max-width: none;
+
+        .entry {
+            margin-top: 20px;
+        }
+    }
+}

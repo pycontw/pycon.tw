@@ -1,0 +1,163 @@
+/* Color palette. */
+$indigo: #3b097b;
+$dark-slate-blue: #192660;
+$dark-peach: #e57b5c;
+$maize: #eec850;
+$azure: #2bb1f7;
+$ultramarine-blue: #3000d1;
+$black: #333333;
+$white: #ffffff;
+$pale-grey: #f7f5fa;
+$dark-indigo: #280454;
+$dark-violet: #280356;
+$purple: #521f93;
+$light-indigo: #875bcd;
+$bluey-grey: #9997b7;
+$white-two: #e6e6e6;
+$pinkish-grey: #c9c9c9;
+$white-35: rgba(255, 255, 255, 0.35);
+$strong-violet:#7200d6;
+$portica:#F4D35E;
+$elf-green:#169B64;
+$egyptian-blue:#224398;
+$waikawa-grey: #616e86;
+$light-grayish-yellow: #FDF6DF;
+$gold-yellow: #fad443;
+$forest-green: #009f5f;
+$light-gray: #868686;
+$dark-orange: #e6851a;
+$jungle-green: #2CB57C;
+$ghost-gray: #f8f8f8;
+
+/* 2020 */
+$brick: white;
+$salmon: rgb(216, 204, 204);
+$jinger-bread: #502526;
+$dark-gray: #262626;
+$imperial: #E23728;
+$salmon-dark: #F6B197;
+$brown: #6A3F3B;
+$my-pink: #D0908A;
+$jazz: #612D2E;
+
+
+/* Some extra styles not in the Zepplin palette. */
+$white-65: rgba(255, 255, 255, 0.65);
+
+
+/* Header styles. */
+
+$header-font-family: 'Philosopher', 'Noto Sans TC', 'sans-serif';
+
+@mixin header($font-size) {
+  color: $jinger-bread;
+  font-family: $header-font-family;
+  font-size: $font-size;
+  font-weight: normal;
+  text-align: center;
+}
+
+@mixin header-geometry($margin-top, $margin-bottom: 24px) {
+	margin-top: $margin-top;
+	margin-bottom: $margin-bottom;
+	+ * {
+		margin-top: 0;
+	}
+}
+
+@mixin h1 {
+	@include header(1.875rem);		// ~ 30px.
+	@include header-geometry(48px);
+	line-height: 150%;
+}
+
+@mixin h2 {
+	@include header(1.75rem);		// ~ 24px.
+	@include header-geometry(72px);
+}
+
+@mixin h3($margin-top: 24px) {
+	@include header(1.25rem);		// ~ 20px.
+	@include header-geometry($margin-top);
+}
+
+@mixin h4() {
+	@include header(1.25rem);		// ~ 20px.
+	@include header-geometry(16px);
+}
+
+@mixin h5() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(16px);
+}
+
+@mixin h5() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(8px);
+}
+
+@mixin h6() {
+	@include header(1.125rem);	// ~ 18px.
+	@include header-geometry(0);
+}
+
+
+/* Content styles. */
+
+$text-font-family: 'Quicksand', 'Microsoft Jhenghei', 'Noto Sans TC', 'sans-serif';
+
+$classic-font-family: 'Philosopher', 'Noto Sans TC', 'sans-serif';
+
+$text-font-size: 1.125rem;			// ~ 18px.
+$text-font-size-small: 0.75rem;	// ~ 12px.
+
+$text-light: $white;
+$text-dark: $black;
+
+$link-dark: lighten($jinger-bread, 25%);
+$link-hover-dark: $waikawa-grey;
+$link-light: $brick;
+$link-hover-light: $waikawa-grey;
+
+@mixin link($base-color, $hover-color) {
+	color: $base-color;
+	text-decoration: none;
+    transition: color 100ms linear, text-decoartion 100ms linear;
+
+	&:hover {
+		color: $hover-color;
+		text-decoration: underline;
+	}
+}
+
+@mixin link-dark {
+	@include link($link-dark, $imperial);
+}
+
+@mixin link-light {
+	@include link($link-light, $link-light);
+}
+
+@mixin text($font-size) {
+  color: $text-dark;
+  font-family: $text-font-family;
+  font-weight: 200;
+  font-size: $font-size;
+
+  strong {
+    font-weight: 400;
+  }
+  em {  // Do not use slant.
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+@mixin text-light {
+  a {
+    @include link-light;
+  }
+  button, dl, p, ul, ol, th, td {
+    color: $text-light;
+  }
+}

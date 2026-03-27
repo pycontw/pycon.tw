@@ -312,9 +312,10 @@ CONFERENCE_CHOICES = [
     ('pycontw-2023', _('PyCon Taiwan 2023')),
     ('pycontw-2024', _('PyCon Taiwan 2024')),
     ('pycontw-2025', _('PyCon Taiwan 2025')),
+    ('pycontw-2026', _('PyCon Taiwan 2026')),
 ]
 
-CONFERENCE_DEFAULT_SLUG = 'pycontw-2025'
+CONFERENCE_DEFAULT_SLUG = 'pycontw-2026'
 TEMPLATES[0]['DIRS'][1] = os.path.join(
     BASE_DIR, 'templates', CONFERENCE_DEFAULT_SLUG,
 )
@@ -334,6 +335,9 @@ EVENTS_DAY_NAMES = collections.OrderedDict([
     (datetime.date(2025, 9, 7), _('Day 2')),
 ])
 
+# see: https://github.com/pycontw/pycon.tw/pull/1252#discussion_r2190736001
+# Changing this value will require all submission system users to agree to the COC content again.
+# This is usually only necessary when the COC content has been modified.
 COC_VERSION = '2024.0'
 
 # Since 2021, pycon.tw has indivisual server hosting the attendee-facing pages
