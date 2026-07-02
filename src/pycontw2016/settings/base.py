@@ -331,8 +331,8 @@ TALK_PROPOSAL_DURATION_CHOICES = (
 )
 
 EVENTS_DAY_NAMES = collections.OrderedDict([
-    (datetime.date(2025, 9, 6), _('Day 1')),
-    (datetime.date(2025, 9, 7), _('Day 2')),
+    (datetime.date(2026, 10, 17), _('Day 1')),
+    (datetime.date(2026, 10, 18), _('Day 2')),
 ])
 
 # see: https://github.com/pycontw/pycon.tw/pull/1252#discussion_r2190736001
