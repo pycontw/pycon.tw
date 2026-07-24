@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 from .base import *  # noqa
 from .base import (
     ALLOWED_HOSTS as BASE_ALLOWED_HOSTS,
+)
+from .base import (
     BASE_DIR,
     STATICFILES_DIRS,
     TEMPLATES,
