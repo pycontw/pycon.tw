@@ -4,9 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .base import *  # noqa
 from .base import (
-    ALLOWED_HOSTS as BASE_ALLOWED_HOSTS,
-)
-from .base import (
+    ALLOWED_HOSTS,
     BASE_DIR,
     STATICFILES_DIRS,
     TEMPLATES,
@@ -21,7 +19,7 @@ CONFERENCE_DEFAULT_SLUG = 'pycontw-2026'
 
 # allow host for docker internal network (http://pycontw-202X[:XXXX])
 COMPOSE_SERVICE_CONTAINER_NAME = 'pycontw-2026'  # defined in docker-compose.yml
-ALLOWED_HOSTS = [*BASE_ALLOWED_HOSTS, COMPOSE_SERVICE_CONTAINER_NAME]
+ALLOWED_HOSTS = [*ALLOWED_HOSTS, COMPOSE_SERVICE_CONTAINER_NAME]
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
