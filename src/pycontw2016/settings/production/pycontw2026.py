@@ -3,7 +3,12 @@ import os
 from django.utils.translation import gettext_lazy as _
 
 from .base import *  # noqa
-from .base import BASE_DIR, STATICFILES_DIRS, TEMPLATES
+from .base import (
+    ALLOWED_HOSTS,
+    BASE_DIR,
+    STATICFILES_DIRS,
+    TEMPLATES,
+)
 
 # Override static and media URL for prefix in WSGI server.
 # https://code.djangoproject.com/ticket/25598
@@ -11,6 +16,10 @@ STATIC_URL = '/prs/static/'
 MEDIA_URL = '/prs/media/'
 
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2026'
+
+# allow host for docker internal network (http://pycontw-202X[:XXXX])
+COMPOSE_SERVICE_CONTAINER_NAME = 'pycontw-2026'  # defined in docker-compose.yml
+ALLOWED_HOSTS = [*ALLOWED_HOSTS, COMPOSE_SERVICE_CONTAINER_NAME]
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
