@@ -20,7 +20,8 @@ MEDIA_URL = '/prs/media/'
 CONFERENCE_DEFAULT_SLUG = 'pycontw-2026'
 
 # allow host for docker internal network (http://pycontw-202X[:XXXX])
-ALLOWED_HOSTS = [*BASE_ALLOWED_HOSTS, CONFERENCE_DEFAULT_SLUG]
+COMPOSE_SERVICE_CONTAINER_NAME = 'pycontw-2026'  # defined in docker-compose.yml
+ALLOWED_HOSTS = [*BASE_ALLOWED_HOSTS, COMPOSE_SERVICE_CONTAINER_NAME]
 
 TALK_PROPOSAL_DURATION_CHOICES = (
     ('NOPREF', _('No preference')),
