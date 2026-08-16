@@ -2,6 +2,7 @@ import pytest
 from django.contrib.admin import site
 from django.contrib.admin.views.main import ChangeList
 from django.contrib.auth.models import AnonymousUser
+from django.urls import reverse
 from django.utils.encoding import force_str
 
 from events.admin import (
@@ -54,6 +55,19 @@ def conv_choice(choice):
         choice['query_string'],
         force_str(choice['display']),
         choice['selected'],
+    )
+
+
+@pytest.mark.django_db
+def test_event_admin_displays_custom_location(admin_client):
+    CustomEvent.objects.create(title='Off-site event', location='lobby')
+
+    response = admin_client.get(reverse('admin:events_customevent_changelist'))
+
+    assert response.status_code == 200
+    assert (
+        b'<td class="field-display_location">Custom: lobby</td>'
+        in response.content
     )
 
 
