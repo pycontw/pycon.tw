@@ -398,7 +398,7 @@ msgstr "R4"
 
 #: events/models.py:142
 msgid "Sprint / Open Space"
-msgstr "衝刺開發 / 開放空間"
+msgstr "開放空間"
 
 #: events/models.py:143 templates/pycontw-2016/_includes/nav/front_nav.html:46
 msgid "Tutorial"
@@ -406,7 +406,7 @@ msgstr "專業課程"
 
 #: events/models.py:144
 msgid "Young Inspire / Poster Session"
-msgstr "Young Inspire / 海報展"
+msgstr "海報展"
 
 #: events/models.py:206
 msgid "is break event"
