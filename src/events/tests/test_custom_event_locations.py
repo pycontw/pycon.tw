@@ -4,7 +4,8 @@ import pytest
 from django.conf import settings
 from django.utils import timezone
 
-from events.forms import CUSTOM_LOCATION, CustomEventForm
+from events.fields import CUSTOM_LOCATION
+from events.forms import CustomEventForm
 from events.models import CustomEvent, Location, Time
 
 
@@ -18,7 +19,7 @@ def test_custom_event_form_saves_predefined_location():
     form = CustomEventForm(data={
         'conference': settings.CONFERENCE_DEFAULT_SLUG,
         'title': 'Scheduled event',
-        'location_mode': Location.R0,
+        'location_0': Location.R0,
         'description': '',
         'link_path': '',
     })
@@ -33,8 +34,8 @@ def test_custom_event_form_saves_custom_location():
     form = CustomEventForm(data={
         'conference': settings.CONFERENCE_DEFAULT_SLUG,
         'title': 'Off-site event',
-        'location_mode': CUSTOM_LOCATION,
-        'custom_location': 'lobby',
+        'location_0': CUSTOM_LOCATION,
+        'location_1': 'lobby',
         'description': '',
         'link_path': '',
     })
@@ -47,36 +48,38 @@ def test_custom_event_form_saves_custom_location():
 def test_custom_event_form_initializes_custom_location():
     form = CustomEventForm(instance=CustomEvent(location='lobby'))
 
-    assert form.fields['location_mode'].initial == CUSTOM_LOCATION
-    assert form.fields['custom_location'].initial == 'lobby'
+    assert form.fields['location'].widget.decompress(form.initial['location']) == [
+        CUSTOM_LOCATION,
+        'lobby',
+    ]
 
 
 def test_custom_event_form_requires_custom_location():
     form = CustomEventForm(data={
         'conference': settings.CONFERENCE_DEFAULT_SLUG,
         'title': 'Off-site event',
-        'location_mode': CUSTOM_LOCATION,
-        'custom_location': '',
+        'location_0': CUSTOM_LOCATION,
+        'location_1': '',
         'description': '',
         'link_path': '',
     })
 
     assert not form.is_valid()
-    assert form.errors['custom_location'] == ['Enter a custom location.']
+    assert form.errors['location'] == ['Enter a custom location.']
 
 
 def test_custom_event_form_limits_custom_location_to_twelve_characters():
     form = CustomEventForm(data={
         'conference': settings.CONFERENCE_DEFAULT_SLUG,
         'title': 'Off-site event',
-        'location_mode': CUSTOM_LOCATION,
-        'custom_location': 'x' * 13,
+        'location_0': CUSTOM_LOCATION,
+        'location_1': 'x' * 13,
         'description': '',
         'link_path': '',
     })
 
     assert not form.is_valid()
-    assert 'custom_location' in form.errors
+    assert 'location' in form.errors
 
 
 @pytest.mark.django_db
