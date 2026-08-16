@@ -25,6 +25,8 @@ from core.utils import format_html_lazy
 from proposals.models import PrimarySpeaker, TalkProposal, TutorialProposal
 from sponsors.models import Sponsor
 
+from .fields import EventLocationModelField
+
 MIDNIGHT_TIME = datetime.time(tzinfo=pytz.timezone('Asia/Taipei'))
 
 EVENT_DATETIME_START_END = (
@@ -142,7 +144,7 @@ class BaseEvent(ConferenceRelated):
         (Location.TUTORIAL, _('Tutorial')),
         (Location.YI_PS, _('Young Inspire / Poster Session')),
     ]
-    location = models.CharField(
+    location = EventLocationModelField(
         max_length=12,
         choices=LOCATION_CHOICES,
         blank=True,

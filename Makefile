@@ -1,4 +1,4 @@
-.PHONY: init
+.PHONY: init psql
 
 init:
 	. ${NVM_DIR}/nvm.sh && nvm use
@@ -8,6 +8,9 @@ init:
 
 run_db:
 	docker compose -f docker-compose-dev.yml up db -d
+
+psql:
+	docker compose -f docker-compose-dev.yml exec db psql -U postgres -d pycontw2016
 
 run_local: init run_db
 	export DATABASE_URL=postgresql://postgres:secretpostgres@127.0.0.1:5432/pycontw2016
@@ -24,4 +27,4 @@ remove_dev:
 	docker compose -f docker-compose-dev.yml down
 
 shell_dev:
-	docker compose -f docker-compose-dev.yml exec -it pycontw /bin/sh
+	docker compose -f docker-compose-dev.yml exec -it pycontw /bin/bash

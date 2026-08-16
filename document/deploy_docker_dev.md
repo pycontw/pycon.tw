@@ -4,12 +4,19 @@
 
 # Containerized Development Environment
 
-1. Simply run the following command to start containerized services, this will run both the database and django service for you:
+1. Create `local.env` file:
+   ```
+   cp src/pycontw2016/settings/local.sample.env \
+      src/pycontw2016/settings/local.env
+   # Replace {{ secret_key }} with the instructions in `local.sample.env`
+   ```
+
+2. Simply run the following command to start containerized services, this will run both the database and django service for you:
     ```
     make run_dev
     ```
 
-2. If the services are up and running in the first time, you may need to run the following in `pycontw` service in docker shell.
+3. If the services are up and running in the first time, you may need to run the following in `pycontw` service in docker shell.
 
     To get into the docker shell for `pycontw`
 
