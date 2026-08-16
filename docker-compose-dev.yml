@@ -10,6 +10,8 @@ services:
       - POSTGRES_PASSWORD=secretpostgres
     ports:
       - ${COMPOSE_DB_PORT:-5432}:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: "pg_isready"
       start_period: 5s
@@ -33,3 +35,6 @@ services:
       - DATABASE_URL=postgres://postgres:secretpostgres@db:5432/pycontw2016
     command: "python3 manage.py runserver 0.0.0.0:8000"
     working_dir: /usr/local/app/src
+
+volumes:
+  postgres_data:
