@@ -1,6 +1,7 @@
 from django import forms
 from django.core import exceptions
 from django.db import models
+from django.utils.html import format_html
 from django.utils.text import capfirst
 from django.utils.translation import gettext_lazy as _
 
@@ -22,6 +23,13 @@ class EventLocationWidget(forms.MultiWidget):
             }),
         ]
         super().__init__(widgets, attrs)
+
+    def render(self, name, value, attrs=None, renderer=None):
+        rendered_widget = super().render(name, value, attrs, renderer)
+        return format_html(
+            '<div class="related-widget-wrapper event-location-widget">{}</div>',
+            rendered_widget,
+        )
 
     def decompress(self, value):
         location_choices = dict(self.widgets[0].choices)
