@@ -27,4 +27,4 @@ remove_dev:
 	docker compose -f docker-compose-dev.yml down
 
 shell_dev:
-	docker compose -f docker-compose-dev.yml exec -it pycontw /bin/sh
+	docker compose -f docker-compose-dev.yml exec -it pycontw /bin/bash
