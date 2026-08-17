@@ -116,13 +116,25 @@ class EndTimeRangeFilter(EventTimeRangeFilter):
     field_name = 'end_time'
 
 
+class EventLocationAdminMixin:
+
+    @admin.display(description=_('location'), ordering='location')
+    def display_location(self, instance):
+        value = instance.location
+        field = instance._meta.get_field('location')
+        if value and value not in dict(field.flatchoices):
+            return _('Custom: %(value)s') % {'value': value}
+
+        return instance.get_location_display()
+
+
 @admin.register(CustomEvent)
-class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
+class CustomEventAdmin(EventLocationAdminMixin, ImportExportMixin, admin.ModelAdmin):
 
     form = CustomEventForm
     search_fields = ['title']
     list_display = [
-        'title', 'begin_time', 'end_time', 'location', 'break_event',
+        'title', 'begin_time', 'end_time', 'display_location', 'break_event',
         'description', 'link_path', 'get_edit_link',
     ]
     list_filter = [
@@ -141,7 +153,7 @@ class CustomEventAdmin(ImportExportMixin, admin.ModelAdmin):
 
 
 @admin.register(KeynoteEvent)
-class KeynoteEventAdmin(TranslationAdmin):
+class KeynoteEventAdmin(EventLocationAdminMixin, TranslationAdmin):
     fields = [
         'conference', 'speaker_name', 'speaker_bio', 'speaker_photo',
         'session_title', 'session_description', 'session_slides',
@@ -150,12 +162,14 @@ class KeynoteEventAdmin(TranslationAdmin):
         'location', 'is_remote',
     ]
     search_fields = ['speaker_name']
-    list_display = ['speaker_name', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = [
+        'speaker_name', 'begin_time', 'end_time', 'display_location', 'is_remote',
+    ]
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
 
 
 @admin.register(JobListingsEvent)
-class JobListingEventAdmin(admin.ModelAdmin):
+class JobListingEventAdmin(EventLocationAdminMixin, admin.ModelAdmin):
     fields = [
         'conference',
         'sponsor',
@@ -163,35 +177,39 @@ class JobListingEventAdmin(admin.ModelAdmin):
     ]
     list_display = [
         'sponsor',
-        'begin_time', 'end_time', 'location']
+        'begin_time', 'end_time', 'display_location']
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location']
     raw_id_fields = ['sponsor']
 
 
 @admin.register(ProposedTalkEvent)
-class ProposedTalkEventAdmin(admin.ModelAdmin):
+class ProposedTalkEventAdmin(EventLocationAdminMixin, admin.ModelAdmin):
     fields = [
         'conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote',
         'youtube_id'
     ]
-    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = [
+        'proposal', 'begin_time', 'end_time', 'display_location', 'is_remote',
+    ]
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 
 @admin.register(ProposedTutorialEvent)
-class ProposedTutorialEventAdmin(admin.ModelAdmin):
+class ProposedTutorialEventAdmin(EventLocationAdminMixin, admin.ModelAdmin):
     fields = [
         'conference', 'proposal', 'begin_time', 'end_time', 'location', 'is_remote',
         'youtube_id'
     ]
-    list_display = ['proposal', 'begin_time', 'end_time', 'location', 'is_remote']
+    list_display = [
+        'proposal', 'begin_time', 'end_time', 'display_location', 'is_remote',
+    ]
     list_filter = [BeginTimeRangeFilter, EndTimeRangeFilter, 'location', 'is_remote']
     raw_id_fields = ['proposal']
 
 
 @admin.register(SponsoredEvent)
-class SponsoredEventAdmin(admin.ModelAdmin):
+class SponsoredEventAdmin(EventLocationAdminMixin, admin.ModelAdmin):
     fields = [
         'conference', 'host', 'title', 'slug', 'category', 'language',
         'abstract', 'python_level', 'detailed_description',
@@ -199,7 +217,7 @@ class SponsoredEventAdmin(admin.ModelAdmin):
         'slido_embed_link', 'hackmd_embed_link', 'youtube_id',
         'begin_time', 'end_time', 'location',
     ]
-    list_display = ['title', 'begin_time', 'end_time', 'location']
+    list_display = ['title', 'begin_time', 'end_time', 'display_location']
     list_filter = [
         BeginTimeRangeFilter, EndTimeRangeFilter, 'location',
         'category', 'language', 'python_level',
