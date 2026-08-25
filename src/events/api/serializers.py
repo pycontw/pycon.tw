@@ -124,7 +124,10 @@ class SponsoredEventListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SponsoredEvent
-        fields = ["id", "title", "category", "speakers", "event_type", "language", "python_level"]
+        fields = [
+            "id", "location", "begin_time", "title", "category", "language",
+            "python_level", "speakers", "event_type",
+        ]
 
 
 class TutorialProposalSerializer(serializers.ModelSerializer):
