@@ -1,7 +1,45 @@
+import datetime
+
 import pytest
 from django.urls import reverse
 
-from events.models import ProposedTalkEvent, ProposedTutorialEvent, SponsoredEvent
+from events.models import Location, ProposedTalkEvent, ProposedTutorialEvent, SponsoredEvent, Time
+
+
+def test_sponsored_speech_list_fields_match_talk(
+        api_client, accepted_talk_proposal, user):
+    begin_time = Time.all_objects.create(
+        value=datetime.datetime(2030, 1, 1, 1, tzinfo=datetime.timezone.utc),
+    )
+    sponsored_event = SponsoredEvent.objects.create(
+        title="Sponsored talk",
+        slug="sponsored-talk",
+        host=user,
+        category="NLP",
+        language="ENEN",
+        python_level="NOVICE",
+        location=Location.R2,
+        begin_time=begin_time,
+    )
+    talk_event = ProposedTalkEvent.objects.create(
+        proposal=accepted_talk_proposal,
+        location=sponsored_event.location,
+        begin_time=sponsored_event.begin_time,
+    )
+    response = api_client.get('/api/events/speeches/', {"event_types": "talk,sponsored"})
+
+    assert response.status_code == 200
+    talk_data = next(
+        event for event in response.json()
+        if event["event_type"] == "talk" and event["id"] == talk_event.id
+    )
+    sponsored_data = next(
+        event for event in response.json()
+        if event["event_type"] == "sponsored" and event["id"] == sponsored_event.id
+    )
+    assert set(sponsored_data) == set(talk_data)
+    assert sponsored_data["location"] == sponsored_event.location
+    assert sponsored_data["begin_time"] == sponsored_event.begin_time_id.isoformat().replace('+00:00', 'Z')
 
 
 @pytest.mark.parametrize(
